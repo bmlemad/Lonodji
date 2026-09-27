@@ -29,7 +29,8 @@ export default function Home() {
           <div className="links">
             <a href="#mission">Mission</a>
             <a href="#programmes">Programmes</a>
-            <a href="#impact">Impact</a>
+            <a href="#territoire">Territoire</a>
+            <a href="#patrimoine">Patrimoine</a>
             <a href="#participer">Participer</a>
           </div>
           <a className="nav-cta" href="#participer">Nous rejoindre</a>
@@ -125,6 +126,51 @@ export default function Home() {
               <p>Paroles de participants et de partenaires, publiées avec leur accord et leur contexte.</p>
               <span className="status">À documenter</span>
             </article>
+          </div>
+        </section>
+
+        <section id="territoire" className="territory section" aria-labelledby="territory-title">
+          <div className="section-head">
+            <div>
+              <p className="eyebrow">04 — Territoire</p>
+              <h2 id="territory-title">Comprendre le terrain.<br /><em>Agir avec précision.</em></h2>
+            </div>
+            <p>
+              Un futur espace pour documenter les besoins, les projets et les ressources du Mandoul Occidental,
+              avec des données sourcées et une cartographie progressive du territoire.
+            </p>
+          </div>
+          <div className="territory-grid">
+            <article className="territory-feature">
+              <span className="module-tag">Observatoire</span>
+              <h3>Mandoul Occidental</h3>
+              <p>Population, santé, éducation, eau, agriculture, infrastructures et numérique : les indicateurs seront publiés avec leur source et leur date.</p>
+              <span className="status">Module en préparation</span>
+            </article>
+            <article className="territory-map">
+              <div className="map-grid" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
+              <span className="map-label">Cartographie territoriale</span>
+              <strong>Carte interactive</strong>
+              <small>Villages · services · projets · besoins</small>
+            </article>
+          </div>
+        </section>
+
+        <section id="patrimoine" className="heritage section" aria-labelledby="heritage-title">
+          <div className="section-head">
+            <div>
+              <p className="eyebrow">05 — Patrimoine</p>
+              <h2 id="heritage-title">Préserver ce qui<br /><em>doit se transmettre.</em></h2>
+            </div>
+            <p>
+              La future mémoire numérique rassemblera des contenus documentés : archives, récits,
+              travaux de recherche, ressources linguistiques et témoignages, dans le respect des droits et des personnes.
+            </p>
+          </div>
+          <div className="heritage-grid">
+            <article><span>01</span><h3>Bibliothèque</h3><p>Livres, études, rapports et publications accessibles selon leurs droits de diffusion.</p></article>
+            <article><span>02</span><h3>Mémoire vivante</h3><p>Récits, histoire locale, témoignages oraux et grandes figures, avec contexte et sources.</p></article>
+            <article><span>03</span><h3>Nangnda</h3><p>Un espace linguistique pouvant accueillir lexique, audio et ressources pédagogiques validées.</p></article>
           </div>
         </section>
 
