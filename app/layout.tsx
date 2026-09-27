@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import SiteFooter from "../components/site-footer";
+import SiteNav from "../components/site-nav";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -47,7 +49,10 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${dmSans.variable} ${playfair.variable}`}>
+        <a className="skip-link" href="#main-content">Aller au contenu</a>
+        <SiteNav />
         {children}
+        <SiteFooter />
         <Script id="structured-data" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
             "@context": "https://schema.org",
