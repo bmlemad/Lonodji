@@ -4,7 +4,8 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "ADEB Lonodji",
     short_name: "ADEB Lonodji",
-    description: "Engagement, transmission et action au service de la communauté.",
+    description:
+      "ADEB Lonodji — engagement, transmission, communauté, territoire et patrimoine.",
     start_url: "/",
     display: "standalone",
     background_color: "#f4f6f1",
