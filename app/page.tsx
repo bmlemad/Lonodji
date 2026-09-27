@@ -19,24 +19,8 @@ const engagement = [
 export default function Home() {
   return (
     <>
-      <a className="skip-link" href="#main-content">Aller au contenu</a>
       <main id="main-content">
-        <nav className="nav" aria-label="Navigation principale">
-          <a className="brand" href="#top" aria-label="ADEB Lonodji — accueil">
-            <span className="brand-mark" aria-hidden="true">A</span>
-            <span>ADEB <b>LONODJI</b></span>
-          </a>
-          <div className="links">
-            <a href="/mission">Mission</a>
-            <a href="/programmes">Programmes</a>
-            <a href="/impact">Impact</a>
-            <a href="/participer">Participer</a>
-            <a href="/transparence">Transparence</a>
-          </div>
-          <a className="nav-cta" href="#participer">Nous rejoindre</a>
-        </nav>
-
-        <section id="top" className="hero" aria-labelledby="hero-title">
+      <section id="top" className="hero" aria-labelledby="hero-title">
           <div className="orb orb-a" aria-hidden="true" />
           <div className="orb orb-b" aria-hidden="true" />
           <div className="hero-copy">
@@ -254,12 +238,7 @@ export default function Home() {
           </div>
         </section>
 
-        <footer>
-          <span>© ADEB Lonodji</span>
-          <span>Courage · Discipline · Héritage</span>
-          <a href="#top">Retour en haut ↑</a>
-        </footer>
-      </main>
+     </main>
     </>
   );
 }
