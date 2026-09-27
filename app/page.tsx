@@ -57,10 +57,29 @@ export default function Home() {
           </p>
         </section>
 
+        <section id="histoire" className="heritage section" aria-labelledby="histoire-title">
+          <div className="section-head">
+            <div>
+              <p className="eyebrow">02 — Histoire</p>
+              <h2 id="histoire-title">Une histoire à<br /><em>documenter et transmettre.</em></h2>
+            </div>
+            <p>
+              L’identité d’ADEB Lonodji s’inscrit dans une mémoire collective liée à Bédjondo,
+              au patrimoine bedjond et aux liens entre territoire et diaspora.
+            </p>
+          </div>
+          <div className="heritage-grid">
+            <article><span>01</span><h3>Bédjondo</h3><p>Un ancrage territorial et culturel à préserver, relier et transmettre.</p></article>
+            <article><span>02</span><h3>Diaspora</h3><p>Des liens qui prolongent la communauté et font circuler expériences et savoirs.</p></article>
+            <article><span>03</span><h3>Mémoire</h3><p>Archives, récits et documents pour comprendre ce qui a été fait avant de construire la suite.</p></article>
+          </div>
+          <div className="section-actions"><a className="text-link" href="/histoire">Explorer l’histoire ↗</a></div>
+        </section>
+
         <section id="programmes" className="programmes section" aria-labelledby="programmes-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">02 — Nos programmes</p>
+              <p className="eyebrow">03 — Nos programmes</p>
               <h2 id="programmes-title">Trois axes.<br /><em>Une même direction.</em></h2>
             </div>
             <p>
@@ -82,9 +101,37 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="actions" className="territory section" aria-labelledby="actions-title">
+          <div className="section-head">
+            <div>
+              <p className="eyebrow">05 — Actions</p>
+              <h2 id="actions-title">Du constat à<br /><em>la preuve de l’action.</em></h2>
+            </div>
+            <p>
+              Un espace pour suivre les enjeux concrets du territoire, les démarches engagées,
+              leurs parties prenantes, leurs sources et leur état d’avancement.
+            </p>
+          </div>
+          <div className="territory-grid">
+            <article className="territory-feature">
+              <span className="module-tag">Domaines suivis</span>
+              <h3>Eau · Électricité · Santé</h3>
+              <p>Les sujets d’action seront présentés avec contexte, dates, sources et statut de vérification.</p>
+              <span className="status">À documenter</span>
+            </article>
+            <article className="territory-feature">
+              <span className="module-tag">Infrastructures</span>
+              <h3>Routes & développement local</h3>
+              <p>Demandes, démarches, réponses et résultats pourront être suivis sans présenter comme acquis ce qui ne l’est pas.</p>
+              <span className="status">À documenter</span>
+            </article>
+          </div>
+          <div className="section-actions"><a className="text-link" href="/actions">Voir les actions ↗</a></div>
+        </section>
+
         <section id="impact" className="impact section" aria-labelledby="impact-title">
           <div className="impact-intro">
-            <p className="eyebrow">03 — Notre impact</p>
+            <p className="eyebrow">06 — Notre impact</p>
             <h2 id="impact-title">Mesurer ce qui<br /><em>devient réel.</em></h2>
             <p>
               La crédibilité d’une organisation se construit aussi par la preuve. Cette rubrique
@@ -143,7 +190,7 @@ export default function Home() {
         <section id="patrimoine" className="heritage section" aria-labelledby="heritage-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">05 — Patrimoine</p>
+              <p className="eyebrow">07 — Patrimoine</p>
               <h2 id="heritage-title">Préserver ce qui<br /><em>doit se transmettre.</em></h2>
             </div>
             <p>
@@ -161,7 +208,7 @@ export default function Home() {
         <section id="valeurs" className="values section" aria-labelledby="values-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">06 — Nos fondations</p>
+              <p className="eyebrow">Fondations</p>
               <h2 id="values-title">Des principes<br /><em>en mouvement.</em></h2>
             </div>
             <p>Des principes simples pour guider les décisions, les projets et la manière de travailler ensemble.</p>
@@ -180,7 +227,7 @@ export default function Home() {
 
         <section className="manifesto" aria-labelledby="manifesto-title">
           <div className="manifesto-inner">
-            <p className="eyebrow">07 — Notre signature</p>
+            <p className="eyebrow">Signature</p>
             <h2 id="manifesto-title">Courage.<br />Discipline.<br /><em>Héritage.</em></h2>
             <p>Parce que ce que nous construisons aujourd’hui doit pouvoir servir demain.</p>
           </div>
