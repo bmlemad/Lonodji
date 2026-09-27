@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ADEB Lonodji — Courage • Discipline • Héritage",
     description:
-      "Engagement, transmission et action au service de la communauté.",
+      "Engagement, transmission, communauté, territoire et patrimoine au service d’une action collective documentée.",
   },
   robots: { index: true, follow: true },
 };
