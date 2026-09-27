@@ -44,6 +44,10 @@ export default function Actions() {
             <article key={title}><h3>{title}</h3><p>{description}</p><span className="status">{status}</span></article>
           ))}
         </div>
+        <div className="section-actions">
+          <a className="text-link" href="https://domainarrivals.com/issues/2026-09-25/" target="_blank" rel="noreferrer">Source externe · ancien site ↗</a>
+          <a className="text-link" href="https://talouchoufoumagazine.wordpress.com/2021/05/02/actu-alladoum-desire-nandogongar-le-premier-tchadien-a-occuper-le-poste-de-superintendant-des-operations-directeur-usine-dans-le-monde-petrolier-depuis-2020/" target="_blank" rel="noreferrer">Source secondaire · initiatives ↗</a>
+        </div>
       </section>
       <section className="detail-note">
         <span className="module-tag">Matrice de reconstruction</span>
