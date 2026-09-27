@@ -27,7 +27,7 @@ export default function Home() {
             <span>ADEB <b>LONODJI</b></span>
           </a>
           <div className="links">
-            <a href="#mission">Mission</a>
+            <a href="/mission">Mission</a>
             <a href="#programmes">Programmes</a>
             <a href="#territoire">Territoire</a>
             <a href="#patrimoine">Patrimoine</a>
