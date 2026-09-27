@@ -73,7 +73,13 @@ export default function Home() {
             <article><span>02</span><h3>Diaspora</h3><p>Des liens qui prolongent la communauté et font circuler expériences et savoirs.</p></article>
             <article><span>03</span><h3>Mémoire</h3><p>Archives, récits et documents pour comprendre ce qui a été fait avant de construire la suite.</p></article>
           </div>
-          <div className="section-actions"><a className="text-link" href="/histoire">Explorer l’histoire ↗</a></div>
+          <div className="detail-note">
+            <span className="module-tag">Archives retrouvées</span>
+            <h3>Une partie de l’ancienne mémoire numérique est désormais documentée.</h3>
+            <p>Une trace publique de lonodji.org décrit quatre pôles, 19 thèmes et huit appels publics. Des initiatives historiques liées à l’éducation, à l’eau et au développement local sont également rapportées par une source secondaire de 2021.</p>
+            <div className="status-list"><span>1995 — À CONFIRMER</span><span>4 PÔLES — À DÉTAILLER</span><span>19 THÈMES — À RETROUVER</span><span>8 APPELS — À RETROUVER</span></div>
+          </div>
+          <div className="section-actions"><a className="text-link" href="/archives">Explorer les archives ↗</a><a className="text-link" href="/histoire">Explorer l’histoire ↗</a></div>
         </section>
 
         <section id="programmes" className="programmes section" aria-labelledby="programmes-title">
