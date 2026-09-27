@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s — ADEB Lonodji",
   },
   description:
-    "ADEB Lonodji — engagement, transmission et action au service de la communauté.",
+    "ADEB Lonodji — association dédiée à l’engagement, la transmission, la communauté et la valorisation du territoire et du patrimoine.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "ADEB Lonodji",
     title: "ADEB Lonodji — Courage • Discipline • Héritage",
     description:
-      "Engagement, transmission et action au service de la communauté.",
+      "Engagement, transmission, communauté, territoire et patrimoine au service d’une action collective documentée.",
   },
   twitter: {
     card: "summary_large_image",
