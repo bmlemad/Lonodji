@@ -101,34 +101,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="actions" className="territory section" aria-labelledby="actions-title">
-          <div className="section-head">
-            <div>
-              <p className="eyebrow">05 — Actions</p>
-              <h2 id="actions-title">Du constat à<br /><em>la preuve de l’action.</em></h2>
-            </div>
-            <p>
-              Un espace pour suivre les enjeux concrets du territoire, les démarches engagées,
-              leurs parties prenantes, leurs sources et leur état d’avancement.
-            </p>
-          </div>
-          <div className="territory-grid">
-            <article className="territory-feature">
-              <span className="module-tag">Domaines suivis</span>
-              <h3>Eau · Électricité · Santé</h3>
-              <p>Les sujets d’action seront présentés avec contexte, dates, sources et statut de vérification.</p>
-              <span className="status">À documenter</span>
-            </article>
-            <article className="territory-feature">
-              <span className="module-tag">Infrastructures</span>
-              <h3>Routes & développement local</h3>
-              <p>Demandes, démarches, réponses et résultats pourront être suivis sans présenter comme acquis ce qui ne l’est pas.</p>
-              <span className="status">À documenter</span>
-            </article>
-          </div>
-          <div className="section-actions"><a className="text-link" href="/actions">Voir les actions ↗</a></div>
-        </section>
-
         <section id="impact" className="impact section" aria-labelledby="impact-title">
           <div className="impact-intro">
             <p className="eyebrow">06 — Notre impact</p>
@@ -185,6 +157,34 @@ export default function Home() {
               <small>Villages · services · projets · besoins</small>
             </article>
           </div>
+        </section>
+
+        <section id="actions" className="territory section" aria-labelledby="actions-title">
+          <div className="section-head">
+            <div>
+              <p className="eyebrow">05 — Actions</p>
+              <h2 id="actions-title">Du constat à<br /><em>la preuve de l’action.</em></h2>
+            </div>
+            <p>
+              Un espace pour suivre les enjeux concrets du territoire, les démarches engagées,
+              leurs parties prenantes, leurs sources et leur état d’avancement.
+            </p>
+          </div>
+          <div className="territory-grid">
+            <article className="territory-feature">
+              <span className="module-tag">Domaines suivis</span>
+              <h3>Eau · Électricité · Santé</h3>
+              <p>Les sujets d’action seront présentés avec contexte, dates, sources et statut de vérification.</p>
+              <span className="status">À documenter</span>
+            </article>
+            <article className="territory-feature">
+              <span className="module-tag">Infrastructures</span>
+              <h3>Routes & développement local</h3>
+              <p>Demandes, démarches, réponses et résultats pourront être suivis sans présenter comme acquis ce qui ne l’est pas.</p>
+              <span className="status">À documenter</span>
+            </article>
+          </div>
+          <div className="section-actions"><a className="text-link" href="/actions">Voir les actions ↗</a></div>
         </section>
 
         <section id="patrimoine" className="heritage section" aria-labelledby="heritage-title">
