@@ -1,15 +1,11 @@
 "use client";
 
-import { useEffect } from "react";
-
 export default function GlobalError({
   reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  useEffect(() => {}, []);
-
   return (
     <main className="not-found">
       <p className="eyebrow">Erreur temporaire</p>
