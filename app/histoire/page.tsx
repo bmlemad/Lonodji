@@ -34,7 +34,7 @@ export default function Histoire() {
           Les dates, documents institutionnels, témoignages et repères historiques seront publiés
           progressivement avec leur source, leur contexte et leur statut de vérification.
         </p>
-        <span className="status">Documentation à compléter</span>
+        <div className="status-list"><span>ARCHIVES À SOURCER</span><span>DATES À VÉRIFIER</span><span>TÉMOIGNAGES À CONTEXTUALISER</span></div>
       </section>
       <Link className="button primary" href="/impact">Voir l’impact documenté ↗</Link>
       <Link className="back-link" href="/">← Accueil</Link>
