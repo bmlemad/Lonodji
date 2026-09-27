@@ -19,24 +19,17 @@ export default function Actions() {
     <main id="main-content" className="detail-page">
       <p className="eyebrow">05 — Actions</p>
       <h1>Du constat à<br /><em>la preuve de l’action.</em></h1>
-      <p className="detail-lead">
-        Cet espace reconnecte l’engagement à des sujets concrets. Chaque action pourra être suivie
-        par son objet, son territoire, ses parties prenantes, ses sources et son état d’avancement.
-      </p>
+      <p className="detail-lead">Cet espace reconnecte l’engagement à des sujets concrets. Chaque action pourra être suivie par son objet, son territoire, ses parties prenantes, ses sources et son état d’avancement.</p>
       <div className="detail-grid">
         {domaines.map(([n, title, description]) => (
-          <article key={n}><span>{n}</span><h2>{title}</h2><p>{description}</p><span className="status">À documenter</span></article>
+          <article key={n}><span>{n}</span><h2>{title}</h2><p>{description}</p><span className="status">À vérifier</span></article>
         ))}
       </div>
       <section className="detail-note">
-        <span className="module-tag">Méthode de suivi</span>
-        <h2>Des actions lisibles, des statuts explicites.</h2>
-        <p>
-          Chaque fiche pourra distinguer le fait établi, la demande formulée, la démarche engagée,
-          la réponse reçue et le résultat constaté. Aucune donnée ne sera présentée comme acquise
-          sans source ou validation.
-        </p>
-        <div className="status-list"><span>DOCUMENTÉ</span><span>TRANSMIS</span><span>EN COURS</span><span>RÉSULTAT À VÉRIFIER</span></div>
+        <span className="module-tag">Chaîne de preuve</span>
+        <h2>Un fait, une source, un statut.</h2>
+        <p>Chaque fiche distinguera le fait établi, la demande formulée, la démarche engagée, la réponse reçue et le résultat constaté. Une information externe ne deviendra pas un fait institutionnel sans vérification.</p>
+        <div className="status-list"><span>À VÉRIFIER</span><span>DOCUMENTÉ</span><span>TRANSMIS</span><span>EN COURS</span><span>RÉSULTAT CONFIRMÉ</span></div>
       </section>
       <Link className="button primary" href="/transparence">Voir la méthode de transparence ↗</Link>
       <Link className="back-link" href="/">← Accueil</Link>
