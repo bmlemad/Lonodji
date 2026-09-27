@@ -14,5 +14,5 @@ const items = [
 ];
 
 export default function Programmes() {
-  return <main id="main-content" className="detail-page"><p className="eyebrow">02 — Programmes</p><h1>Trois axes.<br /><em>Une même direction.</em></h1><p className="detail-lead">Les programmes structurent l’action. Les projets, partenaires et résultats seront publiés ici à mesure qu’ils seront validés et documentés.</p><div className="detail-grid">{items.map(([n, title, description]) => (<article key={n}><span>{n}</span><h2>{title}</h2><p>{description}</p><small>Contenu détaillé à venir</small></article>))}</div><Link className="button primary" href="/impact">Explorer l’impact ↗</Link><Link className="back-link" href="/">← Accueil</Link></main>;
+  return <main id="main-content" className="detail-page"><p className="eyebrow">03 — Programmes</p><h1>Trois axes.<br /><em>Une même direction.</em></h1><p className="detail-lead">Les programmes structurent l’action. Les projets, partenaires et résultats seront publiés ici à mesure qu’ils seront validés et documentés.</p><div className="detail-grid">{items.map(([n, title, description]) => (<article key={n}><span>{n}</span><h2>{title}</h2><p>{description}</p><small>Contenu détaillé à venir</small></article>))}</div><Link className="button primary" href="/impact">Explorer l’impact ↗</Link><Link className="back-link" href="/">← Accueil</Link></main>;
 }
