@@ -45,6 +45,15 @@ export default function Histoire() {
         </p>
         <div className="status-list"><span>1995 — À CONFIRMER</span><span>ARCHIVES ORIGINALES À RETROUVER</span></div>
       </section>
+      <section className="detail-note">
+        <span className="module-tag">Sources de reconstruction</span>
+        <h2>Les traces sont conservées avec leur provenance.</h2>
+        <p>Les éléments historiques ci-dessus proviennent de traces publiques secondaires ou d’indexations de l’ancien site. Ils servent à reconstruire les archives, sans se substituer aux documents originaux.</p>
+        <div className="detail-grid">
+          <article><h3>Trace de l’ancien site</h3><p>Une fiche d’indexation du 25 septembre 2026 décrit l’ancien lonodji.org, son ancrage à Bédjondo, quatre pôles d’action, 19 thèmes et huit appels publics.</p><a className="text-link" href="https://domainarrivals.com/issues/2026-09-25/" target="_blank" rel="noreferrer">Voir la source ↗</a></article>
+          <article><h3>Témoignage documentaire</h3><p>Une publication de 2021 rapporte des initiatives de développement associées à ADEB-Lonodji à Bédjondo, dont des forums, un verger scolaire et des actions liées à l’eau.</p><a className="text-link" href="https://talouchoufoumagazine.wordpress.com/2021/05/02/actu-alladoum-desire-nandogongar-le-premier-tchadien-a-occuper-le-poste-de-superintendant-des-operations-directeur-usine-dans-le-monde-petrolier-depuis-2020/" target="_blank" rel="noreferrer">Voir la source ↗</a></article>
+        </div>
+      </section>
       <Link className="button primary" href="/programmes">Découvrir les programmes ↗</Link>
       <Link className="back-link" href="/">← Accueil</Link>
     </main>
