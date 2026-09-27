@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const items = [
   { href: "/mission", label: "Mission", number: "01" },
@@ -16,6 +17,7 @@ const items = [
 
 export default function SiteNav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   useEffect(() => {
     if (!open) return;
     const onKeyDown = (event: KeyboardEvent) => event.key === "Escape" && setOpen(false);
@@ -27,14 +29,14 @@ export default function SiteNav() {
     <>
       <nav className="nav" aria-label="Navigation principale">
         <Link className="brand" href="/" aria-label="ADEB Lonodji — accueil" onClick={() => setOpen(false)}><span className="brand-mark" aria-hidden="true">A</span><span className="brand-name"><span>ADEB</span><b>LONODJI</b></span></Link>
-        <div className="links" role="list">{items.map((item) => <Link key={item.href} href={item.href} role="listitem"><small>{item.number}</small><span>{item.label}</span></Link>)}</div>
+        <div className="links" role="list">{items.map((item) => <Link key={item.href} href={item.href} role="listitem" aria-current={pathname === item.href ? "page" : undefined}><small>{item.number}</small><span>{item.label}</span></Link>)}</div>
         <Link className="nav-cta" href="/participer"><span>Nous rejoindre</span><b aria-hidden="true">↗</b></Link>
         <button className="menu-toggle" type="button" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen((value) => !value)}><span>{open ? "Fermer" : "Menu"}</span><i aria-hidden="true">{open ? "×" : "☰"}</i></button>
       </nav>
-      <div className={open ? "mobile-menu is-open" : "mobile-menu"} id="mobile-menu" aria-hidden={!open}>
+      <div className={open ? "mobile-menu is-open" : "mobile-menu"} id="mobile-menu" aria-hidden={!open} inert={!open}>
         <div className="mobile-menu-inner">
           <p className="eyebrow">ADEB Lonodji</p><p className="mobile-menu-title">Construire aujourd’hui.<br /><em>Transmettre demain.</em></p>
-          <div className="mobile-menu-links">{items.map((item) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)}><small>{item.number}</small><span>{item.label}</span><b aria-hidden="true">↗</b></Link>)}</div>
+          <div className="mobile-menu-links">{items.map((item) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined} onClick={() => setOpen(false)}><small>{item.number}</small><span>{item.label}</span><b aria-hidden="true">↗</b></Link>)}</div>
           <Link className="button primary mobile-menu-cta" href="/participer" onClick={() => setOpen(false)}>Nous rejoindre <span aria-hidden="true">↗</span></Link>
         </div>
       </div>
