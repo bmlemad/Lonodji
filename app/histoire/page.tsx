@@ -46,6 +46,18 @@ export default function Histoire() {
         <div className="status-list"><span>1995 — À CONFIRMER</span><span>ARCHIVES ORIGINALES À RETROUVER</span></div>
       </section>
       <section className="detail-note">
+        <span className="module-tag">Premières initiatives retrouvées</span>
+        <h2>Une mémoire d’action déjà plus concrète.</h2>
+        <p>
+          Une publication secondaire datée de 2021 rapporte, pour les années 2000, des forums de développement à Bédjondo et Bebopen, un verger au Lycée de Bédjondo et plusieurs initiatives liées à l’éducation et à l’eau. Ces éléments sont intégrés comme sources secondaires, pas comme validation institutionnelle.
+        </p>
+        <div className="detail-grid">
+          <article><h3>Éducation</h3><p>Matériel didactique rapporté à l’École officielle de Bédjondo Kah, soutien à l’ECA de Bédjondo et don rapporté de 100 tables-bancs au Lycée de Bédjondo.</p></article>
+          <article><h3>Eau</h3><p>Contribution rapportée au projet d’adduction d’eau potable de la Commune de Bédjondo et forage manuel rapporté à Bédjondo Kah.</p></article>
+        </div>
+        <div className="status-list"><span>SOURCE SECONDAIRE · 2021</span><span>PIÈCES ORIGINALES À RETROUVER</span></div>
+      </section>
+      <section className="detail-note">
         <span className="module-tag">Sources de reconstruction</span>
         <h2>Les traces sont conservées avec leur provenance.</h2>
         <p>Les éléments historiques ci-dessus proviennent de traces publiques secondaires ou d’indexations de l’ancien site. Ils servent à reconstruire les archives, sans se substituer aux documents originaux.</p>
