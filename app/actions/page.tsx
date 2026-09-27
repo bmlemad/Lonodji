@@ -44,6 +44,18 @@ export default function Actions() {
         </div>
       </section>
       <section className="detail-note">
+        <span className="module-tag">Matrice de reconstruction</span>
+        <h2>Les 19 thèmes seront reconstitués un par un.</h2>
+        <p>La source retrouvée donne le nombre total de thèmes, mais pas leur inventaire. Pour éviter toute reconstruction spéculative, chaque thème sera ajouté uniquement lorsqu’un intitulé, un document ou une trace attribuable pourra être retrouvé.</p>
+        <div className="detail-grid">
+          <article><span>01</span><h3>Inventaire</h3><p>Retrouver l’intitulé exact dans les anciennes pages ou documents.</p></article>
+          <article><span>02</span><h3>Contexte</h3><p>Identifier le territoire, la période et le problème traité.</p></article>
+          <article><span>03</span><h3>Appel</h3><p>Retrouver le texte, le destinataire, les données et la date lorsque disponibles.</p></article>
+          <article><span>04</span><h3>Suivi</h3><p>Rechercher réponses, démarches, résultats et pièces justificatives.</p></article>
+        </div>
+        <div className="status-list"><span>0 / 19 INTITULÉS RECOPIÉS</span><span>8 / 8 APPELS IDENTIFIÉS PAR LEUR EXISTENCE</span><span>TEXTES ORIGINAUX À RETROUVER</span></div>
+      </section>
+      <section className="detail-note">
         <span className="module-tag">Chaîne de preuve</span>
         <h2>Un fait, une source, un statut.</h2>
         <p>Chaque fiche distinguera le fait établi, la demande formulée, la démarche engagée, la réponse reçue et le résultat constaté. Une information externe ne deviendra pas un fait institutionnel sans vérification.</p>
