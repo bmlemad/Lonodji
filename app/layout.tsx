@@ -14,10 +14,12 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   colorScheme: "light",
+  themeColor: "#173b2d",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  applicationName: "ADEB Lonodji",
   title: {
     default: "ADEB Lonodji — Courage • Discipline • Héritage",
     template: "%s — ADEB Lonodji",
