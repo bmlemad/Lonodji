@@ -36,6 +36,15 @@ export default function Histoire() {
         </p>
         <div className="status-list"><span>ARCHIVES À SOURCER</span><span>DATES À VÉRIFIER</span><span>TÉMOIGNAGES À CONTEXTUALISER</span></div>
       </section>
+      <section className="detail-note">
+        <span className="module-tag">Repères retrouvés</span>
+        <h2>Une chronologie à reconstruire à partir des sources.</h2>
+        <p>
+          Une trace indexée de lonodji.org indique une reconnaissance formelle de l’association en 1995.
+          Ce repère est conservé comme piste documentaire et doit être confronté aux documents officiels avant publication comme fait institutionnel.
+        </p>
+        <div className="status-list"><span>1995 — À CONFIRMER</span><span>ARCHIVES ORIGINALES À RETROUVER</span></div>
+      </section>
       <Link className="button primary" href="/programmes">Découvrir les programmes ↗</Link>
       <Link className="back-link" href="/">← Accueil</Link>
     </main>
