@@ -1,7 +1,11 @@
 import type { Metadata, Viewport } from "next";
+import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const siteUrl = "https://adeb-lonodji.netlify.app";
+
+const dmSans = DM_Sans({ subsets: ["latin"], display: "swap", variable: "--font-dm" });
+const playfair = Playfair_Display({ subsets: ["latin"], display: "swap", variable: "--font-playfair" });
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -41,7 +45,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body className={`${dmSans.variable} ${playfair.variable}`}>{children}</body>
     </html>
   );
 }
