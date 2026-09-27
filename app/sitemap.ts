@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 const siteUrl = "https://lonodji.org";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["/", "/mission", "/programmes", "/impact", "/participer", "/transparence"];
+  const routes = ["/", "/mission", "/histoire", "/programmes", "/actions", "/impact", "/participer", "/transparence"];
   return routes.map((path) => ({
     url: new URL(path, siteUrl).toString(),
     changeFrequency: path === "/" ? "weekly" : "monthly",
