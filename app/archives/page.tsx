@@ -54,6 +54,17 @@ export default function Archives() {
       </section>
 
       <section className="detail-note">
+        <span className="module-tag">Chaîne de preuve</span>
+        <h2>Chaque information garde son statut.</h2>
+        <div className="detail-grid">
+          <article><h3>TRACE EXTERNE</h3><p>Information retrouvée dans une source publique décrivant l’ancien site. Elle est conservée comme indice, sans être transformée en document primaire.</p></article>
+          <article><h3>SOURCE SECONDAIRE</h3><p>Information rapportée par une publication tierce. Elle est attribuée à sa source et ne vaut pas, à elle seule, validation institutionnelle.</p></article>
+          <article><h3>À CONFIRMER</h3><p>Repère historique plausible mais qui nécessite un statut, un récépissé, un rapport, une correspondance ou une autre pièce primaire.</p></article>
+          <article><h3>À RETROUVER</h3><p>Élément dont l’existence est signalée mais dont le contenu original — page, texte, date, données ou média — n’est pas encore accessible.</p></article>
+        </div>
+      </section>
+
+      <section className="detail-note">
         <span className="module-tag">Ce qui reste à retrouver</span>
         <h2>Les pages originales et les pièces de preuve.</h2>
         <div className="detail-grid">
