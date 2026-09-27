@@ -101,37 +101,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="impact" className="impact section" aria-labelledby="impact-title">
-          <div className="impact-intro">
-            <p className="eyebrow">06 — Notre impact</p>
-            <h2 id="impact-title">Mesurer ce qui<br /><em>devient réel.</em></h2>
-            <p>
-              La crédibilité d’une organisation se construit aussi par la preuve. Cette rubrique
-              est conçue pour accueillir des résultats vérifiés, des projets documentés et des témoignages authentifiés.
-            </p>
-          </div>
-          <div className="impact-grid">
-            <article>
-              <span className="impact-index">A</span>
-              <h3>Résultats</h3>
-              <p>Données et indicateurs publiés lorsque des résultats vérifiables seront disponibles.</p>
-              <span className="status">Données à venir</span>
-            </article>
-            <article>
-              <span className="impact-index">B</span>
-              <h3>Projets</h3>
-              <p>Présentation des initiatives, de leur objectif, de leur avancement et de leurs enseignements.</p>
-              <span className="status">À documenter</span>
-            </article>
-            <article>
-              <span className="impact-index">C</span>
-              <h3>Témoignages</h3>
-              <p>Paroles de participants et de partenaires, publiées avec leur accord et leur contexte.</p>
-              <span className="status">À documenter</span>
-            </article>
-          </div>
-        </section>
-
         <section id="territoire" className="territory section" aria-labelledby="territory-title">
           <div className="section-head">
             <div>
@@ -185,6 +154,37 @@ export default function Home() {
             </article>
           </div>
           <div className="section-actions"><a className="text-link" href="/actions">Voir les actions ↗</a></div>
+        </section>
+
+        <section id="impact" className="impact section" aria-labelledby="impact-title">
+          <div className="impact-intro">
+            <p className="eyebrow">06 — Notre impact</p>
+            <h2 id="impact-title">Mesurer ce qui<br /><em>devient réel.</em></h2>
+            <p>
+              La crédibilité d’une organisation se construit aussi par la preuve. Cette rubrique
+              est conçue pour accueillir des résultats vérifiés, des projets documentés et des témoignages authentifiés.
+            </p>
+          </div>
+          <div className="impact-grid">
+            <article>
+              <span className="impact-index">A</span>
+              <h3>Résultats</h3>
+              <p>Données et indicateurs publiés lorsque des résultats vérifiables seront disponibles.</p>
+              <span className="status">Données à venir</span>
+            </article>
+            <article>
+              <span className="impact-index">B</span>
+              <h3>Projets</h3>
+              <p>Présentation des initiatives, de leur objectif, de leur avancement et de leurs enseignements.</p>
+              <span className="status">À documenter</span>
+            </article>
+            <article>
+              <span className="impact-index">C</span>
+              <h3>Témoignages</h3>
+              <p>Paroles de participants et de partenaires, publiées avec leur accord et leur contexte.</p>
+              <span className="status">À documenter</span>
+            </article>
+          </div>
         </section>
 
         <section id="patrimoine" className="heritage section" aria-labelledby="heritage-title">
