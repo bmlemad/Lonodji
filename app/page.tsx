@@ -28,10 +28,10 @@ export default function Home() {
           </a>
           <div className="links">
             <a href="/mission">Mission</a>
-            <a href="#programmes">Programmes</a>
-            <a href="#territoire">Territoire</a>
-            <a href="#patrimoine">Patrimoine</a>
-            <a href="#participer">Participer</a>
+            <a href="/programmes">Programmes</a>
+            <a href="/impact">Impact</a>
+            <a href="/participer">Participer</a>
+            <a href="/transparence">Transparence</a>
           </div>
           <a className="nav-cta" href="#participer">Nous rejoindre</a>
         </nav>
@@ -177,7 +177,7 @@ export default function Home() {
         <section id="valeurs" className="values section" aria-labelledby="values-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">04 — Nos fondations</p>
+              <p className="eyebrow">06 — Nos fondations</p>
               <h2 id="values-title">Des principes<br /><em>en mouvement.</em></h2>
             </div>
             <p>Des principes simples pour guider les décisions, les projets et la manière de travailler ensemble.</p>
@@ -196,7 +196,7 @@ export default function Home() {
 
         <section className="manifesto" aria-labelledby="manifesto-title">
           <div className="manifesto-inner">
-            <p className="eyebrow">05 — Notre signature</p>
+            <p className="eyebrow">07 — Notre signature</p>
             <h2 id="manifesto-title">Courage.<br />Discipline.<br /><em>Héritage.</em></h2>
             <p>Parce que ce que nous construisons aujourd’hui doit pouvoir servir demain.</p>
           </div>
@@ -205,7 +205,7 @@ export default function Home() {
         <section id="participer" className="participate section" aria-labelledby="participate-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">06 — Participer</p>
+              <p className="eyebrow">08 — Participer</p>
               <h2 id="participate-title">Une place pour<br /><em>chaque contribution.</em></h2>
             </div>
             <p>
@@ -226,7 +226,7 @@ export default function Home() {
 
         <section id="transparence" className="trust section" aria-labelledby="trust-title">
           <div>
-            <p className="eyebrow">07 — Transparence</p>
+            <p className="eyebrow">09 — Transparence</p>
             <h2 id="trust-title">Une organisation qui<br /><em>documente ses engagements.</em></h2>
           </div>
           <div className="trust-card">
@@ -242,7 +242,7 @@ export default function Home() {
 
         <section id="contact" className="contact section" aria-labelledby="contact-title">
           <div>
-            <p className="eyebrow">08 — Contact</p>
+            <p className="eyebrow">10 — Contact</p>
             <h2 id="contact-title">Construire la suite<br /><em>ensemble.</em></h2>
           </div>
           <div className="contact-card">
