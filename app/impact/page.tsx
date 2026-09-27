@@ -1,1 +1,12 @@
-import Link from "next/link"; export default function Impact(){return <main className="detail-page"><p className="eyebrow">03 — Impact</p><h1>Mesurer ce qui<br/><em>devient réel.</em></h1><p className="detail-lead">Cette rubrique accueillera des résultats vérifiés, des projets documentés et des témoignages authentifiés, sans chiffres fabriqués.</p><div className="detail-grid"><article><span>A</span><h2>Résultats</h2><p>Indicateurs et résultats vérifiables.</p><small>Données à venir</small></article><article><span>B</span><h2>Projets</h2><p>Objectifs, avancement, résultats et enseignements.</p><small>À documenter</small></article><article><span>C</span><h2>Témoignages</h2><p>Paroles publiées avec accord et contexte.</p><small>À documenter</small></article></div><Link className="button primary" href="/participer">Participer ↗</Link><Link className="back-link" href="/">← Accueil</Link></main>}
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Impact",
+  description: "Un espace destiné aux résultats vérifiés, projets documentés et témoignages authentifiés d’ADEB Lonodji.",
+  alternates: { canonical: "/impact" },
+};
+
+export default function Impact() {
+  return <main className="detail-page"><p className="eyebrow">03 — Impact</p><h1>Mesurer ce qui<br/><em>devient réel.</em></h1><p className="detail-lead">Cette rubrique accueillera des résultats vérifiés, des projets documentés et des témoignages authentifiés, sans chiffres fabriqués.</p><div className="detail-grid"><article><span>A</span><h2>Résultats</h2><p>Indicateurs et résultats vérifiables.</p><small>Données à venir</small></article><article><span>B</span><h2>Projets</h2><p>Objectifs, avancement, résultats et enseignements.</p><small>À documenter</small></article><article><span>C</span><h2>Témoignages</h2><p>Paroles publiées avec accord et contexte.</p><small>À documenter</small></article></div><Link className="button primary" href="/participer">Participer ↗</Link><Link className="back-link" href="/">← Accueil</Link></main>;
+}
