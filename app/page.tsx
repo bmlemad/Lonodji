@@ -48,7 +48,7 @@ export default function Home() {
             </p>
             <div className="hero-actions">
               <a className="button primary" href="#mission">Découvrir notre mission <span aria-hidden="true">↗</span></a>
-              <a className="text-link" href="#programmes">Explorer les programmes <span aria-hidden="true">→</span></a>
+              <a className="text-link" href="#programmes">Voir les programmes <span aria-hidden="true">→</span></a>
             </div>
           </div>
           <div className="hero-card" aria-hidden="true">
