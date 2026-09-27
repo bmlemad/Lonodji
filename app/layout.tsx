@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -45,7 +46,27 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr">
-      <body className={`${dmSans.variable} ${playfair.variable}`}>{children}</body>
+      <body className={`${dmSans.variable} ${playfair.variable}`}>
+        {children}
+        <Script id="structured-data" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                name: "ADEB Lonodji",
+                url: siteUrl,
+              },
+              {
+                "@type": "WebSite",
+                name: "ADEB Lonodji",
+                url: siteUrl,
+                inLanguage: "fr-FR",
+              },
+            ],
+          })}
+        </Script>
+      </body>
     </html>
   );
 }
