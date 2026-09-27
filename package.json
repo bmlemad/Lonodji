@@ -13,8 +13,8 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/node": "latest",
+    "typescript": "5.9.3",
+    "@types/node": "22.15.30",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0"
   }
