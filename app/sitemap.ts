@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://adeb-lonodji.netlify.app";
+const siteUrl = "https://lonodji.org";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["/", "/mission", "/programmes", "/impact", "/participer", "/transparence"];
