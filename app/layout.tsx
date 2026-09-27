@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const siteUrl = "https://adeb-lonodji.netlify.app";
+const siteUrl = "https://lonodji.org";
 
 const dmSans = DM_Sans({ subsets: ["latin"], display: "swap", variable: "--font-dm" });
 const playfair = Playfair_Display({ subsets: ["latin"], display: "swap", variable: "--font-playfair" });
