@@ -4,7 +4,7 @@
    n'est pas disponible. Le réseau garde la priorité, pour que personne ne
    lise une version périmée quand la connexion est là. */
 
-var VERSION = 'lonodji-next-v2';
+var VERSION = 'lonodji-next-v3';
 var PAGES = VERSION + '-pages';
 var ASSETS = VERSION + '-assets';
 var HORS_LIGNE = '/hors-ligne';

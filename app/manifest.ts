@@ -27,7 +27,7 @@ export default function manifest(): MetadataRoute.Manifest {
       { src: "/app/icone-512-maskable.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
     shortcuts: [
-      { name: "Retrouver son village", short_name: "Villages", url: "/villages", icons: [{ src: "/app/raccourci-villages.png", sizes: "96x96", type: "image/png" }] },
+      { name: "Retrouver son village", short_name: "Villages", url: "/villages", icons: [{ src: "/icones/raccourci-villages.png", sizes: "96x96", type: "image/png" }] },
       { name: "Le journal", short_name: "Journal", url: "/journal", icons: [{ src: "/app/raccourci-journal.png", sizes: "96x96", type: "image/png" }] },
       { name: "Adhérer à l’association", short_name: "Adhérer", url: "/participer#adherer", icons: [{ src: "/app/raccourci-adherer.png", sizes: "96x96", type: "image/png" }] },
       { name: "Rechercher sur le site", short_name: "Rechercher", url: "/recherche", icons: [{ src: "/app/raccourci-rechercher.png", sizes: "96x96", type: "image/png" }] },

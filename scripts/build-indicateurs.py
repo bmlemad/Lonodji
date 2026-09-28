@@ -115,13 +115,15 @@ def compter_contenu() -> dict:
 
     documents = idx["documents"]
     pdf = [d for d in documents if d.get("pdf")]
+    # + les PDF produits hors de l'ancien site (livre blanc du projet ODEB, public/odeb/)
+    pdf_site = sorted((ROOT / "public" / "odeb").glob("*.pdf")) if (ROOT / "public" / "odeb").exists() else []
 
     return {
         "plaidoyers": {"publies": len(plaidoyers), "envoyes": len(envoyes), "reponses": len(repondus)},
         "coordinations": {"pourvues": sum(1 for t in thematiques if t["filled"]), "total": len(thematiques), "cellulesPourvues": sum(1 for c in cellules if c["filled"]), "cellulesTotal": len(cellules)},
         "articles": len(idx["articles"]),
         "premierArticle": min(a["date"] for a in idx["articles"]) if idx["articles"] else None,
-        "documentsPdf": len(pdf),
+        "documentsPdf": len(pdf) + len(pdf_site),
         "documentsAnnonces": len(documents) - len(pdf),
         "corrections": corrections,
         "engagements": {"total": nb_engagements, "realises": eng_realises},

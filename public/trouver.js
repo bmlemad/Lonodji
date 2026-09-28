@@ -198,8 +198,8 @@ window.__initTrouver = function () {
     "key": "13",
     "pole": "Pôle III · Thématique 13",
     "name": "Gouvernance & plaidoyer",
-    "status": "open",
-    "coord": "Coordonnateur : à pourvoir",
+    "status": "filled",
+    "coord": "Coordonnateur : Adoumbé Maoura, président de l’association",
     "desc": "Organisation communautaire, modernisation d’ADEB LONODJI, relations avec la chefferie traditionnelle, représentation et défense de nos intérêts, accès à l’état civil et aux droits.",
     "page": [
       "/actions",
@@ -230,8 +230,8 @@ window.__initTrouver = function () {
     "key": "15",
     "pole": "Pôle III · Thématique 15",
     "name": "Réseau d’experts & diaspora",
-    "status": "open",
-    "coord": "Coordonnateur : à pourvoir",
+    "status": "filled",
+    "coord": "Coordonnateur : Edgard Djerassem Djimhotengar",
     "desc": "Recensement et mise en relation des cadres et experts de la communauté, liens avec la diaspora, coopération nationale et internationale.",
     "page": [
       "/dossiers/evenements",
@@ -323,8 +323,8 @@ window.__initTrouver = function () {
     "key": "communication",
     "pole": "Cellule transversale",
     "name": "Communication & numérique",
-    "status": "open",
-    "coord": "Coordonnateur : à pourvoir",
+    "status": "filled",
+    "coord": "Coordonnateur : Djimtebaye Mahamat Mamadou Banadji",
     "desc": "Animation de l’association, diffusion des informations et conservation des documents produits par l’ensemble des thématiques — dont ce site, et l’espace Documents.",
     "page": [
       "/documents",

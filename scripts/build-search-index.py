@@ -71,6 +71,35 @@ PAGES_SITE = [
      "d": "Adhérents, coordonnateurs, plaidoyers, besoins recensés et résolus, projets actifs : six indicateurs datés et sourcés, puis ce que le site produit et reçoit.",
      "x": "tableau de bord impact indicateurs adhérents coordonnateurs plaidoyers besoins recensés résolus projets actifs compteurs formulaires règle de preuve chiffres datés sourcés"},
 ]
+PAGES_SITE += [
+    {"t": "Projet ODEB LONODJI — Vision 2030", "r": "/odeb", "k": "Page",
+     "d": "L’Organisation pour le Développement et l’Émergence Bedjonde : un projet porté par ADEB LONODJI pour doter le pays bedjond d’un outil permanent de recherche, de documentation, de développement territorial, d’innovation, de patrimoine et de diaspora.",
+     "x": "ODEB projet vision 2030 quarante ans 40 ans anniversaire fondations 1986 réflexion lancement organisation développement émergence bedjonde transformation institutionnelle outil permanent six missions recherche documentation développement territorial innovation préservation du patrimoine mobilisation de la diaspora pourquoi créer l’ODEB ONG conversion organisation de référence"},
+    {"t": "Livre blanc du projet ODEB LONODJI", "r": "/odeb/livre-blanc", "k": "Page",
+     "d": "Le document fondateur, en version de travail : d’où nous partons, pourquoi une organisation, la vision 2030, six missions, cinq programmes, principes de gouvernance et de redevabilité, ressources, feuille de route, statut du document.",
+     "x": "livre blanc document fondateur ODEB version de travail préambule vision 2030 missions programmes principes gouvernance redevabilité ressources partenaires diaspora chercheurs données ouvertes feuille de route statut adoption assemblée PDF"},
+    {"t": "Feuille de route 2026-2030 du projet ODEB", "r": "/odeb/feuille-de-route", "k": "Page",
+     "d": "Trois phases, de la relance de 2026 à l’organisation de référence de 2030 : chaque chantier avec son état réel — réalisé, en cours, à venir, à décider.",
+     "x": "feuille de route 2026 2030 phases tableau de bord dynamique cartographie communautaire espace membre registre des compétences plateforme de projets bibliothèque numérique observatoire du Mandoul Occidental patrimoine vivant multimédia académie numérique application mobile bilan plan d’action rapport annuel organisation constituée"},
+    {"t": "Les cinq programmes du projet ODEB", "r": "/odeb/programmes", "k": "Page",
+     "d": "Mémoire et Patrimoine, Recherche, Développement territorial, Jeunesse et Innovation, Diaspora : axes, thématiques mobilisées, coordination.",
+     "x": "programmes ODEB mémoire patrimoine recherche développement territorial jeunesse innovation diaspora thématiques coordonnateurs articulation pôles"},
+    {"t": "Programme Mémoire et Patrimoine (ODEB)", "r": "/odeb/programmes/memoire-patrimoine", "k": "Page",
+     "d": "Histoire des peuples bedjonds, atlas patrimonial, bibliothèque numérique : ce qui existe, ce que le programme construira.",
+     "x": "programme mémoire patrimoine histoire des peuples bedjonds manuscrit atlas patrimonial lieux sacrés sépultures généalogies bibliothèque numérique bibliothèque orale musée numérique dictionnaire nangnda"},
+    {"t": "Programme Recherche (ODEB)", "r": "/odeb/programmes/recherche", "k": "Page",
+     "d": "Centre de documentation, base scientifique, publications : ce qui existe, ce que le programme construira.",
+     "x": "programme recherche centre de documentation institut numérique du patrimoine bedjond base scientifique données ouvertes publications rapport annuel cahiers de recherche chercheurs"},
+    {"t": "Programme Développement territorial (ODEB)", "r": "/odeb/programmes/developpement-territorial", "k": "Page",
+     "d": "Observatoire, données, diagnostics : ce qui existe, ce que le programme construira.",
+     "x": "programme développement territorial observatoire du Mandoul Occidental données équipements diagnostics problématiques plaidoyers besoins signalés résolus unités"},
+    {"t": "Programme Jeunesse et Innovation (ODEB)", "r": "/odeb/programmes/jeunesse-innovation", "k": "Page",
+     "d": "Académie numérique, intelligence artificielle, compétences : ce qui existe, ce que le programme construira.",
+     "x": "programme jeunesse innovation académie numérique espace numérique communautaire intelligence artificielle IA données compétences mentorat formation à distance jeunes"},
+    {"t": "Programme Diaspora (ODEB)", "r": "/odeb/programmes/diaspora", "k": "Page",
+     "d": "Experts, investissements, mentorat : ce qui existe, ce que le programme construira.",
+     "x": "programme diaspora experts répertoire des compétences réseau annuaire investissements compte bancaire projets financés mentorat jeunes"},
+]
 entries.extend(PAGES_SITE)
 
 for f in sorted((CONTENT / "articles").glob("*.json")):

@@ -3,6 +3,7 @@ import { ArticleCard } from "../components/blocks";
 import TableauDeBord from "../components/tableau-de-bord";
 import { enLettres, filledCount, getIndex, getPage, ORG, thematiqueCount } from "../lib/content";
 import { getIndicateurs } from "../lib/indicateurs";
+import { ODEB, PROGRAMMES, routeProgramme } from "../lib/odeb";
 
 const values = [
   ["01", "Courage", "Oser agir, prendre des responsabilités et avancer avec détermination, y compris quand il faut dire ce qui manque."],
@@ -92,10 +93,29 @@ export default function Home() {
           <div className="section-actions"><Link className="text-link" href="/journal">Tous les articles ↗</Link></div>
         </section>
 
+        <section id="odeb" className="section od-band" aria-labelledby="odeb-title">
+          <div>
+            <p className="eyebrow">03 — Vision 2030</p>
+            <h2 id="odeb-title">Projet ODEB LONODJI.<br /><em>D’une association à un outil permanent.</em></h2>
+            <p className="od-band-note"><b>1986 → 2026.</b> Pour les quarante ans de ses fondations, l’association a lancé le {ODEB.presenteLabel} la réflexion ODEB LONODJI : six missions, cinq programmes, un livre blanc en version de travail. <Link href={ODEB.article}>L’article du jour →</Link></p>
+          </div>
+          <div>
+            <p className="lead od-band-lead">{ODEB.formulation}</p>
+            <ul className="od-band-programmes">
+              {PROGRAMMES.map((p) => <li key={p.slug}><Link href={routeProgramme(p)}><span>{p.numero}</span>{p.nom}</Link></li>)}
+            </ul>
+            <div className="section-actions od-band-actions">
+              <Link className="button primary" href="/odeb">La vision 2030 <span aria-hidden="true">↗</span></Link>
+              <Link className="button secondary" href="/odeb/livre-blanc">Le livre blanc <span aria-hidden="true">→</span></Link>
+              <Link className="text-link" href="/odeb/feuille-de-route">Feuille de route 2026-2030 <span aria-hidden="true">→</span></Link>
+            </div>
+          </div>
+        </section>
+
         <section id="programmes" className="programmes section" aria-labelledby="programmes-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">03 — Nos actions</p>
+              <p className="eyebrow">04 — Nos actions</p>
               <h2 id="programmes-title">Quatre pôles.<br /><em>Dix-neuf thématiques.</em></h2>
             </div>
             <p>
@@ -119,7 +139,7 @@ export default function Home() {
         <section id="plaidoyers" className="territory section" aria-labelledby="plaidoyers-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">04 — Plaidoyers</p>
+              <p className="eyebrow">05 — Plaidoyers</p>
               <h2 id="plaidoyers-title">Sept plaidoyers,<br /><em>une note à la commune.</em></h2>
             </div>
             <p>Sourcés, chiffrés, adressés à des destinataires nommés et suivis publiquement : ce que nous demandons pour Bédjondo et ses cantons.</p>
@@ -135,7 +155,7 @@ export default function Home() {
         <section id="territoire" className="section heritage" aria-labelledby="territory-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">05 — Territoire</p>
+              <p className="eyebrow">06 — Territoire</p>
               <h2 id="territory-title">Comprendre le terrain.<br /><em>Agir avec précision.</em></h2>
             </div>
             <p>Bédjondo, chef-lieu du Mandoul Occidental, village devenu ville. Le pays bedjond compte sept sous-préfectures au cœur, des présences dans le Logone Oriental et une diaspora agricole au Moyen-Chari.</p>
@@ -153,7 +173,7 @@ export default function Home() {
         <section id="patrimoine" className="heritage section" aria-labelledby="heritage-title" style={{ background: "#f7f8f4" }}>
           <div className="section-head">
             <div>
-              <p className="eyebrow">06 — Histoire & patrimoine</p>
+              <p className="eyebrow">07 — Histoire & patrimoine</p>
               <h2 id="heritage-title">Préserver ce qui<br /><em>doit se transmettre.</em></h2>
             </div>
             <p>De Narmbang à Donath Gari, onze chefs de canton ; des forums de 2000 et 2003 à la réactivation de 2026 ; une langue, le nangnda, et une <Link href="/bibliotheque">bibliothèque de quarante références</Link>.</p>
@@ -168,7 +188,7 @@ export default function Home() {
 
         <section id="impact" className="impact section" aria-labelledby="impact-title">
           <div className="impact-intro">
-            <p className="eyebrow">07 — Tableau de bord</p>
+            <p className="eyebrow">08 — Tableau de bord</p>
             <h2 id="impact-title">Mesurer ce qui<br /><em>devient réel.</em></h2>
             <p>
               La crédibilité se construit par la preuve. Six indicateurs datés et sourcés — adhérents, coordonnateurs, plaidoyers, besoins recensés et résolus, projets — et {corrections} corrections publiées à découvert. Ce qui n’est pas encore fait est écrit comme tel.
@@ -211,7 +231,7 @@ export default function Home() {
         <section id="participer" className="participate section" aria-labelledby="participate-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">08 — Participer</p>
+              <p className="eyebrow">09 — Participer</p>
               <h2 id="participate-title">Une place pour<br /><em>chaque contribution.</em></h2>
             </div>
             <p>Nous répondons sous quarante-huit heures ouvrées, par le formulaire, par WhatsApp ou par téléphone.</p>
@@ -231,7 +251,7 @@ export default function Home() {
 
         <section id="transparence" className="trust section" aria-labelledby="trust-title">
           <div>
-            <p className="eyebrow">09 — Transparence</p>
+            <p className="eyebrow">10 — Transparence</p>
             <h2 id="trust-title">Une association qui<br /><em>rend des comptes.</em></h2>
           </div>
           <div className="trust-card">
@@ -246,7 +266,7 @@ export default function Home() {
 
         <section id="contact" className="contact section" aria-labelledby="contact-title">
           <div>
-            <p className="eyebrow">10 — Contact</p>
+            <p className="eyebrow">11 — Contact</p>
             <h2 id="contact-title">Construire la suite<br /><em>ensemble.</em></h2>
           </div>
           <div className="contact-card">

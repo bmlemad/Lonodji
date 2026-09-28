@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import AppShell from "../components/app-shell";
+import NavTools from "../components/nav-tools";
 import SiteFooter from "../components/site-footer";
 import SiteNav from "../components/site-nav";
+import { ORG } from "../lib/content";
+import { getIndicateurs } from "../lib/indicateurs";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import "./legacy.css";
@@ -48,13 +51,18 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  // chiffres des cartes en vedette du méga-menu (comptés à la construction)
+  const ind = getIndicateurs();
+  const chiffres = { pourvues: ind.contenu.coordinations.pourvues, total: ind.contenu.coordinations.total, fiches: ind.contenu.carte.localitesNommees, articles: ind.contenu.articles, corrections: ind.contenu.corrections };
+  const miseAJour = new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "Africa/Ndjamena" });
   return (
     <html lang="fr">
       <body className={`${dmSans.variable} ${playfair.variable}`}>
         <a className="skip-link" href="#main-content">Aller au contenu</a>
-        <SiteNav />
+        <SiteNav chiffres={chiffres} whatsapp={ORG.whatsapp} telephone={ORG.phone} telephoneHref={ORG.phoneHref} devise={ORG.motto} />
         {children}
-        <SiteFooter />
+        <SiteFooter miseAJour={miseAJour} />
+        <NavTools />
         <AppShell />
         <Script id="structured-data" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({

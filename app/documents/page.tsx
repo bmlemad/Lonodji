@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DocumentCard, PageHeader, SectionHead } from "../../components/blocks";
-import { getIndex, ogFor } from "../../lib/content";
+import { getIndex, ogFor, type DocumentItem } from "../../lib/content";
+import { ODEB } from "../../lib/odeb";
 
 export const metadata: Metadata = {
   title: "Documents à télécharger",
@@ -12,7 +13,9 @@ export const metadata: Metadata = {
 
 export default function Documents() {
   const docs = getIndex().documents;
-  const available = docs.filter((d) => d.pdf);
+  /* Documents produits hors de l'ancien site : le livre blanc du projet ODEB (version de travail). */
+  const livreBlanc: DocumentItem = { title: "Livre blanc du projet ODEB LONODJI", status: "Version de travail", meta: `${ODEB.presenteLabel} · A4 · produit à partir de la page en ligne`, description: "Le document fondateur de l’Organisation pour le Développement et l’Émergence Bedjonde : d’où nous partons, pourquoi une organisation, la vision 2030, six missions, cinq programmes, principes, ressources et feuille de route. Non adopté à ce jour.", pdf: ODEB.livreBlancPdf, links: [{ label: "Lire en ligne", href: "/odeb/livre-blanc" }, { label: "Le projet ODEB", href: "/odeb" }] };
+  const available = [...docs.filter((d) => d.pdf), livreBlanc];
   const pending = docs.filter((d) => !d.pdf);
   return (
     <main id="main-content" className="hub-page">

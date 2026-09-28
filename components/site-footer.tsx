@@ -1,50 +1,53 @@
 import Link from "next/link";
 import { ORG } from "../lib/content";
+import { PIED } from "../lib/navigation";
 import NewsletterForm from "./newsletter-form";
 
-export default function SiteFooter() {
+/* Pied de page : un bandeau (qui nous sommes, comment nous joindre, lettre
+   d'information), cinq colonnes de liens (lib/navigation.ts, PIED) et la
+   ligne de fin (devise, mentions, langue, retour en haut). */
+export default function SiteFooter({ miseAJour }: { miseAJour?: string }) {
   return (
     <footer className="site-footer">
-      <div className="footer-cols">
+      <div className="footer-top">
         <div className="footer-brand-block">
           <div className="footer-brand"><span className="footer-mark">A</span><strong>ADEB <b>LONODJI</b></strong></div>
-          <p>{ORG.tagline}</p>
-          <p>{ORG.place}</p>
-          <a href={ORG.phoneHref}>{ORG.phone}</a>
-          <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <p className="footer-tagline">{ORG.tagline}</p>
+          <p className="footer-place">{ORG.fullName}<br />{ORG.place}</p>
+          <div className="footer-contact">
+            <a href={ORG.phoneHref}><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg>{ORG.phone}</a>
+            <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.6-4A8 8 0 1 1 20 11.5z" /></svg>WhatsApp</a>
+            <Link href="/participer#contact"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 6h16v12H4z" /><path d="m4 7 8 6 8-6" /></svg>Nous écrire</Link>
+          </div>
         </div>
-        <div>
-          <p className="footer-title">L’association</p>
-          <Link href="/mission">Notre mission</Link>
-          <Link href="/histoire">Histoire & patrimoine</Link>
-          <Link href="/transparence">Redevabilité</Link>
-          <Link href="/documents">Documents</Link>
-          <Link href="/archives">Archives du site</Link>
-          <Link href="/mentions-legales">Mentions légales</Link>
+        <div className="footer-join">
+          <p className="footer-title">Rejoindre l’association</p>
+          <p>Une thématique à coordonner, une compétence à inscrire, un récit à envoyer, un besoin à signaler : nous répondons sous quarante-huit heures ouvrées.</p>
+          <div className="footer-join-actions">
+            <Link className="button primary" href="/participer">Nous rejoindre <span aria-hidden="true">↗</span></Link>
+            <Link className="button secondary" href="/diaspora">Inscrire mes compétences <span aria-hidden="true">→</span></Link>
+          </div>
         </div>
-        <div>
-          <p className="footer-title">Agir</p>
-          <Link href="/programmes">Les quatre pôles</Link>
-          <Link href="/actions">Plaidoyers & engagements</Link>
-          <Link href="/impact">Suivi & tableau de bord</Link>
-          <Link href="/carte">Carte du territoire</Link><Link href="/villages">Les villages</Link><Link href="/bibliotheque">Bibliothèque</Link><Link href="/langue">Langue nangnda</Link><Link href="/dossiers">Tous les dossiers</Link>
-          <Link href="/journal">Le journal</Link>
-        </div>
-        <div>
-          <p className="footer-title">Participer</p>
-          <Link href="/participer#contact">Nous écrire</Link>
-          <Link href="/participer#adherer">Adhérer & cotiser</Link>
-          <Link href="/participer#soutenir">Nous soutenir</Link>
-          <Link href="/diaspora">Diaspora : inscrire mes compétences</Link>
-          <Link href="/temoignages">Racontez Bédjondo : témoignages & photos</Link>
-          <p className="footer-title" style={{ marginTop: 18 }}>Lettre d’information</p>
+        <div className="footer-news">
+          <p className="footer-title">Lettre d’information</p>
+          <p>Les nouvelles de l’association, sans publicité, désinscription à tout moment.</p>
           <NewsletterForm />
         </div>
       </div>
+      <div className="footer-cols footer-cols--5">
+        {PIED.map((col) => (
+          <div key={col.titre}>
+            <p className="footer-title">{col.titre}</p>
+            {col.liens.map((l) => <Link href={l.href} key={l.href + l.label}>{l.label}</Link>)}
+          </div>
+        ))}
+      </div>
       <div className="footer-bottom">
-        <span>{ORG.motto}</span>
-        <span>© 2026 {ORG.name} · <Link href="/plan-du-site">Plan du site</Link> · <Link href="/en/index">English</Link> · <Link href="/redaction" rel="nofollow">Rédaction</Link></span>
-        <a href="#main-content">Retour en haut ↑</a>
+        <span className="footer-motto">{ORG.motto}</span>
+        <span className="footer-legal">
+          © 2026 {ORG.name} · Site officiel{miseAJour ? ` · mis à jour le ${miseAJour}` : ""} · <Link href="/mentions-legales">Mentions légales</Link> · <Link href="/plan-du-site">Plan du site</Link> · <Link href="/archives">Archives</Link> · <Link href="/en/index" lang="en">English</Link> · <Link href="/redaction" rel="nofollow">Rédaction</Link>
+        </span>
+        <a className="footer-top-link" href="#main-content">Retour en haut <span aria-hidden="true">↑</span></a>
       </div>
     </footer>
   );

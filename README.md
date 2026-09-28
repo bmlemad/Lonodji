@@ -62,6 +62,20 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 - Les deux formulaires sont déclarés dans `scripts/import-legacy.py` (`FORMULAIRES_SITE`) pour survivre aux réimports, et décrits dans les mentions légales (`UPDATES`).
 - `scripts/build-territoire-svg.py` → `public/carte/territoire.svg` : silhouette des quatorze unités (mêmes tracés que la carte), bannière de l’accueil tant que la banque d’images est vide.
 
+## Projet ODEB LONODJI (vision 2030)
+
+- `/odeb` (vision, pourquoi, six missions, cinq programmes, repères 2030), `/odeb/livre-blanc` (document fondateur, version de travail, sommaire collant, impression), `/odeb/feuille-de-route` (trois phases 2026-2030, état réel de chaque chantier : réalisé, en cours, à venir, à décider), `/odeb/programmes` et `/odeb/programmes/<programme>` (trois axes chacun : « déjà en place » avec liens, « d’ici 2030 » au conditionnel ; thématiques et coordonnateurs lus dans `content/index.json`).
+- Données et textes : `lib/odeb.ts` (formulation institutionnelle, menu, missions, repères, programmes, feuille de route calculée depuis les chiffres du site — `feuilleDeRoute(chiffres)`), `lib/odeb-chiffres.ts` (chiffres assemblés côté serveur), `components/odeb-nav.tsx` (barre de section et encadré d’état). Sources : les quatre documents de stratégie transmis en septembre 2026 ; rien n’y est présenté comme décidé.
+- `scripts/build-livre-blanc.py` → `public/odeb/livre-blanc-odeb-lonodji-2026.pdf` : rend la page du livre blanc en A4 (feuille d’impression de `app/site.css`) après `npm run build` ; à relancer quand la page change. Le PDF est listé sur `/documents` et compté par `build-indicateurs.py`.
+- Les trois pages importées qui citaient l’ancien développement du sigle (démarches, ONG et partenaires, mentions légales) portent le nouveau (« Organisation pour le Développement et l’Émergence Bedjonde ») et une note datée (`UPDATES` de `scripts/import-legacy.py`).
+
+## Navigation (en-tête, méga-menu, menu mobile, pied de page)
+
+- Une seule source : `lib/navigation.ts` (`NAVIGATION` pour l’en-tête et le menu mobile, `PIED` pour le pied de page, `entreeCourante()` pour surligner la section de la page courante) ; le plan du site s’en sert aussi.
+- `components/site-nav.tsx` : barre fixe ; sur ordinateur (> 1100 px) six entrées — L’association, Nos actions, Territoire, Projet ODEB, Journal, Participer — dont cinq ouvrent un panneau (bouton `aria-expanded`, colonnes de liens avec description, carte en vedette dont les chiffres viennent de `content/indicateurs.json` via `app/layout.tsx`) : survol à la souris, clic ou Entrée au clavier, flèche bas vers le premier lien, Échap referme et rend le focus, clic ailleurs et changement de page referment. Sur tablette et mobile (≤ 1100 px) : menu plein écran avec recherche (`/recherche?q=`), groupes dépliables (`<details>`, ouverts par défaut à partir de 641 px), actions (rejoindre, WhatsApp, installer) et liens de fin.
+- `components/site-footer.tsx` : bandeau (qui nous sommes, contact, rejoindre, lettre d’information), cinq colonnes, ligne de fin avec la date de construction du site.
+- `components/nav-tools.tsx` : bouton « retour en haut » après 900 px de défilement (au-dessus de la barre d’onglets en appli) et touche `/` vers la recherche hors des champs.
+
 ## Espace de rédaction privé
 
 - `/redaction` (noindex, lien discret « Rédaction » en pied de page) : écriture des articles en brouillon, aperçu dans le style du journal, rubrique, statut, enregistrement automatique, export `.md`. Mot de passe unique choisi à la première visite (scrypt + sel), jeton de session HMAC dérivé du hash courant (changer le mot de passe déconnecte tout), cinq erreurs bloquent l’entrée un quart d’heure. Mot de passe en POST seulement, jeton en en-tête `Authorization`.
@@ -72,7 +86,7 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 
 - `public/.well-known/assetlinks.json` — lien entre le site et l’appli Android (`org.lonodji.app`) : empreintes de la clé d’essai 2 (APK 1.0.1 du 28/09/2026, ouvre lonodji.org) et de la clé d’essai 1 (APK 1.0.0 du 24/09) ; y ajouter les empreintes des clés Google Play après le premier envoi, puis retirer les clés d’essai.
 - `app/manifest.ts` — manifeste d’installation (icônes, raccourcis : Villages, Journal, Adhérer, Rechercher) ; `public/sw.js` — lecture hors ligne des pages déjà ouvertes, page de repli `/hors-ligne` ; incrémenter `VERSION` à chaque changement de la coquille.
-- Responsive : mobile ≤ 800 px (menu, barre d’onglets en appli, silhouette du territoire sous le héros), tablette 801–1220 px (les huit liens passent dans le menu), ordinateur au-delà (numéros masqués jusqu’à 1340 px).
+- Responsive : mobile ≤ 800 px (barre compacte, menu plein écran, barre d’onglets en appli, silhouette du territoire sous le héros), tablette 801–1100 px (même menu plein écran, groupes sur deux colonnes), ordinateur au-delà (méga-menu).
 - `components/app-shell.tsx` — reconnaissance de l’appli installée (écran d’accueil, appli Android, appli iPhone `LONODJI-iOS`) et barre d’onglets sur mobile dans ce cas.
 - Outils en ligne : `/dossiers/trouver-ma-thematique` (`public/trouver.js`), `/dossiers/genealogie-outil` (`public/genealogie.js`, données dans le navigateur), carte du pays bedjond (`public/geo.js`).
 

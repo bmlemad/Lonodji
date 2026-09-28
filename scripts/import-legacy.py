@@ -581,6 +581,14 @@ UPDATES = [
      '<tr><th scope="row"><a href="/langue#dictionnaire">Un mot en nangnda</a><span class="notice-page">Langue</span></th><td>Mot, catégorie, sens, exemple et traduction, enregistrement (10 Mo au plus), variante, source, nom, contact facultatif, choix de publication</td><td>Vérifier le mot avec les linguistes et l’ajouter au dictionnaire numérique</td><td>Conservé comme source du dictionnaire\u00a0; publié avec ou sans votre nom selon votre choix, retrait possible</td></tr>'
      '<tr><th scope="row"><a href="/temoignages#envoyer">Témoignage, photo ou enregistrement</a><span class="notice-page">Racontez Bédjondo</span></th><td>Type de récit, titre, récit, fichier joint (photo, son, vidéo, 10 Mo au plus), lieu et date, nom, qualité, contact, localité, choix de publication, accords (personnes citées, mineurs)</td><td>Vérifier le récit avec vous, le publier selon votre choix, constituer la banque d’images et les archives de l’association</td><td>Conservé comme archive tant que vous ne le retirez pas\u00a0; publié seulement après votre relecture, avec ou sans votre nom selon votre choix</td></tr>'
      '<tr><th scope="row"><a href="/dossiers/lieux-sacres#signalement">Lieu sacré menacé</a>'),
+    # 28/09/2026 : le sigle ODEB se développe désormais « Organisation pour le Développement et l’Émergence
+    # Bedjonde » (projet ODEB LONODJI, vision 2030) ; les trois pages qui citaient l'ancien développement renvoient au projet.
+    ("vers <strong>ODEB</strong> (Organisation de Développement et d’Entraide des Bedjond). Aucun dossier n’est, à notre connaissance, déposé — voir <a href=\"#vers-ong\">Vers le statut d’ONG</a>.</p>",
+     "vers <strong>ODEB LONODJI</strong> (Organisation pour le Développement et l’Émergence Bedjonde, développement retenu le 28 septembre 2026 — voir <a href=\"/odeb\">le projet ODEB LONODJI</a>). Aucun dossier n’est, à notre connaissance, déposé — voir <a href=\"#vers-ong\">Vers le statut d’ONG</a>.</p>"),
+    ("vers <strong>ODEB</strong> (Organisation de Développement et d’Entraide des Bedjond). Aucun dossier n’est, à notre connaissance, déposé — voir <a href=\"/dossiers/demarches#vers-ong\">Vers le statut d’ONG</a>.</p>",
+     "vers <strong>ODEB LONODJI</strong> (Organisation pour le Développement et l’Émergence Bedjonde, développement retenu le 28 septembre 2026 — voir <a href=\"/odeb\">le projet ODEB LONODJI</a>). Aucun dossier n’est, à notre connaissance, déposé — voir <a href=\"/dossiers/demarches#vers-ong\">Vers le statut d’ONG</a>.</p>"),
+    ("l’association prendra alors le nom d’<strong>ODEB</strong> — Organisation de Développement et d’Entraide des Bedjond — en cohérence avec son nouveau statut. Le nom ADEB LONODJI reste, à ce jour, celui de l’association telle qu’elle existe\u00a0; ODEB est le nom prévu pour l’ONG à venir, pas encore effectif.</p>",
+     "l’association prendra alors le nom d’<strong>ODEB LONODJI</strong> — Organisation pour le Développement et l’Émergence Bedjonde — en cohérence avec son nouveau statut. Le nom ADEB LONODJI reste, à ce jour, celui de l’association telle qu’elle existe\u00a0; ODEB est le nom prévu pour l’ONG à venir, pas encore effectif.</p>\n<p class=\"form-note\"><strong>Mise à jour du 28 septembre 2026\u00a0:</strong> le développement du sigle, que nous écrivions «\u00a0Organisation de Développement et d’Entraide des Bedjond\u00a0», est désormais «\u00a0Organisation pour le Développement et l’Émergence Bedjonde\u00a0», conformément au projet ODEB LONODJI présenté ce jour — vision 2030, six missions, cinq programmes et livre blanc en version de travail, sur <a href=\"/odeb\">sa page</a>. Le statut, lui, n’a pas changé\u00a0: aucun dossier déposé.</p>"),
     # Journal des corrections : le nom du coordonnateur de Culture & patrimoine vivant, mal orthographié le 28/09.
     ('seulement les cas où <strong>nous avons affirmé quelque chose d’inexact</strong>.</p>\n<article class="info-card">\n<p class="form-note">24 septembre 2026 · Identité',
      'seulement les cas où <strong>nous avons affirmé quelque chose d’inexact</strong>.</p>\n<article class="info-card">\n<p class="form-note">28 septembre 2026 · Nom · Relevé par l’intéressé, corrigé dans l’heure</p>\n<h3>Le nom du coordonnateur de Culture &amp; patrimoine vivant était mal orthographié</h3>\n<p><strong>Ce que nous écrivions\u00a0:</strong> en annonçant, le 28 septembre en fin de matinée, que la thématique Culture &amp; patrimoine vivant était confiée à un nouveau coordonnateur, nous avons écrit son nom «\u00a0Madjirabé\u00a0» sur la page Nos actions, le suivi, la page anglaise et l’outil «\u00a0Trouver ma thématique\u00a0».</p>\n<p><strong>Ce qui est exact\u00a0:</strong> le Dr Yaphete Madjiradé. Toutes les pages sont corrigées.</p>\n<p><strong>Comment nous nous en sommes aperçus\u00a0:</strong> par la comparaison, moins d’une heure après la mise en ligne, avec une liste de chercheurs du pays bedjond transmise à l’animation, où le nom est correctement écrit\u00a0; l’animation l’a confirmé.</p>\n</article>\n<article class="info-card">\n<p class="form-note">24 septembre 2026 · Identité'),
@@ -603,23 +611,23 @@ UPDATES_SOURCE = [
     ('<a class="bento-tile" href="#agriculture-elevage-securite-alimentaire" aria-label="13 thématiques', '<a class="bento-tile" href="#entrepreneuriat-finance-inclusive" aria-label="13 thématiques'),
     # suivi : Jeunesse & réussite a désormais sa coordination
     ('<p>Ces quatre thématiques ont des problématiques documentées <strong>et</strong> un plaidoyer déjà publié&nbsp;: <a href="poles.html#eau-energie-connectivite">Eau, énergie &amp; connectivité</a> &middot; <a href="poles.html#desenclavement-urbanisation">Désenclavement &amp; urbanisation</a> &middot; <a href="poles.html#jeunesse-reussite">Jeunesse &amp; réussite</a> &middot; <a href="poles.html#gouvernance-plaidoyer">Gouvernance &amp; plaidoyer</a>. Il ne leur manque qu&rsquo;un coordonnateur ou une coordonnatrice pour suivre les dossiers et relancer les destinataires.</p>',
-     '<p>Ces trois thématiques ont des problématiques documentées <strong>et</strong> un plaidoyer déjà publié&nbsp;: <a href="poles.html#eau-energie-connectivite">Eau, énergie &amp; connectivité</a> &middot; <a href="poles.html#desenclavement-urbanisation">Désenclavement &amp; urbanisation</a> &middot; <a href="poles.html#gouvernance-plaidoyer">Gouvernance &amp; plaidoyer</a>. Il ne leur manque qu&rsquo;un coordonnateur ou une coordonnatrice pour suivre les dossiers et relancer les destinataires. <a href="poles.html#jeunesse-reussite">Jeunesse &amp; réussite</a>, qui était dans le même cas, a sa coordination depuis le 28 septembre 2026.</p>'),
-    # comptes : onze pourvues, huit à pourvoir
-    ('pas encore de coordonnateur pour quinze de ses dix-neuf th&eacute;matiques', 'pas encore de coordonnateur pour six de ses dix-neuf th&eacute;matiques'),
+     '<p>Ces deux thématiques ont des problématiques documentées <strong>et</strong> un plaidoyer déjà publié&nbsp;: <a href="poles.html#eau-energie-connectivite">Eau, énergie &amp; connectivité</a> &middot; <a href="poles.html#desenclavement-urbanisation">Désenclavement &amp; urbanisation</a>. Il ne leur manque qu&rsquo;un coordonnateur ou une coordonnatrice pour suivre les dossiers et relancer les destinataires. <a href="poles.html#jeunesse-reussite">Jeunesse &amp; réussite</a> et <a href="poles.html#gouvernance-plaidoyer">Gouvernance &amp; plaidoyer</a>, qui étaient dans le même cas, ont leur coordination depuis le 28 septembre 2026.</p>'),
+    # comptes : quinze pourvues, quatre à pourvoir (28/09/2026)
+    ('pas encore de coordonnateur pour quinze de ses dix-neuf th&eacute;matiques', 'pas encore de coordonnateur pour quatre de ses dix-neuf th&eacute;matiques'),
     ('aria-label="6 coordonnateurs en poste — voir les thématiques pourvues">\n        <span class="bento-num">6</span>',
-     'aria-label="13 coordonnateurs en poste — voir les thématiques pourvues">\n        <span class="bento-num">13</span>'),
-    ('Santé &amp; prévention, Protection sociale &amp; inclusion</span>', 'Agriculture, élevage &amp; sécurité alimentaire, Jeunesse &amp; réussite, Santé &amp; prévention, Protection sociale &amp; inclusion, Paix &amp; cohésion, Justice &amp; droits humains, Transformation numérique &amp; services, Intelligence artificielle &amp; données, Compétences &amp; entrepreneuriat numérique</span>'),
+     'aria-label="15 coordonnateurs en poste — voir les thématiques pourvues">\n        <span class="bento-num">15</span>'),
+    ('Santé &amp; prévention, Protection sociale &amp; inclusion</span>', 'Agriculture, élevage &amp; sécurité alimentaire, Jeunesse &amp; réussite, Santé &amp; prévention, Protection sociale &amp; inclusion, Gouvernance &amp; plaidoyer, Paix &amp; cohésion, Réseau d&rsquo;experts &amp; diaspora, Justice &amp; droits humains, Transformation numérique &amp; services, Intelligence artificielle &amp; données, Compétences &amp; entrepreneuriat numérique</span>'),
     ('aria-label="13 thématiques encore à pourvoir — se porter volontaire">\n        <span class="bento-num">13</span>',
-     'aria-label="6 thématiques encore à pourvoir — se porter volontaire">\n        <span class="bento-num">6</span>'),
-    ('<p>Treize des dix-neuf thématiques d&rsquo;ADEB LONODJI n&rsquo;ont pas encore de coordon', '<p>Six des dix-neuf thématiques d&rsquo;ADEB LONODJI n&rsquo;ont pas encore de coordon'),
-    ('<p>Treize thématiques attendent un coordonnateur ou une coordonnatrice.', '<p>Six thématiques attendent un coordonnateur ou une coordonnatrice.'),
-    ('<p>Dix-neuf thématiques, et treize attendent encore leur coordonnateur.</p>', '<p>Dix-neuf thématiques, et six attendent encore leur coordonnateur.</p>'),
-    ('pourvoir les treize thématiques encore sans coordonnateur', 'pourvoir les six thématiques encore sans coordonnateur'),
-    ('<p class="lede">Treize des dix-neuf thématiques d&rsquo;ADEB LONODJI cherchent encore un coordonnateur', '<p class="lede">Six des dix-neuf thématiques d&rsquo;ADEB LONODJI cherchent encore un coordonnateur'),
-    ('<p>Treize thématiques et deux cellules cherchent des coordonnateurs et des membres actifs.', '<p>Six thématiques et deux cellules cherchent des coordonnateurs et des membres actifs.'),
-    ('où vous seriez le plus utile. Treize attendent un coordonnateur."', 'où vous seriez le plus utile. Six attendent un coordonnateur."'),
-    ('<p class="lede">Dix-neuf th&eacute;matiques, dont treize sans coordonnateur.', '<p class="lede">Dix-neuf th&eacute;matiques, dont six sans coordonnateur.'),
-    ('<span class="hero-pill">Treize th&eacute;matiques &agrave; pourvoir</span>', '<span class="hero-pill">Six th&eacute;matiques &agrave; pourvoir</span>'),
+     'aria-label="4 thématiques encore à pourvoir — se porter volontaire">\n        <span class="bento-num">4</span>'),
+    ('<p>Treize des dix-neuf thématiques d&rsquo;ADEB LONODJI n&rsquo;ont pas encore de coordon', '<p>Quatre des dix-neuf thématiques d&rsquo;ADEB LONODJI n&rsquo;ont pas encore de coordon'),
+    ('<p>Treize thématiques attendent un coordonnateur ou une coordonnatrice.', '<p>Quatre thématiques attendent un coordonnateur ou une coordonnatrice.'),
+    ('<p>Dix-neuf thématiques, et treize attendent encore leur coordonnateur.</p>', '<p>Dix-neuf thématiques, et quatre attendent encore leur coordonnateur.</p>'),
+    ('pourvoir les treize thématiques encore sans coordonnateur', 'pourvoir les quatre thématiques encore sans coordonnateur'),
+    ('<p class="lede">Treize des dix-neuf thématiques d&rsquo;ADEB LONODJI cherchent encore un coordonnateur', '<p class="lede">Quatre des dix-neuf thématiques d&rsquo;ADEB LONODJI cherchent encore un coordonnateur'),
+    ('<p>Treize thématiques et deux cellules cherchent des coordonnateurs et des membres actifs.', '<p>Quatre thématiques et une cellule cherchent des coordonnateurs et des membres actifs.'),
+    ('où vous seriez le plus utile. Treize attendent un coordonnateur."', 'où vous seriez le plus utile. Quatre attendent un coordonnateur."'),
+    ('<p class="lede">Dix-neuf th&eacute;matiques, dont treize sans coordonnateur.', '<p class="lede">Dix-neuf th&eacute;matiques, dont quatre sans coordonnateur.'),
+    ('<span class="hero-pill">Treize th&eacute;matiques &agrave; pourvoir</span>', '<span class="hero-pill">Quatre th&eacute;matiques &agrave; pourvoir</span>'),
 ]
 # Nominations de coordonnateurs postérieures à l'export : une ligne par thématique.
 # (ancre, nom FR (html), nom EN (html), nom dans trouver.js, pôle FR (html), coordonnateur FR, coordonnateur EN (html), note FR, note EN)
@@ -647,6 +655,19 @@ NOMINATIONS = [
      "Dr Eugène Ngartebaye Le Yotha", "Dr Eug&egrave;ne Ngartebaye Le Yotha",
      " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée au Dr Eugène Ngartebaye Le Yotha.",
      " <strong>Update, 28 September 2026:</strong> the theme is now coordinated by Dr Eug&egrave;ne Ngartebaye Le Yotha."),
+    ("gouvernance-plaidoyer", "Gouvernance &amp; plaidoyer", "Governance &amp; Advocacy", "Gouvernance & plaidoyer", "Gouvernance, paix &amp; plaidoyer",
+     "Adoumbé Maoura, président de l’association", "Adoumb&eacute; Maoura, president of the association",
+     " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée à Adoumbé Maoura, président de l&rsquo;association.",
+     " <strong>Update, 28 September 2026:</strong> the theme is now coordinated by Adoumb&eacute; Maoura, president of the association."),
+    ("reseau-experts-diaspora", "Réseau d&rsquo;experts &amp; diaspora", "Expert Network &amp; Diaspora", "Réseau d’experts & diaspora", "Gouvernance, paix &amp; plaidoyer",
+     "Edgard Djerassem Djimhotengar", "Edgard Djerassem Djimhotengar",
+     " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée à Edgard Djerassem Djimhotengar.",
+     " <strong>Update, 28 September 2026:</strong> the theme is now coordinated by Edgard Djerassem Djimhotengar."),
+    # cellule transversale : mêmes gabarits (tableau, carte, page anglaise, trouver.js), pas de fiche de suivi
+    ("cellule-communication-numerique", "Communication &amp; numérique", "Communication &amp; Digital", "Communication & numérique", "Un appui à toutes les thématiques",
+     "Djimtebaye Mahamat Mamadou Banadji", "Djimtebaye Mahamat Mamadou Banadji",
+     " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la cellule est confiée à Djimtebaye Mahamat Mamadou Banadji.",
+     " <strong>Update, 28 September 2026:</strong> the unit is now coordinated by Djimtebaye Mahamat Mamadou Banadji."),
 ]
 
 
@@ -826,6 +847,9 @@ def main():
     (PUBLIC / "__forms.html").write_text(forms_html(all_forms), encoding="utf-8")
 
     # Ressources (pas public/og ni og-image.png : ce sont scripts/build-og.py qui les génère)
+    # public/{documents,identite,kit,app} sont remplacés à l'identique par ceux de l'ancien site :
+    # ne rien y ajouter à la main (les fichiers propres au site vont dans public/og, public/carte,
+    # public/odeb, public/icones…).
     for d in ("documents", "identite", "kit", "app"):
         src = LEGACY / d
         if src.exists():

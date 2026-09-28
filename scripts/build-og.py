@@ -45,6 +45,10 @@ EYEBROWS = {
     "/mentions-legales": "Mentions légales",
     "/plan-du-site": "Plan du site",
     "/recherche": "Recherche",
+    "/odeb": "Projet ODEB LONODJI · Vision 2030",
+    "/odeb/livre-blanc": "Projet ODEB LONODJI · livre blanc",
+    "/odeb/feuille-de-route": "Projet ODEB LONODJI · feuille de route 2026-2030",
+    "/odeb/programmes": "Projet ODEB LONODJI · les cinq programmes",
 }
 
 
@@ -80,6 +84,9 @@ def read_pages() -> list[dict]:
             lang = "en"
         elif route in pages and pages[route]["kind"] == "dossier":
             eyebrow = "Dossier · " + (pages[route].get("eyebrow") or "ADEB LONODJI")
+            lang = "fr"
+        elif route.startswith("/odeb/programmes/"):
+            eyebrow = "Projet ODEB LONODJI · programme"
             lang = "fr"
         else:
             eyebrow = EYEBROWS.get(route, "ADEB LONODJI")

@@ -25,6 +25,7 @@ export default function Diaspora() {
   const vacantes = total - filledCount(idx);
   const indicateurs = getIndicateurs();
   const poles = idx.structure.poles;
+  const reseau = poles.flatMap((p) => p.items).find((t) => t.id === "reseau-experts-diaspora");
   return (
     <main id="main-content" className="hub-page dp-page">
       <PageHeader
@@ -142,7 +143,7 @@ export default function Diaspora() {
         <LegacyEnhance hasForms />
       </section>
 
-      <p className="lg-footnote">Répertoire ouvert le 28 septembre 2026, au titre de l’action 4.1 du plan d’action 2026-2028 ; les compteurs de cette page paraissent aussi sur le <Link href="/impact">tableau de bord</Link>. Le formulaire est enregistré par le service de formulaires de notre hébergeur (voir <Link href="/mentions-legales#donnees">où vont vos réponses</Link>). Une thématique porte ce chantier : <Link href="/programmes#reseau-experts-diaspora">Réseau d’experts &amp; diaspora</Link>, encore sans coordonnateur — et si c’était vous ?</p>
+      <p className="lg-footnote">Répertoire ouvert le 28 septembre 2026, au titre de l’action 4.1 du plan d’action 2026-2028 ; les compteurs de cette page paraissent aussi sur le <Link href="/impact">tableau de bord</Link>. Le formulaire est enregistré par le service de formulaires de notre hébergeur (voir <Link href="/mentions-legales#donnees">où vont vos réponses</Link>). Une thématique porte ce chantier : <Link href="/programmes#reseau-experts-diaspora">Réseau d’experts &amp; diaspora</Link>{reseau?.filled ? <>, coordonnée par {reseau.coordinator}.</> : <>, encore sans coordonnateur — et si c’était vous ?</>}</p>
     </main>
   );
 }

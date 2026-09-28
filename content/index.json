@@ -105,7 +105,7 @@
    "lede": "Un membre qui veut agir lundi matin ne trouvait nulle part à qui écrire ni comment. Voici la voie hiérarchique, les huit éléments d’une demande recevable, ce que dit l’ordonnance de 2018 sur notre propre statut — et trois lettres modèles à recopier.",
    "description": "À qui écrire, dans quels termes, avec quelles pièces, et quoi faire si personne ne répond — avec trois lettres modèles et notre base légale.",
    "parent": "Agir avec nous",
-   "words": 3842,
+   "words": 3928,
    "hasMap": false
   },
   {
@@ -261,7 +261,7 @@
    "lede": "Nous avons cherché non pas qui dit travailler au Tchad, mais qui intervient dans notre province avec une trace datée. Onze entrées, une vingtaine de structures, aucune basée à Bédjondo — et un modèle déjà installé dans le Mandoul qu’il suffit de demander une quatrième fois.",
    "description": "Qui intervient vraiment dans le Mandoul, avec quel bailleur et sur quel secteur — et l’acteur que nous approchons pour chaque dossier.",
    "parent": "L’association",
-   "words": 2819,
+   "words": 2833,
    "hasMap": false
   },
   {
@@ -318,8 +318,8 @@
    "kind": "dossier",
    "title": "Quelle thématique pour vous ?",
    "eyebrow": "Agir avec nous",
-   "lede": "Dix-neuf thématiques, dont six sans coordonnateur. Cochez ce que vous savez faire ou ce qui vous tient à cœur, dites-nous où vous êtes et combien de temps vous pouvez donner : nous vous proposons les thématiques où vous seriez le plus utile, et le bon interlocuteur. Rien n’est envoyé tant que vous n’avez pas écrit.",
-   "description": "Cochez ce que vous savez faire ou ce qui vous tient à cœur : nous vous proposons les thématiques d’ADEB LONODJI où vous seriez le plus utile. Six attendent un coordonnateur.",
+   "lede": "Dix-neuf thématiques, dont quatre sans coordonnateur. Cochez ce que vous savez faire ou ce qui vous tient à cœur, dites-nous où vous êtes et combien de temps vous pouvez donner : nous vous proposons les thématiques où vous seriez le plus utile, et le bon interlocuteur. Rien n’est envoyé tant que vous n’avez pas écrit.",
+   "description": "Cochez ce que vous savez faire ou ce qui vous tient à cœur : nous vous proposons les thématiques d’ADEB LONODJI où vous seriez le plus utile. Quatre attendent un coordonnateur.",
    "parent": "Agir avec nous",
    "words": 348,
    "hasMap": false
@@ -357,7 +357,7 @@
    "lede": "Les Chantiers ADEB LONODJI sont les projets de réflexion, de recherche et d’action portés par l’association. Pour les organiser, ADEB LONODJI structure son action autour de dix-neuf thématiques réparties en quatre pôles, appuyées par deux cellules transversales — dont un pôle spécialisé Numérique & innovation, créé en septembre 2026. Chaque thématique est animée par un coordonnateur. Cette organisation en pôles est notre méthodologie de travail en équipe : elle permet une bonne coordination des actions entre les thématiques, au lieu d’initiatives dispersées. Chaque thématique est en outre mise en regard des Objectifs de développement durable adoptés par les Nations unies, pour que nos partenaires situent immédiatement notre travail.",
    "description": "Quatre pôles, dix-neuf thématiques et deux cellules transversales pour organiser l’action d’ADEB LONODJI.",
    "parent": "Accueil",
-   "words": 5094,
+   "words": 5170,
    "hasMap": false
   },
   {
@@ -381,7 +381,7 @@
    "lede": "Chaque problématique que nous avons recensée est reliée à la thématique qui doit la porter, et chaque thématique à son plaidoyer quand il existe. Une seule page pour voir où nous en sommes : ce qui avance, ce qui attend un coordonnateur ou une coordonnatrice, et ce que nous n’avons pas encore commencé à documenter.",
    "description": "Chaque problématique reliée à sa thématique, chaque thématique à son plaidoyer s’il existe : le tableau de bord de suivi des actions d’ADEB LONODJI, thématique par thématique.",
    "parent": "Nos actions",
-   "words": 1532,
+   "words": 1542,
    "hasMap": false
   },
   {
@@ -414,7 +414,7 @@
    "kind": "hub",
    "title": "Agir avec nous",
    "eyebrow": "Nous soutenir",
-   "lede": "Six des dix-neuf thématiques d’ADEB LONODJI cherchent encore un coordonnateur, et l’association elle-même se réactive après des années de mise en veille : votre soutien, sous toutes ses formes, compte. Voici les façons d’y contribuer.",
+   "lede": "Quatre des dix-neuf thématiques d’ADEB LONODJI cherchent encore un coordonnateur, et l’association elle-même se réactive après des années de mise en veille : votre soutien, sous toutes ses formes, compte. Voici les façons d’y contribuer.",
    "description": "Les façons de soutenir ADEB LONODJI : cotisation et don, temps et compétences, dons en nature — au service du peuple bedjond de Bédjondo.",
    "parent": "Accueil",
    "words": 479,
@@ -441,7 +441,7 @@
    "lede": "Qui publie ce site, quelles données sont collectées via ses formulaires, et comment les faire corriger ou supprimer.",
    "description": "Mentions légales d’ADEB LONODJI et informations sur les données collectées via les formulaires du site.",
    "parent": "L’association",
-   "words": 1808,
+   "words": 1822,
    "hasMap": false
   },
   {
@@ -549,11 +549,28 @@
    "lede": "ADEB LONODJI organises its work into nineteen themes grouped in four pillars, supported by two cross-cutting units. Each theme is meant to be led by a coordinator who reports to the membership. This page is the English summary; every theme has a fuller description en français .",
    "description": "How ADEB LONODJI organises its work: four pillars, nineteen themes and two cross-cutting units, each set against the UN Sustainable Development Goals it touches.",
    "parent": "Home",
-   "words": 2437,
+   "words": 2490,
    "hasMap": false
   }
  ],
  "articles": [
+  {
+   "slug": "2026-09-28-quarante-ans-reflexion-odeb-lonodji",
+   "route": "/journal/2026-09-28-quarante-ans-reflexion-odeb-lonodji",
+   "title": "Quarante ans après 1986, ADEB LONODJI ouvre la réflexion ODEB LONODJI",
+   "date": "2026-09-28",
+   "dateLabel": "28 septembre 2026",
+   "tag": "Vie de l’association",
+   "category": "vie-association",
+   "summary": "Pour les quarante ans de ses fondations, l’association fête ce 28 septembre 2026 en lançant la réflexion ODEB LONODJI : une organisation permanente pour le pays bedjond à l’horizon 2030, un livre blanc à discuter, cinq…",
+   "readTime": "3 min de lecture",
+   "words": 682,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "3 min de lecture",
+    "682 mots"
+   ]
+  },
   {
    "slug": "2026-09-22-ce-que-veut-dire-nangnda",
    "route": "/journal/2026-09-22-ce-que-veut-dire-nangnda",
@@ -1966,12 +1983,12 @@
       "number": "13",
       "kind": "thematique",
       "name": "Gouvernance & plaidoyer",
-      "status": "À pourvoir",
-      "filled": false,
-      "coordinator": "à pourvoir",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Adoumbé Maoura, président de l’association",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Organisation communautaire, modernisation d’ADEB LONODJI, relations avec la chefferie traditionnelle, représentation et défense de nos intérêts, accès à l’état civil et aux droits. Porte aussi l’ambition d’un vrai rayonnement national : faire reconnaître ADEB LONODJI auprès des institutions nationales de la culture et du patrimoine, et nouer des relations avec les médias tchadiens.",
-      "descriptionText": "Organisation communautaire, modernisation d’ADEB LONODJI, relations avec la chefferie traditionnelle, représentation et défense de nos intérêts, accès à l’état civil et aux droits. Porte aussi l’ambition d’un vrai rayonnement national : faire reconnaître ADEB LONODJI auprès des institutions nationales de la culture et du patrimoine, et nouer des relations avec les médias tchadiens.",
+      "description": "Organisation communautaire, modernisation d’ADEB LONODJI, relations avec la chefferie traditionnelle, représentation et défense de nos intérêts, accès à l’état civil et aux droits. Porte aussi l’ambition d’un vrai rayonnement national : faire reconnaître ADEB LONODJI auprès des institutions nationales de la culture et du patrimoine, et nouer des relations avec les médias tchadiens. <strong>Mise à jour du 28 septembre 2026 :</strong> la coordination de la thématique est confiée à Adoumbé Maoura, président de l’association.",
+      "descriptionText": "Organisation communautaire, modernisation d’ADEB LONODJI, relations avec la chefferie traditionnelle, représentation et défense de nos intérêts, accès à l’état civil et aux droits. Porte aussi l’ambition d’un vrai rayonnement national : faire reconnaître ADEB LONODJI auprès des institutions nationales de la culture et du patrimoine, et nouer des relations avec les médias tchadiens. Mise à jour du 28 septembre 2026 : la coordination de la thématique est confiée à Adoumbé Maoura, président de l’association.",
       "tags": [
        "Gouvernance",
        "Plaidoyer"
@@ -2074,12 +2091,12 @@
       "number": "15",
       "kind": "thematique",
       "name": "Réseau d’experts & diaspora",
-      "status": "À pourvoir",
-      "filled": false,
-      "coordinator": "à pourvoir",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Edgard Djerassem Djimhotengar",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Recensement et mise en relation des cadres et experts de la communauté, liens avec la diaspora, coopération nationale et internationale. Tisse des partenariats avec les autres associations communautaires tchadiennes pour porter ADEB LONODJI au niveau national. La thématique porte aussi un principe clair : encourager les cadres, et surtout les compétences, à se rapprocher du terroir — pour mettre leur savoir-faire directement au service du développement et du bien-être des populations de Bédjondo, et non seulement à distance.",
-      "descriptionText": "Recensement et mise en relation des cadres et experts de la communauté, liens avec la diaspora, coopération nationale et internationale. Tisse des partenariats avec les autres associations communautaires tchadiennes pour porter ADEB LONODJI au niveau national. La thématique porte aussi un principe clair : encourager les cadres, et surtout les compétences, à se rapprocher du terroir — pour mettre leur savoir-faire directement au service du développement et du bien-être des populations de Bédjondo, et non seulement à distance.",
+      "description": "Recensement et mise en relation des cadres et experts de la communauté, liens avec la diaspora, coopération nationale et internationale. Tisse des partenariats avec les autres associations communautaires tchadiennes pour porter ADEB LONODJI au niveau national. La thématique porte aussi un principe clair : encourager les cadres, et surtout les compétences, à se rapprocher du terroir — pour mettre leur savoir-faire directement au service du développement et du bien-être des populations de Bédjondo, et non seulement à distance. <strong>Mise à jour du 28 septembre 2026 :</strong> la coordination de la thématique est confiée à Edgard Djerassem Djimhotengar.",
+      "descriptionText": "Recensement et mise en relation des cadres et experts de la communauté, liens avec la diaspora, coopération nationale et internationale. Tisse des partenariats avec les autres associations communautaires tchadiennes pour porter ADEB LONODJI au niveau national. La thématique porte aussi un principe clair : encourager les cadres, et surtout les compétences, à se rapprocher du terroir — pour mettre leur savoir-faire directement au service du développement et du bien-être des populations de Bédjondo, et non seulement à distance. Mise à jour du 28 septembre 2026 : la coordination de la thématique est confiée à Edgard Djerassem Djimhotengar.",
       "tags": [
        "Diaspora",
        "Experts",
@@ -2444,12 +2461,12 @@
      "number": "",
      "kind": "cellule",
      "name": "Communication & numérique",
-     "status": "À pourvoir",
-     "filled": false,
-     "coordinator": "à pourvoir",
+     "status": "Pourvu",
+     "filled": true,
+     "coordinator": "Djimtebaye Mahamat Mamadou Banadji",
      "coordinatorLabel": "Coordonnateur",
-     "description": "Animation de l’association, diffusion des informations et conservation des documents produits par l’ensemble des thématiques — dont ce site, et l’espace <a href=\"/documents\">Documents</a>. À l’étude : mise en ligne des <a href=\"/participer#reseaux-sociaux\">futurs comptes réseaux sociaux</a> d’ADEB LONODJI, une lettre d’information régulière pour les membres et la diaspora, et un archivage numérique pérenne des travaux de chaque thématique, en lien avec le programme <strong>Bedjond Digital Heritage</strong> porté par la <a href=\"/programmes#savoirs-innovation\">thématique Recherche &amp; savoirs</a>.",
-     "descriptionText": "Animation de l’association, diffusion des informations et conservation des documents produits par l’ensemble des thématiques — dont ce site, et l’espace Documents . À l’étude : mise en ligne des futurs comptes réseaux sociaux d’ADEB LONODJI, une lettre d’information régulière pour les membres et la diaspora, et un archivage numérique pérenne des travaux de chaque thématique, en lien avec le programme Bedjond Digital Heritage porté par la thématique Recherche & savoirs .",
+     "description": "Animation de l’association, diffusion des informations et conservation des documents produits par l’ensemble des thématiques — dont ce site, et l’espace <a href=\"/documents\">Documents</a>. À l’étude : mise en ligne des <a href=\"/participer#reseaux-sociaux\">futurs comptes réseaux sociaux</a> d’ADEB LONODJI, une lettre d’information régulière pour les membres et la diaspora, et un archivage numérique pérenne des travaux de chaque thématique, en lien avec le programme <strong>Bedjond Digital Heritage</strong> porté par la <a href=\"/programmes#savoirs-innovation\">thématique Recherche &amp; savoirs</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> la coordination de la cellule est confiée à Djimtebaye Mahamat Mamadou Banadji.",
+     "descriptionText": "Animation de l’association, diffusion des informations et conservation des documents produits par l’ensemble des thématiques — dont ce site, et l’espace Documents . À l’étude : mise en ligne des futurs comptes réseaux sociaux d’ADEB LONODJI, une lettre d’information régulière pour les membres et la diaspora, et un archivage numérique pérenne des travaux de chaque thématique, en lien avec le programme Bedjond Digital Heritage porté par la thématique Recherche & savoirs . Mise à jour du 28 septembre 2026 : la coordination de la cellule est confiée à Djimtebaye Mahamat Mamadou Banadji.",
      "tags": [
       "Communication",
       "Archivage"
