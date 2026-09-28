@@ -598,86 +598,81 @@ UPDATES_SOURCE = [
     ('<p class="coord">Coordonnateur&nbsp;: Félix Mbété Nangmbatnan</p>', '<p class="coord">Coordonnateur&nbsp;: Dr Yaphete Madjiradé</p>'),
     ('<p class="coord">Coordinator: F&eacute;lix Mb&eacute;t&eacute; Nangmbatnan</p>', '<p class="coord">Coordinator: Dr Yaphete Madjirad&eacute;</p>'),
     ('"coord": "Coordonnateur : Félix Mbété Nangmbatnan",', '"coord": "Coordonnateur : Dr Yaphete Madjiradé",'),
-    # 28/09/2026 : tout le pôle IV (Numérique & innovation, thématiques 17, 18, 19) est confié à Bignéro Moïalbéi LE MADANG :
-    # neuf thématiques pourvues, dix à pourvoir.
-    ('<a class="coord-row" href="poles.html#transformation-numerique-services"><span class="coord-etat">&Agrave; pourvoir</span><span class="coord-nom">Transformation numérique &amp; services</span><span class="coord-pole">Numérique &amp; innovation</span><span class="coord-qui coord-qui--vide">&mdash;</span></a>',
-     '<a class="coord-row" href="poles.html#transformation-numerique-services"><span class="coord-etat coord-etat--ok">Pourvu</span><span class="coord-nom">Transformation numérique &amp; services</span><span class="coord-pole">Numérique &amp; innovation</span><span class="coord-qui">Bignéro Moïalbéi LE MADANG</span></a>'),
-    ('<span class="pole-status pole-status--vacant">À pourvoir</span>\n          <h3>Transformation numérique &amp; services</h3>\n          <p class="coord">Coordonnateur&nbsp;: à pourvoir</p>',
-     '<span class="pole-status pole-status--pourvu">Pourvu</span>\n          <h3>Transformation numérique &amp; services</h3>\n          <p class="coord">Coordonnateur&nbsp;: Bignéro Moïalbéi LE MADANG</p>'),
-    ('<span class="pole-status pole-status--vacant">À pourvoir</span><h3><a href="poles.html#transformation-numerique-services">Transformation numérique &amp; services</a></h3>',
-     '<span class="pole-status pole-status--pourvu">Pourvu</span><h3><a href="poles.html#transformation-numerique-services">Transformation numérique &amp; services</a></h3><p class="coord">Coordonnateur&nbsp;: Bignéro Moïalbéi LE MADANG</p>'),
-    ('<span class="pole-status pole-status--vacant">Open</span>\n          <h3>Digital Transformation &amp; Services</h3>\n          <p class="coord">Coordinator: to be appointed</p>',
-     '<span class="pole-status pole-status--pourvu">Coordinator in post</span>\n          <h3>Digital Transformation &amp; Services</h3>\n          <p class="coord">Coordinator: Bign&eacute;ro Mo&iuml;alb&eacute;i LE MADANG</p>'),
-    ('"name": "Transformation numérique & services",\n    "status": "open",\n    "coord": "Coordonnateur : à pourvoir",',
-     '"name": "Transformation numérique & services",\n    "status": "filled",\n    "coord": "Coordonnateur : Bignéro Moïalbéi LE MADANG",'),
-    ('<a class="coord-row" href="poles.html#intelligence-artificielle-donnees"><span class="coord-etat">&Agrave; pourvoir</span><span class="coord-nom">Intelligence artificielle &amp; données</span><span class="coord-pole">Numérique &amp; innovation</span><span class="coord-qui coord-qui--vide">&mdash;</span></a>',
-     '<a class="coord-row" href="poles.html#intelligence-artificielle-donnees"><span class="coord-etat coord-etat--ok">Pourvu</span><span class="coord-nom">Intelligence artificielle &amp; données</span><span class="coord-pole">Numérique &amp; innovation</span><span class="coord-qui">Bignéro Moïalbéi LE MADANG</span></a>'),
-    ('<span class="pole-status pole-status--vacant">À pourvoir</span>\n          <h3>Intelligence artificielle &amp; données</h3>\n          <p class="coord">Coordonnateur&nbsp;: à pourvoir</p>',
-     '<span class="pole-status pole-status--pourvu">Pourvu</span>\n          <h3>Intelligence artificielle &amp; données</h3>\n          <p class="coord">Coordonnateur&nbsp;: Bignéro Moïalbéi LE MADANG</p>'),
-    ('<span class="pole-status pole-status--vacant">À pourvoir</span><h3><a href="poles.html#intelligence-artificielle-donnees">Intelligence artificielle &amp; données</a></h3>',
-     '<span class="pole-status pole-status--pourvu">Pourvu</span><h3><a href="poles.html#intelligence-artificielle-donnees">Intelligence artificielle &amp; données</a></h3><p class="coord">Coordonnateur&nbsp;: Bignéro Moïalbéi LE MADANG</p>'),
-    ('<span class="pole-status pole-status--vacant">Open</span>\n          <h3>Artificial Intelligence &amp; Data</h3>\n          <p class="coord">Coordinator: to be appointed</p>',
-     '<span class="pole-status pole-status--pourvu">Coordinator in post</span>\n          <h3>Artificial Intelligence &amp; Data</h3>\n          <p class="coord">Coordinator: Bign&eacute;ro Mo&iuml;alb&eacute;i LE MADANG</p>'),
-    ('"name": "Intelligence artificielle & données",\n    "status": "open",\n    "coord": "Coordonnateur : à pourvoir",',
-     '"name": "Intelligence artificielle & données",\n    "status": "filled",\n    "coord": "Coordonnateur : Bignéro Moïalbéi LE MADANG",'),
-    ('<a class="coord-row" href="poles.html#competences-entrepreneuriat-numerique"><span class="coord-etat">&Agrave; pourvoir</span><span class="coord-nom">Compétences &amp; entrepreneuriat numérique</span><span class="coord-pole">Numérique &amp; innovation</span><span class="coord-qui coord-qui--vide">&mdash;</span></a>',
-     '<a class="coord-row" href="poles.html#competences-entrepreneuriat-numerique"><span class="coord-etat coord-etat--ok">Pourvu</span><span class="coord-nom">Compétences &amp; entrepreneuriat numérique</span><span class="coord-pole">Numérique &amp; innovation</span><span class="coord-qui">Bignéro Moïalbéi LE MADANG</span></a>'),
-    ('<span class="pole-status pole-status--vacant">À pourvoir</span>\n          <h3>Compétences &amp; entrepreneuriat numérique</h3>\n          <p class="coord">Coordonnateur&nbsp;: à pourvoir</p>',
-     '<span class="pole-status pole-status--pourvu">Pourvu</span>\n          <h3>Compétences &amp; entrepreneuriat numérique</h3>\n          <p class="coord">Coordonnateur&nbsp;: Bignéro Moïalbéi LE MADANG</p>'),
-    ('<span class="pole-status pole-status--vacant">À pourvoir</span><h3><a href="poles.html#competences-entrepreneuriat-numerique">Compétences &amp; entrepreneuriat numérique</a></h3>',
-     '<span class="pole-status pole-status--pourvu">Pourvu</span><h3><a href="poles.html#competences-entrepreneuriat-numerique">Compétences &amp; entrepreneuriat numérique</a></h3><p class="coord">Coordonnateur&nbsp;: Bignéro Moïalbéi LE MADANG</p>'),
-    ('<span class="pole-status pole-status--vacant">Open</span>\n          <h3>Digital Skills &amp; Entrepreneurship</h3>\n          <p class="coord">Coordinator: to be appointed</p>',
-     '<span class="pole-status pole-status--pourvu">Coordinator in post</span>\n          <h3>Digital Skills &amp; Entrepreneurship</h3>\n          <p class="coord">Coordinator: Bign&eacute;ro Mo&iuml;alb&eacute;i LE MADANG</p>'),
-    ('"name": "Compétences & entrepreneuriat numérique",\n    "status": "open",\n    "coord": "Coordonnateur : à pourvoir",',
-     '"name": "Compétences & entrepreneuriat numérique",\n    "status": "filled",\n    "coord": "Coordonnateur : Bignéro Moïalbéi LE MADANG",'),
-    # 28/09/2026 : Agriculture, élevage & sécurité alimentaire est confiée à Olivier Allaramadji Nomaye, ingénieur agroéconomiste.
-    ('<a class="coord-row" href="poles.html#agriculture-elevage-securite-alimentaire"><span class="coord-etat">&Agrave; pourvoir</span><span class="coord-nom">Agriculture, élevage &amp; sécurité alimentaire</span><span class="coord-pole">Développement humain &amp; moyens d’existence</span><span class="coord-qui coord-qui--vide">&mdash;</span></a>',
-     '<a class="coord-row" href="poles.html#agriculture-elevage-securite-alimentaire"><span class="coord-etat coord-etat--ok">Pourvu</span><span class="coord-nom">Agriculture, élevage &amp; sécurité alimentaire</span><span class="coord-pole">Développement humain &amp; moyens d’existence</span><span class="coord-qui">Olivier Allaramadji Nomaye, ingénieur agroéconomiste</span></a>'),
-    ('<span class="pole-status pole-status--vacant">À pourvoir</span>\n          <h3>Agriculture, élevage &amp; sécurité alimentaire</h3>\n          <p class="coord">Coordonnateur&nbsp;: à pourvoir</p>',
-     '<span class="pole-status pole-status--pourvu">Pourvu</span>\n          <h3>Agriculture, élevage &amp; sécurité alimentaire</h3>\n          <p class="coord">Coordonnateur&nbsp;: Olivier Allaramadji Nomaye, ingénieur agroéconomiste</p>'),
-    ('<span class="pole-status pole-status--vacant">À pourvoir</span><h3><a href="poles.html#agriculture-elevage-securite-alimentaire">Agriculture, élevage &amp; sécurité alimentaire</a></h3>',
-     '<span class="pole-status pole-status--pourvu">Pourvu</span><h3><a href="poles.html#agriculture-elevage-securite-alimentaire">Agriculture, élevage &amp; sécurité alimentaire</a></h3><p class="coord">Coordonnateur&nbsp;: Olivier Allaramadji Nomaye, ingénieur agroéconomiste</p>'),
-    ('<span class="pole-status pole-status--vacant">Open</span>\n          <h3>Agriculture, Livestock &amp; Food Security</h3>\n          <p class="coord">Coordinator: to be appointed</p>',
-     '<span class="pole-status pole-status--pourvu">Coordinator in post</span>\n          <h3>Agriculture, Livestock &amp; Food Security</h3>\n          <p class="coord">Coordinator: Olivier Allaramadji Nomaye, agricultural economist</p>'),
-    ('"name": "Agriculture, élevage & sécurité alimentaire",\n    "status": "open",\n    "coord": "Coordonnateur : à pourvoir",',
-     '"name": "Agriculture, élevage & sécurité alimentaire",\n    "status": "filled",\n    "coord": "Coordonnateur : Olivier Allaramadji Nomaye, ingénieur agroéconomiste",'),
+    # nominations de coordonnateurs : générées depuis NOMINATIONS (voir plus bas), ajoutées à l'exécution
     # la tuile « à pourvoir » pointait vers la thématique 04, désormais pourvue
     ('<a class="bento-tile" href="#agriculture-elevage-securite-alimentaire" aria-label="13 thématiques', '<a class="bento-tile" href="#entrepreneuriat-finance-inclusive" aria-label="13 thématiques'),
-    # comptes : dix pourvues, neuf à pourvoir
+    # suivi : Jeunesse & réussite a désormais sa coordination
+    ('<p>Ces quatre thématiques ont des problématiques documentées <strong>et</strong> un plaidoyer déjà publié&nbsp;: <a href="poles.html#eau-energie-connectivite">Eau, énergie &amp; connectivité</a> &middot; <a href="poles.html#desenclavement-urbanisation">Désenclavement &amp; urbanisation</a> &middot; <a href="poles.html#jeunesse-reussite">Jeunesse &amp; réussite</a> &middot; <a href="poles.html#gouvernance-plaidoyer">Gouvernance &amp; plaidoyer</a>. Il ne leur manque qu&rsquo;un coordonnateur ou une coordonnatrice pour suivre les dossiers et relancer les destinataires.</p>',
+     '<p>Ces trois thématiques ont des problématiques documentées <strong>et</strong> un plaidoyer déjà publié&nbsp;: <a href="poles.html#eau-energie-connectivite">Eau, énergie &amp; connectivité</a> &middot; <a href="poles.html#desenclavement-urbanisation">Désenclavement &amp; urbanisation</a> &middot; <a href="poles.html#gouvernance-plaidoyer">Gouvernance &amp; plaidoyer</a>. Il ne leur manque qu&rsquo;un coordonnateur ou une coordonnatrice pour suivre les dossiers et relancer les destinataires. <a href="poles.html#jeunesse-reussite">Jeunesse &amp; réussite</a>, qui était dans le même cas, a sa coordination depuis le 28 septembre 2026.</p>'),
+    # comptes : onze pourvues, huit à pourvoir
+    ('pas encore de coordonnateur pour quinze de ses dix-neuf th&eacute;matiques', 'pas encore de coordonnateur pour huit de ses dix-neuf th&eacute;matiques'),
     ('aria-label="6 coordonnateurs en poste — voir les thématiques pourvues">\n        <span class="bento-num">6</span>',
-     'aria-label="10 coordonnateurs en poste — voir les thématiques pourvues">\n        <span class="bento-num">10</span>'),
-    ('Santé &amp; prévention, Protection sociale &amp; inclusion</span>', 'Agriculture, élevage &amp; sécurité alimentaire, Santé &amp; prévention, Protection sociale &amp; inclusion, Transformation numérique &amp; services, Intelligence artificielle &amp; données, Compétences &amp; entrepreneuriat numérique</span>'),
+     'aria-label="11 coordonnateurs en poste — voir les thématiques pourvues">\n        <span class="bento-num">11</span>'),
+    ('Santé &amp; prévention, Protection sociale &amp; inclusion</span>', 'Agriculture, élevage &amp; sécurité alimentaire, Jeunesse &amp; réussite, Santé &amp; prévention, Protection sociale &amp; inclusion, Transformation numérique &amp; services, Intelligence artificielle &amp; données, Compétences &amp; entrepreneuriat numérique</span>'),
     ('aria-label="13 thématiques encore à pourvoir — se porter volontaire">\n        <span class="bento-num">13</span>',
-     'aria-label="9 thématiques encore à pourvoir — se porter volontaire">\n        <span class="bento-num">9</span>'),
-    ('<p>Treize des dix-neuf thématiques d&rsquo;ADEB LONODJI n&rsquo;ont pas encore de coordon', '<p>Neuf des dix-neuf thématiques d&rsquo;ADEB LONODJI n&rsquo;ont pas encore de coordon'),
-    ('<p>Treize thématiques attendent un coordonnateur ou une coordonnatrice.', '<p>Neuf thématiques attendent un coordonnateur ou une coordonnatrice.'),
-    ('<p>Dix-neuf thématiques, et treize attendent encore leur coordonnateur.</p>', '<p>Dix-neuf thématiques, et neuf attendent encore leur coordonnateur.</p>'),
-    ('pourvoir les treize thématiques encore sans coordonnateur', 'pourvoir les neuf thématiques encore sans coordonnateur'),
-    ('<p class="lede">Treize des dix-neuf thématiques d&rsquo;ADEB LONODJI cherchent encore un coordonnateur', '<p class="lede">Neuf des dix-neuf thématiques d&rsquo;ADEB LONODJI cherchent encore un coordonnateur'),
-    ('<p>Treize thématiques et deux cellules cherchent des coordonnateurs et des membres actifs.', '<p>Neuf thématiques et deux cellules cherchent des coordonnateurs et des membres actifs.'),
-    ('où vous seriez le plus utile. Treize attendent un coordonnateur."', 'où vous seriez le plus utile. Neuf attendent un coordonnateur."'),
-    ('<p class="lede">Dix-neuf th&eacute;matiques, dont treize sans coordonnateur.', '<p class="lede">Dix-neuf th&eacute;matiques, dont neuf sans coordonnateur.'),
-    ('<span class="hero-pill">Treize th&eacute;matiques &agrave; pourvoir</span>', '<span class="hero-pill">Neuf th&eacute;matiques &agrave; pourvoir</span>'),
+     'aria-label="8 thématiques encore à pourvoir — se porter volontaire">\n        <span class="bento-num">8</span>'),
+    ('<p>Treize des dix-neuf thématiques d&rsquo;ADEB LONODJI n&rsquo;ont pas encore de coordon', '<p>Huit des dix-neuf thématiques d&rsquo;ADEB LONODJI n&rsquo;ont pas encore de coordon'),
+    ('<p>Treize thématiques attendent un coordonnateur ou une coordonnatrice.', '<p>Huit thématiques attendent un coordonnateur ou une coordonnatrice.'),
+    ('<p>Dix-neuf thématiques, et treize attendent encore leur coordonnateur.</p>', '<p>Dix-neuf thématiques, et huit attendent encore leur coordonnateur.</p>'),
+    ('pourvoir les treize thématiques encore sans coordonnateur', 'pourvoir les huit thématiques encore sans coordonnateur'),
+    ('<p class="lede">Treize des dix-neuf thématiques d&rsquo;ADEB LONODJI cherchent encore un coordonnateur', '<p class="lede">Huit des dix-neuf thématiques d&rsquo;ADEB LONODJI cherchent encore un coordonnateur'),
+    ('<p>Treize thématiques et deux cellules cherchent des coordonnateurs et des membres actifs.', '<p>Huit thématiques et deux cellules cherchent des coordonnateurs et des membres actifs.'),
+    ('où vous seriez le plus utile. Treize attendent un coordonnateur."', 'où vous seriez le plus utile. Huit attendent un coordonnateur."'),
+    ('<p class="lede">Dix-neuf th&eacute;matiques, dont treize sans coordonnateur.', '<p class="lede">Dix-neuf th&eacute;matiques, dont huit sans coordonnateur.'),
+    ('<span class="hero-pill">Treize th&eacute;matiques &agrave; pourvoir</span>', '<span class="hero-pill">Huit th&eacute;matiques &agrave; pourvoir</span>'),
 ]
+# Nominations de coordonnateurs postérieures à l'export : une ligne par thématique.
+# (ancre, nom FR (html), nom EN (html), nom dans trouver.js, pôle FR (html), coordonnateur FR, coordonnateur EN (html), note FR, note EN)
+BIG = "Bignéro Moïalbéi LE MADANG"
+BIG_EN = "Bign&eacute;ro Mo&iuml;alb&eacute;i LE MADANG"
+NOTE_P4_FR = " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> les trois thématiques du pôle Numérique &amp; innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l&rsquo;association."
+NOTE_P4_EN = " <strong>Update, 28 September 2026:</strong> the three themes of the Digital &amp; Innovation pole are now coordinated by " + BIG_EN + ", the association&rsquo;s general facilitator."
+NOMINATIONS = [
+    ("transformation-numerique-services", "Transformation numérique &amp; services", "Digital Transformation &amp; Services", "Transformation numérique & services", "Numérique &amp; innovation", BIG, BIG_EN, NOTE_P4_FR, NOTE_P4_EN),
+    ("intelligence-artificielle-donnees", "Intelligence artificielle &amp; données", "Artificial Intelligence &amp; Data", "Intelligence artificielle & données", "Numérique &amp; innovation", BIG, BIG_EN, NOTE_P4_FR, NOTE_P4_EN),
+    ("competences-entrepreneuriat-numerique", "Compétences &amp; entrepreneuriat numérique", "Digital Skills &amp; Entrepreneurship", "Compétences & entrepreneuriat numérique", "Numérique &amp; innovation", BIG, BIG_EN, NOTE_P4_FR, NOTE_P4_EN),
+    ("agriculture-elevage-securite-alimentaire", "Agriculture, élevage &amp; sécurité alimentaire", "Agriculture, Livestock &amp; Food Security", "Agriculture, élevage & sécurité alimentaire", "Développement humain &amp; moyens d’existence",
+     "Olivier Allaramadji Nomaye, ingénieur agroéconomiste", "Olivier Allaramadji Nomaye, agricultural economist",
+     " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée à Olivier Allaramadji Nomaye, ingénieur agroéconomiste.",
+     " <strong>Update, 28 September 2026:</strong> the theme is now coordinated by Olivier Allaramadji Nomaye, agricultural economist."),
+    ("jeunesse-reussite", "Jeunesse &amp; réussite", "Youth &amp; Achievement", "Jeunesse & réussite", "Développement humain &amp; moyens d’existence",
+     "Bruno Kodjadoum NGARTEL", "Bruno Kodjadoum NGARTEL",
+     " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée à Bruno Kodjadoum NGARTEL.",
+     " <strong>Update, 28 September 2026:</strong> the theme is now coordinated by Bruno Kodjadoum NGARTEL."),
+]
+
+
+def nominations_source() -> list[tuple[str, str]]:
+    """Remplacements de source pour chaque nomination : tableau, carte, suivi, page anglaise, trouver.js."""
+    out = []
+    for anc, fr, en, js, pole, qui, qui_en, _nf, _ne in NOMINATIONS:
+        out += [
+            (f'<a class="coord-row" href="poles.html#{anc}"><span class="coord-etat">&Agrave; pourvoir</span><span class="coord-nom">{fr}</span><span class="coord-pole">{pole}</span><span class="coord-qui coord-qui--vide">&mdash;</span></a>',
+             f'<a class="coord-row" href="poles.html#{anc}"><span class="coord-etat coord-etat--ok">Pourvu</span><span class="coord-nom">{fr}</span><span class="coord-pole">{pole}</span><span class="coord-qui">{qui}</span></a>'),
+            (f'<span class="pole-status pole-status--vacant">À pourvoir</span>\n          <h3>{fr}</h3>\n          <p class="coord">Coordonnateur&nbsp;: à pourvoir</p>',
+             f'<span class="pole-status pole-status--pourvu">Pourvu</span>\n          <h3>{fr}</h3>\n          <p class="coord">Coordonnateur&nbsp;: {qui}</p>'),
+            (f'<span class="pole-status pole-status--vacant">À pourvoir</span><h3><a href="poles.html#{anc}">{fr}</a></h3>',
+             f'<span class="pole-status pole-status--pourvu">Pourvu</span><h3><a href="poles.html#{anc}">{fr}</a></h3><p class="coord">Coordonnateur&nbsp;: {qui}</p>'),
+            (f'<span class="pole-status pole-status--vacant">Open</span>\n          <h3>{en}</h3>\n          <p class="coord">Coordinator: to be appointed</p>',
+             f'<span class="pole-status pole-status--pourvu">Coordinator in post</span>\n          <h3>{en}</h3>\n          <p class="coord">Coordinator: {qui_en}</p>'),
+            (f'"name": "{js}",\n    "status": "open",\n    "coord": "Coordonnateur : à pourvoir",',
+             f'"name": "{js}",\n    "status": "filled",\n    "coord": "Coordonnateur : {qui}",'),
+        ]
+    return out
+
+
 NOTES_COORDINATION = [
     # (marqueur dans la source, note ajoutée à la fin de la description de la carte, fichiers concernés)
     ('<p class="coord">Coordonnateur&nbsp;: Dr Yaphete Madjiradé</p>', " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée au Dr Yaphete Madjiradé, qui succède à Félix Mbété Nangmbatnan.", ("poles.html",)),
     ('<p class="coord">Coordinator: Dr Yaphete Madjirad&eacute;</p>', " <strong>Update, 28 September 2026:</strong> the theme is now coordinated by Dr Yaphete Madjirad&eacute;, who succeeds F&eacute;lix Mb&eacute;t&eacute; Nangmbatnan.", ("themes.html",)),
-    ('<h3>Transformation numérique &amp; services</h3>\n          <p class="coord">Coordonnateur&nbsp;: Bignéro Moïalbéi LE MADANG</p>', " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> les trois thématiques du pôle Numérique &amp; innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l&rsquo;association.", ("poles.html",)),
-    ('<h3>Digital Transformation &amp; Services</h3>\n          <p class="coord">Coordinator: Bign&eacute;ro Mo&iuml;alb&eacute;i LE MADANG</p>', " <strong>Update, 28 September 2026:</strong> the three themes of the Digital &amp; Innovation pole are now coordinated by Bign&eacute;ro Mo&iuml;alb&eacute;i LE MADANG, the association&rsquo;s general facilitator.", ("themes.html",)),
-    ('<h3>Intelligence artificielle &amp; données</h3>\n          <p class="coord">Coordonnateur&nbsp;: Bignéro Moïalbéi LE MADANG</p>', " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> les trois thématiques du pôle Numérique &amp; innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l&rsquo;association.", ("poles.html",)),
-    ('<h3>Artificial Intelligence &amp; Data</h3>\n          <p class="coord">Coordinator: Bign&eacute;ro Mo&iuml;alb&eacute;i LE MADANG</p>', " <strong>Update, 28 September 2026:</strong> the three themes of the Digital &amp; Innovation pole are now coordinated by Bign&eacute;ro Mo&iuml;alb&eacute;i LE MADANG, the association&rsquo;s general facilitator.", ("themes.html",)),
-    ('<h3>Agriculture, élevage &amp; sécurité alimentaire</h3>\n          <p class="coord">Coordonnateur&nbsp;: Olivier Allaramadji Nomaye, ingénieur agroéconomiste</p>', " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée à Olivier Allaramadji Nomaye, ingénieur agroéconomiste.", ("poles.html",)),
-    ('<h3>Agriculture, Livestock &amp; Food Security</h3>\n          <p class="coord">Coordinator: Olivier Allaramadji Nomaye, agricultural economist</p>', " <strong>Update, 28 September 2026:</strong> the theme is now coordinated by Olivier Allaramadji Nomaye, agricultural economist.", ("themes.html",)),
-    ('<h3>Compétences &amp; entrepreneuriat numérique</h3>\n          <p class="coord">Coordonnateur&nbsp;: Bignéro Moïalbéi LE MADANG</p>', " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> les trois thématiques du pôle Numérique &amp; innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l&rsquo;association.", ("poles.html",)),
-    ('<h3>Digital Skills &amp; Entrepreneurship</h3>\n          <p class="coord">Coordinator: Bign&eacute;ro Mo&iuml;alb&eacute;i LE MADANG</p>', " <strong>Update, 28 September 2026:</strong> the three themes of the Digital &amp; Innovation pole are now coordinated by Bign&eacute;ro Mo&iuml;alb&eacute;i LE MADANG, the association&rsquo;s general facilitator.", ("themes.html",)),
-]
+] + [(f'<h3>{fr}</h3>\n          <p class="coord">Coordonnateur&nbsp;: {qui}</p>', nf, ("poles.html",)) for _a, fr, _en, _js, _p, qui, _qe, nf, _ne in NOMINATIONS] \
+  + [(f'<h3>{en}</h3>\n          <p class="coord">Coordinator: {qui_en}</p>', ne, ("themes.html",)) for _a, _fr, en, _js, _p, _q, qui_en, _nf, ne in NOMINATIONS]
 
 
 def lire_source(path: Path) -> str:
     """Lit un fichier de l'ancien site en y appliquant les mises à jour de source."""
     html = path.read_text(encoding="utf-8")
-    for old, new in UPDATES_SOURCE:
+    for old, new in UPDATES_SOURCE + nominations_source():
         html = html.replace(old, new)
     # note datée à la fin de la description de la carte concernée (poles.html, en/themes.html)
     for coord, note, fichiers in NOTES_COORDINATION:
