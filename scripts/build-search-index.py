@@ -109,7 +109,7 @@ PAGES_SITE.append({"t": "Observatoire du Mandoul Occidental", "r": "/observatoir
 PAGES_SITE.append({"t": "Espace presse et partenaires", "r": "/presse", "k": "Page",
      "d": "ADEB LONODJI en cinq lignes, les chiffres datés, six dates, le bureau, les communiqués, les logos et leurs règles, le dossier de présentation, le livre blanc, et à qui écrire.",
      "x": "presse journalistes partenaires bailleurs médias communiqué citation en bref chiffres dates 1986 1995 2000 2003 2026 bureau président contact logo pictogramme SVG PNG dossier de présentation livre blanc droit de réponse exactitude protection des personnes"})
-PAGES_SITE.append({"t": "Identité visuelle du projet ODEB LONODJI : le logo « Les Pas vers l’Avenir »", "r": "/odeb/identite", "k": "Page",
+PAGES_SITE.append({"t": "Identité visuelle : le logo « Les Pas vers l’Avenir », adopté le 28 septembre 2026", "r": "/odeb/identite", "k": "Page",
      "d": "Trois empreintes — les ancêtres, la génération actuelle, les générations futures — vers un soleil levant : le logo du projet, ses versions, ses couleurs, ses règles, le kit à télécharger et le papier à en-tête.",
      "x": "logo ODEB identité visuelle charte graphique emblème empreintes pas générations soleil levant verre devise sur les traces de nos ancêtres bâtissons notre avenir couleurs vert profond acacia doré polices DM Sans Playfair kit ZIP SVG PNG papier à en-tête planche imprimeur règles zone de protection tailles minimales monochrome réserve blanche"})
 PAGES_SITE.append({"t": "The ODEB LONODJI project — Vision 2030 (in English)", "r": "/en/odeb", "k": "In English",
@@ -136,6 +136,14 @@ for pole in idx["structure"]["poles"] + ([idx["structure"]["cellules"]] if idx["
             "d": (("Coordination : " + t["coordinator"] + ". ") if t["filled"] else "Coordination à pourvoir. ") + " ".join(t["tags"]),
             "x": plain(t["description"])[:MAX_TEXT],
         })
+
+# directions de pôle (rang de chef de projet), décision du 28/09/2026
+for pole in idx["structure"]["poles"]:
+    d = pole.get("direction")
+    if d:
+        entries.append({"t": f"Direction du pôle {pole['roman']} — {pole['name']}", "r": f"/programmes#{pole['id']}", "k": "Direction de pôle",
+                        "d": (f"Direction : {d['name']}. " if d["filled"] else "Direction à pourvoir. ") + f"{d['label']}, {d['rang']} : anime les coordonnateurs des thématiques du pôle, tient le plan d’action et le calendrier, rend compte au bureau.",
+                        "x": "directeur de pôle directrice direction rang de chef de projet project manager diriger un pôle candidater " + " ".join(t["name"] for t in pole["items"])})
 
 for p in idx["plaidoyers"]:
     entries.append({"t": p["title"], "r": f"/actions#{p['id']}", "k": "Plaidoyer", "d": p["demand"], "x": f"{p['theme']} {p['recipients']} {p['status']} {p['published']}"})

@@ -25,16 +25,20 @@ export const ODEB = {
   devise: "Sur les traces de nos ancêtres, bâtissons notre avenir.",
 };
 
-/* L'identité visuelle du projet, « Les Pas vers l'Avenir », retenue le 28
-   septembre 2026 : trois empreintes — les ancêtres, la génération actuelle,
-   les générations futures — qui avancent vers un soleil levant. Les fichiers
-   sont produits par scripts/build-identite-odeb.py dans public/odeb/identite/
-   (dessins : design/odeb/). */
+/* L'identité visuelle « Les Pas vers l'Avenir », adoptée le 28 septembre 2026
+   par l'association pour elle-même et pour son projet ODEB : trois empreintes —
+   les ancêtres, la génération actuelle, les générations futures — qui avancent
+   vers un soleil levant. Un emblème, deux noms (« ADEB LONODJI », « ODEB
+   LONODJI »). L'emblème est aussi le logo du site (en-tête, pied, icônes,
+   images de partage). Les fichiers sont produits par
+   scripts/build-identite-odeb.py dans public/odeb/identite/ (dessins : design/odeb/). */
 const ID = "/odeb/identite";
 export const IDENTITE = {
   nom: "Les Pas vers l’Avenir",
   retenue: "2026-09-28",
   retenueLabel: "28 septembre 2026",
+  /* adoptée par l'association comme son logo, le même jour */
+  adopteeLabel: "28 septembre 2026",
   page: "/odeb/identite",
   /* emblèmes : verre sur fond, verre sans fond (sur fond sombre ou photo), verre clair, à plat */
   embleme: `${ID}/odeb-lonodji-embleme.svg`,
@@ -51,6 +55,14 @@ export const IDENTITE = {
   horizontalClairSuperposable: `${ID}/odeb-lonodji-logo-horizontal-clair-superposable.svg`,
   vertical: `${ID}/odeb-lonodji-logo-vertical.svg`,
   verticalClair: `${ID}/odeb-lonodji-logo-vertical-clair.svg`,
+  /* les mêmes, au nom de l'association */
+  adeb: {
+    horizontal: `${ID}/adeb-lonodji-logo-horizontal.svg`, horizontalClair: `${ID}/adeb-lonodji-logo-horizontal-clair.svg`,
+    horizontalSuperposable: `${ID}/adeb-lonodji-logo-horizontal-superposable.svg`, horizontalClairSuperposable: `${ID}/adeb-lonodji-logo-horizontal-clair-superposable.svg`,
+    vertical: `${ID}/adeb-lonodji-logo-vertical.svg`, verticalClair: `${ID}/adeb-lonodji-logo-vertical-clair.svg`,
+    png: { horizontal: `${ID}/adeb-lonodji-logo-horizontal.png`, horizontalClair: `${ID}/adeb-lonodji-logo-horizontal-clair.png`, vertical: `${ID}/adeb-lonodji-logo-vertical.png`, verticalClair: `${ID}/adeb-lonodji-logo-vertical-clair.png` },
+    enTeteDocx: `${ID}/papier-en-tete-adeb-lonodji.docx`, enTetePdf: `${ID}/papier-en-tete-adeb-lonodji.pdf`,
+  },
   png: { embleme2048: `${ID}/odeb-lonodji-embleme-2048.png`, embleme1024: `${ID}/odeb-lonodji-embleme-1024.png`, embleme512: `${ID}/odeb-lonodji-embleme-512.png`, superposable1024: `${ID}/odeb-lonodji-embleme-superposable-1024.png`, clair1024: `${ID}/odeb-lonodji-embleme-clair-1024.png`, plat1024: `${ID}/odeb-lonodji-embleme-plat-1024.png`, horizontal: `${ID}/odeb-lonodji-logo-horizontal.png`, horizontalClair: `${ID}/odeb-lonodji-logo-horizontal-clair.png`, vertical: `${ID}/odeb-lonodji-logo-vertical.png` },
   /* documents */
   kit: `${ID}/kit-logo-odeb-lonodji.zip`,
@@ -82,7 +94,7 @@ export const MENU_ODEB: { titre: string; liens: (Lien & { note?: string })[] }[]
       { label: "Pourquoi créer l’ODEB ?", href: "/odeb#pourquoi", note: "D’une association à un outil permanent" },
       { label: "Livre blanc", href: "/odeb/livre-blanc", note: "Le document fondateur, version de travail" },
       { label: "Feuille de route 2026-2030", href: "/odeb/feuille-de-route", note: "Trois phases, ce qui est fait, ce qui reste" },
-      { label: "Identité visuelle", href: "/odeb/identite", note: "Le logo « Les Pas vers l’Avenir », ses règles, le kit" },
+      { label: "Identité visuelle", href: "/odeb/identite", note: "Le logo « Les Pas vers l’Avenir », commun à l’association et au projet" },
       { label: "The ODEB project, in English", href: "/en/odeb", note: "A summary for the diaspora and partners" },
     ],
   },

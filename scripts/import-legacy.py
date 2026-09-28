@@ -315,6 +315,15 @@ def parse_page(path: Path):
 ROMAN = {"pole-1": "I", "pole-2": "II", "pole-3": "III", "pole-4": "IV"}
 
 
+# Direction des pôles (décision du 28/09/2026) : chaque pôle est dirigé par un directeur
+# ou une directrice de pôle, au rang de chef de projet (project manager), qui anime les
+# coordonnateurs de ses thématiques, tient le plan d'action et le calendrier, et rend
+# compte au bureau. Nommer quelqu'un : DIRECTIONS_POLES["pole-2"] = "Prénom Nom, qualité".
+DIRECTIONS_POLES: dict[str, str | None] = {"pole-1": None, "pole-2": None, "pole-3": None, "pole-4": None}
+DIRECTION_LABEL = "Directeur ou directrice de pôle"
+DIRECTION_RANG = "rang de chef de projet"
+
+
 def structure(soup_poles: BeautifulSoup, base_dir="") -> dict:
     main = soup_poles.find("main")
     poles, cellules = [], []
@@ -376,6 +385,9 @@ def structure(soup_poles: BeautifulSoup, base_dir="") -> dict:
             })
         entry = {"id": sec.get("id", ""), "roman": ROMAN.get(sec.get("id", ""), ""), "eyebrow": eyebrow,
                  "name": text(h2), "intro": intro, "items": cards}
+        if sec.get("id", "") in DIRECTIONS_POLES:
+            qui = DIRECTIONS_POLES[sec.get("id", "")]
+            entry["direction"] = {"label": DIRECTION_LABEL, "rang": DIRECTION_RANG, "name": qui or "à pourvoir", "filled": bool(qui)}
         if sec.get("id") == "cellules":
             cellules = entry
         else:
@@ -561,6 +573,9 @@ def forms_html(all_forms: dict) -> str:
 # Mises à jour éditoriales postérieures au 24/09/2026 (faits devenus inexacts)
 # ----------------------------------------------------------------------------
 UPDATES = [
+    # 28/09/2026 au soir : nouveau logo « Les Pas vers l'Avenir » ; la page d'identité précédente reçoit une note datée.
+    ('<div class="eyebrow">Le logo</div>\n<h2>Un cercle, deux pas, deux mains</h2>',
+     '<p class="form-note"><strong>Mise à jour du 28 septembre 2026\u00a0:</strong> l’association a adopté un nouveau logo, «\u00a0Les Pas vers l’Avenir\u00a0» — trois empreintes qui avancent vers un soleil levant —, commun à l’association et à son projet ODEB LONODJI\u00a0: voir <a href="/odeb/identite">l’identité visuelle</a>. Cette page décrit l’identité précédente (logo bleu, couleurs, signes), qui reste celle des documents publiés avant cette date.</p>\n<div class="eyebrow">Le logo</div>\n<h2>Un cercle, deux pas, deux mains</h2>'),
     # Le domaine lonodji.org est en service depuis le 27/09/2026 ; les adresses e-mail ne le sont pas encore.
     ("Le nom de domaine lonodji.org, que nous annoncions, n’est pas enregistré à ce jour\u00a0: les adresses qui y étaient rattachées ne reçoivent rien. Nous publierons ici les nouvelles adresses dès qu’elles fonctionneront.",
      "Le nom de domaine lonodji.org est en service depuis le 27 septembre 2026, mais aucune adresse électronique n’y est encore rattachée. Nous publierons ici les adresses dès qu’elles fonctionneront."),
@@ -611,6 +626,21 @@ UPDATES = [
 # Mises à jour de la source AVANT analyse (structure, scripts et pages) : décisions de
 # l'association postérieures à l'export de l'ancien site, datées dans le texte.
 UPDATES_SOURCE = [
+    # 28/09/2026 : les pôles ont des directeurs (rang de chef de projet) ; le formulaire de contact les propose.
+    ('<option data-objet="thematique">Rejoindre une thématique, ou la coordonner</option>',
+     '<option data-objet="thematique">Rejoindre une thématique, la coordonner, ou diriger un pôle</option>'),
+    ('<legend>Si vous voulez rejoindre une thématique</legend>',
+     '<legend>Si vous voulez rejoindre une thématique ou diriger un pôle</legend>'),
+    ('<label for="pole">Thématique</label>\n              <select id="pole" name="pole">\n                <option value="">Choisir une thématique (optionnel)</option>',
+     '<label for="pole">Thématique, ou direction d’un pôle</label>\n              <select id="pole" name="pole">\n                <option value="">Choisir une thématique ou un pôle (optionnel)</option>\n'
+     '                <optgroup label="Direction d’un pôle — rang de chef de projet">\n'
+     '                  <option>Direction du pôle I — Mémoire, culture &amp; patrimoine</option>\n'
+     '                  <option>Direction du pôle II — Développement humain &amp; moyens d’existence</option>\n'
+     '                  <option>Direction du pôle III — Gouvernance, paix &amp; plaidoyer</option>\n'
+     '                  <option>Direction du pôle IV — Numérique &amp; innovation</option>\n'
+     '                </optgroup>'),
+    ('<label for="coordo">Je candidate pour être coordonnateur de cette thématique</label>',
+     '<label for="coordo">Je candidate pour coordonner cette thématique, ou pour diriger ce pôle</label>'),
     # 28/09/2026 : la coordination de Culture & patrimoine vivant est confiée au Dr Yaphete Madjiradé.
     ('<span class="coord-qui">Félix Mbété Nangmbatnan</span>', '<span class="coord-qui">Dr Yaphete Madjiradé</span>'),
     ('<p class="coord">Coordonnateur&nbsp;: Félix Mbété Nangmbatnan</p>', '<p class="coord">Coordonnateur&nbsp;: Dr Yaphete Madjiradé</p>'),
@@ -622,7 +652,7 @@ UPDATES_SOURCE = [
     # 28/09/2026 : la page anglaise renvoie au projet ODEB LONODJI et ne parle plus de « thirteen themes still open »
     ('      <div class="eyebrow">How to help</div>\n      <h2>Join, give, share your skills, spread the word</h2>\n',
      '      <div class="eyebrow">Vision 2030</div>\n      <h2>The ODEB LONODJI project</h2>\n      <p>On 28 September 2026, forty years after its founding reflections of 1986, the association launched the ODEB LONODJI reflection: a project to give the Bedjond country a permanent organisation for research, documentation, territorial development, innovation, heritage and diaspora mobilisation by 2030. Six missions, five programmes, a roadmap and a white paper (working draft, in French). <a href="odeb.html">Read the summary in English &rarr;</a></p>\n      <div class="eyebrow">How to help</div>\n      <h2>Join, give, share your skills, spread the word</h2>\n'),
-    ('coordinate one of the thirteen themes still open,', 'coordinate one of the themes still open (see the list on the themes page),'),
+    ('coordinate one of the thirteen themes still open,', 'coordinate one of the themes still open (see the list on the themes page), lead one of the four poles (a project-manager role, all four open since 28 September 2026),'),
     # 28/09/2026 : chiffres figés de l'ancien site devenus inexacts (inspection de cohérence)
     ('The full site, the journal (29 articles), the research base', 'The full site, the journal, the research base'),
     ('        <span class="bento-num">38</span>\n        <span class="bento-label">références réunies à ce jour</span>', '        <span class="bento-num">40</span>\n        <span class="bento-label">références réunies à ce jour</span>'),

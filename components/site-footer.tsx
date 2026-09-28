@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { IDENTITE } from "../lib/odeb";
 import { ORG } from "../lib/content";
 import { PIED } from "../lib/navigation";
 import NewsletterForm from "./newsletter-form";
@@ -11,7 +12,7 @@ export default function SiteFooter({ miseAJour }: { miseAJour?: string }) {
     <footer className="site-footer">
       <div className="footer-top">
         <div className="footer-brand-block">
-          <div className="footer-brand"><span className="footer-mark">A</span><strong>ADEB <b>LONODJI</b></strong></div>
+          <div className="footer-brand"><img className="footer-mark footer-mark--embleme" src={IDENTITE.embleme} alt="" width={30} height={30} loading="lazy" decoding="async" /><strong>ADEB <b>LONODJI</b></strong></div>
           <p className="footer-tagline">{ORG.tagline}</p>
           <p className="footer-place">{ORG.fullName}<br />{ORG.place}</p>
           <div className="footer-contact">

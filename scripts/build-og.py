@@ -21,7 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BUILT = ROOT / ".next" / "server" / "app"
 OUT = ROOT / "public" / "og"
-LOGO = ROOT / "public" / "identite" / "logo-adeb-lonodji-1024.png"
+LOGO = ROOT / "public" / "odeb" / "identite" / "odeb-lonodji-embleme-1024.png"  # logo adopté le 28/09/2026 (rond via border-radius)
 ODEB_EMBLEME = ROOT / "public" / "odeb" / "identite" / "odeb-lonodji-embleme-superposable-1024.png"  # pages du projet ODEB
 SKIP = {"/_global-error", "/_not-found", "/hors-ligne", "/en"}  # /en redirige vers /en/index
 

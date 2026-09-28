@@ -8,9 +8,10 @@ export default function ContactPrefill() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const theme = params.get("theme");
+    const direction = (params.get("direction") || "").toUpperCase();  // ?direction=I|II|III|IV : la direction d'un pôle
     const coordo = params.get("coordo");
     const objetDemande = (params.get("objet") || "").toLowerCase();
-    if (!theme && !coordo && !objetDemande) return;
+    if (!theme && !direction && !coordo && !objetDemande) return;
     const form = document.querySelector<HTMLFormElement>("form[name='contact'], form#formulaire-contact");
     if (!form) return;
     const objet = form.querySelector<HTMLSelectElement>("select[name='objet']");
@@ -26,6 +27,10 @@ export default function ContactPrefill() {
         const t = o.text.trim().toLowerCase();
         return /^\d{2}\./.test(t) ? t.startsWith(key.padStart(2, "0") + ".") : t.startsWith(key);
       });
+      if (opt) pole.value = opt.value || opt.text;
+    }
+    if (pole && direction) {
+      const opt = Array.from(pole.options).find((o) => o.text.trim().toLowerCase().startsWith(`direction du pôle ${direction.toLowerCase()} `));
       if (opt) pole.value = opt.value || opt.text;
     }
     const cb = form.querySelector<HTMLInputElement>("input[name='candidature_coordo']");

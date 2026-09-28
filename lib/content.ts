@@ -72,7 +72,8 @@ export type Thematique = {
   odd: OddChip[];
   links: { label: string; href: string }[];
 };
-export type Pole = { id: string; roman: string; eyebrow: string; name: string; intro: string; items: Thematique[] };
+export type Direction = { label: string; rang: string; name: string; filled: boolean };
+export type Pole = { id: string; roman: string; eyebrow: string; name: string; intro: string; items: Thematique[]; direction?: Direction };
 export type Plaidoyer = {
   id: string; title: string; href: string; theme: string; themeHref: string; status: string; demand: string;
   recipients: string; published: string; sent: string; answer: string; pdf: string;
@@ -138,6 +139,8 @@ export function pickSections(page: LegacyPage, opts: { only?: string[]; exclude?
 
 export const thematiqueCount = (idx: ContentIndex) => idx.structure.poles.reduce((n, p) => n + p.items.length, 0);
 export const filledCount = (idx: ContentIndex) => idx.structure.poles.reduce((n, p) => n + p.items.filter((t) => t.filled).length, 0);
+/* Directions de pôle (rang de chef de projet) : pourvues / total. */
+export const directionsCount = (idx: ContentIndex) => ({ total: idx.structure.poles.filter((p) => p.direction).length, pourvues: idx.structure.poles.filter((p) => p.direction?.filled).length });
 /* Nombres en lettres (0 à 20), pour les phrases qui comptent les thématiques. */
 const LETTRES = ["zéro", "une", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf", "vingt"];
 export const enLettres = (n: number, majuscule = false) => { const t = LETTRES[n] ?? String(n); return majuscule ? t.charAt(0).toUpperCase() + t.slice(1) : t; };

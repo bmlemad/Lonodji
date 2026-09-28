@@ -46,11 +46,12 @@ export default function Participer() {
       </section>
 
       <section className="hub-section" id="thematiques">
-        <SectionHead eyebrow="Avant de vous lancer" title="Choisissez un pôle," em="puis une thématique." text={`Dix-neuf thématiques, ${enLettres(vacantes)} sans coordonnateur. La page Nos actions les détaille ; ce raccourci vous oriente en quelques questions.`} />
+        <SectionHead eyebrow="Avant de vous lancer" title="Choisissez un pôle," em="puis une thématique." text={`Dix-neuf thématiques, ${enLettres(vacantes)} sans coordonnateur ; et les quatre pôles cherchent leur directeur ou directrice, au rang de chef de projet. La page Nos actions les détaille ; ce raccourci vous oriente en quelques questions.`} />
         <div className="legacy"><LegacySections sections={[choisir, avant]} /></div>
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
           <Link className="button primary" href="/dossiers/trouver-ma-thematique">Trouver ma thématique en trois questions <span aria-hidden="true">↗</span></Link>
           <Link className="button secondary" href="/programmes#thematiques">Voir les dix-neuf thématiques <span aria-hidden="true">→</span></Link>
+          <Link className="text-link" href="/programmes#diriger-un-pole">Diriger un pôle <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/diaspora">Diaspora : inscrire mes compétences <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/temoignages">Raconter Bédjondo : témoignages &amp; photos <span aria-hidden="true">→</span></Link>
         </div>

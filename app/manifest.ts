@@ -22,9 +22,9 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ["education", "social", "news"],
     prefer_related_applications: false,
     icons: [
-      { src: "/app/icone-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
-      { src: "/app/icone-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
-      { src: "/app/icone-512-maskable.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+      { src: "/icones/icone-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/icones/icone-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/icones/icone-512-maskable.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
     shortcuts: [
       { name: "Retrouver son village", short_name: "Villages", url: "/villages", icons: [{ src: "/icones/raccourci-villages.png", sizes: "96x96", type: "image/png" }] },

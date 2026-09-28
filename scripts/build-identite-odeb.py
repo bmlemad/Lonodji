@@ -49,6 +49,12 @@ og = charger("build_og", ROOT / "scripts" / "build-og.py")
 DEVISE = "« Sur les traces de nos ancêtres, bâtissons notre avenir. »"
 SOUS_TITRE = ("ORGANISATION POUR LE DÉVELOPPEMENT", "ET L’ÉMERGENCE BEDJONDE")
 TEL = "+235 66 29 94 03"
+# Un emblème, deux noms : l'association (logo adopté le 28/09/2026) et son projet.
+MARQUES = {
+    "odeb": {"sigle": "ODEB", "nom": "LONODJI", "sous_titre": SOUS_TITRE, "devise": DEVISE},
+    "adeb": {"sigle": "ADEB", "nom": "LONODJI", "sous_titre": ("ASSOCIATION DE DÉVELOPPEMENT", "ET D’ENTRAIDE DE BÉDJONDO"), "devise": "Courage · Discipline · Héritage"},
+}
+MARQUE = MARQUES["odeb"]
 
 
 # ---------------------------------------------------------------- textes en tracés
@@ -132,31 +138,45 @@ def texte_marque_traces(x: float, y: float, ancre: str, theme: str, taille: floa
     st = taille * .2
     out = []
     # « ODEB » gras puis « LONODJI » fin, en un seul bloc centré ou aligné
-    d1, w1 = TRACEUR.tracer("ODEB ", "dm", taille, 800, taille * .04)
-    d2, w2 = TRACEUR.tracer("LONODJI", "dm", taille, 250, taille * .06)
+    d1, w1 = TRACEUR.tracer(MARQUE["sigle"] + " ", "dm", taille, 800, taille * .04)
+    d2, w2 = TRACEUR.tracer(MARQUE["nom"], "dm", taille, 250, taille * .06)
     w = w1 + w2
     dx = x - w / 2 if ancre == "middle" else x
     out.append(f'<g transform="translate({dx:.2f},{y:.2f})" fill="{ink}"><path d="{d1}"/><path transform="translate({w1:.2f},0)" d="{d2}"/></g>')
-    out.append(TRACEUR.texte(SOUS_TITRE[0], "dm", st, 500, x + (0 if ancre == "middle" else 2), y + st * 2.1, doux, ancre, st * .3))
-    out.append(TRACEUR.texte(SOUS_TITRE[1], "dm", st, 500, x + (0 if ancre == "middle" else 2), y + st * 3.5, doux, ancre, st * .3))
+    out.append(TRACEUR.texte(MARQUE["sous_titre"][0], "dm", st, 500, x + (0 if ancre == "middle" else 2), y + st * 2.1, doux, ancre, st * .3))
+    out.append(TRACEUR.texte(MARQUE["sous_titre"][1], "dm", st, 500, x + (0 if ancre == "middle" else 2), y + st * 3.5, doux, ancre, st * .3))
     ly = y + st * 4.7
     if ancre == "middle":
         out.append(f'<line x1="{x - 46}" y1="{ly:.0f}" x2="{x + 46}" y2="{ly:.0f}" stroke="{verre.GOLD}" stroke-width="4" stroke-linecap="round"/>')
     else:
         out.append(f'<line x1="{x + 2}" y1="{ly:.0f}" x2="{x + 96}" y2="{ly:.0f}" stroke="{verre.GOLD}" stroke-width="4" stroke-linecap="round"/>')
-    if empile:
-        a, b = DEVISE.split(", ")
+    devise = MARQUE["devise"]
+    if empile and ", " in devise:
+        a, b = devise.split(", ", 1)
         out.append(TRACEUR.texte(a + ",", "playfair", devise_taille, 400, x, ly + devise_taille * 1.7, dev, ancre, 0, 12))
         out.append(TRACEUR.texte(b, "playfair", devise_taille, 400, x, ly + devise_taille * 3.0, dev, ancre, 0, 12))
+    elif empile:
+        out.append(TRACEUR.texte(devise, "playfair", devise_taille, 400, x, ly + devise_taille * 2.2, dev, ancre, 0, 12))
     else:
-        out.append(TRACEUR.texte(DEVISE, "playfair", devise_taille, 400, x + 2, ly + devise_taille * 1.7, dev, "start", 0, 12))
+        out.append(TRACEUR.texte(devise, "playfair", devise_taille, 400, x + 2, ly + devise_taille * 1.7, dev, "start", 0, 12))
     return "".join(out)
 
 
 # ---------------------------------------------------------------- fichiers
 def fichiers_svg() -> dict[str, str]:
+    global MARQUE
     verre.texte_marque = texte_marque_traces  # svg_horizontal / svg_vertical appellent texte_marque par son nom
-    return {
+    MARQUE = MARQUES["adeb"]
+    adeb = {
+        "adeb-lonodji-logo-horizontal.svg": verre.svg_horizontal("sombre"),
+        "adeb-lonodji-logo-horizontal-clair.svg": verre.svg_horizontal("clair"),
+        "adeb-lonodji-logo-horizontal-superposable.svg": verre.svg_horizontal("sombre", False),
+        "adeb-lonodji-logo-horizontal-clair-superposable.svg": verre.svg_horizontal("clair", False),
+        "adeb-lonodji-logo-vertical.svg": verre.svg_vertical("sombre"),
+        "adeb-lonodji-logo-vertical-clair.svg": verre.svg_vertical("clair"),
+    }
+    MARQUE = MARQUES["odeb"]
+    return adeb | {
         "odeb-lonodji-embleme.svg": verre.svg_embleme("sombre", True),
         "odeb-lonodji-embleme-superposable.svg": verre.svg_embleme("sombre", False),
         "odeb-lonodji-embleme-clair.svg": verre.svg_embleme("clair", True),
@@ -173,8 +193,12 @@ def fichiers_svg() -> dict[str, str]:
     }
 
 
-LISEZMOI = """ODEB LONODJI — identité visuelle « Les Pas vers l'Avenir »
+LISEZMOI = """ADEB LONODJI et projet ODEB LONODJI — identité visuelle « Les Pas vers l'Avenir »
 Kit du 28 septembre 2026 · lonodji.org/odeb/identite
+
+Un emblème, deux noms : le logo a été adopté le 28 septembre 2026 par l'association
+ADEB LONODJI, qui l'utilise pour elle-même (fichiers adeb-lonodji-…) et pour son
+projet ODEB LONODJI (fichiers odeb-lonodji-…). Les emblèmes seuls sont communs.
 
 Le sens : trois empreintes, une par génération — les ancêtres (la plus grande,
 la plus transparente), la génération actuelle, les générations futures (la plus
@@ -191,14 +215,19 @@ Fichiers
   odeb-lonodji-embleme-plat.svg, -mono.svg, -reserve.svg
       versions à plat : impression courante, tampon, gravure, photocopie,
       broderie, petites tailles (en dessous de 40 px, prendre la version à plat)
+  adeb-lonodji-logo-horizontal(.svg/.png), -clair, -superposable, -clair-superposable,
+  adeb-lonodji-logo-vertical, -clair
+      emblème + « ADEB LONODJI » + Association de Développement et d'Entraide de
+      Bédjondo + Courage · Discipline · Héritage
   odeb-lonodji-logo-horizontal(.svg/.png), -clair, -superposable, -clair-superposable,
   odeb-lonodji-logo-vertical, -clair
-      emblème + nom + devise ; les textes sont en tracés : aucune police à installer ;
+      emblème + « ODEB LONODJI » + développement du sigle + devise du projet ;
+      les textes sont en tracés : aucune police à installer ;
       « superposable » = sans fond, pour les en-têtes de documents et les photos
   odeb-lonodji-planche.pdf
       toutes les versions et les règles, pour l'imprimeur
-  papier-en-tete-odeb-lonodji.docx / .pdf
-      papier à en-tête A4
+  papier-en-tete-adeb-lonodji.docx / .pdf, papier-en-tete-odeb-lonodji.docx / .pdf
+      papiers à en-tête A4 (association, projet)
 
 Règles courtes
   - Ne pas déformer, recolorer, incliner ni séparer les empreintes du soleil.
@@ -206,15 +235,15 @@ Règles courtes
   - Taille minimale : emblème 40 px à l'écran, 12 mm imprimé ;
     logo horizontal 180 px / 45 mm. En dessous, l'emblème à plat.
   - Sur photo : version superposable ou réserve blanche, jamais l'emblème à plat couleur.
-  - Le projet est porté par ADEB LONODJI : quand les deux logos sont présents,
-    celui de l'association vient en premier.
+  - Un emblème, deux noms : jamais les deux noms sous le même emblème ; l'ancien
+    logo bleu (avant le 28 septembre 2026) ne se mélange pas au nouveau.
   - Couleurs : vert profond #173B2D, vert feuille #2F6B4A, acacia #B6CF45,
     doré #F2C94C, encre #10241E, sable #F4F6F1.
   - Polices : DM Sans (nom, textes), Playfair Display (devise, titres).
 
-Le logo appartient à l'association ADEB LONODJI. Usage libre pour parler du
-projet ODEB LONODJI, à condition de ne pas le modifier ; toute autre utilisation,
-écrire à l'association (lonodji.org/participer, objet « Le projet ODEB LONODJI »).
+Le logo appartient à l'association ADEB LONODJI. Usage libre pour parler de
+l'association ou du projet ODEB LONODJI, à condition de ne pas le modifier ; toute
+autre utilisation, écrire à l'association (lonodji.org/participer).
 """
 
 
@@ -256,9 +285,10 @@ def planche_pdf(svgs: dict[str, str], fonts: str, pdf: Path) -> None:
         return re.sub(r' width="\d+" height="\d+"', "", prefixe(svgs[nom], pre), count=1)
 
     horizontal_clair, horizontal = wide("odeb-lonodji-logo-horizontal-clair.svg", "g"), wide("odeb-lonodji-logo-horizontal.svg", "h")
+    adeb_clair, adeb = wide("adeb-lonodji-logo-horizontal-clair.svg", "i"), wide("adeb-lonodji-logo-horizontal.svg", "j")
     html = f"""<!doctype html><html lang="fr"><meta charset="utf-8"><style>{fonts}{PLANCHE_CSS}</style><body>
-    <h1>ODEB LONODJI — identité visuelle « Les Pas vers l’Avenir »</h1>
-    <p class="sub">Planche pour l’imprimeur et les partenaires · kit du 28 septembre 2026 · lonodji.org/odeb/identite · le logo appartient à l’association ADEB LONODJI, qui porte le projet.</p>
+    <h1>ADEB LONODJI · projet ODEB LONODJI — identité visuelle « Les Pas vers l’Avenir »</h1>
+    <p class="sub">Planche pour l’imprimeur et les partenaires · logo adopté le 28 septembre 2026 par l’association, pour elle-même et pour son projet · lonodji.org/odeb/identite</p>
     <div class="grid">
       {cell("odeb-lonodji-embleme.svg", "Emblème verre", "écrans, réseaux, vidéos", "", "a")}
       {cell("odeb-lonodji-embleme-clair.svg", "Verre clair", "papeterie, fonds blancs", "", "b")}
@@ -267,12 +297,14 @@ def planche_pdf(svgs: dict[str, str], fonts: str, pdf: Path) -> None:
       {cell("odeb-lonodji-embleme-mono.svg", "Monochrome", "tampon, gravure, photocopie", "", "e")}
       {cell("odeb-lonodji-embleme-reserve.svg", "Réserve blanche", "sur couleur ou photo", "dark", "f")}
     </div>
+    <div class="wide">{adeb_clair}</div>
+    <div class="wide dark saut">{adeb}</div>
     <div class="wide">{horizontal_clair}</div>
-    <div class="wide dark saut">{horizontal}</div>
-    <h2>Le sens, les couleurs, les règles</h2>
+    <div class="wide dark">{horizontal}</div>
+    <h2 class="saut">Le sens, les couleurs, les règles</h2>
     <div class="regles">
       <div><b>Trois empreintes, trois générations</b><p>La première, la plus grande et la plus transparente : les ancêtres. La deuxième : la génération actuelle. La troisième, la plus petite et la plus lumineuse, sous le soleil : les générations futures. Elles se suivent comme on marche — pied gauche, pied droit — et rapetissent vers l’horizon.</p><b>Le soleil levant</b><p>Posé sur l’horizon, sept rayons, du doré au vert acacia : l’espoir, le développement, l’avenir. Le disque vert profond reprend la couleur du site et le disque du logo d’ADEB LONODJI, dont l’ODEB est la suite.</p><b>Devise</b><p>{DEVISE}</p></div>
-      <div><b>Ce qu’on ne fait pas</b><p>Déformer, incliner, recolorer, ajouter une ombre ou un contour, séparer les empreintes du soleil, changer l’ordre ou le nombre des empreintes, réécrire le nom dans une autre police.</p><b>Zone de protection, tailles</b><p>Tout autour, la hauteur d’une empreinte. Emblème : 40 px à l’écran, 12 mm imprimé ; logo horizontal : 180 px ou 45 mm. En dessous, l’emblème à plat. Le verre s’écrase en noir et blanc : pour le tampon, la gravure et la photocopie, la version monochrome.</p><b>Avec le logo d’ADEB LONODJI</b><p>Le projet est porté par l’association : quand les deux logos sont présents, celui de l’association vient en premier, à la même hauteur d’emblème.</p></div>
+      <div><b>Ce qu’on ne fait pas</b><p>Déformer, incliner, recolorer, ajouter une ombre ou un contour, séparer les empreintes du soleil, changer l’ordre ou le nombre des empreintes, réécrire le nom dans une autre police.</p><b>Zone de protection, tailles</b><p>Tout autour, la hauteur d’une empreinte. Emblème : 40 px à l’écran, 12 mm imprimé ; logo horizontal : 180 px ou 45 mm. En dessous, l’emblème à plat. Le verre s’écrase en noir et blanc : pour le tampon, la gravure et la photocopie, la version monochrome.</p><b>Un emblème, deux noms</b><p>« ADEB LONODJI » pour l’association, « ODEB LONODJI » pour le projet qu’elle porte ; jamais les deux noms sous le même emblème. L’ancien logo bleu (disque, empreintes, poignée de main) reste sur les documents publiés avant le 28 septembre 2026 et ne se mélange pas au nouveau.</p></div>
     </div>
     <div class="couleurs">
       <div style="background:#173b2d"><b>Vert profond</b><br>#173B2D · CMJN 85 45 70 45</div>
@@ -283,7 +315,7 @@ def planche_pdf(svgs: dict[str, str], fonts: str, pdf: Path) -> None:
       <div class="clair" style="background:#f4f6f1"><b>Sable</b><br>#F4F6F1 · CMJN 3 1 5 0</div>
     </div>
     <p><b>Polices.</b> DM Sans pour le nom et les textes (gras 800 pour « ODEB », fin 250 pour « LONODJI », lettres espacées) ; Playfair Display en italique pour la devise et les titres. Les logos de ce kit ont leurs textes convertis en tracés : aucune police à installer. Les équivalents CMJN sont indicatifs ; l’imprimeur ajuste sur épreuve.</p>
-    <p class="pied">Identité retenue le 28 septembre 2026 pour le projet ODEB LONODJI, porté par ADEB LONODJI (Association de Développement et d’Entraide de Bédjondo, reconnue en 1995). Bédjondo · Mandoul, Tchad · {TEL} · lonodji.org/odeb. Usage libre pour parler du projet sans modifier le logo ; toute autre utilisation, écrire à l’association.</p>
+    <p class="pied">Identité adoptée le 28 septembre 2026 par ADEB LONODJI (Association de Développement et d’Entraide de Bédjondo, reconnue en 1995), pour l’association et pour son projet ODEB LONODJI. Bédjondo · Mandoul, Tchad · {TEL} · lonodji.org. Usage libre pour parler de l’association ou du projet sans modifier le logo ; toute autre utilisation, écrire à l’association.</p>
     </body></html>"""
     tmp = TMP / "planche.html"
     tmp.write_text(html, encoding="utf-8")
@@ -309,20 +341,26 @@ EN_TETE_CSS = """
 """
 
 
-def papier_en_tete(fonts: str, logo_png: Path, pdf: Path, docx_path: Path) -> None:
+def papier_en_tete(fonts: str, logo_png: Path, pdf: Path, docx_path: Path, marque: str = "odeb") -> None:
     from playwright.sync_api import sync_playwright
 
-    corps = """<p class="ref">Bédjondo, le ……………………… · Réf. ODEB-2026-…</p>
+    if marque == "adeb":
+        ref, signature, pied_gauche, tete_droite = ("ADEB-2026-…", "Le président de l’association ADEB LONODJI", "<b>ADEB LONODJI</b> · Association de Développement et d’Entraide de Bédjondo · reconnue en 1995 · Courage · Discipline · Héritage · lonodji.org",
+                                                    "<b>ASSOCIATION DE DÉVELOPPEMENT ET D’ENTRAIDE DE BÉDJONDO</b>reconnue en 1995 · Bédjondo, Mandoul, Tchad<br>Courage · Discipline · Héritage")
+    else:
+        ref, signature, pied_gauche, tete_droite = ("ODEB-2026-…", "Pour le projet ODEB LONODJI,<br>Le président de l’association ADEB LONODJI", "<b>ODEB LONODJI</b> · Organisation pour le Développement et l’Émergence Bedjonde · projet stratégique porté par l’ADEB LONODJI · lonodji.org/odeb",
+                                                    "<b>PROJET PORTÉ PAR ADEB LONODJI</b>Association de Développement et d’Entraide de Bédjondo<br>reconnue en 1995 · Bédjondo, Mandoul, Tchad")
+    corps = f"""<p class="ref">Bédjondo, le ……………………… · Réf. {ref}</p>
     <p class="objet"><b>Objet :</b> …………………………………………………………………………</p>
     <p>Madame, Monsieur,</p>
     <p>…</p>
     <p>Nous vous prions d’agréer, Madame, Monsieur, l’expression de notre considération distinguée.</p>
-    <p style="margin-top:14mm">Pour le projet ODEB LONODJI,<br>Le président de l’association ADEB LONODJI</p>"""
+    <p style="margin-top:14mm">{signature}</p>"""
     html = f"""<!doctype html><html lang="fr"><meta charset="utf-8"><style>{fonts}{EN_TETE_CSS}</style><body>
-    <div class="tete"><img src="file://{logo_png}" alt="ODEB LONODJI"><div class="adeb"><b>PROJET PORTÉ PAR ADEB LONODJI</b>Association de Développement et d’Entraide de Bédjondo<br>reconnue en 1995 · Bédjondo, Mandoul, Tchad</div></div>
+    <div class="tete"><img src="file://{logo_png}" alt=""><div class="adeb">{tete_droite}</div></div>
     <div class="filet"></div>
     <div class="corps">{corps}</div>
-    <div class="pied"><div><b>ODEB LONODJI</b> · Organisation pour le Développement et l’Émergence Bedjonde · projet stratégique porté par l’ADEB LONODJI · lonodji.org/odeb</div><div><b>Contact</b> · {TEL} (appel et WhatsApp) · lonodji.org/participer</div></div>
+    <div class="pied"><div>{pied_gauche}</div><div><b>Contact</b> · {TEL} (appel et WhatsApp) · lonodji.org/participer</div></div>
     </body></html>"""
     tmp = TMP / "en-tete.html"
     tmp.write_text(html, encoding="utf-8")
@@ -353,14 +391,13 @@ def papier_en_tete(fonts: str, logo_png: Path, pdf: Path, docx_path: Path) -> No
     tete.add_run().add_picture(str(logo_png), height=Mm(20))
     p2 = sec.header.add_paragraph()
     p2.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    r = p2.add_run("PROJET PORTÉ PAR ADEB LONODJI — Association de Développement et d’Entraide de Bédjondo, reconnue en 1995 · Bédjondo, Mandoul, Tchad")
+    r = p2.add_run(re.sub(r"<[^>]+>", " ", tete_droite.replace("<br>", " · ")).replace("  ", " ").strip())
     r.font.size, r.font.color.rgb = Pt(8), RGBColor(0x52, 0x61, 0x59)
     pied = sec.footer.paragraphs[0]
-    r = pied.add_run(f"ODEB LONODJI · Organisation pour le Développement et l’Émergence Bedjonde · projet stratégique porté par l’ADEB LONODJI · lonodji.org/odeb · {TEL} (appel et WhatsApp)")
+    r = pied.add_run(re.sub(r"<[^>]+>", "", pied_gauche) + f" · {TEL} (appel et WhatsApp)")
     r.font.size, r.font.color.rgb = Pt(8), RGBColor(0x52, 0x61, 0x59)
-    for texte in ["Bédjondo, le ……………………… · Réf. ODEB-2026-…", "Objet : …", "", "Madame, Monsieur,", "", "…", "",
-                  "Nous vous prions d’agréer, Madame, Monsieur, l’expression de notre considération distinguée.", "", "",
-                  "Pour le projet ODEB LONODJI,", "Le président de l’association ADEB LONODJI"]:
+    for texte in [f"Bédjondo, le ……………………… · Réf. {ref}", "Objet : …", "", "Madame, Monsieur,", "", "…", "",
+                  "Nous vous prions d’agréer, Madame, Monsieur, l’expression de notre considération distinguée.", "", ""] + signature.split("<br>"):
         doc.add_paragraph(texte)
     doc.save(str(docx_path))
 
@@ -392,6 +429,12 @@ def main() -> None:
         ("odeb-lonodji-logo-horizontal-clair-superposable.svg", 2000, 640, 1, "odeb-lonodji-logo-horizontal-clair-superposable.png"),
         ("odeb-lonodji-logo-vertical.svg", 1080, 1350, 1, "odeb-lonodji-logo-vertical.png"),
         ("odeb-lonodji-logo-vertical-clair.svg", 1080, 1350, 1, "odeb-lonodji-logo-vertical-clair.png"),
+        ("adeb-lonodji-logo-horizontal.svg", 2000, 640, 1, "adeb-lonodji-logo-horizontal.png"),
+        ("adeb-lonodji-logo-horizontal-clair.svg", 2000, 640, 1, "adeb-lonodji-logo-horizontal-clair.png"),
+        ("adeb-lonodji-logo-horizontal-superposable.svg", 2000, 640, 1, "adeb-lonodji-logo-horizontal-superposable.png"),
+        ("adeb-lonodji-logo-horizontal-clair-superposable.svg", 2000, 640, 1, "adeb-lonodji-logo-horizontal-clair-superposable.png"),
+        ("adeb-lonodji-logo-vertical.svg", 1080, 1350, 1, "adeb-lonodji-logo-vertical.png"),
+        ("adeb-lonodji-logo-vertical-clair.svg", 1080, 1350, 1, "adeb-lonodji-logo-vertical-clair.png"),
     ]
     with sync_playwright() as p:
         b = p.chromium.launch()
@@ -403,13 +446,26 @@ def main() -> None:
             page.wait_for_timeout(150)
             page.screenshot(path=str(OUT / png), omit_background=True)
             page.close()
+        # icônes du site (favicon, écran d'accueil, application) : l'emblème sur son fond, rond ou carré
+        ICONES = ROOT / "public" / "icones"
+        ICONES.mkdir(parents=True, exist_ok=True)
+        for taille, nom, rond in ((512, ICONES / "icone-512.png", True), (192, ICONES / "icone-192.png", True), (512, ICONES / "icone-512-maskable.png", False), (180, ROOT / "app" / "apple-icon.png", False), (96, ICONES / "raccourci-odeb.png", True)):
+            page = b.new_page(viewport={"width": taille, "height": taille}, device_scale_factor=1)
+            svg = re.sub(r' width="\d+" height="\d+"', f' width="{taille}" height="{taille}"', svgs["odeb-lonodji-embleme.svg"], count=1)
+            style = "border-radius:50%;overflow:hidden" if rond else ""
+            page.set_content(page_html(f'<div style="width:{taille}px;height:{taille}px;{style}">{svg}</div>', fonts, taille, taille))
+            page.wait_for_timeout(100)
+            page.screenshot(path=str(nom), omit_background=True)
+            page.close()
         b.close()
-    print(f"{len(rendus)} PNG")
+    print(f"{len(rendus)} PNG + icônes")
+    (ROOT / "app" / "icon.svg").write_text(svgs["odeb-lonodji-embleme-plat.svg"].replace('width="512" height="512"', 'width="64" height="64"'), encoding="utf-8")
 
     planche_pdf(svgs, fonts, OUT / "odeb-lonodji-planche.pdf")
     print("planche PDF")
     papier_en_tete(fonts, OUT / "odeb-lonodji-logo-horizontal-clair-superposable.png", OUT / "papier-en-tete-odeb-lonodji.pdf", OUT / "papier-en-tete-odeb-lonodji.docx")
-    print("papier à en-tête PDF + DOCX")
+    papier_en_tete(fonts, OUT / "adeb-lonodji-logo-horizontal-clair-superposable.png", OUT / "papier-en-tete-adeb-lonodji.pdf", OUT / "papier-en-tete-adeb-lonodji.docx", "adeb")
+    print("papiers à en-tête PDF + DOCX (ODEB, ADEB)")
 
     (OUT / "LISEZMOI.txt").write_text(LISEZMOI, encoding="utf-8")
     kit = OUT / "kit-logo-odeb-lonodji.zip"

@@ -19,6 +19,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Histoire & patrimoine", href: "/histoire", note: "De 1986 à la relance de 2026, grandes figures" },
         { label: "Bédjondo", href: "/dossiers/bedjondo", note: "Repères, langue, statut de commune" },
         { label: "Le journal", href: "/journal", note: "Articles datés et sourcés" },
+        { label: "Identité visuelle", href: "/odeb/identite", note: "Le logo « Les Pas vers l’Avenir », adopté le 28 septembre 2026" },
       ] },
       { titre: "Rendre des comptes", liens: [
         { label: "Redevabilité & transparence", href: "/transparence", note: "Réponse sous 48 h, plainte, protection" },

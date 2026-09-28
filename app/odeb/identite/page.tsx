@@ -7,8 +7,8 @@ import { ogFor } from "../../../lib/content";
 import { IDENTITE, ODEB } from "../../../lib/odeb";
 
 export const metadata: Metadata = {
-  title: "Identité visuelle du projet ODEB LONODJI : le logo « Les Pas vers l’Avenir »",
-  description: "Trois empreintes — les ancêtres, la génération actuelle, les générations futures — qui avancent vers un soleil levant : le logo du projet ODEB LONODJI, ses versions, ses couleurs, ses règles d’usage, le kit à télécharger et le papier à en-tête.",
+  title: "Identité visuelle : le logo « Les Pas vers l’Avenir », adopté le 28 septembre 2026",
+  description: "Trois empreintes — les ancêtres, la génération actuelle, les générations futures — qui avancent vers un soleil levant : le logo d’ADEB LONODJI et de son projet ODEB LONODJI, ses versions, ses couleurs, ses règles d’usage, le kit à télécharger et les papiers à en-tête.",
   alternates: { canonical: "/odeb/identite" },
   openGraph: ogFor("/odeb/identite"),
 };
@@ -24,9 +24,12 @@ const VERSIONS: { titre: string; usage: string; svg: string; png?: string; fond:
 ];
 
 const LOGOS: { titre: string; usage: string; svg: string; png: string; fond: "clair" | "sombre" }[] = [
-  { titre: "Logo horizontal", usage: "Emblème, nom, développement du sigle, devise : documents, bannières, signatures.", svg: IDENTITE.horizontal, png: IDENTITE.png.horizontal, fond: "sombre" },
-  { titre: "Logo horizontal clair", usage: "La même composition sur fond sable, pour le papier et les fonds blancs.", svg: IDENTITE.horizontalClair, png: IDENTITE.png.horizontalClair, fond: "clair" },
-  { titre: "Logo vertical", usage: "Avatars, affiches, couvertures : l’emblème au-dessus du nom.", svg: IDENTITE.vertical, png: IDENTITE.png.vertical, fond: "sombre" },
+  { titre: "ADEB LONODJI, horizontal", usage: "Emblème, nom de l’association, « Association de Développement et d’Entraide de Bédjondo », Courage · Discipline · Héritage.", svg: IDENTITE.adeb.horizontal, png: IDENTITE.adeb.png.horizontal, fond: "sombre" },
+  { titre: "ADEB LONODJI, horizontal clair", usage: "La même composition sur fond sable, pour le papier et les fonds blancs.", svg: IDENTITE.adeb.horizontalClair, png: IDENTITE.adeb.png.horizontalClair, fond: "clair" },
+  { titre: "ADEB LONODJI, vertical", usage: "Avatars, affiches, couvertures : l’emblème au-dessus du nom de l’association.", svg: IDENTITE.adeb.vertical, png: IDENTITE.adeb.png.vertical, fond: "sombre" },
+  { titre: "ODEB LONODJI, horizontal", usage: "Emblème, nom du projet, développement du sigle, devise : documents du projet, bannières.", svg: IDENTITE.horizontal, png: IDENTITE.png.horizontal, fond: "sombre" },
+  { titre: "ODEB LONODJI, horizontal clair", usage: "La même composition sur fond sable, pour le papier et les fonds blancs.", svg: IDENTITE.horizontalClair, png: IDENTITE.png.horizontalClair, fond: "clair" },
+  { titre: "ODEB LONODJI, vertical", usage: "Avatars, affiches, couvertures : l’emblème au-dessus du nom du projet.", svg: IDENTITE.vertical, png: IDENTITE.png.vertical, fond: "sombre" },
 ];
 
 const INTERDITS = [
@@ -42,12 +45,12 @@ export default function Identite() {
   return (
     <main id="main-content" className="hub-page od-page">
       <OdebHero
-        eyebrow={`Projet ${ODEB.sigle} · identité visuelle`}
+        eyebrow="ADEB LONODJI · projet ODEB LONODJI · identité visuelle"
         title="Les Pas vers l’Avenir :"
-        em="le logo du projet, et comment l’utiliser."
-        lead={`Trois empreintes qui avancent vers un soleil levant : la première, la plus grande, ce sont les ancêtres ; la deuxième, la génération actuelle ; la troisième, la plus lumineuse, les générations futures. Sur les traces de nos ancêtres, bâtissons notre avenir. Identité retenue le ${IDENTITE.retenueLabel}, le jour du lancement de la réflexion ; ses fichiers, ses couleurs et ses règles sont ici.`}
-        crumbs={[{ label: "Projet ODEB", href: "/odeb" }, { label: "Identité visuelle" }]}
-        pills={[`Retenue le ${IDENTITE.retenueLabel}`, "Six versions de l’emblème", "Textes en tracés : aucune police à installer", "Kit ZIP, charte PDF, papier à en-tête"]}
+        em="le logo de l’association et de son projet."
+        lead={`Trois empreintes qui avancent vers un soleil levant : la première, la plus grande, ce sont les ancêtres ; la deuxième, la génération actuelle ; la troisième, la plus lumineuse, les générations futures. Sur les traces de nos ancêtres, bâtissons notre avenir. Dessiné pour le projet ODEB LONODJI et adopté le ${IDENTITE.adopteeLabel} par l’association comme son propre logo — un emblème, deux noms —, il est celui du site, de l’application et des images de partage. Ses fichiers, ses couleurs et ses règles sont ici.`}
+        crumbs={[{ label: "L’association", href: "/mission" }, { label: "Identité visuelle" }]}
+        pills={[`Adopté le ${IDENTITE.adopteeLabel}`, "Un emblème, deux noms", "Six emblèmes, six logos complets", "Textes en tracés : aucune police à installer", "Kit ZIP, charte PDF, papiers à en-tête"]}
       />
       <OdebNav actif="identite" />
 
@@ -63,7 +66,7 @@ export default function Identite() {
       </section>
 
       <section className="hub-section" id="versions">
-        <SectionHead eyebrow="Les versions" title="Six emblèmes," em="trois logos complets." text="Un seul dessin, décliné selon le support. Le verre est fait pour les écrans, les vidéos, les fonds photo et l’impression haut de gamme ; les versions à plat pour tout ce qui s’imprime vite ou petit. Chaque fichier se télécharge d’un clic ; le kit ZIP les rassemble." />
+        <SectionHead eyebrow="Les versions" title="Six emblèmes," em="six logos complets." text="Un seul dessin, décliné selon le support. Le verre est fait pour les écrans, les vidéos, les fonds photo et l’impression haut de gamme ; les versions à plat pour tout ce qui s’imprime vite ou petit. L’emblème seul est commun ; les logos complets portent le nom de l’association ou celui du projet. Chaque fichier se télécharge d’un clic ; le kit ZIP les rassemble." />
         <ul className="od-versions">
           {VERSIONS.map((v) => (
             <li key={v.svg}>
@@ -106,7 +109,7 @@ export default function Identite() {
           <article><h3>Zone de protection</h3><p>Tout autour du logo, un espace vide au moins égal à la hauteur d’une empreinte (un quart du disque). Rien n’y entre : ni texte, ni autre logo, ni bord de page.</p></article>
           <article><h3>Tailles minimales</h3><p>Emblème : 40 px à l’écran, 12 mm imprimé. Logo horizontal : 180 px ou 45 mm. En dessous, l’emblème à plat, qui reste lisible jusqu’à 24 px.</p></article>
           <article><h3>Sur quel fond</h3><p>Sur fond clair, le verre clair ou l’emblème à plat ; sur fond sombre ou photo, la version superposable ou la réserve blanche ; sur couleur pleine, la réserve blanche. Jamais l’emblème à plat couleur sur une photo.</p></article>
-          <article><h3>Avec le logo d’ADEB LONODJI</h3><p>Le projet est porté par l’association : quand les deux logos sont présents, celui d’ADEB LONODJI vient en premier, à la même hauteur d’emblème, séparés par leur zone de protection. Dans un texte institutionnel, la mention « projet porté par ADEB LONODJI » accompagne le nom.</p></article>
+          <article><h3>Un emblème, deux noms</h3><p>« ADEB LONODJI » pour l’association, « ODEB LONODJI » pour le projet qu’elle porte : jamais les deux noms sous le même emblème. L’ancien logo bleu — disque, empreintes, poignée de main — reste sur les documents publiés avant le {IDENTITE.adopteeLabel} et ne se mélange pas au nouveau ; ses règles sont dans l’<Link href="/dossiers/identite-visuelle">identité visuelle précédente</Link>.</p></article>
         </div>
         <div className="notice" style={{ marginTop: 18 }}>
           <strong>Ce qu’on ne fait pas.</strong>
@@ -117,17 +120,19 @@ export default function Identite() {
       <section className="hub-section" id="documents">
         <SectionHead eyebrow="À télécharger" title="Le kit," em="et les documents qui vont avec." />
         <div className="link-list">
-          <a href={IDENTITE.kit} download><small>ZIP · tous les fichiers</small><strong>Kit du logo ODEB LONODJI</strong><span>Les onze SVG, les PNG jusqu’à 2048 px, la planche PDF, le papier à en-tête et un LISEZMOI avec les règles courtes.</span></a>
-          <a href={IDENTITE.charte} download><small>PDF · charte</small><strong>Identité visuelle du projet ODEB LONODJI</strong><span>Cette page, en PDF, pour la joindre à un dossier ou l’envoyer à un partenaire.</span></a>
-          <a href={IDENTITE.planche} download><small>PDF · 2 pages</small><strong>Planche pour l’imprimeur</strong><span>Toutes les versions, les couleurs avec leurs équivalents CMJN, les règles ; les textes en tracés.</span></a>
-          <a href={IDENTITE.enTeteDocx} download><small>DOCX · A4</small><strong>Papier à en-tête, à compléter</strong><span>Logo, mention du portage par l’association, pied avec le contact ; le corps de la lettre est à vous.</span></a>
-          <a href={IDENTITE.enTetePdf} download><small>PDF · A4</small><strong>Papier à en-tête, modèle à imprimer</strong><span>La même feuille en PDF, pour l’imprimeur ou pour écrire à la main.</span></a>
-          <Link href="/presse#logo-odeb"><small>Espace presse</small><strong>Les logos de l’association et du projet</strong><span>Pour les journalistes et les partenaires, avec les règles de citation et les visuels à partager.</span></Link>
+          <a href={IDENTITE.kit} download><small>ZIP · tous les fichiers</small><strong>Kit du logo « Les Pas vers l’Avenir »</strong><span>Les dix-neuf SVG (emblèmes, logos ADEB LONODJI et ODEB LONODJI), les PNG jusqu’à 2048 px, la planche PDF, les papiers à en-tête et un LISEZMOI avec les règles courtes.</span></a>
+          <a href={IDENTITE.charte} download><small>PDF · charte</small><strong>Identité visuelle d’ADEB LONODJI et du projet ODEB</strong><span>Cette page, en PDF, pour la joindre à un dossier ou l’envoyer à un partenaire.</span></a>
+          <a href={IDENTITE.planche} download><small>PDF · 3 pages</small><strong>Planche pour l’imprimeur</strong><span>Toutes les versions, les couleurs avec leurs équivalents CMJN, les règles ; les textes en tracés.</span></a>
+          <a href={IDENTITE.adeb.enTeteDocx} download><small>DOCX · A4</small><strong>Papier à en-tête de l’association</strong><span>Logo ADEB LONODJI, reconnaissance de 1995, devise, pied avec le contact ; le corps de la lettre est à vous.</span></a>
+          <a href={IDENTITE.adeb.enTetePdf} download><small>PDF · A4</small><strong>Papier à en-tête de l’association, à imprimer</strong><span>La même feuille en PDF, pour l’imprimeur ou pour écrire à la main.</span></a>
+          <a href={IDENTITE.enTeteDocx} download><small>DOCX · A4</small><strong>Papier à en-tête du projet ODEB</strong><span>Logo ODEB LONODJI, mention du portage par l’association, pied avec le contact.</span></a>
+          <a href={IDENTITE.enTetePdf} download><small>PDF · A4</small><strong>Papier à en-tête du projet ODEB, à imprimer</strong><span>La même feuille en PDF.</span></a>
+          <Link href="/presse#visuels"><small>Espace presse</small><strong>Les logos de l’association et du projet</strong><span>Pour les journalistes et les partenaires, avec les règles de citation et les visuels à partager.</span></Link>
         </div>
       </section>
 
       <OdebEtat />
-      <p className="lg-footnote">Identité « {IDENTITE.nom} » retenue le {IDENTITE.retenueLabel} pour le projet {ODEB.sigle}, porté par ADEB LONODJI ; elle deviendra celle de l’organisation si l’association le décide. Le logo appartient à l’association. Usage libre pour parler du projet, à condition de ne pas le modifier ; toute autre utilisation, <Link href="/participer?objet=odeb#contact">écrivez-nous</Link>, objet « Le projet ODEB LONODJI ». Dessins et scripts de génération : <code>design/odeb/</code> et <code>scripts/build-identite-odeb.py</code> dans le dépôt du site.</p>
+      <p className="lg-footnote">Identité « {IDENTITE.nom} » dessinée le {IDENTITE.retenueLabel} pour le projet {ODEB.sigle} et adoptée le même jour par ADEB LONODJI comme son logo, pour l’association et pour le projet qu’elle porte. Le logo appartient à l’association. Usage libre pour parler de l’association ou du projet, à condition de ne pas le modifier ; toute autre utilisation, <Link href="/participer#contact">écrivez-nous</Link>. Dessins et scripts de génération : <code>design/odeb/</code> et <code>scripts/build-identite-odeb.py</code> dans le dépôt du site.</p>
     </main>
   );
 }

@@ -73,7 +73,7 @@ export default function RootLayout({
                 name: "ADEB LONODJI",
                 alternateName: "Association de Développement et d’Entraide de Bédjondo",
                 url: siteUrl,
-                logo: `${siteUrl}/identite/logo-adeb-lonodji-1024.png`,
+                logo: `${siteUrl}/odeb/identite/odeb-lonodji-embleme-1024.png`,
                 telephone: "+235 66 29 94 03",
                 foundingDate: "1995",
                 address: { "@type": "PostalAddress", addressLocality: "Bédjondo", addressRegion: "Mandoul", addressCountry: "TD" },

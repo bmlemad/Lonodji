@@ -52,7 +52,7 @@ function cartesDuPlan(d: Indicateurs, f: Releve): Carte[] {
       valeur: n(c.coordinations.pourvues),
       unite: `/ ${c.coordinations.total}`,
       libelle: "thématiques pourvues d’un coordonnateur",
-      detail: `${n(vacantes)} thématiques et ${n(cellulesVacantes)} ${pluriel(cellulesVacantes, "cellule transversale cherchent", "cellules transversales cherchent")} encore la personne qui les portera.`,
+      detail: `${n(vacantes)} thématiques et ${n(cellulesVacantes)} ${pluriel(cellulesVacantes, "cellule transversale cherchent", "cellules transversales cherchent")} encore la personne qui les portera ; les quatre directions de pôle (rang de chef de projet) sont à pourvoir.`,
       source: "Structure publiée · mise en ligne",
       courte: "Structure publiée",
       href: "/programmes",

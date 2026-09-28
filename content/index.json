@@ -213,7 +213,7 @@
    "lede": "Un logo, deux registres de couleurs, trois polices et quelques signes qui n’appartiennent qu’au pays bedjond : tout ce qu’il faut pour que les documents, les affiches et les publications de l’association se reconnaissent au premier coup d’œil. Les fichiers sont libres d’usage pour les membres et les partenaires, dans le respect des règles ci-dessous.",
    "description": "Le logo d’ADEB LONODJI, ses couleurs, ses polices et ses signes (barre des quatre pôles, carte du pays bedjond, frise des chefs de canton) : la charte graphique de l’association, avec les fichiers à télécharger.",
    "parent": "L’association",
-   "words": 1151,
+   "words": 1213,
    "hasMap": false
   },
   {
@@ -393,7 +393,7 @@
    "lede": "Une question, une proposition, l’envie d’animer une thématique : c’est ici. Pour devenir membre, remplissez plutôt la déclaration d’intention d’adhésion , sans paiement.",
    "description": "Écrire à ADEB LONODJI ou rejoindre une thématique : formulaire en ligne, téléphone et WhatsApp du président. Pour adhérer, une déclaration d’intention sans paiement.",
    "parent": "Agir avec nous",
-   "words": 1007,
+   "words": 1060,
    "hasMap": false
   },
   {
@@ -489,7 +489,7 @@
    "lede": "ADEB LONODJI is the association of Bédjondo, in southern Chad, and of its diaspora: it works for all the town’s inhabitants and safeguards Bedjond heritage. This English section presents the association, the town and our advocacy; the full site is in French.",
    "description": "ADEB LONODJI, the association of Bédjondo (Mandoul, Chad) and its diaspora, guardian of Bedjond heritage: who we are, what we do, and how to help.",
    "parent": "Home",
-   "words": 550,
+   "words": 566,
    "hasMap": false
   },
   {
@@ -555,6 +555,40 @@
  ],
  "articles": [
   {
+   "slug": "2026-09-28-directions-de-pole",
+   "route": "/journal/2026-09-28-directions-de-pole",
+   "title": "Chaque pôle aura un directeur ou une directrice, au rang de chef de projet",
+   "date": "2026-09-28",
+   "dateLabel": "28 septembre 2026",
+   "tag": "Gouvernance & plaidoyer",
+   "category": "gouvernance",
+   "summary": "Décision du 28 septembre 2026 : les quatre pôles d’action reçoivent une direction, distincte de la coordination des thématiques. Les quatre postes sont à pourvoir ; les candidatures sont ouvertes à tout membre.",
+   "readTime": "1 min de lecture",
+   "words": 239,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "1 min de lecture",
+    "239 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-28-identite-visuelle-odeb-lonodji",
+   "route": "/journal/2026-09-28-identite-visuelle-odeb-lonodji",
+   "title": "« Les Pas vers l’Avenir » : le nouveau logo de l’association et de son projet ODEB",
+   "date": "2026-09-28",
+   "dateLabel": "28 septembre 2026",
+   "tag": "Vie de l’association",
+   "category": "vie-association",
+   "summary": "Trois empreintes de pas qui avancent vers un soleil levant — les ancêtres, la génération actuelle, les générations futures. Dessiné le soir même du lancement de la réflexion ODEB LONODJI, adopté par l’association comme…",
+   "readTime": "2 min de lecture",
+   "words": 409,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "2 min de lecture",
+    "409 mots"
+   ]
+  },
+  {
    "slug": "2026-09-28-lettre-information-02",
    "route": "/journal/2026-09-28-lettre-information-02",
    "title": "Lettre d’information n° 2 — numéro spécial du 28 septembre 2026",
@@ -586,23 +620,6 @@
    "pills": [
     "3 min de lecture",
     "684 mots"
-   ]
-  },
-  {
-   "slug": "2026-09-28-identite-visuelle-odeb-lonodji",
-   "route": "/journal/2026-09-28-identite-visuelle-odeb-lonodji",
-   "title": "Le projet ODEB LONODJI a son logo : « Les Pas vers l’Avenir »",
-   "date": "2026-09-28",
-   "dateLabel": "28 septembre 2026",
-   "tag": "Vie de l’association",
-   "category": "vie-association",
-   "summary": "Trois empreintes de pas qui avancent vers un soleil levant — les ancêtres, la génération actuelle, les générations futures. Retenu le soir même du lancement de la réflexion, le logo du projet est en ligne avec ses…",
-   "readTime": "2 min de lecture",
-   "words": 338,
-   "byline": "Rédaction ADEB LONODJI",
-   "pills": [
-    "2 min de lecture",
-    "338 mots"
    ]
   },
   {
@@ -1466,7 +1483,13 @@
        }
       ]
      }
-    ]
+    ],
+    "direction": {
+     "label": "Directeur ou directrice de pôle",
+     "rang": "rang de chef de projet",
+     "name": "à pourvoir",
+     "filled": false
+    }
    },
    {
     "id": "pole-2",
@@ -2003,7 +2026,13 @@
        }
       ]
      }
-    ]
+    ],
+    "direction": {
+     "label": "Directeur ou directrice de pôle",
+     "rang": "rang de chef de projet",
+     "name": "à pourvoir",
+     "filled": false
+    }
    },
    {
     "id": "pole-3",
@@ -2230,7 +2259,13 @@
        }
       ]
      }
-    ]
+    ],
+    "direction": {
+     "label": "Directeur ou directrice de pôle",
+     "rang": "rang de chef de projet",
+     "name": "à pourvoir",
+     "filled": false
+    }
    },
    {
     "id": "pole-4",
@@ -2423,7 +2458,13 @@
        }
       ]
      }
-    ]
+    ],
+    "direction": {
+     "label": "Directeur ou directrice de pôle",
+     "rang": "rang de chef de projet",
+     "name": "à pourvoir",
+     "filled": false
+    }
    }
   ],
   "cellules": {

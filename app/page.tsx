@@ -120,13 +120,13 @@ export default function Home() {
               <h2 id="programmes-title">Quatre pôles.<br /><em>Dix-neuf thématiques.</em></h2>
             </div>
             <p>
-              Chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte publiquement. Deux cellules transversales — financement et communication — appuient l’ensemble.
+              Chaque pôle est dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ; chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte publiquement. Deux cellules transversales — financement et communication — appuient l’ensemble.
             </p>
           </div>
           <div className="program-grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))" }}>
             {idx.structure.poles.map((pole) => (
               <Link className="program-card" href={`/programmes#${pole.id}`} key={pole.id}>
-                <div className="card-top"><span>Pôle {pole.roman}</span><small>{pole.items.filter((t) => t.filled).length}/{pole.items.length} pourvues</small></div>
+                <div className="card-top"><span>Pôle {pole.roman}</span><small>{pole.items.filter((t) => t.filled).length}/{pole.items.length} pourvues{pole.direction && !pole.direction.filled ? " · direction à pourvoir" : ""}</small></div>
                 <div className="program-body">
                   <h3 style={{ fontSize: 28 }}>{pole.name}</h3>
                   <p>{pole.items.slice(0, 3).map((t) => t.name).join(" · ")}{pole.items.length > 4 ? ` · et ${pole.items.length - 3} autres thématiques` : pole.items.length === 4 ? " · et 1 autre thématique" : ""}</p>

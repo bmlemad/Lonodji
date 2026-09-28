@@ -852,7 +852,7 @@
   {
    "slug": "gouvernance",
    "label": "Gouvernance & plaidoyer",
-   "articles": 9
+   "articles": 10
   },
   {
    "slug": "memoire",
@@ -862,7 +862,7 @@
   {
    "slug": "vie-association",
    "label": "Vie de l’association",
-   "articles": 6
+   "articles": 7
   },
   {
    "slug": "culture",
@@ -915,5 +915,5 @@
    "articles": 1
   }
  ],
- "totalArticles": 38
+ "totalArticles": 40
 }

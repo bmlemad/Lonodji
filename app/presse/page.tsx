@@ -36,6 +36,13 @@ const LOGOS_ODEB: [string, string, string][] = [
   [IDENTITE.mono, "Monochrome (SVG)", "tampon, gravure, photocopie"],
   [IDENTITE.png.embleme1024, "Emblème PNG 1024 px", "réseaux, documents"],
 ];
+const LOGOS_MARQUES: [string, string, string][] = [
+  [IDENTITE.adeb.png.horizontal, "ADEB LONODJI, logo horizontal (PNG)", "association · fond sombre"],
+  [IDENTITE.adeb.png.horizontalClair, "ADEB LONODJI, logo horizontal clair (PNG)", "association · papier"],
+  [IDENTITE.png.horizontal, "ODEB LONODJI, logo horizontal (PNG)", "projet · fond sombre"],
+  [IDENTITE.png.horizontalClair, "ODEB LONODJI, logo horizontal clair (PNG)", "projet · papier"],
+];
+/* l'ancien logo, jusqu'au 28 septembre 2026 */
 const LOGOS: [string, string, string][] = [
   ["/identite/logo-adeb-lonodji.svg", "Logo couleur (SVG)", "fond clair"],
   ["/identite/logo-adeb-lonodji-sombre.svg", "Logo sur fond sombre (SVG)", "réserve"],
@@ -119,25 +126,7 @@ export default function Presse() {
       </section>
 
       <section className="hub-section" id="visuels">
-        <SectionHead eyebrow="Logos et visuels" title="Le logo," em="et comment l’utiliser." text="Un disque bleu, une paire d’empreintes de pas, une poignée de main qui traverse le disque. On garde ses couleurs, sa zone de protection et ses proportions ; en dessous de 48 px, le pictogramme. Aucune photographie de Bédjondo n’est encore disponible : la banque d’images se constitue." />
-        <ul className="pr-logos">
-          {LOGOS.map(([href, label, note]) => (
-            <li key={href}>
-              <a href={href} download className="pr-logo">
-                <span className={href.includes("sombre") || href.includes("blanc") ? "pr-logo-apercu est-sombre" : "pr-logo-apercu"}><img src={href} alt="" width={120} height={120} loading="lazy" /></span>
-                <strong>{label}</strong><small>{note}</small>
-              </a>
-            </li>
-          ))}
-        </ul>
-        <div className="section-actions" style={{ justifyContent: "flex-start" }}>
-          <Link className="button secondary" href="/dossiers/identite-visuelle">Identité visuelle complète : couleurs, polices, règles <span aria-hidden="true">→</span></Link>
-          <Link className="text-link" href="/dossiers/kit-mobilisation">Visuels de mobilisation <span aria-hidden="true">→</span></Link>
-        </div>
-      </section>
-
-      <section className="hub-section" id="logo-odeb">
-        <SectionHead eyebrow="Le logo du projet ODEB LONODJI" title="« Les Pas vers l’Avenir »," em="retenu le 28 septembre 2026." text="Trois empreintes — les ancêtres, la génération actuelle, les générations futures — qui avancent vers un soleil levant, dans un disque de verre vert profond. Le projet est porté par l’association : quand les deux logos sont présents, celui d’ADEB LONODJI vient en premier. En dessous de 40 px, la version à plat ; pour le tampon et la photocopie, la monochrome." />
+        <SectionHead eyebrow="Logos et visuels" title="« Les Pas vers l’Avenir »," em="le logo adopté le 28 septembre 2026." text="Trois empreintes — les ancêtres, la génération actuelle, les générations futures — qui avancent vers un soleil levant, dans un disque de verre vert profond. Un emblème, deux noms : « ADEB LONODJI » pour l’association, « ODEB LONODJI » pour son projet. En dessous de 40 px, la version à plat ; pour le tampon et la photocopie, la monochrome. Aucune photographie de Bédjondo n’est encore disponible : la banque d’images se constitue." />
         <ul className="pr-logos">
           {LOGOS_ODEB.map(([href, label, note]) => (
             <li key={href}>
@@ -148,11 +137,36 @@ export default function Presse() {
             </li>
           ))}
         </ul>
+        <ul className="pr-logos pr-logos--larges">
+          {LOGOS_MARQUES.map(([href, label, note]) => (
+            <li key={href}>
+              <a href={href} download className="pr-logo">
+                <span className={href.includes("clair") ? "pr-logo-apercu pr-logo-apercu--large" : "pr-logo-apercu pr-logo-apercu--large est-sombre"}><img src={href} alt="" width={240} height={77} loading="lazy" /></span>
+                <strong>{label}</strong><small>{note}</small>
+              </a>
+            </li>
+          ))}
+        </ul>
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
           <Link className="button secondary" href="/odeb/identite">Le logo, ses règles, ses couleurs <span aria-hidden="true">→</span></Link>
           <a className="text-link" href={IDENTITE.kit} download>Kit complet (ZIP) <span aria-hidden="true">↓</span></a>
           <a className="text-link" href={IDENTITE.planche} download>Planche pour l’imprimeur (PDF) <span aria-hidden="true">↓</span></a>
+          <Link className="text-link" href="/dossiers/kit-mobilisation">Visuels de mobilisation <span aria-hidden="true">→</span></Link>
         </div>
+        <details className="pr-ancien" id="ancien-logo">
+          <summary>L’ancien logo (jusqu’au 28 septembre 2026)</summary>
+          <p>Un disque bleu, une paire d’empreintes de pas, une poignée de main qui traverse le disque : il reste sur les documents publiés avant cette date et ne se mélange pas au nouveau. Ses règles sont dans l’<Link href="/dossiers/identite-visuelle">identité visuelle précédente</Link>.</p>
+          <ul className="pr-logos">
+            {LOGOS.map(([href, label, note]) => (
+              <li key={href}>
+                <a href={href} download className="pr-logo">
+                  <span className={href.includes("sombre") || href.includes("blanc") ? "pr-logo-apercu est-sombre" : "pr-logo-apercu"}><img src={href} alt="" width={120} height={120} loading="lazy" /></span>
+                  <strong>{label}</strong><small>{note}</small>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
       </section>
 
       <section className="hub-section" id="partage">
@@ -183,7 +197,7 @@ export default function Presse() {
             <a className="text-link" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <p className="lg-footnote">Espace ouvert le 28 septembre 2026 pour accompagner le lancement de la réflexion ODEB LONODJI. Les chiffres sont ceux du site à sa mise en ligne (<Link href="/impact">tableau de bord</Link>) ; les logos et leurs règles viennent de l’<Link href="/dossiers/identite-visuelle">identité visuelle</Link>.</p>
+        <p className="lg-footnote">Espace ouvert le 28 septembre 2026 pour accompagner le lancement de la réflexion ODEB LONODJI. Les chiffres sont ceux du site à sa mise en ligne (<Link href="/impact">tableau de bord</Link>) ; le logo et ses règles sont dans l’<Link href="/odeb/identite">identité visuelle</Link>, l’ancien logo dans l’<Link href="/dossiers/identite-visuelle">identité précédente</Link>.</p>
       </section>
     </main>
   );

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { entreeCourante, NAVIGATION, type NavChiffres, type NavEntree } from "../lib/navigation";
+import { IDENTITE } from "../lib/odeb";
 
 /* En-tête du site : barre fixe, méga-menu par section sur ordinateur (bouton
    « disclosure » + panneau en colonnes et carte en vedette), menu plein écran
@@ -142,7 +143,7 @@ export default function SiteNav({ chiffres, whatsapp, telephone, telephoneHref, 
   return (
     <>
       <nav className="nav" aria-label="Navigation principale" ref={navRef}>
-        <Link className="brand" href="/" aria-label="ADEB LONODJI — accueil" onClick={() => { fermer(); setMenu(false); }}><span className="brand-mark" aria-hidden="true">A</span><span className="brand-name"><span>ADEB</span><b>LONODJI</b></span></Link>
+        <Link className="brand" href="/" aria-label="ADEB LONODJI — accueil" onClick={() => { fermer(); setMenu(false); }}><img className="brand-mark brand-mark--embleme" src={IDENTITE.embleme} alt="" width={34} height={34} decoding="async" /><span className="brand-name"><span>ADEB</span><b>LONODJI</b></span></Link>
         <div className="links">{NAVIGATION.map(rendreEntree)}</div>
         <Link className="nav-search" href="/recherche" aria-label="Rechercher dans le site" title="Rechercher" onClick={fermer}><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg></Link>
         <Link className="nav-cta" href="/participer" aria-label="Nous rejoindre" onClick={fermer}><span>Nous rejoindre</span><b aria-hidden="true">↗</b></Link>
