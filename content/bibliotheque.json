@@ -840,6 +840,12 @@
    "pdf": "/documents/plaidoyer-eau-potable-bedjondo-2026.pdf",
    "description": "Solariser le pompage du château d’eau existant pour mettre fin aux arrêts faute de carburant, étendre le réseau du village desservi à toute la ville, des bornes-fontaines dans chaque quartier, des comités de gestion, l’eau et les latrines dans chaque école et au centre de santé.",
    "meta": "17 septembre 2026 · Gouvernance & plaidoyer"
+  },
+  {
+   "titre": "Livre blanc du projet ODEB LONODJI (version de travail)",
+   "pdf": "/odeb/livre-blanc-odeb-lonodji-2026.pdf",
+   "description": "Le document fondateur de l’Organisation pour le Développement et l’Émergence Bedjonde : vision 2030, six missions, cinq programmes, feuille de route. Non adopté à ce jour.",
+   "meta": "28 septembre 2026 · A4 · version de travail n° 1"
   }
  ],
  "journal": [
@@ -856,7 +862,7 @@
   {
    "slug": "vie-association",
    "label": "Vie de l’association",
-   "articles": 5
+   "articles": 6
   },
   {
    "slug": "culture",
@@ -864,14 +870,14 @@
    "articles": 4
   },
   {
-   "slug": "developpement",
-   "label": "Développement",
+   "slug": "lettre",
+   "label": "Lettre d’information",
    "articles": 2
   },
   {
-   "slug": "lettre",
-   "label": "Lettre d’information",
-   "articles": 1
+   "slug": "developpement",
+   "label": "Développement",
+   "articles": 2
   },
   {
    "slug": "projets",
@@ -909,5 +915,5 @@
    "articles": 1
   }
  ],
- "totalArticles": 36
+ "totalArticles": 38
 }

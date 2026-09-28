@@ -12,6 +12,10 @@ export const metadata: Metadata = {
 
 export default function Archives() {
   const idx = getIndex();
+  const dates = idx.articles.map((a) => a.date).filter(Boolean).sort();
+  const fmt = (d: string) => new Date(d + "T12:00:00Z").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+  const premier = fmt(dates[0]);
+  const dernier = fmt(dates[dates.length - 1]);
   const dossiers = idx.pages.filter((p) => p.kind === "dossier").length;
   return (
     <main id="main-content" className="hub-page">
@@ -23,7 +27,7 @@ export default function Archives() {
       />
       <Stats items={[
         { value: "87", label: "pages reprises", note: "dont 6 pages en anglais" },
-        { value: String(idx.articles.length), label: "articles du journal", note: "du 11 au 22 septembre 2026" },
+        { value: String(idx.articles.length), label: "articles du journal", note: `du ${premier} au ${dernier}` },
         { value: String(dossiers), label: "dossiers de fond", note: "diagnostic, projets, patrimoine" },
         { value: String(idx.documents.filter((d) => d.pdf).length), label: "documents PDF", note: "kit, cahiers, plaidoyers" },
       ]} />

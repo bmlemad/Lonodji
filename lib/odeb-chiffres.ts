@@ -23,7 +23,7 @@ export function chiffresOdeb(): Chiffres {
     localites: ind.contenu.carte.localites,
     fiches: ind.contenu.carte.localitesNommees,
     references: biblio.references.length,
-    pdf: biblio.documents.length,
+    pdf: ind.contenu.documentsPdf,
     chercheurs: biblio.chercheurs.length,
     vacantes: thematiqueCount(idx) - filledCount(idx),
     cellulesVacantes: cellules.filter((c) => !c.filled).length,
