@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageHeader, SectionHead, Stats, ThematiqueRow } from "../../components/blocks";
 import { LegacySections } from "../../components/legacy-content";
 import LegacyEnhance from "../../components/legacy-enhance";
-import { filledCount, getIndex, getPage, ogFor, pickSections, thematiqueCount } from "../../lib/content";
+import { enLettres, filledCount, getIndex, getPage, ogFor, pickSections, thematiqueCount } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Nos actions — quatre pôles, dix-neuf thématiques",
@@ -25,7 +25,7 @@ export default function Programmes() {
         eyebrow="03 — Nos actions"
         title="Quatre pôles,"
         em="dix-neuf thématiques."
-        lead="Les Chantiers ADEB LONODJI : chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte ici. Six thématiques sont pourvues ; treize cherchent encore la personne qui les portera."
+        lead={`Les Chantiers ADEB LONODJI : chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte ici. ${enLettres(filled, true)} thématiques sont pourvues ; ${enLettres(total - filled)} cherchent encore la personne qui les portera.`}
       />
       <Stats items={[
         { value: String(poles.length), label: "pôles d’action", note: "Mémoire · Développement · Gouvernance · Numérique" },

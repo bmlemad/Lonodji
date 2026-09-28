@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArticleCard } from "../components/blocks";
 import TableauDeBord from "../components/tableau-de-bord";
-import { filledCount, getIndex, getPage, ORG, thematiqueCount } from "../lib/content";
+import { enLettres, filledCount, getIndex, getPage, ORG, thematiqueCount } from "../lib/content";
 import { getIndicateurs } from "../lib/indicateurs";
 
 const values = [
@@ -10,8 +10,8 @@ const values = [
   ["03", "Héritage", "Transmettre la langue, l’histoire et les valeurs du peuple bedjond aux générations qui viennent."],
 ];
 
-const participer = [
-  ["01", "Rejoindre ou coordonner une thématique", "Treize thématiques cherchent leur coordonnateur. Une compétence ponctuelle suffit souvent à faire avancer un dossier déjà prêt.", "/participer?coordo=1#contact"],
+const participer = (vacantes: number) => [
+  ["01", "Rejoindre ou coordonner une thématique", `${enLettres(vacantes, true)} thématiques cherchent leur coordonnateur. Une compétence ponctuelle suffit souvent à faire avancer un dossier déjà prêt.`, "/participer?coordo=1#contact"],
   ["02", "Adhérer à l’association", "Déclarer son intention d’adhérer n’engage aucun argent : la collecte est suspendue jusqu’à l’ouverture d’un compte au nom de l’association.", "/participer#adherer"],
   ["03", "Inscrire ses compétences au répertoire de la diaspora", "Médecin, enseignante, ingénieur, juriste, informaticienne : cinq minutes pour dire ce que vous savez faire, et n’être sollicité que pour cela.", "/diaspora"],
   ["04", "Raconter Bédjondo : un récit, une photo, une voix", "Un ancien qui raconte, une femme qui fait bouger les choses, un jeune talent, un paysage, une photo des forums de 2000 et 2003 : rien n’est publié sans votre relecture.", "/temoignages"],
@@ -217,7 +217,7 @@ export default function Home() {
             <p>Nous répondons sous quarante-huit heures ouvrées, par le formulaire, par WhatsApp ou par téléphone.</p>
           </div>
           <div className="engagement-list">
-            {participer.map(([n, title, description, href]) => (
+            {participer(total - filled).map(([n, title, description, href]) => (
               <Link href={href} key={n} style={{ display: "contents" }}>
                 <article>
                   <span>{n}</span>

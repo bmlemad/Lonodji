@@ -4,7 +4,7 @@ import { PageHeader, SectionHead } from "../../components/blocks";
 import ContactPrefill from "../../components/contact-prefill";
 import { LegacySections, Resume } from "../../components/legacy-content";
 import LegacyEnhance from "../../components/legacy-enhance";
-import { getPage, ogFor, ORG } from "../../lib/content";
+import { enLettres, filledCount, getIndex, getPage, ogFor, ORG, thematiqueCount } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Participer : nous écrire, adhérer, soutenir",
@@ -14,6 +14,8 @@ export const metadata: Metadata = {
 };
 
 export default function Participer() {
+  const idx = getIndex();
+  const vacantes = thematiqueCount(idx) - filledCount(idx);
   const contact = getPage("contact");
   const adherer = getPage("adherer");
   const soutenir = getPage("soutenir");
@@ -44,7 +46,7 @@ export default function Participer() {
       </section>
 
       <section className="hub-section" id="thematiques">
-        <SectionHead eyebrow="Avant de vous lancer" title="Choisissez un pôle," em="puis une thématique." text="Dix-neuf thématiques, treize sans coordonnateur. La page Nos actions les détaille ; ce raccourci vous oriente en quelques questions." />
+        <SectionHead eyebrow="Avant de vous lancer" title="Choisissez un pôle," em="puis une thématique." text={`Dix-neuf thématiques, ${enLettres(vacantes)} sans coordonnateur. La page Nos actions les détaille ; ce raccourci vous oriente en quelques questions.`} />
         <div className="legacy"><LegacySections sections={[choisir, avant]} /></div>
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
           <Link className="button primary" href="/dossiers/trouver-ma-thematique">Trouver ma thématique en trois questions <span aria-hidden="true">↗</span></Link>

@@ -138,6 +138,9 @@ export function pickSections(page: LegacyPage, opts: { only?: string[]; exclude?
 
 export const thematiqueCount = (idx: ContentIndex) => idx.structure.poles.reduce((n, p) => n + p.items.length, 0);
 export const filledCount = (idx: ContentIndex) => idx.structure.poles.reduce((n, p) => n + p.items.filter((t) => t.filled).length, 0);
+/* Nombres en lettres (0 à 20), pour les phrases qui comptent les thématiques. */
+const LETTRES = ["zéro", "une", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf", "vingt"];
+export const enLettres = (n: number, majuscule = false) => { const t = LETTRES[n] ?? String(n); return majuscule ? t.charAt(0).toUpperCase() + t.slice(1) : t; };
 
 export const ORG = {
   name: "ADEB LONODJI",
