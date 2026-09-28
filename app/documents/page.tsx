@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DocumentCard, PageHeader, SectionHead } from "../../components/blocks";
-import { getIndex } from "../../lib/content";
+import { getIndex, ogFor } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Documents à télécharger",
   description: "Kit d’adhésion, cahiers de terrain, dossier de présentation, note à la commune et plaidoyers en PDF ; statuts et procès-verbaux dès leur validation.",
   alternates: { canonical: "/documents" },
+  openGraph: ogFor("/documents"),
 };
 
 export default function Documents() {

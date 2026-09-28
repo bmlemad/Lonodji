@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader, SectionHead, Timeline } from "../../components/blocks";
 import { LegacySections, Toc } from "../../components/legacy-content";
-import { getIndex, getPage, ORG } from "../../lib/content";
+import { getIndex, getPage, ogFor, ORG } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Notre mission",
   description: "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : mission, valeurs, repères depuis 1986, bureau exécutif et organisation.",
   alternates: { canonical: "/mission" },
+  openGraph: ogFor("/mission"),
 };
 
 const values = [

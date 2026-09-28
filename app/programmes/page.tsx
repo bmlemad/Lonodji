@@ -3,12 +3,13 @@ import Link from "next/link";
 import { PageHeader, SectionHead, Stats, ThematiqueRow } from "../../components/blocks";
 import { LegacySections } from "../../components/legacy-content";
 import LegacyEnhance from "../../components/legacy-enhance";
-import { filledCount, getIndex, getPage, pickSections, thematiqueCount } from "../../lib/content";
+import { filledCount, getIndex, getPage, ogFor, pickSections, thematiqueCount } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Nos actions — quatre pôles, dix-neuf thématiques",
   description: "Quatre pôles, dix-neuf thématiques et deux cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés.",
   alternates: { canonical: "/programmes" },
+  openGraph: ogFor("/programmes"),
 };
 
 export default function Programmes() {

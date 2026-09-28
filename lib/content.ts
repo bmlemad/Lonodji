@@ -165,3 +165,18 @@ export function metaDescription(text: string, max = 160): string {
   const cut = t.slice(0, max - 1);
   return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:\s]+$/, "") + "…";
 }
+
+/* Image de partage d'une route (Open Graph / Twitter) : public/og/<route>.jpg
+   quand scripts/build-og.py l'a produite, sinon l'image générale du site. */
+export function ogImage(route: string) {
+  const name = route === "/" ? "index" : route.replace(/^\//, "").replace(/\//g, "--");
+  const file = path.join(process.cwd(), "public", "og", `${name}.jpg`);
+  const url = fs.existsSync(file) ? `/og/${name}.jpg` : "/og-image.png";
+  return [{ url, width: 1200, height: 630, alt: "ADEB LONODJI" }];
+}
+
+/* Bloc Open Graph d'une route : titre et description viennent des métadonnées
+   de la page (Next les reprend), le reste est commun au site. */
+export function ogFor(route: string, lang: "fr" | "en" = "fr") {
+  return { siteName: ORG.name, locale: lang === "en" ? "en_GB" : "fr_FR", type: "website" as const, url: route, images: ogImage(route) };
+}

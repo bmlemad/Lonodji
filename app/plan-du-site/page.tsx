@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "../../components/blocks";
-import { getIndex } from "../../lib/content";
+import { getIndex, ogFor } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Plan du site",
   description: "Toutes les pages du site ADEB LONODJI : association, histoire, actions, dossiers, journal, documents, participation et transparence.",
   alternates: { canonical: "/plan-du-site" },
+  openGraph: ogFor("/plan-du-site"),
 };
 
 const main: [string, { href: string; label: string }[]][] = [

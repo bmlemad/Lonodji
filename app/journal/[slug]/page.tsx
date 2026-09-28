@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleCard } from "../../../components/blocks";
 import { LegacySections, Resume, splitTitle } from "../../../components/legacy-content";
-import { getArticle, getIndex, listArticleSlugs, metaDescription, ORG } from "../../../lib/content";
+import { getArticle, getIndex, listArticleSlugs, metaDescription, ogFor, ORG } from "../../../lib/content";
 
 export const dynamicParams = false;
 
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: a.title,
     description: metaDescription(a.description || a.summary),
     alternates: { canonical: `/journal/${slug}` },
-    openGraph: { type: "article", title: a.title, description: metaDescription(a.description || a.summary), publishedTime: a.date, authors: [a.byline || ORG.name] },
+    openGraph: { ...ogFor(`/journal/${slug}`), type: "article", title: a.title, description: metaDescription(a.description || a.summary), publishedTime: a.date, authors: [a.byline || ORG.name] },
   };
 }
 

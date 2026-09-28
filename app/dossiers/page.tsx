@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "../../components/blocks";
-import { getIndex } from "../../lib/content";
+import { getIndex, ogFor } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Tous les dossiers",
   description: "Les dossiers de fond d’ADEB LONODJI : diagnostic territorial, projets à l’étude, plans pour les personnes vulnérables, patrimoine, outils de terrain et cadre légal.",
   alternates: { canonical: "/dossiers" },
+  openGraph: ogFor("/dossiers"),
 };
 
 const groups: [string, string[]][] = [

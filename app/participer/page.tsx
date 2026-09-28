@@ -4,12 +4,13 @@ import { PageHeader, SectionHead } from "../../components/blocks";
 import ContactPrefill from "../../components/contact-prefill";
 import { LegacySections, Resume } from "../../components/legacy-content";
 import LegacyEnhance from "../../components/legacy-enhance";
-import { getPage, ORG } from "../../lib/content";
+import { getPage, ogFor, ORG } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Participer : nous écrire, adhérer, soutenir",
   description: "Rejoindre ou coordonner une thématique, adhérer, proposer un article, recevoir la lettre d’information : par formulaire, WhatsApp ou téléphone.",
   alternates: { canonical: "/participer" },
+  openGraph: ogFor("/participer"),
 };
 
 export default function Participer() {

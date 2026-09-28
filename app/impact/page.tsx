@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader, SectionHead, Stats } from "../../components/blocks";
 import { LegacySections } from "../../components/legacy-content";
-import { filledCount, getIndex, getPage, thematiqueCount } from "../../lib/content";
+import { filledCount, getIndex, getPage, ogFor, thematiqueCount } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Suivi des actions et tableau de bord",
   description: "Le tableau de bord : ce qui est documenté, publié, envoyé et ce qui attend une compétence, thématique par thématique, sans chiffre fabriqué.",
   alternates: { canonical: "/impact" },
+  openGraph: ogFor("/impact"),
 };
 
 export default function Impact() {

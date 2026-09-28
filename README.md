@@ -29,6 +29,13 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 - `scripts/import-legacy.py` — importe l’ancien site statique dans `content/` et `public/` (`python3 scripts/import-legacy.py /chemin/vers/ancien-site`).
 - `scripts/build-legacy-css.py` — génère `app/legacy.css` (styles des composants importés, réduits et raccordés à la palette du site).
 - `scripts/build-search-index.py` — génère `public/search-index.json` pour la page `/recherche` (à relancer après toute modification de `content/`).
+- `scripts/build-og.py` — génère les images de partage `public/og/*.jpg` (une par page, titres et descriptions lus dans le site construit : lancer `npm run build` avant, puis relancer le build pour les déclarer).
+
+## Couche appli mobile
+
+- `public/.well-known/assetlinks.json` — lien entre le site et l’appli Android (`org.lonodji.app`) ; y ajouter les empreintes des clés Google Play après le premier envoi.
+- `app/manifest.ts` — manifeste d’installation (icônes, raccourcis) ; `public/sw.js` — lecture hors ligne des pages déjà ouvertes, page de repli `/hors-ligne`.
+- `components/app-shell.tsx` — reconnaissance de l’appli installée (écran d’accueil, appli Android, appli iPhone `LONODJI-iOS`) et barre d’onglets sur mobile dans ce cas.
 - Outils en ligne : `/dossiers/trouver-ma-thematique` (`public/trouver.js`), `/dossiers/genealogie-outil` (`public/genealogie.js`, données dans le navigateur), carte du pays bedjond (`public/geo.js`).
 
 ## Formulaires

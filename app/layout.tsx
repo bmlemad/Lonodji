@@ -41,13 +41,7 @@ export const metadata: Metadata = {
       "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond. Quatre pôles, dix-neuf thématiques, sept plaidoyers publiés.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ADEB LONODJI — Courage • Discipline • Héritage" }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "ADEB LONODJI — Courage • Discipline • Héritage",
-    description:
-      "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond. Quatre pôles, dix-neuf thématiques, sept plaidoyers publiés.",
-    images: ["/og-image.png"],
-  },
+  twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
 };
 

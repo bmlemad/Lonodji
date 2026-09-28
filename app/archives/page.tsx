@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader, SectionHead, Stats } from "../../components/blocks";
-import { getIndex } from "../../lib/content";
+import { getIndex, ogFor } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Archives du site",
   description: "La première version du site (septembre 2026, 87 pages) est intégralement reprise ici : ce qu’elle contenait, comment, et ce que des sources extérieures en disent.",
   alternates: { canonical: "/archives" },
+  openGraph: ogFor("/archives"),
 };
 
 export default function Archives() {

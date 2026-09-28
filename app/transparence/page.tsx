@@ -3,12 +3,13 @@ import Link from "next/link";
 import { PageHeader, SectionHead } from "../../components/blocks";
 import { LegacySections, Resume, Toc } from "../../components/legacy-content";
 import LegacyEnhance from "../../components/legacy-enhance";
-import { getPage } from "../../lib/content";
+import { getPage, ogFor } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Redevabilité, transparence et journal des corrections",
   description: "Réponse sous 48 heures, mécanisme de plainte, protection des enfants et des personnes vulnérables, charte d’écriture et journal daté des corrections.",
   alternates: { canonical: "/transparence" },
+  openGraph: ogFor("/transparence"),
 };
 
 export default function Transparence() {

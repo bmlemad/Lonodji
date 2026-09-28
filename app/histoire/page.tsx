@@ -3,12 +3,13 @@ import Link from "next/link";
 import { ArticleCard, PageHeader, SectionHead } from "../../components/blocks";
 import { LegacySections } from "../../components/legacy-content";
 import LegacyEnhance from "../../components/legacy-enhance";
-import { getIndex, getPage } from "../../lib/content";
+import { getIndex, getPage, ogFor } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Histoire, Bédjondo et patrimoine bedjond",
   description: "Bédjondo, berceau du peuple bedjond : lignée des chefs de canton, grandes figures, lieux sacrés, généalogies, base de recherche et articles d’histoire.",
   alternates: { canonical: "/histoire" },
+  openGraph: ogFor("/histoire"),
 };
 
 const dossiers = [

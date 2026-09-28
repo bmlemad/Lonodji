@@ -3,12 +3,13 @@ import Link from "next/link";
 import { PageHeader, PlaidoyerCard, SectionHead } from "../../components/blocks";
 import { LegacySections } from "../../components/legacy-content";
 import LegacyEnhance from "../../components/legacy-enhance";
-import { getIndex, getPage, pickSections } from "../../lib/content";
+import { getIndex, getPage, ogFor, pickSections } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Plaidoyers, engagements et dossiers",
   description: "Sept plaidoyers et une note à la commune de Bédjondo — eau, électricité, internet, routes, santé, école, formation — avec destinataires, suivi et engagements.",
   alternates: { canonical: "/actions" },
+  openGraph: ogFor("/actions"),
 };
 
 const dossiers = [

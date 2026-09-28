@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader, SectionHead } from "../../components/blocks";
 import JournalList from "../../components/journal-list";
-import { getIndex } from "../../lib/content";
+import { getIndex, ogFor } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Le journal",
   description: "Articles, annonces, plaidoyers et lettre d’information : la vie de l’association, la mémoire bedjond et les dossiers de développement du Mandoul Occidental.",
   alternates: { canonical: "/journal" },
+  openGraph: ogFor("/journal"),
 };
 
 export default function Journal() {
