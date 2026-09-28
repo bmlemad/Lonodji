@@ -10,7 +10,7 @@ import { getProjets, STADES_ACTIFS, stadeIndex } from "../../lib/projets";
 export const metadata: Metadata = {
   title: "Plateforme de projets : chaque projet, son stade, ce qui manque",
   description: "Espace numérique, application, complexe sportif, Air Bedjondo : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer — et le formulaire pour en proposer un.",
-  alternates: { canonical: "/projets" },
+  alternates: { canonical: "/projets", languages: { fr: "/projets", en: "/en/projects" } },
   openGraph: ogFor("/projets"),
 };
 

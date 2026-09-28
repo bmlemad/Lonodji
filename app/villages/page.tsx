@@ -8,7 +8,7 @@ import { getVillages, GROUPES, km, nf, ORDRE_GROUPES, TYPES } from "../../lib/vi
 export const metadata: Metadata = {
   title: "Les villages du pays bedjond : une fiche par localité",
   description: "Retrouvez votre village : 966 localités du pays bedjond, chacune avec ce que les données ouvertes en savent, ce que le site en dit et ce qui reste à documenter.",
-  alternates: { canonical: "/villages" },
+  alternates: { canonical: "/villages", languages: { fr: "/villages", en: "/en/villages" } },
   openGraph: ogFor("/villages"),
 };
 

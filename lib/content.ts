@@ -186,3 +186,11 @@ export function ogImage(route: string) {
 export function ogFor(route: string, lang: "fr" | "en" = "fr") {
   return { siteName: ORG.name, locale: lang === "en" ? "en_GB" : "fr_FR", type: "website" as const, url: route, images: ogImage(route) };
 }
+
+/* Pages anglaises écrites dans l'appli (hors import de l'ancien site) : plan du site, sitemap, index de recherche. */
+export const EN_PAGES_APP: { route: string; title: string }[] = [
+  { route: "/en/odeb", title: "The ODEB LONODJI project — Vision 2030" },
+  { route: "/en/villages", title: "Find your village — the Bedjond country, unit by unit" },
+  { route: "/en/projects", title: "Projects — each one with its stage, what is missing and how to help" },
+  { route: "/en/impact", title: "Impact dashboard — six dated, sourced indicators" },
+];

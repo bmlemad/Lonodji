@@ -119,6 +119,15 @@ PAGES_SITE.append({"t": "Identité visuelle : le logo « Les Pas vers l’Avenir
 PAGES_SITE.append({"t": "The ODEB LONODJI project — Vision 2030 (in English)", "r": "/en/odeb", "k": "In English",
      "d": "A project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030: six missions, six programmes, a roadmap, a white paper.",
      "x": "ODEB LONODJI project English vision 2030 organisation development emergence Bedjond people missions research documentation territorial development innovation heritage diaspora programmes roadmap white paper take part skills register"})
+PAGES_SITE.append({"t": "Find your village — the Bedjond country, unit by unit (in English)", "r": "/en/villages", "k": "In English",
+     "d": "Fourteen units, 966 named localities, one page per village: what open data knows, what the site says, what is still to document.",
+     "x": "English villages units Mandoul Occidental localities map find your village canton neighbourhood diaspora report a need GADM OpenStreetMap"})
+PAGES_SITE.append({"t": "Projects — each one with its stage, what is missing and how to help (in English)", "r": "/en/projects", "k": "In English",
+     "d": "From idea to service: community digital space, mobile app, sports complex, transport company, hotel, boarding school, university hospital; what exists, what is missing, how to contribute.",
+     "x": "English projects stages idea study announced subscription funded in progress trial in service digital space app sports complex Air Bedjondo transport hotel boarding school university hospital CHU pledge skills"})
+PAGES_SITE.append({"t": "Impact dashboard — six dated, sourced indicators (in English)", "r": "/en/impact", "k": "In English",
+     "d": "Members, coordinators, advocacy briefs, needs recorded and solved, active projects; what the site produces and receives; zeros published as zeros.",
+     "x": "English dashboard impact indicators members coordinators advocacy briefs needs solved projects articles PDF corrections commitments method counted not estimated"})
 PAGES_SITE.append({"t": "Déclaration d’accessibilité", "r": "/accessibilite", "k": "Page",
      "d": "Niveau visé WCAG 2.1 AA, ce qui est vérifié avant chaque mise en ligne, les limites connues (carte, PDF, contenus importés) et comment signaler un obstacle.",
      "x": "accessibilité déclaration WCAG 2.1 AA lecteur d’écran clavier contraste hors ligne téléphone connexion lente axe-core limites carte PDF signaler un obstacle réponse 48 heures"})

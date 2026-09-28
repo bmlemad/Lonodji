@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "../../components/blocks";
-import { getIndex, ogFor } from "../../lib/content";
+import { EN_PAGES_APP, getIndex, ogFor } from "../../lib/content";
 import { NAVIGATION } from "../../lib/navigation";
 import { PROGRAMMES, routeProgramme } from "../../lib/odeb";
 
@@ -26,7 +26,7 @@ export default function PlanDuSite() {
         {main.map(([title, links]) => (
           <div key={title}><h2>{title}</h2>{links.map((l) => <Link key={l.href} href={l.href} style={{ fontSize: 15 }}>{l.label}</Link>)}</div>
         ))}
-        <div><h2>In English</h2>{idx.pages.filter((p) => p.kind === "en").map((p) => <Link key={p.route} href={p.route} style={{ fontSize: 15 }}>{p.title}</Link>)}</div>
+        <div><h2>In English</h2>{idx.pages.filter((p) => p.kind === "en").map((p) => <Link key={p.route} href={p.route} style={{ fontSize: 15 }}>{p.title}</Link>)}{EN_PAGES_APP.map((p) => <Link key={p.route} href={p.route} style={{ fontSize: 15 }}>{p.title}</Link>)}</div>
       </div>
       <section className="hub-section"><p className="eyebrow">Dossiers</p><div className="footer-cols" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(260px,1fr))" }}>{idx.pages.filter((p) => p.kind === "dossier").map((p) => <Link key={p.route} href={p.route} style={{ fontSize: 15 }}>{p.title}</Link>)}</div></section>
       <section className="hub-section"><p className="eyebrow">Journal — {idx.articles.length} articles</p><div className="footer-cols" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(260px,1fr))" }}>{idx.articles.map((a) => <Link key={a.route} href={a.route} style={{ fontSize: 15 }}>{a.dateLabel} — {a.title}</Link>)}</div></section>

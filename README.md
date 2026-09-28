@@ -108,6 +108,10 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 
 - `/accessibilite` — déclaration : niveau visé (WCAG 2.1 AA), contrôles avant mise en ligne (axe-core sur toutes les pages, parcours clavier, captures à trois largeurs), limites connues (carte Leaflet, PDF, contenus importés), signalement d’un obstacle ; reliée en pied de page avec « Signaler un manquement » (mécanisme de plainte de la charte).
 
+## Pages anglaises de l’appli (29 septembre 2026)
+
+- En plus des six pages importées (`/en/index`, `about`, `advocacy`, `bedjondo`, `contact`, `themes`) et de `/en/odeb` : `/en/villages` (les quatorze unités, comptes lus dans `content/villages.json`), `/en/projects` (stades et projets traduits dans la page, données de `content/projets.json`), `/en/impact` (les six indicateurs et ce que le site produit, `content/indicateurs.json`). `hreflang` fr/en sur les pages françaises correspondantes ; liste `EN_PAGES_APP` dans `lib/content.ts` (plan du site), sitemap, index de recherche ; l’accueil anglais les relie (`UPDATES_SOURCE`). L’arabe reste à venir : il demande un relecteur.
+
 ## Outils de navigation (28 septembre 2026, soir)
 
 - **Palette « Aller à… »** (`components/palette.tsx`) : ouverte par la loupe de l’en-tête, la touche `/`, `Ctrl+K` ou `⌘K` ; recherche instantanée sur l’index allégé `public/search-palette.json` (titre, route, type, description ; produit par `build-search-index.py` avec l’index complet), résultats groupés par type, clavier (flèches, Entrée, Échap), raccourcis quand le champ est vide, repli vers `/recherche?q=` et `/villages?q=`. Plein écran sur téléphone.

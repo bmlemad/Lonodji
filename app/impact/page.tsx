@@ -9,7 +9,7 @@ import { getIndicateurs } from "../../lib/indicateurs";
 export const metadata: Metadata = {
   title: "Tableau de bord d’impact et suivi des actions",
   description: "Adhérents, coordonnateurs, plaidoyers, besoins recensés et résolus, projets : six indicateurs datés et sourcés, puis le suivi thématique par thématique.",
-  alternates: { canonical: "/impact" },
+  alternates: { canonical: "/impact", languages: { fr: "/impact", en: "/en/impact" } },
   openGraph: ogFor("/impact"),
 };
 
