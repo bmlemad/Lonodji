@@ -318,8 +318,8 @@
    "kind": "dossier",
    "title": "Quelle thématique pour vous ?",
    "eyebrow": "Agir avec nous",
-   "lede": "Dix-neuf thématiques, dont dix sans coordonnateur. Cochez ce que vous savez faire ou ce qui vous tient à cœur, dites-nous où vous êtes et combien de temps vous pouvez donner : nous vous proposons les thématiques où vous seriez le plus utile, et le bon interlocuteur. Rien n’est envoyé tant que vous n’avez pas écrit.",
-   "description": "Cochez ce que vous savez faire ou ce qui vous tient à cœur : nous vous proposons les thématiques d’ADEB LONODJI où vous seriez le plus utile. Dix attendent un coordonnateur.",
+   "lede": "Dix-neuf thématiques, dont neuf sans coordonnateur. Cochez ce que vous savez faire ou ce qui vous tient à cœur, dites-nous où vous êtes et combien de temps vous pouvez donner : nous vous proposons les thématiques où vous seriez le plus utile, et le bon interlocuteur. Rien n’est envoyé tant que vous n’avez pas écrit.",
+   "description": "Cochez ce que vous savez faire ou ce qui vous tient à cœur : nous vous proposons les thématiques d’ADEB LONODJI où vous seriez le plus utile. Neuf attendent un coordonnateur.",
    "parent": "Agir avec nous",
    "words": 348,
    "hasMap": false
@@ -357,7 +357,7 @@
    "lede": "Les Chantiers ADEB LONODJI sont les projets de réflexion, de recherche et d’action portés par l’association. Pour les organiser, ADEB LONODJI structure son action autour de dix-neuf thématiques réparties en quatre pôles, appuyées par deux cellules transversales — dont un pôle spécialisé Numérique & innovation, créé en septembre 2026. Chaque thématique est animée par un coordonnateur. Cette organisation en pôles est notre méthodologie de travail en équipe : elle permet une bonne coordination des actions entre les thématiques, au lieu d’initiatives dispersées. Chaque thématique est en outre mise en regard des Objectifs de développement durable adoptés par les Nations unies, pour que nos partenaires situent immédiatement notre travail.",
    "description": "Quatre pôles, dix-neuf thématiques et deux cellules transversales pour organiser l’action d’ADEB LONODJI.",
    "parent": "Accueil",
-   "words": 4966,
+   "words": 4997,
    "hasMap": false
   },
   {
@@ -381,7 +381,7 @@
    "lede": "Chaque problématique que nous avons recensée est reliée à la thématique qui doit la porter, et chaque thématique à son plaidoyer quand il existe. Une seule page pour voir où nous en sommes : ce qui avance, ce qui attend un coordonnateur ou une coordonnatrice, et ce que nous n’avons pas encore commencé à documenter.",
    "description": "Chaque problématique reliée à sa thématique, chaque thématique à son plaidoyer s’il existe : le tableau de bord de suivi des actions d’ADEB LONODJI, thématique par thématique.",
    "parent": "Nos actions",
-   "words": 1491,
+   "words": 1497,
    "hasMap": false
   },
   {
@@ -414,7 +414,7 @@
    "kind": "hub",
    "title": "Agir avec nous",
    "eyebrow": "Nous soutenir",
-   "lede": "Dix des dix-neuf thématiques d’ADEB LONODJI cherchent encore un coordonnateur, et l’association elle-même se réactive après des années de mise en veille : votre soutien, sous toutes ses formes, compte. Voici les façons d’y contribuer.",
+   "lede": "Neuf des dix-neuf thématiques d’ADEB LONODJI cherchent encore un coordonnateur, et l’association elle-même se réactive après des années de mise en veille : votre soutien, sous toutes ses formes, compte. Voici les façons d’y contribuer.",
    "description": "Les façons de soutenir ADEB LONODJI : cotisation et don, temps et compétences, dons en nature — au service du peuple bedjond de Bédjondo.",
    "parent": "Accueil",
    "words": 479,
@@ -549,7 +549,7 @@
    "lede": "ADEB LONODJI organises its work into nineteen themes grouped in four pillars, supported by two cross-cutting units. Each theme is meant to be led by a coordinator who reports to the membership. This page is the English summary; every theme has a fuller description en français .",
    "description": "How ADEB LONODJI organises its work: four pillars, nineteen themes and two cross-cutting units, each set against the UN Sustainable Development Goals it touches.",
    "parent": "Home",
-   "words": 2357,
+   "words": 2376,
    "hasMap": false
   }
  ],
@@ -1429,12 +1429,12 @@
       "number": "04",
       "kind": "thematique",
       "name": "Agriculture, élevage & sécurité alimentaire",
-      "status": "À pourvoir",
-      "filled": false,
-      "coordinator": "à pourvoir",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Olivier Allaramadji Nomaye, ingénieur agroéconomiste",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Agriculture, élevage et sécurité alimentaire, sur une <a href=\"/mission\">terre d’agriculture et d’élevage</a> qui reste, aujourd’hui encore, le premier moyen de subsistance des villages du Mandoul Occidental. Parmi les pistes envisagées : appui aux coopératives agricoles et aux filières locales (mil, sorgho, arachide, sésame, maïs, manioc, élevage bovin et caprin), et promotion d’une agriculture moderne : techniques de production améliorées et diversification, y compris le développement de la pisciculture. La sécurité alimentaire passe aussi par la conservation post-récolte (stockage, séchage), souvent le vrai goulot d’étranglement pour les paysans une fois la récolte faite. Piste envisagée à plus long terme : un label des produits de Bédjondo, pour identifier et valoriser les productions locales, agricoles et artisanales, sur les marchés régionaux, en lien avec la cellule Financement & ressources.",
-      "descriptionText": "Agriculture, élevage et sécurité alimentaire, sur une terre d’agriculture et d’élevage qui reste, aujourd’hui encore, le premier moyen de subsistance des villages du Mandoul Occidental. Parmi les pistes envisagées : appui aux coopératives agricoles et aux filières locales (mil, sorgho, arachide, sésame, maïs, manioc, élevage bovin et caprin), et promotion d’une agriculture moderne : techniques de production améliorées et diversification, y compris le développement de la pisciculture. La sécurité alimentaire passe aussi par la conservation post-récolte (stockage, séchage), souvent le vrai goulot d’étranglement pour les paysans une fois la récolte faite. Piste envisagée à plus long terme : un label des produits de Bédjondo, pour identifier et valoriser les productions locales, agricoles et artisanales, sur les marchés régionaux, en lien avec la cellule Financement & ressources.",
+      "description": "Agriculture, élevage et sécurité alimentaire, sur une <a href=\"/mission\">terre d’agriculture et d’élevage</a> qui reste, aujourd’hui encore, le premier moyen de subsistance des villages du Mandoul Occidental. Parmi les pistes envisagées : appui aux coopératives agricoles et aux filières locales (mil, sorgho, arachide, sésame, maïs, manioc, élevage bovin et caprin), et promotion d’une agriculture moderne : techniques de production améliorées et diversification, y compris le développement de la pisciculture. La sécurité alimentaire passe aussi par la conservation post-récolte (stockage, séchage), souvent le vrai goulot d’étranglement pour les paysans une fois la récolte faite. Piste envisagée à plus long terme : un label des produits de Bédjondo, pour identifier et valoriser les productions locales, agricoles et artisanales, sur les marchés régionaux, en lien avec la cellule Financement & ressources. <strong>Mise à jour du 28 septembre 2026 :</strong> la coordination de la thématique est confiée à Olivier Allaramadji Nomaye, ingénieur agroéconomiste.",
+      "descriptionText": "Agriculture, élevage et sécurité alimentaire, sur une terre d’agriculture et d’élevage qui reste, aujourd’hui encore, le premier moyen de subsistance des villages du Mandoul Occidental. Parmi les pistes envisagées : appui aux coopératives agricoles et aux filières locales (mil, sorgho, arachide, sésame, maïs, manioc, élevage bovin et caprin), et promotion d’une agriculture moderne : techniques de production améliorées et diversification, y compris le développement de la pisciculture. La sécurité alimentaire passe aussi par la conservation post-récolte (stockage, séchage), souvent le vrai goulot d’étranglement pour les paysans une fois la récolte faite. Piste envisagée à plus long terme : un label des produits de Bédjondo, pour identifier et valoriser les productions locales, agricoles et artisanales, sur les marchés régionaux, en lien avec la cellule Financement & ressources. Mise à jour du 28 septembre 2026 : la coordination de la thématique est confiée à Olivier Allaramadji Nomaye, ingénieur agroéconomiste.",
       "tags": [
        "Agriculture",
        "Élevage",

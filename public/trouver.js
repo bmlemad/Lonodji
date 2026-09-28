@@ -66,8 +66,8 @@ window.__initTrouver = function () {
     "key": "04",
     "pole": "Pôle II · Thématique 04",
     "name": "Agriculture, élevage & sécurité alimentaire",
-    "status": "open",
-    "coord": "Coordonnateur : à pourvoir",
+    "status": "filled",
+    "coord": "Coordonnateur : Olivier Allaramadji Nomaye, ingénieur agroéconomiste",
     "desc": "Agriculture, élevage et sécurité alimentaire, sur une terre d’agriculture et d’élevage qui reste, aujourd’hui encore, le premier moyen de subsistance des villages du Mandoul Occidental.",
     "page": [
       "/dossiers/agriculture-securite-alimentaire",
