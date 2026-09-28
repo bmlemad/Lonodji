@@ -26,6 +26,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Nos engagements publics", href: "/dossiers/engagements", note: "Ce que nous promettons, où nous en sommes" },
         { label: "Documents à télécharger", href: "/documents", note: "Kits, cahiers, plaidoyers en PDF" },
         { label: "Les démarches, pas à pas", href: "/dossiers/demarches", note: "Statut, récépissé, vers l’ONG" },
+        { label: "Espace presse", href: "/presse", note: "En bref, chiffres, logos, contacts" },
       ] },
     ],
     vedette: { kicker: "Une association qui rend des comptes", titre: (c) => `${c.corrections} corrections publiées`, texte: () => "Ce qui n’est pas encore fait est écrit comme tel ; ce qui était faux est corrigé et daté.", href: "/transparence", label: "Notre charte de redevabilité" },
@@ -121,7 +122,7 @@ export function entreeCourante(pathname: string): string {
   if (pathname.startsWith("/journal")) return "journal";
   if (/^\/(participer|diaspora|temoignages)/.test(pathname)) return "participer";
   if (/^\/(carte|villages|observatoire|bibliotheque|langue|histoire)/.test(pathname) || /^\/dossiers\/(bedjondo|lieux-sacres|genealogies|genealogie-outil|decentralisation)/.test(pathname)) return "territoire";
-  if (/^\/(mission|transparence|documents|mentions-legales|archives|plan-du-site)/.test(pathname) || /^\/dossiers\/(engagements|demarches)/.test(pathname)) return "association";
+  if (/^\/(mission|transparence|documents|presse|mentions-legales|archives|plan-du-site)/.test(pathname) || /^\/dossiers\/(engagements|demarches)/.test(pathname)) return "association";
   if (/^\/(programmes|actions|impact|dossiers|projets)/.test(pathname)) return "actions";
   return "";
 }
@@ -130,7 +131,7 @@ export function entreeCourante(pathname: string): string {
 export const PIED: { titre: string; liens: NavLien[] }[] = [
   { titre: "L’association", liens: [
     { label: "Notre mission", href: "/mission" }, { label: "Histoire & patrimoine", href: "/histoire" }, { label: "Le journal", href: "/journal" },
-    { label: "Redevabilité & transparence", href: "/transparence" }, { label: "Documents", href: "/documents" }, { label: "Les démarches", href: "/dossiers/demarches" }, { label: "Archives du site", href: "/archives" },
+    { label: "Redevabilité & transparence", href: "/transparence" }, { label: "Documents", href: "/documents" }, { label: "Espace presse", href: "/presse" }, { label: "Archives du site", href: "/archives" },
   ] },
   { titre: "Nos actions", liens: [
     { label: "Quatre pôles, dix-neuf thématiques", href: "/programmes" }, { label: "Plaidoyers & engagements", href: "/actions" }, { label: "Tableau de bord d’impact", href: "/impact" },

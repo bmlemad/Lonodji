@@ -79,6 +79,10 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 - `/observatoire` — le territoire en chiffres, unité par unité : localités nommées, équipements connus des données ouvertes par famille, couverture à 10 km, localités citées sur le site, pages par unité ; diagnostic par domaine (documenté, partiel, ailleurs, inconnu ; qui décide ; thématiques) ; suivi des plaidoyers (publié, transmis, réponse) ; tableau des huit indicateurs avec source, méthode et état ; ce qui manque est écrit comme manquant (besoins résolus non publiés, population indisponible).
 - Données : `scripts/build-observatoire.py` → `content/observatoire.json`, à lancer après `build-carte.py`, `build-villages.py` et `build-indicateurs.py` (il lit aussi `content/pages/problematiques.json` et `content/index.json`). Lecture par `lib/observatoire.ts`.
 
+## Espace presse
+
+- `/presse` — pour journalistes et partenaires : citation prête à l’emploi, chiffres datés (tableau de bord), six dates, bureau exécutif (`ORG.bureau`), communiqués (articles « Vie de l’association » et lettre), documents (dossier de présentation, livre blanc), logos téléchargeables avec leurs règles (`public/identite/`), quatre règles demandées aux médias, contact presse. Aucune photo tant que la banque d’images est vide.
+
 ## Navigation (en-tête, méga-menu, menu mobile, pied de page)
 
 - Une seule source : `lib/navigation.ts` (`NAVIGATION` pour l’en-tête et le menu mobile, `PIED` pour le pied de page, `entreeCourante()` pour surligner la section de la page courante) ; le plan du site s’en sert aussi.

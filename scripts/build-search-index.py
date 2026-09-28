@@ -106,6 +106,9 @@ PAGES_SITE.append({"t": "Plateforme de projets", "r": "/projets", "k": "Page",
 PAGES_SITE.append({"t": "Observatoire du Mandoul Occidental", "r": "/observatoire", "k": "Page",
      "d": "Le territoire en chiffres, unité par unité : localités, équipements connus, couverture, diagnostic par domaine, suivi des plaidoyers et des besoins signalés — et ce que l’observatoire ne sait pas.",
      "x": "observatoire Mandoul Occidental unités localités équipements écoles santé eau marchés couverture diagnostic domaines documenté partiel inconnu qui décide plaidoyers transmis réponse besoins signalés résolus population RGPH indicateurs sources"})
+PAGES_SITE.append({"t": "Espace presse et partenaires", "r": "/presse", "k": "Page",
+     "d": "ADEB LONODJI en cinq lignes, les chiffres datés, six dates, le bureau, les communiqués, les logos et leurs règles, le dossier de présentation, le livre blanc, et à qui écrire.",
+     "x": "presse journalistes partenaires bailleurs médias communiqué citation en bref chiffres dates 1986 1995 2000 2003 2026 bureau président contact logo pictogramme SVG PNG dossier de présentation livre blanc droit de réponse exactitude protection des personnes"})
 entries.extend(PAGES_SITE)
 
 for f in sorted((CONTENT / "articles").glob("*.json")):

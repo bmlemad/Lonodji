@@ -865,3 +865,18 @@ html.is-standalone .haut{ bottom:calc(76px + env(safe-area-inset-bottom,0px)); }
 .ob-statut--inconnu{ background:#f5dfd6; border-color:transparent; }
 .ob-statut--inconnu small, .ob-statut--inconnu span{ color:#5a2416; }
 @media(max-width:800px){ .ob-statuts{ grid-template-columns:repeat(2,minmax(0,1fr)); } .ob-table{ font-size:13px; } .ob-table th, .ob-table td{ padding:10px 10px; } }
+
+/* Espace presse (/presse), préfixe .pr- */
+.pr-citation{ margin:0; padding:26px 30px; border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:0 24px 24px 0; background:rgba(255,255,255,.72); max-width:860px; }
+.pr-citation p{ margin:0; font-family:var(--font-playfair),Georgia,serif; font-size:clamp(17px,1.8vw,21px); line-height:1.55; color:var(--ink); }
+.pr-citation footer{ margin-top:14px; font-size:12.5px; color:#607069; }
+.pr-logos{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(180px,100%),1fr)); gap:12px; }
+.pr-logo{ display:flex; flex-direction:column; gap:4px; padding:14px; border:1px solid var(--line); border-radius:18px; background:rgba(255,255,255,.72); transition:transform .18s ease, box-shadow .18s ease; }
+.pr-logo:hover{ transform:translateY(-2px); box-shadow:0 10px 30px rgba(23,59,45,.1); }
+.pr-logo-apercu{ display:grid; place-items:center; height:130px; border-radius:12px; background:#fff; margin-bottom:8px; }
+.pr-logo-apercu.est-sombre{ background:var(--deep); }
+.pr-logo-apercu img{ max-width:120px; max-height:110px; height:auto; }
+.pr-logo strong{ font-size:14px; letter-spacing:-.01em; }
+.pr-logo small{ font-size:11.5px; color:#607069; }
+.pr-contact{ max-width:760px; }
+.pr-page .timeline p{ margin:0; }
