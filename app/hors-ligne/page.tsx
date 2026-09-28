@@ -4,7 +4,7 @@ import { PageHeader, SectionHead } from "../../components/blocks";
 
 export const metadata: Metadata = {
   title: "Pas de connexion",
-  description: "Cette page s’affiche quand le réseau manque et que la page demandée n’a jamais été ouverte sur cet appareil : ce qui reste lisible sans réseau, et comment préparer les prochaines coupures.",
+  description: "Sans réseau, les pages déjà ouvertes restent lisibles : ce qui reste consultable hors ligne et comment préparer les prochaines coupures.",
   alternates: { canonical: "/hors-ligne" },
   robots: { index: false, follow: true },
 };
