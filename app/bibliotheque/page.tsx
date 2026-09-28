@@ -9,7 +9,7 @@ import { getIndicateurs } from "../../lib/indicateurs";
 
 export const metadata: Metadata = {
   title: "Bibliothèque numérique bedjond",
-  description: "Tout ce qui s’est écrit sur le pays bedjond, les Sara et le nangnda : thèses, articles, ouvrages, rapports, archives, publications d’ADEB LONODJI, et les chercheurs qui les ont signés. Déposez un document.",
+  description: "Thèses, articles, ouvrages, rapports, archives et publications d’ADEB LONODJI sur le pays bedjond, les Sara et le nangnda ; les chercheurs ; dépôt de document.",
   alternates: { canonical: "/bibliotheque" },
   openGraph: ogFor("/bibliotheque"),
 };

@@ -7,7 +7,7 @@ import { getIndicateurs } from "../../lib/indicateurs";
 
 export const metadata: Metadata = {
   title: "La langue nangnda (bedjond)",
-  description: "Le nangnda, langue sara du pays bedjond : ce que le site sait (nom, parenté, où on la parle), les références qui la décrivent, le lexique en ligne de Dinguemrebeye et Keegan, et le dictionnaire numérique qui commence par vos mots.",
+  description: "Le nangnda, langue sara du pays bedjond : nom, parenté, aire, références, lexique en ligne avec l’audio, et le dictionnaire numérique qui commence par vos mots.",
   alternates: { canonical: "/langue" },
   openGraph: ogFor("/langue"),
 };

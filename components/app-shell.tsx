@@ -14,7 +14,7 @@ type InstallEvent = Event & { prompt: () => Promise<void>; userChoice: Promise<{
 
 const ICO = {
   accueil: <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.8l8.5 6.7" /><path d="M5.5 9.2V20h4.8v-5.6h3.4V20h4.8V9.2" /></svg>,
-  actions: <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2" /><rect x="13.5" y="3.5" width="7" height="7" rx="2" /><rect x="3.5" y="13.5" width="7" height="7" rx="2" /><rect x="13.5" y="13.5" width="7" height="7" rx="2" /></svg>,
+  villages: <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z" /><circle cx="12" cy="11" r="2.2" /></svg>,
   journal: <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h12.5V18a2.5 2.5 0 0 0 2.5 2.5H6.5A2.5 2.5 0 0 1 4 18z" /><path d="M16.5 9H20v9a2.5 2.5 0 0 1-2.5 2.5" /><path d="M7.5 9h5.5M7.5 12.5h5.5M7.5 16h3.5" /></svg>,
   agir: <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2s-7.5-4.6-7.5-10.3A4.2 4.2 0 0 1 12 7.3a4.2 4.2 0 0 1 7.5 2.6c0 5.7-7.5 10.3-7.5 10.3z" /></svg>,
   menu: <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h11" /></svg>,
@@ -22,14 +22,14 @@ const ICO = {
 
 const ONGLETS = [
   { id: "accueil", href: "/", label: "Accueil" },
-  { id: "actions", href: "/programmes", label: "Actions" },
+  { id: "villages", href: "/villages", label: "Villages" },
   { id: "journal", href: "/journal", label: "Journal" },
   { id: "agir", href: "/participer", label: "Agir" },
 ] as const;
 
 function ongletActif(pathname: string) {
   if (pathname === "/" || pathname === "/en/index") return "accueil";
-  if (/^\/(programmes|actions|dossiers|impact|en\/(themes|advocacy))/.test(pathname)) return "actions";
+  if (/^\/(villages|carte)/.test(pathname)) return "villages";
   if (pathname.startsWith("/journal")) return "journal";
   if (/^\/(participer|en\/contact)/.test(pathname)) return "agir";
   return "";

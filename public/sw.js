@@ -4,7 +4,7 @@
    n'est pas disponible. Le réseau garde la priorité, pour que personne ne
    lise une version périmée quand la connexion est là. */
 
-var VERSION = 'lonodji-next-v1';
+var VERSION = 'lonodji-next-v2';
 var PAGES = VERSION + '-pages';
 var ASSETS = VERSION + '-assets';
 var HORS_LIGNE = '/hors-ligne';
@@ -15,7 +15,9 @@ var COQUILLE = [
   '/manifest.webmanifest',
   '/favicon.svg',
   '/app/icone-192.png',
-  '/app/icone-512.png'
+  '/app/icone-512.png',
+  '/carte/territoire.svg',
+  '/villages'
 ];
 
 self.addEventListener('install', function (e) {

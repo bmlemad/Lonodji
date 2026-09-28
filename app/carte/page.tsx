@@ -8,7 +8,7 @@ import { ogFor } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Carte du territoire bedjond",
-  description: "Carte interactive du pays bedjond : les quatorze unités du Mandoul Occidental et des provinces voisines, leurs localités et équipements présents dans les données ouvertes, et ce que le site en dit.",
+  description: "Carte interactive du pays bedjond : quatorze unités, leurs localités et les équipements connus des données ouvertes, et ce que le site en dit de chaque lieu.",
   alternates: { canonical: "/carte" },
   openGraph: ogFor("/carte"),
 };

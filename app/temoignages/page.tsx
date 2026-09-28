@@ -7,7 +7,7 @@ import { getIndicateurs } from "../../lib/indicateurs";
 
 export const metadata: Metadata = {
   title: "Racontez Bédjondo : témoignages et banque d’images",
-  description: "Un ancien qui raconte, une femme qui fait bouger les choses, un jeune talent, un paysage de Bédjondo, les forums de 2000 et 2003 : envoyez votre récit, votre photo ou votre enregistrement. Rien n’est publié sans votre relecture.",
+  description: "Un ancien qui raconte, une femme leader, un jeune talent, un paysage : envoyez votre récit, votre photo ou votre voix. Rien n’est publié sans votre relecture.",
   alternates: { canonical: "/temoignages" },
   openGraph: ogFor("/temoignages"),
 };

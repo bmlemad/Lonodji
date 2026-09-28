@@ -9,7 +9,7 @@ import { getIndicateurs } from "../../lib/indicateurs";
 
 export const metadata: Metadata = {
   title: "Répertoire des compétences de la diaspora bedjond",
-  description: "Médecins, enseignants, ingénieurs, juristes, entrepreneurs, informaticiens : inscrivez vos compétences pour qu’une thématique ou un plaidoyer de Bédjondo trouve la personne qui sait. Données protégées, retrait à tout moment.",
+  description: "Médecins, enseignants, ingénieurs, juristes, entrepreneurs : inscrivez vos compétences pour que Bédjondo trouve la personne qui sait. Données protégées.",
   alternates: { canonical: "/diaspora" },
   openGraph: ogFor("/diaspora"),
 };

@@ -71,7 +71,8 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 ## Couche appli mobile
 
 - `public/.well-known/assetlinks.json` — lien entre le site et l’appli Android (`org.lonodji.app`) : empreintes de la clé d’essai 2 (APK 1.0.1 du 28/09/2026, ouvre lonodji.org) et de la clé d’essai 1 (APK 1.0.0 du 24/09) ; y ajouter les empreintes des clés Google Play après le premier envoi, puis retirer les clés d’essai.
-- `app/manifest.ts` — manifeste d’installation (icônes, raccourcis) ; `public/sw.js` — lecture hors ligne des pages déjà ouvertes, page de repli `/hors-ligne`.
+- `app/manifest.ts` — manifeste d’installation (icônes, raccourcis : Villages, Journal, Adhérer, Rechercher) ; `public/sw.js` — lecture hors ligne des pages déjà ouvertes, page de repli `/hors-ligne` ; incrémenter `VERSION` à chaque changement de la coquille.
+- Responsive : mobile ≤ 800 px (menu, barre d’onglets en appli, silhouette du territoire sous le héros), tablette 801–1220 px (les huit liens passent dans le menu), ordinateur au-delà (numéros masqués jusqu’à 1340 px).
 - `components/app-shell.tsx` — reconnaissance de l’appli installée (écran d’accueil, appli Android, appli iPhone `LONODJI-iOS`) et barre d’onglets sur mobile dans ce cas.
 - Outils en ligne : `/dossiers/trouver-ma-thematique` (`public/trouver.js`), `/dossiers/genealogie-outil` (`public/genealogie.js`, données dans le navigateur), carte du pays bedjond (`public/geo.js`).
 
