@@ -49,6 +49,7 @@ export default function Participer() {
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
           <Link className="button primary" href="/dossiers/trouver-ma-thematique">Trouver ma thématique en trois questions <span aria-hidden="true">↗</span></Link>
           <Link className="button secondary" href="/programmes#thematiques">Voir les dix-neuf thématiques <span aria-hidden="true">→</span></Link>
+          <Link className="text-link" href="/diaspora">Diaspora : inscrire mes compétences <span aria-hidden="true">→</span></Link>
         </div>
       </section>
 

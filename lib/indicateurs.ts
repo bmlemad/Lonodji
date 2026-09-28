@@ -7,7 +7,7 @@ import path from "node:path";
    à jour en direct par /api/indicateurs quand un jeton d'accès est configuré.
    Ne transitent ici que des nombres : jamais un nom, un courriel, un message. */
 
-export type Compte = { envois: number; personnes?: number };
+export type Compte = { envois: number; personnes?: number; domaines?: Record<string, number>; pays?: number };
 export type Comptes = Record<string, Compte>;
 
 export type Releve = { date: string; methode: string; comptes: Comptes; live?: boolean };
@@ -40,6 +40,11 @@ export function getIndicateurs(): Indicateurs {
 
 const SITE_ID = process.env.SITE_ID || "17ccf3c4-041d-471c-93c5-87730d0b8106";
 const FUSIONS: Record<string, string> = { "lettre-info-pied": "lettre-info" };
+/* Jamais comptés, comme les mentions légales le promettent : contact, message en
+   anglais, personnes handicapées, veuves, plaintes. */
+const JAMAIS_COMPTES = new Set(["contact", "message-en", "handicap", "veuves", "plainte"]);
+/* Comptés par personne : un même courriel envoyé plusieurs fois compte une fois. */
+const PAR_PERSONNE = new Set(["intention-adhesion", "diaspora-competences"]);
 
 type FormNetlify = { id: string; name: string; submission_count?: number };
 type SoumissionNetlify = { id: string; data?: Record<string, unknown> };
@@ -54,26 +59,37 @@ export async function releverFormulaires(jeton: string): Promise<Releve | null> 
   const comptes: Comptes = {};
   for (const f of forms) {
     const nom = FUSIONS[f.name] ?? f.name;
+    if (JAMAIS_COMPTES.has(nom)) continue;
     const c = (comptes[nom] ??= { envois: 0 });
     c.envois += Number(f.submission_count || 0);
-    if (nom === "intention-adhesion" && c.envois > 0) {
+    if (PAR_PERSONNE.has(nom) && c.envois > 0) {
       const s = await fetch(`https://api.netlify.com/api/v1/forms/${f.id}/submissions?per_page=100`, { headers: entetes, cache: "no-store" });
       if (s.ok) {
         const envois = (await s.json()) as SoumissionNetlify[];
         const cles = new Set<string>();
+        const pays = new Set<string>();
+        const domaines: Record<string, number> = {};
         for (const e of envois) {
           const d = e.data ?? {};
           const courriel = String(d.email ?? "").trim().toLowerCase();
           const tel = String(d.telephone ?? "").replace(/\D/g, "");
-          cles.add(courriel || tel || e.id);
+          const cle = courriel || tel || e.id;
+          if (cles.has(cle)) continue;
+          cles.add(cle);
+          if (nom === "diaspora-competences") {
+            const p = String(d.pays ?? "").trim().toLowerCase();
+            if (p) pays.add(p);
+            for (const [k, v] of Object.entries(d)) if (k.startsWith("domaine-") && v) domaines[k.slice(8)] = (domaines[k.slice(8)] ?? 0) + 1;
+          }
         }
         c.personnes = cles.size;
+        if (nom === "diaspora-competences") { c.pays = pays.size; c.domaines = domaines; }
       }
     }
   }
   return {
     date: new Date().toISOString().slice(0, 10),
-    methode: "API Netlify Forms, relevé automatique. Les intentions d'adhésion sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).",
+    methode: "API Netlify Forms, relevé automatique. Les intentions d'adhésion et les inscriptions au répertoire des compétences sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).",
     comptes,
     live: true,
   };

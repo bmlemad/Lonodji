@@ -42,18 +42,17 @@ RELEVE = {
         "promesse-contribution": {"envois": 0},
         "proposition-article": {"envois": 0},
         "lettre-info": {"envois": 0},
-        "contact": {"envois": 0},
-        "plainte": {"envois": 0},
         "temoignage-lignee": {"envois": 0},
         "lieu-sacre": {"envois": 0},
         "mesure-debit": {"envois": 0},
-        "veuves": {"envois": 0},
-        "handicap": {"envois": 0},
-        "message-en": {"envois": 0},
+        "diaspora-competences": {"envois": 0},
     },
 }
 # Les deux formulaires d'abonnement (corps de page et pied de page) comptent ensemble.
 FUSIONS = {"lettre-info-pied": "lettre-info"}
+# Jamais comptés, comme les mentions légales le promettent : contact, message en
+# anglais, personnes handicapées, veuves, plaintes.
+JAMAIS_COMPTES = {"contact", "message-en", "handicap", "veuves", "plainte"}
 
 # Projets suivis par le site et leur stade — un jugement éditorial, tenu à jour ici
 # plutôt que deviné dans le texte des pages.
@@ -145,9 +144,11 @@ def releve_en_direct(jeton: str) -> dict | None:
     comptes: dict[str, dict] = {}
     for f in forms:
         nom = FUSIONS.get(f["name"], f["name"])
+        if nom in JAMAIS_COMPTES:
+            continue
         c = comptes.setdefault(nom, {"envois": 0})
         c["envois"] += int(f.get("submission_count") or 0)
-        if nom == "intention-adhesion" and c["envois"]:
+        if nom in ("intention-adhesion", "diaspora-competences") and c["envois"]:
             try:
                 subs = get(f"https://api.netlify.com/api/v1/forms/{f['id']}/submissions?per_page=100")
                 cles = set()

@@ -467,6 +467,28 @@ def journal_categories(soup_news: BeautifulSoup) -> tuple:
 # Formulaires Netlify : fichier statique de déclaration
 # ----------------------------------------------------------------------------
 
+# Répertoire des compétences de la diaspora (app/diaspora/page.tsx) : déclaré ici pour
+# que public/__forms.html le garde à chaque import. Les cases à cocher ont chacune
+# leur nom (domaine-*, offre-*) : Netlify ne fusionne pas les valeurs multiples.
+FORMULAIRES_SITE = {
+    "diaspora-competences": (
+        '<form name="diaspora-competences"><input type="hidden" name="_honey">'
+        '<input type="text" name="nom"><input type="email" name="email"><input type="text" name="telephone">'
+        '<input type="text" name="pays"><input type="text" name="ville">'
+        '<select name="lien"><option value="">Choisir</option><option value="Originaire de Bédjondo">Originaire de Bédjondo</option>'
+        '<option value="Famille bedjond, autre canton">Famille bedjond, autre canton</option><option value="Conjoint·e, ami·e, allié·e">Conjoint·e, ami·e, allié·e</option>'
+        '<option value="Autre">Autre</option></select>'
+        '<input type="text" name="metier">'
+        + "".join(f'<input type="checkbox" name="domaine-{d}">' for d in ("sante", "education", "ingenierie", "droit", "entreprise", "numerique", "agriculture", "communication", "administration", "autre"))
+        + '<select name="experience"><option value="">Choisir</option><option value="Moins de 3 ans">Moins de 3 ans</option><option value="3 à 10 ans">3 à 10 ans</option><option value="Plus de 10 ans">Plus de 10 ans</option></select>'
+        + "".join(f'<input type="checkbox" name="offre-{o}">' for o in ("conseil", "mentorat", "mission", "formation", "reseau", "financement"))
+        + '<input type="text" name="thematique"><input type="text" name="langues">'
+        '<select name="disponibilite"><option value="">Choisir</option><option value="Quelques heures par mois">Quelques heures par mois</option><option value="Une journée par mois">Une journée par mois</option><option value="Ponctuellement, sur demande">Ponctuellement, sur demande</option><option value="Une mission de plusieurs semaines sur place">Une mission de plusieurs semaines sur place</option></select>'
+        '<textarea name="message"></textarea><input type="checkbox" name="consentement"><input type="checkbox" name="annuaire"></form>'
+    ),
+}
+
+
 def forms_html(all_forms: dict) -> str:
     parts = ["<!doctype html><html lang=\"fr\"><head><meta charset=\"utf-8\"><title>Formulaires ADEB LONODJI</title>",
              "<meta name=\"robots\" content=\"noindex\"></head><body>",
@@ -515,6 +537,16 @@ UPDATES = [
     # Redevabilité : politiques d'intégrité en projet (23/09), non adoptées (note datée).
     ('<p style="margin-top:1.3rem;">Une règle vaut pour tout ce qui précède, et c’est celle que nous appliquons depuis la première page de ce site\xa0: <strong>nous publions nos sources, et nous écrivons ce que nous ne savons pas</strong>. La transparence sur nos lacunes est la seule garantie sérieuse que nous ne racontons pas ce qui nous arrange.</p>',
      '<p style="margin-top:1.3rem;">Une règle vaut pour tout ce qui précède, et c’est celle que nous appliquons depuis la première page de ce site\xa0: <strong>nous publions nos sources, et nous écrivons ce que nous ne savons pas</strong>. La transparence sur nos lacunes est la seule garantie sérieuse que nous ne racontons pas ce qui nous arrange.</p>\n<p class="form-note"><strong>Mise à jour du 28 septembre 2026\xa0:</strong> cinq politiques d’intégrité écrites — conflits d’intérêts, fraude et corruption, données personnelles, achats et dépenses, exploitation et abus sexuels — ont été rédigées en projet le 23 septembre 2026 et sont soumises au bureau exécutif. Elles seront publiées sur cette page une fois adoptées\xa0; d’ici là, seules les règles ci-dessus engagent l’association.</p>'),
+    # Mentions légales : seizième formulaire, le répertoire des compétences de la diaspora (28/09/2026).
+    ("<p>Le site compte quinze formulaires. Ils ne servent pas tous à la même chose",
+     "<p>Le site compte seize formulaires. Ils ne servent pas tous à la même chose"),
+    ('aria-label="Les quinze formulaires du site et le sort de vos données"',
+     'aria-label="Les seize formulaires du site et le sort de vos données"'),
+    ("<p>Pour dix de ces formulaires, un compteur anonyme tient le nombre total d’envois\u00a0; pour le signalement des besoins, il retient aussi la localité, le type de besoin et l’urgence, quand vous acceptez la publication.",
+     "<p>Pour onze de ces formulaires, un compteur anonyme tient le nombre total d’envois, publié sur le <a href=\"/impact\">tableau de bord</a>\u00a0; pour le signalement des besoins, il retient aussi la localité, le type de besoin et l’urgence, quand vous acceptez la publication\u00a0; pour le répertoire des compétences, le nombre de pays et de domaines représentés, sans autre détail."),
+    ('<tr><th scope="row"><a href="/dossiers/lieux-sacres#signalement">Lieu sacré menacé</a>',
+     '<tr><th scope="row"><a href="/diaspora#inscription">Répertoire des compétences</a><span class="notice-page">Diaspora</span></th><td>Nom, e-mail, téléphone facultatif, pays et ville, lien avec Bédjondo, domaines et métier, expérience, ce que vous offrez, thématique, langues, disponibilité, message</td><td>Trouver la compétence qu’une thématique ou un plaidoyer attend, et vous proposer une mission</td><td>Tant que votre inscription est active, revue chaque année\u00a0; nom, métier et pays publiés dans l’annuaire seulement avec votre accord, le reste jamais</td></tr>'
+     '<tr><th scope="row"><a href="/dossiers/lieux-sacres#signalement">Lieu sacré menacé</a>'),
     # Journal des corrections : l'entrée du 23/09 reste telle quelle ; une mise à jour datée la complète.
     ("<p><strong>Comment nous nous en sommes aperçus\u00a0:</strong> un audit complet du site, le 23 septembre, qui a interrogé le registre du .org et l’annuaire RDAP, sans réponse pour lonodji.org, puis relu la notice à la lumière des formulaires réellement en service.</p>",
      "<p><strong>Comment nous nous en sommes aperçus\u00a0:</strong> un audit complet du site, le 23 septembre, qui a interrogé le registre du .org et l’annuaire RDAP, sans réponse pour lonodji.org, puis relu la notice à la lumière des formulaires réellement en service.</p>\n<p><strong>Mise à jour du 28 septembre 2026\u00a0:</strong> le nom de domaine lonodji.org a depuis été enregistré et héberge le site depuis le 27 septembre. Les adresses électroniques restent à créer\u00a0; le formulaire et WhatsApp demeurent les deux voies sûres.</p>"),
@@ -647,17 +679,20 @@ def main():
     # Formulaires (le formulaire de pied de page vit hors <main> : déclaré ici)
     footer_form = BeautifulSoup('<form name="lettre-info-pied"><input type="email" name="email"><input type="checkbox" name="consentement"></form>', "lxml").find("form")
     all_forms.setdefault("lettre-info-pied", footer_form)
+    # Formulaires des pages conçues hors de l'ancien site (app/diaspora) : mêmes noms de champs que dans la page.
+    for name, html in FORMULAIRES_SITE.items():
+        all_forms.setdefault(name, BeautifulSoup(html, "lxml").find("form"))
     (PUBLIC / "__forms.html").write_text(forms_html(all_forms), encoding="utf-8")
 
-    # Ressources
-    for d in ("documents", "identite", "kit", "app", "og"):
+    # Ressources (pas public/og ni og-image.png : ce sont scripts/build-og.py qui les génère)
+    for d in ("documents", "identite", "kit", "app"):
         src = LEGACY / d
         if src.exists():
             dst = PUBLIC / d
             if dst.exists():
                 shutil.rmtree(dst)
             shutil.copytree(src, dst)
-    for f in ("og-image.png", "favicon.svg"):
+    for f in ("favicon.svg",):
         if (LEGACY / f).exists():
             shutil.copy2(LEGACY / f, PUBLIC / f)
     adapt_script("geo.js", "__initGeo", "var figures = document.querySelectorAll('[data-geo]');",

@@ -1,5 +1,5 @@
 {
- "genere": "2026-09-28T10:53:05Z",
+ "genere": "2026-09-28T11:10:55Z",
  "contenu": {
   "plaidoyers": {
    "publies": 8,
@@ -95,12 +95,6 @@
    "lettre-info": {
     "envois": 0
    },
-   "contact": {
-    "envois": 0
-   },
-   "plainte": {
-    "envois": 0
-   },
    "temoignage-lignee": {
     "envois": 0
    },
@@ -110,13 +104,7 @@
    "mesure-debit": {
     "envois": 0
    },
-   "veuves": {
-    "envois": 0
-   },
-   "handicap": {
-    "envois": 0
-   },
-   "message-en": {
+   "diaspora-competences": {
     "envois": 0
    }
   }

@@ -13,7 +13,8 @@ const values = [
 const participer = [
   ["01", "Rejoindre ou coordonner une thématique", "Treize thématiques cherchent leur coordonnateur. Une compétence ponctuelle suffit souvent à faire avancer un dossier déjà prêt.", "/participer?coordo=1#contact"],
   ["02", "Adhérer à l’association", "Déclarer son intention d’adhérer n’engage aucun argent : la collecte est suspendue jusqu’à l’ouverture d’un compte au nom de l’association.", "/participer#adherer"],
-  ["03", "Proposer un article ou un document", "Un témoignage, une photographie des forums de 2000 et 2003, un récépissé, une pièce d’archive : tout est versé avec sa provenance.", "/participer#proposer"],
+  ["03", "Inscrire ses compétences au répertoire de la diaspora", "Médecin, enseignante, ingénieur, juriste, informaticienne : cinq minutes pour dire ce que vous savez faire, et n’être sollicité que pour cela.", "/diaspora"],
+  ["04", "Proposer un article ou un document", "Un témoignage, une photographie des forums de 2000 et 2003, un récépissé, une pièce d’archive : tout est versé avec sa provenance.", "/participer#proposer"],
 ];
 
 export default function Home() {

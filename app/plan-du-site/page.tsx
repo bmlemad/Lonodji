@@ -19,7 +19,7 @@ const main: [string, { href: string; label: string }[]][] = [
     { href: "/programmes", label: "Quatre pôles, dix-neuf thématiques" }, { href: "/actions", label: "Plaidoyers & engagements" }, { href: "/impact", label: "Suivi & tableau de bord" }, { href: "/dossiers", label: "Tous les dossiers" }, { href: "/carte", label: "Carte du territoire" },
   ]],
   ["Participer", [
-    { href: "/participer#contact", label: "Nous écrire" }, { href: "/participer#adherer", label: "Adhérer et cotiser" }, { href: "/participer#soutenir", label: "Nous soutenir" }, { href: "/participer#newsletter", label: "Lettre d’information" }, { href: "/journal", label: "Le journal" }, { href: "/recherche", label: "Rechercher dans le site" },
+    { href: "/participer#contact", label: "Nous écrire" }, { href: "/participer#adherer", label: "Adhérer et cotiser" }, { href: "/participer#soutenir", label: "Nous soutenir" }, { href: "/diaspora", label: "Répertoire des compétences de la diaspora" }, { href: "/participer#newsletter", label: "Lettre d’information" }, { href: "/journal", label: "Le journal" }, { href: "/recherche", label: "Rechercher dans le site" },
   ]],
 ];
 

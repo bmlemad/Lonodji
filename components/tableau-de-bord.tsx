@@ -108,9 +108,9 @@ const FORMULAIRES: { cle: string; libelle: string; note?: string; href: string }
   { cle: "proposition-article", libelle: "propositions d’article", href: "/participer#proposer" },
   { cle: "lettre-info", libelle: "abonnés à la lettre", href: "/participer#newsletter" },
   { cle: "temoignage-lignee", libelle: "témoignages de lignée", href: "/histoire" },
+  { cle: "lieu-sacre", libelle: "lieux sacrés signalés", href: "/dossiers/lieux-sacres" },
   { cle: "mesure-debit", libelle: "mesures de débit internet", href: "/actions#mesure-debit" },
-  { cle: "contact", libelle: "messages reçus", href: "/participer#contact" },
-  { cle: "plainte", libelle: "plaintes déposées", href: "/transparence#comment-nous-signaler-un-manquement" },
+  { cle: "diaspora-competences", libelle: "compétences inscrites au répertoire", href: "/diaspora" },
 ];
 
 export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: Indicateurs; mode?: "complet" | "compact" }) {
@@ -186,7 +186,7 @@ export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: 
 
       <div className="tb-titre">
         <h3>Ce que le site reçoit</h3>
-        <p>{formulaires.live ? "Compteurs en direct" : `Relevé du ${dateLongue(formulaires.date)}`} · des nombres seulement, jamais un nom.</p>
+        <p>{formulaires.live ? "Compteurs en direct" : `Relevé du ${dateLongue(formulaires.date)}`} · des nombres seulement, jamais un nom. Contact, plaintes et formulaires des veuves et des personnes handicapées ne sont jamais comptés.</p>
       </div>
       <ul className="tb-secondaire tb-recoit">
         {FORMULAIRES.map((f) => {

@@ -35,6 +35,7 @@ EYEBROWS = {
     "/documents": "Documents",
     "/dossiers": "Les dossiers",
     "/participer": "Participer",
+    "/diaspora": "Diaspora · répertoire des compétences",
     "/transparence": "Redevabilité",
     "/archives": "Archives du site",
     "/mentions-legales": "Mentions légales",

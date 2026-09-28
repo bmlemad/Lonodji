@@ -47,6 +47,20 @@ for f in sorted((CONTENT / "pages").glob("*.json")):
         "x": text[:MAX_TEXT],
     })
 
+# Pages conçues hors de l'ancien site (app/…), sans JSON dans content/
+PAGES_SITE = [
+    {"t": "Carte du territoire bedjond", "r": "/carte", "k": "Page",
+     "d": "Les quatorze unités du pays bedjond, leurs localités et équipements connus des données ouvertes ; une fiche par lieu, un bouton pour signaler un besoin.",
+     "x": "carte interactive territoire pays bedjond Mandoul Occidental cantons sous-préfectures villages localités écoles centres de santé forages marchés OpenStreetMap signaler un besoin Bédjondo Bébopen Bédaya Bessada Koumra Moïssala Logone Oriental Moyen-Chari diaspora agricole"},
+    {"t": "Répertoire des compétences de la diaspora", "r": "/diaspora", "k": "Page",
+     "d": "Médecins, enseignants, ingénieurs, juristes, entrepreneurs, informaticiens : inscrire ses compétences pour qu’une thématique ou un plaidoyer trouve la personne qui sait.",
+     "x": "diaspora répertoire compétences inscription médecin enseignant ingénieur juriste entrepreneur informaticien mentorat mission formation à distance réseau d’experts pays de résidence N’Djamena Paris Montréal annuaire données protégées retrait"},
+    {"t": "Tableau de bord d’impact", "r": "/impact", "k": "Page",
+     "d": "Adhérents, coordonnateurs, plaidoyers, besoins recensés et résolus, projets actifs : six indicateurs datés et sourcés, puis ce que le site produit et reçoit.",
+     "x": "tableau de bord impact indicateurs adhérents coordonnateurs plaidoyers besoins recensés résolus projets actifs compteurs formulaires règle de preuve chiffres datés sourcés"},
+]
+entries.extend(PAGES_SITE)
+
 for f in sorted((CONTENT / "articles").glob("*.json")):
     d = json.load(open(f, encoding="utf-8"))
     text = plain(" ".join(s["html"] for s in d["sections"]))
