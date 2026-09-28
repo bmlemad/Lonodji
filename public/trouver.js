@@ -214,8 +214,8 @@ window.__initTrouver = function () {
     "key": "14",
     "pole": "Pôle III · Thématique 14",
     "name": "Paix & cohésion",
-    "status": "open",
-    "coord": "Coordonnateur : à pourvoir",
+    "status": "filled",
+    "coord": "Coordonnateur : Sa Majesté Moulbe Brahim Nadoumbeye, chef de canton de Bébopen",
     "desc": "Prévention et règlement des conflits, médiation, relations avec les communautés voisines et dialogue entre les religions.",
     "page": [
       "/dossiers/agriculteurs-eleveurs",
