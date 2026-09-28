@@ -74,7 +74,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       </nav>
       {related.length ? (
         <section className="hub-section">
-          <p className="eyebrow">À lire aussi · {a.tag}</p>
+          <h2 className="eyebrow">À lire aussi · {a.tag}</h2>
           <div className="art-grid">{related.map((r) => <ArticleCard key={r.slug} a={r} />)}</div>
         </section>
       ) : null}

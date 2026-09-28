@@ -91,7 +91,7 @@
 .legacy .lineage-dates{ font-size:13px; color:#607069; }
 .legacy .odd-row{ padding:12px 0; border-top:1px solid var(--line); }
 .legacy .odd-row-head{ display:flex; gap:12px; align-items:baseline; }
-.legacy .odd-row-num{ font-family:var(--font-playfair),Georgia,serif; font-size:24px; color:var(--deep); }
+.legacy .odd-row-num{ font-family:var(--font-playfair),Georgia,serif; font-size:24px; color:var(--deep) !important; }
 .legacy .odd-row-name{ font-weight:600; }
 .legacy .odd-chip{ display:inline-flex; gap:6px; align-items:center; padding:4px 9px; border-radius:99px; margin:3px 4px 3px 0; font-size:12px; text-decoration:none; background:var(--odd-accent,#eef2e9); color:var(--odd-ink,var(--ink)); }
 .legacy .odd-num{ font-weight:700; }

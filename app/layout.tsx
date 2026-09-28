@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s — ADEB LONODJI",
   },
   description:
-    "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : quatre pôles, dix-neuf thématiques, sept plaidoyers pour le Mandoul Occidental (Tchad).",
+    "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : quatre pôles, dix-neuf thématiques, sept plaidoyers pour le Mandoul (Tchad).",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
