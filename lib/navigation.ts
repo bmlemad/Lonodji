@@ -122,7 +122,7 @@ export function entreeCourante(pathname: string): string {
   if (pathname.startsWith("/journal")) return "journal";
   if (/^\/(participer|diaspora|temoignages)/.test(pathname)) return "participer";
   if (/^\/(carte|villages|observatoire|bibliotheque|langue|histoire)/.test(pathname) || /^\/dossiers\/(bedjondo|lieux-sacres|genealogies|genealogie-outil|decentralisation)/.test(pathname)) return "territoire";
-  if (/^\/(mission|transparence|documents|presse|mentions-legales|archives|plan-du-site)/.test(pathname) || /^\/dossiers\/(engagements|demarches)/.test(pathname)) return "association";
+  if (/^\/(mission|transparence|documents|presse|accessibilite|mentions-legales|archives|plan-du-site)/.test(pathname) || /^\/dossiers\/(engagements|demarches)/.test(pathname)) return "association";
   if (/^\/(programmes|actions|impact|dossiers|projets)/.test(pathname)) return "actions";
   return "";
 }
@@ -131,7 +131,7 @@ export function entreeCourante(pathname: string): string {
 export const PIED: { titre: string; liens: NavLien[] }[] = [
   { titre: "L’association", liens: [
     { label: "Notre mission", href: "/mission" }, { label: "Histoire & patrimoine", href: "/histoire" }, { label: "Le journal", href: "/journal" },
-    { label: "Redevabilité & transparence", href: "/transparence" }, { label: "Documents", href: "/documents" }, { label: "Espace presse", href: "/presse" }, { label: "Archives du site", href: "/archives" },
+    { label: "Redevabilité & transparence", href: "/transparence" }, { label: "Documents", href: "/documents" }, { label: "Espace presse", href: "/presse" }, { label: "Accessibilité", href: "/accessibilite" }, { label: "Archives du site", href: "/archives" },
   ] },
   { titre: "Nos actions", liens: [
     { label: "Quatre pôles, dix-neuf thématiques", href: "/programmes" }, { label: "Plaidoyers & engagements", href: "/actions" }, { label: "Tableau de bord d’impact", href: "/impact" },

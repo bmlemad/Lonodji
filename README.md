@@ -85,6 +85,10 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 
 - `/presse` — pour journalistes et partenaires : citation prête à l’emploi, chiffres datés (tableau de bord), six dates, bureau exécutif (`ORG.bureau`), communiqués (articles « Vie de l’association » et lettre), documents (dossier de présentation, livre blanc), logos téléchargeables avec leurs règles (`public/identite/`), quatre règles demandées aux médias, contact presse, et cinq visuels carrés à partager (WhatsApp, réseaux) produits par `scripts/build-visuels.py` → `public/partage/` (textes dans `VISUELS`, chiffres lus dans `content/` ; à relancer après `npm run build` quand les compteurs changent). Aucune photo tant que la banque d’images est vide.
 
+## Accessibilité
+
+- `/accessibilite` — déclaration : niveau visé (WCAG 2.1 AA), contrôles avant mise en ligne (axe-core sur toutes les pages, parcours clavier, captures à trois largeurs), limites connues (carte Leaflet, PDF, contenus importés), signalement d’un obstacle ; reliée en pied de page avec « Signaler un manquement » (mécanisme de plainte de la charte).
+
 ## Navigation (en-tête, méga-menu, menu mobile, pied de page)
 
 - Une seule source : `lib/navigation.ts` (`NAVIGATION` pour l’en-tête et le menu mobile, `PIED` pour le pied de page, `entreeCourante()` pour surligner la section de la page courante) ; le plan du site s’en sert aussi.

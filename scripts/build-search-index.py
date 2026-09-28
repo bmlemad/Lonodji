@@ -112,6 +112,9 @@ PAGES_SITE.append({"t": "Espace presse et partenaires", "r": "/presse", "k": "Pa
 PAGES_SITE.append({"t": "The ODEB LONODJI project — Vision 2030 (in English)", "r": "/en/odeb", "k": "In English",
      "d": "A project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030: six missions, five programmes, a roadmap, a white paper.",
      "x": "ODEB LONODJI project English vision 2030 organisation development emergence Bedjond people missions research documentation territorial development innovation heritage diaspora programmes roadmap white paper take part skills register"})
+PAGES_SITE.append({"t": "Déclaration d’accessibilité", "r": "/accessibilite", "k": "Page",
+     "d": "Niveau visé WCAG 2.1 AA, ce qui est vérifié avant chaque mise en ligne, les limites connues (carte, PDF, contenus importés) et comment signaler un obstacle.",
+     "x": "accessibilité déclaration WCAG 2.1 AA lecteur d’écran clavier contraste hors ligne téléphone connexion lente axe-core limites carte PDF signaler un obstacle réponse 48 heures"})
 entries.extend(PAGES_SITE)
 
 for f in sorted((CONTENT / "articles").glob("*.json")):

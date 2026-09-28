@@ -47,6 +47,7 @@ EYEBROWS = {
     "/recherche": "Recherche",
     "/projets": "Nos actions · plateforme de projets",
     "/presse": "Espace presse et partenaires",
+    "/accessibilite": "Accessibilité",
     "/observatoire": "Territoire · observatoire du Mandoul Occidental",
     "/odeb": "Projet ODEB LONODJI · Vision 2030",
     "/odeb/livre-blanc": "Projet ODEB LONODJI · livre blanc",

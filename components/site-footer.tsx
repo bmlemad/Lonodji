@@ -45,7 +45,7 @@ export default function SiteFooter({ miseAJour }: { miseAJour?: string }) {
       <div className="footer-bottom">
         <span className="footer-motto">{ORG.motto}</span>
         <span className="footer-legal">
-          © 2026 {ORG.name} · Site officiel{miseAJour ? ` · mis à jour le ${miseAJour}` : ""} · <Link href="/mentions-legales">Mentions légales</Link> · <Link href="/plan-du-site">Plan du site</Link> · <Link href="/archives">Archives</Link> · <Link href="/en/index" lang="en">English</Link> · <Link href="/redaction" rel="nofollow">Rédaction</Link>
+          © 2026 {ORG.name} · Site officiel{miseAJour ? ` · mis à jour le ${miseAJour}` : ""} · <Link href="/mentions-legales">Mentions légales</Link> · <Link href="/accessibilite">Accessibilité</Link> · <Link href="/transparence#comment-nous-signaler-un-manquement">Signaler un manquement</Link> · <Link href="/plan-du-site">Plan du site</Link> · <Link href="/archives">Archives</Link> · <Link href="/en/index" lang="en">English</Link> · <Link href="/redaction" rel="nofollow">Rédaction</Link>
         </span>
         <a className="footer-top-link" href="#main-content">Retour en haut <span aria-hidden="true">↑</span></a>
       </div>
