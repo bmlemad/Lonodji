@@ -246,8 +246,8 @@ window.__initTrouver = function () {
     "key": "16",
     "pole": "Pôle III · Thématique 16",
     "name": "Justice & droits humains",
-    "status": "open",
-    "coord": "Coordonnateur : à pourvoir",
+    "status": "filled",
+    "coord": "Coordonnateur : Dr Eugène Ngartebaye Le Yotha",
     "desc": "Sensibilisation au droit et à l’accès à la justice, veille et alerte sur les atteintes aux droits humains touchant la communauté…",
     "page": [
       "/dossiers/veuves",

@@ -605,21 +605,21 @@ UPDATES_SOURCE = [
     ('<p>Ces quatre thématiques ont des problématiques documentées <strong>et</strong> un plaidoyer déjà publié&nbsp;: <a href="poles.html#eau-energie-connectivite">Eau, énergie &amp; connectivité</a> &middot; <a href="poles.html#desenclavement-urbanisation">Désenclavement &amp; urbanisation</a> &middot; <a href="poles.html#jeunesse-reussite">Jeunesse &amp; réussite</a> &middot; <a href="poles.html#gouvernance-plaidoyer">Gouvernance &amp; plaidoyer</a>. Il ne leur manque qu&rsquo;un coordonnateur ou une coordonnatrice pour suivre les dossiers et relancer les destinataires.</p>',
      '<p>Ces trois thématiques ont des problématiques documentées <strong>et</strong> un plaidoyer déjà publié&nbsp;: <a href="poles.html#eau-energie-connectivite">Eau, énergie &amp; connectivité</a> &middot; <a href="poles.html#desenclavement-urbanisation">Désenclavement &amp; urbanisation</a> &middot; <a href="poles.html#gouvernance-plaidoyer">Gouvernance &amp; plaidoyer</a>. Il ne leur manque qu&rsquo;un coordonnateur ou une coordonnatrice pour suivre les dossiers et relancer les destinataires. <a href="poles.html#jeunesse-reussite">Jeunesse &amp; réussite</a>, qui était dans le même cas, a sa coordination depuis le 28 septembre 2026.</p>'),
     # comptes : onze pourvues, huit à pourvoir
-    ('pas encore de coordonnateur pour quinze de ses dix-neuf th&eacute;matiques', 'pas encore de coordonnateur pour sept de ses dix-neuf th&eacute;matiques'),
+    ('pas encore de coordonnateur pour quinze de ses dix-neuf th&eacute;matiques', 'pas encore de coordonnateur pour six de ses dix-neuf th&eacute;matiques'),
     ('aria-label="6 coordonnateurs en poste — voir les thématiques pourvues">\n        <span class="bento-num">6</span>',
-     'aria-label="12 coordonnateurs en poste — voir les thématiques pourvues">\n        <span class="bento-num">12</span>'),
-    ('Santé &amp; prévention, Protection sociale &amp; inclusion</span>', 'Agriculture, élevage &amp; sécurité alimentaire, Jeunesse &amp; réussite, Santé &amp; prévention, Protection sociale &amp; inclusion, Paix &amp; cohésion, Transformation numérique &amp; services, Intelligence artificielle &amp; données, Compétences &amp; entrepreneuriat numérique</span>'),
+     'aria-label="13 coordonnateurs en poste — voir les thématiques pourvues">\n        <span class="bento-num">13</span>'),
+    ('Santé &amp; prévention, Protection sociale &amp; inclusion</span>', 'Agriculture, élevage &amp; sécurité alimentaire, Jeunesse &amp; réussite, Santé &amp; prévention, Protection sociale &amp; inclusion, Paix &amp; cohésion, Justice &amp; droits humains, Transformation numérique &amp; services, Intelligence artificielle &amp; données, Compétences &amp; entrepreneuriat numérique</span>'),
     ('aria-label="13 thématiques encore à pourvoir — se porter volontaire">\n        <span class="bento-num">13</span>',
-     'aria-label="7 thématiques encore à pourvoir — se porter volontaire">\n        <span class="bento-num">7</span>'),
-    ('<p>Treize des dix-neuf thématiques d&rsquo;ADEB LONODJI n&rsquo;ont pas encore de coordon', '<p>Sept des dix-neuf thématiques d&rsquo;ADEB LONODJI n&rsquo;ont pas encore de coordon'),
-    ('<p>Treize thématiques attendent un coordonnateur ou une coordonnatrice.', '<p>Sept thématiques attendent un coordonnateur ou une coordonnatrice.'),
-    ('<p>Dix-neuf thématiques, et treize attendent encore leur coordonnateur.</p>', '<p>Dix-neuf thématiques, et sept attendent encore leur coordonnateur.</p>'),
-    ('pourvoir les treize thématiques encore sans coordonnateur', 'pourvoir les sept thématiques encore sans coordonnateur'),
-    ('<p class="lede">Treize des dix-neuf thématiques d&rsquo;ADEB LONODJI cherchent encore un coordonnateur', '<p class="lede">Sept des dix-neuf thématiques d&rsquo;ADEB LONODJI cherchent encore un coordonnateur'),
-    ('<p>Treize thématiques et deux cellules cherchent des coordonnateurs et des membres actifs.', '<p>Sept thématiques et deux cellules cherchent des coordonnateurs et des membres actifs.'),
-    ('où vous seriez le plus utile. Treize attendent un coordonnateur."', 'où vous seriez le plus utile. Sept attendent un coordonnateur."'),
-    ('<p class="lede">Dix-neuf th&eacute;matiques, dont treize sans coordonnateur.', '<p class="lede">Dix-neuf th&eacute;matiques, dont sept sans coordonnateur.'),
-    ('<span class="hero-pill">Treize th&eacute;matiques &agrave; pourvoir</span>', '<span class="hero-pill">Sept th&eacute;matiques &agrave; pourvoir</span>'),
+     'aria-label="6 thématiques encore à pourvoir — se porter volontaire">\n        <span class="bento-num">6</span>'),
+    ('<p>Treize des dix-neuf thématiques d&rsquo;ADEB LONODJI n&rsquo;ont pas encore de coordon', '<p>Six des dix-neuf thématiques d&rsquo;ADEB LONODJI n&rsquo;ont pas encore de coordon'),
+    ('<p>Treize thématiques attendent un coordonnateur ou une coordonnatrice.', '<p>Six thématiques attendent un coordonnateur ou une coordonnatrice.'),
+    ('<p>Dix-neuf thématiques, et treize attendent encore leur coordonnateur.</p>', '<p>Dix-neuf thématiques, et six attendent encore leur coordonnateur.</p>'),
+    ('pourvoir les treize thématiques encore sans coordonnateur', 'pourvoir les six thématiques encore sans coordonnateur'),
+    ('<p class="lede">Treize des dix-neuf thématiques d&rsquo;ADEB LONODJI cherchent encore un coordonnateur', '<p class="lede">Six des dix-neuf thématiques d&rsquo;ADEB LONODJI cherchent encore un coordonnateur'),
+    ('<p>Treize thématiques et deux cellules cherchent des coordonnateurs et des membres actifs.', '<p>Six thématiques et deux cellules cherchent des coordonnateurs et des membres actifs.'),
+    ('où vous seriez le plus utile. Treize attendent un coordonnateur."', 'où vous seriez le plus utile. Six attendent un coordonnateur."'),
+    ('<p class="lede">Dix-neuf th&eacute;matiques, dont treize sans coordonnateur.', '<p class="lede">Dix-neuf th&eacute;matiques, dont six sans coordonnateur.'),
+    ('<span class="hero-pill">Treize th&eacute;matiques &agrave; pourvoir</span>', '<span class="hero-pill">Six th&eacute;matiques &agrave; pourvoir</span>'),
 ]
 # Nominations de coordonnateurs postérieures à l'export : une ligne par thématique.
 # (ancre, nom FR (html), nom EN (html), nom dans trouver.js, pôle FR (html), coordonnateur FR, coordonnateur EN (html), note FR, note EN)
@@ -643,6 +643,10 @@ NOMINATIONS = [
      "Sa Majesté Moulbe Brahim Nadoumbeye, chef de canton de Bébopen", "His Majesty Moulbe Brahim Nadoumbeye, canton chief of B&eacute;bopen",
      " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée à Sa Majesté Moulbe Brahim Nadoumbeye, chef de canton de Bébopen.",
      " <strong>Update, 28 September 2026:</strong> the theme is now coordinated by His Majesty Moulbe Brahim Nadoumbeye, canton chief of B&eacute;bopen."),
+    ("justice-droits-homme", "Justice &amp; droits humains", "Justice &amp; Human Rights", "Justice & droits humains", "Gouvernance, paix &amp; plaidoyer",
+     "Dr Eugène Ngartebaye Le Yotha", "Dr Eug&egrave;ne Ngartebaye Le Yotha",
+     " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée au Dr Eugène Ngartebaye Le Yotha.",
+     " <strong>Update, 28 September 2026:</strong> the theme is now coordinated by Dr Eug&egrave;ne Ngartebaye Le Yotha."),
 ]
 
 
