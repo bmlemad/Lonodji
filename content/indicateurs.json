@@ -1,0 +1,129 @@
+{
+ "genere": "2026-09-28T10:53:05Z",
+ "contenu": {
+  "plaidoyers": {
+   "publies": 8,
+   "envoyes": 0,
+   "reponses": 0
+  },
+  "coordinations": {
+   "pourvues": 6,
+   "total": 19,
+   "cellulesPourvues": 0,
+   "cellulesTotal": 2
+  },
+  "articles": 36,
+  "premierArticle": "2026-09-11",
+  "documentsPdf": 14,
+  "documentsAnnonces": 4,
+  "corrections": 21,
+  "engagements": {
+   "total": 12,
+   "realises": 0
+  },
+  "problematiques": {
+   "total": 34,
+   "documentees": 12,
+   "partielles": 7,
+   "inconnues": 11,
+   "chantiersPrioritaires": 7
+  },
+  "carte": {
+   "unites": 14,
+   "localites": 1259,
+   "localitesNommees": 966,
+   "equipements": 24,
+   "genere": "2026-09-28"
+  },
+  "pages": 46,
+  "projets": {
+   "actifs": 1,
+   "annonces": 3,
+   "finances": 0,
+   "liste": [
+    {
+     "slug": "application",
+     "nom": "Application pour téléphone",
+     "stade": "essai",
+     "libelle": "version d'essai en ligne (Android 1.0.1, 28 septembre 2026)",
+     "route": "/dossiers/application"
+    },
+    {
+     "slug": "espace-numerique",
+     "nom": "Espace numérique communautaire",
+     "stade": "souscription",
+     "libelle": "premier chantier, souscription ouverte, aucun financement confirmé",
+     "route": "/dossiers/espace-numerique"
+    },
+    {
+     "slug": "air-bedjondo",
+     "nom": "Air Bedjondo",
+     "stade": "annonce",
+     "libelle": "projet annoncé, sans financement ni calendrier",
+     "route": "/dossiers/air-bedjondo"
+    },
+    {
+     "slug": "complexe-sportif",
+     "nom": "Complexe de formation sportive",
+     "stade": "etude",
+     "libelle": "à l'étude",
+     "route": "/dossiers/complexe-sportif"
+    }
+   ]
+  }
+ },
+ "formulaires": {
+  "date": "2026-09-28",
+  "methode": "Console Netlify Forms, après retrait des six envois de test des 20 et 21 septembre. Les intentions d'adhésion sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).",
+  "comptes": {
+   "intention-adhesion": {
+    "envois": 3,
+    "personnes": 2
+   },
+   "signalement-besoin": {
+    "envois": 0
+   },
+   "soutien-plaidoyer": {
+    "envois": 0
+   },
+   "promesse-contribution": {
+    "envois": 0
+   },
+   "proposition-article": {
+    "envois": 0
+   },
+   "lettre-info": {
+    "envois": 0
+   },
+   "contact": {
+    "envois": 0
+   },
+   "plainte": {
+    "envois": 0
+   },
+   "temoignage-lignee": {
+    "envois": 0
+   },
+   "lieu-sacre": {
+    "envois": 0
+   },
+   "mesure-debit": {
+    "envois": 0
+   },
+   "veuves": {
+    "envois": 0
+   },
+   "handicap": {
+    "envois": 0
+   },
+   "message-en": {
+    "envois": 0
+   }
+  }
+ },
+ "bureau": {
+  "adherents": null,
+  "besoinsResolus": 0,
+  "note": "Le nombre d'adhérents à jour de cotisation est tenu par le bureau ; il paraîtra ici, daté, dès sa première transmission. Aucun besoin recensé n'est à ce jour confirmé résolu."
+ }
+}

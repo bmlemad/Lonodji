@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArticleCard } from "../components/blocks";
+import TableauDeBord from "../components/tableau-de-bord";
 import { filledCount, getIndex, getPage, ORG, thematiqueCount } from "../lib/content";
+import { getIndicateurs } from "../lib/indicateurs";
 
 const values = [
   ["01", "Courage", "Oser agir, prendre des responsabilités et avancer avec détermination, y compris quand il faut dire ce qui manque."],
@@ -11,7 +13,7 @@ const values = [
 const participer = [
   ["01", "Rejoindre ou coordonner une thématique", "Treize thématiques cherchent leur coordonnateur. Une compétence ponctuelle suffit souvent à faire avancer un dossier déjà prêt.", "/participer?coordo=1#contact"],
   ["02", "Adhérer à l’association", "Déclarer son intention d’adhérer n’engage aucun argent : la collecte est suspendue jusqu’à l’ouverture d’un compte au nom de l’association.", "/participer#adherer"],
-  ["03", "Proposer un article ou un document", "Un témoignage, une photographie des forums de 2000 et 2003, un récépissé, une pièce d’archive : tout est versé avec sa provenance.", "/participer#proposer-article"],
+  ["03", "Proposer un article ou un document", "Un témoignage, une photographie des forums de 2000 et 2003, un récépissé, une pièce d’archive : tout est versé avec sa provenance.", "/participer#proposer"],
 ];
 
 export default function Home() {
@@ -19,6 +21,7 @@ export default function Home() {
   const total = thematiqueCount(idx);
   const filled = filledCount(idx);
   const latest = idx.articles.slice(0, 3);
+  const indicateurs = getIndicateurs();
   const corrections = (getPage("redevabilite").sections.find((s) => s.id === "corrections")?.html.match(/class="info-card"/g) || []).length;
   return (
     <>
@@ -154,32 +157,16 @@ export default function Home() {
 
         <section id="impact" className="impact section" aria-labelledby="impact-title">
           <div className="impact-intro">
-            <p className="eyebrow">07 — Suivi</p>
+            <p className="eyebrow">07 — Tableau de bord</p>
             <h2 id="impact-title">Mesurer ce qui<br /><em>devient réel.</em></h2>
             <p>
-              La crédibilité se construit par la preuve. Nous publions ce qui est documenté, ce qui est publié, ce qui est envoyé — et nous écrivons comme tel ce qui n’est pas encore fait.
+              La crédibilité se construit par la preuve. Six indicateurs datés et sourcés — adhérents, coordonnateurs, plaidoyers, besoins recensés et résolus, projets — et {corrections} corrections publiées à découvert. Ce qui n’est pas encore fait est écrit comme tel.
             </p>
+            <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 26 }}>
+              <Link className="button secondary" href="/impact">Le tableau de bord complet <span aria-hidden="true">→</span></Link>
+            </div>
           </div>
-          <div className="impact-grid">
-            <article>
-              <span className="impact-index">A</span>
-              <h3>{idx.plaidoyers.length} dossiers publiés</h3>
-              <p>Sept plaidoyers et une note à la commune, avec un cadre de résultats à vingt-deux indicateurs.</p>
-              <span className="status dark">Envoi officiel à venir</span>
-            </article>
-            <article>
-              <span className="impact-index">B</span>
-              <h3>12 engagements publics</h3>
-              <p>Pris sur nos dossiers et rassemblés en un seul endroit. Aucun n’est encore confirmé réalisé, et nous le disons.</p>
-              <span className="status dark">Suivis un par un</span>
-            </article>
-            <article>
-              <span className="impact-index">C</span>
-              <h3>{corrections} corrections datées</h3>
-              <p>Chaque erreur de fait est corrigée, datée et expliquée dans le journal des corrections — surtout quand elle nous dessert.</p>
-              <span className="status dark">Redevabilité</span>
-            </article>
-          </div>
+          <TableauDeBord donnees={indicateurs} mode="compact" />
         </section>
 
         <section id="valeurs" className="values section" aria-labelledby="values-title">

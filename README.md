@@ -36,6 +36,13 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 - `/carte` — carte interactive (Leaflet, fond humanitaire OpenStreetMap France) des 14 unités du pays bedjond (contours GADM 4.1), des localités et équipements OpenStreetMap (exports HOT/HDX) et des liens du site par unité ; fiche par lieu, recherche, bouton « Signaler un besoin ici » qui préremplit le formulaire de la carte des besoins (`?localite=`).
 - `scripts/build-carte.py` — assemble `public/carte/donnees.json` à partir des sources (téléchargées dans `.cache/carte/` au premier lancement) ; à relancer pour rafraîchir les données OSM.
 
+## Tableau de bord d’impact
+
+- `/impact` — les six indicateurs du plan d’action 2026-2028 (adhérents, coordonnateurs, plaidoyers, besoins recensés, besoins résolus, projets actifs), puis « ce que le site produit » et « ce que le site reçoit » ; chaque chiffre porte sa source et sa date. Bandeau condensé sur l’accueil. Composant `components/tableau-de-bord.tsx`.
+- `scripts/build-indicateurs.py` → `content/indicateurs.json` : compte le contenu (plaidoyers, coordinations, articles, PDF, corrections, engagements, problématiques du diagnostic, localités et équipements de la carte, projets et leur stade — liste `PROJETS` à tenir à jour) et fige le dernier relevé des formulaires (`RELEVE`, console Netlify, envois de test retirés). À relancer avant chaque `npm run build` qui suit une modification de contenu.
+- `app/api/indicateurs/route.ts` — renvoie ces chiffres ; si la variable d’environnement `NETLIFY_FORMS_TOKEN` est définie sur le site (jeton d’accès personnel Netlify, *User settings → Applications → Personal access tokens*), les compteurs de formulaires sont relevés en direct sur l’API Netlify (mise en cache dix minutes) et la page les affiche « en direct ». Seuls des nombres sortent de l’API : les envois ne sont lus en mémoire que pour compter les personnes distinctes (intentions d’adhésion). Sans jeton, la page garde le relevé daté.
+- Les chiffres que seule l’association détient (adhérents à jour de cotisation, besoins résolus) sont dans `bureau` du JSON : ils restent « non publiés » tant que le bureau ne les transmet pas avec leur date.
+
 ## Espace de rédaction privé
 
 - `/redaction` (noindex, lien discret « Rédaction » en pied de page) : écriture des articles en brouillon, aperçu dans le style du journal, rubrique, statut, enregistrement automatique, export `.md`. Mot de passe unique choisi à la première visite (scrypt + sel), jeton de session HMAC dérivé du hash courant (changer le mot de passe déconnecte tout), cinq erreurs bloquent l’entrée un quart d’heure. Mot de passe en POST seulement, jeton en en-tête `Authorization`.

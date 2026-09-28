@@ -302,3 +302,46 @@ html.can-install .install-cta{ display:inline-flex; }
   .ct-chiffres{ grid-template-columns:1fr 1fr; }
   .ct-actions .button{ width:100%; justify-content:space-between; }
 }
+
+/* Tableau de bord d'impact (/impact et bandeau de l'accueil) */
+.tb{ margin:0 0 48px; }
+.tb-etat{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; margin:0 0 22px; font-size:13px; color:#607069; }
+.tb-etat .tb-point{ flex:0 0 auto; width:9px; height:9px; border-radius:50%; background:#8c8a3c; box-shadow:0 0 0 3px rgba(140,138,60,.18); }
+.tb-etat.is-live .tb-point{ background:#3f8a4f; box-shadow:0 0 0 3px rgba(63,138,79,.18); }
+.tb-h2{ font-size:clamp(30px,3.6vw,50px); line-height:1; letter-spacing:-.04em; margin:0 0 22px; }
+.tb-h2 em{ font-family:var(--font-playfair),Georgia,serif; font-weight:500; }
+.tb-grille{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.tb-carte{ position:relative; padding:24px 24px 20px; border:1px solid var(--line); border-radius:22px; background:rgba(255,255,255,.78); display:flex; flex-direction:column; gap:6px; min-height:250px; }
+.tb-carte .eyebrow{ margin:0 0 12px; }
+.tb-valeur{ display:flex; align-items:baseline; gap:6px; font-family:var(--font-playfair),Georgia,serif; font-weight:500; font-size:clamp(44px,5vw,64px); line-height:.95; letter-spacing:-.03em; color:var(--deep); }
+.tb-valeur small{ font-family:var(--font-dm),system-ui,sans-serif; font-size:16px; font-weight:600; letter-spacing:0; color:#607069; }
+.tb-libelle{ font-size:14px; font-weight:600; line-height:1.4; }
+.tb-detail{ font-size:13px; line-height:1.55; color:#607069; margin:0; }
+.tb-source{ margin-top:auto; padding:14px 64px 0 0; font-size:10px; text-transform:uppercase; letter-spacing:.12em; color:#526159; }
+.tb-lien{ position:absolute; right:20px; bottom:18px; font-size:12px; font-weight:600; color:var(--deep); }
+.tb-lien:hover, .tb-lien:focus-visible{ text-decoration:underline; text-underline-offset:4px; }
+.tb-titre{ display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 16px; margin:30px 0 12px; }
+.tb-titre h3{ margin:0; font-size:20px; letter-spacing:-.02em; }
+.tb-titre p{ margin:0; font-size:13px; color:#607069; }
+.tb-secondaire{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; list-style:none; margin:0; padding:0; }
+.tb-secondaire>li{ display:flex; }
+.tb-recoit{ grid-template-columns:repeat(5,1fr); }
+.tb-mini{ flex:1 1 auto; padding:16px 16px 14px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.6); display:flex; flex-direction:column; gap:3px; transition:transform .2s ease, box-shadow .2s ease; }
+a.tb-mini:hover, a.tb-mini:focus-visible{ transform:translateY(-2px); box-shadow:0 10px 30px rgba(23,59,45,.1); }
+.tb-mini strong{ font-family:var(--font-playfair),Georgia,serif; font-weight:500; font-size:30px; line-height:1; color:var(--deep); }
+.tb-mini span{ font-size:12px; font-weight:600; line-height:1.35; }
+.tb-mini small{ font-size:11px; color:#607069; line-height:1.4; }
+.tb-methode{ margin-top:24px; padding:20px 24px; border:1px dashed rgba(23,59,45,.32); border-radius:18px; font-size:14px; line-height:1.65; color:#4b5a52; background:rgba(255,255,255,.5); }
+.tb-methode strong{ color:var(--deep); }
+@media(max-width:900px){ .tb-grille{ grid-template-columns:repeat(2,1fr); } .tb-secondaire, .tb-recoit{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:560px){ .tb-grille{ grid-template-columns:1fr; } .tb-carte{ min-height:0; padding-bottom:44px; } }
+.tb-compact{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; list-style:none; margin:0; padding:0; }
+.tb-compact li{ padding:22px 20px 18px; border:1px solid rgba(255,255,255,.18); border-radius:20px; background:rgba(255,255,255,.045); display:flex; flex-direction:column; gap:6px; min-height:180px; }
+.tb-compact .eyebrow{ color:#aab9b0; margin:0 0 10px; }
+.tb-compact .tb-valeur{ color:#fff; font-size:clamp(38px,4vw,54px); }
+.tb-compact .tb-valeur small{ color:#aab9b0; }
+.tb-compact .tb-libelle{ color:#fff; font-size:13px; }
+.tb-compact .tb-source{ color:#c9d5cc; padding:12px 0 0; }
+@media(max-width:980px){ .tb-compact{ grid-template-columns:repeat(3,1fr); } }
+@media(max-width:800px){ .tb-compact{ grid-template-columns:repeat(2,1fr); } .tb-compact li{ min-height:0; } }
+@media(max-width:420px){ .tb-compact{ grid-template-columns:1fr; } }
