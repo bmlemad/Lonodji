@@ -148,7 +148,7 @@ def rewrite_src(src: str, base_dir: str) -> str:
 # Nettoyage
 # ----------------------------------------------------------------------------
 REMOVE_SELECTORS = [
-    "script", "noscript", ".crumbs", ".tri-bar", ".page-hero-visual", ".article-share",
+    'script:not([type="application/json"])', "noscript", ".crumbs", ".tri-bar", ".page-hero-visual", ".article-share",
     ".related", ".article-back", ".filter-tabs", "[data-journal-filters]", ".search-bar",
     ".journal-search", "#journal-search", ".result-count", ".share-feedback",
     ".back-to-top", ".retour-haut", "[data-share]", ".kit-actions",
