@@ -111,6 +111,7 @@ const FORMULAIRES: { cle: string; libelle: string; note?: string; href: string }
   { cle: "lieu-sacre", libelle: "lieux sacrés signalés", href: "/dossiers/lieux-sacres" },
   { cle: "mesure-debit", libelle: "mesures de débit internet", href: "/actions#mesure-debit" },
   { cle: "diaspora-competences", libelle: "compétences inscrites au répertoire", href: "/diaspora" },
+  { cle: "temoignage", libelle: "récits, photos et enregistrements reçus", href: "/temoignages" },
 ];
 
 export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: Indicateurs; mode?: "complet" | "compact" }) {

@@ -36,6 +36,7 @@ export default function SiteFooter() {
           <Link href="/participer#adherer">Adhérer & cotiser</Link>
           <Link href="/participer#soutenir">Nous soutenir</Link>
           <Link href="/diaspora">Diaspora : inscrire mes compétences</Link>
+          <Link href="/temoignages">Racontez Bédjondo : témoignages & photos</Link>
           <p className="footer-title" style={{ marginTop: 18 }}>Lettre d’information</p>
           <NewsletterForm />
         </div>

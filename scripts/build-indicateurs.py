@@ -46,6 +46,7 @@ RELEVE = {
         "lieu-sacre": {"envois": 0},
         "mesure-debit": {"envois": 0},
         "diaspora-competences": {"envois": 0},
+        "temoignage": {"envois": 0},
     },
 }
 # Les deux formulaires d'abonnement (corps de page et pied de page) comptent ensemble.

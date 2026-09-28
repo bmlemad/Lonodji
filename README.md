@@ -43,6 +43,13 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 - `app/api/indicateurs/route.ts` — renvoie ces chiffres ; si la variable d’environnement `NETLIFY_FORMS_TOKEN` est définie sur le site (jeton d’accès personnel Netlify, *User settings → Applications → Personal access tokens*), les compteurs de formulaires sont relevés en direct sur l’API Netlify (mise en cache dix minutes) et la page les affiche « en direct ». Seuls des nombres sortent de l’API : les envois ne sont lus en mémoire que pour compter les personnes distinctes (intentions d’adhésion). Sans jeton, la page garde le relevé daté.
 - Les chiffres que seule l’association détient (adhérents à jour de cotisation, besoins résolus) sont dans `bureau` du JSON : ils restent « non publiés » tant que le bureau ne les transmet pas avec leur date.
 
+## Répertoire des compétences et témoignages
+
+- `/diaspora` — répertoire des compétences de la diaspora (action 4.1) : formulaire `diaspora-competences`, compteurs par personne, pays et domaines (`components/diaspora-compteurs.tsx`, listes dans `lib/diaspora.ts`). Le répertoire nominatif reste dans Netlify Forms ; le site ne publie que des nombres.
+- `/temoignages` — « Racontez Bédjondo » (actions 1.2 et 5.2) : six séries recherchées, règles de consentement et de relecture, formulaire `temoignage` avec pièce jointe (photo, son, vidéo ≤ 10 Mo, envoi multipart par `components/temoignage-form.tsx`).
+- Les deux formulaires sont déclarés dans `scripts/import-legacy.py` (`FORMULAIRES_SITE`) pour survivre aux réimports, et décrits dans les mentions légales (`UPDATES`).
+- `scripts/build-territoire-svg.py` → `public/identite/territoire.svg` : silhouette des quatorze unités (mêmes tracés que la carte), bannière de l’accueil tant que la banque d’images est vide.
+
 ## Espace de rédaction privé
 
 - `/redaction` (noindex, lien discret « Rédaction » en pied de page) : écriture des articles en brouillon, aperçu dans le style du journal, rubrique, statut, enregistrement automatique, export `.md`. Mot de passe unique choisi à la première visite (scrypt + sel), jeton de session HMAC dérivé du hash courant (changer le mot de passe déconnecte tout), cinq erreurs bloquent l’entrée un quart d’heure. Mot de passe en POST seulement, jeton en en-tête `Authorization`.

@@ -471,6 +471,19 @@ def journal_categories(soup_news: BeautifulSoup) -> tuple:
 # que public/__forms.html le garde à chaque import. Les cases à cocher ont chacune
 # leur nom (domaine-*, offre-*) : Netlify ne fusionne pas les valeurs multiples.
 FORMULAIRES_SITE = {
+    "temoignage": (
+        '<form name="temoignage"><input type="hidden" name="_honey">'
+        '<select name="type"><option value="">Choisir</option><option value="Un ancien ou une ancienne raconte">Un ancien ou une ancienne raconte</option>'
+        '<option value="Une femme qui fait bouger les choses">Une femme qui fait bouger les choses</option><option value="Un jeune talent">Un jeune talent</option>'
+        '<option value="Une histoire de Bédjondo : un lieu, un événement, une tradition">Une histoire de Bédjondo : un lieu, un événement, une tradition</option>'
+        '<option value="Un retour au pays, une vie de diaspora">Un retour au pays, une vie de diaspora</option>'
+        '<option value="Une photo ou une série de photos, avec leur histoire">Une photo ou une série de photos, avec leur histoire</option><option value="Autre">Autre</option></select>'
+        '<input type="text" name="titre"><textarea name="recit"></textarea><input type="file" name="fichier"><input type="text" name="lieu">'
+        '<input type="text" name="nom"><input type="text" name="qualite"><input type="text" name="contact"><input type="text" name="localite">'
+        '<select name="publication"><option value="">Choisir</option><option value="Publiable, avec mon nom">Publiable, avec mon nom</option>'
+        '<option value="Publiable, sans mon nom">Publiable, sans mon nom</option><option value="Pour les archives de l’association seulement, sans publication">Pour les archives de l’association seulement, sans publication</option></select>'
+        '<input type="checkbox" name="personnes"><input type="checkbox" name="mineurs"><input type="checkbox" name="consentement"></form>'
+    ),
     "diaspora-competences": (
         '<form name="diaspora-competences"><input type="hidden" name="_honey">'
         '<input type="text" name="nom"><input type="email" name="email"><input type="text" name="telephone">'
@@ -539,13 +552,14 @@ UPDATES = [
      '<p style="margin-top:1.3rem;">Une règle vaut pour tout ce qui précède, et c’est celle que nous appliquons depuis la première page de ce site\xa0: <strong>nous publions nos sources, et nous écrivons ce que nous ne savons pas</strong>. La transparence sur nos lacunes est la seule garantie sérieuse que nous ne racontons pas ce qui nous arrange.</p>\n<p class="form-note"><strong>Mise à jour du 28 septembre 2026\xa0:</strong> cinq politiques d’intégrité écrites — conflits d’intérêts, fraude et corruption, données personnelles, achats et dépenses, exploitation et abus sexuels — ont été rédigées en projet le 23 septembre 2026 et sont soumises au bureau exécutif. Elles seront publiées sur cette page une fois adoptées\xa0; d’ici là, seules les règles ci-dessus engagent l’association.</p>'),
     # Mentions légales : seizième formulaire, le répertoire des compétences de la diaspora (28/09/2026).
     ("<p>Le site compte quinze formulaires. Ils ne servent pas tous à la même chose",
-     "<p>Le site compte seize formulaires. Ils ne servent pas tous à la même chose"),
+     "<p>Le site compte dix-sept formulaires. Ils ne servent pas tous à la même chose"),
     ('aria-label="Les quinze formulaires du site et le sort de vos données"',
-     'aria-label="Les seize formulaires du site et le sort de vos données"'),
+     'aria-label="Les dix-sept formulaires du site et le sort de vos données"'),
     ("<p>Pour dix de ces formulaires, un compteur anonyme tient le nombre total d’envois\u00a0; pour le signalement des besoins, il retient aussi la localité, le type de besoin et l’urgence, quand vous acceptez la publication.",
-     "<p>Pour onze de ces formulaires, un compteur anonyme tient le nombre total d’envois, publié sur le <a href=\"/impact\">tableau de bord</a>\u00a0; pour le signalement des besoins, il retient aussi la localité, le type de besoin et l’urgence, quand vous acceptez la publication\u00a0; pour le répertoire des compétences, le nombre de pays et de domaines représentés, sans autre détail."),
+     "<p>Pour douze de ces formulaires, un compteur anonyme tient le nombre total d’envois, publié sur le <a href=\"/impact\">tableau de bord</a>\u00a0; pour le signalement des besoins, il retient aussi la localité, le type de besoin et l’urgence, quand vous acceptez la publication\u00a0; pour le répertoire des compétences, le nombre de pays et de domaines représentés, sans autre détail."),
     ('<tr><th scope="row"><a href="/dossiers/lieux-sacres#signalement">Lieu sacré menacé</a>',
      '<tr><th scope="row"><a href="/diaspora#inscription">Répertoire des compétences</a><span class="notice-page">Diaspora</span></th><td>Nom, e-mail, téléphone facultatif, pays et ville, lien avec Bédjondo, domaines et métier, expérience, ce que vous offrez, thématique, langues, disponibilité, message</td><td>Trouver la compétence qu’une thématique ou un plaidoyer attend, et vous proposer une mission</td><td>Tant que votre inscription est active, revue chaque année\u00a0; nom, métier et pays publiés dans l’annuaire seulement avec votre accord, le reste jamais</td></tr>'
+     '<tr><th scope="row"><a href="/temoignages#envoyer">Témoignage, photo ou enregistrement</a><span class="notice-page">Racontez Bédjondo</span></th><td>Type de récit, titre, récit, fichier joint (photo, son, vidéo, 10 Mo au plus), lieu et date, nom, qualité, contact, localité, choix de publication, accords (personnes citées, mineurs)</td><td>Vérifier le récit avec vous, le publier selon votre choix, constituer la banque d’images et les archives de l’association</td><td>Conservé comme archive tant que vous ne le retirez pas\u00a0; publié seulement après votre relecture, avec ou sans votre nom selon votre choix</td></tr>'
      '<tr><th scope="row"><a href="/dossiers/lieux-sacres#signalement">Lieu sacré menacé</a>'),
     # Journal des corrections : l'entrée du 23/09 reste telle quelle ; une mise à jour datée la complète.
     ("<p><strong>Comment nous nous en sommes aperçus\u00a0:</strong> un audit complet du site, le 23 septembre, qui a interrogé le registre du .org et l’annuaire RDAP, sans réponse pour lonodji.org, puis relu la notice à la lumière des formulaires réellement en service.</p>",

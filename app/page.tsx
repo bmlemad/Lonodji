@@ -14,7 +14,7 @@ const participer = [
   ["01", "Rejoindre ou coordonner une thématique", "Treize thématiques cherchent leur coordonnateur. Une compétence ponctuelle suffit souvent à faire avancer un dossier déjà prêt.", "/participer?coordo=1#contact"],
   ["02", "Adhérer à l’association", "Déclarer son intention d’adhérer n’engage aucun argent : la collecte est suspendue jusqu’à l’ouverture d’un compte au nom de l’association.", "/participer#adherer"],
   ["03", "Inscrire ses compétences au répertoire de la diaspora", "Médecin, enseignante, ingénieur, juriste, informaticienne : cinq minutes pour dire ce que vous savez faire, et n’être sollicité que pour cela.", "/diaspora"],
-  ["04", "Proposer un article ou un document", "Un témoignage, une photographie des forums de 2000 et 2003, un récépissé, une pièce d’archive : tout est versé avec sa provenance.", "/participer#proposer"],
+  ["04", "Raconter Bédjondo : un récit, une photo, une voix", "Un ancien qui raconte, une femme qui fait bouger les choses, un jeune talent, un paysage, une photo des forums de 2000 et 2003 : rien n’est publié sans votre relecture.", "/temoignages"],
 ];
 
 export default function Home() {
@@ -27,27 +27,36 @@ export default function Home() {
   return (
     <>
       <main id="main-content">
+        {/* Héros : la silhouette réelle du pays bedjond tient lieu de bannière tant que la
+            banque d'images est vide (voir /temoignages). Quand une photographie existera,
+            elle prendra la place de .hero-visual, le reste ne bouge pas. */}
         <section id="top" className="hero" aria-labelledby="hero-title">
-          <div className="orb orb-a" aria-hidden="true" />
-          <div className="orb orb-b" aria-hidden="true" />
           <div className="hero-copy">
             <p className="eyebrow">Association • Bédjondo • Diaspora</p>
             <h1 id="hero-title">Construire aujourd’hui.<br /><em>Transmettre demain.</em></h1>
             <p className="hero-text">
               ADEB LONODJI est l’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond.
-              Reconnue en 1995, remise en mouvement en 2026 : quatre pôles, dix-neuf thématiques, sept plaidoyers publiés pour l’eau, l’électricité, l’école, les routes et la santé.
+              Reconnue en 1995, remise en mouvement en 2026 : quatre pôles, dix-neuf thématiques, huit dossiers de plaidoyer publiés pour l’eau, l’électricité, l’école, les routes et la santé — et un territoire cartographié village par village.
             </p>
             <div className="hero-actions">
               <Link className="button primary" href="/programmes">Découvrir nos actions <span aria-hidden="true">↗</span></Link>
               <Link className="text-link" href="/participer">Rejoindre une thématique <span aria-hidden="true">→</span></Link>
             </div>
           </div>
-          <div className="hero-card" aria-hidden="true">
-            <div className="glass-card">
-              <span className="card-kicker">Où nous en sommes</span>
-              <strong>{filled} thématiques pourvues sur {total}. {total - filled} cherchent leur coordonnateur.</strong>
-              <div className="mini-line" />
-              <span className="card-note">{ORG.motto}</span>
+          <div className="hero-visual" aria-hidden="true">
+            <img className="hero-territoire" src="/identite/territoire.svg" alt="" width={1000} height={727} decoding="async" fetchPriority="high" />
+            <div className="hero-card">
+              <div className="glass-card">
+                <span className="card-kicker">Où nous en sommes</span>
+                <strong>{filled} thématiques pourvues sur {total}. {total - filled} cherchent leur coordonnateur.</strong>
+                <ul className="card-faits">
+                  <li><b>{indicateurs.contenu.plaidoyers.publies}</b> dossiers de plaidoyer publiés</li>
+                  <li><b>{new Intl.NumberFormat("fr-FR").format(indicateurs.contenu.carte.localites)}</b> localités cartographiées</li>
+                  <li><b>{indicateurs.contenu.corrections}</b> corrections publiées à découvert</li>
+                </ul>
+                <div className="mini-line" />
+                <span className="card-note">{ORG.motto}</span>
+              </div>
             </div>
           </div>
         </section>
