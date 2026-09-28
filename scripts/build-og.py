@@ -149,6 +149,31 @@ def esc(s: str) -> str:
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+def rendre_une(route: str, title: str, desc: str, eyebrow: str, lang: str = "fr") -> Path:
+    """Rend l'image d'une seule route sans lire le site construit (utilisé par publier-article.py)."""
+    from playwright.sync_api import sync_playwright
+
+    OUT.mkdir(parents=True, exist_ok=True)
+    fonts = font_faces()
+    tmp = ROOT / ".next" / "og-tmp.html"
+    dest = OUT / (route_name(route) + ".jpg")
+    with sync_playwright() as p:
+        b = p.chromium.launch()
+        page = b.new_page(viewport={"width": 1200, "height": 630}, device_scale_factor=1)
+        size = 66 if len(title) < 60 else 56 if len(title) < 90 else 48
+        tmp.write_text(TEMPLATE.format(lang=lang, fonts=fonts, logo=LOGO, eyebrow=esc(eyebrow), title=split_title(title), desc=esc(desc), size=size), encoding="utf-8")
+        page.goto(tmp.as_uri(), wait_until="load")
+        page.evaluate("document.fonts.ready")
+        page.evaluate("""() => { const t = document.getElementById('t'); const limite = 630 - 54 - 66 - 24; let fs = parseFloat(getComputedStyle(t).fontSize);
+            while (t.getBoundingClientRect().bottom > limite && fs > 30) { fs -= 2; t.style.fontSize = fs + 'px'; } }""")
+        page.wait_for_timeout(50)
+        page.screenshot(path=str(dest), type="jpeg", quality=82)
+        b.close()
+    tmp.unlink(missing_ok=True)
+    print(f"image de partage : {dest.relative_to(ROOT)}")
+    return dest
+
+
 def main():
     from playwright.sync_api import sync_playwright
 

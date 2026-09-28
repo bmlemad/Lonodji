@@ -35,7 +35,7 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 
 - `/redaction` (noindex, lien discret « Rédaction » en pied de page) : écriture des articles en brouillon, aperçu dans le style du journal, rubrique, statut, enregistrement automatique, export `.md`. Mot de passe unique choisi à la première visite (scrypt + sel), jeton de session HMAC dérivé du hash courant (changer le mot de passe déconnecte tout), cinq erreurs bloquent l’entrée un quart d’heure. Mot de passe en POST seulement, jeton en en-tête `Authorization`.
 - API `app/api/redaction/route.ts` ; logique et stockage dans `lib/redaction.ts` — magasin Netlify Blobs `adeb-redaction` en production, fichier `.netlify/redaction-dev.json` en local.
-- La publication reste une décision éditoriale : un brouillon « prêt » est exporté puis intégré au journal (`content/articles/`).
+- La publication reste une décision éditoriale : un brouillon « prêt » est exporté (`.md`) puis publié par `python3 scripts/publier-article.py brouillon.md` (article JSON dans `content/articles/`, index, image de partage, index de recherche), suivi de `npm run build` et du déploiement ; `--retirer <slug>` le retire. L’import de l’ancien site conserve ces articles (`"source": "redaction"`).
 
 ## Couche appli mobile
 

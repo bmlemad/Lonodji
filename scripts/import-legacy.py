@@ -620,6 +620,14 @@ def main():
         all_forms.update(forms)
         (CONTENT / "articles" / f"{slug}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
         index["articles"].append({k: data.get(k, "") for k in ("slug", "route", "title", "date", "dateLabel", "tag", "category", "summary", "readTime", "words", "byline", "pills")})
+    # Articles écrits dans l'espace de rédaction (scripts/publier-article.py) : conservés tels quels
+    for f in sorted((CONTENT / "articles").glob("*.json")):
+        try:
+            d = json.loads(f.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        if d.get("source") == "redaction" and d.get("slug") not in {a["slug"] for a in index["articles"]}:
+            index["articles"].append({k: d.get(k, "") for k in ("slug", "route", "title", "date", "dateLabel", "tag", "category", "summary", "readTime", "words", "byline", "pills")})
     index["articles"].sort(key=lambda a: a["date"], reverse=True)
     index["journalCategories"] = cats
 

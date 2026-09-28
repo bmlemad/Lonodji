@@ -4,3 +4,4 @@ out/
 .netlify/
 *.log
 .DS_Store
+__pycache__/
