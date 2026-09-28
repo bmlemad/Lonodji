@@ -4,7 +4,7 @@ import { SectionHead } from "../../../components/blocks";
 import { OdebHero } from "../../../components/odeb-marque";
 import OdebNav, { OdebEtat } from "../../../components/odeb-nav";
 import { ogFor } from "../../../lib/content";
-import { MISSIONS, ODEB, PROGRAMMES, routeProgramme } from "../../../lib/odeb";
+import { enLettresMaj, MISSIONS, ODEB, PROGRAMMES, routeProgramme } from "../../../lib/odeb";
 import { thematiquesParId } from "../../../lib/odeb-chiffres";
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function Programmes() {
         em="pour six missions."
         lead="Chaque programme a trois axes, s’appuie sur des thématiques nommées de l’association et dit ce qui existe déjà et ce qu’il construira. Les programmes ne créent pas de nouvelles équipes : ils donnent un cadre commun à ce que les thématiques font, et un horizon à ce qu’elles feront."
         crumbs={[{ label: "Projet ODEB", href: "/odeb" }, { label: "Programmes" }]}
-        pills={["Six programmes", "Dix-huit axes", `${new Set(PROGRAMMES.flatMap((p) => p.thematiques)).size} thématiques mobilisées`]}
+        pills={["Six programmes", `${enLettresMaj(PROGRAMMES.reduce((n, p) => n + p.axes.length, 0))} axes`, `${new Set(PROGRAMMES.flatMap((p) => p.thematiques)).size} thématiques mobilisées`]}
       />
       <OdebNav actif="programmes" />
 

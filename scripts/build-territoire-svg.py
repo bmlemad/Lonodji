@@ -18,10 +18,10 @@ W = 1000  # largeur de la boîte ; la hauteur suit la géographie
 MARGE = 24
 
 STYLES = {
-    "coeur": 'fill="#173b2d" fill-opacity=".12" stroke="#173b2d" stroke-opacity=".55" stroke-width="1.6"',
-    "sud": 'fill="#5b7a3a" fill-opacity=".07" stroke="#5b7a3a" stroke-opacity=".5" stroke-width="1.3"',
-    "signale": 'fill="none" stroke="#8c8a3c" stroke-opacity=".5" stroke-width="1.2" stroke-dasharray="6 5"',
-    "diaspora": 'fill="none" stroke="#b5532e" stroke-opacity=".45" stroke-width="1.2" stroke-dasharray="3 5"',
+    "coeur": 'fill="#173b2d" fill-opacity=".2" stroke="#173b2d" stroke-opacity=".8" stroke-width="2"',
+    "sud": 'fill="#5b7a3a" fill-opacity=".14" stroke="#5b7a3a" stroke-opacity=".8" stroke-width="1.7"',
+    "signale": 'fill="#8c8a3c" fill-opacity=".06" stroke="#8c8a3c" stroke-opacity=".85" stroke-width="1.6" stroke-dasharray="6 5"',
+    "diaspora": 'fill="#b5532e" fill-opacity=".05" stroke="#b5532e" stroke-opacity=".75" stroke-width="1.6" stroke-dasharray="3 5"',
 }
 
 

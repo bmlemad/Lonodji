@@ -1,5 +1,5 @@
 {
- "genere": "2026-09-28T21:31:57Z",
+ "genere": "2026-09-28T21:49:31Z",
  "contenu": {
   "plaidoyers": {
    "publies": 8,
@@ -38,7 +38,7 @@
   "pages": 46,
   "projets": {
    "actifs": 1,
-   "annonces": 5,
+   "annonces": 6,
    "finances": 0,
    "liste": [
     {
@@ -82,6 +82,13 @@
      "stade": "idee",
      "libelle": "idée proposée le 28 septembre 2026, programme Économie sociale et revenus ; aucune étude",
      "route": "/odeb/programmes/economie-sociale#axe-2"
+    },
+    {
+     "slug": "chu-bedjondo",
+     "nom": "CHU moderne de Bédjondo et son système de santé",
+     "stade": "idee",
+     "libelle": "idée proposée le 28 septembre 2026, programme Économie sociale et revenus ; aucune étude",
+     "route": "/odeb/programmes/economie-sociale#axe-4"
     }
    ]
   }

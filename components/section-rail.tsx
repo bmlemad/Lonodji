@@ -31,7 +31,7 @@ export default function SectionRail() {
       trouves.push({ id: sec.id, label: brut.length > 34 ? brut.slice(0, 33).trimEnd() + "…" : brut });
     }
     if (trouves.length < 3) return;
-    setItems(trouves);
+    setItems(trouves.slice(0, 10));
     const obs = new IntersectionObserver((entries) => {
       const vis = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
       if (vis[0]) setActif((vis[0].target as HTMLElement).id);

@@ -245,6 +245,45 @@
      "href": "/participer?theme=09#contact"
     }
    ]
+  },
+  {
+   "slug": "chu-bedjondo",
+   "nom": "CHU moderne de Bédjondo et son système de santé",
+   "stade": "idee",
+   "libelle": "idée proposée le 28 septembre 2026, programme Économie sociale et revenus ; aucune étude",
+   "route": "/odeb/programmes/economie-sociale#axe-4",
+   "thematiques": [
+    "sante-prevention",
+    "reseau-experts-diaspora",
+    "cellule-financement-ressources"
+   ],
+   "resume": "Un centre hospitalier universitaire moderne, monté avec des partenaires financiers, et tout ce qui fait un système de santé de dernière génération autour de lui : urgences, maternité, chirurgie, imagerie, laboratoire, pharmacie centrale, dialyse, télémédecine, ambulances, école d’infirmiers et de sages-femmes, centres de santé des cantons reliés, dossier médical numérique, énergie solaire, logements du personnel, mutuelle communautaire. Les soins payants financent les soins gratuits des plus démunis. Par étapes : centre médical, hôpital, CHU.",
+   "existant": [
+    "La thématique Santé & prévention et le diagnostic, qui placent la santé parmi les premiers besoins",
+    "Le répertoire des compétences de la diaspora, où les médecins et soignants peuvent s’inscrire",
+    "L’activité « pharmacie et centre médical à tarif solidaire », première marche du projet"
+   ],
+   "manque": [
+    "La carte sanitaire et l’accord du ministère de la Santé ; une étude de faisabilité",
+    "Un montage en partenariat public-privé et un consortium de partenaires financiers : banques de développement, fondations, agences de coopération, diaspora",
+    "Un terrain, l’énergie, l’eau, la route, la maintenance biomédicale — et les médecins"
+   ],
+   "budget": "aucun",
+   "calendrier": "aucun",
+   "contribuer": [
+    {
+     "label": "Médecin, soignant, gestionnaire hospitalier : inscrire sa compétence",
+     "href": "/diaspora#inscription"
+    },
+    {
+     "label": "Coordonner Santé & prévention : réagir à la proposition",
+     "href": "/participer?theme=11#contact"
+    },
+    {
+     "label": "Le programme Économie sociale et revenus",
+     "href": "/odeb/programmes/economie-sociale#axe-4"
+    }
+   ]
   }
  ]
 }

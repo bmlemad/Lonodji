@@ -368,17 +368,17 @@ a.tb-mini:hover, a.tb-mini:focus-visible{ transform:translateY(-2px); box-shadow
 .dp-formulaire .form-error{ color:#9b2d20; font-weight:600; }
 .dp-formulaire input[type="file"]{ padding:.55em .7em; background:#fff; }
 
-/* Héros de l'accueil : silhouette du pays bedjond en attendant la bannière photo */
+/* Héros de l'accueil : silhouette du pays bedjond, entière et lisible, la carte de repères en dessous */
 .hero:before, .hero:after{ display:none; }
 .hero-copy{ z-index:3; }
-.hero-visual{ position:relative; z-index:2; align-self:stretch; display:flex; align-items:flex-end; justify-content:flex-end; min-height:560px; }
-.hero-territoire{ position:absolute; right:-4%; top:46%; transform:translateY(-50%); width:min(100%,660px); height:auto; opacity:.96; filter:drop-shadow(0 24px 50px rgba(23,59,45,.10)); pointer-events:none; user-select:none; }
-.hero-visual .hero-card{ position:relative; margin-bottom:-6px; }
-.hero-visual .glass-card{ min-height:0; padding:30px; }
-.hero-visual .glass-card strong{ font-size:24px; }
-.card-faits{ list-style:none; margin:18px 0 0; padding:0; display:grid; gap:6px; font-size:13px; color:#3f4f47; }
+.hero-visual{ position:relative; z-index:2; align-self:center; display:flex; flex-direction:column; align-items:flex-end; gap:0; min-height:0; }
+.hero-territoire{ position:relative; width:min(100%,600px); height:auto; margin:0 0 -34px; filter:drop-shadow(0 18px 40px rgba(23,59,45,.14)); pointer-events:none; user-select:none; }
+.hero-visual .hero-card{ position:relative; margin:0; width:100%; justify-content:flex-end; }
+.hero-visual .glass-card{ min-height:0; padding:26px 28px; width:min(340px,100%); }
+.hero-visual .glass-card strong{ font-size:22px; }
+.card-faits{ list-style:none; margin:16px 0 0; padding:0; display:grid; gap:6px; font-size:13px; color:#3f4f47; }
 .card-faits b{ font-family:var(--font-playfair),Georgia,serif; font-weight:500; font-size:22px; line-height:1; color:var(--deep); margin-right:6px; }
-@media(max-width:980px){ .hero{ grid-template-columns:1fr .9fr; } .hero-territoire{ width:min(100%,520px); top:30%; right:0; } .hero-visual .glass-card{ width:min(320px,100%); } }
+@media(max-width:980px){ .hero{ grid-template-columns:1fr .9fr; } .hero-territoire{ width:min(100%,460px); } .hero-visual .glass-card{ width:min(300px,100%); } }
 @media(max-width:800px){ .hero-visual{ display:none; } }
 
 /* Fiches des villages (/villages) */
@@ -1070,7 +1070,8 @@ body.palette-open{ overflow:hidden; }
 /* rail « Sur cette page » */
 .rail{ display:none; }
 @media(min-width:1280px){
-  .rail{ display:block; position:fixed; z-index:40; right:18px; top:50%; transform:translateY(-50%); max-height:70vh; overflow:auto; scrollbar-width:none; }
+  .rail{ display:block; position:fixed; z-index:40; right:18px; top:50%; transform:translateY(-50%); max-height:70vh; overflow:auto; scrollbar-width:none; opacity:0; visibility:hidden; transition:opacity .25s ease, visibility .25s ease; }
+  html.nav-compact .rail{ opacity:1; visibility:visible; }
   .rail::-webkit-scrollbar{ display:none; }
   .rail ol{ list-style:none; margin:0; padding:6px; display:flex; flex-direction:column; gap:2px; align-items:flex-end; }
   .rail a{ display:inline-flex; align-items:center; gap:10px; padding:6px 8px 6px 10px; border-radius:99px; font-size:12px; font-weight:600; color:#526159; max-width:220px; transition:background .18s ease, color .18s ease; }

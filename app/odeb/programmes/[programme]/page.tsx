@@ -47,7 +47,7 @@ export default async function ProgrammePage({ params }: { params: Promise<{ prog
       <OdebNav actif="programmes" />
 
       <section className="hub-section" id="axes">
-        <SectionHead eyebrow="Trois axes" title="Ce qui existe," em="ce que le programme construira." text="Pour chaque axe : ce que le site fait déjà (des liens vers les pages, pas des intentions), puis ce que le programme construirait d’ici 2030 — au conditionnel, parce que rien n’est décidé ni financé." />
+        <SectionHead eyebrow={`${enLettresMaj(p.axes.length)} axes`} title="Ce qui existe," em="ce que le programme construira." text="Pour chaque axe : ce que le site fait déjà (des liens vers les pages, pas des intentions), puis ce que le programme construirait d’ici 2030 — au conditionnel, parce que rien n’est décidé ni financé." />
         <ol className="od-axes-detail">
           {p.axes.map((a, k) => (
             <li key={a.titre} id={`axe-${k + 1}`}>
@@ -79,13 +79,13 @@ export default async function ProgrammePage({ params }: { params: Promise<{ prog
 
       {p.portefeuille ? (
         <section className="hub-section" id="portefeuille">
-          <SectionHead eyebrow="D’autres activités proposées" title={`${enLettresMaj(p.portefeuille.length)} activités de plus,`} em="à étudier, aucune décidée." text="En plus des trois entreprises phares, des activités qui manquent au pays bedjond et qui pourraient rapporter. Pour chacune : ce que c’est, pourquoi ici, d’où viendraient les revenus, ce qu’ils financeraient, ce qu’il faut avant, et le risque principal. Rien n’est chiffré : ce sont des pistes, pas des promesses." />
+          <SectionHead eyebrow="D’autres activités proposées" title={`${enLettresMaj(p.portefeuille.length)} activités de plus,`} em="à étudier, aucune décidée." text="En plus des quatre entreprises phares, des activités qui manquent au pays bedjond et qui pourraient rapporter. Pour chacune : ce que c’est, pourquoi ici, d’où viendraient les revenus, ce qu’ils financeraient, ce qu’il faut avant, et le risque principal. Rien n’est chiffré : ce sont des pistes, pas des promesses." />
           <ul className="od-activites">
             {p.portefeuille.map((a, k) => {
               const ths = a.thematiques.map((id) => th[id]).filter(Boolean);
               return (
                 <li key={a.nom} id={`activite-${k + 1}`}>
-                  <span className="od-num">{p.numero}.{k + 4}</span>
+                  <span className="od-num">{p.numero}.{k + p.axes.length + 1}</span>
                   <h3>{a.nom}</h3>
                   <p className="od-activite-quoi">{a.quoi}</p>
                   <dl>
