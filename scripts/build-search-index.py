@@ -100,6 +100,9 @@ PAGES_SITE += [
      "d": "Experts, investissements, mentorat : ce qui existe, ce que le programme construira.",
      "x": "programme diaspora experts répertoire des compétences réseau annuaire investissements compte bancaire projets financés mentorat jeunes"},
 ]
+PAGES_SITE.append({"t": "Plateforme de projets", "r": "/projets", "k": "Page",
+     "d": "Espace numérique communautaire, application pour téléphone, complexe sportif, Air Bedjondo : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer ; proposer un projet.",
+     "x": "projets plateforme stade idée étude annoncé souscription financé réalisation essai service espace numérique application complexe sportif Air Bedjondo budget devis calendrier porteur thématique promesse de contribution proposer un projet forage école pont bibliothèque atelier"})
 entries.extend(PAGES_SITE)
 
 for f in sorted((CONTENT / "articles").glob("*.json")):

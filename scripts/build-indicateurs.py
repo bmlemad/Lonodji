@@ -49,6 +49,7 @@ RELEVE = {
         "temoignage": {"envois": 0},
         "depot-document": {"envois": 0},
         "mot-nangnda": {"envois": 0},
+        "proposition-projet": {"envois": 0},
     },
 }
 # Les deux formulaires d'abonnement (corps de page et pied de page) comptent ensemble.
@@ -59,13 +60,10 @@ JAMAIS_COMPTES = {"contact", "message-en", "handicap", "veuves", "plainte"}
 
 # Projets suivis par le site et leur stade — un jugement éditorial, tenu à jour ici
 # plutôt que deviné dans le texte des pages.
-PROJETS = [
-    {"slug": "application", "nom": "Application pour téléphone", "stade": "essai", "libelle": "version d'essai en ligne (Android 1.0.1, 28 septembre 2026)", "route": "/dossiers/application"},
-    {"slug": "espace-numerique", "nom": "Espace numérique communautaire", "stade": "souscription", "libelle": "premier chantier, souscription ouverte, aucun financement confirmé", "route": "/dossiers/espace-numerique"},
-    {"slug": "air-bedjondo", "nom": "Air Bedjondo", "stade": "annonce", "libelle": "projet annoncé, sans financement ni calendrier", "route": "/dossiers/air-bedjondo"},
-    {"slug": "complexe-sportif", "nom": "Complexe de formation sportive", "stade": "etude", "libelle": "à l'étude", "route": "/dossiers/complexe-sportif"},
-]
-STADES_ACTIFS = {"essai", "realisation"}
+# Projets : content/projets.json (plateforme de projets, /projets) — une entrée par projet, à tenir à jour à la main.
+_PROJETS_JSON = json.loads((CONTENT / "projets.json").read_text("utf8"))
+PROJETS = [{k: p[k] for k in ("slug", "nom", "stade", "libelle", "route")} for p in _PROJETS_JSON["projets"]]
+STADES_ACTIFS = {"essai", "realisation", "service"}
 
 
 def page(slug: str) -> dict:

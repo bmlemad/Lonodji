@@ -69,6 +69,11 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 - `scripts/build-livre-blanc.py` → `public/odeb/livre-blanc-odeb-lonodji-2026.pdf` : rend la page du livre blanc en A4 (feuille d’impression de `app/site.css`) après `npm run build` ; à relancer quand la page change. Le PDF est listé sur `/documents` et compté par `build-indicateurs.py`.
 - Les trois pages importées qui citaient l’ancien développement du sigle (démarches, ONG et partenaires, mentions légales) portent le nouveau (« Organisation pour le Développement et l’Émergence Bedjonde ») et une note datée (`UPDATES` de `scripts/import-legacy.py`).
 
+## Plateforme de projets
+
+- `/projets` — chaque projet décrit sur le site avec son stade (huit stades, d’« Idée » à « En service »), ce qui existe (liens), ce qui manque, budget et calendrier tels que connus, thématique et coordonnateur, façons de contribuer ; règles de la plateforme (aucun franc sans compte, budget publié sur devis avant toute demande) ; formulaire `proposition-projet` (compté sur le tableau de bord, décrit dans les mentions légales).
+- Données : `content/projets.json`, à tenir à jour à la main (stade, existant, manque, contribuer ; les montants seulement s’ils figurent, sourcés, sur la page du projet) ; lu par `lib/projets.ts` et par `scripts/build-indicateurs.py` (projets actifs = stades essai, réalisation, service).
+
 ## Navigation (en-tête, méga-menu, menu mobile, pied de page)
 
 - Une seule source : `lib/navigation.ts` (`NAVIGATION` pour l’en-tête et le menu mobile, `PIED` pour le pied de page, `entreeCourante()` pour surligner la section de la page courante) ; le plan du site s’en sert aussi.

@@ -1,5 +1,5 @@
 {
- "genere": "2026-09-28T14:44:25Z",
+ "genere": "2026-09-28T14:58:37Z",
  "contenu": {
   "plaidoyers": {
    "publies": 8,
@@ -42,6 +42,13 @@
    "finances": 0,
    "liste": [
     {
+     "slug": "espace-numerique",
+     "nom": "Espace numérique communautaire de Bédjondo",
+     "stade": "souscription",
+     "libelle": "premier chantier, souscription ouverte, aucun financement confirmé",
+     "route": "/dossiers/espace-numerique"
+    },
+    {
      "slug": "application",
      "nom": "Application pour téléphone",
      "stade": "essai",
@@ -49,11 +56,11 @@
      "route": "/dossiers/application"
     },
     {
-     "slug": "espace-numerique",
-     "nom": "Espace numérique communautaire",
-     "stade": "souscription",
-     "libelle": "premier chantier, souscription ouverte, aucun financement confirmé",
-     "route": "/dossiers/espace-numerique"
+     "slug": "complexe-sportif",
+     "nom": "Complexe de formation sportive pour les jeunes",
+     "stade": "etude",
+     "libelle": "à l’étude",
+     "route": "/dossiers/complexe-sportif"
     },
     {
      "slug": "air-bedjondo",
@@ -61,13 +68,6 @@
      "stade": "annonce",
      "libelle": "projet annoncé, sans financement ni calendrier",
      "route": "/dossiers/air-bedjondo"
-    },
-    {
-     "slug": "complexe-sportif",
-     "nom": "Complexe de formation sportive",
-     "stade": "etude",
-     "libelle": "à l'étude",
-     "route": "/dossiers/complexe-sportif"
     }
    ]
   }
@@ -114,6 +114,9 @@
     "envois": 0
    },
    "mot-nangnda": {
+    "envois": 0
+   },
+   "proposition-projet": {
     "envois": 0
    }
   }

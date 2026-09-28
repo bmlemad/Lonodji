@@ -1,0 +1,114 @@
+{
+  "genere": "2026-09-28",
+  "note": "Plateforme de projets (feuille de route ODEB, phase 2). Une entrée par projet décrit sur le site ; à tenir à jour à la main : stade, ce qui existe, ce qui manque, comment contribuer. Lu par lib/projets.ts (page /projets) et par scripts/build-indicateurs.py (tableau de bord). Les montants ne sont repris que s'ils figurent, sourcés, sur la page du projet.",
+  "stades": [
+    { "id": "idee", "nom": "Idée", "texte": "Proposé, pas encore instruit par une thématique." },
+    { "id": "etude", "nom": "À l’étude", "texte": "Besoin, options et repères de coût documentés ; pas encore de devis." },
+    { "id": "annonce", "nom": "Annoncé", "texte": "Décision annoncée par l’association ; ni budget ni calendrier." },
+    { "id": "souscription", "nom": "Souscription", "texte": "Promesses de contribution recueillies ; aucun paiement tant que l’association n’a pas de compte à son nom." },
+    { "id": "finance", "nom": "Financé", "texte": "Budget réuni et publié, calendrier fixé." },
+    { "id": "realisation", "nom": "En réalisation", "texte": "Chantier en cours, suivi daté." },
+    { "id": "essai", "nom": "En essai", "texte": "Une version fonctionne et se teste, avant la mise en service." },
+    { "id": "service", "nom": "En service", "texte": "Réalisé, utilisé, évalué." }
+  ],
+  "projets": [
+    {
+      "slug": "espace-numerique",
+      "nom": "Espace numérique communautaire de Bédjondo",
+      "stade": "souscription",
+      "libelle": "premier chantier, souscription ouverte, aucun financement confirmé",
+      "route": "/dossiers/espace-numerique",
+      "thematiques": ["transformation-numerique-services", "cellule-financement-ressources"],
+      "resume": "Une salle connectée par satellite, alimentée au solaire, six à dix postes, ouverte aux élèves, aux enseignants, aux agents de santé, à la commune et aux porteurs de projets ; financée par l’association et sa diaspora, gérée par un comité local.",
+      "existant": [
+        "Dossier complet : usages, équipement, énergie, gouvernance, durabilité",
+        "Souscription ouverte : des promesses de contribution, sans paiement",
+        "Repères de coût de la connexion satellitaire : 18 000 FCFA par mois (250 Go) ou 32 000 FCFA par mois (illimité)"
+      ],
+      "manque": [
+        "Devis locaux (connexion, solaire, équipement) et budget détaillé, qui sera publié avant toute collecte",
+        "Compte bancaire au nom de l’association pour convertir les promesses",
+        "Local, comité de gestion, deux ou trois jeunes formés à l’animation"
+      ],
+      "budget": "à publier sur devis",
+      "calendrier": "non fixé",
+      "contribuer": [
+        { "label": "Souscrire : une promesse de contribution", "href": "/dossiers/espace-numerique#souscription" },
+        { "label": "Offrir du matériel ou une compétence", "href": "/diaspora#inscription" }
+      ]
+    },
+    {
+      "slug": "application",
+      "nom": "Application pour téléphone",
+      "stade": "essai",
+      "libelle": "version d'essai en ligne (Android 1.0.1, 28 septembre 2026)",
+      "route": "/dossiers/application",
+      "thematiques": ["transformation-numerique-services"],
+      "resume": "Le site installé sur l’écran d’accueil et lisible hors ligne dès aujourd’hui ; puis une application Android et iPhone publiée sur les boutiques quand l’association aura son récépissé et un compte à son nom.",
+      "existant": [
+        "Installation depuis le navigateur, lecture hors ligne, barre d’onglets",
+        "Version d’essai Android 1.0.1 (28 septembre 2026), projet iPhone préparé",
+        "Coûts connus : compte Google Play 25 $ une fois, compte Apple 99 $ par an — traduits en cotisations sur la page"
+      ],
+      "manque": [
+        "Récépissé et compte au nom de l’association (les comptes des boutiques se paient en son nom)",
+        "Vote de l’assemblée sur la dépense annuelle Apple",
+        "Cotisation par mobile money dans l’application"
+      ],
+      "budget": "25 $ une fois (Google Play), 99 $ par an (App Store)",
+      "calendrier": "après le récépissé",
+      "contribuer": [
+        { "label": "Installer le site sur son téléphone", "href": "/dossiers/application" },
+        { "label": "Tester la version d’essai Android", "href": "/dossiers/application" }
+      ]
+    },
+    {
+      "slug": "complexe-sportif",
+      "nom": "Complexe de formation sportive pour les jeunes",
+      "stade": "etude",
+      "libelle": "à l’étude",
+      "route": "/dossiers/complexe-sportif",
+      "thematiques": ["jeunesse-reussite"],
+      "resume": "Football, basket, judo, karaté et athlétisme dans un même lieu, pour les filles et les garçons de Bédjondo et des cantons. L’école commence par des encadreurs formés et un terrain garanti ; le béton vient après.",
+      "existant": [
+        "Dossier : disciplines, deux phases, repères de coût sourcés, protection des enfants, sources de financement (FIFA Forward, FIFA Arena, fédérations)",
+        "Étape préalable définie : terrain par convention écrite, recensement des jeunes et des encadreurs, formation à la protection des enfants"
+      ],
+      "manque": [
+        "Convention de terrain avec la commune et la chefferie",
+        "Recensement des jeunes par âge et discipline, et des adultes capables d’encadrer",
+        "Devis locaux : le budget réel sera publié avant toute demande de financement"
+      ],
+      "budget": "repères seulement, pas de devis",
+      "calendrier": "non fixé",
+      "contribuer": [
+        { "label": "Encadrer, former, recenser", "href": "/dossiers/complexe-sportif#agir" },
+        { "label": "Rejoindre Jeunesse & réussite", "href": "/programmes#jeunesse-reussite" }
+      ]
+    },
+    {
+      "slug": "air-bedjondo",
+      "nom": "Air Bedjondo",
+      "stade": "annonce",
+      "libelle": "projet annoncé, sans financement ni calendrier",
+      "route": "/dossiers/air-bedjondo",
+      "thematiques": ["desenclavement-urbanisation"],
+      "resume": "Un dispositif de transport et de logistique terrestre — pas aérien, malgré son nom — pour désenclaver Bédjondo et relier ses terroirs entre eux. Annoncé par l’animateur de l’association ; tout reste à instruire.",
+      "existant": [
+        "Constat documenté : pistes de canton impraticables en saison des pluies, route vers N’Djamena dégradée",
+        "Une page qui dit ce que nous savons et ce que nous ne savons pas"
+      ],
+      "manque": [
+        "Une étude : besoin, véhicules, exploitation, coûts, gouvernance",
+        "Un porteur : la thématique Désenclavement & urbanisation est à pourvoir",
+        "Financement et calendrier"
+      ],
+      "budget": "aucun",
+      "calendrier": "aucun",
+      "contribuer": [
+        { "label": "Coordonner Désenclavement & urbanisation", "href": "/participer?theme=08&coordo=1#contact" },
+        { "label": "Apporter une compétence transport ou logistique", "href": "/diaspora#inscription" }
+      ]
+    }
+  ]
+}

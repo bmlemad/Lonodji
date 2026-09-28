@@ -32,7 +32,7 @@ function cartesDuPlan(d: Indicateurs, f: Releve): Carte[] {
   const releve = f.live ? "compteur en direct" : `relevé du ${dateLongue(f.date)}`;
   const vacantes = c.coordinations.total - c.coordinations.pourvues;
   const cellulesVacantes = c.coordinations.cellulesTotal - c.coordinations.cellulesPourvues;
-  const actif = c.projets.liste.find((p) => p.stade === "essai" || p.stade === "realisation");
+  const actif = c.projets.liste.find((p) => p.stade === "essai" || p.stade === "realisation" || p.stade === "service");
   return [
     {
       cle: "adherents",
@@ -93,9 +93,9 @@ function cartesDuPlan(d: Indicateurs, f: Releve): Carte[] {
       valeur: n(c.projets.actifs),
       libelle: pluriel(c.projets.actifs, "projet en cours", "projets en cours"),
       detail: `${actif ? `${actif.nom}, ${actif.libelle}. ` : ""}${n(c.projets.annonces)} ${pluriel(c.projets.annonces, "projet annoncé ou à l’étude", "projets annoncés ou à l’étude")}, ${n(c.projets.finances)} ${pluriel(c.projets.finances, "financé", "financés")}.`,
-      source: "Pages de projet · mise en ligne",
-      courte: "Pages de projet",
-      href: actif?.route ?? "/programmes",
+      source: "Plateforme de projets · mise en ligne",
+      courte: "Plateforme de projets",
+      href: "/projets",
     },
   ];
 }
@@ -114,6 +114,7 @@ const FORMULAIRES: { cle: string; libelle: string; note?: string; href: string }
   { cle: "temoignage", libelle: "récits, photos et enregistrements reçus", href: "/temoignages" },
   { cle: "depot-document", libelle: "documents déposés à la bibliothèque", href: "/bibliotheque" },
   { cle: "mot-nangnda", libelle: "mots versés au dictionnaire nangnda", href: "/langue" },
+  { cle: "proposition-projet", libelle: "projets proposés", href: "/projets#proposer" },
 ];
 
 export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: Indicateurs; mode?: "complet" | "compact" }) {

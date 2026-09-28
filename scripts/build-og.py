@@ -45,6 +45,7 @@ EYEBROWS = {
     "/mentions-legales": "Mentions légales",
     "/plan-du-site": "Plan du site",
     "/recherche": "Recherche",
+    "/projets": "Nos actions · plateforme de projets",
     "/odeb": "Projet ODEB LONODJI · Vision 2030",
     "/odeb/livre-blanc": "Projet ODEB LONODJI · livre blanc",
     "/odeb/feuille-de-route": "Projet ODEB LONODJI · feuille de route 2026-2030",

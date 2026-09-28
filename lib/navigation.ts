@@ -43,6 +43,7 @@ export const NAVIGATION: NavEntree[] = [
       { titre: "Plaidoyers & suivi", liens: [
         { label: "Plaidoyers & engagements", href: "/actions", note: "Destinataires nommés, suivi public" },
         { label: "Tableau de bord d’impact", href: "/impact", note: "Six indicateurs datés et sourcés" },
+        { label: "Plateforme de projets", href: "/projets", note: "Chaque projet, son stade, ce qui manque" },
         { label: "Diagnostic territorial", href: "/dossiers/problematiques", note: "Eau, santé, école, routes, réseau" },
         { label: "Carte des besoins", href: "/dossiers/besoins", note: "Signaler, localité par localité" },
         { label: "Enquêtes de terrain", href: "/dossiers/enquetes", note: "Huit inconnues, huit enquêtes" },
@@ -120,7 +121,7 @@ export function entreeCourante(pathname: string): string {
   if (/^\/(participer|diaspora|temoignages)/.test(pathname)) return "participer";
   if (/^\/(carte|villages|bibliotheque|langue|histoire)/.test(pathname) || /^\/dossiers\/(bedjondo|lieux-sacres|genealogies|genealogie-outil|decentralisation)/.test(pathname)) return "territoire";
   if (/^\/(mission|transparence|documents|mentions-legales|archives|plan-du-site)/.test(pathname) || /^\/dossiers\/(engagements|demarches)/.test(pathname)) return "association";
-  if (/^\/(programmes|actions|impact|dossiers)/.test(pathname)) return "actions";
+  if (/^\/(programmes|actions|impact|dossiers|projets)/.test(pathname)) return "actions";
   return "";
 }
 
@@ -132,7 +133,7 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
   ] },
   { titre: "Nos actions", liens: [
     { label: "Quatre pôles, dix-neuf thématiques", href: "/programmes" }, { label: "Plaidoyers & engagements", href: "/actions" }, { label: "Tableau de bord d’impact", href: "/impact" },
-    { label: "Diagnostic territorial", href: "/dossiers/problematiques" }, { label: "Carte des besoins", href: "/dossiers/besoins" }, { label: "Tous les dossiers", href: "/dossiers" }, { label: "Quelle thématique pour vous ?", href: "/dossiers/trouver-ma-thematique" },
+    { label: "Plateforme de projets", href: "/projets" }, { label: "Diagnostic territorial", href: "/dossiers/problematiques" }, { label: "Carte des besoins", href: "/dossiers/besoins" }, { label: "Tous les dossiers", href: "/dossiers" }, { label: "Quelle thématique pour vous ?", href: "/dossiers/trouver-ma-thematique" },
   ] },
   { titre: "Territoire & patrimoine", liens: [
     { label: "Carte du territoire", href: "/carte" }, { label: "Les villages", href: "/villages" }, { label: "Bédjondo", href: "/dossiers/bedjondo" },

@@ -170,14 +170,14 @@ export const PROGRAMMES: Programme[] = [
         existant: [{ label: "Répertoire des compétences", href: "/diaspora" }, { label: "Réseau d’experts & diaspora", href: "/programmes#reseau-experts-diaspora" }],
         suite: "Le répertoire deviendrait un réseau d’experts par domaine, avec un annuaire public pour ceux qui l’acceptent, et des mises en relation qui ne passeraient plus seulement par le bureau." },
       { titre: "Investissements", texte: "Financer des projets identifiés, avec un compte au nom de l’association, des comptes publiés et des projets documentés avant d’être financés.",
-        existant: [{ label: "Nous soutenir (collecte suspendue jusqu’à l’ouverture d’un compte)", href: "/participer#soutenir" }, { label: "Espace numérique : souscription", href: "/dossiers/espace-numerique" }, { label: "Cellule Financement & ressources", href: "/programmes#cellule-financement-ressources" }],
+        existant: [{ label: "Plateforme de projets : stades, budgets, ce qui manque", href: "/projets" }, { label: "Nous soutenir (collecte suspendue jusqu’à l’ouverture d’un compte)", href: "/participer#soutenir" }, { label: "Espace numérique : souscription", href: "/dossiers/espace-numerique" }, { label: "Cellule Financement & ressources", href: "/programmes#cellule-financement-ressources" }],
         suite: "Un cadre d’investissement ne s’ouvrirait qu’après le récépissé et le compte bancaire de l’association ; chaque projet finançable serait publié avec son budget, son calendrier et son suivi sur le tableau de bord." },
       { titre: "Mentorat", texte: "Un jeune, une personne qui l’accompagne, un objectif : la forme la plus simple du lien entre Bédjondo et sa diaspora.",
         existant: [{ label: "Offrir un mentorat (répertoire)", href: "/diaspora#inscription" }, { label: "Jeunesse & réussite", href: "/programmes#jeunesse-reussite" }],
         suite: "Le mentorat serait organisé avec le programme Jeunesse et Innovation : parcours, durée, point d’étape, et une place sur le tableau de bord." },
     ],
     thematiques: ["reseau-experts-diaspora", "entrepreneuriat-finance-inclusive", "jeunesse-reussite", "cellule-financement-ressources"],
-    contribuer: [{ label: "Inscrire ses compétences", href: "/diaspora#inscription" }, { label: "Coordonner Réseau d’experts & diaspora", href: "/participer?theme=15&coordo=1#contact" }, { label: "Adhérer à l’association", href: "/participer#adherer" }],
+    contribuer: [{ label: "Inscrire ses compétences", href: "/diaspora#inscription" }, { label: "Proposer ou soutenir un projet", href: "/projets" }, { label: "Adhérer à l’association", href: "/participer#adherer" }],
   },
 ];
 
@@ -234,7 +234,7 @@ export function feuilleDeRoute(c: Chiffres): Phase[] {
       chantiers: [
         { titre: "Registre des compétences de la diaspora", etat: "fait", note: "ouvert dès septembre 2026, comptes publiés, rien de nominatif sans accord", href: "/diaspora" },
         { titre: "Bibliothèque numérique bedjond", etat: "fait", note: `première version : ${c.references} références, ${c.pdf} PDF, ${c.chercheurs} chercheurs, dépôt de document`, href: "/bibliotheque" },
-        { titre: "Plateforme de projets", etat: "a-venir", note: `chaque projet avec son budget, son calendrier, son suivi ; ${enLettresMin(c.projets)} projets déjà décrits, ${enLettresMin(c.projetsActifs)} ${pluriel(c.projetsActifs, "actif", "actifs")}`, href: "/impact" },
+        { titre: "Plateforme de projets", etat: "fait", note: `ouverte le 28 septembre 2026 : ${enLettresMin(c.projets)} projets décrits avec leur stade, ce qui manque et comment contribuer, ${enLettresMin(c.projetsActifs)} ${pluriel(c.projetsActifs, "actif", "actifs")}, aucun financé ; formulaire pour en proposer`, href: "/projets" },
         { titre: "« Histoire et origines des peuples bedjonds »", etat: "a-venir", note: "publication en chapitres, PDF et glossaire dès transmission du manuscrit", href: "/odeb/programmes/memoire-patrimoine" },
         { titre: "Banque d’images : cent photographies", etat: "en-cours", note: "action 1.2 du plan d’action ; aucune photo publiée à ce jour, les envois sont ouverts", href: "/temoignages" },
         { titre: "Conversion en ONG sous le nom ODEB LONODJI", etat: "a-decider", note: "décision annoncée, aucun dossier déposé ; la démarche est décrite pas à pas", href: "/dossiers/demarches#vers-ong" },
