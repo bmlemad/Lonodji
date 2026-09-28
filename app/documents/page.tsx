@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DocumentCard, PageHeader, SectionHead } from "../../components/blocks";
 import { getIndex, ogFor, type DocumentItem } from "../../lib/content";
-import { ODEB } from "../../lib/odeb";
+import { IDENTITE, ODEB } from "../../lib/odeb";
 
 export const metadata: Metadata = {
   title: "Documents à télécharger",
@@ -15,7 +15,8 @@ export default function Documents() {
   const docs = getIndex().documents;
   /* Documents produits hors de l'ancien site : le livre blanc du projet ODEB (version de travail). */
   const livreBlanc: DocumentItem = { title: "Livre blanc du projet ODEB LONODJI", status: "Version de travail", meta: `${ODEB.presenteLabel} · A4 · produit à partir de la page en ligne`, description: "Le document fondateur de l’Organisation pour le Développement et l’Émergence Bedjonde : d’où nous partons, pourquoi une organisation, la vision 2030, six missions, cinq programmes, principes, ressources et feuille de route. Non adopté à ce jour.", pdf: ODEB.livreBlancPdf, links: [{ label: "Lire en ligne", href: "/odeb/livre-blanc" }, { label: "Le projet ODEB", href: "/odeb" }] };
-  const available = [...docs.filter((d) => d.pdf), livreBlanc];
+  const charte: DocumentItem = { title: "Identité visuelle du projet ODEB LONODJI", status: "Charte", meta: `${IDENTITE.retenueLabel} · A4 · produite à partir de la page en ligne`, description: "Le logo « Les Pas vers l’Avenir » — trois empreintes vers un soleil levant —, ses versions, sa zone de protection, ses tailles minimales, ses couleurs, ses polices et ses règles d’usage ; le kit de fichiers et le papier à en-tête.", pdf: IDENTITE.charte, links: [{ label: "La page en ligne et le kit", href: IDENTITE.page }, { label: "Le projet ODEB", href: "/odeb" }] };
+  const available = [...docs.filter((d) => d.pdf), livreBlanc, charte];
   const pending = docs.filter((d) => !d.pdf);
   return (
     <main id="main-content" className="hub-page">

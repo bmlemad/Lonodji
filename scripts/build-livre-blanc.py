@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Version PDF du livre blanc du projet ODEB LONODJI (public/odeb/…pdf).
+"""Versions PDF des documents du projet ODEB LONODJI (public/odeb/…pdf).
 
-Rend la page /odeb/livre-blanc du site construit (feuille de style d'impression
-de app/site.css) avec Playwright, en A4, avec la pagination en pied de page.
-Le PDF est produit à partir de la page : pas de texte à tenir à double.
+Rend une page du site construit (feuille de style d'impression de app/site.css)
+avec Playwright, en A4, avec la pagination en pied de page. Le PDF est produit
+à partir de la page : pas de texte à tenir à double. Sans argument : le livre
+blanc ; « --charte » : l'identité visuelle (/odeb/identite) ; « --tous » : les deux.
 
-    npm run build && python3 scripts/build-livre-blanc.py
+    npm run build && python3 scripts/build-livre-blanc.py [--charte | --tous]
 
 Le script lance `next start` sur un port libre le temps du rendu, puis l'arrête.
 À relancer après toute modification de la page (les chiffres y sont ceux du site).
@@ -22,8 +23,12 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "public" / "odeb" / "livre-blanc-odeb-lonodji-2026.pdf"
-ROUTE = "/odeb/livre-blanc"
+DOCUMENTS = {
+    "livre-blanc": ("/odeb/livre-blanc", ROOT / "public" / "odeb" / "livre-blanc-odeb-lonodji-2026.pdf",
+                    "ADEB LONODJI · Livre blanc du projet ODEB LONODJI · version de travail n° 1 · lonodji.org/odeb/livre-blanc"),
+    "charte": ("/odeb/identite", ROOT / "public" / "odeb" / "charte-identite-odeb-lonodji-2026.pdf",
+               "ADEB LONODJI · Identité visuelle du projet ODEB LONODJI · « Les Pas vers l’Avenir » · lonodji.org/odeb/identite"),
+}
 
 
 def port_libre() -> int:
@@ -49,32 +54,36 @@ def main() -> None:
 
     if not (ROOT / ".next" / "BUILD_ID").exists():
         raise SystemExit("aucune construction : lancer npm run build d'abord")
+    cles = ["livre-blanc", "charte"] if "--tous" in sys.argv else ["charte"] if "--charte" in sys.argv else ["livre-blanc"]
     port = port_libre()
     serveur = subprocess.Popen(["npx", "next", "start", "-p", str(port)], cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, preexec_fn=os.setsid)
     try:
-        attendre(f"http://127.0.0.1:{port}{ROUTE}")
-        OUT.parent.mkdir(parents=True, exist_ok=True)
+        attendre(f"http://127.0.0.1:{port}{DOCUMENTS[cles[0]][0]}")
         with sync_playwright() as p:
             b = p.chromium.launch()
-            page = b.new_page(viewport={"width": 1000, "height": 1400})
-            page.goto(f"http://127.0.0.1:{port}{ROUTE}", wait_until="networkidle")
-            page.emulate_media(media="print")
-            page.pdf(
-                path=str(OUT),
-                format="A4",
-                print_background=True,
-                margin={"top": "18mm", "bottom": "18mm", "left": "16mm", "right": "16mm"},
-                display_header_footer=True,
-                header_template="<div></div>",
-                footer_template=(
-                    "<div style='width:100%;font-family:DM Sans,Helvetica,Arial,sans-serif;font-size:8px;color:#607069;"
-                    "padding:0 16mm;display:flex;justify-content:space-between;'>"
-                    "<span>ADEB LONODJI · Livre blanc du projet ODEB LONODJI · version de travail n° 1 · lonodji.org/odeb/livre-blanc</span>"
-                    "<span>page <span class='pageNumber'></span> / <span class='totalPages'></span></span></div>"
-                ),
-            )
+            for cle in cles:
+                route, out, pied = DOCUMENTS[cle]
+                out.parent.mkdir(parents=True, exist_ok=True)
+                page = b.new_page(viewport={"width": 1000, "height": 1400})
+                page.goto(f"http://127.0.0.1:{port}{route}", wait_until="networkidle")
+                page.emulate_media(media="print")
+                page.pdf(
+                    path=str(out),
+                    format="A4",
+                    print_background=True,
+                    margin={"top": "18mm", "bottom": "18mm", "left": "16mm", "right": "16mm"},
+                    display_header_footer=True,
+                    header_template="<div></div>",
+                    footer_template=(
+                        "<div style='width:100%;font-family:DM Sans,Helvetica,Arial,sans-serif;font-size:8px;color:#607069;"
+                        "padding:0 16mm;display:flex;justify-content:space-between;'>"
+                        f"<span>{pied}</span>"
+                        "<span>page <span class='pageNumber'></span> / <span class='totalPages'></span></span></div>"
+                    ),
+                )
+                page.close()
+                print(f"{out.relative_to(ROOT)} : {out.stat().st_size // 1024} Ko")
             b.close()
-        print(f"{OUT.relative_to(ROOT)} : {OUT.stat().st_size // 1024} Ko")
     finally:
         os.killpg(os.getpgid(serveur.pid), signal.SIGTERM)
         try:

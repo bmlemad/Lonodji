@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader, SectionHead } from "../../../components/blocks";
+import { SectionHead } from "../../../components/blocks";
+import { OdebHero } from "../../../components/odeb-marque";
 import OdebNav, { OdebEtat } from "../../../components/odeb-nav";
 import { ogFor } from "../../../lib/content";
 import { MISSIONS, ODEB, PROGRAMMES, routeProgramme } from "../../../lib/odeb";
@@ -17,7 +18,7 @@ export default function Programmes() {
   const th = thematiquesParId();
   return (
     <main id="main-content" className="hub-page od-page">
-      <PageHeader
+      <OdebHero
         eyebrow={`Projet ${ODEB.sigle} · programmes`}
         title="Cinq programmes"
         em="pour six missions."

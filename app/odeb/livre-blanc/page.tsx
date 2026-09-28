@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader } from "../../../components/blocks";
+import { OdebHero } from "../../../components/odeb-marque";
 import OdebNav from "../../../components/odeb-nav";
 import { enLettres, ogFor, ORG } from "../../../lib/content";
 import { feuilleDeRoute, MISSIONS, ODEB, PROGRAMMES, REPERES_2030, routeProgramme } from "../../../lib/odeb";
@@ -36,7 +36,7 @@ export default function LivreBlanc() {
   const total = phases.reduce((n, p) => n + p.chantiers.length, 0);
   return (
     <main id="main-content" className="hub-page od-page od-page--doc">
-      <PageHeader
+      <OdebHero
         eyebrow={`Projet ${ODEB.sigle} · livre blanc`}
         title="Livre blanc :"
         em="le document fondateur."

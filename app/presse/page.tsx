@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageHeader, SectionHead, Stats } from "../../components/blocks";
 import { enLettres, filledCount, getIndex, ogFor, ORG, thematiqueCount } from "../../lib/content";
 import { getIndicateurs } from "../../lib/indicateurs";
-import { ODEB } from "../../lib/odeb";
+import { IDENTITE, ODEB } from "../../lib/odeb";
 
 export const metadata: Metadata = {
   title: "Espace presse : l’association en bref, chiffres, logos, contacts",
@@ -27,6 +27,14 @@ const VISUELS: [string, string][] = [
   ["/partage/thematiques-a-pourvoir.png", "Les thématiques qui cherchent leur coordonnateur"],
   ["/partage/retrouver-son-village.png", "Retrouver son village : une fiche par localité"],
   ["/partage/racontez-bedjondo.png", "Racontez Bédjondo : témoignages et photos"],
+];
+const LOGOS_ODEB: [string, string, string][] = [
+  [IDENTITE.embleme, "Emblème en verre (SVG)", "écrans, réseaux, vidéos"],
+  [IDENTITE.superposable, "Emblème superposable (SVG)", "sur photo ou fond sombre"],
+  [IDENTITE.clair, "Verre clair (SVG)", "papeterie, fonds blancs"],
+  [IDENTITE.plat, "À plat, couleur (SVG)", "impression, petites tailles"],
+  [IDENTITE.mono, "Monochrome (SVG)", "tampon, gravure, photocopie"],
+  [IDENTITE.png.embleme1024, "Emblème PNG 1024 px", "réseaux, documents"],
 ];
 const LOGOS: [string, string, string][] = [
   ["/identite/logo-adeb-lonodji.svg", "Logo couleur (SVG)", "fond clair"],
@@ -104,6 +112,7 @@ export default function Presse() {
         <div className="link-list">
           <a href="/documents/dossier-presentation-adeb-lonodji-2026.pdf" download><small>PDF · 4 pages</small><strong>Dossier de présentation d’ADEB LONODJI</strong><span>L’association, ses pôles, ses thématiques, ses plaidoyers.</span></a>
           <a href={ODEB.livreBlancPdf} download><small>PDF · version de travail</small><strong>Livre blanc du projet ODEB LONODJI</strong><span>Vision 2030, six missions, cinq programmes, feuille de route. Non adopté à ce jour.</span></a>
+          <a href={IDENTITE.charte} download><small>PDF · charte</small><strong>Identité visuelle du projet ODEB LONODJI</strong><span>Le logo « Les Pas vers l’Avenir », ses versions, ses couleurs, ses règles ; le kit et le papier à en-tête sont sur la page en ligne.</span></a>
           <Link href="/documents"><small>Tous les PDF</small><strong>Plaidoyers, cahiers de terrain, note à la commune</strong><span>{c.documentsPdf} documents disponibles, {c.documentsAnnonces} annoncés.</span></Link>
           <Link href="/transparence"><small>Redevabilité</small><strong>Charte : réponse sous 48 h, plainte, protection, corrections</strong><span>Les règles que l’association s’impose, et les documents constitutifs à venir.</span></Link>
         </div>
@@ -124,6 +133,25 @@ export default function Presse() {
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
           <Link className="button secondary" href="/dossiers/identite-visuelle">Identité visuelle complète : couleurs, polices, règles <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/dossiers/kit-mobilisation">Visuels de mobilisation <span aria-hidden="true">→</span></Link>
+        </div>
+      </section>
+
+      <section className="hub-section" id="logo-odeb">
+        <SectionHead eyebrow="Le logo du projet ODEB LONODJI" title="« Les Pas vers l’Avenir »," em="retenu le 28 septembre 2026." text="Trois empreintes — les ancêtres, la génération actuelle, les générations futures — qui avancent vers un soleil levant, dans un disque de verre vert profond. Le projet est porté par l’association : quand les deux logos sont présents, celui d’ADEB LONODJI vient en premier. En dessous de 40 px, la version à plat ; pour le tampon et la photocopie, la monochrome." />
+        <ul className="pr-logos">
+          {LOGOS_ODEB.map(([href, label, note]) => (
+            <li key={href}>
+              <a href={href} download className="pr-logo">
+                <span className={href.includes("superposable") ? "pr-logo-apercu est-sombre" : "pr-logo-apercu"}><img src={href} alt="" width={120} height={120} loading="lazy" /></span>
+                <strong>{label}</strong><small>{note}</small>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div className="section-actions" style={{ justifyContent: "flex-start" }}>
+          <Link className="button secondary" href="/odeb/identite">Le logo, ses règles, ses couleurs <span aria-hidden="true">→</span></Link>
+          <a className="text-link" href={IDENTITE.kit} download>Kit complet (ZIP) <span aria-hidden="true">↓</span></a>
+          <a className="text-link" href={IDENTITE.planche} download>Planche pour l’imprimeur (PDF) <span aria-hidden="true">↓</span></a>
         </div>
       </section>
 

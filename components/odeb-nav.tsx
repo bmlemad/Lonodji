@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ODEB } from "../lib/odeb";
+import { IDENTITE, ODEB } from "../lib/odeb";
 
 /* Barre de section du projet ODEB : les mêmes entrées que le menu, en pilules,
    sur chaque page /odeb. `actif` : l'entrée de la page courante. */
@@ -9,12 +9,13 @@ const ENTREES = [
   { id: "livre-blanc", label: "Livre blanc", href: "/odeb/livre-blanc" },
   { id: "feuille-de-route", label: "Feuille de route 2026-2030", href: "/odeb/feuille-de-route" },
   { id: "programmes", label: "Les cinq programmes", href: "/odeb/programmes" },
+  { id: "identite", label: "Identité visuelle", href: "/odeb/identite" },
 ];
 
 export default function OdebNav({ actif }: { actif: string }) {
   return (
     <nav className="od-nav" aria-label={`Projet ${ODEB.sigle}`}>
-      <span className="od-nav-sigle">{ODEB.sigle} · {ODEB.horizon}</span>
+      <span className="od-nav-sigle"><img className="od-embleme--medaillon" src={IDENTITE.embleme} alt="" width={30} height={30} loading="lazy" decoding="async" />{ODEB.sigle} · {ODEB.horizon}</span>
       {ENTREES.map((e) => <Link href={e.href} key={e.id} aria-current={e.id === actif ? "page" : undefined}>{e.label}</Link>)}
     </nav>
   );

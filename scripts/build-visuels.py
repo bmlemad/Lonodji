@@ -19,6 +19,7 @@ _og = importlib.util.module_from_spec(_spec)
 assert _spec.loader
 _spec.loader.exec_module(_og)
 ROOT, LOGO, esc, font_faces = _og.ROOT, _og.LOGO, _og.esc, _og.font_faces
+ODEB_EMBLEME = _og.ODEB_EMBLEME
 
 OUT = ROOT / "public" / "partage"
 CONTENT = ROOT / "content"
@@ -32,11 +33,11 @@ def visuels() -> list[dict]:
     pourvues = len(them) - len(vacantes)
     c = ind["contenu"]
     return [
-        {"nom": "40-ans-reflexion-odeb", "eyebrow": "1986 → 2026 · quarante ans des fondations",
+        {"nom": "40-ans-reflexion-odeb", "odeb": True, "eyebrow": "1986 → 2026 · quarante ans des fondations",
          "titre": "ADEB LONODJI ouvre la <em>réflexion ODEB LONODJI</em>",
          "lignes": ["Organisation pour le Développement et l’Émergence Bedjonde", "Vision 2030 · six missions · cinq programmes", "Un livre blanc en version de travail, à discuter"],
          "url": "lonodji.org/odeb"},
-        {"nom": "livre-blanc-odeb", "eyebrow": "Projet ODEB LONODJI · document fondateur",
+        {"nom": "livre-blanc-odeb", "odeb": True, "eyebrow": "Projet ODEB LONODJI · document fondateur",
          "titre": "Le livre blanc, <em>à lire et à discuter</em>",
          "lignes": ["D’où nous partons, pourquoi une organisation, la vision 2030", "Six missions, cinq programmes, une feuille de route 2026-2030", "Version de travail n° 1 · en ligne et en PDF"],
          "url": "lonodji.org/odeb/livre-blanc"},
@@ -79,10 +80,12 @@ li{{font-size:27px;line-height:1.35;color:#d9e5da;padding:10px 0 10px 30px;borde
 li::before{{content:"";position:absolute;left:0;top:23px;width:12px;height:12px;border-radius:50%;background:#b6cf45}}
 .url{{position:absolute;left:76px;right:76px;bottom:64px;display:flex;justify-content:space-between;align-items:center;font-size:24px;letter-spacing:.08em;color:#fff;font-weight:700}}
 .url small{{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:#aab9b0;font-weight:600}}
+.odeb{{position:absolute;right:56px;top:52px;width:300px;height:300px}}
+body.avec-odeb .eyebrow{{margin-top:250px}} body.avec-odeb h1{{max-width:900px}}
 </style>
-<body>
+<body class="{classe}">
 <div class="grid"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
-<div class="head"><img src="file://{logo}" alt=""><div><strong>ADEB <b>LONODJI</b></strong><small>Courage · Discipline · Héritage</small></div></div>
+<div class="head"><img src="file://{logo}" alt=""><div><strong>ADEB <b>LONODJI</b></strong><small>Courage · Discipline · Héritage</small></div></div>{odeb}
 <p class="eyebrow">{eyebrow}</p><div class="line"></div>
 <h1>{titre}</h1>
 <ul>{lignes}</ul>
@@ -102,7 +105,9 @@ def main() -> None:
         for v in visuels():
             brut = len(v["titre"].replace("<em>", "").replace("</em>", ""))
             size = 76 if brut < 40 else 66 if brut < 60 else 58
-            html = TEMPLATE.format(fonts=fonts, logo=LOGO, eyebrow=esc(v["eyebrow"]), titre=v["titre"], lignes="".join(f"<li>{esc(l)}</li>" for l in v["lignes"]), url=esc(v["url"]), size=size)
+            odeb = v.get("odeb") and ODEB_EMBLEME.exists()
+            html = TEMPLATE.format(fonts=fonts, logo=LOGO, eyebrow=esc(v["eyebrow"]), titre=v["titre"], lignes="".join(f"<li>{esc(l)}</li>" for l in v["lignes"]), url=esc(v["url"]), size=size,
+                                   classe="avec-odeb" if odeb else "", odeb=f'<img class="odeb" src="file://{ODEB_EMBLEME}" alt="">' if odeb else "")
             tmp.write_text(html, encoding="utf-8")
             page.goto(tmp.as_uri(), wait_until="load")
             page.wait_for_timeout(150)

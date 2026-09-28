@@ -3,7 +3,7 @@ import { ArticleCard } from "../components/blocks";
 import TableauDeBord from "../components/tableau-de-bord";
 import { enLettres, filledCount, getIndex, getPage, ORG, thematiqueCount } from "../lib/content";
 import { getIndicateurs } from "../lib/indicateurs";
-import { ODEB, PROGRAMMES, routeProgramme } from "../lib/odeb";
+import { IDENTITE, ODEB, PROGRAMMES, routeProgramme } from "../lib/odeb";
 
 const values = [
   ["01", "Courage", "Oser agir, prendre des responsabilités et avancer avec détermination, y compris quand il faut dire ce qui manque."],
@@ -95,6 +95,7 @@ export default function Home() {
 
         <section id="odeb" className="section od-band" aria-labelledby="odeb-title">
           <div>
+            <img className="od-band-embleme" src={IDENTITE.superposable} alt="" width={140} height={140} loading="lazy" decoding="async" />
             <p className="eyebrow">03 — Vision 2030</p>
             <h2 id="odeb-title">Projet ODEB LONODJI.<br /><em>D’une association à un outil permanent.</em></h2>
             <p className="od-band-note"><b>1986 → 2026.</b> Pour les quarante ans de ses fondations, l’association a lancé le {ODEB.presenteLabel} la réflexion ODEB LONODJI : six missions, cinq programmes, un livre blanc en version de travail. <Link href={ODEB.article}>L’article du jour →</Link></p>

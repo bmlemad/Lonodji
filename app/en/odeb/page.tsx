@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader, SectionHead, Stats } from "../../../components/blocks";
+import { SectionHead, Stats } from "../../../components/blocks";
+import { OdebHero } from "../../../components/odeb-marque";
 import { ogFor } from "../../../lib/content";
 import { feuilleDeRoute, ODEB, PROGRAMMES, routeProgramme } from "../../../lib/odeb";
 import { chiffresOdeb, thematiquesParId } from "../../../lib/odeb-chiffres";
@@ -43,7 +44,7 @@ export default function OdebEn() {
   const faits = tous.filter((x) => x.etat === "fait").length;
   return (
     <main id="main-content" className="hub-page od-page" lang="en">
-      <PageHeader
+      <OdebHero
         eyebrow="ODEB LONODJI project · Vision 2030 · in English"
         title="Organisation for the Development"
         em="and Emergence of the Bedjond people."

@@ -125,6 +125,7 @@ export default function SiteNav({ chiffres, whatsapp, telephone, telephoneHref, 
               ))}
               {e.vedette ? (
                 <Link className="mega-vedette" href={e.vedette.href} onClick={fermer}>
+                  {e.vedette.image ? <img className="mega-vedette-img" src={e.vedette.image} alt="" width={64} height={64} loading="lazy" decoding="async" /> : null}
                   <small>{e.vedette.kicker}</small>
                   <strong>{e.vedette.titre(chiffres)}</strong>
                   <span>{e.vedette.texte(chiffres)}</span>

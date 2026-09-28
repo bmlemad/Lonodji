@@ -1,13 +1,13 @@
 /* Navigation du site : une seule source pour le méga-menu de l'en-tête, le
    menu mobile, le pied de page et le plan du site. Pas d'accès au disque :
    ce module est aussi chargé côté client (composants « use client »). */
-import { MENU_ODEB, ODEB } from "./odeb";
+import { IDENTITE, MENU_ODEB, ODEB } from "./odeb";
 
 export type NavLien = { label: string; href: string; note?: string; externe?: boolean };
 export type NavColonne = { titre: string; liens: NavLien[] };
 /* Chiffres du site passés à l'en-tête pour les cartes en vedette des panneaux. */
 export type NavChiffres = { pourvues: number; total: number; fiches: number; articles: number; corrections: number };
-export type NavVedette = { kicker: string; titre: (c: NavChiffres) => string; texte: (c: NavChiffres) => string; href: string; label: string };
+export type NavVedette = { kicker: string; titre: (c: NavChiffres) => string; texte: (c: NavChiffres) => string; href: string; label: string; image?: string };
 export type NavEntree = { id: string; label: string; court?: string; href: string; colonnes?: NavColonne[]; vedette?: NavVedette };
 
 export const NAVIGATION: NavEntree[] = [
@@ -85,7 +85,7 @@ export const NAVIGATION: NavEntree[] = [
   {
     id: "odeb", label: "Projet ODEB", href: "/odeb",
     colonnes: MENU_ODEB.map((g) => ({ titre: g.titre, liens: g.liens.map((l) => ({ label: l.label, href: l.href, note: l.note })) })),
-    vedette: { kicker: `1986 → 2026 · réflexion ${ODEB.sigle} · vision ${ODEB.horizon}`, titre: () => ODEB.nom, texte: () => "Un projet de transformation institutionnelle : doter le pays bedjond d’un outil permanent de recherche, de documentation, de développement, d’innovation, de patrimoine et de diaspora.", href: "/odeb/livre-blanc", label: "Lire le livre blanc" },
+    vedette: { kicker: `1986 → 2026 · réflexion ${ODEB.sigle} · vision ${ODEB.horizon}`, titre: () => ODEB.nom, texte: () => "Un projet de transformation institutionnelle : doter le pays bedjond d’un outil permanent de recherche, de documentation, de développement, d’innovation, de patrimoine et de diaspora.", href: "/odeb/livre-blanc", label: "Lire le livre blanc", image: IDENTITE.superposable },
   },
   { id: "journal", label: "Journal", href: "/journal" },
   {
@@ -147,6 +147,6 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
   ] },
   { titre: "Projet ODEB · Vision 2030", liens: [
     { label: "La vision", href: "/odeb" }, { label: "Pourquoi créer l’ODEB ?", href: "/odeb#pourquoi" }, { label: "Livre blanc", href: "/odeb/livre-blanc" }, { label: "Feuille de route 2026-2030", href: "/odeb/feuille-de-route" },
-    { label: "Les cinq programmes", href: "/odeb/programmes" },
+    { label: "Les cinq programmes", href: "/odeb/programmes" }, { label: "Identité visuelle", href: "/odeb/identite" },
   ] },
 ];

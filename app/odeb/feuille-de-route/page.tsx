@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader, SectionHead, Stats } from "../../../components/blocks";
+import { SectionHead, Stats } from "../../../components/blocks";
+import { OdebHero } from "../../../components/odeb-marque";
 import OdebNav, { OdebEtat } from "../../../components/odeb-nav";
 import { ogFor } from "../../../lib/content";
 import { ETATS, feuilleDeRoute, ODEB, type Etat } from "../../../lib/odeb";
@@ -20,7 +21,7 @@ export default function FeuilleDeRoute() {
   const compte = (e: Etat) => tous.filter((x) => x.etat === e).length;
   return (
     <main id="main-content" className="hub-page od-page">
-      <PageHeader
+      <OdebHero
         eyebrow={`Projet ${ODEB.sigle} · feuille de route`}
         title="De 2026 à 2030,"
         em="phase par phase."

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader, SectionHead, Stats } from "../../components/blocks";
+import { SectionHead, Stats } from "../../components/blocks";
+import { OdebHero } from "../../components/odeb-marque";
 import OdebNav, { OdebEtat } from "../../components/odeb-nav";
 import { enLettres, ogFor } from "../../lib/content";
 import { MISSIONS, ODEB, PROGRAMMES, REPERES_2030, routeProgramme } from "../../lib/odeb";
@@ -21,7 +22,7 @@ export default function Odeb() {
   const coordonnateurs = new Set(PROGRAMMES.flatMap((p) => p.thematiques).filter((id) => th[id]?.filled).map((id) => th[id].coordinator));
   return (
     <main id="main-content" className="hub-page od-page">
-      <PageHeader
+      <OdebHero
         eyebrow={`Projet ${ODEB.sigle} · Vision ${ODEB.horizon}`}
         title="Organisation pour le Développement"
         em="et l’Émergence Bedjonde."

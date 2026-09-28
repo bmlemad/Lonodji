@@ -886,3 +886,41 @@ html.is-standalone .haut{ bottom:calc(76px + env(safe-area-inset-bottom,0px)); }
 .pr-visuel span{ font-size:13px; font-weight:600; color:var(--ink); }
 .pr-visuel span b{ color:var(--deep); margin-left:4px; }
 .pr-visuel:hover span{ text-decoration:underline; text-underline-offset:4px; }
+
+/* ---- Identité du projet ODEB : l'emblème « Les Pas vers l'Avenir » (verre) ---- */
+.od-embleme{ display:block; height:auto; }
+.od-embleme--medaillon{ border-radius:50%; box-shadow:0 22px 48px rgba(23,59,45,.28), 0 0 0 1px rgba(255,255,255,.6); }
+.od-hero{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:24px 40px; align-items:start; }
+.od-hero-embleme{ width:clamp(150px,17vw,240px); margin-top:26px; }
+@media(max-width:800px){ .od-hero{ grid-template-columns:1fr; gap:6px; } .od-hero-embleme{ order:-1; width:118px; margin:0 0 6px; } }
+.od-nav-sigle{ display:inline-flex; align-items:center; gap:8px; }
+.od-nav-sigle img{ width:30px; height:30px; margin-left:-2px; box-shadow:0 4px 12px rgba(23,59,45,.25); }
+.od-band-embleme{ width:132px; height:132px; margin:-8px 0 22px; }
+.links .mega-vedette-img{ width:64px; height:64px; margin:-4px 0 2px; }
+.od-sens article{ position:relative; }
+.od-sens article > .od-num{ display:block; margin-bottom:8px; }
+.od-devise{ margin:26px 0 0; font-family:var(--font-playfair),Georgia,serif; font-style:italic; font-size:clamp(22px,2.6vw,32px); line-height:1.25; color:var(--deep); letter-spacing:-.01em; max-width:30ch; }
+.od-versions{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(230px,100%),1fr)); gap:14px; }
+.od-versions + .od-versions{ margin-top:14px; }
+.od-versions--logos{ grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); }
+.od-versions li{ display:flex; flex-direction:column; gap:6px; padding:14px; border:1px solid var(--line); border-radius:22px; background:rgba(255,255,255,.72); }
+.od-versions h3{ font-size:17px; letter-spacing:-.02em; margin:6px 0 0; }
+.od-versions p{ margin:0; font-size:13px; line-height:1.5; color:#4f5f58; }
+.od-version-apercu{ display:flex; align-items:center; justify-content:center; aspect-ratio:1; border-radius:16px; background:#fff; border:1px solid var(--line); overflow:hidden; }
+.od-version-apercu img{ width:78%; height:auto; }
+.od-version-apercu.est-sombre{ background:var(--deep); background-image:radial-gradient(circle at 70% 20%, rgba(242,201,76,.28), transparent 45%), radial-gradient(circle at 20% 85%, rgba(182,207,69,.22), transparent 45%); border-color:transparent; }
+.od-version-apercu.est-sable{ background:var(--paper); }
+.od-version-apercu--large{ aspect-ratio:auto; min-height:150px; padding:14px; }
+.od-version-apercu--large img{ width:100%; max-height:240px; object-fit:contain; }
+.od-version-liens{ margin-top:auto !important; padding-top:8px; display:flex; gap:14px; }
+.od-version-liens a{ font-size:13px; font-weight:700; color:var(--deep); text-decoration:underline; text-underline-offset:4px; text-decoration-color:rgba(23,59,45,.3); }
+.od-couleurs{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(170px,100%),1fr)); gap:12px; }
+.od-couleurs li{ display:flex; flex-direction:column; gap:3px; padding:18px 16px; border-radius:18px; min-height:150px; border:1px solid transparent; }
+.od-couleurs strong{ font-size:15px; letter-spacing:-.01em; }
+.od-couleurs code{ font-size:13px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+.od-couleurs small{ font-size:11px; letter-spacing:.06em; text-transform:uppercase; opacity:.85; }
+.od-couleurs span{ margin-top:auto; font-size:12px; line-height:1.4; opacity:.9; }
+.od-police-serif{ font-family:var(--font-playfair),Georgia,serif; font-weight:500; }
+.od-interdits{ margin:8px 0 0; padding-left:20px; }
+.od-interdits li{ margin:4px 0; }
+@media print{ .od-hero-embleme{ width:120px; margin-top:0; } .od-versions{ grid-template-columns:repeat(3,1fr); } .od-couleurs{ grid-template-columns:repeat(3,1fr); } .od-couleurs li{ -webkit-print-color-adjust:exact; print-color-adjust:exact; } .od-version-apercu{ -webkit-print-color-adjust:exact; print-color-adjust:exact; } }

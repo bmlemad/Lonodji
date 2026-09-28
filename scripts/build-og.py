@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BUILT = ROOT / ".next" / "server" / "app"
 OUT = ROOT / "public" / "og"
 LOGO = ROOT / "public" / "identite" / "logo-adeb-lonodji-1024.png"
+ODEB_EMBLEME = ROOT / "public" / "odeb" / "identite" / "odeb-lonodji-embleme-superposable-1024.png"  # pages du projet ODEB
 SKIP = {"/_global-error", "/_not-found", "/hors-ligne", "/en"}  # /en redirige vers /en/index
 
 EYEBROWS = {
@@ -53,6 +54,7 @@ EYEBROWS = {
     "/odeb/livre-blanc": "Projet ODEB LONODJI · livre blanc",
     "/odeb/feuille-de-route": "Projet ODEB LONODJI · feuille de route 2026-2030",
     "/odeb/programmes": "Projet ODEB LONODJI · les cinq programmes",
+    "/odeb/identite": "Projet ODEB LONODJI · identité visuelle",
 }
 
 
@@ -141,15 +143,24 @@ h1{{position:relative;margin:0;font-weight:700;font-size:{size}px;line-height:1.
 h1 em{{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-style:italic;color:#e7f0d2}}
 .desc{{position:absolute;left:64px;right:64px;bottom:54px;margin:0;font-size:24px;line-height:1.35;color:#aab9b0;max-height:66px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}}
 .foot{{position:absolute;right:64px;top:64px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#aab9b0}}
+.odeb{{position:absolute;right:54px;top:118px;width:330px;height:330px}}
+body.avec-odeb h1{{max-width:720px}} body.avec-odeb .desc{{right:420px}}
 </style>
-<body>
+<body class="{classe}">
 <div class="grid"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
 <div class="head"><img src="file://{logo}" alt=""><div><strong>ADEB <b>LONODJI</b></strong><small>Courage · Discipline · Héritage</small></div></div>
-<p class="foot">lonodji.org</p>
+<p class="foot">lonodji.org</p>{odeb}
 <p class="eyebrow">{eyebrow}</p><div class="line"></div>
 <h1 id="t">{title}</h1>
 <p class="desc">{desc}</p>
 </body></html>"""
+
+
+def odeb_bloc(route: str) -> tuple[str, str]:
+    """Sur les pages du projet ODEB, l'emblème « Les Pas vers l'Avenir » à droite de la carte."""
+    if (route.startswith("/odeb") or route == "/en/odeb") and ODEB_EMBLEME.exists():
+        return "avec-odeb", f'<img class="odeb" src="file://{ODEB_EMBLEME}" alt="">'
+    return "", ""
 
 
 def split_title(title: str) -> str:
@@ -177,7 +188,8 @@ def rendre_une(route: str, title: str, desc: str, eyebrow: str, lang: str = "fr"
         b = p.chromium.launch()
         page = b.new_page(viewport={"width": 1200, "height": 630}, device_scale_factor=1)
         size = 66 if len(title) < 60 else 56 if len(title) < 90 else 48
-        tmp.write_text(TEMPLATE.format(lang=lang, fonts=fonts, logo=LOGO, eyebrow=esc(eyebrow), title=split_title(title), desc=esc(desc), size=size), encoding="utf-8")
+        classe, odeb = odeb_bloc(route)
+        tmp.write_text(TEMPLATE.format(lang=lang, fonts=fonts, logo=LOGO, eyebrow=esc(eyebrow), title=split_title(title), desc=esc(desc), size=size, classe=classe, odeb=odeb), encoding="utf-8")
         page.goto(tmp.as_uri(), wait_until="load")
         page.evaluate("document.fonts.ready")
         page.evaluate("""() => { const t = document.getElementById('t'); const limite = 630 - 54 - 66 - 24; let fs = parseFloat(getComputedStyle(t).fontSize);
@@ -206,7 +218,8 @@ def main():
             if only and pg["route"] not in only and pg["name"] not in only:
                 continue
             size = 66 if len(pg["title"]) < 60 else 56 if len(pg["title"]) < 90 else 48
-            html = TEMPLATE.format(lang=pg["lang"], fonts=fonts, logo=LOGO, eyebrow=esc(pg["eyebrow"]), title=split_title(pg["title"]), desc=esc(pg["desc"]), size=size)
+            classe, odeb = odeb_bloc(pg["route"])
+            html = TEMPLATE.format(lang=pg["lang"], fonts=fonts, logo=LOGO, eyebrow=esc(pg["eyebrow"]), title=split_title(pg["title"]), desc=esc(pg["desc"]), size=size, classe=classe, odeb=odeb)
             tmp.write_text(html, encoding="utf-8")
             page.goto(tmp.as_uri(), wait_until="load")   # ouvert en file:// pour que polices et logo (file://) se chargent
             page.evaluate("document.fonts.ready")

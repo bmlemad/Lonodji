@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PageHeader, SectionHead } from "../../../../components/blocks";
+import { SectionHead } from "../../../../components/blocks";
+import { OdebHero } from "../../../../components/odeb-marque";
 import OdebNav, { OdebEtat } from "../../../../components/odeb-nav";
 import { metaDescription, ogFor } from "../../../../lib/content";
 import { MISSIONS, ODEB, programme, PROGRAMMES, routeProgramme } from "../../../../lib/odeb";
@@ -35,7 +36,7 @@ export default async function ProgrammePage({ params }: { params: Promise<{ prog
   const suiv = PROGRAMMES[(i + 1) % PROGRAMMES.length];
   return (
     <main id="main-content" className="hub-page od-page">
-      <PageHeader
+      <OdebHero
         eyebrow={`Projet ${ODEB.sigle} · programme ${p.numero}`}
         title={p.nom}
         em={p.axes.map((a) => a.titre).join(" · ") + "."}
