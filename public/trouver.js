@@ -35,7 +35,7 @@ window.__initTrouver = function () {
     "pole": "Pôle I · Thématique 02",
     "name": "Culture & patrimoine vivant",
     "status": "filled",
-    "coord": "Coordonnateur : Félix Mbété Nangmbatnan",
+    "coord": "Coordonnateur : Dr Yaphete Madjirabé",
     "desc": "Langues et parlers sara, à commencer par le bedjond (bedjond, bebote, yom, pen, maguer), berceau du mouvement.",
     "page": [
       "/mission",

@@ -212,7 +212,7 @@ def unwrap_wrap(section: Tag) -> str:
 
 
 def parse_page(path: Path):
-    html = path.read_text(encoding="utf-8")
+    html = lire_source(path)
     soup = BeautifulSoup(html, "lxml")
     base_dir = str(path.parent.relative_to(LEGACY)).replace(".", "")
     main = soup.find("main")
@@ -567,6 +567,36 @@ UPDATES = [
 ]
 
 
+# Mises à jour de la source AVANT analyse (structure, scripts et pages) : décisions de
+# l'association postérieures à l'export de l'ancien site, datées dans le texte.
+UPDATES_SOURCE = [
+    # 28/09/2026 : la coordination de Culture & patrimoine vivant est confiée au Dr Yaphete Madjirabé.
+    ('<span class="coord-qui">Félix Mbété Nangmbatnan</span>', '<span class="coord-qui">Dr Yaphete Madjirabé</span>'),
+    ('<p class="coord">Coordonnateur&nbsp;: Félix Mbété Nangmbatnan</p>', '<p class="coord">Coordonnateur&nbsp;: Dr Yaphete Madjirabé</p>'),
+    ('<p class="coord">Coordinator: F&eacute;lix Mb&eacute;t&eacute; Nangmbatnan</p>', '<p class="coord">Coordinator: Dr Yaphete Madjirab&eacute;</p>'),
+    ('"coord": "Coordonnateur : Félix Mbété Nangmbatnan",', '"coord": "Coordonnateur : Dr Yaphete Madjirabé",'),
+]
+NOTE_CULTURE_FR = " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée au Dr Yaphete Madjirabé, qui succède à Félix Mbété Nangmbatnan."
+NOTE_CULTURE_EN = " <strong>Update, 28 September 2026:</strong> the theme is now coordinated by Dr Yaphete Madjirab&eacute;, who succeeds F&eacute;lix Mb&eacute;t&eacute; Nangmbatnan."
+
+
+def lire_source(path: Path) -> str:
+    """Lit un fichier de l'ancien site en y appliquant les mises à jour de source."""
+    html = path.read_text(encoding="utf-8")
+    for old, new in UPDATES_SOURCE:
+        html = html.replace(old, new)
+    # note datée à la fin de la description de la thématique 02 (poles.html, en/themes.html)
+    for coord, note in (('<p class="coord">Coordonnateur&nbsp;: Dr Yaphete Madjirabé</p>', NOTE_CULTURE_FR), ('<p class="coord">Coordinator: Dr Yaphete Madjirab&eacute;</p>', NOTE_CULTURE_EN)):
+        i = html.find(coord)
+        if i < 0 or path.name not in ("poles.html", "themes.html"):
+            continue
+        j = html.find("<p>", i)
+        k = html.find("</p>", j)
+        if j > 0 and k > 0:
+            html = html[:k] + note + html[k:]
+    return html
+
+
 def apply_updates(html: str) -> str:
     for old, new in UPDATES:
         html = html.replace(old, new)
@@ -581,7 +611,7 @@ def adapt_script(name: str, init_name: str, find: str = "", replace: str = "", r
     src = LEGACY / name
     if not src.exists():
         return
-    js = src.read_text(encoding="utf-8")
+    js = lire_source(src)
     head = js.find("(function () {")
     tail = js.rfind("})();")
     if head < 0 or tail < 0:
@@ -651,7 +681,7 @@ def main():
         index["pages"].append({k: data[k] for k in ("slug", "route", "kind", "title", "eyebrow", "lede", "description", "parent", "words", "hasMap")})
 
     # Articles
-    news_soup = BeautifulSoup((LEGACY / "actualites.html").read_text(encoding="utf-8"), "lxml")
+    news_soup = BeautifulSoup(lire_source(LEGACY / "actualites.html"), "lxml")
     cats, by_slug = journal_categories(news_soup)
     for p in sorted((LEGACY / "articles").glob("*.html")):
         data, forms = parse_page(p)
@@ -678,13 +708,13 @@ def main():
     index["journalCategories"] = cats
 
     # Données structurées
-    poles_soup = BeautifulSoup((LEGACY / "poles.html").read_text(encoding="utf-8"), "lxml")
+    poles_soup = BeautifulSoup(lire_source(LEGACY / "poles.html"), "lxml")
     index["structure"] = structure(poles_soup)
-    plea_soup = BeautifulSoup((LEGACY / "plaidoyers.html").read_text(encoding="utf-8"), "lxml")
+    plea_soup = BeautifulSoup(lire_source(LEGACY / "plaidoyers.html"), "lxml")
     index["plaidoyers"] = plaidoyers(plea_soup)
-    docs_soup = BeautifulSoup((LEGACY / "documents.html").read_text(encoding="utf-8"), "lxml")
+    docs_soup = BeautifulSoup(lire_source(LEGACY / "documents.html"), "lxml")
     index["documents"] = documents(docs_soup)
-    mission_soup = BeautifulSoup((LEGACY / "mission.html").read_text(encoding="utf-8"), "lxml")
+    mission_soup = BeautifulSoup(lire_source(LEGACY / "mission.html"), "lxml")
     index["history"] = history(mission_soup)
     index["generatedFrom"] = {"legacyVersion": "2026-09-24", "files": len(list(LEGACY.rglob("*"))) }
 

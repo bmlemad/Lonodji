@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Silhouette du pays bedjond (public/identite/territoire.svg) pour l'accueil.
+"""Silhouette du pays bedjond (public/carte/territoire.svg) pour l'accueil.
 
 Tirée des mêmes tracés que la carte (public/carte/donnees.json) : les sept
 unités du cœur en aplat, les autres en contour, Bédjondo marquée d'un point.
@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "public" / "carte" / "donnees.json"
-OUT = ROOT / "public" / "identite" / "territoire.svg"
+OUT = ROOT / "public" / "carte" / "territoire.svg"
 W = 1000  # largeur de la boîte ; la hauteur suit la géographie
 MARGE = 24
 

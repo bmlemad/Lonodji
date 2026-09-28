@@ -357,7 +357,7 @@
    "lede": "Les Chantiers ADEB LONODJI sont les projets de réflexion, de recherche et d’action portés par l’association. Pour les organiser, ADEB LONODJI structure son action autour de dix-neuf thématiques réparties en quatre pôles, appuyées par deux cellules transversales — dont un pôle spécialisé Numérique & innovation, créé en septembre 2026. Chaque thématique est animée par un coordonnateur. Cette organisation en pôles est notre méthodologie de travail en équipe : elle permet une bonne coordination des actions entre les thématiques, au lieu d’initiatives dispersées. Chaque thématique est en outre mise en regard des Objectifs de développement durable adoptés par les Nations unies, pour que nos partenaires situent immédiatement notre travail.",
    "description": "Quatre pôles, dix-neuf thématiques et deux cellules transversales pour organiser l’action d’ADEB LONODJI.",
    "parent": "Accueil",
-   "words": 4839,
+   "words": 4864,
    "hasMap": false
   },
   {
@@ -549,7 +549,7 @@
    "lede": "ADEB LONODJI organises its work into nineteen themes grouped in four pillars, supported by two cross-cutting units. Each theme is meant to be led by a coordinator who reports to the membership. This page is the English summary; every theme has a fuller description en français .",
    "description": "How ADEB LONODJI organises its work: four pillars, nineteen themes and two cross-cutting units, each set against the UN Sustainable Development Goals it touches.",
    "parent": "Home",
-   "words": 2255,
+   "words": 2273,
    "hasMap": false
   }
  ],
@@ -1298,10 +1298,10 @@
       "name": "Culture & patrimoine vivant",
       "status": "Pourvu",
       "filled": true,
-      "coordinator": "Félix Mbété Nangmbatnan",
+      "coordinator": "Dr Yaphete Madjirabé",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Langues et parlers sara, à commencer par le bedjond (bedjond, bebote, yom, pen, maguer), berceau du mouvement. Contes, proverbes, chants, rites, savoirs traditionnels, fêtes culturelles et rencontres communautaires. La thématique porte aussi un principe clair : les sites sacrés du pays bedjond (lieux de rite, sites initiatiques, lieux de mémoire des anciens) doivent être protégés et transmis avec le respect qui leur est dû. Ce principe a désormais sa page : <a href=\"/dossiers/lieux-sacres\">Lieux sacrés et sépultures</a>, où nous exposons la voie juridique retenue et la règle que nous nous imposons : ne rien publier. Sur les proverbes, la bibliothèque référence désormais les <a href=\"/dossiers/recherche#src-sept-cents-proverbes-nang-nda\">sept cents proverbes nangnda réunis par Madjidéné Altana Lydie</a>.",
-      "descriptionText": "Langues et parlers sara, à commencer par le bedjond (bedjond, bebote, yom, pen, maguer), berceau du mouvement. Contes, proverbes, chants, rites, savoirs traditionnels, fêtes culturelles et rencontres communautaires. La thématique porte aussi un principe clair : les sites sacrés du pays bedjond (lieux de rite, sites initiatiques, lieux de mémoire des anciens) doivent être protégés et transmis avec le respect qui leur est dû. Ce principe a désormais sa page : Lieux sacrés et sépultures , où nous exposons la voie juridique retenue et la règle que nous nous imposons : ne rien publier. Sur les proverbes, la bibliothèque référence désormais les sept cents proverbes nangnda réunis par Madjidéné Altana Lydie .",
+      "description": "Langues et parlers sara, à commencer par le bedjond (bedjond, bebote, yom, pen, maguer), berceau du mouvement. Contes, proverbes, chants, rites, savoirs traditionnels, fêtes culturelles et rencontres communautaires. La thématique porte aussi un principe clair : les sites sacrés du pays bedjond (lieux de rite, sites initiatiques, lieux de mémoire des anciens) doivent être protégés et transmis avec le respect qui leur est dû. Ce principe a désormais sa page : <a href=\"/dossiers/lieux-sacres\">Lieux sacrés et sépultures</a>, où nous exposons la voie juridique retenue et la règle que nous nous imposons : ne rien publier. Sur les proverbes, la bibliothèque référence désormais les <a href=\"/dossiers/recherche#src-sept-cents-proverbes-nang-nda\">sept cents proverbes nangnda réunis par Madjidéné Altana Lydie</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> la coordination de la thématique est confiée au Dr Yaphete Madjirabé, qui succède à Félix Mbété Nangmbatnan.",
+      "descriptionText": "Langues et parlers sara, à commencer par le bedjond (bedjond, bebote, yom, pen, maguer), berceau du mouvement. Contes, proverbes, chants, rites, savoirs traditionnels, fêtes culturelles et rencontres communautaires. La thématique porte aussi un principe clair : les sites sacrés du pays bedjond (lieux de rite, sites initiatiques, lieux de mémoire des anciens) doivent être protégés et transmis avec le respect qui leur est dû. Ce principe a désormais sa page : Lieux sacrés et sépultures , où nous exposons la voie juridique retenue et la règle que nous nous imposons : ne rien publier. Sur les proverbes, la bibliothèque référence désormais les sept cents proverbes nangnda réunis par Madjidéné Altana Lydie . Mise à jour du 28 septembre 2026 : la coordination de la thématique est confiée au Dr Yaphete Madjirabé, qui succède à Félix Mbété Nangmbatnan.",
       "tags": [
        "Langues sara",
        "Traditions",

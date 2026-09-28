@@ -44,7 +44,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-visual" aria-hidden="true">
-            <img className="hero-territoire" src="/identite/territoire.svg" alt="" width={1000} height={727} decoding="async" fetchPriority="high" />
+            <img className="hero-territoire" src="/carte/territoire.svg" alt="" width={1000} height={727} decoding="async" fetchPriority="high" />
             <div className="hero-card">
               <div className="glass-card">
                 <span className="card-kicker">Où nous en sommes</span>

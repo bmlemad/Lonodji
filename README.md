@@ -54,7 +54,7 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 - `/diaspora` — répertoire des compétences de la diaspora (action 4.1) : formulaire `diaspora-competences`, compteurs par personne, pays et domaines (`components/diaspora-compteurs.tsx`, listes dans `lib/diaspora.ts`). Le répertoire nominatif reste dans Netlify Forms ; le site ne publie que des nombres.
 - `/temoignages` — « Racontez Bédjondo » (actions 1.2 et 5.2) : six séries recherchées, règles de consentement et de relecture, formulaire `temoignage` avec pièce jointe (photo, son, vidéo ≤ 10 Mo, envoi multipart par `components/temoignage-form.tsx`).
 - Les deux formulaires sont déclarés dans `scripts/import-legacy.py` (`FORMULAIRES_SITE`) pour survivre aux réimports, et décrits dans les mentions légales (`UPDATES`).
-- `scripts/build-territoire-svg.py` → `public/identite/territoire.svg` : silhouette des quatorze unités (mêmes tracés que la carte), bannière de l’accueil tant que la banque d’images est vide.
+- `scripts/build-territoire-svg.py` → `public/carte/territoire.svg` : silhouette des quatorze unités (mêmes tracés que la carte), bannière de l’accueil tant que la banque d’images est vide.
 
 ## Espace de rédaction privé
 
