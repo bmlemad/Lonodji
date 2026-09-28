@@ -34,6 +34,7 @@ export const MENU_ODEB: { titre: string; liens: (Lien & { note?: string })[] }[]
       { label: "Pourquoi créer l’ODEB ?", href: "/odeb#pourquoi", note: "D’une association à un outil permanent" },
       { label: "Livre blanc", href: "/odeb/livre-blanc", note: "Le document fondateur, version de travail" },
       { label: "Feuille de route 2026-2030", href: "/odeb/feuille-de-route", note: "Trois phases, ce qui est fait, ce qui reste" },
+      { label: "The ODEB project, in English", href: "/en/odeb", note: "A summary for the diaspora and partners" },
     ],
   },
   {

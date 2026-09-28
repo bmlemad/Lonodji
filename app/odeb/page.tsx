@@ -9,7 +9,7 @@ import { chiffresOdeb, thematiquesParId } from "../../lib/odeb-chiffres";
 export const metadata: Metadata = {
   title: "Projet ODEB LONODJI — Vision 2030",
   description: "L’ODEB LONODJI, Organisation pour le Développement et l’Émergence Bedjonde : un projet porté par ADEB LONODJI pour doter le pays bedjond d’un outil permanent, à l’horizon 2030.",
-  alternates: { canonical: "/odeb" },
+  alternates: { canonical: "/odeb", languages: { fr: "/odeb", en: "/en/odeb" } },
   openGraph: ogFor("/odeb"),
 };
 

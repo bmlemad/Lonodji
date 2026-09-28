@@ -2,18 +2,21 @@
 
 import { useEffect } from "react";
 
-/** Présélectionne le formulaire de contact depuis l'URL : ?theme=09 (01-19, financement, communication) et &coordo=1. */
+/** Présélectionne le formulaire de contact depuis l'URL : ?theme=09 (01-19, financement, communication), &coordo=1,
+    et ?objet=odeb|presse|partenariat|question|donnees|autre (valeur data-objet des options du champ Objet). */
 export default function ContactPrefill() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const theme = params.get("theme");
     const coordo = params.get("coordo");
-    if (!theme && !coordo) return;
+    const objetDemande = (params.get("objet") || "").toLowerCase();
+    if (!theme && !coordo && !objetDemande) return;
     const form = document.querySelector<HTMLFormElement>("form[name='contact'], form#formulaire-contact");
     if (!form) return;
     const objet = form.querySelector<HTMLSelectElement>("select[name='objet']");
     if (objet) {
-      const opt = Array.from(objet.options).find((o) => o.dataset.objet === "thematique");
+      const voulu = objetDemande === "presse" ? "partenariat" : objetDemande || "thematique";
+      const opt = Array.from(objet.options).find((o) => o.dataset.objet === voulu) ?? (objetDemande ? undefined : Array.from(objet.options).find((o) => o.dataset.objet === "thematique"));
       if (opt) objet.value = opt.value || opt.text;
     }
     const pole = form.querySelector<HTMLSelectElement>("select[name='pole']");

@@ -393,7 +393,7 @@
    "lede": "Une question, une proposition, l’envie d’animer une thématique : c’est ici. Pour devenir membre, remplissez plutôt la déclaration d’intention d’adhésion , sans paiement.",
    "description": "Écrire à ADEB LONODJI ou rejoindre une thématique : formulaire en ligne, téléphone et WhatsApp du président. Pour adhérer, une déclaration d’intention sans paiement.",
    "parent": "Agir avec nous",
-   "words": 999,
+   "words": 1007,
    "hasMap": false
   },
   {
@@ -555,23 +555,6 @@
  ],
  "articles": [
   {
-   "slug": "2026-09-28-quarante-ans-reflexion-odeb-lonodji",
-   "route": "/journal/2026-09-28-quarante-ans-reflexion-odeb-lonodji",
-   "title": "Quarante ans après 1986, ADEB LONODJI ouvre la réflexion ODEB LONODJI",
-   "date": "2026-09-28",
-   "dateLabel": "28 septembre 2026",
-   "tag": "Vie de l’association",
-   "category": "vie-association",
-   "summary": "Pour les quarante ans de ses fondations, l’association fête ce 28 septembre 2026 en lançant la réflexion ODEB LONODJI : une organisation permanente pour le pays bedjond à l’horizon 2030, un livre blanc à discuter, cinq…",
-   "readTime": "3 min de lecture",
-   "words": 682,
-   "byline": "Rédaction ADEB LONODJI",
-   "pills": [
-    "3 min de lecture",
-    "682 mots"
-   ]
-  },
-  {
    "slug": "2026-09-28-lettre-information-02",
    "route": "/journal/2026-09-28-lettre-information-02",
    "title": "Lettre d’information n° 2 — numéro spécial du 28 septembre 2026",
@@ -581,11 +564,28 @@
    "category": "lettre",
    "summary": "Un numéro hors du rythme mensuel, parce que le 28 septembre a beaucoup ouvert : la réflexion ODEB LONODJI pour les quarante ans des fondations, onze coordinations confiées, neuf modules nouveaux sur le site — et la…",
    "readTime": "3 min de lecture",
-   "words": 680,
+   "words": 682,
    "byline": "Rédaction ADEB LONODJI",
    "pills": [
     "3 min de lecture",
-    "680 mots"
+    "682 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-28-quarante-ans-reflexion-odeb-lonodji",
+   "route": "/journal/2026-09-28-quarante-ans-reflexion-odeb-lonodji",
+   "title": "Quarante ans après 1986, ADEB LONODJI ouvre la réflexion ODEB LONODJI",
+   "date": "2026-09-28",
+   "dateLabel": "28 septembre 2026",
+   "tag": "Vie de l’association",
+   "category": "vie-association",
+   "summary": "Pour les quarante ans de ses fondations, l’association fête ce 28 septembre 2026 en lançant la réflexion ODEB LONODJI : une organisation permanente pour le pays bedjond à l’horizon 2030, un livre blanc à discuter, cinq…",
+   "readTime": "3 min de lecture",
+   "words": 684,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "3 min de lecture",
+    "684 mots"
    ]
   },
   {

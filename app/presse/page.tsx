@@ -149,9 +149,9 @@ export default function Presse() {
       <section className="hub-section" id="contact">
         <SectionHead eyebrow="Contact presse" title="À qui écrire," em="et comment." />
         <div className="contact-card pr-contact">
-          <p>Le contact officiel de l’association est celui de son président, {ORG.bureau[0].name} : <a href={ORG.phoneHref}><strong>{ORG.phone}</strong></a>, appel et WhatsApp. Pour une demande écrite, le formulaire est le plus sûr, objet « Presse » ; aucune adresse électronique n’est encore rattachée au domaine lonodji.org.</p>
+          <p>Le contact officiel de l’association est celui de son président, {ORG.bureau[0].name} : <a href={ORG.phoneHref}><strong>{ORG.phone}</strong></a>, appel et WhatsApp. Pour une demande écrite, le formulaire est le plus sûr, objet « Partenariat, presse ou recherche » ; aucune adresse électronique n’est encore rattachée au domaine lonodji.org.</p>
           <div className="hero-actions">
-            <Link className="button primary" href="/participer#contact">Nous écrire <span aria-hidden="true">→</span></Link>
+            <Link className="button primary" href="/participer?objet=presse#contact">Nous écrire <span aria-hidden="true">→</span></Link>
             <a className="text-link" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>
           </div>
         </div>

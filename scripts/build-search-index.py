@@ -109,6 +109,9 @@ PAGES_SITE.append({"t": "Observatoire du Mandoul Occidental", "r": "/observatoir
 PAGES_SITE.append({"t": "Espace presse et partenaires", "r": "/presse", "k": "Page",
      "d": "ADEB LONODJI en cinq lignes, les chiffres datés, six dates, le bureau, les communiqués, les logos et leurs règles, le dossier de présentation, le livre blanc, et à qui écrire.",
      "x": "presse journalistes partenaires bailleurs médias communiqué citation en bref chiffres dates 1986 1995 2000 2003 2026 bureau président contact logo pictogramme SVG PNG dossier de présentation livre blanc droit de réponse exactitude protection des personnes"})
+PAGES_SITE.append({"t": "The ODEB LONODJI project — Vision 2030 (in English)", "r": "/en/odeb", "k": "In English",
+     "d": "A project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030: six missions, five programmes, a roadmap, a white paper.",
+     "x": "ODEB LONODJI project English vision 2030 organisation development emergence Bedjond people missions research documentation territorial development innovation heritage diaspora programmes roadmap white paper take part skills register"})
 entries.extend(PAGES_SITE)
 
 for f in sorted((CONTENT / "articles").glob("*.json")):

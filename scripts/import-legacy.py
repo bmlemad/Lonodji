@@ -614,6 +614,13 @@ UPDATES_SOURCE = [
     ('<p class="coord">Coordonnateur&nbsp;: Félix Mbété Nangmbatnan</p>', '<p class="coord">Coordonnateur&nbsp;: Dr Yaphete Madjiradé</p>'),
     ('<p class="coord">Coordinator: F&eacute;lix Mb&eacute;t&eacute; Nangmbatnan</p>', '<p class="coord">Coordinator: Dr Yaphete Madjirad&eacute;</p>'),
     ('"coord": "Coordonnateur : Félix Mbété Nangmbatnan",', '"coord": "Coordonnateur : Dr Yaphete Madjiradé",'),
+    # 28/09/2026 : objet « Le projet ODEB LONODJI » dans le formulaire de contact (remarques sur le livre blanc)
+    ('              <option data-objet="partenariat">Partenariat, presse ou recherche</option>\n',
+     '              <option data-objet="odeb">Le projet ODEB LONODJI (livre blanc, remarques, contributions)</option>\n              <option data-objet="partenariat">Partenariat, presse ou recherche</option>\n'),
+    # 28/09/2026 : la page anglaise renvoie au projet ODEB LONODJI et ne parle plus de « thirteen themes still open »
+    ('      <div class="eyebrow">How to help</div>\n      <h2>Join, give, share your skills, spread the word</h2>\n',
+     '      <div class="eyebrow">Vision 2030</div>\n      <h2>The ODEB LONODJI project</h2>\n      <p>On 28 September 2026, forty years after its founding reflections of 1986, the association launched the ODEB LONODJI reflection: a project to give the Bedjond country a permanent organisation for research, documentation, territorial development, innovation, heritage and diaspora mobilisation by 2030. Six missions, five programmes, a roadmap and a white paper (working draft, in French). <a href="odeb.html">Read the summary in English &rarr;</a></p>\n      <div class="eyebrow">How to help</div>\n      <h2>Join, give, share your skills, spread the word</h2>\n'),
+    ('coordinate one of the thirteen themes still open,', 'coordinate one of the themes still open (see the list on the themes page),'),
     # nominations de coordonnateurs : générées depuis NOMINATIONS (voir plus bas), ajoutées à l'exécution
     # la tuile « à pourvoir » pointait vers la thématique 04, désormais pourvue
     ('<a class="bento-tile" href="#agriculture-elevage-securite-alimentaire" aria-label="13 thématiques', '<a class="bento-tile" href="#entrepreneuriat-finance-inclusive" aria-label="13 thématiques'),

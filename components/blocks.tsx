@@ -1,11 +1,18 @@
 import Link from "next/link";
 import type { ArticleSummary, DocumentItem, Plaidoyer, Thematique } from "../lib/content";
 
+/* Adresse du site pour les données structurées (pas d'import de lib/content : ce module sert aussi côté client). */
+const SITE = "https://lonodji.org";
+
 export function PageHeader({ eyebrow, title, em, lead, crumbs, pills }: {
   eyebrow: string; title: string; em?: string; lead?: string; crumbs?: { label: string; href?: string }[]; pills?: string[];
 }) {
+  const fil = crumbs?.length
+    ? { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Accueil", item: SITE + "/" }, ...crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 2, name: c.label, ...(c.href ? { item: SITE + c.href } : {}) }))] }
+    : null;
   return (
     <>
+      {fil ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(fil) }} /> : null}
       {crumbs?.length ? (
         <nav className="lg-crumbs" aria-label="Fil d’Ariane">
           <ol>

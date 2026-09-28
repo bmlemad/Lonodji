@@ -160,7 +160,7 @@ export default function LivreBlanc() {
           <section id="statut" className="od-chap">
             <h2><span>10.</span> Statut du document</h2>
             <p>Ce texte est la <strong>version de travail n° 1</strong> du livre blanc, établie le {ODEB.presenteLabel} à partir des documents de stratégie de l’association. Il n’a été adopté par aucune instance ; il n’engage pas l’association au-delà de ce que ses pages publiques engagent déjà. Les chiffres qu’il cite sont ceux du site à la date de mise en ligne, et la version PDF est produite à partir de cette page.</p>
-            <p>Il sera amendé sur remarques et objections — <Link href="/participer#contact">par le formulaire</Link>, objet « Projet ODEB », ou par WhatsApp — puis soumis aux instances de l’association. Chaque nouvelle version sera datée et numérotée ici ; les versions précédentes resteront lisibles dans les <Link href="/archives">archives du site</Link>.</p>
+            <p>Il sera amendé sur remarques et objections — <Link href="/participer?objet=odeb#contact">par le formulaire</Link>, objet « Le projet ODEB LONODJI », ou par WhatsApp — puis soumis aux instances de l’association. Chaque nouvelle version sera datée et numérotée ici ; les versions précédentes resteront lisibles dans les <Link href="/archives">archives du site</Link>.</p>
             <p className="od-signature">{ORG.name} · {ORG.motto}</p>
           </section>
         </article>
