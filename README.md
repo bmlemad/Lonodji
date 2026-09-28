@@ -31,6 +31,12 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 - `scripts/build-search-index.py` — génère `public/search-index.json` pour la page `/recherche` (à relancer après toute modification de `content/`).
 - `scripts/build-og.py` — génère les images de partage `public/og/*.jpg` (une par page, titres et descriptions lus dans le site construit : lancer `npm run build` avant, puis relancer le build pour les déclarer).
 
+## Espace de rédaction privé
+
+- `/redaction` (noindex, lien discret « Rédaction » en pied de page) : écriture des articles en brouillon, aperçu dans le style du journal, rubrique, statut, enregistrement automatique, export `.md`. Mot de passe unique choisi à la première visite (scrypt + sel), jeton de session HMAC dérivé du hash courant (changer le mot de passe déconnecte tout), cinq erreurs bloquent l’entrée un quart d’heure. Mot de passe en POST seulement, jeton en en-tête `Authorization`.
+- API `app/api/redaction/route.ts` ; logique et stockage dans `lib/redaction.ts` — magasin Netlify Blobs `adeb-redaction` en production, fichier `.netlify/redaction-dev.json` en local.
+- La publication reste une décision éditoriale : un brouillon « prêt » est exporté puis intégré au journal (`content/articles/`).
+
 ## Couche appli mobile
 
 - `public/.well-known/assetlinks.json` — lien entre le site et l’appli Android (`org.lonodji.app`) ; y ajouter les empreintes des clés Google Play après le premier envoi.

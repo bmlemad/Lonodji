@@ -44,7 +44,7 @@ export default function Archives() {
         <SectionHead eyebrow="Ce qui a changé" title="Une nouvelle base technique," em="le même contenu." text="Le 27 septembre 2026, le site a été refondu sur une base moderne (Next.js) et mis en ligne sur lonodji.org. Le 28 septembre, le contenu de la première version y a été réintégré." />
         <div className="detail-grid">
           <article><span>01</span><h3>Adresse</h3><p>Le site vit désormais sur lonodji.org. Les anciennes adresses de page ont été réécrites vers les nouvelles.</p></article>
-          <article><span>02</span><h3>Les outils en ligne</h3><p>La recherche interne, l’orientation « Trouver ma thématique » et le cahier généalogique en ligne fonctionnent de nouveau. L’espace de rédaction privé du journal sera reconstruit sur la nouvelle base ; d’ici là, les articles sont proposés par le formulaire.</p></article>
+          <article><span>02</span><h3>Les outils en ligne</h3><p>La recherche interne, l’orientation « Trouver ma thématique », le cahier généalogique en ligne et l’espace de rédaction privé du journal fonctionnent de nouveau ; la lecture hors ligne et l’appli mobile retrouvent le site depuis le 28 septembre.</p></article>
           <article><span>03</span><h3>Ce qui reste à faire</h3><p>Les photographies de Bédjondo et de ses membres, le sens du nom « Lonodji », les documents constitutifs et les adresses e-mail @lonodji.org.</p></article>
         </div>
       </section>

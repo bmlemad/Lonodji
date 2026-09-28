@@ -116,13 +116,8 @@ const nextConfig = {
             permanent: true
       },
       {
-            source: "/redaction",
-            destination: "/",
-            permanent: true
-      },
-      {
             source: "/redaction.html",
-            destination: "/",
+            destination: "/redaction",
             permanent: true
       },
       {
@@ -463,6 +458,21 @@ const nextConfig = {
         // le service worker doit toujours être revérifié, jamais servi longtemps depuis un cache
         source: "/sw.js",
         headers: [{ key: "Cache-Control", value: "no-cache" }],
+      },
+      {
+        // espace de rédaction privé : jamais indexé, jamais mis en cache
+        source: "/redaction",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          { key: "Cache-Control", value: "no-store" },
+        ],
+      },
+      {
+        source: "/api/redaction",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          { key: "Cache-Control", value: "no-store" },
+        ],
       },
       {
         // lien appli Android ↔ site (Digital Asset Links)

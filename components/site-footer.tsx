@@ -41,7 +41,7 @@ export default function SiteFooter() {
       </div>
       <div className="footer-bottom">
         <span>{ORG.motto}</span>
-        <span>© 2026 {ORG.name} · <Link href="/plan-du-site">Plan du site</Link> · <Link href="/en/index">English</Link></span>
+        <span>© 2026 {ORG.name} · <Link href="/plan-du-site">Plan du site</Link> · <Link href="/en/index">English</Link> · <Link href="/redaction" rel="nofollow">Rédaction</Link></span>
         <a href="#main-content">Retour en haut ↑</a>
       </div>
     </footer>
