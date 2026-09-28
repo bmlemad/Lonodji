@@ -49,8 +49,11 @@ HUB_ROUTES = {
     "hors-ligne": "/",
     "404": "/",
     "redaction": "/",
-    "trouver-ma-thematique": "/programmes#thematiques",
-    "genealogie-outil": "/dossiers/genealogies",
+}
+# Scripts de page (outils interactifs), servis depuis public/
+PAGE_SCRIPTS = {
+    "trouver-ma-thematique": ["/trouver.js"],
+    "genealogie-outil": ["/genealogie.js"],
 }
 # Pages portées telles quelles sous /dossiers/<slug>
 DOSSIERS = [
@@ -59,6 +62,7 @@ DOSSIERS = [
     "engagements", "enquetes", "environnement", "espace-numerique", "evenements", "genealogies",
     "handicap", "identite-visuelle", "kit-mobilisation", "lieux-sacres", "odd", "ong-partenaires",
     "problematiques", "recherche", "solidarite-inclusion", "veuves",
+    "trouver-ma-thematique", "genealogie-outil",
 ]
 # Pages de fond dont les sections alimentent une page conçue
 HUB_PAGES = ["mission", "poles", "plaidoyers", "suivi", "contact", "adherer", "soutenir",
@@ -182,8 +186,7 @@ def clean_tree(root: Tag, base_dir: str, collected_forms: dict):
                 if f.has_attr(attr):
                     del f[attr]
             # remplace le libellé d'accord (adresse chez Netlify) : inchangé, conforme aux mentions
-        else:
-            f.decompose()
+        # les formulaires sans nom sont des outils locaux (cahier généalogique) : conservés tels quels
     # les attributs `style` avec variables ODD sont conservés ; on retire les data-* d'interactivité inutiles
     for el in root.find_all(True):
         for attr in list(el.attrs):
@@ -214,6 +217,7 @@ def parse_page(path: Path):
     base_dir = str(path.parent.relative_to(LEGACY)).replace(".", "")
     main = soup.find("main")
     head = soup.find("head")
+    root_attrs = {k: v for k, v in main.attrs.items() if k.startswith("data-")}
     meta_desc = head.find("meta", attrs={"name": "description"})
     title_tag = head.find("title")
     forms = {}
@@ -300,6 +304,8 @@ def parse_page(path: Path):
     data["words"] = len(plain.split())
     data["forms"] = sorted(forms.keys())
     data["hasMap"] = any("data-geo" in s["html"] for s in sections)
+    data["scripts"] = PAGE_SCRIPTS.get(path.stem, []) if base_dir == "" else []
+    data["rootAttrs"] = {k: (v if isinstance(v, str) else " ".join(v)) for k, v in root_attrs.items()}
     return data, forms
 
 
@@ -510,6 +516,46 @@ def apply_updates(html: str) -> str:
 
 
 # ----------------------------------------------------------------------------
+# Scripts interactifs : rendus ré-initialisables et liens réécrits
+# ----------------------------------------------------------------------------
+
+def adapt_script(name: str, init_name: str, find: str = "", replace: str = "", root_sel: str = ""):
+    src = LEGACY / name
+    if not src.exists():
+        return
+    js = src.read_text(encoding="utf-8")
+    head = js.find("(function () {")
+    tail = js.rfind("})();")
+    if head < 0 or tail < 0:
+        raise SystemExit(f"{name} : enveloppe IIFE introuvable")
+    body = js[head + len("(function () {"):tail]
+    if find:
+        body = body.replace(find, replace)
+    # liens de l'ancien site dans les chaînes JavaScript
+    def repl(m):
+        target = m.group(1)
+        return "'" + rewrite_href(target, "") if m.group(0).startswith("'") else '"' + rewrite_href(target, "")
+    # d'abord les préfixes ouverts (« poles.html# » + id, « contact.html?theme= » + clé), puis les liens complets
+    body = re.sub(r"'([a-z0-9-]+)\.html\?theme='", lambda m: "'" + rewrite_href(m.group(1) + ".html", "").split("#")[0] + "?theme='", body)
+    body = re.sub(r"'([a-z0-9-]+)\.html#'", lambda m: "'" + rewrite_href(m.group(1) + ".html", "").split("#")[0] + "#'", body)
+    body = re.sub(r"'([a-z0-9-]+\.html(?:[#?][^']*)?)'", lambda m: "'" + rewrite_href(m.group(1), "") + "'", body)
+    body = re.sub(r'"([a-z0-9-]+\.html(?:[#?][^"]*)?)"', lambda m: '"' + rewrite_href(m.group(1), "") + '"', body)
+    # l'init d'origine s'exécute au chargement ; DOMContentLoaded est déjà passé quand Next l'injecte
+    body = body.replace("if (document.readyState === 'loading') {\n    document.addEventListener('DOMContentLoaded', init);\n  } else {\n    init();\n  }", "init();")
+    guard = ""
+    if root_sel:
+        guard = ("\n  var __root = document.querySelector(" + json.dumps(root_sel) + ");"
+                 "\n  if (!__root || __root.__inited) return;\n  __root.__inited = true;")
+    m = re.match(r"(\s*'use strict';)", body)
+    if m:
+        body = m.group(1) + guard + body[m.end():]
+    else:
+        body = guard + body
+    out = js[:head] + "window." + init_name + " = function () {" + body + "};\nwindow." + init_name + "();\n"
+    (PUBLIC / name).write_text(out, encoding="utf-8")
+
+
+# ----------------------------------------------------------------------------
 # Programme principal
 # ----------------------------------------------------------------------------
 
@@ -591,9 +637,13 @@ def main():
             if dst.exists():
                 shutil.rmtree(dst)
             shutil.copytree(src, dst)
-    for f in ("og-image.png", "favicon.svg", "geo.js"):
+    for f in ("og-image.png", "favicon.svg"):
         if (LEGACY / f).exists():
             shutil.copy2(LEGACY / f, PUBLIC / f)
+    adapt_script("geo.js", "__initGeo", "var figures = document.querySelectorAll('[data-geo]');",
+                 "var figures = document.querySelectorAll('[data-geo]:not([data-geo-pret])');")
+    adapt_script("trouver.js", "__initTrouver", root_sel="[data-tm]")
+    adapt_script("genealogie.js", "__initGenealogie", root_sel="#gn-outil")
     print(f"pages : {len(index['pages'])} · articles : {len(index['articles'])} · formulaires : {len(all_forms)} · "
           f"thématiques : {sum(len(p['items']) for p in index['structure']['poles'])} · plaidoyers : {len(index['plaidoyers'])} · documents : {len(index['documents'])}")
 

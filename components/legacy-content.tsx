@@ -78,12 +78,12 @@ export function LegacyDocument({ page, children, eyebrowPrefix }: { page: Legacy
       {page.lede ? <p className="detail-lead">{page.lede}</p> : null}
       {page.pills?.length ? <div className="status-list lg-pills">{page.pills.map((p) => <span key={p}>{p}</span>)}</div> : null}
       {children}
-      <div className="legacy">
+      <div className="legacy" {...(page.rootAttrs ?? {})}>
         <Resume items={page.resume} />
         <Toc items={page.toc} />
         <LegacySections sections={page.sections} />
       </div>
-      <LegacyEnhance hasMap={page.hasMap} hasForms={page.forms.length > 0} />
+      <LegacyEnhance hasMap={page.hasMap} hasForms={page.forms.length > 0} scripts={page.scripts} />
       <p className="lg-footnote">Page reprise de la première version du site (septembre 2026) et maintenue à jour ici. Une erreur de fait ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
     </main>
   );

@@ -29,6 +29,8 @@
  "words": 393,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "en/about",
  "route": "/en/about",
  "kind": "en"

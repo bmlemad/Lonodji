@@ -36,6 +36,8 @@
  "words": 159,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "evenements",
  "route": "/dossiers/evenements",
  "kind": "dossier"

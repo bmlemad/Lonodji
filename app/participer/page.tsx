@@ -46,7 +46,8 @@ export default function Participer() {
         <SectionHead eyebrow="Avant de vous lancer" title="Choisissez un pôle," em="puis une thématique." text="Dix-neuf thématiques, treize sans coordonnateur. La page Nos actions les détaille ; ce raccourci vous oriente en quelques questions." />
         <div className="legacy"><LegacySections sections={[choisir, avant]} /></div>
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
-          <Link className="button primary" href="/programmes#thematiques">Voir les dix-neuf thématiques <span aria-hidden="true">↗</span></Link>
+          <Link className="button primary" href="/dossiers/trouver-ma-thematique">Trouver ma thématique en trois questions <span aria-hidden="true">↗</span></Link>
+          <Link className="button secondary" href="/programmes#thematiques">Voir les dix-neuf thématiques <span aria-hidden="true">→</span></Link>
         </div>
       </section>
 

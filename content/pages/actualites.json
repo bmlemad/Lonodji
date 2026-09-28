@@ -44,6 +44,8 @@
   "lettre-info"
  ],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "actualites",
  "route": "/journal",
  "kind": "hub"

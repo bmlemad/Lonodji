@@ -145,6 +145,8 @@
  "words": 4428,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "mission",
  "route": "/mission",
  "kind": "hub"

@@ -71,6 +71,8 @@
  "words": 2255,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "en/themes",
  "route": "/en/themes",
  "kind": "en"

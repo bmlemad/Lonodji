@@ -30,6 +30,8 @@
   "message-en"
  ],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "en/contact",
  "route": "/en/contact",
  "kind": "en"

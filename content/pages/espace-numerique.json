@@ -53,6 +53,8 @@
   "promesse-contribution"
  ],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "espace-numerique",
  "route": "/dossiers/espace-numerique",
  "kind": "dossier"

@@ -87,6 +87,8 @@
  "words": 1558,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "environnement",
  "route": "/dossiers/environnement",
  "kind": "dossier"

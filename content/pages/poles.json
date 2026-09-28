@@ -137,6 +137,8 @@
  "words": 4839,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "poles",
  "route": "/programmes",
  "kind": "hub"

@@ -27,6 +27,8 @@ export type LegacyPage = {
   words: number;
   forms: string[];
   hasMap: boolean;
+  scripts?: string[];
+  rootAttrs?: Record<string, string>;
 };
 
 export type Article = LegacyPage & {

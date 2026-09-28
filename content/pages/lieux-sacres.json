@@ -143,6 +143,8 @@
   "lieu-sacre"
  ],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "lieux-sacres",
  "route": "/dossiers/lieux-sacres",
  "kind": "dossier"

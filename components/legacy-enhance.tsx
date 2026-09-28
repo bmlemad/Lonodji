@@ -4,15 +4,17 @@ import Script from "next/script";
 import { useEffect, useRef } from "react";
 
 declare global {
-  interface Window { __initGeo?: () => void }
+  interface Window { __initGeo?: () => void; __initTrouver?: () => void; __initGenealogie?: () => void }
 }
+
+const INIT: Record<string, keyof Window> = { "/geo.js": "__initGeo", "/trouver.js": "__initTrouver", "/genealogie.js": "__initGenealogie" };
 
 /**
  * Améliorations côté navigateur du contenu importé :
  * - envoi des formulaires Netlify sans quitter la page, avec accusé de réception ;
  * - initialisation de la carte du pays bedjond (geo.js) quand la page en contient une.
  */
-export default function LegacyEnhance({ hasMap = false, hasForms = false }: { hasMap?: boolean; hasForms?: boolean }) {
+export default function LegacyEnhance({ hasMap = false, hasForms = false, scripts = [] }: { hasMap?: boolean; hasForms?: boolean; scripts?: string[] }) {
   const done = useRef(false);
 
   useEffect(() => {
@@ -52,6 +54,13 @@ export default function LegacyEnhance({ hasMap = false, hasForms = false }: { ha
     return () => { cleanups.forEach((c) => c()); done.current = false; };
   }, [hasForms]);
 
-  if (!hasMap) return null;
-  return <Script src="/geo.js" strategy="afterInteractive" onReady={() => window.__initGeo?.()} />;
+  const srcs = [...(hasMap ? ["/geo.js"] : []), ...scripts];
+  if (!srcs.length) return null;
+  return (
+    <>
+      {srcs.map((src) => (
+        <Script key={src} src={src} strategy="afterInteractive" onReady={() => { const fn = window[INIT[src]] as unknown as (() => void) | undefined; fn?.(); }} />
+      ))}
+    </>
+  );
 }

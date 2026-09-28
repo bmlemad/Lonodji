@@ -129,6 +129,8 @@
  "words": 3739,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "agriculture-securite-alimentaire",
  "route": "/dossiers/agriculture-securite-alimentaire",
  "kind": "dossier"

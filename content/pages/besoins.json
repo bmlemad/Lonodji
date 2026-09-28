@@ -53,6 +53,8 @@
   "signalement-besoin"
  ],
  "hasMap": true,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "besoins",
  "route": "/dossiers/besoins",
  "kind": "dossier"

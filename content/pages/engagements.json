@@ -44,6 +44,8 @@
  "words": 1947,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "engagements",
  "route": "/dossiers/engagements",
  "kind": "dossier"

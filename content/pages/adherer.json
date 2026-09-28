@@ -131,6 +131,8 @@
   "intention-adhesion"
  ],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "adherer",
  "route": "/participer",
  "kind": "hub"

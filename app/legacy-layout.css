@@ -166,3 +166,4 @@
   .legacy .tl-item{ grid-template-columns:1fr; gap:4px; }
   .legacy > .lg-section.alt{ padding:26px 18px 18px; border-radius:18px; }
 }
+.legacy .pole-hub-link, .legacy .pole-hub-links a, .legacy .tm-links a{ font-family:var(--font-dm),system-ui,sans-serif; font-size:13px; letter-spacing:0; }

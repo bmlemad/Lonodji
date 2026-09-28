@@ -110,6 +110,8 @@
  "words": 5088,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "problematiques",
  "route": "/dossiers/problematiques",
  "kind": "dossier"

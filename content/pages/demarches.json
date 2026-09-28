@@ -140,6 +140,8 @@
  "words": 3842,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "demarches",
  "route": "/dossiers/demarches",
  "kind": "dossier"

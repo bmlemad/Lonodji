@@ -67,6 +67,8 @@
   "temoignage-lignee"
  ],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "figures",
  "route": "/histoire",
  "kind": "hub"

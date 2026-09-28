@@ -96,6 +96,8 @@
  "words": 2102,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "enquetes",
  "route": "/dossiers/enquetes",
  "kind": "dossier"

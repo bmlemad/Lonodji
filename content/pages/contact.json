@@ -54,6 +54,8 @@
   "proposition-article"
  ],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "contact",
  "route": "/participer",
  "kind": "hub"

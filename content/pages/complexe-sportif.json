@@ -170,6 +170,8 @@
  "words": 2985,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "complexe-sportif",
  "route": "/dossiers/complexe-sportif",
  "kind": "dossier"

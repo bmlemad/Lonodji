@@ -109,6 +109,8 @@
   "plainte"
  ],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "redevabilite",
  "route": "/transparence",
  "kind": "hub"

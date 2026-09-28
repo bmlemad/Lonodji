@@ -13,8 +13,8 @@
    simple deplace la carte. La molette seule ne capture jamais le
    defilement de la page : il faut Ctrl (ou Cmd) pour zoomer.
    ------------------------------------------------------------------ */
-(function () {
-  var figures = document.querySelectorAll('[data-geo]');
+window.__initGeo = function () {
+  var figures = document.querySelectorAll('[data-geo]:not([data-geo-pret])');
   if (!figures.length) return;
 
   var ZOOM_MAX = 9;
@@ -320,4 +320,5 @@
     var c = Carte(f);
     if (c) window.__cartes.push(c);
   });
-})();
+};
+window.__initGeo();

@@ -37,6 +37,8 @@
  "words": 674,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "kit-mobilisation",
  "route": "/dossiers/kit-mobilisation",
  "kind": "dossier"

@@ -313,6 +313,30 @@
    "hasMap": false
   },
   {
+   "slug": "trouver-ma-thematique",
+   "route": "/dossiers/trouver-ma-thematique",
+   "kind": "dossier",
+   "title": "Quelle thématique pour vous ?",
+   "eyebrow": "Agir avec nous",
+   "lede": "Dix-neuf thématiques, dont treize sans coordonnateur. Cochez ce que vous savez faire ou ce qui vous tient à cœur, dites-nous où vous êtes et combien de temps vous pouvez donner : nous vous proposons les thématiques où vous seriez le plus utile, et le bon interlocuteur. Rien n’est envoyé tant que vous n’avez pas écrit.",
+   "description": "Cochez ce que vous savez faire ou ce qui vous tient à cœur : nous vous proposons les thématiques d’ADEB LONODJI où vous seriez le plus utile. Treize attendent un coordonnateur.",
+   "parent": "Agir avec nous",
+   "words": 348,
+   "hasMap": false
+  },
+  {
+   "slug": "genealogie-outil",
+   "route": "/dossiers/genealogie-outil",
+   "kind": "dossier",
+   "title": "Cahier généalogique en ligne",
+   "eyebrow": "Mémoire & héritage",
+   "lede": "La même méthode que le cahier papier, avec ce que l’écran sait faire de mieux : calculer le décalage des générations et trouver les incohérences. Tout reste sur votre appareil.",
+   "description": "La version électronique du cahier généalogique : saisie, vue par maison, liste de descendance calculée, vérifications. Rien ne sort de votre navigateur.",
+   "parent": "Généalogies",
+   "words": 928,
+   "hasMap": false
+  },
+  {
    "slug": "mission",
    "route": "/mission",
    "kind": "hub",
@@ -2628,7 +2652,7 @@
     },
     {
      "label": "Version en ligne →",
-     "href": "/dossiers/genealogies"
+     "href": "/dossiers/genealogie-outil"
     }
    ]
   },

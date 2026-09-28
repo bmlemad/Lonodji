@@ -14,6 +14,7 @@ const groups: [string, string[]][] = [
   ["Projets à l’étude", ["air-bedjondo", "complexe-sportif", "espace-numerique", "drones-innovation", "application", "agriculture-securite-alimentaire", "environnement"]],
   ["Personnes vulnérables et paix", ["solidarite-inclusion", "veuves", "handicap", "agriculteurs-eleveurs"]],
   ["Bédjondo et patrimoine", ["bedjondo", "lieux-sacres", "genealogies", "recherche", "identite-visuelle", "evenements", "kit-mobilisation"]],
+  ["Outils en ligne", ["trouver-ma-thematique", "genealogie-outil"]],
 ];
 
 export default function Dossiers() {

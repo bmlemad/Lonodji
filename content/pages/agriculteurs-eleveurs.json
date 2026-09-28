@@ -107,6 +107,8 @@
  "words": 2213,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "agriculteurs-eleveurs",
  "route": "/dossiers/agriculteurs-eleveurs",
  "kind": "dossier"

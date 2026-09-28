@@ -132,6 +132,8 @@
   "veuves"
  ],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "veuves",
  "route": "/dossiers/veuves",
  "kind": "dossier"

@@ -140,3 +140,14 @@ footer.site-footer{ display:block; }
 .contact-cta .big{ font-family:var(--font-playfair),Georgia,serif; font-size:30px; color:var(--deep); letter-spacing:-.02em; }
 .contact-cta small{ font-size:13px; color:#607069; }
 .program-card .program-body{ padding-right:34px; }
+.search-box{ max-width:820px; }
+.search-results{ list-style:none; margin:0; padding:0; }
+.search-results li{ padding:18px 0; border-top:1px solid var(--line); }
+.search-results small{ display:block; font-size:10px; text-transform:uppercase; letter-spacing:.14em; color:#607069; margin-bottom:6px; }
+.search-results a{ font-size:20px; font-weight:600; letter-spacing:-.02em; }
+.search-results a:hover{ text-decoration:underline; text-underline-offset:4px; }
+.search-results p{ margin:6px 0 0; color:#4f5f58; line-height:1.6; font-size:14.5px; }
+.search-results mark{ background:#e9f2c8; color:var(--ink); padding:0 2px; border-radius:3px; }
+.nav-search{ display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:12px; border:1px solid var(--line); background:rgba(255,255,255,.72); color:var(--ink); flex:none; }
+.nav-search:hover{ background:rgba(23,59,45,.07); }
+@media (max-width:800px){ .nav-search{ width:34px; height:34px; order:2; margin-left:auto; } .nav-cta{ margin-left:0; } }

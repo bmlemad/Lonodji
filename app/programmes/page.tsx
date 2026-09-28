@@ -34,7 +34,8 @@ export default function Programmes() {
       ]} />
       <div className="section-actions" style={{ justifyContent: "flex-start", marginBottom: 40 }}>
         <Link className="button primary" href="/participer?coordo=1#contact">Proposer ma candidature <span aria-hidden="true">↗</span></Link>
-        <Link className="button secondary" href="/impact">Voir le tableau de suivi <span aria-hidden="true">→</span></Link>
+        <Link className="button secondary" href="/dossiers/trouver-ma-thematique">Trouver ma thématique <span aria-hidden="true">→</span></Link>
+        <Link className="text-link" href="/impact">Tableau de suivi <span aria-hidden="true">→</span></Link>
       </div>
 
       <div id="thematiques">

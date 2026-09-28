@@ -93,6 +93,8 @@
  "words": 1575,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "drones-innovation",
  "route": "/dossiers/drones-innovation",
  "kind": "dossier"

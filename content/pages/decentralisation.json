@@ -58,6 +58,8 @@
  "words": 1619,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "decentralisation",
  "route": "/dossiers/decentralisation",
  "kind": "dossier"

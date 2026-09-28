@@ -88,6 +88,8 @@
   "soutien-plaidoyer"
  ],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "plaidoyers",
  "route": "/actions",
  "kind": "hub"

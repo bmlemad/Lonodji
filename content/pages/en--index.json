@@ -57,6 +57,8 @@
  "words": 479,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "en/index",
  "route": "/en/index",
  "kind": "en"

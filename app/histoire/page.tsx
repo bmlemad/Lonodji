@@ -15,6 +15,7 @@ const dossiers = [
   { href: "/dossiers/bedjondo", label: "Bédjondo", note: "Le village devenu ville : repères, langue, statut de commune, carte interactive du pays bedjond." },
   { href: "/dossiers/lieux-sacres", label: "Lieux sacrés", note: "Sites sacrés et sépultures à protéger, avec le cahier de recensement." },
   { href: "/dossiers/genealogies", label: "Généalogies", note: "Écrire l’histoire de sa famille avec le cahier généalogique." },
+  { href: "/dossiers/genealogie-outil", label: "Cahier généalogique en ligne", note: "Saisie, vue par maison, liste de descendance, export : tout reste dans votre navigateur." },
   { href: "/dossiers/recherche", label: "Base de recherche", note: "Quarante références sur le peuple sara, les Bedjond et leur langue, dont les travaux de Djarangar Djita Issa." },
   { href: "/dossiers/identite-visuelle", label: "Identité visuelle", note: "Logo, couleurs et signes : la carte des sept unités du cœur, la frise des onze chefs." },
   { href: "/dossiers/evenements", label: "Événements", note: "Assemblées, lancements et rencontres : les dates annoncées et celles à fixer." },

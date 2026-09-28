@@ -129,6 +129,8 @@
  "words": 3298,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "solidarite-inclusion",
  "route": "/dossiers/solidarite-inclusion",
  "kind": "dossier"

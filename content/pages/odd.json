@@ -29,6 +29,8 @@
  "words": 576,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "odd",
  "route": "/dossiers/odd",
  "kind": "dossier"

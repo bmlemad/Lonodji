@@ -593,6 +593,15 @@
 .legacy .mobil-list .is-open .fi{color:var(--terre);}
 @media (prefers-reduced-motion: no-preference){@keyframes cue-bob{0%,100%{ transform:translate(-50%, 0); } 50%{ transform:translate(-50%, 6px); }}}
 @media (prefers-reduced-motion: no-preference){@keyframes ticker-scroll{to{ transform:translateX(-50%); }}}
+.legacy .poles-tabs{display:flex; gap:.6rem; flex-wrap:wrap; margin-bottom:1.4rem;}
+.legacy .poles-tab{display:inline-flex; align-items:center; gap:.7rem;
+  padding:.65rem 1.1rem .65rem .7rem; border-radius:var(--r-pill);
+  border:1.5px solid var(--glass-border); background:var(--glass-bg);
+  backdrop-filter:blur(16px) saturate(170%); -webkit-backdrop-filter:blur(16px) saturate(170%);
+  color:var(--ink); font-family:var(--font-dm),system-ui,sans-serif; font-weight:600; font-size:var(--fs-md); cursor:pointer;
+  transition:border-color .2s ease, color .2s ease, background-color .2s ease, transform .18s ease;}
+.legacy .poles-tab:hover{border-color:var(--or); transform:translateY(-1px);}
+.legacy .poles-tab.is-active{background:var(--terre); color:#FFFFFF; border-color:transparent; box-shadow:0 10px 24px rgba(11,91,194,.25);}
 @media (prefers-reduced-motion: no-preference){@keyframes chip-in{from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; }}}
 .legacy .map-grid{display:grid; grid-template-columns:1.3fr .7fr; gap:2rem; align-items:start;}
 @media (max-width:860px){.legacy .map-grid{grid-template-columns:1fr;}}
@@ -847,10 +856,22 @@
 .legacy .fiche dl{grid-template-columns:1fr; gap:.05rem;}
 .legacy .fiche dt{margin-top:.5rem;}}
 .legacy #gn-outil{margin-top:.4rem;}
+.legacy .gn-flash{margin:.5rem 0 0; min-height:1.2em; font-size:var(--fs-md); color:var(--ink-soft);}
+.legacy .gn-flash:empty{margin:0; min-height:0;}
+.legacy .gn-compteurs{margin-top:1rem;}
+.legacy .gn-barre{display:flex; flex-wrap:wrap; gap:.6rem; margin:1.2rem 0 .8rem;}
 .legacy .gn-barre .btn{margin:0;}
+.legacy .gn-danger{border-color:rgba(190,40,40,.45);}
+.legacy .gn-danger:hover{border-color:rgba(190,40,40,.75);}
+.legacy .gn-import{max-width:420px; margin:0 0 1.4rem;}
+.legacy .gn-import input[type="file"]{width:100%; padding:.55rem .6rem; font:inherit; font-size:var(--fs-md);
+  color:var(--ink); background:var(--glass-bg);
+  border:1px solid var(--glass-border); border-radius:var(--r-sm);}
+.legacy .gn-tabs{margin:1.6rem 0 1rem;}
 @media (max-width:560px){.legacy .gn-barre .btn{width:100%; justify-content:center;}}
 .legacy [hidden]{display:none !important;}
-@media print{.legacy #gn-vue-descendance, .legacy #gn-vue-maisons, .legacy #gn-vue-controles, .legacy #gn-vue-famille{display:block !important; visibility:visible !important;}
+@media print{.legacy .gn-barre, .legacy .gn-import, .legacy .gn-tabs, .legacy .gn-flash{display:none !important;}
+.legacy #gn-vue-descendance, .legacy #gn-vue-maisons, .legacy #gn-vue-controles, .legacy #gn-vue-famille{display:block !important; visibility:visible !important;}
 .legacy #gn-vue-descendance[hidden], .legacy #gn-vue-maisons[hidden], .legacy #gn-vue-controles[hidden], .legacy #gn-vue-famille[hidden]{display:block !important;}}
 .legacy .eyebrow{color:var(--terre-dim);}
 .legacy .pole-status--vacant{opacity:1;}
@@ -887,7 +908,7 @@
 @media (prefers-reduced-motion: reduce){.legacy .rubrique-card{transition:none;}
 .legacy .rubrique-card:hover{transform:none;}}
 .legacy .profil-search .btn .fi{width:18px; height:18px; margin-right:.45em;}
-@media (hover:none){.legacy input, .legacy select, .legacy textarea, .legacy .sort-field select, .legacy .kit-msg{font-size:1rem;}
+@media (hover:none){.legacy input, .legacy select, .legacy textarea, .legacy .sort-field select, .legacy .gn-import input[type="file"], .legacy .kit-msg{font-size:1rem;}
 .legacy .geo-btn{position:relative;}
 .legacy .geo-btn::after{content:""; position:absolute; inset:-5px;}
 .legacy .cite-btn:active, .legacy .book:active, .legacy .geo-btn:active, .legacy a.social-btn:active{transform:scale(.96);}}
@@ -1191,9 +1212,45 @@
 .legacy .btn > svg{flex:none;}}
 @media (max-width:400px){.legacy .bento{grid-template-columns:1fr;}
 .legacy .bento-tile.wide{grid-column:auto;}}
+.legacy .tm-chips{display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1.1rem;}
+.legacy .tm-chip{display:inline-flex; align-items:center; gap:.45rem; min-height:44px; padding:.55rem 1rem .55rem .85rem;
+  border:1.5px solid var(--rule); border-radius:var(--r-lg); background:var(--glass-bg); color:var(--ink);
+  font:inherit; font-size:var(--fs-sm); line-height:1.25; text-align:left; cursor:pointer;
+  transition:border-color .18s ease, background .18s ease, box-shadow .18s ease;}
+.legacy .tm-chip .tm-check{display:none; width:16px; height:16px; flex:none; color:var(--terre);}
+.legacy .tm-chip:hover{border-color:var(--savane);}
+.legacy .tm-chip[aria-pressed="true"]{background:color-mix(in srgb, var(--terre) 12%, transparent); border-color:var(--terre); box-shadow:0 0 0 3px color-mix(in srgb, var(--terre) 16%, transparent); font-weight:600;}
+.legacy .tm-chip[aria-pressed="true"] .tm-check{display:inline;}
+.legacy .tm-chip:focus-visible{outline:2px solid var(--focus); outline-offset:2px;}
+.legacy .tm-grid2{display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1.8rem;}
+.legacy .tm-field{border:1px solid var(--glass-border); border-radius:var(--r-md); background:var(--glass-bg); padding:.9rem 1.2rem 1.15rem; margin:0; min-width:0;}
+.legacy .tm-field legend{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:var(--fs-2xs); letter-spacing:.12em; text-transform:uppercase; color:var(--terre); padding:0 .4rem;}
+.legacy .tm-field-titre{margin:.15rem 0 .75rem; font-family:var(--font-playfair),Georgia,serif; font-weight:600; font-size:var(--fs-lg); line-height:1.25;}
+.legacy .tm-radios{display:flex; flex-wrap:wrap; gap:.5rem;}
+.legacy .tm-radio{position:relative; display:inline-block;}
+.legacy .tm-radio input{position:absolute; opacity:0; width:1px; height:1px; margin:0;}
+.legacy .tm-radio span{display:inline-flex; align-items:center; min-height:40px; padding:.42rem .95rem; border:1.5px solid var(--rule); border-radius:var(--r-lg); font-size:var(--fs-sm); color:var(--ink); cursor:pointer; transition:border-color .18s ease, background .18s ease;}
+.legacy .tm-radio span:hover{border-color:var(--savane);}
+.legacy .tm-radio input:checked + span{border-color:var(--terre); background:color-mix(in srgb, var(--terre) 12%, transparent); font-weight:600;}
+.legacy .tm-radio input:focus-visible + span{outline:2px solid var(--focus); outline-offset:2px;}
+.legacy .tm-note{margin:.75rem 0 0; font-size:var(--fs-xs); color:var(--ink-soft); line-height:1.5;}
+.legacy .tm-go{margin:1.6rem 0 0;}
+.legacy .tm-summary{margin:0 0 1.3rem; color:var(--ink-soft); max-width:72ch; line-height:1.55;}
+.legacy .tm-results{display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:1.1rem;}
 .legacy .tm-card .pole-status{position:static;}
 .legacy .tm-actions .btn{margin-right:.2rem;}
-@media print{.legacy [data-tm-reset]{display:none;}}
+.legacy .tm-steps{counter-reset:tm; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin:1.2rem 0 0; padding:0; list-style:none;}
+.legacy .tm-steps li{counter-increment:tm; padding:1rem 1.1rem 1.1rem; border:1px solid var(--glass-border); border-radius:var(--r-md); background:var(--glass-bg);}
+.legacy .tm-steps li::before{content:counter(tm, decimal-leading-zero); display:block; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:var(--fs-2xs); letter-spacing:.12em; color:var(--terre); margin-bottom:.4rem;}
+.legacy .tm-steps strong{display:block; margin-bottom:.3rem; font-family:var(--font-playfair),Georgia,serif; font-size:var(--fs-lg); font-weight:600;}
+.legacy .tm-steps p{margin:0; font-size:var(--fs-sm); color:var(--ink-soft); line-height:1.55;}
+.legacy .tm-after{margin-top:1.4rem;}
+@media (max-width:760px){.legacy .tm-grid2{grid-template-columns:1fr;}
+.legacy .tm-results{grid-template-columns:1fr;}
+.legacy .tm-chips{gap:.45rem;}
+.legacy .tm-chip{padding:.5rem .85rem;}}
+@media (prefers-reduced-motion: reduce){.legacy .tm-chip, .legacy .tm-chip .tm-check, .legacy .tm-radio span{transition:none;}}
+@media print{.legacy .tm-go, .legacy [data-tm-reset]{display:none;}}
 .legacy .frise-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:1.4rem 0 .4rem; padding-bottom:.4rem; scrollbar-width:thin;
   
   --frise-w:min(1120px, calc(100vw - 2 * clamp(18px, 5vw, 48px)));

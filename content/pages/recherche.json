@@ -58,6 +58,8 @@
  "words": 4046,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "recherche",
  "route": "/dossiers/recherche",
  "kind": "dossier"

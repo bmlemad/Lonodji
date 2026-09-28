@@ -143,6 +143,8 @@
   "handicap"
  ],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "handicap",
  "route": "/dossiers/handicap",
  "kind": "dossier"

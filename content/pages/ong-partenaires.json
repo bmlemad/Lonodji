@@ -118,6 +118,8 @@
  "words": 2819,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "ong-partenaires",
  "route": "/dossiers/ong-partenaires",
  "kind": "dossier"

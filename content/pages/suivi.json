@@ -97,6 +97,8 @@
  "words": 1476,
  "forms": [],
  "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
  "slug": "suivi",
  "route": "/impact",
  "kind": "hub"
