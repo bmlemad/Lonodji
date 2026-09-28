@@ -95,7 +95,7 @@
 .legacy .odd-row-name{ font-weight:600; }
 .legacy .odd-chip{ display:inline-flex; gap:6px; align-items:center; padding:4px 9px; border-radius:99px; margin:3px 4px 3px 0; font-size:12px; text-decoration:none; background:var(--odd-accent,#eef2e9); color:var(--odd-ink,var(--ink)); }
 .legacy .odd-num{ font-weight:700; }
-.legacy .odd-cible{ opacity:1; color:inherit; }
+.legacy .odd-cible, .legacy .odd-chip .odd-cible, .legacy .pole-odd .odd-cible{ opacity:1 !important; color:inherit !important; }
 .legacy .odd-legend{ font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:#607069; margin-right:8px; }
 .legacy .bento, .legacy .bento-compact{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:1.2em 0; }
 .legacy .bento-tile{ padding:18px; border:1px solid var(--line); border-radius:18px; }
