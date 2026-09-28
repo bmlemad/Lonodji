@@ -141,6 +141,7 @@ export default function Home() {
             <p>Bédjondo, chef-lieu du Mandoul Occidental, village devenu ville. Le pays bedjond compte sept sous-préfectures au cœur, des présences dans le Logone Oriental et une diaspora agricole au Moyen-Chari.</p>
           </div>
           <div className="link-list">
+            <Link href="/villages"><small>Retrouver son village</small><strong>966 localités, une fiche chacune</strong><span>Ce que les données ouvertes en savent, ce que le site en dit, ce qui reste à documenter — et le formulaire pour le faire.</span></Link>
             <Link href="/carte"><small>Carte du territoire</small><strong>Le pays bedjond, village par village</strong><span>Quatorze unités, leurs localités et équipements connus des données ouvertes ; une fiche par lieu, un bouton pour signaler.</span></Link>
             <Link href="/dossiers/bedjondo"><small>Bédjondo</small><strong>Repères, langue, statut de commune</strong><span>Avec la carte interactive du pays bedjond, sur contours administratifs vérifiés.</span></Link>
             <Link href="/dossiers/problematiques"><small>Diagnostic territorial</small><strong>Les problématiques documentées</strong><span>Eau, électricité, santé, école, routes, réseau : classées par domaine et reliées à leur thématique.</span></Link>

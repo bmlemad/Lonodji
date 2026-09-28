@@ -43,6 +43,12 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 - `app/api/indicateurs/route.ts` — renvoie ces chiffres ; si la variable d’environnement `NETLIFY_FORMS_TOKEN` est définie sur le site (jeton d’accès personnel Netlify, *User settings → Applications → Personal access tokens*), les compteurs de formulaires sont relevés en direct sur l’API Netlify (mise en cache dix minutes) et la page les affiche « en direct ». Seuls des nombres sortent de l’API : les envois ne sont lus en mémoire que pour compter les personnes distinctes (intentions d’adhésion). Sans jeton, la page garde le relevé daté.
 - Les chiffres que seule l’association détient (adhérents à jour de cotisation, besoins résolus) sont dans `bureau` du JSON : ils restent « non publiés » tant que le bureau ne les transmet pas avec leur date.
 
+## Fiches des villages
+
+- `/villages` (recherche + quatorze unités), `/villages/<unité>` (liste alphabétique, liens du site) et `/villages/<unité>/<village>` (une page par localité nommée : position, unité, équipements connus à moins de 10 km, six questions à documenter reliées aux formulaires préremplis — `?localite=`, `?lieu=` —, pages du site qui la citent, localités voisines). Composants `components/villages-recherche.tsx`, données `lib/villages.ts`.
+- `scripts/build-villages.py` → `content/villages.json`, à partir de `public/carte/donnees.json` (qui porte désormais le slug de chaque localité, 8e élément) et de l’index de recherche (mentions). Ordre : `build-carte.py`, `build-search-index.py`, `build-villages.py`, puis `npm run build`.
+- La carte ouvre une fiche à l’arrivée avec `?village=<unité>/<slug>` ou `?unite=<id>`, et chaque fiche de la carte renvoie à la page du village.
+
 ## Répertoire des compétences et témoignages
 
 - `/diaspora` — répertoire des compétences de la diaspora (action 4.1) : formulaire `diaspora-competences`, compteurs par personne, pays et domaines (`components/diaspora-compteurs.tsx`, listes dans `lib/diaspora.ts`). Le répertoire nominatif reste dans Netlify Forms ; le site ne publie que des nombres.

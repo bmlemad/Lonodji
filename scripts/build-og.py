@@ -37,6 +37,7 @@ EYEBROWS = {
     "/participer": "Participer",
     "/diaspora": "Diaspora · répertoire des compétences",
     "/temoignages": "Témoignages · banque d’images",
+    "/villages": "Territoire · fiches des villages",
     "/transparence": "Redevabilité",
     "/archives": "Archives du site",
     "/mentions-legales": "Mentions légales",

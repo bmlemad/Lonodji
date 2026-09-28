@@ -13,7 +13,7 @@ type Unite = {
   id: string; nom: string; groupe: "coeur" | "sud" | "signale" | "diaspora"; dep: string; prov: string; notice: string; approx: boolean; origine: string;
   gadm: { nom: string; type: string; departement: string; province: string }; geometrie: GeoJSON.Geometry; boite: number[]; centre: number[];
 };
-type Village = [number, number, string, string, string, string, string]; // lon, lat, nom, type, unité, osm, population
+type Village = [number, number, string, string, string, string, string, string]; // lon, lat, nom, type, unité, osm, population, slug de la fiche
 type Equipement = { famille: string; nom: string; coords: number[]; unite: string; osm: string; jeu: string; detail: Record<string, string> };
 type Lien = { type: string; titre: string; route: string };
 type Donnees = {
@@ -53,6 +53,7 @@ export default function CarteTerritoire() {
   const [selection, setSelection] = useState<Selection>(null);
   const [visibles, setVisibles] = useState({ unites: true, villages: true, equipements: true });
   const [requete, setRequete] = useState("");
+  const [pret, setPret] = useState(false);
 
   // données
   useEffect(() => {
@@ -124,11 +125,31 @@ export default function CarteTerritoire() {
         const b = coeur.reduce((acc, u) => [Math.min(acc[0], u.boite[0]), Math.min(acc[1], u.boite[1]), Math.max(acc[2], u.boite[2]), Math.max(acc[3], u.boite[3])], [999, 999, -999, -999]);
         m.fitBounds([[b[1], b[0]], [b[3], b[2]]]);
       }
+      setPret(true);
     })();
     return () => { annule = true; };
   }, [donnees]);
 
   useEffect(() => () => { carte.current?.remove(); carte.current = null; }, []);
+
+  // ?village=<unité>/<slug> ou ?unite=<id> (depuis les fiches des villages) : ouvre la fiche à l'arrivée
+  const ouvertDepuisAdresse = useRef(false);
+  useEffect(() => {
+    if (!donnees || !carte.current || ouvertDepuisAdresse.current) return;
+    ouvertDepuisAdresse.current = true;
+    const q = new URLSearchParams(window.location.search);
+    const village = q.get("village"); const unite = q.get("unite");
+    if (village) {
+      const [uid, slug] = village.split("/");
+      const v = donnees.villages.find((x) => x[4] === uid && x[7] === slug);
+      if (v) { setTimeout(() => { aller([v[1], v[0]], 13, { genre: "village", village: v }); boite.current?.scrollIntoView({ behavior: "smooth", block: "start" }); }, 300); return; }
+    }
+    if (unite) {
+      const u = donnees.unites.find((x) => x.id === unite);
+      if (u) setTimeout(() => { aller([u.centre[1], u.centre[0]], 11, { genre: "unite", unite: u }); boite.current?.scrollIntoView({ behavior: "smooth", block: "start" }); }, 300);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [donnees, pret]);
 
   // couches affichées / masquées
   useEffect(() => {
@@ -210,8 +231,9 @@ export default function CarteTerritoire() {
               <p>{unitePour(selection.village[4])?.gadm.departement.replace(/([a-z])([A-Z])/g, "$1 $2")}, {unitePour(selection.village[4])?.prov}. Position OpenStreetMap : {selection.village[1].toFixed(4)}, {selection.village[0].toFixed(4)}.{selection.village[6] ? ` Population indiquée : ${selection.village[6]}.` : ""}</p>
               <p className="ct-note">Aucune école, aucun centre de santé, aucun forage n’est rattaché à ce lieu dans les données ouvertes : ce silence est une information, pas une réalité. Aidez-nous à le combler.</p>
               <div className="ct-actions">
-                <Link className="button primary" href={`/dossiers/besoins?localite=${encodeURIComponent(nomPropre(selection.village[2]))}`}>Signaler un besoin ici <span aria-hidden="true">↗</span></Link>
-                <a className="button secondary" href={`https://www.openstreetmap.org/?mlat=${selection.village[1]}&mlon=${selection.village[0]}#map=15/${selection.village[1]}/${selection.village[0]}`} target="_blank" rel="noopener noreferrer">Voir sur OpenStreetMap</a>
+                {selection.village[7] ? <Link className="button primary" href={`/villages/${selection.village[4]}/${selection.village[7]}`}>La fiche du village <span aria-hidden="true">→</span></Link> : null}
+                <Link className={selection.village[7] ? "button secondary" : "button primary"} href={`/dossiers/besoins?localite=${encodeURIComponent(nomPropre(selection.village[2]))}`}>Signaler un besoin ici <span aria-hidden="true">↗</span></Link>
+                <a className="text-link" href={`https://www.openstreetmap.org/?mlat=${selection.village[1]}&mlon=${selection.village[0]}#map=15/${selection.village[1]}/${selection.village[0]}`} target="_blank" rel="noopener noreferrer">Voir sur OpenStreetMap ↗</a>
                 <button type="button" className="text-link" onClick={() => setSelection(null)}>Fermer la fiche</button>
               </div>
             </div>
@@ -260,8 +282,9 @@ function UniteFiche({ u, donnees, aller, fermer }: { u: Unite; donnees: Donnees;
       ) : null}
       <p className="ct-source">Contour : GADM 4.1 (« {u.gadm.nom} », {u.gadm.departement.replace(/([a-z])([A-Z])/g, "$1 $2")}, {u.gadm.province.replace(/([a-z])([A-Z])/g, "$1 $2")}). {u.approx ? "Position du chef-lieu approchée. " : ""}{u.origine ? `Repère : ${u.origine}.` : ""}</p>
       <div className="ct-actions">
-        <Link className="button primary" href={`/dossiers/besoins?localite=${encodeURIComponent(u.nom)}`}>Signaler un besoin ici <span aria-hidden="true">↗</span></Link>
-        <button type="button" className="button secondary" onClick={() => aller([u.centre[1], u.centre[0]], 11)}>Centrer la carte</button>
+        <Link className="button primary" href={`/villages/${u.id}`}>Les villages de {u.nom} <span aria-hidden="true">→</span></Link>
+        <Link className="button secondary" href={`/dossiers/besoins?localite=${encodeURIComponent(u.nom)}`}>Signaler un besoin ici <span aria-hidden="true">↗</span></Link>
+        <button type="button" className="text-link" onClick={() => aller([u.centre[1], u.centre[0]], 11)}>Centrer la carte</button>
         <button type="button" className="text-link" onClick={fermer}>Fermer la fiche</button>
       </div>
     </div>

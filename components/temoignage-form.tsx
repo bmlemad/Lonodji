@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /* Formulaire « Racontez Bédjondo » : un récit, une photo, un son ou une courte
    vidéo (≤ 10 Mo), avec les accords nécessaires. Envoi en multipart vers
@@ -15,6 +15,16 @@ export default function TemoignageForm({ telephone, whatsapp }: { telephone: str
   const [erreur, setErreur] = useState("");
   const [fichier, setFichier] = useState("");
   const form = useRef<HTMLFormElement>(null);
+  const [lieu, setLieu] = useState("");
+
+  // ?lieu=Nom (depuis la fiche d'un village) : préremplit le lieu et amène au formulaire
+  useEffect(() => {
+    const l = new URLSearchParams(window.location.search).get("lieu");
+    if (!l) return;
+    setLieu(l.slice(0, 120));
+    const t = setTimeout(() => form.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 350);
+    return () => clearTimeout(t);
+  }, []);
 
   function surFichier(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0];
@@ -73,7 +83,7 @@ export default function TemoignageForm({ telephone, whatsapp }: { telephone: str
           <input accept="image/*,audio/*,video/*,.pdf" id="tm-fichier" name="fichier" onChange={surFichier} type="file" />
           <span className="hint">{fichier || "Format original de préférence, sans filtre ni recadrage. Pour une série de photos, envoyez-la par WhatsApp après ce premier envoi."}</span>
         </div>
-        <div className="field"><label htmlFor="tm-lieu">Lieu et date du récit ou de la photo</label><input id="tm-lieu" name="lieu" placeholder="Bédjondo, quartier…, année ou date" type="text" /></div>
+        <div className="field"><label htmlFor="tm-lieu">Lieu et date du récit ou de la photo</label><input id="tm-lieu" name="lieu" placeholder="Bédjondo, quartier…, année ou date" type="text" value={lieu} onChange={(e) => setLieu(e.target.value)} /></div>
       </fieldset>
 
       <fieldset>

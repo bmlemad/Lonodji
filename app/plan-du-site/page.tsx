@@ -16,7 +16,7 @@ const main: [string, { href: string; label: string }[]][] = [
     { href: "/documents", label: "Documents" }, { href: "/mentions-legales", label: "Mentions légales" }, { href: "/archives", label: "Archives du site" },
   ]],
   ["Nos actions", [
-    { href: "/programmes", label: "Quatre pôles, dix-neuf thématiques" }, { href: "/actions", label: "Plaidoyers & engagements" }, { href: "/impact", label: "Suivi & tableau de bord" }, { href: "/dossiers", label: "Tous les dossiers" }, { href: "/carte", label: "Carte du territoire" },
+    { href: "/programmes", label: "Quatre pôles, dix-neuf thématiques" }, { href: "/actions", label: "Plaidoyers & engagements" }, { href: "/impact", label: "Suivi & tableau de bord" }, { href: "/dossiers", label: "Tous les dossiers" }, { href: "/carte", label: "Carte du territoire" }, { href: "/villages", label: "Les villages, une fiche par localité" },
   ]],
   ["Participer", [
     { href: "/participer#contact", label: "Nous écrire" }, { href: "/participer#adherer", label: "Adhérer et cotiser" }, { href: "/participer#soutenir", label: "Nous soutenir" }, { href: "/diaspora", label: "Répertoire des compétences de la diaspora" }, { href: "/temoignages", label: "Racontez Bédjondo : témoignages et banque d’images" }, { href: "/participer#newsletter", label: "Lettre d’information" }, { href: "/journal", label: "Le journal" }, { href: "/recherche", label: "Rechercher dans le site" },

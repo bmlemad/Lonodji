@@ -171,6 +171,16 @@ def liens_par_unite(unites: dict) -> dict:
 
 # ---------- assemblage ----------
 
+def slug_nom(nom: str) -> str:
+    """« N’Djaména Ndé » → « ndjamena-nde » ; les caractères hors latin (arabe) sont ignorés."""
+    import unicodedata
+    t = unicodedata.normalize("NFKD", nom)
+    t = "".join(ch for ch in t if not unicodedata.combining(ch))
+    t = re.sub(r"[’'`]", "", t.lower())
+    t = re.sub(r"[^a-z0-9]+", "-", t).strip("-")
+    return t
+
+
 def main() -> None:
     CACHE.mkdir(parents=True, exist_ok=True)
     gadm = geojson_depuis_zip(telecharger(GADM_URL, CACHE / "gadm41_TCD_3.json.zip"))
@@ -218,6 +228,17 @@ def main() -> None:
         vus.add(cle)
         villages.append([c[0], c[1], nom, place, uid, t.get("osm_id") or t.get("@id") or "", t.get("population") or ""])
     villages.sort(key=lambda v: (v[4], v[2]))
+    # identifiant lisible par localité nommée, unique dans son unité (fiches /villages/<unité>/<slug>)
+    vus_slug = set()
+    for v in villages:
+        base = slug_nom(v[2]) if v[2] else ""
+        s = base
+        n = 2
+        while base and (v[4], s) in vus_slug:
+            s = f"{base}-{n}"; n += 1
+        if base:
+            vus_slug.add((v[4], s))
+        v.append(s)
 
     # équipements
     equipements = []
