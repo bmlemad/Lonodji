@@ -52,7 +52,7 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 ## Fiches des villages
 
 - `/villages` (recherche + quatorze unités), `/villages/<unité>` (liste alphabétique, liens du site) et `/villages/<unité>/<village>` (une page par localité nommée : position, unité, équipements connus à moins de 10 km, six questions à documenter reliées aux formulaires préremplis — `?localite=`, `?lieu=` —, pages du site qui la citent, localités voisines). Composants `components/villages-recherche.tsx`, données `lib/villages.ts`.
-- `scripts/build-villages.py` → `content/villages.json`, à partir de `public/carte/donnees.json` (qui porte désormais le slug de chaque localité, 8e élément) et de l’index de recherche (mentions). Ordre : `build-carte.py`, `build-search-index.py`, `build-villages.py`, puis `npm run build`.
+- `scripts/build-villages.py` → `content/villages.json`, à partir de `public/carte/donnees.json` (qui porte désormais le slug de chaque localité, 8e élément) et de l’index de recherche (mentions). Ordre : `build-carte.py`, `build-search-index.py`, `build-villages.py`, `build-indicateurs.py`, `build-observatoire.py`, puis `npm run build`.
 - La carte ouvre une fiche à l’arrivée avec `?village=<unité>/<slug>` ou `?unite=<id>`, et chaque fiche de la carte renvoie à la page du village.
 
 ## Répertoire des compétences et témoignages
@@ -73,6 +73,11 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 
 - `/projets` — chaque projet décrit sur le site avec son stade (huit stades, d’« Idée » à « En service »), ce qui existe (liens), ce qui manque, budget et calendrier tels que connus, thématique et coordonnateur, façons de contribuer ; règles de la plateforme (aucun franc sans compte, budget publié sur devis avant toute demande) ; formulaire `proposition-projet` (compté sur le tableau de bord, décrit dans les mentions légales).
 - Données : `content/projets.json`, à tenir à jour à la main (stade, existant, manque, contribuer ; les montants seulement s’ils figurent, sourcés, sur la page du projet) ; lu par `lib/projets.ts` et par `scripts/build-indicateurs.py` (projets actifs = stades essai, réalisation, service).
+
+## Observatoire du Mandoul Occidental
+
+- `/observatoire` — le territoire en chiffres, unité par unité : localités nommées, équipements connus des données ouvertes par famille, couverture à 10 km, localités citées sur le site, pages par unité ; diagnostic par domaine (documenté, partiel, ailleurs, inconnu ; qui décide ; thématiques) ; suivi des plaidoyers (publié, transmis, réponse) ; tableau des huit indicateurs avec source, méthode et état ; ce qui manque est écrit comme manquant (besoins résolus non publiés, population indisponible).
+- Données : `scripts/build-observatoire.py` → `content/observatoire.json`, à lancer après `build-carte.py`, `build-villages.py` et `build-indicateurs.py` (il lit aussi `content/pages/problematiques.json` et `content/index.json`). Lecture par `lib/observatoire.ts`.
 
 ## Navigation (en-tête, méga-menu, menu mobile, pied de page)
 

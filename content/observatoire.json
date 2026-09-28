@@ -1,0 +1,969 @@
+{
+ "genere": "2026-09-28",
+ "sources": {
+  "carte": "2026-09-28",
+  "villages": "2026-09-28",
+  "releve": "2026-09-28"
+ },
+ "familles": {
+  "ecole": {
+   "libelle": "écoles",
+   "total": 6
+  },
+  "sante": {
+   "libelle": "santé",
+   "total": 3
+  },
+  "eau": {
+   "libelle": "eau",
+   "total": 2
+  },
+  "marche": {
+   "libelle": "marchés",
+   "total": 8
+  },
+  "telecom": {
+   "libelle": "télécoms",
+   "total": 2
+  },
+  "administration": {
+   "libelle": "administration",
+   "total": 2
+  },
+  "culte": {
+   "libelle": "lieux de culte",
+   "total": 1
+  }
+ },
+ "totaux": {
+  "unites": 14,
+  "localites": 1259,
+  "nommees": 966,
+  "equipements": 24,
+  "couvertes": 411,
+  "citees": 55
+ },
+ "unites": [
+  {
+   "id": "bedjondo",
+   "nom": "Bédjondo",
+   "groupe": "coeur",
+   "dep": "Mandoul Occidental",
+   "prov": "Mandoul",
+   "kmBedjondo": 4.8,
+   "localites": 37,
+   "nommees": 36,
+   "equipements": {
+    "total": 0,
+    "familles": {
+     "ecole": 0,
+     "sante": 0,
+     "eau": 0,
+     "marche": 0,
+     "telecom": 0,
+     "administration": 0,
+     "culte": 0
+    }
+   },
+   "couvertes": 7,
+   "citees": 7,
+   "pages": 8,
+   "plaidoyers": 6,
+   "route": "/villages/bedjondo"
+  },
+  {
+   "id": "yomi",
+   "nom": "Yomi",
+   "groupe": "coeur",
+   "dep": "Mandoul Occidental",
+   "prov": "Mandoul",
+   "kmBedjondo": 15.8,
+   "localites": 9,
+   "nommees": 9,
+   "equipements": {
+    "total": 0,
+    "familles": {
+     "ecole": 0,
+     "sante": 0,
+     "eau": 0,
+     "marche": 0,
+     "telecom": 0,
+     "administration": 0,
+     "culte": 0
+    }
+   },
+   "couvertes": 0,
+   "citees": 2,
+   "pages": 8,
+   "plaidoyers": 0,
+   "route": "/villages/yomi"
+  },
+  {
+   "id": "nderguigui",
+   "nom": "Nderguigui",
+   "groupe": "coeur",
+   "dep": "Mandoul Occidental",
+   "prov": "Mandoul",
+   "kmBedjondo": 16.3,
+   "localites": 44,
+   "nommees": 41,
+   "equipements": {
+    "total": 0,
+    "familles": {
+     "ecole": 0,
+     "sante": 0,
+     "eau": 0,
+     "marche": 0,
+     "telecom": 0,
+     "administration": 0,
+     "culte": 0
+    }
+   },
+   "couvertes": 1,
+   "citees": 5,
+   "pages": 8,
+   "plaidoyers": 0,
+   "route": "/villages/nderguigui"
+  },
+  {
+   "id": "bangoul",
+   "nom": "Bangoul",
+   "groupe": "coeur",
+   "dep": "Mandoul Occidental",
+   "prov": "Mandoul",
+   "kmBedjondo": 18.2,
+   "localites": 16,
+   "nommees": 16,
+   "equipements": {
+    "total": 0,
+    "familles": {
+     "ecole": 0,
+     "sante": 0,
+     "eau": 0,
+     "marche": 0,
+     "telecom": 0,
+     "administration": 0,
+     "culte": 0
+    }
+   },
+   "couvertes": 0,
+   "citees": 1,
+   "pages": 7,
+   "plaidoyers": 0,
+   "route": "/villages/bangoul"
+  },
+  {
+   "id": "peni",
+   "nom": "Péni",
+   "groupe": "coeur",
+   "dep": "Mandoul Occidental",
+   "prov": "Mandoul",
+   "kmBedjondo": 20.8,
+   "localites": 43,
+   "nommees": 37,
+   "equipements": {
+    "total": 1,
+    "familles": {
+     "ecole": 0,
+     "sante": 0,
+     "eau": 0,
+     "marche": 1,
+     "telecom": 0,
+     "administration": 0,
+     "culte": 0
+    }
+   },
+   "couvertes": 28,
+   "citees": 6,
+   "pages": 8,
+   "plaidoyers": 0,
+   "route": "/villages/peni"
+  },
+  {
+   "id": "bekamba",
+   "nom": "Békamba",
+   "groupe": "coeur",
+   "dep": "Mandoul Occidental",
+   "prov": "Mandoul",
+   "kmBedjondo": 24.3,
+   "localites": 23,
+   "nommees": 23,
+   "equipements": {
+    "total": 1,
+    "familles": {
+     "ecole": 0,
+     "sante": 1,
+     "eau": 0,
+     "marche": 0,
+     "telecom": 0,
+     "administration": 0,
+     "culte": 0
+    }
+   },
+   "couvertes": 21,
+   "citees": 5,
+   "pages": 8,
+   "plaidoyers": 1,
+   "route": "/villages/bekamba"
+  },
+  {
+   "id": "bebopen",
+   "nom": "Bébopen",
+   "groupe": "coeur",
+   "dep": "Mandoul Occidental",
+   "prov": "Mandoul",
+   "kmBedjondo": 25.6,
+   "localites": 43,
+   "nommees": 43,
+   "equipements": {
+    "total": 0,
+    "familles": {
+     "ecole": 0,
+     "sante": 0,
+     "eau": 0,
+     "marche": 0,
+     "telecom": 0,
+     "administration": 0,
+     "culte": 0
+    }
+   },
+   "couvertes": 0,
+   "citees": 3,
+   "pages": 8,
+   "plaidoyers": 0,
+   "route": "/villages/bebopen"
+  },
+  {
+   "id": "beti",
+   "nom": "Béti",
+   "groupe": "sud",
+   "dep": "Kouh-Est",
+   "prov": "Logone Oriental",
+   "kmBedjondo": 26.8,
+   "localites": 83,
+   "nommees": 76,
+   "equipements": {
+    "total": 1,
+    "familles": {
+     "ecole": 0,
+     "sante": 0,
+     "eau": 0,
+     "marche": 1,
+     "telecom": 0,
+     "administration": 0,
+     "culte": 0
+    }
+   },
+   "couvertes": 26,
+   "citees": 2,
+   "pages": 8,
+   "plaidoyers": 0,
+   "route": "/villages/beti"
+  },
+  {
+   "id": "bodo",
+   "nom": "Bodo",
+   "groupe": "sud",
+   "dep": "Kouh-Est",
+   "prov": "Logone Oriental",
+   "kmBedjondo": 33.4,
+   "localites": 148,
+   "nommees": 144,
+   "equipements": {
+    "total": 2,
+    "familles": {
+     "ecole": 0,
+     "sante": 0,
+     "eau": 1,
+     "marche": 1,
+     "telecom": 0,
+     "administration": 0,
+     "culte": 0
+    }
+   },
+   "couvertes": 113,
+   "citees": 8,
+   "pages": 5,
+   "plaidoyers": 0,
+   "route": "/villages/bodo"
+  },
+  {
+   "id": "beboto",
+   "nom": "Béboto",
+   "groupe": "sud",
+   "dep": "Kouh-Ouest",
+   "prov": "Logone Oriental",
+   "kmBedjondo": 58.8,
+   "localites": 118,
+   "nommees": 110,
+   "equipements": {
+    "total": 5,
+    "familles": {
+     "ecole": 0,
+     "sante": 1,
+     "eau": 0,
+     "marche": 3,
+     "telecom": 1,
+     "administration": 0,
+     "culte": 0
+    }
+   },
+   "couvertes": 62,
+   "citees": 3,
+   "pages": 8,
+   "plaidoyers": 0,
+   "route": "/villages/beboto"
+  },
+  {
+   "id": "yamodo",
+   "nom": "Yamodo",
+   "groupe": "signale",
+   "dep": "La Nya Pendé",
+   "prov": "Logone Oriental",
+   "kmBedjondo": 95.6,
+   "localites": 52,
+   "nommees": 47,
+   "equipements": {
+    "total": 4,
+    "familles": {
+     "ecole": 1,
+     "sante": 0,
+     "eau": 0,
+     "marche": 1,
+     "telecom": 1,
+     "administration": 1,
+     "culte": 0
+    }
+   },
+   "couvertes": 31,
+   "citees": 2,
+   "pages": 6,
+   "plaidoyers": 0,
+   "route": "/villages/yamodo"
+  },
+  {
+   "id": "moissala",
+   "nom": "Moïssala",
+   "groupe": "diaspora",
+   "dep": "Barh Sara",
+   "prov": "Mandoul",
+   "kmBedjondo": 68.8,
+   "localites": 42,
+   "nommees": 41,
+   "equipements": {
+    "total": 3,
+    "familles": {
+     "ecole": 2,
+     "sante": 0,
+     "eau": 0,
+     "marche": 0,
+     "telecom": 0,
+     "administration": 0,
+     "culte": 1
+    }
+   },
+   "couvertes": 30,
+   "citees": 1,
+   "pages": 7,
+   "plaidoyers": 0,
+   "route": "/villages/moissala"
+  },
+  {
+   "id": "koumogo",
+   "nom": "Koumogo",
+   "groupe": "diaspora",
+   "dep": "Barh Kôh",
+   "prov": "Moyen-Chari",
+   "kmBedjondo": 121.9,
+   "localites": 423,
+   "nommees": 204,
+   "equipements": {
+    "total": 6,
+    "familles": {
+     "ecole": 2,
+     "sante": 1,
+     "eau": 1,
+     "marche": 1,
+     "telecom": 0,
+     "administration": 1,
+     "culte": 0
+    }
+   },
+   "couvertes": 61,
+   "citees": 8,
+   "pages": 3,
+   "plaidoyers": 0,
+   "route": "/villages/koumogo"
+  },
+  {
+   "id": "moussafoyo",
+   "nom": "Moussafoyo",
+   "groupe": "diaspora",
+   "dep": "Barh Kôh",
+   "prov": "Moyen-Chari",
+   "kmBedjondo": 183.1,
+   "localites": 178,
+   "nommees": 139,
+   "equipements": {
+    "total": 1,
+    "familles": {
+     "ecole": 1,
+     "sante": 0,
+     "eau": 0,
+     "marche": 0,
+     "telecom": 0,
+     "administration": 0,
+     "culte": 0
+    }
+   },
+   "couvertes": 31,
+   "citees": 2,
+   "pages": 2,
+   "plaidoyers": 0,
+   "route": "/villages/moussafoyo"
+  }
+ ],
+ "diagnostic": {
+  "total": 34,
+  "statuts": {
+   "documente": 12,
+   "partiel": 7,
+   "ailleurs": 4,
+   "inconnu": 11
+  },
+  "decideurs": {
+   "National": 8,
+   "Nous": 4,
+   "Province": 2,
+   "Commune": 8,
+   "Département": 1,
+   "Établissements": 2,
+   "Délégation": 2,
+   "Inspection": 1,
+   "DAPLAN": 1,
+   "ANADER": 1,
+   "Canton": 1,
+   "Chefferie": 2,
+   "Transversal": 1
+  },
+  "domaines": [
+   {
+    "nom": "Données & gouvernance",
+    "ancre": "prob-01",
+    "total": 4,
+    "documente": 0,
+    "partiel": 2,
+    "ailleurs": 0,
+    "inconnu": 2,
+    "decideurs": {
+     "National": 1,
+     "Nous": 2,
+     "Province": 1
+    },
+    "thematiques": {
+     "savoirs-innovation": 3,
+     "memoire-heritage": 1
+    },
+    "problemes": [
+     {
+      "id": "prob-01",
+      "texte": "Aucune statistique publiée à l’échelle du département : ni population, ni pauvreté, ni accès aux services",
+      "statut": "Inconnu",
+      "decideur": "National",
+      "thematique": "savoirs-innovation"
+     },
+     {
+      "id": "prob-02",
+      "texte": "Inventaire des villages incomplet — 133 recensés par nous sur 256 estimés ( villages et cantons )",
+      "statut": "Partiel",
+      "decideur": "Nous",
+      "thematique": "savoirs-innovation"
+     },
+     {
+      "id": "prob-03",
+      "texte": "Périmètres et rattachements des cantons non stabilisés — trois cantons restent non identifiés",
+      "statut": "Partiel",
+      "decideur": "Province",
+      "thematique": "savoirs-innovation"
+     },
+     {
+      "id": "prob-04",
+      "texte": "Années de règne des chefs de Bédjondo non documentées ( chronologie à compléter )",
+      "statut": "Inconnu",
+      "decideur": "Nous",
+      "thematique": "memoire-heritage"
+     }
+    ]
+   },
+   {
+    "nom": "État civil & protection",
+    "ancre": "prob-05",
+    "total": 4,
+    "documente": 1,
+    "partiel": 0,
+    "ailleurs": 1,
+    "inconnu": 2,
+    "decideurs": {
+     "Commune": 2,
+     "Département": 1,
+     "Établissements": 1
+    },
+    "thematiques": {
+     "solidarite-inclusion": 3,
+     "leadership-feminin": 1
+    },
+    "problemes": [
+     {
+      "id": "prob-05",
+      "texte": "Enfants dépourvus d’acte de naissance — sans ce document, ni examen, ni bourse, ni héritage ( personnes vulnérables )",
+      "statut": "Inconnu",
+      "decideur": "Commune",
+      "thematique": "solidarite-inclusion"
+     },
+     {
+      "id": "prob-06",
+      "texte": "Départ d’enfants vers les sites aurifères du Nord — Péni est expressément citée parmi les localités de départ",
+      "statut": "Documenté",
+      "decideur": "Département",
+      "thematique": "solidarite-inclusion"
+     },
+     {
+      "id": "prob-07",
+      "texte": "Jeunes mères déscolarisées et pratiques d’exclusion des établissements",
+      "statut": "Ailleurs",
+      "decideur": "Établissements",
+      "thematique": "leadership-feminin"
+     },
+     {
+      "id": "prob-08",
+      "texte": "Orphelins et enfants sans soutien parental — aucun chiffre fiable, ni national ni local",
+      "statut": "Inconnu",
+      "decideur": "Commune",
+      "thematique": "solidarite-inclusion"
+     }
+    ]
+   },
+   {
+    "nom": "Eau, énergie, réseaux",
+    "ancre": "prob-09",
+    "total": 4,
+    "documente": 2,
+    "partiel": 1,
+    "ailleurs": 0,
+    "inconnu": 1,
+    "decideurs": {
+     "Commune": 2,
+     "National": 2
+    },
+    "thematiques": {
+     "eau-energie-connectivite": 3,
+     "desenclavement-urbanisation": 1
+    },
+    "problemes": [
+     {
+      "id": "prob-09",
+      "texte": "Réseau d’eau limité à un seul village et fréquemment à l’arrêt faute de carburant ( eau potable )",
+      "statut": "Documenté",
+      "decideur": "Commune",
+      "thematique": "eau-energie-connectivite"
+     },
+     {
+      "id": "prob-10",
+      "texte": "Aucun équipement public électrifié connu — centre de santé, lycée, mairie ( électricité )",
+      "statut": "Partiel",
+      "decideur": "National",
+      "thematique": "eau-energie-connectivite"
+     },
+     {
+      "id": "prob-11",
+      "texte": "Bédjondo absente du volet rural du projet national de transformation numérique ( connectivité )",
+      "statut": "Documenté",
+      "decideur": "National",
+      "thematique": "eau-energie-connectivite"
+     },
+     {
+      "id": "prob-12",
+      "texte": "Assainissement et gestion des déchets — aucun dispositif connu dans une ville qui a grandi sans plan",
+      "statut": "Inconnu",
+      "decideur": "Commune",
+      "thematique": "desenclavement-urbanisation"
+     }
+    ]
+   },
+   {
+    "nom": "Santé",
+    "ancre": "prob-13",
+    "total": 3,
+    "documente": 1,
+    "partiel": 1,
+    "ailleurs": 0,
+    "inconnu": 1,
+    "decideurs": {
+     "Délégation": 2,
+     "National": 1
+    },
+    "thematiques": {
+     "sante-prevention": 3
+    },
+    "problemes": [
+     {
+      "id": "prob-13",
+      "texte": "Plateau technique, personnel et médicaments du district sanitaire ( santé )",
+      "statut": "Partiel",
+      "decideur": "Délégation",
+      "thematique": "sante-prevention"
+     },
+     {
+      "id": "prob-14",
+      "texte": "Le PASST3, programme de renforcement du système de santé de l’AFD, couvre trois autres provinces — mais l’AFD finance bien la santé maternelle au Mandoul",
+      "statut": "Documenté",
+      "decideur": "National",
+      "thematique": "sante-prevention"
+     },
+     {
+      "id": "prob-15",
+      "texte": "Couverture du district en soins obstétricaux d’urgence — formations tenues au Mandoul, notre district non confirmé",
+      "statut": "Inconnu",
+      "decideur": "Délégation",
+      "thematique": "sante-prevention"
+     }
+    ]
+   },
+   {
+    "nom": "Éducation & formation",
+    "ancre": "prob-16",
+    "total": 4,
+    "documente": 1,
+    "partiel": 1,
+    "ailleurs": 1,
+    "inconnu": 1,
+    "decideurs": {
+     "Inspection": 1,
+     "Établissements": 1,
+     "National": 1,
+     "DAPLAN": 1
+    },
+    "thematiques": {
+     "jeunesse-reussite": 3,
+     "culture-patrimoine-vivant": 1
+    },
+    "problemes": [
+     {
+      "id": "prob-16",
+      "texte": "Déperdition scolaire, très marquée chez les filles — 70 % achèvent le primaire, 5 % atteignent le supérieur ( éducation )",
+      "statut": "Ailleurs",
+      "decideur": "Inspection",
+      "thematique": "jeunesse-reussite"
+     },
+     {
+      "id": "prob-17",
+      "texte": "Latrines séparées, eau et hygiène menstruelle dans les établissements",
+      "statut": "Inconnu",
+      "decideur": "Établissements",
+      "thematique": "jeunesse-reussite"
+     },
+     {
+      "id": "prob-18",
+      "texte": "Centre de formation professionnelle inscrit au registre national mais non ouvert ( formation )",
+      "statut": "Documenté",
+      "decideur": "National",
+      "thematique": "jeunesse-reussite"
+     },
+     {
+      "id": "prob-19",
+      "texte": "Alphabétisation des adultes et langue d’apprentissage — le sar figure parmi les trois langues de l’évaluation nationale",
+      "statut": "Partiel",
+      "decideur": "DAPLAN",
+      "thematique": "culture-patrimoine-vivant"
+     }
+    ]
+   },
+   {
+    "nom": "Agriculture, élevage, environnement",
+    "ancre": "prob-20",
+    "total": 5,
+    "documente": 2,
+    "partiel": 1,
+    "ailleurs": 1,
+    "inconnu": 1,
+    "decideurs": {
+     "ANADER": 1,
+     "National": 1,
+     "Canton": 1,
+     "Nous": 1,
+     "Province": 1
+    },
+    "thematiques": {
+     "agriculture-elevage-securite-alimentaire": 3,
+     "paix-cohesion": 1,
+     "environnement-ressources": 1
+    },
+    "problemes": [
+     {
+      "id": "prob-20",
+      "texte": "Rendements faibles et absence de conseil agricole de proximité ( agriculture )",
+      "statut": "Partiel",
+      "decideur": "ANADER",
+      "thematique": "agriculture-elevage-securite-alimentaire"
+     },
+     {
+      "id": "prob-21",
+      "texte": "Le Mandoul n’est pas couvert par le PRAPS-2, le grand programme pastoral du pays",
+      "statut": "Documenté",
+      "decideur": "National",
+      "thematique": "agriculture-elevage-securite-alimentaire"
+     },
+     {
+      "id": "prob-22",
+      "texte": "Conflits entre agriculteurs et éleveurs sans cadre local de prévention ( agriculteurs et éleveurs )",
+      "statut": "Documenté",
+      "decideur": "Canton",
+      "thematique": "paix-cohesion"
+     },
+     {
+      "id": "prob-23",
+      "texte": "Pertes après récolte et absence de stockage collectif — vendre bas en octobre, acheter cher en juin",
+      "statut": "Inconnu",
+      "decideur": "Nous",
+      "thematique": "agriculture-elevage-securite-alimentaire"
+     },
+     {
+      "id": "prob-24",
+      "texte": "Bois-énergie, coupe du bois et dégradation des terres cultivables",
+      "statut": "Ailleurs",
+      "decideur": "Province",
+      "thematique": "environnement-ressources"
+     }
+    ]
+   },
+   {
+    "nom": "Économie & foncier",
+    "ancre": "prob-25",
+    "total": 4,
+    "documente": 2,
+    "partiel": 1,
+    "ailleurs": 1,
+    "inconnu": 0,
+    "decideurs": {
+     "Commune": 3,
+     "National": 1
+    },
+    "thematiques": {
+     "desenclavement-urbanisation": 3,
+     "entrepreneuriat-finance-inclusive": 1
+    },
+    "problemes": [
+     {
+      "id": "prob-25",
+      "texte": "Foncier sans cadastre dans une ville qui s’étend — 57 % des dossiers judiciaires de Sarh en 2024 étaient des litiges fonciers",
+      "statut": "Ailleurs",
+      "decideur": "Commune",
+      "thematique": "desenclavement-urbanisation"
+     },
+     {
+      "id": "prob-26",
+      "texte": "Inclusion financière à 7 % au niveau national, microfinance à 0,2 % de la population active",
+      "statut": "Documenté",
+      "decideur": "National",
+      "thematique": "entrepreneuriat-finance-inclusive"
+     },
+     {
+      "id": "prob-27",
+      "texte": "Enclavement des pistes de cantons à la saison des pluies ( routes et ponts )",
+      "statut": "Partiel",
+      "decideur": "Commune",
+      "thematique": "desenclavement-urbanisation"
+     },
+     {
+      "id": "prob-28",
+      "texte": "Absence de voirie urbaine, alors que Bédjondo est desservie par la route nationale",
+      "statut": "Documenté",
+      "decideur": "Commune",
+      "thematique": "desenclavement-urbanisation"
+     }
+    ]
+   },
+   {
+    "nom": "Culture, mémoire & lieux",
+    "ancre": "prob-29",
+    "total": 3,
+    "documente": 0,
+    "partiel": 0,
+    "ailleurs": 0,
+    "inconnu": 3,
+    "decideurs": {
+     "Chefferie": 2,
+     "Commune": 1
+    },
+    "thematiques": {
+     "culture-patrimoine-vivant": 2,
+     "memoire-heritage": 1
+    },
+    "problemes": [
+     {
+      "id": "prob-29",
+      "texte": "Lieux et bois sacrés ni recensés ni constatés — aucun inventaire n’existe au Tchad ( lieux sacrés )",
+      "statut": "Inconnu",
+      "decideur": "Chefferie",
+      "thematique": "culture-patrimoine-vivant"
+     },
+     {
+      "id": "prob-30",
+      "texte": "Sépultures anciennes sans marquage, exposées aux travaux publics et à l’extension urbaine",
+      "statut": "Inconnu",
+      "decideur": "Commune",
+      "thematique": "memoire-heritage"
+     },
+     {
+      "id": "prob-31",
+      "texte": "Transmission des limites et des interdits — un savoir porté par quelques anciens et nulle part écrit",
+      "statut": "Inconnu",
+      "decideur": "Chefferie",
+      "thematique": "culture-patrimoine-vivant"
+     }
+    ]
+   },
+   {
+    "nom": "Solidarité & cohésion",
+    "ancre": "prob-32",
+    "total": 3,
+    "documente": 3,
+    "partiel": 0,
+    "ailleurs": 0,
+    "inconnu": 0,
+    "decideurs": {
+     "National": 1,
+     "Nous": 1,
+     "Transversal": 1
+    },
+    "thematiques": {
+     "solidarite-inclusion": 1,
+     "gouvernance-plaidoyer": 1,
+     "jeunesse-reussite": 1
+    },
+    "problemes": [
+     {
+      "id": "prob-32",
+      "texte": "Le Mandoul ne figure pas parmi les neuf provinces du projet national de filets sociaux",
+      "statut": "Documenté",
+      "decideur": "National",
+      "thematique": "solidarite-inclusion"
+     },
+     {
+      "id": "prob-33",
+      "texte": "Aucune organisation de développement n’a son bureau à Bédjondo ( ONG et partenaires )",
+      "statut": "Documenté",
+      "decideur": "Nous",
+      "thematique": "gouvernance-plaidoyer"
+     },
+     {
+      "id": "prob-34",
+      "texte": "Exode rural et perte des forces vives — départs pour l’orpaillage, les villes et la diaspora",
+      "statut": "Documenté",
+      "decideur": "Transversal",
+      "thematique": "jeunesse-reussite"
+     }
+    ]
+   }
+  ]
+ },
+ "plaidoyers": [
+  {
+   "id": "plaidoyer-internet",
+   "title": "Bédjondo a droit au haut débit",
+   "theme": "Connectivité",
+   "status": "Publié",
+   "recipients": "Ministère des Télécommunications et de l’Économie numérique · ARCEP · Airtel, Moov Africa, Salam · Starlink Tchad",
+   "published": "16 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "href": "/journal/2026-09-16-plaidoyer-internet-haut-debit-bedjondo"
+  },
+  {
+   "id": "plaidoyer-electricite",
+   "title": "De la lumière pour Bédjondo",
+   "theme": "Énergie",
+   "status": "Publié",
+   "recipients": "Ministère de l’Énergie · SNE · CEP-TchadElec (PAAET) · ARSE · Banque mondiale / Mission 300 · opérateurs de mini-réseaux",
+   "published": "16 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "href": "/journal/2026-09-16-plaidoyer-electricite-bedjondo"
+  },
+  {
+   "id": "plaidoyer-commune",
+   "title": "Note à la commune de Bédjondo : six propositions",
+   "theme": "Gouvernance locale",
+   "status": "Publié",
+   "recipients": "Maire et conseil communal de Bédjondo · Préfet du Mandoul Occidental",
+   "published": "16 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "href": "/journal/2026-09-16-note-commune-bedjondo"
+  },
+  {
+   "id": "plaidoyer-eau",
+   "title": "De l’eau potable pour chaque quartier de Bédjondo",
+   "theme": "Eau",
+   "status": "Publié",
+   "recipients": "Ministère de l’Hydraulique · Délégation provinciale · PAEPA SU MR (BAD) · UNICEF · Caritas Suisse / NexSud · commune",
+   "published": "17 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "href": "/journal/2026-09-17-plaidoyer-eau-potable-bedjondo"
+  },
+  {
+   "id": "plaidoyer-sante",
+   "title": "Soigner à Bédjondo, pas seulement à Koumra",
+   "theme": "Santé",
+   "status": "Publié",
+   "recipients": "Ministère de la Santé publique · Délégation sanitaire du Mandoul · district sanitaire · hôpital de Koumra · OMS, UNICEF, coopération suisse · commune",
+   "published": "17 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "href": "/journal/2026-09-17-plaidoyer-sante-bedjondo"
+  },
+  {
+   "id": "plaidoyer-routes",
+   "title": "Une voirie pour Bédjondo, des pistes pour ses cantons",
+   "theme": "Voirie & désenclavement",
+   "status": "Publié",
+   "recipients": "Ministère des Infrastructures · Délégation provinciale · PMCR (Banque mondiale) · Fonds d’entretien routier · commune",
+   "published": "17 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "href": "/journal/2026-09-17-plaidoyer-routes-ponts-bedjondo"
+  },
+  {
+   "id": "plaidoyer-education",
+   "title": "Une école à la hauteur des enfants de Bédjondo",
+   "theme": "Éducation",
+   "status": "Publié",
+   "recipients": "Ministère de l’Éducation nationale · Délégation provinciale · Inspection départementale · ProQEB / coopération suisse · UNICEF · commune",
+   "published": "17 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "href": "/journal/2026-09-17-plaidoyer-education-bedjondo"
+  },
+  {
+   "id": "plaidoyer-formation-pro",
+   "title": "Faire vivre le centre de formation professionnelle de Bédjondo",
+   "theme": "Formation professionnelle",
+   "status": "Publié",
+   "recipients": "Ministère en charge de la Formation professionnelle · Direction de l’enseignement professionnel · FONAP · ONAPE · AFD (AFPACET) · coopération suisse / Caritas Suisse · chambre de commerce et artisans · commune",
+   "published": "17 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "href": "/journal/2026-09-17-plaidoyer-formation-professionnelle-bedjondo"
+  }
+ ],
+ "besoins": {
+  "signales": 0,
+  "resolus": 0,
+  "note": "Le nombre d'adhérents à jour de cotisation est tenu par le bureau ; il paraîtra ici, daté, dès sa première transmission. Aucun besoin recensé n'est à ce jour confirmé résolu."
+ },
+ "engagements": {
+  "total": 12,
+  "realises": 0
+ }
+}

@@ -836,3 +836,32 @@ html.is-standalone .haut{ bottom:calc(76px + env(safe-area-inset-bottom,0px)); }
 .pj-cols > div:nth-child(3) .text-link{ display:inline-block; margin-top:8px; color:var(--accent); }
 @media(max-width:980px){ .pj-stades{ grid-template-columns:repeat(2,minmax(0,1fr)); } .pj-tete{ grid-template-columns:1fr; } .pj-cols{ grid-template-columns:1fr; } }
 @media(max-width:560px){ .pj-stades{ grid-template-columns:1fr; } .pj-projet{ padding:22px 18px; } }
+
+/* Observatoire du Mandoul Occidental (/observatoire), préfixe .ob- */
+.ob-table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:20px; background:rgba(255,255,255,.72); }
+.ob-table{ width:100%; border-collapse:collapse; font-size:14px; }
+.ob-table th, .ob-table td{ padding:12px 14px; text-align:left; vertical-align:top; border-top:1px solid var(--line); }
+.ob-table thead th{ border-top:0; font-size:10px; text-transform:uppercase; letter-spacing:.12em; color:#607069; white-space:nowrap; }
+.ob-table tbody th{ font-weight:700; min-width:150px; }
+.ob-table tbody th a:hover, .ob-table td a:hover{ text-decoration:underline; text-underline-offset:4px; }
+.ob-table small{ display:block; font-size:11.5px; color:#607069; font-weight:400; margin-top:2px; }
+.ob-table td{ font-variant-numeric:tabular-nums; }
+.ob-table .est-vide{ color:#9aa6a0; }
+.ob-table .ob-ok{ color:#1f4a2e; font-weight:600; }
+.ob-table .ob-manque{ color:#7a2d1a; font-weight:600; }
+.ob-fam{ white-space:nowrap; }
+.ob-fam span{ display:inline-block; min-width:26px; text-align:center; padding:2px 6px; margin-right:4px; border-radius:8px; background:var(--soft); font-weight:600; }
+.ob-fam span.est-vide{ background:transparent; font-weight:400; }
+.ob-barre{ display:block; width:110px; height:6px; border-radius:99px; background:rgba(16,36,30,.1); overflow:hidden; margin:6px 0 4px; }
+.ob-barre i{ display:block; height:100%; background:var(--deep); border-radius:99px; }
+.ob-statuts{ list-style:none; margin:0 0 14px; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; }
+.ob-statut{ display:flex; flex-direction:column; gap:2px; padding:14px 16px; border-radius:16px; border:1px solid var(--line); background:rgba(255,255,255,.72); }
+.ob-statut strong{ font-family:var(--font-playfair),Georgia,serif; font-weight:500; font-size:30px; line-height:1; }
+.ob-statut span{ font-size:13px; font-weight:700; }
+.ob-statut small{ font-size:11.5px; color:#3f4f48; line-height:1.4; }
+.ob-statut--documente{ background:#dfeccb; border-color:transparent; }
+.ob-statut--partiel{ background:#fbecc8; border-color:transparent; }
+.ob-statut--ailleurs{ background:#e8ecf2; border-color:transparent; }
+.ob-statut--inconnu{ background:#f5dfd6; border-color:transparent; }
+.ob-statut--inconnu small, .ob-statut--inconnu span{ color:#5a2416; }
+@media(max-width:800px){ .ob-statuts{ grid-template-columns:repeat(2,minmax(0,1fr)); } .ob-table{ font-size:13px; } .ob-table th, .ob-table td{ padding:10px 10px; } }

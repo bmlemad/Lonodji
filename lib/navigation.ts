@@ -63,6 +63,7 @@ export const NAVIGATION: NavEntree[] = [
       { titre: "Le territoire", liens: [
         { label: "Carte du territoire", href: "/carte", note: "Quatorze unités, localités, équipements" },
         { label: "Les villages", href: "/villages", note: "Une fiche par localité" },
+        { label: "Observatoire du Mandoul Occidental", href: "/observatoire", note: "Le territoire en chiffres, unité par unité" },
         { label: "Bédjondo", href: "/dossiers/bedjondo", note: "Village devenu ville" },
         { label: "Décentralisation & développement local", href: "/dossiers/decentralisation", note: "Commune, canton, sous-préfecture" },
       ] },
@@ -119,7 +120,7 @@ export function entreeCourante(pathname: string): string {
   if (pathname.startsWith("/odeb")) return "odeb";
   if (pathname.startsWith("/journal")) return "journal";
   if (/^\/(participer|diaspora|temoignages)/.test(pathname)) return "participer";
-  if (/^\/(carte|villages|bibliotheque|langue|histoire)/.test(pathname) || /^\/dossiers\/(bedjondo|lieux-sacres|genealogies|genealogie-outil|decentralisation)/.test(pathname)) return "territoire";
+  if (/^\/(carte|villages|observatoire|bibliotheque|langue|histoire)/.test(pathname) || /^\/dossiers\/(bedjondo|lieux-sacres|genealogies|genealogie-outil|decentralisation)/.test(pathname)) return "territoire";
   if (/^\/(mission|transparence|documents|mentions-legales|archives|plan-du-site)/.test(pathname) || /^\/dossiers\/(engagements|demarches)/.test(pathname)) return "association";
   if (/^\/(programmes|actions|impact|dossiers|projets)/.test(pathname)) return "actions";
   return "";
@@ -136,7 +137,7 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
     { label: "Plateforme de projets", href: "/projets" }, { label: "Diagnostic territorial", href: "/dossiers/problematiques" }, { label: "Carte des besoins", href: "/dossiers/besoins" }, { label: "Tous les dossiers", href: "/dossiers" }, { label: "Quelle thématique pour vous ?", href: "/dossiers/trouver-ma-thematique" },
   ] },
   { titre: "Territoire & patrimoine", liens: [
-    { label: "Carte du territoire", href: "/carte" }, { label: "Les villages", href: "/villages" }, { label: "Bédjondo", href: "/dossiers/bedjondo" },
+    { label: "Carte du territoire", href: "/carte" }, { label: "Les villages", href: "/villages" }, { label: "Observatoire", href: "/observatoire" }, { label: "Bédjondo", href: "/dossiers/bedjondo" },
     { label: "Bibliothèque numérique", href: "/bibliotheque" }, { label: "La langue nangnda", href: "/langue" }, { label: "Lieux sacrés et sépultures", href: "/dossiers/lieux-sacres" }, { label: "Généalogies", href: "/dossiers/genealogies" },
   ] },
   { titre: "Participer", liens: [

@@ -103,6 +103,9 @@ PAGES_SITE += [
 PAGES_SITE.append({"t": "Plateforme de projets", "r": "/projets", "k": "Page",
      "d": "Espace numérique communautaire, application pour téléphone, complexe sportif, Air Bedjondo : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer ; proposer un projet.",
      "x": "projets plateforme stade idée étude annoncé souscription financé réalisation essai service espace numérique application complexe sportif Air Bedjondo budget devis calendrier porteur thématique promesse de contribution proposer un projet forage école pont bibliothèque atelier"})
+PAGES_SITE.append({"t": "Observatoire du Mandoul Occidental", "r": "/observatoire", "k": "Page",
+     "d": "Le territoire en chiffres, unité par unité : localités, équipements connus, couverture, diagnostic par domaine, suivi des plaidoyers et des besoins signalés — et ce que l’observatoire ne sait pas.",
+     "x": "observatoire Mandoul Occidental unités localités équipements écoles santé eau marchés couverture diagnostic domaines documenté partiel inconnu qui décide plaidoyers transmis réponse besoins signalés résolus population RGPH indicateurs sources"})
 entries.extend(PAGES_SITE)
 
 for f in sorted((CONTENT / "articles").glob("*.json")):

@@ -46,6 +46,7 @@ EYEBROWS = {
     "/plan-du-site": "Plan du site",
     "/recherche": "Recherche",
     "/projets": "Nos actions · plateforme de projets",
+    "/observatoire": "Territoire · observatoire du Mandoul Occidental",
     "/odeb": "Projet ODEB LONODJI · Vision 2030",
     "/odeb/livre-blanc": "Projet ODEB LONODJI · livre blanc",
     "/odeb/feuille-de-route": "Projet ODEB LONODJI · feuille de route 2026-2030",
