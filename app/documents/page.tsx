@@ -5,7 +5,7 @@ import { getIndex } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Documents à télécharger",
-  description: "Les documents publics d’ADEB LONODJI : kit d’adhésion, cahiers de terrain, dossier de présentation, note à la commune et plaidoyers en PDF. Statuts, règlement intérieur et procès-verbaux seront publiés dès leur validation.",
+  description: "Kit d’adhésion, cahiers de terrain, dossier de présentation, note à la commune et plaidoyers en PDF ; statuts et procès-verbaux dès leur validation.",
   alternates: { canonical: "/documents" },
 };
 

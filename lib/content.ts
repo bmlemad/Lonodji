@@ -157,3 +157,11 @@ export const ORG = {
     { role: "Animateur", name: "Bignéro Moïalbéi Le Madang", note: "Animation générale de l’association, communication et numérique" },
   ],
 };
+
+/** Coupe une description à 160 caractères sur une limite de mot (balises meta). */
+export function metaDescription(text: string, max = 160): string {
+  const t = text.replace(/\s+/g, " ").trim();
+  if (t.length <= max) return t;
+  const cut = t.slice(0, max - 1);
+  return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:\s]+$/, "") + "…";
+}

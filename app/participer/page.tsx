@@ -8,7 +8,7 @@ import { getPage, ORG } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Participer : nous écrire, adhérer, soutenir",
-  description: "Rejoindre une thématique ou la coordonner, adhérer à ADEB LONODJI, proposer un article, recevoir la lettre d’information et soutenir l’association — par formulaire, par WhatsApp ou par téléphone.",
+  description: "Rejoindre ou coordonner une thématique, adhérer, proposer un article, recevoir la lettre d’information : par formulaire, WhatsApp ou téléphone.",
   alternates: { canonical: "/participer" },
 };
 
@@ -65,7 +65,7 @@ export default function Participer() {
         <div className="legacy"><LegacySections sections={soutenir.sections} /></div>
       </section>
 
-      <section className="hub-section" id="proposer-article">
+      <section className="hub-section" id="proposer">
         <SectionHead eyebrow="Le journal" title="Proposer" em="un article." text="Toute personne peut proposer un article : il est relu, sourcé et publié sous le nom de son auteur." />
         <div className="legacy"><LegacySections sections={[proposer]} /></div>
       </section>

@@ -7,7 +7,7 @@ import { filledCount, getIndex, getPage, pickSections, thematiqueCount } from ".
 
 export const metadata: Metadata = {
   title: "Nos actions — quatre pôles, dix-neuf thématiques",
-  description: "Les Chantiers ADEB LONODJI : quatre pôles, dix-neuf thématiques et deux cellules transversales, avec leurs coordonnateurs, leurs objectifs et les Objectifs de développement durable qu’ils touchent.",
+  description: "Quatre pôles, dix-neuf thématiques et deux cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés.",
   alternates: { canonical: "/programmes" },
 };
 

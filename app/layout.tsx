@@ -22,27 +22,27 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  applicationName: "ADEB Lonodji",
+  applicationName: "ADEB LONODJI",
   title: {
-    default: "ADEB Lonodji — Courage • Discipline • Héritage",
-    template: "%s — ADEB Lonodji",
+    default: "ADEB LONODJI — Courage • Discipline • Héritage",
+    template: "%s — ADEB LONODJI",
   },
   description:
-    "ADEB LONODJI, l’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : quatre pôles, dix-neuf thématiques, sept plaidoyers pour l’eau, l’électricité, l’école, les routes et la santé au Mandoul Occidental (Tchad).",
+    "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : quatre pôles, dix-neuf thématiques, sept plaidoyers pour le Mandoul Occidental (Tchad).",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: siteUrl,
-    siteName: "ADEB Lonodji",
-    title: "ADEB Lonodji — Courage • Discipline • Héritage",
+    siteName: "ADEB LONODJI",
+    title: "ADEB LONODJI — Courage • Discipline • Héritage",
     description:
       "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond. Quatre pôles, dix-neuf thématiques, sept plaidoyers publiés.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ADEB LONODJI — Courage • Discipline • Héritage" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ADEB Lonodji — Courage • Discipline • Héritage",
+    title: "ADEB LONODJI — Courage • Discipline • Héritage",
     description:
       "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond. Quatre pôles, dix-neuf thématiques, sept plaidoyers publiés.",
     images: ["/og-image.png"],
@@ -77,7 +77,7 @@ export default function RootLayout({
               },
               {
                 "@type": "WebSite",
-                name: "ADEB Lonodji",
+                name: "ADEB LONODJI",
                 url: siteUrl,
                 inLanguage: "fr-FR",
               },

@@ -7,7 +7,7 @@ import { getIndex, getPage } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Histoire, Bédjondo et patrimoine bedjond",
-  description: "Bédjondo, berceau du peuple bedjond : la lignée des chefs de canton, les grandes figures, les lieux sacrés, les généalogies, la base de recherche et les articles d’histoire du journal.",
+  description: "Bédjondo, berceau du peuple bedjond : lignée des chefs de canton, grandes figures, lieux sacrés, généalogies, base de recherche et articles d’histoire.",
   alternates: { canonical: "/histoire" },
 };
 

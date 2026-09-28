@@ -7,7 +7,7 @@ import { getIndex, getPage, pickSections } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Plaidoyers, engagements et dossiers",
-  description: "Sept plaidoyers publiés et une note à la commune de Bédjondo — eau, électricité, internet, routes, santé, école, formation professionnelle — avec leurs destinataires, leur état d’envoi et les douze engagements publics de l’association.",
+  description: "Sept plaidoyers et une note à la commune de Bédjondo — eau, électricité, internet, routes, santé, école, formation — avec destinataires, suivi et engagements.",
   alternates: { canonical: "/actions" },
 };
 

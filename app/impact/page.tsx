@@ -6,7 +6,7 @@ import { filledCount, getIndex, getPage, thematiqueCount } from "../../lib/conte
 
 export const metadata: Metadata = {
   title: "Suivi des actions et tableau de bord",
-  description: "Le tableau de bord d’ADEB LONODJI : ce qui est documenté, ce qui est publié, ce qui est envoyé et ce qui attend une compétence, thématique par thématique, sans chiffre fabriqué.",
+  description: "Le tableau de bord : ce qui est documenté, publié, envoyé et ce qui attend une compétence, thématique par thématique, sans chiffre fabriqué.",
   alternates: { canonical: "/impact" },
 };
 

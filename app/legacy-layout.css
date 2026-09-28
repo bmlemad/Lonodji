@@ -4,7 +4,7 @@
 .lg-page{ padding-bottom:60px; }
 .lg-crumbs{ margin:0 0 26px; font-size:12px; color:#607069; }
 .lg-crumbs ol{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px; }
-.lg-crumbs li+li:before{ content:"/"; margin-right:6px; color:#a0aba5; }
+.lg-crumbs li+li:before{ content:"/"; margin-right:6px; color:#607069; }
 .lg-crumbs a:hover{ text-decoration:underline; text-underline-offset:4px; }
 .lg-page .detail-lead{ margin-bottom:34px; }
 .lg-pills{ margin:0 0 42px; }
@@ -12,7 +12,7 @@
 .legacy > .lg-section{ padding:38px 0 8px; border-top:1px solid var(--line); }
 .legacy > .lg-section:first-of-type{ border-top:0; padding-top:12px; }
 .legacy > .lg-section.alt{ margin:24px 0; padding:38px clamp(18px,3vw,40px) 26px; border:1px solid var(--line); border-radius:26px; background:rgba(255,255,255,.62); }
-.legacy .eyebrow{ text-transform:uppercase; letter-spacing:.18em; font-size:10px; font-weight:700; color:#6b7a72; margin:0 0 16px; }
+.legacy .eyebrow{ text-transform:uppercase; letter-spacing:.18em; font-size:10px; font-weight:700; color:#526159; margin:0 0 16px; }
 .legacy h2{ font-family:var(--font-dm),system-ui,sans-serif; font-size:clamp(28px,3.4vw,44px); line-height:1; letter-spacing:-.04em; margin:0 0 22px; max-width:22ch; color:var(--ink); }
 .legacy h2 em{ font-family:var(--font-playfair),Georgia,serif; font-weight:500; }
 .legacy h3{ font-family:var(--font-dm),system-ui,sans-serif; font-size:22px; letter-spacing:-.02em; line-height:1.15; margin:1.6em 0 .5em; color:var(--ink); }
@@ -95,7 +95,7 @@
 .legacy .odd-row-name{ font-weight:600; }
 .legacy .odd-chip{ display:inline-flex; gap:6px; align-items:center; padding:4px 9px; border-radius:99px; margin:3px 4px 3px 0; font-size:12px; text-decoration:none; background:var(--odd-accent,#eef2e9); color:var(--odd-ink,var(--ink)); }
 .legacy .odd-num{ font-weight:700; }
-.legacy .odd-cible{ opacity:.8; }
+.legacy .odd-cible{ opacity:1; }
 .legacy .odd-legend{ font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:#607069; margin-right:8px; }
 .legacy .bento, .legacy .bento-compact{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:1.2em 0; }
 .legacy .bento-tile{ padding:18px; border:1px solid var(--line); border-radius:18px; }

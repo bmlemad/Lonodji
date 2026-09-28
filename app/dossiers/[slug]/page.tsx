@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LegacyDocument } from "../../../components/legacy-content";
-import { getPage, hasPage, listDossierSlugs } from "../../../lib/content";
+import { getPage, hasPage, listDossierSlugs, metaDescription } from "../../../lib/content";
 
 export const dynamicParams = false;
 
@@ -15,9 +15,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const page = getPage(slug);
   return {
     title: page.title,
-    description: page.description || page.lede,
+    description: metaDescription(page.description || page.lede),
     alternates: { canonical: `/dossiers/${slug}` },
-    openGraph: { title: page.title, description: page.description || page.lede, type: "article" },
+    openGraph: { title: page.title, description: metaDescription(page.description || page.lede), type: "article" },
   };
 }
 

@@ -14,7 +14,7 @@ export default function SiteFooter() {
           <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
         <div>
-          <h4>L’association</h4>
+          <p className="footer-title">L’association</p>
           <Link href="/mission">Notre mission</Link>
           <Link href="/histoire">Histoire & patrimoine</Link>
           <Link href="/transparence">Redevabilité</Link>
@@ -23,7 +23,7 @@ export default function SiteFooter() {
           <Link href="/mentions-legales">Mentions légales</Link>
         </div>
         <div>
-          <h4>Agir</h4>
+          <p className="footer-title">Agir</p>
           <Link href="/programmes">Les quatre pôles</Link>
           <Link href="/actions">Plaidoyers & engagements</Link>
           <Link href="/impact">Suivi & tableau de bord</Link>
@@ -31,11 +31,11 @@ export default function SiteFooter() {
           <Link href="/journal">Le journal</Link>
         </div>
         <div>
-          <h4>Participer</h4>
+          <p className="footer-title">Participer</p>
           <Link href="/participer#contact">Nous écrire</Link>
           <Link href="/participer#adherer">Adhérer & cotiser</Link>
           <Link href="/participer#soutenir">Nous soutenir</Link>
-          <h4 style={{ marginTop: 18 }}>Lettre d’information</h4>
+          <p className="footer-title" style={{ marginTop: 18 }}>Lettre d’information</p>
           <NewsletterForm />
         </div>
       </div>

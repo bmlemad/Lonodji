@@ -25,6 +25,7 @@ export default function JournalList({ articles, categories }: { articles: Articl
           <a key={c.slug} role="listitem" href="#articles" aria-current={cat === c.slug ? "true" : undefined} onClick={(e) => { e.preventDefault(); setCat(c.slug); }}>{c.label}</a>
         ))}
       </div>
+      <h2 className="sr-only">Tous les articles</h2>
       <div className="art-grid" id="articles">
         {list.map((a) => <ArticleCard key={a.slug} a={a} />)}
       </div>

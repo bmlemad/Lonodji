@@ -5,7 +5,7 @@ import { getIndex } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Archives du site",
-  description: "La première version du site ADEB LONODJI (septembre 2026, 87 pages) a été réintégrée dans cette nouvelle version : ce qu’elle contenait, comment elle a été reprise, et ce que des sources extérieures disent de l’association.",
+  description: "La première version du site (septembre 2026, 87 pages) est intégralement reprise ici : ce qu’elle contenait, comment, et ce que des sources extérieures en disent.",
   alternates: { canonical: "/archives" },
 };
 

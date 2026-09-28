@@ -6,7 +6,7 @@ import { getIndex, getPage, ORG } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Notre mission",
-  description: "ADEB LONODJI, l’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : mission, valeurs, repères historiques depuis 1986, bureau exécutif, organisation en quatre pôles et dix-neuf thématiques.",
+  description: "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : mission, valeurs, repères depuis 1986, bureau exécutif et organisation.",
   alternates: { canonical: "/mission" },
 };
 

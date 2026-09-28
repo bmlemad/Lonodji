@@ -7,7 +7,7 @@ import { getPage } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Redevabilité, transparence et journal des corrections",
-  description: "Ce à quoi ADEB LONODJI s’engage : réponse sous 48 heures, mécanisme de plainte, protection des enfants et des personnes vulnérables, charte d’écriture, journal daté des corrections et non-discrimination.",
+  description: "Réponse sous 48 heures, mécanisme de plainte, protection des enfants et des personnes vulnérables, charte d’écriture et journal daté des corrections.",
   alternates: { canonical: "/transparence" },
 };
 

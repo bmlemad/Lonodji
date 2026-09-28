@@ -31,7 +31,7 @@
 .them-odd .odd-legend{ font-size:10px; text-transform:uppercase; letter-spacing:.14em; color:#607069; margin-right:4px; }
 .them-odd .odd-chip{ display:inline-flex; gap:6px; align-items:center; padding:4px 9px; border-radius:99px; font-size:11.5px; text-decoration:none; background:var(--odd-accent,#eef2e9); color:var(--odd-ink,var(--ink)); }
 .them-odd .odd-num{ font-weight:700; }
-.them-odd .odd-cible{ opacity:.85; }
+.them-odd .odd-cible{ opacity:1; }
 .them-links{ display:flex; flex-wrap:wrap; gap:6px 18px; font-size:13px; font-weight:600; margin:0; }
 .them-links a:hover{ text-decoration:underline; text-underline-offset:4px; }
 /* journal */
@@ -108,14 +108,14 @@
 .link-list span{ font-size:13px; color:#607069; line-height:1.5; }
 .link-list small{ font-size:10px; text-transform:uppercase; letter-spacing:.14em; color:#607069; }
 .footer-cols{ display:grid; grid-template-columns:1.2fr 1fr 1fr 1.2fr; gap:28px; width:100%; }
-.footer-cols h4{ margin:0 0 10px; font-size:11px; text-transform:uppercase; letter-spacing:.14em; color:var(--ink); }
+.footer-cols h4, .footer-cols h2, .footer-title{ margin:0 0 10px; font-size:11px; text-transform:uppercase; letter-spacing:.14em; color:var(--ink); font-weight:700; }
 .footer-cols a, .footer-cols p{ display:block; margin:0 0 6px; font-size:12px; line-height:1.5; }
 .footer-cols a:hover{ text-decoration:underline; text-underline-offset:4px; }
 .footer-brand-block p{ max-width:36ch; color:#607069; }
 .footer-nl{ display:flex; gap:8px; margin-top:8px; }
 .footer-nl input{ flex:1; min-width:0; padding:10px 12px; border:1px solid var(--line); border-radius:99px; font:400 13px var(--font-dm),system-ui,sans-serif; }
 .footer-nl button{ padding:10px 14px; border-radius:99px; border:0; background:var(--deep); color:#fff; font:600 12px var(--font-dm),system-ui,sans-serif; cursor:pointer; }
-.footer-consent{ font-size:11px; color:#728079; }
+.footer-consent{ font-size:11px; color:#4b5a52; }
 footer.site-footer{ display:block; }
 .footer-bottom{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; margin-top:26px; padding-top:18px; border-top:1px solid var(--line); font-size:11px; }
 @media (max-width:980px){ .footer-cols{ grid-template-columns:1fr 1fr; } }

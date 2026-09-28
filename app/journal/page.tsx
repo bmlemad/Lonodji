@@ -6,7 +6,7 @@ import { getIndex } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Le journal",
-  description: "Articles, annonces, plaidoyers et lettre d’information d’ADEB LONODJI : la vie de l’association, la mémoire de Bédjondo et du peuple bedjond, les dossiers de développement du Mandoul Occidental.",
+  description: "Articles, annonces, plaidoyers et lettre d’information : la vie de l’association, la mémoire bedjond et les dossiers de développement du Mandoul Occidental.",
   alternates: { canonical: "/journal" },
 };
 
