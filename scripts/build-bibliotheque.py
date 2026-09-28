@@ -80,13 +80,16 @@ def main() -> None:
         chercheurs.append({"id": cid, "nom": nom, "role": role, "references": oeuvres})
 
     # tous les auteurs de la base (pour la liste complète), regroupés par nom d'auteur tel qu'écrit
-    auteurs: dict[str, list[str]] = {}
+    auteurs: dict[str, dict] = {}
+    personne = re.compile(r"^[A-ZÉÈÔ][\w’'\-]+(?:\s[A-ZÉÈÔa-zéèô][\w’'\-\.]+){1,4}$")
     for r in references:
         for a in re.split(r"\s*(?:&amp;|&|,|\bet\b)\s*", r["auteurs"]):
             a = a.strip()
-            if len(a) < 4 or a.lower().startswith(("wikip", "étude", "etude", "article", "tchadinfos", "vatican", "inseed", "bureau", "ambassade", "sciences po", "comboni", "mars imperium", "initiative", "nature", "scielo", "morkeg")):
+            if not personne.match(a) or re.search(r"\d", a) or a.split()[0].lower() in ("cité", "citant", "de", "via", "annals", "nature", "planet", "mars", "initiative", "étude", "études", "article", "vatican", "sciences", "source", "documents", "données"):
                 continue
-            auteurs.setdefault(a, []).append(r["id"])
+            cle = sans_accents(a)
+            entree = auteurs.setdefault(cle, {"nom": a, "references": []})
+            entree["references"].append(r["id"])
 
     idx = json.loads((CONTENT / "index.json").read_text("utf8"))
     documents = [{"titre": d["title"], "pdf": d["pdf"], "description": d.get("description", ""), "meta": d.get("meta", "")} for d in idx["documents"] if d.get("pdf")]
@@ -100,7 +103,7 @@ def main() -> None:
         "rubriques": [{"id": r[0], "titre": r[1], "references": [x["id"] for x in references if x["rubrique"] == r[0]]} for r in RUBRIQUES],
         "references": references,
         "chercheurs": chercheurs,
-        "auteurs": sorted(({"nom": k, "references": v} for k, v in auteurs.items()), key=lambda a: sans_accents(a["nom"])),
+        "auteurs": sorted(auteurs.values(), key=lambda a: sans_accents(a["nom"].split()[-1])),
         "documents": documents,
         "journal": [{"slug": s, "label": rubriques_journal.get(s, s), "articles": n} for s, n in sorted(articles_par_rubrique.items(), key=lambda t: -t[1])],
         "totalArticles": len(idx["articles"]),

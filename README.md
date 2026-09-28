@@ -43,6 +43,12 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 - `app/api/indicateurs/route.ts` — renvoie ces chiffres ; si la variable d’environnement `NETLIFY_FORMS_TOKEN` est définie sur le site (jeton d’accès personnel Netlify, *User settings → Applications → Personal access tokens*), les compteurs de formulaires sont relevés en direct sur l’API Netlify (mise en cache dix minutes) et la page les affiche « en direct ». Seuls des nombres sortent de l’API : les envois ne sont lus en mémoire que pour compter les personnes distinctes (intentions d’adhésion). Sans jeton, la page garde le relevé daté.
 - Les chiffres que seule l’association détient (adhérents à jour de cotisation, besoins résolus) sont dans `bureau` du JSON : ils restent « non publiés » tant que le bureau ne les transmet pas avec leur date.
 
+## Bibliothèque numérique et langue
+
+- `/bibliotheque` — les références de la base de recherche (`content/pages/recherche.json`, importée) reclassées par rubrique documentaire, les publications de l’association (PDF, journal par rubrique), les chercheurs du pays bedjond (liste `CHERCHEURS` dans `scripts/build-bibliotheque.py`, à compléter) et un formulaire de dépôt `depot-document` avec fichier ≤ 10 Mo (`components/depot-form.tsx`). Données : `scripts/build-bibliotheque.py` → `content/bibliotheque.json` (à relancer après un réimport).
+- `/langue` — la langue nangnda : ce que le site sait (sources : journal, base), les ressources en ligne (Lexique Nangnda de Dinguemrebeye & Keegan sur morkegbooks.com, rapport SIL), et le formulaire `mot-nangnda` (mot, sens, exemple, enregistrement ≤ 10 Mo, `components/mot-form.tsx`) qui amorce le dictionnaire numérique. L’alphabet et la prononciation restent à écrire avec les linguistes.
+- Les formulaires avec pièce jointe partagent `components/envoi-multipart.ts` ; tous les formulaires du site sont déclarés dans `scripts/import-legacy.py` (`FORMULAIRES_SITE`) et décrits dans les mentions légales (`UPDATES`).
+
 ## Fiches des villages
 
 - `/villages` (recherche + quatorze unités), `/villages/<unité>` (liste alphabétique, liens du site) et `/villages/<unité>/<village>` (une page par localité nommée : position, unité, équipements connus à moins de 10 km, six questions à documenter reliées aux formulaires préremplis — `?localite=`, `?lieu=` —, pages du site qui la citent, localités voisines). Composants `components/villages-recherche.tsx`, données `lib/villages.ts`.

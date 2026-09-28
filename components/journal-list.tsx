@@ -1,12 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ArticleSummary } from "../lib/content";
 import { ArticleCard } from "./blocks";
 
 export default function JournalList({ articles, categories }: { articles: ArticleSummary[]; categories: { slug: string; label: string }[] }) {
   const [cat, setCat] = useState("all");
   const [q, setQ] = useState("");
+  // ?rubrique=<slug> (depuis la bibliothèque) : ouvre le journal sur une rubrique
+  useEffect(() => {
+    const r = new URLSearchParams(window.location.search).get("rubrique");
+    if (r && categories.some((c) => c.slug === r)) setCat(r);
+  }, [categories]);
   const used = new Set(articles.map((a) => a.category));
   const cats = categories.filter((c) => c.slug === "all" || used.has(c.slug));
   const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");

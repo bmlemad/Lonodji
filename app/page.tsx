@@ -156,12 +156,12 @@ export default function Home() {
               <p className="eyebrow">06 — Histoire & patrimoine</p>
               <h2 id="heritage-title">Préserver ce qui<br /><em>doit se transmettre.</em></h2>
             </div>
-            <p>De Narmbang à Donath Gari, onze chefs de canton ; des forums de 2000 et 2003 à la réactivation de 2026 ; une langue, le bedjond, et une base de recherche de quarante références.</p>
+            <p>De Narmbang à Donath Gari, onze chefs de canton ; des forums de 2000 et 2003 à la réactivation de 2026 ; une langue, le nangnda, et une <Link href="/bibliotheque">bibliothèque de quarante références</Link>.</p>
           </div>
           <div className="heritage-grid">
             <article><span>01</span><h3>Grandes figures</h3><p>Tarouss Doumanbé, pilier de la création de l’association ; la lignée des chefs de canton ; les chercheurs qui ont écrit la mémoire bedjond.</p><Link className="text-link" href="/histoire#figures">Découvrir ↗</Link></article>
             <article><span>02</span><h3>Lieux sacrés et généalogies</h3><p>Deux cahiers de terrain pour recenser les sites sacrés et écrire l’histoire de chaque famille.</p><Link className="text-link" href="/dossiers/lieux-sacres">Les lieux sacrés ↗</Link></article>
-            <article><span>03</span><h3>Nangnda, le bedjond</h3><p>Ce que veut vraiment dire « nangnda », et ce que l’enquête SIL dit de la parenté du bedjond avec le gor, le mango et le bebot.</p><Link className="text-link" href="/journal/2026-09-22-ce-que-veut-dire-nangnda">Lire l’article ↗</Link></article>
+            <article><span>03</span><h3>Nangnda, la langue</h3><p>Ce que nous en savons, le lexique de 2 650 mots que l’on peut écouter en ligne, et le dictionnaire numérique qui commence par vos mots.</p><Link className="text-link" href="/langue">La langue nangnda ↗</Link></article>
           </div>
           <div className="section-actions"><Link className="text-link" href="/histoire">Toute l’histoire ↗</Link></div>
         </section>

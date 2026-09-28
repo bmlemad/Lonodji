@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const main: [string, { href: string; label: string }[]][] = [
   ["L’association", [
-    { href: "/mission", label: "Notre mission" }, { href: "/histoire", label: "Histoire & patrimoine" }, { href: "/transparence", label: "Redevabilité & transparence" },
+    { href: "/mission", label: "Notre mission" }, { href: "/histoire", label: "Histoire & patrimoine" }, { href: "/bibliotheque", label: "Bibliothèque numérique bedjond" }, { href: "/langue", label: "La langue nangnda" }, { href: "/transparence", label: "Redevabilité & transparence" },
     { href: "/documents", label: "Documents" }, { href: "/mentions-legales", label: "Mentions légales" }, { href: "/archives", label: "Archives du site" },
   ]],
   ["Nos actions", [

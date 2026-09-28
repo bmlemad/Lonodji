@@ -47,6 +47,8 @@ RELEVE = {
         "mesure-debit": {"envois": 0},
         "diaspora-competences": {"envois": 0},
         "temoignage": {"envois": 0},
+        "depot-document": {"envois": 0},
+        "mot-nangnda": {"envois": 0},
     },
 }
 # Les deux formulaires d'abonnement (corps de page et pied de page) comptent ensemble.

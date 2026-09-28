@@ -112,6 +112,8 @@ const FORMULAIRES: { cle: string; libelle: string; note?: string; href: string }
   { cle: "mesure-debit", libelle: "mesures de débit internet", href: "/actions#mesure-debit" },
   { cle: "diaspora-competences", libelle: "compétences inscrites au répertoire", href: "/diaspora" },
   { cle: "temoignage", libelle: "récits, photos et enregistrements reçus", href: "/temoignages" },
+  { cle: "depot-document", libelle: "documents déposés à la bibliothèque", href: "/bibliotheque" },
+  { cle: "mot-nangnda", libelle: "mots versés au dictionnaire nangnda", href: "/langue" },
 ];
 
 export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: Indicateurs; mode?: "complet" | "compact" }) {

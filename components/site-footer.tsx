@@ -27,7 +27,7 @@ export default function SiteFooter() {
           <Link href="/programmes">Les quatre pôles</Link>
           <Link href="/actions">Plaidoyers & engagements</Link>
           <Link href="/impact">Suivi & tableau de bord</Link>
-          <Link href="/carte">Carte du territoire</Link><Link href="/villages">Les villages</Link><Link href="/dossiers">Tous les dossiers</Link>
+          <Link href="/carte">Carte du territoire</Link><Link href="/villages">Les villages</Link><Link href="/bibliotheque">Bibliothèque</Link><Link href="/langue">Langue nangnda</Link><Link href="/dossiers">Tous les dossiers</Link>
           <Link href="/journal">Le journal</Link>
         </div>
         <div>

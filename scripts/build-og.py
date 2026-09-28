@@ -38,6 +38,8 @@ EYEBROWS = {
     "/diaspora": "Diaspora · répertoire des compétences",
     "/temoignages": "Témoignages · banque d’images",
     "/villages": "Territoire · fiches des villages",
+    "/bibliotheque": "Bibliothèque numérique bedjond",
+    "/langue": "Langue · nangnda",
     "/transparence": "Redevabilité",
     "/archives": "Archives du site",
     "/mentions-legales": "Mentions légales",

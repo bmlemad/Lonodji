@@ -6,7 +6,7 @@ const siteUrl = "https://lonodji.org";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const idx = getIndex();
-  const fixed = ["/", "/mission", "/histoire", "/programmes", "/actions", "/impact", "/journal", "/documents", "/dossiers", "/carte", "/villages", "/diaspora", "/temoignages", "/participer", "/transparence", "/archives", "/mentions-legales", "/plan-du-site"];
+  const fixed = ["/", "/mission", "/histoire", "/programmes", "/actions", "/impact", "/journal", "/documents", "/dossiers", "/carte", "/villages", "/bibliotheque", "/langue", "/diaspora", "/temoignages", "/participer", "/transparence", "/archives", "/mentions-legales", "/plan-du-site"];
   const entries: MetadataRoute.Sitemap = fixed.map((path) => ({
     url: new URL(path, siteUrl).toString(),
     changeFrequency: path === "/" || path === "/journal" ? "weekly" : "monthly",
