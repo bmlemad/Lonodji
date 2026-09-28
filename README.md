@@ -31,6 +31,11 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 - `scripts/build-search-index.py` — génère `public/search-index.json` pour la page `/recherche` (à relancer après toute modification de `content/`).
 - `scripts/build-og.py` — génère les images de partage `public/og/*.jpg` (une par page, titres et descriptions lus dans le site construit : lancer `npm run build` avant, puis relancer le build pour les déclarer).
 
+## Carte du territoire
+
+- `/carte` — carte interactive (Leaflet, fond humanitaire OpenStreetMap France) des 14 unités du pays bedjond (contours GADM 4.1), des localités et équipements OpenStreetMap (exports HOT/HDX) et des liens du site par unité ; fiche par lieu, recherche, bouton « Signaler un besoin ici » qui préremplit le formulaire de la carte des besoins (`?localite=`).
+- `scripts/build-carte.py` — assemble `public/carte/donnees.json` à partir des sources (téléchargées dans `.cache/carte/` au premier lancement) ; à relancer pour rafraîchir les données OSM.
+
 ## Espace de rédaction privé
 
 - `/redaction` (noindex, lien discret « Rédaction » en pied de page) : écriture des articles en brouillon, aperçu dans le style du journal, rubrique, statut, enregistrement automatique, export `.md`. Mot de passe unique choisi à la première visite (scrypt + sel), jeton de session HMAC dérivé du hash courant (changer le mot de passe déconnecte tout), cinq erreurs bloquent l’entrée un quart d’heure. Mot de passe en POST seulement, jeton en en-tête `Authorization`.

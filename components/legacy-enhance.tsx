@@ -54,6 +54,18 @@ export default function LegacyEnhance({ hasMap = false, hasForms = false, script
     return () => { cleanups.forEach((c) => c()); done.current = false; };
   }, [hasForms]);
 
+  // ?localite=Nom (depuis la carte du territoire) : préremplit le champ « localité » du formulaire de signalement
+  useEffect(() => {
+    if (!hasForms) return;
+    const localite = new URLSearchParams(window.location.search).get("localite");
+    if (!localite) return;
+    const champ = document.querySelector<HTMLInputElement>(".legacy form input[name='localite']");
+    if (!champ) return;
+    champ.value = localite.slice(0, 120);
+    const t = setTimeout(() => { champ.closest("form")?.scrollIntoView({ behavior: "smooth", block: "start" }); champ.focus({ preventScroll: true }); }, 350);
+    return () => clearTimeout(t);
+  }, [hasForms]);
+
   const srcs = [...(hasMap ? ["/geo.js"] : []), ...scripts];
   if (!srcs.length) return null;
   return (
