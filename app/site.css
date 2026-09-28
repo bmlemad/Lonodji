@@ -151,3 +151,23 @@ footer.site-footer{ display:block; }
 .nav-search{ display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:12px; border:1px solid var(--line); background:rgba(255,255,255,.72); color:var(--ink); flex:none; }
 .nav-search:hover{ background:rgba(23,59,45,.07); }
 @media (max-width:800px){ .nav-search{ width:34px; height:34px; order:2; margin-left:auto; } .nav-cta{ margin-left:0; } }
+
+/* ---------- couche appli : barre d'onglets (site installé ou ouvert dans l'appli), installation ---------- */
+.button-row{ display:flex; flex-wrap:wrap; gap:12px; margin:26px 0 0; }
+.install-cta{ display:none; margin-top:22px; margin-left:14px; }
+html.can-install .install-cta{ display:inline-flex; }
+.tabbar{ display:none; }
+@media (max-width:800px){
+  html.is-standalone .tabbar{ position:fixed; z-index:48; left:0; right:0; bottom:0; display:grid; grid-template-columns:repeat(5,1fr); height:calc(62px + env(safe-area-inset-bottom,0px)); padding:0 4px env(safe-area-inset-bottom,0px); background:rgba(248,250,246,.94); -webkit-backdrop-filter:blur(20px) saturate(140%); backdrop-filter:blur(20px) saturate(140%); border-top:1px solid var(--line); box-shadow:0 -10px 30px rgba(23,59,45,.08); }
+  html.is-standalone body{ padding-bottom:calc(62px + env(safe-area-inset-bottom,0px)); }
+  html.is-standalone .mobile-menu{ padding-bottom:calc(90px + env(safe-area-inset-bottom,0px)); }
+  html.is-standalone.kb-open .tabbar{ display:none; }
+  html.is-standalone .install-cta{ display:none; }
+  .tabbar .tab{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; min-height:62px; padding:8px 2px 6px; border:0; background:none; border-radius:14px; color:#4b5a52; font:600 10px/1 var(--font-dm),system-ui,sans-serif; letter-spacing:.02em; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+  .tabbar .tab svg{ width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; }
+  .tabbar .tab.is-active{ color:var(--deep); }
+  .tabbar .tab.is-active .tab-ico{ background:rgba(182,207,69,.28); }
+  .tabbar .tab-ico{ display:grid; place-items:center; width:44px; height:26px; border-radius:99px; transition:background .2s ease; }
+  .tabbar .tab:active .tab-ico{ background:rgba(23,59,45,.1); }
+  .tabbar .tab:focus-visible{ outline:3px solid var(--accent); outline-offset:-3px; }
+}

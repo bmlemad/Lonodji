@@ -46,7 +46,7 @@ HUB_ROUTES = {
     "mentions-legales": "/mentions-legales",
     "figures": "/histoire",
     "sitemap": "/plan-du-site",
-    "hors-ligne": "/",
+    "hors-ligne": "/hors-ligne",
     "404": "/",
     "redaction": "/",
 }
@@ -506,6 +506,9 @@ UPDATES = [
      "Le nom de domaine lonodji.org est en service depuis le 27 septembre 2026, mais aucune adresse électronique n’y est encore rattachée. Nous publierons ici les adresses dès qu’elles fonctionneront."),
     ("Le nom de domaine lonodji.org, que nous annoncions comme réservé, n’est pas enregistré à ce jour, et les adresses qui y étaient rattachées ne reçoivent rien\u00a0: nous publierons les nouvelles adresses ici dès qu’elles fonctionneront.",
      "Le nom de domaine lonodji.org héberge le site depuis le 27 septembre 2026, mais aucune adresse électronique n’y est encore rattachée\u00a0: nous publierons les adresses ici dès qu’elles fonctionneront."),
+    # Projet d'application : la réserve sur l'aperçu partagé n'a plus lieu d'être ; l'état des applis du 24/09 est daté.
+    ('<p class="form-note">Une réserve d’honnêteté\xa0: sur l’aperçu actuel du site, l’installation hors ligne est <strong>volontairement désactivée</strong>. Le site y est servi depuis un domaine partagé avec d’autres\xa0; y installer un cache serait s’approprier un espace qui n’est pas le nôtre, et l’aperçu doit montrer exactement le fichier publié. La lecture hors ligne s’activera d’elle-même le jour où le site vivra sur le nom de domaine de l’association — qui reste à acquérir.</p>',
+     '<p class="form-note"><strong>Mise à jour du 28 septembre 2026\xa0:</strong> le site vit sur lonodji.org depuis le 27 septembre, et la lecture hors ligne y est active. Une première version d’essai de l’application Android (1.0.0) et le projet de l’application iPhone ont été préparés le 24 septembre 2026\xa0; leur publication sur Google Play et sur l’App Store attend, comme cette page le prévoit, le récépissé de l’association et l’ouverture des comptes en son nom.</p>'),
     # Journal des corrections : l'entrée du 23/09 reste telle quelle ; une mise à jour datée la complète.
     ("<p><strong>Comment nous nous en sommes aperçus\u00a0:</strong> un audit complet du site, le 23 septembre, qui a interrogé le registre du .org et l’annuaire RDAP, sans réponse pour lonodji.org, puis relu la notice à la lumière des formulaires réellement en service.</p>",
      "<p><strong>Comment nous nous en sommes aperçus\u00a0:</strong> un audit complet du site, le 23 septembre, qui a interrogé le registre du .org et l’annuaire RDAP, sans réponse pour lonodji.org, puis relu la notice à la lumière des formulaires réellement en service.</p>\n<p><strong>Mise à jour du 28 septembre 2026\u00a0:</strong> le nom de domaine lonodji.org a depuis été enregistré et héberge le site depuis le 27 septembre. Les adresses électroniques restent à créer\u00a0; le formulaire et WhatsApp demeurent les deux voies sûres.</p>"),

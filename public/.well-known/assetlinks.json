@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "org.lonodji.app",
+      "sha256_cert_fingerprints": [
+        "C9:7F:CD:7B:9D:95:6E:54:E9:77:34:13:48:E1:5B:1C:92:40:44:C5:25:29:F1:A6:79:AA:9C:5D:EC:41:BF:D3"
+      ]
+    }
+  }
+]

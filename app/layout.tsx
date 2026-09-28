@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import AppShell from "../components/app-shell";
 import SiteFooter from "../components/site-footer";
 import SiteNav from "../components/site-nav";
 import { DM_Sans, Playfair_Display } from "next/font/google";
@@ -60,6 +61,7 @@ export default function RootLayout({
         <SiteNav />
         {children}
         <SiteFooter />
+        <AppShell />
         <Script id="structured-data" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
             "@context": "https://schema.org",

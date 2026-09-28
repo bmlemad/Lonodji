@@ -26,6 +26,13 @@ export default function SiteNav() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   useEffect(() => {
+    // la barre d'onglets de l'appli (components/app-shell.tsx) ouvre et ferme ce menu
+    const surDemande = (e: Event) => setOpen(!!(e as CustomEvent<boolean>).detail);
+    window.addEventListener("lonodji:menu", surDemande);
+    return () => window.removeEventListener("lonodji:menu", surDemande);
+  }, []);
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent("lonodji:menu-state", { detail: open }));
     if (!open) return;
     const onKeyDown = (event: KeyboardEvent) => event.key === "Escape" && setOpen(false);
     document.addEventListener("keydown", onKeyDown);
@@ -36,9 +43,9 @@ export default function SiteNav() {
     <>
       <nav className="nav" aria-label="Navigation principale">
         <Link className="brand" href="/" aria-label="ADEB LONODJI — accueil" onClick={() => setOpen(false)}><span className="brand-mark" aria-hidden="true">A</span><span className="brand-name"><span>ADEB</span><b>LONODJI</b></span></Link>
-        <div className="links" role="list">{items.map((item) => <Link key={item.href} href={item.href} role="listitem" aria-current={isCurrent(pathname, item.href) ? "page" : undefined}><small>{item.number}</small><span>{item.label}</span></Link>)}</div>
+        <div className="links">{items.map((item) => <Link key={item.href} href={item.href} aria-current={isCurrent(pathname, item.href) ? "page" : undefined}><small>{item.number}</small><span>{item.label}</span></Link>)}</div>
         <Link className="nav-search" href="/recherche" aria-label="Rechercher dans le site" title="Rechercher"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg></Link>
-        <Link className="nav-cta" href="/participer"><span>Nous rejoindre</span><b aria-hidden="true">↗</b></Link>
+        <Link className="nav-cta" href="/participer" aria-label="Nous rejoindre"><span>Nous rejoindre</span><b aria-hidden="true">↗</b></Link>
         <button className="menu-toggle" type="button" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen((value) => !value)}><span>{open ? "Fermer" : "Menu"}</span><i aria-hidden="true">{open ? "×" : "☰"}</i></button>
       </nav>
       <div className={open ? "mobile-menu is-open" : "mobile-menu"} id="mobile-menu" aria-hidden={!open} inert={!open}>
@@ -47,6 +54,7 @@ export default function SiteNav() {
           <div className="mobile-menu-links">{items.map((item) => <Link key={item.href} href={item.href} aria-current={isCurrent(pathname, item.href) ? "page" : undefined} onClick={() => setOpen(false)}><small>{item.number}</small><span>{item.label}</span><b aria-hidden="true">↗</b></Link>)}</div>
           <Link className="button primary mobile-menu-cta" href="/participer" onClick={() => setOpen(false)}>Nous rejoindre <span aria-hidden="true">↗</span></Link>
           <Link className="text-link" style={{ display: "inline-block", marginTop: 22 }} href="/recherche" onClick={() => setOpen(false)}>Rechercher dans le site <span aria-hidden="true">→</span></Link>
+          <button className="button secondary install-cta" type="button" onClick={() => { setOpen(false); window.dispatchEvent(new Event("lonodji:install")); }}>Installer l’application <span aria-hidden="true">↓</span></button>
         </div>
       </div>
     </>

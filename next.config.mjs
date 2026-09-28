@@ -111,13 +111,8 @@ const nextConfig = {
             permanent: true
       },
       {
-            source: "/hors-ligne",
-            destination: "/",
-            permanent: true
-      },
-      {
             source: "/hors-ligne.html",
-            destination: "/",
+            destination: "/hors-ligne",
             permanent: true
       },
       {
@@ -464,6 +459,19 @@ const nextConfig = {
   },
   async headers() {
     return [
+      {
+        // le service worker doit toujours être revérifié, jamais servi longtemps depuis un cache
+        source: "/sw.js",
+        headers: [{ key: "Cache-Control", value: "no-cache" }],
+      },
+      {
+        // lien appli Android ↔ site (Digital Asset Links)
+        source: "/.well-known/assetlinks.json",
+        headers: [
+          { key: "Content-Type", value: "application/json" },
+          { key: "Cache-Control", value: "public, max-age=3600" },
+        ],
+      },
       {
         source: "/(.*)",
         headers: [

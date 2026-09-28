@@ -74,8 +74,8 @@ export default function SiteSearch({ initialQuery = "" }: { initialQuery?: strin
         {error ? "L’index de recherche n’a pas pu être chargé." : !index ? "Chargement de l’index…" : terms.length ? `${results.length} résultat${results.length > 1 ? "s" : ""}` : `${index.length} pages, articles, thématiques et documents indexés.`}
       </p>
       {results.length ? (
-        <div className="cat-list" role="list">
-          {kinds.map((k) => <a key={k} role="listitem" href="#resultats" aria-current={kind === k ? "true" : undefined} onClick={(e) => { e.preventDefault(); setKind(k); }}>{k}</a>)}
+        <div className="cat-list">
+          {kinds.map((k) => <a key={k} href="#resultats" aria-current={kind === k ? "true" : undefined} onClick={(e) => { e.preventDefault(); setKind(k); }}>{k}</a>)}
         </div>
       ) : null}
       <ol className="search-results" id="resultats">

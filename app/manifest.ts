@@ -1,19 +1,36 @@
 import type { MetadataRoute } from "next";
 
+/* Manifeste d'application web : il sert à l'installation sur l'écran d'accueil
+   et à l'appli Android (activité web de confiance, paquet org.lonodji.app),
+   qui reprend ses raccourcis et ses icônes. */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "ADEB LONODJI",
-    short_name: "ADEB LONODJI",
-    description: "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond.",
+    id: "/",
+    name: "ADEB LONODJI — Bédjondo",
+    short_name: "LONODJI",
+    description:
+      "Site de l’Association de Développement et d’Entraide de Bédjondo : mémoire, plaidoyers, entraide. Les pages déjà ouvertes restent lisibles sans connexion.",
     start_url: "/",
+    scope: "/",
     display: "standalone",
+    display_override: ["standalone", "minimal-ui"],
+    orientation: "any",
     background_color: "#f4f6f1",
     theme_color: "#173b2d",
     lang: "fr",
+    dir: "ltr",
+    categories: ["education", "social", "news"],
+    prefer_related_applications: false,
     icons: [
-      { src: "/app/icone-192.png", sizes: "192x192", type: "image/png" },
-      { src: "/app/icone-512.png", sizes: "512x512", type: "image/png" },
+      { src: "/app/icone-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/app/icone-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
       { src: "/app/icone-512-maskable.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+    ],
+    shortcuts: [
+      { name: "Adhérer à l’association", short_name: "Adhérer", url: "/participer#adherer", icons: [{ src: "/app/raccourci-adherer.png", sizes: "96x96", type: "image/png" }] },
+      { name: "Le journal", short_name: "Journal", url: "/journal", icons: [{ src: "/app/raccourci-journal.png", sizes: "96x96", type: "image/png" }] },
+      { name: "Rechercher sur le site", short_name: "Rechercher", url: "/recherche", icons: [{ src: "/app/raccourci-rechercher.png", sizes: "96x96", type: "image/png" }] },
+      { name: "Cahier généalogique", short_name: "Généalogie", url: "/dossiers/genealogie-outil", icons: [{ src: "/app/raccourci-genealogie.png", sizes: "96x96", type: "image/png" }] },
     ],
   };
 }

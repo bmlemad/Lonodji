@@ -20,9 +20,9 @@ export default function JournalList({ articles, categories }: { articles: Articl
         </label>
         <p className="journal-count" aria-live="polite">{list.length} article{list.length > 1 ? "s" : ""}</p>
       </div>
-      <div className="cat-list" role="list">
+      <div className="cat-list">
         {cats.map((c) => (
-          <a key={c.slug} role="listitem" href="#articles" aria-current={cat === c.slug ? "true" : undefined} onClick={(e) => { e.preventDefault(); setCat(c.slug); }}>{c.label}</a>
+          <a key={c.slug} href="#articles" aria-current={cat === c.slug ? "true" : undefined} onClick={(e) => { e.preventDefault(); setCat(c.slug); }}>{c.label}</a>
         ))}
       </div>
       <h2 className="sr-only">Tous les articles</h2>
