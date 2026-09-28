@@ -81,7 +81,7 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 
 ## Espace presse
 
-- `/presse` — pour journalistes et partenaires : citation prête à l’emploi, chiffres datés (tableau de bord), six dates, bureau exécutif (`ORG.bureau`), communiqués (articles « Vie de l’association » et lettre), documents (dossier de présentation, livre blanc), logos téléchargeables avec leurs règles (`public/identite/`), quatre règles demandées aux médias, contact presse. Aucune photo tant que la banque d’images est vide.
+- `/presse` — pour journalistes et partenaires : citation prête à l’emploi, chiffres datés (tableau de bord), six dates, bureau exécutif (`ORG.bureau`), communiqués (articles « Vie de l’association » et lettre), documents (dossier de présentation, livre blanc), logos téléchargeables avec leurs règles (`public/identite/`), quatre règles demandées aux médias, contact presse, et cinq visuels carrés à partager (WhatsApp, réseaux) produits par `scripts/build-visuels.py` → `public/partage/` (textes dans `VISUELS`, chiffres lus dans `content/` ; à relancer après `npm run build` quand les compteurs changent). Aucune photo tant que la banque d’images est vide.
 
 ## Navigation (en-tête, méga-menu, menu mobile, pied de page)
 

@@ -21,6 +21,13 @@ const DATES: [string, string][] = [
   ["2026", "Réactivation : quatre pôles, dix-neuf thématiques, deux cellules ; site lonodji.org ; huit plaidoyers ; carte du territoire."],
   ["28 sept. 2026", "Quarante ans des fondations : lancement de la réflexion ODEB LONODJI (vision 2030, cinq programmes, livre blanc en version de travail)."],
 ];
+const VISUELS: [string, string][] = [
+  ["/partage/40-ans-reflexion-odeb.png", "Quarante ans des fondations : la réflexion ODEB LONODJI"],
+  ["/partage/livre-blanc-odeb.png", "Le livre blanc, à lire et à discuter"],
+  ["/partage/thematiques-a-pourvoir.png", "Les thématiques qui cherchent leur coordonnateur"],
+  ["/partage/retrouver-son-village.png", "Retrouver son village : une fiche par localité"],
+  ["/partage/racontez-bedjondo.png", "Racontez Bédjondo : témoignages et photos"],
+];
 const LOGOS: [string, string, string][] = [
   ["/identite/logo-adeb-lonodji.svg", "Logo couleur (SVG)", "fond clair"],
   ["/identite/logo-adeb-lonodji-sombre.svg", "Logo sur fond sombre (SVG)", "réserve"],
@@ -118,6 +125,15 @@ export default function Presse() {
           <Link className="button secondary" href="/dossiers/identite-visuelle">Identité visuelle complète : couleurs, polices, règles <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/dossiers/kit-mobilisation">Visuels de mobilisation <span aria-hidden="true">→</span></Link>
         </div>
+      </section>
+
+      <section className="hub-section" id="partage">
+        <SectionHead eyebrow="Visuels à partager" title="Cinq cartes" em="pour WhatsApp et les réseaux." text="Format carré 1080 × 1080, aux couleurs du site, avec l’adresse de la page. Téléchargez, partagez tel quel ; le texte des cartes est repris ci-dessous pour l’accompagner." />
+        <ul className="pr-visuels">
+          {VISUELS.map(([href, label]) => (
+            <li key={href}><a href={href} download className="pr-visuel"><img src={href} alt="" width={1080} height={1080} loading="lazy" /><span>{label} <b aria-hidden="true">↓</b></span></a></li>
+          ))}
+        </ul>
       </section>
 
       <section className="hub-section" id="regles">

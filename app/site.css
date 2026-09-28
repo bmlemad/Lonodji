@@ -880,3 +880,9 @@ html.is-standalone .haut{ bottom:calc(76px + env(safe-area-inset-bottom,0px)); }
 .pr-logo small{ font-size:11.5px; color:#607069; }
 .pr-contact{ max-width:760px; }
 .pr-page .timeline p{ margin:0; }
+.pr-visuels{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr)); gap:12px; }
+.pr-visuel{ display:flex; flex-direction:column; gap:8px; }
+.pr-visuel img{ width:100%; height:auto; border-radius:18px; border:1px solid var(--line); box-shadow:0 10px 30px rgba(23,59,45,.12); }
+.pr-visuel span{ font-size:13px; font-weight:600; color:var(--ink); }
+.pr-visuel span b{ color:var(--deep); margin-left:4px; }
+.pr-visuel:hover span{ text-decoration:underline; text-underline-offset:4px; }
