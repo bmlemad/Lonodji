@@ -95,7 +95,7 @@ export default function Home() {
                 <div className="card-top"><span>Pôle {pole.roman}</span><small>{pole.items.filter((t) => t.filled).length}/{pole.items.length} pourvues</small></div>
                 <div className="program-body">
                   <h3 style={{ fontSize: 28 }}>{pole.name}</h3>
-                  <p>{pole.items.slice(0, 3).map((t) => t.name).join(" · ")}{pole.items.length > 3 ? ` · et ${pole.items.length - 3} autres thématiques` : ""}</p>
+                  <p>{pole.items.slice(0, 3).map((t) => t.name).join(" · ")}{pole.items.length > 4 ? ` · et ${pole.items.length - 3} autres thématiques` : pole.items.length === 4 ? " · et 1 autre thématique" : ""}</p>
                 </div>
                 <span className="card-arrow" aria-hidden="true">↗</span>
               </Link>

@@ -16,7 +16,7 @@ export default function JournalList({ articles, categories }: { articles: Articl
       <div className="journal-tools">
         <label className="journal-search">
           <span className="sr-only">Rechercher un article</span>
-          <input type="search" placeholder="Rechercher un article, un mot-clé (plaidoyer, langue, forum…)" value={q} onChange={(e) => setQ(e.target.value)} />
+          <input type="search" placeholder="Rechercher un article ou un mot-clé…" value={q} onChange={(e) => setQ(e.target.value)} />
         </label>
         <p className="journal-count" aria-live="polite">{list.length} article{list.length > 1 ? "s" : ""}</p>
       </div>

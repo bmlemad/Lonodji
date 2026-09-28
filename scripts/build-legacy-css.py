@@ -136,6 +136,6 @@ out = TOKENS + "\n".join(body)
 # Les polices de l'ancien site sont remplacées par celles du site moderne
 out = re.sub(r'"Fraunces"[^;}]*', "var(--font-playfair),Georgia,serif", out)
 out = re.sub(r'"Work Sans"[^;}]*', "var(--font-dm),system-ui,sans-serif", out)
-out = re.sub(r'"Space Mono"[^;}]*', "ui-monospace,SFMono-Regular,Menlo,monospace", out)
+out = re.sub(r'"Space Mono"[^;}]*', "var(--font-dm),system-ui,sans-serif", out)  # le registre « mono » de l'ancien site rejoint la police du site
 (ROOT / "app" / "legacy.css").write_text(out, encoding="utf-8")
 print(f"legacy.css : {len(out)//1024} Ko, {len(body)} règles, {len(classes)} classes en inventaire")

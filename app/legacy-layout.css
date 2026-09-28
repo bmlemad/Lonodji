@@ -126,7 +126,6 @@
 .legacy .news-date{ font-size:12px; color:#607069; }
 .legacy .news-foot{ display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:auto; font-size:13px; }
 .legacy .news-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:14px; }
-.legacy .id-swatch{ display:inline-block; width:44px; height:44px; border-radius:12px; border:1px solid var(--line); }
 .legacy .tl-item{ display:grid; grid-template-columns:120px 1fr; gap:14px; padding:14px 0; border-top:1px solid var(--line); }
 .legacy .tl-date{ font-family:var(--font-playfair),Georgia,serif; color:var(--deep); }
 .legacy .kit-card{ padding:18px; border:1px solid var(--line); border-radius:18px; background:#fff; }
