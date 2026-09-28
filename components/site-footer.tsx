@@ -1,9 +1,49 @@
+import Link from "next/link";
+import { ORG } from "../lib/content";
+import NewsletterForm from "./newsletter-form";
+
 export default function SiteFooter() {
   return (
-    <footer>
-      <div className="footer-brand"><span className="footer-mark">A</span><strong>ADEB <b>LONODJI</b></strong></div>
-      <div className="footer-nav"><a href="/mission">Mission</a><a href="/histoire">Histoire</a><a href="/archives">Archives</a><a href="/programmes">Programmes</a><a href="/actions">Actions</a><a href="/impact">Impact</a><a href="/#patrimoine">Patrimoine</a><a href="/participer">Participer</a><a href="/#contact">Contact</a><a href="/transparence">Transparence</a></div>
-      <div className="footer-meta"><span>© ADEB Lonodji</span><span>Bédjondo · Mandoul Occidental · Diaspora</span><span>Courage · Discipline · Héritage</span><a href="/#top">Retour en haut ↑</a></div>
+    <footer className="site-footer">
+      <div className="footer-cols">
+        <div className="footer-brand-block">
+          <div className="footer-brand"><span className="footer-mark">A</span><strong>ADEB <b>LONODJI</b></strong></div>
+          <p>{ORG.tagline}</p>
+          <p>{ORG.place}</p>
+          <a href={ORG.phoneHref}>{ORG.phone}</a>
+          <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+        <div>
+          <h4>L’association</h4>
+          <Link href="/mission">Notre mission</Link>
+          <Link href="/histoire">Histoire & patrimoine</Link>
+          <Link href="/transparence">Redevabilité</Link>
+          <Link href="/documents">Documents</Link>
+          <Link href="/archives">Archives du site</Link>
+          <Link href="/mentions-legales">Mentions légales</Link>
+        </div>
+        <div>
+          <h4>Agir</h4>
+          <Link href="/programmes">Les quatre pôles</Link>
+          <Link href="/actions">Plaidoyers & engagements</Link>
+          <Link href="/impact">Suivi & tableau de bord</Link>
+          <Link href="/dossiers">Tous les dossiers</Link>
+          <Link href="/journal">Le journal</Link>
+        </div>
+        <div>
+          <h4>Participer</h4>
+          <Link href="/participer#contact">Nous écrire</Link>
+          <Link href="/participer#adherer">Adhérer & cotiser</Link>
+          <Link href="/participer#soutenir">Nous soutenir</Link>
+          <h4 style={{ marginTop: 18 }}>Lettre d’information</h4>
+          <NewsletterForm />
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <span>{ORG.motto}</span>
+        <span>© 2026 {ORG.name} · <Link href="/plan-du-site">Plan du site</Link> · <Link href="/en/index">English</Link></span>
+        <a href="#main-content">Retour en haut ↑</a>
+      </div>
     </footer>
   );
 }

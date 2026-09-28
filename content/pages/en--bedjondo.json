@@ -1,0 +1,42 @@
+{
+ "legacy": "en/bedjondo.html",
+ "lang": "en",
+ "documentTitle": "Bédjondo, home of the Bedjond people — ADEB LONODJI",
+ "description": "Bédjondo, capital of Mandoul Occidental (Chad) and cradle of the Bedjond people: geography, people, language, figures and what the town lacks.",
+ "title": "Bédjondo",
+ "eyebrow": "Our town",
+ "lede": "Capital of the Mandoul Occidental department, a commune of more than 11,000 inhabitants at the last census and the cradle of the Bedjond people.",
+ "pills": [
+  "Mandoul Occidental",
+  "Commune",
+  "Bedjond cradle"
+ ],
+ "kicker": "",
+ "crumbs": [
+  "Home",
+  "Bédjondo"
+ ],
+ "parent": "Home",
+ "sections": [
+  {
+   "id": "",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"bento bento-compact\">\n<div class=\"bento-tile\"><span class=\"bento-num\">11086</span><span class=\"bento-label\">inhabitants at the 2009 census (4,344 in 1993)</span></div>\n<div class=\"bento-tile\"><span class=\"bento-num\">5</span><span class=\"bento-label\">Bedjond cantons per the SIL survey: Bédjondo, Bébopen, Bédan, Nderguigui, Yomi</span></div>\n<div class=\"bento-tile\"><span class=\"bento-num\">4</span><span class=\"bento-label\">sub-prefectures: Bédjondo, Bébopen, Békamba, Péni</span></div>\n<div class=\"bento-tile wide\"><span class=\"bento-num\">1</span><span class=\"bento-label\">commune, capital of the Mandoul Occidental department</span><span class=\"bento-note\">Mayor: Tin-Adoum Constant · Prefect of Mandoul Occidental: Maïmara Abba Adji (2026)</span></div>\n</div>"
+  },
+  {
+   "id": "",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Where and who</div>\n<h2>In southern Chad, the cradle of the Bedjond people</h2>\n<p>Bédjondo is the capital of the Mandoul Occidental department, in the Mandoul province of southern Chad, between Koumra (the provincial capital) and Moïssala. The department has four sub-prefectures, five cantons and about 256 villages. The Bedjond speak Bedjond, a Sara language described in the doctoral thesis of Djarangar Djita Issa and documented by the SIL sociolinguistic survey of 2007, which found it to be the main language at home, at the market and at the health centre in the cantons of Bédjondo, Bébopen, Bédan, Nderguigui and Yomi. According to a university study on the identification of the Sara peoples (ACAREF), the Bedjond trace their lineage to a founding ancestor, Narmbang, followed by a line of chiefs down to the current canton chief, Donath Gari. The Yondo initiation rite, the Kul iron currency, tales and dances are part of a heritage the association documents.</p>\n<div class=\"eyebrow\">Today</div>\n<h2>A village that became a town</h2>\n<p>Between the 1993 and 2009 censuses the population of the urban centre multiplied by 2.5, far faster than the province as a whole; no census has been published since, and the town very probably exceeds 15,000 inhabitants. Bédjondo is a commune with a mayor, a council and a communal development plan (budget session held on 14 January 2026). Yet it remains, for the most part, without reliable electricity (6 % national access, 1–2 % in rural areas), without piped drinking water, in a broadband white zone with expensive mobile data, linked to Koumra by a track that is cut in the rainy season, with a health centre without a laboratory and schools of 80 pupils per class. Each of these gaps has its <a href=\"/en/advocacy\">advocacy brief</a>.</p>\n<p class=\"form-note\">Sources: 1993 and 2009 censuses (INSEED, via City Population); Alwihda Info (commune budget session, January 2026; excellence ceremony, July 2025: 357 baccalaureate candidates); SIL Electronic Survey Report 2007-010; ACAREF study (Masnan Beoss); World Bank, ARCEP, AfDB, UNICEF and WHO for sector data. Full references in the <a href=\"/dossiers/recherche\">research base</a> (in French).</p>\n</div>"
+  }
+ ],
+ "words": 385,
+ "forms": [],
+ "hasMap": false,
+ "slug": "en/bedjondo",
+ "route": "/en/bedjondo",
+ "kind": "en"
+}

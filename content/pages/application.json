@@ -1,0 +1,135 @@
+{
+ "legacy": "application.html",
+ "lang": "fr",
+ "documentTitle": "Application mobile — ADEB LONODJI",
+ "description": "Le projet d’application Android et iOS d’ADEB LONODJI : ce qui marche déjà sans boutique, ce que les boutiques coûtent, et ce qui bloque.",
+ "title": "Une application pour téléphone",
+ "eyebrow": "Projet annoncé",
+ "lede": "Elle sera lancée dans les mois à venir, Android d’abord. Voici ce qu’elle fera, ce qu’elle ne fera jamais, ce qu’elle coûte en cotisations — et ce qui fonctionne déjà sans boutique et sans un franc.",
+ "pills": [
+  "Android d’abord",
+  "81 % des appareils",
+  "Déjà installable"
+ ],
+ "kicker": "",
+ "crumbs": [
+  "Accueil",
+  "Agir avec nous",
+  "Application mobile"
+ ],
+ "parent": "Agir avec nous",
+ "resume": [
+  "Cette page suit à ciel ouvert le projet d’application pour téléphone de l’association : Android d’abord, iOS seulement si l’assemblée vote la dépense.",
+  "L’application se limitera à quatre usages, dont la lecture sans réseau, et ne demandera jamais la localisation du téléphone ni ses contacts.",
+  "Sa publication attend l’autorisation légale de l’association ; d’ici là, chacun peut ajouter gratuitement le site à l’écran d’accueil de son téléphone."
+ ],
+ "toc": [
+  {
+   "href": "#une-application-android-et-ios-sera-lancee-d",
+   "label": "Une application Android et iOS sera lancée dans les mois à venir"
+  },
+  {
+   "href": "#le-site-se-pose-sur-lecran-daccueil-et-se-li",
+   "label": "Le site se pose sur l’écran d’accueil et se lit sans réseau"
+  },
+  {
+   "href": "#android-dabord-et-ce-nest-pas-une-preference",
+   "label": "Android d’abord, et ce n’est pas une préférence"
+  },
+  {
+   "href": "#quatre-usages-et-pas-un-de-plus",
+   "label": "Quatre usages, et pas un de plus"
+  },
+  {
+   "href": "#ce-que-coutent-les-boutiques-en-cotisations",
+   "label": "Ce que coûtent les boutiques, en cotisations"
+  },
+  {
+   "href": "#une-boutique-demande-des-papiers-que-nous-na",
+   "label": "Une boutique demande des papiers que nous n’avons pas encore"
+  },
+  {
+   "href": "#quatre-etapes-dans-cet-ordre",
+   "label": "Quatre étapes, dans cet ordre"
+  },
+  {
+   "href": "#ce-que-le-site-consomme-en-donnees-mesure",
+   "label": "Ce que le site consomme en données, mesuré"
+  },
+  {
+   "href": "#cinq-questions-que-nous-ne-deciderons-pas-se",
+   "label": "Cinq questions que nous ne déciderons pas seuls"
+  }
+ ],
+ "sections": [
+  {
+   "id": "une-application-android-et-ios-sera-lancee-d",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Ce qui est décidé</div>\n<h2>Une application Android et iOS sera lancée dans les mois à venir</h2>\n<p>La décision est prise : ADEB LONODJI aura une application pour téléphone. Cette page existe pour que le projet soit conduit à ciel ouvert — ce qu’il coûte, ce qu’il rapporte, ce qui le bloque et ce qui reste à trancher en assemblée — plutôt qu’annoncé un jour et oublié le suivant. Nous avons trop vu de projets numériques annoncés dans une réunion et morts dans un téléphone.</p>\n<p>Une chose doit être dite d’entrée, parce qu’elle commande tout le reste : <strong>une application n’apporte rien qu’un site bien fait n’apporte déjà</strong>, sauf trois choses précises — une icône sur l’écran d’accueil, la lecture sans réseau, et la possibilité d’une notification. Les deux premières <strong>fonctionnent déjà</strong>, sans boutique et sans un franc. La troisième est la seule qui justifie vraiment de payer.</p>\n</div>"
+  },
+  {
+   "id": "le-site-se-pose-sur-lecran-daccueil-et-se-li",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Dès aujourd’hui, sans rien payer</div>\n<h2>Le site se pose sur l’écran d’accueil et se lit sans réseau</h2>\n<p>Depuis le menu du navigateur du téléphone, choisissez « Ajouter à l’écran d’accueil » ou « Installer l’application ». Le site prend alors son icône, s’ouvre en plein écran sans barre d’adresse, et <strong>toute page que vous avez déjà ouverte se rouvre même sans connexion</strong>.</p>\n<p class=\"install-cta\" data-installer-bloc=\"\" hidden=\"\"><button class=\"btn btn-primary\" data-installer=\"\" type=\"button\"><svg aria-hidden=\"true\" class=\"fi fi--btn\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewbox=\"0 0 24 24\"><path d=\"M12 3.5v11M7.5 10 12 14.5 16.5 10\"></path><path d=\"M5 17.5v3h14v-3\"></path></svg>Installer l’application sur ce téléphone</button></p>\n<p>Disons précisément ce que cela ne fait pas, pour que personne ne soit déçu : <strong>ce qui n’a jamais été ouvert n’est pas disponible</strong>. Le site ne se télécharge pas en entier à l’installation, parce qu’il pèse plusieurs mégaoctets et que personne ne doit payer ce transfert sans l’avoir demandé. La méthode est donc simple : ouvrez les pages qui vous intéressent là où le réseau passe, elles resteront lisibles ensuite. Une <a href=\"/\">page dédiée</a> s’affiche pour l’expliquer quand la connexion manque.</p>\n<p>Deux choses fonctionnent entièrement hors ligne dès leur première ouverture : le <a href=\"/dossiers/genealogies\">carnet généalogique</a>, dont les fiches sont enregistrées dans le téléphone et non sur un serveur, et les <a href=\"/documents\">documents PDF</a> une fois téléchargés. Ce sont, ce n’est pas un hasard, les deux outils destinés au terrain.</p>\n<p class=\"form-note\">Une réserve d’honnêteté : sur l’aperçu actuel du site, l’installation hors ligne est <strong>volontairement désactivée</strong>. Le site y est servi depuis un domaine partagé avec d’autres ; y installer un cache serait s’approprier un espace qui n’est pas le nôtre, et l’aperçu doit montrer exactement le fichier publié. La lecture hors ligne s’activera d’elle-même le jour où le site vivra sur le nom de domaine de l’association — qui reste à acquérir.</p>\n</div>"
+  },
+  {
+   "id": "android-dabord-et-ce-nest-pas-une-preference",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">L’ordre des choses</div>\n<h2>Android d’abord, et ce n’est pas une préférence</h2>\n<p>En Afrique, Android équipe environ <strong>81 %</strong> des téléphones qui se connectent, contre <strong>19 %</strong> pour iOS (StatCounter, août 2026). Le rapport est inverse de celui de l’Europe de l’Ouest ou de l’Amérique du Nord, et il est encore plus marqué dans un département rural : à Bédjondo, un iPhone est une rareté. La part iOS qui nous concerne est presque entièrement dans la diaspora.</p>\n<p>Une seconde donnée rassure sur la faisabilité : au Tchad, environ trois appareils Android sur quatre tournent sous une version récente du système — les versions 13 à 16 réunies. Nous n’aurons donc pas à écrire pour des téléphones d’un autre âge, ce qui aurait doublé le travail. Mais nous ne construirons rien qui exige un appareil récent : <strong>le téléphone le plus modeste du village est la mesure</strong>, pas le plus beau de la diaspora.</p>\n<p>Conséquence assumée : Android sortira <strong>avant</strong> iOS, peut-être de plusieurs mois. Ce n’est pas un oubli de la diaspora, qui peut dès aujourd’hui poser le site sur son écran d’accueil, iPhone compris. C’est l’ordre que dicte le rapport entre le nombre de personnes servies et l’argent dépensé.</p>\n</div>"
+  },
+  {
+   "id": "quatre-usages-et-pas-un-de-plus",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Ce qu’elle fera</div>\n<h2>Quatre usages, et pas un de plus</h2>\n<p>Une application qui fait quatre choses bien est utile ; une application qui en promet vingt n’est jamais finie. Voici la liste, et nous nous y tiendrons.</p>\n</div>\n<div class=\"pole-grid\">\n<article class=\"info-card\"><h3>Lire, même sans réseau</h3><p>Les articles, les plaidoyers, les dossiers, les documents : consultables hors connexion après un premier chargement.</p></article>\n<article class=\"info-card\"><h3>Tenir le carnet généalogique</h3><p>Les fiches restent dans le téléphone, comme aujourd’hui dans le navigateur, et s’exportent en un fichier que l’on garde ailleurs.</p></article>\n<article class=\"info-card\"><h3>Remplir les cahiers d’enquête sur le terrain</h3><p>Les cahiers de lieux, de mémoire et de généalogie existent en PDF précisément pour être remplis là où il n’y a pas de réseau.</p></article>\n<article class=\"info-card\"><h3>Annoncer une assemblée ou un deuil</h3><p>Une notification, si et seulement si un membre l’a demandée, et jamais pour autre chose qu’une information de l’association.</p></article>\n</div>\n<div class=\"prose\">\n<div class=\"eyebrow\">Ce qu’elle ne fera pas</div>\n<h2>Quatre engagements, écrits avant le premier code</h2>\n<p>Ces quatre refus sont plus importants que la liste précédente, parce qu’une permission demandée une fois ne se retire jamais vraiment. Nous les inscrivons ici pour que l’assemblée puisse nous les opposer.</p>\n</div>\n<div class=\"pole-grid\">\n<article class=\"info-card\"><h3>Aucune position, jamais</h3><p>L’application ne demandera pas la localisation du téléphone. La raison est écrite sur notre page <a href=\"/dossiers/lieux-sacres\">Lieux sacrés</a> : une carte de ce qui doit rester discret est une carte pour celui qui vient le détruire.</p></article>\n<article class=\"info-card\"><h3>Aucun accès au carnet d’adresses</h3><p>Ni aux contacts, ni aux photographies, ni aux messages. Une association de village n’a aucun besoin de cela, et le demander serait une raison suffisante de nous refuser l’installation.</p></article>\n<article class=\"info-card\"><h3>Aucun compte obligatoire</h3><p>On ne crée pas de mot de passe pour lire l’histoire de son village. L’adhésion se fait par <a href=\"/participer#adherer\">bulletin</a>, pas par formulaire d’inscription.</p></article>\n<article class=\"info-card\"><h3>Aucune publicité, aucune mesure d’audience individuelle</h3><p>Ni régie, ni traçage, ni revente. Si un jour nous comptons les lectures, ce sera par totaux, sans identifier personne, et ce sera écrit avant.</p></article>\n</div>"
+  },
+  {
+   "id": "ce-que-coutent-les-boutiques-en-cotisations",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Le prix, comparé à ce que nous encaissons</div>\n<h2>Ce que coûtent les boutiques, en cotisations</h2>\n<p>Un montant en dollars ne dit rien à une assemblée de village. Nous le traduisons donc dans la seule unité qui compte pour nous : la cotisation annuelle, telle qu’elle est proposée sur notre page <a href=\"/participer#adherer\">Adhérer</a> — mille francs pour un membre résident, vingt-cinq mille pour un membre de la diaspora. Les équivalences en francs sont des ordres de grandeur, calculés à six cents francs CFA pour un dollar ; le franc est arrimé à l’euro à taux fixe, mais le dollar flotte, et ces chiffres bougeront.</p>\n</div>\n<div aria-label=\"Coût des comptes de développeur\" class=\"table-wrap\" role=\"region\" tabindex=\"0\">\n<table class=\"plea-table indic-table\">\n<caption class=\"sr-only\">Coût des comptes de développeur des deux boutiques, en dollars, en francs CFA, et en cotisations annuelles</caption>\n<thead><tr><th scope=\"col\">Poste</th><th scope=\"col\">En dollars</th><th scope=\"col\">En francs CFA</th><th scope=\"col\">Périodicité</th><th scope=\"col\">Ce que cela représente pour nous</th></tr></thead>\n<tbody><tr><th scope=\"row\">Compte développeur Google Play</th><td>25 $</td><td>~15 000 F</td><td>une seule fois, à vie</td><td>Quinze cotisations de membre résident. Payé une fois, jamais redemandé.</td></tr><tr><th scope=\"row\">Compte développeur Apple</th><td>99 $</td><td>~59 000 F</td><td><strong>chaque année</strong></td><td>Cinquante-neuf cotisations de résident, ou deux cotisations et demie de diaspora — <strong>tous les ans</strong>, avant la première ligne de code.</td></tr><tr><th scope=\"row\">Apple sur cinq ans</th><td>495 $</td><td>~297 000 F</td><td>cumulé</td><td>Près de trois cents cotisations de résident. Le jour où l’on ne paie plus, l’application disparaît de la boutique.</td></tr><tr><th scope=\"row\">Nom de domaine et hébergement</th><td>—</td><td>à chiffrer</td><td>chaque année</td><td>Indépendant de l’application, mais les deux boutiques exigent une adresse stable pour la politique de confidentialité.</td></tr></tbody>\n</table>\n</div>\n<div class=\"prose\">\n<p><strong>La colonne qui décide est celle de la périodicité, pas celle du montant.</strong> Quinze mille francs une fois, une association de village peut les trouver. Cinquante-neuf mille francs <em>chaque année</em>, sans interruption, pendant que les trésoriers changent et que les assemblées se succèdent : c’est un engagement d’une autre nature, et c’est exactement le genre de charge qui fait mourir les projets associatifs trois ans après leur lancement. Aucun compte Apple ne sera ouvert avant que l’assemblée ait voté cette dépense en la nommant pour ce qu’elle est : une charge permanente.</p>\n</div>"
+  },
+  {
+   "id": "une-boutique-demande-des-papiers-que-nous-na",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Le blocage</div>\n<h2>Une boutique demande des papiers que nous n’avons pas encore</h2>\n<p>Il y a, au milieu de ce projet, un obstacle qui n’est ni technique ni financier, et il faut le nommer. Pour qu’une application paraisse au nom d’une organisation plutôt qu’au nom d’une personne, Apple exige un numéro <strong>D-U-N-S</strong> — gratuit, obtenu en une à deux semaines — et surtout <strong>une entité légalement reconnue, pièces d’enregistrement à l’appui</strong>. Google Play pose une exigence voisine pour un compte d’organisation.</p>\n<p>Or ADEB LONODJI n’a pas encore son autorisation au titre de l’<strong>ordonnance 023/PR/2018 portant régime des associations</strong>. C’est déjà le premier point de nos <a href=\"/dossiers/demarches\">démarches</a>, et ce projet d’application ne fait que le révéler une fois de plus : <strong>presque tout ce que nous voulons faire bute sur le même papier</strong>. Un compte bancaire, une convention avec une ONG, un compte de boutique, un nom de domaine au nom de l’association : tout part de là.</p>\n<p>Nous ne contournerons pas l’obstacle en publiant l’application au nom d’un membre. Ce serait plus rapide, et ce serait une erreur : l’application porterait le nom d’une personne, dépendrait de sa bonne santé et de sa bonne volonté, et ne serait pas le bien de l’association. Nous préférons attendre le récépissé, et employer ce temps à éprouver l’usage réel du site installé sur l’écran d’accueil.</p>\n</div>"
+  },
+  {
+   "id": "quatre-etapes-dans-cet-ordre",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Le chemin</div>\n<h2>Quatre étapes, dans cet ordre</h2>\n</div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">1</span><div><h3>Maintenant : le site s’installe déjà</h3><p>Depuis le menu du navigateur, « Ajouter à l’écran d’accueil ». Le site prend son icône, s’ouvre en plein écran, et les pages déjà lues restent lisibles sans réseau. Aucune boutique, aucun compte, aucun franc. Cette étape est faite : elle sert à savoir ce dont les gens se servent vraiment avant d’écrire du code natif.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">2</span><div><h3>Le compte Google Play, au nom de l’association</h3><p>Vingt-cinq dollars une fois. Mais un compte au nom de l’association suppose un moyen de paiement au nom de l’association, donc un compte ouvert, donc le récépissé. Un compte personnel évite cette condition et en crée une autre : douze testeurs pendant quatorze jours avant toute publication, et l’application reste attachée à une personne.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">3</span><div><h3>Une première version Android</h3><p>Le site, le <a href=\"/dossiers/genealogies\">carnet généalogique</a> et les documents, dans une enveloppe légère. Rien de plus : une première version qui fait peu et ne se trompe pas vaut mieux qu’une première version qui promet et déçoit. Comptez deux à quatre semaines entre le dépôt et la mise en ligne, examen de la boutique compris.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">4</span><div><h3>iOS ensuite, et seulement si l’assemblée vote la dépense</h3><p>Quatre-vingt-dix-neuf dollars par an, sans interruption possible : une année non payée et l’application disparaît. Nous ne prendrons pas cet engagement sans un vote explicite, parce qu’il engage les trésoriers qui viendront après nous.</p></div></div>"
+  },
+  {
+   "id": "ce-que-le-site-consomme-en-donnees-mesure",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Le coût pour celui qui lit</div>\n<h2>Ce que le site consomme en données, mesuré</h2>\n<p>Dans un département oû la connexion se paie par unités, les mégaoctets sont un coût réel supporté par le lecteur, pas une abstraction technique. Voici les poids réels, mesurés sur le site tel qu’il est publié, compression comprise. Nous ne publions pas d’équivalent en francs : les tarifs varient trop, et nous n’en avons vérifié aucun.</p>\n</div>\n<div aria-label=\"Poids en données du site\" class=\"table-wrap\" role=\"region\" tabindex=\"0\">\n<table class=\"plea-table indic-table\">\n<caption class=\"sr-only\">Poids réel en données des différentes parties du site, compression comprise</caption>\n<thead><tr><th scope=\"col\">Ce qui est téléchargé</th><th scope=\"col\">Poids</th><th scope=\"col\">Remarque</th></tr></thead>\n<tbody><tr><th scope=\"row\">La première page ouverte<br/><em>accueil, feuille de style et script</em></th><td>48 ko</td><td>C’est le seul téléchargement un peu lourd, et il ne se produit qu’une fois.</td></tr><tr><th scope=\"row\">Chaque page suivante</th><td>11 ko</td><td>Mesuré sur un plaidoyer complet. Le reste est déjà dans le téléphone.</td></tr><tr><th scope=\"row\">Le moteur de recherche, à sa première ouverture</th><td>49 ko</td><td>Il n’est chargé que si l’on s’en sert : personne ne paie une recherche qu’il ne fait pas.</td></tr><tr><th scope=\"row\">Tout le texte du site, les 65 pages</th><td>~700 ko</td><td>Moins qu’une seule photographie de téléphone.</td></tr><tr><th scope=\"row\">Les treize documents PDF</th><td>~2 Mo</td><td>Téléchargés un par un, et seulement si on les demande.</td></tr><tr><th scope=\"row\">Une application installée depuis une boutique</th><td>plusieurs Mo</td><td>À l’installation, <strong>puis à chaque mise à jour</strong>. C’est le chiffre qui dérange : <strong>installer l’application coûtera plus de données que lire le site en entier</strong>.</td></tr></tbody>\n</table>\n</div>\n<div class=\"prose\">\n<p>La dernière ligne est l’argument le plus solide en faveur de l’ordre que nous avons choisi. Une application n’est pas gratuite pour celui qui l’installe : elle coûte, en données, davantage que la lecture du site entier, et elle le coûte de nouveau à chaque mise à jour. <strong>Nous ne demanderons donc à personne d’installer une application pour lire ce qu’il peut déjà lire pour onze kilo-octets la page.</strong> L’application se justifiera par la notification et par la commodité, pas par la lecture.</p>\n</div>"
+  },
+  {
+   "id": "cinq-questions-que-nous-ne-deciderons-pas-se",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">À trancher en assemblée</div>\n<h2>Cinq questions que nous ne déciderons pas seuls</h2>\n<p>Ces cinq points ne sont pas des détails d’exécution : chacun engage l’association au-delà du bureau actuel. Ils seront portés à l’ordre du jour de la première assemblée générale.</p>\n<p><strong>Les deux boutiques, ou Android seul ?</strong> Android couvre plus de quatre appareils sur cinq en Afrique. iOS coûte 59 000 F par an pour la part restante, très inégalement répartie : presque aucun téléphone à Bédjondo, une partie de la diaspora.</p>\n<p><strong>Qui détient le compte, et que se passe-t-il s’il disparaît ?</strong> Un compte développeur attaché à une seule personne meurt avec elle, ou avec sa brouille. Il faut deux personnes ayant l’accès et une délibération qui le dit.</p>\n<p><strong>Le nom dans la boutique</strong> « ADEB LONODJI » ne dit rien à qui cherche « Bédjondo ». Le nom affiché se décide une fois ; le changer plus tard perd les installations déjà faites.</p>\n<p><strong>Qui répond aux avis publics ?</strong> Une boutique est un espace public où n’importe qui écrit sur l’association, sous son nom, de façon durable. Il faut désigner qui répond, et selon quelle règle.</p>\n<p><strong>La déclaration de confidentialité exigée par les boutiques</strong> Les deux réclament une politique de confidentialité à une adresse stable. Nos <a href=\"/mentions-legales\">mentions légales</a> en tiennent lieu, mais il faut d’abord un nom de domaine : c’est aussi ce qui bloque l’installation hors ligne sur l’aperçu actuel.</p>\n<h3>Et une dernière, qui n’est pas une question</h3>\n<p>Si, après essai, il apparaît que le site posé sur l’écran d’accueil suffit à ce que les gens en attendent, <strong>nous dirons que l’application n’est pas nécessaire et nous garderons l’argent</strong>. Annoncer un projet oblige à le conduire ; cela n’oblige pas à le conduire jusqu’à la dépense si l’usage montre qu’elle est inutile. Ce que nous ferons de cet essai sera écrit sur notre page <a href=\"/transparence\">Redevabilité</a>, y compris si la conclusion nous désavoue.</p>\n</div>"
+  }
+ ],
+ "words": 2356,
+ "forms": [],
+ "hasMap": false,
+ "slug": "application",
+ "route": "/dossiers/application",
+ "kind": "dossier"
+}

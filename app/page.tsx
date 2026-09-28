@@ -1,46 +1,49 @@
+import Link from "next/link";
+import { ArticleCard } from "../components/blocks";
+import { filledCount, getIndex, getPage, ORG, thematiqueCount } from "../lib/content";
+
 const values = [
-  ["01", "Courage", "Oser agir, prendre des responsabilités et avancer avec détermination."],
-  ["02", "Discipline", "Transformer les intentions en actions concrètes, régulières et durables."],
-  ["03", "Héritage", "Transmettre des valeurs, des compétences et une vision aux générations futures."],
+  ["01", "Courage", "Oser agir, prendre des responsabilités et avancer avec détermination, y compris quand il faut dire ce qui manque."],
+  ["02", "Discipline", "Transformer les intentions en actions concrètes, régulières et durables : une thématique, un coordonnateur, un compte rendu."],
+  ["03", "Héritage", "Transmettre la langue, l’histoire et les valeurs du peuple bedjond aux générations qui viennent."],
 ];
 
-const programmes = [
-  ["01", "Transmission", "Créer des espaces où les savoirs, les expériences et les valeurs circulent.", "Programme"],
-  ["02", "Engagement", "Rassembler les énergies autour d’initiatives utiles et structurées.", "Programme"],
-  ["03", "Communauté", "Faire grandir un réseau solidaire, ouvert et tourné vers l’avenir.", "Programme"],
-];
-
-const engagement = [
-  ["01", "Nous rejoindre", "Participer à la dynamique collective et contribuer selon ses possibilités."],
-  ["02", "Proposer une initiative", "Partager une idée, un projet ou un besoin à étudier avec la communauté."],
-  ["03", "Devenir partenaire", "Explorer une collaboration autour d’actions et de ressources utiles."],
+const participer = [
+  ["01", "Rejoindre ou coordonner une thématique", "Treize thématiques cherchent leur coordonnateur. Une compétence ponctuelle suffit souvent à faire avancer un dossier déjà prêt.", "/participer?coordo=1#contact"],
+  ["02", "Adhérer à l’association", "Déclarer son intention d’adhérer n’engage aucun argent : la collecte est suspendue jusqu’à l’ouverture d’un compte au nom de l’association.", "/participer#adherer"],
+  ["03", "Proposer un article ou un document", "Un témoignage, une photographie des forums de 2000 et 2003, un récépissé, une pièce d’archive : tout est versé avec sa provenance.", "/participer#proposer-article"],
 ];
 
 export default function Home() {
+  const idx = getIndex();
+  const total = thematiqueCount(idx);
+  const filled = filledCount(idx);
+  const latest = idx.articles.slice(0, 3);
+  const corrections = (getPage("redevabilite").sections.find((s) => s.id === "corrections")?.html.match(/class="info-card"/g) || []).length;
   return (
     <>
       <main id="main-content">
-      <section id="top" className="hero" aria-labelledby="hero-title">
+        <section id="top" className="hero" aria-labelledby="hero-title">
           <div className="orb orb-a" aria-hidden="true" />
           <div className="orb orb-b" aria-hidden="true" />
           <div className="hero-copy">
-            <p className="eyebrow">Association • Engagement • Transmission</p>
+            <p className="eyebrow">Association • Bédjondo • Diaspora</p>
             <h1 id="hero-title">Construire aujourd’hui.<br /><em>Transmettre demain.</em></h1>
             <p className="hero-text">
-              ADEB Lonodji veut transformer les valeurs en actions, les expériences en transmission
-              et les liens en force collective.
+              ADEB LONODJI est l’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond.
+              Reconnue en 1995, remise en mouvement en 2026 : quatre pôles, dix-neuf thématiques, sept plaidoyers publiés pour l’eau, l’électricité, l’école, les routes et la santé.
             </p>
             <div className="hero-actions">
-              <a className="button primary" href="#mission">Découvrir notre mission <span aria-hidden="true">↗</span></a>
-              <a className="text-link" href="#programmes">Voir les programmes <span aria-hidden="true">→</span></a>
+              <Link className="button primary" href="/programmes">Découvrir nos actions <span aria-hidden="true">↗</span></Link>
+              <Link className="text-link" href="/participer">Rejoindre une thématique <span aria-hidden="true">→</span></Link>
             </div>
           </div>
           <div className="hero-card" aria-hidden="true">
             <div className="glass-card">
-              <span className="card-kicker">Notre cap</span>
-              <strong>Une génération qui agit, apprend et transmet.</strong>
+              <span className="card-kicker">Où nous en sommes</span>
+              <strong>{filled} thématiques pourvues sur {total}. {total - filled} cherchent leur coordonnateur.</strong>
               <div className="mini-line" />
-              <span className="card-note">Courage · Discipline · Héritage</span>
+              <span className="card-note">{ORG.motto}</span>
             </div>
           </div>
         </section>
@@ -48,166 +51,133 @@ export default function Home() {
         <section id="mission" className="intro section" aria-labelledby="mission-title">
           <div>
             <p className="eyebrow">01 — Notre mission</p>
-            <h2 id="mission-title">Donner du sens à l’action collective.</h2>
+            <h2 id="mission-title">Agir pour Bédjondo, garder la mémoire bedjond.</h2>
           </div>
-          <p className="lead">
-            Nous croyons qu’une communauté devient plus forte lorsque chacun peut contribuer,
-            apprendre et transmettre. ADEB cherche à créer ce cadre par des initiatives utiles,
-            une culture de l’engagement et une attention constante à la transmission.
-          </p>
+          <div>
+            <p className="lead">
+              Nos actions de développement — l’eau, la santé, l’école, les routes — servent tous les habitants de Bédjondo, sans distinction d’origine.
+              La sauvegarde de la langue, de l’histoire et du patrimoine du peuple bedjond reste au cœur de notre objet.
+            </p>
+            <div className="home-facts">
+              <article><strong>1995</strong><span>Reconnaissance officielle, après dix ans de réflexion engagée en 1986.</span></article>
+              <article><strong>2026</strong><span>Réactivation et structuration en pôles et thématiques, quarante ans après.</span></article>
+              <article><strong>{idx.articles.length}</strong><span>articles publiés au journal depuis le 11 septembre 2026.</span></article>
+            </div>
+            <div className="section-actions"><Link className="text-link" href="/mission">Lire notre mission ↗</Link></div>
+          </div>
         </section>
 
-        <section id="histoire" className="heritage section" aria-labelledby="histoire-title">
+        <section id="actualites" className="section home-news" aria-labelledby="news-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">02 — Histoire</p>
-              <h2 id="histoire-title">Une histoire à<br /><em>documenter et transmettre.</em></h2>
+              <p className="eyebrow">02 — Dernières actualités</p>
+              <h2 id="news-title">Ce que nous<br /><em>venons de publier.</em></h2>
             </div>
-            <p>
-              L’identité d’ADEB Lonodji s’inscrit dans une mémoire collective liée à Bédjondo,
-              au patrimoine bedjond et aux liens entre territoire et diaspora.
-            </p>
+            <p>Le journal date ses faits et cite ses sources. Chaque correction de fait est publiée, datée, dans le journal des corrections.</p>
           </div>
-          <div className="heritage-grid">
-            <article><span>01</span><h3>Bédjondo</h3><p>Un ancrage territorial et culturel à préserver, relier et transmettre.</p></article>
-            <article><span>02</span><h3>Diaspora</h3><p>Des liens qui prolongent la communauté et font circuler expériences et savoirs.</p></article>
-            <article><span>03</span><h3>Mémoire</h3><p>Archives, récits et documents pour comprendre ce qui a été fait avant de construire la suite.</p></article>
-          </div>
-          <div className="detail-note">
-            <span className="module-tag">Archives retrouvées</span>
-            <h3>Une partie de l’ancienne mémoire numérique est désormais documentée.</h3>
-            <p>Une trace publique de lonodji.org décrit quatre pôles, 19 thèmes et huit appels publics. Des initiatives historiques liées à l’éducation, à l’eau et au développement local sont également rapportées par une source secondaire de 2021.</p>
-            <div className="status-list"><span>1995 — À CONFIRMER</span><span>4 PÔLES — À DÉTAILLER</span><span>19 THÈMES — À RETROUVER</span><span>8 APPELS — À RETROUVER</span></div>
-          </div>
-          <div className="section-actions"><a className="text-link" href="/archives">Explorer les archives ↗</a><a className="text-link" href="/histoire">Explorer l’histoire ↗</a></div>
+          <div className="art-grid">{latest.map((a) => <ArticleCard key={a.slug} a={a} />)}</div>
+          <div className="section-actions"><Link className="text-link" href="/journal">Tous les articles ↗</Link></div>
         </section>
 
         <section id="programmes" className="programmes section" aria-labelledby="programmes-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">03 — Nos programmes</p>
-              <h2 id="programmes-title">Trois axes.<br /><em>Une même direction.</em></h2>
+              <p className="eyebrow">03 — Nos actions</p>
+              <h2 id="programmes-title">Quatre pôles.<br /><em>Dix-neuf thématiques.</em></h2>
             </div>
             <p>
-              Les programmes structurent l’action autour de trois dimensions complémentaires.
-              Leur contenu, leurs projets et leurs résultats pourront être documentés au fil du développement de l’association.
+              Chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte publiquement. Deux cellules transversales — financement et communication — appuient l’ensemble.
             </p>
           </div>
-          <div className="program-grid">
-            {programmes.map(([n, title, description, label]) => (
-              <article className="program-card" key={n}>
-                <div className="card-top"><span>{n}</span><small>{label}</small></div>
+          <div className="program-grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))" }}>
+            {idx.structure.poles.map((pole) => (
+              <Link className="program-card" href={`/programmes#${pole.id}`} key={pole.id}>
+                <div className="card-top"><span>Pôle {pole.roman}</span><small>{pole.items.filter((t) => t.filled).length}/{pole.items.length} pourvues</small></div>
                 <div className="program-body">
-                  <h3>{title}</h3>
-                  <p>{description}</p>
+                  <h3 style={{ fontSize: 28 }}>{pole.name}</h3>
+                  <p>{pole.items.slice(0, 3).map((t) => t.name).join(" · ")}{pole.items.length > 3 ? ` · et ${pole.items.length - 3} autres thématiques` : ""}</p>
                 </div>
                 <span className="card-arrow" aria-hidden="true">↗</span>
-              </article>
+              </Link>
             ))}
           </div>
         </section>
 
-        <section id="territoire" className="territory section" aria-labelledby="territory-title">
+        <section id="plaidoyers" className="territory section" aria-labelledby="plaidoyers-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">04 — Territoire</p>
+              <p className="eyebrow">04 — Plaidoyers</p>
+              <h2 id="plaidoyers-title">Sept plaidoyers,<br /><em>une note à la commune.</em></h2>
+            </div>
+            <p>Sourcés, chiffrés, adressés à des destinataires nommés et suivis publiquement : ce que nous demandons pour Bédjondo et ses cantons.</p>
+          </div>
+          <div className="link-list">
+            {idx.plaidoyers.map((p) => (
+              <Link key={p.id} href={`/actions#${p.id}`}><small>{p.theme} · {p.status}</small><strong>{p.title}</strong><span>{p.demand}</span></Link>
+            ))}
+          </div>
+          <div className="section-actions"><Link className="text-link" href="/actions">Tous les plaidoyers et leur suivi ↗</Link></div>
+        </section>
+
+        <section id="territoire" className="section heritage" aria-labelledby="territory-title">
+          <div className="section-head">
+            <div>
+              <p className="eyebrow">05 — Territoire</p>
               <h2 id="territory-title">Comprendre le terrain.<br /><em>Agir avec précision.</em></h2>
             </div>
-            <p>
-              Un futur espace pour documenter les besoins, les projets et les ressources du Mandoul Occidental,
-              avec des données sourcées et une cartographie progressive du territoire.
-            </p>
+            <p>Bédjondo, chef-lieu du Mandoul Occidental, village devenu ville. Le pays bedjond compte sept sous-préfectures au cœur, des présences dans le Logone Oriental et une diaspora agricole au Moyen-Chari.</p>
           </div>
-          <div className="territory-grid">
-            <article className="territory-feature">
-              <span className="module-tag">Observatoire</span>
-              <h3>Mandoul Occidental</h3>
-              <p>Population, santé, éducation, eau, agriculture, infrastructures et numérique : les indicateurs seront publiés avec leur source et leur date.</p>
-              <span className="status">Module en préparation</span>
-            </article>
-            <article className="territory-map">
-              <div className="map-grid" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
-              <span className="map-label">Cartographie territoriale</span>
-              <strong>Carte interactive</strong>
-              <small>Villages · services · projets · besoins</small>
-            </article>
+          <div className="link-list">
+            <Link href="/dossiers/bedjondo"><small>Bédjondo</small><strong>Repères, langue, statut de commune</strong><span>Avec la carte interactive du pays bedjond, sur contours administratifs vérifiés.</span></Link>
+            <Link href="/dossiers/problematiques"><small>Diagnostic territorial</small><strong>Les problématiques documentées</strong><span>Eau, électricité, santé, école, routes, réseau : classées par domaine et reliées à leur thématique.</span></Link>
+            <Link href="/dossiers/besoins"><small>Carte des besoins</small><strong>Signaler un besoin, localité par localité</strong><span>Un forage en panne, une école sans maître, un pont coupé.</span></Link>
+            <Link href="/dossiers/enquetes"><small>Enquêtes de terrain</small><strong>Huit inconnues, huit enquêtes</strong><span>Qui détient la réponse, comment s’y prendre, en combien de jours.</span></Link>
           </div>
         </section>
 
-        <section id="actions" className="territory section" aria-labelledby="actions-title">
+        <section id="patrimoine" className="heritage section" aria-labelledby="heritage-title" style={{ background: "#f7f8f4" }}>
           <div className="section-head">
             <div>
-              <p className="eyebrow">05 — Actions</p>
-              <h2 id="actions-title">Du constat à<br /><em>la preuve de l’action.</em></h2>
+              <p className="eyebrow">06 — Histoire & patrimoine</p>
+              <h2 id="heritage-title">Préserver ce qui<br /><em>doit se transmettre.</em></h2>
             </div>
-            <p>
-              Un espace pour suivre les enjeux concrets du territoire, les démarches engagées,
-              leurs parties prenantes, leurs sources et leur état d’avancement.
-            </p>
+            <p>De Narmbang à Donath Gari, onze chefs de canton ; des forums de 2000 et 2003 à la réactivation de 2026 ; une langue, le bedjond, et une base de recherche de quarante références.</p>
           </div>
-          <div className="territory-grid">
-            <article className="territory-feature">
-              <span className="module-tag">Domaines suivis</span>
-              <h3>Eau · Électricité · Santé</h3>
-              <p>Les sujets d’action seront présentés avec contexte, dates, sources et statut de vérification.</p>
-              <span className="status">À documenter</span>
-            </article>
-            <article className="territory-feature">
-              <span className="module-tag">Infrastructures</span>
-              <h3>Routes & développement local</h3>
-              <p>Demandes, démarches, réponses et résultats pourront être suivis sans présenter comme acquis ce qui ne l’est pas.</p>
-              <span className="status">À documenter</span>
-            </article>
+          <div className="heritage-grid">
+            <article><span>01</span><h3>Grandes figures</h3><p>Tarouss Doumanbé, pilier de la création de l’association ; la lignée des chefs de canton ; les chercheurs qui ont écrit la mémoire bedjond.</p><Link className="text-link" href="/histoire#figures">Découvrir ↗</Link></article>
+            <article><span>02</span><h3>Lieux sacrés et généalogies</h3><p>Deux cahiers de terrain pour recenser les sites sacrés et écrire l’histoire de chaque famille.</p><Link className="text-link" href="/dossiers/lieux-sacres">Les lieux sacrés ↗</Link></article>
+            <article><span>03</span><h3>Nangnda, le bedjond</h3><p>Ce que veut vraiment dire « nangnda », et ce que l’enquête SIL dit de la parenté du bedjond avec le gor, le mango et le bebot.</p><Link className="text-link" href="/journal/2026-09-22-ce-que-veut-dire-nangnda">Lire l’article ↗</Link></article>
           </div>
-          <div className="section-actions"><a className="text-link" href="/actions">Voir les actions ↗</a></div>
+          <div className="section-actions"><Link className="text-link" href="/histoire">Toute l’histoire ↗</Link></div>
         </section>
 
         <section id="impact" className="impact section" aria-labelledby="impact-title">
           <div className="impact-intro">
-            <p className="eyebrow">06 — Notre impact</p>
+            <p className="eyebrow">07 — Suivi</p>
             <h2 id="impact-title">Mesurer ce qui<br /><em>devient réel.</em></h2>
             <p>
-              La crédibilité d’une organisation se construit aussi par la preuve. Cette rubrique
-              est conçue pour accueillir des résultats vérifiés, des projets documentés et des témoignages authentifiés.
+              La crédibilité se construit par la preuve. Nous publions ce qui est documenté, ce qui est publié, ce qui est envoyé — et nous écrivons comme tel ce qui n’est pas encore fait.
             </p>
           </div>
           <div className="impact-grid">
             <article>
               <span className="impact-index">A</span>
-              <h3>Résultats</h3>
-              <p>Données et indicateurs publiés lorsque des résultats vérifiables seront disponibles.</p>
-              <span className="status">Données à venir</span>
+              <h3>{idx.plaidoyers.length} dossiers publiés</h3>
+              <p>Sept plaidoyers et une note à la commune, avec un cadre de résultats à vingt-deux indicateurs.</p>
+              <span className="status dark">Envoi officiel à venir</span>
             </article>
             <article>
               <span className="impact-index">B</span>
-              <h3>Projets</h3>
-              <p>Présentation des initiatives, de leur objectif, de leur avancement et de leurs enseignements.</p>
-              <span className="status">À documenter</span>
+              <h3>12 engagements publics</h3>
+              <p>Pris sur nos dossiers et rassemblés en un seul endroit. Aucun n’est encore confirmé réalisé, et nous le disons.</p>
+              <span className="status dark">Suivis un par un</span>
             </article>
             <article>
               <span className="impact-index">C</span>
-              <h3>Témoignages</h3>
-              <p>Paroles de participants et de partenaires, publiées avec leur accord et leur contexte.</p>
-              <span className="status">À documenter</span>
+              <h3>{corrections} corrections datées</h3>
+              <p>Chaque erreur de fait est corrigée, datée et expliquée dans le journal des corrections — surtout quand elle nous dessert.</p>
+              <span className="status dark">Redevabilité</span>
             </article>
-          </div>
-        </section>
-
-        <section id="patrimoine" className="heritage section" aria-labelledby="heritage-title">
-          <div className="section-head">
-            <div>
-              <p className="eyebrow">07 — Patrimoine</p>
-              <h2 id="heritage-title">Préserver ce qui<br /><em>doit se transmettre.</em></h2>
-            </div>
-            <p>
-              La future mémoire numérique rassemblera des contenus documentés : archives, récits,
-              travaux de recherche, ressources linguistiques et témoignages, dans le respect des droits et des personnes.
-            </p>
-          </div>
-          <div className="heritage-grid">
-            <article><span>01</span><h3>Bibliothèque</h3><p>Livres, études, rapports et publications accessibles selon leurs droits de diffusion.</p></article>
-            <article><span>02</span><h3>Mémoire vivante</h3><p>Récits, histoire locale, témoignages oraux et grandes figures, avec contexte et sources.</p></article>
-            <article><span>03</span><h3>Nangnda</h3><p>Un espace linguistique pouvant accueillir lexique, audio et ressources pédagogiques validées.</p></article>
           </div>
         </section>
 
@@ -217,7 +187,7 @@ export default function Home() {
               <p className="eyebrow">Fondations</p>
               <h2 id="values-title">Des principes<br /><em>en mouvement.</em></h2>
             </div>
-            <p>Des principes simples pour guider les décisions, les projets et la manière de travailler ensemble.</p>
+            <p>Trois mots pour guider les décisions, les projets et la manière de travailler ensemble.</p>
           </div>
           <div className="value-grid">
             {values.map(([n, title, description]) => (
@@ -245,18 +215,17 @@ export default function Home() {
               <p className="eyebrow">08 — Participer</p>
               <h2 id="participate-title">Une place pour<br /><em>chaque contribution.</em></h2>
             </div>
-            <p>
-              L’engagement peut prendre plusieurs formes. Les parcours ci-dessous sont prêts à accueillir
-              les modalités réelles de participation dès qu’elles seront confirmées.
-            </p>
+            <p>Nous répondons sous quarante-huit heures ouvrées, par le formulaire, par WhatsApp ou par téléphone.</p>
           </div>
           <div className="engagement-list">
-            {engagement.map(([n, title, description]) => (
-              <article key={n}>
-                <span>{n}</span>
-                <div><h3>{title}</h3><p>{description}</p></div>
-                <b aria-hidden="true">↗</b>
-              </article>
+            {participer.map(([n, title, description, href]) => (
+              <Link href={href} key={n} style={{ display: "contents" }}>
+                <article>
+                  <span>{n}</span>
+                  <div><h3>{title}</h3><p>{description}</p></div>
+                  <b aria-hidden="true">↗</b>
+                </article>
+              </Link>
             ))}
           </div>
         </section>
@@ -264,16 +233,15 @@ export default function Home() {
         <section id="transparence" className="trust section" aria-labelledby="trust-title">
           <div>
             <p className="eyebrow">09 — Transparence</p>
-            <h2 id="trust-title">Une organisation qui<br /><em>documente ses engagements.</em></h2>
+            <h2 id="trust-title">Une association qui<br /><em>rend des comptes.</em></h2>
           </div>
           <div className="trust-card">
             <span className="trust-mark" aria-hidden="true">◎</span>
-            <h3>Rapports & ressources</h3>
+            <h3>Réponse sous 48 heures, plainte possible, corrections publiées</h3>
             <p>
-              Les rapports, documents institutionnels, informations de gouvernance et éléments
-              de financement seront publiés ici lorsqu’ils seront disponibles et validés.
+              Mécanisme de plainte — même anonyme — avec recours jusqu’à l’assemblée générale, protection des enfants et des personnes vulnérables, charte d’écriture, et documents publiés au fur et à mesure de leur validation.
             </p>
-            <span className="status dark">Espace en préparation</span>
+            <Link className="button primary" href="/transparence">Notre charte de redevabilité <span aria-hidden="true">↗</span></Link>
           </div>
         </section>
 
@@ -284,14 +252,16 @@ export default function Home() {
           </div>
           <div className="contact-card">
             <p>
-              Vous souhaitez contribuer, proposer une initiative ou préparer une collaboration ?
-              Les coordonnées officielles pourront être ajoutées ici dès validation.
+              Le contact officiel de l’association est celui de son président, Adoumbé Maoura : <a href={ORG.phoneHref}><strong>{ORG.phone}</strong></a>, appel et WhatsApp.
+              Pour rejoindre une thématique, poser une question ou proposer un partenariat, le formulaire est le plus sûr.
             </p>
-            <a className="button primary" href="#participer">Voir les parcours <span aria-hidden="true">→</span></a>
+            <div className="hero-actions">
+              <Link className="button primary" href="/participer#contact">Nous écrire <span aria-hidden="true">→</span></Link>
+              <a className="text-link" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
         </section>
-
-     </main>
+      </main>
     </>
   );
 }

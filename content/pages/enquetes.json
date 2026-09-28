@@ -1,0 +1,102 @@
+{
+ "legacy": "enquetes.html",
+ "lang": "fr",
+ "documentTitle": "Enquêtes de terrain — ADEB LONODJI",
+ "description": "Huit inconnues de notre recensement deviennent huit enquêtes : qui détient la réponse, comment s’y prendre, ce qu’on relève et en combien de jours.",
+ "title": "Enquêtes de terrain",
+ "eyebrow": "Agir",
+ "lede": "Sur trente-quatre problématiques, onze nous sont entièrement inconnues, et huit peuvent être levées tout de suite. Voici comment lever chacune : le détenteur de la réponse, la méthode, la fiche de relevé et l’effort en journées. Aucune ne demande d’argent.",
+ "pills": [
+  "8 enquêtes",
+  "Aucun budget",
+  "Carnet imprimable"
+ ],
+ "kicker": "",
+ "crumbs": [
+  "Accueil",
+  "Nos actions",
+  "Enquêtes de terrain"
+ ],
+ "parent": "Nos actions",
+ "resume": [
+  "Onze des trente-quatre problématiques recensées restent entièrement inconnues : cette page en transforme huit en enquêtes de terrain, pour remplir les colonnes vides des dossiers.",
+  "Elles portent notamment sur les actes de naissance manquants, les urgences obstétricales, les latrines scolaires et les pertes après récolte, et ne demandent aucun argent.",
+  "Aucune n’a encore été conduite : l’association demande à chaque volontaire une seule enquête, un seul village, et la fiche rendue même incomplète."
+ ],
+ "toc": [
+  {
+   "href": "#huit-fois-inconnu-ce-nest-pas-une-conclusion",
+   "label": "Huit fois « inconnu » — ce n’est pas une conclusion, c’est un programme de travail"
+  },
+  {
+   "href": "#cinq-regles-et-elles-ne-se-negocient-pas",
+   "label": "Cinq règles, et elles ne se négocient pas"
+  },
+  {
+   "href": "#une-inconnue-un-detenteur-une-methode-un-eff",
+   "label": "Une inconnue, un détenteur, une méthode, un effort"
+  },
+  {
+   "href": "#huit-fiches-imprimables-a-emporter-sur-le-te",
+   "label": "Huit fiches imprimables, à emporter sur le terrain"
+  },
+  {
+   "href": "#ou-va-chaque-chiffre",
+   "label": "Où va chaque chiffre"
+  },
+  {
+   "href": "#ce-que-nous-ne-savons-pas-encore",
+   "label": "Ce que nous ne savons pas encore"
+  }
+ ],
+ "sections": [
+  {
+   "id": "huit-fois-inconnu-ce-nest-pas-une-conclusion",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Le principe</div>\n<h2>Huit fois « inconnu » — ce n’est pas une conclusion, c’est un programme de travail</h2>\n<p>Notre <a href=\"/dossiers/problematiques\">recensement des problématiques</a> se termine sur un aveu : sur trente-quatre difficultés établies, <strong>onze nous sont entièrement inconnues</strong>. Nous avons écrit cet aveu sans détour, parce qu’il valait mieux que des estimations inventées. Mais une lacune nommée et laissée en place devient une excuse. Cette page est donc la suite obligée de l’autre : <strong>huit de ces inconnues y deviennent une enquête, avec son détenteur de réponse, sa méthode, sa fiche de relevé et son coût en journées de travail</strong>.</p>\n<p>Aucune ne demande d’argent. Toutes demandent des jambes, un cahier et un peu de méthode. Six des huit peuvent être bouclées en une semaine par quatre personnes, et la plus utile de toutes — savoir si notre centre de santé peut traiter une urgence obstétricale — prend une demi-journée à une seule personne.</p>\n<p>Une remarque de fond avant les fiches. Ces enquêtes ne visent pas à produire un rapport, mais à <strong>remplir les colonnes vides de nos dossiers</strong>. Chaque chiffre relevé ici a une destination précise : une ligne du <a href=\"/actions#resultats\">cadre de résultats</a>, un argument d’un plaidoyer, une demande adressée à un service. Une donnée qui ne sert aucun dossier n’a pas besoin d’être collectée.</p>\n</div>"
+  },
+  {
+   "id": "cinq-regles-et-elles-ne-se-negocient-pas",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Nos règles d’enquête</div>\n<h2>Cinq règles, et elles ne se négocient pas</h2>\n<div class=\"pole-grid\">\n<article class=\"info-card\">\n<h3>Des nombres, jamais des noms</h3>\n<p>Aucune de ces fiches ne comporte de colonne « nom ». Nous relevons des effectifs par quartier, par village, par établissement. Une exception, et une seule : l’enquête sur la lignée des chefs, où le nom du témoin est recueilli <strong>avec son accord explicite pour être cité</strong>, parce qu’un témoignage historique anonyme ne vaut rien.</p>\n</article>\n<article class=\"info-card\">\n<h3>On demande l’autorisation, et on accepte le refus</h3>\n<p>On ne pénètre pas dans une école, un centre de santé ou un quartier sans l’accord de qui en répond. Et quand un interlocuteur refuse de répondre, <strong>on note le refus et on passe</strong>. Un refus consigné est une donnée ; un chiffre arraché est un mensonge en préparation.</p>\n</article>\n<article class=\"info-card\">\n<h3>Deux enquêteurs sur les sujets sensibles</h3>\n<p>Les enquêtes 2 et 7 — enfants sans soutien, départs vers les sites aurifères — ne se font jamais seul. C’est une protection pour les personnes interrogées et pour l’enquêteur lui-même. Ce sont aussi les deux seules dont les fiches remplies ne quittent pas le bureau de l’association.</p>\n</article>\n<article class=\"info-card\">\n<h3>On écrit ce qu’on n’a pas pu relever</h3>\n<p>Une fiche revenue à moitié vide est utile si elle dit pourquoi : école fermée, responsable absent, refus, saison impraticable. C’est ainsi qu’on sait s’il faut y retourner. Une case vide sans motif est une case perdue.</p>\n</article>\n</div>\n<p style=\"margin-top:1.2rem;\">La cinquième règle est une conséquence des quatre autres, et c’est la plus exigeante : <strong>nous publions les résultats même quand ils nous contredisent</strong>. Si l’enquête montre que la situation est meilleure que ce que nos dossiers affirment, nous corrigeons les dossiers et nous le disons au <a href=\"/transparence#corrections\">journal des corrections</a>. Une association qui ne collecte que ce qui l’arrange finit par ne plus être crue sur rien.</p>\n</div>"
+  },
+  {
+   "id": "une-inconnue-un-detenteur-une-methode-un-eff",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Les huit enquêtes</div>\n<h2>Une inconnue, un détenteur, une méthode, un effort</h2>\n<p>L’ordre ci-dessous n’est pas celui du recensement : c’est celui du rapport entre ce que l’enquête coûte et ce qu’elle débloque. Les quatre premières valent d’être lancées avant la fin du mois.</p>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">1</span><div><h3>Combien d’enfants n’ont pas d’acte de naissance ?</h3><dl><dt>Qui détient la réponse</dt><dd>Le service de l’état civil de la commune, et les directeurs d’école</dd><dt>Comment on s’y prend</dt><dd>Ne pas recenser les enfants : recenser les <strong>inscriptions sans pièce</strong>. Chaque directeur d’école sait combien de ses élèves n’ont pas pu fournir d’extrait de naissance à l’inscription, et combien n’ont pas pu être présentés à un examen pour cette raison. On ne demande aucun nom.</dd><dt>Ce qu’on relève</dt><dd>Par école : effectif total, élèves sans acte, élèves empêchés de passer un examen faute d’acte, sur les trois dernières années</dd><dt>Effort</dt><dd>1 personne, 1 jour par école — commencer par les établissements de la ville</dd></dl></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">2</span><div><h3>Combien d’enfants sans soutien parental ?</h3><dl><dt>Qui détient la réponse</dt><dd>Les chefs de quartier et de village, et les églises et communautés religieuses</dd><dt>Comment on s’y prend</dt><dd>C’est l’enquête la plus délicate du carnet et celle où nous sommes le plus prudents. On ne dresse <strong>aucune liste d’enfants</strong>. On demande à chaque chef de quartier un <strong>nombre</strong>, et une seule précision : combien sont scolarisés. Si un chef de quartier préfère ne pas répondre, on n’insiste pas et on l’écrit.</dd><dt>Ce qu’on relève</dt><dd>Par quartier ou village : nombre d’enfants sans soutien parental, dont scolarisés, dont ayant un acte de naissance</dd><dt>Effort</dt><dd>2 personnes, 1 jour pour la ville ; 1 jour par canton ensuite</dd></dl></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">3</span><div><h3>Où va l’eau usée, et où vont les déchets ?</h3><dl><dt>Qui détient la réponse</dt><dd>Observation directe, et le service technique de la commune</dd><dt>Comment on s’y prend</dt><dd>Aucun interlocuteur n’est nécessaire pour commencer : il suffit de marcher et de noter. On relance ensuite la commune sur ce qui existe officiellement.</dd><dt>Ce qu’on relève</dt><dd>Points de dépôt sauvage repérés et localisés ; existence d’une collecte, sa fréquence ; latrines publiques au marché et dans les écoles, en état ou hors service ; écoulement des eaux de pluie et zones stagnantes en saison humide</dd><dt>Effort</dt><dd>2 personnes, 2 jours pour la ville — à refaire une fois en saison sèche et une fois en saison des pluies</dd></dl></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">4</span><div><h3>Notre district peut-il traiter une urgence obstétricale ?</h3><dl><dt>Qui détient la réponse</dt><dd>Le responsable du centre de santé, et la délégation sanitaire provinciale</dd><dt>Comment on s’y prend</dt><dd>Ne pas demander un avis : demander une <strong>liste de moyens</strong>. Une urgence obstétricale se traite ou ne se traite pas selon sept conditions matérielles, et chacune se vérifie en une question fermée.</dd><dt>Ce qu’on relève</dt><dd>Sage-femme affectée et présente ; agent formé aux soins obstétricaux d’urgence ; kit d’urgence disponible ; source de lumière la nuit ; moyen d’évacuation et son coût pour la famille ; sang disponible ou distance au dépôt le plus proche ; nombre d’évacuations vers Koumra sur les douze derniers mois</dd><dt>Effort</dt><dd>1 personne, une demi-journée — la plus rentable de toutes les enquêtes</dd></dl></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">5</span><div><h3>Les filles ont-elles des latrines et de l’eau à l’école ?</h3><dl><dt>Qui détient la réponse</dt><dd>Les directeurs d’établissement, et l’observation sur place</dd><dt>Comment on s’y prend</dt><dd>C’est la première cause d’absences répétées puis d’abandon, et c’est la plus facile à constater : il suffit de regarder, avec l’accord du directeur.</dd><dt>Ce qu’on relève</dt><dd>Par établissement : latrines séparées filles et garçons, oui ou non ; nombre de cabines pour combien d’élèves ; porte qui ferme ; point d’eau dans l’enceinte et son débit ; savon disponible ; local pour l’hygiène menstruelle</dd><dt>Effort</dt><dd>1 personne, 1 jour pour les établissements de la ville</dd></dl></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">6</span><div><h3>Combien perdons-nous après la récolte ?</h3><dl><dt>Qui détient la réponse</dt><dd>Les producteurs eux-mêmes, et les groupements</dd><dt>Comment on s’y prend</dt><dd>On ne pose pas la question en pourcentage, que personne n’estime de la même façon. On la pose en <strong>sacs</strong>, et on la pose deux fois dans l’année : à la récolte, puis six mois plus tard.</dd><dt>Ce qu’on relève</dt><dd>Par producteur volontaire : sacs récoltés, sacs encore détenus six mois après, sacs vendus, prix à la récolte et prix en soudure, lieu et mode de stockage</dd><dt>Effort</dt><dd>3 personnes, 20 producteurs volontaires, deux passages à six mois d’intervalle</dd></dl></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">7</span><div><h3>Combien d’enfants sont partis de nos cantons, et combien sont revenus ?</h3><dl><dt>Qui détient la réponse</dt><dd>Les chefs de village, et l’ARED à Koumra</dd><dt>Comment on s’y prend</dt><dd>Là encore, <strong>des nombres et non des noms</strong>. Un chef de village sait combien de jeunes sont partis dans l’année et combien sont rentrés. C’est la seule enquête du carnet qui doit être conduite par deux personnes au moins, et jamais par un seul enquêteur.</dd><dt>Ce qu’on relève</dt><dd>Par village : départs de jeunes dans les douze derniers mois, retours, tranche d’âge approximative, destination citée</dd><dt>Effort</dt><dd>2 personnes, 1 jour par canton — commencer par Péni, expressément citée dans les sources</dd></dl></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">8</span><div><h3>Quelles sont les années de règne de nos chefs ?</h3><dl><dt>Qui détient la réponse</dt><dd>La chefferie de Bédjondo, les anciens, et les familles des chefs défunts</dd><dt>Comment on s’y prend</dt><dd>La seule enquête de ce carnet qui ne porte pas sur un manque matériel mais sur notre mémoire. Elle est aussi la plus urgente au sens strict : <strong>les témoins vieillissent</strong>. On ne cherche pas des dates précises mais des repères : une saison, un événement, une génération.</dd><dt>Ce qu’on relève</dt><dd>Par chef : début et fin approximatifs, mode de succession, événement repère contemporain, nom du témoin et son accord pour être cité</dd><dt>Effort</dt><dd>2 personnes, plusieurs séances — à enregistrer si le témoin y consent</dd></dl></div></div>\n</div>"
+  },
+  {
+   "id": "huit-fiches-imprimables-a-emporter-sur-le-te",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Le carnet</div>\n<h2>Huit fiches imprimables, à emporter sur le terrain</h2>\n<p>Une enquête ne se conduit pas avec un téléphone en main, ni de mémoire. Les huit fiches ci-dessus existent en un <strong>carnet imprimable</strong>, une page par enquête, avec les cases à remplir, le rappel des règles au dos de la couverture, et l’emplacement de la date et du nom de l’enquêteur. Il est fait pour être photocopié autant de fois qu’il y a de villages.</p>\n<div class=\"lib-callout\">\n<div class=\"lib-callout-icon\"><svg aria-hidden=\"true\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.6\" viewbox=\"0 0 24 24\"><path d=\"M4 4h11l5 5v11H4z\"></path><path d=\"M15 4v5h5\"></path><path d=\"M8 13h8M8 17h5\"></path></svg></div>\n<div>\n<h3>Carnet d’enquête de terrain</h3>\n<p>Huit fiches, les cinq règles, et un tableau de suivi des villages visités. Format A4, en noir et blanc pour rester photocopiable là où l’électricité manque.</p>\n<div class=\"lib-callout-actions\">\n<a class=\"btn btn-primary\" download=\"\" href=\"/documents/carnet-enquete-terrain-adeb-lonodji-2026.pdf\">Télécharger le carnet (PDF) →</a>\n<a class=\"btn btn-ghost\" href=\"/participer#contact\">Je veux enquêter dans mon village →</a>\n</div>\n</div>\n</div>\n<p>Ce que nous demandons à qui prend le carnet : une seule enquête, un seul village, et la fiche rendue même incomplète. Nous préférons quarante fiches partielles rendues à quatre fiches parfaites promises.</p>\n</div>"
+  },
+  {
+   "id": "ou-va-chaque-chiffre",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Ce qui vient après</div>\n<h2>Où va chaque chiffre</h2>\n<p>Les fiches remontent au bureau de l’association, où elles sont agrégées par quartier, par village ou par établissement — jamais par personne. L’agrégat est publié ici, avec sa date, le nombre de fiches qui le composent et les fiches manquantes. Puis il rejoint sa destination : la colonne « départ » du <a href=\"/actions#resultats\">cadre de résultats</a>, qui porte aujourd’hui trop de mentions « non connu » et « à relever ».</p>\n<p>C’est le point de cette page. Ces vingt-deux indicateurs ont été écrits pour être mesurés, et plus de la moitié attendent leur première mesure. Les huit enquêtes ci-dessus en remplissent une bonne part — et à partir de là, nos dossiers cessent de décrire une situation pour commencer à prouver une évolution. C’est la différence entre une association qui demande et une association à qui l’on répond.</p>\n<p>Les fiches des enquêtes 2 et 7 font exception : <strong>seul l’agrégat en sort</strong>, les fiches elles-mêmes ne sont ni transmises, ni numérisées, ni conservées au-delà de l’agrégation. C’est la règle que nous nous sommes donnée sur la page <a href=\"/dossiers/solidarite-inclusion\">Personnes vulnérables</a>, et elle s’applique ici sans exception.</p>\n</div>"
+  },
+  {
+   "id": "ce-que-nous-ne-savons-pas-encore",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Honnêteté</div>\n<h2>Ce que nous ne savons pas encore</h2>\n<p>Nous n’avons pas encore conduit une seule de ces enquêtes : cette page décrit une méthode, pas une expérience. Les estimations d’effort — une personne une journée, deux personnes un jour par canton — sont des ordres de grandeur raisonnés, non mesurés, et ils seront corrigés dès la première enquête bouclée.</p>\n<p>Nous ne savons pas combien de volontaires répondront. Nous ne savons pas si les directeurs d’établissement et les responsables de santé accepteront de répondre à une association sans autorisation vérifiée — raison de plus pour régler d’abord notre <a href=\"/dossiers/demarches\">base légale</a>. Nous ne savons pas si la saison des pluies rendra certains cantons inatteignables pendant une partie de l’année, et il faut probablement le prévoir. Enfin, nous n’avons pas de méthode pour l’enquête la plus difficile de toutes, celle qui manque à notre recensement : la situation des personnes en situation de handicap, sur laquelle nous n’avons trouvé aucune donnée et pour laquelle nous n’avons pas encore su écrire une fiche honnête. <strong>Corrigé le 18 septembre 2026 :</strong> la fiche existe, et elle tient en six questions qui ne prononcent jamais le mot « handicap ». Elle est sur notre <a href=\"/dossiers/handicap\">plan handicap</a>.</p>\n<p class=\"form-note\">Cette page découle directement du <a href=\"/dossiers/problematiques\">recensement des problématiques</a>, dont elle reprend les huit lignes marquées « inconnu ». Les règles de protection appliquées aux enquêtes 2 et 7 sont celles de la page <a href=\"/dossiers/solidarite-inclusion\">Personnes vulnérables</a> ; les engagements de publication et de correction sont ceux de la page <a href=\"/transparence\">Redevabilité</a>. Péni est citée comme point de départ de l’enquête 7 parce que les sources sur les départs d’enfants vers les sites aurifères du Mandoul le nomment expressément : voir <a href=\"/dossiers/ong-partenaires\">ONG et partenaires</a>.</p>\n</div>"
+  }
+ ],
+ "words": 2102,
+ "forms": [],
+ "hasMap": false,
+ "slug": "enquetes",
+ "route": "/dossiers/enquetes",
+ "kind": "dossier"
+}

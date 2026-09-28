@@ -1,0 +1,136 @@
+{
+ "legacy": "genealogies.html",
+ "lang": "fr",
+ "documentTitle": "Écrire la généalogie de sa famille — ADEB LONODJI",
+ "description": "Un modèle conçu pour un pays sans état civil ancien : la maison avant le couple, le rang avant l’année, et un cahier de dix pages à photocopier.",
+ "title": "Écrire la généalogie de sa famille",
+ "eyebrow": "Mémoire & héritage",
+ "lede": "Les formulaires venus d’ailleurs supposent un état civil ancien, une seule épouse et un arbre qui remonte. Aucune des trois hypothèses ne tient ici. Voici un modèle bâti sur les trois contraires.",
+ "pills": [
+  "Dix feuilles",
+  "À photocopier",
+  "Sans état civil",
+  "La famille garde"
+ ],
+ "kicker": "",
+ "crumbs": [
+  "Accueil",
+  "Bédjondo & héritage",
+  "Généalogies"
+ ],
+ "parent": "Bédjondo & héritage",
+ "resume": [
+  "Cette page propose un cahier à photocopier pour écrire la généalogie de sa famille, car les formulaires venus d’ailleurs supposent un état civil ancien et une seule épouse.",
+  "Il range les enfants sous leur mère et situe chaque naissance par un repère plutôt qu’une année, grâce à seize événements datés.",
+  "Commencez par la maison de votre père ; le cahier reste chez vous, et l’association ne publie aucun nom sans accord écrit."
+ ],
+ "toc": [
+  {
+   "href": "#les-formulaires-venus-dailleurs-ne-convienne",
+   "label": "Les formulaires venus d’ailleurs ne conviennent pas ici"
+  },
+  {
+   "href": "#un-numero-qui-se-tient-a-la-main-et-ne-se-de",
+   "label": "Un numéro qui se tient à la main et ne se dérègle pas"
+  },
+  {
+   "href": "#huit-feuilles-et-lordre-dans-lequel-les-remp",
+   "label": "Huit feuilles, et l’ordre dans lequel les remplir"
+  },
+  {
+   "href": "#comment-dater-une-naissance-sans-acte-de-nai",
+   "label": "Comment dater une naissance sans acte de naissance"
+  },
+  {
+   "href": "#six-erreurs-qui-rendent-un-cahier-inutilisab",
+   "label": "Six erreurs qui rendent un cahier inutilisable"
+  },
+  {
+   "href": "#un-cahier-en-ligne-qui-nenvoie-rien-a-person",
+   "label": "Un cahier en ligne qui n’envoie rien à personne"
+  },
+  {
+   "href": "#le-cahier-reste-chez-la-famille",
+   "label": "Le cahier reste chez la famille"
+  },
+  {
+   "href": "#dater-les-onze-chefs-si-assez-de-familles-ec",
+   "label": "Dater les onze chefs, si assez de familles écrivent"
+  },
+  {
+   "href": "#ce-que-nous-ne-savons-pas-et-qui-nous-manque",
+   "label": "Ce que nous ne savons pas, et qui nous manque"
+  }
+ ],
+ "sections": [
+  {
+   "id": "les-formulaires-venus-dailleurs-ne-convienne",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Pourquoi un modèle, et pas un logiciel</div>\n<h2>Les formulaires venus d’ailleurs ne conviennent pas ici</h2>\n<p>Il existe des dizaines de modèles d’arbre généalogique, et des logiciels gratuits. Presque tous reposent sur trois hypothèses qui ne tiennent pas chez nous : qu’il existe un <strong>état civil ancien</strong> où l’on peut vérifier une date, qu’un homme a <strong>une seule épouse</strong>, et qu’on remonte <strong>de soi vers ses ancêtres</strong>. Retirez ces trois hypothèses et le formulaire s’effondre : les cases de dates restent vides, les enfants de plusieurs mères se mélangent en une fratrie indistincte, et l’arbre ne ressemble en rien à la façon dont la famille se raconte.</p>\n<p>Nous proposons donc un modèle construit sur d’autres bases. Il tient sur des feuilles à photocopier, s’écrit au stylo, ne demande ni électricité ni téléphone, et repose sur quatre partis pris.</p>\n<div class=\"pole-grid\">\n<article class=\"info-card\">\n<h3>La maison avant le couple</h3>\n<p>L’unité de base n’est pas le couple mais la maison : un père, ses épouses, et les enfants <strong>rangés sous leur mère</strong>. C’est la feuille la plus importante du cahier, et celle qu’aucun formulaire ordinaire ne prévoit.</p>\n</article>\n<article class=\"info-card\">\n<h3>Le rang avant l’année</h3>\n<p>Presque personne ne connaît son année de naissance au-delà d’une certaine génération, mais tout le monde sait son rang dans la fratrie et devant quel événement il se situe. On enregistre donc <strong>le rang et un repère</strong>, et l’année seulement si elle est connue.</p>\n</article>\n<article class=\"info-card\">\n<h3>Descendre plutôt que remonter</h3>\n<p>La mémoire d’un lignage part d’un ancêtre et descend. La feuille principale est donc une <strong>liste de descendance décalée</strong>, qui s’accommode d’une famille de trois enfants comme d’une famille de onze — ce que des cases fixes ne savent pas faire.</p>\n</article>\n<article class=\"info-card\">\n<h3>L’informateur fait partie du fait</h3>\n<p>Chaque ligne indique de qui on la tient et à quelle date. C’est la règle que nous nous imposons sur tout ce site, appliquée à la famille : <strong>un nom sans informateur est une rumeur</strong> qui vient d’entrer dans les archives.</p>\n</article>\n</div>\n</div>"
+  },
+  {
+   "id": "un-numero-qui-se-tient-a-la-main-et-ne-se-de",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">La numérotation</div>\n<h2>Un numéro qui se tient à la main et ne se dérègle pas</h2>\n<p>Dès la troisième génération, un cahier de famille devient illisible : quatre personnes portent le même nom et l’on ne sait plus de qui l’on parle. Le modèle adopte donc une numérotation par emboîtement, dite <em>d’Aboville</em>, dont toute la règle tient en trois phrases.</p>\n<p>L’ancêtre de départ porte le numéro <strong>1</strong>. Ses enfants portent <strong>1.1</strong>, <strong>1.2</strong>, <strong>1.3</strong> dans l’ordre des naissances. Les enfants de <strong>1.2</strong> portent <strong>1.2.1</strong>, <strong>1.2.2</strong>, et ainsi de suite sans limite. Le numéro dit alors deux choses d’un seul coup : <strong>de qui la personne descend</strong>, et <strong>à quelle génération elle se trouve</strong> — il suffit de compter les chiffres. Aucun calcul, aucun tableau de correspondance, rien à tenir à jour.</p>\n<p>Une précaution est essentielle et elle est propre à notre contexte : <strong>la mère ne figure pas dans le numéro, mais dans une colonne</strong>. Le numéro suit l’ordre des naissances ; la maison, elle, se lit sur la feuille de maison et sur la fiche de personne. C’est ce qui permet de savoir, vingt ans plus tard, qui était frère de même mère et qui ne l’était que de père — sans avoir eu à trancher, dans le numéro lui-même, une hiérarchie entre les maisons.</p>\n</div>"
+  },
+  {
+   "id": "huit-feuilles-et-lordre-dans-lequel-les-remp",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Le cahier</div>\n<h2>Huit feuilles, et l’ordre dans lequel les remplir</h2>\n<p>Le conseil de méthode le plus utile tient en une phrase : <strong>commencez par la maison de votre propre père, pas par l’ancêtre le plus lointain.</strong> La première feuille se remplit en une heure et donne confiance ; la seconde demande des semaines d’enquête et décourage ceux qui commencent par là. On remonte ensuite d’une génération à la fois, et l’on s’arrête où la mémoire s’arrête.</p>\n</div>\n<div aria-label=\"Les huit feuilles du cahier généalogique\" class=\"table-wrap\" role=\"region\" tabindex=\"0\">\n<table class=\"plea-table indic-table\">\n<caption class=\"sr-only\">Les huit feuilles du cahier généalogique, ce qu’elles servent à établir et le moment de s’en servir</caption>\n<thead><tr><th scope=\"col\">Feuille</th><th scope=\"col\">Ce qu’elle sert à établir</th><th scope=\"col\">Quand on s’en sert</th></tr></thead>\n<tbody><tr><th scope=\"row\">Feuille de maison</th><td>Un père, plusieurs mères, les enfants rangés <strong>sous leur mère</strong> et dans l’ordre des naissances</td><td><strong>En premier, toujours.</strong> Celle du père de qui tient le cahier se remplit en une heure</td></tr><tr><th scope=\"row\">Fiche de personne</th><td>Une personne : noms, rang dans la fratrie, année ou repère, mère et maison, et de qui on tient tout cela</td><td>Une par personne, au fur et à mesure ; on photocopie</td></tr><tr><th scope=\"row\">Ascendance sur quatre générations</th><td>Soi, ses parents, ses quatre grands-parents, ses huit arrière-grands-parents, alignés en cases</td><td>Pour se repérer, et pour montrer à un jeune ce qui manque</td></tr><tr><th scope=\"row\">Descendance d’un ancêtre</th><td>La liste décalée des descendants d’un ancêtre, un cran vers la droite par génération</td><td>Quand on travaille sur le lignage entier, une branche par feuille</td></tr><tr><th scope=\"row\">Fiche d’entretien</th><td>Qui parle, quand, devant qui, ce qu’il autorise à écrire et ce qu’il refuse</td><td>À chaque visite à un ancien, sans exception</td></tr><tr><th scope=\"row\">Repères chronologiques</th><td>Seize dates établies du pays bedjond, et des lignes pour les années que la famille nomme elle-même</td><td>Chaque fois qu’une année de naissance est inconnue</td></tr><tr><th scope=\"row\">Termes de parenté</th><td>Les mots bedjond de la parenté et ce qu’ils désignent exactement — table vide, à remplir</td><td>Une fois, avec un ancien ; puis renvoyez-nous la page</td></tr><tr><th scope=\"row\">Index des personnes</th><td>Tous les noms du cahier par ordre alphabétique, avec leur numéro</td><td>En dernière page, tenu au fur et à mesure</td></tr></tbody>\n</table>\n</div>\n<div class=\"prose\">\n<p><a class=\"btn btn-primary\" download=\"\" href=\"/documents/cahier-genealogique-adeb-lonodji-2026.pdf\">Télécharger le cahier (PDF, 10 pages)</a>\n<a class=\"btn btn-ghost\" href=\"/dossiers/genealogies\">Ouvrir le cahier en ligne →</a></p>\n<p class=\"form-note\">Noir et blanc, format A4, conçu pour la photocopie : aucune couleur, aucune trame, rien qui disparaisse à la troisième copie. Les feuilles de personne, de maison et de descendance sont faites pour être reproduites en autant d’exemplaires que nécessaire.</p>\n</div>"
+  },
+  {
+   "id": "comment-dater-une-naissance-sans-acte-de-nai",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Dater</div>\n<h2>Comment dater une naissance sans acte de naissance</h2>\n<p>C’est la difficulté centrale, et elle a une solution. Personne ne dit « je suis né en 1938 », mais tout le monde sait <strong>avant ou après quoi</strong> il est né. Le cahier fournit donc une règle graduée : seize événements datés et sourcés dans notre <a href=\"/dossiers/recherche\">base de recherche</a>, depuis la résistance de Koumra du 16 mai 1903 jusqu’au recensement de 2026, en passant par les années où l’on recrutait les hommes pour le chemin de fer Congo-Océan, entre 1921 et 1934.</p>\n<p>Ce dernier repère mérite qu’on s’y arrête, parce qu’il est à la fois le plus douloureux et le plus utile. Environ <strong>quinze mille hommes du seul Moyen-Chari</strong> furent recrutés pour cette ligne. Il n’existe pratiquement pas de famille du pays sara dont la mémoire ne porte pas cet épisode, et c’est précisément pour cela qu’il date des naissances sur trois générations. Une généalogie qui recueille, village après village, qui est parti et qui est revenu ferait bien davantage qu’un arbre de famille : elle documenterait un fait historique que rien, chez nous, ne conserve.</p>\n<p>Le cahier réserve ensuite une place aux <strong>années que chaque famille nomme elle-même</strong> : l’année de la faim, celle où l’eau a emporté le pont, celle de la grande mortalité du bétail, celle du premier camion. Chacune doit être rattachée, même approximativement, à l’un des seize repères datés. Ce sont ces lignes-là qui feront le plus pour la mémoire du pays, car elles n’existent nulle part ailleurs.</p>\n</div>"
+  },
+  {
+   "id": "six-erreurs-qui-rendent-un-cahier-inutilisab",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Les pièges</div>\n<h2>Six erreurs qui rendent un cahier inutilisable</h2>\n<p>Aucune n’est évidente, et toutes se paient vingt ans plus tard, quand celui qui savait n’est plus là pour corriger.</p>\n</div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">1</span><div><h3>Inscrire une année plutôt qu’un repère</h3><p>« Né vers 1925 » est une invention qui deviendra une certitude ; « né deux ans avant qu’on prenne les hommes pour le chemin de fer » est une information qu’un chercheur pourra dater lui-même dans cinquante ans.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">2</span><div><h3>Écrire « frère » sans dire de quelle mère</h3><p>C’est la perte la plus fréquente et la plus lourde. Frère de même père et de même mère, ou de même père seulement : c’est de cette distinction que dépendent les obligations réelles entre les gens.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">3</span><div><h3>Sauter les enfants morts en bas âge</h3><p>Les omettre décale toute la fratrie et fait mentir l’ordre des naissances, qui est souvent la seule chose dont on se souvienne avec certitude. On inscrit le rang, et rien de plus.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">4</span><div><h3>Trancher un ordre de naissance incertain</h3><p>Entre les enfants de deux mères, l’ordre est parfois disputé. Deviner crée un aîné qui n’en est pas un : on écrit « ordre entre maisons non établi » et l’on passe.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">5</span><div><h3>Confondre l’enfant élevé et l’enfant né</h3><p>Un enfant confié à un oncle ou à une grand-mère est de la famille sans être de la filiation. Les deux faits sont vrais et doivent tenir sur deux lignes distinctes, sans que la seconde efface la première.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">6</span><div><h3>Renuméroter après une découverte</h3><p>Un enfant oublié apparaît entre 1.2 et 1.3 ? On lui donne 1.2bis. Renuméroter rend fausses toutes les feuilles déjà remplies, et personne ne s’en aperçoit avant des années.</p></div></div>"
+  },
+  {
+   "id": "un-cahier-en-ligne-qui-nenvoie-rien-a-person",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">La version électronique</div>\n<h2>Un cahier en ligne qui n’envoie rien à personne</h2>\n<p>Le même cahier existe en <a href=\"/dossiers/genealogies\">version électronique</a>, et il obéit à la même règle : <strong>tout reste dans le navigateur de la famille</strong>. Aucun compte à créer, aucun serveur qui reçoit quoi que ce soit, et nous ne pourrions pas lire ces cahiers même si nous le voulions. L’archive n’est pas la page : c’est le <strong>fichier que l’on exporte</strong> et que l’on garde.</p>\n<p>L’écran apporte trois choses que le papier ne peut pas faire. Il <strong>calcule le décalage</strong> de la liste de descendance, qu’on rate souvent à la main. Il <strong>trouve les incohérences</strong> qu’un œil ne voit pas dans trente fiches : un numéro attribué deux fois, un descendant dont l’ancêtre n’a pas de fiche, deux enfants au même rang dans une même maison. Et il <strong>se recopie sans erreur</strong>, ce qui compte quand le cahier passe à un cousin de la diaspora.</p>\n<p>Il ne remplace pourtant pas le papier, et nous le disons sur la page elle-même : <strong>on ne fait pas parler un ancien avec un téléphone à la main</strong>, et un cahier posé chez quelqu’un dure plus longtemps qu’un fichier. La bonne façon de s’en servir est donc : recueillir sur papier, saisir le soir, exporter, imprimer.</p>\n</div>"
+  },
+  {
+   "id": "le-cahier-reste-chez-la-famille",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Ce que nous ne faisons pas</div>\n<h2>Le cahier reste chez la famille</h2>\n<p>ADEB LONODJI ne constitue pas de base généalogique du pays bedjond, n’en reçoit pas de copie, et ne publie aucun nom sans l’accord écrit de la personne ou, si elle est décédée, de ses descendants directs. Un fichier de familles est exactement le genre d’objet dont on ne maîtrise plus l’usage une fois qu’il existe : c’est la même règle que pour le registre social de notre page <a href=\"/dossiers/solidarite-inclusion\">Personnes vulnérables</a> et pour le registre des <a href=\"/dossiers/lieux-sacres\">lieux sacrés</a>, et elle vaut ici avec la même force.</p>\n<p>Deux avertissements figurent en tête du cahier, et le second est le plus important. D’abord : <strong>ce cahier n’est pas un titre de propriété</strong>. Il établit qui descend de qui, pas un droit sur une terre, une maison ou un héritage, et il ne remplace ni acte d’état civil, ni jugement, ni décision de la chefferie. Dans un département dépourvu de cadastre — et notre <a href=\"/dossiers/problematiques\">recensement</a> rappelle qu’à Sarh, en 2024, <strong>cinquante-sept pour cent des dossiers judiciaires étaient des litiges fonciers</strong> — un arbre généalogique produit devant un tribunal ferait plus de mal à la famille que l’oubli qu’il répare.</p>\n<p>Ensuite : <strong>ce qui ne s’écrit jamais</strong>. Aucune contestation de paternité, aucune maladie, aucune accusation de sorcellerie, aucun reproche, aucune dette. Ces phrases-là, écrites une seule fois, se retournent tôt ou tard contre quelqu’un de la famille, et souvent contre le plus faible. Le cahier note les filiations et les dates ; il ne juge personne et ne garde aucun grief.</p>\n<p>Enfin, toute personne vivante peut demander que sa fiche soit retirée, corrigée ou non communiquée, sans avoir à se justifier. Pour un enfant, c’est le parent ou le tuteur qui décide, et rien ne sort du cahier.</p>\n</div>"
+  },
+  {
+   "id": "dater-les-onze-chefs-si-assez-de-familles-ec",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Ce que cela peut donner</div>\n<h2>Dater les onze chefs, si assez de familles écrivent</h2>\n<p>Notre page <a href=\"/histoire#lignee\">Figures</a> présente la lignée des chefs de canton de Bédjondo : onze noms transmis depuis l’ancêtre Narmbang, selon l’étude universitaire ACAREF. Et onze cases d’années de règne vides, parce qu’aucune source consultable ne date ces successions. Cette lacune figure dans notre <a href=\"/dossiers/problematiques\">recensement des problématiques</a> parmi celles dont nous sommes nous-mêmes responsables.</p>\n<p>Il existe une façon de la combler, et elle ne demande ni archive ni financement. Chaque fiche de personne du cahier comporte une ligne discrète : <strong>« chef de canton régnant à sa naissance, si on s’en souvient »</strong>. Prise isolément, cette mention ne prouve rien. Mais recueillie dans trente familles, sur trois générations, croisée avec les repères datés et les ordres de naissance, elle permet d’encadrer chaque règne entre deux bornes. C’est la méthode ordinaire de la chronologie des traditions orales, et elle ne coûte que de la patience.</p>\n<p>Autrement dit : <strong>ce sont les généalogies de familles qui dateront la lignée des chefs</strong>, et non l’inverse. Nous n’avancerons aucune date avant d’avoir assez de cahiers pour que le recoupement tienne, et nous publierons la méthode en même temps que le résultat, pour que chacun puisse la contester.</p>\n</div>"
+  },
+  {
+   "id": "ce-que-nous-ne-savons-pas-et-qui-nous-manque",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Honnêteté</div>\n<h2>Ce que nous ne savons pas, et qui nous manque</h2>\n<p>Une lacune gêne ce modèle plus que toutes les autres, et elle est visible dans le cahier : <strong>la table des termes de parenté bedjond est vide</strong>. Nous ne connaissons pas avec certitude les mots de la parenté dans la langue, et nous refusons de les inventer — un mot faux, imprimé dans un document destiné à être photocopié, se recopie pendant trente ans. Cette table est donc une page à remplir avec un ancien, et nous publierons le résultat sous le nom de ceux qui l’auront établi.</p>\n<p>L’enjeu dépasse le vocabulaire. Beaucoup de langues de la région appellent « père » le frère du père, distinguent l’aîné du cadet là où le français ne le fait pas, et nomment autrement le frère de mère et le frère de père. Ces écarts ne sont pas des curiosités : ils disent comment la famille fonctionne, qui doit quoi à qui, et qui parle au nom de qui. Tant que nous ne les avons pas écrits, le modèle reste un cadre français appliqué à une réalité bedjond, et nous le disons plutôt que de faire comme si.</p>\n<p>Nous ne savons pas non plus quelle est la profondeur généalogique habituelle de la mémoire des familles d’ici — trois générations, cinq, davantage. Les premiers cahiers remplis nous l’apprendront, et nous le publierons tel quel, même si le chiffre est plus modeste que ce que nous aimerions.</p>\n<p class=\"form-note\">Sources des repères chronologiques imprimés dans le cahier : tous figurent, avec leur source, dans notre <a href=\"/dossiers/recherche\">base de recherche</a> — Tchadinfos citant l’historien Mario Azevedo pour la résistance de Koumra du 16 mai 1903 ; le réseau de recherche <em>Mass Violence and Resistance</em> de Sciences Po pour la mort du chef Mode en 1905, la première révolte du Mandoul de 1908 à 1912, les résistances au recrutement forcé de 1927-1928 et la répression de la « guerre de Bouna » en 1928-1929 ; une étude historique du recrutement colonial dans le bassin du Chari pour le chemin de fer Congo-Océan de 1921 à 1934 et les quinze mille hommes du Moyen-Chari ; Comboni.org pour l’installation de la mission comboniana de Bédjondo en 1978 ; l’institut national de la statistique pour les recensements de 1993 et 2009 ; Tchadinfos pour la dixième assemblée générale de Kokotan d’avril 2023 ; Vatican News pour l’érection du diocèse de Koumra le 12 août 2023. La lignée des onze chefs et le nom de l’ancêtre Narmbang proviennent de l’étude ACAREF de Masnan Beoss sur l’identification des peuples sara du sud du Tchad. Le caractère patrilinéaire de la filiation sara est établi par les sources générales sur les Sara ; la description détaillée du lignage bedjond, elle, reste à faire.</p>\n</div>"
+  }
+ ],
+ "words": 2641,
+ "forms": [],
+ "hasMap": false,
+ "slug": "genealogies",
+ "route": "/dossiers/genealogies",
+ "kind": "dossier"
+}

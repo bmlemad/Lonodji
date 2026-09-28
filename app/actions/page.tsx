@@ -1,75 +1,68 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageHeader, PlaidoyerCard, SectionHead } from "../../components/blocks";
+import { LegacySections } from "../../components/legacy-content";
+import LegacyEnhance from "../../components/legacy-enhance";
+import { getIndex, getPage, pickSections } from "../../lib/content";
 
 export const metadata: Metadata = {
-  title: "Actions",
-  description: "Actions, enjeux territoriaux et plaidoyer documenté d’ADEB Lonodji.",
+  title: "Plaidoyers, engagements et dossiers",
+  description: "Sept plaidoyers publiés et une note à la commune de Bédjondo — eau, électricité, internet, routes, santé, école, formation professionnelle — avec leurs destinataires, leur état d’envoi et les douze engagements publics de l’association.",
   alternates: { canonical: "/actions" },
 };
 
-const domaines = [
-  ["01", "Eau", "Besoins, initiatives et résultats à documenter avec sources et dates."],
-  ["02", "Électricité", "Suivi des enjeux, démarches et avancées lorsqu’elles sont vérifiables."],
-  ["03", "Santé", "Informations territoriales, projets et actions documentés."],
-  ["04", "Routes & infrastructures", "Problématiques, projets et état d’avancement présentés avec contexte."],
-];
-
-const archives = [
-  ["Quatre pôles / 19 thèmes", "Une trace indexée de lonodji.org décrit une organisation des actions en quatre pôles couvrant 19 thèmes. Le détail des quatre pôles et des 19 thèmes reste à récupérer et à valider à partir des archives originales.", "À CONFIRMER"],
-  ["Huit appels publics", "La même trace mentionne huit appels publics portant notamment sur l’eau, l’électricité, les routes et la santé, présentés comme sourcés, quantifiés, adressés à des destinataires identifiés et suivis publiquement.", "SOURCE EXTERNE"],
-  ["Forums de développement", "Une publication de 2021 rapporte que des membres fondateurs d’ADEB-Lonodji avaient organisé des forums sur le développement à Bédjondo et Bebopen dans les années 2000.", "SOURCE SECONDAIRE"],
-  ["Verger du Lycée de Bédjondo", "La même publication de 2021 rapporte l’existence d’un verger au Lycée de Bédjondo parmi les initiatives de développement associées à cette période.", "SOURCE SECONDAIRE"],
-  ["Éducation", "La publication de 2021 rapporte un soutien individuel à l’École officielle de Bédjondo Kah avec du matériel didactique, ainsi qu’un don de ballons et une assistance financière à l’ECA de Bédjondo.", "SOURCE SECONDAIRE"],
-  ["100 tables-bancs", "La publication de 2021 rapporte que, sur proposition d’un membre fondateur, Esso Tchad avait accepté de donner 100 tables-bancs au Lycée de Bédjondo.", "SOURCE SECONDAIRE"],
-  ["Adduction d’eau", "La source de 2021 rapporte une contribution au projet d’adduction d’eau potable porté par la Commune de Bédjondo, ainsi qu’un forage manuel à Bédjondo Kah dans un cadre individuel.", "SOURCE SECONDAIRE"],
+const dossiers = [
+  { href: "/dossiers/engagements", label: "Nos engagements publics", note: "Les douze engagements pris sur nos dossiers, aucun encore confirmé réalisé." },
+  { href: "/dossiers/problematiques", label: "Diagnostic territorial", note: "Les problématiques documentées, classées par domaine et reliées à leur thématique." },
+  { href: "/dossiers/besoins", label: "Carte des besoins", note: "Signaler un forage en panne, une école sans maître, un pont coupé : localité par localité." },
+  { href: "/dossiers/enquetes", label: "Enquêtes de terrain", note: "Huit inconnues de notre recensement, huit enquêtes à conduire, en combien de jours." },
+  { href: "/dossiers/demarches", label: "Les démarches, pas à pas", note: "À qui écrire, avec quelles pièces, et trois lettres modèles." },
+  { href: "/dossiers/decentralisation", label: "Décentralisation", note: "Ce que la commune peut décider, et ce qui reste à l’État." },
+  { href: "/dossiers/agriculteurs-eleveurs", label: "Paix agriculteurs-éleveurs", note: "Un protocole de prévention en six mesures et un cahier de médiation par canton." },
+  { href: "/dossiers/ong-partenaires", label: "ONG et partenaires au Mandoul", note: "Qui intervient vraiment dans la province, avec quel bailleur, sur quel secteur." },
 ];
 
 export default function Actions() {
+  const idx = getIndex();
+  const page = getPage("plaidoyers");
+  const rest = pickSections(page, { only: ["ou-en-est-chaque-dossier", "resultats", "soutenir", "mesure-debit"] });
   return (
-    <main id="main-content" className="detail-page">
-      <p className="eyebrow">05 — Actions</p>
-      <h1>Du constat à<br /><em>la preuve de l’action.</em></h1>
-      <p className="detail-lead">Cet espace reconnecte l’engagement à des sujets concrets. Chaque action pourra être suivie par son objet, son territoire, ses parties prenantes, ses sources et son état d’avancement.</p>
-      <div className="detail-grid">
-        {domaines.map(([n, title, description]) => (
-          <article key={n}><span>{n}</span><h2>{title}</h2><p>{description}</p><span className="status">À vérifier</span></article>
-        ))}
-      </div>
-      <section className="detail-note">
-        <span className="module-tag">Archives retrouvées</span>
-        <h2>Des traces existent. Nous les transformons en dossiers vérifiables.</h2>
-        <p>Les éléments ci-dessous sont des pistes documentaires. La fiche d’indexation de l’ancien site constitue une source externe ; les initiatives rapportées en 2021 proviennent d’une publication secondaire. Aucune de ces sources ne remplace les archives originales de l’association.</p>
-        <div className="detail-grid">
-          {archives.map(([title, description, status]) => (
-            <article key={title}><h3>{title}</h3><p>{description}</p><span className="status">{status}</span></article>
-          ))}
-        </div>
-        <div className="section-actions">
-          <a className="text-link" href="https://domainarrivals.com/issues/2026-09-25/" target="_blank" rel="noreferrer">Source externe · ancien site ↗</a>
-          <a className="text-link" href="https://talouchoufoumagazine.wordpress.com/2021/05/02/actu-alladoum-desire-nandogongar-le-premier-tchadien-a-occuper-le-poste-de-superintendant-des-operations-directeur-usine-dans-le-monde-petrolier-depuis-2020/" target="_blank" rel="noreferrer">Source secondaire · initiatives ↗</a>
+    <main id="main-content" className="hub-page">
+      <PageHeader
+        eyebrow="05 — Plaidoyers & engagements"
+        title="Sept plaidoyers,"
+        em="une note à la commune."
+        lead={page.lede}
+        pills={["8 dossiers publiés", "22 indicateurs de résultats", "12 engagements publics"]}
+      />
+      {page.resume?.length ? (
+        <aside className="lg-resume" aria-label="En trois phrases">
+          <p className="eyebrow">En trois phrases</p>
+          <ol>{page.resume.map((t, i) => <li key={i}>{t}</li>)}</ol>
+        </aside>
+      ) : null}
+
+      <section className="hub-section" id="plaidoyers">
+        <SectionHead eyebrow="Les dossiers" title="Ce que nous demandons," em="et à qui." text="Chaque plaidoyer est sourcé, chiffré, adressé à des destinataires nommés et suivi publiquement : date de publication, date d’envoi, réponse reçue." />
+        <div className="plea-grid">
+          {idx.plaidoyers.map((p) => <PlaidoyerCard key={p.id} p={p} />)}
         </div>
       </section>
-      <section className="detail-note">
-        <span className="module-tag">Matrice de reconstruction</span>
-        <h2>Les 19 thèmes seront reconstitués un par un.</h2>
-        <p>La source retrouvée donne le nombre total de thèmes, mais pas leur inventaire. Pour éviter toute reconstruction spéculative, chaque thème sera ajouté uniquement lorsqu’un intitulé, un document ou une trace attribuable pourra être retrouvé.</p>
-        <div className="detail-grid">
-          <article><span>01</span><h3>Inventaire</h3><p>Retrouver l’intitulé exact dans les anciennes pages ou documents.</p></article>
-          <article><span>02</span><h3>Contexte</h3><p>Identifier le territoire, la période et le problème traité.</p></article>
-          <article><span>03</span><h3>Appel</h3><p>Retrouver le texte, le destinataire, les données et la date lorsque disponibles.</p></article>
-          <article><span>04</span><h3>Suivi</h3><p>Rechercher réponses, démarches, résultats et pièces justificatives.</p></article>
+
+      <section className="hub-section">
+        <SectionHead eyebrow="Suivi et soutien" title="Où en est chaque dossier," em="et comment le soutenir." />
+        <div className="legacy">
+          <LegacySections sections={rest} />
         </div>
-        <div className="status-list"><span>0 / 19 INTITULÉS RECOPIÉS</span><span>8 / 8 APPELS IDENTIFIÉS PAR LEUR EXISTENCE</span><span>TEXTES ORIGINAUX À RETROUVER</span></div>
+        <LegacyEnhance hasForms={page.forms.length > 0} />
       </section>
-      <section className="detail-note">
-        <span className="module-tag">Chaîne de preuve</span>
-        <h2>Un fait, une source, un statut.</h2>
-        <p>Chaque action distinguera le fait établi, la demande formulée, la démarche engagée, la réponse reçue et le résultat constaté. Une information externe ne deviendra pas un fait institutionnel sans vérification.</p>
-        <div className="status-list"><span>À VÉRIFIER</span><span>DOCUMENTÉ</span><span>TRANSMIS</span><span>EN COURS</span><span>RÉSULTAT CONFIRMÉ</span></div>
+
+      <section className="hub-section" id="dossiers">
+        <SectionHead eyebrow="Pour comprendre et agir" title="Les dossiers" em="qui nourrissent ces plaidoyers." />
+        <div className="link-list">
+          {dossiers.map((d) => <Link key={d.href} href={d.href}><strong>{d.label}</strong><span>{d.note}</span></Link>)}
+        </div>
       </section>
-      <Link className="button primary" href="/archives">Consulter les archives ↗</Link>
-      <Link className="button secondary" href="/transparence">Voir la méthode de transparence ↗</Link>
-      <Link className="back-link" href="/">← Accueil</Link>
     </main>
   );
 }

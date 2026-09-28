@@ -1,19 +1,43 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageHeader, SectionHead } from "../../components/blocks";
+import { LegacySections, Resume, Toc } from "../../components/legacy-content";
+import LegacyEnhance from "../../components/legacy-enhance";
+import { getPage } from "../../lib/content";
 
 export const metadata: Metadata = {
-  title: "Transparence",
-  description: "Rapports, gouvernance et ressources publiques : l’espace de transparence d’ADEB Lonodji.",
+  title: "Redevabilité, transparence et journal des corrections",
+  description: "Ce à quoi ADEB LONODJI s’engage : réponse sous 48 heures, mécanisme de plainte, protection des enfants et des personnes vulnérables, charte d’écriture, journal daté des corrections et non-discrimination.",
   alternates: { canonical: "/transparence" },
 };
 
-const rules = [
-  ["01", "Source primaire", "Document officiel, donnée institutionnelle ou archive directement attribuable."],
-  ["02", "Source secondaire", "Publication externe utilisée avec attribution et vérification du contexte."],
-  ["03", "Témoignage", "Parole publiée avec accord, identité ou statut précisé lorsque pertinent."],
-  ["04", "À vérifier", "Information repérée mais non encore suffisamment établie pour être présentée comme un fait."],
-];
-
 export default function Transparence() {
-  return <main id="main-content" className="detail-page"><p className="eyebrow">09 — Transparence</p><h1>Documenter nos<br/><em>engagements.</em></h1><p className="detail-lead">La transparence ne consiste pas seulement à publier : elle consiste à montrer l’origine, le contexte, la date et le statut des informations.</p><div className="detail-grid">{rules.map(([n,title,description])=><article key={n}><span>{n}</span><h2>{title}</h2><p>{description}</p></article>)}</div><section className="detail-note"><span className="module-tag">Méthode éditoriale</span><h2>Ce qui est connu, ce qui est sourcé, ce qui reste à vérifier.</h2><p>Les informations historiques, territoriales, financières et relatives aux actions seront distinguées selon leur niveau de preuve. Une source externe ne sera jamais présentée comme une validation officielle.</p><div className="status-list"><span>SOURCE PRIMAIRE</span><span>SOURCE SECONDAIRE</span><span>TÉMOIGNAGE</span><span>À VÉRIFIER</span></div></section><section className="detail-note"><span className="module-tag">Reconstruction 2026</span><h2>Ce que les archives permettent — et ne permettent pas encore — d’établir.</h2><p>Une trace publique de l’ancien lonodji.org, observée le 25 septembre 2026, décrit ADEB Lonodji comme une association tchadienne liée à Bédjondo et mentionne une reconnaissance annoncée en 1995, quatre pôles d’action, 19 thèmes et huit appels publics. Le détail des 19 thèmes et les textes individuels des huit appels ne sont pas encore accessibles dans les résultats indexés.</p><div className="status-list"><span>RÉSUMÉ RETROUVÉ</span><span>19 THÈMES — À RETROUVER</span><span>8 APPELS — À RETROUVER</span><span>ARCHIVES ORIGINALES RECHERCHÉES</span></div></section><section className="detail-note"><span className="module-tag">Filtre documentaire</span><h2>Ne pas confondre les homonymes.</h2><p>Les recherches font apparaître plusieurs organisations et initiatives portant le nom Lonodji, notamment au Cameroun. Elles sont exclues de la reconstruction ADEB Lonodji lorsqu’aucun lien avec Bédjondo et l’association tchadienne n’est établi.</p></section><Link className="button primary" href="/#contact">Entrer en contact ↗</Link><Link className="back-link" href="/">← Accueil</Link></main>;
+  const page = getPage("redevabilite");
+  const corrections = page.sections.find((s) => s.id === "corrections");
+  const nb = corrections ? (corrections.html.match(/class="info-card"/g) || []).length : 0;
+  return (
+    <main id="main-content" className="hub-page">
+      <PageHeader
+        eyebrow="09 — Redevabilité & transparence"
+        title="Une association qui demande des comptes"
+        em="doit en rendre."
+        lead={page.lede}
+        pills={["Réponse sous 48 h ouvrées", "Plainte possible, même anonyme", `${nb} corrections datées`]}
+      />
+      <div className="legacy">
+        <Resume items={page.resume} />
+        <Toc items={page.toc} />
+        <LegacySections sections={page.sections} />
+      </div>
+      <LegacyEnhance hasForms={page.forms.length > 0} />
+      <section className="hub-section">
+        <SectionHead eyebrow="Pour aller plus loin" title="Documents, mentions légales" em="et données personnelles." />
+        <div className="link-list">
+          <Link href="/documents"><small>Documents</small><strong>Ce que nous publions</strong><span>Kit d’adhésion, cahiers de terrain, plaidoyers ; statuts et PV dès validation.</span></Link>
+          <Link href="/mentions-legales"><small>Mentions légales</small><strong>Éditeur, hébergeur, formulaires</strong><span>Notice de confidentialité réécrite formulaire par formulaire.</span></Link>
+          <Link href="/dossiers/engagements"><small>Engagements</small><strong>Les douze promesses publiques</strong><span>Aucune n’est encore confirmée réalisée ; chacune est suivie.</span></Link>
+        </div>
+      </section>
+    </main>
+  );
 }

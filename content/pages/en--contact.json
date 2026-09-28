@@ -1,0 +1,36 @@
+{
+ "legacy": "en/contact.html",
+ "lang": "en",
+ "documentTitle": "Contact — ADEB LONODJI",
+ "description": "Contact ADEB LONODJI in English: partners, researchers, media and diaspora.",
+ "title": "Get in touch",
+ "eyebrow": "Contact",
+ "lede": "Write to the association in English or French; we answer every message.",
+ "pills": [
+  "English or French",
+  "Partners welcome"
+ ],
+ "kicker": "",
+ "crumbs": [
+  "Home",
+  "Contact"
+ ],
+ "parent": "Home",
+ "sections": [
+  {
+   "id": "",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"two-col\">\n<div class=\"prose\">\n<div class=\"eyebrow\">Write to us</div>\n<h2>Partners, researchers, media, diaspora</h2>\n<p>Use this form to reach the association’s facilitation team in English or French. We answer every message. Institutions and development partners who wish to respond to an advocacy brief, journalists, researchers working on the Sara peoples, and members of the diaspora who want to join or contribute are all welcome.</p>\n<p>Facilitator: Bignéro Moïalbéi LE MADANG. Official contact number: <a href=\"tel:+23566299403\">+235 66 29 94 03</a> (Adoumbé Maoura, president), also on <a href=\"https://wa.me/23566299403\" rel=\"noopener\" target=\"_blank\">WhatsApp</a>. E-mail addresses will be published here once the association’s domain name is registered; until then, this form and WhatsApp are the reliable ways to reach us. The association does not collect dues or donations for now: it will do so only once its authorisation is confirmed and an account is open in its name, so please send no money to anyone on its behalf. Social media accounts will be published as soon as they are opened.</p>\n</div>\n<form action=\"/__forms.html\" id=\"formulaire-en\" method=\"POST\" name=\"message-en\"><input name=\"form-name\" type=\"hidden\" value=\"message-en\"/>\n<input autocomplete=\"off\" name=\"_honey\" style=\"display:none\" tabindex=\"-1\" type=\"text\"/>\n<div class=\"field\"><label for=\"e-name\">Full name</label><input autocomplete=\"name\" id=\"e-name\" name=\"name\" required=\"\" type=\"text\"/></div>\n<div class=\"field\"><label for=\"e-org\">Organisation (optional)</label><input id=\"e-org\" name=\"organisation\" type=\"text\"/></div>\n<div class=\"field\"><label for=\"e-mail\">E-mail</label><input autocomplete=\"email\" id=\"e-mail\" name=\"email\" required=\"\" type=\"email\"/></div>\n<div class=\"field\"><label for=\"e-subj\">Subject</label><select id=\"e-subj\" name=\"subject\" required=\"\"><option value=\"\">Choose</option><option>Reply to an advocacy brief</option><option>Partnership / funding</option><option>Research / media</option><option>Join the association</option><option>Other</option></select></div>\n<div class=\"field\"><label for=\"e-msg\">Message</label><textarea id=\"e-msg\" name=\"message\" required=\"\" rows=\"6\"></textarea></div>\n<label class=\"check check--consentement\"><input name=\"consentement\" required=\"\" type=\"checkbox\" value=\"oui\"/> <span>I agree that ADEB LONODJI keeps this information to follow up on my message, with its host in the United States (Netlify). <a href=\"/mentions-legales#donnees\">Data and rights <span lang=\"fr\">(en français)</span></a></span></label>\n<button class=\"btn btn-primary\" type=\"submit\">Send</button>\n</form>\n</div>"
+  }
+ ],
+ "words": 204,
+ "forms": [
+  "message-en"
+ ],
+ "hasMap": false,
+ "slug": "en/contact",
+ "route": "/en/contact",
+ "kind": "en"
+}

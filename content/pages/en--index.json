@@ -1,0 +1,63 @@
+{
+ "legacy": "en/index.html",
+ "lang": "en",
+ "documentTitle": "ADEB LONODJI in English — ADEB LONODJI",
+ "description": "ADEB LONODJI, the association of Bédjondo (Mandoul, Chad) and its diaspora, guardian of Bedjond heritage: who we are, what we do, and how to help.",
+ "title": "Building Bédjondo’s heritage together",
+ "eyebrow": "English",
+ "lede": "ADEB LONODJI is the association of Bédjondo, in southern Chad, and of its diaspora: it works for all the town’s inhabitants and safeguards Bedjond heritage. This English section presents the association, the town and our advocacy; the full site is in French.",
+ "pills": [
+  "Chad · Mandoul",
+  "Founded 1995",
+  "Relaunched 2026"
+ ],
+ "kicker": "",
+ "crumbs": [
+  "Home",
+  "English"
+ ],
+ "parent": "Home",
+ "sections": [
+  {
+   "id": "",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"bento bento-compact\">\n<div class=\"bento-tile\"><span class=\"bento-num\">4</span><span class=\"bento-label\">areas of action</span></div>\n<div class=\"bento-tile\"><span class=\"bento-num\">19</span><span class=\"bento-label\">themes of action, 6 with a coordinator so far</span></div>\n<div class=\"bento-tile\"><span class=\"bento-num\">8</span><span class=\"bento-label\">advocacy briefs for Bédjondo</span></div>\n<div class=\"bento-tile\"><span class=\"bento-num\">40</span><span class=\"bento-label\">references in the research base</span></div>\n</div>"
+  },
+  {
+   "id": "",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Who we are</div>\n<h2>The association of Bédjondo and its diaspora</h2>\n<p>ADEB LONODJI — Association for the Development and Mutual Aid of Bédjondo — is the organisation that promotes the values, heritage and history of the Bedjond people, whose home is Bédjondo, capital of the Mandoul Occidental department in the Mandoul province of southern Chad. The Bedjond are part of the wider Sara group. The association’s development work serves all the inhabitants of Bédjondo, whatever their origin. Founded through discussions that began in 1986 and officially recognised in 1995, the association held its first forum in Bédjondo in 2000, then a second in Bébopen in 2003, before being relaunched in 2026 with four areas of action, nineteen themes, two cross-cutting units and a public advocacy programme.</p>\n<p><a href=\"/en/about\">Read more about the association →</a></p>\n</div>"
+  },
+  {
+   "id": "",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"section-head\"><div><div class=\"eyebrow\">What we do</div><h2>Four areas of action</h2></div></div>\n<div class=\"pole-grid\">\n<article class=\"pole-card\"><h3>I — Memory, Culture &amp; Heritage</h3><p>Memory and heritage, living culture, knowledge and innovation: documenting oral tradition, the Bedjond language, the Kul iron currency, and building a Bedjond and Sara library.</p></article>\n<article class=\"pole-card\"><h3>II — Human Development &amp; Livelihoods</h3><p>Agriculture and food security, inclusive finance, environment, water, energy and connectivity, roads and urban planning, youth, women’s leadership, health, solidarity.</p></article>\n<article class=\"pole-card\"><h3>III — Governance, Peace &amp; Advocacy</h3><p>Governance and advocacy, peace and cohesion, the network of experts and the diaspora.</p></article>\n<article class=\"pole-card\"><h3>IV — Digital &amp; Innovation</h3><p>Digital transformation and services, artificial intelligence and data, digital skills and entrepreneurship.</p></article>\n</div>"
+  },
+  {
+   "id": "",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"section-head\"><div><div class=\"eyebrow\">Advocacy</div><h2>A town of probably over 15,000 without the infrastructure of a town</h2><p class=\"lede\">Bédjondo grew from 4,344 inhabitants (1993 census) to 11,086 (2009) and very probably exceeds 15,000 today. It has a mayor and a council, but no reliable electricity, no piped water, no broadband, a road cut off in the rainy season, a health centre without a laboratory and overcrowded schools. We have published eight advocacy briefs, each with a sourced diagnosis, specific requests to named recipients, and our own commitments.</p></div><a class=\"btn btn-primary\" href=\"/en/advocacy\">Our eight briefs →</a></div>"
+  },
+  {
+   "id": "",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">How to help</div>\n<h2>Join, give, share your skills, spread the word</h2>\n<p>Members of the diaspora and friends of Bédjondo can join the association, coordinate one of the thirteen themes still open, contribute to the first concrete projects (a community digital space powered by satellite and solar energy; solar lighting for the market), offer professional skills — planners, engineers, doctors, teachers, IT specialists — or simply relay our advocacy. The association does not collect dues or donations for now: it will do so only once its authorisation is confirmed and an account is open in its name, so please send no money to anyone on its behalf. <a href=\"/en/contact\">Write to us</a> and we will get back to you.</p>\n<p>The full site, the journal (29 articles), the research base and all PDFs are in French: <a href=\"/\">visit the French site</a>.</p>\n</div>"
+  }
+ ],
+ "words": 479,
+ "forms": [],
+ "hasMap": false,
+ "slug": "en/index",
+ "route": "/en/index",
+ "kind": "en"
+}

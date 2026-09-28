@@ -1,0 +1,2847 @@
+{
+ "pages": [
+  {
+   "slug": "agriculteurs-eleveurs",
+   "route": "/dossiers/agriculteurs-eleveurs",
+   "kind": "dossier",
+   "title": "Agriculteurs et éleveurs : prévenir les conflits",
+   "eyebrow": "Paix & cohésion",
+   "lede": "Première cause de morts violentes dans le sud du Tchad depuis cinq ans. Voici ce qui est établi, ce qui l’est chez nous, ce qui explique que des litiges de champ tournent au drame — et six mesures de prévention à l’échelle d’un canton.",
+   "description": "Prévenir les conflits agropastoraux dans le Mandoul : ce que disent les chiffres et un protocole de prévention à l’échelle des cantons.",
+   "parent": "Nos actions",
+   "words": 2213,
+   "hasMap": false
+  },
+  {
+   "slug": "agriculture-securite-alimentaire",
+   "route": "/dossiers/agriculture-securite-alimentaire",
+   "kind": "dossier",
+   "title": "Agriculture, élevage & sécurité alimentaire",
+   "eyebrow": "Agriculture, élevage & sécurité alimentaire",
+   "lede": "Bédjondo produit, récolte et nourrit — et reste pauvre. Le problème n’est pas d’abord de produire davantage, mais de garder, transformer et vendre mieux. Voici notre diagnostic et notre plan, en trois saisons.",
+   "description": "Le plan de développement agricole et pastoral d’ADEB LONODJI pour Bédjondo : diagnostic, trois saisons d’action, et la mise en valeur des produits.",
+   "parent": "Nos actions",
+   "words": 3739,
+   "hasMap": false
+  },
+  {
+   "slug": "air-bedjondo",
+   "route": "/dossiers/air-bedjondo",
+   "kind": "dossier",
+   "title": "Air Bedjondo",
+   "eyebrow": "Nos projets",
+   "lede": "Un projet de transport et de logistique terrestre annoncé pour désenclaver Bédjondo et relier ses terroirs entre eux. Malgré son nom, ce n’est pas un projet aérien : ce que nous savons, et surtout ce que nous ne savons pas encore.",
+   "description": "Air Bedjondo : le projet de transport et de logistique terrestre annoncé par ADEB LONODJI pour désenclaver Bédjondo et relier ses terroirs. Malgré son nom, ce n’est pas un projet aérien.",
+   "parent": "Nos actions",
+   "words": 695,
+   "hasMap": false
+  },
+  {
+   "slug": "application",
+   "route": "/dossiers/application",
+   "kind": "dossier",
+   "title": "Une application pour téléphone",
+   "eyebrow": "Projet annoncé",
+   "lede": "Elle sera lancée dans les mois à venir, Android d’abord. Voici ce qu’elle fera, ce qu’elle ne fera jamais, ce qu’elle coûte en cotisations — et ce qui fonctionne déjà sans boutique et sans un franc.",
+   "description": "Le projet d’application Android et iOS d’ADEB LONODJI : ce qui marche déjà sans boutique, ce que les boutiques coûtent, et ce qui bloque.",
+   "parent": "Agir avec nous",
+   "words": 2356,
+   "hasMap": false
+  },
+  {
+   "slug": "bedjondo",
+   "route": "/dossiers/bedjondo",
+   "kind": "dossier",
+   "title": "Bédjondo",
+   "eyebrow": "Notre ville",
+   "lede": "Chef-lieu du département du Mandoul Occidental, commune de plus de 11 000 habitants au dernier recensement, berceau du peuple bedjond : tout ce que nous savons de la ville, en une page, et ce qui reste à établir.",
+   "description": "Bédjondo, chef-lieu du Mandoul Occidental et berceau du peuple bedjond : géographie, histoire, langue, commune, chiffres et ce qui manque à la ville.",
+   "parent": "Accueil",
+   "words": 1689,
+   "hasMap": true
+  },
+  {
+   "slug": "besoins",
+   "route": "/dossiers/besoins",
+   "kind": "dossier",
+   "title": "La carte des besoins de Bédjondo",
+   "eyebrow": "Diagnostic participatif",
+   "lede": "Un formulaire simple pour dire, quartier par quartier et canton par canton, ce qui manque. Les signalements sont synthétisés, remis à la commune et joints à nos plaidoyers.",
+   "description": "Signalez un besoin à Bédjondo ou dans les cantons du Mandoul Occidental : eau, électricité, réseau, santé, route, école.",
+   "parent": "Nos actions",
+   "words": 907,
+   "hasMap": true
+  },
+  {
+   "slug": "complexe-sportif",
+   "route": "/dossiers/complexe-sportif",
+   "kind": "dossier",
+   "title": "Un complexe de formation sportive pour les jeunes de Bédjondo",
+   "eyebrow": "Pôle II · Jeunesse & réussite · Projet à l’étude",
+   "lede": "Une école de football, du basket, du judo, du karaté et de l’athlétisme, dans un même lieu, pour les filles et les garçons de Bédjondo et des cantons. Rien n’est encore construit ni financé : voici ce que nous proposons, dans quel ordre, et ce que chacun peut faire dès maintenant.",
+   "description": "Football, basket, judo, karaté, athlétisme : le projet par étapes d’un complexe de formation sportive pour les jeunes de Bédjondo. Rien n’est encore construit ni financé.",
+   "parent": "Nos actions",
+   "words": 2985,
+   "hasMap": false
+  },
+  {
+   "slug": "decentralisation",
+   "route": "/dossiers/decentralisation",
+   "kind": "dossier",
+   "title": "Décentralisation & développement local",
+   "eyebrow": "Gouvernance & plaidoyer",
+   "lede": "Depuis les élections communales de décembre 2024, l’essentiel de ce que Bédjondo attend ne se décide plus seulement à N’Djamena. Cette page expose le cadre tel qu’il est, l’écart entre les textes et les moyens, et la méthode que nous nous appliquons.",
+   "description": "Ce que la décentralisation tchadienne change pour Bédjondo : cadre légal, moyens réels de la commune, et la méthode de développement local d’ADEB LONODJI.",
+   "parent": "Nos actions",
+   "words": 1619,
+   "hasMap": false
+  },
+  {
+   "slug": "demarches",
+   "route": "/dossiers/demarches",
+   "kind": "dossier",
+   "title": "Les démarches, pas à pas",
+   "eyebrow": "Agir",
+   "lede": "Un membre qui veut agir lundi matin ne trouvait nulle part à qui écrire ni comment. Voici la voie hiérarchique, les huit éléments d’une demande recevable, ce que dit l’ordonnance de 2018 sur notre propre statut — et trois lettres modèles à recopier.",
+   "description": "À qui écrire, dans quels termes, avec quelles pièces, et quoi faire si personne ne répond — avec trois lettres modèles et notre base légale.",
+   "parent": "Agir avec nous",
+   "words": 3842,
+   "hasMap": false
+  },
+  {
+   "slug": "drones-innovation",
+   "route": "/dossiers/drones-innovation",
+   "kind": "dossier",
+   "title": "Drones & innovation pour les secteurs stratégiques",
+   "eyebrow": "Numérique & innovation",
+   "lede": "Aucun drone ne survole aujourd’hui Bédjondo. Cette page est une proposition, pas un bilan : comment cet outil pourrait servir l’agriculture, la cartographie, la santé, la protection du patrimoine et la formation des jeunes — cinq secteurs déjà ouverts sur ce site.",
+   "description": "Une proposition d’ADEB LONODJI : utiliser les drones pour l’agriculture, la cartographie, la santé, la sécurité du patrimoine et la formation numérique à Bédjondo.",
+   "parent": "Nos actions",
+   "words": 1575,
+   "hasMap": false
+  },
+  {
+   "slug": "engagements",
+   "route": "/dossiers/engagements",
+   "kind": "dossier",
+   "title": "Nos engagements publics",
+   "eyebrow": "Redevabilité",
+   "lede": "Chaque plaidoyer se termine par une promesse. Voici les douze, rassemblées en un seul endroit — un registre, pas un bilan de réalisations.",
+   "description": "Les douze engagements pris par ADEB LONODJI sur ses dossiers et plaidoyers, rassemblés en un seul endroit — aucun n’est encore confirmé réalisé.",
+   "parent": "L’association",
+   "words": 1947,
+   "hasMap": false
+  },
+  {
+   "slug": "enquetes",
+   "route": "/dossiers/enquetes",
+   "kind": "dossier",
+   "title": "Enquêtes de terrain",
+   "eyebrow": "Agir",
+   "lede": "Sur trente-quatre problématiques, onze nous sont entièrement inconnues, et huit peuvent être levées tout de suite. Voici comment lever chacune : le détenteur de la réponse, la méthode, la fiche de relevé et l’effort en journées. Aucune ne demande d’argent.",
+   "description": "Huit inconnues de notre recensement deviennent huit enquêtes : qui détient la réponse, comment s’y prendre, ce qu’on relève et en combien de jours.",
+   "parent": "Nos actions",
+   "words": 2102,
+   "hasMap": false
+  },
+  {
+   "slug": "environnement",
+   "route": "/dossiers/environnement",
+   "kind": "dossier",
+   "title": "Environnement & durabilité",
+   "eyebrow": "Environnement & ressources naturelles",
+   "lede": "Un forage sans réparateur, un bois coupé pour la cuisine, une batterie abandonnée dans un champ : la durabilité se joue sur ces détails. Voici ce que nous savons déjà, la grille que nous appliquons désormais à chacun de nos projets, ce que l’économie verte et circulaire peut vouloir dire ici, et ce qui reste à établir.",
+   "description": "Ce qu’ADEB LONODJI sait de l’environnement à Bédjondo, la règle « l’entretien avant l’inauguration » et la grille de durabilité en cinq questions appliquée à chacun de ses projets.",
+   "parent": "Nos actions",
+   "words": 1558,
+   "hasMap": false
+  },
+  {
+   "slug": "espace-numerique",
+   "route": "/dossiers/espace-numerique",
+   "kind": "dossier",
+   "title": "L’espace numérique communautaire de Bédjondo",
+   "eyebrow": "Premier chantier",
+   "lede": "Une salle connectée par satellite, alimentée au solaire, ouverte aux élèves, aux enseignants, aux agents de santé, à la commune et aux porteurs de projets — financée par l’association et sa diaspora, gérée par un comité local.",
+   "description": "Un espace numérique communautaire à Bédjondo, connecté par satellite et alimenté au solaire, financé avec la diaspora.",
+   "parent": "Nos actions",
+   "words": 800,
+   "hasMap": false
+  },
+  {
+   "slug": "evenements",
+   "route": "/dossiers/evenements",
+   "kind": "dossier",
+   "title": "Événements",
+   "eyebrow": "Agenda communautaire",
+   "lede": "Réunions de pôles, assemblées générales et activités communautaires à venir.",
+   "description": "Assemblées, lancements de thématiques et rencontres d’ADEB LONODJI, à Bédjondo, à N’Djamena et dans la diaspora : les dates annoncées et celles à fixer.",
+   "parent": "Actualités",
+   "words": 159,
+   "hasMap": false
+  },
+  {
+   "slug": "genealogies",
+   "route": "/dossiers/genealogies",
+   "kind": "dossier",
+   "title": "Écrire la généalogie de sa famille",
+   "eyebrow": "Mémoire & héritage",
+   "lede": "Les formulaires venus d’ailleurs supposent un état civil ancien, une seule épouse et un arbre qui remonte. Aucune des trois hypothèses ne tient ici. Voici un modèle bâti sur les trois contraires.",
+   "description": "Un modèle conçu pour un pays sans état civil ancien : la maison avant le couple, le rang avant l’année, et un cahier de dix pages à photocopier.",
+   "parent": "Bédjondo & héritage",
+   "words": 2641,
+   "hasMap": false
+  },
+  {
+   "slug": "handicap",
+   "route": "/dossiers/handicap",
+   "kind": "dossier",
+   "title": "Un plan pour les personnes en situation de handicap",
+   "eyebrow": "Plan handicap",
+   "lede": "Nous avions signalé ce trou deux fois sans savoir le combler. Voici la méthode : six questions qui ne disent jamais le mot, un inventaire d’obstacles plutôt qu’une liste de noms, huit textes tchadiens dont personne ne se sert — et les cinq défauts que nous avons corrigés sur ce site avant de publier cette page.",
+   "description": "Le plan d’ADEB LONODJI pour les personnes en situation de handicap : compter sans humilier, et les droits tchadiens que personne n’utilise.",
+   "parent": "Personnes vulnérables",
+   "words": 4125,
+   "hasMap": false
+  },
+  {
+   "slug": "identite-visuelle",
+   "route": "/dossiers/identite-visuelle",
+   "kind": "dossier",
+   "title": "Identité visuelle",
+   "eyebrow": "Charte graphique",
+   "lede": "Un logo, deux registres de couleurs, trois polices et quelques signes qui n’appartiennent qu’au pays bedjond : tout ce qu’il faut pour que les documents, les affiches et les publications de l’association se reconnaissent au premier coup d’œil. Les fichiers sont libres d’usage pour les membres et les partenaires, dans le respect des règles ci-dessous.",
+   "description": "Le logo d’ADEB LONODJI, ses couleurs, ses polices et ses signes (barre des quatre pôles, carte du pays bedjond, frise des chefs de canton) : la charte graphique de l’association, avec les fichiers à télécharger.",
+   "parent": "L’association",
+   "words": 1151,
+   "hasMap": false
+  },
+  {
+   "slug": "kit-mobilisation",
+   "route": "/dossiers/kit-mobilisation",
+   "kind": "dossier",
+   "title": "Kit de mobilisation",
+   "eyebrow": "Relayer",
+   "lede": "Neuf visuels et messages prêts à partager pour faire connaître ADEB LONODJI et ses plaidoyers dans vos groupes, au pays comme dans la diaspora.",
+   "description": "Visuels et messages prêts à partager sur WhatsApp, Facebook et TikTok pour relayer les plaidoyers et l’action d’ADEB LONODJI pour Bédjondo.",
+   "parent": "Agir avec nous",
+   "words": 674,
+   "hasMap": false
+  },
+  {
+   "slug": "lieux-sacres",
+   "route": "/dossiers/lieux-sacres",
+   "kind": "dossier",
+   "title": "Lieux sacrés et sépultures",
+   "eyebrow": "Culture & patrimoine vivant",
+   "lede": "Un mot oublié se retrouve dans un dictionnaire ; un bois coupé ne revient pas. Le droit tchadien prévoit une protection que presque personne n’utilise — et la première règle est de ne rien publier.",
+   "description": "Le droit tchadien connaît la forêt sacrée, inviolable et inaliénable, et personne ne s’en sert. Comment protéger un lieu sans le mettre à nu.",
+   "parent": "Bédjondo & héritage",
+   "words": 3917,
+   "hasMap": false
+  },
+  {
+   "slug": "odd",
+   "route": "/dossiers/odd",
+   "kind": "dossier",
+   "title": "Nos thématiques et les ODD",
+   "eyebrow": "Une grille de lecture partagée",
+   "lede": "Pour chaque objectif des Nations unies, les thématiques d’ADEB LONODJI qui le touchent. C’est notre lecture, pas un label.",
+   "description": "Les dix-sept Objectifs de développement durable des Nations unies, objectif par objectif, et les thématiques d'ADEB LONODJI qui les touchent.",
+   "parent": "Nos actions",
+   "words": 576,
+   "hasMap": false
+  },
+  {
+   "slug": "ong-partenaires",
+   "route": "/dossiers/ong-partenaires",
+   "kind": "dossier",
+   "title": "ONG et partenaires opérationnels au Mandoul",
+   "eyebrow": "Cartographie des acteurs",
+   "lede": "Nous avons cherché non pas qui dit travailler au Tchad, mais qui intervient dans notre province avec une trace datée. Onze entrées, une vingtaine de structures, aucune basée à Bédjondo — et un modèle déjà installé dans le Mandoul qu’il suffit de demander une quatrième fois.",
+   "description": "Qui intervient vraiment dans le Mandoul, avec quel bailleur et sur quel secteur — et l’acteur que nous approchons pour chaque dossier.",
+   "parent": "L’association",
+   "words": 2819,
+   "hasMap": false
+  },
+  {
+   "slug": "problematiques",
+   "route": "/dossiers/problematiques",
+   "kind": "dossier",
+   "title": "Diagnostic territorial du Mandoul Occidental",
+   "eyebrow": "État des lieux",
+   "lede": "Trente-quatre problématiques recensées, avec pour chacune ce que nous savons vraiment et qui peut décider. Cinq causes racines plutôt qu’une litanie de manques, sept priorités dont cinq ne demandent pas d’argent — et onze points que nous ignorons entièrement.",
+   "description": "Trente-quatre problématiques du Mandoul Occidental recensées, avec l’état de la connaissance, qui décide, cinq causes racines et sept priorités.",
+   "parent": "Nos actions",
+   "words": 5088,
+   "hasMap": false
+  },
+  {
+   "slug": "recherche",
+   "route": "/dossiers/recherche",
+   "kind": "dossier",
+   "title": "Base de recherche bibliographique",
+   "eyebrow": "Thématique 03 · Recherche & savoirs",
+   "lede": "Un premier socle documentaire sur le peuple sara, les Bedjond et leur langue, réuni dans le cadre du programme Bedjond Digital Heritage coordonné par Sylvain Nomaye. Cherchez par titre, auteur ou mot-clé.",
+   "description": "Base de recherche bibliographique sur le peuple sara, les Bedjond et leur langue.",
+   "parent": "Bédjondo & héritage",
+   "words": 4046,
+   "hasMap": false
+  },
+  {
+   "slug": "solidarite-inclusion",
+   "route": "/dossiers/solidarite-inclusion",
+   "kind": "dossier",
+   "title": "Jeunes mères, orphelins, personnes isolées",
+   "eyebrow": "Protection sociale & inclusion",
+   "lede": "Le Mandoul est exclu du grand programme national de filets sociaux. Voici ce que les données établissent, ce qu’un lycée voisin a trouvé comme réponse, sept mesures à notre portée — en commençant par le document qui décide de tout : l’acte de naissance — et une proposition de caisse d’entraide et de développement économique communautaire .",
+   "description": "Mariage précoce, déscolarisation des filles, enfants sans soutien : ce que les données établissent, et sept mesures pour Bédjondo.",
+   "parent": "Nos actions",
+   "words": 3298,
+   "hasMap": false
+  },
+  {
+   "slug": "veuves",
+   "route": "/dossiers/veuves",
+   "kind": "dossier",
+   "title": "Un plan pour les veuves de Bédjondo",
+   "eyebrow": "Plan veuves",
+   "lede": "Le handicap était « absent » de notre recensement ; les veuves l’étaient tout autant, de tout notre site. Voici la méthode : quatre questions de suivi là où une case est déjà cochée, un code civil de 1958 et une ordonnance de 2025 que presque personne ne connaît — et un débat national qui a nommé le problème sans le résoudre.",
+   "description": "Le plan d’ADEB LONODJI pour les veuves : ce que l’état civil sait déjà, ce qu’il ne demande jamais, et les textes tchadiens que personne ne connaît encore.",
+   "parent": "Personnes vulnérables",
+   "words": 2851,
+   "hasMap": false
+  },
+  {
+   "slug": "mission",
+   "route": "/mission",
+   "kind": "hub",
+   "title": "Notre mission",
+   "eyebrow": "Qui nous sommes",
+   "lede": "ADEB LONODJI, Association de Développement et d’Entraide de Bédjondo, rassemble Bédjondo et sa diaspora et fait vivre les valeurs, l’héritage et l’histoire du peuple bedjond : peuple d’origine de Bédjondo, dans le Mandoul, selon les travaux de Djarangar Djita Issa, et composante du grand ensemble sara. Portée par ses membres, elle agit pour le développement de Bédjondo au service de tous ses habitants, sans distinction d’origine.",
+   "description": "Notre vision : faire d’ADEB LONODJI un cadre de promotion des valeurs et de l’héritage du peuple bedjond de Bédjondo (Mandoul), composante du peuple sara.",
+   "parent": "Accueil",
+   "words": 4428,
+   "hasMap": false
+  },
+  {
+   "slug": "poles",
+   "route": "/programmes",
+   "kind": "hub",
+   "title": "Quatre pôles, dix-neuf thématiques",
+   "eyebrow": "Les Chantiers ADEB LONODJI",
+   "lede": "Les Chantiers ADEB LONODJI sont les projets de réflexion, de recherche et d’action portés par l’association. Pour les organiser, ADEB LONODJI structure son action autour de dix-neuf thématiques réparties en quatre pôles, appuyées par deux cellules transversales — dont un pôle spécialisé Numérique & innovation, créé en septembre 2026. Chaque thématique est animée par un coordonnateur. Cette organisation en pôles est notre méthodologie de travail en équipe : elle permet une bonne coordination des actions entre les thématiques, au lieu d’initiatives dispersées. Chaque thématique est en outre mise en regard des Objectifs de développement durable adoptés par les Nations unies, pour que nos partenaires situent immédiatement notre travail.",
+   "description": "Quatre pôles, dix-neuf thématiques et deux cellules transversales pour organiser l’action d’ADEB LONODJI.",
+   "parent": "Accueil",
+   "words": 4839,
+   "hasMap": false
+  },
+  {
+   "slug": "plaidoyers",
+   "route": "/actions",
+   "kind": "hub",
+   "title": "Nos plaidoyers pour Bédjondo",
+   "eyebrow": "Gouvernance & plaidoyer",
+   "lede": "Ce que nous demandons à l’État, aux régulateurs, aux opérateurs et à la commune pour Bédjondo et le Mandoul Occidental — avec, pour chaque dossier, l’état d’avancement et la possibilité d’y joindre votre soutien.",
+   "description": "Internet, électricité, commune : les plaidoyers d’ADEB LONODJI pour Bédjondo, leur suivi public, et comment les soutenir.",
+   "parent": "Nos actions",
+   "words": 1888,
+   "hasMap": false
+  },
+  {
+   "slug": "suivi",
+   "route": "/impact",
+   "kind": "hub",
+   "title": "Suivi des actions importantes",
+   "eyebrow": "Tableau de bord",
+   "lede": "Chaque problématique que nous avons recensée est reliée à la thématique qui doit la porter, et chaque thématique à son plaidoyer quand il existe. Une seule page pour voir où nous en sommes : ce qui avance, ce qui attend un coordonnateur ou une coordonnatrice, et ce que nous n’avons pas encore commencé à documenter.",
+   "description": "Chaque problématique reliée à sa thématique, chaque thématique à son plaidoyer s’il existe : le tableau de bord de suivi des actions d’ADEB LONODJI, thématique par thématique.",
+   "parent": "Nos actions",
+   "words": 1476,
+   "hasMap": false
+  },
+  {
+   "slug": "contact",
+   "route": "/participer",
+   "kind": "hub",
+   "title": "Nous écrire, rejoindre une thématique",
+   "eyebrow": "Nous écrire",
+   "lede": "Une question, une proposition, l’envie d’animer une thématique : c’est ici. Pour devenir membre, remplissez plutôt la déclaration d’intention d’adhésion , sans paiement.",
+   "description": "Écrire à ADEB LONODJI ou rejoindre une thématique : formulaire en ligne, téléphone et WhatsApp du président. Pour adhérer, une déclaration d’intention sans paiement.",
+   "parent": "Agir avec nous",
+   "words": 999,
+   "hasMap": false
+  },
+  {
+   "slug": "adherer",
+   "route": "/participer",
+   "kind": "hub",
+   "title": "Adhérer et cotiser",
+   "eyebrow": "Adhésion",
+   "lede": "L’association se dote de cartes d’adhérent et invite ses membres à cotiser. Voici ce que la carte donne et ce qu’elle n’achète pas, la grille proposée au vote, où va l’argent, et les règles qui protègent l’adhérent autant que le trésorier.",
+   "description": "Carte d’adhérent au format bancaire, grille de cotisation proposée au vote, règle de caisse et registre protégé.",
+   "parent": "Agir avec nous",
+   "words": 2389,
+   "hasMap": false
+  },
+  {
+   "slug": "soutenir",
+   "route": "/participer",
+   "kind": "hub",
+   "title": "Agir avec nous",
+   "eyebrow": "Nous soutenir",
+   "lede": "Treize des dix-neuf thématiques d’ADEB LONODJI cherchent encore un coordonnateur, et l’association elle-même se réactive après des années de mise en veille : votre soutien, sous toutes ses formes, compte. Voici les façons d’y contribuer.",
+   "description": "Les façons de soutenir ADEB LONODJI : cotisation et don, temps et compétences, dons en nature — au service du peuple bedjond de Bédjondo.",
+   "parent": "Accueil",
+   "words": 479,
+   "hasMap": false
+  },
+  {
+   "slug": "redevabilite",
+   "route": "/transparence",
+   "kind": "hub",
+   "title": "Redevabilité",
+   "eyebrow": "Gouvernance & plaidoyer",
+   "lede": "Nous demandons aux institutions de publier leurs données, d’annoncer leurs décisions et de répondre à leurs courriers. Voici ce à quoi nous nous engageons de notre côté — et comment nous saisir si nous y manquons.",
+   "description": "Nos engagements : réponse sous 48 heures, mécanisme de plainte ouvert et anonyme, protection des enfants et des témoins, usage des fonds, non-discrimination.",
+   "parent": "L’association",
+   "words": 7057,
+   "hasMap": false
+  },
+  {
+   "slug": "mentions-legales",
+   "route": "/mentions-legales",
+   "kind": "hub",
+   "title": "Mentions légales & confidentialité",
+   "eyebrow": "Transparence",
+   "lede": "Qui publie ce site, quelles données sont collectées via ses formulaires, et comment les faire corriger ou supprimer.",
+   "description": "Mentions légales d’ADEB LONODJI et informations sur les données collectées via les formulaires du site.",
+   "parent": "L’association",
+   "words": 1536,
+   "hasMap": false
+  },
+  {
+   "slug": "figures",
+   "route": "/histoire",
+   "kind": "hub",
+   "title": "Grandes figures",
+   "eyebrow": "Mémoire & héritage",
+   "lede": "Les femmes et les hommes qui ont marqué l’histoire du peuple bedjond et la création d’ADEB LONODJI. Cette page rassemble les figures déjà documentées ailleurs sur le site ; elle est appelée à s’enrichir, avec la rigueur pratiquée depuis l’origine sur les autres pages — ce que l’on sait, et ce qui reste à préciser.",
+   "description": "Les figures qui ont marqué le peuple bedjond et la création d’ADEB LONODJI : piliers de l’association, chefs de canton, chercheurs.",
+   "parent": "Bédjondo & héritage",
+   "words": 1305,
+   "hasMap": false
+  },
+  {
+   "slug": "documents",
+   "route": "/documents",
+   "kind": "hub",
+   "title": "Documents d’ADEB LONODJI",
+   "eyebrow": "Transparence & Gouvernance",
+   "lede": "L’espace où seront publiés, au fur et à mesure de leur formalisation, les documents officiels de l’association : statuts, règlement intérieur, procès-verbaux d’assemblée et rapports d’activité. C’est aussi le sens de la transparence portée par la cellule Financement & ressources .",
+   "description": "Statuts, règlement intérieur et procès-verbaux d’ADEB LONODJI : l’espace officiel des documents de l’association, en cours de constitution.",
+   "parent": "L’association",
+   "words": 1123,
+   "hasMap": false
+  },
+  {
+   "slug": "actualites",
+   "route": "/journal",
+   "kind": "hub",
+   "title": "Le journal",
+   "eyebrow": "Vie de l’association",
+   "lede": "Le journal des décisions, réunions et actions menées par ADEB LONODJI et ses pôles.",
+   "description": "Le journal d’ADEB LONODJI : annonces de l’association, travaux sur le peuple bedjond, plaidoyers et comptes rendus de terrain au Mandoul Occidental.",
+   "parent": "Accueil",
+   "words": 1737,
+   "hasMap": false
+  },
+  {
+   "slug": "en/index",
+   "route": "/en/index",
+   "kind": "en",
+   "title": "Building Bédjondo’s heritage together",
+   "eyebrow": "English",
+   "lede": "ADEB LONODJI is the association of Bédjondo, in southern Chad, and of its diaspora: it works for all the town’s inhabitants and safeguards Bedjond heritage. This English section presents the association, the town and our advocacy; the full site is in French.",
+   "description": "ADEB LONODJI, the association of Bédjondo (Mandoul, Chad) and its diaspora, guardian of Bedjond heritage: who we are, what we do, and how to help.",
+   "parent": "Home",
+   "words": 479,
+   "hasMap": false
+  },
+  {
+   "slug": "en/about",
+   "route": "/en/about",
+   "kind": "en",
+   "title": "About the association",
+   "eyebrow": "Who we are",
+   "lede": "Discussions since 1986, official recognition in 1995, relaunch in 2026: the association of Bédjondo and its diaspora, its mission, its organisation and its values.",
+   "description": "History, mission, organisation and values of ADEB LONODJI, the association of Bédjondo (Chad) and its diaspora, guardian of Bedjond heritage.",
+   "parent": "Home",
+   "words": 393,
+   "hasMap": false
+  },
+  {
+   "slug": "en/advocacy",
+   "route": "/en/advocacy",
+   "kind": "en",
+   "title": "Eight briefs for Bédjondo",
+   "eyebrow": "Advocacy",
+   "lede": "Broadband, electricity, drinking water, health, roads and bridges, education, vocational training, and a note to the commune: what we ask of the State, regulators, operators and partners, and what we commit to in return.",
+   "description": "Eight advocacy briefs by ADEB LONODJI for Bédjondo, Chad: broadband, electricity, drinking water, health, roads, education, vocational training, and a note to the commune.",
+   "parent": "Home",
+   "words": 668,
+   "hasMap": false
+  },
+  {
+   "slug": "en/bedjondo",
+   "route": "/en/bedjondo",
+   "kind": "en",
+   "title": "Bédjondo",
+   "eyebrow": "Our town",
+   "lede": "Capital of the Mandoul Occidental department, a commune of more than 11,000 inhabitants at the last census and the cradle of the Bedjond people.",
+   "description": "Bédjondo, capital of Mandoul Occidental (Chad) and cradle of the Bedjond people: geography, people, language, figures and what the town lacks.",
+   "parent": "Home",
+   "words": 385,
+   "hasMap": false
+  },
+  {
+   "slug": "en/contact",
+   "route": "/en/contact",
+   "kind": "en",
+   "title": "Get in touch",
+   "eyebrow": "Contact",
+   "lede": "Write to the association in English or French; we answer every message.",
+   "description": "Contact ADEB LONODJI in English: partners, researchers, media and diaspora.",
+   "parent": "Home",
+   "words": 204,
+   "hasMap": false
+  },
+  {
+   "slug": "en/themes",
+   "route": "/en/themes",
+   "kind": "en",
+   "title": "Four pillars, nineteen themes",
+   "eyebrow": "How we are organised",
+   "lede": "ADEB LONODJI organises its work into nineteen themes grouped in four pillars, supported by two cross-cutting units. Each theme is meant to be led by a coordinator who reports to the membership. This page is the English summary; every theme has a fuller description en français .",
+   "description": "How ADEB LONODJI organises its work: four pillars, nineteen themes and two cross-cutting units, each set against the UN Sustainable Development Goals it touches.",
+   "parent": "Home",
+   "words": 2255,
+   "hasMap": false
+  }
+ ],
+ "articles": [
+  {
+   "slug": "2026-09-22-ce-que-veut-dire-nangnda",
+   "route": "/journal/2026-09-22-ce-que-veut-dire-nangnda",
+   "title": "Ce que veut vraiment dire « nangnda »",
+   "date": "2026-09-22",
+   "dateLabel": "22 septembre 2026",
+   "tag": "Culture & patrimoine vivant",
+   "category": "culture",
+   "summary": "Gor, yamod, pen : le bedjond en est-il l’origine, ou ses frères ? Ce que dit vraiment l’enquête SIL sur le nom nangnda et sa parenté avec le gor, le mango et le bebot.",
+   "readTime": "4 min de lecture",
+   "words": 762,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "4 min de lecture",
+    "664 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-22-mobiliser-toutes-les-competences",
+   "route": "/journal/2026-09-22-mobiliser-toutes-les-competences",
+   "title": "Toutes les compétences, un peu de votre temps",
+   "date": "2026-09-22",
+   "dateLabel": "22 septembre 2026",
+   "tag": "Vie de l’association",
+   "category": "vie-association",
+   "summary": "Neuf thématiques ont déjà leur diagnostic, parfois leur plaidoyer : il leur manque une compétence, pas forcément un engagement à plein temps. Le tableau de suivi dit où.",
+   "readTime": "2 min de lecture",
+   "words": 436,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "2 min de lecture",
+    "436 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-21-lettre-information-01",
+   "route": "/journal/2026-09-21-lettre-information-01",
+   "title": "Lettre d’information n° 1 — septembre 2026",
+   "date": "2026-09-21",
+   "dateLabel": "21 septembre 2026",
+   "tag": "Lettre d’information",
+   "category": "lettre",
+   "summary": "Premier numéro : trente-trois articles publiés depuis le 11 septembre, huit dossiers de plaidoyer, deux sièges, quatre coordinations pourvues sur dix-neuf, et un formulaire de signalement des besoins qui vient d’ouvrir.",
+   "readTime": "2 min de lecture",
+   "words": 449,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "2 min de lecture",
+    "444 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-19-annonce-air-bedjondo",
+   "route": "/journal/2026-09-19-annonce-air-bedjondo",
+   "title": "Air Bedjondo, un projet de transport terrestre annoncé",
+   "date": "2026-09-19",
+   "dateLabel": "19 septembre 2026",
+   "tag": "Nos projets",
+   "category": "projets",
+   "summary": "Un projet de transport et de logistique terrestre pour désenclaver Bédjondo et relier ses terroirs — malgré son nom, ce n’est pas un projet aérien. Ce que l’animateur d’ADEB LONODJI vient d’annoncer, et ce qui reste à préciser.",
+   "readTime": "1 min de lecture",
+   "words": 219,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "1 min de lecture",
+    "213 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-19-annonce-deux-sieges",
+   "route": "/journal/2026-09-19-annonce-deux-sieges",
+   "title": "Deux sièges pour ADEB LONODJI : un à N’Djamena, un à Bédjondo",
+   "date": "2026-09-19",
+   "dateLabel": "19 septembre 2026",
+   "tag": "Vie de l’association",
+   "category": "vie-association",
+   "summary": "L’animateur d’ADEB LONODJI a annoncé une organisation à deux sièges, national à N’Djamena et opérationnel à Bédjondo — une décision distincte des projets de transport annoncés par ailleurs.",
+   "readTime": "1 min de lecture",
+   "words": 144,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "1 min de lecture",
+    "142 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-19-quarante-ans-adeb-lonodji",
+   "route": "/journal/2026-09-19-quarante-ans-adeb-lonodji",
+   "title": "2026 : les 40 ans d’ADEB LONODJI",
+   "date": "2026-09-19",
+   "dateLabel": "19 septembre 2026",
+   "tag": "Vie de l’association",
+   "category": "vie-association",
+   "summary": "1986, 1995, 2000, 2003, 2026 : quarante ans après les premières réflexions de cadres bedjond, ADEB LONODJI fait de sa réactivation un repère plutôt qu’un hasard de calendrier.",
+   "readTime": "2 min de lecture",
+   "words": 344,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "2 min de lecture",
+    "339 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-17-plaidoyer-eau-potable-bedjondo",
+   "route": "/journal/2026-09-17-plaidoyer-eau-potable-bedjondo",
+   "title": "Plaidoyer : de l’eau potable pour chaque quartier de Bédjondo",
+   "date": "2026-09-17",
+   "dateLabel": "17 septembre 2026",
+   "tag": "Gouvernance & plaidoyer",
+   "category": "gouvernance",
+   "summary": "Un chef-lieu sans réseau d’eau : le plaidoyer d’ADEB LONODJI pour inscrire Bédjondo dans les programmes d’hydraulique et bâtir une mini-adduction solaire.",
+   "readTime": "7 min de lecture",
+   "words": 1550,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "7 min de lecture",
+    "1499 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-17-plaidoyer-education-bedjondo",
+   "route": "/journal/2026-09-17-plaidoyer-education-bedjondo",
+   "title": "Plaidoyer : une école à la hauteur des enfants de Bédjondo",
+   "date": "2026-09-17",
+   "dateLabel": "17 septembre 2026",
+   "tag": "Gouvernance & plaidoyer",
+   "category": "gouvernance",
+   "summary": "73 élèves par maître, des classes de 83 : le plaidoyer d’ADEB LONODJI pour des écoles et un lycée dignes de Bédjondo, et la relève du ProQEB.",
+   "readTime": "6 min de lecture",
+   "words": 1271,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "6 min de lecture",
+    "1234 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-17-plaidoyer-formation-professionnelle-bedjondo",
+   "route": "/journal/2026-09-17-plaidoyer-formation-professionnelle-bedjondo",
+   "title": "Plaidoyer : faire vivre le centre de formation professionnelle de Bédjondo",
+   "date": "2026-09-17",
+   "dateLabel": "17 septembre 2026",
+   "tag": "Gouvernance & plaidoyer",
+   "category": "gouvernance",
+   "summary": "Bédjondo figure au répertoire des 55 centres de formation technique et professionnelle publics créés au Tchad. Le plaidoyer d’ADEB LONODJI pour que ce centre ouvre vraiment, sur neuf métiers — menuiserie bois, menuiserie métallique et soudure, solaire, forages, maçonnerie, agro-transformation, couture, mécanique, numérique.",
+   "readTime": "15 min de lecture",
+   "words": 3115,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "15 min de lecture",
+    "3038 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-17-plaidoyer-routes-ponts-bedjondo",
+   "route": "/journal/2026-09-17-plaidoyer-routes-ponts-bedjondo",
+   "title": "Plaidoyer : une voirie pour Bédjondo, des pistes pour ses cantons",
+   "date": "2026-09-17",
+   "dateLabel": "17 septembre 2026",
+   "tag": "Gouvernance & plaidoyer",
+   "category": "gouvernance",
+   "summary": "Un chef-lieu coupé à chaque saison des pluies : le plaidoyer d’ADEB LONODJI pour l’axe Koumra–Bédjondo, le pont de l’axe Bédjondo–Békamba et le pont de Hoblo.",
+   "readTime": "7 min de lecture",
+   "words": 1546,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "7 min de lecture",
+    "1498 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-17-plaidoyer-sante-bedjondo",
+   "route": "/journal/2026-09-17-plaidoyer-sante-bedjondo",
+   "title": "Plaidoyer : soigner à Bédjondo, pas seulement à Koumra",
+   "date": "2026-09-17",
+   "dateLabel": "17 septembre 2026",
+   "tag": "Gouvernance & plaidoyer",
+   "category": "gouvernance",
+   "summary": "Une femme tchadienne sur cent meurt en couches : le plaidoyer d’ADEB LONODJI pour un centre de santé de Bédjondo digne d’un chef-lieu de département.",
+   "readTime": "6 min de lecture",
+   "words": 1231,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "6 min de lecture",
+    "1189 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-16-bedjondo-village-devenu-ville",
+   "route": "/journal/2026-09-16-bedjondo-village-devenu-ville",
+   "title": "Bédjondo, un village devenu ville : nos propositions",
+   "date": "2026-09-16",
+   "dateLabel": "16 septembre 2026",
+   "tag": "Désenclavement & urbanisation",
+   "category": "urbanisation",
+   "summary": "Bédjondo a grandi sans plan ni équipements. Urbanisme, voirie, eau, énergie, assainissement, marché, santé : douze propositions pour une ville moderne.",
+   "readTime": "11 min de lecture",
+   "words": 2257,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "11 min de lecture",
+    "2211 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-16-bibliotheques-mandoul-occidental",
+   "route": "/journal/2026-09-16-bibliotheques-mandoul-occidental",
+   "title": "Un fonds bedjond et sara pour les bibliothèques du Mandoul Occidental",
+   "date": "2026-09-16",
+   "dateLabel": "16 septembre 2026",
+   "tag": "Mémoire & héritage",
+   "category": "memoire",
+   "summary": "Avec les bibliothèques du Mandoul Occidental, ADEB LONODJI veut mettre à disposition sur place les ouvrages de référence sur les Bedjond et les Sara.",
+   "readTime": "2 min de lecture",
+   "words": 423,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "2 min de lecture",
+    "416 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-16-note-commune-bedjondo",
+   "route": "/journal/2026-09-16-note-commune-bedjondo",
+   "title": "Note à la commune de Bédjondo : six propositions",
+   "date": "2026-09-16",
+   "dateLabel": "16 septembre 2026",
+   "tag": "Gouvernance & plaidoyer",
+   "category": "gouvernance",
+   "summary": "Planifier, financer, conventionner, ouvrir le conseil, réussir un chantier : la note qu’ADEB LONODJI adresse au maire et au conseil communal de Bédjondo.",
+   "readTime": "6 min de lecture",
+   "words": 1359,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "6 min de lecture",
+    "1138 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-16-plaidoyer-electricite-bedjondo",
+   "route": "/journal/2026-09-16-plaidoyer-electricite-bedjondo",
+   "title": "Plaidoyer : de la lumière pour Bédjondo",
+   "date": "2026-09-16",
+   "dateLabel": "16 septembre 2026",
+   "tag": "Gouvernance & plaidoyer",
+   "category": "gouvernance",
+   "summary": "6 % d’accès à l’électricité au Tchad, 1 à 2 % en zone rurale : le plaidoyer d’ADEB LONODJI pour inscrire Bédjondo dans le PAAET et la Mission 300.",
+   "readTime": "7 min de lecture",
+   "words": 1437,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "7 min de lecture",
+    "1374 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-16-plaidoyer-internet-haut-debit-bedjondo",
+   "route": "/journal/2026-09-16-plaidoyer-internet-haut-debit-bedjondo",
+   "title": "Plaidoyer : Bédjondo a droit au haut débit",
+   "date": "2026-09-16",
+   "dateLabel": "16 septembre 2026",
+   "tag": "Gouvernance & plaidoyer",
+   "category": "gouvernance",
+   "summary": "Zone blanche, données trop chères : le plaidoyer d’ADEB LONODJI au ministère, à l’ARCEP, aux opérateurs et à Starlink pour connecter Bédjondo.",
+   "readTime": "9 min de lecture",
+   "words": 1853,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "9 min de lecture",
+    "1785 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-15-cooperation-suisse-mandoul",
+   "route": "/journal/2026-09-15-cooperation-suisse-mandoul",
+   "title": "Ce que fait la coopération suisse au Mandoul",
+   "date": "2026-09-15",
+   "dateLabel": "15 septembre 2026",
+   "tag": "Développement",
+   "category": "developpement",
+   "summary": "Éducation, mutuelles de santé, filières arachide, sésame et karité : les programmes suisses qui touchent le Mandoul, et ce qu’ADEB LONODJI peut en faire.",
+   "readTime": "4 min de lecture",
+   "words": 927,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "4 min de lecture",
+    "892 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-15-monnaie-kul-echanges-economiques",
+   "route": "/journal/2026-09-15-monnaie-kul-echanges-economiques",
+   "title": "Le Kul et les monnaies de fer du pays sara",
+   "date": "2026-09-15",
+   "dateLabel": "15 septembre 2026",
+   "tag": "Mémoire & héritage",
+   "category": "memoire",
+   "summary": "Kul, kemb, barres et fers de houe : comment les Sara, dont les Bedjond, ont fait du fer forgé leur monnaie, à quoi elle servait et pourquoi elle a disparu.",
+   "readTime": "7 min de lecture",
+   "words": 1383,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "7 min de lecture",
+    "1329 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-15-sil-enquete-langue-bedjond",
+   "route": "/journal/2026-09-15-sil-enquete-langue-bedjond",
+   "title": "Ce que la SIL a écrit sur la langue bedjond",
+   "date": "2026-09-15",
+   "dateLabel": "15 septembre 2026",
+   "tag": "Culture & patrimoine vivant",
+   "category": "culture",
+   "summary": "L’enquête SIL (1999-2000, publiée en 2007) sur le bedjond : où on le parle, combien de locuteurs, intercompréhension avec gor, mango, mbay, ngambay et écriture.",
+   "readTime": "7 min de lecture",
+   "words": 1391,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "7 min de lecture",
+    "1322 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-14-appel-filles-fils-bedjondo",
+   "route": "/journal/2026-09-14-appel-filles-fils-bedjondo",
+   "title": "Filles et fils de Bédjondo, ADEB LONODJI a besoin de vous",
+   "date": "2026-09-14",
+   "dateLabel": "14 septembre 2026",
+   "tag": "Vie de l’association",
+   "category": "vie-association",
+   "summary": "Dix-sept thématiques sur dix-neuf attendent un coordonnateur. Appel aux filles et fils de Bédjondo, au Tchad comme dans la diaspora.",
+   "readTime": "2 min de lecture",
+   "words": 397,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "2 min de lecture",
+    "391 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-14-caisse-entraide-solidarite-en-acte",
+   "route": "/journal/2026-09-14-caisse-entraide-solidarite-en-acte",
+   "title": "Une caisse d’entraide entre membres",
+   "date": "2026-09-14",
+   "dateLabel": "14 septembre 2026",
+   "tag": "Protection sociale & inclusion",
+   "category": "solidarite",
+   "summary": "L’entraide est dans le nom même d’ADEB. Une caisse d’entraide en cas de décès ou de maladie, et une attention particulière aux plus fragiles.",
+   "readTime": "1 min de lecture",
+   "words": 227,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "1 min de lecture",
+    "225 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-14-diaspora-bedjond-pont-vers-terroir",
+   "route": "/journal/2026-09-14-diaspora-bedjond-pont-vers-terroir",
+   "title": "La diaspora bedjond, un pont vers le terroir",
+   "date": "2026-09-14",
+   "dateLabel": "14 septembre 2026",
+   "tag": "Réseau d’experts & diaspora",
+   "category": "diaspora",
+   "summary": "Recenser les compétences, relier la diaspora à Bédjondo et rapprocher les savoir-faire du terroir : un appel à celles et ceux qui vivent loin.",
+   "readTime": "1 min de lecture",
+   "words": 228,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "1 min de lecture",
+    "223 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-14-eau-energie-sante-chantiers-du-quotidien",
+   "route": "/journal/2026-09-14-eau-energie-sante-chantiers-du-quotidien",
+   "title": "Eau, énergie, santé : les chantiers du quotidien",
+   "date": "2026-09-14",
+   "dateLabel": "14 septembre 2026",
+   "tag": "Développement",
+   "category": "developpement",
+   "summary": "Eau potable, électricité, internet, santé, routes : trois thématiques du Pôle II portent les besoins les plus concrets des villages bedjond.",
+   "readTime": "1 min de lecture",
+   "words": 284,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "1 min de lecture",
+    "281 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-14-femmes-bedjondo-leadership-feminin",
+   "route": "/journal/2026-09-14-femmes-bedjondo-leadership-feminin",
+   "title": "Femmes de Bédjondo, une thématique à prendre",
+   "date": "2026-09-14",
+   "dateLabel": "14 septembre 2026",
+   "tag": "Genre & autonomisation des femmes",
+   "category": "leadership-feminin",
+   "summary": "Groupements, revenus, formation au leadership et place réelle dans les décisions : la thématique Genre & autonomisation des femmes attend ses coordonnatrices.",
+   "readTime": "1 min de lecture",
+   "words": 245,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "1 min de lecture",
+    "240 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-14-jeunesse-bedjondo-reussir-ici",
+   "route": "/journal/2026-09-14-jeunesse-bedjondo-reussir-ici",
+   "title": "Jeunesse de Bédjondo : réussir ici",
+   "date": "2026-09-14",
+   "dateLabel": "14 septembre 2026",
+   "tag": "Jeunesse & réussite",
+   "category": "jeunesse",
+   "summary": "Parrainage, bourses, écoles, sport et perspectives sur place : la thématique Jeunesse & réussite s’adresse aux jeunes et à ceux qui les accompagnent.",
+   "readTime": "1 min de lecture",
+   "words": 273,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "1 min de lecture",
+    "268 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-14-nourrir-bedjondo-agriculture-elevage",
+   "route": "/journal/2026-09-14-nourrir-bedjondo-agriculture-elevage",
+   "title": "Nourrir Bédjondo : agriculture et élevage",
+   "date": "2026-09-14",
+   "dateLabel": "14 septembre 2026",
+   "tag": "Agriculture, élevage & sécurité alimentaire",
+   "category": "agriculture",
+   "summary": "Coopératives, stockage post-récolte, agriculture moderne et futur label des produits de Bédjondo : la thématique 04 cherche ses porteurs.",
+   "readTime": "1 min de lecture",
+   "words": 240,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "1 min de lecture",
+    "236 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-13-bedjondo-bedaya-fondation-ndjan",
+   "route": "/journal/2026-09-13-bedjondo-bedaya-fondation-ndjan",
+   "title": "Qui sont les Ndjan ?",
+   "date": "2026-09-13",
+   "dateLabel": "13 septembre 2026",
+   "tag": "Mémoire & héritage",
+   "category": "memoire",
+   "summary": "Trois garnisons ancestrales, la fondation de Bédjondo, le développement de Bédaya, la métallurgie du fer et la monnaie Kul : l’histoire fondatrice des Ndjan.",
+   "readTime": "2 min de lecture",
+   "words": 368,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "2 min de lecture",
+    "366 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-13-bedjondo-berceau-nangnda",
+   "route": "/journal/2026-09-13-bedjondo-berceau-nangnda",
+   "title": "Bédjondo, berceau du peuple bedjond",
+   "date": "2026-09-13",
+   "dateLabel": "13 septembre 2026",
+   "tag": "Mémoire & héritage",
+   "category": "memoire",
+   "summary": "Sommaire des premiers résultats de recherche de la thématique Mémoire & héritage, avec liens vers les six articles détaillés parus le même jour.",
+   "readTime": "1 min de lecture",
+   "words": 297,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "1 min de lecture",
+    "253 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-13-bedjondo-geographie-organisation",
+   "route": "/journal/2026-09-13-bedjondo-geographie-organisation",
+   "title": "Bédjondo : géographie et organisation",
+   "date": "2026-09-13",
+   "dateLabel": "13 septembre 2026",
+   "tag": "Mémoire & héritage",
+   "category": "memoire",
+   "summary": "Chef-lieu du Mandoul Occidental, Bédjondo est le berceau du peuple bedjond : population, organisation traditionnelle et lignée des chefs depuis Narmbang.",
+   "readTime": "2 min de lecture",
+   "words": 337,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "2 min de lecture",
+    "332 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-13-kokotan-langue-nangnda",
+   "route": "/journal/2026-09-13-kokotan-langue-nangnda",
+   "title": "Kokotan, l’association de la langue bedjond",
+   "date": "2026-09-13",
+   "dateLabel": "13 septembre 2026",
+   "tag": "Culture & patrimoine vivant",
+   "category": "culture",
+   "summary": "Présentation de Kokotan, association pour la promotion de la langue bedjond basée à Bédjondo, et de l’étendue du pays bedjond qu’elle rassemble.",
+   "readTime": "2 min de lecture",
+   "words": 375,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "2 min de lecture",
+    "376 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-13-ndjan-baguirmiens",
+   "route": "/journal/2026-09-13-ndjan-baguirmiens",
+   "title": "Ndjan et Baguirmiens : une parenté à préciser",
+   "date": "2026-09-13",
+   "dateLabel": "13 septembre 2026",
+   "tag": "Mémoire & héritage",
+   "category": "memoire",
+   "summary": "Ce terme n’existe dans aucune source consultée comme groupe établi. Plutôt que d’inventer une fiche, ADEB LONODJI clarifie ce qui est réellement documenté : une parenté linguistique lointaine et hypothétique, à ne pas confondre avec le sultanat historique du Baguirmi.",
+   "readTime": "3 min de lecture",
+   "words": 625,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "3 min de lecture",
+    "600 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-13-villages-cantons-pays-nangnda",
+   "route": "/journal/2026-09-13-villages-cantons-pays-nangnda",
+   "title": "Villages et cantons du pays bedjond",
+   "date": "2026-09-13",
+   "dateLabel": "13 septembre 2026",
+   "tag": "Mémoire & héritage",
+   "category": "memoire",
+   "summary": "Un premier inventaire, sous-préfecture par sous-préfecture, des villages du pays bedjond — avec ses limites, ses incohérences et une invitation à le corriger collectivement.",
+   "readTime": "11 min de lecture",
+   "words": 3499,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "11 min de lecture",
+    "2275 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-13-yondo-rite-initiatique",
+   "route": "/journal/2026-09-13-yondo-rite-initiatique",
+   "title": "Le Yondo, rite initiatique des Sara et des Bedjond",
+   "date": "2026-09-13",
+   "dateLabel": "13 septembre 2026",
+   "tag": "Culture & patrimoine vivant",
+   "category": "culture",
+   "summary": "Le grand rite initiatique masculin partagé par l’ensemble des Sara du sud du Tchad : valeurs transmises, déroulement, durée actuelle et sources académiques.",
+   "readTime": "1 min de lecture",
+   "words": 303,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "1 min de lecture",
+    "299 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-12-cadre-federateur",
+   "route": "/journal/2026-09-12-cadre-federateur",
+   "title": "Vers un cadre fédérateur ADEB LONODJI",
+   "date": "2026-09-12",
+   "dateLabel": "12 septembre 2026",
+   "tag": "Gouvernance & plaidoyer",
+   "category": "gouvernance",
+   "summary": "Après plusieurs jours d’échanges, le groupe converge vers l’idée d’un cadre fédérateur porté par ADEB LONODJI (Association de Développement et d’Entraide de Bédjondo), en concertation avec les associations existantes.",
+   "readTime": "1 min de lecture",
+   "words": 155,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "1 min de lecture",
+    "153 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-12-lancement-memoire-heritage",
+   "route": "/journal/2026-09-12-lancement-memoire-heritage",
+   "title": "Lancement de la thématique Mémoire & héritage",
+   "date": "2026-09-12",
+   "dateLabel": "12 septembre 2026",
+   "tag": "Mémoire & héritage",
+   "category": "memoire",
+   "summary": "La thématique 1 — Origines, Histoire, Identité et Patrimoine du peuple bedjond — est confiée à Dr Bé-Rammaj Miaro-II, avec un plan de recherche en cinq axes.",
+   "readTime": "1 min de lecture",
+   "words": 150,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "1 min de lecture",
+    "148 mots"
+   ]
+  },
+  {
+   "slug": "2026-09-11-structuration-poles",
+   "route": "/journal/2026-09-11-structuration-poles",
+   "title": "ADEB LONODJI se structure en 3 pôles et 12 thématiques",
+   "date": "2026-09-11",
+   "dateLabel": "11 septembre 2026",
+   "tag": "Vie de l’association",
+   "category": "vie-association",
+   "summary": "L’animateur propose une nouvelle organisation des échanges du groupe : trois pôles, douze thématiques d’action et deux cellules transversales, chacune animée par un coordonnateur.",
+   "readTime": "1 min de lecture",
+   "words": 250,
+   "byline": "Rédaction ADEB LONODJI",
+   "pills": [
+    "1 min de lecture",
+    "240 mots"
+   ]
+  }
+ ],
+ "journalCategories": [
+  {
+   "slug": "all",
+   "label": "Tous"
+  },
+  {
+   "slug": "lettre",
+   "label": "Lettre d’information"
+  },
+  {
+   "slug": "vie-association",
+   "label": "Vie de l’association"
+  },
+  {
+   "slug": "gouvernance",
+   "label": "Gouvernance & plaidoyer"
+  },
+  {
+   "slug": "memoire",
+   "label": "Mémoire & héritage"
+  },
+  {
+   "slug": "culture",
+   "label": "Culture & patrimoine vivant"
+  },
+  {
+   "slug": "developpement",
+   "label": "Développement"
+  },
+  {
+   "slug": "urbanisation",
+   "label": "Désenclavement & urbanisation"
+  },
+  {
+   "slug": "agriculture",
+   "label": "Agriculture, élevage & sécurité alimentaire"
+  },
+  {
+   "slug": "jeunesse",
+   "label": "Jeunesse & réussite"
+  },
+  {
+   "slug": "leadership-feminin",
+   "label": "Genre & autonomisation des femmes"
+  },
+  {
+   "slug": "diaspora",
+   "label": "Réseau d’experts & diaspora"
+  },
+  {
+   "slug": "solidarite",
+   "label": "Protection sociale & inclusion"
+  },
+  {
+   "slug": "projets",
+   "label": "Nos projets"
+  }
+ ],
+ "structure": {
+  "poles": [
+   {
+    "id": "pole-1",
+    "roman": "I",
+    "eyebrow": "Pôle I",
+    "name": "Mémoire, culture & patrimoine",
+    "intro": "",
+    "items": [
+     {
+      "id": "memoire-heritage",
+      "number": "01",
+      "kind": "thematique",
+      "name": "Mémoire & héritage",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Dr Bé-Rammaj Miaro-II, historien",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Origines, histoire des cantons, <a href=\"/histoire\">grandes figures</a>, archives physiques et numériques et témoignages. Documentation systématique de la tradition et de la transmission orale (récits des anciens, généalogies, rites, savoirs pratiques) avant qu’elles ne se perdent. Démarches pour que des monuments, routes, places, écoles et édifices publics portent le nom des grandes figures de la communauté. Piste envisagée à plus long terme : un musée dédié au peuple bedjond, à Bédjondo, un lieu physique où seraient rassemblés objets, archives et témoignages, en écho au musée virtuel porté par la thématique Recherche & savoirs. Lieu d’implantation, statut, financement et calendrier restent à définir avec la commune et les partenaires. Ce que nous ne savons pas encore, nous le disons ; ce chantier avancera au rythme des décisions prises collectivement, pas avant.",
+      "descriptionText": "Origines, histoire des cantons, grandes figures , archives physiques et numériques et témoignages. Documentation systématique de la tradition et de la transmission orale (récits des anciens, généalogies, rites, savoirs pratiques) avant qu’elles ne se perdent. Démarches pour que des monuments, routes, places, écoles et édifices publics portent le nom des grandes figures de la communauté. Piste envisagée à plus long terme : un musée dédié au peuple bedjond, à Bédjondo, un lieu physique où seraient rassemblés objets, archives et témoignages, en écho au musée virtuel porté par la thématique Recherche & savoirs. Lieu d’implantation, statut, financement et calendrier restent à définir avec la commune et les partenaires. Ce que nous ne savons pas encore, nous le disons ; ce chantier avancera au rythme des décisions prises collectivement, pas avant.",
+      "tags": [
+       "Origines",
+       "Archives",
+       "Transmission"
+      ],
+      "odd": [
+       {
+        "num": "11",
+        "name": "Villes durables",
+        "cible": "11.4",
+        "title": "ODD 11 — Villes et communautés durables | cible 11.4 — protection du patrimoine culturel et naturel",
+        "accent": "#FD9D24",
+        "ink": "#10181f"
+       },
+       {
+        "num": "4",
+        "name": "Éducation",
+        "cible": "4.7",
+        "title": "ODD 4 — Éducation de qualité | cible 4.7 — éducation à la diversité culturelle",
+        "accent": "#C5192D",
+        "ink": "#ffffff"
+       }
+      ],
+      "links": [
+       {
+        "label": "Explorer les origines →",
+        "href": "/mission"
+       },
+       {
+        "label": "Musée virtuel (Recherche & savoirs) →",
+        "href": "/programmes#savoirs-innovation"
+       },
+       {
+        "label": "Généalogies des familles →",
+        "href": "/dossiers/genealogies"
+       },
+       {
+        "label": "Suivi : 2 problématiques →",
+        "href": "/impact#memoire-heritage"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=01#contact"
+       }
+      ]
+     },
+     {
+      "id": "culture-patrimoine-vivant",
+      "number": "02",
+      "kind": "thematique",
+      "name": "Culture & patrimoine vivant",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Félix Mbété Nangmbatnan",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Langues et parlers sara, à commencer par le bedjond (bedjond, bebote, yom, pen, maguer), berceau du mouvement. Contes, proverbes, chants, rites, savoirs traditionnels, fêtes culturelles et rencontres communautaires. La thématique porte aussi un principe clair : les sites sacrés du pays bedjond (lieux de rite, sites initiatiques, lieux de mémoire des anciens) doivent être protégés et transmis avec le respect qui leur est dû. Ce principe a désormais sa page : <a href=\"/dossiers/lieux-sacres\">Lieux sacrés et sépultures</a>, où nous exposons la voie juridique retenue et la règle que nous nous imposons : ne rien publier. Sur les proverbes, la bibliothèque référence désormais les <a href=\"/dossiers/recherche#src-sept-cents-proverbes-nang-nda\">sept cents proverbes nangnda réunis par Madjidéné Altana Lydie</a>.",
+      "descriptionText": "Langues et parlers sara, à commencer par le bedjond (bedjond, bebote, yom, pen, maguer), berceau du mouvement. Contes, proverbes, chants, rites, savoirs traditionnels, fêtes culturelles et rencontres communautaires. La thématique porte aussi un principe clair : les sites sacrés du pays bedjond (lieux de rite, sites initiatiques, lieux de mémoire des anciens) doivent être protégés et transmis avec le respect qui leur est dû. Ce principe a désormais sa page : Lieux sacrés et sépultures , où nous exposons la voie juridique retenue et la règle que nous nous imposons : ne rien publier. Sur les proverbes, la bibliothèque référence désormais les sept cents proverbes nangnda réunis par Madjidéné Altana Lydie .",
+      "tags": [
+       "Langues sara",
+       "Traditions",
+       "Sites sacrés"
+      ],
+      "odd": [
+       {
+        "num": "11",
+        "name": "Villes durables",
+        "cible": "11.4",
+        "title": "ODD 11 — Villes et communautés durables | cible 11.4 — protection du patrimoine culturel et naturel",
+        "accent": "#FD9D24",
+        "ink": "#10181f"
+       },
+       {
+        "num": "4",
+        "name": "Éducation",
+        "cible": "4.7",
+        "title": "ODD 4 — Éducation de qualité | cible 4.7 — éducation à la diversité culturelle",
+        "accent": "#C5192D",
+        "ink": "#ffffff"
+       }
+      ],
+      "links": [
+       {
+        "label": "Langue & culture bedjond →",
+        "href": "/mission"
+       },
+       {
+        "label": "Lieux sacrés et sépultures →",
+        "href": "/dossiers/lieux-sacres"
+       },
+       {
+        "label": "Suivi : 3 problématiques →",
+        "href": "/impact#culture-patrimoine-vivant"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=02#contact"
+       }
+      ]
+     },
+     {
+      "id": "savoirs-innovation",
+      "number": "03",
+      "kind": "thematique",
+      "name": "Recherche & savoirs",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Sylvain Nomaye, ingénieur de conception en informatique",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Travaux universitaires, publications et valorisation de nos chercheurs, portées par le programme <strong>Bedjond Digital Heritage</strong> : numérisation des archives et traditions orales, dictionnaire numérique de la langue bedjond, cartographie du patrimoine territorial, musée virtuel de la monnaie Kul et de la métallurgie du fer, et académie numérique pour la jeunesse. Ce musée virtuel est pensé comme la première étape d’un même projet de mémoire — documenter et rendre accessible en ligne avant, un jour peut-être, de donner à ces collections un lieu physique à Bédjondo (voir la piste envisagée par la thématique Mémoire & héritage). La thématique encourage activement la recherche scientifique sur le peuple sara, à commencer par les Bedjond, en lien avec les universités et chercheurs tchadiens et internationaux. Ambition à plus long terme : passer d’une communauté qui encourage la recherche à une communauté qui publie elle-même — livres, articles scientifiques et autres travaux édités ou coédités par ADEB LONODJI. Pour que ces savoirs soient accessibles sur place, la thématique travaillera avec les responsables des bibliothèques du Mandoul Occidental afin de mettre les ouvrages de référence à leur disposition (<a href=\"/dossiers/recherche#shelf-title\">voir la bibliothèque</a>).",
+      "descriptionText": "Travaux universitaires, publications et valorisation de nos chercheurs, portées par le programme Bedjond Digital Heritage : numérisation des archives et traditions orales, dictionnaire numérique de la langue bedjond, cartographie du patrimoine territorial, musée virtuel de la monnaie Kul et de la métallurgie du fer, et académie numérique pour la jeunesse. Ce musée virtuel est pensé comme la première étape d’un même projet de mémoire — documenter et rendre accessible en ligne avant, un jour peut-être, de donner à ces collections un lieu physique à Bédjondo (voir la piste envisagée par la thématique Mémoire & héritage). La thématique encourage activement la recherche scientifique sur le peuple sara, à commencer par les Bedjond, en lien avec les universités et chercheurs tchadiens et internationaux. Ambition à plus long terme : passer d’une communauté qui encourage la recherche à une communauté qui publie elle-même — livres, articles scientifiques et autres travaux édités ou coédités par ADEB LONODJI. Pour que ces savoirs soient accessibles sur place, la thématique travaillera avec les responsables des bibliothèques du Mandoul Occidental afin de mettre les ouvrages de référence à leur disposition ( voir la bibliothèque ).",
+      "tags": [
+       "Recherche",
+       "Numérique",
+       "Patrimoine",
+       "Publications",
+       "Bibliothèques"
+      ],
+      "odd": [
+       {
+        "num": "4",
+        "name": "Éducation",
+        "cible": "4.7",
+        "title": "ODD 4 — Éducation de qualité | cible 4.7 — éducation à la diversité culturelle",
+        "accent": "#C5192D",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "9",
+        "name": "Infrastructures",
+        "cible": "9.5",
+        "title": "ODD 9 — Industrie, innovation et infrastructure | cible 9.5 — recherche et capacités scientifiques",
+        "accent": "#FD6925",
+        "ink": "#10181f"
+       },
+       {
+        "num": "17",
+        "name": "Partenariats",
+        "cible": "17.6",
+        "title": "ODD 17 — Partenariats pour la réalisation des objectifs | cible 17.6 — coopération scientifique internationale",
+        "accent": "#19486A",
+        "ink": "#ffffff"
+       }
+      ],
+      "links": [
+       {
+        "label": "Base de recherche →",
+        "href": "/dossiers/recherche"
+       },
+       {
+        "label": "Cellule communication & numérique →",
+        "href": "/programmes#cellule-communication-numerique"
+       },
+       {
+        "label": "Musée physique (Mémoire & héritage) →",
+        "href": "/programmes#memoire-heritage"
+       },
+       {
+        "label": "Cellule financement & ressources →",
+        "href": "/programmes#cellule-financement-ressources"
+       },
+       {
+        "label": "Suivi : 3 problématiques →",
+        "href": "/impact#savoirs-innovation"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=03#contact"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "pole-2",
+    "roman": "II",
+    "eyebrow": "Pôle II",
+    "name": "Développement humain & moyens d’existence",
+    "intro": "",
+    "items": [
+     {
+      "id": "agriculture-elevage-securite-alimentaire",
+      "number": "04",
+      "kind": "thematique",
+      "name": "Agriculture, élevage & sécurité alimentaire",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Agriculture, élevage et sécurité alimentaire, sur une <a href=\"/mission\">terre d’agriculture et d’élevage</a> qui reste, aujourd’hui encore, le premier moyen de subsistance des villages du Mandoul Occidental. Parmi les pistes envisagées : appui aux coopératives agricoles et aux filières locales (mil, sorgho, arachide, sésame, maïs, manioc, élevage bovin et caprin), et promotion d’une agriculture moderne : techniques de production améliorées et diversification, y compris le développement de la pisciculture. La sécurité alimentaire passe aussi par la conservation post-récolte (stockage, séchage), souvent le vrai goulot d’étranglement pour les paysans une fois la récolte faite. Piste envisagée à plus long terme : un label des produits de Bédjondo, pour identifier et valoriser les productions locales, agricoles et artisanales, sur les marchés régionaux, en lien avec la cellule Financement & ressources.",
+      "descriptionText": "Agriculture, élevage et sécurité alimentaire, sur une terre d’agriculture et d’élevage qui reste, aujourd’hui encore, le premier moyen de subsistance des villages du Mandoul Occidental. Parmi les pistes envisagées : appui aux coopératives agricoles et aux filières locales (mil, sorgho, arachide, sésame, maïs, manioc, élevage bovin et caprin), et promotion d’une agriculture moderne : techniques de production améliorées et diversification, y compris le développement de la pisciculture. La sécurité alimentaire passe aussi par la conservation post-récolte (stockage, séchage), souvent le vrai goulot d’étranglement pour les paysans une fois la récolte faite. Piste envisagée à plus long terme : un label des produits de Bédjondo, pour identifier et valoriser les productions locales, agricoles et artisanales, sur les marchés régionaux, en lien avec la cellule Financement & ressources.",
+      "tags": [
+       "Agriculture",
+       "Élevage",
+       "Sécurité alimentaire"
+      ],
+      "odd": [
+       {
+        "num": "2",
+        "name": "Faim",
+        "cible": "2.1 / 2.3",
+        "title": "ODD 2 — Faim « zéro » | cible 2.1 — accès de tous à une alimentation suffisante · cible 2.3 — revenus des petits producteurs",
+        "accent": "#DDA63A",
+        "ink": "#10181f"
+       },
+       {
+        "num": "12",
+        "name": "Consommation responsable",
+        "cible": "12.3",
+        "title": "ODD 12 — Consommation et production responsables | cible 12.3 — pertes après récolte",
+        "accent": "#BF8B2E",
+        "ink": "#10181f"
+       },
+       {
+        "num": "15",
+        "name": "Vie terrestre",
+        "cible": "15.3",
+        "title": "ODD 15 — Vie terrestre | cible 15.3 — restauration des terres dégradées",
+        "accent": "#56C02B",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Hub filières & appuis techniques →",
+        "href": "/dossiers/agriculture-securite-alimentaire"
+       },
+       {
+        "label": "Cellule financement & ressources →",
+        "href": "/programmes#cellule-financement-ressources"
+       },
+       {
+        "label": "Suivi : 3 problématiques →",
+        "href": "/impact#agriculture-elevage-securite-alimentaire"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=04#contact"
+       }
+      ]
+     },
+     {
+      "id": "entrepreneuriat-finance-inclusive",
+      "number": "05",
+      "kind": "thematique",
+      "name": "Entrepreneuriat & finance inclusive",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la <a href=\"/programmes#cellule-financement-ressources\">cellule Financement &amp; ressources</a> pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire , notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire (<a href=\"/dossiers/environnement#economie-verte\">voir les pistes</a>).",
+      "descriptionText": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la cellule Financement & ressources pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire , notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire ( voir les pistes ).",
+      "tags": [
+       "Emploi",
+       "Entrepreneuriat",
+       "Vie chère",
+       "Inclusion financière",
+       "Métiers verts"
+      ],
+      "odd": [
+       {
+        "num": "8",
+        "name": "Travail décent",
+        "cible": "8.3",
+        "title": "ODD 8 — Travail décent et croissance économique | cible 8.3 — création d’emplois décents et petites entreprises",
+        "accent": "#A21942",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "1",
+        "name": "Pauvreté",
+        "cible": "1.4",
+        "title": "ODD 1 — Pas de pauvreté | cible 1.4 — accès aux ressources économiques et aux services financiers",
+        "accent": "#E5243B",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "12",
+        "name": "Consommation responsable",
+        "cible": "12.5",
+        "title": "ODD 12 — Consommation et production responsables | cible 12.5 — réduction des déchets par le réemploi et le recyclage",
+        "accent": "#BF8B2E",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Cellule financement & ressources →",
+        "href": "/programmes#cellule-financement-ressources"
+       },
+       {
+        "label": "Suivi : 1 problématique →",
+        "href": "/impact#entrepreneuriat-finance-inclusive"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=05#contact"
+       }
+      ]
+     },
+     {
+      "id": "environnement-ressources",
+      "number": "06",
+      "kind": "thematique",
+      "name": "Environnement & ressources naturelles",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la <a href=\"/programmes#eau-energie-connectivite\">thématique Eau, énergie &amp; connectivité</a>. La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page <a href=\"/dossiers/environnement#economie-verte\">Environnement &amp; durabilité</a>.",
+      "descriptionText": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la thématique Eau, énergie & connectivité . La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page Environnement & durabilité .",
+      "tags": [
+       "Foncier",
+       "Environnement",
+       "Climat",
+       "Énergie solaire",
+       "Économie circulaire"
+      ],
+      "odd": [
+       {
+        "num": "13",
+        "name": "Climat",
+        "cible": "13.1",
+        "title": "ODD 13 — Lutte contre les changements climatiques | cible 13.1 — résilience face aux aléas climatiques",
+        "accent": "#3F7E44",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "15",
+        "name": "Vie terrestre",
+        "cible": "15.2",
+        "title": "ODD 15 — Vie terrestre | cible 15.2 — gestion durable des forêts et reboisement",
+        "accent": "#56C02B",
+        "ink": "#10181f"
+       },
+       {
+        "num": "12",
+        "name": "Consommation responsable",
+        "cible": "12.5",
+        "title": "ODD 12 — Consommation et production responsables | cible 12.5 — réduction des déchets par le réemploi et le recyclage",
+        "accent": "#BF8B2E",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Environnement & durabilité →",
+        "href": "/dossiers/environnement"
+       },
+       {
+        "label": "Eau, énergie & connectivité →",
+        "href": "/programmes#eau-energie-connectivite"
+       },
+       {
+        "label": "Suivi : 1 problématique →",
+        "href": "/impact#environnement-ressources"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=06#contact"
+       }
+      ]
+     },
+     {
+      "id": "eau-energie-connectivite",
+      "number": "07",
+      "kind": "thematique",
+      "name": "Eau, énergie & connectivité",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Accès à l’eau potable, à l’électricité et à la connexion internet : trois priorités identifiées par la communauté, encore insuffisantes sur le territoire. Identification des besoins des villages et portage des projets auprès des autorités et des partenaires, en lien avec les écoles et les centres de santé qui en dépendent directement. Sur l’électricité, la thématique fait un choix clair : <strong>améliorer l’accès grâce aux énergies renouvelables</strong> — solaire en premier lieu — par des solutions adaptées aux villages : kits et lampes solaires pour les foyers, mini-réseaux ou installations solaires pour les écoles, les centres de santé et les forages, en complément du réseau conventionnel là où il existe, et en lien avec la réflexion sur le solaire portée par la thématique Environnement & ressources naturelles. Sur la connectivité, la thématique porte le <a href=\"/journal/2026-09-16-plaidoyer-internet-haut-debit-bedjondo\">plaidoyer pour un accès à l’internet haut débit à Bédjondo</a>, zone blanche où les données mobiles restent trop chères, et le <a href=\"/journal/2026-09-16-plaidoyer-electricite-bedjondo\">plaidoyer pour l’accès à l’électricité</a>, qui demande l’inscription de Bédjondo dans le PAAET et la Mission 300.",
+      "descriptionText": "Accès à l’eau potable, à l’électricité et à la connexion internet : trois priorités identifiées par la communauté, encore insuffisantes sur le territoire. Identification des besoins des villages et portage des projets auprès des autorités et des partenaires, en lien avec les écoles et les centres de santé qui en dépendent directement. Sur l’électricité, la thématique fait un choix clair : améliorer l’accès grâce aux énergies renouvelables — solaire en premier lieu — par des solutions adaptées aux villages : kits et lampes solaires pour les foyers, mini-réseaux ou installations solaires pour les écoles, les centres de santé et les forages, en complément du réseau conventionnel là où il existe, et en lien avec la réflexion sur le solaire portée par la thématique Environnement & ressources naturelles. Sur la connectivité, la thématique porte le plaidoyer pour un accès à l’internet haut débit à Bédjondo , zone blanche où les données mobiles restent trop chères, et le plaidoyer pour l’accès à l’électricité , qui demande l’inscription de Bédjondo dans le PAAET et la Mission 300.",
+      "tags": [
+       "Eau potable",
+       "Électricité",
+       "Solaire",
+       "Internet"
+      ],
+      "odd": [
+       {
+        "num": "6",
+        "name": "Eau & assainissement",
+        "cible": "6.1",
+        "title": "ODD 6 — Eau propre et assainissement | cible 6.1 — accès universel à l’eau potable",
+        "accent": "#26BDE2",
+        "ink": "#10181f"
+       },
+       {
+        "num": "7",
+        "name": "Énergie",
+        "cible": "7.1 / 7.2",
+        "title": "ODD 7 — Énergie propre et d’un coût abordable | cible 7.1 — accès à des services énergétiques fiables · cible 7.2 — part des énergies renouvelables",
+        "accent": "#FCC30B",
+        "ink": "#10181f"
+       },
+       {
+        "num": "9",
+        "name": "Infrastructures",
+        "cible": "9.c",
+        "title": "ODD 9 — Industrie, innovation et infrastructure | cible 9.c — accès à internet",
+        "accent": "#FD6925",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Environnement & ressources naturelles →",
+        "href": "/programmes#environnement-ressources"
+       },
+       {
+        "label": "Santé & prévention →",
+        "href": "/programmes#sante-prevention"
+       },
+       {
+        "label": "Suivi : 3 problématiques · 3 plaidoyers →",
+        "href": "/impact#eau-energie-connectivite"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=07#contact"
+       }
+      ]
+     },
+     {
+      "id": "desenclavement-urbanisation",
+      "number": "08",
+      "kind": "thematique",
+      "name": "Désenclavement & urbanisation",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la <a href=\"/programmes#jeunesse-reussite\">thématique Jeunesse &amp; réussite</a>. Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir <a href=\"/journal/2026-09-16-bedjondo-village-devenu-ville\">nos douze propositions pour une ville moderne</a>). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir <a href=\"/dossiers/air-bedjondo\">Air Bedjondo</a>).",
+      "descriptionText": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la thématique Jeunesse & réussite . Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir nos douze propositions pour une ville moderne ). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir Air Bedjondo ).",
+      "tags": [
+       "Désenclavement",
+       "Urbanisation",
+       "Routes",
+       "Assainissement",
+       "Plan de ville"
+      ],
+      "odd": [
+       {
+        "num": "9",
+        "name": "Infrastructures",
+        "cible": "9.1",
+        "title": "ODD 9 — Industrie, innovation et infrastructure | cible 9.1 — infrastructures fiables et accessibles",
+        "accent": "#FD6925",
+        "ink": "#10181f"
+       },
+       {
+        "num": "11",
+        "name": "Villes durables",
+        "cible": "11.3 / 11.6",
+        "title": "ODD 11 — Villes et communautés durables | cible 11.3 — urbanisation participative et planifiée · cible 11.6 — gestion des déchets municipaux",
+        "accent": "#FD9D24",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Air Bedjondo →",
+        "href": "/dossiers/air-bedjondo"
+       },
+       {
+        "label": "Jeunesse & réussite →",
+        "href": "/programmes#jeunesse-reussite"
+       },
+       {
+        "label": "Suivi : 4 problématiques · 1 plaidoyer →",
+        "href": "/impact#desenclavement-urbanisation"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=08#contact"
+       }
+      ]
+     },
+     {
+      "id": "jeunesse-reussite",
+      "number": "09",
+      "kind": "thematique",
+      "name": "Jeunesse & réussite",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Orientation, mentorat, bourses, réussite scolaire, promotion de l’excellence, sport et loisirs pour les jeunes de la communauté. Premières pistes : un réseau de parrainage reliant cadres et étudiants bedjond, un appui aux bourses pour les élèves méritants, et des rencontres sportives et culturelles entre les cantons pour resserrer les liens entre les jeunes générations. La thématique se préoccupe aussi de l’exode des jeunes hors de Bédjondo et du Mandoul, vers N’Djamena ou l’étranger : un exode qui tient d’abord à la pauvreté et au manque de débouchés, non à un manque d’attachement au terroir. Elle cherche à créer, sur place, des perspectives de formation et d’emploi qui donnent une vraie alternative au départ. Elle porte aussi l’état des écoles elles-mêmes (manque d’enseignants, infrastructures scolaires), qui pèse directement sur cette réussite et sur ce départ. ADEB LONODJI tient à saluer et remercier l’association ASDMO, qui œuvre déjà beaucoup pour l’éducation, la culture, l’art, le sport et le bien-être de la jeunesse, notamment à travers des festivals.",
+      "descriptionText": "Orientation, mentorat, bourses, réussite scolaire, promotion de l’excellence, sport et loisirs pour les jeunes de la communauté. Premières pistes : un réseau de parrainage reliant cadres et étudiants bedjond, un appui aux bourses pour les élèves méritants, et des rencontres sportives et culturelles entre les cantons pour resserrer les liens entre les jeunes générations. La thématique se préoccupe aussi de l’exode des jeunes hors de Bédjondo et du Mandoul, vers N’Djamena ou l’étranger : un exode qui tient d’abord à la pauvreté et au manque de débouchés, non à un manque d’attachement au terroir. Elle cherche à créer, sur place, des perspectives de formation et d’emploi qui donnent une vraie alternative au départ. Elle porte aussi l’état des écoles elles-mêmes (manque d’enseignants, infrastructures scolaires), qui pèse directement sur cette réussite et sur ce départ. ADEB LONODJI tient à saluer et remercier l’association ASDMO, qui œuvre déjà beaucoup pour l’éducation, la culture, l’art, le sport et le bien-être de la jeunesse, notamment à travers des festivals.",
+      "tags": [
+       "Jeunesse",
+       "Mentorat",
+       "Exode rural",
+       "Partenariats"
+      ],
+      "odd": [
+       {
+        "num": "4",
+        "name": "Éducation",
+        "cible": "4.1 / 4.4",
+        "title": "ODD 4 — Éducation de qualité | cible 4.1 — achever un cycle complet d’enseignement primaire et secondaire · cible 4.4 — compétences pour l’emploi et l’entrepreneuriat",
+        "accent": "#C5192D",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "8",
+        "name": "Travail décent",
+        "cible": "8.6",
+        "title": "ODD 8 — Travail décent et croissance économique | cible 8.6 — jeunes sans emploi ni formation",
+        "accent": "#A21942",
+        "ink": "#ffffff"
+       }
+      ],
+      "links": [
+       {
+        "label": "Complexe de formation sportive →",
+        "href": "/dossiers/complexe-sportif"
+       },
+       {
+        "label": "Désenclavement & urbanisation →",
+        "href": "/programmes#desenclavement-urbanisation"
+       },
+       {
+        "label": "Cellule financement & ressources →",
+        "href": "/programmes#cellule-financement-ressources"
+       },
+       {
+        "label": "Réseau d’experts & diaspora →",
+        "href": "/programmes#reseau-experts-diaspora"
+       },
+       {
+        "label": "Suivi : 4 problématiques · 2 plaidoyers →",
+        "href": "/impact#jeunesse-reussite"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=09#contact"
+       }
+      ]
+     },
+     {
+      "id": "leadership-feminin",
+      "number": "10",
+      "kind": "thematique",
+      "name": "Genre & autonomisation des femmes",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Odette Tolmbaye",
+      "coordinatorLabel": "Coordonnatrice",
+      "description": "Autonomisation des femmes et participation pleine et entière aux décisions et au développement communautaire. Concrètement : appui aux groupements et activités génératrices de revenus portées par des femmes de Bédjondo, formation au leadership, et présence effective des femmes dans les instances de décision d’ADEB LONODJI elle-même. La thématique porte aussi la <strong>lutte contre les violences basées sur le genre</strong> : violences conjugales, mariages forcés, lévirat imposé et rites de veuvage abusifs, harcèlement en milieu scolaire. Le Tchad s’est doté en 2025 d’une ordonnance qui sanctionne lourdement ces faits — jusqu’à dix ans d’emprisonnement pour un mariage forcé — et presque personne ne la connaît : la faire connaître est déjà une action (<a href=\"/dossiers/veuves\">voir le plan pour les veuves</a>). Une coopération internationale finance par ailleurs un projet de lutte contre les VBG qui cible le Mandoul et le Logone Oriental : nous n’avons pas à partir de zéro (<a href=\"/dossiers/ong-partenaires\">ONG &amp; partenaires</a>).",
+      "descriptionText": "Autonomisation des femmes et participation pleine et entière aux décisions et au développement communautaire. Concrètement : appui aux groupements et activités génératrices de revenus portées par des femmes de Bédjondo, formation au leadership, et présence effective des femmes dans les instances de décision d’ADEB LONODJI elle-même. La thématique porte aussi la lutte contre les violences basées sur le genre : violences conjugales, mariages forcés, lévirat imposé et rites de veuvage abusifs, harcèlement en milieu scolaire. Le Tchad s’est doté en 2025 d’une ordonnance qui sanctionne lourdement ces faits — jusqu’à dix ans d’emprisonnement pour un mariage forcé — et presque personne ne la connaît : la faire connaître est déjà une action ( voir le plan pour les veuves ). Une coopération internationale finance par ailleurs un projet de lutte contre les VBG qui cible le Mandoul et le Logone Oriental : nous n’avons pas à partir de zéro ( ONG & partenaires ).",
+      "tags": [
+       "Femmes",
+       "Autonomisation",
+       "Violences basées sur le genre",
+       "Leadership"
+      ],
+      "odd": [
+       {
+        "num": "5",
+        "name": "Égalité femmes-hommes",
+        "cible": "5.2 / 5.3 / 5.5",
+        "title": "ODD 5 — Égalité entre les sexes | cible 5.2 — éliminer les violences faites aux femmes et aux filles · cible 5.3 — éliminer les mariages d’enfants, précoces ou forcés · cible 5.5 — participation des femmes aux décisions",
+        "accent": "#FF3A21",
+        "ink": "#10181f"
+       },
+       {
+        "num": "8",
+        "name": "Travail décent",
+        "cible": "8.3",
+        "title": "ODD 8 — Travail décent et croissance économique | cible 8.3 — création d’emplois décents et petites entreprises",
+        "accent": "#A21942",
+        "ink": "#ffffff"
+       }
+      ],
+      "links": [
+       {
+        "label": "Plan pour les veuves →",
+        "href": "/dossiers/veuves"
+       },
+       {
+        "label": "Justice & droits humains →",
+        "href": "/programmes#justice-droits-homme"
+       },
+       {
+        "label": "Suivi : 1 problématique →",
+        "href": "/impact#leadership-feminin"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=10#contact"
+       }
+      ]
+     },
+     {
+      "id": "sante-prevention",
+      "number": "11",
+      "kind": "thematique",
+      "name": "Santé & prévention",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Dr Nestor Alladoumdjim",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Prévention, accès à des soins de santé de qualité — encore insuffisant sur le territoire — et sensibilisation sanitaire. Premières priorités : des campagnes de sensibilisation, un relais avec les centres de santé et les autorités du Mandoul Occidental, la <strong>lutte contre l’alcoolisme</strong> — consommation abusive, et surtout alcool frelaté, dont les risques pour la santé sont sérieux ; c’est une préoccupation récurrente des familles , et l’hygiène et l’assainissement, en lien avec la <a href=\"/programmes#eau-energie-connectivite\">thématique Eau, énergie &amp; connectivité</a> pour l’accès à l’eau potable. La thématique s’appuie sur le <a href=\"/journal/2026-09-17-plaidoyer-sante-bedjondo\">plaidoyer santé</a> déjà publié et suivi indicateur par indicateur : une maternité qui fonctionne jour et nuit avec une sage-femme qualifiée, une chaîne du froid fiable pour la vaccination des enfants, un laboratoire de base pour diagnostiquer le paludisme, la typhoïde et la tuberculose, une ambulance et un protocole d’évacuation. C’est à ce dossier, et non à une intention, que répondent les cibles 3.1, 3.2 et 3.3.",
+      "descriptionText": "Prévention, accès à des soins de santé de qualité — encore insuffisant sur le territoire — et sensibilisation sanitaire. Premières priorités : des campagnes de sensibilisation, un relais avec les centres de santé et les autorités du Mandoul Occidental, la lutte contre l’alcoolisme — consommation abusive, et surtout alcool frelaté, dont les risques pour la santé sont sérieux ; c’est une préoccupation récurrente des familles , et l’hygiène et l’assainissement, en lien avec la thématique Eau, énergie & connectivité pour l’accès à l’eau potable. La thématique s’appuie sur le plaidoyer santé déjà publié et suivi indicateur par indicateur : une maternité qui fonctionne jour et nuit avec une sage-femme qualifiée, une chaîne du froid fiable pour la vaccination des enfants, un laboratoire de base pour diagnostiquer le paludisme, la typhoïde et la tuberculose, une ambulance et un protocole d’évacuation. C’est à ce dossier, et non à une intention, que répondent les cibles 3.1, 3.2 et 3.3.",
+      "tags": [
+       "Santé",
+       "Prévention",
+       "Alcoolisme",
+       "Hygiène"
+      ],
+      "odd": [
+       {
+        "num": "3",
+        "name": "Santé",
+        "cible": "3.1 / 3.2 / 3.3 / 3.5 / 3.8",
+        "title": "ODD 3 — Bonne santé et bien-être | cible 3.1 — réduire la mortalité maternelle · cible 3.2 — éliminer les décès évitables de nouveau-nés et d’enfants · cible 3.3 — mettre fin au paludisme, à la tuberculose et aux maladies transmissibles · cible 3.5 — abus de substances, dont l’alcool · cible 3.8 — couverture sanitaire universelle",
+        "accent": "#4C9F38",
+        "ink": "#10181f"
+       },
+       {
+        "num": "6",
+        "name": "Eau & assainissement",
+        "cible": "6.2",
+        "title": "ODD 6 — Eau propre et assainissement | cible 6.2 — assainissement et hygiène",
+        "accent": "#26BDE2",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Eau, énergie & connectivité →",
+        "href": "/programmes#eau-energie-connectivite"
+       },
+       {
+        "label": "Suivi : 3 problématiques · 1 plaidoyer →",
+        "href": "/impact#sante-prevention"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=11#contact"
+       }
+      ]
+     },
+     {
+      "id": "solidarite-inclusion",
+      "number": "12",
+      "kind": "thematique",
+      "name": "Protection sociale & inclusion",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Solkem Ngarmbatina",
+      "coordinatorLabel": "Coordonnatrice",
+      "description": "Accompagnement social, soutien aux familles, solidarité dans les moments difficiles et aide d’urgence en cas de catastrophe ou d’épidémie. Premières pistes : une caisse d’entraide entre membres en cas de décès ou de maladie, des tontines et un appui au microcrédit pour les activités génératrices de revenus, et une attention particulière portée aux personnes en situation de handicap et aux veuves, souvent les plus exposées quand la solidarité familiale ne suffit plus. C’est, avec <a href=\"/programmes#entrepreneuriat-finance-inclusive\">Entrepreneuriat &amp; finance inclusive</a>, la thématique de la <strong>lutte contre la pauvreté</strong> : non pas comme un mot d’ordre, mais comme un filet là où un décès, une maladie ou une mauvaise récolte fait basculer une famille entière.",
+      "descriptionText": "Accompagnement social, soutien aux familles, solidarité dans les moments difficiles et aide d’urgence en cas de catastrophe ou d’épidémie. Premières pistes : une caisse d’entraide entre membres en cas de décès ou de maladie, des tontines et un appui au microcrédit pour les activités génératrices de revenus, et une attention particulière portée aux personnes en situation de handicap et aux veuves, souvent les plus exposées quand la solidarité familiale ne suffit plus. C’est, avec Entrepreneuriat & finance inclusive , la thématique de la lutte contre la pauvreté : non pas comme un mot d’ordre, mais comme un filet là où un décès, une maladie ou une mauvaise récolte fait basculer une famille entière.",
+      "tags": [
+       "Entraide",
+       "Inclusion",
+       "Pauvreté",
+       "Microcrédit"
+      ],
+      "odd": [
+       {
+        "num": "10",
+        "name": "Inégalités",
+        "cible": "10.2",
+        "title": "ODD 10 — Inégalités réduites | cible 10.2 — inclusion de tous, sans distinction",
+        "accent": "#DD1367",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "1",
+        "name": "Pauvreté",
+        "cible": "1.3",
+        "title": "ODD 1 — Pas de pauvreté | cible 1.3 — socles de protection sociale",
+        "accent": "#E5243B",
+        "ink": "#ffffff"
+       }
+      ],
+      "links": [
+       {
+        "label": "Hub Personnes vulnérables →",
+        "href": "/dossiers/solidarite-inclusion"
+       },
+       {
+        "label": "Caisse, tontines & microcrédit →",
+        "href": "/dossiers/solidarite-inclusion#entraide-economique"
+       },
+       {
+        "label": "Plan handicap →",
+        "href": "/dossiers/handicap"
+       },
+       {
+        "label": "Plan veuves →",
+        "href": "/dossiers/veuves"
+       },
+       {
+        "label": "Suivi : 4 problématiques →",
+        "href": "/impact#solidarite-inclusion"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=12#contact"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "pole-3",
+    "roman": "III",
+    "eyebrow": "Pôle III",
+    "name": "Gouvernance, paix & plaidoyer",
+    "intro": "",
+    "items": [
+     {
+      "id": "gouvernance-plaidoyer",
+      "number": "13",
+      "kind": "thematique",
+      "name": "Gouvernance & plaidoyer",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Organisation communautaire, modernisation d’ADEB LONODJI, relations avec la chefferie traditionnelle, représentation et défense de nos intérêts, accès à l’état civil et aux droits. Porte aussi l’ambition d’un vrai rayonnement national : faire reconnaître ADEB LONODJI auprès des institutions nationales de la culture et du patrimoine, et nouer des relations avec les médias tchadiens.",
+      "descriptionText": "Organisation communautaire, modernisation d’ADEB LONODJI, relations avec la chefferie traditionnelle, représentation et défense de nos intérêts, accès à l’état civil et aux droits. Porte aussi l’ambition d’un vrai rayonnement national : faire reconnaître ADEB LONODJI auprès des institutions nationales de la culture et du patrimoine, et nouer des relations avec les médias tchadiens.",
+      "tags": [
+       "Gouvernance",
+       "Plaidoyer"
+      ],
+      "odd": [
+       {
+        "num": "16",
+        "name": "Paix & justice",
+        "cible": "16.7 / 16.9",
+        "title": "ODD 16 — Paix, justice et institutions efficaces | cible 16.7 — décisions inclusives et participatives · cible 16.9 — identité juridique pour tous, dont l’état civil",
+        "accent": "#00689D",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "17",
+        "name": "Partenariats",
+        "cible": "17.17",
+        "title": "ODD 17 — Partenariats pour la réalisation des objectifs | cible 17.17 — partenariats efficaces",
+        "accent": "#19486A",
+        "ink": "#ffffff"
+       }
+      ],
+      "links": [
+       {
+        "label": "Nos plaidoyers →",
+        "href": "/actions"
+       },
+       {
+        "label": "Décentralisation →",
+        "href": "/dossiers/decentralisation"
+       },
+       {
+        "label": "Rayonnement national →",
+        "href": "/mission"
+       },
+       {
+        "label": "Suivi : 1 problématique · 1 plaidoyer →",
+        "href": "/impact#gouvernance-plaidoyer"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=13#contact"
+       }
+      ]
+     },
+     {
+      "id": "paix-cohesion",
+      "number": "14",
+      "kind": "thematique",
+      "name": "Paix & cohésion",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Prévention et règlement des conflits, médiation, relations avec les communautés voisines et dialogue entre les religions. Cela pourrait se traduire par : une médiation de proximité pour les différends fonciers ou familiaux avant qu’ils ne s’enveniment, une veille sur les tensions naissantes, et un dialogue régulier entre pratiques animistes et christianisme, dans la continuité de la nuance déjà pratiquée sur ce site à propos du <a href=\"/journal/2026-09-13-yondo-rite-initiatique\">Yondo</a>.",
+      "descriptionText": "Prévention et règlement des conflits, médiation, relations avec les communautés voisines et dialogue entre les religions. Cela pourrait se traduire par : une médiation de proximité pour les différends fonciers ou familiaux avant qu’ils ne s’enveniment, une veille sur les tensions naissantes, et un dialogue régulier entre pratiques animistes et christianisme, dans la continuité de la nuance déjà pratiquée sur ce site à propos du Yondo .",
+      "tags": [
+       "Médiation",
+       "Cohésion"
+      ],
+      "odd": [
+       {
+        "num": "16",
+        "name": "Paix & justice",
+        "cible": "16.1",
+        "title": "ODD 16 — Paix, justice et institutions efficaces | cible 16.1 — réduction de toutes les formes de violence",
+        "accent": "#00689D",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "10",
+        "name": "Inégalités",
+        "cible": "10.2",
+        "title": "ODD 10 — Inégalités réduites | cible 10.2 — inclusion de tous, sans distinction",
+        "accent": "#DD1367",
+        "ink": "#ffffff"
+       }
+      ],
+      "links": [
+       {
+        "label": "Paix agriculteurs-éleveurs →",
+        "href": "/dossiers/agriculteurs-eleveurs"
+       },
+       {
+        "label": "Le Yondo, rite initiatique →",
+        "href": "/journal/2026-09-13-yondo-rite-initiatique"
+       },
+       {
+        "label": "Suivi : 1 problématique →",
+        "href": "/impact#paix-cohesion"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=14#contact"
+       }
+      ]
+     },
+     {
+      "id": "reseau-experts-diaspora",
+      "number": "15",
+      "kind": "thematique",
+      "name": "Réseau d’experts & diaspora",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Recensement et mise en relation des cadres et experts de la communauté, liens avec la diaspora, coopération nationale et internationale. Tisse des partenariats avec les autres associations communautaires tchadiennes pour porter ADEB LONODJI au niveau national. La thématique porte aussi un principe clair : encourager les cadres, et surtout les compétences, à se rapprocher du terroir — pour mettre leur savoir-faire directement au service du développement et du bien-être des populations de Bédjondo, et non seulement à distance.",
+      "descriptionText": "Recensement et mise en relation des cadres et experts de la communauté, liens avec la diaspora, coopération nationale et internationale. Tisse des partenariats avec les autres associations communautaires tchadiennes pour porter ADEB LONODJI au niveau national. La thématique porte aussi un principe clair : encourager les cadres, et surtout les compétences, à se rapprocher du terroir — pour mettre leur savoir-faire directement au service du développement et du bien-être des populations de Bédjondo, et non seulement à distance.",
+      "tags": [
+       "Diaspora",
+       "Experts",
+       "Retour au terroir"
+      ],
+      "odd": [
+       {
+        "num": "17",
+        "name": "Partenariats",
+        "cible": "17.17",
+        "title": "ODD 17 — Partenariats pour la réalisation des objectifs | cible 17.17 — partenariats efficaces",
+        "accent": "#19486A",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "10",
+        "name": "Inégalités",
+        "cible": "10.7",
+        "title": "ODD 10 — Inégalités réduites | cible 10.7 — migrations ordonnées et responsables",
+        "accent": "#DD1367",
+        "ink": "#ffffff"
+       }
+      ],
+      "links": [
+       {
+        "label": "Événements →",
+        "href": "/dossiers/evenements"
+       },
+       {
+        "label": "Jeunesse & réussite →",
+        "href": "/programmes#jeunesse-reussite"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=15#contact"
+       }
+      ]
+     },
+     {
+      "id": "justice-droits-homme",
+      "number": "16",
+      "kind": "thematique",
+      "name": "Justice & droits humains",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Sensibilisation au droit et à l’accès à la justice, veille et alerte sur les atteintes aux droits humains touchant la communauté, et accompagnement des personnes vulnérables dans leurs démarches face à des litiges ou des injustices. Une thématique transversale, en lien direct avec les chantiers déjà engagés pour les veuves et pour les personnes en situation de handicap — dont l’accompagnement des victimes de <strong>violences basées sur le genre</strong>, qui relève ici de l’accès effectif à la justice, quand la <a href=\"/programmes#leadership-feminin\">thématique Genre &amp; autonomisation des femmes</a> en porte la prévention , et avec l’accès à l’état civil porté par la thématique Gouvernance & plaidoyer.",
+      "descriptionText": "Sensibilisation au droit et à l’accès à la justice, veille et alerte sur les atteintes aux droits humains touchant la communauté, et accompagnement des personnes vulnérables dans leurs démarches face à des litiges ou des injustices. Une thématique transversale, en lien direct avec les chantiers déjà engagés pour les veuves et pour les personnes en situation de handicap — dont l’accompagnement des victimes de violences basées sur le genre , qui relève ici de l’accès effectif à la justice, quand la thématique Genre & autonomisation des femmes en porte la prévention , et avec l’accès à l’état civil porté par la thématique Gouvernance & plaidoyer.",
+      "tags": [
+       "Droits humains",
+       "Accès à la justice",
+       "Violences basées sur le genre"
+      ],
+      "odd": [
+       {
+        "num": "16",
+        "name": "Paix & justice",
+        "cible": "16.3",
+        "title": "ODD 16 — Paix, justice et institutions efficaces | cible 16.3 — accès de tous à la justice",
+        "accent": "#00689D",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "5",
+        "name": "Égalité femmes-hommes",
+        "cible": "5.2",
+        "title": "ODD 5 — Égalité entre les sexes | cible 5.2 — éliminer les violences faites aux femmes et aux filles",
+        "accent": "#FF3A21",
+        "ink": "#10181f"
+       },
+       {
+        "num": "10",
+        "name": "Inégalités",
+        "cible": "10.2",
+        "title": "ODD 10 — Inégalités réduites | cible 10.2 — inclusion de tous, sans distinction",
+        "accent": "#DD1367",
+        "ink": "#ffffff"
+       }
+      ],
+      "links": [
+       {
+        "label": "Plan veuves →",
+        "href": "/dossiers/veuves"
+       },
+       {
+        "label": "Plan handicap →",
+        "href": "/dossiers/handicap"
+       },
+       {
+        "label": "Gouvernance & plaidoyer →",
+        "href": "/programmes#gouvernance-plaidoyer"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=16#contact"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "pole-4",
+    "roman": "IV",
+    "eyebrow": "Pôle IV",
+    "name": "Numérique & innovation",
+    "intro": "",
+    "items": [
+     {
+      "id": "transformation-numerique-services",
+      "number": "17",
+      "kind": "thematique",
+      "name": "Transformation numérique & services",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons : accompagnement à l’état civil et aux démarches administratives en ligne, mobile money et paiements numériques pour les producteurs et les commerçants, outils simples pour les écoles, les centres de santé et les coopératives. La thématique porte aussi l’inclusion numérique — initier les aînés, les femmes et les villages éloignés aux usages de base — et l’équipement, en lien avec la connectivité et l’énergie solaire portées par la thématique <a href=\"#eau-energie-connectivite\">Eau, énergie &amp; connectivité</a>.",
+      "descriptionText": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons : accompagnement à l’état civil et aux démarches administratives en ligne, mobile money et paiements numériques pour les producteurs et les commerçants, outils simples pour les écoles, les centres de santé et les coopératives. La thématique porte aussi l’inclusion numérique — initier les aînés, les femmes et les villages éloignés aux usages de base — et l’équipement, en lien avec la connectivité et l’énergie solaire portées par la thématique Eau, énergie & connectivité .",
+      "tags": [
+       "E-administration",
+       "Inclusion numérique",
+       "Mobile money"
+      ],
+      "odd": [
+       {
+        "num": "9",
+        "name": "Infrastructures",
+        "cible": "9.c",
+        "title": "ODD 9 — Industrie, innovation et infrastructure | cible 9.c — accès à internet",
+        "accent": "#FD6925",
+        "ink": "#10181f"
+       },
+       {
+        "num": "16",
+        "name": "Paix & justice",
+        "cible": "16.9",
+        "title": "ODD 16 — Paix, justice et institutions efficaces | cible 16.9 — identité juridique pour tous, dont l’état civil",
+        "accent": "#00689D",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "10",
+        "name": "Inégalités",
+        "cible": "10.2",
+        "title": "ODD 10 — Inégalités réduites | cible 10.2 — inclusion de tous, sans distinction",
+        "accent": "#DD1367",
+        "ink": "#ffffff"
+       }
+      ],
+      "links": [
+       {
+        "label": "Espace numérique →",
+        "href": "/dossiers/espace-numerique"
+       },
+       {
+        "label": "Eau, énergie & connectivité →",
+        "href": "/programmes#eau-energie-connectivite"
+       },
+       {
+        "label": "Gouvernance & plaidoyer →",
+        "href": "/programmes#gouvernance-plaidoyer"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=17#contact"
+       }
+      ]
+     },
+     {
+      "id": "intelligence-artificielle-donnees",
+      "number": "18",
+      "kind": "thematique",
+      "name": "Intelligence artificielle & données",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Mettre l’intelligence artificielle et les données au service de la communauté. Premières pistes : constituer un corpus de la langue bedjond (textes, enregistrements, lexique) pour permettre demain la reconnaissance vocale, la traduction et l’apprentissage assisté ; structurer les données de la communauté — villages, cantons, membres, patrimoine — dans des bases fiables et ouvertes ; et explorer les usages de l’IA et des drones pour l’agriculture, la cartographie, la santé et l’éducation locales. La thématique veille à la maîtrise de nos données par la communauté elle-même, et prolonge le programme <a href=\"#savoirs-innovation\">Bedjond Digital Heritage</a>.",
+      "descriptionText": "Mettre l’intelligence artificielle et les données au service de la communauté. Premières pistes : constituer un corpus de la langue bedjond (textes, enregistrements, lexique) pour permettre demain la reconnaissance vocale, la traduction et l’apprentissage assisté ; structurer les données de la communauté — villages, cantons, membres, patrimoine — dans des bases fiables et ouvertes ; et explorer les usages de l’IA et des drones pour l’agriculture, la cartographie, la santé et l’éducation locales. La thématique veille à la maîtrise de nos données par la communauté elle-même, et prolonge le programme Bedjond Digital Heritage .",
+      "tags": [
+       "IA",
+       "Données",
+       "Langue bedjond",
+       "Drones"
+      ],
+      "odd": [
+       {
+        "num": "9",
+        "name": "Infrastructures",
+        "cible": "9.5",
+        "title": "ODD 9 — Industrie, innovation et infrastructure | cible 9.5 — recherche et capacités scientifiques",
+        "accent": "#FD6925",
+        "ink": "#10181f"
+       },
+       {
+        "num": "4",
+        "name": "Éducation",
+        "cible": "4.4",
+        "title": "ODD 4 — Éducation de qualité | cible 4.4 — compétences pour l’emploi et l’entrepreneuriat",
+        "accent": "#C5192D",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "17",
+        "name": "Partenariats",
+        "cible": "17.18",
+        "title": "ODD 17 — Partenariats pour la réalisation des objectifs | cible 17.18 — données fiables et accessibles",
+        "accent": "#19486A",
+        "ink": "#ffffff"
+       }
+      ],
+      "links": [
+       {
+        "label": "Drones & innovation →",
+        "href": "/dossiers/drones-innovation"
+       },
+       {
+        "label": "Recherche & savoirs →",
+        "href": "/programmes#savoirs-innovation"
+       },
+       {
+        "label": "Culture & patrimoine vivant →",
+        "href": "/programmes#culture-patrimoine-vivant"
+       },
+       {
+        "label": "L’enquête SIL sur le bedjond →",
+        "href": "/journal/2026-09-15-sil-enquete-langue-bedjond"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=18#contact"
+       }
+      ]
+     },
+     {
+      "id": "competences-entrepreneuriat-numerique",
+      "number": "19",
+      "kind": "thematique",
+      "name": "Compétences & entrepreneuriat numérique",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Former les jeunes de Bédjondo aux métiers du numérique et leur ouvrir des débouchés sur place : initiation à l’informatique, au code, au design et aux outils bureautiques ; académie numérique et parrainage par les professionnels bedjond du secteur, au Tchad comme dans la diaspora ; appui aux jeunes qui veulent vivre du numérique — freelance, services en ligne, petites entreprises tech — en lien avec la thématique <a href=\"#entrepreneuriat-finance-inclusive\">Entrepreneuriat &amp; finance inclusive</a>. Une réponse concrète à l’exode des jeunes évoqué par la thématique <a href=\"#jeunesse-reussite\">Jeunesse &amp; réussite</a>.",
+      "descriptionText": "Former les jeunes de Bédjondo aux métiers du numérique et leur ouvrir des débouchés sur place : initiation à l’informatique, au code, au design et aux outils bureautiques ; académie numérique et parrainage par les professionnels bedjond du secteur, au Tchad comme dans la diaspora ; appui aux jeunes qui veulent vivre du numérique — freelance, services en ligne, petites entreprises tech — en lien avec la thématique Entrepreneuriat & finance inclusive . Une réponse concrète à l’exode des jeunes évoqué par la thématique Jeunesse & réussite .",
+      "tags": [
+       "Formation",
+       "Emploi",
+       "Startups"
+      ],
+      "odd": [
+       {
+        "num": "4",
+        "name": "Éducation",
+        "cible": "4.4",
+        "title": "ODD 4 — Éducation de qualité | cible 4.4 — compétences pour l’emploi et l’entrepreneuriat",
+        "accent": "#C5192D",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "8",
+        "name": "Travail décent",
+        "cible": "8.6",
+        "title": "ODD 8 — Travail décent et croissance économique | cible 8.6 — jeunes sans emploi ni formation",
+        "accent": "#A21942",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "9",
+        "name": "Infrastructures",
+        "cible": "9.c",
+        "title": "ODD 9 — Industrie, innovation et infrastructure | cible 9.c — accès à internet",
+        "accent": "#FD6925",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Jeunesse & réussite →",
+        "href": "/programmes#jeunesse-reussite"
+       },
+       {
+        "label": "Réseau d’experts & diaspora →",
+        "href": "/programmes#reseau-experts-diaspora"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=19#contact"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "cellules": {
+   "id": "cellules",
+   "roman": "",
+   "eyebrow": "Cellules transversales",
+   "name": "Un appui à toutes les thématiques",
+   "intro": "",
+   "items": [
+    {
+     "id": "cellule-financement-ressources",
+     "number": "",
+     "kind": "cellule",
+     "name": "Financement & ressources",
+     "status": "À pourvoir",
+     "filled": false,
+     "coordinator": "à pourvoir",
+     "coordinatorLabel": "Coordonnateur",
+     "description": "Cotisations, collecte de fonds, recherche de financements et gestion transparente des ressources au service de toutes les thématiques. Quelques priorités : un barème de cotisation clair pour les membres et la diaspora, des appels à contribution ponctuels pour des projets précis, la recherche de partenaires et de bailleurs, et un compte-rendu régulier de l’usage des fonds devant l’ensemble des membres, publié au fil de l’eau dans l’espace <a href=\"/documents\">Documents</a>. Piste envisagée à plus long terme : un fonds de soutien aux études et à la recherche, pour appuyer les étudiants bedjond méritants et les travaux de recherche portés par la thématique Recherche & savoirs.",
+     "descriptionText": "Cotisations, collecte de fonds, recherche de financements et gestion transparente des ressources au service de toutes les thématiques. Quelques priorités : un barème de cotisation clair pour les membres et la diaspora, des appels à contribution ponctuels pour des projets précis, la recherche de partenaires et de bailleurs, et un compte-rendu régulier de l’usage des fonds devant l’ensemble des membres, publié au fil de l’eau dans l’espace Documents . Piste envisagée à plus long terme : un fonds de soutien aux études et à la recherche, pour appuyer les étudiants bedjond méritants et les travaux de recherche portés par la thématique Recherche & savoirs.",
+     "tags": [
+      "Cotisations",
+      "Financement",
+      "Bourses"
+     ],
+     "odd": [
+      {
+       "num": "17",
+       "name": "Partenariats",
+       "cible": "17.17",
+       "title": "ODD 17 — Partenariats pour la réalisation des objectifs | cible 17.17 — partenariats efficaces",
+       "accent": "#19486A",
+       "ink": "#ffffff"
+      },
+      {
+       "num": "16",
+       "name": "Paix & justice",
+       "cible": "16.6",
+       "title": "ODD 16 — Paix, justice et institutions efficaces | cible 16.6 — institutions transparentes qui rendent des comptes",
+       "accent": "#00689D",
+       "ink": "#ffffff"
+      }
+     ],
+     "links": [
+      {
+       "label": "Entrepreneuriat & finance inclusive →",
+       "href": "/programmes#entrepreneuriat-finance-inclusive"
+      },
+      {
+       "label": "Jeunesse & réussite →",
+       "href": "/programmes#jeunesse-reussite"
+      },
+      {
+       "label": "Recherche & savoirs →",
+       "href": "/programmes#savoirs-innovation"
+      },
+      {
+       "label": "Documents →",
+       "href": "/documents"
+      },
+      {
+       "label": "Rejoindre cette thématique →",
+       "href": "/participer?theme=financement#contact"
+      }
+     ]
+    },
+    {
+     "id": "cellule-communication-numerique",
+     "number": "",
+     "kind": "cellule",
+     "name": "Communication & numérique",
+     "status": "À pourvoir",
+     "filled": false,
+     "coordinator": "à pourvoir",
+     "coordinatorLabel": "Coordonnateur",
+     "description": "Animation de l’association, diffusion des informations et conservation des documents produits par l’ensemble des thématiques — dont ce site, et l’espace <a href=\"/documents\">Documents</a>. À l’étude : mise en ligne des <a href=\"/participer#reseaux-sociaux\">futurs comptes réseaux sociaux</a> d’ADEB LONODJI, une lettre d’information régulière pour les membres et la diaspora, et un archivage numérique pérenne des travaux de chaque thématique, en lien avec le programme <strong>Bedjond Digital Heritage</strong> porté par la <a href=\"/programmes#savoirs-innovation\">thématique Recherche &amp; savoirs</a>.",
+     "descriptionText": "Animation de l’association, diffusion des informations et conservation des documents produits par l’ensemble des thématiques — dont ce site, et l’espace Documents . À l’étude : mise en ligne des futurs comptes réseaux sociaux d’ADEB LONODJI, une lettre d’information régulière pour les membres et la diaspora, et un archivage numérique pérenne des travaux de chaque thématique, en lien avec le programme Bedjond Digital Heritage porté par la thématique Recherche & savoirs .",
+     "tags": [
+      "Communication",
+      "Archivage"
+     ],
+     "odd": [
+      {
+       "num": "17",
+       "name": "Partenariats",
+       "cible": "17.17",
+       "title": "ODD 17 — Partenariats pour la réalisation des objectifs | cible 17.17 — partenariats efficaces",
+       "accent": "#19486A",
+       "ink": "#ffffff"
+      },
+      {
+       "num": "9",
+       "name": "Infrastructures",
+       "cible": "9.c",
+       "title": "ODD 9 — Industrie, innovation et infrastructure | cible 9.c — accès à internet",
+       "accent": "#FD6925",
+       "ink": "#10181f"
+      }
+     ],
+     "links": [
+      {
+       "label": "Recherche & savoirs →",
+       "href": "/programmes#savoirs-innovation"
+      },
+      {
+       "label": "Documents →",
+       "href": "/documents"
+      },
+      {
+       "label": "Actualités →",
+       "href": "/journal"
+      },
+      {
+       "label": "Base de recherche →",
+       "href": "/dossiers/recherche"
+      },
+      {
+       "label": "Rejoindre cette thématique →",
+       "href": "/participer?theme=communication#contact"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "plaidoyers": [
+  {
+   "id": "plaidoyer-internet",
+   "title": "Bédjondo a droit au haut débit",
+   "href": "/journal/2026-09-16-plaidoyer-internet-haut-debit-bedjondo",
+   "theme": "Connectivité",
+   "themeHref": "/programmes#eau-energie-connectivite",
+   "status": "Publié",
+   "demand": "Zone prioritaire des 200 sites 3G/4G et du service universel, carte de couverture publique, tarifs ruraux, point de vente Starlink accessible, espace numérique communal.",
+   "recipients": "Ministère des Télécommunications et de l’Économie numérique · ARCEP · Airtel, Moov Africa, Salam · Starlink Tchad",
+   "published": "16 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "pdf": "/documents/plaidoyer-internet-bedjondo-2026.pdf"
+  },
+  {
+   "id": "plaidoyer-electricite",
+   "title": "De la lumière pour Bédjondo",
+   "href": "/journal/2026-09-16-plaidoyer-electricite-bedjondo",
+   "theme": "Énergie",
+   "themeHref": "/programmes#eau-energie-connectivite",
+   "status": "Publié",
+   "demand": "Inscription de Bédjondo et de ses cantons dans le PAAET et la Mission 300, équipements publics d’abord, kits solaires subventionnés, chefs-lieux non électrifiés ciblés.",
+   "recipients": "Ministère de l’Énergie · SNE · CEP-TchadElec (PAAET) · ARSE · Banque mondiale / Mission 300 · opérateurs de mini-réseaux",
+   "published": "16 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "pdf": "/documents/plaidoyer-electricite-bedjondo-2026.pdf"
+  },
+  {
+   "id": "plaidoyer-commune",
+   "title": "Note à la commune de Bédjondo : six propositions",
+   "href": "/journal/2026-09-16-note-commune-bedjondo",
+   "theme": "Gouvernance locale",
+   "themeHref": "/programmes#gouvernance-plaidoyer",
+   "status": "Publié",
+   "demand": "Plan de développement communal public et opposable, ressources propres transparentes, conventions, conseil ouvert, premier chantier : éclairage solaire du marché.",
+   "recipients": "Maire et conseil communal de Bédjondo · Préfet du Mandoul Occidental",
+   "published": "16 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "pdf": "/documents/note-commune-bedjondo-2026.pdf"
+  },
+  {
+   "id": "plaidoyer-eau",
+   "title": "De l’eau potable pour chaque quartier de Bédjondo",
+   "href": "/journal/2026-09-17-plaidoyer-eau-potable-bedjondo",
+   "theme": "Eau",
+   "themeHref": "/programmes#eau-energie-connectivite",
+   "status": "Publié",
+   "demand": "Solariser le pompage du château d’eau existant pour mettre fin aux arrêts faute de carburant, étendre le réseau du village desservi à toute la ville, eau et latrines dans chaque école et au centre de santé, comités de gestion.",
+   "recipients": "Ministère de l’Hydraulique · Délégation provinciale · PAEPA SU MR (BAD) · UNICEF · Caritas Suisse / NexSud · commune",
+   "published": "17 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "pdf": "/documents/plaidoyer-eau-potable-bedjondo-2026.pdf"
+  },
+  {
+   "id": "plaidoyer-sante",
+   "title": "Soigner à Bédjondo, pas seulement à Koumra",
+   "href": "/journal/2026-09-17-plaidoyer-sante-bedjondo",
+   "theme": "Santé",
+   "themeHref": "/programmes#sante-prevention",
+   "status": "Publié",
+   "demand": "Sage-femme et infirmier affectés, laboratoire, chaîne du froid solaire, kit d’urgences obstétricales, ambulance et protocole d’évacuation vers Koumra, mutuelle de santé.",
+   "recipients": "Ministère de la Santé publique · Délégation sanitaire du Mandoul · district sanitaire · hôpital de Koumra · OMS, UNICEF, coopération suisse · commune",
+   "published": "17 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "pdf": "/documents/plaidoyer-sante-bedjondo-2026.pdf"
+  },
+  {
+   "id": "plaidoyer-routes",
+   "title": "Une voirie pour Bédjondo, des pistes pour ses cantons",
+   "href": "/journal/2026-09-17-plaidoyer-routes-ponts-bedjondo",
+   "theme": "Voirie & désenclavement",
+   "themeHref": "/programmes#desenclavement-urbanisation",
+   "status": "Publié",
+   "demand": "La ville est desservie par la nationale mais n’a aucune voirie : un premier schéma de voirie urbaine avec caniveaux et exutoires, le pont sur l’axe Bédjondo–Békamba, la reconstruction du pont de Hoblo, les pistes cantonales dans le PMCR, le cantonnage local.",
+   "recipients": "Ministère des Infrastructures · Délégation provinciale · PMCR (Banque mondiale) · Fonds d’entretien routier · commune",
+   "published": "17 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "pdf": "/documents/plaidoyer-routes-ponts-bedjondo-2026.pdf"
+  },
+  {
+   "id": "plaidoyer-education",
+   "title": "Une école à la hauteur des enfants de Bédjondo",
+   "href": "/journal/2026-09-17-plaidoyer-education-bedjondo",
+   "theme": "Éducation",
+   "themeHref": "/programmes#jeunesse-reussite",
+   "status": "Publié",
+   "demand": "Enseignants qualifiés et maîtres communautaires régularisés, salles en dur avec eau et latrines, lycée équipé, relève du ProQEB, cantines, formation professionnelle.",
+   "recipients": "Ministère de l’Éducation nationale · Délégation provinciale · Inspection départementale · ProQEB / coopération suisse · UNICEF · commune",
+   "published": "17 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "pdf": "/documents/plaidoyer-education-bedjondo-2026.pdf"
+  },
+  {
+   "id": "plaidoyer-formation-pro",
+   "title": "Faire vivre le centre de formation professionnelle de Bédjondo",
+   "href": "/journal/2026-09-17-plaidoyer-formation-professionnelle-bedjondo",
+   "theme": "Formation professionnelle",
+   "themeHref": "/programmes#jeunesse-reussite",
+   "status": "Publié",
+   "demand": "Ouvrir réellement le centre déjà inscrit au répertoire national, sur neuf métiers utiles — menuiserie bois, menuiserie métallique et soudure, solaire, forages, maçonnerie, agro-transformation, couture, mécanique, numérique , avec apprentissage financé par le FONAP et examens tenus sur place.",
+   "recipients": "Ministère en charge de la Formation professionnelle · Direction de l’enseignement professionnel · FONAP · ONAPE · AFD (AFPACET) · coopération suisse / Caritas Suisse · chambre de commerce et artisans · commune",
+   "published": "17 septembre 2026",
+   "sent": "À envoyer",
+   "answer": "—",
+   "pdf": "/documents/plaidoyer-formation-professionnelle-bedjondo-2026.pdf"
+  }
+ ],
+ "documents": [
+  {
+   "title": "Kit d’adhésion",
+   "status": "PDF disponible",
+   "meta": "Septembre 2026 · 5 pages · A4",
+   "description": "Tout ce qu’il faut pour ouvrir les adhésions : planche de huit cartes au format bancaire, recto et verso à imprimer dos à dos, bulletin d’adhésion avec la grille de cotisation, carnet de reçus numérotés, et notice de numérotation et de tenue du registre pour le trésorier.",
+   "pdf": "/documents/kit-adhesion-adeb-lonodji-2026.pdf",
+   "links": [
+    {
+     "label": "Adhérer et cotiser →",
+     "href": "/participer#adherer"
+    }
+   ]
+  },
+  {
+   "title": "Carnet d’enquête de terrain",
+   "status": "PDF disponible",
+   "meta": "Septembre 2026 · 10 pages · A4 noir et blanc",
+   "description": "Huit fiches à remplir village par village pour lever les huit inconnues de notre recensement : acte de naissance, enfants sans soutien, assainissement, urgences obstétricales, latrines scolaires, pertes après récolte, départs de jeunes, lignée des chefs. Les cinq règles d’enquête en couverture, un tableau de suivi des villages à la fin. Conçu pour être photocopié.",
+   "pdf": "/documents/carnet-enquete-terrain-adeb-lonodji-2026.pdf",
+   "links": [
+    {
+     "label": "Les huit enquêtes →",
+     "href": "/dossiers/enquetes"
+    }
+   ]
+  },
+  {
+   "title": "Cahier généalogique des familles",
+   "status": "PDF disponible",
+   "meta": "Septembre 2026 · 10 pages · noir et blanc, pour la photocopie",
+   "description": "Un modèle d’arbre généalogique conçu pour un pays sans état civil ancien : feuille de maison (un père, plusieurs mères, les enfants rangés sous leur mère), fiche de personne, ascendance, liste de descendance décalée, fiche d’entretien avec un ancien, seize repères chronologiques datés pour situer une naissance, et la table des termes de parenté bedjond à remplir. Le cahier reste chez la famille.",
+   "pdf": "/documents/cahier-genealogique-adeb-lonodji-2026.pdf",
+   "links": [
+    {
+     "label": "La méthode →",
+     "href": "/dossiers/genealogies"
+    },
+    {
+     "label": "Version en ligne →",
+     "href": "/dossiers/genealogies"
+    }
+   ]
+  },
+  {
+   "title": "Cahier de recensement des lieux sacrés",
+   "status": "PDF disponible",
+   "meta": "Septembre 2026 · 6 pages · noir et blanc, pour la photocopie",
+   "description": "Les cinq règles de discrétion, deux feuilles de registre à quatre colonnes, la fiche de vérification préalable à tout chantier, la clause de découverte fortuite à recopier dans les marchés de travaux et la lettre modèle de demande de constatation d’une forêt sacrée. Ce cahier est tenu par la chefferie ; l’association n’en détient aucune copie.",
+   "pdf": "/documents/cahier-lieux-sacres-adeb-lonodji-2026.pdf",
+   "links": [
+    {
+     "label": "Lieux sacrés et sépultures →",
+     "href": "/dossiers/lieux-sacres"
+    }
+   ]
+  },
+  {
+   "title": "Cahier de terrain du plan handicap",
+   "status": "PDF disponible",
+   "meta": "Septembre 2026 · 8 pages · noir et blanc, pour la photocopie",
+   "description": "Les six questions du Groupe de Washington dans leur libellé exact et les cinq règles de l’enquêteur ; deux feuilles de ménage sans aucun nom ; l’inventaire des obstacles, qui nomme les bâtiments et non les gens ; la fiche de vérification au devis ; et deux lettres modèles, pour la carte nationale d’invalidité et pour l’exonération des frais de scolarité. Ce cahier ne recueille ni nom ni diagnostic.",
+   "pdf": "/documents/cahier-handicap-adeb-lonodji-2026.pdf",
+   "links": [
+    {
+     "label": "Le plan handicap →",
+     "href": "/dossiers/handicap"
+    }
+   ]
+  },
+  {
+   "title": "Dossier de présentation d’ADEB LONODJI",
+   "status": "PDF disponible",
+   "meta": "Septembre 2026 · 4 pages",
+   "description": "Qui nous sommes, les quatre pôles et dix-huit thématiques, Bédjondo aujourd’hui, les huit plaidoyers et leurs engagements, la bibliothèque, et quatre façons de contribuer. À transmettre aux partenaires, médias et institutions.",
+   "pdf": "/documents/dossier-presentation-adeb-lonodji-2026.pdf",
+   "links": [
+    {
+     "label": "Kit de mobilisation →",
+     "href": "/dossiers/kit-mobilisation"
+    }
+   ]
+  },
+  {
+   "title": "Note à la commune de Bédjondo",
+   "status": "PDF disponible",
+   "meta": "16 septembre 2026 · Gouvernance & plaidoyer",
+   "description": "Six propositions adressées au maire et au conseil communal pour une commune à la hauteur de sa ville : planifier, financer, conventionner, ouvrir le conseil, réussir un premier chantier, et les engagements d’ADEB LONODJI.",
+   "pdf": "/documents/note-commune-bedjondo-2026.pdf",
+   "links": [
+    {
+     "label": "Lire en ligne →",
+     "href": "/journal/2026-09-16-note-commune-bedjondo"
+    }
+   ]
+  },
+  {
+   "title": "Plaidoyer pour le haut débit à Bédjondo",
+   "status": "PDF disponible",
+   "meta": "16 septembre 2026 · Gouvernance & plaidoyer",
+   "description": "Adressé au ministère, à l’ARCEP, aux opérateurs mobiles et à Starlink Tchad : le constat d’une zone blanche aux données trop chères, quatre séries de demandes et les engagements de l’association (espace numérique communautaire, campagne de mesure des débits).",
+   "pdf": "/documents/plaidoyer-internet-bedjondo-2026.pdf",
+   "links": [
+    {
+     "label": "Lire en ligne →",
+     "href": "/journal/2026-09-16-plaidoyer-internet-haut-debit-bedjondo"
+    }
+   ]
+  },
+  {
+   "title": "Plaidoyer pour l’électricité à Bédjondo",
+   "status": "PDF disponible",
+   "meta": "16 septembre 2026 · Gouvernance & plaidoyer",
+   "description": "Adressé au ministère de l’Énergie, à la SNE, à la CEP-TchadElec (PAAET), à l’ARSE et aux partenaires de la Mission 300 : inscrire Bédjondo et ses cantons dans les programmes d’électrification, avec le solaire comme solution de référence, et les engagements de l’association (éclairage public du marché, relevé des besoins, formation).",
+   "pdf": "/documents/plaidoyer-electricite-bedjondo-2026.pdf",
+   "links": [
+    {
+     "label": "Lire en ligne →",
+     "href": "/journal/2026-09-16-plaidoyer-electricite-bedjondo"
+    }
+   ]
+  },
+  {
+   "title": "Plaidoyer pour la formation professionnelle à Bédjondo",
+   "status": "PDF disponible",
+   "meta": "17 septembre 2026 · Gouvernance & plaidoyer",
+   "description": "Rendre opérationnel le centre de formation technique et professionnelle de Bédjondo déjà inscrit au répertoire national, l’ouvrir sur neuf métiers utiles à la ville — dont la menuiserie bois et la menuiserie métallique , y habiliter un dispositif d’apprentissage financé par le FONAP et y tenir les examens.",
+   "pdf": "/documents/plaidoyer-formation-professionnelle-bedjondo-2026.pdf",
+   "links": [
+    {
+     "label": "Lire en ligne →",
+     "href": "/journal/2026-09-17-plaidoyer-formation-professionnelle-bedjondo"
+    }
+   ]
+  },
+  {
+   "title": "Plaidoyer pour l’éducation à Bédjondo",
+   "status": "PDF disponible",
+   "meta": "17 septembre 2026 · Gouvernance & plaidoyer",
+   "description": "Des enseignants qualifiés affectés et payés, des salles en dur avec eau et latrines, un lycée complet et équipé, la relève des acquis du ProQEB, des cantines et un appui aux filles.",
+   "pdf": "/documents/plaidoyer-education-bedjondo-2026.pdf",
+   "links": [
+    {
+     "label": "Lire en ligne →",
+     "href": "/journal/2026-09-17-plaidoyer-education-bedjondo"
+    }
+   ]
+  },
+  {
+   "title": "Plaidoyer pour la voirie de Bédjondo et le désenclavement de ses cantons",
+   "status": "PDF disponible",
+   "meta": "17 septembre 2026 · Gouvernance & plaidoyer",
+   "description": "La ville est desservie par la nationale mais n’a aucune voirie : un premier schéma de voirie urbaine avec caniveaux et exutoires, le pont de l’axe Bédjondo–Békamba demandé par les femmes, le pont de Hoblo reconstruit, les pistes cantonales dans le PMCR, le cantonnage local.",
+   "pdf": "/documents/plaidoyer-routes-ponts-bedjondo-2026.pdf",
+   "links": [
+    {
+     "label": "Lire en ligne →",
+     "href": "/journal/2026-09-17-plaidoyer-routes-ponts-bedjondo"
+    }
+   ]
+  },
+  {
+   "title": "Plaidoyer pour des soins de qualité à Bédjondo",
+   "status": "PDF disponible",
+   "meta": "17 septembre 2026 · Gouvernance & plaidoyer",
+   "description": "Un plateau technique de chef-lieu : maternité fonctionnelle jour et nuit, laboratoire, chaîne du froid, personnel qualifié, ambulance vers Koumra, mutuelle de santé relancée.",
+   "pdf": "/documents/plaidoyer-sante-bedjondo-2026.pdf",
+   "links": [
+    {
+     "label": "Lire en ligne →",
+     "href": "/journal/2026-09-17-plaidoyer-sante-bedjondo"
+    }
+   ]
+  },
+  {
+   "title": "Plaidoyer pour l’accès à l’eau potable à Bédjondo",
+   "status": "PDF disponible",
+   "meta": "17 septembre 2026 · Gouvernance & plaidoyer",
+   "description": "Solariser le pompage du château d’eau existant pour mettre fin aux arrêts faute de carburant, étendre le réseau du village desservi à toute la ville, des bornes-fontaines dans chaque quartier, des comités de gestion, l’eau et les latrines dans chaque école et au centre de santé.",
+   "pdf": "/documents/plaidoyer-eau-potable-bedjondo-2026.pdf",
+   "links": [
+    {
+     "label": "Lire en ligne →",
+     "href": "/journal/2026-09-17-plaidoyer-eau-potable-bedjondo"
+    }
+   ]
+  },
+  {
+   "title": "Statuts de l’association",
+   "status": "À venir",
+   "meta": "",
+   "description": "Le document fondateur qui définit l’objet, l’organisation et le fonctionnement d’ADEB LONODJI.",
+   "pdf": "",
+   "links": []
+  },
+  {
+   "title": "Règlement intérieur",
+   "status": "À venir",
+   "meta": "",
+   "description": "Les règles pratiques de fonctionnement de l’association et de ses instances, en complément des statuts.",
+   "pdf": "",
+   "links": []
+  },
+  {
+   "title": "Procès-verbaux d’assemblée générale",
+   "status": "À venir",
+   "meta": "",
+   "description": "Les comptes-rendus des grandes réunions de l’association, à commencer par celles de sa réactivation engagée en 2026.",
+   "pdf": "",
+   "links": []
+  },
+  {
+   "title": "Rapports d’activité",
+   "status": "À venir",
+   "meta": "",
+   "description": "Le bilan des actions menées par les thématiques et cellules, partagé avec l’ensemble des membres.",
+   "pdf": "",
+   "links": []
+  }
+ ],
+ "history": [
+  {
+   "year": "1986",
+   "title": "Premières réflexions",
+   "text": "Des cadres bedjond engagent les premières réflexions autour de la mise en place d’un cadre associatif pour la communauté. Tarouss Doumanbé compte parmi les piliers majeurs de cette réflexion et de la création d’ADEB LONODJI."
+  },
+  {
+   "year": "1995",
+   "title": "Reconnaissance officielle",
+   "text": "ADEB LONODJI est officiellement reconnue, concrétisant près de dix ans de réflexion portée par ces cadres bedjond."
+  },
+  {
+   "year": "2000",
+   "title": "Premier forum, à Bédjondo",
+   "text": "ADEB LONODJI organise son tout premier forum communautaire à Bédjondo même."
+  },
+  {
+   "year": "2003",
+   "title": "Forum de Bébopen",
+   "text": "ADEB LONODJI organise un second grand rassemblement communautaire dans le canton de Bébopen, Mandoul Occidental."
+  },
+  {
+   "year": "2003–2025",
+   "title": "Mise en veille",
+   "text": "L’association traverse des difficultés de gestion et une période de mise en veille, pendant que d’autres initiatives communautaires voient le jour. Le décès de Tarouss Doumanbé, l’un des piliers majeurs de la réflexion et de la création d’ADEB LONODJI, a fortement affecté le bon fonctionnement de l’association."
+  },
+  {
+   "year": "2026",
+   "title": "Réactivation et structuration — 40 ans après 1986",
+   "text": "La communauté engage la réactivation d’ADEB LONODJI et se structure en pôles et thématiques d’action : trois pôles et douze thématiques le 11 septembre, portés à quatre pôles et dix-neuf thématiques dans les jours qui suivent. Le projet de modernisation est piloté par Bignéro Moïalbéi LE MADANG , animateur de l’association. Cette réactivation tombe l’année même des 40 ans des premières réflexions de 1986 : ADEB LONODJI en fait un repère plutôt qu’un hasard de calendrier."
+  }
+ ],
+ "generatedFrom": {
+  "legacyVersion": "2026-09-24",
+  "files": 166
+ }
+}

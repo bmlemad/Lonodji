@@ -1,18 +1,78 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageHeader, SectionHead, Stats, ThematiqueRow } from "../../components/blocks";
+import { LegacySections } from "../../components/legacy-content";
+import LegacyEnhance from "../../components/legacy-enhance";
+import { filledCount, getIndex, getPage, pickSections, thematiqueCount } from "../../lib/content";
 
 export const metadata: Metadata = {
-  title: "Programmes",
-  description: "Les trois axes d’action d’ADEB Lonodji : transmission, engagement et communauté.",
+  title: "Nos actions — quatre pôles, dix-neuf thématiques",
+  description: "Les Chantiers ADEB LONODJI : quatre pôles, dix-neuf thématiques et deux cellules transversales, avec leurs coordonnateurs, leurs objectifs et les Objectifs de développement durable qu’ils touchent.",
   alternates: { canonical: "/programmes" },
 };
 
-const items = [
-  ["01", "Transmission", "Créer des espaces où les savoirs, les expériences et les valeurs circulent."],
-  ["02", "Engagement", "Rassembler les énergies autour d’initiatives utiles et structurées."],
-  ["03", "Communauté", "Faire grandir un réseau solidaire, ouvert et tourné vers l’avenir."],
-];
-
 export default function Programmes() {
-  return <main id="main-content" className="detail-page"><p className="eyebrow">03 — Programmes</p><h1>Trois axes.<br /><em>Une même direction.</em></h1><p className="detail-lead">Les programmes structurent l’action. Les projets, partenaires et résultats seront publiés ici à mesure qu’ils seront validés et documentés.</p><div className="detail-grid">{items.map(([n, title, description]) => (<article key={n}><span>{n}</span><h2>{title}</h2><p>{description}</p><small>Contenu détaillé à venir</small></article>))}</div><Link className="button primary" href="/#territoire">Explorer le territoire ↗</Link><Link className="button secondary" href="/actions">Voir les actions ↗</Link><Link className="back-link" href="/">← Accueil</Link></main>;
+  const idx = getIndex();
+  const page = getPage("poles");
+  const total = thematiqueCount(idx);
+  const filled = filledCount(idx);
+  const { poles, cellules } = idx.structure;
+  const extra = pickSections(page, { only: ["nos-actions-page-par-page", "odd-cadrage", "odd-index", "devenir-coordonnateur-dune-thematique"] });
+  return (
+    <main id="main-content" className="hub-page">
+      <PageHeader
+        eyebrow="03 — Nos actions"
+        title="Quatre pôles,"
+        em="dix-neuf thématiques."
+        lead="Les Chantiers ADEB LONODJI : chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte ici. Six thématiques sont pourvues ; treize cherchent encore la personne qui les portera."
+      />
+      <Stats items={[
+        { value: String(poles.length), label: "pôles d’action", note: "Mémoire · Développement · Gouvernance · Numérique" },
+        { value: String(total), label: "thématiques", note: "+ 2 cellules transversales" },
+        { value: String(filled), label: "pourvues", note: `${Math.round((filled / total) * 100)} % des thématiques` },
+        { value: String(total - filled), label: "à pourvoir", note: "candidatures ouvertes à tout membre" },
+      ]} />
+      <div className="section-actions" style={{ justifyContent: "flex-start", marginBottom: 40 }}>
+        <Link className="button primary" href="/participer?coordo=1#contact">Proposer ma candidature <span aria-hidden="true">↗</span></Link>
+        <Link className="button secondary" href="/impact">Voir le tableau de suivi <span aria-hidden="true">→</span></Link>
+      </div>
+
+      <div id="thematiques">
+        {poles.map((pole) => (
+          <section className="pole-block" id={pole.id} key={pole.id} aria-labelledby={`${pole.id}-titre`}>
+            <header>
+              <span className="pole-roman" aria-hidden="true">{pole.roman}</span>
+              <div>
+                <p className="eyebrow">{pole.eyebrow} · {pole.items.filter((t) => t.filled).length} pourvue{pole.items.filter((t) => t.filled).length > 1 ? "s" : ""} sur {pole.items.length}</p>
+                <h2 id={`${pole.id}-titre`}>{pole.name}</h2>
+                {pole.intro ? <p>{pole.intro}</p> : null}
+              </div>
+            </header>
+            {pole.items.map((t) => <ThematiqueRow key={t.id} t={t} />)}
+          </section>
+        ))}
+        {cellules ? (
+          <section className="pole-block" id="cellules" aria-labelledby="cellules-titre">
+            <header>
+              <span className="pole-roman" aria-hidden="true">+</span>
+              <div>
+                <p className="eyebrow">{cellules.eyebrow}</p>
+                <h2 id="cellules-titre">{cellules.name}</h2>
+                {cellules.intro ? <p>{cellules.intro}</p> : null}
+              </div>
+            </header>
+            {cellules.items.map((t) => <ThematiqueRow key={t.id} t={t} />)}
+          </section>
+        ) : null}
+      </div>
+
+      <section className="hub-section">
+        <SectionHead eyebrow="Pour aller plus loin" title="Comment ça fonctionne," em="et où chaque pôle agit." text="Les pages qui suivent viennent de la première version du site et restent la référence : devenir coordonnateur, la lecture par les Objectifs de développement durable, et les dossiers ouverts par chaque pôle." />
+        <div className="legacy">
+          <LegacySections sections={extra} />
+        </div>
+        <LegacyEnhance hasForms={page.forms.length > 0} />
+      </section>
+    </main>
+  );
 }

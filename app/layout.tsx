@@ -4,6 +4,9 @@ import SiteFooter from "../components/site-footer";
 import SiteNav from "../components/site-nav";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import "./legacy.css";
+import "./legacy-layout.css";
+import "./site.css";
 
 const siteUrl = "https://lonodji.org";
 
@@ -25,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s — ADEB Lonodji",
   },
   description:
-    "ADEB Lonodji — association dédiée à l’engagement, la transmission, la communauté et la valorisation du territoire et du patrimoine.",
+    "ADEB LONODJI, l’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : quatre pôles, dix-neuf thématiques, sept plaidoyers pour l’eau, l’électricité, l’école, les routes et la santé au Mandoul Occidental (Tchad).",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -34,13 +37,15 @@ export const metadata: Metadata = {
     siteName: "ADEB Lonodji",
     title: "ADEB Lonodji — Courage • Discipline • Héritage",
     description:
-      "Engagement, transmission, communauté, territoire et patrimoine au service d’une action collective documentée.",
+      "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond. Quatre pôles, dix-neuf thématiques, sept plaidoyers publiés.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ADEB LONODJI — Courage • Discipline • Héritage" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ADEB Lonodji — Courage • Discipline • Héritage",
     description:
-      "Engagement, transmission, communauté, territoire et patrimoine au service d’une action collective documentée.",
+      "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond. Quatre pôles, dix-neuf thématiques, sept plaidoyers publiés.",
+    images: ["/og-image.png"],
   },
   robots: { index: true, follow: true },
 };
@@ -61,8 +66,14 @@ export default function RootLayout({
             "@graph": [
               {
                 "@type": "Organization",
-                name: "ADEB Lonodji",
+                name: "ADEB LONODJI",
+                alternateName: "Association de Développement et d’Entraide de Bédjondo",
                 url: siteUrl,
+                logo: `${siteUrl}/identite/logo-adeb-lonodji-1024.png`,
+                telephone: "+235 66 29 94 03",
+                foundingDate: "1995",
+                address: { "@type": "PostalAddress", addressLocality: "Bédjondo", addressRegion: "Mandoul", addressCountry: "TD" },
+                slogan: "Courage • Discipline • Héritage",
               },
               {
                 "@type": "WebSite",

@@ -1,0 +1,64 @@
+{
+ "legacy": "air-bedjondo.html",
+ "lang": "fr",
+ "documentTitle": "Air Bedjondo — transport et logistique terrestre — ADEB LONODJI",
+ "description": "Air Bedjondo : le projet de transport et de logistique terrestre annoncé par ADEB LONODJI pour désenclaver Bédjondo et relier ses terroirs. Malgré son nom, ce n’est pas un projet aérien.",
+ "title": "Air Bedjondo",
+ "eyebrow": "Nos projets",
+ "lede": "Un projet de transport et de logistique terrestre annoncé pour désenclaver Bédjondo et relier ses terroirs entre eux. Malgré son nom, ce n’est pas un projet aérien : ce que nous savons, et surtout ce que nous ne savons pas encore.",
+ "pills": [
+  "Projet annoncé",
+  "Aucun financement confirmé",
+  "Aucun calendrier"
+ ],
+ "kicker": "",
+ "crumbs": [
+  "Accueil",
+  "Nos actions",
+  "Air Bedjondo"
+ ],
+ "parent": "Nos actions",
+ "sections": [
+  {
+   "id": "",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Pourquoi ce projet</div>\n<h2>Un nom qui prête à confusion : Air Bedjondo est un projet terrestre</h2>\n<p>Nos pages <a href=\"/journal/2026-09-17-plaidoyer-routes-ponts-bedjondo\">routes et ponts</a> et <a href=\"/journal/2026-09-16-bedjondo-village-devenu-ville\">Bédjondo, village devenu ville</a> documentent déjà le même constat : les pistes de canton deviennent impraticables à la saison des pluies, et Bédjondo reste éloigné de N’Djamena par une route dont l’état pèse sur les échanges, sur l’accès aux soins d’urgence et sur l’exode des jeunes. L’animateur d’ADEB LONODJI a annoncé un projet pour répondre à ce constat : <strong>Air Bedjondo</strong>, un dispositif de <strong>transport et de logistique terrestre</strong> pour désenclaver Bédjondo et relier ses terroirs entre eux. Malgré son nom, il ne s’agit pas d’un projet aérien : aucune liaison par avion n’est annoncée ni envisagée. (L’organisation de l’association à deux sièges, annoncée en parallèle, est une question distincte : elle est traitée sur notre page <a href=\"/mission#sieges\">Mission</a>, pas ici.)</p>\n<p><strong>Cette page dit ce que nous savons et ce que nous ne savons pas encore.</strong> À ce stade, il s’agit d’une intention annoncée par l’animateur : aucune étude de faisabilité, aucun financement et aucun calendrier ne sont aujourd’hui publics. Nous préférons l’écrire ainsi que de laisser croire à un chantier déjà engagé.</p>\n</div>"
+  },
+  {
+   "id": "air-bedjondo",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Le projet</div>\n<h2>Air Bedjondo : relier les terroirs bedjond entre eux, par la route</h2>\n<p>L’idée : un dispositif de transport et de logistique terrestre pour désenclaver Bédjondo et relier ses cantons et villages entre eux, au-delà du seul axe vers N’Djamena que documente notre plaidoyer <a href=\"/journal/2026-09-17-plaidoyer-routes-ponts-bedjondo\">routes et ponts</a>. Une meilleure circulation à l’intérieur même du territoire bedjond pèse directement sur l’écoulement des récoltes — notre page <a href=\"/dossiers/problematiques\">Problématiques</a> signale déjà les pertes après récolte faute de stockage et d’accès aux marchés — sur l’accès aux services entre villages, et sur les urgences médicales quand la route vers N’Djamena devient impraticable en saison des pluies.</p>\n<p><strong>Ce que nous ne savons pas.</strong> Ni le mode de transport envisagé (véhicules propres, partenariat avec des transporteurs existants, coopérative locale), ni les axes prioritaires, ni le montage financier, ni le calendrier. Nous les documenterons au fur et à mesure qu’ils seront précisés.</p>\n</div>"
+  },
+  {
+   "id": "",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Ce qu’ADEB LONODJI s’engage à faire</div>\n<h2>Trois règles, avant tout chantier</h2>\n</div>\n<div class=\"pole-grid\">\n<article class=\"info-card\"><h3>Aucune promesse de date</h3><p>Ni pour le premier axe, ni pour le premier camion. Un projet annoncé n’est pas un projet financé, et nous ne confondrons jamais les deux.</p></article>\n<article class=\"info-card\"><h3>Une étude avant un chantier</h3><p>Faisabilité, coût, sécurité, autorisations le cas échéant : aucun de ces points n’est aujourd’hui documenté. Nous le disons plutôt que de laisser croire le contraire.</p></article>\n<article class=\"info-card\"><h3>Rendre compte, y compris de l’absence d’avancée</h3><p>Comme pour nos <a href=\"/dossiers/engagements\">engagements</a> et notre <a href=\"/transparence\">redevabilité</a> : si rien n’a bougé d’ici la prochaine mise à jour de cette page, nous l’écrirons.</p></article>\n</div>"
+  },
+  {
+   "id": "",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Participer</div>\n<h2>Vous avez une compétence utile à ce projet ?</h2>\n<p>Logistique, transport routier, ingénierie de pistes et de routes, financement de projet : si vous avez une expérience utile à Air Bedjondo, écrivez-nous. Nous préférons commencer par entendre qui sait déjà faire ce type de projet ailleurs, plutôt que de tout réinventer seuls.</p>\n<p><a class=\"btn btn-primary\" href=\"/participer#contact\"><svg aria-hidden=\"true\" class=\"fi fi--btn\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewbox=\"0 0 24 24\"><rect height=\"14\" rx=\"2\" width=\"18\" x=\"3\" y=\"5\"></rect><path d=\"m3 7 9 6 9-6\"></path></svg>Nous écrire</a> <a class=\"btn btn-ghost\" href=\"/programmes#desenclavement-urbanisation\">Voir la thématique Désenclavement &amp; urbanisation →</a></p>\n<p class=\"form-note\">Cette page a été ouverte le 19 septembre 2026, à partir d’une annonce de l’animateur d’ADEB LONODJI. Elle sera mise à jour à mesure que ce projet se précise : nous daterons chaque changement de fond.</p>\n</div>"
+  },
+  {
+   "id": "",
+   "alt": true,
+   "cls": "durability-grid",
+   "tag": "section",
+   "html": "<div class=\"eyebrow\">Durabilité</div>\n<h2 id=\"durabilite-titre\">Grille de durabilité : cinq questions</h2>\n<p class=\"prose-note\">Les mêmes cinq questions sont posées à chacun de nos projets. Nous n’inscrivons que ce qui est déjà publié sur ce site ; le reste est noté « à établir ». « Établi » veut dire que la réponse est écrite, pas que c’est déjà fait. <a href=\"/dossiers/environnement#grille\">Pourquoi cette grille</a>.</p>\n<div aria-label=\"Grille de durabilité — Air Bedjondo\" class=\"table-wrap\" role=\"region\" tabindex=\"0\">\n<table class=\"plea-table grid-table\">\n<thead><tr><th scope=\"col\">Question</th><th scope=\"col\">État</th><th scope=\"col\">Ce que nous savons aujourd’hui</th></tr></thead>\n<tbody>\n<tr><th scope=\"row\">Qui entretient ?</th><td><span class=\"grid-status grid-status--todo\">À établir</span></td><td>Mode de transport encore inconnu (véhicules propres, transporteurs existants, coopérative).</td></tr>\n<tr><th scope=\"row\">Avec quel budget ?</th><td><span class=\"grid-status grid-status--todo\">À établir</span></td><td>Aucun montage financier public.</td></tr>\n<tr><th scope=\"row\">Que deviennent les déchets ?</th><td><span class=\"grid-status grid-status--todo\">À établir</span></td><td>Pneus, huiles de vidange, pièces : à prévoir dès que le mode de transport sera choisi.</td></tr>\n<tr><th scope=\"row\">Quel effet sur l’eau et les arbres ?</th><td><span class=\"grid-status grid-status--todo\">À établir</span></td><td>Carburant, poussière, pistes à ouvrir ou élargir : à évaluer dans l’étude de faisabilité que nous demandons avant tout chantier.</td></tr>\n<tr><th scope=\"row\">Qui est formé ?</th><td><span class=\"grid-status grid-status--todo\">À établir</span></td><td>Conducteurs, mécaniciens, gestionnaires : à définir.</td></tr>\n</tbody>\n</table>\n</div>"
+  }
+ ],
+ "words": 695,
+ "forms": [],
+ "hasMap": false,
+ "slug": "air-bedjondo",
+ "route": "/dossiers/air-bedjondo",
+ "kind": "dossier"
+}

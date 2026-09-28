@@ -1,0 +1,137 @@
+{
+ "legacy": "adherer.html",
+ "lang": "fr",
+ "documentTitle": "Adhérer et cotiser — ADEB LONODJI",
+ "description": "Carte d’adhérent au format bancaire, grille de cotisation proposée au vote, règle de caisse et registre protégé.",
+ "title": "Adhérer et cotiser",
+ "eyebrow": "Adhésion",
+ "lede": "L’association se dote de cartes d’adhérent et invite ses membres à cotiser. Voici ce que la carte donne et ce qu’elle n’achète pas, la grille proposée au vote, où va l’argent, et les règles qui protègent l’adhérent autant que le trésorier.",
+ "pills": [
+  "Format bancaire",
+  "8 catégories",
+  "Reçu numéroté obligatoire"
+ ],
+ "kicker": "",
+ "crumbs": [
+  "Accueil",
+  "Agir avec nous",
+  "Adhérer & cotiser"
+ ],
+ "parent": "Agir avec nous",
+ "resume": [
+  "Adhérer donne une voix à l’assemblée, mais la carte n’ouvre aucun droit sur un bien, un emploi ni une aide.",
+  "La cotisation proposée au vote serait de 1 000 F par an pour un résident, et personne n’est écarté faute de pouvoir payer.",
+  "La collecte des cotisations et des dons est suspendue : n’envoyez d’argent à personne pour l’association, mais déclarez votre intention d’adhérer , qui n’engage aucun paiement."
+ ],
+ "toc": [
+  {
+   "href": "#une-carte-une-cotisation-et-une-regle-de-cai",
+   "label": "Une carte, une cotisation, et une règle de caisse"
+  },
+  {
+   "href": "#format-bancaire-numero-permanent-validite-vi",
+   "label": "Format bancaire, numéro permanent, validité visée à la main"
+  },
+  {
+   "href": "#ce-que-nous-proposons-de-demander",
+   "label": "Ce que nous proposons de demander"
+  },
+  {
+   "href": "#personne-nest-ecarte-faute-de-pouvoir-payer",
+   "label": "Personne n’est écarté faute de pouvoir payer"
+  },
+  {
+   "href": "#ou-va-la-cotisation-et-qui-le-verifie",
+   "label": "Où va la cotisation, et qui le vérifie"
+  },
+  {
+   "href": "#lespece-dabord-le-mobile-ensuite",
+   "label": "L’espèce d’abord, le mobile ensuite"
+  },
+  {
+   "href": "#bulletin",
+   "label": "Déclarer son intention d’adhérer"
+  },
+  {
+   "href": "#ce-que-nous-inscrivons-et-ce-que-nous-ninscr",
+   "label": "Ce que nous inscrivons, et ce que nous n’inscrirons jamais"
+  },
+  {
+   "href": "#ce-qui-reste-a-decider",
+   "label": "Ce qui reste à décider"
+  }
+ ],
+ "sections": [
+  {
+   "id": "une-carte-une-cotisation-et-une-regle-de-cai",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">La décision</div>\n<h2>Une carte, une cotisation, et une règle de caisse</h2>\n<p>L’association se dote de <strong>cartes d’adhérent</strong> et invite ses membres à <strong>cotiser</strong>. Cette page dit tout ce qui doit être dit avant la première pièce encaissée : ce que la carte donne et ce qu’elle n’achète pas, la grille proposée au vote, où va l’argent, et les règles qui protègent à la fois l’adhérent et le trésorier.</p>\n<p>Nous commençons par la phrase la plus importante, et elle figure aussi au dos de chaque carte : <strong>cette carte n’ouvre aucun droit sur un bien, un emploi ni une aide.</strong> Une association de développement qui laisse croire le contraire se transforme en guichet, se remplit de demandeurs et se vide de ses forces. Ce que la carte donne est autre chose, et c’est plus solide : une voix à l’assemblée, un accès aux comptes, et le droit de dire que l’on fait partie de ce qui se construit.</p>\n</div>"
+  },
+  {
+   "id": "format-bancaire-numero-permanent-validite-vi",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">La carte</div>\n<h2>Format bancaire, numéro permanent, validité visée à la main</h2>\n<p>Trois choix techniques, et chacun a une raison.</p>\n<p><strong>Le format bancaire, 85,6 sur 54 millimètres.</strong> C’est la taille d’une carte d’identité ou d’une carte SIM : elle entre dans tous les portefeuilles, les plastifieuses du commerce sont faites pour elle, et huit cartes tiennent sur une feuille A4. Une carte au format libre coûte plus cher à produire et se perd davantage.</p>\n<p><strong>Un numéro qui ne change jamais.</strong> Il se lit en quatre blocs — par exemple <strong>LNJ-26-BDJ-0142</strong> : LNJ pour l’association, 26 pour l’année de la <em>première</em> adhésion, BDJ pour le rattachement, et un numéro d’ordre sur quatre chiffres. Les rattachements : <strong>BDJ</strong> Bédjondo · <strong>BBP</strong> Bébopen · <strong>NDG</strong> Nderguigui · <strong>YOM</strong> Yomi · <strong>PEN</strong> Péni (sous-préfecture) · <strong>BKB</strong> Békamba · <strong>TCH</strong> Reste du Tchad · <strong>DIA</strong> Diaspora. Un membre qui cesse de cotiser pendant cinq ans puis revient retrouve son numéro : c’est ainsi que l’on garde une mémoire de qui a porté l’association, et pas seulement de qui paie cette année.</p>\n<p><strong>La validité au dos, visée à la main.</strong> Quatre cases, une par année, que la trésorière vise ou cachette. Nous avons écarté la carte à réimprimer chaque année : elle coûte quatre fois plus cher et elle échoue le jour où l’imprimante est en panne. Une carte vaut ce que vaut le registre qui la double : <strong>une carte dont le numéro ne figure pas au registre n’est pas valide</strong>, et cela suffit à décourager les fausses.</p>\n<div class=\"lib-callout\">\n<div class=\"lib-callout-icon\"><svg aria-hidden=\"true\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.6\" viewbox=\"0 0 24 24\"><rect height=\"14\" rx=\"2.5\" width=\"20\" x=\"2\" y=\"5\"></rect><path d=\"M2 10h20\"></path><path d=\"M6 14.5h5\"></path></svg></div>\n<div>\n<h3>Le kit d’adhésion, prêt à imprimer</h3>\n<p>Cinq pages : la planche de huit cartes au recto, la planche des versos à imprimer au dos, le bulletin d’adhésion, un carnet de reçus numérotés, et la notice de numérotation et de tenue du registre pour le trésorier. Le bleu de la carte reste lisible en photocopie noir et blanc.</p>\n<div class=\"lib-callout-actions\">\n<a class=\"btn btn-primary\" download=\"\" href=\"/documents/kit-adhesion-adeb-lonodji-2026.pdf\">Télécharger le kit (PDF) →</a>\n<a class=\"btn btn-ghost\" href=\"#bulletin\">Adhérer en ligne →</a>\n</div>\n</div>\n</div>\n</div>"
+  },
+  {
+   "id": "ce-que-nous-proposons-de-demander",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">La grille</div>\n<h2>Ce que nous proposons de demander</h2>\n<p>Ces montants sont une <strong>proposition soumise au vote de l’assemblée générale</strong>, pas une décision déjà prise. Nous les avons calibrés sur une référence publique plutôt qu’au hasard : le salaire minimum interprofessionnel garanti est fixé à <strong>89 625 francs par mois</strong> au Tchad. La cotisation d’un membre résident, mille francs par an, représente donc environ <strong>1 % d’un mois de SMIG</strong> — l’ordre d’une journée de travail journalier. Nous avons cherché le montant qui engage sans exclure.</p>\n</div>\n<div aria-label=\"Grille de cotisation proposée\" class=\"table-wrap\" role=\"region\" tabindex=\"0\">\n<table class=\"plea-table indic-table\">\n<caption class=\"sr-only\">Catégories d’adhésion, montant annuel proposé en francs CFA, et justification</caption>\n<thead><tr><th scope=\"col\">Catégorie</th><th scope=\"col\">Par an, en FCFA</th><th scope=\"col\">Pourquoi ce montant</th></tr></thead>\n<tbody><tr><th scope=\"row\">Jeune de moins de 18 ans, élève</th><td class=\"num\"><strong>Gratuit</strong></td><td>Carte « Jeune ». Aucune cotisation demandée.</td></tr><tr><th scope=\"row\">Étudiant, apprenti, sans revenu</th><td class=\"num\"><strong>500</strong></td><td>Un montant symbolique, pour que l’adhésion soit un acte.</td></tr><tr><th scope=\"row\">Membre résident à Bédjondo ou dans les cantons</th><td class=\"num\"><strong>1 000</strong></td><td>Environ 1 % du SMIG mensuel, l’ordre d’une journée de travail.</td></tr><tr><th scope=\"row\">Membre actif : salarié, commerçant, artisan</th><td class=\"num\"><strong>5 000</strong></td><td>Un peu plus de 400 F par mois.</td></tr><tr><th scope=\"row\">Cadre résidant au Tchad, hors du département</th><td class=\"num\"><strong>12 000</strong></td><td>1 000 F par mois.</td></tr><tr><th scope=\"row\">Membre de la diaspora</th><td class=\"num\"><strong>25 000</strong></td><td>Environ 2 000 F par mois, soit 38 euros par an.</td></tr><tr><th scope=\"row\">Bienfaiteur</th><td class=\"num\"><strong>à partir de 100 000</strong></td><td>Libre. Mention au rapport annuel si la personne y consent.</td></tr><tr><th scope=\"row\">Membre d’honneur</th><td class=\"num\"><strong>Gratuit</strong></td><td>Sur décision de l’assemblée : chefferie, anciens, personnes ayant rendu service.</td></tr></tbody>\n</table>\n</div>\n<div class=\"prose\">\n<p class=\"form-note\">Huit catégories, dont deux gratuites. Un adhérent de la diaspora cotise vingt-cinq fois plus qu’un résident : ce n’est pas une faveur faite au village, c’est la reconnaissance d’un écart de revenu réel.</p>\n</div>"
+  },
+  {
+   "id": "personne-nest-ecarte-faute-de-pouvoir-payer",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">La règle qui compte le plus</div>\n<h2>Personne n’est écarté faute de pouvoir payer</h2>\n<p>Une association de village qui conditionne l’appartenance à l’argent perd d’abord les plus utiles : les jeunes, les femmes sans revenu propre, les anciens. Deux dispositifs l’empêchent, et ils sont inscrits au bulletin d’adhésion.</p>\n<div class=\"pole-grid\">\n<article class=\"info-card\">\n<h3>La cotisation en nature</h3>\n<p>Des journées de travail, un transport assuré, l’hébergement d’une mission, l’impression de documents, la tenue d’une enquête de terrain : tout cela s’évalue et s’inscrit au registre <strong>comme une cotisation ordinaire</strong>. Le membre est à jour, sa carte est visée, et personne ne sait — parce que personne n’a besoin de savoir — que sa cotisation n’était pas en pièces.</p>\n</article>\n<article class=\"info-card\">\n<h3>La dispense discrète</h3>\n<p>Elle est accordée par le bureau, sans motif exigé de l’intéressé, et <strong>elle n’est jamais rendue publique</strong> : ni en assemblée, ni au rapport, ni dans une liste. Une dispense annoncée est une humiliation déguisée en générosité. Le registre porte la mention, le reste se tait.</p>\n</article>\n</div>\n<p style=\"margin-top:1.2rem;\">Une conséquence à assumer : <strong>le nombre d’adhérents et le montant collecté ne diront jamais la même chose</strong>, et c’est voulu. Nous publierons les deux chiffres séparément, sans chercher à faire coïncider l’un avec l’autre.</p>\n</div>"
+  },
+  {
+   "id": "ou-va-la-cotisation-et-qui-le-verifie",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">L’argent</div>\n<h2>Où va la cotisation, et qui le vérifie</h2>\n<p>Une cotisation sans règle d’affectation devient une caisse noire par simple négligence. Nous proposons donc une clé de répartition, elle aussi soumise au vote, et surtout un principe : <strong>la répartition est décidée avant la collecte, pas après</strong>.</p>\n<p><strong>Quarante pour cent au fonds de projets</strong>, affectés aux priorités du <a href=\"/dossiers/problematiques\">recensement</a> — la campagne d’actes de naissance en premier, parce qu’elle est la moins chère et qu’elle débloque tout le reste. <strong>Vingt-cinq pour cent au fonctionnement</strong> : déplacements vers les cantons, courriers et dépôts de dossiers, impressions, carburant des missions. C’est la part la moins séduisante et la plus décisive ; une association sans frais de déplacement ne sort pas de son chef-lieu. <strong>Vingt pour cent à la <a href=\"/journal/2026-09-14-caisse-entraide-solidarite-en-acte\">caisse d’entraide</a></strong>. <strong>Dix pour cent en réserve</strong>, non engageable sans décision d’assemblée. <strong>Cinq pour cent pour les frais</strong> de transfert et de tenue de compte.</p>\n<p>Quatre règles de caisse encadrent le tout, et elles valent plus que la clé de répartition : <strong>aucun encaissement sans reçu numéroté</strong>, en deux exemplaires dont un reste à l’adhérent ; <strong>deux signatures pour toute dépense</strong> ; <strong>aucune somme conservée par une seule personne</strong> au-delà du strict nécessaire ; et un <strong>relevé des entrées et sorties publié chaque trimestre</strong>, avec le nombre d’adhérents et le total collecté. Les numéros de reçus se suivent sans trou : un reçu annulé reste au carnet, barré et signé.</p>\n<p>C’est le prolongement direct de nos engagements de <a href=\"/transparence\">redevabilité</a>. Une association qui demande des comptes aux programmes nationaux et n’en rend pas sur mille francs de cotisation ne mérite pas d’être écoutée.</p>\n</div>"
+  },
+  {
+   "id": "lespece-dabord-le-mobile-ensuite",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Comment payer</div>\n<h2>L’espèce d’abord, le mobile ensuite</h2>\n<p>Il faut être exact sur l’état du pays. La monnaie électronique progresse au Tchad — Airtel Money et Moov Money, rejoints par Konoom, première <em>fintech</em> entièrement tchadienne, et par Nita — mais le Tchad reste le pays le moins avancé de la zone CEMAC en la matière : la presse spécialisée relevait entre <strong>160 000 et 240 000 comptes actifs</strong> sur la période 2020-2022, et les frais d’envoi sont jugés élevés par les usagers eux-mêmes.</p>\n<p>La conclusion pratique est nette : <strong>la collecte en espèces contre reçu numéroté sera le canal principal à Bédjondo</strong>, et le mobile est le canal de la diaspora et des cadres. Un détail technique a son importance : <strong>recevoir de l’argent mobile est gratuit</strong> — seul l’envoyeur paie des frais. L’association ne perd donc rien sur une cotisation reçue par ce moyen, et nous indiquerons à chaque envoyeur le coût avant qu’il ne s’engage.</p>\n<div class=\"collect-card collect-card--suspendu\" id=\"collecte-suspendue\">\n<h3>La collecte est suspendue</h3>\n<p><strong>Depuis le 23 septembre 2026, l’association ne reçoit ni cotisation ni don</strong>, en espèces comme par Mobile Money. Trois conditions manquent encore, et nous préférons les réunir avant d’encaisser le premier franc : <strong>l’autorisation de l’association</strong> au titre de l’ordonnance n<sup>o</sup> 023/PR/2018, qui réserve la perception de cotisations aux associations régulièrement autorisées ; <strong>le vote de la grille</strong> par l’assemblée générale ; et <strong>un compte ouvert au nom de l’association</strong>, à double signature, là où nous indiquions jusqu’ici le compte Mobile Money personnel de la trésorière.</p>\n<p>Vous pouvez en revanche, dès maintenant, <a href=\"#bulletin\">déclarer votre intention d’adhérer</a> ou enregistrer une <a href=\"/dossiers/espace-numerique#souscription\">promesse de contribution</a> : ni l’une ni l’autre n’engage de paiement. Nous vous préviendrons quand la collecte rouvrira, avec les coordonnées du compte de l’association, publiées ici et sur la page <a href=\"/participer#soutenir\">Soutenir</a>.</p>\n<p><strong>D’ici là, n’envoyez d’argent à personne au nom d’ADEB LONODJI</strong>, pas même à un membre du bureau, et signalez-nous toute sollicitation au <a href=\"tel:+23566299403\">+235 66 29 94 03</a> (appel et <a href=\"https://wa.me/23566299403\" rel=\"noopener\" target=\"_blank\">WhatsApp</a>). Si vous avez déjà versé une cotisation ou un don, écrivez-nous : il doit figurer au registre, avec son reçu numéroté.</p>\n</div>\n</div>"
+  },
+  {
+   "id": "bulletin",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Adhérer</div>\n<h2>Déclarer son intention d’adhérer</h2>\n<div class=\"vie-strip\"><div class=\"vie-item\" data-vie=\"\" data-vie-compteur=\"intentions\" data-vie-etat=\"attente\">\n<span class=\"vie-quoi\">Intentions d’adhésion reçues</span>\n<span class=\"vie-chiffre\" hidden=\"\"><span class=\"vie-n\">0</span><span class=\"vie-mot\" data-vie-mot=\"personne|personnes\">personnes</span></span>\n<span class=\"vie-attente\">Le nombre d’intentions reçues s’affichera ici à partir de la dixième.</span>\n</div></div>\n<p>Ce formulaire ne vaut pas adhésion et n’engage aucun paiement : il nous permet de vous inscrire sur la liste d’attente d’adhésion, de vous prévenir de la date de l’assemblée et de vous remettre votre bulletin et votre carte dès que la grille sera votée. L’adhésion se conclut par un <strong>bulletin signé</strong> et un <strong>reçu numéroté</strong>, jamais par un message. C’est la seule voie d’adhésion en ligne ; la page <a href=\"/participer#contact\">Contact</a> sert aux questions et aux candidatures à l’animation d’une thématique.</p>\n<div class=\"collect-card\">\n<form action=\"/__forms.html\" method=\"POST\" name=\"intention-adhesion\"><input name=\"form-name\" type=\"hidden\" value=\"intention-adhesion\"/>\n<input autocomplete=\"off\" name=\"_honey\" style=\"display:none\" tabindex=\"-1\" type=\"text\"/>\n<div class=\"form-row\">\n<div class=\"field\"><label for=\"ad-nom\">Nom et prénoms</label>\n<input autocomplete=\"name\" id=\"ad-nom\" name=\"nom\" required=\"\" type=\"text\"/></div>\n<div class=\"field\"><label for=\"ad-tel\">Téléphone ou WhatsApp</label>\n<input autocomplete=\"tel\" id=\"ad-tel\" name=\"telephone\" type=\"text\"/></div>\n</div>\n<div class=\"form-row\">\n<div class=\"field\"><label for=\"ad-mail\">Adresse électronique</label>\n<input autocomplete=\"email\" id=\"ad-mail\" name=\"email\" type=\"email\"/></div>\n<div class=\"field\"><label for=\"ad-loc\">Village, quartier, canton ou ville</label>\n<input id=\"ad-loc\" name=\"localite\" placeholder=\"Ex. Bédjondo, quartier… / Yomi / N’Djamena / Paris\" type=\"text\"/></div>\n</div>\n<div class=\"form-row\">\n<div class=\"field\"><label for=\"ad-cat\">Catégorie envisagée</label>\n<select id=\"ad-cat\" name=\"categorie\">\n<option value=\"\">Choisir</option>\n<option>Jeune de moins de 18 ans, élève</option>\n<option>Étudiant, apprenti, sans revenu</option>\n<option>Membre résident à Bédjondo ou dans les cantons</option>\n<option>Membre actif : salarié, commerçant, artisan</option>\n<option>Cadre résidant au Tchad, hors du département</option>\n<option>Membre de la diaspora</option>\n<option>Bienfaiteur</option>\n<option>Je préfère en parler d’abord</option>\n</select></div>\n<div class=\"field\"><label for=\"ad-mode\">Mode de cotisation envisagé</label>\n<select id=\"ad-mode\" name=\"mode\">\n<option value=\"\">Choisir</option>\n<option>Espèces, sur place</option>\n<option>Transfert mobile</option>\n<option>En nature : travail, transport, impression, enquête</option>\n<option>Je souhaite une dispense</option>\n</select></div>\n</div>\n<div class=\"field\"><label for=\"ad-parent\">Moins de 18 ans : nom et téléphone d’un parent ou tuteur</label>\n<input aria-describedby=\"ad-parent-note\" id=\"ad-parent\" name=\"parent_tuteur\" type=\"text\"/>\n<p class=\"form-note\" id=\"ad-parent-note\">L’adhésion d’un mineur n’est conclue qu’avec l’autorisation d’un parent ou de son tuteur légal, comme le prévoit l’article 13 de l’ordonnance n<sup>o</sup> 023/PR/2018 sur les associations. Nous la lui demanderons par écrit avant toute suite.</p></div>\n<div class=\"field\"><label for=\"ad-them\">Thématique où vous voulez servir (facultatif)</label>\n<input id=\"ad-them\" name=\"thematique\" placeholder=\"Ex. Mémoire &amp; héritage, Santé, Agriculture…\" type=\"text\"/></div>\n<div class=\"field\"><label for=\"ad-mot\">Un mot, si vous le souhaitez</label>\n<textarea id=\"ad-mot\" name=\"message\" placeholder=\"Ce que vous aimeriez apporter, ou une question\" rows=\"3\"></textarea></div>\n<label class=\"check check--consentement\"><input name=\"consentement\" required=\"\" type=\"checkbox\" value=\"oui\"/> <span>J’accepte qu’ADEB LONODJI conserve ces informations pour donner suite à mon envoi, chez son hébergeur aux États-Unis (Netlify). <a href=\"/mentions-legales#donnees\">Données et droits</a></span></label>\n<button class=\"btn btn-primary\" type=\"submit\"><svg aria-hidden=\"true\" class=\"fi fi--btn\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.6\" viewbox=\"0 0 24 24\"><path d=\"M5 12h14\"></path><path d=\"m13 6 6 6-6 6\"></path></svg>Envoyer mon intention d’adhésion</button>\n<p class=\"form-note\">Vos coordonnées servent uniquement à vous joindre et à préparer votre adhésion. Elles ne sont ni publiées, ni transmises, et vous pouvez demander leur retrait à tout moment : voir <a href=\"/mentions-legales#donnees\">données et droits</a>.</p>\n</form>\n</div>\n</div>"
+  },
+  {
+   "id": "ce-que-nous-inscrivons-et-ce-que-nous-ninscr",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Le registre</div>\n<h2>Ce que nous inscrivons, et ce que nous n’inscrirons jamais</h2>\n<p>Le registre des adhérents comporte neuf colonnes : numéro d’adhérent, nom et prénoms, rattachement, un téléphone, catégorie, date d’adhésion, cotisations année par année avec le numéro de reçu, date de remise de la carte, et observations. Il est tenu par la trésorière, consultable par le bureau, et <strong>ni publié, ni transmis, ni déposé sur un service extérieur</strong>.</p>\n<p>Trois colonnes n’y figureront jamais : l’<strong>appartenance religieuse</strong>, l’<strong>appartenance ethnique</strong> et l’<strong>orientation politique</strong> d’un adhérent. Ces informations ne nous servent à rien et leur seule collecte serait une faute — dans un pays et une région où des listes ont déjà servi à autre chose que ce pour quoi elles avaient été faites. C’est la même règle que celle de notre page <a href=\"/dossiers/solidarite-inclusion\">Personnes vulnérables</a> sur le registre social : une donnée que l’on ne collecte pas est la seule qui ne puisse pas fuir.</p>\n<p>Et trois vérifications avant toute remise de carte, à faire dans cet ordre : le bulletin est signé, le reçu est émis et son numéro reporté au registre, le numéro d’adhérent est inscrit au registre <em>et</em> sur la carte, à l’identique. Une carte remise sans ces trois éléments crée un adhérent que rien ne prouve et un trou dans la caisse que personne ne saura expliquer.</p>\n</div>"
+  },
+  {
+   "id": "ce-qui-reste-a-decider",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Honnêteté</div>\n<h2>Ce qui reste à décider</h2>\n<p>Rien de ce qui précède n’est encore voté. La grille de cotisation, la clé de répartition, le montant au-delà duquel deux signatures sont exigées, la durée de conservation des données du registre et le sort des cotisations en cas de dissolution : ce sont des décisions d’assemblée générale, et nous n’avons pas encore de date à annoncer.</p>\n<p>Nous ne savons pas non plus combien de membres cotiseront. L’association parle de trois cents personnes réunies autour d’elle, mais c’est une estimation, et le passage d’une adhésion morale à une cotisation payée fait toujours perdre du monde. Nous préférons l’écrire avant de découvrir le chiffre, pour ne pas avoir à l’expliquer après. <strong>Le premier relevé trimestriel publié dira la vérité</strong>, quelle qu’elle soit.</p>\n<p>Enfin, un préalable qui dépasse cette page : encaisser des cotisations suppose une association dont l’autorisation est en règle. Notre page <a href=\"/dossiers/demarches\">Démarches</a> explique pourquoi c’est aujourd’hui incertain et ce qu’il faut faire d’abord. <strong>Régulariser passe avant collecter</strong>, et pas seulement pour la forme : l’argent des membres n’a pas à financer un risque que nous pouvions lever. C’est pourquoi la collecte est <a href=\"#collecte-suspendue\">suspendue</a> d’ici là.</p>\n<p class=\"form-note\">Sources : montant du salaire minimum interprofessionnel garanti au Tchad, 89 625 francs CFA par mois, relevé sur les bases de droit du travail spécialisées, avec l’avertissement d’usage sur l’évolution des montants ; Tchadinfos, 4 septembre 2026, sur la monnaie électronique au Tchad (opérateurs Airtel Money, Moov Money, Konoom et Nita ; entre 160 000 et 240 000 comptes actifs sur 2020-2022 ; frais jugés élevés par les usagers) ; grilles tarifaires d’Airtel Money Tchad, non publiées par transaction et affichées au menu de l’opérateur, la réception restant gratuite, relevé de juin 2026. Le cadre juridique de l’association et l’obligation d’autorisation sont traités sur notre page <a href=\"/dossiers/demarches\">Démarches</a>.</p>\n</div>"
+  }
+ ],
+ "words": 2389,
+ "forms": [
+  "intention-adhesion"
+ ],
+ "hasMap": false,
+ "slug": "adherer",
+ "route": "/participer",
+ "kind": "hub"
+}

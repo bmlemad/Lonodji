@@ -1,0 +1,176 @@
+{
+ "legacy": "complexe-sportif.html",
+ "lang": "fr",
+ "documentTitle": "Complexe de formation sportive — ADEB LONODJI",
+ "description": "Football, basket, judo, karaté, athlétisme : le projet par étapes d’un complexe de formation sportive pour les jeunes de Bédjondo. Rien n’est encore construit ni financé.",
+ "title": "Un complexe de formation sportive pour les jeunes de Bédjondo",
+ "eyebrow": "Pôle II · Jeunesse & réussite · Projet à l’étude",
+ "lede": "Une école de football, du basket, du judo, du karaté et de l’athlétisme, dans un même lieu, pour les filles et les garçons de Bédjondo et des cantons. Rien n’est encore construit ni financé : voici ce que nous proposons, dans quel ordre, et ce que chacun peut faire dès maintenant.",
+ "pills": [
+  "Football",
+  "Basket",
+  "Judo · karaté",
+  "Athlétisme"
+ ],
+ "kicker": "",
+ "crumbs": [
+  "Accueil",
+  "Nos actions",
+  "Complexe sportif"
+ ],
+ "parent": "Nos actions",
+ "resume": [
+  "Bédjondo joue déjà au championnat de football du Mandoul, mais nous n’avons trouvé aucune source décrivant un club formateur, une académie ou un équipement sportif dans la ville.",
+  "Le projet avance par étapes : commencer sans rien construire, puis des terrains en plein air et un dojo, enfin une salle couverte et une piste d’athlétisme.",
+  "Aucun don n’est collecté aujourd’hui : nous cherchons un terrain, des encadreurs et des partenaires, et chaque étape sera rendue publique ici."
+ ],
+ "toc": [
+  {
+   "href": "#pourquoi",
+   "label": "Bédjondo joue déjà, sans lieu pour former"
+  },
+  {
+   "href": "#disciplines",
+   "label": "Cinq disciplines, et qui les organise au Tchad"
+  },
+  {
+   "href": "#etape-prealable",
+   "label": "Avant de construire : ce qui ne coûte presque rien"
+  },
+  {
+   "href": "#phase-1",
+   "label": "Phase 1 : des terrains en plein air et un dojo"
+  },
+  {
+   "href": "#phase-2",
+   "label": "Phase 2 : une salle couverte et une piste d’athlétisme"
+  },
+  {
+   "href": "#couts",
+   "label": "Des repères de coût, pas encore un budget"
+  },
+  {
+   "href": "#protection",
+   "label": "La sécurité des enfants avant les résultats"
+  },
+  {
+   "href": "#inclusion",
+   "label": "Les filles et les jeunes handicapés, dès le premier jour"
+  },
+  {
+   "href": "#gouvernance",
+   "label": "Qui décide, qui entretient"
+  },
+  {
+   "href": "#financements",
+   "label": "Où chercher l’argent, et à quelles conditions"
+  },
+  {
+   "href": "#ne-ferons-pas",
+   "label": "Quatre choses que nous ne ferons pas"
+  },
+  {
+   "href": "#agir",
+   "label": "Ce que vous pouvez faire dès maintenant"
+  }
+ ],
+ "sections": [
+  {
+   "id": "pourquoi",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Pourquoi ce projet</div>\n<h2>Bédjondo joue déjà, sans lieu pour former</h2>\n<p>Le football se joue à Bédjondo. Au championnat provincial du Mandoul de 2025, le Mandoul Occidental était représenté par Bédjondo, face aux champions de Koumra, de Péni et de Goundi, et une équipe de Bédjondo figure parmi les six engagées au championnat provincial de 2026. Et la ligue provinciale de football du Mandoul a organisé fin 2024 son premier championnat depuis quatorze ans.</p>\n<p>Tout près, Koumra a inauguré le 9 septembre 2026 la première « FIFA Arena » du Tchad, un mini-stade synthétique construit en quarante-cinq jours ; le ministère de la Jeunesse et des Sports, la fédération et la FIFA se sont accordés en mai sur vingt-trois mini-terrains de ce type, dont une première phase de dix. En janvier 2026, le délégué général du gouvernement dans le Mandoul demandait déjà des mini-stades dans les cinq départements de la province, et la reprise des travaux du stade de Koumra, arrêtés depuis plusieurs années.</p>\n<p>Ce qui manque, c’est un lieu où les enfants apprennent, encadrés, toutes les semaines. <strong>Nous n’avons trouvé aucune source décrivant un club formateur, une académie ou un équipement sportif dans Bédjondo même.</strong> Si vous savez ce qui existe (un terrain d’école, un terrain communal, un club), <a href=\"/participer?theme=09#contact\">dites-le-nous</a> : cette page sera corrigée.</p>\n<p>Le sport répond aussi à ce que notre thématique <a href=\"/programmes#jeunesse-reussite\">Jeunesse &amp; réussite</a> décrit déjà : des jeunes qui partent faute de perspectives, des cantons qui se connaissent mal. Elle prévoyait des rencontres sportives et culturelles entre les cantons ; le complexe en serait le lieu. Et nous ne partons pas de rien : l’association ASDMO agit déjà pour la jeunesse, y compris par le sport, et nous voulons travailler avec elle plutôt qu’à côté.</p>\n<p><strong>Où en est le projet.</strong> Il a été proposé par l’animateur d’ADEB LONODJI le 24 septembre 2026. Aucun terrain n’est réservé, aucun devis n’est fait, aucun financement n’est acquis. Nous l’écrivons pour que personne ne croie le contraire.</p>\n</div>"
+  },
+  {
+   "id": "disciplines",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Les disciplines</div>\n<h2>Cinq disciplines, et qui les organise au Tchad</h2>\n<p>Chaque discipline a sa fédération nationale, et chaque club qui forme des jeunes doit s’y affilier : c’est ce qui donne accès aux compétitions, aux formations d’entraîneurs et, parfois, à du matériel.</p>\n</div>\n<div aria-label=\"Les cinq disciplines du complexe\" class=\"table-wrap\" role=\"region\" tabindex=\"0\">\n<table class=\"plea-table indic-table\">\n<thead><tr><th scope=\"col\">Discipline</th><th scope=\"col\">Ce qu’il faut</th><th scope=\"col\">Qui l’organise au Tchad</th><th scope=\"col\">Près de Bédjondo</th></tr></thead>\n<tbody>\n<tr><th scope=\"row\">Football (école de foot)</th><td>Un terrain, et des buts réduits pour les plus jeunes</td><td>Fédération tchadienne de football association (FTFA)</td><td>Ligue provinciale du Mandoul, qui a relancé son championnat en 2024 ; FIFA Arena de Koumra depuis septembre 2026</td></tr>\n<tr><th scope=\"row\">Basket (et volley, hand)</th><td>Une dalle de béton, partagée par les trois sports</td><td>Fédération tchadienne de basketball</td><td>Le Mandoul a disputé en 2024 le tournoi féminin de la zone méridionale, à Doba</td></tr>\n<tr><th scope=\"row\">Judo</th><td>Un tapis de tatamis, sous un toit</td><td>Fédération tchadienne de judo</td><td>Aucune ligue trouvée dans le Mandoul</td></tr>\n<tr><th scope=\"row\">Karaté</th><td>Le même tapis que le judo</td><td>Fédération tchadienne de karaté et disciplines assimilées</td><td>Une ligue à Koumra, formée par la fédération à Doba en décembre 2024</td></tr>\n<tr><th scope=\"row\">Athlétisme</th><td>Pour commencer, un espace plat de 60 × 40 m</td><td>Fédération tchadienne d’athlétisme</td><td>Aucune ligue trouvée dans le Mandoul</td></tr>\n</tbody>\n</table>\n</div>\n<div class=\"prose\">\n<p><strong>Et la lutte traditionnelle ?</strong> Elle a son championnat national depuis 2010, et la Fédération tchadienne de luttes associées couvre ce style. Nous ne savons pas si elle se pratique aujourd’hui à Bédjondo : si c’est le cas, <a href=\"/participer?theme=09#contact\">dites-le-nous</a>, et elle aura sa place dans le complexe.</p>\n</div>"
+  },
+  {
+   "id": "etape-prealable",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Avant de construire</div>\n<h2>Ce qui ne coûte presque rien, et qu’on peut faire tout de suite</h2>\n<p>Un complexe sans encadreurs formés n’est qu’un terrain vague clôturé. L’école commence par des adultes, un terrain garanti et des séances régulières ; le béton vient après.</p>\n</div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">1</span><div><h3>Réserver un terrain, par écrit</h3><p>Une convention avec la commune et la chefferie, pour un usage sportif et une longue durée. Sans elle, rien ne se construit.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">2</span><div><h3>Recenser</h3><p>Combien d’enfants et de jeunes, par âge et par discipline ; quels adultes savent encadrer (anciens joueurs, enseignants d’éducation physique, judokas, karatékas) ; quels terrains existent déjà.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">3</span><div><h3>Former les encadreurs</h3><p>Les cours FIFA Guardians sur la protection des enfants dans le football sont ouverts aux bénévoles et proposés en français. La FTFA a formé à Sarh, en juin 2026, quarante techniciens du Moyen-Chari et du Mandoul à la licence D fédérale. Le programme <span lang=\"en\">Kids’ Athletics</span> de World Athletics est gratuit, pour les 4 à 14 ans.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">4</span><div><h3>Commencer</h3><p>Des séances régulières d’athlétisme et de football sur un espace existant. <span lang=\"en\">Kids’ Athletics</span> se contente d’un terrain plat de 60 × 40 m et de matériel fabriqué sur place.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">5</span><div><h3>S’affilier</h3><p>Déclarer les clubs auprès des ligues et des fédérations, et proposer les écoles de Bédjondo au programme FIFA <span lang=\"en\">Football for Schools</span>, lancé au Tchad en mai 2023 avec le ministère de l’Éducation nationale.</p></div></div>"
+  },
+  {
+   "id": "phase-1",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Phase 1</div>\n<h2>Des terrains en plein air et un dojo</h2>\n<p>Quatre équipements, aux dimensions des fédérations internationales, pour que les jeunes formés ici puissent jouer partout ailleurs.</p>\n</div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">1</span><div><h3>Terrain de football</h3><p><strong>105 × 68 m</strong>, les dimensions recommandées par la FIFA, en latérite compactée, avec des bandes de sécurité d’au moins 2 m. On y trace des terrains réduits pour les plus jeunes, du 5 contre 5 des moins de 8 ans (37 × 27 m) jusqu’au 11 contre 11. La latérite coûte bien moins que le gazon et ne demande pas d’arrosage.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">2</span><div><h3>Dalle multisport</h3><p><strong>44 × 24 m de béton</strong> : un terrain de handball de 40 × 20 m et 2 m de bordure, qui porte aussi un terrain de basket (28 × 15 m) et un terrain de volley (18 × 9 m). Seules les lignes sont peintes.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">3</span><div><h3>Dojo</h3><p><strong>Une salle d’environ 14 × 14 m</strong>, avec un tapis de 12 × 12 m (72 tatamis de 1 × 2 m) : c’est l’aire complète du karaté (8 × 8 m et 2 m de sécurité), et plus que le minimum conseillé pour le judo des jeunes (10 × 10 m). Une salle fermée, parce que les tatamis craignent la pluie et la poussière.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">4</span><div><h3>Eau, hygiène, ombre</h3><p>Un point d’eau potable, des latrines dont une accessible (1,5 × 1,5 m d’espace libre), de l’ombre et un local pour ranger le matériel.</p></div></div>\n<div class=\"prose\">\n<p><strong>La surface à réserver dès le départ.</strong> C’est la piste de la phase 2 qui la fixe : avec huit couloirs, l’anneau de 400 m occupe 177 × 93 m et entoure le terrain de football. Avec la dalle, le dojo et les abords, il faut compter environ deux hectares.</p>\n</div>"
+  },
+  {
+   "id": "phase-2",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Phase 2</div>\n<h2>Une salle couverte et une piste d’athlétisme</h2>\n<p>Quand la phase 1 fonctionne, avec des séances régulières et un entretien tenu, on couvre et on court.</p>\n</div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">1</span><div><h3>Couvrir la dalle</h3><p>Un toit sur poteaux, côtés ouverts, pour jouer à l’ombre et sous la pluie. Le volley demande 7 m de hauteur libre.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">2</span><div><h3>La piste, en deux temps</h3><p>Comme le propose World Athletics pour les budgets serrés : d’abord une ligne droite de 100 m à six couloirs (avec 3 m avant le départ et 17 m après l’arrivée) et une aire de saut en longueur le long du terrain ; puis l’anneau de 400 m autour du terrain de football, en surface minérale.</p></div></div>\n<div class=\"fiche\"><span aria-hidden=\"true\" class=\"fiche-num\">3</span><div><h3>Vestiaires et lumière</h3><p>Des vestiaires et des douches séparés pour les filles et les garçons, et l’éclairage solaire de la dalle pour les séances du soir.</p></div></div>\n<div class=\"prose\">\n<p><strong>Plus tard, si le complexe vit.</strong> Un hébergement pour les stages, une tribune, peut-être un terrain synthétique. Pas avant : un terrain synthétique coûte plusieurs centaines de milliers de dollars, demande un entretien régulier (une heure pour dix heures de jeu, selon Sport England) et sa surface peut dépasser 90 °C quand l’air est à 37 °C.</p>\n</div>"
+  },
+  {
+   "id": "couts",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Coûts</div>\n<h2>Des repères de coût, pas encore un budget</h2>\n<p>Nous n’avons pas de devis. Les chiffres ci-dessous viennent d’autres projets ou de catalogues ; ils situent des ordres de grandeur, et chacun dit d’où il vient. Le budget réel se fera sur devis locaux, et il sera publié ici avant toute demande de financement.</p>\n</div>\n<div aria-label=\"Repères de coût\" class=\"table-wrap\" role=\"region\" tabindex=\"0\">\n<table class=\"plea-table indic-table\">\n<thead><tr><th scope=\"col\">Poste</th><th scope=\"col\">Repère</th><th scope=\"col\">D’où vient le chiffre</th></tr></thead>\n<tbody>\n<tr><th scope=\"row\">Dalle multisport</th><td>11 millions de FCFA pour la réhabilitation d’un plateau de basket, de hand et de volley</td><td>Commune de Thiès-Nord (Sénégal), février 2026 ; dimensions non publiées</td></tr>\n<tr><th scope=\"row\">Tatamis (1 × 2 m)</th><td>119 à 159 € pièce par lots de plus de vingt-cinq (4 ou 5 cm d’épaisseur), hors transport : 8 600 à 11 500 € pour 72 tatamis, soit environ 5,6 à 7,5 millions de FCFA</td><td>Catalogue d’un fournisseur français, septembre 2026 ; parité fixe 1 € = 655,957 FCFA</td></tr>\n<tr><th scope=\"row\">Bâtiment simple (dojo, vestiaires)</th><td>192 000 FCFA le m² pour un logement neuf : 37,6 millions de FCFA pour 196 m² à ce prix, sans doute moins pour une salle sans cloisons ni finitions</td><td>Centre for Affordable Housing Finance in Africa, fiche Tchad : le prix le plus bas relevé, proposé par un promoteur en 2020</td></tr>\n<tr><th scope=\"row\">Terrain de football en latérite</th><td>Aucun chiffre fiable trouvé : terrassement, compactage et drainage à chiffrer sur place</td><td>La GIZ note seulement que ces surfaces coûtent nettement moins que le béton ou le gazon</td></tr>\n<tr><th scope=\"row\">Pour comparaison : terrain synthétique</th><td>445 923 dollars (Burkina Faso, 2019-2020) et 524 215 dollars (Côte d’Ivoire, 2018), payés par la FIFA</td><td>Rapport mondial FIFA Forward 2016-2022</td></tr>\n</tbody>\n</table>\n</div>"
+  },
+  {
+   "id": "protection",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Protection de l’enfance</div>\n<h2>La sécurité des enfants avant les résultats</h2>\n<p>Un complexe sportif pour enfants est d’abord un lieu où des adultes ont autorité sur des mineurs. Nous appliquerons les huit <em>International Safeguards for Children in Sport</em> (mesures internationales de prévention en faveur des enfants dans le sport, 2014), dont la première pose que toute organisation qui propose du sport aux moins de 18 ans doit avoir une politique de protection. Concrètement :</p>\n<ul>\n<li>une politique écrite, adoptée avant la première séance, et une personne désignée pour la faire respecter ;</li>\n<li>des encadreurs recrutés sur entretien et références, formés, qui signent un code de conduite : aucune punition physique, jamais seul à seul avec un enfant ;</li>\n<li>chaque incident noté et conservé, et un signalement toujours possible, même anonyme, par notre <a href=\"/transparence#comment-nous-signaler-un-manquement\">mécanisme de plainte</a> ;</li>\n<li>des liens avec les acteurs de la protection de l’enfance du Mandoul ;</li>\n<li>la chaleur traitée comme un risque : entraînements tôt le matin et en fin d’après-midi en saison chaude, eau et ombre à chaque séance, pauses pour se rafraîchir. La FIFA impose ces pauses à partir de 32 °C à l’indice WBGT ; pour des enfants, nous serons plus prudents.</li>\n</ul>\n</div>"
+  },
+  {
+   "id": "inclusion",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Pour tous</div>\n<h2>Les filles et les jeunes handicapés, dès le premier jour</h2>\n<p>Les filles auront les mêmes horaires, les mêmes terrains et leurs propres équipes dès le départ, avec des encadrantes. En janvier 2026, à Koumra, le ministre de la Jeunesse et des Sports a promis « un appui accru au sport féminin » : nous comptons nous en prévaloir.</p>\n<p>La loi 007/PR/2007 intègre les personnes handicapées aux activités socioculturelles « au même titre que les personnes valides », avec une formation dans les domaines sportifs (article 17), et impose des rampes d’accès aux constructions publiques (article 20). Le complexe sera de plain-pied ou desservi par des rampes en pente douce (1 pour 20, selon le guide d’accessibilité du Comité international paralympique), avec des toilettes accessibles. Voir notre <a href=\"/dossiers/handicap\">plan handicap</a>.</p>\n</div>"
+  },
+  {
+   "id": "gouvernance",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Gouvernance</div>\n<h2>Qui décide, qui entretient</h2>\n<p>Le complexe sera un bien collectif, pas celui d’une personne. Un comité de gestion réunira l’association, des parents, des encadreurs et des représentants des jeunes, filles comprises, et les clubs seront affiliés à leurs fédérations.</p>\n<p>L’entretien sera budgété dès le premier jour : la latérite se nivelle et se compacte à chaque saison, les caniveaux se curent avant les pluies, et sur la dalle on ne repeint que les lignes. La question d’une cotisation sera tranchée en assemblée générale, avec une règle : aucun enfant écarté faute d’argent. Les comptes seront publiés dans notre <a href=\"/impact\">tableau de suivi</a>.</p>\n</div>"
+  },
+  {
+   "id": "financements",
+   "alt": true,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Financements</div>\n<h2>Où chercher l’argent, et à quelles conditions</h2>\n<p><strong>Aucun don n’est collecté aujourd’hui.</strong> La collecte de l’association est suspendue depuis le 23 septembre 2026, le temps de réunir trois conditions, dont un compte ouvert à son nom (<a href=\"/participer#collecte-suspendue\">voir pourquoi</a>). Voici les sources réalistes, et ce que chacune exige.</p>\n</div>\n<div aria-label=\"Sources de financement possibles\" class=\"table-wrap\" role=\"region\" tabindex=\"0\">\n<table class=\"plea-table indic-table\">\n<thead><tr><th scope=\"col\">Source</th><th scope=\"col\">Ce qu’elle apporte</th><th scope=\"col\">Comment y accéder</th></tr></thead>\n<tbody>\n<tr><th scope=\"row\">FIFA Forward</th><td>Jusqu’à 8 millions de dollars par fédération sur 2023-2026, que la fédération peut redistribuer à ses ligues et à ses clubs</td><td>Seulement par la FTFA et la ligue du Mandoul</td></tr>\n<tr><th scope=\"row\">FIFA Arena</th><td>Des mini-terrains synthétiques : vingt-trois prévus au Tchad, le premier à Koumra</td><td>Par le ministère et la FTFA, qui conduisent le projet</td></tr>\n<tr><th scope=\"row\">FIFA Football for Schools</th><td>Formation et matériel pour les écoles</td><td>Par le ministère de l’Éducation nationale ; programme lancé au Tchad en mai 2023</td></tr>\n<tr><th scope=\"row\">Fondation FIFA, programme communautaire</th><td>Jusqu’à 30 000 dollars par an</td><td>Candidature directe d’une ONG enregistrée, avec une politique de protection de l’enfance et des comptes audités : ADEB LONODJI n’y est pas encore éligible</td></tr>\n<tr><th scope=\"row\">Solidarité olympique (CIO)</th><td>Stages et bourses pour les entraîneurs</td><td>Par les fédérations et le Comité olympique et sportif tchadien (COST)</td></tr>\n<tr><th scope=\"row\">Fédération internationale de judo</th><td>Des tatamis ou des kimonos, déjà donnés à des fédérations africaines (Zimbabwe, Burkina Faso)</td><td>Par la Fédération tchadienne de judo</td></tr>\n<tr><th scope=\"row\">World Athletics, <span lang=\"en\">Kids’ Athletics</span></th><td>Une méthode et des ressources gratuites pour les 4 à 14 ans</td><td>Directement, dès maintenant</td></tr>\n<tr><th scope=\"row\">AFD, « Sport en commun »</th><td>Des appels à projets pour les acteurs africains du sport ; celui de 2026 est clos</td><td>Il exigeait 36 mois d’existence légale et un besoin de plus de 100 000 €</td></tr>\n<tr><th scope=\"row\">Diaspora et habitants</th><td>Du travail, des matériaux, un terrain</td><td>En nature, sans argent : voir <a href=\"/participer#dons-nature\">Soutenir</a></td></tr>\n</tbody>\n</table>\n</div>\n<div class=\"prose\">\n<p>Notre statut juridique est encore en vérification ; tant qu’il ne l’est pas, les financements directs (Fondation FIFA, AFD) nous restent fermés. C’est une raison de plus de commencer par l’étape qui ne coûte presque rien.</p>\n</div>"
+  },
+  {
+   "id": "ne-ferons-pas",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Les limites de ce projet</div>\n<h2>Quatre choses que nous ne ferons pas</h2>\n</div>\n<div class=\"pole-grid\">\n<article class=\"info-card\"><h3>Construire sans terrain garanti par écrit</h3><p>Pas un sac de ciment avant une convention signée avec la commune et la chefferie, pour un usage sportif et une longue durée.</p></article>\n<article class=\"info-card\"><h3>Collecter de l’argent sans compte au nom de l’association</h3><p>La règle vaut pour tous nos projets ; celui-ci n’y fait pas exception.</p></article>\n<article class=\"info-card\"><h3>Poser un gazon synthétique avant de savoir entretenir la latérite</h3><p>Un équipement coûteux qu’on ne sait pas entretenir se dégrade plus vite qu’un terrain simple bien tenu.</p></article>\n<article class=\"info-card\"><h3>Confier un enfant à un adulte qui n’a pas signé la charte</h3><p>Aucune exception, pour aucun titre ni aucune compétence : la protection passe avant le résultat.</p></article>\n</div>"
+  },
+  {
+   "id": "",
+   "alt": true,
+   "cls": "durability-grid",
+   "tag": "section",
+   "html": "<div class=\"eyebrow\">Durabilité</div>\n<h2 id=\"durabilite-titre\">Grille de durabilité : cinq questions</h2>\n<p class=\"prose-note\">Les mêmes cinq questions sont posées à chacun de nos projets. Nous n’inscrivons que ce qui est déjà publié sur ce site ; le reste est noté « à établir ». « Établi » veut dire que la réponse est écrite, pas que c’est déjà fait. <a href=\"/dossiers/environnement#grille\">Pourquoi cette grille</a>.</p>\n<div aria-label=\"Grille de durabilité — complexe de formation sportive\" class=\"table-wrap\" role=\"region\" tabindex=\"0\">\n<table class=\"plea-table grid-table\">\n<thead><tr><th scope=\"col\">Question</th><th scope=\"col\">État</th><th scope=\"col\">Ce que nous savons aujourd’hui</th></tr></thead>\n<tbody>\n<tr><th scope=\"row\">Qui entretient ?</th><td><span class=\"grid-status grid-status--part\">En partie</span></td><td>Le comité de gestion ; latérite nivelée et compactée à chaque saison, caniveaux curés avant les pluies. Les personnes restent à désigner.</td></tr>\n<tr><th scope=\"row\">Avec quel budget ?</th><td><span class=\"grid-status grid-status--todo\">À établir</span></td><td>Aucun devis ; des repères de coût sont publiés plus haut, et une ligne d’entretien figurera dans le premier budget.</td></tr>\n<tr><th scope=\"row\">Que deviennent les déchets ?</th><td><span class=\"grid-status grid-status--todo\">À établir</span></td><td>Bouteilles et emballages des jours de tournoi : poubelles et collecte à organiser.</td></tr>\n<tr><th scope=\"row\">Quel effet sur l’eau et les arbres ?</th><td><span class=\"grid-status grid-status--part\">En partie</span></td><td>Terrain en latérite, sans gazon à arroser ; l’eau sert à boire, pas à irriguer. Des arbres d’ombrage à planter autour des terrains.</td></tr>\n<tr><th scope=\"row\">Qui est formé ?</th><td><span class=\"grid-status grid-status--part\">En partie</span></td><td>Les encadreurs : protection de l’enfance, licence D de la FTFA, <span lang=\"en\">Kids’ Athletics</span>. L’entretien : à définir.</td></tr>\n</tbody>\n</table>\n</div>"
+  },
+  {
+   "id": "agir",
+   "alt": false,
+   "cls": "",
+   "tag": "section",
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Agir</div>\n<h2>Ce que vous pouvez faire dès maintenant</h2>\n<ul>\n<li>Vous avez joué, entraîné, arbitré ou enseigné l’éducation physique : proposez-vous comme encadreur.</li>\n<li>Vous connaissez un terrain libre, un bâtiment, ou simplement un espace plat de 60 × 40 m : dites-le-nous.</li>\n<li>Vous représentez une ligue, un club, une école ou l’association ASDMO : travaillons ensemble.</li>\n<li>Vous voulez coordonner la thématique <a href=\"/programmes#jeunesse-reussite\">Jeunesse &amp; réussite</a> : elle attend encore son coordonnateur.</li>\n</ul>\n<p><a class=\"btn btn-primary\" href=\"/participer?theme=09#contact\">Proposer mon aide</a> <a class=\"btn btn-ghost\" href=\"/programmes#jeunesse-reussite\">Voir la thématique</a></p>\n<p class=\"form-note\">Sources : Tchadinfos, championnats provinciaux de football du Mandoul (2 décembre 2024, 19 avril 2025, 29 mai 2026), mission du ministre de la Jeunesse et des Sports dans le Mandoul (28 janvier 2026), accord Tchad-FIFA sur vingt-trois mini-terrains (4 mai 2026), FIFA Arena de Koumra (9 septembre 2026), stage de la fédération de karaté à Doba (31 décembre 2024), tournoi féminin de basket de Doba (27 mars 2024), formation à la licence D à Sarh (15 juin 2026) ; Alwihda Info et Ialtchad, championnats de lutte traditionnelle (2010, 2021) ; United World Wrestling, fiche de la FTLA ; FIFA, lancement de <span lang=\"en\">Football for Schools</span> au Tchad (15 mai 2023), règlement FIFA Forward 3.0 (2023-2026), lignes directrices du programme communautaire de la Fondation FIFA (2025-2026), programme FIFA Guardians, rapport mondial FIFA Forward 2016-2022 ; IFAB, Lois du jeu 2026/27 ; FIBA, règles officielles 2024 ; FIVB, règles 2025-2028 ; IHF, règles du jeu (2024) ; Fédération internationale de judo, règles sportives et d’organisation (janvier 2026) et actualités de développement ; WKF, règles de kata 2026 ; Sport England, tailles comparées des aires en salle (2015) et surfaces artificielles (2013) ; World Athletics, manuel des installations (2019) et <span lang=\"en\">Kids’ Athletics</span> ; GIZ, manuel de conception des terrains <span lang=\"en\">Sport for Development in Africa</span> (2019) et manuel d’entretien (2017) ; The FA, dimensions des terrains de jeunes (2012) ; Racinais et al., consensus sur l’exercice à la chaleur, <em>British Journal of Sports Medicine</em> (2015) ; McNitt et al., Penn State (température des gazons synthétiques) ; APS via AllAfrica, plateau multisport de Thiès-Nord (16 février 2026) ; catalogue Sporenco (tatamis) ; CAHF, fiche Tchad (2021) ; UNICEF UK et partenaires, <em>International Safeguards for Children in Sport</em> (2014) ; Comité international paralympique, guide d’accessibilité (2020) ; loi 007/PR/2007, articles 17 et 20 ; Sport en commun (AFD), appel 2026. Recherche du 24 septembre 2026.</p>\n</div>"
+  }
+ ],
+ "words": 2985,
+ "forms": [],
+ "hasMap": false,
+ "slug": "complexe-sportif",
+ "route": "/dossiers/complexe-sportif",
+ "kind": "dossier"
+}
