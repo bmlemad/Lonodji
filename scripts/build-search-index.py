@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content"
 OUT = ROOT / "public" / "search-index.json"
+OUT_PALETTE = ROOT / "public" / "search-palette.json"  # index allégé (titre, route, type, description) pour la palette « Aller à… »
 MAX_TEXT = 3500
 
 KIND_LABEL = {"hub": "Page", "dossier": "Dossier", "en": "In English", "article": "Article"}
@@ -76,12 +77,12 @@ PAGES_SITE += [
      "d": "L’Organisation pour le Développement et l’Émergence Bedjonde : un projet porté par ADEB LONODJI pour doter le pays bedjond d’un outil permanent de recherche, de documentation, de développement territorial, d’innovation, de patrimoine et de diaspora.",
      "x": "ODEB projet vision 2030 quarante ans 40 ans anniversaire fondations 1986 réflexion lancement organisation développement émergence bedjonde transformation institutionnelle outil permanent six missions recherche documentation développement territorial innovation préservation du patrimoine mobilisation de la diaspora pourquoi créer l’ODEB ONG conversion organisation de référence"},
     {"t": "Livre blanc du projet ODEB LONODJI", "r": "/odeb/livre-blanc", "k": "Page",
-     "d": "Le document fondateur, en version de travail : d’où nous partons, pourquoi une organisation, la vision 2030, six missions, cinq programmes, principes de gouvernance et de redevabilité, ressources, feuille de route, statut du document.",
+     "d": "Le document fondateur, en version de travail : d’où nous partons, pourquoi une organisation, la vision 2030, six missions, six programmes, principes de gouvernance et de redevabilité, ressources, feuille de route, statut du document.",
      "x": "livre blanc document fondateur ODEB version de travail préambule vision 2030 missions programmes principes gouvernance redevabilité ressources partenaires diaspora chercheurs données ouvertes feuille de route statut adoption assemblée PDF"},
     {"t": "Feuille de route 2026-2030 du projet ODEB", "r": "/odeb/feuille-de-route", "k": "Page",
      "d": "Trois phases, de la relance de 2026 à l’organisation de référence de 2030 : chaque chantier avec son état réel — réalisé, en cours, à venir, à décider.",
      "x": "feuille de route 2026 2030 phases tableau de bord dynamique cartographie communautaire espace membre registre des compétences plateforme de projets bibliothèque numérique observatoire du Mandoul Occidental patrimoine vivant multimédia académie numérique application mobile bilan plan d’action rapport annuel organisation constituée"},
-    {"t": "Les cinq programmes du projet ODEB", "r": "/odeb/programmes", "k": "Page",
+    {"t": "Les six programmes du projet ODEB", "r": "/odeb/programmes", "k": "Page",
      "d": "Mémoire et Patrimoine, Recherche, Développement territorial, Jeunesse et Innovation, Diaspora : axes, thématiques mobilisées, coordination.",
      "x": "programmes ODEB mémoire patrimoine recherche développement territorial jeunesse innovation diaspora thématiques coordonnateurs articulation pôles"},
     {"t": "Programme Mémoire et Patrimoine (ODEB)", "r": "/odeb/programmes/memoire-patrimoine", "k": "Page",
@@ -100,6 +101,9 @@ PAGES_SITE += [
      "d": "Experts, investissements, mentorat : ce qui existe, ce que le programme construira.",
      "x": "programme diaspora experts répertoire des compétences réseau annuaire investissements compte bancaire projets financés mentorat jeunes"},
 ]
+PAGES_SITE.append({"t": "Programme Économie sociale et revenus (ODEB)", "r": "/odeb/programmes/economie-sociale", "k": "Page",
+     "d": "Des entreprises distinctes de l’association dont les bénéfices financent les projets : complexe hôtelier à Bédjondo, collège-lycée avec internat dès la sixième, transport et logistique terrestres, et dix autres activités proposées ; cinq règles, trois étapes.",
+     "x": "programme économie sociale revenus activités génératrices de revenus lucratif entreprises bénéfices projets développement bien-être complexe hôtelier hôtel Bédjondo complexe scolaire internat sixième collège lycée élites bourses société de transport logistique terrestre Air Bedjondo huilerie arachide sésame moulin stockage warrantage ferme agro-pastorale briqueterie matériaux énergie solaire kiosque centre de services numériques mobile money galerie marchande logements loyers pharmacie centre médical tarif solidaire station carburant boutique du terroir diaspora caisse d’épargne microfinance COBAC société coopérative OHADA dividendes comptes publiés audit"})
 PAGES_SITE.append({"t": "Plateforme de projets", "r": "/projets", "k": "Page",
      "d": "Espace numérique communautaire, application pour téléphone, complexe sportif, Air Bedjondo : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer ; proposer un projet.",
      "x": "projets plateforme stade idée étude annoncé souscription financé réalisation essai service espace numérique application complexe sportif Air Bedjondo budget devis calendrier porteur thématique promesse de contribution proposer un projet forage école pont bibliothèque atelier"})
@@ -113,7 +117,7 @@ PAGES_SITE.append({"t": "Identité visuelle : le logo « Les Pas vers l’Avenir
      "d": "Trois empreintes — les ancêtres, la génération actuelle, les générations futures — vers un soleil levant : le logo du projet, ses versions, ses couleurs, ses règles, le kit à télécharger et le papier à en-tête.",
      "x": "logo ODEB identité visuelle charte graphique emblème empreintes pas générations soleil levant verre devise sur les traces de nos ancêtres bâtissons notre avenir couleurs vert profond acacia doré polices DM Sans Playfair kit ZIP SVG PNG papier à en-tête planche imprimeur règles zone de protection tailles minimales monochrome réserve blanche"})
 PAGES_SITE.append({"t": "The ODEB LONODJI project — Vision 2030 (in English)", "r": "/en/odeb", "k": "In English",
-     "d": "A project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030: six missions, five programmes, a roadmap, a white paper.",
+     "d": "A project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030: six missions, six programmes, a roadmap, a white paper.",
      "x": "ODEB LONODJI project English vision 2030 organisation development emergence Bedjond people missions research documentation territorial development innovation heritage diaspora programmes roadmap white paper take part skills register"})
 PAGES_SITE.append({"t": "Déclaration d’accessibilité", "r": "/accessibilite", "k": "Page",
      "d": "Niveau visé WCAG 2.1 AA, ce qui est vérifié avant chaque mise en ligne, les limites connues (carte, PDF, contenus importés) et comment signaler un obstacle.",
@@ -152,4 +156,6 @@ for d in idx["documents"]:
     entries.append({"t": d["title"], "r": d["pdf"] or "/documents", "k": "Document PDF" if d["pdf"] else "Document à venir", "d": d["description"], "x": d.get("meta", "")})
 
 OUT.write_text(json.dumps(entries, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+palette = [{"t": e["t"], "r": e["r"], "k": e["k"], "d": (e.get("d") or "")[:150]} for e in entries]
+OUT_PALETTE.write_text(json.dumps(palette, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 print(f"search-index.json : {len(entries)} entrées, {OUT.stat().st_size // 1024} Ko")

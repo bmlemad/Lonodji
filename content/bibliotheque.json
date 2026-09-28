@@ -870,13 +870,13 @@
    "articles": 4
   },
   {
-   "slug": "lettre",
-   "label": "Lettre d’information",
-   "articles": 2
-  },
-  {
    "slug": "developpement",
    "label": "Développement",
+   "articles": 3
+  },
+  {
+   "slug": "lettre",
+   "label": "Lettre d’information",
    "articles": 2
   },
   {
@@ -915,5 +915,5 @@
    "articles": 1
   }
  ],
- "totalArticles": 40
+ "totalArticles": 41
 }

@@ -8,9 +8,9 @@ import { chiffresOdeb, thematiquesParId } from "../../../lib/odeb-chiffres";
 
 export const metadata: Metadata = {
   title: "The ODEB LONODJI project — Vision 2030 (in English)",
-  description: "ODEB LONODJI, the Organisation for the Development and Emergence of the Bedjond people: a project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030. Six missions, five programmes, a roadmap, a white paper.",
+  description: "ODEB LONODJI, the Organisation for the Development and Emergence of the Bedjond people: a project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030. Six missions, six programmes, a roadmap, a white paper.",
   alternates: { canonical: "/en/odeb", languages: { fr: "/odeb", en: "/en/odeb" } },
-  openGraph: { ...ogFor("/en/odeb", "en"), title: "The ODEB LONODJI project — Vision 2030", description: "A project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030: six missions, five programmes, a roadmap, a white paper." },
+  openGraph: { ...ogFor("/en/odeb", "en"), title: "The ODEB LONODJI project — Vision 2030", description: "A project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030: six missions, six programmes, a roadmap, a white paper." },
 };
 
 const MISSIONS_EN: [string, string][] = [
@@ -27,6 +27,7 @@ const PROGRAMMES_EN: Record<string, [string, string]> = {
   "developpement-territorial": ["Territorial development", "Observatory, data, diagnostics."],
   "jeunesse-innovation": ["Youth and Innovation", "Digital academy, artificial intelligence, skills."],
   diaspora: ["Diaspora", "Experts, investment, mentoring."],
+  "economie-sociale": ["Social economy and revenue", "Businesses whose profits fund development: hotel, boarding school, transport and logistics, and more."],
 };
 const REPERES_EN = [
   "the digital memory of the Bedjond people",
@@ -50,12 +51,12 @@ export default function OdebEn() {
         em="and Emergence of the Bedjond people."
         lead="ODEB LONODJI is a strategic project led by ADEB LONODJI, aiming to establish, in time, a reference organisation dedicated to sustainable development, research, heritage and the emergence of the Bedjond country (Mandoul Occidental, Chad). It was launched on 28 September 2026, the day the association celebrated forty years since its founding reflections of 1986."
         crumbs={[{ label: "In English", href: "/en/index" }, { label: "ODEB project" }]}
-        pills={["Led by ADEB LONODJI", "Launched 28 September 2026", "Six missions, five programmes", "White paper: working draft, in French"]}
+        pills={["Led by ADEB LONODJI", "Launched 28 September 2026", "Six missions, six programmes", "White paper: working draft, in French"]}
       />
 
       <Stats items={[
         { value: "6", label: "permanent missions", note: "research, documentation, territorial development, innovation, heritage, diaspora" },
-        { value: "5", label: "programmes", note: "memory and heritage, research, territorial development, youth and innovation, diaspora" },
+        { value: "6", label: "programmes", note: "memory and heritage, research, territorial development, youth and innovation, diaspora, social economy and revenue" },
         { value: `${faits}/${tous.length}`, label: "roadmap items completed", note: "as verified on the site, 2026–2030 in three phases" },
         { value: `${c.pourvues}/${c.total}`, label: "themes with a coordinator", note: `${c.vacantes} still open; a skill from the diaspora can make the difference` },
       ]} />
@@ -68,7 +69,7 @@ export default function OdebEn() {
       </section>
 
       <section className="hub-section" id="programmes">
-        <SectionHead eyebrow="Five programmes" title="Programmes," em="not promises." text="Each programme has three strands, relies on named themes of the association and states, on its French page, what already exists and what it would build by 2030 — in the conditional, because nothing is funded." />
+        <SectionHead eyebrow="Six programmes" title="Programmes," em="not promises." text="Each programme has three strands, relies on named themes of the association and states, on its French page, what already exists and what it would build by 2030 — in the conditional, because nothing is funded. The sixth, added on the evening of 28 September 2026, proposes income-generating businesses — a hotel, a boarding school from year 7, a transport company — whose profits would fund the development and welfare projects." />
         <div className="od-programmes">
           {PROGRAMMES.map((p) => {
             const [nom, texte] = PROGRAMMES_EN[p.slug];

@@ -35,11 +35,11 @@ def visuels() -> list[dict]:
     return [
         {"nom": "40-ans-reflexion-odeb", "odeb": True, "eyebrow": "1986 → 2026 · quarante ans des fondations",
          "titre": "ADEB LONODJI ouvre la <em>réflexion ODEB LONODJI</em>",
-         "lignes": ["Organisation pour le Développement et l’Émergence Bedjonde", "Vision 2030 · six missions · cinq programmes", "Un livre blanc en version de travail, à discuter"],
+         "lignes": ["Organisation pour le Développement et l’Émergence Bedjonde", "Vision 2030 · six missions · six programmes", "Un livre blanc en version de travail, à discuter"],
          "url": "lonodji.org/odeb"},
         {"nom": "livre-blanc-odeb", "odeb": True, "eyebrow": "Projet ODEB LONODJI · document fondateur",
          "titre": "Le livre blanc, <em>à lire et à discuter</em>",
-         "lignes": ["D’où nous partons, pourquoi une organisation, la vision 2030", "Six missions, cinq programmes, une feuille de route 2026-2030", "Version de travail n° 1 · en ligne et en PDF"],
+         "lignes": ["D’où nous partons, pourquoi une organisation, la vision 2030", "Six missions, six programmes, une feuille de route 2026-2030", "Version de travail n° 1 · en ligne et en PDF"],
          "url": "lonodji.org/odeb/livre-blanc"},
         {"nom": "thematiques-a-pourvoir", "eyebrow": f"{pourvues} thématiques pourvues sur {len(them)}",
          "titre": f"{'Quatre' if len(vacantes) == 4 else len(vacantes)} thématiques <em>cherchent leur coordonnateur</em>",

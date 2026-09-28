@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import AppShell from "../components/app-shell";
 import NavTools from "../components/nav-tools";
+import Palette from "../components/palette";
+import SectionRail from "../components/section-rail";
 import SiteFooter from "../components/site-footer";
 import SiteNav from "../components/site-nav";
 import { ORG } from "../lib/content";
@@ -63,6 +65,8 @@ export default function RootLayout({
         {children}
         <SiteFooter miseAJour={miseAJour} />
         <NavTools />
+        <Palette />
+        <SectionRail />
         <AppShell />
         <Script id="structured-data" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({

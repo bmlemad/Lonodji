@@ -148,6 +148,6 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
   ] },
   { titre: "Projet ODEB · Vision 2030", liens: [
     { label: "La vision", href: "/odeb" }, { label: "Pourquoi créer l’ODEB ?", href: "/odeb#pourquoi" }, { label: "Livre blanc", href: "/odeb/livre-blanc" }, { label: "Feuille de route 2026-2030", href: "/odeb/feuille-de-route" },
-    { label: "Les cinq programmes", href: "/odeb/programmes" }, { label: "Identité visuelle", href: "/odeb/identite" },
+    { label: "Les six programmes", href: "/odeb/programmes" }, { label: "Identité visuelle", href: "/odeb/identite" },
   ] },
 ];

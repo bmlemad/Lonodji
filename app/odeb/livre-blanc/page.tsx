@@ -8,7 +8,7 @@ import { chiffresOdeb, thematiquesParId } from "../../../lib/odeb-chiffres";
 
 export const metadata: Metadata = {
   title: "Livre blanc du projet ODEB LONODJI (version de travail)",
-  description: "Le document fondateur de l’ODEB LONODJI : d’où nous partons, pourquoi une organisation, la vision 2030, six missions, cinq programmes, principes, ressources et feuille de route.",
+  description: "Le document fondateur de l’ODEB LONODJI : d’où nous partons, pourquoi une organisation, la vision 2030, six missions, six programmes, principes, ressources et feuille de route.",
   alternates: { canonical: "/odeb/livre-blanc" },
   openGraph: ogFor("/odeb/livre-blanc"),
 };
@@ -19,7 +19,7 @@ const CHAPITRES = [
   ["pourquoi", "Pourquoi une organisation"],
   ["vision", "La vision 2030"],
   ["missions", "Six missions"],
-  ["programmes", "Cinq programmes"],
+  ["programmes", "Six programmes"],
   ["principes", "Principes de gouvernance et de redevabilité"],
   ["ressources", "Ressources et partenaires"],
   ["feuille-de-route", "Feuille de route 2026-2030"],
@@ -102,8 +102,8 @@ export default function LivreBlanc() {
           </section>
 
           <section id="programmes" className="od-chap">
-            <h2><span>6.</span> Cinq programmes</h2>
-            <p>Les missions s’exécutent à travers cinq programmes. Chacun a trois axes, s’appuie sur des thématiques nommées de l’association et dit, sur sa page, ce qui existe et ce qu’il construira.</p>
+            <h2><span>6.</span> Six programmes</h2>
+            <p>Les missions s’exécutent à travers six programmes. Chacun a trois axes, s’appuie sur des thématiques nommées de l’association et dit, sur sa page, ce qui existe et ce qu’il construira. Le sixième, Économie sociale et revenus, proposé le soir du 28 septembre 2026, est d’une autre nature : des entreprises distinctes de l’association, dont les bénéfices reviendraient aux projets de développement et de bien-être — un complexe hôtelier, un collège-lycée avec internat, une société de transport, et d’autres activités à étudier —, sous cinq règles : une société et non l’association, des comptes publiés et des bénéfices affectés aux projets, ce qui manque au pays et non ce qui y existe, de l’argent propre sans promesse de rendement, une entreprise à la fois.</p>
             <dl className="od-dl">
               {PROGRAMMES.map((p) => {
                 const ths = p.thematiques.map((id) => th[id]).filter(Boolean);

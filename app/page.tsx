@@ -98,7 +98,7 @@ export default function Home() {
             <img className="od-band-embleme" src={IDENTITE.superposable} alt="" width={140} height={140} loading="lazy" decoding="async" />
             <p className="eyebrow">03 — Vision 2030</p>
             <h2 id="odeb-title">Projet ODEB LONODJI.<br /><em>D’une association à un outil permanent.</em></h2>
-            <p className="od-band-note"><b>1986 → 2026.</b> Pour les quarante ans de ses fondations, l’association a lancé le {ODEB.presenteLabel} la réflexion ODEB LONODJI : six missions, cinq programmes, un livre blanc en version de travail. <Link href={ODEB.article}>L’article du jour →</Link></p>
+            <p className="od-band-note"><b>1986 → 2026.</b> Pour les quarante ans de ses fondations, l’association a lancé le {ODEB.presenteLabel} la réflexion ODEB LONODJI : six missions, six programmes, un livre blanc en version de travail. <Link href={ODEB.article}>L’article du jour →</Link></p>
           </div>
           <div>
             <p className="lead od-band-lead">{ODEB.formulation}</p>

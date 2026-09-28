@@ -8,7 +8,7 @@ const ENTREES = [
   { id: "pourquoi", label: "Pourquoi l’ODEB ?", href: "/odeb#pourquoi" },
   { id: "livre-blanc", label: "Livre blanc", href: "/odeb/livre-blanc" },
   { id: "feuille-de-route", label: "Feuille de route 2026-2030", href: "/odeb/feuille-de-route" },
-  { id: "programmes", label: "Les cinq programmes", href: "/odeb/programmes" },
+  { id: "programmes", label: "Les six programmes", href: "/odeb/programmes" },
   { id: "identite", label: "Identité visuelle", href: "/odeb/identite" },
 ];
 

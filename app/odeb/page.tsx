@@ -28,13 +28,13 @@ export default function Odeb() {
         em="et l’Émergence Bedjonde."
         lead={ODEB.formulation}
         crumbs={[{ label: "Projet ODEB" }]}
-        pills={["Projet porté par ADEB LONODJI", `Réflexion lancée le ${ODEB.presenteLabel}`, "Pour les quarante ans des fondations, 1986-2026", "Six missions, cinq programmes", "Livre blanc en version de travail"]}
+        pills={["Projet porté par ADEB LONODJI", `Réflexion lancée le ${ODEB.presenteLabel}`, "Pour les quarante ans des fondations, 1986-2026", "Six missions, six programmes", "Livre blanc en version de travail"]}
       />
       <OdebNav actif="vision" />
 
       <Stats items={[
         { value: "6", label: "missions permanentes", note: "recherche, documentation, développement territorial, innovation, patrimoine, diaspora" },
-        { value: "5", label: "programmes", note: "mémoire et patrimoine, recherche, développement territorial, jeunesse et innovation, diaspora" },
+        { value: String(PROGRAMMES.length), label: "programmes", note: "mémoire et patrimoine, recherche, développement territorial, jeunesse et innovation, diaspora, économie sociale et revenus" },
         { value: ODEB.horizon, label: "l’horizon", note: "une feuille de route en trois phases, de 2026 à 2030" },
         { value: `${c.pourvues}/${c.total}`, label: "thématiques déjà pourvues", note: `${nf.format(coordonnateurs.size)} coordonnateurs et coordonnatrices portent déjà les programmes` },
       ]} />
@@ -66,7 +66,7 @@ export default function Odeb() {
       </section>
 
       <section className="hub-section" id="programmes">
-        <SectionHead eyebrow="Cinq programmes" title="Des programmes," em="pas des promesses." text="Chaque programme a trois axes, s’appuie sur des thématiques nommées et dit, page par page, ce qui existe déjà et ce qu’il construira. Ce qui n’est pas fait est écrit au conditionnel." />
+        <SectionHead eyebrow="Six programmes" title="Des programmes," em="pas des promesses." text="Chaque programme a trois axes, s’appuie sur des thématiques nommées et dit, page par page, ce qui existe déjà et ce qu’il construira. Ce qui n’est pas fait est écrit au conditionnel. Le sixième, ajouté le soir du 28 septembre 2026, propose des entreprises dont les bénéfices financeraient les projets." />
         <div className="od-programmes">
           {PROGRAMMES.map((p) => {
             const ths = p.thematiques.map((id) => th[id]).filter(Boolean);
@@ -97,7 +97,7 @@ export default function Odeb() {
           <article>
             <span className="status">Document fondateur · version de travail</span>
             <h3>Livre blanc du projet ODEB LONODJI</h3>
-            <p>D’où nous partons, pourquoi une organisation, la vision 2030, les six missions, les cinq programmes, les principes de gouvernance et de redevabilité, les ressources, la feuille de route — et le statut du document.</p>
+            <p>D’où nous partons, pourquoi une organisation, la vision 2030, les six missions, les six programmes, les principes de gouvernance et de redevabilité, les ressources, la feuille de route — et le statut du document.</p>
             <div className="doc-links"><Link className="button primary" href="/odeb/livre-blanc">Lire en ligne <span aria-hidden="true">↗</span></Link><a className="button secondary" href={ODEB.livreBlancPdf} download>PDF</a></div>
           </article>
           <article>

@@ -85,7 +85,7 @@ export const IDENTITE = {
 };
 
 /* Le menu « Projet ODEB LONODJI », tel que l'association l'a demandé :
-   Vision (pourquoi, livre blanc, feuille de route) puis les cinq programmes. */
+   Vision (pourquoi, livre blanc, feuille de route) puis les six programmes. */
 export const MENU_ODEB: { titre: string; liens: (Lien & { note?: string })[] }[] = [
   {
     titre: "Vision",
@@ -106,7 +106,8 @@ export const MENU_ODEB: { titre: string; liens: (Lien & { note?: string })[] }[]
       { label: "Développement territorial", href: "/odeb/programmes/developpement-territorial", note: "Observatoire, données, diagnostics" },
       { label: "Jeunesse et Innovation", href: "/odeb/programmes/jeunesse-innovation", note: "Académie numérique, IA, compétences" },
       { label: "Diaspora", href: "/odeb/programmes/diaspora", note: "Experts, investissements, mentorat" },
-      { label: "Les cinq programmes", href: "/odeb/programmes", note: "Vue d’ensemble et thématiques mobilisées" },
+      { label: "Économie sociale et revenus", href: "/odeb/programmes/economie-sociale", note: "Hôtel, collège-internat, transport : des revenus pour les projets" },
+      { label: "Les six programmes", href: "/odeb/programmes", note: "Vue d’ensemble et thématiques mobilisées" },
     ],
   },
 ];
@@ -133,16 +134,22 @@ export const REPERES_2030 = [
   "une référence africaine de développement territorial piloté par la communauté",
 ];
 
-/* Les cinq programmes. `axes` reprend les trois sous-titres donnés par
+/* Les six programmes. `axes` reprend les trois sous-titres donnés par
    l'association pour chaque programme ; `existant` renvoie à ce que le site
    fait déjà, `suite` dit ce que le programme construira — au conditionnel des
    documents de stratégie, jamais comme un fait acquis. `thematiques` : les
    identifiants des thématiques (content/index.json) qui portent le programme ;
    leurs coordonnateurs sont lus à la construction. */
 export type Axe = { titre: string; texte: string; existant: Lien[]; suite: string };
+/* Une activité génératrice de revenus proposée (programme 06) : rien n'est décidé ni chiffré. */
+export type Activite = { nom: string; quoi: string; pourquoi: string; revenus: string; finance: string; prealables: string; risque: string; thematiques: string[]; projet?: string };
 export type Programme = {
   slug: string; numero: string; nom: string; accroche: string; objet: string;
   missions: string[]; axes: Axe[]; thematiques: string[]; contribuer: Lien[];
+  /* programme 06 : les règles du jeu, le portefeuille d'activités proposées, les étapes */
+  principes?: { titre: string; texte: string }[];
+  portefeuille?: Activite[];
+  etapes?: { periode: string; titre: string; texte: string }[];
 };
 
 export const PROGRAMMES: Programme[] = [
@@ -241,6 +248,50 @@ export const PROGRAMMES: Programme[] = [
     thematiques: ["reseau-experts-diaspora", "entrepreneuriat-finance-inclusive", "jeunesse-reussite", "cellule-financement-ressources"],
     contribuer: [{ label: "Inscrire ses compétences", href: "/diaspora#inscription" }, { label: "Proposer ou soutenir un projet", href: "/projets" }, { label: "Adhérer à l’association", href: "/participer#adherer" }],
   },
+  {
+    slug: "economie-sociale", numero: "06", nom: "Économie sociale et revenus",
+    accroche: "Des activités qui rapportent, pour financer celles qui ne rapportent pas : le développement et le bien-être.",
+    objet: "Le programme crée, sous une forme juridique distincte de l’association, des entreprises dont les bénéfices reviennent intégralement aux projets de développement et de bien-être du pays bedjond. Il ne s’agit pas de gagner de l’argent pour lui-même, mais d’avoir des revenus propres et durables, pour que les projets ne dépendent plus seulement des cotisations et des dons. Trois entreprises phares ont été proposées le 28 septembre 2026 — un complexe hôtelier à Bédjondo, un complexe scolaire avec internat à partir de la sixième, une société de transport et de logistique terrestres — et une dizaine d’autres activités sont proposées ici pour être étudiées. Rien n’est créé, ni étudié, ni financé à ce jour.",
+    missions: ["developpement", "diaspora", "innovation"],
+    axes: [
+      { titre: "Hôtellerie et accueil", texte: "Un complexe hôtelier à Bédjondo : chambres, restauration, salle de réunion et d’événements, pour les missions administratives et associatives, les commerçants, les visiteurs et la diaspora de passage. Ses bénéfices financent les projets.",
+        existant: [{ label: "Bédjondo, chef-lieu : repères", href: "/dossiers/bedjondo" }, { label: "Plateforme de projets : le complexe hôtelier", href: "/projets#complexe-hotelier" }, { label: "Répertoire des compétences (hôtellerie, gestion)", href: "/diaspora" }],
+        suite: "Une étude de marché dirait d’abord qui dort et se réunit à Bédjondo aujourd’hui, et où ; une première phase — une maison d’hôtes d’une dizaine de chambres avec une salle — précéderait le complexe, avec un exploitant formé et des comptes publiés. Terrain, coût et calendrier restent à établir." },
+      { titre: "Éducation d’excellence", texte: "Un complexe scolaire avec internat à partir de la sixième, pour former les futures élites du pays bedjond : collège puis lycée, exigeants, ouverts par des bourses aux élèves méritants sans moyens. Les frais de scolarité couvrent les charges et dégagent un excédent pour les projets.",
+        existant: [{ label: "Thématique Jeunesse & réussite", href: "/programmes#jeunesse-reussite" }, { label: "Complexe sportif (à l’étude)", href: "/projets#complexe-sportif" }, { label: "Espace numérique communautaire", href: "/dossiers/espace-numerique" }, { label: "Plateforme de projets : le complexe scolaire", href: "/projets#complexe-scolaire-internat" }],
+        suite: "Le collège viendrait d’abord (quatre classes, un internat), le lycée ensuite ; il faudrait l’agrément du ministère, un terrain, des enseignants, un règlement des bourses et un conseil d’établissement. La démographie scolaire du Mandoul Occidental et les établissements existants seraient étudiés avant toute décision." },
+      { titre: "Transport et logistique terrestres", texte: "Une société de transport de personnes et de marchandises reliant Bédjondo à ses cantons, à Koumra, Moundou et N’Djamena, avec une logistique agricole — collecte des récoltes, acheminement des intrants — là où les pistes le permettent.",
+        existant: [{ label: "Air Bedjondo, transport et logistique terrestres (annoncé)", href: "/projets#air-bedjondo" }, { label: "Thématique Désenclavement & urbanisation", href: "/programmes#desenclavement-urbanisation" }, { label: "Diagnostic : pistes et routes", href: "/dossiers/problematiques" }],
+        suite: "Le projet annoncé sous le nom d’Air Bedjondo deviendrait l’entreprise de transport du programme : étude des flux et des saisons, deux véhicules pour commencer, entretien et sécurité, tarifs publiés, partenariats avec les transporteurs existants plutôt que contre eux." },
+    ],
+    thematiques: ["entrepreneuriat-finance-inclusive", "agriculture-elevage-securite-alimentaire", "desenclavement-urbanisation", "jeunesse-reussite", "reseau-experts-diaspora", "cellule-financement-ressources"],
+    contribuer: [{ label: "Apporter une compétence : hôtellerie, enseignement, transport, gestion, finance", href: "/diaspora#inscription" }, { label: "Proposer une activité génératrice de revenus", href: "/projets#proposer" }, { label: "Coordonner Entrepreneuriat & finance inclusive", href: "/participer?theme=05&coordo=1#contact" }, { label: "Prendre la cellule Financement & ressources", href: "/participer?theme=financement&coordo=1#contact" }],
+    principes: [
+      { titre: "Une société, pas l’association", texte: "Une association ne partage pas de bénéfices et ne doit pas mêler ses comptes à ceux d’un commerce. Les activités seraient portées par une société distincte — société commerciale ou société coopérative du droit OHADA, qui s’applique au Tchad — détenue par l’association (demain par l’ODEB), dont les statuts affectent les bénéfices aux projets. Ni dividendes ni parts pour les membres." },
+      { titre: "Les bénéfices vont aux projets, et on le voit", texte: "Chaque entreprise tient ses propres comptes et les publie chaque année ; le tableau de bord du site montre ce qu’elle a versé au fonds des projets de développement et de bien-être. Proposition à trancher par l’assemblée : une part réinvestie dans l’entreprise, le reste versé au fonds — par exemple un tiers et deux tiers." },
+      { titre: "Ce qui manque à Bédjondo, pas ce qui y existe déjà", texte: "Les entreprises visent ce qui n’existe pas ou ce qui manque de qualité ; elles ne viennent pas écraser les commerçants et les transporteurs du pays bedjond, elles travaillent avec eux. Emploi local et achats locaux d’abord ; les prix restent ceux du marché." },
+      { titre: "De l’argent propre, sans promesse de rendement", texte: "Le capital viendrait des membres et de la diaspora sous forme de parts sans dividende, de partenaires et de prêts ; aucune collecte avant le compte bancaire au nom de l’association et la création de la société, aucune promesse de gain à quiconque. Un audit indépendant à partir de la deuxième année." },
+      { titre: "Une entreprise à la fois", texte: "On commence par celle dont la clientèle est la plus sûre et le capital le plus faible, on la fait tourner un an, on publie ses comptes, puis on lance la suivante. Chaque activité passe par la plateforme de projets, avec son stade : idée, étude, annonce, souscription, financée, réalisation, essai, en service." },
+    ],
+    portefeuille: [
+      { nom: "Transformation des récoltes", quoi: "Une huilerie d’arachide et de sésame, une décortiqueuse, un moulin : transformer sur place ce que le Mandoul cultive au lieu de le vendre brut.", pourquoi: "Le Mandoul est une région agricole ; la valeur ajoutée part aujourd’hui ailleurs.", revenus: "Vente d’huile, de tourteaux, de farine ; prestation de service aux producteurs.", finance: "Les projets d’eau et de santé des villages producteurs.", prealables: "Étude des volumes, énergie, local, normes sanitaires.", risque: "Approvisionnement irrégulier selon les saisons et les prix.", thematiques: ["agriculture-elevage-securite-alimentaire", "entrepreneuriat-finance-inclusive"] },
+      { nom: "Stockage et vente groupée", quoi: "Des magasins de stockage où les producteurs déposent leurs récoltes et les vendent en contre-saison, à meilleur prix, avec une avance possible (warrantage).", pourquoi: "Les récoltes se vendent au plus bas, à la récolte, faute de stockage.", revenus: "Frais de stockage, marge sur la vente groupée.", finance: "Le fonds de bourses du collège-internat.", prealables: "Entrepôts, pesage, règles claires, partenariat avec une institution financière agréée.", risque: "Gestion des stocks et des impayés.", thematiques: ["agriculture-elevage-securite-alimentaire", "entrepreneuriat-finance-inclusive"] },
+      { nom: "Ferme agro-pastorale modèle", quoi: "Embouche bovine et caprine, aviculture, maraîchage irrigué, doublés d’un centre de formation pratique pour les jeunes.", pourquoi: "Former en produisant, et montrer ce que donnent de meilleures pratiques.", revenus: "Vente de bétail, d’œufs, de légumes ; formations payantes pour les projets financés.", finance: "Les projets des cantons ruraux.", prealables: "Terrain, eau, vétérinaire, semences ; accord des chefs de terre.", risque: "Épizooties, sécheresse, vols.", thematiques: ["agriculture-elevage-securite-alimentaire", "jeunesse-reussite"] },
+      { nom: "Matériaux de construction", quoi: "Une briqueterie (briques de terre stabilisée, parpaings) et un atelier de menuiserie qui fournissent d’abord les chantiers du programme — hôtel, collège — puis les particuliers.", pourquoi: "Chaque chantier du programme achèterait ses matériaux à sa propre entreprise ; le reste se vend.", revenus: "Vente de briques, de charpentes, de portes et fenêtres.", finance: "Le réinvestissement dans les chantiers suivants.", prealables: "Presse à briques, carrière autorisée, formation.", risque: "Concurrence des matériaux importés, saisonnalité.", thematiques: ["desenclavement-urbanisation", "competences-entrepreneuriat-numerique"] },
+      { nom: "Énergie solaire de proximité", quoi: "Des kiosques de recharge et de vente d’énergie, la location-vente de kits solaires pour les foyers, puis une mini-centrale pour le marché et le centre de santé.", pourquoi: "Bédjondo et ses villages n’ont pas de réseau électrique fiable ; l’énergie est un besoin recensé par le diagnostic.", revenus: "Recharge, abonnements, mensualités des kits.", finance: "L’électrification des écoles et des centres de santé.", prealables: "Étude de la demande, fournisseur, maintenance, autorisation.", risque: "Impayés, matériel de mauvaise qualité.", thematiques: ["eau-energie-connectivite", "entrepreneuriat-finance-inclusive"] },
+      { nom: "Centre de services numériques et financiers", quoi: "Adossé à l’espace numérique communautaire : impression, photocopie, formation, télécentre, agent de mobile money, démarches en ligne.", pourquoi: "Le premier chantier de l’association (l’espace numérique) doit pouvoir payer sa connexion et son animateur.", revenus: "Services, formations, commissions d’agent.", finance: "La connexion et l’animation de l’espace numérique, puis l’académie numérique.", prealables: "L’espace numérique lui-même ; un agrément d’agent auprès d’un opérateur.", risque: "Faible pouvoir d’achat, coupures.", thematiques: ["transformation-numerique-services", "competences-entrepreneuriat-numerique"], projet: "/dossiers/espace-numerique" },
+      { nom: "Galerie marchande et logements", quoi: "Des boutiques en location autour du marché de Bédjondo et quelques logements pour les fonctionnaires et enseignants affectés au chef-lieu.", pourquoi: "Des loyers réguliers sont le revenu le plus stable qu’une organisation puisse avoir.", revenus: "Loyers.", finance: "Le fonds de bien-être : santé, veuves, personnes handicapées.", prealables: "Foncier sécurisé, accord de la commune, construction par l’entreprise de matériaux.", risque: "Foncier contesté, vacance des locaux.", thematiques: ["desenclavement-urbanisation", "solidarite-inclusion"] },
+      { nom: "Pharmacie et centre médical à tarif solidaire", quoi: "Une pharmacie agréée et un centre médical privé à tarifs modérés, dont l’excédent finance les soins gratuits des plus démunis.", pourquoi: "La santé est l’un des premiers besoins du diagnostic ; la qualité manque autant que l’accès.", revenus: "Ventes de médicaments, consultations, analyses.", finance: "La prise en charge des indigents et la prévention.", prealables: "Agréments, pharmacien et médecin, chaîne d’approvisionnement sûre.", risque: "Médicaments contrefaits, réglementation.", thematiques: ["sante-prevention", "solidarite-inclusion"] },
+      { nom: "Station multiservices", quoi: "Carburant, pièces et réparation pour motos et véhicules, sur l’axe de Bédjondo, en appui à l’entreprise de transport.", pourquoi: "Les transporteurs du programme et ceux du pays bedjond en ont besoin sur place.", revenus: "Carburant, pièces, main-d’œuvre.", finance: "L’entretien des pistes plaidé auprès des autorités, et les projets de désenclavement.", prealables: "Agrément de distribution, cuve, sécurité, terrain.", risque: "Marges faibles, réglementation du carburant.", thematiques: ["desenclavement-urbanisation"] },
+      { nom: "La boutique du pays bedjond", quoi: "Vente aux diasporas de N’Djamena et d’ailleurs de produits du terroir et de l’artisanat — huile, miel, sésame, tissus, vannerie — par commande en ligne et expédition groupée.", pourquoi: "La diaspora achète déjà ces produits par des circuits informels ; elle est la première clientèle du site.", revenus: "Marge sur les produits, expédition.", finance: "Les artisans et les groupements de femmes, puis les projets culturels.", prealables: "Producteurs partenaires, emballage, logistique (l’entreprise de transport), paiement mobile.", risque: "Qualité inégale, douanes pour l’export.", thematiques: ["leadership-feminin", "culture-patrimoine-vivant", "transformation-numerique-services"] },
+      { nom: "Caisse d’épargne et de crédit communautaire", quoi: "À plus long terme, une institution de microfinance agréée : épargne des membres, crédit aux petites activités, sous licence et contrôle.", pourquoi: "Aucune des activités ci-dessus ne démarre sans crédit ; la thématique Entrepreneuriat & finance inclusive le dit.", revenus: "Intérêts et frais, plafonnés.", finance: "Le crédit aux jeunes et aux femmes entrepreneurs.", prealables: "Agrément de la COBAC, capital minimal, gestionnaires formés : plusieurs années.", risque: "Le plus réglementé et le plus exposé de tous ; à ne tenter qu’une fois les autres entreprises stables.", thematiques: ["entrepreneuriat-finance-inclusive", "leadership-feminin"] },
+    ],
+    etapes: [
+      { periode: "2026-2027", titre: "Études et cadre", texte: "Études de faisabilité des trois entreprises phares ; choix de la forme juridique et rédaction des statuts de la société de développement ; règle d’affectation des bénéfices votée par l’assemblée ; compte bancaire et récépissé de l’association d’abord." },
+      { periode: "2027-2028", titre: "Première entreprise", texte: "Création de la société, souscription des parts sans dividende, lancement de l’activité la plus sûre et la moins coûteuse ; premiers comptes publiés au bout d’un an." },
+      { periode: "2028-2030", titre: "Deuxième et troisième", texte: "Une entreprise par an si la précédente tient ; le portefeuille se complète par les activités qui ont trouvé leur porteur ; l’ODEB constituée en hérite avec ses règles." },
+    ],
+  },
 ];
 
 export const programme = (slug: string) => PROGRAMMES.find((p) => p.slug === slug);
@@ -300,6 +351,8 @@ export function feuilleDeRoute(c: Chiffres): Phase[] {
         { titre: "« Histoire et origines des peuples bedjonds »", etat: "a-venir", note: "publication en chapitres, PDF et glossaire dès transmission du manuscrit", href: "/odeb/programmes/memoire-patrimoine" },
         { titre: "Banque d’images : cent photographies", etat: "en-cours", note: "action 1.2 du plan d’action ; aucune photo publiée à ce jour, les envois sont ouverts", href: "/temoignages" },
         { titre: "Conversion en ONG sous le nom ODEB LONODJI", etat: "a-decider", note: "décision annoncée, aucun dossier déposé ; la démarche est décrite pas à pas", href: "/dossiers/demarches#vers-ong" },
+        { titre: "Études de faisabilité des trois entreprises phares", etat: "a-venir", note: "complexe hôtelier, collège-lycée avec internat, transport-logistique : proposées le 28 septembre 2026, rien d’étudié ni de chiffré", href: "/odeb/programmes/economie-sociale" },
+        { titre: "Société de développement : forme juridique et règle d’affectation des bénéfices", etat: "a-decider", note: "société commerciale ou coopérative distincte de l’association ; part réinvestie et part versée aux projets, à voter par l’assemblée", href: "/odeb/programmes/economie-sociale#principes" },
       ],
     },
     {
@@ -311,6 +364,7 @@ export function feuilleDeRoute(c: Chiffres): Phase[] {
         { titre: "Académie numérique", etat: "a-venir", note: "dans l’espace numérique communautaire, dont la souscription est ouverte", href: "/dossiers/espace-numerique" },
         { titre: "Application mobile complète", etat: "en-cours", note: "version d’essai Android en ligne ; boutiques et cotisation par mobile money après le récépissé et le compte", href: "/dossiers/application" },
         { titre: "Atlas patrimonial : lieux sacrés et sépultures", etat: "a-decider", note: "la règle actuelle est de ne rien publier ; toute couche patrimoniale de la carte suppose une décision de l’association", href: "/dossiers/lieux-sacres" },
+        { titre: "Première entreprise de développement en service", etat: "a-venir", note: "la plus sûre et la moins coûteuse d’abord ; comptes publiés au bout d’un an, bénéfices versés au fonds des projets", href: "/odeb/programmes/economie-sociale#etapes" },
       ],
     },
     {

@@ -64,7 +64,7 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 
 ## Projet ODEB LONODJI (vision 2030)
 
-- `/odeb` (vision, pourquoi, six missions, cinq programmes, repères 2030), `/odeb/livre-blanc` (document fondateur, version de travail, sommaire collant, impression), `/odeb/feuille-de-route` (trois phases 2026-2030, état réel de chaque chantier : réalisé, en cours, à venir, à décider), `/odeb/programmes` et `/odeb/programmes/<programme>` (trois axes chacun : « déjà en place » avec liens, « d’ici 2030 » au conditionnel ; thématiques et coordonnateurs lus dans `content/index.json`).
+- `/odeb` (vision, pourquoi, six missions, six programmes, repères 2030), `/odeb/livre-blanc` (document fondateur, version de travail, sommaire collant, impression), `/odeb/feuille-de-route` (trois phases 2026-2030, état réel de chaque chantier : réalisé, en cours, à venir, à décider), `/odeb/programmes` et `/odeb/programmes/<programme>` (trois axes chacun : « déjà en place » avec liens, « d’ici 2030 » au conditionnel ; thématiques et coordonnateurs lus dans `content/index.json`).
 - Données et textes : `lib/odeb.ts` (formulation institutionnelle, menu, missions, repères, programmes, feuille de route calculée depuis les chiffres du site — `feuilleDeRoute(chiffres)`), `lib/odeb-chiffres.ts` (chiffres assemblés côté serveur), `components/odeb-nav.tsx` (barre de section et encadré d’état). Sources : les quatre documents de stratégie transmis en septembre 2026 ; rien n’y est présenté comme décidé.
 - `scripts/build-livre-blanc.py` → `public/odeb/livre-blanc-odeb-lonodji-2026.pdf` : rend la page du livre blanc en A4 (feuille d’impression de `app/site.css`) après `npm run build` ; à relancer quand la page change. Le PDF est listé sur `/documents` et compté par `build-indicateurs.py`.
 - `/en/odeb` — résumé en anglais du projet (missions, programmes, feuille de route, façons d’aider), relié depuis l’accueil anglais, le menu et `hreflang` ; le livre blanc reste en français.
@@ -79,6 +79,11 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 - `scripts/build-livre-blanc.py --tous` produit le livre blanc **et** la charte (`public/odeb/charte-identite-odeb-lonodji-2026.pdf`, rendu de `/odeb/identite`) ; `build-og.py` et `build-visuels.py` posent l’emblème sur les images des pages et cartes du projet quand `public/odeb/identite/odeb-lonodji-embleme-superposable-1024.png` existe.
 - **Logo du site depuis le 28 septembre 2026 au soir** : l’association a adopté l’emblème comme son propre logo. Un emblème, deux noms : `adeb-lonodji-logo-*` (association, devise Courage · Discipline · Héritage) et `odeb-lonodji-logo-*` (projet). L’emblème est dans l’en-tête et le pied (`brand-mark--embleme`, `footer-mark--embleme`), le favicon (`app/icon.svg`, à plat), `app/apple-icon.png`, les icônes de l’application (`public/icones/icone-*.png`, manifest et `sw.js` v4), la pastille des images de partage (`LOGO` de `build-og.py`), le JSON-LD de `app/layout.tsx` ; papiers à en-tête ADEB et ODEB. L’ancien logo bleu reste dans `public/identite/` (documents antérieurs) et sur `/dossiers/identite-visuelle`, qui porte une note datée (`UPDATES`).
 - Ordre après un changement de logo : `python3 design/odeb/build-logo-verre.py` (aperçus) → `npm run build` → `python3 scripts/build-identite-odeb.py` (SVG, PNG, icônes, planche, en-têtes, kit) → `python3 scripts/build-og.py` (toutes les pages : la pastille change) → `python3 scripts/build-visuels.py` → `python3 scripts/build-livre-blanc.py --tous` → `python3 scripts/build-indicateurs.py` → `npm run build`.
+
+### Programme 06 — Économie sociale et revenus (28 septembre 2026, soir)
+
+- Sixième programme du projet ODEB (`PROGRAMMES` dans `lib/odeb.ts`, slug `economie-sociale`) : des entreprises distinctes de l’association dont les bénéfices financent les projets. Trois axes proposés (complexe hôtelier à Bédjondo, complexe scolaire avec internat dès la sixième, transport et logistique terrestres — reprend le projet Air Bedjondo), cinq règles (`principes`), dix activités supplémentaires proposées (`portefeuille` : quoi, pourquoi ici, revenus, ce que ça finance, préalables, risque), trois étapes (`etapes`) ; la page `app/odeb/programmes/[programme]` rend ces sections quand elles existent. Rien n’est décidé ni chiffré : tout est au conditionnel.
+- Retombées : deux projets au stade « idée » dans `content/projets.json` (`complexe-hotelier`, `complexe-scolaire-internat`), Air Bedjondo rattaché au programme ; deux chantiers de plus dans la feuille de route (phase 2 : études de faisabilité, forme juridique ; phase 3 : première entreprise en service) ; « six programmes » partout (menu, vision, livre blanc, visuels, EN) ; entrée de recherche ; brève au journal `2026-09-28-sixieme-programme-economie-sociale`.
 
 ## Directions de pôle (28 septembre 2026)
 
@@ -102,6 +107,14 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 ## Accessibilité
 
 - `/accessibilite` — déclaration : niveau visé (WCAG 2.1 AA), contrôles avant mise en ligne (axe-core sur toutes les pages, parcours clavier, captures à trois largeurs), limites connues (carte Leaflet, PDF, contenus importés), signalement d’un obstacle ; reliée en pied de page avec « Signaler un manquement » (mécanisme de plainte de la charte).
+
+## Outils de navigation (28 septembre 2026, soir)
+
+- **Palette « Aller à… »** (`components/palette.tsx`) : ouverte par la loupe de l’en-tête, la touche `/`, `Ctrl+K` ou `⌘K` ; recherche instantanée sur l’index allégé `public/search-palette.json` (titre, route, type, description ; produit par `build-search-index.py` avec l’index complet), résultats groupés par type, clavier (flèches, Entrée, Échap), raccourcis quand le champ est vide, repli vers `/recherche?q=` et `/villages?q=`. Plein écran sur téléphone.
+- **En-tête qui se resserre** après 60 px (`html.nav-compact`) et, sur téléphone, **s’efface en descendant et revient en remontant** (`html.nav-hidden`, jamais quand le menu ou la palette sont ouverts) — `components/nav-tools.tsx`.
+- **Fil de lecture** (`.lecture`) sur les pages longues (articles, livre blanc, identité, feuille de route, programmes, dossiers, fiches de villages, presse, transparence…) et **retour en haut** avec un anneau d’avancement.
+- **Rail « Sur cette page »** (`components/section-rail.tsx`, ≥ 1280 px) : les sections de `<main>` qui ont un titre, construites après le rendu, suivies au défilement ; absent quand la page a un sommaire (livre blanc) ou moins de trois sections.
+- **Barre d’onglets** en bas d’écran (`components/app-shell.tsx`) pour tous les visiteurs sur téléphone, plus seulement l’appli installée : Accueil, Villages, Journal, Agir, Menu ; masquée quand le clavier ou la palette sont ouverts.
 
 ## Navigation (en-tête, méga-menu, menu mobile, pied de page)
 

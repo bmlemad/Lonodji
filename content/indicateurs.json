@@ -1,5 +1,5 @@
 {
- "genere": "2026-09-28T18:27:10Z",
+ "genere": "2026-09-28T21:31:57Z",
  "contenu": {
   "plaidoyers": {
    "publies": 8,
@@ -12,7 +12,7 @@
    "cellulesPourvues": 1,
    "cellulesTotal": 2
   },
-  "articles": 40,
+  "articles": 41,
   "premierArticle": "2026-09-11",
   "documentsPdf": 16,
   "documentsAnnonces": 4,
@@ -38,7 +38,7 @@
   "pages": 46,
   "projets": {
    "actifs": 1,
-   "annonces": 3,
+   "annonces": 5,
    "finances": 0,
    "liste": [
     {
@@ -68,6 +68,20 @@
      "stade": "annonce",
      "libelle": "projet annoncé, sans financement ni calendrier",
      "route": "/dossiers/air-bedjondo"
+    },
+    {
+     "slug": "complexe-hotelier",
+     "nom": "Complexe hôtelier de Bédjondo",
+     "stade": "idee",
+     "libelle": "idée proposée le 28 septembre 2026, programme Économie sociale et revenus ; aucune étude",
+     "route": "/odeb/programmes/economie-sociale#axe-1"
+    },
+    {
+     "slug": "complexe-scolaire-internat",
+     "nom": "Complexe scolaire avec internat, dès la sixième",
+     "stade": "idee",
+     "libelle": "idée proposée le 28 septembre 2026, programme Économie sociale et revenus ; aucune étude",
+     "route": "/odeb/programmes/economie-sociale#axe-2"
     }
    ]
   }

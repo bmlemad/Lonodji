@@ -8,7 +8,8 @@ import { useEffect, useState } from "react";
    ligne), reconnaissance de l'appli installée (écran d'accueil, appli Android
    — activité web de confiance ouverte avec un référent android-app://, appli
    iPhone qui signe « LONODJI-iOS » dans son agent utilisateur), barre
-   d'onglets en bas d'écran dans ce cas, et invitation à l'installation. */
+   d'onglets en bas d'écran sur téléphone (pour tous les visiteurs depuis le
+   28/09/2026, pas seulement l'appli), et invitation à l'installation. */
 
 type InstallEvent = Event & { prompt: () => Promise<void>; userChoice: Promise<{ outcome: string }> };
 
@@ -97,7 +98,8 @@ export default function AppShell() {
     };
   }, []);
 
-  if (!appli) return null;
+  // la barre d'onglets sert à tous les visiteurs sur téléphone (CSS ≤ 800 px) ; l'appli installée y ajoute ses réglages
+  void appli;
   const actif = ongletActif(pathname);
   return (
     <nav className="tabbar" aria-label="Onglets de l’application">

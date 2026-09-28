@@ -19,7 +19,7 @@ const DATES: [string, string][] = [
   ["2000", "Premier forum communautaire, à Bédjondo."],
   ["2003", "Second forum, à Bébopen ; puis une longue mise en veille."],
   ["2026", "Réactivation : quatre pôles, dix-neuf thématiques, deux cellules ; site lonodji.org ; huit plaidoyers ; carte du territoire."],
-  ["28 sept. 2026", "Quarante ans des fondations : lancement de la réflexion ODEB LONODJI (vision 2030, cinq programmes, livre blanc en version de travail)."],
+  ["28 sept. 2026", "Quarante ans des fondations : lancement de la réflexion ODEB LONODJI (vision 2030, six programmes, livre blanc en version de travail)."],
 ];
 const VISUELS: [string, string][] = [
   ["/partage/40-ans-reflexion-odeb.png", "Quarante ans des fondations : la réflexion ODEB LONODJI"],
@@ -118,7 +118,7 @@ export default function Presse() {
         <SectionHead eyebrow="Documents" title="À lire" em="et à joindre." />
         <div className="link-list">
           <a href="/documents/dossier-presentation-adeb-lonodji-2026.pdf" download><small>PDF · 4 pages</small><strong>Dossier de présentation d’ADEB LONODJI</strong><span>L’association, ses pôles, ses thématiques, ses plaidoyers.</span></a>
-          <a href={ODEB.livreBlancPdf} download><small>PDF · version de travail</small><strong>Livre blanc du projet ODEB LONODJI</strong><span>Vision 2030, six missions, cinq programmes, feuille de route. Non adopté à ce jour.</span></a>
+          <a href={ODEB.livreBlancPdf} download><small>PDF · version de travail</small><strong>Livre blanc du projet ODEB LONODJI</strong><span>Vision 2030, six missions, six programmes, feuille de route. Non adopté à ce jour.</span></a>
           <a href={IDENTITE.charte} download><small>PDF · charte</small><strong>Identité visuelle du projet ODEB LONODJI</strong><span>Le logo « Les Pas vers l’Avenir », ses versions, ses couleurs, ses règles ; le kit et le papier à en-tête sont sur la page en ligne.</span></a>
           <Link href="/documents"><small>Tous les PDF</small><strong>Plaidoyers, cahiers de terrain, note à la commune</strong><span>{c.documentsPdf} documents disponibles, {c.documentsAnnonces} annoncés.</span></Link>
           <Link href="/transparence"><small>Redevabilité</small><strong>Charte : réponse sous 48 h, plainte, protection, corrections</strong><span>Les règles que l’association s’impose, et les documents constitutifs à venir.</span></Link>
