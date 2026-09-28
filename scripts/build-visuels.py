@@ -61,35 +61,44 @@ TEMPLATE = """<!doctype html><html lang="fr"><meta charset="utf-8">
 {fonts}
 *{{box-sizing:border-box}}
 html,body{{margin:0;width:1080px;height:1080px;overflow:hidden}}
-body{{position:relative;background:linear-gradient(150deg,#1b4434 0%,#173b2d 50%,#10241e 100%);color:#fff;font-family:"DM Sans",Arial,sans-serif;padding:72px 76px}}
-.orb{{position:absolute;border-radius:50%;filter:blur(50px)}}
-.orb-a{{width:620px;height:620px;right:-220px;top:-260px;background:rgba(182,207,69,.22)}}
-.orb-b{{width:420px;height:420px;left:-160px;bottom:-220px;background:rgba(215,228,164,.12)}}
-.grid{{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(180deg,rgba(0,0,0,.9),transparent 80%)}}
-.head{{position:relative;display:flex;align-items:center;gap:18px}}
-.head img{{width:72px;height:72px;border-radius:50%;box-shadow:0 8px 24px rgba(0,0,0,.25)}}
-.head strong{{display:block;font-size:28px;letter-spacing:.1em;font-weight:700}}
-.head strong b{{font-weight:500}}
-.head small{{display:block;margin-top:4px;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:#aab9b0}}
-.eyebrow{{position:relative;margin:120px 0 0;font-size:19px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#c9d97a;max-width:900px}}
-.line{{position:relative;width:54px;height:5px;background:#b6cf45;margin:20px 0 26px}}
-h1{{position:relative;margin:0;font-weight:700;font-size:{size}px;line-height:1.02;letter-spacing:-.035em;max-width:930px}}
-h1 em{{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-style:italic;color:#e7f0d2}}
-ul{{position:relative;list-style:none;margin:44px 0 0;padding:0;max-width:900px}}
-li{{font-size:27px;line-height:1.35;color:#d9e5da;padding:10px 0 10px 30px;border-top:1px solid rgba(255,255,255,.14);position:relative}}
-li::before{{content:"";position:absolute;left:0;top:23px;width:12px;height:12px;border-radius:50%;background:#b6cf45}}
-.url{{position:absolute;left:76px;right:76px;bottom:64px;display:flex;justify-content:space-between;align-items:center;font-size:24px;letter-spacing:.08em;color:#fff;font-weight:700}}
-.url small{{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:#aab9b0;font-weight:600}}
-.odeb{{position:absolute;right:56px;top:52px;width:300px;height:300px}}
-body.avec-odeb .eyebrow{{margin-top:250px}} body.avec-odeb h1{{max-width:900px}}
+body{{position:relative;color:#fff;font-family:"DM Sans",Arial,sans-serif;background:linear-gradient(150deg,#0f3327 0%,#123a2b 50%,#071b15 100%)}}
+.orb{{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none}}
+.orb-a{{width:700px;height:700px;right:-220px;top:-320px;background:rgba(242,201,76,.38)}}
+.orb-b{{width:620px;height:620px;left:-240px;bottom:-300px;background:rgba(182,207,69,.28)}}
+.orb-c{{width:640px;height:640px;left:120px;top:-200px;background:rgba(47,107,74,.7)}}
+.orb-d{{width:520px;height:520px;right:60px;bottom:-260px;background:rgba(13,90,74,.6)}}
+.grain{{position:absolute;inset:0;opacity:.07;mix-blend-mode:overlay;background-image:url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")}}
+.vignette{{position:absolute;inset:0;background:radial-gradient(75% 75% at 50% 50%,transparent 55%,rgba(0,0,0,.45) 100%)}}
+.panneau{{position:absolute;inset:36px;border-radius:38px;padding:40px 46px 40px;background:linear-gradient(160deg,rgba(255,255,255,.13) 0%,rgba(255,255,255,.05) 55%,rgba(255,255,255,.09) 100%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(255,255,255,.08),0 34px 90px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(26px) saturate(140%);backdrop-filter:blur(26px) saturate(140%);overflow:hidden}}
+.panneau:after{{content:"";position:absolute;inset:0;background:linear-gradient(112deg,transparent 42%,rgba(255,255,255,.07) 50%,transparent 58%);pointer-events:none}}
+.reflet{{position:absolute;left:-10%;top:-30%;width:60%;height:55%;background:radial-gradient(closest-side,rgba(255,255,255,.2),transparent);pointer-events:none}}
+.head{{position:relative;display:inline-flex;align-items:center;gap:16px;padding:9px 22px 9px 9px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.28)}}
+.head img{{width:62px;height:62px;border-radius:50%;box-shadow:0 8px 24px rgba(0,0,0,.35)}}
+.head strong{{display:block;font-size:24px;letter-spacing:.1em;font-weight:700}}
+.head strong b{{font-weight:400}}
+.head small{{display:block;margin-top:3px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#c9d5cc}}
+.eyebrow{{position:relative;margin:96px 0 0;font-size:18px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#f2c94c;max-width:900px}}
+.line{{position:relative;width:70px;height:4px;border-radius:4px;background:linear-gradient(90deg,#f2c94c,#b6cf45);margin:20px 0 26px}}
+h1{{position:relative;margin:0;font-weight:700;font-size:{size}px;line-height:1.02;letter-spacing:-.035em;max-width:920px;text-shadow:0 2px 24px rgba(0,0,0,.25)}}
+h1 em{{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-style:italic;color:#f4ecc9}}
+ul{{position:relative;list-style:none;margin:40px 0 0;padding:0;max-width:900px;display:flex;flex-direction:column;gap:10px}}
+li{{font-size:25px;line-height:1.3;color:#e6eee6;padding:14px 22px 14px 56px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.14);position:relative}}
+li::before{{content:"";position:absolute;left:24px;top:24px;width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,#f2c94c,#b6cf45);box-shadow:0 0 14px rgba(242,201,76,.6)}}
+.url{{position:absolute;left:46px;right:46px;bottom:40px;display:flex;justify-content:space-between;align-items:center;font-size:23px;letter-spacing:.06em;color:#fff;font-weight:700;margin:0}}
+.url span{{padding:12px 20px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}}
+.url small{{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#c9d5cc;font-weight:600}}
+.odeb{{position:absolute;right:40px;top:40px;width:300px;height:300px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.4))}}
+body.avec-odeb .eyebrow{{margin-top:220px}} body.avec-odeb h1{{max-width:900px}}
 </style>
 <body class="{classe}">
-<div class="grid"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
+<div class="orb orb-c"></div><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-d"></div><div class="vignette"></div><div class="grain"></div>
+<div class="panneau"><div class="reflet"></div>
 <div class="head"><img src="file://{logo}" alt=""><div><strong>ADEB <b>LONODJI</b></strong><small>Courage · Discipline · Héritage</small></div></div>{odeb}
 <p class="eyebrow">{eyebrow}</p><div class="line"></div>
 <h1>{titre}</h1>
 <ul>{lignes}</ul>
 <p class="url"><span>{url}</span><small>Site officiel · septembre 2026</small></p>
+</div>
 </body></html>"""
 
 

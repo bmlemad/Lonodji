@@ -127,32 +127,40 @@ TEMPLATE = """<!doctype html><html lang="{lang}"><meta charset="utf-8">
 {fonts}
 *{{box-sizing:border-box}}
 html,body{{margin:0;width:1200px;height:630px;overflow:hidden}}
-body{{position:relative;background:linear-gradient(135deg,#1b4434 0%,#173b2d 45%,#10241e 100%);color:#fff;font-family:"DM Sans",Arial,sans-serif;padding:60px 64px 54px}}
-.orb{{position:absolute;border-radius:50%;filter:blur(40px);pointer-events:none}}
-.orb-a{{width:560px;height:560px;right:-160px;top:-220px;background:rgba(182,207,69,.22)}}
-.orb-b{{width:360px;height:360px;right:120px;bottom:-240px;background:rgba(215,228,164,.12)}}
-.grid{{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(180deg,rgba(0,0,0,.9),transparent 85%)}}
-.head{{position:relative;display:flex;align-items:center;gap:16px}}
-.head img{{width:58px;height:58px;border-radius:50%;box-shadow:0 8px 24px rgba(0,0,0,.25)}}
-.head strong{{display:block;font-size:24px;letter-spacing:.1em;font-weight:700}}
-.head strong b{{font-weight:500}}
-.head small{{display:block;margin-top:3px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#aab9b0}}
-.eyebrow{{position:relative;margin:54px 0 0;font-size:16px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#c9d97a}}
-.line{{position:relative;width:46px;height:4px;background:#b6cf45;margin:16px 0 22px}}
-h1{{position:relative;margin:0;font-weight:700;font-size:{size}px;line-height:1.02;letter-spacing:-.035em;max-width:1060px;overflow-wrap:anywhere}}
-h1 em{{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-style:italic;color:#e7f0d2}}
-.desc{{position:absolute;left:64px;right:64px;bottom:54px;margin:0;font-size:24px;line-height:1.35;color:#aab9b0;max-height:66px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}}
-.foot{{position:absolute;right:64px;top:64px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#aab9b0}}
-.odeb{{position:absolute;right:54px;top:118px;width:330px;height:330px}}
-body.avec-odeb h1{{max-width:720px}} body.avec-odeb .desc{{right:420px}}
+body{{position:relative;color:#fff;font-family:"DM Sans",Arial,sans-serif;background:linear-gradient(135deg,#0f3327 0%,#123a2b 48%,#071b15 100%)}}
+.orb{{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}}
+.orb-a{{width:640px;height:640px;right:-120px;top:-300px;background:rgba(242,201,76,.38)}}
+.orb-b{{width:560px;height:560px;left:-200px;bottom:-320px;background:rgba(182,207,69,.28)}}
+.orb-c{{width:620px;height:620px;left:220px;top:-260px;background:rgba(47,107,74,.7)}}
+.orb-d{{width:480px;height:480px;right:120px;bottom:-300px;background:rgba(13,90,74,.6)}}
+.grain{{position:absolute;inset:0;opacity:.07;mix-blend-mode:overlay;background-image:url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")}}
+.vignette{{position:absolute;inset:0;background:radial-gradient(75% 75% at 50% 50%,transparent 55%,rgba(0,0,0,.45) 100%)}}
+.panneau{{position:absolute;inset:30px;border-radius:32px;padding:34px 40px 30px;background:linear-gradient(160deg,rgba(255,255,255,.13) 0%,rgba(255,255,255,.05) 55%,rgba(255,255,255,.09) 100%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(255,255,255,.08),0 34px 90px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(26px) saturate(140%);backdrop-filter:blur(26px) saturate(140%);overflow:hidden}}
+.panneau:after{{content:"";position:absolute;inset:0;background:linear-gradient(112deg,transparent 42%,rgba(255,255,255,.08) 50%,transparent 58%);pointer-events:none}}
+.reflet{{position:absolute;left:-10%;top:-45%;width:60%;height:70%;background:radial-gradient(closest-side,rgba(255,255,255,.22),transparent);pointer-events:none}}
+.head{{position:relative;display:inline-flex;align-items:center;gap:14px;padding:8px 18px 8px 8px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.28)}}
+.head img{{width:50px;height:50px;border-radius:50%;box-shadow:0 8px 24px rgba(0,0,0,.35)}}
+.head strong{{display:block;font-size:20px;letter-spacing:.1em;font-weight:700}}
+.head strong b{{font-weight:400}}
+.head small{{display:block;margin-top:2px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#c9d5cc}}
+.foot{{position:absolute;right:40px;top:44px;margin:0;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#c9d5cc}}
+.eyebrow{{position:relative;margin:46px 0 0;font-size:15px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#f2c94c}}
+.line{{position:relative;width:64px;height:3px;border-radius:3px;background:linear-gradient(90deg,#f2c94c,#b6cf45);margin:16px 0 20px}}
+h1{{position:relative;margin:0;font-weight:700;font-size:{size}px;line-height:1.02;letter-spacing:-.035em;max-width:1000px;overflow-wrap:anywhere;text-shadow:0 2px 24px rgba(0,0,0,.25)}}
+h1 em{{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-style:italic;color:#f4ecc9}}
+.desc{{position:absolute;left:40px;right:40px;bottom:30px;margin:0;font-size:22px;line-height:1.35;color:#c9d5cc;max-height:60px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}}
+.odeb{{position:absolute;right:26px;top:84px;width:330px;height:330px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.4))}}
+body.avec-odeb h1{{max-width:690px}} body.avec-odeb .desc{{right:400px}}
 </style>
 <body class="{classe}">
-<div class="grid"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
+<div class="orb orb-c"></div><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-d"></div><div class="vignette"></div><div class="grain"></div>
+<div class="panneau"><div class="reflet"></div>
 <div class="head"><img src="file://{logo}" alt=""><div><strong>ADEB <b>LONODJI</b></strong><small>Courage · Discipline · Héritage</small></div></div>
 <p class="foot">lonodji.org</p>{odeb}
 <p class="eyebrow">{eyebrow}</p><div class="line"></div>
 <h1 id="t">{title}</h1>
 <p class="desc">{desc}</p>
+</div>
 </body></html>"""
 
 
@@ -192,7 +200,7 @@ def rendre_une(route: str, title: str, desc: str, eyebrow: str, lang: str = "fr"
         tmp.write_text(TEMPLATE.format(lang=lang, fonts=fonts, logo=LOGO, eyebrow=esc(eyebrow), title=split_title(title), desc=esc(desc), size=size, classe=classe, odeb=odeb), encoding="utf-8")
         page.goto(tmp.as_uri(), wait_until="load")
         page.evaluate("document.fonts.ready")
-        page.evaluate("""() => { const t = document.getElementById('t'); const limite = 630 - 54 - 66 - 24; let fs = parseFloat(getComputedStyle(t).fontSize);
+        page.evaluate("""() => { const t = document.getElementById('t'); const limite = 630 - 30 - 30 - 60 - 22; let fs = parseFloat(getComputedStyle(t).fontSize);
             while (t.getBoundingClientRect().bottom > limite && fs > 30) { fs -= 2; t.style.fontSize = fs + 'px'; } }""")
         page.wait_for_timeout(50)
         page.screenshot(path=str(dest), type="jpeg", quality=82)
@@ -224,7 +232,7 @@ def main():
             page.goto(tmp.as_uri(), wait_until="load")   # ouvert en file:// pour que polices et logo (file://) se chargent
             page.evaluate("document.fonts.ready")
             # le titre ne doit pas déborder sur la description : on réduit la taille jusqu'à ce qu'il tienne
-            page.evaluate("""() => { const t = document.getElementById('t'); const limite = 630 - 54 - 66 - 24; let fs = parseFloat(getComputedStyle(t).fontSize);
+            page.evaluate("""() => { const t = document.getElementById('t'); const limite = 630 - 30 - 30 - 60 - 22; let fs = parseFloat(getComputedStyle(t).fontSize);
                 while (t.getBoundingClientRect().bottom > limite && fs > 30) { fs -= 2; t.style.fontSize = fs + 'px'; } }""")
             page.wait_for_timeout(50)
             dest = OUT / (pg["name"] + ".jpg")

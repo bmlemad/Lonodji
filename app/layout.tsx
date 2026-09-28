@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s — ADEB LONODJI",
   },
   description:
-    "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : quatre pôles, dix-neuf thématiques, sept plaidoyers pour le Mandoul (Tchad).",
+    "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : quatre pôles, dix-neuf thématiques, huit plaidoyers pour le Mandoul (Tchad).",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "ADEB LONODJI",
     title: "ADEB LONODJI — Courage • Discipline • Héritage",
     description:
-      "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond. Quatre pôles, dix-neuf thématiques, sept plaidoyers publiés.",
+      "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond. Quatre pôles, dix-neuf thématiques, huit plaidoyers publiés.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ADEB LONODJI — Courage • Discipline • Héritage" }],
   },
   twitter: { card: "summary_large_image" },

@@ -924,3 +924,44 @@ html.is-standalone .haut{ bottom:calc(76px + env(safe-area-inset-bottom,0px)); }
 .od-interdits{ margin:8px 0 0; padding-left:20px; }
 .od-interdits li{ margin:4px 0; }
 @media print{ .od-hero-embleme{ width:120px; margin-top:0; } .od-versions{ grid-template-columns:repeat(3,1fr); } .od-couleurs{ grid-template-columns:repeat(3,1fr); } .od-couleurs li{ -webkit-print-color-adjust:exact; print-color-adjust:exact; } .od-version-apercu{ -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+
+/* ---- Cartes en verre premium (28/09/2026) : une seule recette pour toutes les cartes du site ----
+   Fond blanc translucide en dégradé, reflet en haut à gauche, filet de lumière sur le bord haut,
+   ombre portée profonde et douce, flou de ce qui passe derrière ; au survol des cartes cliquables,
+   la carte se soulève et son bord prend l'acacia. Les cartes sur fond sombre ont la même recette
+   en clair sur sombre. */
+:root{ --verre-rayon:24px; --verre-ombre:inset 0 1px 0 rgba(255,255,255,1), inset 0 0 0 1px rgba(16,36,30,.05), 0 26px 56px -28px rgba(23,59,45,.38), 0 8px 22px -12px rgba(23,59,45,.16); --verre-ombre-survol:inset 0 1px 0 #fff, inset 0 0 0 1px rgba(182,207,69,.6), 0 38px 76px -30px rgba(23,59,45,.48), 0 14px 30px -12px rgba(23,59,45,.22); }
+.hub-page{ background:radial-gradient(900px 620px at 92% -80px, rgba(242,201,76,.22), transparent 62%), radial-gradient(760px 640px at -120px 520px, rgba(182,207,69,.22), transparent 62%), radial-gradient(820px 700px at 104% 100%, rgba(47,107,74,.16), transparent 62%), linear-gradient(135deg,#f5f7f1,#eaf0e5); }
+.programmes, .participate{ background:radial-gradient(900px 600px at 100% 0%, rgba(242,201,76,.16), transparent 62%), radial-gradient(700px 600px at 0% 100%, rgba(182,207,69,.18), transparent 62%), #f7f8f4; }
+.values, .trust, .contact, .intro{ background:radial-gradient(800px 560px at 0% 0%, rgba(182,207,69,.14), transparent 62%), radial-gradient(760px 600px at 100% 100%, rgba(242,201,76,.14), transparent 62%), #fff; }
+.stat-tile, .art-card, .plea, .doc-card, .bureau-card, .home-facts article, .detail-grid article, .link-list a, .tb-carte, .tb-mini, .vl-unite, .vl-faits, .vl-questions article, .bb-ref, .bb-journal, .bb-chercheurs article, .pj-projet, .pj-faits, .pj-cols > div, .pj-stades li, .od-phase, .od-chantier, .od-programme-fiche, .od-programme, .od-docs article, .od-axe-cols > div, .od-axes-liste li, .pr-logo, .od-versions li, .program-card, .value-card, .trust-card, .contact-card, .glass-card, .contact-aside, .ct-fiche, .ct-resultats, .rd-porte, .dp-formulaire, .form-success, .pole-block, .tb-methode, .ob-statut, .article-nav a{
+  background-color:rgba(255,255,255,.5);
+  background-image:radial-gradient(130% 80% at 0% 0%, rgba(255,255,255,.95) 0%, rgba(255,255,255,0) 58%), linear-gradient(160deg, rgba(255,255,255,.66) 0%, rgba(255,255,255,.34) 100%);
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:var(--verre-ombre);
+  -webkit-backdrop-filter:blur(18px) saturate(150%); backdrop-filter:blur(18px) saturate(150%);
+}
+.program-card{ background:radial-gradient(130% 80% at 0% 0%, rgba(255,255,255,.95) 0%, rgba(255,255,255,0) 58%), linear-gradient(160deg, rgba(255,255,255,.72), rgba(255,255,255,.4)); box-shadow:var(--verre-ombre); }
+.program-card:before{ background:radial-gradient(circle, rgba(242,201,76,.22), rgba(182,207,69,.1) 55%, transparent 70%); filter:blur(14px); }
+.glass-card{ background:radial-gradient(130% 80% at 0% 0%, rgba(255,255,255,.9) 0%, rgba(255,255,255,0) 58%), linear-gradient(145deg, rgba(255,255,255,.62), rgba(255,255,255,.22)); }
+.value-card, .home-facts article{ background-color:rgba(255,255,255,.4); }
+.stat-tile, .tb-mini, .od-chantier, .pr-logo, .pj-stades li, .od-axes-liste li, .article-nav a{ box-shadow:inset 0 1px 0 rgba(255,255,255,1), inset 0 0 0 1px rgba(16,36,30,.05), 0 18px 40px -24px rgba(23,59,45,.34), 0 6px 16px -10px rgba(23,59,45,.14); }
+.link-list a, a.tb-mini, a.vl-unite, a.od-programme, a.pr-logo, a.program-card, a.art-card, .pr-visuel, .article-nav a, a.stat-tile, .od-versions li{ transition:transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s ease, border-color .28s ease; }
+.link-list a:hover, .link-list a:focus-visible, a.tb-mini:hover, a.tb-mini:focus-visible, a.vl-unite:hover, a.vl-unite:focus-visible, a.od-programme:hover, a.od-programme:focus-visible, a.pr-logo:hover, a.pr-logo:focus-visible, a.program-card:hover, a.program-card:focus-visible, a.art-card:hover, .article-nav a:hover, a.stat-tile:hover{ transform:translateY(-4px); box-shadow:var(--verre-ombre-survol); border-color:rgba(255,255,255,.95); }
+.pr-visuel img{ box-shadow:0 26px 56px -24px rgba(23,59,45,.45), 0 0 0 1px rgba(255,255,255,.7); transition:transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s ease; }
+.pr-visuel:hover img{ transform:translateY(-4px); box-shadow:0 38px 76px -28px rgba(23,59,45,.55), 0 0 0 1px rgba(182,207,69,.6); }
+.od-version-apercu{ box-shadow:inset 0 1px 0 rgba(255,255,255,.9), inset 0 0 0 1px rgba(16,36,30,.05); }
+.od-couleurs li{ box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 22px 46px -26px rgba(23,59,45,.45); }
+/* cartes sur fond sombre : bande Vision 2030, tableau d'impact, vedette du méga-menu, pilules */
+.impact-grid article, .od-band-programmes a{ background-color:rgba(255,255,255,.04); background-image:radial-gradient(120% 70% at 0% 0%, rgba(255,255,255,.16), transparent 60%), linear-gradient(160deg, rgba(255,255,255,.09), rgba(255,255,255,.02)); border-color:rgba(255,255,255,.2); box-shadow:inset 0 1px 0 rgba(255,255,255,.26), 0 26px 50px -26px rgba(0,0,0,.6); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); }
+.od-band-programmes a:hover{ background-color:rgba(255,255,255,.1); box-shadow:inset 0 1px 0 rgba(255,255,255,.34), inset 0 0 0 1px rgba(182,207,69,.5), 0 30px 56px -26px rgba(0,0,0,.7); transform:translateY(-2px); }
+.od-band-programmes a{ transition:transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s ease, background-color .25s ease; }
+.links .mega-vedette{ background-image:radial-gradient(120% 80% at 100% 0%, rgba(242,201,76,.26), transparent 55%), radial-gradient(90% 70% at 0% 100%, rgba(182,207,69,.22), transparent 60%), linear-gradient(160deg,#1d4a39,#0f2c22); box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 26px 54px -22px rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.12); }
+.links .mega-vedette:hover, .links .mega-vedette:focus-visible{ box-shadow:inset 0 1px 0 rgba(255,255,255,.28), inset 0 0 0 1px rgba(182,207,69,.5), 0 34px 70px -24px rgba(0,0,0,.65); }
+.status{ background:linear-gradient(160deg, rgba(255,255,255,.9), rgba(255,255,255,.55)); box-shadow:inset 0 1px 0 #fff, 0 6px 16px -10px rgba(23,59,45,.3); border-color:rgba(16,36,30,.1); }
+.notice{ background:radial-gradient(120% 90% at 0% 0%, rgba(255,255,255,.7), rgba(255,255,255,0) 60%), linear-gradient(160deg, #eef4e6, #e4ede0); box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 20px 44px -26px rgba(23,59,45,.3); border-color:rgba(23,59,45,.18); }
+.button.secondary{ background:linear-gradient(160deg, rgba(255,255,255,.92), rgba(255,255,255,.6)); box-shadow:inset 0 1px 0 #fff, 0 10px 24px -14px rgba(23,59,45,.3); }
+.button.primary{ background:linear-gradient(160deg,#1d4a39,#123227); box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 14px 30px -14px rgba(23,59,45,.6); }
+.button:hover{ box-shadow:0 18px 40px -16px rgba(23,59,45,.5), inset 0 1px 0 rgba(255,255,255,.3); }
+@media(prefers-reduced-motion:reduce){ .link-list a:hover, a.tb-mini:hover, a.vl-unite:hover, a.od-programme:hover, a.pr-logo:hover, a.program-card:hover, a.art-card:hover, .pr-visuel:hover img, .od-band-programmes a:hover{ transform:none; } }
+@media print{ .stat-tile, .art-card, .plea, .doc-card, .detail-grid article, .link-list a, .od-programme, .od-docs article, .od-versions li, .od-phase, .od-chantier, .od-programme-fiche{ box-shadow:none; background:#fff; border-color:#d5ddd6; -webkit-backdrop-filter:none; backdrop-filter:none; } }
