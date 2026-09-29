@@ -949,7 +949,46 @@ def lire_source(path: Path) -> str:
         k = html.find("</p>", j)
         if j > 0 and k > 0:
             html = html[:k] + note + html[k:]
-    return structure_29_09(html, path)
+    return corrections_revue(structure_29_09(html, path), path)
+
+
+# ---------------------------------------------------------------------------
+# Revue du 29 septembre 2026 : corrections exactes, rangées par fichier source dans
+# scripts/corrections_fr.py et scripts/corrections_en.py (CORRECTIONS = {"mission.html": [(ancien, nouveau), …]}).
+# Chaque remplacement qui ne trouve plus son texte est signalé à l'import, pour ne rien perdre en silence.
+def _charger_corrections() -> dict:
+    import importlib.util
+    tout: dict = {}
+    for nom in ("corrections_fr", "corrections_en"):
+        f = Path(__file__).with_name(nom + ".py")
+        if not f.exists():
+            continue
+        spec = importlib.util.spec_from_file_location(nom, f)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        for cle, paires in getattr(mod, "CORRECTIONS", {}).items():
+            tout.setdefault(cle, []).extend(paires)
+    return tout
+
+
+_CORRECTIONS = None
+CORRECTIONS_MANQUEES: list = []
+
+
+def corrections_revue(html: str, path: Path) -> str:
+    global _CORRECTIONS
+    if _CORRECTIONS is None:
+        _CORRECTIONS = _charger_corrections()
+    try:
+        cle = path.relative_to(LEGACY).as_posix()
+    except (ValueError, NameError):
+        cle = path.name
+    for ancien, nouveau in _CORRECTIONS.get(cle, []):
+        if ancien in html:
+            html = html.replace(ancien, nouveau)
+        elif nouveau not in html:
+            CORRECTIONS_MANQUEES.append((cle, ancien[:70]))
+    return html
 
 
 def apply_updates(html: str) -> str:
@@ -1107,6 +1146,8 @@ def main():
     adapt_script("genealogie.js", "__initGenealogie", root_sel="#gn-outil")
     print(f"pages : {len(index['pages'])} · articles : {len(index['articles'])} · formulaires : {len(all_forms)} · "
           f"thématiques : {sum(len(p['items']) for p in index['structure']['poles'])} · plaidoyers : {len(index['plaidoyers'])} · documents : {len(index['documents'])}")
+    for cle, debut in sorted(set(CORRECTIONS_MANQUEES)):
+        print(f"correction sans effet : {cle} · « {debut}… »")
 
 
 if __name__ == "__main__":
