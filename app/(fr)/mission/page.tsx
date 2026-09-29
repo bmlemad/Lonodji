@@ -19,8 +19,10 @@ export default function Mission() {
   const page = getPage("mission");
   /* Les repères historiques de l'ancien site sont déjà dans la frise ci-dessus : on ne les répète pas plus bas. */
   const DOUBLON = "dune-association-a-un-cadre-federateur";
-  const sections = page.sections.filter((s) => s.id !== DOUBLON);
-  const toc = (page.toc ?? []).filter((t) => t.href !== `#${DOUBLON}`);
+  /* Origines, terre, histoire et langue : depuis la restructuration du 29/09/2026, dans Patrimoine (/histoire#origines). */
+  const PATRIMOINE = ["le-peuple-sara-et-les-bedjond", "une-terre-dagriculture-et-delevage", "une-histoire-aussi-faite-depreuves", "la-langue-et-la-culture-bedjond"];
+  const sections = page.sections.filter((s) => s.id !== DOUBLON && !PATRIMOINE.includes(s.id));
+  const toc = (page.toc ?? []).filter((t) => t.href !== `#${DOUBLON}` && !PATRIMOINE.includes(t.href.slice(1)));
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
@@ -47,11 +49,12 @@ export default function Mission() {
       </section>
 
       <section className="hub-section" id="en-detail">
-        <SectionHead eyebrow="En détail" title="Origines, territoire," em="organisation et objectifs." text="Le texte de référence de l’association, repris de la première version du site et mis à jour ici." />
+        <SectionHead eyebrow="En détail" title="Ce qu’est l’association," em="comment elle s’organise, ce qu’elle vise." text="Le texte de référence de l’association, repris de la première version du site et mis à jour ici. Les origines du peuple bedjond, sa terre, son histoire et sa langue sont dans la rubrique Patrimoine." />
         <div className="legacy">
           <Toc items={toc} />
           <LegacySections sections={sections} />
         </div>
+        <p className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="button secondary" href="/histoire#origines">Origines, terre, histoire et langue du peuple bedjond <span aria-hidden="true">→</span></Link></p>
       </section>
       <Partager route="/mission" titre="Notre mission" texte="L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : mission, valeurs, repères depuis 1986, bureau exécutif et organisation." />
     </main>

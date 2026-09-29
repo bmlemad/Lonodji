@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead } from "@/components/blocks";
 import ContactPrefill from "@/components/contact-prefill";
+import OuvrirAncre from "@/components/ouvrir-ancre";
 import { LegacySections, Resume } from "@/components/legacy-content";
 import LegacyEnhance from "@/components/legacy-enhance";
 import { enLettres, filledCount, getIndex, getPage, ogFor, ORG, thematiqueCount } from "@/lib/content";
@@ -61,10 +62,24 @@ export default function Participer() {
       <section className="hub-section" id="adherer">
         <SectionHead eyebrow="Adhésion" title="Adhérer" em="à l’association." text={adherer.lede} />
         <div className="notice"><strong>Collecte suspendue depuis le 23 septembre 2026.</strong> Aucune cotisation ni don n’est encaissé, en espèces comme par Mobile Money, tant que trois conditions ne sont pas réunies : l’autorisation de l’association, le vote de la grille de cotisation par l’assemblée générale et un compte bancaire à double signature au nom de l’association. Les intentions d’adhésion, elles, restent ouvertes : elles n’engagent aucun argent.</div>
-        <div className="legacy">
-          <Resume items={adherer.resume} />
-          <LegacySections sections={adherer.sections} />
-        </div>
+        {(() => {
+          // en vue : l'essentiel et le formulaire ; repliées : les règles détaillées (rien n'est retiré)
+          const vue = ["une-carte-une-cotisation-et-une-regle-de-cai", "bulletin", "personne-nest-ecarte-faute-de-pouvoir-payer"];
+          const essentiel = vue.map((id) => adherer.sections.find((x) => x.id === id)).filter((x) => x !== undefined);
+          const details = adherer.sections.filter((x) => !vue.includes(x.id));
+          return (
+            <div className="legacy">
+              <Resume items={adherer.resume} />
+              <LegacySections sections={essentiel} />
+              {details.length ? (
+                <details className="plier">
+                  <summary><strong>Les règles de l’adhésion en détail</strong><span>{details.length} sections : la carte, la grille proposée, l’argent, le registre, ce qui reste à décider</span></summary>
+                  <LegacySections sections={details} />
+                </details>
+              ) : null}
+            </div>
+          );
+        })()}
       </section>
 
       <section className="hub-section" id="soutenir">
@@ -84,6 +99,7 @@ export default function Participer() {
       </section>
 
       <ContactPrefill />
+      <OuvrirAncre />
       <LegacyEnhance hasForms={forms.length > 0} />
     </main>
   );

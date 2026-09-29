@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/components/lien";
+import OuvrirAncre from "@/components/ouvrir-ancre";
 import { ArticleCard, PageHeader, SectionHead } from "@/components/blocks";
 import { LegacySections } from "@/components/legacy-content";
 import LegacyEnhance from "@/components/legacy-enhance";
@@ -33,6 +34,9 @@ const secondary = [
 export default function Histoire() {
   const idx = getIndex();
   const figures = getPage("figures");
+  /* repris de la page Mission (restructuration du 29/09/2026) */
+  const ORIGINES = ["le-peuple-sara-et-les-bedjond", "une-terre-dagriculture-et-delevage", "une-histoire-aussi-faite-depreuves", "la-langue-et-la-culture-bedjond"];
+  const origines = ORIGINES.map((id) => getPage("mission").sections.find((x) => x.id === id)).filter((x) => x !== undefined);
   const articles = idx.articles.filter((a) => ["memoire", "culture"].includes(a.category));
   return (
     <main id="main-content" className="hub-page">
@@ -48,6 +52,22 @@ export default function Histoire() {
         <SectionHead eyebrow="Les dossiers" title="Territoire, lieux," em="familles et sources." />
         <div className="link-list">
           {dossiers.map((d) => <Link key={d.href} href={d.href}><strong>{d.label}</strong><span>{d.note}</span></Link>)}
+        </div>
+      </section>
+
+      <section className="hub-section" id="origines">
+        <SectionHead eyebrow="Origines" title="Le peuple sara, les Bedjond," em="leur terre, leur histoire, leur langue." text="Ce que disent les travaux publiés et la mémoire orale, chacun à sa place : les sources sont citées, les hypothèses dites comme telles." />
+        <div className="legacy plier-liste">
+          {origines.map((o) => {
+            const titre = (o.html.match(/<h2[^>]*>([\s\S]*?)<\/h2>/)?.[1] ?? "").replace(/<[^>]+>/g, "").trim();
+            const mots = o.html.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+            return (
+              <details className="plier" key={o.id} id={o.id}>
+                <summary><strong>{titre}</strong><span>{Math.max(1, Math.round(mots / 220))} min de lecture</span></summary>
+                <LegacySections sections={[{ ...o, id: `${o.id}-texte` }]} sansPremierTitre />
+              </details>
+            );
+          })}
         </div>
       </section>
 
@@ -76,6 +96,7 @@ export default function Histoire() {
         <div className="art-grid">{articles.map((a) => <ArticleCard key={a.slug} a={a} />)}</div>
       </section>
       <Partager route="/histoire" titre="Histoire, Bédjondo et patrimoine bedjond" texte="Bédjondo, berceau du peuple bedjond : lignée des chefs de canton, grandes figures, lieux sacrés, généalogies, base de recherche et articles d’histoire." />
+      <OuvrirAncre />
     </main>
   );
 }

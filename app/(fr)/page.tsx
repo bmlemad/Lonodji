@@ -163,6 +163,20 @@ export default function Home() {
           <div className="section-actions"><Link className="text-link" href="/actions">Tous les plaidoyers et leur suivi →</Link></div>
         </section>
 
+        <section id="impact" className="impact section" aria-labelledby="impact-title">
+          <div className="impact-intro">
+            <p className="eyebrow">Tableau de suivi</p>
+            <h2 id="impact-title">Mesurer ce qui<br /><em>devient réel.</em></h2>
+            <p>
+              La crédibilité se construit par la preuve. Six indicateurs datés et sourcés — adhérents, coordonnateurs, plaidoyers, besoins recensés et résolus, projets — et {corrections} corrections publiées à découvert. Ce qui n’est pas encore fait est écrit comme tel.
+            </p>
+            <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 26 }}>
+              <Link className="button secondary" href="/impact">Le tableau de suivi complet <span aria-hidden="true">→</span></Link>
+            </div>
+          </div>
+          <TableauDeBord donnees={indicateurs} mode="compact" />
+        </section>
+
         <section id="territoire" className="section heritage" aria-labelledby="territory-title">
           <div className="section-head">
             <div>
@@ -179,12 +193,13 @@ export default function Home() {
             <Link href="/territoire/besoins"><small>Carte des besoins</small><strong>Signaler un besoin, localité par localité</strong><span>Un forage en panne, une école sans maître, un pont coupé.</span></Link>
             <Link href="/territoire/enquetes"><small>Enquêtes de terrain</small><strong>Huit inconnues, huit enquêtes</strong><span>Qui détient la réponse, comment s’y prendre, en combien de jours.</span></Link>
           </div>
+          <div className="section-actions"><Link className="text-link" href="/territoire">Tout le territoire →</Link></div>
         </section>
 
         <section id="patrimoine" className="heritage section" aria-labelledby="heritage-title" style={{ background: "#f7f8f4" }}>
           <div className="section-head">
             <div>
-              <p className="eyebrow">Histoire & patrimoine</p>
+              <p className="eyebrow">Patrimoine</p>
               <h2 id="heritage-title">Préserver ce qui<br /><em>doit se transmettre.</em></h2>
             </div>
             <p>De Narmbang à Donath Gari, onze chefs de canton ; des forums de 2000 et 2003 à la réactivation de 2026 ; une langue, le nangnda, et une <Link href="/bibliotheque">bibliothèque de quarante références</Link>.</p>
@@ -194,21 +209,7 @@ export default function Home() {
             <article><span>02</span><h3>Lieux sacrés et généalogies</h3><p>Deux cahiers de terrain pour recenser les sites sacrés et écrire l’histoire de chaque famille.</p><Link className="text-link" href="/patrimoine/lieux-sacres">Les lieux sacrés →</Link></article>
             <article><span>03</span><h3>Nangnda, la langue</h3><p>Ce que nous en savons, le lexique de 2 650 mots que l’on peut écouter en ligne, et le dictionnaire numérique qui commence par vos mots.</p><Link className="text-link" href="/langue">La langue nangnda →</Link></article>
           </div>
-          <div className="section-actions"><Link className="text-link" href="/histoire">Toute l’histoire →</Link></div>
-        </section>
-
-        <section id="impact" className="impact section" aria-labelledby="impact-title">
-          <div className="impact-intro">
-            <p className="eyebrow">Tableau de bord</p>
-            <h2 id="impact-title">Mesurer ce qui<br /><em>devient réel.</em></h2>
-            <p>
-              La crédibilité se construit par la preuve. Six indicateurs datés et sourcés — adhérents, coordonnateurs, plaidoyers, besoins recensés et résolus, projets — et {corrections} corrections publiées à découvert. Ce qui n’est pas encore fait est écrit comme tel.
-            </p>
-            <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 26 }}>
-              <Link className="button secondary" href="/impact">Le tableau de bord complet <span aria-hidden="true">→</span></Link>
-            </div>
-          </div>
-          <TableauDeBord donnees={indicateurs} mode="compact" />
+          <div className="section-actions"><Link className="text-link" href="/patrimoine">Tout le patrimoine →</Link></div>
         </section>
 
         <section className="manifesto" aria-labelledby="manifesto-title">

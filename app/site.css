@@ -1647,3 +1647,17 @@ a.vues-them-vue:hover{ background:#f1f5ec; }
 .od-nav{ border-radius:18px; border-color:var(--carte-filet); background:var(--carte-fond); padding:6px; }
 .od-nav a{ border-radius:13px; padding:9px 14px; }
 .od-nav-sigle{ color:var(--muted); }
+/* Blocs repliables (pages longues) : le détail reste dans la page, ouvert à la demande */
+details.plier{ margin:40px 0 0; border:1px solid var(--carte-filet); border-radius:var(--r-carte-m); background:var(--carte-fond); box-shadow:var(--carte-ombre); }
+details.plier > summary{ list-style:none; cursor:pointer; display:flex; flex-direction:column; gap:4px; padding:20px 56px 20px 24px; position:relative; }
+details.plier > summary::-webkit-details-marker{ display:none; }
+details.plier > summary strong{ font-size:18px; letter-spacing:-.01em; }
+details.plier > summary span{ font-size:13.5px; color:var(--muted); }
+details.plier > summary::after{ content:"+"; position:absolute; right:22px; top:50%; transform:translateY(-50%); width:30px; height:30px; border-radius:50%; display:grid; place-items:center; background:#eef4e6; color:var(--deep); font-size:20px; font-weight:600; }
+details.plier[open] > summary::after{ content:"–"; }
+details.plier > summary:focus-visible{ outline:3px solid var(--accent); outline-offset:3px; border-radius:var(--r-carte-m); }
+details.plier[open]{ padding-bottom:12px; }
+details.plier > .lg-section, details.plier > section{ margin-left:24px !important; margin-right:24px !important; }
+details.plier > .lg-section:first-of-type{ margin-top:0 !important; border-top:1px solid var(--line) !important; }
+.plier-liste{ display:grid; gap:12px; }
+.plier-liste details.plier{ margin:0; }
