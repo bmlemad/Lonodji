@@ -455,6 +455,13 @@ def reseaux_sociaux(b, fonts: str, svgs: dict[str, str]) -> list[str]:
             page.screenshot(path=str(OUT / nom), type="jpeg", quality=90) if nom.endswith(".jpg") else page.screenshot(path=str(OUT / nom))
             page.close()
             faits.append(nom)
+            if suffixe.startswith("banniere-facebook"):  # aperçu léger pour la page Identité (et la charte PDF)
+                from PIL import Image
+
+                im = Image.open(OUT / nom).convert("RGB")
+                im.thumbnail((820, 312))
+                im.save(OUT / f"{marque}-lonodji-banniere-apercu.jpg", "JPEG", quality=82, optimize=True)
+                faits.append(f"{marque}-lonodji-banniere-apercu.jpg")
     # fond des diapositives sombres (modèles PowerPoint), 16:9 sans logo
     page = b.new_page(viewport={"width": 2560, "height": 1440}, device_scale_factor=1)
     page.set_content(page_html(f'<div style="width:2560px;height:1440px;{FOND_RESEAU}"></div>', fonts, 2560, 1440))
@@ -667,7 +674,7 @@ def main() -> None:
     kit = OUT / "kit-logo-odeb-lonodji.zip"
     with zipfile.ZipFile(kit, "w", zipfile.ZIP_DEFLATED) as z:
         for f in sorted(OUT.iterdir()):
-            if f.suffix in {".svg", ".png", ".jpg", ".pdf", ".docx", ".txt", ".html", ".pptx"} and f.name != kit.name and not f.name.startswith("fond-diaporama") and "-1000." not in f.name:
+            if f.suffix in {".svg", ".png", ".jpg", ".pdf", ".docx", ".txt", ".html", ".pptx"} and f.name != kit.name and not f.name.startswith("fond-diaporama") and "-1000." not in f.name and "-apercu." not in f.name:
                 z.write(f, f"kit-logo-odeb-lonodji/{f.name}")
     print(f"kit : {kit.relative_to(ROOT)} ({kit.stat().st_size // 1024} Ko)")
     shutil.rmtree(TMP, ignore_errors=True)

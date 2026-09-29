@@ -855,14 +855,14 @@
    "articles": 10
   },
   {
-   "slug": "memoire",
-   "label": "Mémoire & héritage",
+   "slug": "vie-association",
+   "label": "Vie de l’association",
    "articles": 8
   },
   {
-   "slug": "vie-association",
-   "label": "Vie de l’association",
-   "articles": 7
+   "slug": "memoire",
+   "label": "Mémoire & héritage",
+   "articles": 8
   },
   {
    "slug": "culture",
@@ -915,5 +915,5 @@
    "articles": 1
   }
  ],
- "totalArticles": 41
+ "totalArticles": 42
 }

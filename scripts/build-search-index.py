@@ -116,6 +116,24 @@ PAGES_SITE.append({"t": "Espace presse et partenaires", "r": "/presse", "k": "Pa
 PAGES_SITE.append({"t": "Identité visuelle : le logo « Les Pas vers l’Avenir », adopté le 28 septembre 2026", "r": "/odeb/identite", "k": "Page",
      "d": "Trois empreintes — les ancêtres, la génération actuelle, les générations futures — vers un soleil levant : le logo du projet, ses versions, ses couleurs, ses règles, le kit à télécharger et le papier à en-tête.",
      "x": "logo ODEB identité visuelle charte graphique emblème empreintes pas générations soleil levant verre devise sur les traces de nos ancêtres bâtissons notre avenir couleurs vert profond acacia doré polices DM Sans Playfair kit ZIP SVG PNG papier à en-tête planche imprimeur règles zone de protection tailles minimales monochrome réserve blanche"})
+PAGES_SITE.append({"t": "Fiches de mission : diriger un pôle, coordonner une thématique", "r": "/programmes/fiches-de-mission", "k": "Page",
+     "d": "Vingt-cinq fiches en PDF — quatre directions de pôle au rang de chef de projet, dix-neuf coordinations, deux cellules — avec le rôle, le périmètre, les quatre étapes et le lien pour candidater.",
+     "x": "fiche de mission fiches poste directeur directrice de pôle chef de projet coordonnateur coordonnatrice coordination thématique cellule candidater candidature recrutement bénévole rôle périmètre étapes PDF recueil à pourvoir vacant"})
+PAGES_SITE.append({"t": "La lettre d’information : chaque mois, publié, décidé, ouvert", "r": "/lettre", "k": "Page",
+     "d": "Les numéros de la lettre d’ADEB LONODJI, à lire en ligne ou à transmettre en PDF sur WhatsApp ; l’abonnement par e-mail ; la règle de la lettre.",
+     "x": "lettre d’information newsletter infolettre numéros abonnement s’abonner e-mail mensuelle PDF WhatsApp transmettre publié décidé ouvert archive"})
+PAGES_SITE.append({"t": "Registre public des décisions", "r": "/transparence/decisions", "k": "Page",
+     "d": "Ce que l’association a décidé, nommé, annoncé ou proposé depuis septembre 2026, tel que le site l’a publié, avec la source de chaque ligne et ce qui reste attendu.",
+     "x": "registre décisions décidé nommé nomination annoncé annonce proposé proposition à voter règle en vigueur procès-verbal PV assemblée bureau transparence redevabilité source daté logo directions de pôle sièges ODEB programme 06"})
+PAGES_SITE.append({"t": "Quinze affiches « Retrouvez votre village » à imprimer", "r": "/villages#affiches", "k": "Document PDF",
+     "d": "Une affiche A4 par unité et une affiche générale, avec un code QR vers les villages et l’adresse en toutes lettres — pour les chefs, les relais, les écoles, les centres de santé.",
+     "x": "affiche affiches imprimer A4 PDF code QR village unité chef de canton relais école centre de santé lieu de culte accrocher papier"})
+PAGES_SITE.append({"t": "Présentation du projet ODEB à l’assemblée (PDF, PowerPoint)", "r": "/odeb#presentation", "k": "Document PDF",
+     "d": "Vingt-six diapositives faites depuis les pages du site : vision, repères 2030, missions, programmes, cinq règles à voter, gouvernance, feuille de route, décisions attendues.",
+     "x": "présentation diaporama diapositives PowerPoint PPTX PDF assemblée générale AG projeter ODEB programmes règles vote décisions"})
+PAGES_SITE.append({"t": "Bannières, image de profil, signature e-mail, cartes de visite, modèles de diaporama", "r": "/odeb/identite#reseaux", "k": "Document PDF",
+     "d": "Le kit complété : bannières Facebook, LinkedIn, X, YouTube pour les deux noms, image de profil et icône de groupe WhatsApp, signatures e-mail, carte de visite et planche A4, modèles PowerPoint.",
+     "x": "bannière bannières Facebook LinkedIn X Twitter YouTube image de profil icône groupe WhatsApp signature e-mail carte de visite cartes planche modèle PowerPoint diaporama kit logo"})
 PAGES_SITE.append({"t": "The ODEB LONODJI project — Vision 2030 (in English)", "r": "/en/odeb", "k": "In English",
      "d": "A project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030: six missions, six programmes, a roadmap, a white paper.",
      "x": "ODEB LONODJI project English vision 2030 organisation development emergence Bedjond people missions research documentation territorial development innovation heritage diaspora programmes roadmap white paper take part skills register"})

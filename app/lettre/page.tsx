@@ -54,7 +54,7 @@ export default function LettrePage() {
         <div className="detail-grid">
           <article>
             <h3>Recevoir la lettre</h3>
-            <NewsletterForm />
+            <NewsletterForm id="lettre-nl-email" label="Recevoir la lettre d’information" />
           </article>
           <article><h3>La recevoir sur WhatsApp</h3><p>Le PDF de chaque numéro est fait pour être transmis tel quel : téléchargez-le ci-dessus et envoyez-le dans le groupe de votre village, de votre famille, de votre association. Le bouton « Partager » de chaque page fait la même chose avec le lien.</p></article>
           <article><h3>Comment elle s’écrit</h3><p>Le numéro se prépare à partir de ce que le site a enregistré dans le mois — articles, nominations, corrections, chiffres du tableau de bord — puis l’association y ajoute ce qu’elle a décidé, daté et sourcé. Rien d’autre. Une erreur ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p></article>

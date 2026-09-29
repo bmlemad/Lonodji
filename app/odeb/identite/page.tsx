@@ -137,7 +137,7 @@ export default function Identite() {
         <div className="od-bannieres">
           {(["adeb", "odeb"] as const).map((m) => (
             <figure key={m} className="od-banniere">
-              <img src={IDENTITE.reseaux.facebook[m]} alt={`Bannière ${m === "adeb" ? "ADEB LONODJI" : "ODEB LONODJI"} pour Facebook`} width="820" height="312" loading="lazy" />
+              <img src={IDENTITE.reseaux.apercu[m]} alt={`Bannière ${m === "adeb" ? "ADEB LONODJI" : "ODEB LONODJI"} pour Facebook`} width="820" height="312" loading="lazy" />
               <figcaption><strong>{m === "adeb" ? "ADEB LONODJI" : "ODEB LONODJI"}</strong> · <a href={IDENTITE.reseaux.facebook[m]} download>Facebook {IDENTITE.reseaux.facebook.taille}</a> · <a href={IDENTITE.reseaux.linkedin[m]} download>LinkedIn {IDENTITE.reseaux.linkedin.taille}</a> · <a href={IDENTITE.reseaux.x[m]} download>X {IDENTITE.reseaux.x.taille}</a> · <a href={IDENTITE.reseaux.youtube[m]} download>YouTube {IDENTITE.reseaux.youtube.taille}</a></figcaption>
             </figure>
           ))}

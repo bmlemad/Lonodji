@@ -1,0 +1,43 @@
+{
+ "legacy": "",
+ "source": "redaction",
+ "lang": "fr",
+ "documentTitle": "Dix outils de plus sur le site : partager, imprimer, candidater, présenter — ADEB LONODJI",
+ "description": "Le 29 septembre 2026, le site s’allège pour ceux qui paient la donnée au mégaoctet, et s’équipe pour le terrain et les réunions : partage WhatsApp sur chaque…",
+ "title": "Dix outils de plus sur le site : partager, imprimer, candidater, présenter",
+ "eyebrow": "Vie de l’association",
+ "lede": "Le 29 septembre 2026, le site s’allège pour ceux qui paient la donnée au mégaoctet, et s’équipe pour le terrain et les réunions : partage WhatsApp sur chaque page, fiches de village imprimables et quinze affiches, kit du logo complété, fiches de mission, présentation du projet ODEB, archive de la lettre, registre des décisions.",
+ "pills": [
+  "3 min de lecture",
+  "502 mots"
+ ],
+ "kicker": "29 septembre 2026",
+ "crumbs": [
+  "Accueil",
+  "Actualités"
+ ],
+ "parent": "Actualités",
+ "date": "2026-09-29",
+ "dateLabel": "29 septembre 2026",
+ "readTime": "3 min de lecture",
+ "byline": "Rédaction ADEB LONODJI",
+ "tag": "Vie de l’association",
+ "sections": [
+  {
+   "id": "",
+   "alt": false,
+   "cls": "prose",
+   "tag": "section",
+   "html": "<p>Une journée de travail sur le site, et rien de nouveau sur le fond : tout ce qui suit sert ce qui existe déjà — le faire circuler, l’imprimer, le présenter, le tenir à jour. Voici ce qui est en ligne.</p>\n<h2>Pour ceux qui paient la donnée au mégaoctet</h2>\n<p>Mesuré sur téléphone : chaque page déclenchait de 170 à 210 kilo-octets de préchargements invisibles — les liens du menu, du pied de page, des listes. Ils sont coupés. Une page se charge au clic, en une requête, et un fil d’attente le montre en haut de l’écran. Sur un forfait tchadien, c’est une visite qui coûte plusieurs fois moins.</p>\n<h2>Partager, imprimer, accrocher</h2>\n<ul><li><strong>Partager</strong> : chaque page a désormais un bouton dans l’en-tête et un bloc en bas — WhatsApp d’abord, puis le partage du téléphone, la copie du lien, Facebook, l’e-mail, et un message prêt à coller dans un groupe.</li><li><strong>Les fiches de village s’impriment</strong> : un code QR ouvre la fiche sur un téléphone, l’adresse est écrite en toutes lettres, et les six questions à documenter se remplissent à la main, sur papier. Pour ceux qui n’ont pas internet.</li><li><strong>Quinze affiches</strong> « Retrouvez votre village » (<a href=\"/villages#affiches\" rel=\"noopener\">une par unité, une générale</a>), en PDF A4, pour les chefs de canton et de village, les relais, les écoles, les centres de santé, les lieux de culte.</li></ul>\n<h2>Pour l’association</h2>\n<ul><li><strong>Le kit du logo est complet</strong> : bannières Facebook, LinkedIn, X et YouTube pour les deux noms, image de profil et icône de groupe WhatsApp, signatures e-mail, carte de visite et planche de dix cartes, modèles de diaporama — sur la page <a href=\"/odeb/identite#reseaux\" rel=\"noopener\">Identité visuelle</a>.</li><li><strong>Vingt-cinq fiches de mission</strong> (<a href=\"/programmes/fiches-de-mission\" rel=\"noopener\">en PDF</a>) : les quatre directions de pôle, au rang de chef de projet, les dix-neuf coordinations de thématique et les deux cellules — le rôle, le périmètre, les quatre étapes, le lien pour candidater. Les quatre directions et quatre thématiques sont à pourvoir.</li><li><strong>La présentation du projet ODEB à l’assemblée</strong> (<a href=\"/odeb#presentation\" rel=\"noopener\">PDF et PowerPoint</a>) : vingt-six diapositives faites depuis les pages du site, dont les cinq règles du programme 06 à voter et la liste des décisions attendues.</li><li><strong>La lettre d’information a sa page</strong> (<a href=\"/lettre\" rel=\"noopener\">/lettre</a>) : les numéros, l’abonnement, et le PDF de chaque numéro, fait pour être transmis tel quel sur WhatsApp.</li><li><strong>Le registre public des décisions</strong> (<a href=\"/transparence/decisions\" rel=\"noopener\">/transparence/decisions</a>) : ce que l’association a décidé, nommé, annoncé ou proposé depuis le 11 septembre, ligne par ligne, avec la source et ce qui reste attendu. Les procès-verbaux ne sont pas encore publiés : le registre reprend ce qui a été rendu public, il ne les remplace pas.</li></ul>\n<h2>Ce qui attend encore</h2>\n<p>L’arabe est prêt en brouillon — l’accueil et le contact — et attend un relecteur de langue maternelle avant de paraître. Le compte bancaire, les photos, l’adresse e-mail de l’association, les statuts et le récépissé restent de l’autre côté de l’écran : le site est prêt à les recevoir. Une remarque, une erreur : <a href=\"/participer#contact\" rel=\"noopener\">écrivez-nous</a>.</p>"
+  }
+ ],
+ "words": 502,
+ "forms": [],
+ "hasMap": false,
+ "scripts": [],
+ "rootAttrs": {},
+ "slug": "2026-09-29-dix-outils-de-plus",
+ "route": "/journal/2026-09-29-dix-outils-de-plus",
+ "category": "vie-association",
+ "summary": "Le 29 septembre 2026, le site s’allège pour ceux qui paient la donnée au mégaoctet, et s’équipe pour le terrain et les réunions : partage WhatsApp sur chaque page, fiches de village imprimables et quinze affiches, kit…"
+}

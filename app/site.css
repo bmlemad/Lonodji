@@ -1219,3 +1219,7 @@ body.feuille-open .tabbar{ display:none; }
 .registre-statut--proposition{ background:rgba(242,201,76,.28); border-color:rgba(242,201,76,.8); color:#5a4300; }
 .registre-statut--publication{ background:rgba(16,36,30,.06); }
 .registre-statut--regle{ background:var(--deep); border-color:var(--deep); color:#fff; }
+.detail-grid article span.registre-statut{ color:#4b5a52; }
+.detail-grid article span.registre-statut--decision, .detail-grid article span.registre-statut--nomination{ color:var(--deep); }
+.detail-grid article span.registre-statut--proposition{ color:#5a4300; }
+.detail-grid article span.registre-statut--regle{ color:#fff; }

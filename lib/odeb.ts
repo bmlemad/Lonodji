@@ -76,6 +76,7 @@ export const IDENTITE = {
     linkedin: { adeb: `${ID}/adeb-lonodji-banniere-linkedin-1584x396.png`, odeb: `${ID}/odeb-lonodji-banniere-linkedin-1584x396.png`, taille: "1584 × 396" },
     x: { adeb: `${ID}/adeb-lonodji-banniere-x-1500x500.png`, odeb: `${ID}/odeb-lonodji-banniere-x-1500x500.png`, taille: "1500 × 500" },
     youtube: { adeb: `${ID}/adeb-lonodji-banniere-youtube-2560x1440.jpg`, odeb: `${ID}/odeb-lonodji-banniere-youtube-2560x1440.jpg`, taille: "2560 × 1440" },
+    apercu: { adeb: `${ID}/adeb-lonodji-banniere-apercu.jpg`, odeb: `${ID}/odeb-lonodji-banniere-apercu.jpg` },
     profil: `${ID}/embleme-profil-1024.png`,
     whatsapp: `${ID}/embleme-profil-whatsapp-640.png`,
   },
