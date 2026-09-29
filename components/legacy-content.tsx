@@ -84,7 +84,7 @@ const PARENT_LABELS: Record<string, string> = {
 
 /* Barre de liens des pages anglaises héritées. */
 const LIENS_EN: { label: string; href: string }[] = [
-  { label: "About", href: "/en/about" }, { label: "Themes", href: "/en/themes" }, { label: "Sectors", href: "/en/sectors" },
+  { label: "About", href: "/en/about" }, { label: "Themes", href: "/en/themes" }, { label: "Sectors", href: "/en/sectors" }, { label: "Donors", href: "/en/donors" },
   { label: "Advocacy", href: "/en/advocacy" }, { label: "Bédjondo", href: "/en/bedjondo" }, { label: "Villages", href: "/en/villages" },
   { label: "Projects", href: "/en/projects" }, { label: "ODEB", href: "/en/odeb" }, { label: "Contact", href: "/en/contact" },
 ];

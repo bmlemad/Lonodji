@@ -28,7 +28,7 @@ const PIED_EN: Colonne[] = [
     { label: "NGOs & funders", href: "/dossiers/ong-partenaires", fr: true }, { label: "Accountability & transparency", href: "/transparence", fr: true }, { label: "Press", href: "/presse", fr: true },
   ] },
   { titre: "Our work", liens: [
-    { label: "Four pillars, twenty themes", href: "/en/themes" }, { label: "Sectors", href: "/en/sectors" }, { label: "Impact dashboard", href: "/en/impact" },
+    { label: "Four pillars, twenty themes", href: "/en/themes" }, { label: "Sectors", href: "/en/sectors" }, { label: "Donor programmes in Chad", href: "/en/donors" }, { label: "Impact dashboard", href: "/en/impact" },
     { label: "Projects", href: "/en/projects" }, { label: "Documents", href: "/documents", fr: true },
   ] },
   { titre: "Territory & heritage", liens: [

@@ -20,6 +20,7 @@ const NAV_EN: { label: string; href: string; mobile?: boolean }[] = [
   { label: "About", href: "/en/about" },
   { label: "Themes", href: "/en/themes" },
   { label: "Sectors", href: "/en/sectors" },
+  { label: "Donors", href: "/en/donors", mobile: true },
   { label: "Advocacy", href: "/en/advocacy" },
   { label: "Bédjondo", href: "/en/bedjondo", mobile: true },
   { label: "Villages", href: "/en/villages" },

@@ -7,6 +7,7 @@ export const FR_VERS_EN: Record<string, string> = {
   "/participer": "/en/contact",
   "/programmes": "/en/themes",
   "/secteurs": "/en/sectors",
+  "/bailleurs": "/en/donors",
   "/impact": "/en/impact",
   "/projets": "/en/projects",
   "/villages": "/en/villages",

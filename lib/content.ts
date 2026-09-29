@@ -210,4 +210,5 @@ export const EN_PAGES_APP: { route: string; title: string }[] = [
   { route: "/en/projects", title: "Projects — each one with its stage, what is missing and how to help" },
   { route: "/en/impact", title: "Impact dashboard — six dated, sourced indicators" },
   { route: "/en/sectors", title: "Sectors of intervention — WASH, health, nutrition, relief, DRR" },
+  { route: "/en/donors", title: "Donor programmes in Chad — World Bank, EU, UN, AfDB, and where we connect" },
 ];
