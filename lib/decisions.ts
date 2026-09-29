@@ -126,6 +126,12 @@ export const DECISIONS: Decision[] = [
     sources: [{ label: "Nos actions", href: "/programmes#pole-2" }, { label: "Secteurs d’intervention", href: "/secteurs" }],
   },
   {
+    id: "2026-20", date: "2026-09-22", type: "nomination",
+    titre: "Coordination de la thématique Culture & patrimoine vivant",
+    texte: "La coordination est confiée à Félix Mbété Nangmbatnan le 22 septembre 2026. Le 28 septembre 2026, le Dr Yaphete Madjiradé lui succède (entrée 2026-08).",
+    sources: [{ label: "Nos actions", href: "/programmes#culture-patrimoine-vivant" }, { label: "Journal des corrections", href: "/transparence#corrections" }],
+  },
+  {
     id: "2026-15", date: "2026-09-23", type: "nomination", dateLabel: "date non publiée, au plus tard le 23 septembre 2026",
     titre: "Coordination de la thématique Protection sociale, enfance & inclusion",
     texte: "La coordination est confiée à Solkem Ngarmbatina. Le journal des corrections du 23 septembre 2026 la cite déjà parmi les six thématiques pourvues.",
