@@ -138,7 +138,7 @@
      "href": "/dossiers/complexe-sportif#agir"
     },
     {
-     "label": "Rejoindre Jeunesse & réussite",
+     "label": "Rejoindre Éducation, jeunesse & formation",
      "href": "/programmes#jeunesse-reussite"
     }
    ]
@@ -160,14 +160,14 @@
    ],
    "manque": [
     "Une étude : besoin, véhicules, exploitation, coûts, gouvernance",
-    "Un porteur : la thématique Désenclavement & urbanisation est à pourvoir",
+    "Un porteur : la thématique Énergie, routes & urbanisme est à pourvoir",
     "Financement et calendrier"
    ],
    "budget": "aucun",
    "calendrier": "aucun",
    "contribuer": [
     {
-     "label": "Coordonner Désenclavement & urbanisation",
+     "label": "Coordonner Énergie, routes & urbanisme",
      "href": "/participer?theme=08&coordo=1#contact"
     },
     {
@@ -225,7 +225,7 @@
    ],
    "resume": "Un collège puis un lycée exigeants, avec internat à partir de la sixième, pour former les futures élites du pays bedjond ; des bourses pour les élèves méritants sans moyens ; des frais de scolarité qui couvrent les charges et dégagent un excédent pour les projets. Le collège d’abord, quatre classes et un internat ; le lycée ensuite.",
    "existant": [
-    "La thématique Jeunesse & réussite, pourvue depuis le 28 septembre 2026",
+    "La thématique Éducation, jeunesse & formation, pourvue depuis le 28 septembre 2026",
     "Le complexe sportif à l’étude et l’espace numérique communautaire, qui en seraient les voisins naturels"
    ],
    "manque": [
@@ -241,7 +241,7 @@
      "href": "/diaspora#inscription"
     },
     {
-     "label": "Coordonner Jeunesse & réussite : réagir à la proposition",
+     "label": "Coordonner Éducation, jeunesse & formation : réagir à la proposition",
      "href": "/participer?theme=09#contact"
     }
    ]

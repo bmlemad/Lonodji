@@ -112,6 +112,12 @@ export const DECISIONS: Decision[] = [
     sources: [{ label: "Nos actions — diriger un pôle", href: "/programmes#diriger-un-pole" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }],
   },
   {
+    id: "2026-14", date: "2026-09-29", type: "decision",
+    titre: "Quatre intitulés alignés sur les activités",
+    texte: "07 Eau, assainissement & hygiène (le WASH des ONG) ; 08 Énergie, routes & urbanisme (les infrastructures, dont l’énergie venue de la 07) ; 09 Éducation, jeunesse & formation (jusqu’ici Jeunesse & réussite) ; 17 Connectivité & services numériques (la connexion internet venue de la 07). Numéros, liens et coordinations inchangés.",
+    sources: [{ label: "Nos actions", href: "/programmes#pole-2" }, { label: "Secteurs d’intervention", href: "/secteurs" }],
+  },
+  {
     id: "regle-01", date: "2026-09-11", type: "regle",
     titre: "Aucune collecte avant un compte bancaire au nom de l’association",
     texte: "La collecte est suspendue jusqu’à l’ouverture d’un compte au nom de l’association ; les intentions d’adhésion et les promesses de contribution n’engagent aucun paiement.",

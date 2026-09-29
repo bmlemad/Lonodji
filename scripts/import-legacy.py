@@ -771,6 +771,24 @@ RENOMMAGES_29_09 = [
     ("Health &amp; Prevention", "Health, Nutrition &amp; Prevention"),
     ("Environment &amp; Natural Resources", "Environment, Climate &amp; Natural Resources"),
     ("Social Protection &amp; Inclusion", "Social Protection, Children &amp; Inclusion"),
+    # 29/09/2026, second temps : intitulés alignés sur les activités (07 WASH, 08 infrastructures, 09 éducation, 17 connectivité)
+    ("Eau, assainissement, énergie &amp; connectivité", "Eau, assainissement &amp; hygiène"),
+    ("Eau, assainissement, énergie & connectivité", "Eau, assainissement & hygiène"),
+    ("Eau, assainissement, &eacute;nergie &amp; connectivit&eacute;", "Eau, assainissement &amp; hygi&egrave;ne"),
+    ("Désenclavement &amp; urbanisation", "Énergie, routes &amp; urbanisme"),
+    ("Désenclavement & urbanisation", "Énergie, routes & urbanisme"),
+    ("D&eacute;senclavement &amp; urbanisation", "&Eacute;nergie, routes &amp; urbanisme"),
+    ("Jeunesse &amp; réussite", "Éducation, jeunesse &amp; formation"),
+    ("Jeunesse & réussite", "Éducation, jeunesse & formation"),
+    ("Jeunesse &amp; r&eacute;ussite", "&Eacute;ducation, jeunesse &amp; formation"),
+    ("Transformation numérique &amp; services", "Connectivité &amp; services numériques"),
+    ("Transformation numérique & services", "Connectivité & services numériques"),
+    ("Eau, &eacute;nergie &amp; connectivit&eacute;", "Eau, assainissement &amp; hygi&egrave;ne"),
+    ("Transformation num&eacute;rique &amp; services", "Connectivit&eacute; &amp; services num&eacute;riques"),
+    ("Water, Sanitation, Energy &amp; Connectivity", "Water, Sanitation &amp; Hygiene"),
+    ("Road Access &amp; Urban Growth", "Energy, Roads &amp; Urban Planning"),
+    ("Youth &amp; Achievement", "Education, Youth &amp; Training"),
+    ("Digital Transformation &amp; Services", "Connectivity &amp; Digital Services"),
 ]
 COMPTES_29_09 = [
     # vingt thématiques, cinq à pourvoir (les quatre d'avant + Urgences & risques)
@@ -803,8 +821,14 @@ COMPTES_RE_29_09 = [
 ]
 NOTES_PERIMETRE_29_09 = [
     # (titre de la carte après renommage, note ajoutée à la fin de sa description) — poles.html
-    ("Eau, assainissement, énergie &amp; connectivité",
-     " <strong>Mise à jour du 29 septembre 2026&nbsp;:</strong> la thématique s&rsquo;élargit à l&rsquo;<strong>assainissement et à l&rsquo;hygiène</strong> (latrines, gestion des eaux usées et des déchets, lavage des mains à l&rsquo;école et au marché), le troisième pilier de ce que les ONG appellent « eau, assainissement, hygiène » (EAH)."),
+    ("Eau, assainissement &amp; hygiène",
+     " <strong>Mise à jour du 29 septembre 2026&nbsp;:</strong> la thématique devient <strong>Eau, assainissement &amp; hygiène</strong> — ce que les ONG appellent « eau, assainissement, hygiène » (EAH, ou WASH) : l&rsquo;eau potable, les latrines, les eaux usées et les déchets, le lavage des mains à l&rsquo;école et au marché. L&rsquo;énergie rejoint la thématique 08, Énergie, routes &amp; urbanisme, et la connexion internet la thématique 17, Connectivité &amp; services numériques."),
+    ("Énergie, routes &amp; urbanisme",
+     " <strong>Mise à jour du 29 septembre 2026&nbsp;:</strong> la thématique, jusqu&rsquo;ici « Désenclavement &amp; urbanisation », réunit désormais les infrastructures&nbsp;: l&rsquo;<strong>énergie</strong> (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l&rsquo;urbanisme de Bédjondo."),
+    ("Éducation, jeunesse &amp; formation",
+     " <strong>Mise à jour du 29 septembre 2026&nbsp;:</strong> la thématique, jusqu&rsquo;ici « Jeunesse &amp; réussite », prend le nom de ce qu&rsquo;elle porte&nbsp;: l&rsquo;<strong>éducation</strong> — l&rsquo;école, le lycée, la formation professionnelle et les plaidoyers qui les concernent — et la jeunesse. Sa coordination ne change pas."),
+    ("Connectivité &amp; services numériques",
+     " <strong>Mise à jour du 29 septembre 2026&nbsp;:</strong> la thématique, jusqu&rsquo;ici « Transformation numérique &amp; services », reprend la <strong>connectivité</strong> — réseau mobile, haut débit, espace numérique — venue de la thématique 07. Sa coordination ne change pas."),
     ("Santé, nutrition &amp; prévention",
      " <strong>Mise à jour du 29 septembre 2026&nbsp;:</strong> la thématique s&rsquo;élargit à la <strong>nutrition</strong> — dépistage de la malnutrition des jeunes enfants, alimentation des femmes enceintes et allaitantes, lien avec les centres de santé et la thématique Agriculture, élevage &amp; sécurité alimentaire."),
     ("Environnement, climat &amp; ressources naturelles",
@@ -916,7 +940,6 @@ def lire_source(path: Path) -> str:
     html = path.read_text(encoding="utf-8")
     for old, new in UPDATES_SOURCE + nominations_source():
         html = html.replace(old, new)
-    html = structure_29_09(html, path)
     # note datée à la fin de la description de la carte concernée (poles.html, en/themes.html)
     for coord, note, fichiers in NOTES_COORDINATION:
         i = html.find(coord)
@@ -926,7 +949,7 @@ def lire_source(path: Path) -> str:
         k = html.find("</p>", j)
         if j > 0 and k > 0:
             html = html[:k] + note + html[k:]
-    return html
+    return structure_29_09(html, path)
 
 
 def apply_updates(html: str) -> str:
@@ -1036,6 +1059,10 @@ def main():
             continue
         if d.get("source") == "redaction" and d.get("slug") not in {a["slug"] for a in index["articles"]}:
             index["articles"].append({k: d.get(k, "") for k in ("slug", "route", "title", "date", "dateLabel", "tag", "category", "summary", "readTime", "words", "byline", "pills")})
+    for a in index["articles"]:  # l'étiquette suit le nom actuel de la rubrique ; le texte daté de l'article ne change pas
+        for o, n in RENOMMAGES_29_09:
+            if a.get("tag") == o:
+                a["tag"] = n
     index["articles"].sort(key=lambda a: a["date"], reverse=True)
     index["journalCategories"] = cats
 

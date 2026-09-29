@@ -103,7 +103,7 @@
   {
    "id": "eau-energie-connectivite",
    "numero": "07",
-   "nom": "Eau, assainissement, énergie & connectivité",
+   "nom": "Eau, assainissement & hygiène",
    "pole": "II",
    "poleNom": "Développement humain & moyens d’existence",
    "pourvue": false,
@@ -113,7 +113,7 @@
   {
    "id": "desenclavement-urbanisation",
    "numero": "08",
-   "nom": "Désenclavement & urbanisation",
+   "nom": "Énergie, routes & urbanisme",
    "pole": "II",
    "poleNom": "Développement humain & moyens d’existence",
    "pourvue": false,
@@ -123,7 +123,7 @@
   {
    "id": "jeunesse-reussite",
    "numero": "09",
-   "nom": "Jeunesse & réussite",
+   "nom": "Éducation, jeunesse & formation",
    "pole": "II",
    "poleNom": "Développement humain & moyens d’existence",
    "pourvue": true,
@@ -213,7 +213,7 @@
   {
    "id": "transformation-numerique-services",
    "numero": "17",
-   "nom": "Transformation numérique & services",
+   "nom": "Connectivité & services numériques",
    "pole": "IV",
    "poleNom": "Numérique & innovation",
    "pourvue": true,
