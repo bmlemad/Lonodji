@@ -7,9 +7,9 @@ import { getMissions } from "../../../lib/missions";
 
 export const metadata: Metadata = {
   title: "Fiches de mission : diriger un pôle, coordonner une thématique",
-  description: "Vingt-cinq fiches de mission en PDF — quatre directions de pôle au rang de chef de projet, dix-neuf coordinations de thématique, deux cellules transversales — avec ce que la personne fait, le périmètre, les quatre étapes et le lien pour candidater.",
+  description: "Vingt-six fiches de mission en PDF — quatre directions de pôle au rang de chef de projet, vingt coordinations de thématique, deux cellules transversales — avec ce que la personne fait, le périmètre, les quatre étapes et le lien pour candidater.",
   alternates: { canonical: "/programmes/fiches-de-mission" },
-  openGraph: { ...ogFor("/programmes/fiches-de-mission"), title: "Fiches de mission : diriger un pôle, coordonner une thématique", description: "Vingt-cinq fiches en PDF : ce que la personne fait, le périmètre, les quatre étapes, le lien pour candidater." },
+  openGraph: { ...ogFor("/programmes/fiches-de-mission"), title: "Fiches de mission : diriger un pôle, coordonner une thématique", description: "Vingt-six fiches en PDF : ce que la personne fait, le périmètre, les quatre étapes, le lien pour candidater." },
 };
 
 const jour = (iso: string) => new Date(iso).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
@@ -54,7 +54,7 @@ export default function FichesDeMission() {
       </section>
 
       <section className="hub-section" id="coordinations">
-        <SectionHead eyebrow="Dix-neuf coordinations" title="Une thématique," em="une fiche." text="Le coordonnateur ou la coordonnatrice réunit les membres intéressés, propose un plan d’action simple, fait avancer la thématique au quotidien avec l’appui des cellules transversales, et rend compte lors des assemblées. Coordonner demande de la régularité ; contribuer ponctuellement est déjà précieux." />
+        <SectionHead eyebrow="Vingt coordinations" title="Une thématique," em="une fiche." text="Le coordonnateur ou la coordonnatrice réunit les membres intéressés, propose un plan d’action simple, fait avancer la thématique au quotidien avec l’appui des cellules transversales, et rend compte lors des assemblées. Coordonner demande de la régularité ; contribuer ponctuellement est déjà précieux." />
         <div className="link-list">
           {m.coordinations.map((c) => (
             <a key={c.id} href={c.pdf} download>

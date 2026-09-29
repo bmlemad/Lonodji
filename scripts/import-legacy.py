@@ -750,11 +750,170 @@ NOTES_COORDINATION = [
   + [(f'<h3>{en}</h3>\n          <p class="coord">Coordinator: {qui_en}</p>', ne, ("themes.html",)) for _a, _fr, en, _js, _p, _q, qui_en, _nf, ne in NOMINATIONS]
 
 
+# ----------------------------------------------------------------------------
+# 29/09/2026 : périmètres élargis (secteurs standards des ONG de développement et
+# d'aide) et vingtième thématique « Urgences & risques » dans le pôle II.
+# Les articles du journal, datés, restent tels qu'écrits ; tout le reste suit.
+# ----------------------------------------------------------------------------
+RENOMMAGES_29_09 = [
+    # (ancien, nouveau) — HTML et texte brut (trouver.js), FR puis EN
+    ("Eau, énergie &amp; connectivité", "Eau, assainissement, énergie &amp; connectivité"),
+    ("Eau, énergie & connectivité", "Eau, assainissement, énergie & connectivité"),
+    ("Eau, &eacute;nergie &amp; connectivit&eacute;", "Eau, assainissement, &eacute;nergie &amp; connectivit&eacute;"),
+    ("Santé &amp; prévention", "Santé, nutrition &amp; prévention"),
+    ("Santé & prévention", "Santé, nutrition & prévention"),
+    ("Sant&eacute; &amp; pr&eacute;vention", "Sant&eacute;, nutrition &amp; pr&eacute;vention"),
+    ("Environnement &amp; ressources naturelles", "Environnement, climat &amp; ressources naturelles"),
+    ("Environnement & ressources naturelles", "Environnement, climat & ressources naturelles"),
+    ("Protection sociale &amp; inclusion", "Protection sociale, enfance &amp; inclusion"),
+    ("Protection sociale & inclusion", "Protection sociale, enfance & inclusion"),
+    ("Water, Energy &amp; Connectivity", "Water, Sanitation, Energy &amp; Connectivity"),
+    ("Health &amp; Prevention", "Health, Nutrition &amp; Prevention"),
+    ("Environment &amp; Natural Resources", "Environment, Climate &amp; Natural Resources"),
+    ("Social Protection &amp; Inclusion", "Social Protection, Children &amp; Inclusion"),
+]
+COMPTES_29_09 = [
+    # vingt thématiques, cinq à pourvoir (les quatre d'avant + Urgences & risques)
+    ("quatre de ses dix-neuf th&eacute;matiques", "cinq de ses vingt th&eacute;matiques"),
+    ("Quatre des dix-neuf thématiques", "Cinq des vingt thématiques"),
+    ("<p>Quatre thématiques attendent un coordonnateur", "<p>Cinq thématiques attendent un coordonnateur"),
+    ("<p>Dix-neuf thématiques, et quatre attendent encore leur coordonnateur.</p>", "<p>Vingt thématiques, et cinq attendent encore leur coordonnateur.</p>"),
+    ("pourvoir les quatre thématiques encore sans coordonnateur", "pourvoir les cinq thématiques encore sans coordonnateur"),
+    ("Dix-neuf th&eacute;matiques, dont quatre sans coordonnateur.", "Vingt th&eacute;matiques, dont cinq sans coordonnateur."),
+    ("Quatre th&eacute;matiques &agrave; pourvoir</span>", "Cinq th&eacute;matiques &agrave; pourvoir</span>"),
+    ("<p>Quatre thématiques et une cellule cherchent", "<p>Cinq thématiques et une cellule cherchent"),
+    ("où vous seriez le plus utile. Quatre attendent un coordonnateur.", "où vous seriez le plus utile. Cinq attendent un coordonnateur."),
+    ('aria-label="4 thématiques encore à pourvoir — se porter volontaire">\n        <span class="bento-num">4</span>',
+     'aria-label="5 thématiques encore à pourvoir — se porter volontaire">\n        <span class="bento-num">5</span>'),
+    ("Thirteen of ADEB LONODJI&rsquo;s nineteen themes still have no coordinator.", "Five of ADEB LONODJI&rsquo;s twenty themes still have no coordinator."),
+    ("<h2>Six coordinators out of nineteen</h2>", "<h2>Fifteen coordinators out of twenty</h2>"),
+    ("thirteen of the nineteen themes have no coordinator today", "five of the twenty themes have no coordinator today"),
+]
+# « dix-neuf thématiques » et variantes, hors articles (regex, casse conservée)
+COMPTES_RE_29_09 = [
+    (r"\bdix-neuf(\s+th(?:é|&eacute;)matiques)", r"vingt\1"),
+    (r"\bDix-neuf(\s+th(?:é|&eacute;)matiques)", r"Vingt\1"),
+    (r"\b19(\s+th(?:é|&eacute;)matiques)", r"20\1"),
+    (r"\bdix-neuf(\s+coordinations)", r"vingt\1"),
+    (r"\bnineteen(\s+themes)", r"twenty\1"),
+    (r"\bNineteen(\s+themes)", r"Twenty\1"),
+]
+NOTES_PERIMETRE_29_09 = [
+    # (titre de la carte après renommage, note ajoutée à la fin de sa description) — poles.html
+    ("Eau, assainissement, énergie &amp; connectivité",
+     " <strong>Mise à jour du 29 septembre 2026&nbsp;:</strong> la thématique s&rsquo;élargit à l&rsquo;<strong>assainissement et à l&rsquo;hygiène</strong> (latrines, gestion des eaux usées et des déchets, lavage des mains à l&rsquo;école et au marché), le troisième pilier de ce que les ONG appellent « eau, assainissement, hygiène » (EAH)."),
+    ("Santé, nutrition &amp; prévention",
+     " <strong>Mise à jour du 29 septembre 2026&nbsp;:</strong> la thématique s&rsquo;élargit à la <strong>nutrition</strong> — dépistage de la malnutrition des jeunes enfants, alimentation des femmes enceintes et allaitantes, lien avec les centres de santé et la thématique Agriculture, élevage &amp; sécurité alimentaire."),
+    ("Environnement, climat &amp; ressources naturelles",
+     " <strong>Mise à jour du 29 septembre 2026&nbsp;:</strong> la thématique s&rsquo;élargit à l&rsquo;<strong>adaptation au changement climatique</strong> — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Urgences &amp; risques."),
+    ("Protection sociale, enfance &amp; inclusion",
+     " <strong>Mise à jour du 29 septembre 2026&nbsp;:</strong> la thématique s&rsquo;élargit à la <strong>protection de l&rsquo;enfance</strong> — enregistrement des naissances, enfants hors de l&rsquo;école, mariages précoces, en lien avec la politique de protection de l&rsquo;association ; l&rsquo;aide d&rsquo;urgence en cas de catastrophe ou d&rsquo;épidémie passe à la thématique 20, Urgences &amp; risques."),
+]
+URGENCES_CARTE = """
+        <article class="pole-card" id="urgences-risques">
+          <div class="pole-head-row">
+            <span class="pole-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5"/><path d="M12 17.5h.01"/></svg></span>
+            <span class="pole-num">THÉMATIQUE 20</span>
+          </div>
+          <span class="pole-status pole-status--vacant">À pourvoir</span>
+          <h3>Urgences &amp; risques</h3>
+          <p class="coord">Coordonnateur&nbsp;: à pourvoir</p>
+          <p>Préparer le pays bedjond aux crises plutôt que les subir&nbsp;: inondations de la saison des pluies, épidémies, sécheresse, feux de brousse, arrivée de familles déplacées. Pistes envisagées&nbsp;: cartographier avec les villages les zones inondables et les points d&rsquo;eau exposés&nbsp;; un plan de contingence simple par canton — qui prévenir, où se mettre à l&rsquo;abri, quelles réserves&nbsp;; un réseau d&rsquo;alerte par WhatsApp et par la radio communautaire, qui relaie les alertes officielles&nbsp;; et, quand la crise est là, informer, orienter et recenser les besoins pour les services de l&rsquo;État, la Croix-Rouge du Tchad et les agences humanitaires, plutôt que les doubler. L&rsquo;association ne collecte rien avant d&rsquo;avoir un compte à son nom&nbsp;: une aide d&rsquo;urgence ne passerait que par des circuits vérifiables et publiés. <strong>Thématique créée le 29 septembre 2026</strong>&nbsp;; elle reprend l&rsquo;aide d&rsquo;urgence jusqu&rsquo;ici rattachée à Protection sociale, enfance &amp; inclusion. Rien n&rsquo;est encore engagé.</p>
+          <div class="pole-tags"><span class="tag">Urgences</span><span class="tag">Inondations</span><span class="tag">Épidémies</span><span class="tag">Alerte</span></div>
+          <div class="pole-odd"><span class="odd-legend">ODD</span><a class="odd-chip" href="odd.html#odd-1" style="--odd-accent:#E5243B;--odd-ink:#ffffff" title="ODD 1 &mdash; Pas de pauvret&eacute; | cible 1.5 &mdash; r&eacute;silience des plus pauvres face aux catastrophes"><span class="odd-num">1</span><span class="odd-name">Pauvret&eacute;</span><span class="odd-cible">1.5</span></a><a class="odd-chip" href="odd.html#odd-11" style="--odd-accent:#FD9D24;--odd-ink:#10181f" title="ODD 11 &mdash; Villes et communaut&eacute;s durables | cible 11.5 &mdash; r&eacute;duire les d&eacute;c&egrave;s et les pertes dus aux catastrophes"><span class="odd-num">11</span><span class="odd-name">Villes</span><span class="odd-cible">11.5</span></a><a class="odd-chip" href="odd.html#odd-13" style="--odd-accent:#3F7E44;--odd-ink:#ffffff" title="ODD 13 &mdash; Lutte contre le changement climatique | cible 13.1 &mdash; r&eacute;silience face aux al&eacute;as climatiques"><span class="odd-num">13</span><span class="odd-name">Climat</span><span class="odd-cible">13.1</span></a></div>
+          <div class="pole-hub-links">
+          <a class="pole-hub-link" href="besoins.html">Signaler un besoin, localité par localité &rarr;</a>
+          <a class="pole-hub-link pole-hub-link--join" href="contact.html?theme=20">Rejoindre cette th&eacute;matique &rarr;</a>
+          </div>
+        </article>
+"""
+URGENCES_EN = """
+        <article class="pole-card">
+          <div class="pole-head-row"><span class="pole-num">THEME 20</span></div>
+          <span class="pole-status pole-status--vacant">Open</span>
+          <h3>Emergencies &amp; Risks</h3>
+          <p class="coord">Coordinator: to be appointed</p>
+          <p>Preparing the Bedjond country for crises rather than suffering them: rainy-season floods, epidemics, drought, bush fires, displaced families. Ideas under consideration: mapping flood-prone areas with the villages, a simple contingency plan per canton, an alert network over WhatsApp and community radio, and, when a crisis hits, informing, guiding and recording needs for the State services, the Chad Red Cross and humanitarian agencies rather than duplicating them. Created on 29 September 2026; nothing is committed yet, and no money is collected before the association has an account in its name.</p>
+          <div class="pole-hub-links">
+          <a class="pole-hub-link" href="../poles.html#urgences-risques">Full description <span lang="fr">en fran&ccedil;ais</span> &rarr;</a>
+          </div>
+        </article>"""
+URGENCES_JS = """  {
+    "id": "urgences-risques",
+    "num": "20",
+    "key": "20",
+    "pole": "Pôle II · Thématique 20",
+    "name": "Urgences & risques",
+    "status": "open",
+    "coord": "Coordonnateur : à pourvoir",
+    "desc": "Préparer le pays bedjond aux crises : inondations, épidémies, sécheresse ; cartographie des risques, plan de contingence par canton, réseau d’alerte, relais avec l’État et les agences humanitaires.",
+    "page": [
+      "besoins.html",
+      "Carte des besoins"
+    ],
+    "suivi": false,
+    "tier": 3
+  },
+"""
+
+
+def structure_29_09(html: str, path: Path) -> str:
+    """Applique les décisions du 29/09/2026 à un fichier de l'ancien site (hors articles)."""
+    if "articles" in path.parts:
+        return html
+    for old, new in RENOMMAGES_29_09 + COMPTES_29_09:
+        html = html.replace(old, new)
+    if path.name != "actualites.html":  # les résumés d'articles, datés, restent tels qu'écrits
+        for rx, rep in COMPTES_RE_29_09:
+            html = re.sub(rx, rep, html)
+    if path.name == "poles.html":
+        for titre, note in NOTES_PERIMETRE_29_09:
+            i = html.find(f"<h3>{titre}</h3>")
+            if i < 0:
+                continue
+            j = html.find("<p>", i)
+            k = html.find("</p>", j)
+            if j > 0 and k > 0:
+                html = html[:k] + note + html[k:]
+        # la carte, après celle de Protection sociale (fin du pôle II)
+        i = html.find('<article class="pole-card" id="solidarite-inclusion">')
+        k = html.find("</article>", i)
+        if i > 0 and k > 0 and 'id="urgences-risques"' not in html:
+            html = html[:k + len("</article>")] + "\n" + URGENCES_CARTE.rstrip() + html[k + len("</article>"):]
+        # la ligne du tableau des coordinations
+        m = re.search(r'<a class="coord-row" href="poles\.html#solidarite-inclusion">.*?</a>', html)
+        if m and "poles.html#urgences-risques" not in html[m.end():m.end() + 400]:
+            ligne = ('\n        <a class="coord-row" href="poles.html#urgences-risques"><span class="coord-etat">&Agrave; pourvoir</span><span class="coord-nom">Urgences &amp; risques</span>'
+                     '<span class="coord-pole">Développement humain &amp; moyens d’existence</span><span class="coord-qui coord-qui--vide">à pourvoir</span></a>')
+            html = html[:m.end()] + ligne + html[m.end():]
+    if path.name == "contact.html":
+        html = html.replace("<option>12. Protection sociale, enfance &amp; inclusion</option>\n",
+                            "<option>12. Protection sociale, enfance &amp; inclusion</option>\n                  <option>20. Urgences &amp; risques</option>\n")
+    if path.name == "themes.html" and "THEME 20" not in html:
+        i = html.find('<span class="pole-num">THEME 12</span>')
+        k = html.find("</article>", i)
+        if i > 0 and k > 0:
+            html = html[:k + len("</article>")] + URGENCES_EN + html[k + len("</article>"):]
+    if path.name == "trouver.js" and '"id": "urgences-risques"' not in html:
+        html = html.replace("aide d’urgence en cas de catastrophe ou d’épidémie.", "protection de l’enfance (naissances, école, mariages précoces).")
+        i = html.find('    "id": "gouvernance-plaidoyer",')
+        i = html.rfind("  {", 0, i)
+        if i > 0:
+            html = html[:i] + URGENCES_JS + html[i:]
+        for cle in ('"social"', '"sante"', '"envi"'):
+            j = html.find(f"  {cle}: {{")
+            s_ = html.find('"s": [', j)
+            if j > 0 and s_ > 0:
+                html = html[:s_ + len('"s": [')] + '\n      "urgences-risques",' + html[s_ + len('"s": ['):]
+    return html
+
+
 def lire_source(path: Path) -> str:
     """Lit un fichier de l'ancien site en y appliquant les mises à jour de source."""
     html = path.read_text(encoding="utf-8")
     for old, new in UPDATES_SOURCE + nominations_source():
         html = html.replace(old, new)
+    html = structure_29_09(html, path)
     # note datée à la fin de la description de la carte concernée (poles.html, en/themes.html)
     for coord, note, fichiers in NOTES_COORDINATION:
         i = html.find(coord)

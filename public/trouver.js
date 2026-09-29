@@ -94,7 +94,7 @@ window.__initTrouver = function () {
     "num": "06",
     "key": "06",
     "pole": "Pôle II · Thématique 06",
-    "name": "Environnement & ressources naturelles",
+    "name": "Environnement, climat & ressources naturelles",
     "status": "open",
     "coord": "Coordonnateur : à pourvoir",
     "desc": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire.",
@@ -110,7 +110,7 @@ window.__initTrouver = function () {
     "num": "07",
     "key": "07",
     "pole": "Pôle II · Thématique 07",
-    "name": "Eau, énergie & connectivité",
+    "name": "Eau, assainissement, énergie & connectivité",
     "status": "open",
     "coord": "Coordonnateur : à pourvoir",
     "desc": "Accès à l’eau potable, à l’électricité et à la connexion internet : trois priorités identifiées par la communauté, encore insuffisantes sur le territoire.",
@@ -168,7 +168,7 @@ window.__initTrouver = function () {
     "num": "11",
     "key": "11",
     "pole": "Pôle II · Thématique 11",
-    "name": "Santé & prévention",
+    "name": "Santé, nutrition & prévention",
     "status": "filled",
     "coord": "Coordonnateur : Dr Nestor Alladoumdjim",
     "desc": "Prévention, accès à des soins de santé de qualité — encore insuffisant sur le territoire — et sensibilisation sanitaire.",
@@ -181,16 +181,32 @@ window.__initTrouver = function () {
     "num": "12",
     "key": "12",
     "pole": "Pôle II · Thématique 12",
-    "name": "Protection sociale & inclusion",
+    "name": "Protection sociale, enfance & inclusion",
     "status": "filled",
     "coord": "Coordonnatrice : Solkem Ngarmbatina",
-    "desc": "Accompagnement social, soutien aux familles, solidarité dans les moments difficiles et aide d’urgence en cas de catastrophe ou d’épidémie.",
+    "desc": "Accompagnement social, soutien aux familles, solidarité dans les moments difficiles et protection de l’enfance (naissances, école, mariages précoces).",
     "page": [
       "/dossiers/solidarite-inclusion",
       "Hub Personnes vulnérables"
     ],
     "suivi": true,
     "tier": 0
+  },
+  {
+    "id": "urgences-risques",
+    "num": "20",
+    "key": "20",
+    "pole": "Pôle II · Thématique 20",
+    "name": "Urgences & risques",
+    "status": "open",
+    "coord": "Coordonnateur : à pourvoir",
+    "desc": "Préparer le pays bedjond aux crises : inondations, épidémies, sécheresse ; cartographie des risques, plan de contingence par canton, réseau d’alerte, relais avec l’État et les agences humanitaires.",
+    "page": [
+      "/dossiers/besoins",
+      "Carte des besoins"
+    ],
+    "suivi": false,
+    "tier": 3
   },
   {
     "id": "gouvernance-plaidoyer",
@@ -355,6 +371,7 @@ window.__initTrouver = function () {
       "eau-energie-connectivite"
     ],
     "s": [
+      "urgences-risques",
       "agriculture-elevage-securite-alimentaire"
     ]
   },
@@ -364,6 +381,7 @@ window.__initTrouver = function () {
       "sante-prevention"
     ],
     "s": [
+      "urgences-risques",
       "solidarite-inclusion"
     ]
   },
@@ -403,6 +421,7 @@ window.__initTrouver = function () {
       "solidarite-inclusion"
     ],
     "s": [
+      "urgences-risques",
       "justice-droits-homme",
       "leadership-feminin"
     ]

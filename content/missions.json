@@ -18,7 +18,7 @@
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-direction-pole-2.pdf",
-   "thematiques": 9
+   "thematiques": 10
   },
   {
    "pole": "pole-3",
@@ -93,7 +93,7 @@
   {
    "id": "environnement-ressources",
    "numero": "06",
-   "nom": "Environnement & ressources naturelles",
+   "nom": "Environnement, climat & ressources naturelles",
    "pole": "II",
    "poleNom": "Développement humain & moyens d’existence",
    "pourvue": false,
@@ -103,7 +103,7 @@
   {
    "id": "eau-energie-connectivite",
    "numero": "07",
-   "nom": "Eau, énergie & connectivité",
+   "nom": "Eau, assainissement, énergie & connectivité",
    "pole": "II",
    "poleNom": "Développement humain & moyens d’existence",
    "pourvue": false,
@@ -143,7 +143,7 @@
   {
    "id": "sante-prevention",
    "numero": "11",
-   "nom": "Santé & prévention",
+   "nom": "Santé, nutrition & prévention",
    "pole": "II",
    "poleNom": "Développement humain & moyens d’existence",
    "pourvue": true,
@@ -153,12 +153,22 @@
   {
    "id": "solidarite-inclusion",
    "numero": "12",
-   "nom": "Protection sociale & inclusion",
+   "nom": "Protection sociale, enfance & inclusion",
    "pole": "II",
    "poleNom": "Développement humain & moyens d’existence",
    "pourvue": true,
    "qui": "Solkem Ngarmbatina",
    "pdf": "/missions/fiche-mission-coordination-solidarite-inclusion.pdf"
+  },
+  {
+   "id": "urgences-risques",
+   "numero": "20",
+   "nom": "Urgences & risques",
+   "pole": "II",
+   "poleNom": "Développement humain & moyens d’existence",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-coordination-urgences-risques.pdf"
   },
   {
    "id": "gouvernance-plaidoyer",

@@ -7,8 +7,8 @@ import { directionsCount, enLettres, filledCount, getIndex, getPage, ogFor, pick
 import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
-  title: "Nos actions — quatre pôles, dix-neuf thématiques",
-  description: "Quatre pôles, dix-neuf thématiques et deux cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés.",
+  title: "Nos actions — quatre pôles, vingt thématiques",
+  description: "Quatre pôles, vingt thématiques et deux cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés.",
   alternates: { canonical: "/programmes" },
   openGraph: ogFor("/programmes"),
 };
@@ -26,7 +26,7 @@ export default function Programmes() {
       <PageHeader
         eyebrow="03 — Nos actions"
         title="Quatre pôles,"
-        em="dix-neuf thématiques."
+        em="vingt thématiques."
         lead={`Les Chantiers ADEB LONODJI : chaque pôle est dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ; chaque thématique est animée par un coordonnateur ou une coordonnatrice, avance à son rythme et rend compte ici. ${enLettres(filled, true)} thématiques sont pourvues ; ${enLettres(total - filled)} cherchent encore la personne qui les portera, et les ${enLettres(dir.total - dir.pourvues)} directions de pôle sont à pourvoir.`}
       />
       <Stats items={[
@@ -99,7 +99,7 @@ export default function Programmes() {
         </div>
         <LegacyEnhance hasForms={page.forms.length > 0} />
       </section>
-      <Partager route="/programmes" titre="Nos actions" texte="Quatre pôles, dix-neuf thématiques et deux cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés." />
+      <Partager route="/programmes" titre="Nos actions" texte="Quatre pôles, vingt thématiques et deux cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés." />
     </main>
   );
 }

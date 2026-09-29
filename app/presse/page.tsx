@@ -19,7 +19,7 @@ const DATES: [string, string][] = [
   ["1995", "Reconnaissance officielle de l’Association de Développement et d’Entraide de Bédjondo."],
   ["2000", "Premier forum communautaire, à Bédjondo."],
   ["2003", "Second forum, à Bébopen ; puis une longue mise en veille."],
-  ["2026", "Réactivation : quatre pôles, dix-neuf thématiques, deux cellules ; site lonodji.org ; huit plaidoyers ; carte du territoire."],
+  ["2026", "Réactivation : quatre pôles, vingt thématiques (la vingtième, Urgences & risques, le 29 septembre), deux cellules ; site lonodji.org ; huit plaidoyers ; carte du territoire."],
   ["28 sept. 2026", "Quarante ans des fondations : lancement de la réflexion ODEB LONODJI (vision 2030, six programmes, livre blanc en version de travail)."],
 ];
 const VISUELS: [string, string][] = [

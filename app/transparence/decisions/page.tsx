@@ -31,7 +31,7 @@ export default function Decisions() {
       />
       <Stats items={[
         { value: String(compte("decision")), label: "décisions", note: TYPES.decision.note },
-        { value: String(compte("nomination")), label: "nominations", note: "quinze coordinations sur dix-neuf pourvues, une cellule sur deux" },
+        { value: String(compte("nomination")), label: "nominations", note: "quinze coordinations sur vingt pourvues, une cellule sur deux" },
         { value: String(compte("proposition")), label: "proposition à voter", note: "les cinq règles du programme 06, par l’assemblée" },
         { value: String(compte("regle")), label: "règles en vigueur", note: "que l’association s’impose depuis la mise en ligne du site" },
       ]} />

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fiches de mission en PDF (A4) : les quatre directions de pôle, les dix-neuf
+"""Fiches de mission en PDF (A4) : les quatre directions de pôle, les vingt
 coordinations de thématique et les deux cellules transversales, dans
 public/missions/, plus un recueil complet. Tout le texte vient de
 content/index.json (structure importée du site) et des formulations déjà
@@ -142,7 +142,7 @@ def fiche_coordination(t: dict, pole: dict | None, logo: str, jour: str, cellule
     if cellule:
         url = f"{SITE}/participer#contact"
         kind, eyebrow, titre, sous = "Cellule transversale", "Cellule transversale · appui à toutes les thématiques", f"Cellule {h.escape(t['name'])}", "Coordonnateur ou coordonnatrice de la cellule"
-        direction = "<p>Les deux cellules transversales — Financement &amp; ressources, Communication &amp; numérique — appuient chacune des dix-neuf thématiques et les quatre pôles.</p>"
+        direction = "<p>Les deux cellules transversales — Financement &amp; ressources, Communication &amp; numérique — appuient chacune des vingt thématiques et les quatre pôles.</p>"
     else:
         assert pole
         url = f"{SITE}/participer?theme={t['number']}&coordo=1"

@@ -222,7 +222,7 @@ export const PROGRAMMES: Programme[] = [
         existant: [{ label: "Diagnostic territorial du Mandoul Occidental", href: "/dossiers/problematiques" }, { label: "Huit enquêtes de terrain", href: "/dossiers/enquetes" }, { label: "Décentralisation & développement local", href: "/dossiers/decentralisation" }],
         suite: "Les diagnostics seraient déclinés par unité et actualisés chaque année ; les plaidoyers, transmis à leurs destinataires — aucun ne l’a encore été — et suivis jusqu’à la réponse." },
     ],
-    thematiques: ["agriculture-elevage-securite-alimentaire", "environnement-ressources", "eau-energie-connectivite", "desenclavement-urbanisation", "sante-prevention", "gouvernance-plaidoyer"],
+    thematiques: ["agriculture-elevage-securite-alimentaire", "environnement-ressources", "eau-energie-connectivite", "desenclavement-urbanisation", "sante-prevention", "urgences-risques", "gouvernance-plaidoyer"],
     contribuer: [{ label: "Signaler un besoin, localité par localité", href: "/dossiers/besoins" }, { label: "Soutenir un plaidoyer", href: "/actions" }, { label: "Coordonner une thématique à pourvoir", href: "/participer?coordo=1#contact" }],
   },
   {
@@ -340,7 +340,7 @@ export function feuilleDeRoute(c: Chiffres): Phase[] {
       id: "2026", periode: "2026", titre: "Relance et fondations",
       texte: "Quarante ans après les premières réflexions, l’association se remet en mouvement : une structure, un site qui date ses faits, des plaidoyers, un diagnostic, une carte. Tout ce qui suit s’appuie dessus.",
       chantiers: [
-        { titre: "Quatre pôles, dix-neuf thématiques, deux cellules", etat: c.vacantes + c.cellulesVacantes ? "en-cours" : "fait", note: `${c.pourvues} coordinations pourvues sur ${c.total}${c.vacantes ? ` ; ${c.vacantes} ${pluriel(c.vacantes, "thématique reste", "thématiques restent")} à pourvoir` : ""}${c.cellulesVacantes ? (c.cellulesVacantes === 1 ? ", et une des deux cellules" : ", et les deux cellules") : ""}`, href: "/programmes" },
+        { titre: "Quatre pôles, vingt thématiques, deux cellules", etat: c.vacantes + c.cellulesVacantes ? "en-cours" : "fait", note: `${c.pourvues} coordinations pourvues sur ${c.total}${c.vacantes ? ` ; ${c.vacantes} ${pluriel(c.vacantes, "thématique reste", "thématiques restent")} à pourvoir` : ""}${c.cellulesVacantes ? (c.cellulesVacantes === 1 ? ", et une des deux cellules" : ", et les deux cellules") : ""}`, href: "/programmes" },
         { titre: "Le site lonodji.org", etat: "fait", note: `${c.pages} pages, ${c.articles} articles, ${c.formulaires} formulaires, une version anglaise, une appli installable`, href: "/" },
         { titre: `${enLettresMaj(c.plaidoyers)} plaidoyers publiés`, etat: c.plaidoyersEnvoyes ? "fait" : "en-cours", note: c.plaidoyersEnvoyes ? `${c.plaidoyersEnvoyes} sur ${c.plaidoyers} transmis à leurs destinataires` : "publiés, aucun encore transmis : les lettres attendent la signature du bureau", href: "/actions" },
         { titre: "Diagnostic territorial", etat: "fait", note: `${c.problematiques} problématiques, ${c.chantiersPrioritaires} chantiers prioritaires, huit enquêtes de terrain`, href: "/dossiers/problematiques" },

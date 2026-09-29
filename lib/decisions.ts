@@ -76,7 +76,7 @@ export const DECISIONS: Decision[] = [
     titre: "Onze coordinations confiées le même jour",
     texte: "Culture & patrimoine vivant (Dr Yaphete Madjiradé), Agriculture, élevage & sécurité alimentaire (Olivier Allaramadji Nomaye), Jeunesse & réussite (Bruno Kodjadoum NGARTEL), Gouvernance & plaidoyer (Adoumbé Maoura), Paix & cohésion (Sa Majesté Moulbe Brahim Nadoumbeye), Réseau d’experts & diaspora (Edgard Djerassem Djimhotengar), Justice & droits humains (Dr Eugène Ngartebaye Le Yotha), les trois thématiques du pôle Numérique & innovation (Bignéro Moïalbéi LE MADANG), la cellule Communication & numérique (Djimtebaye Mahamat Mamadou Banadji).",
     sources: [{ label: "Lettre n° 2", href: "/journal/2026-09-28-lettre-information-02" }, { label: "Nos actions", href: "/programmes" }],
-    suite: "Quatre thématiques et la cellule Financement & ressources restent à pourvoir.",
+    suite: "Quatre thématiques et la cellule Financement & ressources restaient à pourvoir ; s’y ajoute Urgences & risques, créée le 29 septembre 2026.",
   },
   {
     id: "2026-09", date: "2026-09-28", type: "decision",
@@ -97,6 +97,13 @@ export const DECISIONS: Decision[] = [
     texte: "Des entreprises distinctes de l’association dont les bénéfices iraient aux projets de développement et de bien-être. Cinq règles sont proposées avec le programme — une société, pas l’association ; des bénéfices affectés aux projets et des comptes publiés ; ce qui manque au pays bedjond ; de l’argent propre sans promesse de rendement ; une entreprise à la fois —, à voter par l’assemblée avant toute création, avec la règle d’affectation des bénéfices.",
     sources: [{ label: "Article du 28 septembre 2026", href: "/journal/2026-09-28-sixieme-programme-economie-sociale" }, { label: "Programme 06", href: "/odeb/programmes/economie-sociale#principes" }],
     suite: "Vote de l’assemblée attendu ; aucune entreprise n’est créée, rien n’est chiffré.",
+  },
+  {
+    id: "2026-12", date: "2026-09-29", type: "decision",
+    titre: "Vingt thématiques : quatre périmètres élargis et une thématique Urgences & risques",
+    texte: "Pour couvrir les secteurs des ONG de développement et d’aide : Eau, assainissement, énergie & connectivité (l’assainissement et l’hygiène) ; Santé, nutrition & prévention (la nutrition) ; Environnement, climat & ressources naturelles (l’adaptation au changement climatique) ; Protection sociale, enfance & inclusion (la protection de l’enfance). Une vingtième thématique, Urgences & risques, rejoint le pôle II : préparation aux inondations et aux épidémies, plan de contingence par canton, réseau d’alerte, relais avec l’État et les agences humanitaires.",
+    sources: [{ label: "Article du 29 septembre 2026", href: "/journal/2026-09-29-vingt-thematiques-urgences-risques" }, { label: "Nos actions", href: "/programmes#urgences-risques" }],
+    suite: "La coordination d’Urgences & risques est à pourvoir ; rien n’est encore engagé, aucune collecte avant un compte au nom de l’association.",
   },
   {
     id: "regle-01", date: "2026-09-11", type: "regle",

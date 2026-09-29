@@ -852,7 +852,7 @@
   {
    "slug": "gouvernance",
    "label": "Gouvernance & plaidoyer",
-   "articles": 10
+   "articles": 11
   },
   {
    "slug": "vie-association",
@@ -891,7 +891,7 @@
   },
   {
    "slug": "solidarite",
-   "label": "Protection sociale & inclusion",
+   "label": "Protection sociale, enfance & inclusion",
    "articles": 1
   },
   {
@@ -915,5 +915,5 @@
    "articles": 1
   }
  ],
- "totalArticles": 42
+ "totalArticles": 43
 }

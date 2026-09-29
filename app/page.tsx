@@ -37,7 +37,7 @@ export default function Home() {
             <h1 id="hero-title">Construire aujourd’hui.<br /><em>Transmettre demain.</em></h1>
             <p className="hero-text">
               ADEB LONODJI est l’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond.
-              Reconnue en 1995, remise en mouvement en 2026 : quatre pôles, dix-neuf thématiques, huit dossiers de plaidoyer publiés pour l’eau, l’électricité, l’école, les routes et la santé — et un territoire cartographié village par village.
+              Reconnue en 1995, remise en mouvement en 2026 : quatre pôles, vingt thématiques, huit dossiers de plaidoyer publiés pour l’eau, l’électricité, l’école, les routes et la santé — et un territoire cartographié village par village.
             </p>
             <div className="hero-actions">
               <Link className="button primary" href="/programmes">Découvrir nos actions <span aria-hidden="true">↗</span></Link>
@@ -117,7 +117,7 @@ export default function Home() {
           <div className="section-head">
             <div>
               <p className="eyebrow">04 — Nos actions</p>
-              <h2 id="programmes-title">Quatre pôles.<br /><em>Dix-neuf thématiques.</em></h2>
+              <h2 id="programmes-title">Quatre pôles.<br /><em>Vingt thématiques.</em></h2>
             </div>
             <p>
               Chaque pôle est dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ; chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte publiquement. Deux cellules transversales — financement et communication — appuient l’ensemble.

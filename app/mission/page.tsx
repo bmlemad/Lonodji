@@ -28,7 +28,7 @@ export default function Mission() {
         title="L’association de Bédjondo et de sa diaspora,"
         em="gardienne du patrimoine bedjond."
         lead={page.lede || "Reconnue en 1995 après dix ans de réflexion, remise en mouvement en 2026, ADEB LONODJI agit pour tous les habitants de Bédjondo — eau, santé, école, routes — et garde au cœur de son objet la sauvegarde de la langue, de l’histoire et du patrimoine bedjond."}
-        pills={["Reconnue en 1995", "Réactivée en 2026", "4 pôles · 19 thématiques"]}
+        pills={["Reconnue en 1995", "Réactivée en 2026", "4 pôles · 20 thématiques"]}
       />
       <div className="detail-grid">
         {values.map(([title, text], i) => (

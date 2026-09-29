@@ -51,7 +51,7 @@ export default function Programmes() {
       </div>
 
       <section className="hub-section" id="articulation">
-        <SectionHead eyebrow="Programmes et thématiques" title="Deux grilles," em="une seule association." text="Les quatre pôles et dix-neuf thématiques restent l’organisation de travail de l’ADEB LONODJI ; les six programmes sont la grille de l’ODEB, tournée vers 2030. Une thématique peut servir plusieurs programmes ; un programme s’appuie sur plusieurs thématiques. Le tableau ci-dessous dit qui porte quoi." />
+        <SectionHead eyebrow="Programmes et thématiques" title="Deux grilles," em="une seule association." text="Les quatre pôles et vingt thématiques restent l’organisation de travail de l’ADEB LONODJI ; les six programmes sont la grille de l’ODEB, tournée vers 2030. Une thématique peut servir plusieurs programmes ; un programme s’appuie sur plusieurs thématiques. Le tableau ci-dessous dit qui porte quoi." />
         <div className="od-table-wrap">
           <table className="od-table">
             <thead><tr><th scope="col">Programme</th><th scope="col">Thématiques mobilisées</th><th scope="col">Coordination</th></tr></thead>

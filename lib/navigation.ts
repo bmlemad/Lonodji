@@ -37,7 +37,7 @@ export const NAVIGATION: NavEntree[] = [
   {
     id: "actions", label: "Nos actions", href: "/programmes",
     colonnes: [
-      { titre: "Quatre pôles, dix-neuf thématiques", liens: [
+      { titre: "Quatre pôles, vingt thématiques", liens: [
         { label: "Mémoire, culture & patrimoine", href: "/programmes#pole-1", note: "Pôle I" },
         { label: "Développement humain & moyens d’existence", href: "/programmes#pole-2", note: "Pôle II" },
         { label: "Gouvernance, paix & plaidoyer", href: "/programmes#pole-3", note: "Pôle III" },
@@ -137,7 +137,7 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
     { label: "Redevabilité & transparence", href: "/transparence" }, { label: "Registre des décisions", href: "/transparence/decisions" }, { label: "Documents", href: "/documents" }, { label: "Espace presse", href: "/presse" }, { label: "Accessibilité", href: "/accessibilite" }, { label: "Archives du site", href: "/archives" },
   ] },
   { titre: "Nos actions", liens: [
-    { label: "Quatre pôles, dix-neuf thématiques", href: "/programmes" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }, { label: "Plaidoyers & engagements", href: "/actions" }, { label: "Tableau de bord d’impact", href: "/impact" },
+    { label: "Quatre pôles, vingt thématiques", href: "/programmes" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }, { label: "Plaidoyers & engagements", href: "/actions" }, { label: "Tableau de bord d’impact", href: "/impact" },
     { label: "Plateforme de projets", href: "/projets" }, { label: "Diagnostic territorial", href: "/dossiers/problematiques" }, { label: "Carte des besoins", href: "/dossiers/besoins" }, { label: "Tous les dossiers", href: "/dossiers" }, { label: "Quelle thématique pour vous ?", href: "/dossiers/trouver-ma-thematique" },
   ] },
   { titre: "Territoire & patrimoine", liens: [

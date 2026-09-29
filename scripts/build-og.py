@@ -29,7 +29,7 @@ EYEBROWS = {
     "/": "Association · Bédjondo · diaspora",
     "/mission": "L’association",
     "/histoire": "Histoire & patrimoine",
-    "/programmes": "Nos actions · 4 pôles, 19 thématiques",
+    "/programmes": "Nos actions · 4 pôles, 20 thématiques",
     "/actions": "Plaidoyers & engagements",
     "/impact": "Suivi & tableau de bord",
     "/journal": "Le journal",

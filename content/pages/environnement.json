@@ -4,7 +4,7 @@
  "documentTitle": "Environnement & durabilité — ADEB LONODJI",
  "description": "Ce qu’ADEB LONODJI sait de l’environnement à Bédjondo, la règle « l’entretien avant l’inauguration » et la grille de durabilité en cinq questions appliquée à chacun de ses projets.",
  "title": "Environnement & durabilité",
- "eyebrow": "Environnement & ressources naturelles",
+ "eyebrow": "Environnement, climat & ressources naturelles",
  "lede": "Un forage sans réparateur, un bois coupé pour la cuisine, une batterie abandonnée dans un champ : la durabilité se joue sur ces détails. Voici ce que nous savons déjà, la grille que nous appliquons désormais à chacun de nos projets, ce que l’économie verte et circulaire peut vouloir dire ici, et ce qui reste à établir.",
  "pills": [
   "5 questions par projet",
@@ -25,7 +25,7 @@
    "alt": false,
    "cls": "",
    "tag": "section",
-   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Pourquoi cette page</div>\n<h2>Deux sens au mot « durable »</h2>\n<p>Un projet durable, c’est d’abord un ouvrage qui fonctionne encore dans cinq ans : quelqu’un l’entretient, avec de l’argent prévu pour cela. C’est ensuite un ouvrage qui n’abîme pas ce dont Bédjondo vit : l’eau, les arbres, les terres cultivables.</p>\n<p>Le premier sens était déjà bien traité sur ce site, dispersé entre plusieurs pages. Le second l’était peu. Cette page rassemble le premier et ouvre le second, avec la même règle que partout ailleurs : nous écrivons ce qui est établi, et nous nommons ce que nous ignorons. Elle relève de la thématique <a href=\"/programmes#environnement-ressources\">Environnement &amp; ressources naturelles</a>, qui cherche encore son coordonnateur.</p>\n</div>"
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Pourquoi cette page</div>\n<h2>Deux sens au mot « durable »</h2>\n<p>Un projet durable, c’est d’abord un ouvrage qui fonctionne encore dans cinq ans : quelqu’un l’entretient, avec de l’argent prévu pour cela. C’est ensuite un ouvrage qui n’abîme pas ce dont Bédjondo vit : l’eau, les arbres, les terres cultivables.</p>\n<p>Le premier sens était déjà bien traité sur ce site, dispersé entre plusieurs pages. Le second l’était peu. Cette page rassemble le premier et ouvre le second, avec la même règle que partout ailleurs : nous écrivons ce qui est établi, et nous nommons ce que nous ignorons. Elle relève de la thématique <a href=\"/programmes#environnement-ressources\">Environnement, climat &amp; ressources naturelles</a>, qui cherche encore son coordonnateur.</p>\n</div>"
   },
   {
    "id": "",
@@ -81,10 +81,10 @@
    "alt": false,
    "cls": "",
    "tag": "section",
-   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Rejoindre</div>\n<h2>La thématique Environnement &amp; ressources naturelles cherche son coordonnateur</h2>\n<p>Foncier, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, adaptation aux aléas climatiques, économie verte et circulaire : c’est le champ de la <a href=\"/programmes#environnement-ressources\">thématique 06</a>. Agronome, forestier, hydraulicien, enseignant ou simple habitant attentif : votre regard compte.</p>\n<p><a class=\"btn btn-primary\" href=\"/participer#contact\">Proposer mon aide</a></p>\n</div>"
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Rejoindre</div>\n<h2>La thématique Environnement, climat &amp; ressources naturelles cherche son coordonnateur</h2>\n<p>Foncier, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, adaptation aux aléas climatiques, économie verte et circulaire : c’est le champ de la <a href=\"/programmes#environnement-ressources\">thématique 06</a>. Agronome, forestier, hydraulicien, enseignant ou simple habitant attentif : votre regard compte.</p>\n<p><a class=\"btn btn-primary\" href=\"/participer#contact\">Proposer mon aide</a></p>\n</div>"
   }
  ],
- "words": 1558,
+ "words": 1560,
  "forms": [],
  "hasMap": false,
  "scripts": [],

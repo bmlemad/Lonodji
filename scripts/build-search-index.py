@@ -16,7 +16,7 @@ MAX_TEXT = 3500
 
 KIND_LABEL = {"hub": "Page", "dossier": "Dossier", "en": "In English", "article": "Article"}
 HUB_TITLES = {
-    "mission": "Notre mission", "poles": "Nos actions : quatre pôles, dix-neuf thématiques", "plaidoyers": "Plaidoyers & engagements",
+    "mission": "Notre mission", "poles": "Nos actions : quatre pôles, vingt thématiques", "plaidoyers": "Plaidoyers & engagements",
     "suivi": "Suivi & tableau de bord", "contact": "Participer : nous écrire", "adherer": "Adhérer et cotiser", "soutenir": "Nous soutenir",
     "redevabilite": "Redevabilité & transparence", "mentions-legales": "Mentions légales & confidentialité", "figures": "Histoire : grandes figures",
     "documents": "Documents à télécharger", "actualites": "Le journal",
@@ -117,7 +117,7 @@ PAGES_SITE.append({"t": "Identité visuelle : le logo « Les Pas vers l’Avenir
      "d": "Trois empreintes — les ancêtres, la génération actuelle, les générations futures — vers un soleil levant : le logo du projet, ses versions, ses couleurs, ses règles, le kit à télécharger et le papier à en-tête.",
      "x": "logo ODEB identité visuelle charte graphique emblème empreintes pas générations soleil levant verre devise sur les traces de nos ancêtres bâtissons notre avenir couleurs vert profond acacia doré polices DM Sans Playfair kit ZIP SVG PNG papier à en-tête planche imprimeur règles zone de protection tailles minimales monochrome réserve blanche"})
 PAGES_SITE.append({"t": "Fiches de mission : diriger un pôle, coordonner une thématique", "r": "/programmes/fiches-de-mission", "k": "Page",
-     "d": "Vingt-cinq fiches en PDF — quatre directions de pôle au rang de chef de projet, dix-neuf coordinations, deux cellules — avec le rôle, le périmètre, les quatre étapes et le lien pour candidater.",
+     "d": "Vingt-six fiches en PDF — quatre directions de pôle au rang de chef de projet, vingt coordinations, deux cellules — avec le rôle, le périmètre, les quatre étapes et le lien pour candidater.",
      "x": "fiche de mission fiches poste directeur directrice de pôle chef de projet coordonnateur coordonnatrice coordination thématique cellule candidater candidature recrutement bénévole rôle périmètre étapes PDF recueil à pourvoir vacant"})
 PAGES_SITE.append({"t": "La lettre d’information : chaque mois, publié, décidé, ouvert", "r": "/lettre", "k": "Page",
      "d": "Les numéros de la lettre d’ADEB LONODJI, à lire en ligne ou à transmettre en PDF sur WhatsApp ; l’abonnement par e-mail ; la règle de la lettre.",
