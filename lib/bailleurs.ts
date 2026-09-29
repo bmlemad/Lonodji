@@ -298,7 +298,7 @@ export const PROGRAMMES_BAILLEURS: ProgrammeBailleur[] = [
     montant: "à définir", periode: "travaux lancés le 22 mai 2026", statut: "preparation", portee: "national",
     zones: "Provinces de convergence à définir",
     thematiques: ["gouvernance-plaidoyer"], plaidoyers: ["plaidoyer-commune", "plaidoyer-eau", "plaidoyer-sante", "plaidoyer-education"],
-    accroche: "Demander à participer aux consultations de la société civile et déposer une note « Mandoul Occidental / Bédjondo » qui résume les huit plaidoyers.",
+    accroche: "Demander à participer aux consultations de la société civile et déposer une note « Mandoul Occidental / Bédjondo » qui résume nos plaidoyers et la note à la commune.",
     source: "https://tchadinfos.com/2026/05/22/tchad-onu-le-comite-de-pilotage-clot-le-cycle-2024-2026-et-lance-les-travaux-pour-lunsdcf-2027-2030/", sourceLabel: "Tchadinfos, 22 mai 2026",
   },
   {

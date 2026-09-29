@@ -27,7 +27,7 @@ export default function Participer() {
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
-        eyebrow="08 — Participer"
+        eyebrow="Participer"
         title="Une place pour"
         em="chaque contribution."
         lead="Rejoindre une thématique, la coordonner, proposer un article, adhérer, transmettre un document ou une information : tout passe par cette page. Nous répondons sous quarante-huit heures ouvrées."
@@ -80,6 +80,7 @@ export default function Participer() {
       <section className="hub-section" id="newsletter">
         <SectionHead eyebrow="Lettre d’information" title="Recevoir" em="les actualités." />
         <div className="legacy"><LegacySections sections={[newsletter]} sansPremierTitre /></div>
+        <p className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="text-link" href="/lettre">Les numéros parus <span aria-hidden="true">→</span></Link></p>
       </section>
 
       <ContactPrefill />

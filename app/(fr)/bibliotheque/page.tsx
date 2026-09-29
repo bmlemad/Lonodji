@@ -33,7 +33,7 @@ export default function Bibliotheque() {
   return (
     <main id="main-content" className="hub-page bb-page">
       <PageHeader
-        eyebrow="Bibliothèque numérique bedjond"
+        eyebrow="Territoire · bibliothèque numérique"
         title="Tout ce qui s’est écrit"
         em="sur le pays bedjond."
         lead="Thèses, articles, ouvrages, rapports d’enquête, archives, publications de l’association : la bibliothèque rassemble ce que nous avons lu et vérifié sur le peuple bedjond, les Sara et le nangnda, et dit d’où vient chaque référence. Elle grandit par dépôt : un mémoire oublié dans un tiroir, un article introuvable en ligne, une archive familiale — c’est ici qu’ils deviennent consultables."

@@ -64,7 +64,7 @@ export default function Bailleurs() {
   return (
     <main id="main-content" className="hub-page bl-page">
       <PageHeader
-        eyebrow="Nos actions · partenaires techniques et financiers"
+        eyebrow="Nos actions · programmes des bailleurs"
         title="Les programmes des bailleurs au Tchad,"
         em="et où nous nous raccrochons."
         lead={`Banque mondiale, Union européenne et coopérations européennes, Nations unies, Banque africaine de développement, fonds mondiaux : nous avons relevé les programmes en cours ou en préparation au Tchad, en cherchant d’abord ceux qui touchent le Mandoul. Pour chacun, ce qu’il finance, où, jusqu’à quand, et comment l’association peut s’y raccrocher — une demande écrite, une liste de localités à rejoindre, une consultation à suivre. Aucun de ces programmes n’est un financement de l’association : ce sont des portes à pousser. Relevé du ${RELEVE}, sources ouvertes une à une.`}
@@ -103,7 +103,7 @@ export default function Bailleurs() {
       </section>
 
       <section className="hub-section" id="par-plaidoyer">
-        <SectionHead eyebrow="Nos huit plaidoyers" title="Pour chaque plaidoyer," em="les programmes à saisir." text="Les destinataires publiés dans nos plaidoyers en septembre restent valables ; voici les programmes qui financent aujourd’hui ce que chacun demande." />
+        <SectionHead eyebrow="Nos plaidoyers" title="Pour chaque plaidoyer," em="les programmes à saisir." text="Les destinataires publiés dans nos plaidoyers en septembre restent valables ; voici les programmes qui financent aujourd’hui ce que chacun demande." />
         <div className="bl-plaidoyers">
           {plaidoyers.map((pl) => (
             <article key={pl.id} className="bl-plaidoyer">

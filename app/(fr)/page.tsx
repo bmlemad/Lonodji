@@ -69,7 +69,7 @@ export default function Home() {
 
         <section id="mission" className="intro section" aria-labelledby="mission-title">
           <div>
-            <p className="eyebrow">01 — Notre mission</p>
+            <p className="eyebrow">Notre mission</p>
             <h2 id="mission-title">Agir pour Bédjondo, garder la mémoire bedjond.</h2>
           </div>
           <div>
@@ -89,7 +89,7 @@ export default function Home() {
         <section id="actualites" className="section home-news" aria-labelledby="news-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">02 — Dernières actualités</p>
+              <p className="eyebrow">Dernières actualités</p>
               <h2 id="news-title">Ce que nous<br /><em>venons de publier.</em></h2>
             </div>
             <p>Le journal date ses faits et cite ses sources. Chaque correction de fait est publiée, datée, dans le journal des corrections.</p>
@@ -101,7 +101,7 @@ export default function Home() {
         <section id="odeb" className="section od-band" aria-labelledby="odeb-title">
           <div>
             <img className="od-band-embleme" src={IDENTITE.superposable} alt="" width={140} height={140} loading="lazy" decoding="async" />
-            <p className="eyebrow">03 — Vision 2030</p>
+            <p className="eyebrow">Vision 2030</p>
             <h2 id="odeb-title">Projet ODEB LONODJI.<br /><em>D’une association à un outil permanent.</em></h2>
             <p className="od-band-note"><b>1986 → 2026.</b> Pour les quarante ans de ses fondations, l’association a lancé le {ODEB.presenteLabel} la réflexion ODEB LONODJI : six missions, six programmes, un livre blanc en version de travail. <Link href={ODEB.article}>L’article du 28 septembre →</Link></p>
           </div>
@@ -122,7 +122,7 @@ export default function Home() {
         <section id="programmes" className="programmes section" aria-labelledby="programmes-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">04 — Nos actions</p>
+              <p className="eyebrow">Nos actions</p>
               <h2 id="programmes-title">Quatre pôles.<br /><em>Vingt thématiques.</em></h2>
             </div>
             <p>
@@ -150,7 +150,7 @@ export default function Home() {
         <section id="plaidoyers" className="territory section" aria-labelledby="plaidoyers-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">05 — Plaidoyers</p>
+              <p className="eyebrow">Plaidoyers</p>
               <h2 id="plaidoyers-title">Sept plaidoyers,<br /><em>une note à la commune.</em></h2>
             </div>
             <p>Sourcés, chiffrés, adressés à des destinataires nommés et suivis publiquement : ce que nous demandons pour Bédjondo et ses cantons.</p>
@@ -166,7 +166,7 @@ export default function Home() {
         <section id="territoire" className="section heritage" aria-labelledby="territory-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">06 — Territoire</p>
+              <p className="eyebrow">Territoire</p>
               <h2 id="territory-title">Comprendre le terrain.<br /><em>Agir avec précision.</em></h2>
             </div>
             <p>Bédjondo, chef-lieu du Mandoul Occidental, village devenu ville. Le pays bedjond compte sept unités au cœur (sous-préfectures selon GADM), des présences dans le Logone Oriental et une diaspora agricole au Moyen-Chari et à Moïssala.</p>
@@ -184,7 +184,7 @@ export default function Home() {
         <section id="patrimoine" className="heritage section" aria-labelledby="heritage-title" style={{ background: "#f7f8f4" }}>
           <div className="section-head">
             <div>
-              <p className="eyebrow">07 — Histoire & patrimoine</p>
+              <p className="eyebrow">Histoire & patrimoine</p>
               <h2 id="heritage-title">Préserver ce qui<br /><em>doit se transmettre.</em></h2>
             </div>
             <p>De Narmbang à Donath Gari, onze chefs de canton ; des forums de 2000 et 2003 à la réactivation de 2026 ; une langue, le nangnda, et une <Link href="/bibliotheque">bibliothèque de quarante références</Link>.</p>
@@ -199,7 +199,7 @@ export default function Home() {
 
         <section id="impact" className="impact section" aria-labelledby="impact-title">
           <div className="impact-intro">
-            <p className="eyebrow">08 — Tableau de bord</p>
+            <p className="eyebrow">Tableau de bord</p>
             <h2 id="impact-title">Mesurer ce qui<br /><em>devient réel.</em></h2>
             <p>
               La crédibilité se construit par la preuve. Six indicateurs datés et sourcés — adhérents, coordonnateurs, plaidoyers, besoins recensés et résolus, projets — et {corrections} corrections publiées à découvert. Ce qui n’est pas encore fait est écrit comme tel.
@@ -211,41 +211,26 @@ export default function Home() {
           <TableauDeBord donnees={indicateurs} mode="compact" />
         </section>
 
-        <section id="valeurs" className="values section" aria-labelledby="values-title">
-          <div className="section-head">
-            <div>
-              <p className="eyebrow">Fondations</p>
-              <h2 id="values-title">Des principes<br /><em>en mouvement.</em></h2>
-            </div>
-            <p>Trois mots pour guider les décisions, les projets et la manière de travailler ensemble.</p>
-          </div>
-          <div className="value-grid">
-            {values.map(([n, title, description]) => (
-              <article className="value-card" key={n}>
-                <span>{n}</span>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <i aria-hidden="true">→</i>
-              </article>
-            ))}
-          </div>
-        </section>
-
         <section className="manifesto" aria-labelledby="manifesto-title">
           <div className="manifesto-inner">
             <p className="eyebrow">Signature</p>
             <h2 id="manifesto-title">Courage.<br />Discipline.<br /><em>Héritage.</em></h2>
             <p>Parce que ce que nous construisons aujourd’hui doit pouvoir servir demain.</p>
+            <dl className="manifesto-valeurs" id="valeurs">
+              {values.map(([n, title, description]) => (
+                <div key={n}><dt>{title}</dt><dd>{description}</dd></div>
+              ))}
+            </dl>
           </div>
         </section>
 
         <section id="participer" className="participate section" aria-labelledby="participate-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">09 — Participer</p>
+              <p className="eyebrow">Participer</p>
               <h2 id="participate-title">Une place pour<br /><em>chaque contribution.</em></h2>
             </div>
-            <p>Nous répondons sous quarante-huit heures ouvrées, par le formulaire, par WhatsApp ou par téléphone.</p>
+            <p>Nous répondons sous quarante-huit heures ouvrées, par le <Link className="lien-souligne" href="/participer#contact">formulaire</Link> ou au numéro officiel de l’association, celui de son président, Adoumbé Maoura : <a className="lien-souligne" href={ORG.phoneHref}>{ORG.phone}</a>, appel et <a className="lien-souligne" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
           </div>
           <div className="engagement-list">
             {participer(total - filled).map(([n, title, description, href]) => (
@@ -262,7 +247,7 @@ export default function Home() {
 
         <section id="transparence" className="trust section" aria-labelledby="trust-title">
           <div>
-            <p className="eyebrow">10 — Transparence</p>
+            <p className="eyebrow">Transparence</p>
             <h2 id="trust-title">Une association qui<br /><em>rend des comptes.</em></h2>
           </div>
           <div className="trust-card">
@@ -275,22 +260,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="contact section" aria-labelledby="contact-title">
-          <div>
-            <p className="eyebrow">11 — Contact</p>
-            <h2 id="contact-title">Construire la suite<br /><em>ensemble.</em></h2>
-          </div>
-          <div className="contact-card">
-            <p>
-              Le contact officiel de l’association est celui de son président, Adoumbé Maoura : <a href={ORG.phoneHref}><strong>{ORG.phone}</strong></a>, appel et WhatsApp.
-              Pour rejoindre une thématique, poser une question ou proposer un partenariat, le formulaire est le plus sûr.
-            </p>
-            <div className="hero-actions">
-              <Link className="button primary" href="/participer#contact">Nous écrire <span aria-hidden="true">→</span></Link>
-              <a className="text-link" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-        </section>
       </main>
     </>
   );

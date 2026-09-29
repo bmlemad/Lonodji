@@ -21,7 +21,7 @@ export default function Impact() {
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
-        eyebrow="06 — Suivi & tableau de bord"
+        eyebrow="Nos actions · tableau de bord"
         title="Mesurer ce qui"
         em="devient réel."
         lead="Six indicateurs de suivi, datés et sourcés, que le plan d’action 2026-2028 nous engage à publier : ils mesurent ce que fait l’association (réalisations), pas encore les changements pour les habitants (impact), qui viendront des cibles du cadre de résultats. Puis, thématique par thématique, ce qui est documenté, publié, envoyé — et où une compétence changerait la donne. Ce qui n’est pas encore réalisé est écrit comme tel."

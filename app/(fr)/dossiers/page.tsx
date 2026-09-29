@@ -25,7 +25,7 @@ export default function Dossiers() {
   const bySlug = new Map(pages.map((p) => [p.slug, p]));
   return (
     <main id="main-content" className="hub-page">
-      <PageHeader eyebrow="Les dossiers" title="Tout ce que nous" em="avons documenté." lead={`${pages.length} dossiers de fond, chacun daté et sourcé, du diagnostic territorial aux projets à l’étude. Ils nourrissent les plaidoyers et les vingt thématiques.`} />
+      <PageHeader eyebrow="Nos actions · tous les dossiers" title="Tout ce que nous" em="avons documenté." lead={`${pages.length} dossiers de fond, chacun daté et sourcé, du diagnostic territorial aux projets à l’étude. Ils nourrissent les plaidoyers et les vingt thématiques.`} />
       {groups.map(([title, slugs]) => (
         <section className="hub-section" key={title}>
           <p className="eyebrow">{title}</p>

@@ -25,7 +25,7 @@ export default function Langue() {
   return (
     <main id="main-content" className="hub-page lg-langue">
       <PageHeader
-        eyebrow="Langue · nangnda"
+        eyebrow="Territoire · la langue nangnda"
         title="Le nangnda,"
         em="la langue du pays bedjond."
         lead="Bedjond, bediondo, nangnda, nang-nda, ta-bedjond : plusieurs noms pour une même langue sara, parlée à Bédjondo et dans ses cantons, décrite par des linguistes, documentée par un lexique de 2 650 mots que l’on peut écouter en ligne, et transmise sur le terrain par l’association Kokotan. Cette page réunit ce que nous en savons, où l’apprendre, et comment y ajouter votre voix."

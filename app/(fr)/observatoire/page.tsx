@@ -128,7 +128,7 @@ export default function Observatoire() {
             </tbody>
           </table>
         </div>
-        <p className="lg-footnote">Les lettres de transmission des huit plaidoyers ont été préparées le 24 septembre 2026 et attendent la signature du bureau ; la date d’envoi de chaque dossier sera inscrite ici dès la transmission. {o.engagements.total} engagements publics sont suivis par ailleurs, {o.engagements.realises} confirmé{o.engagements.realises > 1 ? "s" : ""} réalisé{o.engagements.realises > 1 ? "s" : ""}.</p>
+        <p className="lg-footnote">Les lettres de transmission des huit dossiers de plaidoyer ont été préparées le 24 septembre 2026 et attendent la signature du bureau ; la date d’envoi de chaque dossier sera inscrite ici dès la transmission. {o.engagements.total} engagements publics sont suivis par ailleurs, {o.engagements.realises} confirmé{o.engagements.realises > 1 ? "s" : ""} réalisé{o.engagements.realises > 1 ? "s" : ""}.</p>
       </section>
 
       <section className="hub-section" id="indicateurs">

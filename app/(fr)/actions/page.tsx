@@ -32,7 +32,7 @@ export default function Actions() {
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
-        eyebrow="05 — Plaidoyers & engagements"
+        eyebrow="Nos actions · plaidoyers & engagements"
         title="Sept plaidoyers,"
         em="une note à la commune."
         lead={page.lede}

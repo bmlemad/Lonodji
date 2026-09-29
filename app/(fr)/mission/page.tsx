@@ -29,7 +29,7 @@ export default function Mission() {
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
-        eyebrow="01 — Qui nous sommes"
+        eyebrow="Association · notre mission"
         title="L’association de Bédjondo et de sa diaspora,"
         em="gardienne du patrimoine bedjond."
         lead={page.lede || "Reconnue en 1995 après dix ans de réflexion, remise en mouvement en 2026, ADEB LONODJI agit pour tous les habitants de Bédjondo — eau, santé, école, routes — et garde au cœur de son objet la sauvegarde de la langue, de l’histoire et du patrimoine bedjond."}

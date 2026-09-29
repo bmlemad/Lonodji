@@ -65,7 +65,7 @@ export default function Presse() {
   return (
     <main id="main-content" className="hub-page pr-page">
       <PageHeader
-        eyebrow="Espace presse et partenaires"
+        eyebrow="Association · presse & partenaires"
         title="L’association"
         em="en bref, et à jour."
         lead="Ce qu’un journaliste, un élu, un bailleur ou un partenaire doit savoir d’ADEB LONODJI, sans avoir à le chercher : qui nous sommes, les chiffres tels qu’ils sont, les dates, les personnes, les documents, les visuels, et à qui écrire. Tout ce qui est ici est vérifiable sur le site."

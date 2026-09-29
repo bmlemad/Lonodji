@@ -218,7 +218,7 @@ export const PROGRAMMES: Programme[] = [
       { titre: "Données", texte: "Ce que l’on sait de chaque localité : position, unité, équipements, ce que le site en dit, ce qui reste à documenter.",
         existant: [{ label: "Carte du territoire : 14 unités, 1 259 localités", href: "/carte" }, { label: "Fiches des villages", href: "/villages" }],
         suite: "Les données ouvertes ne connaissent presque aucun équipement au cœur du pays bedjond : écoles, forages, centres de santé et marchés seraient relevés sur le terrain, fiche par fiche, avec les formulaires déjà en place." },
-      { titre: "Diagnostics", texte: "Trente-quatre problématiques classées par domaine, sept chantiers prioritaires, huit plaidoyers publiés : le diagnostic existe, il doit vivre.",
+      { titre: "Diagnostics", texte: "Trente-quatre problématiques classées par domaine, sept chantiers prioritaires, huit dossiers de plaidoyer publiés : le diagnostic existe, il doit vivre.",
         existant: [{ label: "Diagnostic territorial du Mandoul Occidental", href: "/dossiers/problematiques" }, { label: "Huit enquêtes de terrain", href: "/dossiers/enquetes" }, { label: "Décentralisation & développement local", href: "/dossiers/decentralisation" }],
         suite: "Les diagnostics seraient déclinés par unité et actualisés chaque année ; les plaidoyers, transmis à leurs destinataires — aucun ne l’a encore été — et suivis jusqu’à la réponse." },
     ],

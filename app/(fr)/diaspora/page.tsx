@@ -30,7 +30,7 @@ export default function Diaspora() {
   return (
     <main id="main-content" className="hub-page dp-page">
       <PageHeader
-        eyebrow="Diaspora · répertoire des compétences"
+        eyebrow="Participer · répertoire des compétences"
         title="Vos compétences,"
         em="au service de Bédjondo."
         lead="Médecins, enseignants, ingénieurs, juristes, entrepreneurs, informaticiens : la diaspora bedjond est riche de savoir-faire que personne n’a jamais recensés. Ce répertoire les rassemble, avec votre accord, pour qu’une thématique qui bute sur une question trouve la personne qui sait y répondre — depuis N’Djamena, Paris, Montréal ou Bédjondo même."

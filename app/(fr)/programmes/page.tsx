@@ -28,7 +28,7 @@ export default function Programmes() {
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
-        eyebrow="03 — Nos actions"
+        eyebrow="Nos actions · pôles & thématiques"
         title="Quatre pôles,"
         em="vingt thématiques."
         lead={`Les Chantiers ADEB LONODJI : chaque pôle sera dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ; chaque thématique est animée par un coordonnateur ou une coordonnatrice, avance à son rythme et rend compte ici. ${enLettres(filled, true)} thématiques sont pourvues ; ${enLettres(total - filled)} cherchent encore la personne qui les portera, et les ${enLettres(dir.total - dir.pourvues)} directions de pôle sont à pourvoir.`}

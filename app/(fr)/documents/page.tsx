@@ -24,10 +24,10 @@ export default function Documents() {
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
-        eyebrow="Transparence & gouvernance"
+        eyebrow="Association · documents"
         title="Nos documents,"
         em="à lire et à imprimer."
-        lead="Tout ce que l’association publie tient ici, au format PDF : outils de terrain, dossier de présentation, note à la commune et les huit plaidoyers. Les pièces constitutives suivront à mesure qu’elles seront adoptées."
+        lead="Tout ce que l’association publie tient ici, au format PDF : outils de terrain, dossier de présentation, note à la commune et les sept plaidoyers. Les pièces constitutives suivront à mesure qu’elles seront adoptées."
         pills={[`${available.length} PDF disponibles`, `${pending.length} à venir`]}
       />
       <section id="disponibles">

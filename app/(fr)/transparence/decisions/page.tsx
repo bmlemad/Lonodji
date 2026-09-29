@@ -24,7 +24,7 @@ export default function Decisions() {
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
-        eyebrow="Redevabilité · registre des décisions"
+        eyebrow="Association · registre des décisions"
         title="Ce qui a été décidé,"
         em="nommé, annoncé, proposé — et ce qui ne l’est pas."
         lead="Une ligne par fait daté, avec sa source sur le site et ce qui reste attendu. Le registre distingue ce que l’association a décidé de ce qu’elle a seulement annoncé ou proposé à son assemblée. Les procès-verbaux ne sont pas encore publiés : le registre reprend ce qui a été rendu public, il ne les remplace pas. Une ligne fausse ou manquante ? Elle sera corrigée et datée."

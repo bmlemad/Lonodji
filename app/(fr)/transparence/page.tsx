@@ -20,7 +20,7 @@ export default function Transparence() {
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
-        eyebrow="09 — Redevabilité & transparence"
+        eyebrow="Association · redevabilité & transparence"
         title="Une association qui demande des comptes"
         em="doit en rendre."
         lead={page.lede}

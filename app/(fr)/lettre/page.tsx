@@ -20,7 +20,7 @@ export default function LettrePage() {
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
-        eyebrow="Le journal · la lettre d’information"
+        eyebrow="Association · lettre d’information"
         title="Chaque mois,"
         em="ce que l’association a publié, décidé ou ouvert."
         lead="Pas de communiqué, pas d’annonce sans suite : la lettre ne dit que ce qui a été publié sur le site, décidé par l’association ou ouvert aux membres depuis le numéro précédent. Quand il n’y a rien à dire, elle le dit. Chaque numéro se lit en ligne et se transmet en PDF, tel quel, dans un groupe WhatsApp ou par e-mail."

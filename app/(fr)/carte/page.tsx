@@ -30,7 +30,7 @@ export default function Carte() {
   return (
     <main id="main-content" className="hub-page carte-page">
       <PageHeader
-        eyebrow="Territoire · cartographie"
+        eyebrow="Territoire · carte"
         title="Le pays bedjond,"
         em="village par village."
         lead="Les quatorze unités du pays bedjond sur fond de carte ouverte, avec les localités et les équipements que les données publiques connaissent — et ceux qu’elles ignorent encore. Touchez un canton, un village ou un équipement : sa fiche dit ce que nous savons, ce que le site en a écrit, et comment signaler un besoin à cet endroit."
@@ -53,7 +53,7 @@ export default function Carte() {
           <article><span>01</span><h3>Signaler depuis la carte</h3><p>Chaque fiche porte un bouton « Signaler un besoin ici » : le formulaire de la carte des besoins s’ouvre avec la localité déjà remplie. Un forage en panne, une école sans maître, un centre de santé sans électricité — le signalement est daté, modéré, puis publié dans la synthèse mensuelle.</p><Link className="text-link" href="/dossiers/besoins">La carte des besoins <span aria-hidden="true">→</span></Link></article>
           <article><span>02</span><h3>Compléter les données ouvertes</h3><p>OpenStreetMap se corrige comme une encyclopédie : un compte gratuit, l’éditeur en ligne, et chacun peut placer l’école ou le forage de son village — depuis Bédjondo ou depuis la diaspora, à partir des images satellites. Ce que vous y ajoutez apparaît ici à la mise à jour suivante des données.</p><a className="text-link" href="https://www.openstreetmap.org/#map=12/8.63/17.19" target="_blank" rel="noopener noreferrer">Ouvrir Bédjondo dans OpenStreetMap <span aria-hidden="true">↗</span></a></article>
           <article><span>03</span><h3>Une fiche par village</h3><p>Chaque localité nommée a sa page : position, unité, équipements connus à moins de dix kilomètres, pages du site qui la citent, et six questions à documenter — l’eau, l’école, la santé, le réseau, l’histoire, les habitants — chacune reliée au formulaire qui permet d’y répondre.</p><Link className="text-link" href="/villages">Retrouver son village <span aria-hidden="true">→</span></Link></article>
-          <article><span>04</span><h3>Ce que le site en dit</h3><p>La fiche de chaque unité rassemble les plaidoyers, dossiers et articles qui la citent : les huit plaidoyers pour Bédjondo, le forum de Bébopen de 2003, la présence bedjond du Logone Oriental et du Moyen-Chari. La carte est une porte d’entrée dans tout le reste du site.</p><Link className="text-link" href="/dossiers/bedjondo">Le dossier Bédjondo <span aria-hidden="true">→</span></Link></article>
+          <article><span>04</span><h3>Ce que le site en dit</h3><p>La fiche de chaque unité rassemble les plaidoyers, dossiers et articles qui la citent : les huit dossiers de plaidoyer pour Bédjondo, le forum de Bébopen de 2003, la présence bedjond du Logone Oriental et du Moyen-Chari. La carte est une porte d’entrée dans tout le reste du site.</p><Link className="text-link" href="/dossiers/bedjondo">Le dossier Bédjondo <span aria-hidden="true">→</span></Link></article>
         </div>
       </section>
 
