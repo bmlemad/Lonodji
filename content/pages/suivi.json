@@ -49,7 +49,7 @@
    "alt": true,
    "cls": "",
    "tag": "section",
-   "html": "<div class=\"wrap prose\">\n<div class=\"eyebrow\">Pôle par pôle</div>\n<h2>Suivi par pôle, thématique par thématique</h2>\n<p>Dix-neuf fiches, une par thématique : son statut de coordination, les problématiques du diagnostic qui la concernent directement, et le ou les plaidoyers qu’elle porte le cas échéant. Les deux cellules transversales n’apparaissent pas ici : elles appuient toutes les thématiques à la fois plutôt qu’une problématique précise.</p>\n</div>\n<div class=\"wrap\">\n\n</div>"
+   "html": "<div class=\"wrap prose\">\n<div class=\"eyebrow\">Pôle par pôle</div>\n<h2>Suivi par pôle, thématique par thématique</h2>\n<p>Une fiche par thématique — la vingtième, Urgences &amp; risques, créée le 29 septembre 2026, attend encore ses problématiques : son statut de coordination, les problématiques du diagnostic qui la concernent directement, et le ou les plaidoyers qu’elle porte le cas échéant. Les deux cellules transversales n’apparaissent pas ici : elles appuient toutes les thématiques à la fois plutôt qu’une problématique précise.</p>\n</div>\n<div class=\"wrap\">\n\n</div>"
   },
   {
    "id": "pole-1",
@@ -94,7 +94,7 @@
    "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Dit franchement</div>\n<h2>Ce que ce tableau ne couvre pas encore</h2>\n<p>Cinq thématiques ne sont reliées à aucune problématique du diagnostic : <a href=\"/programmes#reseau-experts-diaspora\">Réseau d’experts &amp; diaspora</a> · <a href=\"/programmes#justice-droits-homme\">Justice &amp; droits humains</a> · <a href=\"/programmes#transformation-numerique-services\">Transformation numérique &amp; services</a> · <a href=\"/programmes#intelligence-artificielle-donnees\">Intelligence artificielle &amp; données</a> · <a href=\"/programmes#competences-entrepreneuriat-numerique\">Compétences &amp; entrepreneuriat numérique</a>. Ce n’est pas un oubli : ce sont des chantiers tournés vers l’avenir (numérique, données, diaspora, droit), pour lesquels nous n’avons pas encore de cas documenté sur notre territoire. Plutôt que de forcer un lien qui n’existerait que sur le papier, nous préférons le dire : si vous connaissez un cas concret qui s’y rattache, <a href=\"/dossiers/besoins\">signalez-le</a>.</p>\n<p>Le cadre de résultats des plaidoyers compte un groupe d’indicateurs « Agriculture » qui n’a pas encore de dossier de plaidoyer dédié : nous suivons trois indicateurs sans avoir publié la demande qui les justifie. Et surtout : onze de nos trente-quatre problématiques restent à l’état « Inconnu ». C’est le même constat que sur la page <a href=\"/dossiers/problematiques\">diagnostic territorial</a> : un territoire sans chiffres est un territoire qu’on relie mal à ses propres thématiques. Le recensement en cours de traitement changera peut-être cela dans les mois qui viennent.</p>\n</div>"
   }
  ],
- "words": 1548,
+ "words": 1562,
  "forms": [],
  "hasMap": false,
  "scripts": [],

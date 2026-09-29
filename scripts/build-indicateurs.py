@@ -115,6 +115,8 @@ def compter_contenu() -> dict:
     pdf = [d for d in documents if d.get("pdf")]
     # + les PDF produits hors de l'ancien site (livre blanc du projet ODEB, public/odeb/)
     pdf_site = sorted((ROOT / "public" / "odeb").glob("*.pdf")) if (ROOT / "public" / "odeb").exists() else []
+    # + les recueils listés sur /documents (fiches de mission, affiche générale), comptés une fois chacun
+    pdf_site += [f for f in (ROOT / "public" / "missions" / "fiches-de-mission-adeb-lonodji.pdf", ROOT / "public" / "carte" / "affiches" / "affiche-villages.pdf") if f.exists()]
 
     return {
         "plaidoyers": {"publies": len(plaidoyers), "envoyes": len(envoyes), "reponses": len(repondus)},

@@ -788,6 +788,9 @@ COMPTES_29_09 = [
     ("Thirteen of ADEB LONODJI&rsquo;s nineteen themes still have no coordinator.", "Five of ADEB LONODJI&rsquo;s twenty themes still have no coordinator."),
     ("<h2>Six coordinators out of nineteen</h2>", "<h2>Fifteen coordinators out of twenty</h2>"),
     ("thirteen of the nineteen themes have no coordinator today", "five of the twenty themes have no coordinator today"),
+    # QA de cohérence du 29/09/2026 : chiffres figés de l'ancien site
+    ("le nombre de th&eacute;matiques qui ont un coordonnateur&nbsp;: deux sur dix-neuf.", "le nombre de th&eacute;matiques qui ont un coordonnateur&nbsp;: quinze sur vingt au 29 septembre 2026."),
+    ("<p>Dix-neuf fiches, une par thématique&nbsp;:", "<p>Une fiche par thématique — la vingtième, Urgences &amp; risques, créée le 29 septembre 2026, attend encore ses problématiques&nbsp;:"),
 ]
 # « dix-neuf thématiques » et variantes, hors articles (regex, casse conservée)
 COMPTES_RE_29_09 = [
