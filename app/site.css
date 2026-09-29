@@ -1421,3 +1421,57 @@ main :where(ul, ol):not([class]):not(nav *) > li, main .plea-next > li, main .od
 /* Champs obligatoires : un astérisque sobre, expliqué en tête de formulaire */
 .requis{ color:#8a3b12; font-weight:700; }
 .form-requis{ font-size:13px; color:#4f5e57; margin:0 0 14px; }
+
+/* ==========================================================================
+   Logo en verre (29 septembre 2026) : plus grand, disque de verre dépoli
+   (fond flouté, bord de lumière, reflet), motif net « Les Pas vers l’Avenir ».
+   ========================================================================== */
+.logo-verre{
+  position:relative; flex:none; display:grid; place-items:center;
+  width:50px; height:50px; border-radius:50%; isolation:isolate; overflow:hidden;
+  background:
+    radial-gradient(120% 90% at 28% 12%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.55) 38%, rgba(255,255,255,.18) 70%),
+    linear-gradient(160deg, rgba(246,211,92,.22), rgba(182,207,69,.16) 45%, rgba(23,59,45,.14));
+  -webkit-backdrop-filter:blur(14px) saturate(170%); backdrop-filter:blur(14px) saturate(170%);
+  border:1px solid rgba(255,255,255,.95);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255,255,255,1),
+    inset 0 -8px 14px rgba(23,59,45,.12),
+    inset 0 0 0 1px rgba(255,255,255,.35),
+    0 10px 24px rgba(23,59,45,.20),
+    0 0 0 1px rgba(23,59,45,.10);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+/* reflet en arc sur le haut du verre */
+.logo-verre::before{
+  content:""; position:absolute; z-index:2; left:12%; right:12%; top:5%; height:42%;
+  border-radius:50% 50% 45% 45% / 60% 60% 40% 40%;
+  background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,0));
+  opacity:.55; pointer-events:none;
+}
+/* halo doré du soleil, derrière le motif */
+.logo-verre::after{
+  content:""; position:absolute; z-index:0; left:50%; top:30%; width:70%; height:50%; transform:translate(-50%,-50%);
+  background:radial-gradient(closest-side, rgba(246,211,92,.55), rgba(246,211,92,0)); pointer-events:none;
+}
+.logo-verre img{ position:relative; z-index:1; width:31px; height:auto; filter:drop-shadow(0 1px 1px rgba(255,255,255,.7)); }
+.brand:hover .logo-verre, .brand:focus-visible .logo-verre{ transform:translateY(-1px) scale(1.04); box-shadow:inset 0 1.5px 0 #fff, inset 0 -8px 14px rgba(23,59,45,.12), 0 14px 30px rgba(23,59,45,.26), 0 0 0 1px rgba(23,59,45,.12); }
+.brand{ gap:12px; }
+.brand-name{ font-size:14px; letter-spacing:.09em; }
+.logo-verre--pied{ width:44px; height:44px; }
+.logo-verre--pied img{ width:27px; }
+.footer-brand{ gap:12px; font-size:13px; }
+@media (max-width:800px){
+  .logo-verre{ width:44px; height:44px; }
+  .logo-verre img{ width:27px; }
+}
+@media (prefers-reduced-motion:reduce){ .logo-verre{ transition:none; } .brand:hover .logo-verre{ transform:none; } }
+.logo-verre img{ width:34px; }
+.logo-verre--pied img{ width:29px; }
+/* téléphone : le nom revient à côté du logo, sur deux lignes */
+@media (max-width:520px){
+  .brand{ gap:8px; }
+  .brand-name{ display:flex; flex-direction:column; gap:0; font-size:10.5px; line-height:1.15; letter-spacing:.1em; }
+  .logo-verre img{ width:30px; }
+}
+@media (max-width:359px){ .brand-name{ display:none; } }

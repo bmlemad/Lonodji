@@ -52,7 +52,7 @@ export default function SiteFooter({ miseAJour, lang = "fr" }: { miseAJour?: str
     <footer className="site-footer">
       <div className="footer-top">
         <div className="footer-brand-block">
-          <div className="footer-brand"><img className="footer-mark footer-mark--embleme" src={IDENTITE.embleme} alt="" width={30} height={30} loading="lazy" decoding="async" /><strong>ADEB <b>LONODJI</b></strong></div>
+          <div className="footer-brand"><span className="logo-verre logo-verre--pied" aria-hidden="true"><img src="/icones/logo-motif-verre.svg" alt="" width={26} height={30} loading="lazy" decoding="async" /></span><strong>ADEB <b>LONODJI</b></strong></div>
           <p className="footer-tagline">{en ? "The association of Bédjondo and its diaspora, guardian of the Bedjond heritage." : ORG.tagline}</p>
           <p className="footer-place">{en ? <span lang="fr">{ORG.fullName}</span> : ORG.fullName}<br />{en ? "Bédjondo · Mandoul Occidental · Mandoul, Chad" : ORG.place}</p>
           <div className="footer-contact">
