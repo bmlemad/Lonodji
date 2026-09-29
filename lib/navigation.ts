@@ -25,6 +25,7 @@ export const NAVIGATION: NavEntree[] = [
       { titre: "Rendre des comptes", liens: [
         { label: "Redevabilité & transparence", href: "/transparence", note: "Réponse sous 48 h, plainte, protection" },
         { label: "Journal des corrections", href: "/transparence#corrections", note: "Chaque erreur, datée, à découvert" },
+        { label: "Registre des décisions", href: "/transparence/decisions", note: "Décidé, nommé, annoncé, proposé : daté et sourcé" },
         { label: "Nos engagements publics", href: "/dossiers/engagements", note: "Ce que nous promettons, où nous en sommes" },
         { label: "Documents à télécharger", href: "/documents", note: "Kits, cahiers, plaidoyers en PDF" },
         { label: "Les démarches, pas à pas", href: "/dossiers/demarches", note: "Statut, récépissé, vers l’ONG" },
@@ -133,7 +134,7 @@ export function entreeCourante(pathname: string): string {
 export const PIED: { titre: string; liens: NavLien[] }[] = [
   { titre: "L’association", liens: [
     { label: "Notre mission", href: "/mission" }, { label: "Histoire & patrimoine", href: "/histoire" }, { label: "Le journal", href: "/journal" }, { label: "La lettre d’information", href: "/lettre" },
-    { label: "Redevabilité & transparence", href: "/transparence" }, { label: "Documents", href: "/documents" }, { label: "Espace presse", href: "/presse" }, { label: "Accessibilité", href: "/accessibilite" }, { label: "Archives du site", href: "/archives" },
+    { label: "Redevabilité & transparence", href: "/transparence" }, { label: "Registre des décisions", href: "/transparence/decisions" }, { label: "Documents", href: "/documents" }, { label: "Espace presse", href: "/presse" }, { label: "Accessibilité", href: "/accessibilite" }, { label: "Archives du site", href: "/archives" },
   ] },
   { titre: "Nos actions", liens: [
     { label: "Quatre pôles, dix-neuf thématiques", href: "/programmes" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }, { label: "Plaidoyers & engagements", href: "/actions" }, { label: "Tableau de bord d’impact", href: "/impact" },

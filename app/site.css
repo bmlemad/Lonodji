@@ -1201,3 +1201,21 @@ body.feuille-open .tabbar{ display:none; }
 .od-banniere img{ display:block; width:100%; height:auto; border-radius:10px; }
 .od-banniere figcaption{ margin-top:10px; font-size:12.5px; line-height:1.7; color:var(--muted); }
 .od-banniere figcaption a{ color:var(--deep); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
+
+/* ---- Registre public des décisions ---- */
+.registre{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+.registre-ligne{ padding:20px 22px 18px; border:1px solid var(--carte-bord); border-radius:20px; background:var(--carte-fond); box-shadow:var(--carte-ombre); }
+.registre-tete{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; margin-bottom:10px; }
+.registre-tete time{ font-size:13px; font-weight:600; color:var(--deep); }
+.registre-tete small{ font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+.registre-ligne h3{ margin:0 0 8px; font-size:20px; letter-spacing:-.02em; }
+.registre-ligne p{ margin:0 0 8px; font-size:15px; line-height:1.6; color:#3f4f48; }
+.registre-suite{ padding:10px 14px; border-radius:12px; background:rgba(242,201,76,.16); color:var(--ink) !important; }
+.registre-sources{ display:flex; flex-wrap:wrap; gap:6px 16px; margin:4px 0 0 !important; font-size:13px; font-weight:600; }
+.registre-sources a{ color:var(--deep); text-decoration:underline; text-underline-offset:4px; }
+.registre-statut--decision{ background:rgba(182,207,69,.32); border-color:rgba(182,207,69,.8); color:var(--deep); }
+.registre-statut--nomination{ background:rgba(47,107,74,.12); border-color:rgba(47,107,74,.4); color:var(--deep); }
+.registre-statut--annonce{ background:#eef2e9; }
+.registre-statut--proposition{ background:rgba(242,201,76,.28); border-color:rgba(242,201,76,.8); color:#5a4300; }
+.registre-statut--publication{ background:rgba(16,36,30,.06); }
+.registre-statut--regle{ background:var(--deep); border-color:var(--deep); color:#fff; }

@@ -35,6 +35,7 @@ export default function Transparence() {
       <section className="hub-section">
         <SectionHead eyebrow="Pour aller plus loin" title="Documents, mentions légales" em="et données personnelles." />
         <div className="link-list">
+          <Link href="/transparence/decisions"><small>Registre</small><strong>Registre public des décisions</strong><span>Décidé, nommé, annoncé, proposé : chaque ligne datée, sourcée, avec ce qui reste attendu.</span></Link>
           <Link href="/documents"><small>Documents</small><strong>Ce que nous publions</strong><span>Kit d’adhésion, cahiers de terrain, plaidoyers ; statuts et PV dès validation.</span></Link>
           <Link href="/mentions-legales"><small>Mentions légales</small><strong>Éditeur, hébergeur, formulaires</strong><span>Notice de confidentialité réécrite formulaire par formulaire.</span></Link>
           <Link href="/dossiers/engagements"><small>Engagements</small><strong>Les douze promesses publiques</strong><span>Aucune n’est encore confirmée réalisée ; chacune est suivie.</span></Link>

@@ -1,0 +1,121 @@
+/* Registre public des décisions : ce que l'association a décidé, nommé,
+   annoncé ou proposé, tel que le site l'a publié — rien d'autre. Chaque ligne
+   cite sa source (article, lettre, page) ; le statut distingue ce qui est
+   décidé de ce qui n'est que proposé ou annoncé. Les procès-verbaux ne sont
+   pas encore publiés : le registre reprend les décisions rendues publiques,
+   il ne les remplace pas. Tenu à la main ; une entrée par fait daté. */
+export type TypeDecision = "decision" | "nomination" | "annonce" | "proposition" | "publication" | "regle";
+export type Decision = {
+  id: string;
+  date: string; // AAAA-MM-JJ ; pour une règle sans date de vote connue, la date de mise en ligne
+  type: TypeDecision;
+  titre: string;
+  texte: string;
+  sources: { label: string; href: string }[];
+  /* ce que l'entrée attend encore, s'il y a lieu */
+  suite?: string;
+};
+
+export const TYPES: Record<TypeDecision, { label: string; court: string; note: string }> = {
+  decision: { label: "Décision", court: "Décidé", note: "prise par l’association et rendue publique" },
+  nomination: { label: "Nomination", court: "Nommé", note: "coordination ou fonction confiée à une personne" },
+  annonce: { label: "Annonce", court: "Annoncé", note: "intention rendue publique, sans budget ni calendrier" },
+  proposition: { label: "Proposition", court: "À voter", note: "soumise à l’assemblée, pas encore décidée" },
+  publication: { label: "Publication", court: "Publié", note: "un texte qui engage l’association, publié sur le site" },
+  regle: { label: "Règle", court: "En vigueur", note: "que l’association s’impose, dès sa mise en ligne" },
+};
+
+export const DECISIONS: Decision[] = [
+  {
+    id: "2026-01", date: "2026-09-11", type: "decision",
+    titre: "L’association s’organise en pôles et thématiques",
+    texte: "Trois pôles et douze thématiques le 11 septembre 2026, élargis avant le 14 septembre à quatre pôles, dix-neuf thématiques et deux cellules transversales — la structure que présente la page Nos actions.",
+    sources: [{ label: "Article du 11 septembre 2026", href: "/journal/2026-09-11-structuration-poles" }, { label: "Appel du 14 septembre 2026", href: "/journal/2026-09-14-appel-filles-fils-bedjondo" }, { label: "Nos actions", href: "/programmes" }],
+  },
+  {
+    id: "2026-02", date: "2026-09-12", type: "nomination",
+    titre: "Coordination de la thématique Mémoire & héritage",
+    texte: "Le Dr Bé-Rammaj Miaro-II, historien, prend en charge la thématique ; Recherche & savoirs est coordonnée par Sylvain Nomaye.",
+    sources: [{ label: "Article du 12 septembre 2026", href: "/journal/2026-09-12-lancement-memoire-heritage" }],
+  },
+  {
+    id: "2026-03", date: "2026-09-17", type: "publication",
+    titre: "Sept plaidoyers et une note à la commune de Bédjondo",
+    texte: "Eau potable, électricité, haut débit, santé, école, formation professionnelle, routes et ponts, et six propositions à la commune : huit textes qui citent leurs sources et disent ce que l’association ignore encore.",
+    sources: [{ label: "Plaidoyers & engagements", href: "/actions" }, { label: "Lettre n° 1", href: "/journal/2026-09-21-lettre-information-01" }],
+    suite: "Publiés, aucun encore transmis à ses destinataires : les lettres attendent la signature du bureau.",
+  },
+  {
+    id: "2026-04", date: "2026-09-19", type: "decision",
+    titre: "Deux sièges : N’Djamena et Bédjondo",
+    texte: "Un siège national à N’Djamena, tourné vers les institutions, les partenaires et la diaspora ; un siège des opérations à Bédjondo, où se décide et se mène le travail de terrain.",
+    sources: [{ label: "Article du 19 septembre 2026", href: "/journal/2026-09-19-annonce-deux-sieges" }, { label: "Lettre n° 1", href: "/journal/2026-09-21-lettre-information-01" }],
+    suite: "L’adresse de chaque siège, sa date d’ouverture et le partage des responsabilités ne sont pas encore fixés publiquement.",
+  },
+  {
+    id: "2026-05", date: "2026-09-19", type: "annonce",
+    titre: "Air Bedjondo, un projet de transport terrestre",
+    texte: "Une intention annoncée par l’animateur de l’association et relayée par elle sans en être le porteur : ni étude, ni financement, ni calendrier. Depuis le 28 septembre 2026, l’entreprise de transport et de logistique figure parmi les quatre entreprises phares proposées du programme 06.",
+    sources: [{ label: "Article du 19 septembre 2026", href: "/journal/2026-09-19-annonce-air-bedjondo" }, { label: "Plateforme de projets", href: "/projets#air-bedjondo" }],
+  },
+  {
+    id: "2026-06", date: "2026-09-21", type: "nomination",
+    titre: "Quatre coordinations pourvues au 21 septembre 2026",
+    texte: "Mémoire & héritage (Dr Bé-Rammaj Miaro-II), Recherche & savoirs (Sylvain Nomaye), Genre & autonomisation des femmes (Odette Tolmbaye), Santé & prévention (Dr Nestor Alladoumdjim).",
+    sources: [{ label: "Lettre n° 1", href: "/journal/2026-09-21-lettre-information-01" }],
+  },
+  {
+    id: "2026-07", date: "2026-09-28", type: "decision",
+    titre: "Lancement de la réflexion ODEB LONODJI",
+    texte: "Pour les quarante ans de ses fondations, l’association ouvre la réflexion sur une Organisation pour le Développement et l’Émergence Bedjonde à l’horizon 2030, avec quatre pièces en ligne : la vision et ses six missions, les programmes, la feuille de route 2026-2030, le livre blanc en version de travail.",
+    sources: [{ label: "Article du 28 septembre 2026", href: "/journal/2026-09-28-quarante-ans-reflexion-odeb-lonodji" }, { label: "Le projet ODEB LONODJI", href: "/odeb" }],
+    suite: "Rien n’est décidé sur l’ODEB elle-même : ni statut, ni budget, ni personnel ; le livre blanc est fait pour être discuté.",
+  },
+  {
+    id: "2026-08", date: "2026-09-28", type: "nomination",
+    titre: "Onze coordinations confiées le même jour",
+    texte: "Culture & patrimoine vivant (Dr Yaphete Madjiradé), Agriculture, élevage & sécurité alimentaire (Olivier Allaramadji Nomaye), Jeunesse & réussite (Bruno Kodjadoum NGARTEL), Gouvernance & plaidoyer (Adoumbé Maoura), Paix & cohésion (Sa Majesté Moulbe Brahim Nadoumbeye), Réseau d’experts & diaspora (Edgard Djerassem Djimhotengar), Justice & droits humains (Dr Eugène Ngartebaye Le Yotha), les trois thématiques du pôle Numérique & innovation (Bignéro Moïalbéi LE MADANG), la cellule Communication & numérique (Djimtebaye Mahamat Mamadou Banadji).",
+    sources: [{ label: "Lettre n° 2", href: "/journal/2026-09-28-lettre-information-02" }, { label: "Nos actions", href: "/programmes" }],
+    suite: "Quatre thématiques et la cellule Financement & ressources restent à pourvoir.",
+  },
+  {
+    id: "2026-09", date: "2026-09-28", type: "decision",
+    titre: "Adoption du logo « Les Pas vers l’Avenir »",
+    texte: "Dessiné le soir même du lancement de la réflexion ODEB, le logo est adopté par l’association pour elle-même et pour son projet : un emblème, deux noms. L’ancien logo reste sur les documents publiés avant cette date.",
+    sources: [{ label: "Article du 28 septembre 2026", href: "/journal/2026-09-28-identite-visuelle-odeb-lonodji" }, { label: "Identité visuelle", href: "/odeb/identite" }],
+  },
+  {
+    id: "2026-10", date: "2026-09-28", type: "decision",
+    titre: "Création des directions de pôle, au rang de chef de projet",
+    texte: "Chaque pôle a désormais une direction, distincte de la coordination des thématiques : elle anime les coordonnateurs, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets, rend compte au bureau et à l’assemblée. Quatre postes ouverts à tout membre.",
+    sources: [{ label: "Article du 28 septembre 2026", href: "/journal/2026-09-28-directions-de-pole" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }],
+    suite: "Les quatre directions sont à pourvoir.",
+  },
+  {
+    id: "2026-11", date: "2026-09-28", type: "proposition",
+    titre: "Programme 06 « Économie sociale et revenus » : cinq règles à voter",
+    texte: "Des entreprises distinctes de l’association dont les bénéfices iraient aux projets de développement et de bien-être. Cinq règles sont proposées avec le programme — une société, pas l’association ; des bénéfices affectés aux projets et des comptes publiés ; ce qui manque au pays bedjond ; de l’argent propre sans promesse de rendement ; une entreprise à la fois —, à voter par l’assemblée avant toute création, avec la règle d’affectation des bénéfices.",
+    sources: [{ label: "Article du 28 septembre 2026", href: "/journal/2026-09-28-sixieme-programme-economie-sociale" }, { label: "Programme 06", href: "/odeb/programmes/economie-sociale#principes" }],
+    suite: "Vote de l’assemblée attendu ; aucune entreprise n’est créée, rien n’est chiffré.",
+  },
+  {
+    id: "regle-01", date: "2026-09-11", type: "regle",
+    titre: "Aucune collecte avant un compte bancaire au nom de l’association",
+    texte: "La collecte est suspendue jusqu’à l’ouverture d’un compte au nom de l’association ; les intentions d’adhésion et les promesses de contribution n’engagent aucun paiement.",
+    sources: [{ label: "Notre mission — le bureau", href: "/mission" }, { label: "Plateforme de projets", href: "/projets" }],
+  },
+  {
+    id: "regle-02", date: "2026-09-11", type: "regle",
+    titre: "Lieux sacrés et sépultures : ne rien publier",
+    texte: "Le registre des lieux sacrés et des sépultures est tenu avec les chefs ; rien n’en paraît sur la carte ni sur le site.",
+    sources: [{ label: "Lieux sacrés et sépultures", href: "/dossiers/lieux-sacres" }],
+  },
+  {
+    id: "regle-03", date: "2026-09-11", type: "regle",
+    titre: "Réponse sous 48 heures ouvrées, plainte possible, corrections datées",
+    texte: "Toute demande reçoit une réponse sous 48 heures ouvrées ; une plainte est possible, même anonyme ; chaque erreur de fait est corrigée et datée dans le journal des corrections.",
+    sources: [{ label: "Redevabilité & transparence", href: "/transparence" }],
+  },
+];
+
+export const decisionsTriees = () => [...DECISIONS].sort((a, b) => (a.date === b.date ? a.id.localeCompare(b.id) : b.date.localeCompare(a.date)));
