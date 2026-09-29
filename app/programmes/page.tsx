@@ -78,7 +78,7 @@ export default function Programmes() {
       </div>
 
       <section className="hub-section" id="diriger-un-pole">
-        <SectionHead eyebrow="Diriger un pôle" title="Quatre directions de pôle," em="au rang de chef de projet." text="Depuis le 28 septembre 2026, chaque pôle a une direction, distincte de la coordination des thématiques. Le directeur ou la directrice de pôle a rang de chef de projet : il anime les coordonnateurs de ses thématiques, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets qui en relèvent, et rend compte au bureau et à l’assemblée. Les quatre postes sont ouverts à tout membre." />
+        <SectionHead eyebrow="Diriger un pôle" title="Quatre directions de pôle," em="au rang de chef de projet." text="Depuis le 28 septembre 2026, chaque pôle a une direction, distincte de la coordination des thématiques. Le directeur ou la directrice de pôle a rang de chef de projet : il anime les coordonnateurs de ses thématiques, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets qui en relèvent, et rend compte au bureau et à l’assemblée. Les quatre postes sont ouverts à tout membre ; chaque poste a sa fiche de mission en PDF, comme chaque thématique." />
         <div className="detail-grid">
           {poles.map((pole) => (
             <article key={pole.id}>
@@ -86,6 +86,7 @@ export default function Programmes() {
               <h3>{pole.name}</h3>
               <p>{pole.direction?.filled ? `Direction : ${pole.direction.name}.` : "Direction à pourvoir. Le pôle avance déjà par ses thématiques ; il manque la personne qui les tient ensemble."}</p>
               {!pole.direction?.filled ? <Link className="text-link" href={`/participer?direction=${pole.roman}&coordo=1#contact`}>Candidater <span aria-hidden="true">→</span></Link> : null}
+              <a className="text-link" href={`/missions/fiche-mission-direction-${pole.id}.pdf`} download>Fiche de mission <span aria-hidden="true">PDF</span></a>
             </article>
           ))}
         </div>

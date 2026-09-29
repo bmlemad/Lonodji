@@ -1,0 +1,250 @@
+{
+ "genere": "2026-09-29",
+ "recueil": "/missions/fiches-de-mission-adeb-lonodji.pdf",
+ "directions": [
+  {
+   "pole": "pole-1",
+   "roman": "I",
+   "nom": "Mémoire, culture & patrimoine",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-direction-pole-1.pdf",
+   "thematiques": 3
+  },
+  {
+   "pole": "pole-2",
+   "roman": "II",
+   "nom": "Développement humain & moyens d’existence",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-direction-pole-2.pdf",
+   "thematiques": 9
+  },
+  {
+   "pole": "pole-3",
+   "roman": "III",
+   "nom": "Gouvernance, paix & plaidoyer",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-direction-pole-3.pdf",
+   "thematiques": 4
+  },
+  {
+   "pole": "pole-4",
+   "roman": "IV",
+   "nom": "Numérique & innovation",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-direction-pole-4.pdf",
+   "thematiques": 3
+  }
+ ],
+ "coordinations": [
+  {
+   "id": "memoire-heritage",
+   "numero": "01",
+   "nom": "Mémoire & héritage",
+   "pole": "I",
+   "poleNom": "Mémoire, culture & patrimoine",
+   "pourvue": true,
+   "qui": "Dr Bé-Rammaj Miaro-II, historien",
+   "pdf": "/missions/fiche-mission-coordination-memoire-heritage.pdf"
+  },
+  {
+   "id": "culture-patrimoine-vivant",
+   "numero": "02",
+   "nom": "Culture & patrimoine vivant",
+   "pole": "I",
+   "poleNom": "Mémoire, culture & patrimoine",
+   "pourvue": true,
+   "qui": "Dr Yaphete Madjiradé",
+   "pdf": "/missions/fiche-mission-coordination-culture-patrimoine-vivant.pdf"
+  },
+  {
+   "id": "savoirs-innovation",
+   "numero": "03",
+   "nom": "Recherche & savoirs",
+   "pole": "I",
+   "poleNom": "Mémoire, culture & patrimoine",
+   "pourvue": true,
+   "qui": "Sylvain Nomaye, ingénieur de conception en informatique",
+   "pdf": "/missions/fiche-mission-coordination-savoirs-innovation.pdf"
+  },
+  {
+   "id": "agriculture-elevage-securite-alimentaire",
+   "numero": "04",
+   "nom": "Agriculture, élevage & sécurité alimentaire",
+   "pole": "II",
+   "poleNom": "Développement humain & moyens d’existence",
+   "pourvue": true,
+   "qui": "Olivier Allaramadji Nomaye, ingénieur agroéconomiste",
+   "pdf": "/missions/fiche-mission-coordination-agriculture-elevage-securite-alimentaire.pdf"
+  },
+  {
+   "id": "entrepreneuriat-finance-inclusive",
+   "numero": "05",
+   "nom": "Entrepreneuriat & finance inclusive",
+   "pole": "II",
+   "poleNom": "Développement humain & moyens d’existence",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-coordination-entrepreneuriat-finance-inclusive.pdf"
+  },
+  {
+   "id": "environnement-ressources",
+   "numero": "06",
+   "nom": "Environnement & ressources naturelles",
+   "pole": "II",
+   "poleNom": "Développement humain & moyens d’existence",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-coordination-environnement-ressources.pdf"
+  },
+  {
+   "id": "eau-energie-connectivite",
+   "numero": "07",
+   "nom": "Eau, énergie & connectivité",
+   "pole": "II",
+   "poleNom": "Développement humain & moyens d’existence",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-coordination-eau-energie-connectivite.pdf"
+  },
+  {
+   "id": "desenclavement-urbanisation",
+   "numero": "08",
+   "nom": "Désenclavement & urbanisation",
+   "pole": "II",
+   "poleNom": "Développement humain & moyens d’existence",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-coordination-desenclavement-urbanisation.pdf"
+  },
+  {
+   "id": "jeunesse-reussite",
+   "numero": "09",
+   "nom": "Jeunesse & réussite",
+   "pole": "II",
+   "poleNom": "Développement humain & moyens d’existence",
+   "pourvue": true,
+   "qui": "Bruno Kodjadoum NGARTEL",
+   "pdf": "/missions/fiche-mission-coordination-jeunesse-reussite.pdf"
+  },
+  {
+   "id": "leadership-feminin",
+   "numero": "10",
+   "nom": "Genre & autonomisation des femmes",
+   "pole": "II",
+   "poleNom": "Développement humain & moyens d’existence",
+   "pourvue": true,
+   "qui": "Odette Tolmbaye",
+   "pdf": "/missions/fiche-mission-coordination-leadership-feminin.pdf"
+  },
+  {
+   "id": "sante-prevention",
+   "numero": "11",
+   "nom": "Santé & prévention",
+   "pole": "II",
+   "poleNom": "Développement humain & moyens d’existence",
+   "pourvue": true,
+   "qui": "Dr Nestor Alladoumdjim",
+   "pdf": "/missions/fiche-mission-coordination-sante-prevention.pdf"
+  },
+  {
+   "id": "solidarite-inclusion",
+   "numero": "12",
+   "nom": "Protection sociale & inclusion",
+   "pole": "II",
+   "poleNom": "Développement humain & moyens d’existence",
+   "pourvue": true,
+   "qui": "Solkem Ngarmbatina",
+   "pdf": "/missions/fiche-mission-coordination-solidarite-inclusion.pdf"
+  },
+  {
+   "id": "gouvernance-plaidoyer",
+   "numero": "13",
+   "nom": "Gouvernance & plaidoyer",
+   "pole": "III",
+   "poleNom": "Gouvernance, paix & plaidoyer",
+   "pourvue": true,
+   "qui": "Adoumbé Maoura, président de l’association",
+   "pdf": "/missions/fiche-mission-coordination-gouvernance-plaidoyer.pdf"
+  },
+  {
+   "id": "paix-cohesion",
+   "numero": "14",
+   "nom": "Paix & cohésion",
+   "pole": "III",
+   "poleNom": "Gouvernance, paix & plaidoyer",
+   "pourvue": true,
+   "qui": "Sa Majesté Moulbe Brahim Nadoumbeye, chef de canton de Bébopen",
+   "pdf": "/missions/fiche-mission-coordination-paix-cohesion.pdf"
+  },
+  {
+   "id": "reseau-experts-diaspora",
+   "numero": "15",
+   "nom": "Réseau d’experts & diaspora",
+   "pole": "III",
+   "poleNom": "Gouvernance, paix & plaidoyer",
+   "pourvue": true,
+   "qui": "Edgard Djerassem Djimhotengar",
+   "pdf": "/missions/fiche-mission-coordination-reseau-experts-diaspora.pdf"
+  },
+  {
+   "id": "justice-droits-homme",
+   "numero": "16",
+   "nom": "Justice & droits humains",
+   "pole": "III",
+   "poleNom": "Gouvernance, paix & plaidoyer",
+   "pourvue": true,
+   "qui": "Dr Eugène Ngartebaye Le Yotha",
+   "pdf": "/missions/fiche-mission-coordination-justice-droits-homme.pdf"
+  },
+  {
+   "id": "transformation-numerique-services",
+   "numero": "17",
+   "nom": "Transformation numérique & services",
+   "pole": "IV",
+   "poleNom": "Numérique & innovation",
+   "pourvue": true,
+   "qui": "Bignéro Moïalbéi LE MADANG",
+   "pdf": "/missions/fiche-mission-coordination-transformation-numerique-services.pdf"
+  },
+  {
+   "id": "intelligence-artificielle-donnees",
+   "numero": "18",
+   "nom": "Intelligence artificielle & données",
+   "pole": "IV",
+   "poleNom": "Numérique & innovation",
+   "pourvue": true,
+   "qui": "Bignéro Moïalbéi LE MADANG",
+   "pdf": "/missions/fiche-mission-coordination-intelligence-artificielle-donnees.pdf"
+  },
+  {
+   "id": "competences-entrepreneuriat-numerique",
+   "numero": "19",
+   "nom": "Compétences & entrepreneuriat numérique",
+   "pole": "IV",
+   "poleNom": "Numérique & innovation",
+   "pourvue": true,
+   "qui": "Bignéro Moïalbéi LE MADANG",
+   "pdf": "/missions/fiche-mission-coordination-competences-entrepreneuriat-numerique.pdf"
+  }
+ ],
+ "cellules": [
+  {
+   "id": "cellule-financement-ressources",
+   "nom": "Financement & ressources",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-cellule-financement-ressources.pdf"
+  },
+  {
+   "id": "cellule-communication-numerique",
+   "nom": "Communication & numérique",
+   "pourvue": true,
+   "qui": "Djimtebaye Mahamat Mamadou Banadji",
+   "pdf": "/missions/fiche-mission-cellule-communication-numerique.pdf"
+  }
+ ]
+}

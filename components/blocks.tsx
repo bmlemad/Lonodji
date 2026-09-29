@@ -72,7 +72,7 @@ export function ThematiqueRow({ t, pole }: { t: Thematique; pole?: string }) {
             </a>
           ))}</p>
         ) : null}
-        {t.links.length ? <p className="them-links">{t.links.map((l) => <Link key={l.href + l.label} href={l.href}>{l.label}</Link>)}</p> : null}
+        {t.links.length ? <p className="them-links">{t.links.map((l) => <Link key={l.href + l.label} href={l.href}>{l.label}</Link>)}<a href={`/missions/fiche-mission-${t.kind === "cellule" ? "" : "coordination-"}${t.id}.pdf`} download>Fiche de mission (PDF) ↓</a></p> : null}
       </div>
       <span className={t.filled ? "status filled" : "status"}>{t.filled ? "Pourvu" : "À pourvoir"}{pole ? ` · Pôle ${pole}` : ""}</span>
     </article>

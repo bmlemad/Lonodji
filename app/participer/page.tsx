@@ -52,6 +52,7 @@ export default function Participer() {
           <Link className="button primary" href="/dossiers/trouver-ma-thematique">Trouver ma thématique en trois questions <span aria-hidden="true">↗</span></Link>
           <Link className="button secondary" href="/programmes#thematiques">Voir les dix-neuf thématiques <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/programmes#diriger-un-pole">Diriger un pôle <span aria-hidden="true">→</span></Link>
+          <Link className="text-link" href="/programmes/fiches-de-mission">Les fiches de mission (PDF) <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/diaspora">Diaspora : inscrire mes compétences <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/temoignages">Raconter Bédjondo : témoignages &amp; photos <span aria-hidden="true">→</span></Link>
         </div>
