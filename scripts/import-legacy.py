@@ -186,12 +186,68 @@ def clean_tree(root: Tag, base_dir: str, collected_forms: dict):
                 if f.has_attr(attr):
                     del f[attr]
             # remplace le libellé d'accord (adresse chez Netlify) : inchangé, conforme aux mentions
+            marquer_obligatoires(f, root)
+            for champ in f.find_all("input", attrs={"name": "nom"}):
+                if not champ.has_attr("autocomplete"):
+                    champ["autocomplete"] = "name"
+        else:
+            # outil local (cahier généalogique) : les noms saisis sont ceux des ancêtres, pas de l'utilisateur
+            for champ in f.find_all("input"):
+                if champ.get("type", "text") == "text" and not champ.has_attr("autocomplete"):
+                    champ["autocomplete"] = "off"
         # les formulaires sans nom sont des outils locaux (cahier généalogique) : conservés tels quels
     # les attributs `style` avec variables ODD sont conservés ; on retire les data-* d'interactivité inutiles
     for el in root.find_all(True):
         for attr in list(el.attrs):
             if attr in ("data-search", "data-need-loc", "data-plea"):
                 del el[attr]
+
+
+def marquer_obligatoires(form: Tag, root: Tag) -> None:
+    """Une seule convention pour les champs obligatoires : un astérisque après le libellé, expliqué en tête."""
+    soup = form
+    while soup.parent is not None:
+        soup = soup.parent
+    marques = 0
+    for champ in form.find_all(["input", "textarea", "select"]):
+        if not champ.has_attr("required") or champ.get("type") in ("hidden", "submit"):
+            continue
+        lab = None
+        if champ.get("id"):
+            lab = form.find("label", attrs={"for": champ["id"]}) or root.find("label", attrs={"for": champ["id"]})
+        if lab is None:
+            lab = champ.find_parent("label")
+        if lab is None or "*" in lab.get_text() or lab.find(class_="requis"):
+            marques += 1 if lab is not None else 0
+            continue
+        etoile = soup.new_tag("span", attrs={"class": "requis", "aria-hidden": "true"})
+        etoile.string = " *"
+        cible = lab.find("span") if champ.get("type") in ("checkbox", "radio") and lab.find("span") else lab
+        if cible is lab and champ.find_parent("label") is lab:
+            # libellé qui englobe le champ : l'astérisque suit le texte, avant le champ
+            premier_texte = next((c for c in lab.contents if isinstance(c, NavigableString) and c.strip()), None)
+            if premier_texte is not None:
+                premier_texte.insert_after(etoile)
+            else:
+                lab.append(etoile)
+        else:
+            cible.append(etoile)
+        marques += 1
+    if marques and not form.find(class_="form-requis"):
+        note = soup.new_tag("p", attrs={"class": "form-requis"})
+        note.append("Les champs marqués ")
+        e = soup.new_tag("span", attrs={"class": "requis", "aria-hidden": "true"})
+        e.string = "*"
+        note.append(e)
+        note.append(" sont obligatoires." if form.find_parent(attrs={"lang": "en"}) is None and "lang=\"en\"" not in str(root)[:400] else "")
+        if note.get_text().endswith("*"):
+            note.clear()
+            note.append("Fields marked ")
+            e2 = soup.new_tag("span", attrs={"class": "requis", "aria-hidden": "true"})
+            e2.string = "*"
+            note.append(e2)
+            note.append(" are required.")
+        form.insert(0, note)
 
 
 def inner_html(el: Tag) -> str:
@@ -540,8 +596,18 @@ FORMULAIRES_SITE = {
 
 
 def forms_html(all_forms: dict) -> str:
-    parts = ["<!doctype html><html lang=\"fr\"><head><meta charset=\"utf-8\"><title>Formulaires ADEB LONODJI</title>",
-             "<meta name=\"robots\" content=\"noindex\"></head><body>",
+    parts = ["<!doctype html><html lang=\"fr\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+             "<title>Merci — ADEB LONODJI</title>",
+             "<meta name=\"robots\" content=\"noindex\">"
+             "<style>body{margin:0;font:17px/1.6 system-ui,sans-serif;color:#10241e;background:#f4f6f1}"
+             "main{max-width:560px;margin:12vh auto;padding:0 20px}h1{font-size:30px;line-height:1.15;margin:0 0 12px}"
+             "a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:99px;background:#173b2d;color:#fff;text-decoration:none;font-weight:600;margin:8px 8px 0 0}"
+             "a.second{background:#fff;color:#173b2d;border:1px solid rgba(16,36,30,.2)}form{display:none}</style></head><body>",
+             # page affichée si un formulaire est envoyé sans JavaScript (l'action des formulaires pointe ici)
+             "<main><h1>Merci, votre envoi est bien parti.</h1>"
+             "<p>Si vous avez laissé un moyen de vous joindre, vous recevrez un accusé de réception sous 48 heures ouvrées. "
+             "<span lang=\"en\">Thank you, your message has been sent.</span></p>"
+             "<p><a href=\"/\">Retour au site</a><a class=\"second\" href=\"https://wa.me/23566299403\">WhatsApp</a></p></main>",
              "<!-- Déclaration statique des formulaires pour Netlify Forms (site Next.js). Généré par scripts/import-legacy.py -->"]
     for name in sorted(all_forms):
         f = all_forms[name]

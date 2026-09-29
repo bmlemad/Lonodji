@@ -4,6 +4,7 @@ import Link from "@/components/lien";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { boucleFocus } from "@/components/partager";
+import { useChemin } from "@/components/chemin";
 
 /* Palette « Aller à… » : une fenêtre de recherche instantanée sur toutes les
    pages, thématiques, articles et documents du site (index allégé
@@ -26,12 +27,25 @@ const RACCOURCIS: Entry[] = [
   { t: "Tableau de bord d’impact", r: "/impact", k: "Raccourci", d: "Six indicateurs datés et sourcés" },
 ];
 
+const RACCOURCIS_EN: Entry[] = [
+  { t: "Find your village", r: "/en/villages", k: "Raccourci", d: "Fourteen units, 966 named localities" },
+  { t: "About the association", r: "/en/about", k: "Raccourci", d: "Who we are, since 1986" },
+  { t: "Themes and pillars", r: "/en/themes", k: "Raccourci", d: "Four pillars, twenty themes, coordinators" },
+  { t: "Sectors of intervention", r: "/en/sectors", k: "Raccourci", d: "WASH, health, nutrition, relief… our themes in NGO terms" },
+  { t: "Advocacy", r: "/en/advocacy", k: "Raccourci", d: "Seven briefs and a note to the commune" },
+  { t: "Projects", r: "/en/projects", k: "Raccourci", d: "Each project with its stage and what is missing" },
+  { t: "Impact dashboard", r: "/en/impact", k: "Raccourci", d: "Six dated, sourced indicators" },
+  { t: "The ODEB LONODJI project", r: "/en/odeb", k: "Raccourci", d: "Vision 2030" },
+  { t: "Contact us", r: "/en/contact", k: "Raccourci", d: "Form and WhatsApp" },
+];
+
 const ORDRE = ["Raccourci", "Page", "Direction de pôle", "Thématique", "Article", "Plaidoyer", "Document PDF", "Document à venir", "In English", "Dossier"];
 
 const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’']/g, " ");
 const estChamp = (el: Element | null) => !!el && (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || (el as HTMLElement).isContentEditable);
 
 export default function Palette() {
+  const en = useChemin().startsWith("/en");
   const [ouverte, setOuverte] = useState(false);
   const [q, setQ] = useState("");
   const [index, setIndex] = useState<Entry[] | null>(null);
@@ -90,7 +104,7 @@ export default function Palette() {
   const texte = q.trim();
   const resultats = useMemo<Entry[]>(() => {
     const n = norm(texte);
-    if (!n) return RACCOURCIS;
+    if (!n) return en ? RACCOURCIS_EN : RACCOURCIS;
     if (!index) return [];
     const termes = n.split(/\s+/).filter(Boolean);
     const notes: { e: Entry; s: number }[] = [];
@@ -107,14 +121,19 @@ export default function Palette() {
       if (s < 0) continue;
       if (e.k === "Page") s += 1;
       if (e.k === "Raccourci") s += 2;
+      if (en && e.k === "In English") s += 3;
       notes.push({ e, s });
     }
     notes.sort((a, b) => b.s - a.s || ORDRE.indexOf(a.e.k) - ORDRE.indexOf(b.e.k));
     return notes.slice(0, 14).map((x) => x.e);
-  }, [texte, index]);
+  }, [texte, index, en]);
 
-  const actionSite: Entry = { t: `Chercher « ${texte} » dans tout le site`, r: `/recherche?q=${encodeURIComponent(texte)}`, k: "Action", d: "Tous les contenus, avec des extraits" };
-  const actionVillage: Entry = { t: `Chercher le village « ${texte} »`, r: `/villages?q=${encodeURIComponent(texte)}`, k: "Action", d: "Parmi 966 localités nommées" };
+  const actionSite: Entry = en
+    ? { t: `Search the whole site for “${texte}” (in French)`, r: `/recherche?q=${encodeURIComponent(texte)}`, k: "Action", d: "All content, with excerpts" }
+    : { t: `Chercher « ${texte} » dans tout le site`, r: `/recherche?q=${encodeURIComponent(texte)}`, k: "Action", d: "Tous les contenus, avec des extraits" };
+  const actionVillage: Entry = en
+    ? { t: `Find the village “${texte}”`, r: `/villages?q=${encodeURIComponent(texte)}`, k: "Action", d: "Among 966 named localities" }
+    : { t: `Chercher le village « ${texte} »`, r: `/villages?q=${encodeURIComponent(texte)}`, k: "Action", d: "Parmi 966 localités nommées" };
   // aucune page ne correspond : c'est sans doute un nom de lieu, la recherche de village passe d'abord
   const actions: Entry[] = !texte ? [] : index && !resultats.length ? [actionVillage, actionSite] : [actionSite, actionVillage];
   const tout = [...resultats, ...actions];
@@ -136,7 +155,7 @@ export default function Palette() {
   let i = -1;
   const groupes = ORDRE.concat(["Action"]).map((k) => ({ k, items: tout.filter((e) => e.k === k) })).filter((g) => g.items.length);
   return (
-    <div className="palette" role="dialog" aria-modal="true" aria-label="Aller à une page du site">
+    <div className="palette" role="dialog" aria-modal="true" aria-label={en ? "Go to a page" : "Aller à une page du site"}>
       <div className="palette-fond" onClick={() => setOuverte(false)} />
       <div className="palette-boite" ref={boite}>
         <div className="palette-champ">
@@ -147,8 +166,8 @@ export default function Palette() {
             value={q}
             onChange={(e) => setQ(e.target.value)}
             onKeyDown={onKeyChamp}
-            placeholder="Une page, un village, une thématique, un article…"
-            aria-label="Aller à…"
+            placeholder={en ? "A page, a village, a theme…" : "Une page, un village, une thématique, un article…"}
+            aria-label={en ? "Go to…" : "Aller à…"}
             role="combobox"
             aria-expanded={true}
             aria-autocomplete="list"
@@ -157,14 +176,14 @@ export default function Palette() {
             autoComplete="off"
             enterKeyHint="go"
           />
-          <button type="button" className="palette-fermer" onClick={() => setOuverte(false)} aria-label="Fermer (Échap)">Échap</button>
+          <button type="button" className="palette-fermer" onClick={() => setOuverte(false)} aria-label={en ? "Close (Esc)" : "Fermer (Échap)"}>{en ? "Esc" : "Échap"}</button>
         </div>
-        {texte && !index ? <p className="palette-vide" role="status">Chargement de l’index…</p> : null}
-        {texte && index && !resultats.length ? <p className="palette-vide" role="status">Aucune page avec ce titre ; cherchez-le parmi les villages ou dans tout le site ci-dessous.</p> : null}
-        <ul className="palette-liste" id="palette-liste" role="listbox" aria-label="Résultats" ref={liste}>
+        {texte && !index ? <p className="palette-vide" role="status">{en ? "Loading the index…" : "Chargement de l’index…"}</p> : null}
+        {texte && index && !resultats.length ? <p className="palette-vide" role="status">{en ? "No page with this title; look for it among the villages or across the site below." : "Aucune page avec ce titre ; cherchez-le parmi les villages ou dans tout le site ci-dessous."}</p> : null}
+        <ul className="palette-liste" id="palette-liste" role="listbox" aria-label={en ? "Results" : "Résultats"} ref={liste}>
           {groupes.map((g) => (
             <li key={g.k} className="palette-groupe" role="group" aria-labelledby={`palette-g-${g.k.replace(/\W+/g, "-")}`}>
-              <span className="palette-titre" id={`palette-g-${g.k.replace(/\W+/g, "-")}`}>{g.k === "Raccourci" ? "Où aller ?" : g.k === "Action" ? "Sinon" : g.k}</span>
+              <span className="palette-titre" id={`palette-g-${g.k.replace(/\W+/g, "-")}`}>{g.k === "Raccourci" ? (en ? "Where to?" : "Où aller ?") : g.k === "Action" ? (en ? "Otherwise" : "Sinon") : en && g.k !== "In English" ? `${g.k} (FR)` : g.k}</span>
               <ul role="presentation">
                 {g.items.map((e) => {
                   i += 1;
@@ -186,8 +205,8 @@ export default function Palette() {
           ))}
         </ul>
         <div className="palette-pied">
-          <span><kbd>↑</kbd><kbd>↓</kbd> choisir · <kbd>↵</kbd> ouvrir · <kbd>Échap</kbd> fermer</span>
-          <Link href="/recherche" onClick={() => { navigue.current = true; setOuverte(false); }}>Recherche complète <span aria-hidden="true">→</span></Link>
+          {en ? <span><kbd>↑</kbd><kbd>↓</kbd> choose · <kbd>↵</kbd> open · <kbd>Esc</kbd> close</span> : <span><kbd>↑</kbd><kbd>↓</kbd> choisir · <kbd>↵</kbd> ouvrir · <kbd>Échap</kbd> fermer</span>}
+          <Link href="/recherche" onClick={() => { navigue.current = true; setOuverte(false); }}>{en ? "Full search (in French)" : "Recherche complète"} <span aria-hidden="true">→</span></Link>
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
@@ -10,8 +11,8 @@ import { getProjets, STADES_ACTIFS, stadeIndex } from "@/lib/projets";
 import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
-  title: "Plateforme de projets : chaque projet, son stade, ce qui manque",
-  description: "Espace numérique, application, complexe sportif, Air Bedjondo : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer — et le formulaire pour en proposer un.",
+  title: "Plateforme de projets",
+  description: metaDescription("Espace numérique, application, complexe sportif, Air Bedjondo : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer — et le formulaire pour en proposer un."),
   alternates: { canonical: "/projets", languages: alternatesLangues("/projets") },
   openGraph: ogFor("/projets"),
 };

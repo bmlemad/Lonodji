@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead } from "@/components/blocks";
@@ -5,7 +6,7 @@ import { ogFor, ORG } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Déclaration d’accessibilité",
-  description: "Ce que lonodji.org fait pour être lisible et utilisable par tous — lecteurs d’écran, clavier, petits écrans, connexions lentes —, ce qui est testé, les limites connues, et à qui signaler un obstacle.",
+  description: metaDescription("Ce que lonodji.org fait pour être lisible et utilisable par tous — lecteurs d’écran, clavier, petits écrans, connexions lentes —, ce qui est testé, les limites connues, et à qui signaler un obstacle."),
   alternates: { canonical: "/accessibilite" },
   openGraph: ogFor("/accessibilite"),
 };

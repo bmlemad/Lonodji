@@ -63,9 +63,17 @@ export async function releverFormulaires(jeton: string): Promise<Releve | null> 
     const c = (comptes[nom] ??= { envois: 0 });
     c.envois += Number(f.submission_count || 0);
     if (PAR_PERSONNE.has(nom) && c.envois > 0) {
-      const s = await fetch(`https://api.netlify.com/api/v1/forms/${f.id}/submissions?per_page=100`, { headers: entetes, cache: "no-store" });
-      if (s.ok) {
-        const envois = (await s.json()) as SoumissionNetlify[];
+      // toutes les pages d'envois (100 par page) : au-delà de cent, le décompte par personne resterait juste
+      const envois: SoumissionNetlify[] = [];
+      let lu = true;
+      for (let page = 1; page <= 50; page++) {
+        const s = await fetch(`https://api.netlify.com/api/v1/forms/${f.id}/submissions?per_page=100&page=${page}`, { headers: entetes, cache: "no-store" });
+        if (!s.ok) { lu = page > 1; break; }
+        const lot = (await s.json()) as SoumissionNetlify[];
+        envois.push(...lot);
+        if (lot.length < 100) break;
+      }
+      if (lu) {
         const cles = new Set<string>();
         const pays = new Set<string>();
         const domaines: Record<string, number> = {};

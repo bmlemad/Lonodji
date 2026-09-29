@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
@@ -8,8 +9,8 @@ import { thematiquesParId } from "@/lib/odeb-chiffres";
 import { ETATS_SECTEUR, GROUPES_SECTEURS, NON_COUVERTS, SECTEURS } from "@/lib/secteurs";
 
 export const metadata: Metadata = {
-  title: "Sectors of intervention — WASH, health, nutrition, relief, DRR…",
-  description: "ADEB LONODJI’s twenty themes mapped to the sectors development and humanitarian partners use: IASC clusters, OECD-DAC purpose codes and SDGs, what is done and what is only an idea.",
+  title: "Sectors of intervention",
+  description: metaDescription("ADEB LONODJI’s twenty themes mapped to the sectors development and humanitarian partners use: IASC clusters, OECD-DAC purpose codes and SDGs, what is done and what is only an idea."),
   alternates: { canonical: "/en/sectors", languages: alternatesLangues("/en/sectors") },
   openGraph: { ...ogFor("/en/sectors", "en"), title: "Sectors of intervention — WASH, health, nutrition, relief, DRR…", description: "Twenty themes mapped to NGO sectors, clusters, DAC codes and SDGs." },
 };

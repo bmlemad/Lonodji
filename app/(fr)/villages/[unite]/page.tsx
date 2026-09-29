@@ -6,7 +6,7 @@ import { ogFor } from "@/lib/content";
 import { getVillages, GROUPES, km, nf, routeVillage, TYPES, villagesDe } from "@/lib/villages";
 import Partager from "@/components/partager";
 
-export const dynamicParams = false;
+export const dynamicParams = true; // adresse inconnue : notFound() dans la page (404 hydratée sans écart)
 
 export function generateStaticParams() {
   return Object.keys(getVillages().unites).map((unite) => ({ unite }));

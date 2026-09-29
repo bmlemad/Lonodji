@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { SectionHead } from "@/components/blocks";
@@ -10,7 +11,7 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Les six programmes du projet ODEB LONODJI",
-  description: "Mémoire et Patrimoine, Recherche, Développement territorial, Jeunesse et Innovation, Diaspora, Économie sociale et revenus : six programmes, leurs axes, les thématiques et coordonnateurs qui les portent.",
+  description: metaDescription("Mémoire et Patrimoine, Recherche, Développement territorial, Jeunesse et Innovation, Diaspora, Économie sociale et revenus : six programmes, leurs axes, les thématiques et coordonnateurs qui les portent."),
   alternates: { canonical: "/odeb/programmes" },
   openGraph: ogFor("/odeb/programmes"),
 };

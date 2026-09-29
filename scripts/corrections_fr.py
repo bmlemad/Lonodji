@@ -328,3 +328,9 @@ for _f, _paires in {
     "sitemap.html": [("Adhérer et cotiser", "Adhérer (déclaration d’intention)")],
 }.items():
     CORRECTIONS.setdefault(_f, []).extend(_paires)
+
+# Compteur d'abonnés : le tableau de bord publie les zéros tels quels ; plus de seuil annoncé ici.
+CORRECTIONS.setdefault("actualites.html", []).append((
+    "Le nombre d&rsquo;abonn&eacute;s s&rsquo;affichera ici &agrave; partir du dixi&egrave;me. Inscrivez-vous pour recevoir le prochain num&eacute;ro.",
+    "Le nombre d&rsquo;abonn&eacute;s est publi&eacute;, m&ecirc;me &agrave; z&eacute;ro, sur le <a href=\"suivi.html\">tableau de bord</a>. Inscrivez-vous pour recevoir le prochain num&eacute;ro.",
+))

@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -7,8 +8,8 @@ import { IDENTITE, ODEB } from "@/lib/odeb";
 import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
-  title: "Espace presse : l’association en bref, chiffres, logos, contacts",
-  description: "Pour les journalistes et les partenaires : ADEB LONODJI en cinq lignes, les chiffres datés, les dates, le bureau, les communiqués, les logos et visuels, le dossier de présentation, et à qui écrire.",
+  title: "Espace presse : l’association en bref",
+  description: metaDescription("Pour les journalistes et les partenaires : ADEB LONODJI en cinq lignes, les chiffres datés, les dates, le bureau, les communiqués, les logos et visuels, le dossier de présentation, et à qui écrire."),
   alternates: { canonical: "/presse" },
   openGraph: ogFor("/presse"),
 };

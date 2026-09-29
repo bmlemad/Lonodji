@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { LegacyDocument } from "@/components/legacy-content";
 import { getPage, hasPage, listDossierSlugs, metaDescription, ogFor } from "@/lib/content";
 
-export const dynamicParams = false;
+export const dynamicParams = true; // adresse inconnue : notFound() dans la page (404 hydratée sans écart)
 
 export function generateStaticParams() {
   return listDossierSlugs().map((slug) => ({ slug }));

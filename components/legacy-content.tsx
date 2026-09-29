@@ -4,7 +4,9 @@ import type { LegacyPage, Section } from "../lib/content";
 import LegacyEnhance from "./legacy-enhance";
 
 /** Rendu des sections importées de l'ancien site, dans le style du site moderne. */
-export function LegacySections({ sections, className = "" }: { sections: Section[]; className?: string }) {
+/* sansPremierTitre : quand la page pose déjà son propre titre de section (SectionHead) juste au-dessus,
+   le premier titre h2 de la section importée, qui le répète, est retiré (un seul titre par bloc). */
+export function LegacySections({ sections, className = "", sansPremierTitre = false }: { sections: Section[]; className?: string; sansPremierTitre?: boolean }) {
   return (
     <>
       {sections.map((s, i) => {
@@ -14,7 +16,7 @@ export function LegacySections({ sections, className = "" }: { sections: Section
             key={s.id || i}
             id={s.id || undefined}
             className={classes}
-            dangerouslySetInnerHTML={{ __html: s.html }}
+            dangerouslySetInnerHTML={{ __html: sansPremierTitre && i === 0 ? s.html.replace(/<h2\b[^>]*>[\s\S]*?<\/h2>/, "") : s.html }}
           />
         );
       })}

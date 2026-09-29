@@ -9,6 +9,91 @@ const nextConfig = {
     // Adresses de la première version du site (septembre 2026) : conservées pour les liens déjà partagés.
     return [
       {
+        // adresse devinée couramment (revue du 29/09/2026)
+        source: "/thematiques",
+        destination: "/programmes",
+        permanent: true,
+      },
+      {
+        // adresse devinée couramment (revue du 29/09/2026)
+        source: "/newsletter",
+        destination: "/lettre",
+        permanent: true,
+      },
+      {
+        // adresse devinée couramment (revue du 29/09/2026)
+        source: "/don",
+        destination: "/participer#soutenir",
+        permanent: true,
+      },
+      {
+        // adresse devinée couramment (revue du 29/09/2026)
+        source: "/dons",
+        destination: "/participer#soutenir",
+        permanent: true,
+      },
+      {
+        // adresse devinée couramment (revue du 29/09/2026)
+        source: "/partenaires",
+        destination: "/dossiers/ong-partenaires",
+        permanent: true,
+      },
+      {
+        // adresse devinée couramment (revue du 29/09/2026)
+        source: "/bailleurs",
+        destination: "/dossiers/ong-partenaires",
+        permanent: true,
+      },
+      {
+        // adresse devinée couramment (revue du 29/09/2026)
+        source: "/equipe",
+        destination: "/mission",
+        permanent: true,
+      },
+      {
+        // adresse devinée couramment (revue du 29/09/2026)
+        source: "/bureau",
+        destination: "/mission",
+        permanent: true,
+      },
+      {
+        // adresse devinée couramment (revue du 29/09/2026)
+        source: "/statuts",
+        destination: "/documents",
+        permanent: true,
+      },
+      {
+        // adresse devinée couramment (revue du 29/09/2026)
+        source: "/decisions",
+        destination: "/transparence/decisions",
+        permanent: true,
+      },
+      {
+        // adresse devinée couramment (revue du 29/09/2026)
+        source: "/secteurs-intervention",
+        destination: "/secteurs",
+        permanent: true,
+      },
+      {
+        // adresse devinée couramment (revue du 29/09/2026)
+        source: "/en/press",
+        destination: "/en/contact",
+        permanent: true,
+      },
+      {
+        // adresse devinée couramment (revue du 29/09/2026)
+        source: "/en/donate",
+        destination: "/en/contact",
+        permanent: true,
+      },
+      {
+        // adresse devinée couramment (revue du 29/09/2026)
+        source: "/en/sectors-of-intervention",
+        destination: "/en/sectors",
+        permanent: true,
+      },
+
+      {
             source: "/index.html",
             destination: "/",
             permanent: true

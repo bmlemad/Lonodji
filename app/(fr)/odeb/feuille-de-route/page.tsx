@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { SectionHead, Stats } from "@/components/blocks";
@@ -10,7 +11,7 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Feuille de route 2026-2030 du projet ODEB LONODJI",
-  description: "Trois phases, de la relance de 2026 à l’organisation de référence de 2030 : ce qui est réalisé, en cours, à venir ou à décider, chantier par chantier, avec l’état réel du site.",
+  description: metaDescription("Trois phases, de la relance de 2026 à l’organisation de référence de 2030 : ce qui est réalisé, en cours, à venir ou à décider, chantier par chantier, avec l’état réel du site."),
   alternates: { canonical: "/odeb/feuille-de-route" },
   openGraph: ogFor("/odeb/feuille-de-route"),
 };

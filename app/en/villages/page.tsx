@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -8,7 +9,7 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Find your village — the Bedjond country, unit by unit",
-  description: "Fourteen administrative units in and around Mandoul Occidental, 966 named localities, one page per village: what open data knows, what the site says, what is still to document.",
+  description: metaDescription("Fourteen administrative units in and around Mandoul Occidental, 966 named localities, one page per village: what open data knows, what the site says, what is still to document."),
   alternates: { canonical: "/en/villages", languages: alternatesLangues("/en/villages") },
   openGraph: { ...ogFor("/en/villages", "en"), title: "Find your village — the Bedjond country, unit by unit", description: "Fourteen units, 966 named localities, one page per village." },
 };

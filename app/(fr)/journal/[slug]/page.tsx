@@ -6,7 +6,7 @@ import { ArticleCard } from "@/components/blocks";
 import { LegacySections, Resume, splitTitle } from "@/components/legacy-content";
 import { getArticle, getIndex, listArticleSlugs, metaDescription, ogFor, ogImage, ORG } from "@/lib/content";
 
-export const dynamicParams = false;
+export const dynamicParams = true; // adresse inconnue : notFound() dans la page (404 hydratée sans écart)
 
 export function generateStaticParams() {
   return listArticleSlugs().map((slug) => ({ slug }));
@@ -17,7 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!listArticleSlugs().includes(slug)) return {};
   const a = getArticle(slug);
   return {
-    title: a.title,
+    // titre long : sans le suffixe du site, pour rester lisible dans les résultats de recherche
+    title: a.title.length > 55 ? { absolute: a.title } : a.title,
     description: metaDescription(a.description || a.summary),
     alternates: { canonical: `/journal/${slug}` },
     openGraph: { ...ogFor(`/journal/${slug}`), type: "article", title: a.title, description: metaDescription(a.description || a.summary), publishedTime: a.date, authors: [a.byline || ORG.name] },

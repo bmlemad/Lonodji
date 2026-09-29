@@ -69,7 +69,7 @@
    "lede": "Un formulaire simple pour dire, quartier par quartier et canton par canton, ce qui manque. Les signalements sont synthétisés, remis à la commune et joints à nos plaidoyers.",
    "description": "Signalez un besoin à Bédjondo ou dans les cantons du Mandoul Occidental : eau, électricité, réseau, santé, route, école.",
    "parent": "Nos actions",
-   "words": 1332,
+   "words": 1351,
    "hasMap": true
   },
   {
@@ -165,7 +165,7 @@
    "lede": "Une salle qui serait connectée par satellite, alimentée au solaire, ouverte aux élèves, aux enseignants, aux agents de santé, à la commune et aux porteurs de projets — financée par l’association et sa diaspora, gérée par un comité local.",
    "description": "Un projet d’espace numérique communautaire à Bédjondo, qui serait connecté par satellite et alimenté au solaire, financé avec la diaspora.",
    "parent": "Nos actions",
-   "words": 800,
+   "words": 812,
    "hasMap": false
   },
   {
@@ -201,7 +201,7 @@
    "lede": "Nous avions signalé ce trou deux fois sans savoir le combler. Voici la méthode : six questions qui ne disent jamais le mot, un inventaire d’obstacles plutôt qu’une liste de noms, huit textes tchadiens dont personne ne se sert — et les cinq défauts que nous avons corrigés sur ce site avant de publier cette page.",
    "description": "Le plan d’ADEB LONODJI pour les personnes en situation de handicap : compter sans humilier, et les droits tchadiens que personne n’utilise.",
    "parent": "Personnes vulnérables",
-   "words": 4125,
+   "words": 4137,
    "hasMap": false
   },
   {
@@ -237,7 +237,7 @@
    "lede": "Un mot oublié se retrouve dans un dictionnaire ; un bois coupé ne revient pas. Le droit tchadien prévoit une protection que presque personne n’utilise — et la première règle est de ne rien publier.",
    "description": "Le droit tchadien connaît la forêt sacrée, inviolable et inaliénable, et personne ne s’en sert. Comment protéger un lieu sans le mettre à nu.",
    "parent": "Bédjondo & héritage",
-   "words": 3917,
+   "words": 3925,
    "hasMap": false
   },
   {
@@ -309,7 +309,7 @@
    "lede": "Le handicap était « absent » de notre recensement ; les veuves l’étaient tout autant, de tout notre site. Voici la méthode : quatre questions de suivi là où une case est déjà cochée, un code civil de 1958 et une ordonnance de 2025 que presque personne ne connaît — et un débat national qui a nommé le problème sans le résoudre.",
    "description": "Le plan d’ADEB LONODJI pour les veuves : ce que l’état civil sait déjà, ce qu’il ne demande jamais, et les textes tchadiens que personne ne connaît encore.",
    "parent": "Personnes vulnérables",
-   "words": 2851,
+   "words": 2863,
    "hasMap": false
   },
   {
@@ -369,7 +369,7 @@
    "lede": "Ce que nous demandons à l’État, aux régulateurs, aux opérateurs et à la commune pour Bédjondo et le Mandoul Occidental — avec, pour chaque dossier, l’état d’avancement et la possibilité d’y joindre votre soutien.",
    "description": "Internet, électricité, commune : les plaidoyers d’ADEB LONODJI pour Bédjondo, leur suivi public, et comment les soutenir.",
    "parent": "Nos actions",
-   "words": 1951,
+   "words": 1974,
    "hasMap": false
   },
   {
@@ -393,7 +393,7 @@
    "lede": "Une question, une proposition, l’envie d’animer une thématique : c’est ici. Pour devenir membre, remplissez plutôt la déclaration d’intention d’adhésion , sans paiement.",
    "description": "Écrire à ADEB LONODJI ou rejoindre une thématique : formulaire en ligne, téléphone et WhatsApp du président. Pour adhérer, une déclaration d’intention sans paiement.",
    "parent": "Agir avec nous",
-   "words": 1078,
+   "words": 1098,
    "hasMap": false
   },
   {
@@ -405,7 +405,7 @@
    "lede": "L’association se dote de cartes d’adhérent et invite ses membres à cotiser. Voici ce que la carte donne et ce qu’elle n’achète pas, la grille proposée au vote, où va l’argent, et les règles qui protègent l’adhérent autant que le trésorier.",
    "description": "Carte d’adhérent au format bancaire, grille de cotisation proposée au vote, règle de caisse et registre protégé.",
    "parent": "Agir avec nous",
-   "words": 2389,
+   "words": 2397,
    "hasMap": false
   },
   {
@@ -429,7 +429,7 @@
    "lede": "Nous demandons aux institutions de publier leurs données, d’annoncer leurs décisions et de répondre à leurs courriers. Voici ce à quoi nous nous engageons de notre côté — et comment nous saisir si nous y manquons.",
    "description": "Nos engagements : réponse sous 48 heures, mécanisme de plainte ouvert et anonyme, protection des enfants et des témoins, usage des fonds, non-discrimination.",
    "parent": "L’association",
-   "words": 7331,
+   "words": 7340,
    "hasMap": false
   },
   {
@@ -453,7 +453,7 @@
    "lede": "Les femmes et les hommes qui ont marqué l’histoire du peuple bedjond et la création d’ADEB LONODJI. Cette page rassemble les figures déjà documentées ailleurs sur le site ; elle est appelée à s’enrichir, avec la rigueur pratiquée depuis l’origine sur les autres pages — ce que l’on sait, et ce qui reste à préciser.",
    "description": "Les figures qui ont marqué le peuple bedjond et la création d’ADEB LONODJI : piliers de l’association, chefs de canton, chercheurs.",
    "parent": "Bédjondo & héritage",
-   "words": 1305,
+   "words": 1317,
    "hasMap": false
   },
   {
@@ -477,7 +477,7 @@
    "lede": "Le journal des décisions, réunions et actions menées par ADEB LONODJI et ses pôles.",
    "description": "Le journal d’ADEB LONODJI : annonces de l’association, travaux sur le peuple bedjond, plaidoyers et comptes rendus de terrain au Mandoul Occidental.",
    "parent": "Accueil",
-   "words": 1741,
+   "words": 1754,
    "hasMap": false
   },
   {
@@ -537,7 +537,7 @@
    "lede": "Write to the association in English or French; we answer every message.",
    "description": "Contact ADEB LONODJI in English: partners, researchers, media and diaspora.",
    "parent": "Home",
-   "words": 225,
+   "words": 235,
    "hasMap": false
   },
   {

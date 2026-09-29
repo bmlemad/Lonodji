@@ -9,7 +9,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "ADEB LONODJI — Bédjondo",
     short_name: "LONODJI",
     description:
-      "Site de l’Association de Développement et d’Entraide de Bédjondo : mémoire, plaidoyers, entraide. Les pages déjà ouvertes restent lisibles sans connexion.",
+      "L’association de Bédjondo et de sa diaspora : villages, thématiques, plaidoyers, journal. Les pages déjà ouvertes restent lisibles sans connexion.",
     start_url: "/",
     scope: "/",
     display: "standalone",
@@ -32,6 +32,13 @@ export default function manifest(): MetadataRoute.Manifest {
       { name: "Adhérer à l’association", short_name: "Adhérer", url: "/participer#adherer", icons: [{ src: "/app/raccourci-adherer.png", sizes: "96x96", type: "image/png" }] },
       { name: "Rechercher sur le site", short_name: "Rechercher", url: "/recherche", icons: [{ src: "/app/raccourci-rechercher.png", sizes: "96x96", type: "image/png" }] },
     ],
-
+    // captures de la version actuelle (29 septembre 2026), montrées par le navigateur à l'installation
+    screenshots: [
+      { src: "/icones/capture-accueil.jpg", sizes: "1080x1920", type: "image/jpeg", form_factor: "narrow", label: "Accueil" },
+      { src: "/icones/capture-villages.jpg", sizes: "1080x1920", type: "image/jpeg", form_factor: "narrow", label: "Retrouver son village" },
+      { src: "/icones/capture-programmes.jpg", sizes: "1080x1920", type: "image/jpeg", form_factor: "narrow", label: "Quatre pôles, vingt thématiques" },
+      { src: "/icones/capture-carte.jpg", sizes: "1080x1920", type: "image/jpeg", form_factor: "narrow", label: "Carte du territoire" },
+      { src: "/icones/capture-ordinateur.jpg", sizes: "1280x800", type: "image/jpeg", form_factor: "wide", label: "Accueil sur ordinateur" },
+    ],
   };
 }

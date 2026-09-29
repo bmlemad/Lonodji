@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { notFound } from "next/navigation";
@@ -8,7 +9,7 @@ import Partager from "@/components/partager";
 import BoutonImprimer from "@/components/imprimer";
 import { qrSvg } from "@/lib/qr";
 
-export const dynamicParams = false;
+export const dynamicParams = true; // adresse inconnue : notFound() dans la page (404 hydratée sans écart)
 
 export function generateStaticParams() {
   return getVillages().villages.map((v) => ({ unite: v.unite, village: v.slug }));
@@ -25,8 +26,11 @@ export async function generateMetadata({ params }: { params: Promise<{ unite: st
   const u = getVillages().unites[unite];
   if (!v || !u) return {};
   const route = routeVillage(v);
-  const desc = description(v.nom, v.type, u.nom, v.kmBedjondo, v.equipements.length, v.mentions.length);
-  return { title: `${v.nom} (${u.nom})`, description: desc, alternates: { canonical: route }, openGraph: { ...ogFor(route), url: route, title: `${v.nom} — ${TYPES[v.type] || "Localité"} de ${u.nom}`, description: desc } };
+  const desc = metaDescription(description(v.nom, v.type, u.nom, v.kmBedjondo, v.equipements.length, v.mentions.length));
+  // homonymes dans la même unité (Kemdili, Kemdili 2…) : la distance à Bédjondo les distingue dans les résultats
+  const homonymes = getVillages().villages.filter((x) => x.unite === unite && x.nom === v.nom).length > 1;
+  const titre = homonymes ? `${v.nom} (${u.nom}, ${km(v.kmBedjondo)} de Bédjondo)` : `${v.nom} (${u.nom})`;
+  return { title: titre, description: desc, alternates: { canonical: route }, openGraph: { ...ogFor(route), url: route, title: `${v.nom} — ${TYPES[v.type] || "Localité"} de ${u.nom}`, description: desc } };
 }
 
 type Question = { titre: string; question: string; liens: { action: string; href: string }[] };

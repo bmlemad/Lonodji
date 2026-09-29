@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
@@ -6,8 +7,8 @@ import { ogFor } from "@/lib/content";
 import { DECISIONS, decisionsTriees, INSTANCE_PAR_DEFAUT, TYPES, type TypeDecision } from "@/lib/decisions";
 
 export const metadata: Metadata = {
-  title: "Registre public des décisions : décidé, nommé, annoncé, proposé",
-  description: "Ce que l’association a décidé, nommé, annoncé ou proposé depuis septembre 2026, tel que le site l’a publié, avec la source de chaque ligne et ce qui reste attendu. Les procès-verbaux ne sont pas encore publiés : le registre reprend ce qui a été rendu public.",
+  title: "Registre public des décisions",
+  description: metaDescription("Ce que l’association a décidé, nommé, annoncé ou proposé depuis septembre 2026, tel que le site l’a publié, avec la source de chaque ligne et ce qui reste attendu. Les procès-verbaux ne sont pas encore publiés : le registre reprend ce qui a été rendu public."),
   alternates: { canonical: "/transparence/decisions" },
   openGraph: { ...ogFor("/transparence/decisions"), title: "Registre public des décisions", description: "Décidé, nommé, annoncé, proposé : chaque ligne avec sa date, sa source et ce qui reste attendu." },
 };

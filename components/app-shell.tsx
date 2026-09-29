@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "@/components/lien";
-import { usePathname } from "next/navigation";
+import { useChemin } from "@/components/chemin";
 import { useEffect, useState } from "react";
 import { equivalent } from "@/lib/langues";
 
@@ -52,50 +52,11 @@ function ongletActif(pathname: string) {
 /* Lien vers la même page dans l'autre langue (pied de page) : page équivalente
    si elle existe (lib/langues.ts), accueil de l'autre langue sinon. */
 export function LienLangue({ className }: { className?: string } = {}) {
-  const pathname = usePathname() || "/";
+  const pathname = useChemin() || "/";
   const eq = equivalent(pathname);
   return eq.lang === "fr"
     ? <Link className={className} href={eq.href} lang="fr" hrefLang="fr">Français</Link>
     : <Link className={className} href={eq.href} lang="en" hrefLang="en">English</Link>;
-}
-
-/* Lettre d'information, version anglaise du formulaire du pied de page (même
-   formulaire Netlify « lettre-info-pied », mêmes champs). */
-export function LettreEn({ id = "footer-nl-email" }: { id?: string } = {}) {
-  const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
-  return state === "done" ? (
-    <p className="footer-consent" role="status">Thank you! Your address is registered for the newsletter.</p>
-  ) : (
-    <form
-      name="lettre-info-pied"
-      method="POST"
-      action="/__forms.html"
-      aria-label="Newsletter"
-      onSubmit={async (e) => {
-        e.preventDefault();
-        const form = e.currentTarget;
-        setState("sending");
-        try {
-          const body = new URLSearchParams(new FormData(form) as unknown as Record<string, string>);
-          const res = await fetch("/__forms.html", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
-          if (!res.ok) throw new Error(String(res.status));
-          setState("done");
-        } catch {
-          setState("error");
-        }
-      }}
-    >
-      <input type="hidden" name="form-name" value="lettre-info-pied" />
-      <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
-      <label className="sr-only" htmlFor={id}>E-mail address</label>
-      <div className="footer-nl">
-        <input id={id} type="email" name="email" required autoComplete="email" placeholder="you@example.com" />
-        <button type="submit" disabled={state === "sending"}>{state === "sending" ? "…" : "Subscribe"}</button>
-      </div>
-      <label className="footer-consent"><input type="checkbox" name="consentement" value="oui" required /> I agree that my address is kept for the newsletter, with our host in the United States. <a href="/mentions-legales#donnees" lang="fr" hrefLang="fr">Data and rights (in French)</a></label>
-      {state === "error" ? <p className="footer-consent" role="alert">Sending failed; please try again in a moment.</p> : null}
-    </form>
-  );
 }
 
 function estAppli(): boolean {
@@ -110,7 +71,7 @@ function estAppli(): boolean {
 }
 
 export default function AppShell({ lang = "fr" }: { lang?: "fr" | "en" } = {}) {
-  const pathname = usePathname();
+  const pathname = useChemin();
   const [appli, setAppli] = useState(false);
   const [menuOuvert, setMenuOuvert] = useState(false);
 

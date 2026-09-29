@@ -39,16 +39,15 @@ export default function Participer() {
         <a className="button secondary" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp <span aria-hidden="true">↗</span></a>
       </div>
 
-      <section id="contact" aria-labelledby="contact-titre">
+      <section id="contact" aria-label="Nous écrire">
         <div className="legacy">
-          <h2 id="contact-titre" className="sr-only">Nous écrire</h2>
           <LegacySections sections={[ecrire]} />
         </div>
       </section>
 
       <section className="hub-section" id="thematiques">
         <SectionHead eyebrow="Avant de vous lancer" title="Choisissez un pôle," em="puis une thématique." text={`Vingt thématiques, ${enLettres(vacantes)} sans coordonnateur ; et les quatre pôles cherchent leur directeur ou directrice, au rang de chef de projet. La page Nos actions les détaille ; ce raccourci vous oriente en quelques questions.`} />
-        <div className="legacy"><LegacySections sections={[choisir, avant]} /></div>
+        <div className="legacy"><LegacySections sections={[choisir, avant]} sansPremierTitre /></div>
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
           <Link className="button primary" href="/dossiers/trouver-ma-thematique">Trouver ma thématique en trois questions <span aria-hidden="true">→</span></Link>
           <Link className="button secondary" href="/programmes#thematiques">Voir les vingt thématiques <span aria-hidden="true">→</span></Link>
@@ -60,7 +59,7 @@ export default function Participer() {
       </section>
 
       <section className="hub-section" id="adherer">
-        <SectionHead eyebrow="Adhésion" title="Adhérer" em="et cotiser." text={adherer.lede} />
+        <SectionHead eyebrow="Adhésion" title="Adhérer" em="à l’association." text={adherer.lede} />
         <div className="notice"><strong>Collecte suspendue depuis le 23 septembre 2026.</strong> Aucune cotisation ni don n’est encaissé, en espèces comme par Mobile Money, tant que trois conditions ne sont pas réunies : l’autorisation de l’association, le vote de la grille de cotisation par l’assemblée générale et un compte bancaire à double signature au nom de l’association. Les intentions d’adhésion, elles, restent ouvertes : elles n’engagent aucun argent.</div>
         <div className="legacy">
           <Resume items={adherer.resume} />
@@ -70,17 +69,17 @@ export default function Participer() {
 
       <section className="hub-section" id="soutenir">
         <SectionHead eyebrow="Nous soutenir" title="Cinq façons" em="d’agir avec nous." text={soutenir.lede} />
-        <div className="legacy"><LegacySections sections={soutenir.sections} /></div>
+        <div className="legacy"><LegacySections sections={soutenir.sections} sansPremierTitre /></div>
       </section>
 
       <section className="hub-section" id="proposer">
         <SectionHead eyebrow="Le journal" title="Proposer" em="un article." text="Toute personne peut proposer un article : il est relu, sourcé et publié sous le nom de son auteur." />
-        <div className="legacy"><LegacySections sections={[proposer]} /></div>
+        <div className="legacy"><LegacySections sections={[proposer]} sansPremierTitre /></div>
       </section>
 
       <section className="hub-section" id="newsletter">
         <SectionHead eyebrow="Lettre d’information" title="Recevoir" em="les actualités." />
-        <div className="legacy"><LegacySections sections={[newsletter]} /></div>
+        <div className="legacy"><LegacySections sections={[newsletter]} sansPremierTitre /></div>
       </section>
 
       <ContactPrefill />

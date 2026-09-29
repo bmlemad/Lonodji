@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -7,8 +8,8 @@ import { getProjets, STADES_ACTIFS, stadeIndex } from "@/lib/projets";
 import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
-  title: "Projects — each one with its stage, what is missing and how to help",
-  description: "The association’s projects, from idea to service: community digital space, mobile app, sports complex, transport company, hotel, boarding school, university hospital. Stage, what exists, what is missing, how to contribute.",
+  title: "Projects: stage, gaps and how to help",
+  description: metaDescription("The association’s projects, from idea to service: community digital space, mobile app, sports complex, transport company, hotel, boarding school, university hospital. Stage, what exists, what is missing, how to contribute."),
   alternates: { canonical: "/en/projects", languages: alternatesLangues("/en/projects") },
   openGraph: { ...ogFor("/en/projects", "en"), title: "Projects — each one with its stage, what is missing and how to help", description: "From idea to service: what exists, what is missing, how to contribute. No money is collected before the association has a bank account." },
 };

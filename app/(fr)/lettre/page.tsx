@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
@@ -7,8 +8,8 @@ import { ogFor } from "@/lib/content";
 import { getLettres } from "@/lib/lettres";
 
 export const metadata: Metadata = {
-  title: "La lettre d’information : chaque mois, ce qui a été publié, décidé, ouvert",
-  description: "Les numéros de la lettre d’ADEB LONODJI, à lire en ligne ou à transmettre en PDF par WhatsApp ; l’abonnement par e-mail ; la règle : rien que ce qui a été publié, décidé ou ouvert, et quand il n’y a rien à dire, on le dit.",
+  title: "La lettre d’information",
+  description: metaDescription("Les numéros de la lettre d’ADEB LONODJI, à lire en ligne ou à transmettre en PDF par WhatsApp ; l’abonnement par e-mail ; la règle : rien que ce qui a été publié, décidé ou ouvert, et quand il n’y a rien à dire, on le dit."),
   alternates: { canonical: "/lettre" },
   openGraph: { ...ogFor("/lettre"), title: "La lettre d’information d’ADEB LONODJI", description: "Chaque mois : publié, décidé, ouvert. En ligne, ou en PDF à transmettre." },
 };

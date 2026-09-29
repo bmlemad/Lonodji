@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
@@ -6,8 +7,8 @@ import { ogFor } from "@/lib/content";
 import { getMissions } from "@/lib/missions";
 
 export const metadata: Metadata = {
-  title: "Fiches de mission : diriger un pôle, coordonner une thématique",
-  description: "Vingt-six fiches de mission en PDF — quatre directions de pôle au rang de chef de projet, vingt coordinations de thématique, deux cellules transversales — avec ce que la personne fait, le périmètre, les quatre étapes et le lien pour candidater.",
+  title: "Fiches de mission des pôles et thématiques",
+  description: metaDescription("Vingt-six fiches de mission en PDF — quatre directions de pôle au rang de chef de projet, vingt coordinations de thématique, deux cellules transversales — avec ce que la personne fait, le périmètre, les quatre étapes et le lien pour candidater."),
   alternates: { canonical: "/programmes/fiches-de-mission" },
   openGraph: { ...ogFor("/programmes/fiches-de-mission"), title: "Fiches de mission : diriger un pôle, coordonner une thématique", description: "Vingt-six fiches en PDF : ce que la personne fait, le périmètre, les quatre étapes, le lien pour candidater." },
 };

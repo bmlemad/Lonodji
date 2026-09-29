@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
@@ -8,8 +9,8 @@ import { thematiquesParId } from "@/lib/odeb-chiffres";
 import { ETATS_SECTEUR, GROUPES_SECTEURS, NON_COUVERTS, SECTEURS } from "@/lib/secteurs";
 
 export const metadata: Metadata = {
-  title: "Secteurs d’intervention : WASH, santé, nutrition, urgences… et nos vingt thématiques",
-  description: "Les vingt thématiques de l’association lues dans la langue des ONG de développement et d’aide : dix-sept secteurs (WASH, santé, nutrition, éducation, sécurité alimentaire, relief, réduction des risques, protection…), leurs clusters, codes CAD et ODD, ce qui est publié et ce qui n’est qu’une piste.",
+  title: "Secteurs d’intervention et thématiques",
+  description: metaDescription("Les vingt thématiques de l’association lues dans la langue des ONG de développement et d’aide : dix-sept secteurs (WASH, santé, nutrition, éducation, sécurité alimentaire, relief, réduction des risques, protection…), leurs clusters, codes CAD et ODD, ce qui est publié et ce qui n’est qu’une piste."),
   alternates: { canonical: "/secteurs", languages: alternatesLangues("/secteurs") },
   openGraph: { ...ogFor("/secteurs"), title: "Secteurs d’intervention : WASH, santé, nutrition, urgences…", description: "Dix-sept secteurs des ONG, nos vingt thématiques, ce qui est publié et ce qui n’est qu’une piste." },
 };

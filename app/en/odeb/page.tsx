@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { SectionHead, Stats } from "@/components/blocks";
@@ -10,7 +11,7 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "The ODEB LONODJI project — Vision 2030",
-  description: "ODEB LONODJI, the Organisation for the Development and Emergence of the Bedjond people: a project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030. Six missions, six programmes, a roadmap, a white paper.",
+  description: metaDescription("ODEB LONODJI, the Organisation for the Development and Emergence of the Bedjond people: a project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030. Six missions, six programmes, a roadmap, a white paper."),
   alternates: { canonical: "/en/odeb", languages: alternatesLangues("/en/odeb") },
   openGraph: { ...ogFor("/en/odeb", "en"), title: "The ODEB LONODJI project — Vision 2030", description: "A project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030: six missions, six programmes, a roadmap, a white paper." },
 };

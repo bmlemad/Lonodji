@@ -1417,3 +1417,7 @@ main :where(ul, ol):not([class]):not(nav *) > li, main .plea-next > li, main .od
 /* Pictogrammes des équipements (carte, légende, listes) */
 .ct-eq span, .ct-legende-eq, .ct-liste i{ display:inline-grid; place-items:center; }
 .ct-picto, .ct-picto svg, .ct-eq svg{ display:block; }
+
+/* Champs obligatoires : un astérisque sobre, expliqué en tête de formulaire */
+.requis{ color:#8a3b12; font-weight:700; }
+.form-requis{ font-size:13px; color:#4f5e57; margin:0 0 14px; }

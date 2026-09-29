@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { OdebHero } from "@/components/odeb-marque";
@@ -9,7 +10,7 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Livre blanc du projet ODEB LONODJI (version de travail)",
-  description: "Le document fondateur de l’ODEB LONODJI : d’où nous partons, pourquoi une organisation, la vision 2030, six missions, six programmes, principes, ressources et feuille de route.",
+  description: metaDescription("Le document fondateur de l’ODEB LONODJI : d’où nous partons, pourquoi une organisation, la vision 2030, six missions, six programmes, principes, ressources et feuille de route."),
   alternates: { canonical: "/odeb/livre-blanc" },
   openGraph: ogFor("/odeb/livre-blanc"),
 };

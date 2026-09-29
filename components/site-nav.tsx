@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "@/components/lien";
-import { usePathname } from "next/navigation";
+import { useChemin } from "@/components/chemin";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { entreeCourante, NAVIGATION, type NavChiffres, type NavEntree } from "../lib/navigation";
 import { IDENTITE } from "../lib/odeb";
@@ -32,7 +32,7 @@ const NAV_EN: { label: string; href: string; mobile?: boolean }[] = [
 const Fleche = () => <svg className="nav-chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>;
 
 export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephone, telephoneHref, devise }: Props) {
-  const pathname = usePathname();
+  const pathname = useChemin();
   const courante = entreeCourante(pathname);
   const [ouvert, setOuvert] = useState<string | null>(null);   // panneau ouvert (ordinateur)
   const [menu, setMenu] = useState(false);                     // menu plein écran (tablette, mobile)

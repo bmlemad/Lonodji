@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { SectionHead } from "@/components/blocks";
@@ -8,8 +9,8 @@ import { IDENTITE, ODEB } from "@/lib/odeb";
 import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
-  title: "Identité visuelle : le logo « Les Pas vers l’Avenir », adopté le 28 septembre 2026",
-  description: "Trois empreintes — les ancêtres, la génération actuelle, les générations futures — qui avancent vers un soleil levant : le logo d’ADEB LONODJI et de son projet ODEB LONODJI, ses versions, ses couleurs, ses règles d’usage, le kit à télécharger et les papiers à en-tête.",
+  title: "Identité visuelle « Les Pas vers l’Avenir »",
+  description: metaDescription("Trois empreintes — les ancêtres, la génération actuelle, les générations futures — qui avancent vers un soleil levant : le logo d’ADEB LONODJI et de son projet ODEB LONODJI, ses versions, ses couleurs, ses règles d’usage, le kit à télécharger et les papiers à en-tête."),
   alternates: { canonical: "/odeb/identite" },
   openGraph: ogFor("/odeb/identite"),
 };

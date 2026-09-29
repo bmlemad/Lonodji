@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -8,8 +9,8 @@ import { GROUPES, km } from "@/lib/villages";
 import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
-  title: "Observatoire du Mandoul Occidental : le territoire, unité par unité",
-  description: "Localités, équipements connus, couverture, diagnostic par domaine, plaidoyers et besoins signalés : les chiffres du pays bedjond par unité, datés et sourcés, et ce que l’observatoire ne sait pas encore.",
+  title: "Observatoire du Mandoul Occidental",
+  description: metaDescription("Localités, équipements connus, couverture, diagnostic par domaine, plaidoyers et besoins signalés : les chiffres du pays bedjond par unité, datés et sourcés, et ce que l’observatoire ne sait pas encore."),
   alternates: { canonical: "/observatoire" },
   openGraph: ogFor("/observatoire"),
 };

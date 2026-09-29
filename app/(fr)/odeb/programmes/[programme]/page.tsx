@@ -9,7 +9,7 @@ import { metaDescription, ogFor } from "@/lib/content";
 import { enLettresMaj, MISSIONS, ODEB, programme, PROGRAMMES, routeProgramme } from "@/lib/odeb";
 import { thematiquesParId } from "@/lib/odeb-chiffres";
 
-export const dynamicParams = false;
+export const dynamicParams = true; // adresse inconnue : notFound() dans la page (404 hydratée sans écart)
 
 export function generateStaticParams() {
   return PROGRAMMES.map((p) => ({ programme: p.slug }));
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ programme
   if (!p) return {};
   const route = routeProgramme(p);
   return {
-    title: `Programme ${p.nom} — projet ODEB LONODJI`,
+    title: `Programme ${p.nom} — ODEB`,
     description: metaDescription(`${p.axes.map((a) => a.titre).join(", ")} : ${p.accroche}`),
     alternates: { canonical: route },
     openGraph: ogFor(route),

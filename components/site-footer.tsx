@@ -2,7 +2,7 @@ import Link from "@/components/lien";
 import { IDENTITE } from "../lib/odeb";
 import { ORG } from "../lib/content";
 import { PIED } from "../lib/navigation";
-import { LettreEn, LienLangue } from "./app-shell";
+import { LienLangue } from "./app-shell";
 import NewsletterForm from "./newsletter-form";
 
 type Colonne = { titre: string; liens: { label: string; href: string; fr?: boolean }[] };
@@ -83,7 +83,7 @@ export default function SiteFooter({ miseAJour, lang = "fr" }: { miseAJour?: str
         <div className="footer-news">
           <p className="footer-title">{en ? "Newsletter — Subscribe" : "Lettre d’information"}</p>
           <p>{en ? "News from the association (in French), no advertising, unsubscribe at any time." : "Les nouvelles de l’association, sans publicité, désinscription à tout moment."}</p>
-          {en ? <LettreEn /> : <NewsletterForm />}
+          <NewsletterForm lang={en ? "en" : "fr"} />
         </div>
       </div>
       <div className="footer-cols footer-cols--5">

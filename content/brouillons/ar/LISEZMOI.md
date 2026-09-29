@@ -1,6 +1,6 @@
 # Version arabe : accueil et contact — brouillons, non publiés
 
-Deux pages traduites depuis la version anglaise du 28 septembre 2026 (`content/pages/en--index.json`, `en--contact.json`), en arabe standard moderne, **à relire par un locuteur natif avant toute publication**. Elles ne sont pas dans le build : rien de ce dossier n'est lu par le site.
+Deux pages traduites depuis la version anglaise du 28 septembre 2026, recalées le 29 septembre sur les faits corrigés (vingt thématiques dont quinze pourvues, noms actuels des thématiques, nom de domaine en service) (`content/pages/en--index.json`, `en--contact.json`), en arabe standard moderne, **à relire par un locuteur natif avant toute publication**. Elles ne sont pas dans le build : rien de ce dossier n'est lu par le site.
 
 - `index.md` — l'accueil (« Building Bédjondo's heritage together »)
 - `contact.md` — le contact (« Get in touch »), avec les libellés du formulaire

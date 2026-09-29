@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/content";
 import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
@@ -11,7 +12,7 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Projet ODEB LONODJI — Vision 2030",
-  description: "L’ODEB LONODJI, Organisation pour le Développement et l’Émergence Bedjonde : un projet porté par ADEB LONODJI pour doter le pays bedjond d’un outil permanent, à l’horizon 2030.",
+  description: metaDescription("L’ODEB LONODJI, Organisation pour le Développement et l’Émergence Bedjonde : un projet porté par ADEB LONODJI pour doter le pays bedjond d’un outil permanent, à l’horizon 2030."),
   alternates: { canonical: "/odeb", languages: alternatesLangues("/odeb") },
   openGraph: ogFor("/odeb"),
 };

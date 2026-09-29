@@ -2,16 +2,25 @@
 
 import { useState } from "react";
 
-export default function NewsletterForm({ id = "footer-nl-email", label = "Lettre d’information" }: { id?: string; label?: string } = {}) {
+const T = {
+  fr: { merci: "Merci ! Votre adresse est enregistrée pour la lettre d’information.", label: "Lettre d’information", email: "Adresse e-mail", placeholder: "votre@e-mail.com", envoyer: "S’abonner",
+    accord: "J’accepte que mon adresse soit conservée pour la lettre, chez notre hébergeur aux États-Unis.", droits: "Données et droits", erreur: "L’envoi n’a pas abouti ; réessayez dans un instant." },
+  en: { merci: "Thank you! Your address is registered for the newsletter.", label: "Newsletter", email: "E-mail address", placeholder: "you@example.com", envoyer: "Subscribe",
+    accord: "I agree that my address is kept for the newsletter, with our host in the United States.", droits: "Data and rights (in French)", erreur: "Sending failed; please try again in a moment." },
+};
+
+/* Formulaire d'abonnement du pied de page (Netlify « lettre-info-pied »), en français ou en anglais : mêmes champs. */
+export default function NewsletterForm({ id = "footer-nl-email", label, lang = "fr" }: { id?: string; label?: string; lang?: "fr" | "en" } = {}) {
+  const t = T[lang];
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
   return state === "done" ? (
-    <p className="footer-consent" role="status">Merci ! Votre adresse est enregistrée pour la lettre d’information.</p>
+    <p className="footer-consent" role="status">{t.merci}</p>
   ) : (
     <form
       name="lettre-info-pied"
       method="POST"
       action="/__forms.html"
-      aria-label={label}
+      aria-label={label ?? t.label}
       onSubmit={async (e) => {
         e.preventDefault();
         const form = e.currentTarget;
@@ -28,13 +37,13 @@ export default function NewsletterForm({ id = "footer-nl-email", label = "Lettre
     >
       <input type="hidden" name="form-name" value="lettre-info-pied" />
       <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
-      <label className="sr-only" htmlFor={id}>Adresse e-mail</label>
+      <label className="sr-only" htmlFor={id}>{t.email}</label>
       <div className="footer-nl">
-        <input id={id} type="email" name="email" required autoComplete="email" placeholder="votre@e-mail.com" />
-        <button type="submit" disabled={state === "sending"}>{state === "sending" ? "…" : "S’abonner"}</button>
+        <input id={id} type="email" name="email" required autoComplete="email" placeholder={t.placeholder} />
+        <button type="submit" disabled={state === "sending"}>{state === "sending" ? "…" : t.envoyer}</button>
       </div>
-      <label className="footer-consent"><input type="checkbox" name="consentement" value="oui" required /> J’accepte que mon adresse soit conservée pour la lettre, chez notre hébergeur aux États-Unis. <a href="/mentions-legales#donnees">Données et droits</a></label>
-      {state === "error" ? <p className="footer-consent" role="alert">L’envoi n’a pas abouti ; réessayez dans un instant.</p> : null}
+      <label className="footer-consent"><input type="checkbox" name="consentement" value="oui" required /> {t.accord} <a href="/mentions-legales#donnees" hrefLang="fr">{t.droits}</a></label>
+      {state === "error" ? <p className="footer-consent" role="alert">{t.erreur}</p> : null}
     </form>
   );
 }
