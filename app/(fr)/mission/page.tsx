@@ -13,11 +13,6 @@ export const metadata: Metadata = {
   openGraph: ogFor("/mission"),
 };
 
-const values = [
-  ["Courage", "Oser agir, prendre des responsabilités et avancer avec détermination, y compris quand il faut dire ce qui manque."],
-  ["Discipline", "Transformer les intentions en actions concrètes, régulières et durables : une thématique, un coordonnateur, un compte rendu."],
-  ["Héritage", "Transmettre la langue, l’histoire et les valeurs du peuple bedjond, et laisser à Bédjondo plus que ce que nous avons trouvé."],
-];
 
 export default function Mission() {
   const idx = getIndex();
@@ -35,11 +30,6 @@ export default function Mission() {
         lead={page.lede || "Reconnue en 1995 après dix ans de réflexion, remise en mouvement en 2026, ADEB LONODJI agit pour tous les habitants de Bédjondo — eau, santé, école, routes — et garde au cœur de son objet la sauvegarde de la langue, de l’histoire et du patrimoine bedjond."}
         pills={["Reconnue en 1995 · autorisation actuelle en vérification", "Réactivée en 2026", "4 pôles · 20 thématiques"]}
       />
-      <div className="detail-grid">
-        {values.map(([title, text], i) => (
-          <article key={title}><span>0{i + 1}</span><h2>{title}</h2><p>{text}</p></article>
-        ))}
-      </div>
 
       <section className="hub-section" id="reperes">
         <SectionHead eyebrow="Repères historiques" title="Quarante ans," em="de 1986 à 2026." text="Les dates ci-dessous sont celles que l’association confirme. Quand une date reste incertaine, nous le disons dans le journal des corrections plutôt que de l’affirmer." />

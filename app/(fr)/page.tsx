@@ -11,10 +11,10 @@ import { IDENTITE, ODEB, PROGRAMMES, routeProgramme } from "@/lib/odeb";
 export const metadata: Metadata = { alternates: { canonical: "/", languages: alternatesLangues("/") } };
 
 const values = [
-  ["01", "Courage", "Oser agir, prendre des responsabilités et avancer avec détermination, y compris quand il faut dire ce qui manque."],
-  ["02", "Discipline", "Transformer les intentions en actions concrètes, régulières et durables : une thématique, un coordonnateur, un compte rendu."],
-  ["03", "Héritage", "Transmettre la langue, l’histoire et les valeurs du peuple bedjond aux générations qui viennent."],
-];
+  ["01", "Courage", "Affronter les défis de la communauté sans attendre qu’une solution vienne d’ailleurs ; agir en premier, avec responsabilité."],
+  ["02", "Discipline", "Tenir les engagements pris envers l’association, respecter l’organisation en pôles et rendre compte des actions menées."],
+  ["03", "Héritage", "Préserver et transmettre ce que la communauté bedjond a construit, pour que les générations futures en héritent renforcé."],
+]
 
 const participer = (vacantes: number) => [
   ["01", "Rejoindre ou coordonner une thématique", `${enLettres(vacantes, true)} thématiques cherchent leur coordonnateur. Une compétence ponctuelle suffit souvent à faire avancer un dossier déjà prêt.`, "/participer?coordo=1#contact"],

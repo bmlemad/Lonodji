@@ -32,7 +32,7 @@ const PIED_EN: Colonne[] = [
     { label: "Projects", href: "/en/projects" }, { label: "Documents", href: "/documents", fr: true },
   ] },
   { titre: "Territory & heritage", liens: [
-    { label: "Villages", href: "/en/villages" }, { label: "Bédjondo", href: "/en/bedjondo" }, { label: "Map of the territory", href: "/carte", fr: true }, { label: "Digital library", href: "/bibliotheque", fr: true },
+    { label: "Villages", href: "/en/villages" }, { label: "Map of the territory", href: "/carte", fr: true }, { label: "Digital library", href: "/bibliotheque", fr: true },
   ] },
   { titre: "Get involved", liens: [
     { label: "Write to us", href: "/en/contact" }, { label: "Join (declaration of intent)", href: "/participer#adherer", fr: true }, { label: "Register your skills", href: "/diaspora", fr: true },

@@ -8,6 +8,18 @@ const nextConfig = {
   async redirects() {
     // Adresses de la première version du site (septembre 2026) : conservées pour les liens déjà partagés.
     return [
+      // doublons : pages de la première version servies aussi sous /dossiers/ (audit des doublons du 29/09/2026)
+      { source: "/dossiers/mission", destination: "/mission", permanent: true },
+      { source: "/dossiers/poles", destination: "/programmes", permanent: true },
+      { source: "/dossiers/plaidoyers", destination: "/actions", permanent: true },
+      { source: "/dossiers/suivi", destination: "/impact", permanent: true },
+      { source: "/dossiers/redevabilite", destination: "/transparence", permanent: true },
+      { source: "/dossiers/documents", destination: "/documents", permanent: true },
+      { source: "/dossiers/soutenir", destination: "/participer#soutenir", permanent: true },
+      { source: "/dossiers/adherer", destination: "/participer#adherer", permanent: true },
+      { source: "/dossiers/contact", destination: "/participer#contact", permanent: true },
+      { source: "/dossiers/actualites", destination: "/journal", permanent: true },
+      { source: "/dossiers/figures", destination: "/histoire#figures", permanent: true },
       {
         // adresse devinée couramment (revue du 29/09/2026)
         source: "/thematiques",

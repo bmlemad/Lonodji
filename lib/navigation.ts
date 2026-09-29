@@ -17,7 +17,6 @@ export const NAVIGATION: NavEntree[] = [
       { titre: "Qui nous sommes", liens: [
         { label: "Notre mission", href: "/mission", note: "Objet, valeurs, bureau exécutif" },
         { label: "Histoire & patrimoine", href: "/histoire", note: "De 1986 à la relance de 2026, grandes figures" },
-        { label: "La lettre d’information", href: "/lettre", note: "Chaque mois : publié, décidé, ouvert ; PDF à transmettre" },
       ] },
       { titre: "Rendre des comptes", liens: [
         { label: "Redevabilité & transparence", href: "/transparence", note: "Réponse sous 48 h, plainte, protection" },
@@ -50,7 +49,6 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Tableau de bord d’impact", href: "/impact", note: "Six indicateurs datés et sourcés" },
         { label: "Plateforme de projets", href: "/projets", note: "Chaque projet, son stade, ce qui manque" },
         { label: "Diagnostic territorial", href: "/dossiers/problematiques", note: "Eau, santé, école, routes, réseau" },
-        { label: "Carte des besoins", href: "/dossiers/besoins", note: "Signaler, localité par localité" },
         { label: "Enquêtes de terrain", href: "/dossiers/enquetes", note: "Huit inconnues, huit enquêtes" },
       ] },
       { titre: "Outils", liens: [
@@ -139,7 +137,7 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
   ] },
   { titre: "Nos actions", liens: [
     { label: "Quatre pôles, vingt thématiques", href: "/programmes" }, { label: "Secteurs d’intervention", href: "/secteurs" }, { label: "Programmes des bailleurs", href: "/bailleurs" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }, { label: "Plaidoyers & engagements", href: "/actions" }, { label: "Tableau de bord d’impact", href: "/impact" },
-    { label: "Plateforme de projets", href: "/projets" }, { label: "Diagnostic territorial", href: "/dossiers/problematiques" }, { label: "Carte des besoins", href: "/dossiers/besoins" }, { label: "Tous les dossiers", href: "/dossiers" }, { label: "Quelle thématique pour vous ?", href: "/dossiers/trouver-ma-thematique" },
+    { label: "Plateforme de projets", href: "/projets" }, { label: "Diagnostic territorial", href: "/dossiers/problematiques" }, { label: "Tous les dossiers", href: "/dossiers" }, { label: "Quelle thématique pour vous ?", href: "/dossiers/trouver-ma-thematique" },
   ] },
   { titre: "Territoire & patrimoine", liens: [
     { label: "Carte du territoire", href: "/carte" }, { label: "Les villages", href: "/villages" }, { label: "Observatoire", href: "/observatoire" }, { label: "Bédjondo", href: "/dossiers/bedjondo" },
