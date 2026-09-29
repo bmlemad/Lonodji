@@ -8,6 +8,7 @@ import OdebNav, { OdebEtat } from "@/components/odeb-nav";
 import { metaDescription, ogFor } from "@/lib/content";
 import { enLettresMaj, MISSIONS, ODEB, programme, PROGRAMMES, routeProgramme } from "@/lib/odeb";
 import { thematiquesParId } from "@/lib/odeb-chiffres";
+import { PORTEES, programmesUtilesDes, STATUTS } from "@/lib/bailleurs";
 
 export const dynamicParams = true; // adresse inconnue : notFound() dans la page (404 hydratée sans écart)
 
@@ -32,6 +33,7 @@ export default async function ProgrammePage({ params }: { params: Promise<{ prog
   if (!p) notFound();
   const th = thematiquesParId();
   const ths = p.thematiques.map((id) => th[id]).filter(Boolean);
+  const partenaires = programmesUtilesDes(p.thematiques);
   const i = PROGRAMMES.indexOf(p);
   const prec = PROGRAMMES[(i + PROGRAMMES.length - 1) % PROGRAMMES.length];
   const suiv = PROGRAMMES[(i + 1) % PROGRAMMES.length];
@@ -128,6 +130,22 @@ export default async function ProgrammePage({ params }: { params: Promise<{ prog
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className="hub-section" id="partenaires">
+        <SectionHead eyebrow="Programmes des bailleurs" title="Qui finance déjà" em="ce que ce programme vise." text={partenaires.length ? `${partenaires.length} programme${partenaires.length > 1 ? "s" : ""} en cours ou en préparation au Tchad touche${partenaires.length > 1 ? "nt" : ""} les thématiques de ce programme, du plus proche de Bédjondo au plus lointain. Aucun ne finance l’association : ce sont des portes à pousser, avec une demande écrite ou une liste de localités à rejoindre.` : "Aucun programme de bailleur relevé ne finance aujourd’hui les thématiques de ce programme : il repose sur les membres, la diaspora et, plus tard, les guichets ouverts aux associations."} />
+        {partenaires.length ? (
+          <ul className="od-partenaires">
+            {partenaires.map((b) => (
+              <li key={b.id}>
+                <span className={`bl-portee bl-portee--${b.portee}`}>{PORTEES[b.portee]}</span>
+                <Link href={`/bailleurs#${b.id}`}><strong>{b.nom.split(" — ")[0]}</strong></Link>
+                <small>{b.bailleur.split(" — ")[0]}{b.statut !== "actif" ? ` · ${STATUTS[b.statut].toLowerCase()}` : ""}</small>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        <p className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="text-link" href="/bailleurs#guichets">Les guichets ouverts à l’association <span aria-hidden="true">→</span></Link></p>
       </section>
 
       <section className="hub-section" id="contribuer">

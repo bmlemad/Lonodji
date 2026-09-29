@@ -6,6 +6,9 @@ import { LegacySections } from "@/components/legacy-content";
 import LegacyEnhance from "@/components/legacy-enhance";
 import { directionsCount, enLettres, filledCount, getIndex, getPage, ogFor, pickSections, thematiqueCount } from "@/lib/content";
 import Partager from "@/components/partager";
+import { programmesUtilesDe } from "@/lib/bailleurs";
+
+const partenairesDe = (id: string) => programmesUtilesDe(id).map((p) => ({ id: p.id, nom: p.nom.split(" — ")[0], proche: ["bedjondo", "koumra", "mandoul"].includes(p.portee) }));
 
 export const metadata: Metadata = {
   title: "Nos actions — quatre pôles, vingt thématiques",
@@ -41,6 +44,7 @@ export default function Programmes() {
         <Link className="button primary" href="/participer?coordo=1#contact">Proposer ma candidature <span aria-hidden="true">→</span></Link>
         <Link className="button secondary" href="/secteurs">Nos secteurs d’intervention : WASH, santé, urgences… <span aria-hidden="true">→</span></Link>
         <Link className="button secondary" href="/dossiers/trouver-ma-thematique">Trouver ma thématique <span aria-hidden="true">→</span></Link>
+        <Link className="button secondary" href="/bailleurs#par-action">Programmes des bailleurs, action par action <span aria-hidden="true">→</span></Link>
         <Link className="text-link" href="/impact">Tableau de suivi <span aria-hidden="true">→</span></Link>
       </div>
 
@@ -61,7 +65,7 @@ export default function Programmes() {
                 ) : null}
               </div>
             </header>
-            {pole.items.map((t) => <ThematiqueRow key={t.id} t={t} />)}
+            {pole.items.map((t) => <ThematiqueRow key={t.id} t={t} partenaires={partenairesDe(t.id)} />)}
           </section>
         ))}
         {cellules ? (
@@ -74,7 +78,7 @@ export default function Programmes() {
                 {cellules.intro ? <p>{cellules.intro}</p> : null}
               </div>
             </header>
-            {cellules.items.map((t) => <ThematiqueRow key={t.id} t={t} />)}
+            {cellules.items.map((t) => <ThematiqueRow key={t.id} t={t} partenaires={t.id === "cellule-financement-ressources" ? undefined : partenairesDe(t.id)} />)}
           </section>
         ) : null}
       </div>

@@ -9,6 +9,7 @@ import { getIndicateurs } from "@/lib/indicateurs";
 import { thematiquesParId } from "@/lib/odeb-chiffres";
 import { getProjets, STADES_ACTIFS, stadeIndex } from "@/lib/projets";
 import Partager from "@/components/partager";
+import { ALIGNEMENT_PROJETS, GUICHETS, programmeParId } from "@/lib/bailleurs";
 
 export const metadata: Metadata = {
   title: "Plateforme de projets",
@@ -56,7 +57,7 @@ export default function Projets() {
       </section>
 
       <section className="hub-section" id="projets">
-        <SectionHead eyebrow="Le registre" title="Ce qui est en cours," em="et ce qui attend." text="Du plus avancé au moins avancé. Pour chacun : ce qui existe déjà — des liens, pas des intentions —, ce qui manque, le budget tel qu’il est connu, et ce que vous pouvez faire." />
+        <SectionHead eyebrow="Le registre" title="Ce qui est en cours," em="et ce qui attend." text="Du plus avancé au moins avancé. Pour chacun : ce qui existe déjà — des liens, pas des intentions —, ce qui manque, le budget tel qu’il est connu, ce que vous pouvez faire, et les programmes des bailleurs qui y correspondent — ou le constat qu’aucun n’y correspond." />
         <div className="pj-liste">
           {tries.map((p) => {
             const stade = d.stades.find((s) => s.id === p.stade);
@@ -81,6 +82,22 @@ export default function Projets() {
                   <div><p className="pj-label">Ce qui manque</p><ul>{p.manque.map((x) => <li key={x}>{x}</li>)}</ul></div>
                   <div><p className="pj-label">Contribuer</p><ul className="pj-contribuer">{p.contribuer.map((l) => <li key={l.href + l.label}><Link href={l.href}>{l.label} <span aria-hidden="true">→</span></Link></li>)}</ul><Link className="text-link" href={p.route}>Le dossier complet <span aria-hidden="true">→</span></Link></div>
                 </div>
+                {ALIGNEMENT_PROJETS[p.slug] ? (() => {
+                  const al = ALIGNEMENT_PROJETS[p.slug];
+                  const progs = al.programmes.map(programmeParId).filter((x) => x !== undefined);
+                  return (
+                    <div className="pj-partenaires">
+                      <p className="pj-label">Programmes des partenaires</p>
+                      <p>{al.lecture}</p>
+                      {progs.length || al.guichets.length ? (
+                        <p className="pj-partenaires-liens">
+                          {progs.map((g) => <Link key={g.id} href={`/bailleurs#${g.id}`}>{g.nom.split(" — ")[0]}</Link>)}
+                          {al.guichets.map((i) => <Link key={i} className="est-guichet" href="/bailleurs#guichets">Guichet : {GUICHETS[i].nom}</Link>)}
+                        </p>
+                      ) : null}
+                    </div>
+                  );
+                })() : null}
               </article>
             );
           })}

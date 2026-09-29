@@ -411,3 +411,63 @@ export function programmesDe(thematique: string): ProgrammeBailleur[] {
 export function programmesDuPlaidoyer(plaidoyer: string): ProgrammeBailleur[] {
   return PROGRAMMES_BAILLEURS.filter((p) => p.plaidoyers?.includes(plaidoyer));
 }
+
+/* ── Rapprochement dans l'autre sens : de nos actions vers les programmes ── */
+
+const ORDRE_PORTEE: Portee[] = ["bedjondo", "koumra", "mandoul", "sud", "national", "hors-zone"];
+const utile = (p: ProgrammeBailleur) => p.statut !== "clos" && p.portee !== "hors-zone";
+const parProximite = (a: ProgrammeBailleur, b: ProgrammeBailleur) => ORDRE_PORTEE.indexOf(a.portee) - ORDRE_PORTEE.indexOf(b.portee);
+
+/* Programmes en cours ou en préparation qui financent une thématique, du plus proche au plus lointain. */
+export function programmesUtilesDe(thematique: string): ProgrammeBailleur[] {
+  return PROGRAMMES_BAILLEURS.filter((p) => utile(p) && p.thematiques.includes(thematique)).sort(parProximite);
+}
+
+/* Même chose pour un ensemble de thématiques (programme ODEB, projet), sans doublon. */
+export function programmesUtilesDes(thematiques: string[]): ProgrammeBailleur[] {
+  return PROGRAMMES_BAILLEURS.filter((p) => utile(p) && p.thematiques.some((t) => thematiques.includes(t))).sort(parProximite);
+}
+
+export const programmeParId = (id: string) => PROGRAMMES_BAILLEURS.find((p) => p.id === id);
+
+/* Nos projets (content/projets.json) rapprochés à la main des programmes et guichets :
+   un programme n'est cité que s'il finance ce que le projet contient. Quand rien ne
+   correspond, on le dit. `guichets` : index dans GUICHETS. */
+export type AlignementProjet = { programmes: string[]; guichets: number[]; lecture: string };
+export const ALIGNEMENT_PROJETS: Record<string, AlignementProjet> = {
+  "espace-numerique": {
+    programmes: ["patn", "paaet", "pnud-minireseaux", "unicef"],
+    guichets: [0, 1],
+    lecture: "Le projet le mieux aligné : le PATN prévoit des centres numériques communautaires et une liste de 500 zones blanches à couvrir, le PAAET et les mini-réseaux financent l’énergie solaire. Demander l’inscription de Bédjondo ne finance pas la salle, mais peut lui apporter le réseau et l’électricité. Pour l’équipement lui-même, les guichets ouverts aux associations conviennent, une fois l’association en règle.",
+  },
+  application: {
+    programmes: ["patn"],
+    guichets: [],
+    lecture: "Aucun programme relevé ne finance une application associative. Le PATN finance les services numériques publics : le lien est indirect (couverture réseau, compétences). L’application reste portée par les bénévoles.",
+  },
+  "complexe-sportif": {
+    programmes: [],
+    guichets: [0, 1],
+    lecture: "Aucun programme relevé ne finance le sport. Seuls les guichets ouverts aux associations pourraient contribuer à une première tranche (équipement, terrain), une fois le projet chiffré et l’association en règle.",
+  },
+  "air-bedjondo": {
+    programmes: [],
+    guichets: [],
+    lecture: "Aucun programme en cours ne finance le transport rural dans le Mandoul : le PMCR est clos depuis le 30 avril 2026. Le projet dépend d’investisseurs privés ; le plaidoyer routes s’adresse désormais au ministère des Infrastructures et au Fonds d’entretien routier.",
+  },
+  "complexe-hotelier": {
+    programmes: [],
+    guichets: [],
+    lecture: "Investissement privé : aucun bailleur public relevé ne finance l’hôtellerie. Le financement viendra de la diaspora et d’investisseurs, dans un montage à définir.",
+  },
+  "complexe-scolaire-internat": {
+    programmes: ["smarted", "education-bm", "acpesi"],
+    guichets: [],
+    lecture: "Ces programmes financent l’école publique (salles, latrines, enseignants) et la formation professionnelle, pas un établissement privé avec internat. Ils servent le plaidoyer éducation en parallèle : de meilleures écoles publiques à Bédjondo préparent les élèves qui entreront au collège.",
+  },
+  "chu-bedjondo": {
+    programmes: ["deesse", "bid-unicef-sante", "prpss", "unfpa", "sahit-na", "fonds-mondial"],
+    guichets: [],
+    lecture: "Aucun programme ne finance un hôpital universitaire. Ceux-ci financent les centres de santé et la santé maternelle : ce sont les premières marches du « système de santé » que le projet décrit. La conception de SAHIT-NA, avant mars 2027, est le moment de faire inscrire Bédjondo dans la carte sanitaire.",
+  },
+};

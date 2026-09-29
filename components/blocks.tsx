@@ -59,7 +59,7 @@ export function SectionHead({ eyebrow, title, em, text, id }: { eyebrow: string;
   );
 }
 
-export function ThematiqueRow({ t, pole }: { t: Thematique; pole?: string }) {
+export function ThematiqueRow({ t, pole, partenaires }: { t: Thematique; pole?: string; partenaires?: { id: string; nom: string; proche: boolean }[] }) {
   // candidature : numéro de la thématique, ou code court de la cellule (même logique que /odeb/programmes/[programme])
   const cle = t.kind === "cellule" ? t.id.replace("cellule-", "").split("-")[0] : t.number;
   return (
@@ -78,6 +78,12 @@ export function ThematiqueRow({ t, pole }: { t: Thematique; pole?: string }) {
               <span className="odd-num">{o.num}</span><span className="odd-name">{o.name}</span><span className="odd-cible">{o.cible}</span>
             </a>
           ))}</p>
+        ) : null}
+        {partenaires ? (
+          <p className="them-partenaires">
+            <span className="them-partenaires-titre">Programmes partenaires</span>
+            {partenaires.length ? <>{partenaires.slice(0, 4).map((p) => <Link key={p.id} href={`/bailleurs#${p.id}`} className={p.proche ? "est-proche" : undefined}>{p.nom}</Link>)}{partenaires.length > 4 ? <Link href={`/bailleurs#action-${t.id}`}>+ {partenaires.length - 4}</Link> : null}</> : <Link href={`/bailleurs#action-${t.id}`}>aucun programme relevé</Link>}
+          </p>
         ) : null}
         {t.links.length ? <p className="them-links">{t.links.map((l) => <Link key={l.href + l.label} href={l.href}>{l.label}</Link>)}<a href={`/missions/fiche-mission-${t.kind === "cellule" ? "" : "coordination-"}${t.id}.pdf`} download>Fiche de mission (PDF) ↓</a></p> : null}
       </div>

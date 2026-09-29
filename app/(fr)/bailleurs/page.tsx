@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
-import { metaDescription, ogFor } from "@/lib/content";
+import { getIndex, metaDescription, ogFor } from "@/lib/content";
+import { getProjets } from "@/lib/projets";
 import { thematiquesParId } from "@/lib/odeb-chiffres";
 import {
-  FAMILLES, FENETRES, GUICHETS, PLAIDOYERS_NOMS, PORTEES, PROGRAMMES_BAILLEURS, RELEVE, STATUTS,
+  ALIGNEMENT_PROJETS, FAMILLES, FENETRES, GUICHETS, PLAIDOYERS_NOMS, PORTEES, programmeParId, PROGRAMMES_BAILLEURS, programmesUtilesDe, RELEVE, STATUTS,
   type Famille, type ProgrammeBailleur,
 } from "@/lib/bailleurs";
 
@@ -53,6 +54,11 @@ export default function Bailleurs() {
   const familles = (Object.keys(FAMILLES) as Famille[]).map((f) => ({
     f, items: principaux.filter((p) => p.famille === f).sort((a, b) => ORDRE_PORTEE.indexOf(a.portee) - ORDRE_PORTEE.indexOf(b.portee)),
   })).filter((g) => g.items.length);
+  const { poles, cellules } = getIndex().structure;
+  const groupesActions = [...poles.map((pl) => ({ id: pl.id, titre: `Pôle ${pl.roman} · ${pl.name}`, items: pl.items })), ...(cellules ? [{ id: "cellules", titre: cellules.name, items: cellules.items.filter((c) => c.id !== "cellule-financement-ressources") }] : [])];
+  const toutesActions = groupesActions.flatMap((g) => g.items);
+  const sansProgramme = toutesActions.filter((t) => !programmesUtilesDe(t.id).length);
+  const projets = getProjets().projets.filter((pj) => ALIGNEMENT_PROJETS[pj.slug]);
   const plaidoyers = Object.entries(PLAIDOYERS_NOMS).map(([id, v]) => ({ id, ...v, items: PROGRAMMES_BAILLEURS.filter((p) => p.plaidoyers?.includes(id)) }));
 
   return (
@@ -111,6 +117,54 @@ export default function Bailleurs() {
               ) : <p className="bl-mini">Aucun programme relevé.</p>}
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="hub-section" id="par-action">
+        <SectionHead eyebrow="Nos actions" title="Pour chaque thématique," em="les programmes qui la financent." text={`Nos ${toutesActions.length} thématiques et cellules, pôle par pôle, avec les programmes en cours ou en préparation qui financent le même domaine — du plus proche de Bédjondo au plus lointain. ${sansProgramme.length ? `${sansProgramme.length} n’en ont aucun : ${sansProgramme.map((t) => t.name).join(", ")}. Ce sont des angles morts des bailleurs, que l’association devra financer autrement.` : ""}`} />
+        <div className="bl-actions">
+          {groupesActions.map((g) => (
+            <div className="bl-actions-pole" key={g.id}>
+              <h3>{g.titre}</h3>
+              <ul>
+                {g.items.map((t) => {
+                  const ps = programmesUtilesDe(t.id);
+                  return (
+                    <li key={t.id} id={`action-${t.id}`}>
+                      <Link className="bl-action-nom" href={`/programmes#${t.id}`}>{t.name}</Link>
+                      <span className="bl-action-progs">
+                        {ps.length ? ps.map((b) => <a key={b.id} href={`#${b.id}`} className={["bedjondo", "koumra", "mandoul"].includes(b.portee) ? "est-proche" : undefined} title={`${b.bailleur} · ${PORTEES[b.portee]}`}>{b.nom.split(" — ")[0]}</a>) : <em>aucun programme relevé</em>}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <p className="bl-legende"><span className="est-proche">Surligné</span> : le programme cite le Mandoul, Koumra ou Bédjondo.</p>
+      </section>
+
+      <section className="hub-section" id="par-projet">
+        <SectionHead eyebrow="Nos projets" title="Pour chaque projet," em="ce qui correspond, et ce qui ne correspond pas." text="Un programme n’est cité que s’il finance ce que le projet contient. Plusieurs de nos projets n’ont aucun bailleur public possible : nous l’écrivons plutôt que de forcer un rapprochement." />
+        <div className="bl-grille">
+          {projets.map((pj) => {
+            const al = ALIGNEMENT_PROJETS[pj.slug];
+            const progs = al.programmes.map(programmeParId).filter((x) => x !== undefined);
+            return (
+              <article className="bl-carte" key={pj.slug} id={`projet-${pj.slug}`}>
+                <h3><Link href={`/projets#${pj.slug}`}>{pj.nom}</Link></h3>
+                <p className="bl-qui">{pj.libelle}</p>
+                <p className="bl-accroche">{al.lecture}</p>
+                {progs.length || al.guichets.length ? (
+                  <p className="bl-liens">
+                    {progs.map((b) => <a key={b.id} href={`#${b.id}`}>{b.nom.split(" — ")[0]}</a>)}
+                    {al.guichets.map((i) => <a key={i} className="bl-lien-plaidoyer" href="#guichets">Guichet : {GUICHETS[i].nom}</a>)}
+                  </p>
+                ) : <p className="bl-mini">Aucun programme ni guichet correspondant.</p>}
+              </article>
+            );
+          })}
         </div>
       </section>
 
