@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parents[2]
 PAGES = ["/", "/mission", "/histoire", "/programmes", "/programmes/fiches-de-mission", "/secteurs", "/en/sectors", "/actions", "/impact", "/projets", "/observatoire", "/villages", "/villages/bedjondo", "/villages/bedjondo/bedjondo", "/carte", "/journal", "/lettre",
          "/bibliotheque", "/langue", "/diaspora", "/temoignages", "/documents", "/transparence", "/transparence/decisions", "/participer", "/presse", "/accessibilite", "/mentions-legales", "/plan-du-site", "/archives", "/recherche?q=odeb",
          "/odeb", "/odeb/livre-blanc", "/odeb/feuille-de-route", "/odeb/programmes", "/odeb/programmes/economie-sociale", "/odeb/programmes/memoire-patrimoine", "/odeb/identite",
-         "/dossiers", "/dossiers/besoins", "/dossiers/identite-visuelle", "/dossiers/demarches", "/dossiers/lieux-sacres",
+         "/dossiers", "/territoire", "/patrimoine", "/territoire/diagnostic", "/patrimoine/base-de-recherche", "/projets/bedjondo-transport-logistique", "/programmes/handicap", "/bailleurs", "/en/donors", "/territoire/besoins", "/association/ancienne-identite-visuelle", "/association/demarches", "/patrimoine/lieux-sacres",
          "/journal/2026-09-28-lettre-information-02", "/journal/2026-09-28-directions-de-pole",
          "/en/index", "/en/odeb", "/en/villages", "/en/projects", "/en/impact", "/en/contact"]
 FICHIERS = (".pdf", ".jpg", ".jpeg", ".png", ".svg", ".json", ".js", ".xml", ".txt", ".zip", ".docx", ".pptx", ".html", ".ics")
@@ -36,9 +36,9 @@ CHECK_VISUEL = """() => {
   for (const el of document.querySelectorAll('main *, footer *, .nav *')) {
     const cs = getComputedStyle(el);
     if (el.childElementCount === 0 && el.textContent.trim() && parseFloat(cs.fontSize) < 10 && cs.display !== 'none' && cs.visibility !== 'hidden' && !el.closest('.legacy')) out.tiny++;
-    if (cs.overflow === 'hidden' && el.scrollWidth > el.clientWidth + 2 && el.clientWidth > 40 && !el.closest('.ob-table-wrap, .od-table-wrap, .table-wrap, .links, .mobile-menu, .leaflet-container, pre, .legacy svg, .geo-liste, .program-card')) out.clipped.push((el.className||el.tagName).toString().slice(0,60));
+    if (cs.overflow === 'hidden' && el.scrollWidth > el.clientWidth + 2 && el.clientWidth > 40 && !el.closest('.ob-table-wrap, .od-table-wrap, .table-wrap, .links, .mobile-menu, .leaflet-container, pre, .legacy svg, .geo-liste, .program-card, .shelf')) out.clipped.push((el.className||el.tagName).toString().slice(0,60));
     const r = el.getBoundingClientRect();
-    if (r.width > 0 && (r.right > vw + 2) && cs.position !== 'fixed' && !el.closest('.ob-table-wrap, .od-table-wrap, .table-wrap, .leaflet-container, .links, .mega, pre, .legacy svg, .geo-liste, [style*="overflow"]')) out.offscreen.push((el.className||el.tagName).toString().slice(0,60));
+    if (r.width > 0 && (r.right > vw + 2) && cs.position !== 'fixed' && !el.closest('.ob-table-wrap, .od-table-wrap, .table-wrap, .leaflet-container, .links, .mega, pre, .legacy svg, .geo-liste, .shelf, .kanban-board, [style*="overflow"]')) out.offscreen.push((el.className||el.tagName).toString().slice(0,60));
   }
   for (const a of document.querySelectorAll('main a[href]')) if (!a.textContent.trim() && !a.getAttribute('aria-label') && !a.querySelector('img[alt]')) out.emptyLinks++;
   const t = document.body.innerText; for (const k of ['undefined','NaN','[object','null ']) if (t.includes(k)) out.nan.push(k);

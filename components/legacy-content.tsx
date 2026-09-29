@@ -62,6 +62,16 @@ export function Crumbs({ items, parentHref, lang = "fr" }: { items: string[]; pa
   );
 }
 
+/* Rubriques du site (29/09/2026) : préfixe d'adresse → libellé et page d'entrée du fil d'Ariane. */
+const RUBRIQUES: [string, string, string][] = [
+  ["/projets/", "Projets", "/projets"],
+  ["/programmes/", "Nos actions", "/programmes"],
+  ["/territoire/", "Territoire", "/territoire"],
+  ["/patrimoine/", "Patrimoine", "/patrimoine"],
+  ["/association/", "L’association", "/mission"],
+  ["/participer/", "Participer", "/participer"],
+];
+
 export const PARENT_ROUTES: Record<string, string> = {
   "Nos actions": "/programmes",
   "L’association": "/mission",
@@ -95,7 +105,11 @@ export function LegacyDocument({ page, children, eyebrowPrefix }: { page: Legacy
   const en = page.lang === "en";
   return (
     <main id="main-content" className="detail-page lg-page" lang={page.lang !== "fr" ? page.lang : undefined}>
-      {en && page.route === "/en/index" ? null : <Crumbs items={page.crumbs} parentHref={PARENT_ROUTES[page.parent]} lang={en ? "en" : "fr"} />}
+      {en && page.route === "/en/index" ? null : (() => {
+        // rubrique d'après l'adresse (restructuration du 29/09/2026), sinon le parent de l'ancien site
+        const r = RUBRIQUES.find(([pre]) => page.route.startsWith(pre));
+        return r ? <Crumbs items={["Accueil", r[1], page.crumbs?.[page.crumbs.length - 1] ?? page.title]} parentHref={r[2]} /> : <Crumbs items={page.crumbs} parentHref={PARENT_ROUTES[page.parent]} lang={en ? "en" : "fr"} />;
+      })()}
       <p className="eyebrow">{[eyebrowPrefix, page.eyebrow].filter(Boolean).join(" — ")}</p>
       <h1>{main}{rest.length ? <><br /><em>{rest.join(" ")}</em></> : null}</h1>
       {page.lede ? <p className="detail-lead">{page.lede}</p> : null}

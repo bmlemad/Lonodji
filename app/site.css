@@ -1613,3 +1613,5 @@ html.nav-compact .nav .logo-verre img{ width:34px; }
 @media (max-width:800px){ .nav .logo-verre img{ width:37px; } html.nav-compact .nav .logo-verre img{ width:29px; } }
 .btl-points{ margin:0; padding-left:1.1em; display:grid; gap:6px; font-size:14.5px; line-height:1.55; }
 .btl-points li::marker{ color:var(--deep); }
+/* contraste AA du compteur « documenté » du diagnostic territorial */
+.legacy .kanban-col[data-status="documente"] .kanban-col-count, .legacy .kanban-col[data-status="pourvu"] .kanban-col-count{ color:#2d4a14; }

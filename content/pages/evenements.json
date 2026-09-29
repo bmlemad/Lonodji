@@ -39,6 +39,6 @@
  "scripts": [],
  "rootAttrs": {},
  "slug": "evenements",
- "route": "/dossiers/evenements",
+ "route": "/association/evenements",
  "kind": "dossier"
 }

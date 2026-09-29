@@ -1,5 +1,5 @@
 {
- "genere": "2026-09-29T16:42:17Z",
+ "genere": "2026-09-29T17:08:07Z",
  "contenu": {
   "plaidoyers": {
    "publies": 8,
@@ -35,7 +35,7 @@
    "equipements": 24,
    "genere": "2026-09-28"
   },
-  "pages": 46,
+  "pages": 45,
   "projets": {
    "actifs": 1,
    "annonces": 6,
@@ -46,28 +46,28 @@
      "nom": "Espace numérique communautaire de Bédjondo",
      "stade": "souscription",
      "libelle": "premier chantier, souscription ouverte, aucun financement confirmé",
-     "route": "/dossiers/espace-numerique"
+     "route": "/projets/espace-numerique"
     },
     {
      "slug": "application",
      "nom": "Application pour téléphone",
      "stade": "essai",
      "libelle": "version d'essai en ligne (Android 1.0.1, 28 septembre 2026)",
-     "route": "/dossiers/application"
+     "route": "/projets/application"
     },
     {
      "slug": "complexe-sportif",
      "nom": "Complexe de formation sportive pour les jeunes",
      "stade": "etude",
      "libelle": "à l’étude",
-     "route": "/dossiers/complexe-sportif"
+     "route": "/projets/complexe-sportif"
     },
     {
      "slug": "bedjondo-transport-logistique",
      "nom": "Bedjondo Transport et Logistique",
      "stade": "annonce",
      "libelle": "projet annoncé, sans financement ni calendrier",
-     "route": "/dossiers/bedjondo-transport-logistique"
+     "route": "/projets/bedjondo-transport-logistique"
     },
     {
      "slug": "complexe-hotelier",

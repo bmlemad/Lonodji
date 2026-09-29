@@ -40,7 +40,7 @@ export default async function Unite({ params }: { params: Promise<{ unite: strin
         title={u.nom}
         em={u.kmBedjondo < 1 ? "chef-lieu du pays bedjond." : `à ${km(u.kmBedjondo)} de Bédjondo.`}
         lead={`${u.notice} ${u.dep}${u.prov && u.prov !== u.dep ? `, ${u.prov}` : ""}. ${nf.format(u.comptes.nommes)} localités nommées sur OpenStreetMap${u.comptes.villages > u.comptes.nommes ? `, ${nf.format(u.comptes.villages - u.comptes.nommes)} sans nom` : ""} ; chacune a sa fiche.`}
-        crumbs={[{ label: "Territoire", href: "/carte" }, { label: "Villages", href: "/villages" }, { label: u.nom }]}
+        crumbs={[{ label: "Territoire", href: "/territoire" }, { label: "Villages", href: "/villages" }, { label: u.nom }]}
         pills={[`${nf.format(u.comptes.nommes)} localités nommées`, `${nf.format(u.comptes.equipements)} ${u.comptes.equipements > 1 ? "équipements connus" : "équipement connu"}`, `${nf.format(u.liens.length)} ${u.liens.length > 1 ? "pages du site" : "page du site"}`]}
       />
 
@@ -53,7 +53,7 @@ export default async function Unite({ params }: { params: Promise<{ unite: strin
 
       <div className="section-actions" style={{ justifyContent: "flex-start", marginBottom: 8 }}>
         <Link className="button primary" href={`/carte?unite=${u.id}`}>Voir {u.nom} sur la carte <span aria-hidden="true">→</span></Link>
-        <Link className="button secondary" href={`/dossiers/besoins?localite=${encodeURIComponent(u.nom)}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
+        <Link className="button secondary" href={`/territoire/besoins?localite=${encodeURIComponent(u.nom)}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
       </div>
 
       <section className="hub-section" id="villages">

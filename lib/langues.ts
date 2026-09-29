@@ -3,7 +3,7 @@ export const FR_VERS_EN: Record<string, string> = {
   "/": "/en/index",
   "/mission": "/en/about",
   "/actions": "/en/advocacy",
-  "/dossiers/bedjondo": "/en/bedjondo",
+  "/territoire/bedjondo": "/en/bedjondo",
   "/participer": "/en/contact",
   "/programmes": "/en/themes",
   "/secteurs": "/en/sectors",

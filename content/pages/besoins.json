@@ -45,7 +45,7 @@
    "alt": false,
    "cls": "",
    "tag": "section",
-   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Comment c’est utilisé</div>\n<h2>Du signalement au chantier</h2>\n<p>Chaque signalement est lu par l’animation de l’association et rattaché à une localité et à un type de besoin. Tous les mois, nous publions une synthèse : nombre de signalements par quartier et par canton, besoins les plus cités, cas urgents. Cette synthèse est transmise à la commune de Bédjondo, qui l’a demandée pour son plan de développement, et jointe aux <a href=\"/actions\">plaidoyers</a> concernés lorsqu’ils sont envoyés aux ministères, aux régulateurs et aux programmes. Quand un besoin devient un chantier — forage réparé, pont reconstruit, salle équipée — nous le marquons ici comme résolu, avec la date et l’acteur qui l’a réalisé.</p>\n<p>Avant de signaler, il peut être utile de voir ce que nous savons déjà : <a href=\"/dossiers/problematiques\">le recensement des problématiques</a> indique, pour chacune des trente-quatre difficultés établies, si elle est documentée chez nous ou seulement ailleurs. <strong>Onze d’entre elles nous sont entièrement inconnues</strong>, et ce sont celles où votre signalement apporte le plus.</p>\n<p>Vos données personnelles ne sont jamais publiées ; seules les informations sur le besoin le sont, sous forme agrégée. Vous pouvez aussi signaler un besoin par le <a href=\"/participer#contact\">formulaire de contact</a> ou de vive voix aux membres de l’association.</p>\n</div>"
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Comment c’est utilisé</div>\n<h2>Du signalement au chantier</h2>\n<p>Chaque signalement est lu par l’animation de l’association et rattaché à une localité et à un type de besoin. Tous les mois, nous publions une synthèse : nombre de signalements par quartier et par canton, besoins les plus cités, cas urgents. Cette synthèse est transmise à la commune de Bédjondo, qui l’a demandée pour son plan de développement, et jointe aux <a href=\"/actions\">plaidoyers</a> concernés lorsqu’ils sont envoyés aux ministères, aux régulateurs et aux programmes. Quand un besoin devient un chantier — forage réparé, pont reconstruit, salle équipée — nous le marquons ici comme résolu, avec la date et l’acteur qui l’a réalisé.</p>\n<p>Avant de signaler, il peut être utile de voir ce que nous savons déjà : <a href=\"/territoire/diagnostic\">le recensement des problématiques</a> indique, pour chacune des trente-quatre difficultés établies, si elle est documentée chez nous ou seulement ailleurs. <strong>Onze d’entre elles nous sont entièrement inconnues</strong>, et ce sont celles où votre signalement apporte le plus.</p>\n<p>Vos données personnelles ne sont jamais publiées ; seules les informations sur le besoin le sont, sous forme agrégée. Vous pouvez aussi signaler un besoin par le <a href=\"/participer#contact\">formulaire de contact</a> ou de vive voix aux membres de l’association.</p>\n</div>"
   }
  ],
  "words": 1351,
@@ -56,6 +56,6 @@
  "scripts": [],
  "rootAttrs": {},
  "slug": "besoins",
- "route": "/dossiers/besoins",
+ "route": "/territoire/besoins",
  "kind": "dossier"
 }

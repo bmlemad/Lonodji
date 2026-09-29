@@ -157,11 +157,11 @@ export default function Presse() {
           <a className="text-link" href={IDENTITE.planche} download>Planche pour l’imprimeur (PDF) <span aria-hidden="true">↓</span></a>
           <Link className="text-link" href="/odeb/identite#reseaux">Bannières, image de profil, signature e-mail, cartes de visite <span aria-hidden="true">→</span></Link>
           <a className="text-link" href="/carte/affiches/affiche-villages.pdf" download>Affiche « Retrouvez votre village » (PDF A4) <span aria-hidden="true">↓</span></a>
-          <Link className="text-link" href="/dossiers/kit-mobilisation">Visuels de mobilisation <span aria-hidden="true">→</span></Link>
+          <Link className="text-link" href="/participer/kit-mobilisation">Visuels de mobilisation <span aria-hidden="true">→</span></Link>
         </div>
         <details className="pr-ancien" id="ancien-logo">
           <summary>Ancienne identité (avant le 28 septembre 2026)</summary>
-          <p>Un disque bleu, une paire d’empreintes de pas, une poignée de main qui traverse le disque : il reste sur les documents publiés avant cette date et ne se mélange pas au nouveau. Ses règles sont dans l’<Link href="/dossiers/identite-visuelle">identité visuelle précédente</Link>.</p>
+          <p>Un disque bleu, une paire d’empreintes de pas, une poignée de main qui traverse le disque : il reste sur les documents publiés avant cette date et ne se mélange pas au nouveau. Ses règles sont dans l’<Link href="/association/ancienne-identite-visuelle">identité visuelle précédente</Link>.</p>
           <ul className="pr-logos">
             {LOGOS.map(([href, label, note]) => (
               <li key={href}>
@@ -204,7 +204,7 @@ export default function Presse() {
           </div>
         </div>
         <Partager route="/presse" titre="Espace presse" texte="Pour les journalistes et les partenaires : ADEB LONODJI en cinq lignes, les chiffres datés, les dates, le bureau, les communiqués, les logos et visuels, le dossier de présentation, et à qui écrire." />
-        <p className="lg-footnote">Espace ouvert le 28 septembre 2026 pour accompagner le lancement de la réflexion ODEB LONODJI. Les chiffres sont ceux du site à sa mise en ligne (<Link href="/impact">tableau de bord</Link>) ; le logo et ses règles sont dans l’<Link href="/odeb/identite">identité visuelle</Link>, l’ancien logo dans l’<Link href="/dossiers/identite-visuelle">identité précédente</Link>.</p>
+        <p className="lg-footnote">Espace ouvert le 28 septembre 2026 pour accompagner le lancement de la réflexion ODEB LONODJI. Les chiffres sont ceux du site à sa mise en ligne (<Link href="/impact">tableau de bord</Link>) ; le logo et ses règles sont dans l’<Link href="/odeb/identite">identité visuelle</Link>, l’ancien logo dans l’<Link href="/association/ancienne-identite-visuelle">identité précédente</Link>.</p>
       </section>
     </main>
   );

@@ -38,11 +38,11 @@ type Question = { titre: string; question: string; liens: { action: string; href
 const A_DOCUMENTER = (nom: string): Question[] => {
   const n = encodeURIComponent(nom);
   return [
-    { titre: "L’eau", question: "Un forage, un puits, une source ? Combien, et fonctionnent-ils ? Quelle distance pour aller chercher l’eau ?", liens: [{ action: "Signaler un besoin d’eau", href: `/dossiers/besoins?localite=${n}` }] },
-    { titre: "L’école", question: "Une école ? Combien de classes, de maîtres, d’élèves ? Jusqu’à quel niveau, et où vont ensuite les enfants ?", liens: [{ action: "Signaler un besoin d’école", href: `/dossiers/besoins?localite=${n}` }] },
-    { titre: "La santé", question: "Un centre ou une case de santé ? Un agent, une sage-femme ? À quelle distance sont les soins les plus proches ?", liens: [{ action: "Signaler un besoin de santé", href: `/dossiers/besoins?localite=${n}` }] },
-    { titre: "Le réseau et l’énergie", question: "Quel opérateur passe, avec quel débit, et où ? Y a-t-il de l’électricité, des panneaux solaires, un groupe électrogène ?", liens: [{ action: "Mesurer le débit ici", href: `/actions?lieu=${n}#mesure-debit` }, { action: "Signaler un besoin d’énergie", href: `/dossiers/besoins?localite=${n}` }] },
-    { titre: "L’histoire et les lieux sacrés", question: "D’où vient le nom ? Quelles lignées, quels anciens ? Quels lieux sacrés ou sépultures à protéger, et sont-ils menacés ?", liens: [{ action: `Raconter ${nom}`, href: `/temoignages?lieu=${n}` }, { action: "Signaler un lieu sacré menacé", href: `/dossiers/lieux-sacres?localite=${n}#signalement` }] },
+    { titre: "L’eau", question: "Un forage, un puits, une source ? Combien, et fonctionnent-ils ? Quelle distance pour aller chercher l’eau ?", liens: [{ action: "Signaler un besoin d’eau", href: `/territoire/besoins?localite=${n}` }] },
+    { titre: "L’école", question: "Une école ? Combien de classes, de maîtres, d’élèves ? Jusqu’à quel niveau, et où vont ensuite les enfants ?", liens: [{ action: "Signaler un besoin d’école", href: `/territoire/besoins?localite=${n}` }] },
+    { titre: "La santé", question: "Un centre ou une case de santé ? Un agent, une sage-femme ? À quelle distance sont les soins les plus proches ?", liens: [{ action: "Signaler un besoin de santé", href: `/territoire/besoins?localite=${n}` }] },
+    { titre: "Le réseau et l’énergie", question: "Quel opérateur passe, avec quel débit, et où ? Y a-t-il de l’électricité, des panneaux solaires, un groupe électrogène ?", liens: [{ action: "Mesurer le débit ici", href: `/actions?lieu=${n}#mesure-debit` }, { action: "Signaler un besoin d’énergie", href: `/territoire/besoins?localite=${n}` }] },
+    { titre: "L’histoire et les lieux sacrés", question: "D’où vient le nom ? Quelles lignées, quels anciens ? Quels lieux sacrés ou sépultures à protéger, et sont-ils menacés ?", liens: [{ action: `Raconter ${nom}`, href: `/temoignages?lieu=${n}` }, { action: "Signaler un lieu sacré menacé", href: `/patrimoine/lieux-sacres?localite=${n}#signalement` }] },
     { titre: "Les habitants", question: "Combien d’habitants, combien de familles ? Qui est chef de village ou de quartier ? Quelles associations, quels groupements ?", liens: [{ action: "Nous l’écrire", href: `/participer?localite=${n}#contact` }] },
   ];
 };
@@ -68,7 +68,7 @@ export default async function Village({ params }: { params: Promise<{ unite: str
         title={v.nom}
         em={estBedjondo ? "chef-lieu du pays bedjond." : `${type.toLowerCase()} de ${u.nom}.`}
         lead={`${estBedjondo ? "Chef-lieu du Mandoul Occidental et berceau du peuple bedjond" : `${type} de ${u.nom} (${u.dep}${u.prov && u.prov !== u.dep ? `, ${u.prov}` : ""}), à ${km(v.kmBedjondo)} de Bédjondo`}. Voici ce que les données ouvertes en savent, ce que le site en a écrit, et ce qui reste à documenter — chaque manque renvoie au formulaire qui permet de le combler.`}
-        crumbs={[{ label: "Territoire", href: "/carte" }, { label: "Villages", href: "/villages" }, { label: u.nom, href: `/villages/${unite}` }, { label: v.nom }]}
+        crumbs={[{ label: "Territoire", href: "/territoire" }, { label: "Villages", href: "/villages" }, { label: u.nom, href: `/villages/${unite}` }, { label: v.nom }]}
         pills={[GROUPES[u.groupe], `${v.equipements.length ? nf.format(v.equipements.length) : "aucun"} équipement${v.equipements.length > 1 ? "s" : ""} connu${v.equipements.length > 1 ? "s" : ""} à moins de 10 km`, v.mentions.length ? `cité par ${nf.format(v.mentions.length)} page${v.mentions.length > 1 ? "s" : ""}` : "pas encore cité sur le site"]}
       />
 
@@ -81,7 +81,7 @@ export default async function Village({ params }: { params: Promise<{ unite: str
 
       <div className="section-actions" style={{ justifyContent: "flex-start", marginBottom: 8 }}>
         <Link className="button primary" href={`/carte?village=${unite}/${v.slug}`}>Voir {v.nom} sur la carte <span aria-hidden="true">→</span></Link>
-        <Link className="button secondary" href={`/dossiers/besoins?localite=${encodeURIComponent(v.nom)}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
+        <Link className="button secondary" href={`/territoire/besoins?localite=${encodeURIComponent(v.nom)}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
         <Link className="text-link" href={`/temoignages?lieu=${encodeURIComponent(v.nom)}`}>Raconter {v.nom} <span aria-hidden="true">→</span></Link>
       </div>
 

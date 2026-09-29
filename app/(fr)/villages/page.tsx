@@ -28,7 +28,7 @@ export default function Villages() {
         title="Retrouver son village,"
         em="et ce qu’on en sait."
         lead="Chaque localité nommée du pays bedjond a désormais sa page : sa position, son unité, les équipements que les données ouvertes connaissent autour d’elle, les pages du site qui la citent — et, surtout, ce qui reste à documenter, avec le formulaire qui permet de le faire. Une fiche vide est un appel, pas un constat."
-        crumbs={[{ label: "Territoire", href: "/carte" }, { label: "Villages" }]}
+        crumbs={[{ label: "Territoire", href: "/territoire" }, { label: "Villages" }]}
         pills={[`${nf.format(d.villages.length)} localités nommées`, `${Object.keys(d.unites).length} unités`, `données du ${genere}`]}
       />
 

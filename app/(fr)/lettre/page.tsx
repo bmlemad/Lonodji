@@ -24,7 +24,7 @@ export default function LettrePage() {
         title="Chaque mois,"
         em="ce que l’association a publié, décidé ou ouvert."
         lead="Pas de communiqué, pas d’annonce sans suite : la lettre ne dit que ce qui a été publié sur le site, décidé par l’association ou ouvert aux membres depuis le numéro précédent. Quand il n’y a rien à dire, elle le dit. Chaque numéro se lit en ligne et se transmet en PDF, tel quel, dans un groupe WhatsApp ou par e-mail."
-        crumbs={[{ label: "Le journal", href: "/journal" }, { label: "Lettre d’information" }]}
+        crumbs={[{ label: "Journal", href: "/journal" }, { label: "Lettre d’information" }]}
         pills={[`${lettres.length} numéro${lettres.length > 1 ? "s" : ""}`, derniere ? `dernier : ${derniere.dateLabel}` : "aucun numéro", "mensuelle", "PDF à transmettre"]}
       />
       <Stats items={[

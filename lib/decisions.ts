@@ -64,7 +64,7 @@ export const DECISIONS: Decision[] = [
     id: "2026-21", date: "2026-09-29", type: "annonce",
     titre: "Air Bedjondo devient Bedjondo Transport et Logistique",
     texte: "Le projet de transport et de logistique terrestres annoncé le 19 septembre 2026 change de nom : l’ancien laissait croire à un projet aérien. Six propositions pour le mener sont publiées avec lui, soumises au bureau et à l’assemblée.",
-    sources: [{ label: "Page du projet", href: "/dossiers/bedjondo-transport-logistique" }],
+    sources: [{ label: "Page du projet", href: "/projets/bedjondo-transport-logistique" }],
     suite: "Rien n’est décidé sur le projet lui-même : ni étude, ni montage, ni financement, ni calendrier.",
   },
   {
@@ -169,7 +169,7 @@ export const DECISIONS: Decision[] = [
     id: "2026-19", date: "2026-09-24", type: "annonce", dateLabel: "date non publiée ; en ligne au plus tard le 24 septembre 2026",
     titre: "Conversion en ONG, sous le nom ODEB LONODJI",
     texte: "L’association annonce son intention de passer du statut d’association à celui d’ONG, sous le nom d’ODEB LONODJI. L’instance et la date de la décision ne sont pas publiées ; aucun dossier n’est déposé.",
-    sources: [{ label: "Démarches — vers le statut d’ONG", href: "/dossiers/demarches#vers-ong" }],
+    sources: [{ label: "Démarches — vers le statut d’ONG", href: "/association/demarches#vers-ong" }],
     suite: "Vérifier d’abord l’autorisation de l’association au titre de l’ordonnance de 2018 ; nom et objet à fixer par l’assemblée générale.",
   },
   {
@@ -182,7 +182,7 @@ export const DECISIONS: Decision[] = [
     id: "regle-02", date: "2026-09-11", type: "regle",
     titre: "Lieux sacrés et sépultures : ne rien publier",
     texte: "Le registre des lieux sacrés et des sépultures est tenu avec les chefs ; rien n’en paraît sur la carte ni sur le site.",
-    sources: [{ label: "Lieux sacrés et sépultures", href: "/dossiers/lieux-sacres" }],
+    sources: [{ label: "Lieux sacrés et sépultures", href: "/patrimoine/lieux-sacres" }],
   },
   {
     id: "regle-03", date: "2026-09-11", type: "regle",

@@ -63,7 +63,7 @@ export default function VillagesEn() {
         <SectionHead eyebrow="From the diaspora" title="Three ways" em="to complete the map." />
         <div className="link-list">
           <Link href="/villages" hrefLang="fr"><small>Search</small><strong>Look up a village by name</strong><span>Type at least two letters of its name on the French page; the results show its unit, its neighbours and its page.</span></Link>
-          <Link href="/dossiers/besoins" hrefLang="fr"><small>Report</small><strong>Report a need, locality by locality</strong><span>Water, school, health post, road: the form takes the name of the place, the kind of need and its urgency.</span></Link>
+          <Link href="/territoire/besoins" hrefLang="fr"><small>Report</small><strong>Report a need, locality by locality</strong><span>Water, school, health post, road: the form takes the name of the place, the kind of need and its urgency.</span></Link>
           <Link href="/en/contact"><small>Write to us</small><strong>Correct a name, a position, a boundary</strong><span>Every correction is published and dated in the corrections log.</span></Link>
         </div>
         <Partager route="/en/villages" titre="Find your village" texte="Fourteen administrative units in and around Mandoul Occidental, 966 named localities, one page per village: what open data knows, what the site says, what is still to document." lang="en" />

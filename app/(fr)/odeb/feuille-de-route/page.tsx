@@ -28,7 +28,7 @@ export default function FeuilleDeRoute() {
         title="De 2026 à 2030,"
         em="phase par phase."
         lead="La feuille de route énoncée par l’association le 28 septembre 2026 : trois phases de six, douze et dix-huit mois, puis le bilan du plan d’action 2026-2028 et la constitution de l’organisation. Chaque chantier porte son état réel — réalisé, en cours, à venir, à décider — tel que le site le constate à sa mise en ligne."
-        crumbs={[{ label: "Projet ODEB", href: "/odeb" }, { label: "Feuille de route" }]}
+        crumbs={[{ label: "Vision 2030 — projet ODEB", href: "/odeb" }, { label: "Feuille de route" }]}
         pills={["Trois phases", "Horizon 2030", `État au ${new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "Africa/Ndjamena" })}`]}
       />
       <OdebNav actif="feuille-de-route" />

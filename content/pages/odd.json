@@ -32,6 +32,6 @@
  "scripts": [],
  "rootAttrs": {},
  "slug": "odd",
- "route": "/dossiers/odd",
+ "route": "/programmes/odd",
  "kind": "dossier"
 }

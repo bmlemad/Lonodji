@@ -40,7 +40,7 @@ export default function Observatoire() {
         title="Observatoire"
         em="du Mandoul Occidental."
         lead="Les mêmes règles que le tableau de bord — un chiffre, sa source, sa date — appliquées au territoire, unité par unité : ce que l’on sait des localités et des équipements, l’état du diagnostic par domaine, le suivi des plaidoyers et des besoins signalés. Et, tout aussi précisément, ce que l’observatoire ne sait pas encore."
-        crumbs={[{ label: "Territoire", href: "/carte" }, { label: "Observatoire" }]}
+        crumbs={[{ label: "Territoire", href: "/territoire" }, { label: "Observatoire" }]}
         pills={[`${t.unites} unités`, `${nf.format(t.localites)} localités`, `${o.diagnostic.total} problématiques`, `données du ${date(o.sources.carte)}`]}
       />
 
@@ -93,7 +93,7 @@ export default function Observatoire() {
             <tbody>
               {o.diagnostic.domaines.map((d) => (
                 <tr key={d.nom}>
-                  <th scope="row"><Link href={`/dossiers/problematiques#${d.ancre}`}>{d.nom}</Link></th>
+                  <th scope="row"><Link href={`/territoire/diagnostic#${d.ancre}`}>{d.nom}</Link></th>
                   <td>{d.total}</td>
                   <td className={d.documente ? "ob-ok" : "est-vide"}>{d.documente}</td>
                   <td className={d.partiel ? undefined : "est-vide"}>{d.partiel}</td>
@@ -106,29 +106,12 @@ export default function Observatoire() {
             </tbody>
           </table>
         </div>
-        <p className="lg-footnote">Échelons de décision sur l’ensemble du diagnostic : {decideurs.map(([k, n]) => `${k} (${n})`).join(", ")}. Les {o.diagnostic.statuts.inconnu} problématiques « inconnues » sont l’objet des <Link href="/dossiers/enquetes">huit enquêtes de terrain</Link>, qui ne demandent pas d’argent.</p>
+        <p className="lg-footnote">Échelons de décision sur l’ensemble du diagnostic : {decideurs.map(([k, n]) => `${k} (${n})`).join(", ")}. Les {o.diagnostic.statuts.inconnu} problématiques « inconnues » sont l’objet des <Link href="/territoire/enquetes">huit enquêtes de terrain</Link>, qui ne demandent pas d’argent.</p>
       </section>
 
       <section className="hub-section" id="plaidoyers">
-        <SectionHead eyebrow="Suivi des plaidoyers" title="Publiés, transmis," em="répondus." text="Chaque plaidoyer nomme ses destinataires. L’observatoire suit la transmission et la réponse ; le dossier de chaque plaidoyer garde le texte, les chiffres et les sources." />
-        <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Tableau de suivi des plaidoyers">
-          <table className="ob-table ob-table--plaidoyers">
-            <thead><tr><th scope="col">Plaidoyer</th><th scope="col">Thème</th><th scope="col">Destinataires</th><th scope="col">Publié</th><th scope="col">Transmis</th><th scope="col">Réponse</th></tr></thead>
-            <tbody>
-              {o.plaidoyers.map((p) => (
-                <tr key={p.id}>
-                  <th scope="row"><Link href={p.href}>{p.title}</Link></th>
-                  <td>{p.theme}</td>
-                  <td><small>{p.recipients}</small></td>
-                  <td>{p.published}</td>
-                  <td className={/aucun|non|—|pas/i.test(p.sent) || !p.sent ? "ob-manque" : "ob-ok"}>{p.sent || "—"}</td>
-                  <td className={/aucun|non|—|pas/i.test(p.answer) || !p.answer ? "est-vide" : "ob-ok"}>{p.answer || "—"}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="lg-footnote">Les lettres de transmission des huit dossiers de plaidoyer ont été préparées le 24 septembre 2026 et attendent la signature du bureau ; la date d’envoi de chaque dossier sera inscrite ici dès la transmission. {o.engagements.total} engagements publics sont suivis par ailleurs, {o.engagements.realises} confirmé{o.engagements.realises > 1 ? "s" : ""} réalisé{o.engagements.realises > 1 ? "s" : ""}.</p>
+        <SectionHead eyebrow="Suivi des plaidoyers" title="Publiés, transmis," em="répondus." text={`La transmission et la réponse de chaque dossier de plaidoyer sont suivies au même endroit que les autres indicateurs de l’association : le tableau de suivi. ${o.engagements.total} engagements publics y sont aussi suivis.`} />
+        <p className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="button secondary" href="/impact#plaidoyers">Le suivi des plaidoyers <span aria-hidden="true">→</span></Link></p>
       </section>
 
       <section className="hub-section" id="indicateurs">
@@ -153,9 +136,9 @@ export default function Observatoire() {
       <section className="hub-section" id="alimenter">
         <SectionHead eyebrow="Alimenter l’observatoire" title="Quatre gestes" em="qui changent un chiffre." />
         <div className="link-list">
-          <Link href="/dossiers/besoins"><small>Besoins</small><strong>Signaler un besoin, localité par localité</strong><span>Un forage en panne, une école sans maître, un pont coupé : compté ici dès l’envoi, jamais nommé.</span></Link>
+          <Link href="/territoire/besoins"><small>Besoins</small><strong>Signaler un besoin, localité par localité</strong><span>Un forage en panne, une école sans maître, un pont coupé : compté ici dès l’envoi, jamais nommé.</span></Link>
           <Link href="/villages"><small>Équipements</small><strong>Dire ce qu’il y a dans son village</strong><span>Chaque fiche pose six questions — eau, école, santé, réseau, histoire, habitants — avec le formulaire pour y répondre.</span></Link>
-          <Link href="/dossiers/enquetes"><small>Diagnostic</small><strong>Mener une des huit enquêtes de terrain</strong><span>Les onze problématiques inconnues ont chacune leur détenteur de réponse, leur méthode et leur fiche de relevé.</span></Link>
+          <Link href="/territoire/enquetes"><small>Diagnostic</small><strong>Mener une des huit enquêtes de terrain</strong><span>Les onze problématiques inconnues ont chacune leur détenteur de réponse, leur méthode et leur fiche de relevé.</span></Link>
           <Link href="/actions#mesure-debit"><small>Connectivité</small><strong>Mesurer le débit internet chez soi</strong><span>Une mesure datée et située, pour le plaidoyer haut débit.</span></Link>
         </div>
         <Partager route="/observatoire" titre="Observatoire du Mandoul Occidental" texte="Localités, équipements connus, couverture, diagnostic par domaine, plaidoyers et besoins signalés : les chiffres du pays bedjond par unité, datés et sourcés, et ce que l’observatoire ne sait pas encore." />

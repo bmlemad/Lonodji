@@ -40,6 +40,6 @@
  "scripts": [],
  "rootAttrs": {},
  "slug": "kit-mobilisation",
- "route": "/dossiers/kit-mobilisation",
+ "route": "/participer/kit-mobilisation",
  "kind": "dossier"
 }

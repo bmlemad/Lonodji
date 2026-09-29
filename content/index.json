@@ -2,7 +2,7 @@
  "pages": [
   {
    "slug": "agriculteurs-eleveurs",
-   "route": "/dossiers/agriculteurs-eleveurs",
+   "route": "/programmes/agriculteurs-eleveurs",
    "kind": "dossier",
    "title": "Agriculteurs et éleveurs : prévenir les conflits",
    "eyebrow": "Paix & cohésion",
@@ -14,7 +14,7 @@
   },
   {
    "slug": "agriculture-securite-alimentaire",
-   "route": "/dossiers/agriculture-securite-alimentaire",
+   "route": "/programmes/agriculture-securite-alimentaire",
    "kind": "dossier",
    "title": "Agriculture, élevage & sécurité alimentaire",
    "eyebrow": "Agriculture, élevage & sécurité alimentaire",
@@ -25,20 +25,8 @@
    "hasMap": false
   },
   {
-   "slug": "air-bedjondo",
-   "route": "/dossiers/air-bedjondo",
-   "kind": "dossier",
-   "title": "Bedjondo Transport et Logistique (ex-Air Bedjondo)",
-   "eyebrow": "Nos projets",
-   "lede": "Un projet de transport et de logistique terrestre annoncé pour désenclaver Bédjondo et relier ses terroirs entre eux. Malgré son nom, ce n’est pas un projet aérien : ce que nous savons, et surtout ce que nous ne savons pas encore.",
-   "description": "Air Bedjondo : le projet de transport et de logistique terrestre annoncé par ADEB LONODJI pour désenclaver Bédjondo et relier ses terroirs. Malgré son nom, ce n’est pas un projet aérien.",
-   "parent": "Nos actions",
-   "words": 696,
-   "hasMap": false
-  },
-  {
    "slug": "application",
-   "route": "/dossiers/application",
+   "route": "/projets/application",
    "kind": "dossier",
    "title": "Une application pour téléphone",
    "eyebrow": "Projet annoncé",
@@ -50,7 +38,7 @@
   },
   {
    "slug": "bedjondo",
-   "route": "/dossiers/bedjondo",
+   "route": "/territoire/bedjondo",
    "kind": "dossier",
    "title": "Bédjondo",
    "eyebrow": "Notre ville",
@@ -62,7 +50,7 @@
   },
   {
    "slug": "besoins",
-   "route": "/dossiers/besoins",
+   "route": "/territoire/besoins",
    "kind": "dossier",
    "title": "La carte des besoins de Bédjondo",
    "eyebrow": "Diagnostic participatif",
@@ -74,7 +62,7 @@
   },
   {
    "slug": "complexe-sportif",
-   "route": "/dossiers/complexe-sportif",
+   "route": "/projets/complexe-sportif",
    "kind": "dossier",
    "title": "Un complexe de formation sportive pour les jeunes de Bédjondo",
    "eyebrow": "Pôle II · Éducation, jeunesse & formation · Projet à l’étude",
@@ -86,7 +74,7 @@
   },
   {
    "slug": "decentralisation",
-   "route": "/dossiers/decentralisation",
+   "route": "/territoire/decentralisation",
    "kind": "dossier",
    "title": "Décentralisation & développement local",
    "eyebrow": "Gouvernance & plaidoyer",
@@ -98,7 +86,7 @@
   },
   {
    "slug": "demarches",
-   "route": "/dossiers/demarches",
+   "route": "/association/demarches",
    "kind": "dossier",
    "title": "Les démarches, pas à pas",
    "eyebrow": "Agir",
@@ -110,7 +98,7 @@
   },
   {
    "slug": "drones-innovation",
-   "route": "/dossiers/drones-innovation",
+   "route": "/projets/drones-innovation",
    "kind": "dossier",
    "title": "Drones & innovation pour les secteurs stratégiques",
    "eyebrow": "Numérique & innovation",
@@ -122,7 +110,7 @@
   },
   {
    "slug": "engagements",
-   "route": "/dossiers/engagements",
+   "route": "/association/engagements",
    "kind": "dossier",
    "title": "Nos engagements publics",
    "eyebrow": "Redevabilité",
@@ -134,7 +122,7 @@
   },
   {
    "slug": "enquetes",
-   "route": "/dossiers/enquetes",
+   "route": "/territoire/enquetes",
    "kind": "dossier",
    "title": "Enquêtes de terrain",
    "eyebrow": "Agir",
@@ -146,7 +134,7 @@
   },
   {
    "slug": "environnement",
-   "route": "/dossiers/environnement",
+   "route": "/programmes/environnement",
    "kind": "dossier",
    "title": "Environnement & durabilité",
    "eyebrow": "Environnement, climat & ressources naturelles",
@@ -158,7 +146,7 @@
   },
   {
    "slug": "espace-numerique",
-   "route": "/dossiers/espace-numerique",
+   "route": "/projets/espace-numerique",
    "kind": "dossier",
    "title": "L’espace numérique communautaire de Bédjondo",
    "eyebrow": "Premier chantier",
@@ -170,7 +158,7 @@
   },
   {
    "slug": "evenements",
-   "route": "/dossiers/evenements",
+   "route": "/association/evenements",
    "kind": "dossier",
    "title": "Événements",
    "eyebrow": "Agenda communautaire",
@@ -182,7 +170,7 @@
   },
   {
    "slug": "genealogies",
-   "route": "/dossiers/genealogies",
+   "route": "/patrimoine/genealogies",
    "kind": "dossier",
    "title": "Écrire la généalogie de sa famille",
    "eyebrow": "Mémoire & héritage",
@@ -194,7 +182,7 @@
   },
   {
    "slug": "handicap",
-   "route": "/dossiers/handicap",
+   "route": "/programmes/handicap",
    "kind": "dossier",
    "title": "Un plan pour les personnes en situation de handicap",
    "eyebrow": "Plan handicap",
@@ -206,7 +194,7 @@
   },
   {
    "slug": "identite-visuelle",
-   "route": "/dossiers/identite-visuelle",
+   "route": "/association/ancienne-identite-visuelle",
    "kind": "dossier",
    "title": "Identité visuelle",
    "eyebrow": "Charte graphique",
@@ -218,7 +206,7 @@
   },
   {
    "slug": "kit-mobilisation",
-   "route": "/dossiers/kit-mobilisation",
+   "route": "/participer/kit-mobilisation",
    "kind": "dossier",
    "title": "Kit de mobilisation",
    "eyebrow": "Relayer",
@@ -230,7 +218,7 @@
   },
   {
    "slug": "lieux-sacres",
-   "route": "/dossiers/lieux-sacres",
+   "route": "/patrimoine/lieux-sacres",
    "kind": "dossier",
    "title": "Lieux sacrés et sépultures",
    "eyebrow": "Culture & patrimoine vivant",
@@ -242,7 +230,7 @@
   },
   {
    "slug": "odd",
-   "route": "/dossiers/odd",
+   "route": "/programmes/odd",
    "kind": "dossier",
    "title": "Nos thématiques et les ODD",
    "eyebrow": "Une grille de lecture partagée",
@@ -254,19 +242,19 @@
   },
   {
    "slug": "ong-partenaires",
-   "route": "/dossiers/ong-partenaires",
+   "route": "/association/ong-partenaires",
    "kind": "dossier",
    "title": "ONG et partenaires opérationnels au Mandoul",
    "eyebrow": "Cartographie des acteurs",
    "lede": "Nous avons cherché non pas qui dit travailler au Tchad, mais qui intervient dans notre province avec une trace datée. Onze entrées, une vingtaine de structures, aucune basée à Bédjondo — et un modèle déjà installé dans le Mandoul qu’il suffit de demander une quatrième fois.",
    "description": "Qui intervient vraiment dans le Mandoul, avec quel bailleur et sur quel secteur — et l’acteur que nous approchons pour chaque dossier.",
    "parent": "L’association",
-   "words": 2854,
+   "words": 2840,
    "hasMap": false
   },
   {
    "slug": "problematiques",
-   "route": "/dossiers/problematiques",
+   "route": "/territoire/diagnostic",
    "kind": "dossier",
    "title": "Diagnostic territorial du Mandoul Occidental",
    "eyebrow": "État des lieux",
@@ -278,7 +266,7 @@
   },
   {
    "slug": "recherche",
-   "route": "/dossiers/recherche",
+   "route": "/patrimoine/base-de-recherche",
    "kind": "dossier",
    "title": "Base de recherche bibliographique",
    "eyebrow": "Thématique 03 · Recherche & savoirs",
@@ -290,7 +278,7 @@
   },
   {
    "slug": "solidarite-inclusion",
-   "route": "/dossiers/solidarite-inclusion",
+   "route": "/programmes/solidarite-inclusion",
    "kind": "dossier",
    "title": "Jeunes mères, orphelins, personnes isolées",
    "eyebrow": "Protection sociale, enfance & inclusion",
@@ -302,7 +290,7 @@
   },
   {
    "slug": "veuves",
-   "route": "/dossiers/veuves",
+   "route": "/programmes/veuves",
    "kind": "dossier",
    "title": "Un plan pour les veuves de Bédjondo",
    "eyebrow": "Plan veuves",
@@ -314,7 +302,7 @@
   },
   {
    "slug": "trouver-ma-thematique",
-   "route": "/dossiers/trouver-ma-thematique",
+   "route": "/participer/trouver-ma-thematique",
    "kind": "dossier",
    "title": "Quelle thématique pour vous ?",
    "eyebrow": "Agir avec nous",
@@ -326,7 +314,7 @@
   },
   {
    "slug": "genealogie-outil",
-   "route": "/dossiers/genealogie-outil",
+   "route": "/patrimoine/genealogie-outil",
    "kind": "dossier",
    "title": "Cahier généalogique en ligne",
    "eyebrow": "Mémoire & héritage",
@@ -441,7 +429,7 @@
    "lede": "Qui publie ce site, quelles données sont collectées via ses formulaires, et comment les faire corriger ou supprimer.",
    "description": "Mentions légales d’ADEB LONODJI et informations sur les données collectées via les formulaires du site.",
    "parent": "L’association",
-   "words": 1907,
+   "words": 1591,
    "hasMap": false
   },
   {
@@ -1398,7 +1386,7 @@
        },
        {
         "label": "Généalogies des familles →",
-        "href": "/dossiers/genealogies"
+        "href": "/patrimoine/genealogies"
        },
        {
         "label": "Suivi : 2 problématiques →",
@@ -1419,7 +1407,7 @@
       "filled": true,
       "coordinator": "Dr Yaphete Madjiradé",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Langues et parlers sara, à commencer par le bedjond (bedjond, bebote, yom, pen, maguer), berceau du mouvement. Contes, proverbes, chants, rites, savoirs traditionnels, fêtes culturelles et rencontres communautaires. La thématique porte aussi un principe clair : les sites sacrés du pays bedjond (lieux de rite, sites initiatiques, lieux de mémoire des anciens) doivent être protégés et transmis avec le respect qui leur est dû. Ce principe a désormais sa page : <a href=\"/dossiers/lieux-sacres\">Lieux sacrés et sépultures</a>, où nous exposons la voie juridique retenue et la règle que nous nous imposons : ne rien publier. Sur les proverbes, la bibliothèque référence désormais les <a href=\"/dossiers/recherche#src-sept-cents-proverbes-nang-nda\">sept cents proverbes nangnda réunis par Madjidéné Altana Lydie</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> la coordination de la thématique est confiée au Dr Yaphete Madjiradé, qui succède à Félix Mbété Nangmbatnan.",
+      "description": "Langues et parlers sara, à commencer par le bedjond (bedjond, bebote, yom, pen, maguer), berceau du mouvement. Contes, proverbes, chants, rites, savoirs traditionnels, fêtes culturelles et rencontres communautaires. La thématique porte aussi un principe clair : les sites sacrés du pays bedjond (lieux de rite, sites initiatiques, lieux de mémoire des anciens) doivent être protégés et transmis avec le respect qui leur est dû. Ce principe a désormais sa page : <a href=\"/patrimoine/lieux-sacres\">Lieux sacrés et sépultures</a>, où nous exposons la voie juridique retenue et la règle que nous nous imposons : ne rien publier. Sur les proverbes, la bibliothèque référence désormais les <a href=\"/patrimoine/base-de-recherche#src-sept-cents-proverbes-nang-nda\">sept cents proverbes nangnda réunis par Madjidéné Altana Lydie</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> la coordination de la thématique est confiée au Dr Yaphete Madjiradé, qui succède à Félix Mbété Nangmbatnan.",
       "descriptionText": "Langues et parlers sara, à commencer par le bedjond (bedjond, bebote, yom, pen, maguer), berceau du mouvement. Contes, proverbes, chants, rites, savoirs traditionnels, fêtes culturelles et rencontres communautaires. La thématique porte aussi un principe clair : les sites sacrés du pays bedjond (lieux de rite, sites initiatiques, lieux de mémoire des anciens) doivent être protégés et transmis avec le respect qui leur est dû. Ce principe a désormais sa page : Lieux sacrés et sépultures , où nous exposons la voie juridique retenue et la règle que nous nous imposons : ne rien publier. Sur les proverbes, la bibliothèque référence désormais les sept cents proverbes nangnda réunis par Madjidéné Altana Lydie . Mise à jour du 28 septembre 2026 : la coordination de la thématique est confiée au Dr Yaphete Madjiradé, qui succède à Félix Mbété Nangmbatnan.",
       "tags": [
        "Langues sara",
@@ -1451,7 +1439,7 @@
        },
        {
         "label": "Lieux sacrés et sépultures →",
-        "href": "/dossiers/lieux-sacres"
+        "href": "/patrimoine/lieux-sacres"
        },
        {
         "label": "Suivi : 3 problématiques →",
@@ -1472,7 +1460,7 @@
       "filled": true,
       "coordinator": "Sylvain Nomaye, ingénieur de conception en informatique",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Travaux universitaires, publications et valorisation de nos chercheurs, portées par le programme <strong>Bedjond Digital Heritage</strong> : numérisation des archives et traditions orales, dictionnaire numérique de la langue bedjond, cartographie du patrimoine territorial, musée virtuel de la monnaie Kul et de la métallurgie du fer, et académie numérique pour la jeunesse. Ce musée virtuel est pensé comme la première étape d’un même projet de mémoire — documenter et rendre accessible en ligne avant, un jour peut-être, de donner à ces collections un lieu physique à Bédjondo (voir la piste envisagée par la thématique Mémoire & héritage). La thématique encourage activement la recherche scientifique sur le peuple sara, à commencer par les Bedjond, en lien avec les universités et chercheurs tchadiens et internationaux. Ambition à plus long terme : passer d’une communauté qui encourage la recherche à une communauté qui publie elle-même — livres, articles scientifiques et autres travaux édités ou coédités par ADEB LONODJI. Pour que ces savoirs soient accessibles sur place, la thématique travaillera avec les responsables des bibliothèques du Mandoul Occidental afin de mettre les ouvrages de référence à leur disposition (<a href=\"/dossiers/recherche#shelf-title\">voir la bibliothèque</a>).",
+      "description": "Travaux universitaires, publications et valorisation de nos chercheurs, portées par le programme <strong>Bedjond Digital Heritage</strong> : numérisation des archives et traditions orales, dictionnaire numérique de la langue bedjond, cartographie du patrimoine territorial, musée virtuel de la monnaie Kul et de la métallurgie du fer, et académie numérique pour la jeunesse. Ce musée virtuel est pensé comme la première étape d’un même projet de mémoire — documenter et rendre accessible en ligne avant, un jour peut-être, de donner à ces collections un lieu physique à Bédjondo (voir la piste envisagée par la thématique Mémoire & héritage). La thématique encourage activement la recherche scientifique sur le peuple sara, à commencer par les Bedjond, en lien avec les universités et chercheurs tchadiens et internationaux. Ambition à plus long terme : passer d’une communauté qui encourage la recherche à une communauté qui publie elle-même — livres, articles scientifiques et autres travaux édités ou coédités par ADEB LONODJI. Pour que ces savoirs soient accessibles sur place, la thématique travaillera avec les responsables des bibliothèques du Mandoul Occidental afin de mettre les ouvrages de référence à leur disposition (<a href=\"/patrimoine/base-de-recherche#shelf-title\">voir la bibliothèque</a>).",
       "descriptionText": "Travaux universitaires, publications et valorisation de nos chercheurs, portées par le programme Bedjond Digital Heritage : numérisation des archives et traditions orales, dictionnaire numérique de la langue bedjond, cartographie du patrimoine territorial, musée virtuel de la monnaie Kul et de la métallurgie du fer, et académie numérique pour la jeunesse. Ce musée virtuel est pensé comme la première étape d’un même projet de mémoire — documenter et rendre accessible en ligne avant, un jour peut-être, de donner à ces collections un lieu physique à Bédjondo (voir la piste envisagée par la thématique Mémoire & héritage). La thématique encourage activement la recherche scientifique sur le peuple sara, à commencer par les Bedjond, en lien avec les universités et chercheurs tchadiens et internationaux. Ambition à plus long terme : passer d’une communauté qui encourage la recherche à une communauté qui publie elle-même — livres, articles scientifiques et autres travaux édités ou coédités par ADEB LONODJI. Pour que ces savoirs soient accessibles sur place, la thématique travaillera avec les responsables des bibliothèques du Mandoul Occidental afin de mettre les ouvrages de référence à leur disposition ( voir la bibliothèque ).",
       "tags": [
        "Recherche",
@@ -1510,7 +1498,7 @@
       "links": [
        {
         "label": "Base de recherche →",
-        "href": "/dossiers/recherche"
+        "href": "/patrimoine/base-de-recherche"
        },
        {
         "label": "Cellule communication & numérique →",
@@ -1594,7 +1582,7 @@
       "links": [
        {
         "label": "Hub filières & appuis techniques →",
-        "href": "/dossiers/agriculture-securite-alimentaire"
+        "href": "/programmes/agriculture-securite-alimentaire"
        },
        {
         "label": "Cellule financement & ressources →",
@@ -1619,7 +1607,7 @@
       "filled": false,
       "coordinator": "à pourvoir",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la <a href=\"/programmes#cellule-financement-ressources\">cellule Financement &amp; ressources</a> pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire, notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire (<a href=\"/dossiers/environnement#economie-verte\">voir les pistes</a>).",
+      "description": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la <a href=\"/programmes#cellule-financement-ressources\">cellule Financement &amp; ressources</a> pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire, notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire (<a href=\"/programmes/environnement#economie-verte\">voir les pistes</a>).",
       "descriptionText": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la cellule Financement & ressources pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire, notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire ( voir les pistes ).",
       "tags": [
        "Emploi",
@@ -1678,7 +1666,7 @@
       "filled": false,
       "coordinator": "à pourvoir",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la <a href=\"/programmes#desenclavement-urbanisation\">thématique Énergie, routes &amp; urbanisme</a>. La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page <a href=\"/dossiers/environnement#economie-verte\">Environnement &amp; durabilité</a>. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique s’élargit à l’<strong>adaptation au changement climatique</strong> — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Urgences & risques.",
+      "description": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la <a href=\"/programmes#desenclavement-urbanisation\">thématique Énergie, routes &amp; urbanisme</a>. La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page <a href=\"/programmes/environnement#economie-verte\">Environnement &amp; durabilité</a>. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique s’élargit à l’<strong>adaptation au changement climatique</strong> — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Urgences & risques.",
       "descriptionText": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la thématique Énergie, routes & urbanisme . La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page Environnement & durabilité . Mise à jour du 29 septembre 2026 : la thématique s’élargit à l’ adaptation au changement climatique — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Urgences & risques.",
       "tags": [
        "Foncier",
@@ -1716,7 +1704,7 @@
       "links": [
        {
         "label": "Environnement & durabilité →",
-        "href": "/dossiers/environnement"
+        "href": "/programmes/environnement"
        },
        {
         "label": "Eau, assainissement & hygiène →",
@@ -1790,7 +1778,7 @@
       "filled": false,
       "coordinator": "à pourvoir",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la <a href=\"/programmes#jeunesse-reussite\">thématique Éducation, jeunesse &amp; formation</a>. Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir <a href=\"/journal/2026-09-16-bedjondo-village-devenu-ville\">nos douze propositions pour une ville moderne</a>). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir <a href=\"https://lonodji.org/dossiers/bedjondo-transport-logistique\">Bedjondo Transport et Logistique</a>, ex-Air Bedjondo). <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’<strong>énergie</strong> (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo.",
+      "description": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la <a href=\"/programmes#jeunesse-reussite\">thématique Éducation, jeunesse &amp; formation</a>. Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir <a href=\"/journal/2026-09-16-bedjondo-village-devenu-ville\">nos douze propositions pour une ville moderne</a>). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir <a href=\"https://lonodji.org/projets/bedjondo-transport-logistique\">Bedjondo Transport et Logistique</a>, ex-Air Bedjondo). <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’<strong>énergie</strong> (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo.",
       "descriptionText": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la thématique Éducation, jeunesse & formation . Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir nos douze propositions pour une ville moderne ). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir Bedjondo Transport et Logistique , ex-Air Bedjondo). Mise à jour du 29 septembre 2026 : la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’ énergie (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo.",
       "tags": [
        "Désenclavement",
@@ -1829,7 +1817,7 @@
       "links": [
        {
         "label": "Bedjondo Transport et Logistique →",
-        "href": "https://lonodji.org/dossiers/bedjondo-transport-logistique"
+        "href": "https://lonodji.org/projets/bedjondo-transport-logistique"
        },
        {
         "label": "Éducation, jeunesse & formation →",
@@ -1883,7 +1871,7 @@
       "links": [
        {
         "label": "Complexe de formation sportive →",
-        "href": "/dossiers/complexe-sportif"
+        "href": "/projets/complexe-sportif"
        },
        {
         "label": "Énergie, routes & urbanisme →",
@@ -1916,7 +1904,7 @@
       "filled": true,
       "coordinator": "Odette Tolmbaye",
       "coordinatorLabel": "Coordonnatrice",
-      "description": "Autonomisation des femmes et participation pleine et entière aux décisions et au développement communautaire. Concrètement : appui aux groupements et activités génératrices de revenus portées par des femmes de Bédjondo, formation au leadership, et présence effective des femmes dans les instances de décision d’ADEB LONODJI elle-même. La thématique porte aussi la <strong>lutte contre les violences basées sur le genre</strong> : violences conjugales, mariages forcés, lévirat imposé et rites de veuvage abusifs, harcèlement en milieu scolaire. Le Tchad s’est doté en 2025 d’une ordonnance qui sanctionne lourdement ces faits — jusqu’à dix ans d’emprisonnement pour un mariage forcé — et presque personne ne la connaît : la faire connaître est déjà une action (<a href=\"/dossiers/veuves\">voir le plan pour les veuves</a>). Une coopération internationale finance par ailleurs un projet de lutte contre les VBG qui cible le Mandoul et le Logone Oriental : nous n’avons pas à partir de zéro (<a href=\"/dossiers/ong-partenaires\">ONG &amp; partenaires</a>).",
+      "description": "Autonomisation des femmes et participation pleine et entière aux décisions et au développement communautaire. Concrètement : appui aux groupements et activités génératrices de revenus portées par des femmes de Bédjondo, formation au leadership, et présence effective des femmes dans les instances de décision d’ADEB LONODJI elle-même. La thématique porte aussi la <strong>lutte contre les violences basées sur le genre</strong> : violences conjugales, mariages forcés, lévirat imposé et rites de veuvage abusifs, harcèlement en milieu scolaire. Le Tchad s’est doté en 2025 d’une ordonnance qui sanctionne lourdement ces faits — jusqu’à dix ans d’emprisonnement pour un mariage forcé — et presque personne ne la connaît : la faire connaître est déjà une action (<a href=\"/programmes/veuves\">voir le plan pour les veuves</a>). Une coopération internationale finance par ailleurs un projet de lutte contre les VBG qui cible le Mandoul et le Logone Oriental : nous n’avons pas à partir de zéro (<a href=\"/association/ong-partenaires\">ONG &amp; partenaires</a>).",
       "descriptionText": "Autonomisation des femmes et participation pleine et entière aux décisions et au développement communautaire. Concrètement : appui aux groupements et activités génératrices de revenus portées par des femmes de Bédjondo, formation au leadership, et présence effective des femmes dans les instances de décision d’ADEB LONODJI elle-même. La thématique porte aussi la lutte contre les violences basées sur le genre : violences conjugales, mariages forcés, lévirat imposé et rites de veuvage abusifs, harcèlement en milieu scolaire. Le Tchad s’est doté en 2025 d’une ordonnance qui sanctionne lourdement ces faits — jusqu’à dix ans d’emprisonnement pour un mariage forcé — et presque personne ne la connaît : la faire connaître est déjà une action ( voir le plan pour les veuves ). Une coopération internationale finance par ailleurs un projet de lutte contre les VBG qui cible le Mandoul et le Logone Oriental : nous n’avons pas à partir de zéro ( ONG & partenaires ).",
       "tags": [
        "Femmes",
@@ -1945,7 +1933,7 @@
       "links": [
        {
         "label": "Plan pour les veuves →",
-        "href": "/dossiers/veuves"
+        "href": "/programmes/veuves"
        },
        {
         "label": "Justice & droits humains →",
@@ -2057,19 +2045,19 @@
       "links": [
        {
         "label": "Hub Personnes vulnérables →",
-        "href": "/dossiers/solidarite-inclusion"
+        "href": "/programmes/solidarite-inclusion"
        },
        {
         "label": "Caisse, tontines & microcrédit →",
-        "href": "/dossiers/solidarite-inclusion#entraide-economique"
+        "href": "/programmes/solidarite-inclusion#entraide-economique"
        },
        {
         "label": "Plan handicap →",
-        "href": "/dossiers/handicap"
+        "href": "/programmes/handicap"
        },
        {
         "label": "Plan veuves →",
-        "href": "/dossiers/veuves"
+        "href": "/programmes/veuves"
        },
        {
         "label": "Suivi : 4 problématiques →",
@@ -2127,7 +2115,7 @@
       "links": [
        {
         "label": "Signaler un besoin, localité par localité →",
-        "href": "/dossiers/besoins"
+        "href": "/territoire/besoins"
        },
        {
         "label": "Rejoindre cette thématique →",
@@ -2190,7 +2178,7 @@
        },
        {
         "label": "Décentralisation →",
-        "href": "/dossiers/decentralisation"
+        "href": "/territoire/decentralisation"
        },
        {
         "label": "Rayonnement national →",
@@ -2242,7 +2230,7 @@
       "links": [
        {
         "label": "Paix agriculteurs-éleveurs →",
-        "href": "/dossiers/agriculteurs-eleveurs"
+        "href": "/programmes/agriculteurs-eleveurs"
        },
        {
         "label": "Le Yondo, rite initiatique →",
@@ -2295,7 +2283,7 @@
       "links": [
        {
         "label": "Événements →",
-        "href": "/dossiers/evenements"
+        "href": "/association/evenements"
        },
        {
         "label": "Éducation, jeunesse & formation →",
@@ -2352,11 +2340,11 @@
       "links": [
        {
         "label": "Plan veuves →",
-        "href": "/dossiers/veuves"
+        "href": "/programmes/veuves"
        },
        {
         "label": "Plan handicap →",
-        "href": "/dossiers/handicap"
+        "href": "/programmes/handicap"
        },
        {
         "label": "Gouvernance & plaidoyer →",
@@ -2429,7 +2417,7 @@
       "links": [
        {
         "label": "Espace numérique →",
-        "href": "/dossiers/espace-numerique"
+        "href": "/projets/espace-numerique"
        },
        {
         "label": "Énergie, routes & urbanisme →",
@@ -2495,7 +2483,7 @@
       "links": [
        {
         "label": "Drones & innovation →",
-        "href": "/dossiers/drones-innovation"
+        "href": "/projets/drones-innovation"
        },
        {
         "label": "Recherche & savoirs →",
@@ -2693,7 +2681,7 @@
       },
       {
        "label": "Base de recherche →",
-       "href": "/dossiers/recherche"
+       "href": "/patrimoine/base-de-recherche"
       },
       {
        "label": "Rejoindre cette cellule →",
@@ -2841,7 +2829,7 @@
    "links": [
     {
      "label": "Les huit enquêtes →",
-     "href": "/dossiers/enquetes"
+     "href": "/territoire/enquetes"
     }
    ]
   },
@@ -2854,11 +2842,11 @@
    "links": [
     {
      "label": "La méthode →",
-     "href": "/dossiers/genealogies"
+     "href": "/patrimoine/genealogies"
     },
     {
      "label": "Version en ligne →",
-     "href": "/dossiers/genealogie-outil"
+     "href": "/patrimoine/genealogie-outil"
     }
    ]
   },
@@ -2871,7 +2859,7 @@
    "links": [
     {
      "label": "Lieux sacrés et sépultures →",
-     "href": "/dossiers/lieux-sacres"
+     "href": "/patrimoine/lieux-sacres"
     }
    ]
   },
@@ -2884,7 +2872,7 @@
    "links": [
     {
      "label": "Le plan handicap →",
-     "href": "/dossiers/handicap"
+     "href": "/programmes/handicap"
     }
    ]
   },
@@ -2897,7 +2885,7 @@
    "links": [
     {
      "label": "Kit de mobilisation →",
-     "href": "/dossiers/kit-mobilisation"
+     "href": "/participer/kit-mobilisation"
     }
    ]
   },
@@ -3046,7 +3034,7 @@
    "links": [
     {
      "label": "Démarches",
-     "href": "/dossiers/demarches"
+     "href": "/association/demarches"
     }
    ]
   },

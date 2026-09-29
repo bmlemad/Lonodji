@@ -109,9 +109,15 @@ PAGES_SITE.append({"t": "Programme Économie sociale et revenus (ODEB)", "r": "/
 PAGES_SITE.append({"t": "Note de synthèse des huit dossiers de plaidoyer (PDF, 2 pages)", "r": "/notes/note-synthese-bedjondo.pdf", "k": "Document",
      "d": "Bédjondo en chiffres sourcés, les huit demandes, les programmes des bailleurs à rejoindre ; à joindre aux courriers.",
      "x": "note synthèse plaidoyer PDF bailleurs partenaires courrier eau électricité haut débit santé école formation routes commune"})
-PAGES_SITE.append({"t": "Bedjondo Transport et Logistique (ex-Air Bedjondo)", "r": "/dossiers/bedjondo-transport-logistique", "k": "Dossier",
+PAGES_SITE.append({"t": "Bedjondo Transport et Logistique (ex-Air Bedjondo)", "r": "/projets/bedjondo-transport-logistique", "k": "Dossier",
      "d": "Le projet de transport et de logistique terrestres de Bédjondo, renommé le 29 septembre 2026, et six propositions pour le mener.",
      "x": "Bedjondo Transport et Logistique Air Bedjondo transport logistique pistes navette marché récoltes fret colis diaspora évacuation sanitaire tricycle pick-up coopérative programme économie sociale"})
+PAGES_SITE.append({"t": "Territoire — le pays bedjond", "r": "/territoire", "k": "Page",
+     "d": "La carte, les villages, Bédjondo, la décentralisation, l’observatoire, le diagnostic territorial, les besoins et les enquêtes.",
+     "x": "territoire carte villages Bédjondo décentralisation observatoire diagnostic besoins enquêtes Mandoul Occidental"})
+PAGES_SITE.append({"t": "Patrimoine — la mémoire du pays bedjond", "r": "/patrimoine", "k": "Page",
+     "d": "Histoire et grandes figures, lieux sacrés, généalogies, témoignages, la langue nangnda, la bibliothèque et la base de recherche.",
+     "x": "patrimoine mémoire histoire figures chefs de canton lieux sacrés généalogies témoignages langue nangnda bibliothèque recherche"})
 PAGES_SITE.append({"t": "Plateforme de projets", "r": "/projets", "k": "Page",
      "d": "Espace numérique communautaire, application pour téléphone, complexe sportif, Air Bedjondo : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer ; proposer un projet.",
      "x": "projets plateforme stade idée étude annoncé souscription financé réalisation essai service espace numérique application complexe sportif Air Bedjondo budget devis calendrier porteur thématique promesse de contribution proposer un projet forage école pont bibliothèque atelier"})

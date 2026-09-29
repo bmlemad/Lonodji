@@ -75,7 +75,7 @@ function cartesDuPlan(d: Indicateurs, f: Releve): Carte[] {
       detail: `${n(c.problematiques.total)} problématiques du diagnostic territorial (${n(c.problematiques.documentees)} documentées) et ${n(besoinsForm)} ${pluriel(besoinsForm, "signalement citoyen reçu", "signalements citoyens reçus")} par la carte des besoins.`,
       source: `Diagnostic + formulaire · ${releve}`,
       courte: "Diagnostic + formulaire",
-      href: "/dossiers/problematiques",
+      href: "/territoire/diagnostic",
     },
     {
       cle: "resolus",
@@ -85,7 +85,7 @@ function cartesDuPlan(d: Indicateurs, f: Releve): Carte[] {
       detail: `Rien n’est compté ici sans preuve datée. ${n(c.engagements.total)} engagements publics sont suivis un par un ; ${n(c.engagements.realises)} ${pluriel(c.engagements.realises, "est confirmé réalisé", "sont confirmés réalisés")}.`,
       source: "Règle de preuve · mise en ligne",
       courte: "Règle de preuve",
-      href: "/dossiers/engagements",
+      href: "/association/engagements",
     },
     {
       cle: "projets",
@@ -102,13 +102,13 @@ function cartesDuPlan(d: Indicateurs, f: Releve): Carte[] {
 
 const FORMULAIRES: { cle: string; libelle: string; note?: string; href: string }[] = [
   { cle: "intention-adhesion", libelle: "intentions d’adhésion", href: "/participer#adherer" },
-  { cle: "signalement-besoin", libelle: "signalements de besoin", href: "/dossiers/besoins" },
+  { cle: "signalement-besoin", libelle: "signalements de besoin", href: "/territoire/besoins" },
   { cle: "soutien-plaidoyer", libelle: "soutiens à un plaidoyer", href: "/actions" },
   { cle: "promesse-contribution", libelle: "promesses de contribution", href: "/participer#soutenir" },
   { cle: "proposition-article", libelle: "propositions d’article", href: "/participer#proposer" },
   { cle: "lettre-info", libelle: "abonnés à la lettre", href: "/participer#newsletter" },
   { cle: "temoignage-lignee", libelle: "témoignages de lignée", href: "/histoire" },
-  { cle: "lieu-sacre", libelle: "lieux sacrés signalés", href: "/dossiers/lieux-sacres" },
+  { cle: "lieu-sacre", libelle: "lieux sacrés signalés", href: "/patrimoine/lieux-sacres" },
   { cle: "mesure-debit", libelle: "mesures de débit internet", href: "/actions#mesure-debit" },
   { cle: "diaspora-competences", libelle: "compétences inscrites au répertoire", href: "/diaspora" },
   { cle: "temoignage", libelle: "récits, photos et enregistrements reçus", href: "/temoignages" },
@@ -181,8 +181,8 @@ export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: 
         <li><Link className="tb-mini" href="/journal"><strong>{n(c.articles)}</strong><span>articles du journal</span><small>depuis le {c.premierArticle ? dateLongue(c.premierArticle) : "11 septembre 2026"}</small></Link></li>
         <li><Link className="tb-mini" href="/documents"><strong>{n(c.documentsPdf)}</strong><span>documents PDF</span><small>{n(c.documentsAnnonces)} annoncés, à venir</small></Link></li>
         <li><Link className="tb-mini" href="/transparence#corrections"><strong>{n(c.corrections)}</strong><span>corrections datées</span><small>journal des corrections</small></Link></li>
-        <li><Link className="tb-mini" href="/dossiers/engagements"><strong>{n(c.engagements.total)}</strong><span>engagements publics</span><small>{n(c.engagements.realises)} confirmé réalisé</small></Link></li>
-        <li><Link className="tb-mini" href="/dossiers/problematiques"><strong>{n(c.problematiques.chantiersPrioritaires)}</strong><span>chantiers prioritaires</span><small>tirés du diagnostic</small></Link></li>
+        <li><Link className="tb-mini" href="/association/engagements"><strong>{n(c.engagements.total)}</strong><span>engagements publics</span><small>{n(c.engagements.realises)} confirmé réalisé</small></Link></li>
+        <li><Link className="tb-mini" href="/territoire/diagnostic"><strong>{n(c.problematiques.chantiersPrioritaires)}</strong><span>chantiers prioritaires</span><small>tirés du diagnostic</small></Link></li>
         <li><Link className="tb-mini" href="/carte"><strong>{n(c.carte.localites)}</strong><span>localités cartographiées</span><small>{n(c.carte.unites)} unités du pays bedjond</small></Link></li>
         <li><Link className="tb-mini" href="/carte"><strong>{n(c.carte.equipements)}</strong><span>équipements cartographiés</span><small>dans les données ouvertes</small></Link></li>
         <li><Link className="tb-mini" href="/plan-du-site"><strong>{n(c.pages)}</strong><span>pages publiées</span><small>hors journal</small></Link></li>

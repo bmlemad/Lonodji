@@ -1,3 +1,7 @@
+import { readFileSync } from "node:fs";
+
+const ROUTES_DOSSIERS = JSON.parse(readFileSync(new URL("./content/routes-dossiers.json", import.meta.url), "utf8")).routes;
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // les brouillons (arabes notamment) ne doivent jamais être embarqués dans les fonctions serveur
@@ -8,8 +12,8 @@ const nextConfig = {
   async redirects() {
     // Adresses de la première version du site (septembre 2026) : conservées pour les liens déjà partagés.
     return [
-      // 29/09/2026 : Air Bedjondo devient Bedjondo Transport et Logistique
-      { source: "/dossiers/air-bedjondo", destination: "/dossiers/bedjondo-transport-logistique", permanent: true },
+      // 29/09/2026 : restructuration — chaque page de fond quitte /dossiers/ pour sa rubrique (content/routes-dossiers.json)
+      ...Object.entries(ROUTES_DOSSIERS).map(([slug, destination]) => ({ source: `/dossiers/${slug}`, destination, permanent: true })),
       // doublons : pages de la première version servies aussi sous /dossiers/ (audit des doublons du 29/09/2026)
       { source: "/dossiers/mission", destination: "/mission", permanent: true },
       { source: "/dossiers/poles", destination: "/programmes", permanent: true },
@@ -49,7 +53,7 @@ const nextConfig = {
       {
         // adresse devinée couramment (revue du 29/09/2026)
         source: "/partenaires",
-        destination: "/dossiers/ong-partenaires",
+        destination: "/association/ong-partenaires",
         permanent: true,
       },
       {
@@ -218,277 +222,277 @@ const nextConfig = {
       },
       {
             source: "/agriculteurs-eleveurs",
-            destination: "/dossiers/agriculteurs-eleveurs",
+            destination: "/programmes/agriculteurs-eleveurs",
             permanent: true
       },
       {
             source: "/agriculteurs-eleveurs.html",
-            destination: "/dossiers/agriculteurs-eleveurs",
+            destination: "/programmes/agriculteurs-eleveurs",
             permanent: true
       },
       {
             source: "/agriculture-securite-alimentaire",
-            destination: "/dossiers/agriculture-securite-alimentaire",
+            destination: "/programmes/agriculture-securite-alimentaire",
             permanent: true
       },
       {
             source: "/agriculture-securite-alimentaire.html",
-            destination: "/dossiers/agriculture-securite-alimentaire",
+            destination: "/programmes/agriculture-securite-alimentaire",
             permanent: true
       },
       {
             source: "/air-bedjondo",
-            destination: "/dossiers/air-bedjondo",
+            destination: "/projets/bedjondo-transport-logistique",
             permanent: true
       },
       {
             source: "/air-bedjondo.html",
-            destination: "/dossiers/air-bedjondo",
+            destination: "/projets/bedjondo-transport-logistique",
             permanent: true
       },
       {
             source: "/application",
-            destination: "/dossiers/application",
+            destination: "/projets/application",
             permanent: true
       },
       {
             source: "/application.html",
-            destination: "/dossiers/application",
+            destination: "/projets/application",
             permanent: true
       },
       {
             source: "/bedjondo",
-            destination: "/dossiers/bedjondo",
+            destination: "/territoire/bedjondo",
             permanent: true
       },
       {
             source: "/bedjondo.html",
-            destination: "/dossiers/bedjondo",
+            destination: "/territoire/bedjondo",
             permanent: true
       },
       {
             source: "/besoins",
-            destination: "/dossiers/besoins",
+            destination: "/territoire/besoins",
             permanent: true
       },
       {
             source: "/besoins.html",
-            destination: "/dossiers/besoins",
+            destination: "/territoire/besoins",
             permanent: true
       },
       {
             source: "/complexe-sportif",
-            destination: "/dossiers/complexe-sportif",
+            destination: "/projets/complexe-sportif",
             permanent: true
       },
       {
             source: "/complexe-sportif.html",
-            destination: "/dossiers/complexe-sportif",
+            destination: "/projets/complexe-sportif",
             permanent: true
       },
       {
             source: "/decentralisation",
-            destination: "/dossiers/decentralisation",
+            destination: "/territoire/decentralisation",
             permanent: true
       },
       {
             source: "/decentralisation.html",
-            destination: "/dossiers/decentralisation",
+            destination: "/territoire/decentralisation",
             permanent: true
       },
       {
             source: "/demarches",
-            destination: "/dossiers/demarches",
+            destination: "/association/demarches",
             permanent: true
       },
       {
             source: "/demarches.html",
-            destination: "/dossiers/demarches",
+            destination: "/association/demarches",
             permanent: true
       },
       {
             source: "/drones-innovation",
-            destination: "/dossiers/drones-innovation",
+            destination: "/projets/drones-innovation",
             permanent: true
       },
       {
             source: "/drones-innovation.html",
-            destination: "/dossiers/drones-innovation",
+            destination: "/projets/drones-innovation",
             permanent: true
       },
       {
             source: "/engagements",
-            destination: "/dossiers/engagements",
+            destination: "/association/engagements",
             permanent: true
       },
       {
             source: "/engagements.html",
-            destination: "/dossiers/engagements",
+            destination: "/association/engagements",
             permanent: true
       },
       {
             source: "/enquetes",
-            destination: "/dossiers/enquetes",
+            destination: "/territoire/enquetes",
             permanent: true
       },
       {
             source: "/enquetes.html",
-            destination: "/dossiers/enquetes",
+            destination: "/territoire/enquetes",
             permanent: true
       },
       {
             source: "/environnement",
-            destination: "/dossiers/environnement",
+            destination: "/programmes/environnement",
             permanent: true
       },
       {
             source: "/environnement.html",
-            destination: "/dossiers/environnement",
+            destination: "/programmes/environnement",
             permanent: true
       },
       {
             source: "/espace-numerique",
-            destination: "/dossiers/espace-numerique",
+            destination: "/projets/espace-numerique",
             permanent: true
       },
       {
             source: "/espace-numerique.html",
-            destination: "/dossiers/espace-numerique",
+            destination: "/projets/espace-numerique",
             permanent: true
       },
       {
             source: "/evenements",
-            destination: "/dossiers/evenements",
+            destination: "/association/evenements",
             permanent: true
       },
       {
             source: "/evenements.html",
-            destination: "/dossiers/evenements",
+            destination: "/association/evenements",
             permanent: true
       },
       {
             source: "/genealogies",
-            destination: "/dossiers/genealogies",
+            destination: "/patrimoine/genealogies",
             permanent: true
       },
       {
             source: "/genealogies.html",
-            destination: "/dossiers/genealogies",
+            destination: "/patrimoine/genealogies",
             permanent: true
       },
       {
             source: "/handicap",
-            destination: "/dossiers/handicap",
+            destination: "/programmes/handicap",
             permanent: true
       },
       {
             source: "/handicap.html",
-            destination: "/dossiers/handicap",
+            destination: "/programmes/handicap",
             permanent: true
       },
       {
             source: "/identite-visuelle",
-            destination: "/dossiers/identite-visuelle",
+            destination: "/association/ancienne-identite-visuelle",
             permanent: true
       },
       {
             source: "/identite-visuelle.html",
-            destination: "/dossiers/identite-visuelle",
+            destination: "/association/ancienne-identite-visuelle",
             permanent: true
       },
       {
             source: "/kit-mobilisation",
-            destination: "/dossiers/kit-mobilisation",
+            destination: "/participer/kit-mobilisation",
             permanent: true
       },
       {
             source: "/kit-mobilisation.html",
-            destination: "/dossiers/kit-mobilisation",
+            destination: "/participer/kit-mobilisation",
             permanent: true
       },
       {
             source: "/lieux-sacres",
-            destination: "/dossiers/lieux-sacres",
+            destination: "/patrimoine/lieux-sacres",
             permanent: true
       },
       {
             source: "/lieux-sacres.html",
-            destination: "/dossiers/lieux-sacres",
+            destination: "/patrimoine/lieux-sacres",
             permanent: true
       },
       {
             source: "/odd",
-            destination: "/dossiers/odd",
+            destination: "/programmes/odd",
             permanent: true
       },
       {
             source: "/odd.html",
-            destination: "/dossiers/odd",
+            destination: "/programmes/odd",
             permanent: true
       },
       {
             source: "/ong-partenaires",
-            destination: "/dossiers/ong-partenaires",
+            destination: "/association/ong-partenaires",
             permanent: true
       },
       {
             source: "/ong-partenaires.html",
-            destination: "/dossiers/ong-partenaires",
+            destination: "/association/ong-partenaires",
             permanent: true
       },
       {
             source: "/problematiques",
-            destination: "/dossiers/problematiques",
+            destination: "/territoire/diagnostic",
             permanent: true
       },
       {
             source: "/problematiques.html",
-            destination: "/dossiers/problematiques",
+            destination: "/territoire/diagnostic",
             permanent: true
       },
       {
             source: "/recherche.html",
-            destination: "/dossiers/recherche",
+            destination: "/patrimoine/base-de-recherche",
             permanent: true
       },
       {
             source: "/solidarite-inclusion",
-            destination: "/dossiers/solidarite-inclusion",
+            destination: "/programmes/solidarite-inclusion",
             permanent: true
       },
       {
             source: "/solidarite-inclusion.html",
-            destination: "/dossiers/solidarite-inclusion",
+            destination: "/programmes/solidarite-inclusion",
             permanent: true
       },
       {
             source: "/veuves",
-            destination: "/dossiers/veuves",
+            destination: "/programmes/veuves",
             permanent: true
       },
       {
             source: "/veuves.html",
-            destination: "/dossiers/veuves",
+            destination: "/programmes/veuves",
             permanent: true
       },
       {
             source: "/trouver-ma-thematique",
-            destination: "/dossiers/trouver-ma-thematique",
+            destination: "/participer/trouver-ma-thematique",
             permanent: true
       },
       {
             source: "/trouver-ma-thematique.html",
-            destination: "/dossiers/trouver-ma-thematique",
+            destination: "/participer/trouver-ma-thematique",
             permanent: true
       },
       {
             source: "/genealogie-outil",
-            destination: "/dossiers/genealogie-outil",
+            destination: "/patrimoine/genealogie-outil",
             permanent: true
       },
       {
             source: "/genealogie-outil.html",
-            destination: "/dossiers/genealogie-outil",
+            destination: "/patrimoine/genealogie-outil",
             permanent: true
       },
       {

@@ -115,7 +115,7 @@ def html(fonts: str, *, titre: str, unite: str | None, sous: str, chiffres: list
 <div class="qr">{qr_svg(url)}<span class="adr">{adresse}</span><span class="lib">Scannez avec l’appareil photo du téléphone, ou tapez l’adresse.</span></div>
 </div>
 <div class="actions">
-<div class="action"><b>Signaler un besoin</b><span>Eau, école, santé, route : le nom du lieu, le besoin, l’urgence.<br><code>lonodji.org/dossiers/besoins</code></span></div>
+<div class="action"><b>Signaler un besoin</b><span>Eau, école, santé, route : le nom du lieu, le besoin, l’urgence.<br><code>lonodji.org/territoire/besoins</code></span></div>
 <div class="action"><b>Raconter le village</b><span>Son histoire, ses familles, ses lieux : ce que les données ne savent pas.<br><code>lonodji.org/temoignages</code></span></div>
 <div class="action"><b>Écrire à l’association</b><span>Appel et WhatsApp : <code>{WHATSAPP}</code><br><code>lonodji.org/participer</code></span></div>
 </div>

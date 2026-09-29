@@ -224,7 +224,7 @@ export default function CarteTerritoire() {
               <li key={i}><button type="button" onClick={() => aller(r.coords, r.unit ? 10 : 13, r.unit ? { genre: "unite", unite: r.unit } : r.village ? { genre: "village", village: r.village } : null)}><strong>{r.nom}</strong> <span>{r.type}{r.unite ? ` · ${r.unite}` : ""}</span></button></li>
             ))}
           </ul>
-        ) : requete.trim().length >= 2 && donnees ? <p className="ct-vide" id="ct-resultats">Aucun lieu de ce nom dans les données ouvertes. Vous le connaissez ? <Link href={`/dossiers/besoins?localite=${encodeURIComponent(requete.trim())}`}>Signalez-le-nous</Link>.</p> : null}
+        ) : requete.trim().length >= 2 && donnees ? <p className="ct-vide" id="ct-resultats">Aucun lieu de ce nom dans les données ouvertes. Vous le connaissez ? <Link href={`/territoire/besoins?localite=${encodeURIComponent(requete.trim())}`}>Signalez-le-nous</Link>.</p> : null}
         <fieldset className="ct-couches">
           <legend className="sr-only">Couches</legend>
           <label><input type="checkbox" checked={visibles.unites} onChange={(e) => setVisibles({ ...visibles, unites: e.target.checked })} /> Unités du pays bedjond</label>
@@ -260,7 +260,7 @@ export default function CarteTerritoire() {
               <p className="ct-note">Aucune école, aucun centre de santé, aucun forage n’est rattaché à ce lieu dans les données ouvertes : ce silence est une information, pas une réalité. Aidez-nous à le combler.</p>
               <div className="ct-actions">
                 {selection.village[7] ? <Link className="button primary" href={`/villages/${selection.village[4]}/${selection.village[7]}`}>La fiche du village <span aria-hidden="true">→</span></Link> : null}
-                <Link className={selection.village[7] ? "button secondary" : "button primary"} href={`/dossiers/besoins?localite=${encodeURIComponent(nomPropre(selection.village[2]))}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
+                <Link className={selection.village[7] ? "button secondary" : "button primary"} href={`/territoire/besoins?localite=${encodeURIComponent(nomPropre(selection.village[2]))}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
                 <a className="text-link" href={`https://www.openstreetmap.org/?mlat=${selection.village[1]}&mlon=${selection.village[0]}#map=15/${selection.village[1]}/${selection.village[0]}`} target="_blank" rel="noopener noreferrer">Voir sur OpenStreetMap ↗</a>
                 <button type="button" className="text-link" onClick={() => setSelection(null)}>Fermer la fiche</button>
               </div>
@@ -274,7 +274,7 @@ export default function CarteTerritoire() {
                 <div><dt>source</dt><dd>OpenStreetMap, export HOT « {selection.equipement.jeu.replace(/_/g, " ")} »</dd></div>
               </dl>
               <div className="ct-actions">
-                <Link className="button primary" href={`/dossiers/besoins?localite=${encodeURIComponent((selection.equipement.nom || unitePour(selection.equipement.unite)?.nom || "").slice(0, 80))}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
+                <Link className="button primary" href={`/territoire/besoins?localite=${encodeURIComponent((selection.equipement.nom || unitePour(selection.equipement.unite)?.nom || "").slice(0, 80))}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
                 <a className="button secondary" href={`https://www.openstreetmap.org/?mlat=${selection.equipement.coords[1]}&mlon=${selection.equipement.coords[0]}#map=16/${selection.equipement.coords[1]}/${selection.equipement.coords[0]}`} target="_blank" rel="noopener noreferrer">Voir sur OpenStreetMap</a>
                 <button type="button" className="text-link" onClick={() => setSelection(null)}>Fermer la fiche</button>
               </div>
@@ -311,7 +311,7 @@ function UniteFiche({ u, donnees, aller, fermer }: { u: Unite; donnees: Donnees;
       <p className="ct-source">Contour : GADM 4.1 (« {u.gadm.nom} », {u.gadm.departement.replace(/([a-z])([A-Z])/g, "$1 $2")}, {u.gadm.province.replace(/([a-z])([A-Z])/g, "$1 $2")}). {u.approx ? "Position du chef-lieu approchée. " : ""}{u.origine ? `Repère : ${u.origine}.` : ""}</p>
       <div className="ct-actions">
         <Link className="button primary" href={`/villages/${u.id}`}>Les villages de {u.nom} <span aria-hidden="true">→</span></Link>
-        <Link className="button secondary" href={`/dossiers/besoins?localite=${encodeURIComponent(u.nom)}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
+        <Link className="button secondary" href={`/territoire/besoins?localite=${encodeURIComponent(u.nom)}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
         <button type="button" className="text-link" onClick={() => aller([u.centre[1], u.centre[0]], 11)}>Centrer la carte</button>
         <button type="button" className="text-link" onClick={fermer}>Fermer la fiche</button>
       </div>

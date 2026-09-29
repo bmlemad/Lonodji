@@ -47,7 +47,7 @@ export const SECTEURS: Secteur[] = [
     thematiques: ["eau-energie-connectivite", "sante-prevention"],
     activites: [
       { texte: "Plaidoyer : de l’eau potable pour chaque quartier de Bédjondo", etat: "fait", href: `${P}eau-potable-bedjondo` },
-      { texte: "Formulaire de signalement des besoins, localité par localité (0 signalement au 28 septembre 2026)", etat: "fait", href: "/dossiers/besoins" },
+      { texte: "Formulaire de signalement des besoins, localité par localité (0 signalement au 28 septembre 2026)", etat: "fait", href: "/territoire/besoins" },
       { texte: "Latrines et lavage des mains à l’école et au marché", etat: "piste" },
       { texte: "Gestion des déchets et des eaux usées avec la commune", etat: "piste" },
     ],
@@ -71,7 +71,7 @@ export const SECTEURS: Secteur[] = [
     activites: [
       { texte: "Dépistage de la malnutrition des jeunes enfants, avec les centres de santé", etat: "piste" },
       { texte: "Alimentation des femmes enceintes et allaitantes", etat: "piste" },
-      { texte: "Lien avec les cultures et l’élevage du pays bedjond", etat: "piste", href: "/dossiers/agriculture-securite-alimentaire" },
+      { texte: "Lien avec les cultures et l’élevage du pays bedjond", etat: "piste", href: "/programmes/agriculture-securite-alimentaire" },
     ],
   },
   {
@@ -92,8 +92,8 @@ export const SECTEURS: Secteur[] = [
     cadre: { cluster: "Cluster Sécurité alimentaire", cad: "CAD 311", odd: "ODD 2" }, etat: "couvert",
     thematiques: ["agriculture-elevage-securite-alimentaire"],
     activites: [
-      { texte: "Hub filières et appuis techniques", etat: "fait", href: "/dossiers/agriculture-securite-alimentaire" },
-      { texte: "Agriculteurs et éleveurs : prévenir les conflits", etat: "fait", href: "/dossiers/agriculteurs-eleveurs" },
+      { texte: "Hub filières et appuis techniques", etat: "fait", href: "/programmes/agriculture-securite-alimentaire" },
+      { texte: "Agriculteurs et éleveurs : prévenir les conflits", etat: "fait", href: "/programmes/agriculteurs-eleveurs" },
       { texte: "Stockage, vente groupée, transformation des récoltes (programme 06)", etat: "piste", href: "/odeb/programmes/economie-sociale#portefeuille" },
     ],
   },
@@ -104,7 +104,7 @@ export const SECTEURS: Secteur[] = [
     thematiques: ["entrepreneuriat-finance-inclusive", "solidarite-inclusion", "competences-entrepreneuriat-numerique"],
     activites: [
       { texte: "Une caisse d’entraide entre membres (collecte suspendue)", etat: "piste", href: "/journal/2026-09-14-caisse-entraide-solidarite-en-acte" },
-      { texte: "Tontines et microcrédit", etat: "piste", href: "/dossiers/solidarite-inclusion#entraide-economique" },
+      { texte: "Tontines et microcrédit", etat: "piste", href: "/programmes/solidarite-inclusion#entraide-economique" },
       { texte: "Entreprises d’économie sociale (programme 06)", etat: "piste", href: "/odeb/programmes/economie-sociale" },
     ],
   },
@@ -114,7 +114,7 @@ export const SECTEURS: Secteur[] = [
     cadre: { cad: "CAD 410", odd: "ODD 13 · 15" }, etat: "elargi",
     thematiques: ["environnement-ressources"],
     activites: [
-      { texte: "Hub environnement : foncier, ressources naturelles", etat: "fait", href: "/dossiers/environnement" },
+      { texte: "Hub environnement : foncier, ressources naturelles", etat: "fait", href: "/programmes/environnement" },
       { texte: "Adapter les pratiques agricoles aux pluies irrégulières", etat: "piste" },
       { texte: "Reboisement, protection des berges", etat: "piste" },
     ],
@@ -137,7 +137,7 @@ export const SECTEURS: Secteur[] = [
     cadre: { cad: "CAD 720", odd: "ODD 1.5" }, etat: "nouveau",
     thematiques: ["urgences-risques"],
     activites: [
-      { texte: "Recenser les besoins d’une localité touchée, par le formulaire du site", etat: "fait", href: "/dossiers/besoins" },
+      { texte: "Recenser les besoins d’une localité touchée, par le formulaire du site", etat: "fait", href: "/territoire/besoins" },
       { texte: "Informer et orienter les familles vers les secours officiels", etat: "piste" },
       { texte: "Relayer les besoins recensés à l’État, à la Croix-Rouge du Tchad, aux agences", etat: "piste" },
       { texte: "Aide d’urgence seulement par des circuits vérifiables et publiés, après l’ouverture du compte", etat: "piste" },
@@ -166,8 +166,8 @@ export const SECTEURS: Secteur[] = [
     thematiques: ["solidarite-inclusion", "leadership-feminin", "justice-droits-homme"],
     activites: [
       { texte: "Règles de protection des enfants et des personnes vulnérables (charte de redevabilité ; politique contre l’exploitation et les abus sexuels en projet, soumise au bureau)", etat: "fait", href: "/transparence" },
-      { texte: "Plan handicap", etat: "fait", href: "/dossiers/handicap" },
-      { texte: "Plan veuves", etat: "fait", href: "/dossiers/veuves" },
+      { texte: "Plan handicap", etat: "fait", href: "/programmes/handicap" },
+      { texte: "Plan veuves", etat: "fait", href: "/programmes/veuves" },
       { texte: "Enregistrement des naissances, enfants hors de l’école, mariages précoces", etat: "piste" },
     ],
   },
@@ -180,7 +180,7 @@ export const SECTEURS: Secteur[] = [
       { texte: "Sept plaidoyers publiés, sourcés, avec leurs destinataires", etat: "fait", href: "/actions" },
       { texte: "Note à la commune de Bédjondo : six propositions", etat: "fait", href: "/journal/2026-09-16-note-commune-bedjondo" },
       { texte: "Registre public des décisions", etat: "fait", href: "/transparence/decisions" },
-      { texte: "Décentralisation : ce que la commune peut faire", etat: "fait", href: "/dossiers/decentralisation" },
+      { texte: "Décentralisation : ce que la commune peut faire", etat: "fait", href: "/territoire/decentralisation" },
     ],
   },
   {
@@ -189,7 +189,7 @@ export const SECTEURS: Secteur[] = [
     cadre: { cad: "CAD 152", odd: "ODD 16" }, etat: "couvert",
     thematiques: ["paix-cohesion"],
     activites: [
-      { texte: "Agriculteurs et éleveurs : prévenir les conflits", etat: "fait", href: "/dossiers/agriculteurs-eleveurs" },
+      { texte: "Agriculteurs et éleveurs : prévenir les conflits", etat: "fait", href: "/programmes/agriculteurs-eleveurs" },
       { texte: "Médiation de proximité pour les différends fonciers ou familiaux", etat: "piste" },
     ],
   },
@@ -212,7 +212,7 @@ export const SECTEURS: Secteur[] = [
       { texte: "Histoire et patrimoine bedjond", etat: "fait", href: "/histoire" },
       { texte: "La langue nangnda et son dictionnaire", etat: "fait", href: "/langue" },
       { texte: "Bibliothèque numérique", etat: "fait", href: "/bibliotheque" },
-      { texte: "Lieux sacrés et sépultures : ne rien publier", etat: "fait", href: "/dossiers/lieux-sacres" },
+      { texte: "Lieux sacrés et sépultures : ne rien publier", etat: "fait", href: "/patrimoine/lieux-sacres" },
     ],
   },
   {
@@ -222,8 +222,8 @@ export const SECTEURS: Secteur[] = [
     thematiques: ["transformation-numerique-services", "intelligence-artificielle-donnees", "competences-entrepreneuriat-numerique"],
     activites: [
       { texte: "Une fiche par village, 966 localités", etat: "fait", href: "/villages" },
-      { texte: "L’application pour téléphone", etat: "fait", href: "/dossiers/application" },
-      { texte: "Drones et innovation", etat: "fait", href: "/dossiers/drones-innovation" },
+      { texte: "L’application pour téléphone", etat: "fait", href: "/projets/application" },
+      { texte: "Drones et innovation", etat: "fait", href: "/projets/drones-innovation" },
       { texte: "Espace numérique communautaire", etat: "piste", href: "/projets#espace-numerique" },
     ],
   },

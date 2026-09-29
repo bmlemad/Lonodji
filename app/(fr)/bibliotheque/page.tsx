@@ -33,11 +33,11 @@ export default function Bibliotheque() {
   return (
     <main id="main-content" className="hub-page bb-page">
       <PageHeader
-        eyebrow="Territoire · bibliothèque numérique"
+        eyebrow="Patrimoine · bibliothèque numérique"
         title="Tout ce qui s’est écrit"
         em="sur le pays bedjond."
         lead="Thèses, articles, ouvrages, rapports d’enquête, archives, publications de l’association : la bibliothèque rassemble ce que nous avons lu et vérifié sur le peuple bedjond, les Sara et le nangnda, et dit d’où vient chaque référence. Elle grandit par dépôt : un mémoire oublié dans un tiroir, un article introuvable en ligne, une archive familiale — c’est ici qu’ils deviennent consultables."
-        crumbs={[{ label: "Histoire & patrimoine", href: "/histoire" }, { label: "Bibliothèque" }]}
+        crumbs={[{ label: "Patrimoine", href: "/patrimoine" }, { label: "Bibliothèque" }]}
         pills={[`${b.references.length} références`, `${b.documents.length} documents d’ADEB LONODJI`, `${b.totalArticles} articles du journal`, "dépôt ouvert"]}
       />
 

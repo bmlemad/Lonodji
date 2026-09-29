@@ -11,8 +11,8 @@ import { metaDescription, ogFor } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Bedjondo Transport et Logistique",
   description: metaDescription("Le projet de transport et de logistique terrestres de Bédjondo, annoncé sous le nom d’Air Bedjondo : pourquoi, ce que nous savons, ce que nous ne savons pas, et nos propositions pour le mener — services, véhicules, montage, étapes, règles."),
-  alternates: { canonical: "/dossiers/bedjondo-transport-logistique" },
-  openGraph: { ...ogFor("/dossiers/bedjondo-transport-logistique"), title: "Bedjondo Transport et Logistique — désenclaver par la route", description: "Le projet annoncé sous le nom d’Air Bedjondo, et nos propositions pour le mener." },
+  alternates: { canonical: "/projets/bedjondo-transport-logistique" },
+  openGraph: { ...ogFor("/projets/bedjondo-transport-logistique"), title: "Bedjondo Transport et Logistique — désenclaver par la route", description: "Le projet annoncé sous le nom d’Air Bedjondo, et nos propositions pour le mener." },
 };
 
 const PROPOSITIONS: { titre: string; texte: string; points: string[] }[] = [
@@ -90,7 +90,7 @@ export default function BedjondoTransportLogistique() {
         <SectionHead eyebrow="Pourquoi ce projet" title="Un chef-lieu coupé" em="à chaque saison des pluies." />
         <div className="detail-grid">
           <article><h3>Des pistes impraticables</h3><p>Les pistes vers les cantons ne sont pas entretenues et deviennent impraticables à la saison des pluies ; au pont de Hoblo, la traversée se fait en pirogue d’août à octobre (<Link href="/journal/2026-09-17-plaidoyer-routes-ponts-bedjondo">plaidoyer routes et ponts</Link>).</p></article>
-          <article><h3>Des récoltes qui se perdent</h3><p>Faute de stockage et d’accès aux marchés, une partie des récoltes est perdue : le <Link href="/dossiers/problematiques">diagnostic territorial</Link> le relève.</p></article>
+          <article><h3>Des récoltes qui se perdent</h3><p>Faute de stockage et d’accès aux marchés, une partie des récoltes est perdue : le <Link href="/territoire/diagnostic">diagnostic territorial</Link> le relève.</p></article>
           <article><h3>Des urgences loin des soins</h3><p>Se soigner veut souvent dire partir à Koumra ; le <Link href="/journal/2026-09-17-plaidoyer-sante-bedjondo">plaidoyer santé</Link> demande un moyen d’évacuation.</p></article>
         </div>
       </section>
@@ -136,7 +136,7 @@ export default function BedjondoTransportLogistique() {
         </div>
       </section>
 
-      <Partager route="/dossiers/bedjondo-transport-logistique" titre="Bedjondo Transport et Logistique" texte="Le projet de transport et de logistique terrestres de Bédjondo, annoncé sous le nom d’Air Bedjondo, et nos propositions pour le mener." />
+      <Partager route="/projets/bedjondo-transport-logistique" titre="Bedjondo Transport et Logistique" texte="Le projet de transport et de logistique terrestres de Bédjondo, annoncé sous le nom d’Air Bedjondo, et nos propositions pour le mener." />
     </main>
   );
 }

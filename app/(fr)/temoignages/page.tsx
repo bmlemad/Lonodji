@@ -29,11 +29,11 @@ export default function Temoignages() {
   return (
     <main id="main-content" className="hub-page tm-page">
       <PageHeader
-        eyebrow="Territoire · témoignages & images"
+        eyebrow="Patrimoine · témoignages & images"
         title="Racontez Bédjondo"
         em="à celles et ceux qui viennent."
         lead="Ce site sait compter, documenter, plaider. Il ne sait pas encore faire entendre les voix de Bédjondo ni la montrer. Un ancien qui raconte le forum de 2003, une femme qui tient le marché, un jeune qui a réussi, un paysage au petit matin : c’est ce qui manque, et c’est vous qui l’avez."
-        crumbs={[{ label: "Participer", href: "/participer" }, { label: "Témoignages" }]}
+        crumbs={[{ label: "Patrimoine", href: "/patrimoine" }, { label: "Témoignages" }]}
         pills={["En français ou en bedjond", "Photo, son ou vidéo, 10 Mo au plus", "Rien de publié sans votre relecture"]}
       />
 

@@ -43,7 +43,7 @@ export default function LivreBlanc() {
         title="Livre blanc :"
         em="le document fondateur."
         lead="Ce que l’ODEB LONODJI doit être, pourquoi, avec quels programmes et selon quel calendrier — écrit avec les mêmes règles que le reste du site : des sources, des chiffres datés, et ce qui n’est pas encore fait écrit comme tel."
-        crumbs={[{ label: "Projet ODEB", href: "/odeb" }, { label: "Livre blanc" }]}
+        crumbs={[{ label: "Vision 2030 — projet ODEB", href: "/odeb" }, { label: "Livre blanc" }]}
         pills={["Version de travail n° 1", ODEB.presenteLabel, "Non adopté à ce jour"]}
       />
       <OdebNav actif="livre-blanc" />
@@ -131,7 +131,7 @@ export default function LivreBlanc() {
               <li><strong>Une réponse sous quarante-huit heures ouvrées</strong>, un mécanisme de plainte — même anonyme — avec recours jusqu’à l’assemblée générale, et la protection des personnes vulnérables, selon la <Link href="/transparence">charte de redevabilité</Link>.</li>
               <li><strong>L’argent tracé.</strong> Aucune collecte avant un compte au nom de l’association, à double signature.</li>
               <li><strong>Sans distinction.</strong> Les actions de développement servent tous les habitants, sans distinction d’origine.</li>
-              <li><strong>Portée par l’ADEB LONODJI.</strong> Le projet est conduit par l’association et par ses instances ; l’ODEB n’existe pas à côté d’elle mais à sa suite. Son statut, sa gouvernance et ses moyens seront ceux que l’association décidera, dans les formes prévues par <Link href="/dossiers/demarches#vers-ong">le droit tchadien des ONG</Link>.</li>
+              <li><strong>Portée par l’ADEB LONODJI.</strong> Le projet est conduit par l’association et par ses instances ; l’ODEB n’existe pas à côté d’elle mais à sa suite. Son statut, sa gouvernance et ses moyens seront ceux que l’association décidera, dans les formes prévues par <Link href="/association/demarches#vers-ong">le droit tchadien des ONG</Link>.</li>
             </ol>
           </section>
 
@@ -142,7 +142,7 @@ export default function LivreBlanc() {
               <li><strong>La diaspora bedjond</strong>, par le <Link href="/diaspora">répertoire des compétences</Link> : des experts, du temps, et à terme des investissements dans des projets documentés avant d’être financés.</li>
               <li><strong>Les chercheurs du pays bedjond</strong> — {enLettres(c.chercheurs)} sont recensés dans la <Link href="/bibliotheque">bibliothèque</Link> — et les linguistes qui écriront avec nous ce que le site ne sait pas encore de la langue nangnda.</li>
               <li><strong>Les données ouvertes</strong> : contours administratifs GADM, localités et équipements d’OpenStreetMap, que la communauté complète fiche par fiche.</li>
-              <li><strong>Les partenaires opérationnels du Mandoul</strong>, ONG et programmes déjà présents sur le territoire, recensés dans <Link href="/dossiers/ong-partenaires">un dossier dédié</Link>, avec qui l’ODEB cherchera la complémentarité plutôt que la concurrence.</li>
+              <li><strong>Les partenaires opérationnels du Mandoul</strong>, ONG et programmes déjà présents sur le territoire, recensés dans <Link href="/association/ong-partenaires">un dossier dédié</Link>, avec qui l’ODEB cherchera la complémentarité plutôt que la concurrence.</li>
               <li><strong>Les institutions</strong> — commune de Bédjondo, sous-préfectures, chefferies, services de l’État — destinataires des plaidoyers et interlocutrices de l’observatoire.</li>
               <li><strong>La cellule Financement & ressources</strong> de l’association, encore à pourvoir, qui préparera le cadre de financement et de reddition des comptes.</li>
             </ol>

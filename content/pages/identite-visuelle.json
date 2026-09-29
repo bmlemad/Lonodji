@@ -105,6 +105,6 @@
  "scripts": [],
  "rootAttrs": {},
  "slug": "identite-visuelle",
- "route": "/dossiers/identite-visuelle",
+ "route": "/association/ancienne-identite-visuelle",
  "kind": "dossier"
 }

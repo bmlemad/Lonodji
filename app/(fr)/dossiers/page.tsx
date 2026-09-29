@@ -24,7 +24,7 @@ export default function Dossiers() {
   const pages = getIndex().pages.filter((p) => p.kind === "dossier");
   const bySlug = new Map<string, { slug: string; route: string; eyebrow: string; title: string; lede: string }>(pages.map((p) => [p.slug, p]));
   // dossiers écrits directement dans l'appli (hors import de l'ancien site)
-  bySlug.set("bedjondo-transport-logistique", { slug: "bedjondo-transport-logistique", route: "/dossiers/bedjondo-transport-logistique", eyebrow: "Projet annoncé", title: "Bedjondo Transport et Logistique", lede: "Le projet de transport et de logistique terrestres annoncé sous le nom d’Air Bedjondo, renommé le 29 septembre 2026 : pourquoi, ce que nous savons, et six propositions pour le mener." });
+  bySlug.set("bedjondo-transport-logistique", { slug: "bedjondo-transport-logistique", route: "/projets/bedjondo-transport-logistique", eyebrow: "Projet annoncé", title: "Bedjondo Transport et Logistique", lede: "Le projet de transport et de logistique terrestres annoncé sous le nom d’Air Bedjondo, renommé le 29 septembre 2026 : pourquoi, ce que nous savons, et six propositions pour le mener." });
   return (
     <main id="main-content" className="hub-page">
       <PageHeader eyebrow="Nos actions · tous les dossiers" title="Tout ce que nous" em="avons documenté." lead={`${pages.length} dossiers de fond, chacun daté et sourcé, du diagnostic territorial aux projets à l’étude. Ils nourrissent les plaidoyers et les vingt thématiques.`} />

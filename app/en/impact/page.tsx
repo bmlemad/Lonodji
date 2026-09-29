@@ -66,7 +66,7 @@ export default function ImpactEn() {
           <Link href="/journal" hrefLang="fr"><small>Journal</small><strong>{c.articles} articles</strong><span>dated and sourced, since {c.premierArticle ? date(c.premierArticle) : "—"}; two newsletters</span></Link>
           <Link href="/documents" hrefLang="fr"><small>Documents</small><strong>{c.documentsPdf} {c.documentsPdf === 1 ? "PDF" : "PDFs"}</strong><span>{c.documentsAnnonces} announced, to come: statutes, receipt, minutes, accounts</span></Link>
           <Link href="/transparence#corrections" hrefLang="fr"><small>Accountability</small><strong>{c.corrections} corrections</strong><span>each one published and dated in the corrections log</span></Link>
-          <Link href="/dossiers/engagements" hrefLang="fr"><small>Commitments</small><strong>{c.engagements.total} public commitments</strong><span>{c.engagements.realises} confirmed fulfilled</span></Link>
+          <Link href="/association/engagements" hrefLang="fr"><small>Commitments</small><strong>{c.engagements.total} public commitments</strong><span>{c.engagements.realises} confirmed fulfilled</span></Link>
           <Link href="/en/villages"><small>Territory</small><strong>{nf.format(c.carte.localites)} localities mapped</strong><span>{c.carte.unites} units, {nf.format(c.carte.localitesNommees)} named, {c.carte.equipements} known {c.carte.equipements === 1 ? "facility" : "facilities"}</span></Link>
           <Link href="/en/projects"><small>Projects</small><strong>{c.projets.actifs + c.projets.annonces} projects described</strong><span>each with its stage, what is missing and how to contribute</span></Link>
         </div>

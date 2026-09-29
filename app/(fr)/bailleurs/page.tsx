@@ -207,7 +207,7 @@ export default function Bailleurs() {
 
       <section className="hub-section">
         <p className="lg-footnote">
-          Relevé établi le {RELEVE} à partir des portails officiels (Banque mondiale, BAD, registre IATI de l’Union européenne, coopération suisse, AFD, PNUD, UNICEF, UNFPA, FIDA, OCHA, Fonds mondial) et, à défaut, de la presse tchadienne, citée comme telle. Quand un montant, une date ou une zone n’a pas été trouvé, nous l’écrivons. Les programmes changent vite : ce relevé sera refait tous les six mois. Une erreur, un programme oublié ? <Link href="/participer?objet=partenariat#contact">Écrivez-nous</Link>. Voir aussi <Link href="/secteurs">nos secteurs d’intervention</Link> et <Link href="/dossiers/ong-partenaires">les ONG et partenaires présents</Link>.
+          Relevé établi le {RELEVE} à partir des portails officiels (Banque mondiale, BAD, registre IATI de l’Union européenne, coopération suisse, AFD, PNUD, UNICEF, UNFPA, FIDA, OCHA, Fonds mondial) et, à défaut, de la presse tchadienne, citée comme telle. Quand un montant, une date ou une zone n’a pas été trouvé, nous l’écrivons. Les programmes changent vite : ce relevé sera refait tous les six mois. Une erreur, un programme oublié ? <Link href="/participer?objet=partenariat#contact">Écrivez-nous</Link>. Voir aussi <Link href="/secteurs">nos secteurs d’intervention</Link> et <Link href="/association/ong-partenaires">les ONG et partenaires présents</Link>.
         </p>
         <Partager route="/bailleurs" titre="Programmes des bailleurs au Tchad, et où ADEB LONODJI se raccroche" texte="Banque mondiale, UE, Nations unies, BAD : les programmes qui touchent le Mandoul, et nos points d’entrée." />
       </section>

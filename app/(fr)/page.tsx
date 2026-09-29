@@ -174,10 +174,10 @@ export default function Home() {
           <div className="link-list">
             <Link href="/villages"><small>Retrouver son village</small><strong>966 localités, une fiche chacune</strong><span>Ce que les données ouvertes en savent, ce que le site en dit, ce qui reste à documenter — et le formulaire pour le faire.</span></Link>
             <Link href="/carte"><small>Carte du territoire</small><strong>Le pays bedjond, village par village</strong><span>Quatorze unités, leurs localités et équipements connus des données ouvertes ; une fiche par lieu, un bouton pour signaler.</span></Link>
-            <Link href="/dossiers/bedjondo"><small>Bédjondo</small><strong>Repères, langue, statut de commune</strong><span>Avec la carte interactive du pays bedjond, sur contours administratifs vérifiés.</span></Link>
-            <Link href="/dossiers/problematiques"><small>Diagnostic territorial</small><strong>Les problématiques documentées</strong><span>Eau, électricité, santé, école, routes, réseau : classées par domaine et reliées à leur thématique.</span></Link>
-            <Link href="/dossiers/besoins"><small>Carte des besoins</small><strong>Signaler un besoin, localité par localité</strong><span>Un forage en panne, une école sans maître, un pont coupé.</span></Link>
-            <Link href="/dossiers/enquetes"><small>Enquêtes de terrain</small><strong>Huit inconnues, huit enquêtes</strong><span>Qui détient la réponse, comment s’y prendre, en combien de jours.</span></Link>
+            <Link href="/territoire/bedjondo"><small>Bédjondo</small><strong>Repères, langue, statut de commune</strong><span>Avec la carte interactive du pays bedjond, sur contours administratifs vérifiés.</span></Link>
+            <Link href="/territoire/diagnostic"><small>Diagnostic territorial</small><strong>Les problématiques documentées</strong><span>Eau, électricité, santé, école, routes, réseau : classées par domaine et reliées à leur thématique.</span></Link>
+            <Link href="/territoire/besoins"><small>Carte des besoins</small><strong>Signaler un besoin, localité par localité</strong><span>Un forage en panne, une école sans maître, un pont coupé.</span></Link>
+            <Link href="/territoire/enquetes"><small>Enquêtes de terrain</small><strong>Huit inconnues, huit enquêtes</strong><span>Qui détient la réponse, comment s’y prendre, en combien de jours.</span></Link>
           </div>
         </section>
 
@@ -191,7 +191,7 @@ export default function Home() {
           </div>
           <div className="heritage-grid">
             <article><span>01</span><h3>Grandes figures</h3><p>Tarouss Doumanbé, pilier de la création de l’association ; la lignée des chefs de canton ; les chercheurs qui ont écrit la mémoire bedjond.</p><Link className="text-link" href="/histoire#figures">Découvrir →</Link></article>
-            <article><span>02</span><h3>Lieux sacrés et généalogies</h3><p>Deux cahiers de terrain pour recenser les sites sacrés et écrire l’histoire de chaque famille.</p><Link className="text-link" href="/dossiers/lieux-sacres">Les lieux sacrés →</Link></article>
+            <article><span>02</span><h3>Lieux sacrés et généalogies</h3><p>Deux cahiers de terrain pour recenser les sites sacrés et écrire l’histoire de chaque famille.</p><Link className="text-link" href="/patrimoine/lieux-sacres">Les lieux sacrés →</Link></article>
             <article><span>03</span><h3>Nangnda, la langue</h3><p>Ce que nous en savons, le lexique de 2 650 mots que l’on peut écouter en ligne, et le dictionnaire numérique qui commence par vos mots.</p><Link className="text-link" href="/langue">La langue nangnda →</Link></article>
           </div>
           <div className="section-actions"><Link className="text-link" href="/histoire">Toute l’histoire →</Link></div>

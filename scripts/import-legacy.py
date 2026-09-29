@@ -55,9 +55,11 @@ PAGE_SCRIPTS = {
     "trouver-ma-thematique": ["/trouver.js"],
     "genealogie-outil": ["/genealogie.js"],
 }
-# Pages portées telles quelles sous /dossiers/<slug>
+# Pages portées telles quelles ; leur adresse vient de content/routes-dossiers.json (restructuration du 29/09/2026 :
+# chaque page rejoint sa rubrique). « air-bedjondo » n’est plus importée : remplacée par la page du projet renommé.
+ROUTES_DOSSIERS = json.loads((Path(__file__).resolve().parent.parent / "content" / "routes-dossiers.json").read_text(encoding="utf-8"))["routes"]
 DOSSIERS = [
-    "agriculteurs-eleveurs", "agriculture-securite-alimentaire", "air-bedjondo", "application",
+    "agriculteurs-eleveurs", "agriculture-securite-alimentaire", "application",
     "bedjondo", "besoins", "complexe-sportif", "decentralisation", "demarches", "drones-innovation",
     "engagements", "enquetes", "environnement", "espace-numerique", "evenements", "genealogies",
     "handicap", "identite-visuelle", "kit-mobilisation", "lieux-sacres", "odd", "ong-partenaires",
@@ -109,8 +111,8 @@ def route_for(name: str, base_dir: str) -> str:
         return "/"
     if n in HUB_ROUTES:
         return HUB_ROUTES[n]
-    if n in DOSSIERS:
-        return "/dossiers/" + n
+    if n in ROUTES_DOSSIERS:
+        return ROUTES_DOSSIERS[n]
     return "/dossiers/" + n
 
 
@@ -1141,7 +1143,7 @@ def main():
             continue
         data, forms = parse_page(p)
         data["slug"] = name
-        data["route"] = HUB_ROUTES.get(name, "/dossiers/" + name).split("#")[0]
+        data["route"] = HUB_ROUTES.get(name, ROUTES_DOSSIERS.get(name, "/dossiers/" + name)).split("#")[0]
         data["kind"] = "hub" if name in HUB_PAGES else "dossier"
         all_forms.update(forms)
         (CONTENT / "pages" / f"{name}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")

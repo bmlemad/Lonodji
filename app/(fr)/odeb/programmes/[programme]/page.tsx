@@ -44,7 +44,7 @@ export default async function ProgrammePage({ params }: { params: Promise<{ prog
         title={p.nom}
         em={p.axes.map((a) => a.titre).join(" · ") + "."}
         lead={p.objet}
-        crumbs={[{ label: "Projet ODEB", href: "/odeb" }, { label: "Programmes", href: "/odeb/programmes" }, { label: p.nom }]}
+        crumbs={[{ label: "Vision 2030 — projet ODEB", href: "/odeb" }, { label: "Programmes", href: "/odeb/programmes" }, { label: p.nom }]}
         pills={[`Missions : ${p.missions.map((id) => MISSIONS.find((m) => m.id === id)?.nom).filter(Boolean).join(", ")}`, `${ths.length} ${ths.length > 1 ? "thématiques" : "thématique"}, ${ths.filter((t) => t.filled).length} ${ths.filter((t) => t.filled).length > 1 ? "pourvues" : "pourvue"}`]}
       />
       <OdebNav actif="programmes" />

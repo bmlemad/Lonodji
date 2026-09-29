@@ -8,7 +8,7 @@ const siteUrl = "https://lonodji.org";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const idx = getIndex();
-  const fixed = ["/", "/mission", "/histoire", "/programmes", "/programmes/fiches-de-mission", "/secteurs", "/bailleurs", "/dossiers/bedjondo-transport-logistique", "/en/sectors", "/en/donors", "/actions", "/impact", "/projets", "/journal", "/documents", "/dossiers", "/carte", "/villages", "/observatoire", "/bibliotheque", "/langue", "/diaspora", "/temoignages", "/odeb", "/en/odeb", "/en/villages", "/en/projects", "/en/impact", "/odeb/livre-blanc", "/odeb/feuille-de-route", "/odeb/programmes", "/odeb/identite", ...PROGRAMMES.map(routeProgramme), "/participer", "/presse", "/transparence", "/transparence/decisions", "/lettre", "/archives", "/accessibilite", "/mentions-legales", "/plan-du-site"];
+  const fixed = ["/", "/mission", "/histoire", "/programmes", "/programmes/fiches-de-mission", "/secteurs", "/bailleurs", "/territoire", "/patrimoine", "/projets/bedjondo-transport-logistique", "/en/sectors", "/en/donors", "/actions", "/impact", "/projets", "/journal", "/documents", "/dossiers", "/carte", "/villages", "/observatoire", "/bibliotheque", "/langue", "/diaspora", "/temoignages", "/odeb", "/en/odeb", "/en/villages", "/en/projects", "/en/impact", "/odeb/livre-blanc", "/odeb/feuille-de-route", "/odeb/programmes", "/odeb/identite", ...PROGRAMMES.map(routeProgramme), "/participer", "/presse", "/transparence", "/transparence/decisions", "/lettre", "/archives", "/accessibilite", "/mentions-legales", "/plan-du-site"];
   const entries: MetadataRoute.Sitemap = fixed.map((path) => ({
     url: new URL(path, siteUrl).toString(),
     changeFrequency: path === "/" || path === "/journal" ? "weekly" : "monthly",

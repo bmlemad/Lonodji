@@ -25,11 +25,11 @@ export default function Langue() {
   return (
     <main id="main-content" className="hub-page lg-langue">
       <PageHeader
-        eyebrow="Territoire · la langue nangnda"
+        eyebrow="Patrimoine · la langue nangnda"
         title="Le nangnda,"
         em="la langue du pays bedjond."
         lead="Bedjond, bediondo, nangnda, nang-nda, ta-bedjond : plusieurs noms pour une même langue sara, parlée à Bédjondo et dans ses cantons, décrite par des linguistes, documentée par un lexique de 2 650 mots que l’on peut écouter en ligne, et transmise sur le terrain par l’association Kokotan. Cette page réunit ce que nous en savons, où l’apprendre, et comment y ajouter votre voix."
-        crumbs={[{ label: "Histoire & patrimoine", href: "/histoire" }, { label: "Langue" }]}
+        crumbs={[{ label: "Patrimoine", href: "/patrimoine" }, { label: "Langue" }]}
         pills={["Famille sara, groupe « Doba »", "Lexique en ligne, avec l’audio", "Dictionnaire numérique : en collecte"]}
       />
 
@@ -59,14 +59,14 @@ export default function Langue() {
             <div className="bb-liens">
               <a className="text-link" href="https://morkegbooks.com/Services/World/Languages/SaraBagirmi/SoundDictionary/Nangnda/" target="_blank" rel="noopener noreferrer">Consulter le lexique sonore <span aria-hidden="true">↗</span></a>
               <a className="text-link" href="https://morkegbooks.com/Services/World/Languages/SaraBagirmi/pdfs/Bediondo.pdf" target="_blank" rel="noopener noreferrer">Le lexique en PDF <span aria-hidden="true">↗</span></a>
-              <Link className="text-link" href="/dossiers/recherche#src-lexique-nangnda">La fiche dans la base<span className="sr-only"> : le lexique nangnda</span> <span aria-hidden="true">→</span></Link>
+              <Link className="text-link" href="/patrimoine/base-de-recherche#src-lexique-nangnda">La fiche dans la base<span className="sr-only"> : le lexique nangnda</span> <span aria-hidden="true">→</span></Link>
             </div>
           </article>
           <article>
             <span>Étude linguistique · référence</span>
             <h3>Description phonologique et grammaticale du bedjonde</h3>
             <p>Djarangar Djita Issa, linguiste tchadien, professeur titulaire des universités (École normale supérieure de Bongor). Le travail de référence sur le parler de Bédjondo, à l’origine de la désignation du peuple bedjond ; c’est là que sont décrits les sons et la grammaire de la langue.</p>
-            <div className="bb-liens"><Link className="text-link" href="/dossiers/recherche#src-description-phonologique-et-grammaticale">La fiche dans la base<span className="sr-only"> : la description phonologique et grammaticale</span> <span aria-hidden="true">→</span></Link></div>
+            <div className="bb-liens"><Link className="text-link" href="/patrimoine/base-de-recherche#src-description-phonologique-et-grammaticale">La fiche dans la base<span className="sr-only"> : la description phonologique et grammaticale</span> <span aria-hidden="true">→</span></Link></div>
           </article>
           <article>
             <span>Enquête · SIL International, 2007</span>
@@ -74,14 +74,14 @@ export default function Langue() {
             <p>Eric Johnson, SIL Electronic Survey Report 2007-010 : la seule enquête publiée consacrée au bedjond — cantons, locuteurs, noms de la langue, similarité lexicale et intercompréhension avec le bebot, le gor, le mango, le mbay et le ngambay, vitalité, écriture.</p>
             <div className="bb-liens">
               <a className="text-link" href="https://www.sil.org/system/files/reapdata/17/11/23/17112357599868426173562598215635923193/silesr2007_010.pdf" target="_blank" rel="noopener noreferrer">Le rapport (PDF) <span aria-hidden="true">↗</span></a>
-              <Link className="text-link" href="/dossiers/recherche#src-enquete-sociolinguistique-des-varietes-l">La fiche dans la base<span className="sr-only"> : l’enquête sociolinguistique</span> <span aria-hidden="true">→</span></Link>
+              <Link className="text-link" href="/patrimoine/base-de-recherche#src-enquete-sociolinguistique-des-varietes-l">La fiche dans la base<span className="sr-only"> : l’enquête sociolinguistique</span> <span aria-hidden="true">→</span></Link>
             </div>
           </article>
           <article>
             <span>Recueil · proverbes</span>
             <h3>Sept cents proverbes Nang-nda</h3>
             <p>Madjidéné Altana Lydie. Le plus vaste corpus de proverbes nangnda réuni en un volume, à notre connaissance, et le premier ouvrage de la bibliothèque dont l’autrice appartient au peuple dont elle écrit la langue. Référencé d’après l’exemplaire physique ; éditeur et année restent à établir.</p>
-            <div className="bb-liens"><Link className="text-link" href="/dossiers/recherche#src-sept-cents-proverbes-nang-nda">La fiche dans la base<span className="sr-only"> : les sept cents proverbes</span> <span aria-hidden="true">→</span></Link></div>
+            <div className="bb-liens"><Link className="text-link" href="/patrimoine/base-de-recherche#src-sept-cents-proverbes-nang-nda">La fiche dans la base<span className="sr-only"> : les sept cents proverbes</span> <span aria-hidden="true">→</span></Link></div>
           </article>
           <article>
             <span>Classification · Keegan</span>

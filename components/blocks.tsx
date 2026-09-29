@@ -74,7 +74,7 @@ export function ThematiqueRow({ t, pole, partenaires }: { t: Thematique; pole?: 
         <p className="them-desc" dangerouslySetInnerHTML={{ __html: t.description }} />
         {t.odd.length ? (
           <p className="them-odd"><span className="odd-legend">ODD</span>{t.odd.map((o) => (
-            <a key={o.num + o.cible} className="odd-chip" href={`/dossiers/odd#odd-${o.num}`} title={o.title} style={{ ["--odd-accent" as string]: o.accent, ["--odd-ink" as string]: o.ink }}>
+            <a key={o.num + o.cible} className="odd-chip" href={`/programmes/odd#odd-${o.num}`} title={o.title} style={{ ["--odd-accent" as string]: o.accent, ["--odd-ink" as string]: o.ink }}>
               <span className="odd-num">{o.num}</span><span className="odd-name">{o.name}</span><span className="odd-cible">{o.cible}</span>
             </a>
           ))}</p>

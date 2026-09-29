@@ -155,7 +155,7 @@ def liens_par_unite(unites: dict) -> dict:
         trouves = []
         if uid == "bedjondo":
             trouves = [{"type": "plaidoyer", "titre": t, "route": r} for _, t, r, _ in plaid]
-            trouves += [{"type": "dossier", "titre": "Bédjondo, notre ville", "route": "/dossiers/bedjondo"}, {"type": "dossier", "titre": "Carte des besoins", "route": "/dossiers/besoins"}]
+            trouves += [{"type": "dossier", "titre": "Bédjondo, notre ville", "route": "/territoire/bedjondo"}, {"type": "dossier", "titre": "Carte des besoins", "route": "/territoire/besoins"}]
         else:
             for typ, titre, route, texte in corpus + plaid:
                 if motif.search(texte) or motif.search(titre):

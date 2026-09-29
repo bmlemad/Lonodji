@@ -71,7 +71,7 @@ def main() -> None:
         rubrique = next((r[0] for r in RUBRIQUES if typ in r[2]), "archives")
         references.append({
             "id": sid, "cat": cat, "type": typ, "rubrique": rubrique, "titre": titre, "auteurs": auteurs, "meta": meta,
-            "resume": resume[:320] + ("…" if len(resume) > 320 else ""), "liens": liens[:2], "route": f"/dossiers/recherche#{sid}",
+            "resume": resume[:320] + ("…" if len(resume) > 320 else ""), "liens": liens[:2], "route": f"/patrimoine/base-de-recherche#{sid}",
         })
 
     chercheurs = []

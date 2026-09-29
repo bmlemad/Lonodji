@@ -25,7 +25,7 @@ export default function HorsLigne() {
         <SectionHead eyebrow="Sans réseau" title="Ce qui reste" em="lisible." text="Une page que vous avez déjà ouverte sur cet appareil se rouvre sans connexion, dans l’état où vous l’avez lue. C’est tout : le site ne se télécharge pas en entier, parce qu’il pèse plusieurs mégaoctets et que personne ne doit payer ce transfert sans l’avoir demandé." />
         <div className="detail-grid">
           <article><span>01</span><h3>Déjà lu = encore lisible</h3><p>Les pages ouvertes quand le réseau passait restent affichables. Ouvrez celles qui vous intéressent quand la connexion est bonne — au marché, à Koumra, là où la 3G passe.</p></article>
-          <article><span>02</span><h3>Le cahier généalogique</h3><p>Ses fiches sont enregistrées dans le téléphone, jamais sur un serveur : il fonctionne entièrement hors ligne dès qu’il a été ouvert une fois.</p><Link className="text-link" href="/dossiers/genealogie-outil">Ouvrir le cahier <span aria-hidden="true">→</span></Link></article>
+          <article><span>02</span><h3>Le cahier généalogique</h3><p>Ses fiches sont enregistrées dans le téléphone, jamais sur un serveur : il fonctionne entièrement hors ligne dès qu’il a été ouvert une fois.</p><Link className="text-link" href="/patrimoine/genealogie-outil">Ouvrir le cahier <span aria-hidden="true">→</span></Link></article>
           <article><span>03</span><h3>Les documents PDF</h3><p>Un document téléchargé reste sur l’appareil. Les documents à faire remplir sur le terrain existent en PDF pour cette raison : on les imprime une fois et on n’a plus besoin de réseau.</p><Link className="text-link" href="/documents">Voir les documents <span aria-hidden="true">→</span></Link></article>
         </div>
       </section>

@@ -49,7 +49,7 @@
    "nom": "Espace numérique communautaire de Bédjondo",
    "stade": "souscription",
    "libelle": "premier chantier, souscription ouverte, aucun financement confirmé",
-   "route": "/dossiers/espace-numerique",
+   "route": "/projets/espace-numerique",
    "thematiques": [
     "transformation-numerique-services",
     "cellule-financement-ressources"
@@ -70,7 +70,7 @@
    "contribuer": [
     {
      "label": "Souscrire : une promesse de contribution",
-     "href": "/dossiers/espace-numerique#souscription"
+     "href": "/projets/espace-numerique#souscription"
     },
     {
      "label": "Offrir du matériel ou une compétence",
@@ -83,7 +83,7 @@
    "nom": "Application pour téléphone",
    "stade": "essai",
    "libelle": "version d'essai en ligne (Android 1.0.1, 28 septembre 2026)",
-   "route": "/dossiers/application",
+   "route": "/projets/application",
    "thematiques": [
     "transformation-numerique-services"
    ],
@@ -103,11 +103,11 @@
    "contribuer": [
     {
      "label": "Installer le site sur son téléphone",
-     "href": "/dossiers/application"
+     "href": "/projets/application"
     },
     {
      "label": "Tester la version d’essai Android",
-     "href": "/dossiers/application"
+     "href": "/projets/application"
     }
    ]
   },
@@ -116,7 +116,7 @@
    "nom": "Complexe de formation sportive pour les jeunes",
    "stade": "etude",
    "libelle": "à l’étude",
-   "route": "/dossiers/complexe-sportif",
+   "route": "/projets/complexe-sportif",
    "thematiques": [
     "jeunesse-reussite"
    ],
@@ -135,7 +135,7 @@
    "contribuer": [
     {
      "label": "Encadrer, former, recenser",
-     "href": "/dossiers/complexe-sportif#agir"
+     "href": "/projets/complexe-sportif#agir"
     },
     {
      "label": "Rejoindre Éducation, jeunesse & formation",
@@ -148,7 +148,7 @@
    "nom": "Bedjondo Transport et Logistique",
    "stade": "annonce",
    "libelle": "projet annoncé, sans financement ni calendrier",
-   "route": "/dossiers/bedjondo-transport-logistique",
+   "route": "/projets/bedjondo-transport-logistique",
    "thematiques": [
     "desenclavement-urbanisation"
    ],

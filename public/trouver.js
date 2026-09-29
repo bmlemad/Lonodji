@@ -54,7 +54,7 @@ window.__initTrouver = function () {
     "coord": "Coordonnateur : Sylvain Nomaye, ingénieur de conception en informatique",
     "desc": "Travaux universitaires, publications et valorisation de nos chercheurs, portées par le programme Bedjond Digital Heritage…",
     "page": [
-      "/dossiers/recherche",
+      "/patrimoine/base-de-recherche",
       "Base de recherche"
     ],
     "suivi": true,
@@ -70,7 +70,7 @@ window.__initTrouver = function () {
     "coord": "Coordonnateur : Olivier Allaramadji Nomaye, ingénieur agroéconomiste",
     "desc": "Agriculture, élevage et sécurité alimentaire, sur une terre d’agriculture et d’élevage qui reste, aujourd’hui encore, le premier moyen de subsistance des villages du Mandoul Occidental.",
     "page": [
-      "/dossiers/agriculture-securite-alimentaire",
+      "/programmes/agriculture-securite-alimentaire",
       "Hub filières & appuis techniques"
     ],
     "suivi": true,
@@ -99,7 +99,7 @@ window.__initTrouver = function () {
     "coord": "Coordonnateur : à pourvoir",
     "desc": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire.",
     "page": [
-      "/dossiers/environnement",
+      "/programmes/environnement",
       "Environnement & durabilité"
     ],
     "suivi": true,
@@ -128,7 +128,7 @@ window.__initTrouver = function () {
     "coord": "Coordonnateur : à pourvoir",
     "desc": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par…",
     "page": [
-      "/dossiers/air-bedjondo",
+      "/projets/bedjondo-transport-logistique",
       "Air Bedjondo"
     ],
     "suivi": true,
@@ -157,7 +157,7 @@ window.__initTrouver = function () {
     "coord": "Coordonnatrice : Odette Tolmbaye",
     "desc": "Autonomisation des femmes et participation pleine et entière aux décisions et au développement communautaire.",
     "page": [
-      "/dossiers/veuves",
+      "/programmes/veuves",
       "Plan pour les veuves"
     ],
     "suivi": true,
@@ -186,7 +186,7 @@ window.__initTrouver = function () {
     "coord": "Coordonnatrice : Solkem Ngarmbatina",
     "desc": "Accompagnement social, soutien aux familles, solidarité dans les moments difficiles et protection de l’enfance (naissances, école, mariages précoces).",
     "page": [
-      "/dossiers/solidarite-inclusion",
+      "/programmes/solidarite-inclusion",
       "Hub Personnes vulnérables"
     ],
     "suivi": true,
@@ -202,7 +202,7 @@ window.__initTrouver = function () {
     "coord": "Coordonnateur : à pourvoir",
     "desc": "Préparer le pays bedjond aux crises : inondations, épidémies, sécheresse ; cartographie des risques, plan de contingence par canton, réseau d’alerte, relais avec l’État et les agences humanitaires.",
     "page": [
-      "/dossiers/besoins",
+      "/territoire/besoins",
       "Carte des besoins"
     ],
     "suivi": false,
@@ -234,7 +234,7 @@ window.__initTrouver = function () {
     "coord": "Coordonnateur : Sa Majesté Moulbe Brahim Nadoumbeye, chef de canton de Bébopen",
     "desc": "Prévention et règlement des conflits, médiation, relations avec les communautés voisines et dialogue entre les religions.",
     "page": [
-      "/dossiers/agriculteurs-eleveurs",
+      "/programmes/agriculteurs-eleveurs",
       "Paix agriculteurs-éleveurs"
     ],
     "suivi": true,
@@ -250,7 +250,7 @@ window.__initTrouver = function () {
     "coord": "Coordonnateur : Edgard Djerassem Djimhotengar",
     "desc": "Recensement et mise en relation des cadres et experts de la communauté, liens avec la diaspora, coopération nationale et internationale.",
     "page": [
-      "/dossiers/evenements",
+      "/association/evenements",
       "Événements"
     ],
     "suivi": false,
@@ -266,7 +266,7 @@ window.__initTrouver = function () {
     "coord": "Coordonnateur : Dr Eugène Ngartebaye Le Yotha",
     "desc": "Sensibilisation au droit et à l’accès à la justice, veille et alerte sur les atteintes aux droits humains touchant la communauté…",
     "page": [
-      "/dossiers/veuves",
+      "/programmes/veuves",
       "Plan veuves"
     ],
     "suivi": false,
@@ -282,7 +282,7 @@ window.__initTrouver = function () {
     "coord": "Coordonnateur : Bignéro Moïalbéi LE MADANG",
     "desc": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons…",
     "page": [
-      "/dossiers/espace-numerique",
+      "/projets/espace-numerique",
       "Espace numérique"
     ],
     "suivi": false,
@@ -298,7 +298,7 @@ window.__initTrouver = function () {
     "coord": "Coordonnateur : Bignéro Moïalbéi LE MADANG",
     "desc": "Mettre l’intelligence artificielle et les données au service de la communauté.",
     "page": [
-      "/dossiers/drones-innovation",
+      "/projets/drones-innovation",
       "Drones & innovation"
     ],
     "suivi": false,

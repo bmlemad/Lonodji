@@ -14,13 +14,13 @@ export const metadata: Metadata = {
 };
 
 const dossiers = [
-  { href: "/dossiers/bedjondo", label: "Bédjondo", note: "Le village devenu ville : repères, langue, statut de commune, carte interactive du pays bedjond." },
-  { href: "/dossiers/lieux-sacres", label: "Lieux sacrés", note: "Sites sacrés et sépultures à protéger, avec le cahier de recensement." },
-  { href: "/dossiers/genealogies", label: "Généalogies", note: "Écrire l’histoire de sa famille avec le cahier généalogique." },
-  { href: "/dossiers/genealogie-outil", label: "Cahier généalogique en ligne", note: "Saisie, vue par maison, liste de descendance, export : tout reste dans votre navigateur." },
-  { href: "/dossiers/recherche", label: "Base de recherche", note: "Quarante références sur le peuple sara, les Bedjond et leur langue, dont les travaux de Djarangar Djita Issa." },
-  { href: "/dossiers/identite-visuelle", label: "Identité visuelle", note: "Logo, couleurs et signes : la carte des sept unités du cœur, la frise des onze chefs." },
-  { href: "/dossiers/evenements", label: "Événements", note: "Assemblées, lancements et rencontres : les dates annoncées et celles à fixer." },
+  { href: "/territoire/bedjondo", label: "Bédjondo", note: "Le village devenu ville : repères, langue, statut de commune, carte interactive du pays bedjond." },
+  { href: "/patrimoine/lieux-sacres", label: "Lieux sacrés", note: "Sites sacrés et sépultures à protéger, avec le cahier de recensement." },
+  { href: "/patrimoine/genealogies", label: "Généalogies", note: "Écrire l’histoire de sa famille avec le cahier généalogique." },
+  { href: "/patrimoine/genealogie-outil", label: "Cahier généalogique en ligne", note: "Saisie, vue par maison, liste de descendance, export : tout reste dans votre navigateur." },
+  { href: "/patrimoine/base-de-recherche", label: "Base de recherche", note: "Quarante références sur le peuple sara, les Bedjond et leur langue, dont les travaux de Djarangar Djita Issa." },
+  { href: "/association/ancienne-identite-visuelle", label: "Identité visuelle", note: "Logo, couleurs et signes : la carte des sept unités du cœur, la frise des onze chefs." },
+  { href: "/association/evenements", label: "Événements", note: "Assemblées, lancements et rencontres : les dates annoncées et celles à fixer." },
 ];
 
 const secondary = [
@@ -37,7 +37,7 @@ export default function Histoire() {
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
-        eyebrow="Association · histoire & patrimoine"
+        eyebrow="Patrimoine · histoire & grandes figures"
         title="Bédjondo, berceau"
         em="du peuple bedjond."
         lead="Les Bedjond — « nangnda » de leur nom d’origine — ont pour berceau Bédjondo, dans le Mandoul Occidental, selon les travaux de Djarangar Djita Issa. Cette page rassemble ce que nous savons de leur histoire, ce qui reste à établir, et les personnes qui portent cette mémoire."

@@ -12,9 +12,9 @@ type Colonne = { titre: string; liens: { label: string; href: string; fr?: boole
    d'intention (aucune cotisation n'est perçue pour l'instant). */
 const PIED_FR: Colonne[] = PIED.map((col) => {
   let liens = col.liens.map((l) => (l.label === "Adhérer & cotiser" ? { ...l, label: "Adhérer (déclaration d’intention)" } : l));
-  if (col.titre === "L’association" && !liens.some((l) => l.href === "/dossiers/ong-partenaires")) {
+  if (col.titre === "L’association" && !liens.some((l) => l.href === "/association/ong-partenaires")) {
     const i = liens.findIndex((l) => l.href === "/presse");
-    const lien = { label: "ONG & bailleurs", href: "/dossiers/ong-partenaires" };
+    const lien = { label: "ONG & bailleurs", href: "/association/ong-partenaires" };
     liens = i >= 0 ? [...liens.slice(0, i), lien, ...liens.slice(i)] : [...liens, lien];
   }
   return { titre: col.titre, liens };
@@ -25,7 +25,7 @@ const PIED_FR: Colonne[] = PIED.map((col) => {
 const PIED_EN: Colonne[] = [
   { titre: "The association", liens: [
     { label: "About us", href: "/en/about" }, { label: "Bédjondo, our town", href: "/en/bedjondo" }, { label: "Advocacy", href: "/en/advocacy" },
-    { label: "NGOs & funders", href: "/dossiers/ong-partenaires", fr: true }, { label: "Accountability & transparency", href: "/transparence", fr: true }, { label: "Press", href: "/presse", fr: true },
+    { label: "NGOs & funders", href: "/association/ong-partenaires", fr: true }, { label: "Accountability & transparency", href: "/transparence", fr: true }, { label: "Press", href: "/presse", fr: true },
   ] },
   { titre: "Our work", liens: [
     { label: "Four pillars, twenty themes", href: "/en/themes" }, { label: "Sectors", href: "/en/sectors" }, { label: "Donor programmes in Chad", href: "/en/donors" }, { label: "Impact dashboard", href: "/en/impact" },
