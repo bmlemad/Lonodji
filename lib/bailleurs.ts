@@ -375,6 +375,14 @@ export const PROGRAMMES_BAILLEURS: ProgrammeBailleur[] = [
     source: WB("099060126173538264"), sourceLabel: "Banque mondiale, document d’évaluation",
   },
   {
+    id: "pilier", famille: "banque-mondiale", bailleur: "Banque mondiale (IDA) — mairie de N’Djamena ; volet communautaire confié au PNUD", nom: "PILIER — lutte contre les inondations et résilience urbaine à N’Djamena",
+    montant: "150 M USD (don IDA, 2023) + 20 M USD pour le volet communautaire (mai 2024)", periode: "approuvé le 6 avril 2023 ; six ans de mise en œuvre selon la presse", statut: "actif", portee: "hors-zone",
+    zones: "N’Djamena seulement (dix communes d’arrondissement) : drainage, curage de 200 km de caniveaux en 2026, comités de quartier et alerte précoce — pas le Mandoul",
+    thematiques: ["urgences-risques"],
+    accroche: "Hors de notre zone : ne pas lui écrire pour Bédjondo. Son volet communautaire (comités de quartier, alerte précoce aux inondations, mis en œuvre par le PNUD) peut servir de modèle à une demande pour Bédjondo, adressée à la protection civile du Mandoul au titre de la réponse d’urgence contingente (CERP).",
+    source: "https://www.banquemondiale.org/fr/news/press-release/2023/04/06/chad-world-bank-supports-flood-risk-management-and-resilient-urban-planning-in-n-djamena", sourceLabel: "Banque mondiale, communiqué du 6 avril 2023",
+  },
+  {
     id: "usaid", famille: "autres", bailleur: "États-Unis", nom: "USAID — fermée le 1er juillet 2025",
     montant: "6,3 M USD déclarés pour l’exercice 2025", periode: "—", statut: "clos", portee: "hors-zone",
     zones: "Aucun programme américain actif identifié dans le Mandoul",
