@@ -23,12 +23,13 @@ export function OdebEmbleme({ fond = "clair", taille = 200, className, alt = "",
   );
 }
 
-/* En-tête des pages du projet : l'en-tête habituel, l'emblème à sa droite. */
+/* En-tête des pages du projet : l'en-tête habituel, l'emblème à sa droite.
+   lang="en" (page anglaise) : fil d'Ariane et texte de remplacement en anglais. */
 export function OdebHero(props: Parameters<typeof PageHeader>[0]) {
   return (
     <div className="od-hero">
       <div><PageHeader {...props} /></div>
-      <OdebEmbleme taille={240} className="od-hero-embleme" priorite alt={`Emblème du projet ${ODEB.sigle}`} />
+      <OdebEmbleme taille={240} className="od-hero-embleme" priorite alt={props.lang === "en" ? `Emblem of the ${ODEB.sigle} project` : `Emblème du projet ${ODEB.sigle}`} />
     </div>
   );
 }

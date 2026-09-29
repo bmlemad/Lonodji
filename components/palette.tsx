@@ -3,6 +3,7 @@
 import Link from "@/components/lien";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { boucleFocus } from "@/components/partager";
 
 /* Palette « Aller à… » : une fenêtre de recherche instantanée sur toutes les
    pages, thématiques, articles et documents du site (index allégé
@@ -37,6 +38,9 @@ export default function Palette() {
   const [sel, setSel] = useState(0);
   const champ = useRef<HTMLInputElement>(null);
   const liste = useRef<HTMLUListElement>(null);
+  const boite = useRef<HTMLDivElement>(null);
+  const declencheur = useRef<HTMLElement | null>(null);   // élément à qui rendre le focus à la fermeture
+  const navigue = useRef(false);                          // fermeture par navigation : le focus suit la nouvelle page
   const router = useRouter();
   const pathname = usePathname();
 
@@ -56,10 +60,32 @@ export default function Palette() {
   useEffect(() => {
     if (!ouverte) { document.body.classList.remove("palette-open"); setQ(""); setSel(0); return; }
     document.body.classList.add("palette-open");
-    if (!index) fetch("/search-palette.json").then((r) => r.json()).then(setIndex).catch(() => setIndex([]));
     const t = setTimeout(() => champ.current?.focus(), 40);
     return () => clearTimeout(t);
+  }, [ouverte]);
+  useEffect(() => {
+    if (ouverte && !index) fetch("/search-palette.json").then((r) => r.json()).then(setIndex).catch(() => setIndex([]));
   }, [ouverte, index]);
+
+  // piège de focus : on mémorise le déclencheur, Tab boucle dans la boîte, Échap ferme,
+  // et le focus revient au déclencheur à la fermeture (sauf navigation vers une autre page)
+  useEffect(() => {
+    if (!ouverte) return;
+    const actif = document.activeElement;
+    declencheur.current = actif instanceof HTMLElement && actif !== document.body ? actif : null;
+    navigue.current = false;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { e.preventDefault(); setOuverte(false); return; }
+      boucleFocus(e, boite.current);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      const d = declencheur.current;
+      declencheur.current = null;
+      if (d && d.isConnected && !navigue.current) window.setTimeout(() => d.focus({ preventScroll: true }), 0);
+    };
+  }, [ouverte]);
 
   const texte = q.trim();
   const resultats = useMemo<Entry[]>(() => {
@@ -87,12 +113,10 @@ export default function Palette() {
     return notes.slice(0, 14).map((x) => x.e);
   }, [texte, index]);
 
-  const actions: Entry[] = texte
-    ? [
-        { t: `Chercher « ${texte} » dans tout le site`, r: `/recherche?q=${encodeURIComponent(texte)}`, k: "Action", d: "Tous les contenus, avec des extraits" },
-        { t: `Chercher le village « ${texte} »`, r: `/villages?q=${encodeURIComponent(texte)}`, k: "Action", d: "Parmi 966 localités nommées" },
-      ]
-    : [];
+  const actionSite: Entry = { t: `Chercher « ${texte} » dans tout le site`, r: `/recherche?q=${encodeURIComponent(texte)}`, k: "Action", d: "Tous les contenus, avec des extraits" };
+  const actionVillage: Entry = { t: `Chercher le village « ${texte} »`, r: `/villages?q=${encodeURIComponent(texte)}`, k: "Action", d: "Parmi 966 localités nommées" };
+  // aucune page ne correspond : c'est sans doute un nom de lieu, la recherche de village passe d'abord
+  const actions: Entry[] = !texte ? [] : index && !resultats.length ? [actionVillage, actionSite] : [actionSite, actionVillage];
   const tout = [...resultats, ...actions];
 
   useEffect(() => { setSel(0); }, [texte]);
@@ -101,12 +125,11 @@ export default function Palette() {
     el?.scrollIntoView({ block: "nearest" });
   }, [sel]);
 
-  const aller = (e: Entry) => { setOuverte(false); router.push(e.r); };
+  const aller = (e: Entry) => { navigue.current = true; setOuverte(false); router.push(e.r); };
   const onKeyChamp = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowDown") { e.preventDefault(); setSel((s) => Math.min(tout.length - 1, s + 1)); }
     else if (e.key === "ArrowUp") { e.preventDefault(); setSel((s) => Math.max(0, s - 1)); }
     else if (e.key === "Enter") { e.preventDefault(); if (tout[sel]) aller(tout[sel]); }
-    else if (e.key === "Escape") { e.preventDefault(); setOuverte(false); }
   };
 
   if (!ouverte) return null;
@@ -115,7 +138,7 @@ export default function Palette() {
   return (
     <div className="palette" role="dialog" aria-modal="true" aria-label="Aller à une page du site">
       <div className="palette-fond" onClick={() => setOuverte(false)} />
-      <div className="palette-boite">
+      <div className="palette-boite" ref={boite}>
         <div className="palette-champ">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
           <input
@@ -126,24 +149,31 @@ export default function Palette() {
             onKeyDown={onKeyChamp}
             placeholder="Une page, un village, une thématique, un article…"
             aria-label="Aller à…"
+            role="combobox"
+            aria-expanded={true}
+            aria-autocomplete="list"
             aria-controls="palette-liste"
             aria-activedescendant={tout[sel] ? `palette-${sel}` : undefined}
             autoComplete="off"
             enterKeyHint="go"
           />
-          <button type="button" className="palette-fermer" onClick={() => setOuverte(false)} aria-label="Fermer">Échap</button>
+          <button type="button" className="palette-fermer" onClick={() => setOuverte(false)} aria-label="Fermer (Échap)">Échap</button>
         </div>
-        <ul className="palette-liste" id="palette-liste" role="listbox" ref={liste}>
+        {texte && !index ? <p className="palette-vide" role="status">Chargement de l’index…</p> : null}
+        {texte && index && !resultats.length ? <p className="palette-vide" role="status">Aucune page avec ce titre ; cherchez-le parmi les villages ou dans tout le site ci-dessous.</p> : null}
+        <ul className="palette-liste" id="palette-liste" role="listbox" aria-label="Résultats" ref={liste}>
           {groupes.map((g) => (
-            <li key={g.k} className="palette-groupe" role="presentation">
-              <span className="palette-titre">{g.k === "Raccourci" ? "Où aller ?" : g.k === "Action" ? "Sinon" : g.k}</span>
+            <li key={g.k} className="palette-groupe" role="group" aria-labelledby={`palette-g-${g.k.replace(/\W+/g, "-")}`}>
+              <span className="palette-titre" id={`palette-g-${g.k.replace(/\W+/g, "-")}`}>{g.k === "Raccourci" ? "Où aller ?" : g.k === "Action" ? "Sinon" : g.k}</span>
               <ul role="presentation">
                 {g.items.map((e) => {
                   i += 1;
                   const k = i;
+                  // l'option est le lien lui-même (pas de lien dans une option) ; hors de l'ordre de tabulation :
+                  // on la choisit aux flèches depuis le champ (aria-activedescendant)
                   return (
-                    <li key={e.r + e.t} role="option" id={`palette-${k}`} aria-selected={k === sel} data-i={k} className={k === sel ? "is-selected" : undefined} onMouseEnter={() => setSel(k)}>
-                      <Link href={e.r} onClick={() => setOuverte(false)}>
+                    <li key={e.r + e.t} role="presentation" data-i={k} className={k === sel ? "palette-option is-selected" : "palette-option"} onMouseEnter={() => setSel(k)}>
+                      <Link href={e.r} role="option" id={`palette-${k}`} aria-selected={k === sel} tabIndex={-1} onClick={() => { navigue.current = true; setOuverte(false); }}>
                         <strong>{e.t}</strong>
                         {e.d ? <span>{e.d}</span> : null}
                         <b aria-hidden="true">↵</b>
@@ -154,12 +184,10 @@ export default function Palette() {
               </ul>
             </li>
           ))}
-          {texte && !index ? <li className="palette-vide">Chargement de l’index…</li> : null}
-          {texte && index && !resultats.length ? <li className="palette-vide">Rien avec ce titre ; essayez la recherche complète ci-dessous.</li> : null}
         </ul>
         <div className="palette-pied">
           <span><kbd>↑</kbd><kbd>↓</kbd> choisir · <kbd>↵</kbd> ouvrir · <kbd>Échap</kbd> fermer</span>
-          <Link href="/recherche" onClick={() => setOuverte(false)}>Recherche complète <span aria-hidden="true">→</span></Link>
+          <Link href="/recherche" onClick={() => { navigue.current = true; setOuverte(false); }}>Recherche complète <span aria-hidden="true">→</span></Link>
         </div>
       </div>
     </div>

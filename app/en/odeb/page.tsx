@@ -3,14 +3,15 @@ import Link from "@/components/lien";
 import { SectionHead, Stats } from "@/components/blocks";
 import { OdebHero } from "@/components/odeb-marque";
 import { ogFor } from "@/lib/content";
+import { alternatesLangues } from "@/lib/langues";
 import { feuilleDeRoute, ODEB, PROGRAMMES, routeProgramme } from "@/lib/odeb";
 import { chiffresOdeb, thematiquesParId } from "@/lib/odeb-chiffres";
 import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
-  title: "The ODEB LONODJI project — Vision 2030 (in English)",
+  title: "The ODEB LONODJI project — Vision 2030",
   description: "ODEB LONODJI, the Organisation for the Development and Emergence of the Bedjond people: a project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030. Six missions, six programmes, a roadmap, a white paper.",
-  alternates: { canonical: "/en/odeb", languages: { fr: "/odeb", en: "/en/odeb" } },
+  alternates: { canonical: "/en/odeb", languages: alternatesLangues("/en/odeb") },
   openGraph: { ...ogFor("/en/odeb", "en"), title: "The ODEB LONODJI project — Vision 2030", description: "A project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030: six missions, six programmes, a roadmap, a white paper." },
 };
 
@@ -38,20 +39,57 @@ const REPERES_EN = [
   "an African reference for community-led territorial development",
 ];
 
+/* Feuille de route : titres et périodes des phases (lib/odeb.ts, en français), traduits à l'affichage. */
+const PHASES_EN: Record<string, [string, string]> = {
+  "2026": ["2026", "Relaunch and foundations"],
+  "phase-1": ["Phase 1 · 0 to 6 months", "Bringing the site to life"],
+  "phase-2": ["Phase 2 · 6 to 18 months", "Equipping the community"],
+  "phase-3": ["Phase 3 · 18 to 36 months", "The observatory and the academy"],
+  "2028": ["2028", "Review of the 2026-2028 action plan"],
+  "2030": ["2029-2030", "The reference organisation"],
+};
+
+/* Intitulés anglais actuels des thématiques (mêmes que /en/themes), par identifiant de lib/content. */
+const THEMES_EN: Record<string, string> = {
+  "memoire-heritage": "Memory & Heritage",
+  "culture-patrimoine-vivant": "Culture & Living Heritage",
+  "savoirs-innovation": "Research & Knowledge",
+  "agriculture-elevage-securite-alimentaire": "Agriculture, Livestock & Food Security",
+  "entrepreneuriat-finance-inclusive": "Entrepreneurship & Inclusive Finance",
+  "environnement-ressources": "Environment, Climate & Natural Resources",
+  "eau-energie-connectivite": "Water, Sanitation & Hygiene",
+  "desenclavement-urbanisation": "Energy, Roads & Urban Planning",
+  "jeunesse-reussite": "Education, Youth & Training",
+  "leadership-feminin": "Gender & Women’s Empowerment",
+  "sante-prevention": "Health, Nutrition & Prevention",
+  "solidarite-inclusion": "Social Protection, Children & Inclusion",
+  "urgences-risques": "Emergencies & Risks",
+  "gouvernance-plaidoyer": "Governance & Advocacy",
+  "paix-cohesion": "Peace & Social Cohesion",
+  "reseau-experts-diaspora": "Expert Network & Diaspora",
+  "justice-droits-homme": "Justice & Human Rights",
+  "transformation-numerique-services": "Connectivity & Digital Services",
+  "intelligence-artificielle-donnees": "Artificial Intelligence & Data",
+  "competences-entrepreneuriat-numerique": "Digital Skills & Entrepreneurship",
+};
+
 export default function OdebEn() {
   const c = chiffresOdeb();
   const th = thematiquesParId();
   const phases = feuilleDeRoute(c);
   const tous = phases.flatMap((p) => p.chantiers);
   const faits = tous.filter((x) => x.etat === "fait").length;
+  // thématiques encore sans coordinateur, calculées depuis la structure (pas de liste figée)
+  const ouvertes = Object.values(th).filter((t) => t.kind === "thematique" && !t.filled).sort((a, b) => Number(a.number) - Number(b.number));
   return (
     <main id="main-content" className="hub-page od-page" lang="en">
       <OdebHero
         eyebrow="ODEB LONODJI project · Vision 2030 · in English"
         title="Organisation for the Development"
         em="and Emergence of the Bedjond people."
-        lead="ODEB LONODJI is a strategic project led by ADEB LONODJI, aiming to establish, in time, a reference organisation dedicated to sustainable development, research, heritage and the emergence of the Bedjond country (Mandoul Occidental, Chad). It was launched on 28 September 2026, the day the association celebrated forty years since its founding reflections of 1986."
-        crumbs={[{ label: "In English", href: "/en/index" }, { label: "ODEB project" }]}
+        lead="ODEB LONODJI is a strategic project led by ADEB LONODJI, aiming to establish, in time, a reference organisation dedicated to sustainable development, research, heritage and the emergence of the Bedjond country (Mandoul Occidental, Chad). It was launched on 28 September 2026, the day the association celebrated forty years since the first discussions of 1986."
+        crumbs={[{ label: "ODEB project" }]}
+        lang="en"
         pills={["Led by ADEB LONODJI", "Launched 28 September 2026", "Six missions, six programmes", "White paper: working draft, in French"]}
       />
 
@@ -63,7 +101,7 @@ export default function OdebEn() {
       ]} />
 
       <section className="hub-section" id="why">
-        <SectionHead eyebrow="Why create ODEB" title="An association acts;" em="a territory needs a permanent tool." text="Recognised in 1995 and revived in 2026, ADEB LONODJI works through volunteer themes. In a few weeks it published advocacy briefs, a diagnosis of 34 issues, a map of 1,259 localities, 966 village pages and a library of 40 references. Keeping all this alive for years is the job of an organisation, not of a campaign. ODEB is the name the association has chosen for its future NGO status; the project gives that name a content before the status. Nothing is decided yet: no statute, no budget, no staff." />
+        <SectionHead eyebrow="Why create ODEB" title="An association acts;" em="a territory needs a permanent tool." text="Recognised in 1995 and revived in 2026, ADEB LONODJI works through volunteer themes. In a few weeks it published advocacy briefs, a diagnosis of 34 issues, a map of 1,259 localities, 966 village pages and a library of 40 references. Keeping all this alive for years is the job of an organisation, not of a campaign. ODEB is the name the association has chosen for its future NGO status; the project gives the name substance before the legal status exists. Nothing is decided yet: no statutes, no budget, no staff." />
         <ol className="od-missions">
           {MISSIONS_EN.map(([nom, texte], i) => <li key={nom}><span className="od-num">0{i + 1}</span><div><h3>{nom}</h3><p>{texte}</p></div></li>)}
         </ol>
@@ -99,7 +137,8 @@ export default function OdebEn() {
         <div className="link-list">
           {phases.map((p) => {
             const f = p.chantiers.filter((x) => x.etat === "fait").length;
-            return <Link href={`/odeb/feuille-de-route#${p.id}`} key={p.id} hrefLang="fr"><small>{p.periode}</small><strong>{p.titre}</strong><span>{f} of {p.chantiers.length} items completed · details in French</span></Link>;
+            const [periode, titre] = PHASES_EN[p.id] ?? [p.periode, p.titre];
+            return <Link href={`/odeb/feuille-de-route#${p.id}`} key={p.id} hrefLang="fr"><small>{periode}</small><strong>{titre}</strong><span>{f} of {p.chantiers.length} items completed · details in French</span></Link>;
           })}
         </div>
       </section>
@@ -107,13 +146,13 @@ export default function OdebEn() {
       <section className="hub-section" id="take-part">
         <SectionHead eyebrow="Take part" title="From the diaspora," em="four ways to help." />
         <div className="link-list">
-          <Link href="/diaspora"><small>Skills register</small><strong>Register your skills</strong><span>Doctor, teacher, engineer, lawyer, developer: five minutes, and you are only contacted for what you said you could do. Nothing is published without your consent.</span></Link>
-          <Link href="/participer?coordo=1#contact"><small>Coordination</small><strong>Take one of the {c.vacantes} open themes</strong><span>Entrepreneurship and inclusive finance, environment, water-energy-connectivity, roads and urban planning.</span></Link>
+          <Link href="/diaspora" hrefLang="fr"><small>Skills register (form in French)</small><strong>Register your skills</strong><span>Doctor, teacher, engineer, lawyer, developer: five minutes, and you are only contacted for what you said you could do. Nothing is published without your consent.</span></Link>
+          <Link href="/participer?coordo=1#contact" hrefLang="fr"><small>Coordination (form in French)</small><strong>Take one of the {ouvertes.length} open themes</strong><span>{ouvertes.map((t) => THEMES_EN[t.id] ?? t.name).join("; ")}.</span></Link>
           <Link href="/odeb/livre-blanc" hrefLang="fr"><small>White paper (French)</small><strong>Read and comment on the white paper</strong><span>Working draft no. 1 of 28 September 2026, online and as a PDF; comments through the contact form, subject “Le projet ODEB LONODJI”.</span></Link>
           <Link href="/projets" hrefLang="fr"><small>Projects</small><strong>Propose or support a project</strong><span>Each project with its stage, what is missing and how to contribute. No money is collected until the association has a bank account in its name.</span></Link>
         </div>
         <Partager route="/en/odeb" titre="The ODEB LONODJI project" texte="ODEB LONODJI, the Organisation for the Development and Emergence of the Bedjond people: a project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030. Six missions, six programmes, a roadmap, a white paper." lang="en" />
-        <p className="lg-footnote">This page summarises, in English, the French pages of the ODEB LONODJI project: <Link href="/odeb" hrefLang="fr">vision</Link>, <Link href="/odeb/programmes" hrefLang="fr">programmes</Link>, <Link href="/odeb/feuille-de-route" hrefLang="fr">roadmap</Link> and <Link href="/odeb/livre-blanc" hrefLang="fr">white paper</Link>. Figures are those of the site at publication; the white paper is a working draft, not yet adopted by the association. Official contact: the association’s president, <a href="tel:+23566299403">+235 66 29 94 03</a> (calls and WhatsApp). {ODEB.sigle} · {ODEB.nom}.</p>
+        <p className="lg-footnote">This page summarises, in English, the French pages of the ODEB LONODJI project: <Link href="/odeb" hrefLang="fr">vision</Link>, <Link href="/odeb/programmes" hrefLang="fr">programmes</Link>, <Link href="/odeb/feuille-de-route" hrefLang="fr">roadmap</Link> and <Link href="/odeb/livre-blanc" hrefLang="fr">white paper</Link>. Figures are those of the site at publication; the white paper is a working draft, not yet adopted by the association. Official contact: the association’s president, <a href="tel:+23566299403">+235 66 29 94 03</a> (calls and WhatsApp). {ODEB.sigle} · <span lang="fr">{ODEB.nom}</span>.</p>
       </section>
     </main>
   );

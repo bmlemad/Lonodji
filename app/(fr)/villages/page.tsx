@@ -1,3 +1,4 @@
+import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -9,7 +10,7 @@ import Partager from "@/components/partager";
 export const metadata: Metadata = {
   title: "Les villages du pays bedjond : une fiche par localité",
   description: "Retrouvez votre village : 966 localités du pays bedjond, chacune avec ce que les données ouvertes en savent, ce que le site en dit et ce qui reste à documenter.",
-  alternates: { canonical: "/villages", languages: { fr: "/villages", en: "/en/villages" } },
+  alternates: { canonical: "/villages", languages: alternatesLangues("/villages") },
   openGraph: ogFor("/villages"),
 };
 
@@ -75,7 +76,7 @@ export default function Villages() {
           <article><h3>Votre village manque ?</h3><p>Il n’est pas dans les données ouvertes, ou son nom y est écrit autrement. Ajoutez-le ou corrigez-le sur OpenStreetMap — un compte gratuit suffit — ou <Link href="/participer#contact">écrivez-nous</Link> : il apparaîtra à la mise à jour suivante.</p></article>
         </div>
         <Partager route="/villages" titre="Les villages du pays bedjond" texte="Retrouvez votre village : 966 localités du pays bedjond, chacune avec ce que les données ouvertes en savent, ce que le site en dit et ce qui reste à documenter." />
-        <p className="lg-footnote">Fiches générées par <code>scripts/build-villages.py</code> à partir des données de la carte ({d.sources.localites}). Une erreur de nom ou de position ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
+        <p className="lg-footnote">Fiches établies automatiquement à partir des données de la carte ({d.sources.localites}). Une erreur de nom ou de position ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
       </section>
     </main>
   );

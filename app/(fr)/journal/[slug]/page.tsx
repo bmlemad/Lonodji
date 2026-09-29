@@ -4,7 +4,7 @@ import Partager from "@/components/partager";
 import { notFound } from "next/navigation";
 import { ArticleCard } from "@/components/blocks";
 import { LegacySections, Resume, splitTitle } from "@/components/legacy-content";
-import { getArticle, getIndex, listArticleSlugs, metaDescription, ogFor, ORG } from "@/lib/content";
+import { getArticle, getIndex, listArticleSlugs, metaDescription, ogFor, ogImage, ORG } from "@/lib/content";
 
 export const dynamicParams = false;
 
@@ -41,14 +41,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     headline: a.title,
     description: a.description || a.summary,
     datePublished: a.date,
+    dateModified: a.date,
+    image: [`https://lonodji.org${ogImage(`/journal/${slug}`)[0].url}`],
     inLanguage: "fr-FR",
     author: { "@type": "Organization", name: ORG.name },
-    publisher: { "@type": "Organization", name: ORG.name, url: ORG.url },
+    publisher: { "@type": "Organization", name: ORG.name, url: ORG.url, logo: { "@type": "ImageObject", url: "https://lonodji.org/odeb/identite/odeb-lonodji-embleme-1024.png" } },
     mainEntityOfPage: url,
   };
   return (
     <main id="main-content" className="hub-page article-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld).replace(/</g, "\\u003c") }} />
       <div className="article-head">
         <nav className="lg-crumbs" aria-label="Fil d’Ariane"><ol><li><Link href="/">Accueil</Link></li><li><Link href="/journal">Le journal</Link></li><li aria-current="page">{a.tag || "Article"}</li></ol></nav>
         <p className="eyebrow">{a.tag || "Le journal"}</p>

@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ unite: st
   if (!v || !u) return {};
   const route = routeVillage(v);
   const desc = description(v.nom, v.type, u.nom, v.kmBedjondo, v.equipements.length, v.mentions.length);
-  return { title: `${v.nom} (${u.nom})`, description: desc, alternates: { canonical: route }, openGraph: { ...ogFor("/villages"), url: route, title: `${v.nom} — ${TYPES[v.type] || "Localité"} de ${u.nom}`, description: desc } };
+  return { title: `${v.nom} (${u.nom})`, description: desc, alternates: { canonical: route }, openGraph: { ...ogFor(route), url: route, title: `${v.nom} — ${TYPES[v.type] || "Localité"} de ${u.nom}`, description: desc } };
 }
 
 type Question = { titre: string; question: string; liens: { action: string; href: string }[] };
@@ -155,7 +155,7 @@ export default async function Village({ params }: { params: Promise<{ unite: str
 
       <Partager route={routeVillage(v)} titre={`${v.nom} (${u.nom})`} texte={`fiche de ${type.toLowerCase() === "localité" ? "la localité" : "ce " + type.toLowerCase()} sur le site de l’association ADEB LONODJI : ce que l’on sait, ce qu’il reste à documenter`} />
 
-      <p className="lg-footnote">Nom et position : OpenStreetMap (export humanitaire HOT, données du {genere}) ; rattachement à {u.nom} : contours GADM 4.1. Un nom mal écrit, une position fausse ? Corrigez-la sur OpenStreetMap ou <Link href="/transparence#corrections">signalez-la</Link> : elle sera corrigée et datée. Fiche générée par <code>scripts/build-villages.py</code>.</p>
+      <p className="lg-footnote">Nom et position : OpenStreetMap (export humanitaire HOT, données du {genere}) ; rattachement à {u.nom} : contours GADM 4.1. Un nom mal écrit, une position fausse ? Corrigez-la sur OpenStreetMap ou <Link href="/transparence#corrections">signalez-la</Link> : elle sera corrigée et datée. Fiche établie automatiquement à partir des données de la carte.</p>
     </main>
   );
 }

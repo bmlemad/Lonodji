@@ -26,7 +26,7 @@ export default function Redaction() {
         lead="Réservé à la rédaction. Les brouillons s’enregistrent d’eux-mêmes et restent privés jusqu’à leur intégration au journal. Une erreur de fait se corrige toujours à découvert : voir la charte d’écriture."
       />
       <RedactionApp rubriques={rubriques} />
-      <p className="lg-footnote">Publier : exporter le brouillon « prêt » (.md) et le transmettre à la rédaction — il est intégré au journal par <code>scripts/publier-article.py</code>, puis mis en ligne. Cette page n’est pas indexée par les moteurs de recherche. <Link href="/transparence#charte-ecriture">Charte d’écriture</Link> · <Link href="/journal">Le journal</Link></p>
+      <p className="lg-footnote">Publier : exporter le brouillon « prêt » (.md) et le transmettre à la rédaction — il est intégré au journal par l’animation, puis mis en ligne. Cette page n’est pas indexée par les moteurs de recherche. <Link href="/transparence#charte-ecriture">Charte d’écriture</Link> · <Link href="/journal">Le journal</Link></p>
     </main>
   );
 }

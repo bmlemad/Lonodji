@@ -41,7 +41,7 @@
   "nommees": 966,
   "equipements": 24,
   "couvertes": 411,
-  "citees": 55
+  "citees": 56
  },
  "unites": [
   {
@@ -417,7 +417,7 @@
     }
    },
    "couvertes": 31,
-   "citees": 2,
+   "citees": 3,
    "pages": 2,
    "plaidoyers": 0,
    "route": "/villages/moussafoyo"
@@ -474,7 +474,7 @@
      },
      {
       "id": "prob-02",
-      "texte": "Inventaire des villages incomplet — 133 recensés par nous sur 256 estimés ( villages et cantons )",
+      "texte": "Inventaire des villages incomplet — 966 localités nommées dans les données ouvertes (OpenStreetMap) sur les quatorze unités du pays bedjond, dont 205 dans le Mandoul Occidental, aucune encore vérifiée sur le terrain, pour environ 256 villages estimés dans ce seul département ( villages et cantons )",
       "statut": "Partiel",
       "decideur": "Nous",
       "thematique": "savoirs-innovation"
@@ -556,8 +556,9 @@
      "National": 2
     },
     "thematiques": {
-     "eau-energie-connectivite": 3,
-     "desenclavement-urbanisation": 1
+     "eau-energie-connectivite": 2,
+     "desenclavement-urbanisation": 1,
+     "transformation-numerique-services": 1
     },
     "problemes": [
      {
@@ -572,21 +573,21 @@
       "texte": "Aucun équipement public électrifié connu — centre de santé, lycée, mairie ( électricité )",
       "statut": "Partiel",
       "decideur": "National",
-      "thematique": "eau-energie-connectivite"
+      "thematique": "desenclavement-urbanisation"
      },
      {
       "id": "prob-11",
       "texte": "Bédjondo absente du volet rural du projet national de transformation numérique ( connectivité )",
       "statut": "Documenté",
       "decideur": "National",
-      "thematique": "eau-energie-connectivite"
+      "thematique": "transformation-numerique-services"
      },
      {
       "id": "prob-12",
       "texte": "Assainissement et gestion des déchets — aucun dispositif connu dans une ville qui a grandi sans plan",
       "statut": "Inconnu",
       "decideur": "Commune",
-      "thematique": "desenclavement-urbanisation"
+      "thematique": "eau-energie-connectivite"
      }
     ]
    },

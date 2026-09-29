@@ -1,3 +1,4 @@
+import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead } from "@/components/blocks";
@@ -9,7 +10,7 @@ import { enLettres, filledCount, getIndex, getPage, ogFor, ORG, thematiqueCount 
 export const metadata: Metadata = {
   title: "Participer : nous écrire, adhérer, soutenir",
   description: "Rejoindre ou coordonner une thématique, adhérer, proposer un article, recevoir la lettre d’information : par formulaire, WhatsApp ou téléphone.",
-  alternates: { canonical: "/participer" },
+  alternates: { canonical: "/participer", languages: alternatesLangues("/participer") },
   openGraph: ogFor("/participer"),
 };
 

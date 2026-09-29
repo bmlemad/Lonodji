@@ -21,6 +21,7 @@ export default function SectionRail() {
     const main = document.querySelector("main");
     if (!main || main.querySelector(".od-sommaire")) return;
     const trouves: Item[] = [];
+    const vus = new Set<string>();   // deux sections au même libellé (eyebrow répété) : une seule entrée
     for (const sec of Array.from(main.querySelectorAll<HTMLElement>("section[id], div[id].hub-section"))) {
       if (sec.closest("section[id] section[id]")) continue;
       const h = sec.querySelector<HTMLElement>("h2, h3");
@@ -28,6 +29,9 @@ export default function SectionRail() {
       const eyebrow = sec.querySelector<HTMLElement>(".eyebrow");
       const brut = (eyebrow?.textContent || h.textContent || "").replace(/\s+/g, " ").trim().replace(/^\d{2}\s+—\s+/, "");
       if (!brut) continue;
+      const cle = brut.toLowerCase();
+      if (vus.has(cle)) continue;
+      vus.add(cle);
       trouves.push({ id: sec.id, label: brut.length > 34 ? brut.slice(0, 33).trimEnd() + "…" : brut });
     }
     if (trouves.length < 3) return;

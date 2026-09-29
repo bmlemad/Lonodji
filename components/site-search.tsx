@@ -20,6 +20,12 @@ function snippet(text: string, terms: string[]): { before: string; hit: string; 
   return null;
 }
 
+const SYNONYMES: Record<string, string> = {
+  coordinateur: "coordonnateur", coordinatrice: "coordonnatrice", coordinateurs: "coordonnateurs",
+  donate: "soutenir", don: "soutenir", dons: "soutenir", email: "contact", mail: "contact", press: "presse",
+  bureau: "bureau", equipe: "bureau", statuts: "statuts",
+};
+
 export default function SiteSearch({ initialQuery = "" }: { initialQuery?: string }) {
   const [index, setIndex] = useState<Entry[] | null>(null);
   const [q, setQ] = useState(initialQuery);
@@ -39,7 +45,8 @@ export default function SiteSearch({ initialQuery = "" }: { initialQuery?: strin
     window.history.replaceState(null, "", url.toString());
   }, [q]);
 
-  const terms = useMemo(() => norm(q).split(/\s+/).filter((t) => t.length >= 2), [q]);
+  // quelques équivalences usuelles (orthographe voisine, mots anglais courants)
+  const terms = useMemo(() => norm(q).split(/\s+/).filter((t) => t.length >= 2).map((t) => SYNONYMES[t] ?? t), [q]);
   const results = useMemo(() => {
     if (!index || !terms.length) return [];
     const scored = index.map((e) => {
@@ -90,7 +97,8 @@ export default function SiteSearch({ initialQuery = "" }: { initialQuery?: strin
           );
         })}
       </ol>
-      {index && terms.length && !results.length ? <p className="lg-footnote">Aucun résultat. Essayez un autre mot, ou parcourez <Link href="/plan-du-site">le plan du site</Link>.</p> : null}
+      {terms.length ? <p className="search-villages">Un village ? <Link href={`/villages?q=${encodeURIComponent(q.trim())}`}>Chercher « {q.trim()} » parmi les 966 localités →</Link></p> : null}
+      {index && terms.length && !results.length ? <p className="lg-footnote">Aucun résultat dans les pages. C’est peut-être un village : le lien ci-dessus cherche parmi les localités. Sinon, parcourez <Link href="/plan-du-site">le plan du site</Link>.</p> : null}
     </div>
   );
 }

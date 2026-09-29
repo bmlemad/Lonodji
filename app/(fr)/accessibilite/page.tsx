@@ -27,7 +27,7 @@ export default function Accessibilite() {
         <div className="detail-grid">
           <article><h3>Le niveau visé</h3><p>Les pages du site visent le niveau AA des règles internationales WCAG 2.1 : contrastes suffisants, navigation au clavier, structure de titres, textes de remplacement, formulaires étiquetés, pas de contenu qui bouge sans commande.</p></article>
           <article><h3>Léger et hors ligne</h3><p>Aucune image lourde, aucun script de suivi, aucune bannière de consentement : le site n’en a pas besoin. Une fois ouvertes, les pages restent lisibles sans réseau, et le site s’installe sur l’écran d’accueil du téléphone.</p></article>
-          <article><h3>En français simple, et en anglais</h3><p>Nous écrivons court, nous datons nos faits, nous nommons ce que nous ne savons pas. Dix pages existent en anglais — l’association, les plaidoyers, Bédjondo, les villages, les projets, le tableau de bord, le projet ODEB — ; l’arabe et le nangnda restent à venir, et nous le disons plutôt que de le promettre.</p></article>
+          <article><h3>En français simple, et en anglais</h3><p>Nous écrivons court, nous datons nos faits, nous nommons ce que nous ne savons pas. Onze pages existent en anglais — accueil, l’association, les thématiques, les plaidoyers, Bédjondo, contact, les villages, les projets, le tableau de bord, les secteurs, le projet ODEB — ; l’arabe et le nangnda restent à venir, et nous le disons plutôt que de le promettre.</p></article>
         </div>
       </section>
 

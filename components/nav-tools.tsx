@@ -76,7 +76,15 @@ export default function NavTools() {
         aria-label="Retour en haut de la page"
         title="Retour en haut"
         tabIndex={visible ? 0 : -1}
-        onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" })}
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+          // le focus suit : sinon, la tabulation suivante repartirait du bas de la page
+          const cible = document.getElementById("main-content");
+          if (cible) {
+            if (!cible.hasAttribute("tabindex")) cible.setAttribute("tabindex", "-1");
+            cible.focus({ preventScroll: true });
+          }
+        }}
       >
         <svg className="haut-anneau" width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
           <circle cx="23" cy="23" r={r} fill="none" stroke="rgba(23,59,45,.12)" strokeWidth="2.5" />

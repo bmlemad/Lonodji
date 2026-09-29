@@ -52,7 +52,7 @@ export default function Observatoire() {
 
       <section className="hub-section" id="unites">
         <SectionHead eyebrow="Par unité" title="Quatorze unités," em="ce que l’on en sait." text="Sept sous-préfectures du cœur, trois du sud où la présence bedjond est attestée, une signalée, trois de diaspora agricole. Les équipements sont ceux que des contributeurs ont placés sur OpenStreetMap : presque aucun au cœur du pays bedjond, ce qui mesure d’abord une absence de relevé. La colonne « citées » compte les localités dont le site parle déjà." />
-        <div className="ob-table-wrap">
+        <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Tableau des unités : localités, équipements, couverture">
           <table className="ob-table">
             <thead>
               <tr>
@@ -86,7 +86,7 @@ export default function Observatoire() {
         <ul className="ob-statuts">
           {STATUTS.map(([cle, nom, texte]) => <li key={cle} className={`ob-statut ob-statut--${cle}`}><strong>{o.diagnostic.statuts[cle] ?? 0}</strong><span>{nom}</span><small>{texte}</small></li>)}
         </ul>
-        <div className="ob-table-wrap">
+        <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Tableau des problématiques par domaine">
           <table className="ob-table ob-table--domaines">
             <thead><tr><th scope="col">Domaine</th><th scope="col">Problématiques</th><th scope="col">Documenté</th><th scope="col">Partiel</th><th scope="col">Ailleurs</th><th scope="col">Inconnu</th><th scope="col">Qui décide</th><th scope="col">Thématiques</th></tr></thead>
             <tbody>
@@ -110,7 +110,7 @@ export default function Observatoire() {
 
       <section className="hub-section" id="plaidoyers">
         <SectionHead eyebrow="Suivi des plaidoyers" title="Publiés, transmis," em="répondus." text="Chaque plaidoyer nomme ses destinataires. L’observatoire suit la transmission et la réponse ; le dossier de chaque plaidoyer garde le texte, les chiffres et les sources." />
-        <div className="ob-table-wrap">
+        <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Tableau de suivi des plaidoyers">
           <table className="ob-table ob-table--plaidoyers">
             <thead><tr><th scope="col">Plaidoyer</th><th scope="col">Thème</th><th scope="col">Destinataires</th><th scope="col">Publié</th><th scope="col">Transmis</th><th scope="col">Réponse</th></tr></thead>
             <tbody>
@@ -132,7 +132,7 @@ export default function Observatoire() {
 
       <section className="hub-section" id="indicateurs">
         <SectionHead eyebrow="Ce que l’observatoire suit" title="Huit indicateurs," em="leur source et leur état." />
-        <div className="ob-table-wrap">
+        <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Tableau des indicateurs">
           <table className="ob-table ob-table--indic">
             <thead><tr><th scope="col">Indicateur</th><th scope="col">Source et méthode</th><th scope="col">Mise à jour</th><th scope="col">État</th></tr></thead>
             <tbody>
@@ -158,7 +158,7 @@ export default function Observatoire() {
           <Link href="/actions#mesure-debit"><small>Connectivité</small><strong>Mesurer le débit internet chez soi</strong><span>Une mesure datée et située, pour le plaidoyer haut débit.</span></Link>
         </div>
         <Partager route="/observatoire" titre="Observatoire du Mandoul Occidental" texte="Localités, équipements connus, couverture, diagnostic par domaine, plaidoyers et besoins signalés : les chiffres du pays bedjond par unité, datés et sourcés, et ce que l’observatoire ne sait pas encore." />
-        <p className="lg-footnote">Observatoire ouvert le 28 septembre 2026, première version, au titre de la phase 3 de la <Link href="/odeb/feuille-de-route#phase-3">feuille de route 2026-2030</Link> et de l’axe « Observatoire » du <Link href="/odeb/programmes/developpement-territorial">programme Développement territorial</Link>. Données : <code>scripts/build-observatoire.py</code> (carte du {date(o.sources.carte)}, fiches du {date(o.sources.villages)}, relevé des formulaires du {date(o.sources.releve)}). Une erreur ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
+        <p className="lg-footnote">Observatoire ouvert le 28 septembre 2026, première version, au titre de la phase 3 de la <Link href="/odeb/feuille-de-route#phase-3">feuille de route 2026-2030</Link> et de l’axe « Observatoire » du <Link href="/odeb/programmes/developpement-territorial">programme Développement territorial</Link>. Données établies automatiquement (carte du {date(o.sources.carte)}, fiches du {date(o.sources.villages)}, relevé des formulaires du {date(o.sources.releve)}). Une erreur ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
       </section>
     </main>
   );

@@ -95,16 +95,32 @@ export type ContentIndex = {
 
 let indexCache: ContentIndex | null = null;
 
+/* Les textes courts (chapôs, résumés, repères) sont extraits de l'ancien site balise par balise :
+   un lien ou un gras suivi d'une virgule y laissait une espace parasite (« adhésion , sans paiement »).
+   On la retire à la lecture, sans toucher au HTML des sections ni aux adresses. */
+const ESPACE_PARASITE = /(?<=[\p{L}\p{N}»)’])[ \u00a0]+(?=[,.](?:\s|$))/gu;
+const CLES_INTACTES = new Set(["html", "href", "route", "slug", "pdf", "legacy", "themeHref"]);
+function sansEspaceParasite<T>(v: T, cle = ""): T {
+  if (typeof v === "string") return (CLES_INTACTES.has(cle) ? v : v.replace(ESPACE_PARASITE, "")) as T;
+  if (Array.isArray(v)) return v.map((x) => sansEspaceParasite(x, cle)) as T;
+  if (v && typeof v === "object") {
+    const o: Record<string, unknown> = {};
+    for (const [k, x] of Object.entries(v as Record<string, unknown>)) o[k] = sansEspaceParasite(x, k);
+    return o as T;
+  }
+  return v;
+}
+
 export function getIndex(): ContentIndex {
   if (!indexCache) {
-    indexCache = JSON.parse(fs.readFileSync(path.join(CONTENT_DIR, "index.json"), "utf8")) as ContentIndex;
+    indexCache = sansEspaceParasite(JSON.parse(fs.readFileSync(path.join(CONTENT_DIR, "index.json"), "utf8")) as ContentIndex);
   }
   return indexCache;
 }
 
 export function getPage(slug: string): LegacyPage {
   const file = path.join(CONTENT_DIR, "pages", `${slug.replace("/", "--")}.json`);
-  return JSON.parse(fs.readFileSync(file, "utf8")) as LegacyPage;
+  return sansEspaceParasite(JSON.parse(fs.readFileSync(file, "utf8")) as LegacyPage);
 }
 
 export function hasPage(slug: string): boolean {
@@ -113,7 +129,7 @@ export function hasPage(slug: string): boolean {
 
 export function getArticle(slug: string): Article {
   const file = path.join(CONTENT_DIR, "articles", `${slug}.json`);
-  return JSON.parse(fs.readFileSync(file, "utf8")) as Article;
+  return sansEspaceParasite(JSON.parse(fs.readFileSync(file, "utf8")) as Article);
 }
 
 export function listArticleSlugs(): string[] {
@@ -160,7 +176,7 @@ export const ORG = {
     { role: "Vice-présidente", name: "Célestine Moyombaye", note: "" },
     { role: "Secrétaire général", name: "Salomon Ngarbaye", note: "" },
     { role: "Trésorière", name: "Élisabeth Neloumngaye Ndodinguem", note: "Collecte suspendue jusqu’à l’ouverture d’un compte au nom de l’association" },
-    { role: "Animateur", name: "Bignéro Moïalbéi Le Madang", note: "Animation générale de l’association, communication et numérique" },
+    { role: "Animateur", name: "Bignéro Moïalbéi LE MADANG", note: "Animation générale de l’association, communication et numérique" },
   ],
 };
 

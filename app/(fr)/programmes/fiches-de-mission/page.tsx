@@ -79,8 +79,8 @@ export default function FichesDeMission() {
         </div>
       </section>
 
-      <Partager route="/programmes/fiches-de-mission" titre="Fiches de mission" texte="Diriger un pôle, coordonner une thématique : vingt-cinq fiches de mission en PDF, avec le rôle, le périmètre, les étapes et le lien pour candidater." />
-      <p className="lg-footnote">Fiches générées par <code>scripts/build-fiches-mission.py</code> depuis la structure publiée sur <Link href="/programmes">Nos actions</Link> ; état au {jour(m.genere)}. Une nomination est publiée, datée, dans le <Link href="/journal">journal</Link>, puis les fiches sont régénérées.</p>
+      <Partager route="/programmes/fiches-de-mission" titre="Fiches de mission" texte="Diriger un pôle, coordonner une thématique : vingt-six fiches de mission en PDF, avec le rôle, le périmètre, les étapes et le lien pour candidater." />
+      <p className="lg-footnote">Fiches établies automatiquement depuis la structure publiée sur <Link href="/programmes">Nos actions</Link> ; état au {jour(m.genere)}. Une nomination est publiée, datée, dans le <Link href="/journal">journal</Link>, puis les fiches sont régénérées.</p>
     </main>
   );
 }

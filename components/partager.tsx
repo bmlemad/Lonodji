@@ -25,6 +25,19 @@ const ICO = {
   fermer: <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>,
 };
 
+/* Piège de focus d'une boîte modale : Tab et Maj+Tab bouclent sur ses éléments
+   focalisables. Réutilisé par la palette et le menu mobile. */
+const FOCALISABLES = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), summary, [tabindex]:not([tabindex="-1"])';
+export function boucleFocus(e: KeyboardEvent, boite: HTMLElement | null) {
+  if (e.key !== "Tab" || !boite) return;
+  const els = Array.from(boite.querySelectorAll<HTMLElement>(FOCALISABLES)).filter((el) => el.offsetParent !== null || el === document.activeElement);
+  if (!els.length) { e.preventDefault(); return; }
+  const premier = els[0], dernier = els[els.length - 1];
+  const actif = document.activeElement as HTMLElement | null;
+  if (e.shiftKey && (actif === premier || !boite.contains(actif))) { e.preventDefault(); dernier.focus(); }
+  else if (!e.shiftKey && (actif === dernier || !boite.contains(actif))) { e.preventDefault(); premier.focus(); }
+}
+
 async function copier(texte: string): Promise<boolean> {
   try {
     if (navigator.clipboard?.writeText) { await navigator.clipboard.writeText(texte); return true; }
@@ -84,8 +97,11 @@ export default function Partager(props: Props) {
 export function FeuillePartage() {
   const [ouverte, setOuverte] = useState(false);
   const [page, setPage] = useState<{ titre: string; texte: string; url: string; lang: "fr" | "en" }>({ titre: "", texte: "", url: "", lang: "fr" });
+  const boite = useRef<HTMLDivElement>(null);
+  const declencheur = useRef<HTMLElement | null>(null);   // élément à qui rendre le focus à la fermeture
   useEffect(() => {
     const ouvrir = () => {
+      declencheur.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
       const main = document.querySelector("main");
       const lang = (main?.getAttribute("lang") || document.documentElement.lang || "fr").startsWith("en") ? "en" : "fr";
       const h1 = (document.querySelector("main h1") as HTMLElement | null)?.innerText.replace(/\s+/g, " ").trim();
@@ -94,18 +110,35 @@ export function FeuillePartage() {
       setPage({ titre, texte: texte.length > 160 ? texte.slice(0, 157).trimEnd() + "…" : texte, url: location.origin + location.pathname, lang });
       setOuverte(true);
     };
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOuverte(false); };
     window.addEventListener("lonodji:partager", ouvrir);
-    document.addEventListener("keydown", onKey);
-    return () => { window.removeEventListener("lonodji:partager", ouvrir); document.removeEventListener("keydown", onKey); };
+    return () => window.removeEventListener("lonodji:partager", ouvrir);
   }, []);
-  useEffect(() => { document.body.classList.toggle("feuille-open", ouverte); return () => document.body.classList.remove("feuille-open"); }, [ouverte]);
+  useEffect(() => {
+    document.body.classList.toggle("feuille-open", ouverte);
+    if (!ouverte) return () => document.body.classList.remove("feuille-open");
+    // ouverture : focus sur « Fermer » (ou le premier bouton), Tab boucle dans la boîte, Échap ferme
+    const t = window.setTimeout(() => (boite.current?.querySelector<HTMLElement>(".feuille-fermer") || boite.current?.querySelector<HTMLElement>("button, a[href]"))?.focus(), 0);
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { e.preventDefault(); setOuverte(false); return; }
+      boucleFocus(e, boite.current);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      window.clearTimeout(t);
+      document.removeEventListener("keydown", onKey);
+      document.body.classList.remove("feuille-open");
+      // fermeture : le focus revient au bouton qui a ouvert la feuille
+      const d = declencheur.current;
+      declencheur.current = null;
+      if (d && d.isConnected) window.setTimeout(() => d.focus({ preventScroll: true }), 0);
+    };
+  }, [ouverte]);
   if (!ouverte) return null;
   const t = T[page.lang];
   return (
     <div className="feuille" role="dialog" aria-modal="true" aria-label={t.titre}>
       <div className="feuille-fond" onClick={() => setOuverte(false)} />
-      <div className="feuille-boite">
+      <div className="feuille-boite" ref={boite}>
         <div className="feuille-tete">
           <div><span className="eyebrow">{t.titre}</span><strong>{page.titre}</strong><small>{page.url.replace(/^https?:\/\//, "")}</small></div>
           <button type="button" className="feuille-fermer" onClick={() => setOuverte(false)} aria-label={t.fermer}>{ICO.fermer}</button>

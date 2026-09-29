@@ -35,10 +35,19 @@ const FAMILLES: Record<string, { label: string; couleur: string }> = {
   marche: { label: "Marché", couleur: "#C98A2B" },
   culte: { label: "Lieu de culte", couleur: "#7a4b12" },
   energie: { label: "Énergie", couleur: "#e67e22" },
-  telecom: { label: "Télécom", couleur: "#5B7BB5" },
+  telecom: { label: "Télécom", couleur: "#4d6ea8" },   // assombri (5,1:1 avec le blanc)
   administration: { label: "Administration", couleur: "#2B2118" },
   finance: { label: "Services financiers", couleur: "#6c5ce7" },
 };
+
+/* Encre lisible sur une pastille de couleur : blanc sur les couleurs sombres,
+   vert nuit (#10241e) sur les claires (eau, marché, énergie) — contraste ≥ 4,5:1. */
+function encre(fond: string): string {
+  const h = fond.replace("#", "");
+  const [r, g, b] = [0, 2, 4].map((k) => { const c = parseInt(h.slice(k, k + 2), 16) / 255; return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; });
+  const l = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  return 1.05 / (l + 0.05) >= (l + 0.05) / 0.0647 ? "#fff" : "#10241e";   // 0,0647 : luminance de #10241e + 0,05
+}
 const TYPES: Record<string, string> = { city: "Ville", town: "Bourg", village: "Village", hamlet: "Hameau" };
 
 function sansAccents(s: string) { return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
@@ -109,7 +118,7 @@ export default function CarteTerritoire() {
       const equipementsCouche = L.layerGroup().addTo(m);
       for (const e of donnees.equipements) {
         const fam = FAMILLES[e.famille] || { label: e.famille, couleur: "#607069" };
-        const ic = L.divIcon({ className: "ct-eq", html: `<span style="background:${fam.couleur}" title="${fam.label}">${fam.label.charAt(0)}</span>`, iconSize: [22, 22], iconAnchor: [11, 11] });
+        const ic = L.divIcon({ className: "ct-eq", html: `<span style="background:${fam.couleur};color:${encre(fam.couleur)}" title="${fam.label}">${fam.label.charAt(0)}</span>`, iconSize: [24, 24], iconAnchor: [12, 12] });
         const mk = L.marker([e.coords[1], e.coords[0]], { icon: ic, keyboard: true, alt: `${fam.label} : ${e.nom || "sans nom"}` });
         mk.bindTooltip(`${fam.label} · ${e.nom || "sans nom"}`, { direction: "top", offset: [0, -10], className: "ct-info" });
         mk.on("click", () => setSelection({ genre: "equipement", equipement: e }));
@@ -219,7 +228,7 @@ export default function CarteTerritoire() {
               <p>Chaque point ouvre sa fiche : ce que les données ouvertes en disent, ce que le site en dit, et un bouton pour signaler un besoin à cet endroit.</p>
               <ul className="ct-legende">
                 {(Object.keys(GROUPES) as Unite["groupe"][]).map((g) => <li key={g}><i style={{ background: GROUPES[g].couleur, opacity: 0.35 + GROUPES[g].fond }} /> {GROUPES[g].label}</li>)}
-                {Object.entries(FAMILLES).filter(([k]) => donnees?.familles[k]).map(([k, f]) => <li key={k}><i className="ct-legende-eq" style={{ background: f.couleur }}>{f.label.charAt(0)}</i> {f.label} <small>{donnees?.familles[k]}</small></li>)}
+                {Object.entries(FAMILLES).filter(([k]) => donnees?.familles[k]).map(([k, f]) => <li key={k}><i className="ct-legende-eq" style={{ background: f.couleur, color: encre(f.couleur) }}>{f.label.charAt(0)}</i> {f.label} <small>{donnees?.familles[k]}</small></li>)}
               </ul>
             </div>
           ) : selection.genre === "unite" ? (
@@ -273,7 +282,7 @@ function UniteFiche({ u, donnees, aller, fermer }: { u: Unite; donnees: Donnees;
         <div><strong>{c.equipements}</strong><span>équipement{c.equipements > 1 ? "s" : ""} cartographié{c.equipements > 1 ? "s" : ""}</span></div>
       </div>
       {c.equipements === 0 ? <p className="ct-note">Aucune école, aucun centre de santé, aucun forage de cette unité n’est encore dans les données ouvertes. Ce n’est pas qu’il n’y en a pas : c’est que personne ne les a encore cartographiés. C’est à notre portée.</p> : null}
-      {eq.length ? <ul className="ct-liste">{eq.map((e, i) => <li key={i}><button type="button" onClick={() => aller([e.coords[1], e.coords[0]], 15, { genre: "equipement", equipement: e })}><i style={{ background: FAMILLES[e.famille]?.couleur }}>{(FAMILLES[e.famille]?.label || "?").charAt(0)}</i>{e.nom || FAMILLES[e.famille]?.label}</button></li>)}</ul> : null}
+      {eq.length ? <ul className="ct-liste">{eq.map((e, i) => <li key={i}><button type="button" onClick={() => aller([e.coords[1], e.coords[0]], 15, { genre: "equipement", equipement: e })}><i style={{ background: FAMILLES[e.famille]?.couleur, color: FAMILLES[e.famille] ? encre(FAMILLES[e.famille].couleur) : undefined }}>{(FAMILLES[e.famille]?.label || "?").charAt(0)}</i>{e.nom || FAMILLES[e.famille]?.label}</button></li>)}</ul> : null}
       {liens.length ? (
         <>
           <p className="eyebrow" style={{ marginTop: 22 }}>Sur le site</p>

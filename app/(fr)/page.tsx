@@ -1,9 +1,14 @@
+import type { Metadata } from "next";
+import { alternatesLangues } from "@/lib/langues";
 import Link from "@/components/lien";
 import { ArticleCard } from "@/components/blocks";
 import TableauDeBord from "@/components/tableau-de-bord";
 import { enLettres, filledCount, getIndex, getPage, ORG, thematiqueCount } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
 import { IDENTITE, ODEB, PROGRAMMES, routeProgramme } from "@/lib/odeb";
+
+
+export const metadata: Metadata = { alternates: { canonical: "/", languages: alternatesLangues("/") } };
 
 const values = [
   ["01", "Courage", "Oser agir, prendre des responsabilités et avancer avec détermination, y compris quand il faut dire ce qui manque."],
@@ -37,11 +42,11 @@ export default function Home() {
             <h1 id="hero-title">Construire aujourd’hui.<br /><em>Transmettre demain.</em></h1>
             <p className="hero-text">
               ADEB LONODJI est l’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond.
-              Reconnue en 1995, remise en mouvement en 2026 : quatre pôles, vingt thématiques, huit dossiers de plaidoyer publiés pour l’eau, l’électricité, l’école, les routes et la santé — et un territoire cartographié village par village.
+              Reconnue en 1995 — mise en conformité avec l’ordonnance de 2018 en vérification —, remise en mouvement en 2026 : quatre pôles, vingt thématiques, huit dossiers de plaidoyer publiés pour l’eau, l’électricité, l’école, les routes et la santé — et un territoire cartographié village par village.
             </p>
             <div className="hero-actions">
               <Link className="button primary" href="/programmes">Découvrir nos actions <span aria-hidden="true">↗</span></Link>
-              <Link className="text-link" href="/participer">Rejoindre une thématique <span aria-hidden="true">→</span></Link>
+              <Link className="text-link" href="/participer?coordo=1#contact">Rejoindre une thématique <span aria-hidden="true">→</span></Link>
             </div>
           </div>
           <div className="hero-visual" aria-hidden="true">
@@ -49,10 +54,10 @@ export default function Home() {
             <div className="hero-card">
               <div className="glass-card">
                 <span className="card-kicker">Où nous en sommes</span>
-                <strong>{filled} thématiques pourvues sur {total}. {total - filled} cherchent leur coordonnateur.</strong>
+                <strong>{filled} thématiques pourvues sur {total} ; {enLettres(total - filled)} cherchent encore leur coordonnateur.</strong>
                 <ul className="card-faits">
                   <li><b>{indicateurs.contenu.plaidoyers.publies}</b> dossiers de plaidoyer publiés</li>
-                  <li><b>{new Intl.NumberFormat("fr-FR").format(indicateurs.contenu.carte.localites)}</b> localités cartographiées</li>
+                  <li><b>{new Intl.NumberFormat("fr-FR").format(indicateurs.contenu.carte.localites)}</b> points cartographiés, {new Intl.NumberFormat("fr-FR").format(indicateurs.contenu.carte.localitesNommees)} localités nommées</li>
                   <li><b>{indicateurs.contenu.corrections}</b> corrections publiées à découvert</li>
                 </ul>
                 <div className="mini-line" />
@@ -105,6 +110,7 @@ export default function Home() {
             <ul className="od-band-programmes">
               {PROGRAMMES.map((p) => <li key={p.slug}><Link href={routeProgramme(p)}><span>{p.numero}</span>{p.nom}</Link></li>)}
             </ul>
+            <p className="od-band-note">Les six programmes du projet s’appuieront sur les vingt thématiques de l’association : <Link href="/odeb/programmes">voir quelles thématiques chaque programme mobilise →</Link></p>
             <div className="section-actions od-band-actions">
               <Link className="button primary" href="/odeb">La vision 2030 <span aria-hidden="true">↗</span></Link>
               <Link className="button secondary" href="/odeb/livre-blanc">Le livre blanc <span aria-hidden="true">→</span></Link>
@@ -120,7 +126,7 @@ export default function Home() {
               <h2 id="programmes-title">Quatre pôles.<br /><em>Vingt thématiques.</em></h2>
             </div>
             <p>
-              Chaque pôle est dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ; chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte publiquement. Deux cellules transversales — financement et communication — appuient l’ensemble.
+              Chaque pôle sera dirigé par un directeur ou une directrice de pôle, au rang de chef de projet (les quatre postes sont à pourvoir) ; chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte publiquement. Deux cellules transversales — financement et communication — appuient l’ensemble.
             </p>
           </div>
           <div className="program-grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))" }}>
@@ -163,7 +169,7 @@ export default function Home() {
               <p className="eyebrow">06 — Territoire</p>
               <h2 id="territory-title">Comprendre le terrain.<br /><em>Agir avec précision.</em></h2>
             </div>
-            <p>Bédjondo, chef-lieu du Mandoul Occidental, village devenu ville. Le pays bedjond compte sept sous-préfectures au cœur, des présences dans le Logone Oriental et une diaspora agricole au Moyen-Chari et à Moïssala.</p>
+            <p>Bédjondo, chef-lieu du Mandoul Occidental, village devenu ville. Le pays bedjond compte sept unités au cœur (sous-préfectures selon GADM), des présences dans le Logone Oriental et une diaspora agricole au Moyen-Chari et à Moïssala.</p>
           </div>
           <div className="link-list">
             <Link href="/villages"><small>Retrouver son village</small><strong>966 localités, une fiche chacune</strong><span>Ce que les données ouvertes en savent, ce que le site en dit, ce qui reste à documenter — et le formulaire pour le faire.</span></Link>

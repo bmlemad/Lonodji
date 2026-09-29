@@ -23,34 +23,37 @@ export function LegacySections({ sections, className = "" }: { sections: Section
   );
 }
 
-export function Resume({ items }: { items?: string[] }) {
+export function Resume({ items, lang = "fr" }: { items?: string[]; lang?: "fr" | "en" }) {
   if (!items || !items.length) return null;
   return (
     <aside className="lg-resume" aria-labelledby="lg-resume-titre">
-      <p className="eyebrow" id="lg-resume-titre">En trois phrases</p>
+      <p className="eyebrow" id="lg-resume-titre">{lang === "en" ? "In three sentences" : "En trois phrases"}</p>
       <ol>{items.map((t, i) => <li key={i}>{t}</li>)}</ol>
     </aside>
   );
 }
 
-export function Toc({ items }: { items?: { href: string; label: string }[] }) {
+export function Toc({ items, lang = "fr" }: { items?: { href: string; label: string }[]; lang?: "fr" | "en" }) {
   if (!items || !items.length) return null;
   return (
-    <nav className="lg-toc" aria-label="Sommaire de la page">
-      <p className="eyebrow">Sur cette page</p>
+    <nav className="lg-toc" aria-label={lang === "en" ? "Page contents" : "Sommaire de la page"}>
+      <p className="eyebrow">{lang === "en" ? "On this page" : "Sur cette page"}</p>
       <ol>{items.map((t) => <li key={t.href}><a href={t.href}>{t.label}</a></li>)}</ol>
     </nav>
   );
 }
 
-export function Crumbs({ items, parentHref }: { items: string[]; parentHref?: string }) {
+export function Crumbs({ items, parentHref, lang = "fr" }: { items: string[]; parentHref?: string; lang?: "fr" | "en" }) {
   if (!items || items.length < 2) return null;
-  const parent = items[items.length - 2];
+  const en = lang === "en";
+  const accueil = en ? "Home" : "Accueil";
+  const brut = items[items.length - 2];
+  const parent = PARENT_LABELS[brut] ?? brut;
   return (
-    <nav className="lg-crumbs" aria-label="Fil d’Ariane">
+    <nav className="lg-crumbs" aria-label={en ? "Breadcrumb" : "Fil d’Ariane"}>
       <ol>
-        <li><Link href="/">Accueil</Link></li>
-        {parentHref && parent !== "Accueil" ? <li><Link href={parentHref}>{parent}</Link></li> : null}
+        <li><Link href={en ? "/en/index" : "/"}>{accueil}</Link></li>
+        {parentHref && brut !== "Accueil" && brut !== "Home" ? <li><Link href={parentHref}>{parent}</Link></li> : null}
         <li aria-current="page">{items[items.length - 1]}</li>
       </ol>
     </nav>
@@ -61,32 +64,60 @@ export const PARENT_ROUTES: Record<string, string> = {
   "Nos actions": "/programmes",
   "L’association": "/mission",
   "L'association": "/mission",
-  "Bédjondo & héritage": "/histoire",
+  "Bédjondo & héritage": "/carte",
+  "Territoire & patrimoine": "/carte",
   "Actualités": "/journal",
   "Le journal": "/journal",
   "Agir avec nous": "/participer",
+  "Participer": "/participer",
   "Association": "/mission",
+  "Home": "/en/index",
 };
+
+/* Libellés actuels des rubriques parentes (les pages importées gardent l'ancien nom). */
+const PARENT_LABELS: Record<string, string> = {
+  "Agir avec nous": "Participer",
+  "Bédjondo & héritage": "Territoire & patrimoine",
+};
+
+/* Barre de liens des pages anglaises héritées. */
+const LIENS_EN: { label: string; href: string }[] = [
+  { label: "About", href: "/en/about" }, { label: "Themes", href: "/en/themes" }, { label: "Sectors", href: "/en/sectors" },
+  { label: "Advocacy", href: "/en/advocacy" }, { label: "Bédjondo", href: "/en/bedjondo" }, { label: "Villages", href: "/en/villages" },
+  { label: "Projects", href: "/en/projects" }, { label: "ODEB", href: "/en/odeb" }, { label: "Contact", href: "/en/contact" },
+];
 
 /** Page de fond complète (dossier) : en-tête conçu + contenu importé. */
 export function LegacyDocument({ page, children, eyebrowPrefix }: { page: LegacyPage; children?: React.ReactNode; eyebrowPrefix?: string }) {
   const [main, ...rest] = splitTitle(page.title);
+  const en = page.lang === "en";
   return (
     <main id="main-content" className="detail-page lg-page" lang={page.lang !== "fr" ? page.lang : undefined}>
-      <Crumbs items={page.crumbs} parentHref={PARENT_ROUTES[page.parent]} />
+      {en && page.route === "/en/index" ? null : <Crumbs items={page.crumbs} parentHref={PARENT_ROUTES[page.parent]} lang={en ? "en" : "fr"} />}
       <p className="eyebrow">{[eyebrowPrefix, page.eyebrow].filter(Boolean).join(" — ")}</p>
       <h1>{main}{rest.length ? <><br /><em>{rest.join(" ")}</em></> : null}</h1>
       {page.lede ? <p className="detail-lead">{page.lede}</p> : null}
       {page.pills?.length ? <div className="status-list lg-pills">{page.pills.map((p) => <span key={p}>{p}</span>)}</div> : null}
       {children}
       <div className="legacy" {...(page.rootAttrs ?? {})}>
-        <Resume items={page.resume} />
-        <Toc items={page.toc} />
+        <Resume items={page.resume} lang={en ? "en" : "fr"} />
+        <Toc items={page.toc} lang={en ? "en" : "fr"} />
         <LegacySections sections={page.sections} />
       </div>
       <LegacyEnhance hasMap={page.hasMap} hasForms={page.forms.length > 0} scripts={page.scripts} />
       <Partager route={page.route} titre={page.title.replace(/\s+/g, " ")} texte={page.description} lang={page.lang === "en" ? "en" : "fr"} />
-      <p className="lg-footnote">Page reprise de la première version du site (septembre 2026) et maintenue à jour ici. Une erreur de fait ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
+      {en ? (
+        <>
+          <nav className="lg-footnote lg-liens-en" aria-label="English pages">
+            {LIENS_EN.map((l, i) => (
+              <span key={l.href}>{i ? " · " : ""}{l.href === page.route ? <span aria-current="page">{l.label}</span> : <Link href={l.href}>{l.label}</Link>}</span>
+            ))}
+          </nav>
+          <p className="lg-footnote">Page carried over from the first version of the site (September 2026) and kept up to date here. Spotted a factual error? <Link href="/transparence#corrections" hrefLang="fr">Report it (in French)</Link>: it will be corrected and dated.</p>
+        </>
+      ) : (
+        <p className="lg-footnote">Page reprise de la première version du site (septembre 2026) et maintenue à jour ici. Une erreur de fait ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
+      )}
     </main>
   );
 }

@@ -1280,3 +1280,67 @@ input[type=checkbox], input[type=radio]{ flex:0 0 auto; }
 .not-found-recherche input{ flex:1 1 240px; min-height:48px; padding:0 14px; border:1px solid var(--line); border-radius:14px; font:inherit; background:#fff; }
 .not-found-liens{ display:flex; flex-wrap:wrap; gap:10px; list-style:none; padding:0; margin:0 0 26px; }
 .not-found-liens a{ display:inline-flex; align-items:center; min-height:44px; padding:0 16px; border:1px solid var(--line); border-radius:999px; background:#fff; font-weight:600; font-size:14px; }
+
+/* ---- Revue accessibilité du 29 septembre 2026 ----
+   Surcharges regroupées ici (les règles d'origine plus haut restent intactes). */
+
+/* Focus jamais masqué sous la barre d'onglets mobile (62 px) */
+@media (max-width:800px){ html{ scroll-padding-bottom:calc(62px + env(safe-area-inset-bottom) + 16px); } }
+
+/* Focus homogène (les cibles programmatiques en tabindex=-1 n'en ont pas besoin) */
+:where(button, summary, [tabindex]:not([tabindex="-1"])):focus-visible{ outline:3px solid var(--accent); outline-offset:3px; }
+#main-content[tabindex="-1"]:focus, .form-note[tabindex="-1"]:focus{ outline:none; }
+
+/* En-tête : fond plus opaque au-dessus des bandes sombres, liens plus contrastés */
+.nav{ background:rgba(248,250,246,.92); }
+.links, .nav-lien{ color:#3d4c45; }
+/* Lien de langue « EN » / « FR » entre la loupe et le partage */
+.nav-langue{ display:inline-flex; align-items:center; justify-content:center; min-width:38px; height:38px; padding:0 8px; border-radius:12px; border:1px solid var(--line); background:rgba(255,255,255,.72); color:var(--deep); font:700 12px/1 var(--font-dm),system-ui,sans-serif; letter-spacing:.06em; flex:none; }
+.nav-langue:hover{ background:rgba(23,59,45,.07); }
+@media (max-width:1100px){ .nav-langue{ order:2; } }
+@media (max-width:800px){ .nav-langue{ display:none; } }
+/* Ordinateur : outils regroupés à droite, liens centrés entre le logo et les outils */
+@media (min-width:1101px){
+  .nav{ justify-content:flex-start; gap:8px; }
+  .nav .links{ margin:0 auto; min-width:0; }
+  .nav .brand{ margin-right:10px; }
+  /* pages anglaises : liste simple, qui défile plutôt que de déborder sur les écrans moyens */
+  html[lang="en"] .nav .links{ flex:0 1 auto; justify-content:flex-start; overflow-x:auto; scrollbar-width:none; }
+  html[lang="en"] .nav .links::-webkit-scrollbar{ display:none; }
+}
+
+/* Palette : focus du champ visible, placeholder contrasté, option = le lien */
+.palette-champ:focus-within{ box-shadow:inset 0 -2px 0 var(--accent); }
+.palette-champ input::placeholder{ color:#66756e; }
+.palette-liste .palette-option a{ display:grid; grid-template-columns:1fr auto; gap:2px 12px; align-items:center; padding:10px 12px; border-radius:14px; }
+.palette-liste .palette-option strong{ font-size:15px; letter-spacing:-.01em; color:var(--ink); }
+.palette-liste .palette-option span{ grid-column:1; font-size:12.5px; color:#526159; line-height:1.4; display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; }
+.palette-liste .palette-option b{ grid-column:2; grid-row:1 / span 2; font-size:13px; color:#8a9a90; opacity:0; }
+.palette-liste .palette-option.is-selected b{ opacity:1; color:var(--deep); }
+p.palette-vide{ margin:0; padding:12px 18px 0; }
+
+/* Contrastes */
+.lg-footnote, .lg-crumbs, .lg-crumbs a, .lg-crumbs li+li:before{ color:#4f5e57; }
+.ob-table .est-vide, .ob-fam span.est-vide{ color:#66756e; font-style:italic; }
+.legacy .bento-note, .legacy .bento-tile .bento-note{ opacity:1; }
+
+/* Carte : pastilles d'équipements à 24 px (couleur du texte calculée dans carte-territoire.tsx) */
+.ct-eq span{ width:24px; height:24px; }
+.ct-resultats button:focus-visible{ outline:2px solid var(--deep); outline-offset:-2px; }
+
+/* Reflux à 320 px (/odeb) et cibles */
+.status{ max-width:100%; white-space:normal; }
+.them-links a{ display:inline-flex; align-items:center; min-height:24px; }
+.section-actions{ flex-wrap:wrap; gap:12px 18px; align-items:center; }
+
+/* Mouvement réduit : palette, menu plein écran, rail */
+@media (prefers-reduced-motion:reduce){
+  .palette-fond, .palette-boite{ animation:none; }
+  .mobile-menu, .mobile-menu.is-open{ transition:none; transform:none; }
+  .nav{ transition:none; }
+  .rail, .rail a, .rail a span, .rail a i{ transition:none; }
+  .rail a span{ transform:none; }
+}
+
+.search-villages{ margin:6px 0 18px; font-size:14px; }
+.search-villages a{ display:inline-flex; align-items:center; min-height:32px; font-weight:600; text-decoration:underline; text-underline-offset:3px; }

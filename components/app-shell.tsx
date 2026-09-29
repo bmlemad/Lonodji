@@ -3,6 +3,7 @@
 import Link from "@/components/lien";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { equivalent } from "@/lib/langues";
 
 /* Couche « appli » du site : enregistrement du service worker (lecture hors
    ligne), reconnaissance de l'appli installée (écran d'accueil, appli Android
@@ -18,22 +19,83 @@ const ICO = {
   villages: <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z" /><circle cx="12" cy="11" r="2.2" /></svg>,
   journal: <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h12.5V18a2.5 2.5 0 0 0 2.5 2.5H6.5A2.5 2.5 0 0 1 4 18z" /><path d="M16.5 9H20v9a2.5 2.5 0 0 1-2.5 2.5" /><path d="M7.5 9h5.5M7.5 12.5h5.5M7.5 16h3.5" /></svg>,
   agir: <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2s-7.5-4.6-7.5-10.3A4.2 4.2 0 0 1 12 7.3a4.2 4.2 0 0 1 7.5 2.6c0 5.7-7.5 10.3-7.5 10.3z" /></svg>,
+  themes: <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" /></svg>,
   menu: <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h11" /></svg>,
 };
 
-const ONGLETS = [
+type Onglet = { id: keyof typeof ICO; href: string; label: string };
+
+const ONGLETS: Onglet[] = [
   { id: "accueil", href: "/", label: "Accueil" },
   { id: "villages", href: "/villages", label: "Villages" },
   { id: "journal", href: "/journal", label: "Journal" },
-  { id: "agir", href: "/participer", label: "Agir" },
-] as const;
+  { id: "agir", href: "/participer", label: "Participer" },
+];
+
+// barre d'onglets des pages anglaises : uniquement des pages qui existent en anglais
+const ONGLETS_EN: Onglet[] = [
+  { id: "accueil", href: "/en/index", label: "Home" },
+  { id: "villages", href: "/en/villages", label: "Villages" },
+  { id: "themes", href: "/en/themes", label: "Themes" },
+  { id: "agir", href: "/en/contact", label: "Contact" },
+];
 
 function ongletActif(pathname: string) {
   if (pathname === "/" || pathname === "/en/index") return "accueil";
-  if (/^\/(villages|carte)/.test(pathname)) return "villages";
+  if (/^\/(villages|carte|en\/villages)/.test(pathname)) return "villages";
+  if (pathname.startsWith("/en/themes")) return "themes";
   if (pathname.startsWith("/journal")) return "journal";
   if (/^\/(participer|en\/contact)/.test(pathname)) return "agir";
   return "";
+}
+
+/* Lien vers la même page dans l'autre langue (pied de page) : page équivalente
+   si elle existe (lib/langues.ts), accueil de l'autre langue sinon. */
+export function LienLangue({ className }: { className?: string } = {}) {
+  const pathname = usePathname() || "/";
+  const eq = equivalent(pathname);
+  return eq.lang === "fr"
+    ? <Link className={className} href={eq.href} lang="fr" hrefLang="fr">Français</Link>
+    : <Link className={className} href={eq.href} lang="en" hrefLang="en">English</Link>;
+}
+
+/* Lettre d'information, version anglaise du formulaire du pied de page (même
+   formulaire Netlify « lettre-info-pied », mêmes champs). */
+export function LettreEn({ id = "footer-nl-email" }: { id?: string } = {}) {
+  const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
+  return state === "done" ? (
+    <p className="footer-consent" role="status">Thank you! Your address is registered for the newsletter.</p>
+  ) : (
+    <form
+      name="lettre-info-pied"
+      method="POST"
+      action="/__forms.html"
+      aria-label="Newsletter"
+      onSubmit={async (e) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        setState("sending");
+        try {
+          const body = new URLSearchParams(new FormData(form) as unknown as Record<string, string>);
+          const res = await fetch("/__forms.html", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
+          if (!res.ok) throw new Error(String(res.status));
+          setState("done");
+        } catch {
+          setState("error");
+        }
+      }}
+    >
+      <input type="hidden" name="form-name" value="lettre-info-pied" />
+      <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+      <label className="sr-only" htmlFor={id}>E-mail address</label>
+      <div className="footer-nl">
+        <input id={id} type="email" name="email" required autoComplete="email" placeholder="you@example.com" />
+        <button type="submit" disabled={state === "sending"}>{state === "sending" ? "…" : "Subscribe"}</button>
+      </div>
+      <label className="footer-consent"><input type="checkbox" name="consentement" value="oui" required /> I agree that my address is kept for the newsletter, with our host in the United States. <a href="/mentions-legales#donnees" lang="fr" hrefLang="fr">Data and rights (in French)</a></label>
+      {state === "error" ? <p className="footer-consent" role="alert">Sending failed; please try again in a moment.</p> : null}
+    </form>
+  );
 }
 
 function estAppli(): boolean {
@@ -101,9 +163,10 @@ export default function AppShell({ lang = "fr" }: { lang?: "fr" | "en" } = {}) {
   // la barre d'onglets sert à tous les visiteurs sur téléphone (CSS ≤ 800 px) ; l'appli installée y ajoute ses réglages
   void appli;
   const actif = ongletActif(pathname);
+  const en = lang === "en";
   return (
-    <nav className="tabbar" aria-label="Onglets de l’application">
-      {ONGLETS.map((o) => {
+    <nav className="tabbar" aria-label={en ? "App tabs" : "Onglets de l’application"}>
+      {(en ? ONGLETS_EN : ONGLETS).map((o) => {
         const on = o.id === actif;
         return (
           <Link
@@ -122,7 +185,7 @@ export default function AppShell({ lang = "fr" }: { lang?: "fr" | "en" } = {}) {
         );
       })}
       <button className={menuOuvert ? "tab tab--menu is-active" : "tab tab--menu"} type="button" aria-controls="mobile-menu" aria-expanded={menuOuvert} onClick={() => window.dispatchEvent(new CustomEvent("lonodji:menu", { detail: !menuOuvert }))}>
-        <span className="tab-ico">{ICO.menu}</span><span className="tab-txt">{menuOuvert ? "Fermer" : "Menu"}</span>
+        <span className="tab-ico">{ICO.menu}</span><span className="tab-txt">{menuOuvert ? (en ? "Close" : "Fermer") : "Menu"}</span>
       </button>
     </nav>
   );

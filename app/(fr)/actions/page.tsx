@@ -1,3 +1,4 @@
+import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, PlaidoyerCard, SectionHead } from "@/components/blocks";
@@ -9,7 +10,7 @@ import Partager from "@/components/partager";
 export const metadata: Metadata = {
   title: "Plaidoyers, engagements et dossiers",
   description: "Sept plaidoyers et une note à la commune de Bédjondo — eau, électricité, internet, routes, santé, école, formation — avec destinataires, suivi et engagements.",
-  alternates: { canonical: "/actions" },
+  alternates: { canonical: "/actions", languages: alternatesLangues("/actions") },
   openGraph: ogFor("/actions"),
 };
 

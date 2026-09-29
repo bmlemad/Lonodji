@@ -157,7 +157,7 @@ export default function Identite() {
 
       <OdebEtat />
       <Partager route="/odeb/identite" titre="Identité visuelle" texte="Trois empreintes — les ancêtres, la génération actuelle, les générations futures — qui avancent vers un soleil levant : le logo d’ADEB LONODJI et de son projet ODEB LONODJI, ses versions, ses couleurs, ses règles d’usage, le kit à télécharger et les papiers à en-tête." />
-      <p className="lg-footnote">Identité « {IDENTITE.nom} » dessinée le {IDENTITE.retenueLabel} pour le projet {ODEB.sigle} et adoptée le même jour par ADEB LONODJI comme son logo, pour l’association et pour le projet qu’elle porte. Le logo appartient à l’association. Usage libre pour parler de l’association ou du projet, à condition de ne pas le modifier ; toute autre utilisation, <Link href="/participer#contact">écrivez-nous</Link>. Dessins et scripts de génération : <code>design/odeb/</code> et <code>scripts/build-identite-odeb.py</code> dans le dépôt du site.</p>
+      <p className="lg-footnote">Identité « {IDENTITE.nom} » dessinée le {IDENTITE.retenueLabel} pour le projet {ODEB.sigle} et adoptée le même jour par ADEB LONODJI comme son logo, pour l’association et pour le projet qu’elle porte. Le logo appartient à l’association. Usage libre pour parler de l’association ou du projet, à condition de ne pas le modifier ; toute autre utilisation, <Link href="/participer#contact">écrivez-nous</Link>. Les dessins sources sont conservés avec le site.</p>
     </main>
   );
 }

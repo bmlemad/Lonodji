@@ -14,13 +14,21 @@ export type Decision = {
   sources: { label: string; href: string }[];
   /* ce que l'entrée attend encore, s'il y a lieu */
   suite?: string;
+  /* qui a décidé, quand le site le dit ; sinon « non précisée publiquement » */
+  instance?: string;
+  /* à la place de la date, quand la date exacte n'est pas publiée (date sert alors au tri) */
+  dateLabel?: string;
+  /* règle dont la date de départ est connue : affichée « depuis le … » */
+  datee?: boolean;
 };
+
+export const INSTANCE_PAR_DEFAUT = "non précisée publiquement";
 
 export const TYPES: Record<TypeDecision, { label: string; court: string; note: string }> = {
   decision: { label: "Décision", court: "Décidé", note: "prise par l’association et rendue publique" },
   nomination: { label: "Nomination", court: "Nommé", note: "coordination ou fonction confiée à une personne" },
   annonce: { label: "Annonce", court: "Annoncé", note: "intention rendue publique, sans budget ni calendrier" },
-  proposition: { label: "Proposition", court: "À voter", note: "soumise à l’assemblée, pas encore décidée" },
+  proposition: { label: "Proposition", court: "À décider", note: "soumise à l’assemblée ou au bureau, pas encore décidée" },
   publication: { label: "Publication", court: "Publié", note: "un texte qui engage l’association, publié sur le site" },
   regle: { label: "Règle", court: "En vigueur", note: "que l’association s’impose, dès sa mise en ligne" },
 };
@@ -101,7 +109,7 @@ export const DECISIONS: Decision[] = [
   {
     id: "2026-12", date: "2026-09-29", type: "decision",
     titre: "Vingt thématiques : quatre périmètres élargis et une thématique Urgences & risques",
-    texte: "Pour couvrir les secteurs des ONG de développement et d’aide : Eau, assainissement, énergie & connectivité (l’assainissement et l’hygiène) ; Santé, nutrition & prévention (la nutrition) ; Environnement, climat & ressources naturelles (l’adaptation au changement climatique) ; Protection sociale, enfance & inclusion (la protection de l’enfance). Une vingtième thématique, Urgences & risques, rejoint le pôle II : préparation aux inondations et aux épidémies, plan de contingence par canton, réseau d’alerte, relais avec l’État et les agences humanitaires.",
+    texte: "Pour couvrir les secteurs des ONG de développement et d’aide : Eau, énergie & connectivité, devenue le même jour Eau, assainissement & hygiène (l’assainissement et l’hygiène) ; Santé, nutrition & prévention (la nutrition) ; Environnement, climat & ressources naturelles (l’adaptation au changement climatique) ; Protection sociale, enfance & inclusion (la protection de l’enfance). Une vingtième thématique, Urgences & risques, rejoint le pôle II : préparation aux inondations et aux épidémies, plan de contingence par canton, réseau d’alerte, relais avec l’État et les agences humanitaires.",
     sources: [{ label: "Article du 29 septembre 2026", href: "/journal/2026-09-29-vingt-thematiques-urgences-risques" }, { label: "Nos actions", href: "/programmes#urgences-risques" }],
     suite: "La coordination d’Urgences & risques est à pourvoir ; rien n’est encore engagé, aucune collecte avant un compte au nom de l’association.",
   },
@@ -118,10 +126,44 @@ export const DECISIONS: Decision[] = [
     sources: [{ label: "Nos actions", href: "/programmes#pole-2" }, { label: "Secteurs d’intervention", href: "/secteurs" }],
   },
   {
-    id: "regle-01", date: "2026-09-11", type: "regle",
+    id: "2026-15", date: "2026-09-23", type: "nomination", dateLabel: "date non publiée, au plus tard le 23 septembre 2026",
+    titre: "Coordination de la thématique Protection sociale, enfance & inclusion",
+    texte: "La coordination est confiée à Solkem Ngarmbatina. Le journal des corrections du 23 septembre 2026 la cite déjà parmi les six thématiques pourvues.",
+    sources: [{ label: "Journal des corrections, 23 septembre 2026", href: "/transparence#corrections" }, { label: "Nos actions", href: "/programmes#solidarite-inclusion" }],
+  },
+  {
+    id: "2026-16", date: "2026-09-23", type: "decision",
+    titre: "Suspension de la collecte sur le compte personnel de la trésorière",
+    texte: "La collecte est suspendue, en espèces comme par Mobile Money, jusqu’à ce que trois conditions soient réunies : l’autorisation de l’association au titre de l’ordonnance n° 023/PR/2018, le vote de la grille de cotisation par l’assemblée générale, et un compte au nom de l’association, à double signature. Le numéro de la trésorière est retiré du site.",
+    sources: [{ label: "Journal des corrections, 23 septembre 2026", href: "/transparence#corrections" }],
+    suite: "Les trois conditions ne sont pas réunies à ce jour.",
+  },
+  {
+    id: "2026-17", date: "2026-09-23", type: "proposition",
+    titre: "Cinq politiques d’intégrité",
+    texte: "Conflits d’intérêts, fraude et corruption, données personnelles, achats et dépenses, exploitation et abus sexuels : cinq politiques écrites, rédigées en projet le 23 septembre 2026 et soumises au bureau exécutif.",
+    sources: [{ label: "Redevabilité & transparence", href: "/transparence" }],
+    suite: "Proposition — projets du 23 septembre 2026, soumis au bureau exécutif ; non adoptés à ce jour.",
+  },
+  {
+    id: "2026-18", date: "2026-09-24", type: "decision", instance: "Décision de l’animation, à confirmer par l’assemblée générale",
+    titre: "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond",
+    texte: "La présentation change : les actions de développement servent tous les habitants de Bédjondo, sans distinction d’origine ; la sauvegarde du patrimoine, de la langue et de l’histoire du peuple bedjond reste au cœur de l’objet.",
+    sources: [{ label: "Journal des corrections, 24 septembre 2026", href: "/transparence#corrections" }],
+    suite: "Confirmation par l’assemblée générale ; le nom et l’objet de la future ONG seront fixés par elle.",
+  },
+  {
+    id: "2026-19", date: "2026-09-24", type: "annonce", dateLabel: "date non publiée ; en ligne au plus tard le 24 septembre 2026",
+    titre: "Conversion en ONG, sous le nom ODEB LONODJI",
+    texte: "L’association annonce son intention de passer du statut d’association à celui d’ONG, sous le nom d’ODEB LONODJI. L’instance et la date de la décision ne sont pas publiées ; aucun dossier n’est déposé.",
+    sources: [{ label: "Démarches — vers le statut d’ONG", href: "/dossiers/demarches#vers-ong" }],
+    suite: "Vérifier d’abord l’autorisation de l’association au titre de l’ordonnance de 2018 ; nom et objet à fixer par l’assemblée générale.",
+  },
+  {
+    id: "regle-01", date: "2026-09-23", type: "regle", datee: true,
     titre: "Aucune collecte avant un compte bancaire au nom de l’association",
-    texte: "La collecte est suspendue jusqu’à l’ouverture d’un compte au nom de l’association ; les intentions d’adhésion et les promesses de contribution n’engagent aucun paiement.",
-    sources: [{ label: "Notre mission — le bureau", href: "/mission" }, { label: "Plateforme de projets", href: "/projets" }],
+    texte: "Collecte suspendue depuis le 23 septembre 2026 (journal des corrections, 23 septembre 2026), jusqu’à l’ouverture d’un compte au nom de l’association ; les intentions d’adhésion et les promesses de contribution n’engagent aucun paiement.",
+    sources: [{ label: "Journal des corrections, 23 septembre 2026", href: "/transparence#corrections" }, { label: "Notre mission — le bureau", href: "/mission" }, { label: "Plateforme de projets", href: "/projets" }],
   },
   {
     id: "regle-02", date: "2026-09-11", type: "regle",

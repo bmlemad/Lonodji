@@ -1,3 +1,4 @@
+import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -11,7 +12,7 @@ import Partager from "@/components/partager";
 export const metadata: Metadata = {
   title: "Plateforme de projets : chaque projet, son stade, ce qui manque",
   description: "Espace numérique, application, complexe sportif, Air Bedjondo : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer — et le formulaire pour en proposer un.",
-  alternates: { canonical: "/projets", languages: { fr: "/projets", en: "/en/projects" } },
+  alternates: { canonical: "/projets", languages: alternatesLangues("/projets") },
   openGraph: ogFor("/projets"),
 };
 
@@ -140,7 +141,7 @@ export default function Projets() {
 
       <Partager route="/projets" titre="Plateforme de projets" texte="Espace numérique, application, complexe sportif, Air Bedjondo : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer — et le formulaire pour en proposer un." />
 
-      <p className="lg-footnote">Plateforme ouverte le 28 septembre 2026, au titre de la phase 2 de la <Link href="/odeb/feuille-de-route#phase-2">feuille de route 2026-2030</Link> et de l’axe « Investissements » du <Link href="/odeb/programmes/diaspora">programme Diaspora</Link> du projet ODEB LONODJI. Les projets sont décrits dans <code>content/projets.json</code> ; leur stade et leurs compteurs paraissent sur le <Link href="/impact">tableau de bord</Link>. Les propositions sont enregistrées par le service de formulaires de notre hébergeur (<Link href="/mentions-legales#donnees">où vont vos réponses</Link>).</p>
+      <p className="lg-footnote">Plateforme ouverte le 28 septembre 2026, au titre de la phase 2 de la <Link href="/odeb/feuille-de-route#phase-2">feuille de route 2026-2030</Link> et de l’axe « Investissements » du <Link href="/odeb/programmes/diaspora">programme Diaspora</Link> du projet ODEB LONODJI. Chaque projet est décrit ici par l’animation ; les stades et les compteurs paraissent sur le <Link href="/impact">tableau de bord</Link>. Les propositions sont enregistrées par le service de formulaires de notre hébergeur (<Link href="/mentions-legales#donnees">où vont vos réponses</Link>).</p>
     </main>
   );
 }

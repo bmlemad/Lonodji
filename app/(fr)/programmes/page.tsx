@@ -1,3 +1,4 @@
+import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats, ThematiqueRow } from "@/components/blocks";
@@ -9,7 +10,7 @@ import Partager from "@/components/partager";
 export const metadata: Metadata = {
   title: "Nos actions — quatre pôles, vingt thématiques",
   description: "Quatre pôles, vingt thématiques et deux cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés.",
-  alternates: { canonical: "/programmes" },
+  alternates: { canonical: "/programmes", languages: alternatesLangues("/programmes") },
   openGraph: ogFor("/programmes"),
 };
 
@@ -27,7 +28,7 @@ export default function Programmes() {
         eyebrow="03 — Nos actions"
         title="Quatre pôles,"
         em="vingt thématiques."
-        lead={`Les Chantiers ADEB LONODJI : chaque pôle est dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ; chaque thématique est animée par un coordonnateur ou une coordonnatrice, avance à son rythme et rend compte ici. ${enLettres(filled, true)} thématiques sont pourvues ; ${enLettres(total - filled)} cherchent encore la personne qui les portera, et les ${enLettres(dir.total - dir.pourvues)} directions de pôle sont à pourvoir.`}
+        lead={`Les Chantiers ADEB LONODJI : chaque pôle sera dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ; chaque thématique est animée par un coordonnateur ou une coordonnatrice, avance à son rythme et rend compte ici. ${enLettres(filled, true)} thématiques sont pourvues ; ${enLettres(total - filled)} cherchent encore la personne qui les portera, et les ${enLettres(dir.total - dir.pourvues)} directions de pôle sont à pourvoir.`}
       />
       <Stats items={[
         { value: String(poles.length), label: "pôles d’action", note: "Mémoire · Développement · Gouvernance · Numérique" },
@@ -79,7 +80,7 @@ export default function Programmes() {
       </div>
 
       <section className="hub-section" id="diriger-un-pole">
-        <SectionHead eyebrow="Diriger un pôle" title="Quatre directions de pôle," em="au rang de chef de projet." text="Depuis le 28 septembre 2026, chaque pôle a une direction, distincte de la coordination des thématiques. Le directeur ou la directrice de pôle a rang de chef de projet : il anime les coordonnateurs de ses thématiques, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets qui en relèvent, et rend compte au bureau et à l’assemblée. Dans le vocabulaire des ONG et des bailleurs, c’est un « Pillar Lead », au niveau d’un responsable de programme : l’équivalent figure sur les fiches de mission et les pages anglaises. Les six « programmes » du projet ODEB sont autre chose : ils croisent les pôles. Les quatre postes sont ouverts à tout membre ; chaque poste a sa fiche de mission en PDF, comme chaque thématique." />
+        <SectionHead eyebrow="Diriger un pôle" title="Quatre directions de pôle," em="au rang de chef de projet." text="Depuis le 28 septembre 2026, chaque pôle a une direction à pourvoir, distincte de la coordination des thématiques. Le directeur ou la directrice de pôle a rang de chef de projet : il anime les coordonnateurs de ses thématiques, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets qui en relèvent, et rend compte au bureau et à l’assemblée. Pour les partenaires internationaux, nous traduisons par « Pillar Lead » (niveau « Programme Manager ») : l’équivalent figure sur les fiches de mission et les pages anglaises. Les six « programmes » du projet ODEB sont autre chose : ils croisent les pôles. Les quatre postes sont ouverts à tout membre ; chaque poste a sa fiche de mission en PDF, comme chaque thématique." />
         <div className="detail-grid">
           {poles.map((pole) => (
             <article key={pole.id}>

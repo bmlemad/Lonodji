@@ -65,7 +65,7 @@ export default function Carte() {
           <article><h3>Les quatorze unités</h3><p>{d.sources.unites}. Sept unités au cœur (Mandoul Occidental), trois où la présence bedjond est attestée, une signalée, trois de diaspora agricole. Le détail et ses sources sont dans le dossier Bédjondo.</p></article>
         </div>
         <Partager route="/carte" titre="Carte du territoire bedjond" texte="Carte interactive du pays bedjond : quatorze unités, leurs localités et les équipements connus des données ouvertes, et ce que le site en dit de chaque lieu." />
-        <p className="lg-footnote">Fond de carte : tuiles humanitaires d’OpenStreetMap France, chargées depuis leurs serveurs quand la page s’affiche ; le reste de la carte fonctionne hors ligne une fois ouvert. Données assemblées par <code>scripts/build-carte.py</code>, régénérables à tout moment. Une erreur de fait ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
+        <p className="lg-footnote">Fond de carte : tuiles humanitaires d’OpenStreetMap France, chargées depuis leurs serveurs quand la page s’affiche ; le reste de la carte fonctionne hors ligne une fois ouvert. Données assemblées automatiquement, régénérables à tout moment. Une erreur de fait ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
       </section>
     </main>
   );

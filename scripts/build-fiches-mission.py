@@ -53,6 +53,11 @@ COORDINATION_FAIT = [
     "rend compte de l’avancement lors des assemblées de l’association, devant l’ensemble des membres.",
 ]
 COORDINATION_NOTE = "Coordonner une thématique demande de la régularité ; contribuer ponctuellement est déjà précieux. Depuis le 28 septembre 2026, le coordonnateur ou la coordonnatrice travaille avec la direction de son pôle, qui tient le plan d’action et le calendrier de l’ensemble."
+# Engagement commun à toutes les fiches : la charte de redevabilité (/transparence) exige déjà
+# la déclaration de tout intérêt personnel ou familial dans une décision.
+ENGAGEMENT = ("<b>Fonction bénévole.</b> La personne retenue s’engage à respecter la charte de redevabilité (lonodji.org/transparence), "
+              "dont la protection des enfants, l’interdiction de l’exploitation et des abus sexuels, et la déclaration de tout intérêt personnel "
+              "ou familial dans une décision, à laquelle elle ne prend alors pas part.")
 ETAPES = [
     ("Candidature", "Tout membre de l’association peut candidater, par le formulaire de contact du site."),
     ("Plan d’action", "La personne retenue réunit les membres intéressés et propose un plan d’action simple."),
@@ -93,6 +98,7 @@ li{margin:0 0 1.2mm}
 .candidater b{display:block;font-size:11pt}
 .candidater span{display:block;font-size:9pt;color:#dce6dc;margin-top:1mm}
 .candidater code{font-family:ui-monospace,Menlo,Consolas,monospace;color:#f2c94c;font-size:9pt}
+.engagement{margin-top:5mm;padding:3mm 4mm;border-left:2px solid #b6cf45;background:#f7f9f4;font-size:9pt;break-inside:avoid}
 .pied{margin-top:6mm;font-size:8pt;color:#607069;line-height:1.5}
 """
 
@@ -130,6 +136,7 @@ def fiche_direction(pole: dict, logo: str, jour: str) -> str:
 <div class="grille">{them}</div>
 <h2>Comment cela se passe</h2>
 {etapes_html()}
+<p class="engagement">{ENGAGEMENT}</p>
 {candidater(url, "Candidater à la direction du pôle " + pole['roman'])}
 <p class="pied">Sources : page Nos actions (lonodji.org/programmes), article « Chaque pôle aura un directeur ou une directrice, au rang de chef de projet » du 28 septembre 2026, page Mission (comment l’association est organisée). Les coordinations indiquées sont celles publiées sur le site à la date de la fiche ; les nominations sont publiées, datées, dans le journal.</p>
 </section>"""
@@ -164,6 +171,7 @@ def fiche_coordination(t: dict, pole: dict | None, logo: str, jour: str, cellule
 {('<h2>Sur le site</h2><ul>' + liens + '</ul>') if liens else ''}
 <h2>Comment cela se passe</h2>
 {etapes_html()}
+<p class="engagement">{ENGAGEMENT}</p>
 {candidater(url, "Candidater à la coordination" + ("" if cellule else " de la thématique " + t['number']))}
 <p class="pied">Sources : page Nos actions (lonodji.org/programmes), page Mission (comment l’association est organisée), page Participer. La description de la thématique est celle publiée sur le site à la date de la fiche ; les nominations sont publiées, datées, dans le journal.</p>
 </section>"""

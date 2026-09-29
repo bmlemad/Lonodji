@@ -158,3 +158,13 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 ## Formulaires
 
 Les formulaires postent vers `/__forms.html` (Netlify Forms). Toute modification d’un formulaire doit être reportée dans `public/__forms.html` pour rester détectée au déploiement.
+
+## Revue du 29 septembre 2026
+
+- Pages françaises dans le groupe de routes `app/(fr)`, pages anglaises dans `app/en` : deux mises en page racines
+  (`components/root-shell.tsx`), donc `<html lang="en">` sur /en ; 404 globale (`app/global-not-found.tsx`).
+- Corrections de texte des pages héritées : `scripts/corrections_fr.py` et `scripts/corrections_en.py`
+  (remplacements exacts par fichier source ; l'import signale « correction sans effet » s'il en reste un inopérant).
+- Après `import-legacy.py`, relancer aussi `build-dossier-presentation.py` (dossier de présentation régénéré depuis les
+  données) et `build-kit-adhesion.py` (kit d'adhésion : collecte suspendue, contact, engagement).
+- Espace de rédaction : la création du mot de passe exige le code d'invitation `REDACTION_INVITATION` (variable Netlify).

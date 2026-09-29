@@ -62,7 +62,7 @@ export default function LettrePage() {
       </section>
 
       <Partager route="/lettre" titre="La lettre d’information d’ADEB LONODJI" texte="chaque mois, ce que l’association a publié, décidé ou ouvert — en ligne ou en PDF à transmettre" />
-      <p className="lg-footnote">Les numéros sont des articles du journal (rubrique « Lettre d’information ») ; leurs PDF sont produits par <code>scripts/build-lettre.py</code>, qui prépare aussi le brouillon du numéro suivant à partir des articles du mois.</p>
+      <p className="lg-footnote">Les numéros sont des articles du journal (rubrique « Lettre d’information ») ; leurs PDF sont produits automatiquement, de même que le brouillon du numéro suivant à partir des articles du mois.</p>
     </main>
   );
 }

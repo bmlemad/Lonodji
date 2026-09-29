@@ -1119,7 +1119,7 @@ def main():
     (CONTENT / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=1), encoding="utf-8")
 
     # Formulaires (le formulaire de pied de page vit hors <main> : déclaré ici)
-    footer_form = BeautifulSoup('<form name="lettre-info-pied"><input type="email" name="email"><input type="checkbox" name="consentement"></form>', "lxml").find("form")
+    footer_form = BeautifulSoup('<form name="lettre-info-pied"><input type="hidden" name="_honey"><input type="email" name="email"><input type="checkbox" name="consentement"></form>', "lxml").find("form")
     all_forms.setdefault("lettre-info-pied", footer_form)
     # Formulaires des pages conçues hors de l'ancien site (app/diaspora) : mêmes noms de champs que dans la page.
     for name, html in FORMULAIRES_SITE.items():

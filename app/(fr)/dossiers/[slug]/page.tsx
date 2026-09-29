@@ -1,3 +1,4 @@
+import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LegacyDocument } from "@/components/legacy-content";
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: page.title,
     description: metaDescription(page.description || page.lede),
-    alternates: { canonical: `/dossiers/${slug}` },
+    alternates: { canonical: `/dossiers/${slug}`, languages: alternatesLangues(`/dossiers/${slug}`) },
     openGraph: { ...ogFor(`/dossiers/${slug}`), type: "article", title: page.title, description: metaDescription(page.description || page.lede) },
   };
 }

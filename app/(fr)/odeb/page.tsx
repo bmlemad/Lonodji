@@ -1,3 +1,4 @@
+import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { SectionHead, Stats } from "@/components/blocks";
@@ -11,7 +12,7 @@ import Partager from "@/components/partager";
 export const metadata: Metadata = {
   title: "Projet ODEB LONODJI — Vision 2030",
   description: "L’ODEB LONODJI, Organisation pour le Développement et l’Émergence Bedjonde : un projet porté par ADEB LONODJI pour doter le pays bedjond d’un outil permanent, à l’horizon 2030.",
-  alternates: { canonical: "/odeb", languages: { fr: "/odeb", en: "/en/odeb" } },
+  alternates: { canonical: "/odeb", languages: alternatesLangues("/odeb") },
   openGraph: ogFor("/odeb"),
 };
 
@@ -43,7 +44,7 @@ export default function Odeb() {
       <section className="hub-section" id="pourquoi">
         <SectionHead eyebrow="Pourquoi créer l’ODEB ?" title="Une association agit ;" em="un territoire a besoin d’un outil permanent." text={`${ODEB.objet} Quarante ans après les premières réflexions de 1986, l’association a choisi de fêter ses fondations par ce pas plutôt que par une cérémonie.`} />
         <div className="detail-grid od-pourquoi">
-          <article><span>01</span><h3>Ce qui a été produit doit être tenu</h3><p>Reconnue en 1995, remise en mouvement en 2026, l’ADEB LONODJI agit par thématiques bénévoles. En quelques semaines, elle a publié {enLettres(c.plaidoyers)} plaidoyers, un diagnostic de {c.problematiques} problématiques, une carte de {nf.format(c.localites)} localités, {nf.format(c.fiches)} fiches de villages, une bibliothèque de {c.references} références. Tout cela demande à être tenu à jour, enrichi et gardé sur des années : c’est la fonction d’une organisation, pas d’une campagne.</p><Link className="text-link" href="/impact">Le tableau de bord <span aria-hidden="true">→</span></Link></article>
+          <article><span>01</span><h3>Ce qui a été produit doit être tenu</h3><p>Reconnue en 1995 — mise en conformité avec l’ordonnance de 2018 en vérification —, remise en mouvement en 2026, l’ADEB LONODJI agit par thématiques bénévoles. En quelques semaines, elle a publié {enLettres(c.plaidoyers)} dossiers de plaidoyer, un diagnostic de {c.problematiques} problématiques, une carte de {nf.format(c.localites)} localités, {nf.format(c.fiches)} fiches de villages, une bibliothèque de {c.references} références. Tout cela demande à être tenu à jour, enrichi et gardé sur des années : c’est la fonction d’une organisation, pas d’une campagne.</p><Link className="text-link" href="/impact">Le tableau de bord <span aria-hidden="true">→</span></Link></article>
           <article><span>02</span><h3>Six fonctions que personne n’assure</h3><p>Recherche, documentation, développement territorial, innovation, préservation du patrimoine, mobilisation de la diaspora : chacune existe aujourd’hui en morceaux — une thématique, un dossier, un formulaire — et aucune n’a de structure permanente pour la porter au nom du pays bedjond tout entier.</p><Link className="text-link" href="#missions">Les six missions <span aria-hidden="true">→</span></Link></article>
           <article><span>03</span><h3>Le pas institutionnel est déjà annoncé</h3><p>L’association a annoncé sa conversion en ONG, et le nom ODEB pour la structure à venir ; aucun dossier n’est déposé à ce jour. Le projet donne un contenu à ce nom avant le statut : une vision, des programmes, une feuille de route, un livre blanc à discuter.</p><Link className="text-link" href="/dossiers/demarches#vers-ong">Vers le statut d’ONG <span aria-hidden="true">→</span></Link></article>
           <article><span>04</span><h3>Ce que l’ODEB n’est pas</h3><p>Ni une nouvelle association concurrente, ni une structure déjà constituée : pas de statut, pas de budget, pas de personnel. Un projet stratégique porté par l’ADEB LONODJI, lancé comme une réflexion le {ODEB.presenteLabel} — le jour où l’association a fêté {ODEB.anniversaire} —, dont l’adoption et le calendrier lui appartiennent, et qui se juge sur les mêmes preuves que le reste du site.</p><Link className="text-link" href="/odeb/livre-blanc#statut">Le statut du livre blanc <span aria-hidden="true">→</span></Link></article>

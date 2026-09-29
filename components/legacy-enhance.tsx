@@ -26,7 +26,9 @@ export default function LegacyEnhance({ hasMap = false, hasForms = false, script
         event.preventDefault();
         const button = form.querySelector<HTMLButtonElement>("button[type=submit], input[type=submit]");
         const label = button?.textContent;
-        if (button) { button.disabled = true; button.textContent = "Envoi…"; }
+        // formulaires des pages anglaises : messages en anglais
+        const en = !!form.closest('[lang="en"]');
+        if (button) { button.disabled = true; button.textContent = en ? "Sending…" : "Envoi…"; }
         try {
           const body = new URLSearchParams(new FormData(form) as unknown as Record<string, string>);
           const res = await fetch("/__forms.html", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
@@ -34,10 +36,15 @@ export default function LegacyEnhance({ hasMap = false, hasForms = false, script
           const note = document.createElement("p");
           note.className = "form-note form-success";
           note.setAttribute("role", "status");
-          note.textContent = "Merci, votre message est bien parti. Vous recevrez un accusé de réception sous 48 heures ouvrées si vous avez laissé un moyen de vous joindre.";
+          note.textContent = en
+            ? "Thank you, your message has been sent. If you left a way to reach you, you will receive an acknowledgement within 48 working hours."
+            : "Merci, votre message est bien parti. Vous recevrez un accusé de réception sous 48 heures ouvrées si vous avez laissé un moyen de vous joindre.";
           form.replaceWith(note);
+          // le formulaire disparaît : le focus passe sur l'accusé de réception (sinon il retombe sur <body>)
+          note.tabIndex = -1;
+          note.focus();
         } catch {
-          if (button) { button.disabled = false; button.textContent = label ?? "Envoyer"; }
+          if (button) { button.disabled = false; button.textContent = label ?? (en ? "Send" : "Envoyer"); }
           let err = form.querySelector<HTMLElement>(".form-error");
           if (!err) {
             err = document.createElement("p");
@@ -45,7 +52,9 @@ export default function LegacyEnhance({ hasMap = false, hasForms = false, script
             err.setAttribute("role", "alert");
             form.appendChild(err);
           }
-          err.textContent = "L’envoi n’a pas abouti. Réessayez dans un instant, ou écrivez-nous par WhatsApp au +235 66 29 94 03.";
+          err.textContent = en
+            ? "Your message could not be sent. Please try again in a moment, or write to us on WhatsApp at +235 66 29 94 03."
+            : "L’envoi n’a pas abouti. Réessayez dans un instant, ou écrivez-nous par WhatsApp au +235 66 29 94 03.";
         }
       };
       form.addEventListener("submit", handler);

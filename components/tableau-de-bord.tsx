@@ -168,7 +168,7 @@ export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: 
             <span className="tb-libelle">{k.libelle}</span>
             <p className="tb-detail">{k.detail}</p>
             <span className="tb-source">{k.source}</span>
-            {k.href ? <Link className="tb-lien" href={k.href}>Voir <span aria-hidden="true">→</span></Link> : null}
+            {k.href ? <Link className="tb-lien" href={k.href}>Voir<span className="sr-only"> {k.libelle}</span> <span aria-hidden="true">→</span></Link> : null}
           </article>
         ))}
       </div>

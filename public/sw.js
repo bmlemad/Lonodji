@@ -4,11 +4,13 @@
    n'est pas disponible. Le réseau garde la priorité, pour que personne ne
    lise une version périmée quand la connexion est là. */
 
-var VERSION = 'lonodji-next-v4';
+var VERSION = 'lonodji-next-v5';
 var PAGES = VERSION + '-pages';
 var ASSETS = VERSION + '-assets';
 var HORS_LIGNE = '/hors-ligne';
 var MAX_PAGES = 80;
+var MAX_ASSETS = 150;          // fichiers statiques gardés (les plus anciens s'effacent d'abord)
+var PDF_MAX = 2000000;         // les PDF de plus de 2 Mo ne sont pas gardés hors ligne
 var COQUILLE = [
   '/',
   HORS_LIGNE,
@@ -48,11 +50,15 @@ function estStatique(url) {
 
 function garder(nomCache, req, rep) {
   if (!rep || !rep.ok || rep.type === 'opaque') return;
+  if (/\.pdf$/i.test(new URL(req.url).pathname) && Number(rep.headers.get('content-length') || 0) > PDF_MAX) return;
   var copie = rep.clone();
   caches.open(nomCache).then(function (c) {
     c.put(req, copie).then(function () {
-      if (nomCache !== PAGES) return;
       return c.keys().then(function (cles) {
+        if (nomCache === ASSETS) {
+          var surplus = cles.length - MAX_ASSETS;
+          return Promise.all(cles.slice(0, surplus > 0 ? surplus : 0).map(function (k) { return c.delete(k); }));
+        }
         // les pages les plus anciennes s'effacent d'abord (la coquille reste)
         var trop = cles.length - MAX_PAGES;
         return Promise.all(cles.filter(function (k) {

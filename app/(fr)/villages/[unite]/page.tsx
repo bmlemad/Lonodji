@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ unite: st
   const u = getVillages().unites[unite];
   if (!u) return {};
   const desc = `${u.nom} (${u.dep}) : ${nf.format(u.comptes.nommes)} localités nommées, ${nf.format(u.comptes.equipements)} équipement${u.comptes.equipements > 1 ? "s" : ""} connu${u.comptes.equipements > 1 ? "s" : ""} des données ouvertes, et ce que le site en dit. Une fiche par village.`;
-  return { title: `Les villages de ${u.nom}`, description: desc, alternates: { canonical: `/villages/${unite}` }, openGraph: { ...ogFor("/villages"), url: `/villages/${unite}`, title: `Les villages de ${u.nom}`, description: desc } };
+  return { title: `Les villages de ${u.nom}`, description: desc, alternates: { canonical: `/villages/${unite}` }, openGraph: { ...ogFor(`/villages/${unite}`), url: `/villages/${unite}`, title: `Les villages de ${u.nom}`, description: desc } };
 }
 
 export default async function Unite({ params }: { params: Promise<{ unite: string }> }) {

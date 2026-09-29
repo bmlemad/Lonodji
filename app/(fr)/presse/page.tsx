@@ -19,7 +19,7 @@ const DATES: [string, string][] = [
   ["1995", "Reconnaissance officielle de l’Association de Développement et d’Entraide de Bédjondo."],
   ["2000", "Premier forum communautaire, à Bédjondo."],
   ["2003", "Second forum, à Bébopen ; puis une longue mise en veille."],
-  ["2026", "Réactivation : quatre pôles, vingt thématiques (la vingtième, Urgences & risques, le 29 septembre), deux cellules ; site lonodji.org ; huit plaidoyers ; carte du territoire."],
+  ["2026", "Réactivation : quatre pôles, vingt thématiques (la vingtième, Urgences & risques, le 29 septembre), deux cellules ; site lonodji.org ; sept plaidoyers et une note à la commune ; carte du territoire."],
   ["28 sept. 2026", "Quarante ans des fondations : lancement de la réflexion ODEB LONODJI (vision 2030, six programmes, livre blanc en version de travail)."],
 ];
 const VISUELS: [string, string][] = [
@@ -71,11 +71,12 @@ export default function Presse() {
         crumbs={[{ label: "L’association", href: "/mission" }, { label: "Presse" }]}
         pills={["Association reconnue en 1995", "Bédjondo · Mandoul · Tchad", `Chiffres au ${releve}`]}
       />
+      <p className="detail-lead">Contact presse : {ORG.bureau[0].name}, président — <a href={ORG.phoneHref}>{ORG.phone}</a> (appel, WhatsApp) · <Link href="/participer?objet=presse#contact">Formulaire, objet presse</Link></p>
 
       <section className="hub-section" id="en-bref">
         <SectionHead eyebrow="En cinq lignes" title="Qui nous sommes," em="en une citation prête à l’emploi." />
         <blockquote className="pr-citation">
-          <p>« ADEB LONODJI, l’Association de Développement et d’Entraide de Bédjondo, est l’association du peuple bedjond de Bédjondo (Mandoul Occidental, Tchad) et de sa diaspora. Née de réflexions engagées en 1986 et reconnue en 1995, remise en mouvement en 2026, elle agit par {enLettres(total)} thématiques bénévoles pour l’eau, la santé, l’école, les routes et le réseau, et garde la mémoire, la langue et le patrimoine bedjond. Sa devise : Courage, Discipline, Héritage. Depuis le {ODEB.presenteLabel}, elle porte la réflexion ODEB LONODJI, projet d’organisation permanente à l’horizon 2030. »</p>
+          <p>« ADEB LONODJI, l’Association de Développement et d’Entraide de Bédjondo, est l’association de Bédjondo (Mandoul Occidental, Tchad) et de sa diaspora, gardienne du patrimoine bedjond. Née de réflexions engagées en 1986 et reconnue en 1995, remise en mouvement en 2026, elle agit par {enLettres(total)} thématiques bénévoles pour l’eau, la santé, l’école, les routes et le réseau, et garde la mémoire, la langue et le patrimoine bedjond. Sa devise : Courage, Discipline, Héritage. Depuis le {ODEB.presenteLabel}, elle porte la réflexion ODEB LONODJI, projet d’organisation permanente à l’horizon 2030. »</p>
           <footer>Texte libre de reprise, à citer « ADEB LONODJI, lonodji.org ». Le nom s’écrit en capitales : ADEB LONODJI ; le peuple s’écrit « bedjond », sa langue « nangnda ».</footer>
         </blockquote>
       </section>
@@ -84,7 +85,7 @@ export default function Presse() {
         <SectionHead eyebrow="Les chiffres" title="Datés, sourcés," em="tels qu’ils sont." text="Chaque nombre vient du tableau de bord du site, où il porte sa source et sa méthode. Ce qui n’est pas fait est écrit comme tel : aucun plaidoyer n’a encore été transmis, aucun projet n’est financé, la collecte est suspendue." />
         <Stats items={[
           { value: `${pourvues}/${total}`, label: "thématiques pourvues", note: `${total - pourvues} cherchent leur coordonnateur ; ${c.coordinations.cellulesPourvues}/${c.coordinations.cellulesTotal} cellules` },
-          { value: String(c.plaidoyers.publies), label: "plaidoyers publiés", note: `${c.plaidoyers.envoyes} transmis, ${c.plaidoyers.reponses} réponses` },
+          { value: String(c.plaidoyers.publies), label: "dossiers de plaidoyer publiés", note: `${c.plaidoyers.envoyes} transmis, ${c.plaidoyers.reponses} réponses` },
           { value: nf.format(c.carte.localitesNommees), label: "fiches de villages", note: `${c.carte.unites} unités, ${nf.format(c.carte.localites)} localités cartographiées` },
           { value: String(c.problematiques.total), label: "problématiques diagnostiquées", note: `${c.problematiques.inconnues} inconnues, ${c.problematiques.chantiersPrioritaires} chantiers prioritaires` },
           { value: String(c.articles), label: "articles au journal", note: `depuis le ${new Date((c.premierArticle ?? "2026-09-11") + "T12:00:00Z").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}` },
@@ -157,7 +158,7 @@ export default function Presse() {
           <Link className="text-link" href="/dossiers/kit-mobilisation">Visuels de mobilisation <span aria-hidden="true">→</span></Link>
         </div>
         <details className="pr-ancien" id="ancien-logo">
-          <summary>L’ancien logo (jusqu’au 28 septembre 2026)</summary>
+          <summary>Ancienne identité (avant le 28 septembre 2026)</summary>
           <p>Un disque bleu, une paire d’empreintes de pas, une poignée de main qui traverse le disque : il reste sur les documents publiés avant cette date et ne se mélange pas au nouveau. Ses règles sont dans l’<Link href="/dossiers/identite-visuelle">identité visuelle précédente</Link>.</p>
           <ul className="pr-logos">
             {LOGOS.map(([href, label, note]) => (

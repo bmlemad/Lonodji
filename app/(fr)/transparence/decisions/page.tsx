@@ -3,7 +3,7 @@ import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import { ogFor } from "@/lib/content";
-import { DECISIONS, decisionsTriees, TYPES, type TypeDecision } from "@/lib/decisions";
+import { DECISIONS, decisionsTriees, INSTANCE_PAR_DEFAUT, TYPES, type TypeDecision } from "@/lib/decisions";
 
 export const metadata: Metadata = {
   title: "Registre public des décisions : décidé, nommé, annoncé, proposé",
@@ -18,7 +18,8 @@ const ORDRE: TypeDecision[] = ["decision", "nomination", "annonce", "proposition
 export default function Decisions() {
   const liste = decisionsTriees();
   const compte = (t: TypeDecision) => DECISIONS.filter((d) => d.type === t).length;
-  const dernier = liste.find((d) => d.type !== "regle");
+  const dernier = liste.find((d) => d.type !== "regle" && !d.dateLabel);
+  const nProp = compte("proposition");
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
@@ -27,27 +28,28 @@ export default function Decisions() {
         em="nommé, annoncé, proposé — et ce qui ne l’est pas."
         lead="Une ligne par fait daté, avec sa source sur le site et ce qui reste attendu. Le registre distingue ce que l’association a décidé de ce qu’elle a seulement annoncé ou proposé à son assemblée. Les procès-verbaux ne sont pas encore publiés : le registre reprend ce qui a été rendu public, il ne les remplace pas. Une ligne fausse ou manquante ? Elle sera corrigée et datée."
         crumbs={[{ label: "Redevabilité & transparence", href: "/transparence" }, { label: "Registre des décisions" }]}
-        pills={[`${DECISIONS.length} entrées`, `${compte("decision")} décisions`, `${compte("proposition")} proposition à voter`, dernier ? `dernier fait : ${jour(dernier.date)}` : ""].filter(Boolean)}
+        pills={[`${DECISIONS.length} entrées`, `${compte("decision")} décisions`, `${nProp} ${nProp > 1 ? "propositions à décider" : "proposition à décider"}`, dernier ? `dernier fait : ${jour(dernier.date)}` : ""].filter(Boolean)}
       />
       <Stats items={[
         { value: String(compte("decision")), label: "décisions", note: TYPES.decision.note },
         { value: String(compte("nomination")), label: "nominations", note: "quinze coordinations sur vingt pourvues, une cellule sur deux" },
-        { value: String(compte("proposition")), label: "proposition à voter", note: "les cinq règles du programme 06, par l’assemblée" },
+        { value: String(nProp), label: nProp > 1 ? "propositions à décider" : "proposition à décider", note: "les cinq règles du programme 06, par l’assemblée ; les cinq politiques d’intégrité, par le bureau" },
         { value: String(compte("regle")), label: "règles en vigueur", note: "que l’association s’impose depuis la mise en ligne du site" },
       ]} />
 
       <section className="hub-section" id="registre">
-        <SectionHead eyebrow="Le registre" title="Du plus récent" em="au plus ancien." text="Un statut par ligne : décidé, nommé, annoncé, à voter, publié, en vigueur. Les règles n’ont pas de date de vote connue : elles valent depuis la mise en ligne des pages qui les énoncent." />
+        <SectionHead eyebrow="Le registre" title="Du plus récent" em="au plus ancien." text="Un statut par ligne : décidé, nommé, annoncé, à décider, publié, en vigueur ; et l’instance qui a décidé, quand elle est publique. Les règles n’ont pas de date de vote connue : elles valent depuis la mise en ligne des pages qui les énoncent, ou depuis la date indiquée." />
         <ol className="registre">
           {liste.map((d) => (
             <li key={d.id} className={`registre-ligne registre-ligne--${d.type}`} id={d.id}>
               <div className="registre-tete">
                 <span className={`status registre-statut registre-statut--${d.type}`}>{TYPES[d.type].court}</span>
-                <time dateTime={d.type === "regle" ? undefined : d.date}>{d.type === "regle" ? "Depuis la mise en ligne" : jour(d.date)}</time>
+                {d.dateLabel ? <time>{d.dateLabel}</time> : <time dateTime={d.type === "regle" && !d.datee ? undefined : d.date}>{d.type === "regle" ? (d.datee ? `Depuis le ${jour(d.date)}` : "Depuis la mise en ligne") : jour(d.date)}</time>}
                 <small>n° {d.id}</small>
               </div>
               <h3>{d.titre}</h3>
               <p>{d.texte}</p>
+              <p className="registre-suite"><b>Instance :</b> {d.instance ?? INSTANCE_PAR_DEFAUT}</p>
               {d.suite ? <p className="registre-suite"><b>Ce qui reste attendu :</b> {d.suite}</p> : null}
               <p className="registre-sources">{d.sources.map((s) => <Link key={s.href} href={s.href}>{s.label}</Link>)}</p>
             </li>
@@ -72,7 +74,7 @@ export default function Decisions() {
       </section>
 
       <Partager route="/transparence/decisions" titre="Registre public des décisions" texte="ce que l’association a décidé, nommé, annoncé ou proposé, avec la source de chaque ligne et ce qui reste attendu" />
-      <p className="lg-footnote">Registre tenu à la main dans <code>lib/decisions.ts</code>, à partir des articles du journal, des lettres d’information et des pages du site ; {DECISIONS.length} entrées.</p>
+      <p className="lg-footnote">Registre tenu à la main par l’animation, à partir des articles du journal, des lettres d’information et des pages du site ; {DECISIONS.length} entrées.</p>
     </main>
   );
 }

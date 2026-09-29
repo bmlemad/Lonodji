@@ -21,7 +21,7 @@
    "lede": "Bédjondo produit, récolte et nourrit — et reste pauvre. Le problème n’est pas d’abord de produire davantage, mais de garder, transformer et vendre mieux. Voici notre diagnostic et notre plan, en trois saisons.",
    "description": "Le plan de développement agricole et pastoral d’ADEB LONODJI pour Bédjondo : diagnostic, trois saisons d’action, et la mise en valeur des produits.",
    "parent": "Nos actions",
-   "words": 3740,
+   "words": 3739,
    "hasMap": false
   },
   {
@@ -105,7 +105,7 @@
    "lede": "Un membre qui veut agir lundi matin ne trouvait nulle part à qui écrire ni comment. Voici la voie hiérarchique, les huit éléments d’une demande recevable, ce que dit l’ordonnance de 2018 sur notre propre statut — et trois lettres modèles à recopier.",
    "description": "À qui écrire, dans quels termes, avec quelles pièces, et quoi faire si personne ne répond — avec trois lettres modèles et notre base légale.",
    "parent": "Agir avec nous",
-   "words": 3928,
+   "words": 3951,
    "hasMap": false
   },
   {
@@ -129,7 +129,7 @@
    "lede": "Chaque plaidoyer se termine par une promesse. Voici les douze, rassemblées en un seul endroit — un registre, pas un bilan de réalisations.",
    "description": "Les douze engagements pris par ADEB LONODJI sur ses dossiers et plaidoyers, rassemblés en un seul endroit — aucun n’est encore confirmé réalisé.",
    "parent": "L’association",
-   "words": 1949,
+   "words": 1977,
    "hasMap": false
   },
   {
@@ -162,8 +162,8 @@
    "kind": "dossier",
    "title": "L’espace numérique communautaire de Bédjondo",
    "eyebrow": "Premier chantier",
-   "lede": "Une salle connectée par satellite, alimentée au solaire, ouverte aux élèves, aux enseignants, aux agents de santé, à la commune et aux porteurs de projets — financée par l’association et sa diaspora, gérée par un comité local.",
-   "description": "Un espace numérique communautaire à Bédjondo, connecté par satellite et alimenté au solaire, financé avec la diaspora.",
+   "lede": "Une salle qui serait connectée par satellite, alimentée au solaire, ouverte aux élèves, aux enseignants, aux agents de santé, à la commune et aux porteurs de projets — financée par l’association et sa diaspora, gérée par un comité local.",
+   "description": "Un projet d’espace numérique communautaire à Bédjondo, qui serait connecté par satellite et alimenté au solaire, financé avec la diaspora.",
    "parent": "Nos actions",
    "words": 800,
    "hasMap": false
@@ -249,7 +249,7 @@
    "lede": "Pour chaque objectif des Nations unies, les thématiques d’ADEB LONODJI qui le touchent. C’est notre lecture, pas un label.",
    "description": "Les dix-sept Objectifs de développement durable des Nations unies, objectif par objectif, et les thématiques d'ADEB LONODJI qui les touchent.",
    "parent": "Nos actions",
-   "words": 587,
+   "words": 607,
    "hasMap": false
   },
   {
@@ -261,7 +261,7 @@
    "lede": "Nous avons cherché non pas qui dit travailler au Tchad, mais qui intervient dans notre province avec une trace datée. Onze entrées, une vingtaine de structures, aucune basée à Bédjondo — et un modèle déjà installé dans le Mandoul qu’il suffit de demander une quatrième fois.",
    "description": "Qui intervient vraiment dans le Mandoul, avec quel bailleur et sur quel secteur — et l’acteur que nous approchons pour chaque dossier.",
    "parent": "L’association",
-   "words": 2836,
+   "words": 2837,
    "hasMap": false
   },
   {
@@ -273,7 +273,7 @@
    "lede": "Trente-quatre problématiques recensées, avec pour chacune ce que nous savons vraiment et qui peut décider. Cinq causes racines plutôt qu’une litanie de manques, sept priorités dont cinq ne demandent pas d’argent — et onze points que nous ignorons entièrement.",
    "description": "Trente-quatre problématiques du Mandoul Occidental recensées, avec l’état de la connaissance, qui décide, cinq causes racines et sept priorités.",
    "parent": "Nos actions",
-   "words": 5120,
+   "words": 5191,
    "hasMap": false
   },
   {
@@ -345,7 +345,7 @@
    "lede": "ADEB LONODJI, Association de Développement et d’Entraide de Bédjondo, rassemble Bédjondo et sa diaspora et fait vivre les valeurs, l’héritage et l’histoire du peuple bedjond : peuple d’origine de Bédjondo, dans le Mandoul, selon les travaux de Djarangar Djita Issa, et composante du grand ensemble sara. Portée par ses membres, elle agit pour le développement de Bédjondo au service de tous ses habitants, sans distinction d’origine.",
    "description": "Notre vision : faire d’ADEB LONODJI un cadre de promotion des valeurs et de l’héritage du peuple bedjond de Bédjondo (Mandoul), composante du peuple sara.",
    "parent": "Accueil",
-   "words": 4430,
+   "words": 4463,
    "hasMap": false
   },
   {
@@ -357,7 +357,7 @@
    "lede": "Les Chantiers ADEB LONODJI sont les projets de réflexion, de recherche et d’action portés par l’association. Pour les organiser, ADEB LONODJI structure son action autour de vingt thématiques réparties en quatre pôles, appuyées par deux cellules transversales — dont un pôle spécialisé Numérique & innovation, créé en septembre 2026. Chaque thématique est animée par un coordonnateur. Cette organisation en pôles est notre méthodologie de travail en équipe : elle permet une bonne coordination des actions entre les thématiques, au lieu d’initiatives dispersées. Chaque thématique est en outre mise en regard des Objectifs de développement durable adoptés par les Nations unies, pour que nos partenaires situent immédiatement notre travail.",
    "description": "Quatre pôles, vingt thématiques et deux cellules transversales pour organiser l’action d’ADEB LONODJI.",
    "parent": "Accueil",
-   "words": 5728,
+   "words": 5624,
    "hasMap": false
   },
   {
@@ -381,7 +381,7 @@
    "lede": "Chaque problématique que nous avons recensée est reliée à la thématique qui doit la porter, et chaque thématique à son plaidoyer quand il existe. Une seule page pour voir où nous en sommes : ce qui avance, ce qui attend un coordonnateur ou une coordonnatrice, et ce que nous n’avons pas encore commencé à documenter.",
    "description": "Chaque problématique reliée à sa thématique, chaque thématique à son plaidoyer s’il existe : le tableau de bord de suivi des actions d’ADEB LONODJI, thématique par thématique.",
    "parent": "Nos actions",
-   "words": 1564,
+   "words": 1570,
    "hasMap": false
   },
   {
@@ -429,7 +429,7 @@
    "lede": "Nous demandons aux institutions de publier leurs données, d’annoncer leurs décisions et de répondre à leurs courriers. Voici ce à quoi nous nous engageons de notre côté — et comment nous saisir si nous y manquons.",
    "description": "Nos engagements : réponse sous 48 heures, mécanisme de plainte ouvert et anonyme, protection des enfants et des témoins, usage des fonds, non-discrimination.",
    "parent": "L’association",
-   "words": 7291,
+   "words": 7331,
    "hasMap": false
   },
   {
@@ -441,7 +441,7 @@
    "lede": "Qui publie ce site, quelles données sont collectées via ses formulaires, et comment les faire corriger ou supprimer.",
    "description": "Mentions légales d’ADEB LONODJI et informations sur les données collectées via les formulaires du site.",
    "parent": "L’association",
-   "words": 1875,
+   "words": 1907,
    "hasMap": false
   },
   {
@@ -465,7 +465,7 @@
    "lede": "L’espace où seront publiés, au fur et à mesure de leur formalisation, les documents officiels de l’association : statuts, règlement intérieur, procès-verbaux d’assemblée et rapports d’activité. C’est aussi le sens de la transparence portée par la cellule Financement & ressources .",
    "description": "Statuts, règlement intérieur et procès-verbaux d’ADEB LONODJI : l’espace officiel des documents de l’association, en cours de constitution.",
    "parent": "L’association",
-   "words": 1123,
+   "words": 1247,
    "hasMap": false
   },
   {
@@ -489,7 +489,7 @@
    "lede": "ADEB LONODJI is the association of Bédjondo, in southern Chad, and of its diaspora: it works for all the town’s inhabitants and safeguards Bedjond heritage. This English section presents the association, the town and our advocacy; the full site is in French.",
    "description": "ADEB LONODJI, the association of Bédjondo (Mandoul, Chad) and its diaspora, guardian of Bedjond heritage: who we are, what we do, and how to help.",
    "parent": "Home",
-   "words": 598,
+   "words": 607,
    "hasMap": false
   },
   {
@@ -501,7 +501,7 @@
    "lede": "Discussions since 1986, official recognition in 1995, relaunch in 2026: the association of Bédjondo and its diaspora, its mission, its organisation and its values.",
    "description": "History, mission, organisation and values of ADEB LONODJI, the association of Bédjondo (Chad) and its diaspora, guardian of Bedjond heritage.",
    "parent": "Home",
-   "words": 393,
+   "words": 412,
    "hasMap": false
   },
   {
@@ -511,9 +511,9 @@
    "title": "Eight briefs for Bédjondo",
    "eyebrow": "Advocacy",
    "lede": "Broadband, electricity, drinking water, health, roads and bridges, education, vocational training, and a note to the commune: what we ask of the State, regulators, operators and partners, and what we commit to in return.",
-   "description": "Eight advocacy briefs by ADEB LONODJI for Bédjondo, Chad: broadband, electricity, drinking water, health, roads, education, vocational training, and a note to the commune.",
+   "description": "Eight advocacy briefs for Bédjondo, Chad: broadband, electricity, water, health, roads, education, training, and a note to the commune.",
    "parent": "Home",
-   "words": 668,
+   "words": 666,
    "hasMap": false
   },
   {
@@ -525,7 +525,7 @@
    "lede": "Capital of the Mandoul Occidental department, a commune of more than 11,000 inhabitants at the last census and the cradle of the Bedjond people.",
    "description": "Bédjondo, capital of Mandoul Occidental (Chad) and cradle of the Bedjond people: geography, people, language, figures and what the town lacks.",
    "parent": "Home",
-   "words": 385,
+   "words": 383,
    "hasMap": false
   },
   {
@@ -537,7 +537,7 @@
    "lede": "Write to the association in English or French; we answer every message.",
    "description": "Contact ADEB LONODJI in English: partners, researchers, media and diaspora.",
    "parent": "Home",
-   "words": 204,
+   "words": 225,
    "hasMap": false
   },
   {
@@ -549,7 +549,7 @@
    "lede": "ADEB LONODJI organises its work into twenty themes grouped in four pillars, supported by two cross-cutting units. Each theme is meant to be led by a coordinator who reports to the membership. This page is the English summary; every theme has a fuller description en français .",
    "description": "How ADEB LONODJI organises its work: four pillars, twenty themes and two cross-cutting units, each set against the UN Sustainable Development Goals it touches.",
    "parent": "Home",
-   "words": 2607,
+   "words": 2928,
    "hasMap": false
   }
  ],
@@ -1619,8 +1619,8 @@
       "filled": false,
       "coordinator": "à pourvoir",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la <a href=\"/programmes#cellule-financement-ressources\">cellule Financement &amp; ressources</a> pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire , notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire (<a href=\"/dossiers/environnement#economie-verte\">voir les pistes</a>).",
-      "descriptionText": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la cellule Financement & ressources pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire , notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire ( voir les pistes ).",
+      "description": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la <a href=\"/programmes#cellule-financement-ressources\">cellule Financement &amp; ressources</a> pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire, notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire (<a href=\"/dossiers/environnement#economie-verte\">voir les pistes</a>).",
+      "descriptionText": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la cellule Financement & ressources pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire, notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire ( voir les pistes ).",
       "tags": [
        "Emploi",
        "Entrepreneuriat",
@@ -1678,8 +1678,8 @@
       "filled": false,
       "coordinator": "à pourvoir",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la <a href=\"/programmes#eau-energie-connectivite\">thématique Eau, assainissement &amp; hygiène</a>. La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page <a href=\"/dossiers/environnement#economie-verte\">Environnement &amp; durabilité</a>. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique s’élargit à l’<strong>adaptation au changement climatique</strong> — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Urgences & risques.",
-      "descriptionText": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la thématique Eau, assainissement & hygiène . La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page Environnement & durabilité . Mise à jour du 29 septembre 2026 : la thématique s’élargit à l’ adaptation au changement climatique — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Urgences & risques.",
+      "description": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la <a href=\"/programmes#desenclavement-urbanisation\">thématique Énergie, routes &amp; urbanisme</a>. La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page <a href=\"/dossiers/environnement#economie-verte\">Environnement &amp; durabilité</a>. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique s’élargit à l’<strong>adaptation au changement climatique</strong> — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Urgences & risques.",
+      "descriptionText": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la thématique Énergie, routes & urbanisme . La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page Environnement & durabilité . Mise à jour du 29 septembre 2026 : la thématique s’élargit à l’ adaptation au changement climatique — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Urgences & risques.",
       "tags": [
        "Foncier",
        "Environnement",
@@ -1741,37 +1741,20 @@
       "filled": false,
       "coordinator": "à pourvoir",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Accès à l’eau potable, à l’électricité et à la connexion internet : trois priorités identifiées par la communauté, encore insuffisantes sur le territoire. Identification des besoins des villages et portage des projets auprès des autorités et des partenaires, en lien avec les écoles et les centres de santé qui en dépendent directement. Sur l’électricité, la thématique fait un choix clair : <strong>améliorer l’accès grâce aux énergies renouvelables</strong> — solaire en premier lieu — par des solutions adaptées aux villages : kits et lampes solaires pour les foyers, mini-réseaux ou installations solaires pour les écoles, les centres de santé et les forages, en complément du réseau conventionnel là où il existe, et en lien avec la réflexion sur le solaire portée par la thématique Environnement, climat & ressources naturelles. Sur la connectivité, la thématique porte le <a href=\"/journal/2026-09-16-plaidoyer-internet-haut-debit-bedjondo\">plaidoyer pour un accès à l’internet haut débit à Bédjondo</a>, zone blanche où les données mobiles restent trop chères, et le <a href=\"/journal/2026-09-16-plaidoyer-electricite-bedjondo\">plaidoyer pour l’accès à l’électricité</a>, qui demande l’inscription de Bédjondo dans le PAAET et la Mission 300. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique devient <strong>Eau, assainissement &amp; hygiène</strong> — ce que les ONG appellent « eau, assainissement, hygiène » (EAH, ou WASH) : l’eau potable, les latrines, les eaux usées et les déchets, le lavage des mains à l’école et au marché. L’énergie rejoint la thématique 08, Énergie, routes & urbanisme, et la connexion internet la thématique 17, Connectivité & services numériques.",
-      "descriptionText": "Accès à l’eau potable, à l’électricité et à la connexion internet : trois priorités identifiées par la communauté, encore insuffisantes sur le territoire. Identification des besoins des villages et portage des projets auprès des autorités et des partenaires, en lien avec les écoles et les centres de santé qui en dépendent directement. Sur l’électricité, la thématique fait un choix clair : améliorer l’accès grâce aux énergies renouvelables — solaire en premier lieu — par des solutions adaptées aux villages : kits et lampes solaires pour les foyers, mini-réseaux ou installations solaires pour les écoles, les centres de santé et les forages, en complément du réseau conventionnel là où il existe, et en lien avec la réflexion sur le solaire portée par la thématique Environnement, climat & ressources naturelles. Sur la connectivité, la thématique porte le plaidoyer pour un accès à l’internet haut débit à Bédjondo , zone blanche où les données mobiles restent trop chères, et le plaidoyer pour l’accès à l’électricité , qui demande l’inscription de Bédjondo dans le PAAET et la Mission 300. Mise à jour du 29 septembre 2026 : la thématique devient Eau, assainissement & hygiène — ce que les ONG appellent « eau, assainissement, hygiène » (EAH, ou WASH) : l’eau potable, les latrines, les eaux usées et les déchets, le lavage des mains à l’école et au marché. L’énergie rejoint la thématique 08, Énergie, routes & urbanisme, et la connexion internet la thématique 17, Connectivité & services numériques.",
+      "description": "Eau potable, assainissement et hygiène — ce que les ONG appellent EAH (WASH) : l’eau dans chaque quartier, les latrines, les eaux usées et les déchets, le lavage des mains à l’école et au marché, en lien avec les écoles et les centres de santé. La thématique porte le <a href=\"/journal/2026-09-17-plaidoyer-eau-potable-bedjondo\">plaidoyer pour l’eau potable</a>. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique devient <strong>Eau, assainissement &amp; hygiène</strong> — ce que les ONG appellent « eau, assainissement, hygiène » (EAH, ou WASH) : l’eau potable, les latrines, les eaux usées et les déchets, le lavage des mains à l’école et au marché. L’énergie rejoint la thématique 08, Énergie, routes & urbanisme, et la connexion internet la thématique 17, Connectivité & services numériques.",
+      "descriptionText": "Eau potable, assainissement et hygiène — ce que les ONG appellent EAH (WASH) : l’eau dans chaque quartier, les latrines, les eaux usées et les déchets, le lavage des mains à l’école et au marché, en lien avec les écoles et les centres de santé. La thématique porte le plaidoyer pour l’eau potable . Mise à jour du 29 septembre 2026 : la thématique devient Eau, assainissement & hygiène — ce que les ONG appellent « eau, assainissement, hygiène » (EAH, ou WASH) : l’eau potable, les latrines, les eaux usées et les déchets, le lavage des mains à l’école et au marché. L’énergie rejoint la thématique 08, Énergie, routes & urbanisme, et la connexion internet la thématique 17, Connectivité & services numériques.",
       "tags": [
        "Eau potable",
-       "Électricité",
-       "Solaire",
-       "Internet"
+       "Assainissement",
+       "Hygiène"
       ],
       "odd": [
        {
         "num": "6",
         "name": "Eau & assainissement",
-        "cible": "6.1",
-        "title": "ODD 6 — Eau propre et assainissement | cible 6.1 — accès universel à l’eau potable",
+        "cible": "6.1 / 6.2",
+        "title": "ODD 6 — Eau propre et assainissement | cible 6.1 — accès universel à l’eau potable · cible 6.2 — assainissement et hygiène",
         "accent": "#26BDE2",
-        "ink": "#10181f"
-       },
-       {
-        "num": "7",
-        "name": "Énergie",
-        "cible": "7.1 / 7.2",
-        "title": "ODD 7 — Énergie propre et d’un coût abordable | cible 7.1 — accès à des services énergétiques fiables · cible 7.2 — part des énergies renouvelables",
-        "accent": "#FCC30B",
-        "ink": "#10181f"
-       },
-       {
-        "num": "9",
-        "name": "Infrastructures",
-        "cible": "9.c",
-        "title": "ODD 9 — Industrie, innovation et infrastructure | cible 9.c — accès à internet",
-        "accent": "#FD6925",
         "ink": "#10181f"
        }
       ],
@@ -1785,7 +1768,11 @@
         "href": "/programmes#sante-prevention"
        },
        {
-        "label": "Suivi : 3 problématiques · 3 plaidoyers →",
+        "label": "Énergie, routes & urbanisme →",
+        "href": "/programmes#desenclavement-urbanisation"
+       },
+       {
+        "label": "Suivi : 2 problématiques · 1 plaidoyer →",
         "href": "/impact#eau-energie-connectivite"
        },
        {
@@ -1809,7 +1796,8 @@
        "Désenclavement",
        "Urbanisation",
        "Routes",
-       "Assainissement",
+       "Électricité",
+       "Solaire",
        "Plan de ville"
       ],
       "odd": [
@@ -1828,6 +1816,14 @@
         "title": "ODD 11 — Villes et communautés durables | cible 11.3 — urbanisation participative et planifiée · cible 11.6 — gestion des déchets municipaux",
         "accent": "#FD9D24",
         "ink": "#10181f"
+       },
+       {
+        "num": "7",
+        "name": "Énergie",
+        "cible": "7.1 / 7.2",
+        "title": "ODD 7 — Énergie propre et d’un coût abordable | cible 7.1 — accès à des services énergétiques fiables · cible 7.2 — part des énergies renouvelables",
+        "accent": "#FCC30B",
+        "ink": "#10181f"
        }
       ],
       "links": [
@@ -1840,7 +1836,7 @@
         "href": "/programmes#jeunesse-reussite"
        },
        {
-        "label": "Suivi : 4 problématiques · 1 plaidoyer →",
+        "label": "Suivi : 4 problématiques · 2 plaidoyers →",
         "href": "/impact#desenclavement-urbanisation"
        },
        {
@@ -1974,8 +1970,8 @@
       "filled": true,
       "coordinator": "Dr Nestor Alladoumdjim",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Prévention, accès à des soins de santé de qualité — encore insuffisant sur le territoire — et sensibilisation sanitaire. Premières priorités : des campagnes de sensibilisation, un relais avec les centres de santé et les autorités du Mandoul Occidental, la <strong>lutte contre l’alcoolisme</strong> — consommation abusive, et surtout alcool frelaté, dont les risques pour la santé sont sérieux ; c’est une préoccupation récurrente des familles , et l’hygiène et l’assainissement, en lien avec la <a href=\"/programmes#eau-energie-connectivite\">thématique Eau, assainissement &amp; hygiène</a> pour l’accès à l’eau potable. La thématique s’appuie sur le <a href=\"/journal/2026-09-17-plaidoyer-sante-bedjondo\">plaidoyer santé</a> déjà publié et suivi indicateur par indicateur : une maternité qui fonctionne jour et nuit avec une sage-femme qualifiée, une chaîne du froid fiable pour la vaccination des enfants, un laboratoire de base pour diagnostiquer le paludisme, la typhoïde et la tuberculose, une ambulance et un protocole d’évacuation. C’est à ce dossier, et non à une intention, que répondent les cibles 3.1, 3.2 et 3.3. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique s’élargit à la <strong>nutrition</strong> — dépistage de la malnutrition des jeunes enfants, alimentation des femmes enceintes et allaitantes, lien avec les centres de santé et la thématique Agriculture, élevage & sécurité alimentaire.",
-      "descriptionText": "Prévention, accès à des soins de santé de qualité — encore insuffisant sur le territoire — et sensibilisation sanitaire. Premières priorités : des campagnes de sensibilisation, un relais avec les centres de santé et les autorités du Mandoul Occidental, la lutte contre l’alcoolisme — consommation abusive, et surtout alcool frelaté, dont les risques pour la santé sont sérieux ; c’est une préoccupation récurrente des familles , et l’hygiène et l’assainissement, en lien avec la thématique Eau, assainissement & hygiène pour l’accès à l’eau potable. La thématique s’appuie sur le plaidoyer santé déjà publié et suivi indicateur par indicateur : une maternité qui fonctionne jour et nuit avec une sage-femme qualifiée, une chaîne du froid fiable pour la vaccination des enfants, un laboratoire de base pour diagnostiquer le paludisme, la typhoïde et la tuberculose, une ambulance et un protocole d’évacuation. C’est à ce dossier, et non à une intention, que répondent les cibles 3.1, 3.2 et 3.3. Mise à jour du 29 septembre 2026 : la thématique s’élargit à la nutrition — dépistage de la malnutrition des jeunes enfants, alimentation des femmes enceintes et allaitantes, lien avec les centres de santé et la thématique Agriculture, élevage & sécurité alimentaire.",
+      "description": "Prévention, accès à des soins de santé de qualité — encore insuffisant sur le territoire — et sensibilisation sanitaire. Premières priorités : des campagnes de sensibilisation, un relais avec les centres de santé et les autorités du Mandoul Occidental, la <strong>lutte contre l’alcoolisme</strong> — consommation abusive, et surtout alcool frelaté, dont les risques pour la santé sont sérieux ; c’est une préoccupation récurrente des familles, et l’hygiène et l’assainissement, en lien avec la <a href=\"/programmes#eau-energie-connectivite\">thématique Eau, assainissement &amp; hygiène</a> pour l’accès à l’eau potable. La thématique s’appuie sur le <a href=\"/journal/2026-09-17-plaidoyer-sante-bedjondo\">plaidoyer santé</a> déjà publié et suivi indicateur par indicateur : une maternité qui fonctionne jour et nuit avec une sage-femme qualifiée, une chaîne du froid fiable pour la vaccination des enfants, un laboratoire de base pour diagnostiquer le paludisme, la typhoïde et la tuberculose, une ambulance et un protocole d’évacuation. C’est à ce dossier, et non à une intention, que répondent les cibles 3.1, 3.2 et 3.3. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique s’élargit à la <strong>nutrition</strong> — dépistage de la malnutrition des jeunes enfants, alimentation des femmes enceintes et allaitantes, lien avec les centres de santé et la thématique Agriculture, élevage & sécurité alimentaire.",
+      "descriptionText": "Prévention, accès à des soins de santé de qualité — encore insuffisant sur le territoire — et sensibilisation sanitaire. Premières priorités : des campagnes de sensibilisation, un relais avec les centres de santé et les autorités du Mandoul Occidental, la lutte contre l’alcoolisme — consommation abusive, et surtout alcool frelaté, dont les risques pour la santé sont sérieux ; c’est une préoccupation récurrente des familles, et l’hygiène et l’assainissement, en lien avec la thématique Eau, assainissement & hygiène pour l’accès à l’eau potable. La thématique s’appuie sur le plaidoyer santé déjà publié et suivi indicateur par indicateur : une maternité qui fonctionne jour et nuit avec une sage-femme qualifiée, une chaîne du froid fiable pour la vaccination des enfants, un laboratoire de base pour diagnostiquer le paludisme, la typhoïde et la tuberculose, une ambulance et un protocole d’évacuation. C’est à ce dossier, et non à une intention, que répondent les cibles 3.1, 3.2 et 3.3. Mise à jour du 29 septembre 2026 : la thématique s’élargit à la nutrition — dépistage de la malnutrition des jeunes enfants, alimentation des femmes enceintes et allaitantes, lien avec les centres de santé et la thématique Agriculture, élevage & sécurité alimentaire.",
       "tags": [
        "Santé",
        "Prévention",
@@ -1997,6 +1993,14 @@
         "cible": "6.2",
         "title": "ODD 6 — Eau propre et assainissement | cible 6.2 — assainissement et hygiène",
         "accent": "#26BDE2",
+        "ink": "#10181f"
+       },
+       {
+        "num": "2",
+        "name": "Faim",
+        "cible": "2.2",
+        "title": "ODD 2 — Faim « zéro » | cible 2.2 — mettre fin à toutes les formes de malnutrition",
+        "accent": "#DDA63A",
         "ink": "#10181f"
        }
       ],
@@ -2024,8 +2028,8 @@
       "filled": true,
       "coordinator": "Solkem Ngarmbatina",
       "coordinatorLabel": "Coordonnatrice",
-      "description": "Accompagnement social, soutien aux familles, solidarité dans les moments difficiles et aide d’urgence en cas de catastrophe ou d’épidémie. Premières pistes : une caisse d’entraide entre membres en cas de décès ou de maladie, des tontines et un appui au microcrédit pour les activités génératrices de revenus, et une attention particulière portée aux personnes en situation de handicap et aux veuves, souvent les plus exposées quand la solidarité familiale ne suffit plus. C’est, avec <a href=\"/programmes#entrepreneuriat-finance-inclusive\">Entrepreneuriat &amp; finance inclusive</a>, la thématique de la <strong>lutte contre la pauvreté</strong> : non pas comme un mot d’ordre, mais comme un filet là où un décès, une maladie ou une mauvaise récolte fait basculer une famille entière. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique s’élargit à la <strong>protection de l’enfance</strong> — enregistrement des naissances, enfants hors de l’école, mariages précoces, en lien avec la politique de protection de l’association ; l’aide d’urgence en cas de catastrophe ou d’épidémie passe à la thématique 20, Urgences & risques.",
-      "descriptionText": "Accompagnement social, soutien aux familles, solidarité dans les moments difficiles et aide d’urgence en cas de catastrophe ou d’épidémie. Premières pistes : une caisse d’entraide entre membres en cas de décès ou de maladie, des tontines et un appui au microcrédit pour les activités génératrices de revenus, et une attention particulière portée aux personnes en situation de handicap et aux veuves, souvent les plus exposées quand la solidarité familiale ne suffit plus. C’est, avec Entrepreneuriat & finance inclusive , la thématique de la lutte contre la pauvreté : non pas comme un mot d’ordre, mais comme un filet là où un décès, une maladie ou une mauvaise récolte fait basculer une famille entière. Mise à jour du 29 septembre 2026 : la thématique s’élargit à la protection de l’enfance — enregistrement des naissances, enfants hors de l’école, mariages précoces, en lien avec la politique de protection de l’association ; l’aide d’urgence en cas de catastrophe ou d’épidémie passe à la thématique 20, Urgences & risques.",
+      "description": "Accompagnement social, soutien aux familles et solidarité dans les moments difficiles. Premières pistes : une caisse d’entraide entre membres en cas de décès ou de maladie, des tontines et un appui au microcrédit pour les activités génératrices de revenus, et une attention particulière portée aux personnes en situation de handicap et aux veuves, souvent les plus exposées quand la solidarité familiale ne suffit plus. C’est, avec <a href=\"/programmes#entrepreneuriat-finance-inclusive\">Entrepreneuriat &amp; finance inclusive</a>, la thématique de la <strong>lutte contre la pauvreté</strong> : non pas comme un mot d’ordre, mais comme un filet là où un décès, une maladie ou une mauvaise récolte fait basculer une famille entière. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique s’élargit à la <strong>protection de l’enfance</strong> — enregistrement des naissances, enfants hors de l’école, mariages précoces, en lien avec la politique de protection de l’association ; l’aide d’urgence en cas de catastrophe ou d’épidémie passe à la thématique 20, Urgences & risques.",
+      "descriptionText": "Accompagnement social, soutien aux familles et solidarité dans les moments difficiles. Premières pistes : une caisse d’entraide entre membres en cas de décès ou de maladie, des tontines et un appui au microcrédit pour les activités génératrices de revenus, et une attention particulière portée aux personnes en situation de handicap et aux veuves, souvent les plus exposées quand la solidarité familiale ne suffit plus. C’est, avec Entrepreneuriat & finance inclusive , la thématique de la lutte contre la pauvreté : non pas comme un mot d’ordre, mais comme un filet là où un décès, une maladie ou une mauvaise récolte fait basculer une famille entière. Mise à jour du 29 septembre 2026 : la thématique s’élargit à la protection de l’enfance — enregistrement des naissances, enfants hors de l’école, mariages précoces, en lien avec la politique de protection de l’association ; l’aide d’urgence en cas de catastrophe ou d’épidémie passe à la thématique 20, Urgences & risques.",
       "tags": [
        "Entraide",
        "Inclusion",
@@ -2312,8 +2316,8 @@
       "filled": true,
       "coordinator": "Dr Eugène Ngartebaye Le Yotha",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Sensibilisation au droit et à l’accès à la justice, veille et alerte sur les atteintes aux droits humains touchant la communauté, et accompagnement des personnes vulnérables dans leurs démarches face à des litiges ou des injustices. Une thématique transversale, en lien direct avec les chantiers déjà engagés pour les veuves et pour les personnes en situation de handicap — dont l’accompagnement des victimes de <strong>violences basées sur le genre</strong>, qui relève ici de l’accès effectif à la justice, quand la <a href=\"/programmes#leadership-feminin\">thématique Genre &amp; autonomisation des femmes</a> en porte la prévention , et avec l’accès à l’état civil porté par la thématique Gouvernance & plaidoyer. <strong>Mise à jour du 28 septembre 2026 :</strong> la coordination de la thématique est confiée au Dr Eugène Ngartebaye Le Yotha.",
-      "descriptionText": "Sensibilisation au droit et à l’accès à la justice, veille et alerte sur les atteintes aux droits humains touchant la communauté, et accompagnement des personnes vulnérables dans leurs démarches face à des litiges ou des injustices. Une thématique transversale, en lien direct avec les chantiers déjà engagés pour les veuves et pour les personnes en situation de handicap — dont l’accompagnement des victimes de violences basées sur le genre , qui relève ici de l’accès effectif à la justice, quand la thématique Genre & autonomisation des femmes en porte la prévention , et avec l’accès à l’état civil porté par la thématique Gouvernance & plaidoyer. Mise à jour du 28 septembre 2026 : la coordination de la thématique est confiée au Dr Eugène Ngartebaye Le Yotha.",
+      "description": "Sensibilisation au droit et à l’accès à la justice, veille et alerte sur les atteintes aux droits humains touchant la communauté, et accompagnement des personnes vulnérables dans leurs démarches face à des litiges ou des injustices. Une thématique transversale, en lien direct avec les chantiers déjà engagés pour les veuves et pour les personnes en situation de handicap — dont l’accompagnement des victimes de <strong>violences basées sur le genre</strong>, qui relève ici de l’accès effectif à la justice, quand la <a href=\"/programmes#leadership-feminin\">thématique Genre &amp; autonomisation des femmes</a> en porte la prévention, et avec l’accès à l’état civil porté par la thématique Gouvernance & plaidoyer. <strong>Mise à jour du 28 septembre 2026 :</strong> la coordination de la thématique est confiée au Dr Eugène Ngartebaye Le Yotha.",
+      "descriptionText": "Sensibilisation au droit et à l’accès à la justice, veille et alerte sur les atteintes aux droits humains touchant la communauté, et accompagnement des personnes vulnérables dans leurs démarches face à des litiges ou des injustices. Une thématique transversale, en lien direct avec les chantiers déjà engagés pour les veuves et pour les personnes en situation de handicap — dont l’accompagnement des victimes de violences basées sur le genre , qui relève ici de l’accès effectif à la justice, quand la thématique Genre & autonomisation des femmes en porte la prévention, et avec l’accès à l’état civil porté par la thématique Gouvernance & plaidoyer. Mise à jour du 28 septembre 2026 : la coordination de la thématique est confiée au Dr Eugène Ngartebaye Le Yotha.",
       "tags": [
        "Droits humains",
        "Accès à la justice",
@@ -2388,9 +2392,10 @@
       "filled": true,
       "coordinator": "Bignéro Moïalbéi LE MADANG",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons : accompagnement à l’état civil et aux démarches administratives en ligne, mobile money et paiements numériques pour les producteurs et les commerçants, outils simples pour les écoles, les centres de santé et les coopératives. La thématique porte aussi l’inclusion numérique — initier les aînés, les femmes et les villages éloignés aux usages de base — et l’équipement, en lien avec la connectivité et l’énergie solaire portées par la thématique <a href=\"#eau-energie-connectivite\">Eau, assainissement &amp; hygiène</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique, jusqu’ici « Transformation numérique & services », reprend la <strong>connectivité</strong> — réseau mobile, haut débit, espace numérique — venue de la thématique 07. Sa coordination ne change pas.",
-      "descriptionText": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons : accompagnement à l’état civil et aux démarches administratives en ligne, mobile money et paiements numériques pour les producteurs et les commerçants, outils simples pour les écoles, les centres de santé et les coopératives. La thématique porte aussi l’inclusion numérique — initier les aînés, les femmes et les villages éloignés aux usages de base — et l’équipement, en lien avec la connectivité et l’énergie solaire portées par la thématique Eau, assainissement & hygiène . Mise à jour du 28 septembre 2026 : les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. Mise à jour du 29 septembre 2026 : la thématique, jusqu’ici « Transformation numérique & services », reprend la connectivité — réseau mobile, haut débit, espace numérique — venue de la thématique 07. Sa coordination ne change pas.",
+      "description": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons : accompagnement à l’état civil et aux démarches administratives en ligne, mobile money et paiements numériques pour les producteurs et les commerçants, outils simples pour les écoles, les centres de santé et les coopératives. La thématique porte aussi l’inclusion numérique — initier les aînés, les femmes et les villages éloignés aux usages de base — et l’équipement, en lien avec l’énergie solaire portée par la thématique <a href=\"#desenclavement-urbanisation\">Énergie, routes &amp; urbanisme</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique, jusqu’ici « Transformation numérique & services », reprend la <strong>connectivité</strong> — réseau mobile, haut débit, espace numérique — venue de la thématique 07. Sa coordination ne change pas.",
+      "descriptionText": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons : accompagnement à l’état civil et aux démarches administratives en ligne, mobile money et paiements numériques pour les producteurs et les commerçants, outils simples pour les écoles, les centres de santé et les coopératives. La thématique porte aussi l’inclusion numérique — initier les aînés, les femmes et les villages éloignés aux usages de base — et l’équipement, en lien avec l’énergie solaire portée par la thématique Énergie, routes & urbanisme . Mise à jour du 28 septembre 2026 : les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. Mise à jour du 29 septembre 2026 : la thématique, jusqu’ici « Transformation numérique & services », reprend la connectivité — réseau mobile, haut débit, espace numérique — venue de la thématique 07. Sa coordination ne change pas.",
       "tags": [
+       "Internet",
        "E-administration",
        "Inclusion numérique",
        "Mobile money"
@@ -2427,8 +2432,12 @@
         "href": "/dossiers/espace-numerique"
        },
        {
-        "label": "Eau, assainissement & hygiène →",
-        "href": "/programmes#eau-energie-connectivite"
+        "label": "Énergie, routes & urbanisme →",
+        "href": "/programmes#desenclavement-urbanisation"
+       },
+       {
+        "label": "Suivi : 1 problématique · 1 plaidoyer →",
+        "href": "/impact#transformation-numerique-services"
        },
        {
         "label": "Gouvernance & plaidoyer →",
@@ -2631,7 +2640,7 @@
        "href": "/documents"
       },
       {
-       "label": "Rejoindre cette thématique →",
+       "label": "Rejoindre cette cellule →",
        "href": "/participer?theme=financement#contact"
       }
      ]
@@ -2687,7 +2696,7 @@
        "href": "/dossiers/recherche"
       },
       {
-       "label": "Rejoindre cette thématique →",
+       "label": "Rejoindre cette cellule →",
        "href": "/participer?theme=communication#contact"
       }
      ]
@@ -2701,7 +2710,7 @@
    "title": "Bédjondo a droit au haut débit",
    "href": "/journal/2026-09-16-plaidoyer-internet-haut-debit-bedjondo",
    "theme": "Connectivité",
-   "themeHref": "/programmes#eau-energie-connectivite",
+   "themeHref": "/programmes#transformation-numerique-services",
    "status": "Publié",
    "demand": "Zone prioritaire des 200 sites 3G/4G et du service universel, carte de couverture publique, tarifs ruraux, point de vente Starlink accessible, espace numérique communal.",
    "recipients": "Ministère des Télécommunications et de l’Économie numérique · ARCEP · Airtel, Moov Africa, Salam · Starlink Tchad",
@@ -2715,7 +2724,7 @@
    "title": "De la lumière pour Bédjondo",
    "href": "/journal/2026-09-16-plaidoyer-electricite-bedjondo",
    "theme": "Énergie",
-   "themeHref": "/programmes#eau-energie-connectivite",
+   "themeHref": "/programmes#desenclavement-urbanisation",
    "status": "Publié",
    "demand": "Inscription de Bédjondo et de ses cantons dans le PAAET et la Mission 300, équipements publics d’abord, kits solaires subventionnés, chefs-lieux non électrifiés ciblés.",
    "recipients": "Ministère de l’Énergie · SNE · CEP-TchadElec (PAAET) · ARSE · Banque mondiale / Mission 300 · opérateurs de mini-réseaux",
@@ -2801,7 +2810,7 @@
    "theme": "Formation professionnelle",
    "themeHref": "/programmes#jeunesse-reussite",
    "status": "Publié",
-   "demand": "Ouvrir réellement le centre déjà inscrit au répertoire national, sur neuf métiers utiles — menuiserie bois, menuiserie métallique et soudure, solaire, forages, maçonnerie, agro-transformation, couture, mécanique, numérique , avec apprentissage financé par le FONAP et examens tenus sur place.",
+   "demand": "Ouvrir réellement le centre déjà inscrit au répertoire national, sur neuf métiers utiles — menuiserie bois, menuiserie métallique et soudure, solaire, forages, maçonnerie, agro-transformation, couture, mécanique, numérique, avec apprentissage financé par le FONAP et examens tenus sur place.",
    "recipients": "Ministère en charge de la Formation professionnelle · Direction de l’enseignement professionnel · FONAP · ONAPE · AFD (AFPACET) · coopération suisse / Caritas Suisse · chambre de commerce et artisans · commune",
    "published": "17 septembre 2026",
    "sent": "À envoyer",
@@ -2883,7 +2892,7 @@
    "title": "Dossier de présentation d’ADEB LONODJI",
    "status": "PDF disponible",
    "meta": "Septembre 2026 · 4 pages",
-   "description": "Qui nous sommes, les quatre pôles et dix-huit thématiques, Bédjondo aujourd’hui, les huit plaidoyers et leurs engagements, la bibliothèque, et quatre façons de contribuer. À transmettre aux partenaires, médias et institutions.",
+   "description": "Qui nous sommes, les quatre pôles et leurs thématiques (dix-neuf dans cette édition de septembre 2026 ; vingt depuis le 29 septembre), Bédjondo aujourd’hui, les sept plaidoyers et la note à la commune, la bibliothèque, et quatre façons de contribuer. À transmettre aux partenaires, médias et institutions.",
    "pdf": "/documents/dossier-presentation-adeb-lonodji-2026.pdf",
    "links": [
     {
@@ -2935,7 +2944,7 @@
    "title": "Plaidoyer pour la formation professionnelle à Bédjondo",
    "status": "PDF disponible",
    "meta": "17 septembre 2026 · Gouvernance & plaidoyer",
-   "description": "Rendre opérationnel le centre de formation technique et professionnelle de Bédjondo déjà inscrit au répertoire national, l’ouvrir sur neuf métiers utiles à la ville — dont la menuiserie bois et la menuiserie métallique , y habiliter un dispositif d’apprentissage financé par le FONAP et y tenir les examens.",
+   "description": "Rendre opérationnel le centre de formation technique et professionnelle de Bédjondo déjà inscrit au répertoire national, l’ouvrir sur neuf métiers utiles à la ville — dont la menuiserie bois et la menuiserie métallique, y habiliter un dispositif d’apprentissage financé par le FONAP et y tenir les examens.",
    "pdf": "/documents/plaidoyer-formation-professionnelle-bedjondo-2026.pdf",
    "links": [
     {
@@ -3000,7 +3009,7 @@
    "title": "Statuts de l’association",
    "status": "À venir",
    "meta": "",
-   "description": "Le document fondateur qui définit l’objet, l’organisation et le fonctionnement d’ADEB LONODJI.",
+   "description": "Le document fondateur qui définit l’objet, l’organisation et le fonctionnement d’ADEB LONODJI. Les statuts de 1995 ne sont pas publiés à ce jour ; des statuts révisés, s’il y a lieu, seront adoptés par l’assemblée générale, puis publiés ici.",
    "pdf": "",
    "links": []
   },
@@ -3025,6 +3034,35 @@
    "status": "À venir",
    "meta": "",
    "description": "Le bilan des actions menées par les thématiques et cellules, partagé avec l’ensemble des membres.",
+   "pdf": "",
+   "links": []
+  },
+  {
+   "title": "Autorisation (arrêté ou récépissé)",
+   "status": "En vérification",
+   "meta": "",
+   "description": "La pièce qui établit l’autorisation de l’association au titre de l’ordonnance n o 023/PR/2018 : sa mise en conformité est en vérification (voir Démarches ).",
+   "pdf": "",
+   "links": [
+    {
+     "label": "Démarches",
+     "href": "/dossiers/demarches"
+    }
+   ]
+  },
+  {
+   "title": "Cinq politiques d’intégrité",
+   "status": "Projets",
+   "meta": "",
+   "description": "Conflits d’intérêts, fraude et corruption, données personnelles, achats et dépenses, exploitation et abus sexuels : projets du 23 septembre 2026, soumis au bureau exécutif, publiés ici une fois adoptés.",
+   "pdf": "",
+   "links": []
+  },
+  {
+   "title": "Comptes annuels",
+   "status": "À venir",
+   "meta": "",
+   "description": "À partir du premier exercice qui suivra l’ouverture du compte au nom de l’association.",
    "pdf": "",
    "links": []
   }

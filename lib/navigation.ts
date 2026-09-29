@@ -17,10 +17,7 @@ export const NAVIGATION: NavEntree[] = [
       { titre: "Qui nous sommes", liens: [
         { label: "Notre mission", href: "/mission", note: "Objet, valeurs, bureau exécutif" },
         { label: "Histoire & patrimoine", href: "/histoire", note: "De 1986 à la relance de 2026, grandes figures" },
-        { label: "Bédjondo", href: "/dossiers/bedjondo", note: "Repères, langue, statut de commune" },
-        { label: "Le journal", href: "/journal", note: "Articles datés et sourcés" },
         { label: "La lettre d’information", href: "/lettre", note: "Chaque mois : publié, décidé, ouvert ; PDF à transmettre" },
-        { label: "Identité visuelle", href: "/odeb/identite", note: "Le logo « Les Pas vers l’Avenir », adopté le 28 septembre 2026" },
       ] },
       { titre: "Rendre des comptes", liens: [
         { label: "Redevabilité & transparence", href: "/transparence", note: "Réponse sous 48 h, plainte, protection" },
@@ -29,7 +26,8 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Nos engagements publics", href: "/dossiers/engagements", note: "Ce que nous promettons, où nous en sommes" },
         { label: "Documents à télécharger", href: "/documents", note: "Kits, cahiers, plaidoyers en PDF" },
         { label: "Les démarches, pas à pas", href: "/dossiers/demarches", note: "Statut, récépissé, vers l’ONG" },
-        { label: "Espace presse", href: "/presse", note: "En bref, chiffres, logos, contacts" },
+        { label: "ONG & bailleurs : notre statut", href: "/dossiers/ong-partenaires", note: "Statut, partenaires présents au Mandoul, qui fait quoi" },
+        { label: "Presse & partenaires", href: "/presse", note: "En bref, chiffres, logos, contacts" },
       ] },
     ],
     vedette: { kicker: "Une association qui rend des comptes", titre: (c) => `${c.corrections} corrections publiées`, texte: () => "Ce qui n’est pas encore fait est écrit comme tel ; ce qui était faux est corrigé et daté.", href: "/transparence", label: "Notre charte de redevabilité" },
@@ -44,6 +42,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Numérique & innovation", href: "/programmes#pole-4", note: "Pôle IV" },
         { label: "Les deux cellules transversales", href: "/programmes#cellules", note: "Financement, communication" },
         { label: "Secteurs d’intervention", href: "/secteurs", note: "WASH, santé, nutrition, urgences… en langue ONG" },
+        { label: "Fiches de mission (PDF)", href: "/programmes/fiches-de-mission", note: "Diriger un pôle, coordonner une thématique" },
       ] },
       { titre: "Plaidoyers & suivi", liens: [
         { label: "Plaidoyers & engagements", href: "/actions", note: "Destinataires nommés, suivi public" },
@@ -98,7 +97,7 @@ export const NAVIGATION: NavEntree[] = [
       { titre: "Agir", liens: [
         { label: "Nous écrire", href: "/participer#contact", note: "Réponse sous 48 h ouvrées" },
         { label: "Rejoindre ou coordonner une thématique", href: "/participer?coordo=1#contact", note: "Proposer sa candidature" },
-        { label: "Adhérer & cotiser", href: "/participer#adherer", note: "Collecte suspendue jusqu’au compte" },
+        { label: "Adhérer (déclaration d’intention)", href: "/participer#adherer", note: "Aucun paiement tant que le compte n’est pas ouvert" },
         { label: "Nous soutenir", href: "/participer#soutenir", note: "Promesse de contribution" },
       ] },
       { titre: "Contribuer", liens: [
@@ -110,7 +109,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Proposer un article", href: "/participer#proposer", note: "Pour le journal" },
       ] },
       { titre: "Rester en lien", liens: [
-        { label: "Lettre d’information", href: "/participer#newsletter", note: "Les nouvelles de l’association" },
+        { label: "Lettre d’information", href: "/lettre", note: "Les nouvelles de l’association" },
         { label: "Installer l’application", href: "/dossiers/application", note: "Android, iPhone, hors ligne" },
         { label: "In English", href: "/en/index", note: "The association in English" },
       ] },
@@ -135,7 +134,7 @@ export function entreeCourante(pathname: string): string {
 export const PIED: { titre: string; liens: NavLien[] }[] = [
   { titre: "L’association", liens: [
     { label: "Notre mission", href: "/mission" }, { label: "Histoire & patrimoine", href: "/histoire" }, { label: "Le journal", href: "/journal" }, { label: "La lettre d’information", href: "/lettre" },
-    { label: "Redevabilité & transparence", href: "/transparence" }, { label: "Registre des décisions", href: "/transparence/decisions" }, { label: "Documents", href: "/documents" }, { label: "Espace presse", href: "/presse" }, { label: "Accessibilité", href: "/accessibilite" }, { label: "Archives du site", href: "/archives" },
+    { label: "Redevabilité & transparence", href: "/transparence" }, { label: "Registre des décisions", href: "/transparence/decisions" }, { label: "Documents", href: "/documents" }, { label: "ONG & bailleurs : notre statut", href: "/dossiers/ong-partenaires" }, { label: "Presse & partenaires", href: "/presse" }, { label: "Accessibilité", href: "/accessibilite" }, { label: "Archives du site", href: "/archives" },
   ] },
   { titre: "Nos actions", liens: [
     { label: "Quatre pôles, vingt thématiques", href: "/programmes" }, { label: "Secteurs d’intervention", href: "/secteurs" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }, { label: "Plaidoyers & engagements", href: "/actions" }, { label: "Tableau de bord d’impact", href: "/impact" },
@@ -146,7 +145,7 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
     { label: "Bibliothèque numérique", href: "/bibliotheque" }, { label: "La langue nangnda", href: "/langue" }, { label: "Lieux sacrés et sépultures", href: "/dossiers/lieux-sacres" }, { label: "Généalogies", href: "/dossiers/genealogies" },
   ] },
   { titre: "Participer", liens: [
-    { label: "Nous écrire", href: "/participer#contact" }, { label: "Adhérer & cotiser", href: "/participer#adherer" }, { label: "Nous soutenir", href: "/participer#soutenir" },
+    { label: "Nous écrire", href: "/participer#contact" }, { label: "Adhérer (déclaration d’intention)", href: "/participer#adherer" }, { label: "Nous soutenir", href: "/participer#soutenir" },
     { label: "Inscrire ses compétences", href: "/diaspora" }, { label: "Racontez Bédjondo", href: "/temoignages" }, { label: "Signaler un besoin", href: "/dossiers/besoins" }, { label: "Installer l’application", href: "/dossiers/application" },
   ] },
   { titre: "Projet ODEB · Vision 2030", liens: [

@@ -1,3 +1,4 @@
+import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead } from "@/components/blocks";
@@ -10,7 +11,7 @@ import Partager from "@/components/partager";
 export const metadata: Metadata = {
   title: "Tableau de bord d’impact et suivi des actions",
   description: "Adhérents, coordonnateurs, plaidoyers, besoins recensés et résolus, projets : six indicateurs datés et sourcés, puis le suivi thématique par thématique.",
-  alternates: { canonical: "/impact", languages: { fr: "/impact", en: "/en/impact" } },
+  alternates: { canonical: "/impact", languages: alternatesLangues("/impact") },
   openGraph: ogFor("/impact"),
 };
 
@@ -23,7 +24,7 @@ export default function Impact() {
         eyebrow="06 — Suivi & tableau de bord"
         title="Mesurer ce qui"
         em="devient réel."
-        lead="Six indicateurs d’impact, datés et sourcés, que le plan d’action 2026-2028 nous engage à publier. Puis, thématique par thématique, ce qui est documenté, publié, envoyé — et où une compétence changerait la donne. Ce qui n’est pas encore réalisé est écrit comme tel."
+        lead="Six indicateurs de suivi, datés et sourcés, que le plan d’action 2026-2028 nous engage à publier : ils mesurent ce que fait l’association (réalisations), pas encore les changements pour les habitants (impact), qui viendront des cibles du cadre de résultats. Puis, thématique par thématique, ce qui est documenté, publié, envoyé — et où une compétence changerait la donne. Ce qui n’est pas encore réalisé est écrit comme tel."
       />
       <TableauDeBord donnees={indicateurs} />
       <div className="notice">

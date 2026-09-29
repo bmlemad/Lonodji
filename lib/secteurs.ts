@@ -1,8 +1,9 @@
 /* Secteurs d'intervention : les vingt thématiques de l'association lues dans la
    langue des ONG de développement et d'aide (clusters humanitaires de l'IASC,
    codes-objet du CAD de l'OCDE, ODD). Chaque activité dit son état réel :
-   « fait » quand un document ou une page existe (lien), « piste » quand ce n'est
-   qu'envisagé. Rien n'est chiffré ni engagé au-delà de ce que le site montre.
+   « fait » (affiché « Publié ») quand une page, un document ou un formulaire existe
+   (lien) — ce n'est pas une activité réalisée sur le terrain —, « piste » quand ce
+   n'est qu'envisagé. Rien n'est chiffré ni engagé au-delà de ce que le site montre.
    Page : /secteurs (et /en/sectors). */
 
 export type EtatSecteur = "couvert" | "elargi" | "nouveau";
@@ -14,7 +15,9 @@ export type Secteur = {
   sigle: string; // l'étiquette que les partenaires emploient
   en: string;
   enTexte: string;
-  cadre: { cluster?: string; cad: string; odd: string };
+  /* cluster, cad, odd : repris tels quels par /en/sectors ; clusterFr, cadFr, reference :
+     précisions affichées sur la page française seulement */
+  cadre: { cluster?: string; cad: string; odd: string; clusterFr?: string; cadFr?: string; reference?: string };
   etat: EtatSecteur;
   thematiques: string[]; // identifiants de content/index.json
   activites: Activite[];
@@ -44,7 +47,7 @@ export const SECTEURS: Secteur[] = [
     thematiques: ["eau-energie-connectivite", "sante-prevention"],
     activites: [
       { texte: "Plaidoyer : de l’eau potable pour chaque quartier de Bédjondo", etat: "fait", href: `${P}eau-potable-bedjondo` },
-      { texte: "Recenser les besoins en eau, localité par localité", etat: "fait", href: "/dossiers/besoins" },
+      { texte: "Formulaire de signalement des besoins, localité par localité (0 signalement au 28 septembre 2026)", etat: "fait", href: "/dossiers/besoins" },
       { texte: "Latrines et lavage des mains à l’école et au marché", etat: "piste" },
       { texte: "Gestion des déchets et des eaux usées avec la commune", etat: "piste" },
     ],
@@ -100,7 +103,7 @@ export const SECTEURS: Secteur[] = [
     cadre: { cluster: "Relèvement précoce", cad: "CAD 240-250", odd: "ODD 1 · 8" }, etat: "couvert",
     thematiques: ["entrepreneuriat-finance-inclusive", "solidarite-inclusion", "competences-entrepreneuriat-numerique"],
     activites: [
-      { texte: "Une caisse d’entraide entre membres", etat: "fait", href: "/journal/2026-09-14-caisse-entraide-solidarite-en-acte" },
+      { texte: "Une caisse d’entraide entre membres (collecte suspendue)", etat: "piste", href: "/journal/2026-09-14-caisse-entraide-solidarite-en-acte" },
       { texte: "Tontines et microcrédit", etat: "piste", href: "/dossiers/solidarite-inclusion#entraide-economique" },
       { texte: "Entreprises d’économie sociale (programme 06)", etat: "piste", href: "/odeb/programmes/economie-sociale" },
     ],
@@ -132,7 +135,7 @@ export const SECTEURS: Secteur[] = [
     id: "relief", groupe: "urgences", nom: "Réponse aux urgences", sigle: "Relief", en: "Emergency response (relief)",
     enTexte: "When a crisis hits: inform, guide, record needs for the State, the Chad Red Cross and humanitarian agencies — never collect money before the association has an account.",
     cadre: { cad: "CAD 720", odd: "ODD 1.5" }, etat: "nouveau",
-    thematiques: ["urgences-risques", "solidarite-inclusion"],
+    thematiques: ["urgences-risques"],
     activites: [
       { texte: "Recenser les besoins d’une localité touchée, par le formulaire du site", etat: "fait", href: "/dossiers/besoins" },
       { texte: "Informer et orienter les familles vers les secours officiels", etat: "piste" },
@@ -143,7 +146,7 @@ export const SECTEURS: Secteur[] = [
   {
     id: "drr", groupe: "urgences", nom: "Réduction des risques de catastrophe", sigle: "DRR / RRC", en: "Disaster risk reduction (DRR)",
     enTexte: "Mapping flood-prone areas with the villages, a contingency plan per canton, an alert network over WhatsApp and community radio.",
-    cadre: { cad: "CAD 740", odd: "ODD 11.5 · 13.1" }, etat: "nouveau",
+    cadre: { cad: "CAD 740", odd: "ODD 11.5 · 13.1", reference: "cadre de Sendai 2015-2030" }, etat: "nouveau",
     thematiques: ["urgences-risques", "environnement-ressources"],
     activites: [
       { texte: "Carte du territoire, base de la cartographie des risques", etat: "fait", href: "/carte" },
@@ -155,10 +158,14 @@ export const SECTEURS: Secteur[] = [
   {
     id: "protection", groupe: "droits", nom: "Protection", sigle: "Protection", en: "Protection",
     enTexte: "Child protection (birth registration, out-of-school children, early marriage), people with disabilities, widows; a safeguarding policy.",
-    cadre: { cluster: "Cluster Protection (enfance, VBG)", cad: "CAD 16010 · 15180", odd: "ODD 5 · 16" }, etat: "elargi",
+    cadre: {
+      cluster: "Cluster Protection (enfance, VBG)", cad: "CAD 15160 · 15180 · 16010", odd: "ODD 5 · 16",
+      clusterFr: "Cluster Protection — domaines de responsabilité Protection de l’enfance et VBG",
+      cadFr: "CAD 15160 (droits de la personne) · 15180 (VBG) · 16010 (protection sociale)",
+    }, etat: "elargi",
     thematiques: ["solidarite-inclusion", "leadership-feminin", "justice-droits-homme"],
     activites: [
-      { texte: "Politique de protection des enfants et des personnes vulnérables", etat: "fait", href: "/transparence" },
+      { texte: "Règles de protection des enfants et des personnes vulnérables (charte de redevabilité ; politique contre l’exploitation et les abus sexuels en projet, soumise au bureau)", etat: "fait", href: "/transparence" },
       { texte: "Plan handicap", etat: "fait", href: "/dossiers/handicap" },
       { texte: "Plan veuves", etat: "fait", href: "/dossiers/veuves" },
       { texte: "Enregistrement des naissances, enfants hors de l’école, mariages précoces", etat: "piste" },
@@ -166,11 +173,11 @@ export const SECTEURS: Secteur[] = [
   },
   {
     id: "gouvernance", groupe: "droits", nom: "Gouvernance et société civile", sigle: "Gouvernance", en: "Governance and civil society",
-    enTexte: "Eight sourced advocacy briefs, a note to the commune, a public register of decisions, a corrections log.",
+    enTexte: "Seven sourced advocacy briefs, a note to the commune, a public register of decisions, a corrections log.",
     cadre: { cad: "CAD 151", odd: "ODD 16" }, etat: "couvert",
     thematiques: ["gouvernance-plaidoyer", "justice-droits-homme"],
     activites: [
-      { texte: "Huit plaidoyers publiés, sourcés, avec leurs destinataires", etat: "fait", href: "/actions" },
+      { texte: "Sept plaidoyers publiés, sourcés, avec leurs destinataires", etat: "fait", href: "/actions" },
       { texte: "Note à la commune de Bédjondo : six propositions", etat: "fait", href: "/journal/2026-09-16-note-commune-bedjondo" },
       { texte: "Registre public des décisions", etat: "fait", href: "/transparence/decisions" },
       { texte: "Décentralisation : ce que la commune peut faire", etat: "fait", href: "/dossiers/decentralisation" },
@@ -192,7 +199,7 @@ export const SECTEURS: Secteur[] = [
     cadre: { cad: "marqueur genre du CAD", odd: "ODD 5" }, etat: "couvert",
     thematiques: ["leadership-feminin"],
     activites: [
-      { texte: "Femmes de Bédjondo : une thématique à prendre", etat: "fait", href: "/journal/2026-09-14-femmes-bedjondo-leadership-feminin" },
+      { texte: "Article : le leadership des femmes de Bédjondo (14 septembre 2026)", etat: "fait", href: "/journal/2026-09-14-femmes-bedjondo-leadership-feminin" },
       { texte: "Accès des femmes au crédit, à la terre, aux responsabilités", etat: "piste" },
     ],
   },
@@ -226,7 +233,7 @@ export const SECTEURS: Secteur[] = [
     cadre: { cad: "hors nomenclature CAD", odd: "ODD 17" }, etat: "couvert",
     thematiques: ["reseau-experts-diaspora"],
     activites: [
-      { texte: "Répertoire des compétences de la diaspora", etat: "fait", href: "/diaspora" },
+      { texte: "Formulaire du répertoire des compétences (0 inscription au 28 septembre 2026)", etat: "fait", href: "/diaspora" },
       { texte: "La diaspora bedjond, un pont vers le terroir", etat: "fait", href: "/journal/2026-09-14-diaspora-bedjond-pont-vers-terroir" },
     ],
   },
@@ -236,7 +243,7 @@ export const SECTEURS: Secteur[] = [
 export const NON_COUVERTS: { nom: string; sigle: string; en: string; pourquoi: string }[] = [
   { nom: "Abris et articles non alimentaires", sigle: "Shelter / NFI", en: "Shelter and non-food items", pourquoi: "Distribuer des bâches, des kits, reconstruire des abris demande des stocks, de la logistique et des fonds que l’association n’a pas." },
   { nom: "Gestion de sites de déplacés", sigle: "CCCM", en: "Camp coordination and management", pourquoi: "C’est le rôle de l’État et des agences mandatées ; l’association peut informer et orienter." },
-  { nom: "Logistique et télécommunications d’urgence", sigle: "Logistique · ETC", en: "Logistics and emergency telecoms", pourquoi: "Hors de portée d’une association sans moyens propres ; son réseau d’alerte WhatsApp en tient lieu localement." },
+  { nom: "Logistique et télécommunications d’urgence", sigle: "Logistique · ETC", en: "Logistics and emergency telecoms", pourquoi: "Hors de portée d’une association sans moyens propres ; un réseau d’alerte par WhatsApp, envisagé, pourrait relayer localement les alertes officielles." },
 ];
 
 export const secteursDeThematique = (id: string) => SECTEURS.filter((s) => s.thematiques.includes(id));
