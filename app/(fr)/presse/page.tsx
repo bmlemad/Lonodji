@@ -120,6 +120,7 @@ export default function Presse() {
       <section className="hub-section" id="documents">
         <SectionHead eyebrow="Documents" title="À lire" em="et à joindre." />
         <div className="link-list">
+          <a href="/notes/note-synthese-bedjondo.pdf" download><small>PDF · 2 pages</small><strong>Note de synthèse des huit dossiers de plaidoyer</strong><span>Bédjondo en chiffres sourcés, les huit demandes, les programmes à rejoindre, ce que nous ne savons pas encore. À joindre aux courriers.</span></a>
           <a href="/documents/dossier-presentation-adeb-lonodji-2026.pdf" download><small>PDF · 4 pages</small><strong>Dossier de présentation d’ADEB LONODJI</strong><span>L’association, ses pôles, ses thématiques, ses plaidoyers.</span></a>
           <a href={ODEB.livreBlancPdf} download><small>PDF · version de travail</small><strong>Livre blanc du projet ODEB LONODJI</strong><span>Vision 2030, six missions, six programmes, feuille de route. Non adopté à ce jour.</span></a>
           <a href={IDENTITE.charte} download><small>PDF · charte</small><strong>Identité visuelle du projet ODEB LONODJI</strong><span>Le logo « Les Pas vers l’Avenir », ses versions, ses couleurs, ses règles ; le kit et le papier à en-tête sont sur la page en ligne.</span></a>

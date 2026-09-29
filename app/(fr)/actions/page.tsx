@@ -38,6 +38,10 @@ export default function Actions() {
         lead={page.lede}
         pills={["8 dossiers publiés", "22 indicateurs de résultats", "12 engagements publics"]}
       />
+      <p className="section-actions" style={{ justifyContent: "flex-start", marginTop: 0 }}>
+        <a className="button secondary" href="/notes/note-synthese-bedjondo.pdf" download>Les huit dossiers en deux pages (PDF) <span aria-hidden="true">↓</span></a>
+        <Link className="text-link" href="/bailleurs">Les programmes des bailleurs à rejoindre <span aria-hidden="true">→</span></Link>
+      </p>
       {page.resume?.length ? (
         <aside className="lg-resume" aria-label="En trois phrases">
           <p className="eyebrow">En trois phrases</p>

@@ -255,6 +255,10 @@ CORRECTIONS = {
         ("Une adresse &eacute;lectronique d&eacute;di&eacute;e sera publi&eacute;e ici d&egrave;s que le nom de domaine de l&rsquo;association sera enregistr&eacute;.",
          "Une adresse &eacute;lectronique d&eacute;di&eacute;e sera publi&eacute;e ici d&egrave;s qu&rsquo;une adresse &eacute;lectronique sera rattach&eacute;e &agrave; lonodji.org."),
     ],
+    "articles/2026-09-17-plaidoyer-eau-potable-bedjondo.html": [
+        # coquille (29/09/2026) : « desserre » pour « dessert », sans changement de sens
+        ("nous ignorons quel village exactement son réseau desserre,", "nous ignorons quel village exactement son réseau dessert,"),
+    ],
     "redevabilite.html": [
         # 10.
         ("qui l&rsquo;instruisent sans lui. Si la réponse ne vous satisfait pas,",

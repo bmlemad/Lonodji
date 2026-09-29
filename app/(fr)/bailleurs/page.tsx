@@ -71,6 +71,9 @@ export default function Bailleurs() {
         crumbs={[{ label: "Nos actions", href: "/programmes" }, { label: "Programmes des bailleurs" }]}
         pills={[`${PROGRAMMES_BAILLEURS.length} programmes relevés`, `${mandoul.length} touchent le Mandoul`, "1 déjà actif à Bédjondo", `relevé du ${RELEVE}`]}
       />
+      <p className="section-actions" style={{ justifyContent: "flex-start", marginTop: 0 }}>
+        <a className="button secondary" href="/notes/note-synthese-bedjondo.pdf" download>Note de synthèse à joindre aux courriers (PDF, 2 pages) <span aria-hidden="true">↓</span></a>
+      </p>
       <Stats items={[
         { value: String(actifs.length), label: "programmes en cours ou en préparation", note: "relevés un à un dans les portails officiels des bailleurs" },
         { value: String(mandoul.length), label: "citent le Mandoul ou Koumra", note: "dans leurs documents officiels ou leurs activités" },
