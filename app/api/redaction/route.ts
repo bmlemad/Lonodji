@@ -3,7 +3,7 @@ import { createHash, timingSafeEqual } from "node:crypto";
 import {
   changerMotDePasse, compteExiste, connexion, creerCompte, enregistrerBrouillon, Erreur, lireBrouillon,
   listerBrouillons, MOT_DE_PASSE_MIN, motDePasseValide, supprimerBrouillon, verifierJeton,
-} from "../../../lib/redaction";
+} from "@/lib/redaction";
 
 /* API de l'espace de rédaction privé (voir lib/redaction.ts).
    GET  → { existe }                      : un mot de passe a-t-il été créé ?

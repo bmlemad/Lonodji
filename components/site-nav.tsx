@@ -11,11 +11,11 @@ import { IDENTITE } from "../lib/odeb";
    sur tablette et mobile (recherche, groupes dépliables, actions). Une seule
    source de données : lib/navigation.ts. */
 
-type Props = { chiffres: NavChiffres; whatsapp: string; telephone: string; telephoneHref: string; devise: string };
+type Props = { lang?: "fr" | "en"; chiffres: NavChiffres; whatsapp: string; telephone: string; telephoneHref: string; devise: string };
 
 const Fleche = () => <svg className="nav-chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>;
 
-export default function SiteNav({ chiffres, whatsapp, telephone, telephoneHref, devise }: Props) {
+export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephone, telephoneHref, devise }: Props) {
   const pathname = usePathname();
   const courante = entreeCourante(pathname);
   const [ouvert, setOuvert] = useState<string | null>(null);   // panneau ouvert (ordinateur)

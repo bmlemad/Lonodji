@@ -3,6 +3,7 @@ const nextConfig = {
   // les brouillons (arabes notamment) ne doivent jamais être embarqués dans les fonctions serveur
   outputFileTracingExcludes: { "*": ["content/brouillons/**"] },
   reactStrictMode: true,
+  experimental: { globalNotFound: true },
   poweredByHeader: false,
   async redirects() {
     // Adresses de la première version du site (septembre 2026) : conservées pour les liens déjà partagés.

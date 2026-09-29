@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
-import { getIndex } from "../lib/content";
-import { PROGRAMMES, routeProgramme } from "../lib/odeb";
-import { getVillages, routeVillage } from "../lib/villages";
+import { getIndex } from "@/lib/content";
+import { PROGRAMMES, routeProgramme } from "@/lib/odeb";
+import { getVillages, routeVillage } from "@/lib/villages";
 
 const siteUrl = "https://lonodji.org";
 

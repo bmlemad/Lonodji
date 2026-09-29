@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "@/components/lien";
-import { SectionHead, Stats } from "../../../components/blocks";
-import { OdebHero } from "../../../components/odeb-marque";
-import { ogFor } from "../../../lib/content";
-import { feuilleDeRoute, ODEB, PROGRAMMES, routeProgramme } from "../../../lib/odeb";
-import { chiffresOdeb, thematiquesParId } from "../../../lib/odeb-chiffres";
+import { SectionHead, Stats } from "@/components/blocks";
+import { OdebHero } from "@/components/odeb-marque";
+import { ogFor } from "@/lib/content";
+import { feuilleDeRoute, ODEB, PROGRAMMES, routeProgramme } from "@/lib/odeb";
+import { chiffresOdeb, thematiquesParId } from "@/lib/odeb-chiffres";
 import Partager from "@/components/partager";
 
 export const metadata: Metadata = {

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getIndicateurs, releverFormulaires, type Releve } from "../../../lib/indicateurs";
+import { getIndicateurs, releverFormulaires, type Releve } from "@/lib/indicateurs";
 
 /* Compteurs du tableau de bord d'impact.
    GET → { genere, contenu, formulaires, bureau }

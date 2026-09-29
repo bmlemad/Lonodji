@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "@/components/lien";
-import { PageHeader, SectionHead, Stats } from "../../../components/blocks";
-import { ogFor } from "../../../lib/content";
-import { getVillages } from "../../../lib/villages";
+import { PageHeader, SectionHead, Stats } from "@/components/blocks";
+import { ogFor } from "@/lib/content";
+import { getVillages } from "@/lib/villages";
 import Partager from "@/components/partager";
 
 export const metadata: Metadata = {

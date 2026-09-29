@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { LegacyDocument } from "../../../components/legacy-content";
-import { getPage, hasPage, listEnSlugs, metaDescription, ogFor } from "../../../lib/content";
+import { LegacyDocument } from "@/components/legacy-content";
+import { getPage, hasPage, listEnSlugs, metaDescription, ogFor } from "@/lib/content";
 
 export const dynamicParams = false;
 

@@ -7,7 +7,7 @@ import NewsletterForm from "./newsletter-form";
 /* Pied de page : un bandeau (qui nous sommes, comment nous joindre, lettre
    d'information), cinq colonnes de liens (lib/navigation.ts, PIED) et la
    ligne de fin (devise, mentions, langue, retour en haut). */
-export default function SiteFooter({ miseAJour }: { miseAJour?: string }) {
+export default function SiteFooter({ miseAJour, lang = "fr" }: { miseAJour?: string; lang?: "fr" | "en" }) {
   return (
     <footer className="site-footer">
       <div className="footer-top">

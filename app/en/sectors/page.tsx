@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
-import { PageHeader, SectionHead } from "../../../components/blocks";
-import { ogFor } from "../../../lib/content";
-import { thematiquesParId } from "../../../lib/odeb-chiffres";
-import { ETATS_SECTEUR, GROUPES_SECTEURS, NON_COUVERTS, SECTEURS } from "../../../lib/secteurs";
+import { PageHeader, SectionHead } from "@/components/blocks";
+import { ogFor } from "@/lib/content";
+import { thematiquesParId } from "@/lib/odeb-chiffres";
+import { ETATS_SECTEUR, GROUPES_SECTEURS, NON_COUVERTS, SECTEURS } from "@/lib/secteurs";
 
 export const metadata: Metadata = {
   title: "Sectors of intervention — WASH, health, nutrition, relief, DRR… (in English)",

@@ -47,7 +47,7 @@ function estAppli(): boolean {
   return natif || nav.standalone === true || (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches);
 }
 
-export default function AppShell() {
+export default function AppShell({ lang = "fr" }: { lang?: "fr" | "en" } = {}) {
   const pathname = usePathname();
   const [appli, setAppli] = useState(false);
   const [menuOuvert, setMenuOuvert] = useState(false);
