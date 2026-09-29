@@ -4,7 +4,7 @@ import { SectionHead, Stats } from "../../components/blocks";
 import { OdebHero } from "../../components/odeb-marque";
 import OdebNav, { OdebEtat } from "../../components/odeb-nav";
 import { enLettres, ogFor } from "../../lib/content";
-import { MISSIONS, ODEB, PROGRAMMES, REPERES_2030, routeProgramme } from "../../lib/odeb";
+import { IDENTITE, MISSIONS, ODEB, PROGRAMMES, REPERES_2030, routeProgramme } from "../../lib/odeb";
 import { chiffresOdeb, thematiquesParId } from "../../lib/odeb-chiffres";
 import Partager from "@/components/partager";
 
@@ -93,7 +93,7 @@ export default function Odeb() {
       </section>
 
       <section className="hub-section" id="documents">
-        <SectionHead eyebrow="Les deux documents" title="Le livre blanc" em="et la feuille de route." />
+        <SectionHead eyebrow="Les documents" title="Le livre blanc," em="la feuille de route, la présentation." />
         <div className="od-docs">
           <article>
             <span className="status">Document fondateur · version de travail</span>
@@ -106,6 +106,12 @@ export default function Odeb() {
             <h3>Feuille de route 2026-2030</h3>
             <p>Ce qui est fait, ce qui est en cours, ce qui reste à faire et ce qui reste à décider, phase par phase, avec l’état réel de chaque chantier à la date de mise en ligne.</p>
             <div className="doc-links"><Link className="button primary" href="/odeb/feuille-de-route">Voir la feuille de route <span aria-hidden="true">↗</span></Link><Link className="text-link" href="/impact">Le tableau de bord <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article id="presentation">
+            <span className="status">Pour l’assemblée · {IDENTITE.presentation.diapositives} diapositives</span>
+            <h3>Présentation du projet à l’assemblée</h3>
+            <p>Le projet en diapositives, faites depuis les pages du site et rien d’autre : pourquoi, les cinq repères 2030, les six missions, les six programmes et leurs axes, les cinq règles du programme 06 à voter, qui porte le projet, la feuille de route, et la liste des décisions attendues. À projeter ou à envoyer avant la réunion ; le fichier PowerPoint se modifie.</p>
+            <div className="doc-links"><a className="button primary" href={IDENTITE.presentation.pdf} download>PDF <span aria-hidden="true">↓</span></a><a className="button secondary" href={IDENTITE.presentation.pptx} download>PowerPoint</a><Link className="text-link" href="/odeb/identite#reseaux">Modèle de diaporama vierge <span aria-hidden="true">→</span></Link></div>
           </article>
         </div>
       </section>

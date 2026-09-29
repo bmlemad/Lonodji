@@ -51,7 +51,7 @@ export default function Identite() {
         em="le logo de l’association et de son projet."
         lead={`Trois empreintes qui avancent vers un soleil levant : la première, la plus grande, ce sont les ancêtres ; la deuxième, la génération actuelle ; la troisième, la plus lumineuse, les générations futures. Sur les traces de nos ancêtres, bâtissons notre avenir. Dessiné pour le projet ODEB LONODJI et adopté le ${IDENTITE.adopteeLabel} par l’association comme son propre logo — un emblème, deux noms —, il est celui du site, de l’application et des images de partage. Ses fichiers, ses couleurs et ses règles sont ici.`}
         crumbs={[{ label: "L’association", href: "/mission" }, { label: "Identité visuelle" }]}
-        pills={[`Adopté le ${IDENTITE.adopteeLabel}`, "Un emblème, deux noms", "Six emblèmes, six logos complets", "Textes en tracés : aucune police à installer", "Kit ZIP, charte PDF, papiers à en-tête"]}
+        pills={[`Adopté le ${IDENTITE.adopteeLabel}`, "Un emblème, deux noms", "Six emblèmes, six logos complets", "Textes en tracés : aucune police à installer", "Kit ZIP, charte PDF, papiers à en-tête", "Bannières, signature e-mail, cartes de visite, diaporamas"]}
       />
       <OdebNav actif="identite" />
 
@@ -121,7 +121,7 @@ export default function Identite() {
       <section className="hub-section" id="documents">
         <SectionHead eyebrow="À télécharger" title="Le kit," em="et les documents qui vont avec." />
         <div className="link-list">
-          <a href={IDENTITE.kit} download><small>ZIP · tous les fichiers</small><strong>Kit du logo « Les Pas vers l’Avenir »</strong><span>Les dix-neuf SVG (emblèmes, logos ADEB LONODJI et ODEB LONODJI), les PNG jusqu’à 2048 px, la planche PDF, les papiers à en-tête et un LISEZMOI avec les règles courtes.</span></a>
+          <a href={IDENTITE.kit} download><small>ZIP · tous les fichiers</small><strong>Kit du logo « Les Pas vers l’Avenir »</strong><span>Les dix-neuf SVG (emblèmes, logos ADEB LONODJI et ODEB LONODJI), les PNG jusqu’à 2048 px, la planche PDF, les papiers à en-tête, les bannières, les images de profil, les signatures e-mail, les cartes de visite, les modèles de diaporama et un LISEZMOI avec les règles courtes.</span></a>
           <a href={IDENTITE.charte} download><small>PDF · charte</small><strong>Identité visuelle d’ADEB LONODJI et du projet ODEB</strong><span>Cette page, en PDF, pour la joindre à un dossier ou l’envoyer à un partenaire.</span></a>
           <a href={IDENTITE.planche} download><small>PDF · 3 pages</small><strong>Planche pour l’imprimeur</strong><span>Toutes les versions, les couleurs avec leurs équivalents CMJN, les règles ; les textes en tracés.</span></a>
           <a href={IDENTITE.adeb.enTeteDocx} download><small>DOCX · A4</small><strong>Papier à en-tête de l’association</strong><span>Logo ADEB LONODJI, reconnaissance de 1995, devise, pied avec le contact ; le corps de la lettre est à vous.</span></a>
@@ -129,6 +129,29 @@ export default function Identite() {
           <a href={IDENTITE.enTeteDocx} download><small>DOCX · A4</small><strong>Papier à en-tête du projet ODEB</strong><span>Logo ODEB LONODJI, mention du portage par l’association, pied avec le contact.</span></a>
           <a href={IDENTITE.enTetePdf} download><small>PDF · A4</small><strong>Papier à en-tête du projet ODEB, à imprimer</strong><span>La même feuille en PDF.</span></a>
           <Link href="/presse#visuels"><small>Espace presse</small><strong>Les logos de l’association et du projet</strong><span>Pour les journalistes et les partenaires, avec les règles de citation et les visuels à partager.</span></Link>
+        </div>
+      </section>
+
+      <section className="hub-section" id="reseaux">
+        <SectionHead eyebrow="Réseaux, messagerie, papeterie" title="Prêts à poser," em="le jour où l’on change de logo." text="Ajoutés au kit le 29 septembre 2026 : ce dont une page Facebook, un groupe WhatsApp, une boîte mail ou un imprimeur ont besoin, sans rien redessiner. Les bannières placent le logo dans la zone que les recadrages des téléphones ne coupent pas ; l’image de profil est faite pour le rond." />
+        <div className="od-bannieres">
+          {(["adeb", "odeb"] as const).map((m) => (
+            <figure key={m} className="od-banniere">
+              <img src={IDENTITE.reseaux.facebook[m]} alt={`Bannière ${m === "adeb" ? "ADEB LONODJI" : "ODEB LONODJI"} pour Facebook`} width="820" height="312" loading="lazy" />
+              <figcaption><strong>{m === "adeb" ? "ADEB LONODJI" : "ODEB LONODJI"}</strong> · <a href={IDENTITE.reseaux.facebook[m]} download>Facebook {IDENTITE.reseaux.facebook.taille}</a> · <a href={IDENTITE.reseaux.linkedin[m]} download>LinkedIn {IDENTITE.reseaux.linkedin.taille}</a> · <a href={IDENTITE.reseaux.x[m]} download>X {IDENTITE.reseaux.x.taille}</a> · <a href={IDENTITE.reseaux.youtube[m]} download>YouTube {IDENTITE.reseaux.youtube.taille}</a></figcaption>
+            </figure>
+          ))}
+        </div>
+        <div className="link-list">
+          <a href={IDENTITE.reseaux.profil} download><small>PNG · 1024 × 1024</small><strong>Image de profil</strong><span>L’emblème sur fond vert profond, pour Facebook, LinkedIn, WhatsApp : rien n’est coupé par le recadrage rond.</span></a>
+          <a href={IDENTITE.reseaux.whatsapp} download><small>PNG · 640 × 640</small><strong>Icône de groupe WhatsApp</strong><span>La même image, à la taille que WhatsApp accepte.</span></a>
+          <a href={IDENTITE.signature.adeb} download><small>HTML · messagerie</small><strong>Signature e-mail de l’association</strong><span>Ouvrir, tout sélectionner, copier, coller dans Gmail ou Outlook ; trois lignes entre crochets à remplacer. Le logo est hébergé ici, rien à joindre.</span></a>
+          <a href={IDENTITE.signature.odeb} download><small>HTML · messagerie</small><strong>Signature e-mail du projet ODEB</strong><span>La même, au nom du projet.</span></a>
+          <a href={IDENTITE.cartes.pdf} download><small>PDF · 85 × 55 mm</small><strong>Carte de visite de l’association, recto verso</strong><span>Nom, fonction, téléphone et adresse à remplacer par l’imprimeur ou dans un éditeur PDF ; code QR vers le site.</span></a>
+          <a href={IDENTITE.cartes.planche} download><small>PDF · A4</small><strong>Planche de dix cartes de visite</strong><span>Recto puis verso, à imprimer en recto verso retourné sur le bord long, et à découper sur le trait.</span></a>
+          <a href={IDENTITE.diaporama.adeb} download><small>PPTX · 16:9</small><strong>Modèle de diaporama de l’association</strong><span>Sept diapositives types (titre, partie, texte, colonnes, chiffres, étapes, fin) aux couleurs de l’identité ; installer DM Sans et Playfair Display pour retrouver les polices.</span></a>
+          <a href={IDENTITE.diaporama.odeb} download><small>PPTX · 16:9</small><strong>Modèle de diaporama du projet ODEB</strong><span>Le même, au nom du projet.</span></a>
+          <Link href="/odeb#presentation"><small>Projet ODEB</small><strong>La présentation du projet à l’assemblée</strong><span>Vingt-six diapositives faites depuis les pages du site : vision, missions, programmes, règles à voter, décisions attendues. PPTX et PDF.</span></Link>
         </div>
       </section>
 

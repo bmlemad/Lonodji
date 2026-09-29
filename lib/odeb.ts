@@ -70,6 +70,20 @@ export const IDENTITE = {
   enTeteDocx: `${ID}/papier-en-tete-odeb-lonodji.docx`,
   enTetePdf: `${ID}/papier-en-tete-odeb-lonodji.pdf`,
   charte: "/odeb/charte-identite-odeb-lonodji-2026.pdf",
+  /* ajoutés au kit le 29 septembre 2026 : réseaux sociaux, messagerie, cartes, diaporamas */
+  reseaux: {
+    facebook: { adeb: `${ID}/adeb-lonodji-banniere-facebook-1640x624.png`, odeb: `${ID}/odeb-lonodji-banniere-facebook-1640x624.png`, taille: "1640 × 624" },
+    linkedin: { adeb: `${ID}/adeb-lonodji-banniere-linkedin-1584x396.png`, odeb: `${ID}/odeb-lonodji-banniere-linkedin-1584x396.png`, taille: "1584 × 396" },
+    x: { adeb: `${ID}/adeb-lonodji-banniere-x-1500x500.png`, odeb: `${ID}/odeb-lonodji-banniere-x-1500x500.png`, taille: "1500 × 500" },
+    youtube: { adeb: `${ID}/adeb-lonodji-banniere-youtube-2560x1440.jpg`, odeb: `${ID}/odeb-lonodji-banniere-youtube-2560x1440.jpg`, taille: "2560 × 1440" },
+    profil: `${ID}/embleme-profil-1024.png`,
+    whatsapp: `${ID}/embleme-profil-whatsapp-640.png`,
+  },
+  signature: { adeb: `${ID}/signature-e-mail-adeb-lonodji.html`, odeb: `${ID}/signature-e-mail-odeb-lonodji.html` },
+  cartes: { pdf: `${ID}/carte-de-visite-adeb-lonodji.pdf`, planche: `${ID}/carte-de-visite-adeb-lonodji-planche-a4.pdf` },
+  diaporama: { adeb: `${ID}/modele-diaporama-adeb-lonodji.pptx`, odeb: `${ID}/modele-diaporama-odeb-lonodji.pptx` },
+  /* présentation du projet à l'assemblée, produite par scripts/build-diaporama.js depuis les données du site */
+  presentation: { pptx: "/odeb/odeb-lonodji-presentation-assemblee-2026.pptx", pdf: "/odeb/odeb-lonodji-presentation-assemblee-2026.pdf", diapositives: 26 },
   couleurs: [
     { nom: "Vert profond", hex: "#173B2D", cmjn: "85 45 70 45", role: "le disque, les fonds, les textes sur fond clair" },
     { nom: "Vert feuille", hex: "#2F6B4A", cmjn: "78 30 75 15", role: "le halo du disque, les liens" },

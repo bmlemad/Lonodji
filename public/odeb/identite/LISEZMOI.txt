@@ -1,0 +1,72 @@
+ADEB LONODJI et projet ODEB LONODJI — identité visuelle « Les Pas vers l'Avenir »
+Kit du 28 septembre 2026 · lonodji.org/odeb/identite
+
+Un emblème, deux noms : le logo a été adopté le 28 septembre 2026 par l'association
+ADEB LONODJI, qui l'utilise pour elle-même (fichiers adeb-lonodji-…) et pour son
+projet ODEB LONODJI (fichiers odeb-lonodji-…). Les emblèmes seuls sont communs.
+
+Le sens : trois empreintes, une par génération — les ancêtres (la plus grande,
+la plus transparente), la génération actuelle, les générations futures (la plus
+petite, la plus lumineuse) — avancent vers un soleil levant posé sur l'horizon.
+Devise : « Sur les traces de nos ancêtres, bâtissons notre avenir. »
+
+Fichiers
+  odeb-lonodji-embleme.svg / -2048.png / -1024.png / -512.png
+      emblème en verre sur son fond vert profond : écrans, réseaux, vidéos
+  odeb-lonodji-embleme-superposable.svg / -1024.png (fond transparent)
+      emblème en verre sans fond : à poser sur une photo ou un fond sombre
+  odeb-lonodji-embleme-clair.svg / -1024.png, -clair-superposable.svg
+      verre clair : papeterie, fonds blancs ou sable
+  odeb-lonodji-embleme-plat.svg, -mono.svg, -reserve.svg
+      versions à plat : impression courante, tampon, gravure, photocopie,
+      broderie, petites tailles (en dessous de 40 px, prendre la version à plat)
+  adeb-lonodji-logo-horizontal(.svg/.png), -clair, -superposable, -clair-superposable,
+  adeb-lonodji-logo-vertical, -clair
+      emblème + « ADEB LONODJI » + Association de Développement et d'Entraide de
+      Bédjondo + Courage · Discipline · Héritage
+  odeb-lonodji-logo-horizontal(.svg/.png), -clair, -superposable, -clair-superposable,
+  odeb-lonodji-logo-vertical, -clair
+      emblème + « ODEB LONODJI » + développement du sigle + devise du projet ;
+      les textes sont en tracés : aucune police à installer ;
+      « superposable » = sans fond, pour les en-têtes de documents et les photos
+  odeb-lonodji-planche.pdf
+      toutes les versions et les règles, pour l'imprimeur
+  papier-en-tete-adeb-lonodji.docx / .pdf, papier-en-tete-odeb-lonodji.docx / .pdf
+      papiers à en-tête A4 (association, projet)
+  adeb-lonodji-banniere-…png, odeb-lonodji-banniere-…png
+      bannières prêtes à poser : Facebook (1640 × 624), LinkedIn (1584 × 396),
+      X (1500 × 500), YouTube (2560 × 1440, en JPEG) ; le logo tient dans la
+      zone sûre des recadrages mobiles
+  embleme-profil-1024.png, embleme-profil-whatsapp-640.png
+      image de profil (Facebook, LinkedIn, WhatsApp) et icône de groupe WhatsApp :
+      l'emblème sur fond vert profond, prévu pour le recadrage rond
+  signature-e-mail-adeb-lonodji.html, signature-e-mail-odeb-lonodji.html
+      signature de messagerie : ouvrir dans un navigateur, tout sélectionner,
+      copier, coller dans Gmail (Paramètres → Signature), Outlook ou Thunderbird,
+      puis remplacer les trois lignes entre crochets ; le logo est hébergé sur
+      lonodji.org (…-signature-logo.png), rien à joindre
+  carte-de-visite-adeb-lonodji.pdf, carte-de-visite-adeb-lonodji-planche-a4.pdf
+      carte de visite 85 × 55 mm recto verso (nom, fonction, téléphone à
+      remplacer par l'imprimeur ou dans un éditeur PDF) et planche A4 de dix
+      cartes (recto puis verso, à retourner sur le bord long)
+  modele-diaporama-adeb-lonodji.pptx, modele-diaporama-odeb-lonodji.pptx
+      modèles PowerPoint 16:9 (titre, section, texte, deux colonnes, chiffres,
+      fin) aux couleurs de l'identité ; installer DM Sans et Playfair Display
+      (gratuites, Google Fonts) pour retrouver les polices, sinon Calibri et
+      Cambria prennent le relais
+
+Règles courtes
+  - Ne pas déformer, recolorer, incliner ni séparer les empreintes du soleil.
+  - Zone de protection : la hauteur d'une empreinte tout autour.
+  - Taille minimale : emblème 40 px à l'écran, 12 mm imprimé ;
+    logo horizontal 180 px / 45 mm. En dessous, l'emblème à plat.
+  - Sur photo : version superposable ou réserve blanche, jamais l'emblème à plat couleur.
+  - Un emblème, deux noms : jamais les deux noms sous le même emblème ; l'ancien
+    logo bleu (avant le 28 septembre 2026) ne se mélange pas au nouveau.
+  - Couleurs : vert profond #173B2D, vert feuille #2F6B4A, acacia #B6CF45,
+    doré #F2C94C, encre #10241E, sable #F4F6F1.
+  - Polices : DM Sans (nom, textes), Playfair Display (devise, titres).
+
+Le logo appartient à l'association ADEB LONODJI. Usage libre pour parler de
+l'association ou du projet ODEB LONODJI, à condition de ne pas le modifier ; toute
+autre utilisation, écrire à l'association (lonodji.org/participer).

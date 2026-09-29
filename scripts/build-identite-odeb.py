@@ -175,6 +175,8 @@ def fichiers_svg() -> dict[str, str]:
         "adeb-lonodji-logo-vertical.svg": verre.svg_vertical("sombre"),
         "adeb-lonodji-logo-vertical-clair.svg": verre.svg_vertical("clair"),
     }
+    for k in adeb:  # le générateur écrit le libellé du projet : celui de l'association pour ses fichiers
+        adeb[k] = adeb[k].replace('aria-label="ODEB LONODJI — Organisation pour le Développement et l’Émergence Bedjonde"', 'aria-label="ADEB LONODJI — Association de Développement et d’Entraide de Bédjondo"', 1)
     MARQUE = MARQUES["odeb"]
     return adeb | {
         "odeb-lonodji-embleme.svg": verre.svg_embleme("sombre", True),
@@ -228,6 +230,27 @@ Fichiers
       toutes les versions et les règles, pour l'imprimeur
   papier-en-tete-adeb-lonodji.docx / .pdf, papier-en-tete-odeb-lonodji.docx / .pdf
       papiers à en-tête A4 (association, projet)
+  adeb-lonodji-banniere-…png, odeb-lonodji-banniere-…png
+      bannières prêtes à poser : Facebook (1640 × 624), LinkedIn (1584 × 396),
+      X (1500 × 500), YouTube (2560 × 1440, en JPEG) ; le logo tient dans la
+      zone sûre des recadrages mobiles
+  embleme-profil-1024.png, embleme-profil-whatsapp-640.png
+      image de profil (Facebook, LinkedIn, WhatsApp) et icône de groupe WhatsApp :
+      l'emblème sur fond vert profond, prévu pour le recadrage rond
+  signature-e-mail-adeb-lonodji.html, signature-e-mail-odeb-lonodji.html
+      signature de messagerie : ouvrir dans un navigateur, tout sélectionner,
+      copier, coller dans Gmail (Paramètres → Signature), Outlook ou Thunderbird,
+      puis remplacer les trois lignes entre crochets ; le logo est hébergé sur
+      lonodji.org (…-signature-logo.png), rien à joindre
+  carte-de-visite-adeb-lonodji.pdf, carte-de-visite-adeb-lonodji-planche-a4.pdf
+      carte de visite 85 × 55 mm recto verso (nom, fonction, téléphone à
+      remplacer par l'imprimeur ou dans un éditeur PDF) et planche A4 de dix
+      cartes (recto puis verso, à retourner sur le bord long)
+  modele-diaporama-adeb-lonodji.pptx, modele-diaporama-odeb-lonodji.pptx
+      modèles PowerPoint 16:9 (titre, section, texte, deux colonnes, chiffres,
+      fin) aux couleurs de l'identité ; installer DM Sans et Playfair Display
+      (gratuites, Google Fonts) pour retrouver les polices, sinon Calibri et
+      Cambria prennent le relais
 
 Règles courtes
   - Ne pas déformer, recolorer, incliner ni séparer les empreintes du soleil.
@@ -402,6 +425,166 @@ def papier_en_tete(fonts: str, logo_png: Path, pdf: Path, docx_path: Path, marqu
     doc.save(str(docx_path))
 
 
+# ---------------------------------------------------------------- réseaux sociaux, signature, cartes de visite
+FOND_RESEAU = "background:radial-gradient(circle at 18% 20%, rgba(182,207,69,.22), transparent 38%), radial-gradient(circle at 84% 78%, rgba(242,201,76,.16), transparent 34%), linear-gradient(120deg,#0f3327 0%,#123a2b 55%,#071b15 100%)"
+BANNIERES = [  # (suffixe, largeur, hauteur, hauteur du logo en % de la hauteur)
+    ("banniere-facebook-1640x624", 1640, 624, 62),
+    ("banniere-linkedin-1584x396", 1584, 396, 64),
+    ("banniere-x-1500x500", 1500, 500, 62),
+    ("banniere-youtube-2560x1440", 2560, 1440, 34),
+]
+
+
+def reseaux_sociaux(b, fonts: str, svgs: dict[str, str]) -> list[str]:
+    """Bannières (Facebook, LinkedIn, X, YouTube) pour les deux noms, image de
+    profil et icône de groupe WhatsApp (emblème commun)."""
+    faits = []
+    for marque in ("adeb", "odeb"):
+        logo = svgs[f"{marque}-lonodji-logo-horizontal-superposable.svg"]
+        logo = re.sub(r' width="\d+" height="\d+"', "", logo, count=1)
+        for suffixe, w, h, pct in BANNIERES:
+            hl = h * pct / 100
+            # zone sûre : le logo tient dans les 60 % centraux (recadrage mobile de Facebook, avatar de LinkedIn en bas à gauche)
+            corps = (f'<div style="position:relative;width:{w}px;height:{h}px;{FOND_RESEAU}">'
+                     f'<div style="position:absolute;inset:0;display:grid;place-items:center"><div style="width:{hl * 2000 / 640:.0f}px;height:{hl:.0f}px">{logo}</div></div>'
+                     f'<div style="position:absolute;right:{h * .06:.0f}px;bottom:{h * .06:.0f}px;font:600 {h * .035:.0f}px/1 \'DM Sans\',system-ui,sans-serif;letter-spacing:.14em;color:rgba(255,255,255,.62)">LONODJI.ORG</div></div>')
+            page = b.new_page(viewport={"width": w, "height": h}, device_scale_factor=1)
+            page.set_content(page_html(corps, fonts, w, h))
+            page.wait_for_timeout(120)
+            nom = f"{marque}-lonodji-{suffixe}." + ("jpg" if w >= 2000 else "png")  # YouTube en JPEG : 2560 px en PNG pèserait 2 Mo
+            page.screenshot(path=str(OUT / nom), type="jpeg", quality=90) if nom.endswith(".jpg") else page.screenshot(path=str(OUT / nom))
+            page.close()
+            faits.append(nom)
+    # fond des diapositives sombres (modèles PowerPoint), 16:9 sans logo
+    page = b.new_page(viewport={"width": 2560, "height": 1440}, device_scale_factor=1)
+    page.set_content(page_html(f'<div style="width:2560px;height:1440px;{FOND_RESEAU}"></div>', fonts, 2560, 1440))
+    page.wait_for_timeout(80)
+    page.screenshot(path=str(OUT / "fond-diaporama-sombre-2560x1440.jpg"), type="jpeg", quality=88)
+    page.close()
+    faits.append("fond-diaporama-sombre-2560x1440.jpg")
+    # logos horizontaux allégés (1000 px) pour les diaporamas
+    from PIL import Image
+
+    for marque in ("adeb", "odeb"):
+        im = Image.open(OUT / f"{marque}-lonodji-logo-horizontal-superposable.png")
+        im.thumbnail((1000, 320))
+        im.save(OUT / f"{marque}-lonodji-logo-horizontal-superposable-1000.png", "PNG", optimize=True)
+        faits.append(f"{marque}-lonodji-logo-horizontal-superposable-1000.png")
+    # profil (Facebook, LinkedIn, WhatsApp) : l'emblème sur un carré vert profond, à l'aise dans le recadrage rond
+    emb = re.sub(r' width="\d+" height="\d+"', "", svgs["odeb-lonodji-embleme.svg"], count=1)
+    for taille, nom in ((1024, "embleme-profil-1024.png"), (640, "embleme-profil-whatsapp-640.png")):
+        page = b.new_page(viewport={"width": taille, "height": taille}, device_scale_factor=1)
+        page.set_content(page_html(f'<div style="width:{taille}px;height:{taille}px;display:grid;place-items:center;background:#173b2d"><div style="width:{taille * .84:.0f}px;height:{taille * .84:.0f}px">{emb}</div></div>', fonts, taille, taille))
+        page.wait_for_timeout(120)
+        page.screenshot(path=str(OUT / nom))
+        page.close()
+        faits.append(nom)
+    return faits
+
+
+SIGNATURE = """<!doctype html><html lang="fr"><meta charset="utf-8"><title>Signature e-mail — {NOM}</title>
+<!-- Signature e-mail {NOM}. Ouvrir ce fichier dans un navigateur, tout sélectionner (Ctrl+A), copier (Ctrl+C),
+     puis coller dans Gmail (Paramètres → Signature), Outlook ou Thunderbird. Remplacer les trois lignes entre crochets. -->
+<body style="margin:24px;font-family:'DM Sans',Arial,Helvetica,sans-serif;color:#10241e">
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:'DM Sans',Arial,Helvetica,sans-serif;color:#10241e;font-size:14px;line-height:1.45">
+<tr>
+<td style="padding:0 18px 0 0;border-right:1px solid #d5ddd6;vertical-align:middle"><a href="{URL}" style="text-decoration:none"><img src="https://lonodji.org/odeb/identite/{LOGO}" width="200" height="64" alt="{NOM}" style="display:block;width:200px;height:64px;border:0"></a></td>
+<td style="padding:0 0 0 18px;vertical-align:middle">
+<div style="font-size:16px;font-weight:700;letter-spacing:.01em">[Prénom NOM]</div>
+<div style="color:#526159;margin:2px 0 8px">[Fonction] · <b style="color:#173b2d">{NOM}</b></div>
+<div style="font-size:13px;color:#526159">{DESCRIPTION}</div>
+<div style="font-size:13px;margin-top:8px"><a href="tel:{TELHREF}" style="color:#173b2d;text-decoration:none">[+235 …]</a> · <a href="mailto:" style="color:#173b2d;text-decoration:none">[prenom.nom@…]</a> · <a href="{URL}" style="color:#173b2d;text-decoration:none;font-weight:700">{URLCOURTE}</a></div>
+</td>
+</tr>
+</table>
+</body></html>
+"""
+
+
+def signatures_email(b, fonts: str) -> list[str]:
+    """Deux signatures HTML (association, projet) et le petit logo hébergé qu'elles affichent."""
+    faits = []
+    for marque, nom, description, url, url_courte in (
+        ("adeb", "ADEB LONODJI", "Association de Développement et d’Entraide de Bédjondo · Courage · Discipline · Héritage", "https://lonodji.org", "lonodji.org"),
+        ("odeb", "ODEB LONODJI", "Organisation pour le Développement et l’Émergence Bedjonde · projet porté par l’ADEB LONODJI", "https://lonodji.org/odeb", "lonodji.org/odeb"),
+    ):
+        logo = f"{marque}-lonodji-signature-logo.png"
+        # logo clair superposable, 400 × 128 (affiché 200 × 64), pour les fonds blancs des messageries
+        from PIL import Image
+
+        im = Image.open(OUT / f"{marque}-lonodji-logo-horizontal-clair-superposable.png")
+        im.thumbnail((400, 128))
+        im.save(OUT / logo, "PNG", optimize=True)
+        html = SIGNATURE.replace("{NOM}", nom).replace("{LOGO}", logo).replace("{DESCRIPTION}", description).replace("{URL}", url).replace("{URLCOURTE}", url_courte).replace("{TELHREF}", "")
+        (OUT / f"signature-e-mail-{marque}-lonodji.html").write_text(html, encoding="utf-8")
+        faits += [logo, f"signature-e-mail-{marque}-lonodji.html"]
+    return faits
+
+
+CARTE_CSS = """
+*{box-sizing:border-box} html,body{margin:0;font-family:'DM Sans',Arial,sans-serif;color:#10241e;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.carte{position:relative;width:85mm;height:55mm;overflow:hidden;page-break-after:always}
+.recto{background:radial-gradient(circle at 18% 20%, rgba(182,207,69,.22), transparent 38%), radial-gradient(circle at 84% 78%, rgba(242,201,76,.16), transparent 34%), linear-gradient(120deg,#0f3327 0%,#123a2b 55%,#071b15 100%);display:grid;place-items:center}
+.recto svg{width:62mm;height:auto}
+.verso{background:#fff;padding:7mm 7mm 6mm}
+.verso .nom{font-size:12.5pt;font-weight:700;letter-spacing:.01em;margin:0}
+.verso .fonction{font-size:8.5pt;color:#526159;margin:1mm 0 0}
+.verso .orga{font-size:8pt;color:#173b2d;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:4mm 0 0}
+.verso .orga small{display:block;font-weight:500;letter-spacing:0;text-transform:none;color:#526159;font-size:7.5pt;margin-top:.5mm}
+.verso .contact{position:absolute;left:7mm;bottom:6mm;font-size:8pt;line-height:1.55;color:#10241e}
+.verso .contact b{color:#173b2d}
+.verso .qr{position:absolute;right:7mm;bottom:6mm;width:15mm;height:15mm}
+.verso .qr svg{width:100%;height:100%}
+.verso .emb{position:absolute;right:7mm;top:6mm;width:11mm;height:11mm}
+.verso .emb svg{width:100%;height:100%}
+.verso .filet{position:absolute;left:7mm;right:7mm;bottom:22mm;height:1px;background:linear-gradient(90deg,#f2c94c,#b6cf45 40%,rgba(182,207,69,0))}
+"""
+PLANCHE_CARTES_CSS = """
+@page{size:A4;margin:0}
+html,body{margin:0;width:210mm;height:297mm}
+.page{position:relative;width:210mm;height:297mm;page-break-after:always}
+.grille{position:absolute;left:14mm;top:11mm;display:grid;grid-template-columns:85mm 85mm;grid-auto-rows:55mm;gap:0 12mm}
+.grille .carte{page-break-after:auto;outline:.2mm solid #cfd8d0}
+.repere{position:absolute;left:14mm;right:14mm;bottom:8mm;font:7.5pt 'DM Sans',Arial,sans-serif;color:#607069;text-align:center}
+"""
+
+
+def cartes_de_visite(fonts: str, svgs: dict[str, str]) -> list[str]:
+    """Carte de visite ADEB LONODJI (85 × 55 mm, recto verso) et planche A4 de dix cartes."""
+    import segno
+    from playwright.sync_api import sync_playwright
+
+    logo = re.sub(r' width="\d+" height="\d+"', "", svgs["adeb-lonodji-logo-horizontal-superposable.svg"], count=1)
+    emb = re.sub(r' width="\d+" height="\d+"', "", svgs["odeb-lonodji-embleme-plat.svg"], count=1)
+    q = segno.make("https://lonodji.org", error="m")
+    w, h = q.symbol_size(scale=1, border=0)
+    qr = q.svg_inline(scale=1, border=0, dark="#173b2d", light=None).replace("<svg ", f'<svg viewBox="0 0 {w} {h}" shape-rendering="crispEdges" ', 1)
+    recto = f'<div class="carte recto">{logo}</div>'
+    verso = f"""<div class="carte verso"><div class="emb">{emb}</div>
+    <p class="nom">Prénom NOM</p><p class="fonction">Fonction dans l’association</p>
+    <p class="orga">ADEB LONODJI<small>Association de Développement et d’Entraide de Bédjondo · Courage · Discipline · Héritage</small></p>
+    <div class="filet"></div>
+    <div class="contact"><b>+235 00 00 00 00</b> · appel et WhatsApp<br>prenom.nom@…<br><b>lonodji.org</b></div>
+    <div class="qr">{qr}</div></div>"""
+    faits = []
+    with sync_playwright() as p:
+        b = p.chromium.launch()
+        pg = b.new_page()
+        tmp = TMP / "carte.html"
+        tmp.write_text(f'<!doctype html><html lang="fr"><meta charset="utf-8"><style>{fonts}{CARTE_CSS} @page{{size:85mm 55mm;margin:0}}</style><body>{recto}{verso}</body></html>', encoding="utf-8")
+        pg.goto(tmp.as_uri(), wait_until="load"); pg.evaluate("document.fonts.ready")
+        pg.pdf(path=str(OUT / "carte-de-visite-adeb-lonodji.pdf"), width="85mm", height="55mm", print_background=True, prefer_css_page_size=True, margin={"top": "0", "bottom": "0", "left": "0", "right": "0"})
+        faits.append("carte-de-visite-adeb-lonodji.pdf")
+        # planche A4 : dix cartes recto, puis dix versos (même ordre : impression recto verso retournée sur le bord long)
+        pages = "".join(f'<div class="page"><div class="grille">{face * 10}</div><div class="repere">{titre} · 10 cartes de 85 × 55 mm · découper sur le trait · ADEB LONODJI · lonodji.org/odeb/identite</div></div>' for face, titre in ((recto, "Recto"), (verso, "Verso")))
+        tmp.write_text(f'<!doctype html><html lang="fr"><meta charset="utf-8"><style>{fonts}{CARTE_CSS}{PLANCHE_CARTES_CSS}</style><body>{pages}</body></html>', encoding="utf-8")
+        pg.goto(tmp.as_uri(), wait_until="load"); pg.evaluate("document.fonts.ready")
+        pg.pdf(path=str(OUT / "carte-de-visite-adeb-lonodji-planche-a4.pdf"), format="A4", print_background=True, prefer_css_page_size=True, margin={"top": "0", "bottom": "0", "left": "0", "right": "0"})
+        faits.append("carte-de-visite-adeb-lonodji-planche-a4.pdf")
+        b.close()
+    return faits
+
+
 def main() -> None:
     global TRACEUR
     from playwright.sync_api import sync_playwright
@@ -421,6 +604,8 @@ def main() -> None:
         ("odeb-lonodji-embleme.svg", 1024, 1024, 1, "odeb-lonodji-embleme-1024.png"),
         ("odeb-lonodji-embleme.svg", 512, 512, 1, "odeb-lonodji-embleme-512.png"),
         ("odeb-lonodji-embleme-superposable.svg", 1024, 1024, 1, "odeb-lonodji-embleme-superposable-1024.png"),
+        ("odeb-lonodji-embleme-superposable.svg", 512, 512, 1, "odeb-lonodji-embleme-superposable-512.png"),
+        ("odeb-lonodji-embleme-clair-superposable.svg", 512, 512, 1, "odeb-lonodji-embleme-clair-superposable-512.png"),
         ("odeb-lonodji-embleme-clair.svg", 1024, 1024, 1, "odeb-lonodji-embleme-clair-1024.png"),
         ("odeb-lonodji-embleme-plat.svg", 512, 512, 2, "odeb-lonodji-embleme-plat-1024.png"),
         ("odeb-lonodji-logo-horizontal.svg", 2000, 640, 1, "odeb-lonodji-logo-horizontal.png"),
@@ -457,8 +642,9 @@ def main() -> None:
             page.wait_for_timeout(100)
             page.screenshot(path=str(nom), omit_background=True)
             page.close()
+        reseaux = reseaux_sociaux(b, fonts, svgs)
         b.close()
-    print(f"{len(rendus)} PNG + icônes")
+    print(f"{len(rendus)} PNG + icônes + {len(reseaux)} images pour les réseaux")
     (ROOT / "app" / "icon.svg").write_text(svgs["odeb-lonodji-embleme-plat.svg"].replace('width="512" height="512"', 'width="64" height="64"'), encoding="utf-8")
 
     planche_pdf(svgs, fonts, OUT / "odeb-lonodji-planche.pdf")
@@ -466,12 +652,22 @@ def main() -> None:
     papier_en_tete(fonts, OUT / "odeb-lonodji-logo-horizontal-clair-superposable.png", OUT / "papier-en-tete-odeb-lonodji.pdf", OUT / "papier-en-tete-odeb-lonodji.docx")
     papier_en_tete(fonts, OUT / "adeb-lonodji-logo-horizontal-clair-superposable.png", OUT / "papier-en-tete-adeb-lonodji.pdf", OUT / "papier-en-tete-adeb-lonodji.docx", "adeb")
     print("papiers à en-tête PDF + DOCX (ODEB, ADEB)")
+    with sync_playwright() as p:
+        b = p.chromium.launch()
+        signatures_email(b, fonts)
+        b.close()
+    cartes_de_visite(fonts, svgs)
+    print("signatures e-mail, cartes de visite")
+    import subprocess
+
+    subprocess.run(["node", str(ROOT / "scripts" / "build-diaporama.js"), "--modeles"], check=True)
+    print("modèles de diaporama PPTX")
 
     (OUT / "LISEZMOI.txt").write_text(LISEZMOI, encoding="utf-8")
     kit = OUT / "kit-logo-odeb-lonodji.zip"
     with zipfile.ZipFile(kit, "w", zipfile.ZIP_DEFLATED) as z:
         for f in sorted(OUT.iterdir()):
-            if f.suffix in {".svg", ".png", ".pdf", ".docx", ".txt"} and f.name != kit.name:
+            if f.suffix in {".svg", ".png", ".jpg", ".pdf", ".docx", ".txt", ".html", ".pptx"} and f.name != kit.name and not f.name.startswith("fond-diaporama") and "-1000." not in f.name:
                 z.write(f, f"kit-logo-odeb-lonodji/{f.name}")
     print(f"kit : {kit.relative_to(ROOT)} ({kit.stat().st_size // 1024} Ko)")
     shutil.rmtree(TMP, ignore_errors=True)

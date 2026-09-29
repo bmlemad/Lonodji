@@ -152,6 +152,8 @@ export default function Presse() {
           <Link className="button secondary" href="/odeb/identite">Le logo, ses règles, ses couleurs <span aria-hidden="true">→</span></Link>
           <a className="text-link" href={IDENTITE.kit} download>Kit complet (ZIP) <span aria-hidden="true">↓</span></a>
           <a className="text-link" href={IDENTITE.planche} download>Planche pour l’imprimeur (PDF) <span aria-hidden="true">↓</span></a>
+          <Link className="text-link" href="/odeb/identite#reseaux">Bannières, image de profil, signature e-mail, cartes de visite <span aria-hidden="true">→</span></Link>
+          <a className="text-link" href="/carte/affiches/affiche-villages.pdf" download>Affiche « Retrouvez votre village » (PDF A4) <span aria-hidden="true">↓</span></a>
           <Link className="text-link" href="/dossiers/kit-mobilisation">Visuels de mobilisation <span aria-hidden="true">→</span></Link>
         </div>
         <details className="pr-ancien" id="ancien-logo">
