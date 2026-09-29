@@ -110,30 +110,32 @@ export async function creerCompte(motDePasse: string): Promise<string> {
   return signer(auth.hash);
 }
 
-export async function verifierMotDePasse(motDePasse: string): Promise<Auth> {
+export async function verifierMotDePasse(motDePasse: string, ip = "?"): Promise<Auth> {
   const m = await magasin();
   const brut = await m.get("auth");
   if (!brut) throw new Erreur(404, "Aucun mot de passe n’a encore été créé.");
-  const tentatives: Tentatives = JSON.parse((await m.get("tentatives")) || '{"n":0,"jusqua":0}');
+  /* Compteur d'échecs par adresse (hachée) : un inconnu ne peut plus bloquer l'animation en se trompant exprès. */
+  const cle = `tentatives/${ip}`;
+  const tentatives: Tentatives = JSON.parse((await m.get(cle)) || '{"n":0,"jusqua":0}');
   if (tentatives.jusqua > Date.now()) {
     throw new Erreur(429, `Trop d’essais : réessayez dans ${Math.ceil((tentatives.jusqua - Date.now()) / 60000)} min.`);
   }
   const auth: Auth = JSON.parse(brut);
   if (!egal(deriver(motDePasse, auth.sel), auth.hash)) {
     const n = (tentatives.jusqua ? 0 : tentatives.n) + 1;
-    await m.set("tentatives", JSON.stringify({ n, jusqua: n >= ESSAIS_MAX ? Date.now() + BLOCAGE_MS : 0 }));
+    await m.set(cle, JSON.stringify({ n, jusqua: n >= ESSAIS_MAX ? Date.now() + BLOCAGE_MS : 0 }));
     throw new Erreur(401, "Mot de passe incorrect.");
   }
-  if (tentatives.n) await m.delete("tentatives");
+  if (tentatives.n) await m.delete(cle);
   return auth;
 }
 
-export async function connexion(motDePasse: string): Promise<string> {
-  return signer((await verifierMotDePasse(motDePasse)).hash);
+export async function connexion(motDePasse: string, ip = "?"): Promise<string> {
+  return signer((await verifierMotDePasse(motDePasse, ip)).hash);
 }
 
-export async function changerMotDePasse(ancien: string, nouveau: string): Promise<string> {
-  await verifierMotDePasse(ancien);
+export async function changerMotDePasse(ancien: string, nouveau: string, ip = "?"): Promise<string> {
+  await verifierMotDePasse(ancien, ip);
   const sel = randomBytes(16).toString("hex");
   const auth: Auth = { sel, hash: deriver(nouveau, sel), maj: new Date().toISOString() };
   await (await magasin()).set("auth", JSON.stringify(auth));

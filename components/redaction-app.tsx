@@ -133,7 +133,7 @@ export default function RedactionApp({ rubriques }: { rubriques: Rubrique[] }) {
       if (etat === "creer") {
         if (motDePasse !== String(f.get("confirmation") || "")) { setMessage("Les deux saisies ne correspondent pas."); return; }
       }
-      const d = await api({ action: etat === "creer" ? "creer" : "connexion", motDePasse });
+      const d = await api(etat === "creer" ? { action: "creer", motDePasse, invitation: String(f.get("invitation") || "") } : { action: "connexion", motDePasse });
       try { sessionStorage.setItem(CLE, d.jeton); } catch { /* stockage indisponible : la session vit en mémoire */ }
       setJeton(d.jeton);
       await charger(d.jeton);
@@ -215,7 +215,8 @@ export default function RedactionApp({ rubriques }: { rubriques: Rubrique[] }) {
     return (
       <form className="rd-porte" onSubmit={entrer}>
         <h2>{etat === "creer" ? "Choisir le mot de passe de l’espace" : "Entrer dans l’espace de rédaction"}</h2>
-        <p>{etat === "creer" ? "Aucun mot de passe n’existe encore : celui que vous choisissez maintenant protégera l’espace. Dix caractères au moins ; gardez-le dans un gestionnaire de mots de passe, il n’est stocké qu’en empreinte." : "Le mot de passe est celui choisi à la première visite. Cinq erreurs bloquent l’entrée un quart d’heure."}</p>
+        <p>{etat === "creer" ? "Aucun mot de passe n’existe encore. Saisissez le code d’invitation remis à l’animation, puis choisissez le mot de passe qui protégera l’espace. Dix caractères au moins ; gardez-le dans un gestionnaire de mots de passe, il n’est stocké qu’en empreinte." : "Le mot de passe est celui choisi à la première visite. Cinq erreurs bloquent l’entrée un quart d’heure."}</p>
+        {etat === "creer" ? <label>Code d’invitation<input type="text" name="invitation" autoComplete="off" spellCheck={false} required /></label> : null}
         <label>Mot de passe<input type="password" name="motDePasse" autoComplete={etat === "creer" ? "new-password" : "current-password"} minLength={etat === "creer" ? 10 : 1} required autoFocus /></label>
         {etat === "creer" ? <label>Confirmer le mot de passe<input type="password" name="confirmation" autoComplete="new-password" minLength={10} required /></label> : null}
         {message ? <p className="rd-erreur" role="alert">{message}</p> : null}
