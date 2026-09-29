@@ -6,6 +6,7 @@ import OdebNav, { OdebEtat } from "../../../components/odeb-nav";
 import { ogFor } from "../../../lib/content";
 import { enLettresMaj, MISSIONS, ODEB, PROGRAMMES, routeProgramme } from "../../../lib/odeb";
 import { thematiquesParId } from "../../../lib/odeb-chiffres";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Les six programmes du projet ODEB LONODJI",
@@ -72,6 +73,7 @@ export default function Programmes() {
       </section>
 
       <OdebEtat />
+      <Partager route="/odeb/programmes" titre="Les six programmes du projet ODEB LONODJI" texte="Mémoire et Patrimoine, Recherche, Développement territorial, Jeunesse et Innovation, Diaspora, Économie sociale et revenus : six programmes, leurs axes, les thématiques et coordonnateurs qui les portent." />
     </main>
   );
 }

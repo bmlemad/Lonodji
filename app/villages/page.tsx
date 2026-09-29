@@ -4,6 +4,7 @@ import { PageHeader, SectionHead, Stats } from "../../components/blocks";
 import VillagesRecherche, { type EntreeVillage } from "../../components/villages-recherche";
 import { ogFor } from "../../lib/content";
 import { getVillages, GROUPES, km, nf, ORDRE_GROUPES, TYPES } from "../../lib/villages";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Les villages du pays bedjond : une fiche par localité",
@@ -53,6 +54,19 @@ export default function Villages() {
         </div>
       </section>
 
+      <section className="hub-section" id="affiches">
+        <SectionHead eyebrow="Sur papier" title="Quinze affiches" em="à imprimer et à accrocher." text="Pour les chefs de canton et de village, les relais, les écoles, les centres de santé, les lieux de culte : une affiche A4 par unité, avec un code QR vers ses villages et l’adresse en toutes lettres, et une affiche générale. Chaque fiche de village s’imprime aussi telle quelle, avec ses six questions à remplir à la main." />
+        <div className="vl-affiches">
+          <a className="vl-affiche vl-affiche--generale" href="/carte/affiches/affiche-villages.pdf">
+            <img src="/carte/affiches/affiche-villages.jpg" alt="Aperçu de l’affiche générale « Retrouvez votre village »" width="397" height="562" loading="lazy" />
+            <span><small>Affiche générale · A4 · PDF</small><strong>Retrouvez votre village</strong><em>{nf.format(d.villages.length)} localités, {Object.keys(d.unites).length} unités, une fiche par village</em></span>
+          </a>
+          <ul className="vl-affiches-liste">
+            {unites.map((u) => <li key={u.id}><a href={`/carte/affiches/affiche-${u.id}.pdf`}><small>{GROUPES[u.groupe]}</small><strong>{u.nom}</strong><span>{nf.format(u.comptes.nommes)} localités nommées · PDF A4</span></a></li>)}
+          </ul>
+        </div>
+      </section>
+
       <section className="hub-section" id="methode">
         <SectionHead eyebrow="D’où viennent ces fiches" title="Des données ouvertes," em="et de vous." />
         <div className="detail-grid">
@@ -60,6 +74,7 @@ export default function Villages() {
           <article><h3>Ce que la fiche attend</h3><p>L’eau, l’école, la santé, le réseau, l’histoire du nom, les lieux sacrés, le nombre d’habitants : chaque manque renvoie au formulaire qui permet de le combler, et ce qui est reçu et vérifié paraît sur la fiche, daté et sourcé.</p></article>
           <article><h3>Votre village manque ?</h3><p>Il n’est pas dans les données ouvertes, ou son nom y est écrit autrement. Ajoutez-le ou corrigez-le sur OpenStreetMap — un compte gratuit suffit — ou <Link href="/participer#contact">écrivez-nous</Link> : il apparaîtra à la mise à jour suivante.</p></article>
         </div>
+        <Partager route="/villages" titre="Les villages du pays bedjond" texte="Retrouvez votre village : 966 localités du pays bedjond, chacune avec ce que les données ouvertes en savent, ce que le site en dit et ce qui reste à documenter." />
         <p className="lg-footnote">Fiches générées par <code>scripts/build-villages.py</code> à partir des données de la carte ({d.sources.localites}). Une erreur de nom ou de position ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
       </section>
     </main>

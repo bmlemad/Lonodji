@@ -3,6 +3,7 @@ import Script from "next/script";
 import AppShell from "../components/app-shell";
 import NavTools from "../components/nav-tools";
 import Palette from "../components/palette";
+import { FeuillePartage } from "../components/partager";
 import SectionRail from "../components/section-rail";
 import SiteFooter from "../components/site-footer";
 import SiteNav from "../components/site-nav";
@@ -66,6 +67,7 @@ export default function RootLayout({
         <SiteFooter miseAJour={miseAJour} />
         <NavTools />
         <Palette />
+        <FeuillePartage />
         <SectionRail />
         <AppShell />
         <Script id="structured-data" type="application/ld+json" strategy="afterInteractive">

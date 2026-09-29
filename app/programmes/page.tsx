@@ -4,6 +4,7 @@ import { PageHeader, SectionHead, Stats, ThematiqueRow } from "../../components/
 import { LegacySections } from "../../components/legacy-content";
 import LegacyEnhance from "../../components/legacy-enhance";
 import { directionsCount, enLettres, filledCount, getIndex, getPage, ogFor, pickSections, thematiqueCount } from "../../lib/content";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Nos actions — quatre pôles, dix-neuf thématiques",
@@ -97,6 +98,7 @@ export default function Programmes() {
         </div>
         <LegacyEnhance hasForms={page.forms.length > 0} />
       </section>
+      <Partager route="/programmes" titre="Nos actions" texte="Quatre pôles, dix-neuf thématiques et deux cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés." />
     </main>
   );
 }

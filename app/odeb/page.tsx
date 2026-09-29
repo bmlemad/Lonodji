@@ -6,6 +6,7 @@ import OdebNav, { OdebEtat } from "../../components/odeb-nav";
 import { enLettres, ogFor } from "../../lib/content";
 import { MISSIONS, ODEB, PROGRAMMES, REPERES_2030, routeProgramme } from "../../lib/odeb";
 import { chiffresOdeb, thematiquesParId } from "../../lib/odeb-chiffres";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Projet ODEB LONODJI — Vision 2030",
@@ -110,6 +111,7 @@ export default function Odeb() {
       </section>
 
       <OdebEtat />
+      <Partager route="/odeb" titre="Projet ODEB LONODJI" texte="L’ODEB LONODJI, Organisation pour le Développement et l’Émergence Bedjonde : un projet porté par ADEB LONODJI pour doter le pays bedjond d’un outil permanent, à l’horizon 2030." />
       <p className="lg-footnote">Sources : « Projet ODEB LONODJI — Vision 2030 » (formulation institutionnelle, missions, programmes, {ODEB.presenteLabel}) ; plan d’action stratégique 2026-2028 ; « ADEB LONODJI 2030 — de site associatif à infrastructure numérique du peuple bedjond » ; recommandations stratégiques pour lonodji.org, vision 2027-2030 ; feuille de route en trois phases énoncée par l’association le {ODEB.presenteLabel} ; <Link href={ODEB.article}>article du journal</Link> annonçant le lancement de la réflexion pour les quarante ans des fondations. Les chiffres de cette page sont ceux du site à sa mise en ligne.</p>
     </main>
   );

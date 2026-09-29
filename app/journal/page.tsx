@@ -3,6 +3,7 @@ import Link from "@/components/lien";
 import { PageHeader, SectionHead } from "../../components/blocks";
 import JournalList from "../../components/journal-list";
 import { getIndex, ogFor } from "../../lib/content";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Le journal",
@@ -32,6 +33,7 @@ export default function Journal() {
           <Link href="/participer#newsletter"><small>S’abonner</small><strong>Recevoir les actualités</strong><span>Une adresse e-mail suffit ; désinscription à tout moment.</span></Link>
         </div>
       </section>
+      <Partager route="/journal" titre="Le journal" texte="Articles, annonces, plaidoyers et lettre d’information : la vie de l’association, la mémoire bedjond et les dossiers de développement du Mandoul Occidental." />
     </main>
   );
 }

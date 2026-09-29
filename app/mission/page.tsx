@@ -3,6 +3,7 @@ import Link from "@/components/lien";
 import { PageHeader, SectionHead, Timeline } from "../../components/blocks";
 import { LegacySections, Toc } from "../../components/legacy-content";
 import { getIndex, getPage, ogFor, ORG } from "../../lib/content";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Notre mission",
@@ -57,6 +58,7 @@ export default function Mission() {
           <LegacySections sections={page.sections} />
         </div>
       </section>
+      <Partager route="/mission" titre="Notre mission" texte="L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : mission, valeurs, repères depuis 1986, bureau exécutif et organisation." />
     </main>
   );
 }

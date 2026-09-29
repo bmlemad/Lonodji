@@ -5,6 +5,7 @@ import { OdebHero } from "../../../components/odeb-marque";
 import OdebNav, { OdebEtat } from "../../../components/odeb-nav";
 import { ogFor } from "../../../lib/content";
 import { IDENTITE, ODEB } from "../../../lib/odeb";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Identité visuelle : le logo « Les Pas vers l’Avenir », adopté le 28 septembre 2026",
@@ -132,6 +133,7 @@ export default function Identite() {
       </section>
 
       <OdebEtat />
+      <Partager route="/odeb/identite" titre="Identité visuelle" texte="Trois empreintes — les ancêtres, la génération actuelle, les générations futures — qui avancent vers un soleil levant : le logo d’ADEB LONODJI et de son projet ODEB LONODJI, ses versions, ses couleurs, ses règles d’usage, le kit à télécharger et les papiers à en-tête." />
       <p className="lg-footnote">Identité « {IDENTITE.nom} » dessinée le {IDENTITE.retenueLabel} pour le projet {ODEB.sigle} et adoptée le même jour par ADEB LONODJI comme son logo, pour l’association et pour le projet qu’elle porte. Le logo appartient à l’association. Usage libre pour parler de l’association ou du projet, à condition de ne pas le modifier ; toute autre utilisation, <Link href="/participer#contact">écrivez-nous</Link>. Dessins et scripts de génération : <code>design/odeb/</code> et <code>scripts/build-identite-odeb.py</code> dans le dépôt du site.</p>
     </main>
   );

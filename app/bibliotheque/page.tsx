@@ -6,6 +6,7 @@ import { PageHeader, SectionHead, Stats } from "../../components/blocks";
 import DepotForm from "../../components/depot-form";
 import { ogFor, ORG } from "../../lib/content";
 import { getIndicateurs } from "../../lib/indicateurs";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Bibliothèque numérique bedjond",
@@ -119,6 +120,8 @@ export default function Bibliotheque() {
           <DepotForm telephone={ORG.phone} whatsapp={ORG.whatsapp} />
         </div>
       </section>
+
+      <Partager route="/bibliotheque" titre="Bibliothèque numérique bedjond" texte="Thèses, articles, ouvrages, rapports, archives et publications d’ADEB LONODJI sur le pays bedjond, les Sara et le nangnda ; les chercheurs ; dépôt de document." />
 
       <p className="lg-footnote">La base de recherche est coordonnée par Sylvain Nomaye (thématique Recherche &amp; savoirs, programme Bedjond Digital Heritage) ; chaque référence y a sa fiche avec sa citation. Cette bibliothèque en est le classement par rubrique, régénéré par <code>scripts/build-bibliotheque.py</code> à chaque mise en ligne. Une référence fausse, une attribution douteuse ? <Link href="/transparence#corrections">Signalez-la</Link>. Voir aussi <Link href="/langue">la langue nangnda</Link> et <Link href="/temoignages">la collecte des témoignages</Link>.</p>
     </main>

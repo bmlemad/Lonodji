@@ -5,6 +5,7 @@ import { ogFor } from "../../lib/content";
 import { getObservatoire } from "../../lib/observatoire";
 import { thematiquesParId } from "../../lib/odeb-chiffres";
 import { GROUPES, km } from "../../lib/villages";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Observatoire du Mandoul Occidental : le territoire, unité par unité",
@@ -156,6 +157,7 @@ export default function Observatoire() {
           <Link href="/dossiers/enquetes"><small>Diagnostic</small><strong>Mener une des huit enquêtes de terrain</strong><span>Les onze problématiques inconnues ont chacune leur détenteur de réponse, leur méthode et leur fiche de relevé.</span></Link>
           <Link href="/actions#mesure-debit"><small>Connectivité</small><strong>Mesurer le débit internet chez soi</strong><span>Une mesure datée et située, pour le plaidoyer haut débit.</span></Link>
         </div>
+        <Partager route="/observatoire" titre="Observatoire du Mandoul Occidental" texte="Localités, équipements connus, couverture, diagnostic par domaine, plaidoyers et besoins signalés : les chiffres du pays bedjond par unité, datés et sourcés, et ce que l’observatoire ne sait pas encore." />
         <p className="lg-footnote">Observatoire ouvert le 28 septembre 2026, première version, au titre de la phase 3 de la <Link href="/odeb/feuille-de-route#phase-3">feuille de route 2026-2030</Link> et de l’axe « Observatoire » du <Link href="/odeb/programmes/developpement-territorial">programme Développement territorial</Link>. Données : <code>scripts/build-observatoire.py</code> (carte du {date(o.sources.carte)}, fiches du {date(o.sources.villages)}, relevé des formulaires du {date(o.sources.releve)}). Une erreur ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
       </section>
     </main>

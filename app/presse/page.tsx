@@ -4,6 +4,7 @@ import { PageHeader, SectionHead, Stats } from "../../components/blocks";
 import { enLettres, filledCount, getIndex, ogFor, ORG, thematiqueCount } from "../../lib/content";
 import { getIndicateurs } from "../../lib/indicateurs";
 import { IDENTITE, ODEB } from "../../lib/odeb";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Espace presse : l’association en bref, chiffres, logos, contacts",
@@ -197,6 +198,7 @@ export default function Presse() {
             <a className="text-link" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>
           </div>
         </div>
+        <Partager route="/presse" titre="Espace presse" texte="Pour les journalistes et les partenaires : ADEB LONODJI en cinq lignes, les chiffres datés, les dates, le bureau, les communiqués, les logos et visuels, le dossier de présentation, et à qui écrire." />
         <p className="lg-footnote">Espace ouvert le 28 septembre 2026 pour accompagner le lancement de la réflexion ODEB LONODJI. Les chiffres sont ceux du site à sa mise en ligne (<Link href="/impact">tableau de bord</Link>) ; le logo et ses règles sont dans l’<Link href="/odeb/identite">identité visuelle</Link>, l’ancien logo dans l’<Link href="/dossiers/identite-visuelle">identité précédente</Link>.</p>
       </section>
     </main>

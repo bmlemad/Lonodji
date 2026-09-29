@@ -1104,3 +1104,93 @@ body.palette-open{ overflow:hidden; }
 html.nav-pending::before{content:"";position:fixed;top:0;left:0;width:30%;height:3px;z-index:10000;background:var(--accent);border-radius:0 3px 3px 0;pointer-events:none;animation:nav-attente .9s ease-in-out infinite}
 @keyframes nav-attente{0%{transform:translateX(-100%)}100%{transform:translateX(340%)}}
 @media (prefers-reduced-motion: reduce){html.nav-pending::before{animation:none;width:100%;opacity:.55}}
+
+/* ---- Partager (bloc de page, feuille de l'en-tête) ---- */
+.partage{ margin:44px 0 0; padding:22px 24px 20px; border:1px solid var(--carte-bord); border-radius:22px; background:var(--carte-fond); box-shadow:var(--carte-ombre); }
+.partage-tete{ display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 16px; margin-bottom:14px; }
+.partage-tete .eyebrow{ margin:0; }
+.partage-tete strong{ font-size:16px; letter-spacing:-.01em; color:var(--ink); }
+.partage-boutons{ display:flex; flex-wrap:wrap; gap:8px; }
+.partage-btn{ display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:9px 14px; border:1px solid var(--carte-bord); border-radius:999px; background:#fff; color:var(--deep); font:600 12.5px/1.1 var(--font-dm),system-ui,sans-serif; cursor:pointer; text-decoration:none; transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+.partage-btn svg{ width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; flex:none; }
+.partage-btn:hover, .partage-btn:focus-visible{ transform:translateY(-1px); box-shadow:0 8px 22px -10px rgba(23,59,45,.45); background:#fbfcf9; }
+.partage-btn--wa{ background:var(--deep); border-color:var(--deep); color:#fff; }
+.partage-btn--wa:hover, .partage-btn--wa:focus-visible{ background:#1d4a38; }
+.partage-btn--wa svg{ stroke:var(--accent); }
+.partage-btn.is-fait{ background:rgba(182,207,69,.28); border-color:rgba(182,207,69,.7); }
+.partage-message{ flex-basis:100%; margin-top:6px; }
+.partage-message summary{ cursor:pointer; font:600 12.5px/1.4 var(--font-dm),system-ui,sans-serif; color:var(--muted); padding:6px 0; list-style:none; display:inline-flex; align-items:center; gap:8px; }
+.partage-message summary::-webkit-details-marker{ display:none; }
+.partage-message summary::before{ content:""; width:7px; height:7px; border-right:1.8px solid currentColor; border-bottom:1.8px solid currentColor; transform:rotate(-45deg); transition:transform .15s ease; }
+.partage-message[open] summary::before{ transform:rotate(45deg); }
+.partage-aide{ margin:6px 0 10px; font-size:13px; color:var(--muted); }
+.partage-message textarea{ display:block; width:100%; margin:0 0 10px; padding:12px 14px; border:1px solid var(--carte-bord); border-radius:14px; background:#fbfcf9; color:var(--ink); font:14px/1.5 var(--font-dm),system-ui,sans-serif; resize:vertical; }
+.partage-boutons--compact .partage-btn{ min-height:36px; padding:7px 12px; }
+.nav-share{ display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:12px; border:1px solid var(--line); background:rgba(255,255,255,.72); color:var(--ink); flex:none; cursor:pointer; padding:0; }
+.nav-share:hover{ background:rgba(23,59,45,.07); }
+.nav-share svg{ width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+@media (max-width:800px){ .nav-share{ width:34px; height:34px; order:2; } }
+@media (max-width:320px){ .nav-share{ display:none; } }
+.feuille{ position:fixed; inset:0; z-index:70; display:grid; place-items:end center; }
+.feuille-fond{ position:absolute; inset:0; background:rgba(16,36,30,.42); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); }
+.feuille-boite{ position:relative; width:min(560px,100%); max-height:88vh; overflow:auto; padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px)); border:1px solid rgba(255,255,255,.8); border-radius:26px 26px 0 0; background:rgba(250,251,248,.96); -webkit-backdrop-filter:blur(22px) saturate(140%); backdrop-filter:blur(22px) saturate(140%); box-shadow:0 -20px 60px rgba(23,59,45,.25); animation:feuille-monte .22s ease-out; }
+@keyframes feuille-monte{ from{ transform:translateY(24px); opacity:0; } to{ transform:none; opacity:1; } }
+@media (min-width:801px){ .feuille{ place-items:center; } .feuille-boite{ border-radius:26px; } }
+@media (prefers-reduced-motion: reduce){ .feuille-boite{ animation:none; } }
+.feuille-tete{ display:flex; align-items:flex-start; justify-content:space-between; gap:14px; margin-bottom:16px; }
+.feuille-tete .eyebrow{ margin:0 0 6px; }
+.feuille-tete strong{ display:block; font-size:17px; line-height:1.25; letter-spacing:-.015em; }
+.feuille-tete small{ display:block; margin-top:4px; font-size:12px; color:var(--muted); word-break:break-all; }
+.feuille-fermer{ flex:none; display:grid; place-items:center; width:38px; height:38px; border:1px solid var(--carte-bord); border-radius:12px; background:#fff; color:var(--ink); cursor:pointer; padding:0; }
+.feuille-fermer svg{ width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; }
+body.feuille-open .tabbar{ display:none; }
+@media print{ .partage, .feuille, .nav-share{ display:none !important; } }
+
+/* ---- Fiche village imprimable : code QR, adresse, impression ---- */
+.vl-imprimer{ display:grid; grid-template-columns:132px 1fr; gap:22px; align-items:center; margin:44px 0 0; padding:22px 24px; border:1px solid var(--carte-bord); border-radius:22px; background:var(--carte-fond); box-shadow:var(--carte-ombre); }
+.vl-qr{ width:132px; height:132px; padding:10px; border:1px solid var(--carte-bord); border-radius:16px; background:#fff; }
+.vl-qr svg{ display:block; width:100%; height:100%; }
+.vl-imprimer-texte .eyebrow{ margin:0 0 6px; }
+.vl-imprimer-texte strong{ display:block; font-size:18px; letter-spacing:-.015em; margin-bottom:8px; }
+.vl-imprimer-texte p{ margin:0 0 14px; font-size:14px; line-height:1.6; color:var(--muted); }
+.vl-adresse{ font-family:ui-monospace,Menlo,Consolas,monospace; font-size:13px; color:var(--deep); word-break:break-all; }
+.vl-imprimer-actions{ display:flex; flex-wrap:wrap; gap:10px; }
+.vl-imprimer-actions .button{ gap:10px; padding:12px 16px; }
+.vl-imprimer-actions .button span{ font-size:10px; letter-spacing:.12em; color:var(--muted); }
+@media (max-width:640px){ .vl-imprimer{ grid-template-columns:1fr; justify-items:start; } }
+
+@media print{
+  .vl-fiche{ padding:0 !important; background:#fff !important; }
+  .vl-fiche::before{ content:"ADEB LONODJI · lonodji.org · fiche de village"; display:block; font:700 8.5pt/1 var(--font-dm),system-ui,sans-serif; letter-spacing:.16em; text-transform:uppercase; color:#526159; margin:0 0 7mm; padding-bottom:3mm; border-bottom:1px solid #d5ddd6; }
+  .vl-fiche .section-actions, .vl-fiche .vl-actions, .vl-imprimer-actions, .vl-fiche .lg-crumbs, .vl-fiche .status-list{ display:none !important; }
+  .vl-fiche h1{ font-size:26pt; }
+  .vl-fiche .hub-section{ margin-top:8mm; padding-top:5mm; }
+  .vl-fiche .stat-tile, .vl-fiche .vl-questions article, .vl-fiche .link-list a, .vl-fiche .vl-voisins li{ break-inside:avoid; box-shadow:none; background:#fff; border-color:#d5ddd6; }
+  .vl-fiche .vl-questions{ grid-template-columns:1fr 1fr; gap:4mm; }
+  .vl-fiche .vl-questions article{ min-height:38mm; background:repeating-linear-gradient(to bottom, transparent 0 7.5mm, #cfd8d0 7.5mm calc(7.5mm + 1px)) 0 22mm / 100% calc(100% - 22mm) no-repeat; }
+  .vl-fiche .vl-questions h3{ font-size:12pt; }
+  .vl-fiche .vl-questions p{ font-size:9.5pt; }
+  .vl-imprimer{ grid-template-columns:34mm 1fr; box-shadow:none; border-color:#d5ddd6; break-inside:avoid; margin-top:8mm; }
+  .vl-qr{ width:34mm; height:34mm; padding:2mm; border-color:#d5ddd6; border-radius:3mm; }
+  .vl-imprimer-texte p{ font-size:10pt; color:#10241e; }
+  .vl-adresse{ font-size:11pt; }
+  .vl-fiche .lg-footnote{ font-size:8.5pt; margin-top:8mm; }
+}
+
+/* ---- Affiches à imprimer (hub des villages, pages d'unité) ---- */
+.vl-affiches{ display:grid; grid-template-columns:minmax(220px,300px) 1fr; gap:18px; align-items:start; }
+.vl-affiche{ display:grid; gap:12px; padding:14px; border:1px solid var(--carte-bord); border-radius:22px; background:var(--carte-fond); box-shadow:var(--carte-ombre); transition:transform .2s ease, box-shadow .2s ease; }
+.vl-affiche:hover{ transform:translateY(-2px); box-shadow:var(--carte-ombre-survol); }
+.vl-affiche img{ display:block; width:100%; height:auto; border:1px solid var(--carte-bord); border-radius:12px; }
+.vl-affiche span{ display:grid; gap:4px; padding:0 4px 4px; }
+.vl-affiche small{ font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:700; }
+.vl-affiche strong{ font-size:19px; letter-spacing:-.02em; }
+.vl-affiche em{ font-style:normal; font-size:13px; color:var(--muted); }
+.vl-affiches-liste{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:10px; }
+.vl-affiches-liste a{ display:grid; gap:3px; min-height:100%; padding:14px 16px; border:1px solid var(--carte-bord); border-radius:16px; background:var(--carte-fond); box-shadow:var(--carte-ombre); transition:transform .2s ease, box-shadow .2s ease; }
+.vl-affiches-liste a:hover{ transform:translateY(-2px); box-shadow:var(--carte-ombre-survol); }
+.vl-affiches-liste small{ font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:700; }
+.vl-affiches-liste strong{ font-size:17px; letter-spacing:-.015em; }
+.vl-affiches-liste span{ font-size:12.5px; color:var(--muted); }
+.vl-affiche-mini{ display:block; width:120px; height:auto; border:1px solid var(--carte-bord); border-radius:12px; align-self:start; }
+@media (max-width:760px){ .vl-affiches{ grid-template-columns:1fr; } .vl-affiche{ grid-template-columns:120px 1fr; align-items:center; } }

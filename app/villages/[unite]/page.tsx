@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { PageHeader, SectionHead, Stats } from "../../../components/blocks";
 import { ogFor } from "../../../lib/content";
 import { getVillages, GROUPES, km, nf, routeVillage, TYPES, villagesDe } from "../../../lib/villages";
+import Partager from "@/components/partager";
 
 export const dynamicParams = false;
 
@@ -78,6 +79,21 @@ export default async function Unite({ params }: { params: Promise<{ unite: strin
           </div>
         </section>
       ) : null}
+
+      <aside className="vl-imprimer" aria-label="Affiche à imprimer">
+        <img className="vl-affiche-mini" src="/carte/affiches/affiche-villages.jpg" alt="" width="120" height="170" loading="lazy" />
+        <div className="vl-imprimer-texte">
+          <span className="eyebrow">Sur papier</span>
+          <strong>L’affiche de {u.nom}, à accrocher au village.</strong>
+          <p>Un A4 avec le code QR vers les villages de {u.nom}, l’adresse en toutes lettres et les trois façons d’écrire à l’association — pour les chefs, les relais, les écoles, les centres de santé.</p>
+          <div className="vl-imprimer-actions">
+            <a className="button secondary" href={`/carte/affiches/affiche-${unite}.pdf`}>Affiche de {u.nom} <span aria-hidden="true">PDF A4</span></a>
+            <Link className="text-link" href="/villages#affiches">Les quinze affiches <span aria-hidden="true">→</span></Link>
+          </div>
+        </div>
+      </aside>
+
+      <Partager route={`/villages/${unite}`} titre={u.nom} texte={`les villages de ${u.nom} sur le site de l’association ADEB LONODJI : chaque localité a sa fiche`} />
 
       <p className="lg-footnote">Contour : GADM 4.1 ({u.dep}). {u.approx ? "Position du chef-lieu approchée. " : ""}{u.origine ? `Repère : ${u.origine}. ` : ""}Localités et équipements : OpenStreetMap (exports humanitaires HOT), données du {new Date(d.genere).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}. Un village manque ou est mal nommé ? Corrigez-le sur OpenStreetMap ou <Link href="/participer#contact">écrivez-nous</Link>.</p>
     </main>

@@ -5,6 +5,7 @@ import OdebNav from "../../../components/odeb-nav";
 import { enLettres, ogFor, ORG } from "../../../lib/content";
 import { feuilleDeRoute, MISSIONS, ODEB, PROGRAMMES, REPERES_2030, routeProgramme } from "../../../lib/odeb";
 import { chiffresOdeb, thematiquesParId } from "../../../lib/odeb-chiffres";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Livre blanc du projet ODEB LONODJI (version de travail)",
@@ -165,6 +166,7 @@ export default function LivreBlanc() {
           </section>
         </article>
       </div>
+      <Partager route="/odeb/livre-blanc" titre="Livre blanc du projet ODEB LONODJI (version de travail)" texte="Le document fondateur de l’ODEB LONODJI : d’où nous partons, pourquoi une organisation, la vision 2030, six missions, six programmes, principes, ressources et feuille de route." />
     </main>
   );
 }

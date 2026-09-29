@@ -4,6 +4,7 @@ import { PageHeader, PlaidoyerCard, SectionHead } from "../../components/blocks"
 import { LegacySections } from "../../components/legacy-content";
 import LegacyEnhance from "../../components/legacy-enhance";
 import { getIndex, getPage, ogFor, pickSections } from "../../lib/content";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Plaidoyers, engagements et dossiers",
@@ -64,6 +65,7 @@ export default function Actions() {
           {dossiers.map((d) => <Link key={d.href} href={d.href}><strong>{d.label}</strong><span>{d.note}</span></Link>)}
         </div>
       </section>
+      <Partager route="/actions" titre="Plaidoyers, engagements et dossiers" texte="Sept plaidoyers et une note à la commune de Bédjondo — eau, électricité, internet, routes, santé, école, formation — avec destinataires, suivi et engagements." />
     </main>
   );
 }

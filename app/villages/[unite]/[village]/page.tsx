@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 import { PageHeader, SectionHead, Stats } from "../../../../components/blocks";
 import { ogFor } from "../../../../lib/content";
 import { FAMILLES, ficheVillage, getVillages, GROUPES, km, nf, routeVillage, TYPES } from "../../../../lib/villages";
+import Partager from "@/components/partager";
+import BoutonImprimer from "@/components/imprimer";
+import { qrSvg } from "@/lib/qr";
 
 export const dynamicParams = false;
 
@@ -52,6 +55,8 @@ export default async function Village({ params }: { params: Promise<{ unite: str
   const osm = `https://www.openstreetmap.org/?mlat=${v.lat}&mlon=${v.lon}#map=15/${v.lat}/${v.lon}`;
   const editerOsm = `https://www.openstreetmap.org/edit#map=17/${v.lat}/${v.lon}`;
   const genere = new Date(d.genere).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+  const adresse = `lonodji.org${routeVillage(v)}`;
+  const qr = await qrSvg(`https://${adresse}`);
   return (
     <main id="main-content" className="hub-page vl-page vl-fiche">
       <PageHeader
@@ -134,6 +139,21 @@ export default async function Village({ params }: { params: Promise<{ unite: str
           </div>
         </section>
       ) : null}
+
+      <aside className="vl-imprimer" aria-label="Fiche imprimable">
+        <div className="vl-qr" dangerouslySetInnerHTML={{ __html: qr }} />
+        <div className="vl-imprimer-texte">
+          <span className="eyebrow">Fiche imprimable</span>
+          <strong>Imprimez cette fiche, affichez-la au village.</strong>
+          <p>Le code QR ouvre cette page sur un téléphone ; l’adresse est écrite en toutes lettres pour ceux qui n’en ont pas : <b className="vl-adresse">{adresse}</b>. Les six questions se remplissent aussi à la main, sur papier.</p>
+          <div className="vl-imprimer-actions">
+            <BoutonImprimer label="Imprimer la fiche" />
+            <a className="button secondary" href={`/carte/affiches/affiche-${unite}.pdf`}>Affiche de {u.nom} <span aria-hidden="true">PDF</span></a>
+          </div>
+        </div>
+      </aside>
+
+      <Partager route={routeVillage(v)} titre={`${v.nom} (${u.nom})`} texte={`fiche de ${type.toLowerCase() === "localité" ? "la localité" : "ce " + type.toLowerCase()} sur le site de l’association ADEB LONODJI : ce que l’on sait, ce qu’il reste à documenter`} />
 
       <p className="lg-footnote">Nom et position : OpenStreetMap (export humanitaire HOT, données du {genere}) ; rattachement à {u.nom} : contours GADM 4.1. Un nom mal écrit, une position fausse ? Corrigez-la sur OpenStreetMap ou <Link href="/transparence#corrections">signalez-la</Link> : elle sera corrigée et datée. Fiche générée par <code>scripts/build-villages.py</code>.</p>
     </main>

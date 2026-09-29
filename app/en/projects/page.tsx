@@ -3,6 +3,7 @@ import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "../../../components/blocks";
 import { ogFor } from "../../../lib/content";
 import { getProjets, STADES_ACTIFS, stadeIndex } from "../../../lib/projets";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Projects — each one with its stage, what is missing and how to help (in English)",
@@ -85,6 +86,7 @@ export default function ProjectsEn() {
           <Link href="/projets#proposer" hrefLang="fr"><small>Propose</small><strong>Propose a project or an income-generating activity</strong><span>Name, locality, need, proposal, order of cost; the association answers within 48 working hours.</span></Link>
           <Link href="/en/odeb"><small>ODEB project</small><strong>The Social economy and revenue programme</strong><span>Businesses distinct from the association whose profits would fund the projects: five rules, four flagship ventures, ten more activities to study.</span></Link>
         </div>
+        <Partager route="/en/projects" titre="Projects" texte="The association’s projects, from idea to service: community digital space, mobile app, sports complex, transport company, hotel, boarding school, university hospital. Stage, what exists, what is missing, how to contribute." lang="en" />
         <p className="lg-footnote">Stages and counts as of {p.genere.slice(0, 10)}, read from the same file as the French page (<Link href="/projets" hrefLang="fr">Plateforme de projets</Link>) and the <Link href="/en/impact">dashboard</Link>. Proposals are recorded by our host’s form service; see <Link href="/mentions-legales#donnees" hrefLang="fr">where your answers go</Link>.</p>
       </section>
     </main>

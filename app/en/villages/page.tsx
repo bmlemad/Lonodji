@@ -3,6 +3,7 @@ import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "../../../components/blocks";
 import { ogFor } from "../../../lib/content";
 import { getVillages } from "../../../lib/villages";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Find your village — the Bedjond country, unit by unit (in English)",
@@ -59,6 +60,7 @@ export default function VillagesEn() {
           <Link href="/dossiers/besoins" hrefLang="fr"><small>Report</small><strong>Report a need, locality by locality</strong><span>Water, school, health post, road: the form takes the name of the place, the kind of need and its urgency.</span></Link>
           <Link href="/en/contact"><small>Write to us</small><strong>Correct a name, a position, a boundary</strong><span>Every correction is published and dated in the corrections log.</span></Link>
         </div>
+        <Partager route="/en/villages" titre="Find your village" texte="Fourteen units of the Mandoul Occidental and around it, 966 named localities, one page per village: what open data knows, what the site says, what is still to document." lang="en" />
         <p className="lg-footnote">Counts as of {v.genere.slice(0, 10)}; boundaries from GADM 4.1, localities from OpenStreetMap and GeoNames, all approximate. Sacred sites and graves are never shown on the map: the association keeps that register with the chiefs. French page: <Link href="/villages" hrefLang="fr">Les villages</Link>.</p>
       </section>
     </main>

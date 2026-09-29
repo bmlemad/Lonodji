@@ -1,4 +1,5 @@
 import Link from "@/components/lien";
+import Partager from "@/components/partager";
 import type { LegacyPage, Section } from "../lib/content";
 import LegacyEnhance from "./legacy-enhance";
 
@@ -84,6 +85,7 @@ export function LegacyDocument({ page, children, eyebrowPrefix }: { page: Legacy
         <LegacySections sections={page.sections} />
       </div>
       <LegacyEnhance hasMap={page.hasMap} hasForms={page.forms.length > 0} scripts={page.scripts} />
+      <Partager route={page.route} titre={page.title.replace(/\s+/g, " ")} texte={page.description} lang={page.lang === "en" ? "en" : "fr"} />
       <p className="lg-footnote">Page reprise de la première version du site (septembre 2026) et maintenue à jour ici. Une erreur de fait ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
     </main>
   );

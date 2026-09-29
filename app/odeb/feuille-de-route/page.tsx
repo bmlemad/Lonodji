@@ -6,6 +6,7 @@ import OdebNav, { OdebEtat } from "../../../components/odeb-nav";
 import { ogFor } from "../../../lib/content";
 import { ETATS, feuilleDeRoute, ODEB, type Etat } from "../../../lib/odeb";
 import { chiffresOdeb } from "../../../lib/odeb-chiffres";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Feuille de route 2026-2030 du projet ODEB LONODJI",
@@ -71,6 +72,7 @@ export default function FeuilleDeRoute() {
           <article><h3>En cours</h3><p>Le chantier est commencé et une partie se voit déjà ; le reste dépend d’une étape nommée — une signature, une nomination, un compte à ouvrir.</p></article>
           <article><h3>À venir, à décider</h3><p>« À venir » : prévu par la feuille de route, pas commencé. « À décider » : le chantier attend une décision de l’association que le site ne peut ni prendre ni anticiper.</p></article>
         </div>
+        <Partager route="/odeb/feuille-de-route" titre="Feuille de route 2026-2030 du projet ODEB LONODJI" texte="Trois phases, de la relance de 2026 à l’organisation de référence de 2030 : ce qui est réalisé, en cours, à venir ou à décider, chantier par chantier, avec l’état réel du site." />
         <p className="lg-footnote">Phases et contenu : feuille de route énoncée par l’association le {ODEB.presenteLabel} (phase 1 : tableau de bord dynamique, cartographie communautaire, espace membre ; phase 2 : registre des compétences de la diaspora, plateforme de projets, bibliothèque numérique bedjond ; phase 3 : observatoire du Mandoul Occidental, patrimoine vivant multimédia, académie numérique, application mobile) ; plan d’action 2026-2028 ; recommandations 2027-2030. Les dates sont comptées depuis cette présentation. L’état des chantiers est celui du site à sa mise en ligne ; le <Link href="/impact">tableau de bord</Link> en donne les chiffres.</p>
       </section>
 

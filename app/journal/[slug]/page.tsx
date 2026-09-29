@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/components/lien";
+import Partager from "@/components/partager";
 import { notFound } from "next/navigation";
 import { ArticleCard } from "../../../components/blocks";
 import { LegacySections, Resume, splitTitle } from "../../../components/legacy-content";
@@ -63,11 +64,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <Resume items={a.resume} />
         <LegacySections sections={a.sections} />
       </div>
-      <div className="article-share" aria-label="Partager cet article">
-        <a className="button secondary" href={`https://wa.me/?text=${encodeURIComponent(a.title + " — " + url)}`} target="_blank" rel="noopener noreferrer">Partager sur WhatsApp</a>
-        <a className="button secondary" href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`} target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a className="button secondary" href={`mailto:?subject=${encodeURIComponent(a.title)}&body=${encodeURIComponent(url)}`}>Par e-mail</a>
-      </div>
+      <Partager route={`/journal/${slug}`} titre={a.title} texte={a.description || a.summary} />
       <nav className="article-nav" aria-label="Autres articles">
         {newer ? <Link href={newer.route}><small>Article suivant</small>{newer.title}</Link> : null}
         {older ? <Link href={older.route}><small>Article précédent</small>{older.title}</Link> : null}

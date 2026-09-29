@@ -4,6 +4,7 @@ import { PageHeader, SectionHead } from "../../components/blocks";
 import { LegacySections, Resume, Toc } from "../../components/legacy-content";
 import LegacyEnhance from "../../components/legacy-enhance";
 import { getPage, ogFor } from "../../lib/content";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Redevabilité, transparence et journal des corrections",
@@ -39,6 +40,7 @@ export default function Transparence() {
           <Link href="/dossiers/engagements"><small>Engagements</small><strong>Les douze promesses publiques</strong><span>Aucune n’est encore confirmée réalisée ; chacune est suivie.</span></Link>
         </div>
       </section>
+      <Partager route="/transparence" titre="Redevabilité, transparence et journal des corrections" texte="Réponse sous 48 heures, mécanisme de plainte, protection des enfants et des personnes vulnérables, charte d’écriture et journal daté des corrections." />
     </main>
   );
 }

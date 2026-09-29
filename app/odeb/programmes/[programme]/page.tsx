@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/components/lien";
+import Partager from "@/components/partager";
 import { notFound } from "next/navigation";
 import { SectionHead } from "../../../../components/blocks";
 import { OdebHero } from "../../../../components/odeb-marque";
@@ -135,6 +136,8 @@ export default async function ProgrammePage({ params }: { params: Promise<{ prog
           {p.contribuer.map((l) => <Link href={l.href} key={l.href + l.label}><small>Programme {p.numero}</small><strong>{l.label}</strong></Link>)}
         </div>
       </section>
+
+      <Partager route={routeProgramme(p)} titre={`Programme ${p.numero} · ${p.nom}`} texte={p.accroche} />
 
       <nav className="article-nav" aria-label="Autres programmes">
         <Link href={routeProgramme(prec)}><small>Programme précédent</small>{prec.numero} · {prec.nom}</Link>

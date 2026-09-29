@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader } from "../../components/blocks";
 import { getIndex, ogFor } from "../../lib/content";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Tous les dossiers",
@@ -34,6 +35,7 @@ export default function Dossiers() {
           </div>
         </section>
       ))}
+      <Partager route="/dossiers" titre="Tous les dossiers" texte="Les dossiers de fond d’ADEB LONODJI : diagnostic territorial, projets à l’étude, plans pour les personnes vulnérables, patrimoine, outils de terrain et cadre légal." />
     </main>
   );
 }

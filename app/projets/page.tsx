@@ -6,6 +6,7 @@ import { enLettres, ogFor, ORG } from "../../lib/content";
 import { getIndicateurs } from "../../lib/indicateurs";
 import { thematiquesParId } from "../../lib/odeb-chiffres";
 import { getProjets, STADES_ACTIFS, stadeIndex } from "../../lib/projets";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Plateforme de projets : chaque projet, son stade, ce qui manque",
@@ -136,6 +137,8 @@ export default function Projets() {
         </div>
         <LegacyEnhance hasForms />
       </section>
+
+      <Partager route="/projets" titre="Plateforme de projets" texte="Espace numérique, application, complexe sportif, Air Bedjondo : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer — et le formulaire pour en proposer un." />
 
       <p className="lg-footnote">Plateforme ouverte le 28 septembre 2026, au titre de la phase 2 de la <Link href="/odeb/feuille-de-route#phase-2">feuille de route 2026-2030</Link> et de l’axe « Investissements » du <Link href="/odeb/programmes/diaspora">programme Diaspora</Link> du projet ODEB LONODJI. Les projets sont décrits dans <code>content/projets.json</code> ; leur stade et leurs compteurs paraissent sur le <Link href="/impact">tableau de bord</Link>. Les propositions sont enregistrées par le service de formulaires de notre hébergeur (<Link href="/mentions-legales#donnees">où vont vos réponses</Link>).</p>
     </main>

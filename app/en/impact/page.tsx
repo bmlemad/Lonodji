@@ -3,6 +3,7 @@ import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "../../../components/blocks";
 import { ogFor } from "../../../lib/content";
 import { getIndicateurs } from "../../../lib/indicateurs";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Impact dashboard — six dated, sourced indicators (in English)",
@@ -57,6 +58,7 @@ export default function ImpactEn() {
           <article><h3>Forms</h3><p>Submissions are counted on the platform that receives them, after removing test entries; one person sending twice counts once. No personal data leaves the inbox. Method of the last reading: {f.methode}</p></article>
           <article><h3>What the board holds</h3><p>{i.bureau.note}</p></article>
         </div>
+        <Partager route="/en/impact" titre="Impact dashboard" texte="Members, coordinators, advocacy briefs, needs recorded and solved, active projects: six indicators, dated and sourced, plus what the site produces and receives. Zeros are published as zeros." lang="en" />
         <p className="lg-footnote">Same figures as the French dashboard (<Link href="/impact" hrefLang="fr">Tableau de bord d’impact</Link>), read from the same file at the same release. The four pole directions and the sixth ODEB programme are described in French on <Link href="/programmes" hrefLang="fr">Nos actions</Link> and <Link href="/en/odeb">the ODEB project in English</Link>.</p>
       </section>
     </main>

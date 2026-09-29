@@ -5,6 +5,7 @@ import { LegacySections } from "../../components/legacy-content";
 import TableauDeBord from "../../components/tableau-de-bord";
 import { getPage, ogFor } from "../../lib/content";
 import { getIndicateurs } from "../../lib/indicateurs";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Tableau de bord d’impact et suivi des actions",
@@ -38,6 +39,7 @@ export default function Impact() {
           <Link className="button secondary" href="/transparence#corrections">Journal des corrections <span aria-hidden="true">→</span></Link>
         </div>
       </section>
+      <Partager route="/impact" titre="Tableau de bord d’impact et suivi des actions" texte="Adhérents, coordonnateurs, plaidoyers, besoins recensés et résolus, projets : six indicateurs datés et sourcés, puis le suivi thématique par thématique." />
     </main>
   );
 }

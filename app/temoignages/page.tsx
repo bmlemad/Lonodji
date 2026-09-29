@@ -4,6 +4,7 @@ import { PageHeader, SectionHead, Stats } from "../../components/blocks";
 import TemoignageForm from "../../components/temoignage-form";
 import { ogFor, ORG } from "../../lib/content";
 import { getIndicateurs } from "../../lib/indicateurs";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Racontez Bédjondo : témoignages et banque d’images",
@@ -70,6 +71,8 @@ export default function Temoignages() {
           <TemoignageForm telephone={ORG.phone} whatsapp={ORG.whatsapp} />
         </div>
       </section>
+
+      <Partager route="/temoignages" titre="Racontez Bédjondo" texte="Un ancien qui raconte, une femme leader, un jeune talent, un paysage : envoyez votre récit, votre photo ou votre voix. Rien n’est publié sans votre relecture." />
 
       <p className="lg-footnote">Page ouverte le 28 septembre 2026 au titre des actions 1.2 (banque d’images) et 5.2 (patrimoine vivant) du plan d’action 2026-2028, qui prévoit aussi une campagne de photographies professionnelles ; en attendant, ce sont vos photos qui font exister la banque d’images. Les récits validés paraissent dans <Link href="/journal">le journal</Link>, signés et datés ; les photos, sur les pages qu’elles illustrent, avec leur crédit. Les envois sont enregistrés par le service de formulaires de notre hébergeur (<Link href="/mentions-legales#donnees">où vont vos réponses</Link>) ; les compteurs paraissent sur le <Link href="/impact">tableau de bord</Link>.</p>
     </main>

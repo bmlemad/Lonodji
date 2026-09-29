@@ -4,6 +4,7 @@ import { ArticleCard, PageHeader, SectionHead } from "../../components/blocks";
 import { LegacySections } from "../../components/legacy-content";
 import LegacyEnhance from "../../components/legacy-enhance";
 import { getIndex, getPage, ogFor } from "../../lib/content";
+import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Histoire, Bédjondo et patrimoine bedjond",
@@ -74,6 +75,7 @@ export default function Histoire() {
         <SectionHead eyebrow="Le journal" title="Les articles" em="d’histoire et de culture." />
         <div className="art-grid">{articles.map((a) => <ArticleCard key={a.slug} a={a} />)}</div>
       </section>
+      <Partager route="/histoire" titre="Histoire, Bédjondo et patrimoine bedjond" texte="Bédjondo, berceau du peuple bedjond : lignée des chefs de canton, grandes figures, lieux sacrés, généalogies, base de recherche et articles d’histoire." />
     </main>
   );
 }
