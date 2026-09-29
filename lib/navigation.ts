@@ -19,6 +19,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Histoire & patrimoine", href: "/histoire", note: "De 1986 à la relance de 2026, grandes figures" },
         { label: "Bédjondo", href: "/dossiers/bedjondo", note: "Repères, langue, statut de commune" },
         { label: "Le journal", href: "/journal", note: "Articles datés et sourcés" },
+        { label: "La lettre d’information", href: "/lettre", note: "Chaque mois : publié, décidé, ouvert ; PDF à transmettre" },
         { label: "Identité visuelle", href: "/odeb/identite", note: "Le logo « Les Pas vers l’Avenir », adopté le 28 septembre 2026" },
       ] },
       { titre: "Rendre des comptes", liens: [
@@ -131,11 +132,11 @@ export function entreeCourante(pathname: string): string {
 /* Pied de page : cinq colonnes, choisies à la main pour rester lisibles. */
 export const PIED: { titre: string; liens: NavLien[] }[] = [
   { titre: "L’association", liens: [
-    { label: "Notre mission", href: "/mission" }, { label: "Histoire & patrimoine", href: "/histoire" }, { label: "Le journal", href: "/journal" },
+    { label: "Notre mission", href: "/mission" }, { label: "Histoire & patrimoine", href: "/histoire" }, { label: "Le journal", href: "/journal" }, { label: "La lettre d’information", href: "/lettre" },
     { label: "Redevabilité & transparence", href: "/transparence" }, { label: "Documents", href: "/documents" }, { label: "Espace presse", href: "/presse" }, { label: "Accessibilité", href: "/accessibilite" }, { label: "Archives du site", href: "/archives" },
   ] },
   { titre: "Nos actions", liens: [
-    { label: "Quatre pôles, dix-neuf thématiques", href: "/programmes" }, { label: "Plaidoyers & engagements", href: "/actions" }, { label: "Tableau de bord d’impact", href: "/impact" },
+    { label: "Quatre pôles, dix-neuf thématiques", href: "/programmes" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }, { label: "Plaidoyers & engagements", href: "/actions" }, { label: "Tableau de bord d’impact", href: "/impact" },
     { label: "Plateforme de projets", href: "/projets" }, { label: "Diagnostic territorial", href: "/dossiers/problematiques" }, { label: "Carte des besoins", href: "/dossiers/besoins" }, { label: "Tous les dossiers", href: "/dossiers" }, { label: "Quelle thématique pour vous ?", href: "/dossiers/trouver-ma-thematique" },
   ] },
   { titre: "Territoire & patrimoine", liens: [

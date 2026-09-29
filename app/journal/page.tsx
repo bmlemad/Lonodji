@@ -28,7 +28,7 @@ export default function Journal() {
       <section className="hub-section">
         <SectionHead eyebrow="Recevoir et proposer" title="La lettre d’information," em="et vos articles." text="La lettre reprend l’essentiel du journal. Toute personne peut proposer un article : il est relu, sourcé et publié sous le nom de son auteur." />
         <div className="link-list">
-          <Link href="/journal/2026-09-21-lettre-information-01"><small>Lettre d’information</small><strong>Lire le numéro 1</strong><span>Le premier numéro, paru le 21 septembre 2026.</span></Link>
+          <Link href="/lettre"><small>Lettre d’information</small><strong>Tous les numéros, l’abonnement, les PDF</strong><span>Chaque mois, ce que l’association a publié, décidé ou ouvert ; le PDF se transmet tel quel sur WhatsApp.</span></Link>
           <Link href="/participer#proposer"><small>Contribuer</small><strong>Proposer un article</strong><span>Un formulaire dédié, une relecture, une publication signée.</span></Link>
           <Link href="/participer#newsletter"><small>S’abonner</small><strong>Recevoir les actualités</strong><span>Une adresse e-mail suffit ; désinscription à tout moment.</span></Link>
         </div>
