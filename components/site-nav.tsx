@@ -16,17 +16,18 @@ type Props = { lang?: "fr" | "en"; chiffres: NavChiffres; whatsapp: string; tele
 
 /* Pages anglaises : pas de méga-menu (ses libellés sont en français), une liste simple. */
 const NAV_EN: { label: string; href: string; mobile?: boolean }[] = [
+  // même ordre que les rubriques françaises : l'association (et sa vision 2030), nos actions, le territoire, participer
   { label: "Home", href: "/en/index" },
   { label: "About", href: "/en/about" },
+  { label: "Vision 2030", href: "/en/odeb" },
   { label: "Themes", href: "/en/themes" },
-  { label: "Sectors", href: "/en/sectors" },
-  { label: "Donors", href: "/en/donors", mobile: true },
+  { label: "Sectors", href: "/en/sectors", mobile: true },
   { label: "Advocacy", href: "/en/advocacy" },
-  { label: "Bédjondo", href: "/en/bedjondo", mobile: true },
-  { label: "Villages", href: "/en/villages" },
   { label: "Projects", href: "/en/projects" },
+  { label: "Donors", href: "/en/donors", mobile: true },
   { label: "Impact", href: "/en/impact", mobile: true },
-  { label: "ODEB", href: "/en/odeb" },
+  { label: "Villages", href: "/en/villages" },
+  { label: "Bédjondo", href: "/en/bedjondo", mobile: true },
   { label: "Contact", href: "/en/contact" },
 ];
 

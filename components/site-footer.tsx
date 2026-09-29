@@ -24,21 +24,21 @@ const PIED_FR: Colonne[] = PIED.map((col) => {
    en français, sont signalées comme telles (fr: true → hreflang="fr"). */
 const PIED_EN: Colonne[] = [
   { titre: "The association", liens: [
-    { label: "About us", href: "/en/about" }, { label: "Bédjondo, our town", href: "/en/bedjondo" }, { label: "Advocacy", href: "/en/advocacy" },
-    { label: "NGOs & funders", href: "/association/ong-partenaires", fr: true }, { label: "Accountability & transparency", href: "/transparence", fr: true }, { label: "Press", href: "/presse", fr: true },
+    { label: "About us", href: "/en/about" }, { label: "Vision 2030 — the ODEB project", href: "/en/odeb" }, { label: "White paper", href: "/odeb/livre-blanc", fr: true },
+    { label: "Accountability & transparency", href: "/transparence", fr: true }, { label: "NGOs & funders", href: "/association/ong-partenaires", fr: true }, { label: "Press", href: "/presse", fr: true },
   ] },
   { titre: "Our work", liens: [
-    { label: "Four pillars, twenty themes", href: "/en/themes" }, { label: "Sectors", href: "/en/sectors" }, { label: "Donor programmes in Chad", href: "/en/donors" }, { label: "Impact dashboard", href: "/en/impact" },
-    { label: "Projects", href: "/en/projects" }, { label: "Documents", href: "/documents", fr: true },
+    { label: "Four pillars, twenty themes", href: "/en/themes" }, { label: "Sectors", href: "/en/sectors" }, { label: "Advocacy", href: "/en/advocacy" },
+    { label: "Projects", href: "/en/projects" }, { label: "Donor programmes in Chad", href: "/en/donors" }, { label: "Impact dashboard", href: "/en/impact" },
   ] },
-  { titre: "Territory & heritage", liens: [
-    { label: "Villages", href: "/en/villages" }, { label: "Map of the territory", href: "/carte", fr: true }, { label: "Digital library", href: "/bibliotheque", fr: true },
+  { titre: "Territory", liens: [
+    { label: "Villages", href: "/en/villages" }, { label: "Bédjondo, our town", href: "/en/bedjondo" }, { label: "Map of the territory", href: "/carte", fr: true }, { label: "Observatory", href: "/observatoire", fr: true },
+  ] },
+  { titre: "Heritage", liens: [
+    { label: "History", href: "/histoire", fr: true }, { label: "The Nangnda language", href: "/langue", fr: true }, { label: "Digital library", href: "/bibliotheque", fr: true },
   ] },
   { titre: "Get involved", liens: [
-    { label: "Write to us", href: "/en/contact" }, { label: "Join (declaration of intent)", href: "/participer#adherer", fr: true }, { label: "Register your skills", href: "/diaspora", fr: true },
-  ] },
-  { titre: "ODEB project · Vision 2030", liens: [
-    { label: "The ODEB project", href: "/en/odeb" }, { label: "White paper", href: "/odeb/livre-blanc", fr: true }, { label: "Roadmap 2026-2030", href: "/odeb/feuille-de-route", fr: true },
+    { label: "Write to us", href: "/en/contact" }, { label: "Join (declaration of intent)", href: "/participer#adherer", fr: true }, { label: "Register your skills", href: "/diaspora", fr: true }, { label: "Documents", href: "/documents", fr: true },
   ] },
 ];
 

@@ -3,7 +3,7 @@ import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
-import { PageHeader, SectionHead, Stats } from "@/components/blocks";
+import { PageHeader, SectionHead, Stats, VuesThematiques } from "@/components/blocks";
 import { ogFor } from "@/lib/content";
 import { thematiquesParId } from "@/lib/odeb-chiffres";
 import { ETATS_SECTEUR, GROUPES_SECTEURS, NON_COUVERTS, SECTEURS } from "@/lib/secteurs";
@@ -30,6 +30,7 @@ export default function Secteurs() {
         crumbs={[{ label: "Nos actions", href: "/programmes" }, { label: "Secteurs d’intervention" }]}
         pills={[`${SECTEURS.length} secteurs`, "20 thématiques", `${nouveaux} élargis ou nouveaux le 29 septembre 2026`, `${NON_COUVERTS.length} secteurs non couverts, dits`]}
       />
+      <VuesThematiques active="secteurs" />
       <Stats items={[
         { value: String(SECTEURS.length), label: "secteurs de rattachement", note: "des services essentiels aux urgences, avec leurs thématiques" },
         { value: String(faites), label: "pages ou outils publiés", note: "une page, un document ou un formulaire existe ; ce n’est pas une activité réalisée sur le terrain" },

@@ -1,7 +1,7 @@
 import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
-import { PageHeader, SectionHead, Stats, ThematiqueRow } from "@/components/blocks";
+import { PageHeader, SectionHead, Stats, ThematiqueRow, VuesThematiques } from "@/components/blocks";
 import { LegacySections } from "@/components/legacy-content";
 import LegacyEnhance from "@/components/legacy-enhance";
 import { directionsCount, enLettres, filledCount, getIndex, getPage, ogFor, pickSections, thematiqueCount } from "@/lib/content";
@@ -33,6 +33,7 @@ export default function Programmes() {
         em="vingt thématiques."
         lead={`Les Chantiers ADEB LONODJI : chaque pôle sera dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ; chaque thématique est animée par un coordonnateur ou une coordonnatrice, avance à son rythme et rend compte ici. ${enLettres(filled, true)} thématiques sont pourvues ; ${enLettres(total - filled)} cherchent encore la personne qui les portera, et les ${enLettres(dir.total - dir.pourvues)} directions de pôle sont à pourvoir.`}
       />
+      <VuesThematiques active="poles" />
       <Stats items={[
         { value: String(poles.length), label: "pôles d’action", note: "Mémoire · Développement · Gouvernance · Numérique" },
         { value: String(total), label: "thématiques", note: "+ 2 cellules transversales" },

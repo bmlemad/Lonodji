@@ -1615,3 +1615,35 @@ html.nav-compact .nav .logo-verre img{ width:34px; }
 .btl-points li::marker{ color:var(--deep); }
 /* contraste AA du compteur « documenté » du diagnostic territorial */
 .legacy .kanban-col[data-status="documente"] .kanban-col-count, .legacy .kanban-col[data-status="pourvu"] .kanban-col-count{ color:#2d4a14; }
+/* ------------------------------------------------------------------
+   Restructuration, étape C (29/09/2026) : les sections reprises de l’ancien site suivent le gabarit
+   des sections du site — pas de « feuille » encadrée, même filet, mêmes titres, même largeur.
+   ------------------------------------------------------------------ */
+.legacy{ max-width:none; }
+.legacy > .lg-section, .legacy > .lg-section.alt{
+  margin:56px 0 0; padding:44px 0 0; background:transparent; border:0; border-top:1px solid var(--line);
+  border-radius:0; box-shadow:none;
+}
+.legacy > .lg-section:first-of-type{ margin-top:24px; }
+.legacy > .lg-section > .prose > .eyebrow:first-child, .legacy > .lg-section > .wrap > .eyebrow:first-child{ margin-bottom:18px; }
+.legacy > .lg-section h2{ font-size:clamp(30px,3.6vw,50px); line-height:1.02; letter-spacing:-.045em; max-width:20ch; margin:0 0 30px; }
+.legacy .prose{ max-width:780px; }
+/* listes longues de cartes (journal des corrections, engagements) : deux colonnes sur grand écran */
+@media (min-width:1000px){
+  .legacy #corrections > .prose, .legacy #corrections > .wrap{ max-width:none; display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start; }
+  .legacy #corrections > .prose > :not(.info-card), .legacy #corrections > .wrap > :not(.info-card){ grid-column:1 / -1; max-width:780px; }
+  .legacy #corrections .info-card{ margin:0; }
+}
+.vues-them{ display:flex; flex-wrap:wrap; align-items:stretch; gap:8px; margin:0 0 34px; padding:6px; border:1px solid var(--carte-filet); border-radius:18px; background:var(--carte-fond); width:fit-content; max-width:100%; }
+.vues-them-titre{ align-self:center; padding:0 10px 0 8px; font-size:11px; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); font-weight:700; }
+.vues-them-vue{ display:flex; flex-direction:column; gap:2px; padding:9px 16px; border-radius:13px; text-decoration:none; color:var(--ink); }
+.vues-them-vue strong{ font-size:14px; }
+.vues-them-vue small{ font-size:12px; color:var(--muted); }
+a.vues-them-vue:hover{ background:#f1f5ec; }
+.vues-them-vue.est-active{ background:var(--deep); color:#fff; }
+.vues-them-vue.est-active small{ color:#cfe0c4; }
+@media (max-width:560px){ .vues-them{ width:100%; } .vues-them-titre{ flex-basis:100%; padding:4px 8px; } .vues-them-vue{ flex:1; } }
+/* Vision 2030 — projet ODEB : la navigation de la partie adopte le style des sélecteurs du site */
+.od-nav{ border-radius:18px; border-color:var(--carte-filet); background:var(--carte-fond); padding:6px; }
+.od-nav a{ border-radius:13px; padding:9px 14px; }
+.od-nav-sigle{ color:var(--muted); }
