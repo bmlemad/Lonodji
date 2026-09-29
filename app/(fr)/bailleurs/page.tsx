@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
+import OuvrirAncre from "@/components/ouvrir-ancre";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import { getIndex, metaDescription, ogFor } from "@/lib/content";
 import { getProjets } from "@/lib/projets";
@@ -171,14 +172,22 @@ export default function Bailleurs() {
         </div>
       </section>
 
-      {familles.map((g) => (
-        <section className="hub-section" id={`famille-${g.f}`} key={g.f}>
-          <SectionHead eyebrow="Programmes" title={FAMILLES[g.f]} text={`${g.items.length} programme${g.items.length > 1 ? "s" : ""}, du plus proche de Bédjondo au plus lointain.`} />
-          <div className="bl-grille">
-            {g.items.map((p) => <Carte key={p.id} p={p} th={th} />)}
-          </div>
-        </section>
-      ))}
+      <section className="hub-section" id="programmes-detail">
+        <SectionHead eyebrow="Les programmes" title="Chaque programme," em="bailleur par bailleur." text="Montant, période, zones, comment nous y raccrocher et la source : une fiche par programme, du plus proche de Bédjondo au plus lointain. Ouvrez une famille de bailleurs pour lire ses fiches." />
+        <div className="plier-liste">
+          {familles.map((g) => {
+            const proches = g.items.filter((p) => ["bedjondo", "koumra", "mandoul"].includes(p.portee)).length;
+            return (
+              <details className="plier" id={`famille-${g.f}`} key={g.f}>
+                <summary><strong>{FAMILLES[g.f]}</strong><span>{g.items.length} programme{g.items.length > 1 ? "s" : ""}{proches ? `, dont ${proches} qui cite${proches > 1 ? "nt" : ""} le Mandoul, Koumra ou Bédjondo` : ""}</span></summary>
+                <div className="bl-grille plier-cartes">
+                  {g.items.map((p) => <Carte key={p.id} p={p} th={th} />)}
+                </div>
+              </details>
+            );
+          })}
+        </div>
+      </section>
 
       <section className="hub-section" id="guichets">
         <SectionHead eyebrow="Guichets" title="Où l’association peut déposer" em="elle-même." text="Tous demandent une association en règle — statuts, récépissé, compte à son nom — ou une association sœur de la diaspora déclarée à l’étranger. D’où l’importance des démarches en cours." />
@@ -200,11 +209,15 @@ export default function Bailleurs() {
 
       <section className="hub-section" id="a-connaitre">
         <SectionHead eyebrow="À connaître" title="Clos, ou hors" em="de notre zone." text="Pour ne pas écrire à la mauvaise porte." />
-        <div className="bl-grille">
-          {aConnaitre.map((p) => <Carte key={p.id} p={p} th={th} />)}
-        </div>
+        <details className="plier">
+          <summary><strong>{aConnaitre.length} programmes clos ou hors de notre zone</strong><span>{aConnaitre.map((p) => p.nom.split(" — ")[0]).join(" · ")}</span></summary>
+          <div className="bl-grille plier-cartes">
+            {aConnaitre.map((p) => <Carte key={p.id} p={p} th={th} />)}
+          </div>
+        </details>
       </section>
 
+      <OuvrirAncre />
       <section className="hub-section">
         <p className="lg-footnote">
           Relevé établi le {RELEVE} à partir des portails officiels (Banque mondiale, BAD, registre IATI de l’Union européenne, coopération suisse, AFD, PNUD, UNICEF, UNFPA, FIDA, OCHA, Fonds mondial) et, à défaut, de la presse tchadienne, citée comme telle. Quand un montant, une date ou une zone n’a pas été trouvé, nous l’écrivons. Les programmes changent vite : ce relevé sera refait tous les six mois. Une erreur, un programme oublié ? <Link href="/participer?objet=partenariat#contact">Écrivez-nous</Link>. Voir aussi <Link href="/secteurs">nos secteurs d’intervention</Link> et <Link href="/association/ong-partenaires">les ONG et partenaires présents</Link>.

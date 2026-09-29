@@ -1661,3 +1661,12 @@ details.plier > .lg-section, details.plier > section{ margin-left:24px !importan
 details.plier > .lg-section:first-of-type{ margin-top:0 !important; border-top:1px solid var(--line) !important; }
 .plier-liste{ display:grid; gap:12px; }
 .plier-liste details.plier{ margin:0; }
+/* Redevabilité : corrections précédentes et sections longues repliables */
+.legacy details.plier--section{ margin:56px 0 0; }
+.legacy details.plier--section > .lg-section{ border-top:0 !important; margin-top:0 !important; padding-top:8px !important; }
+.legacy #corrections details.plier--corrections{ grid-column:1 / -1; margin:8px 0 0; max-width:none !important; }
+.plier-cartes{ display:grid; gap:16px; padding:0 24px 12px; }
+@media (min-width:1000px){ .plier-cartes{ grid-template-columns:1fr 1fr; align-items:start; } }
+.plier-cartes .info-card{ margin:0; }
+.plier-cartes.bl-grille{ padding:0 24px 12px; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); }
+@media (max-width:640px){ .plier-cartes.bl-grille{ padding:0 12px 12px; grid-template-columns:1fr; } }

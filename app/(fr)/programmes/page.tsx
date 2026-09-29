@@ -6,6 +6,7 @@ import { LegacySections } from "@/components/legacy-content";
 import LegacyEnhance from "@/components/legacy-enhance";
 import { directionsCount, enLettres, filledCount, getIndex, getPage, ogFor, pickSections, thematiqueCount } from "@/lib/content";
 import Partager from "@/components/partager";
+import OuvrirAncre from "@/components/ouvrir-ancre";
 import { programmesUtilesDe } from "@/lib/bailleurs";
 
 const partenairesDe = (id: string) => programmesUtilesDe(id).map((p) => ({ id: p.id, nom: p.nom.split(" — ")[0], proche: ["bedjondo", "koumra", "mandoul"].includes(p.portee) }));
@@ -91,11 +92,17 @@ export default function Programmes() {
 
       <section className="hub-section">
         <SectionHead eyebrow="Pour aller plus loin" title="Comment ça fonctionne," em="et où chaque pôle agit." text="Les pages qui suivent viennent de la première version du site et restent la référence : devenir coordonnateur, la lecture par les Objectifs de développement durable, et les dossiers ouverts par chaque pôle." />
-        <div className="legacy">
-          <LegacySections sections={extra} />
+        <div className="legacy plier-liste">
+          {extra.map((sec) => (
+            <details className="plier" key={sec.id} id={sec.id}>
+              <summary><strong>{(sec.html.match(/<h2[^>]*>([\s\S]*?)<\/h2>/)?.[1] ?? sec.id).replace(/<[^>]+>/g, "").trim()}</strong><span>{Math.max(1, Math.round(sec.html.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length / 220))} min de lecture</span></summary>
+              <LegacySections sections={[{ ...sec, id: `${sec.id}-texte` }]} sansPremierTitre />
+            </details>
+          ))}
         </div>
         <LegacyEnhance hasForms={page.forms.length > 0} />
       </section>
+      <OuvrirAncre />
       <Partager route="/programmes" titre="Nos actions" texte="Quatre pôles, vingt thématiques et deux cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés." />
     </main>
   );
