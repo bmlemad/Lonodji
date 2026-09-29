@@ -76,7 +76,7 @@ export default async function Village({ params }: { params: Promise<{ unite: str
       ]} />
 
       <div className="section-actions" style={{ justifyContent: "flex-start", marginBottom: 8 }}>
-        <Link className="button primary" href={`/carte?village=${unite}/${v.slug}`}>Voir {v.nom} sur la carte <span aria-hidden="true">↗</span></Link>
+        <Link className="button primary" href={`/carte?village=${unite}/${v.slug}`}>Voir {v.nom} sur la carte <span aria-hidden="true">→</span></Link>
         <Link className="button secondary" href={`/dossiers/besoins?localite=${encodeURIComponent(v.nom)}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
         <Link className="text-link" href={`/temoignages?lieu=${encodeURIComponent(v.nom)}`}>Raconter {v.nom} <span aria-hidden="true">→</span></Link>
       </div>

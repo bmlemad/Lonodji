@@ -100,13 +100,13 @@ export default function Odeb() {
             <span className="status">Document fondateur · version de travail</span>
             <h3>Livre blanc du projet ODEB LONODJI</h3>
             <p>D’où nous partons, pourquoi une organisation, la vision 2030, les six missions, les six programmes, les principes de gouvernance et de redevabilité, les ressources, la feuille de route — et le statut du document.</p>
-            <div className="doc-links"><Link className="button primary" href="/odeb/livre-blanc">Lire en ligne <span aria-hidden="true">↗</span></Link><a className="button secondary" href={ODEB.livreBlancPdf} download>PDF</a></div>
+            <div className="doc-links"><Link className="button primary" href="/odeb/livre-blanc">Lire en ligne <span aria-hidden="true">→</span></Link><a className="button secondary" href={ODEB.livreBlancPdf} download>PDF</a></div>
           </article>
           <article>
             <span className="status">2026-2030 · trois phases</span>
             <h3>Feuille de route 2026-2030</h3>
             <p>Ce qui est fait, ce qui est en cours, ce qui reste à faire et ce qui reste à décider, phase par phase, avec l’état réel de chaque chantier à la date de mise en ligne.</p>
-            <div className="doc-links"><Link className="button primary" href="/odeb/feuille-de-route">Voir la feuille de route <span aria-hidden="true">↗</span></Link><Link className="text-link" href="/impact">Le tableau de bord <span aria-hidden="true">→</span></Link></div>
+            <div className="doc-links"><Link className="button primary" href="/odeb/feuille-de-route">Voir la feuille de route <span aria-hidden="true">→</span></Link><Link className="text-link" href="/impact">Le tableau de bord <span aria-hidden="true">→</span></Link></div>
           </article>
           <article id="presentation">
             <span className="status">Pour l’assemblée · {IDENTITE.presentation.diapositives} diapositives</span>

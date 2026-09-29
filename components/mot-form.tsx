@@ -57,7 +57,7 @@ export default function MotForm({ telephone, whatsapp }: { telephone: string; wh
       </fieldset>
       {erreur ? <p className="form-note form-error" role="alert">{erreur}</p> : null}
       <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
-        <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Envoyer ce mot"} <span aria-hidden="true">↗</span></button>
+        <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Envoyer ce mot"} <span aria-hidden="true">→</span></button>
       </div>
       <p className="form-note">Vous préférez dicter ? <a href={whatsapp} target="_blank" rel="noopener noreferrer">Un message vocal sur WhatsApp</a> ou un appel au {telephone} : nous transcrivons, puis vous relisez.</p>
     </form>

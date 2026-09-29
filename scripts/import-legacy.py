@@ -975,6 +975,24 @@ _CORRECTIONS = None
 CORRECTIONS_MANQUEES: list = []
 
 
+_LIEN = re.compile(r'(<a\b[^>]*\bhref="([^"]+)"[^>]*>)(.*?)(</a>)', re.S)
+
+
+def fleches_coherentes(html: str) -> str:
+    """Une seule convention de flèches : → page du site, ↗ autre site, ↓ téléchargement (PDF, ZIP)."""
+    def rep(m):
+        ouvre, href, texte, ferme = m.groups()
+        h = href.lower().split("#")[0].split("?")[0]
+        if h.endswith((".pdf", ".zip")):
+            texte = texte.replace("&rarr;", "&darr;").replace("→", "↓").replace("&nearr;", "&darr;").replace("↗", "↓")
+        elif href.startswith(("http://", "https://")) and "lonodji.org" not in href:
+            texte = texte.replace("&rarr;", "&nearr;").replace("→", "↗")
+        else:
+            texte = texte.replace("&nearr;", "&rarr;").replace("↗", "→")
+        return ouvre + texte + ferme
+    return _LIEN.sub(rep, html)
+
+
 def corrections_revue(html: str, path: Path) -> str:
     global _CORRECTIONS
     if _CORRECTIONS is None:
@@ -983,6 +1001,7 @@ def corrections_revue(html: str, path: Path) -> str:
         cle = path.relative_to(LEGACY).as_posix()
     except (ValueError, NameError):
         cle = path.name
+    html = fleches_coherentes(html)
     for ancien, nouveau in _CORRECTIONS.get(cle, []):
         if ancien in html:
             html = html.replace(ancien, nouveau)

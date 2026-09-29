@@ -318,3 +318,13 @@ CORRECTIONS = {
         ("un miel d&rsquo;origine arboricole et non florale , l&rsquo;a", "un miel d&rsquo;origine arboricole et non florale, l&rsquo;a"),
     ],
 }
+
+
+# Revue des symboles et libellés (29 septembre 2026) : plus d'invitation à « cotiser » tant que la collecte est suspendue.
+for _f, _paires in {
+    "documents.html": [("Adh&eacute;rer et cotiser", "Adh&eacute;rer (d&eacute;claration d&rsquo;intention)")],
+    "adherer.html": [("Adh&eacute;rer et cotiser", "Adh&eacute;rer (d&eacute;claration d&rsquo;intention)")],
+    "soutenir.html": [("Adhérer et cotiser", "Adhérer (déclaration d’intention)")],
+    "sitemap.html": [("Adhérer et cotiser", "Adhérer (déclaration d’intention)")],
+}.items():
+    CORRECTIONS.setdefault(_f, []).extend(_paires)

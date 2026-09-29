@@ -52,7 +52,7 @@ export default async function Unite({ params }: { params: Promise<{ unite: strin
       ]} />
 
       <div className="section-actions" style={{ justifyContent: "flex-start", marginBottom: 8 }}>
-        <Link className="button primary" href={`/carte?unite=${u.id}`}>Voir {u.nom} sur la carte <span aria-hidden="true">↗</span></Link>
+        <Link className="button primary" href={`/carte?unite=${u.id}`}>Voir {u.nom} sur la carte <span aria-hidden="true">→</span></Link>
         <Link className="button secondary" href={`/dossiers/besoins?localite=${encodeURIComponent(u.nom)}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
       </div>
 

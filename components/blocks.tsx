@@ -110,7 +110,7 @@ export function PlaidoyerCard({ p }: { p: Plaidoyer }) {
         <div><dt>Réponse</dt><dd>{p.answer}</dd></div>
       </dl>
       <div className="plea-links">
-        <Link className="button primary" href={p.href}>Lire le plaidoyer<span className="sr-only"> « {p.title} »</span> <span aria-hidden="true">↗</span></Link>
+        <Link className="button primary" href={p.href}>Lire le plaidoyer<span className="sr-only"> « {p.title} »</span> <span aria-hidden="true">→</span></Link>
         {p.pdf ? <a className="button secondary" href={p.pdf} download>PDF<span className="sr-only"> du plaidoyer « {p.title} »</span></a> : null}
       </div>
     </article>

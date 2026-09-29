@@ -400,7 +400,7 @@
    "slug": "adherer",
    "route": "/participer",
    "kind": "hub",
-   "title": "Adhérer et cotiser",
+   "title": "Adhérer (déclaration d’intention)",
    "eyebrow": "Adhésion",
    "lede": "L’association se dote de cartes d’adhérent et invite ses membres à cotiser. Voici ce que la carte donne et ce qu’elle n’achète pas, la grille proposée au vote, où va l’argent, et les règles qui protègent l’adhérent autant que le trésorier.",
    "description": "Carte d’adhérent au format bancaire, grille de cotisation proposée au vote, règle de caisse et registre protégé.",
@@ -2827,7 +2827,7 @@
    "pdf": "/documents/kit-adhesion-adeb-lonodji-2026.pdf",
    "links": [
     {
-     "label": "Adhérer et cotiser →",
+     "label": "Adhérer (déclaration d’intention) →",
      "href": "/participer#adherer"
     }
    ]

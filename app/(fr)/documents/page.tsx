@@ -41,7 +41,7 @@ export default function Documents() {
       <section className="hub-section">
         <SectionHead eyebrow="Aidez-nous" title="Vous détenez une pièce" em="de notre histoire ?" text="Récépissé de 1995, statuts d’origine, photographies des forums de 2000 et 2003, comptes rendus : chaque document retrouvé sera versé aux archives avec sa provenance." />
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
-          <Link className="button primary" href="/participer#contact">Nous transmettre un document <span aria-hidden="true">↗</span></Link>
+          <Link className="button primary" href="/participer#contact">Nous transmettre un document <span aria-hidden="true">→</span></Link>
           <Link className="button secondary" href="/transparence">Notre charte de redevabilité <span aria-hidden="true">→</span></Link>
         </div>
       </section>

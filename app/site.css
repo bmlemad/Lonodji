@@ -1344,3 +1344,76 @@ p.palette-vide{ margin:0; padding:12px 18px 0; }
 
 .search-villages{ margin:6px 0 18px; font-size:14px; }
 .search-villages a{ display:inline-flex; align-items:center; min-height:32px; font-weight:600; text-decoration:underline; text-underline-offset:3px; }
+
+/* Icônes dessinées (menu, marque de confiance, soleil) : alignées sur le texte */
+.menu-toggle i{ display:inline-flex; vertical-align:middle; }
+.menu-toggle i svg, .trust-mark svg, .od-num svg{ display:block; }
+
+/* ==========================================================================
+   Harmonisation des cartes (revue du 29 septembre 2026)
+   Trois tailles seulement : petite (tuiles, chiffres, étapes), moyenne (cartes),
+   grande (panneaux, blocs de page). Un seul filet, un seul fond, une seule ombre ;
+   les cartes cliquables réagissent toutes de la même façon au survol et au focus.
+   Les cartes sur bande sombre (.impact, .tb-compact) gardent leurs couleurs.
+   ========================================================================== */
+:root{
+  --r-carte-s:14px; --r-carte-m:20px; --r-carte-l:26px;
+  --carte-filet:rgba(16,36,30,.14);
+  --carte-fond:#fff;
+  --carte-ombre:0 1px 2px rgba(16,36,30,.04), 0 10px 30px rgba(16,36,30,.06);
+  --carte-ombre-survol:0 2px 4px rgba(16,36,30,.05), 0 18px 42px rgba(16,36,30,.11);
+}
+/* taille moyenne */
+.link-list > a, .detail-grid > article, .home-facts > article, .heritage-grid > article,
+.art-card, .info-card, .pole-card, .doc-card, aside.partage, .sec-carte, .vl-unite, .bureau-card, .plea,
+.tb-carte, .od-programme, .value-card, .contact-card, .trust-card, .bb-journal, .vl-affiche, .vl-imprimer,
+.registre-ligne, .lib-callout, .step-card, .tb-methode, .lg-toc, .vie-item, .pr-logo, .program-card{
+  border-radius:var(--r-carte-m); border:1px solid var(--carte-filet); box-shadow:var(--carte-ombre);
+}
+/* petite taille */
+.stat-tile, .tb-mini, .bento-tile, .rubrique-card, .bb-ref, .ob-statut, .est-occupe, .pj-faits,
+.pj-cols > div, .pj-stades > li{
+  border-radius:var(--r-carte-s); border:1px solid var(--carte-filet); box-shadow:var(--carte-ombre);
+}
+/* grande taille */
+.lg-section, .pole-block, .pj-projet, .od-programme-fiche, .geo-cadre{
+  border-radius:var(--r-carte-l); border:1px solid var(--carte-filet); box-shadow:var(--carte-ombre);
+}
+.ob-table-wrap, .od-table-wrap, .table-wrap{ border-radius:var(--r-carte-m); }
+/* fond : blanc franc plutôt que les voiles translucides (lisibilité sur les dégradés) */
+.info-card, .pole-card, .rubrique-card, .bento-tile, .step-card, .vie-item, .lib-callout, .lg-toc, .lg-section,
+.detail-grid > article, .home-facts > article, .heritage-grid > article{ background:var(--carte-fond); }
+/* bandes sombres : seulement l'arrondi */
+.impact .tb-compact > li, .impact-grid article{ box-shadow:none; }
+.tb-compact > li{ border-radius:var(--r-carte-s); }
+/* cartes cliquables : même réaction partout */
+a.link-list-item, .link-list > a, a.art-card, a.pole-card, a.rubrique-card, a.tb-mini, a.bento-tile, a.vl-unite,
+a.od-programme, a.pr-logo, a.vl-affiche, a.program-card, .art-card:has(> a:only-child){
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.link-list > a:hover, a.art-card:hover, a.pole-card:hover, a.rubrique-card:hover, a.tb-mini:hover, a.bento-tile:hover,
+a.vl-unite:hover, a.od-programme:hover, a.pr-logo:hover, a.vl-affiche:hover, a.program-card:hover,
+.link-list > a:focus-visible, a.art-card:focus-visible, a.pole-card:focus-visible, a.rubrique-card:focus-visible,
+a.tb-mini:focus-visible, a.bento-tile:focus-visible, a.vl-unite:focus-visible, a.od-programme:focus-visible,
+a.pr-logo:focus-visible, a.vl-affiche:focus-visible, a.program-card:focus-visible{
+  transform:translateY(-2px); box-shadow:var(--carte-ombre-survol); border-color:rgba(23,59,45,.3);
+}
+@media (prefers-reduced-motion:reduce){
+  .link-list > a:hover, a.art-card:hover, a.pole-card:hover, a.rubrique-card:hover, a.tb-mini:hover, a.bento-tile:hover,
+  a.vl-unite:hover, a.od-programme:hover, a.pr-logo:hover, a.vl-affiche:hover, a.program-card:hover{ transform:none; }
+}
+@media (max-width:800px){
+  :root{ --r-carte-m:18px; --r-carte-l:22px; }
+}
+.notice{ border-radius:var(--r-carte-m); }
+
+/* Listes de texte : une seule présentation (puces et numéros vert profond, respiration régulière) */
+main :where(ul, ol):not([class]):not(nav *), main .plea-next, main .od-liste, main ol.steps{ padding-left:1.3em; }
+main :where(ul:not([class]):not(nav *), .plea-next) > li::marker{ color:var(--deep); }
+main :where(ol:not([class]):not(nav *), .od-liste, ol.steps) > li::marker{ color:var(--deep); font-weight:700; font-variant-numeric:tabular-nums; }
+main :where(ul, ol):not([class]):not(nav *) > li + li, main .plea-next > li + li, main .od-liste > li + li, main ol.steps > li + li{ margin-top:.45em; }
+main :where(ul, ol):not([class]):not(nav *) > li, main .plea-next > li, main .od-liste > li, main ol.steps > li{ padding-left:.2em; line-height:1.6; }
+
+/* Pictogrammes des équipements (carte, légende, listes) */
+.ct-eq span, .ct-legende-eq, .ct-liste i{ display:inline-grid; place-items:center; }
+.ct-picto, .ct-picto svg, .ct-eq svg{ display:block; }

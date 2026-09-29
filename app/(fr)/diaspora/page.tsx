@@ -136,7 +136,7 @@ export default function Diaspora() {
             <label className="check check--consentement"><input name="consentement" required type="checkbox" value="oui" /> <span>J’accepte qu’ADEB LONODJI conserve ces informations pour me proposer des missions et me mettre en relation avec ses thématiques, selon ses <Link href="/mentions-legales#donnees">mentions légales</Link>. Je peux retirer mon inscription à tout moment. *</span></label>
             <label className="check check--consentement"><input name="annuaire" type="checkbox" value="oui" /> <span>J’accepte que mon nom, mon métier et mon pays figurent dans l’annuaire public de la diaspora quand il sera ouvert (le reste n’y figurera jamais). Facultatif.</span></label>
             <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
-              <button className="button primary" type="submit">M’inscrire au répertoire <span aria-hidden="true">↗</span></button>
+              <button className="button primary" type="submit">M’inscrire au répertoire <span aria-hidden="true">→</span></button>
             </div>
             <p className="form-note">Vous préférez en parler d’abord ? <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">Écrivez-nous sur WhatsApp</a> ou appelez le {ORG.phone}.</p>
           </form>

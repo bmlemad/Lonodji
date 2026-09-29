@@ -78,7 +78,7 @@ export default function Projets() {
                 <div className="pj-cols">
                   <div><p className="pj-label">Ce qui existe</p><ul>{p.existant.map((x) => <li key={x}>{x}</li>)}</ul></div>
                   <div><p className="pj-label">Ce qui manque</p><ul>{p.manque.map((x) => <li key={x}>{x}</li>)}</ul></div>
-                  <div><p className="pj-label">Contribuer</p><ul className="pj-contribuer">{p.contribuer.map((l) => <li key={l.href + l.label}><Link href={l.href}>{l.label} <span aria-hidden="true">→</span></Link></li>)}</ul><Link className="text-link" href={p.route}>Le dossier complet <span aria-hidden="true">↗</span></Link></div>
+                  <div><p className="pj-label">Contribuer</p><ul className="pj-contribuer">{p.contribuer.map((l) => <li key={l.href + l.label}><Link href={l.href}>{l.label} <span aria-hidden="true">→</span></Link></li>)}</ul><Link className="text-link" href={p.route}>Le dossier complet <span aria-hidden="true">→</span></Link></div>
                 </div>
               </article>
             );
@@ -131,7 +131,7 @@ export default function Projets() {
             </fieldset>
             <label className="check check--consentement"><input name="consentement" required type="checkbox" value="oui" /> <span>J’accepte qu’ADEB LONODJI conserve cette proposition et mon contact pour l’instruire et me répondre, selon ses <Link href="/mentions-legales#donnees">mentions légales</Link>. *</span></label>
             <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
-              <button className="button primary" type="submit">Proposer ce projet <span aria-hidden="true">↗</span></button>
+              <button className="button primary" type="submit">Proposer ce projet <span aria-hidden="true">→</span></button>
             </div>
             <p className="form-note">Vous préférez en parler d’abord ? <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">Écrivez-nous sur WhatsApp</a> ou appelez le {ORG.phone}.</p>
           </form>

@@ -116,7 +116,7 @@ export default function TemoignageForm({ telephone, whatsapp }: { telephone: str
 
       {erreur ? <p className="form-note form-error" role="alert">{erreur}</p> : null}
       <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
-        <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Envoyer mon récit"} <span aria-hidden="true">↗</span></button>
+        <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Envoyer mon récit"} <span aria-hidden="true">→</span></button>
       </div>
       <p className="form-note">Vous préférez raconter de vive voix ? <a href={whatsapp} target="_blank" rel="noopener noreferrer">Écrivez-nous sur WhatsApp</a> ou appelez le {telephone} : nous prenons note, puis vous relisez.</p>
     </form>

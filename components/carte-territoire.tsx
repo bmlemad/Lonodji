@@ -40,6 +40,25 @@ const FAMILLES: Record<string, { label: string; couleur: string }> = {
   finance: { label: "Services financiers", couleur: "#6c5ce7" },
 };
 
+/* Pictogrammes des familles d'équipements (tracés 24×24, trait courant) : plus de lettres
+   ambiguës (É école / E eau). Les mêmes sur la carte, la légende et les listes. */
+const PICTOS: Record<string, string> = {
+  ecole: "M3 9 12 5l9 4-9 4-9-4Z M7 11v4c0 1.5 2.2 3 5 3s5-1.5 5-3v-4",
+  sante: "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6Z",
+  eau: "M12 3s6 6.6 6 11a6 6 0 0 1-12 0c0-4.4 6-11 6-11Z",
+  marche: "M4 9h16l-1.5 10h-13Z M8 9l4-5 4 5",
+  culte: "M12 3v4 M10 5h4 M6 21V11l6-4 6 4v10 M10 21v-4h4v4",
+  energie: "M13 3 5 14h6l-1 7 8-11h-6Z",
+  telecom: "M12 10v11 M8 21h8 M8.5 6.5a5 5 0 0 1 7 0 M6 4a8.5 8.5 0 0 1 12 0 M12 10a1 1 0 1 0 0-.01",
+  administration: "M4 21h16 M5 10h14 M12 3 4 7v3h16V7Z M7 10v8 M12 10v8 M17 10v8",
+  finance: "M3 7h18v10H3Z M12 12a2 2 0 1 0 0-.01 M6 10v4 M18 10v4",
+};
+function picto(k: string, taille = 14): string {
+  const d = PICTOS[k] || "M12 12a3 3 0 1 0 0-.01";
+  return `<svg width="${taille}" height="${taille}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+}
+const Picto = ({ k, taille = 13 }: { k: string; taille?: number }) => <span className="ct-picto" dangerouslySetInnerHTML={{ __html: picto(k, taille) }} />;
+
 /* Encre lisible sur une pastille de couleur : blanc sur les couleurs sombres,
    vert nuit (#10241e) sur les claires (eau, marché, énergie) — contraste ≥ 4,5:1. */
 function encre(fond: string): string {
@@ -118,7 +137,7 @@ export default function CarteTerritoire() {
       const equipementsCouche = L.layerGroup().addTo(m);
       for (const e of donnees.equipements) {
         const fam = FAMILLES[e.famille] || { label: e.famille, couleur: "#607069" };
-        const ic = L.divIcon({ className: "ct-eq", html: `<span style="background:${fam.couleur};color:${encre(fam.couleur)}" title="${fam.label}">${fam.label.charAt(0)}</span>`, iconSize: [24, 24], iconAnchor: [12, 12] });
+        const ic = L.divIcon({ className: "ct-eq", html: `<span style="background:${fam.couleur};color:${encre(fam.couleur)}" title="${fam.label}">${picto(e.famille)}</span>`, iconSize: [24, 24], iconAnchor: [12, 12] });
         const mk = L.marker([e.coords[1], e.coords[0]], { icon: ic, keyboard: true, alt: `${fam.label} : ${e.nom || "sans nom"}` });
         mk.bindTooltip(`${fam.label} · ${e.nom || "sans nom"}`, { direction: "top", offset: [0, -10], className: "ct-info" });
         mk.on("click", () => setSelection({ genre: "equipement", equipement: e }));
@@ -209,7 +228,7 @@ export default function CarteTerritoire() {
         <fieldset className="ct-couches">
           <legend className="sr-only">Couches</legend>
           <label><input type="checkbox" checked={visibles.unites} onChange={(e) => setVisibles({ ...visibles, unites: e.target.checked })} /> Unités du pays bedjond</label>
-          <label><input type="checkbox" checked={visibles.villages} onChange={(e) => setVisibles({ ...visibles, villages: e.target.checked })} /> Localités <small>{donnees ? donnees.villages.length : ""}</small></label>
+          <label><input type="checkbox" checked={visibles.villages} onChange={(e) => setVisibles({ ...visibles, villages: e.target.checked })} /> Localités <small>{donnees ? donnees.villages.length.toLocaleString("fr-FR") : ""}</small></label>
           <label><input type="checkbox" checked={visibles.equipements} onChange={(e) => setVisibles({ ...visibles, equipements: e.target.checked })} /> Équipements <small>{donnees ? donnees.equipements.length : ""}</small></label>
         </fieldset>
       </div>
@@ -228,7 +247,7 @@ export default function CarteTerritoire() {
               <p>Chaque point ouvre sa fiche : ce que les données ouvertes en disent, ce que le site en dit, et un bouton pour signaler un besoin à cet endroit.</p>
               <ul className="ct-legende">
                 {(Object.keys(GROUPES) as Unite["groupe"][]).map((g) => <li key={g}><i style={{ background: GROUPES[g].couleur, opacity: 0.35 + GROUPES[g].fond }} /> {GROUPES[g].label}</li>)}
-                {Object.entries(FAMILLES).filter(([k]) => donnees?.familles[k]).map(([k, f]) => <li key={k}><i className="ct-legende-eq" style={{ background: f.couleur, color: encre(f.couleur) }}>{f.label.charAt(0)}</i> {f.label} <small>{donnees?.familles[k]}</small></li>)}
+                {Object.entries(FAMILLES).filter(([k]) => donnees?.familles[k]).map(([k, f]) => <li key={k}><i className="ct-legende-eq" style={{ background: f.couleur, color: encre(f.couleur) }}><Picto k={k} /></i> {f.label} <small>{donnees?.familles[k]}</small></li>)}
               </ul>
             </div>
           ) : selection.genre === "unite" ? (
@@ -241,7 +260,7 @@ export default function CarteTerritoire() {
               <p className="ct-note">Aucune école, aucun centre de santé, aucun forage n’est rattaché à ce lieu dans les données ouvertes : ce silence est une information, pas une réalité. Aidez-nous à le combler.</p>
               <div className="ct-actions">
                 {selection.village[7] ? <Link className="button primary" href={`/villages/${selection.village[4]}/${selection.village[7]}`}>La fiche du village <span aria-hidden="true">→</span></Link> : null}
-                <Link className={selection.village[7] ? "button secondary" : "button primary"} href={`/dossiers/besoins?localite=${encodeURIComponent(nomPropre(selection.village[2]))}`}>Signaler un besoin ici <span aria-hidden="true">↗</span></Link>
+                <Link className={selection.village[7] ? "button secondary" : "button primary"} href={`/dossiers/besoins?localite=${encodeURIComponent(nomPropre(selection.village[2]))}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
                 <a className="text-link" href={`https://www.openstreetmap.org/?mlat=${selection.village[1]}&mlon=${selection.village[0]}#map=15/${selection.village[1]}/${selection.village[0]}`} target="_blank" rel="noopener noreferrer">Voir sur OpenStreetMap ↗</a>
                 <button type="button" className="text-link" onClick={() => setSelection(null)}>Fermer la fiche</button>
               </div>
@@ -255,7 +274,7 @@ export default function CarteTerritoire() {
                 <div><dt>source</dt><dd>OpenStreetMap, export HOT « {selection.equipement.jeu.replace(/_/g, " ")} »</dd></div>
               </dl>
               <div className="ct-actions">
-                <Link className="button primary" href={`/dossiers/besoins?localite=${encodeURIComponent((selection.equipement.nom || unitePour(selection.equipement.unite)?.nom || "").slice(0, 80))}`}>Signaler un besoin ici <span aria-hidden="true">↗</span></Link>
+                <Link className="button primary" href={`/dossiers/besoins?localite=${encodeURIComponent((selection.equipement.nom || unitePour(selection.equipement.unite)?.nom || "").slice(0, 80))}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
                 <a className="button secondary" href={`https://www.openstreetmap.org/?mlat=${selection.equipement.coords[1]}&mlon=${selection.equipement.coords[0]}#map=16/${selection.equipement.coords[1]}/${selection.equipement.coords[0]}`} target="_blank" rel="noopener noreferrer">Voir sur OpenStreetMap</a>
                 <button type="button" className="text-link" onClick={() => setSelection(null)}>Fermer la fiche</button>
               </div>
@@ -282,7 +301,7 @@ function UniteFiche({ u, donnees, aller, fermer }: { u: Unite; donnees: Donnees;
         <div><strong>{c.equipements}</strong><span>équipement{c.equipements > 1 ? "s" : ""} cartographié{c.equipements > 1 ? "s" : ""}</span></div>
       </div>
       {c.equipements === 0 ? <p className="ct-note">Aucune école, aucun centre de santé, aucun forage de cette unité n’est encore dans les données ouvertes. Ce n’est pas qu’il n’y en a pas : c’est que personne ne les a encore cartographiés. C’est à notre portée.</p> : null}
-      {eq.length ? <ul className="ct-liste">{eq.map((e, i) => <li key={i}><button type="button" onClick={() => aller([e.coords[1], e.coords[0]], 15, { genre: "equipement", equipement: e })}><i style={{ background: FAMILLES[e.famille]?.couleur, color: FAMILLES[e.famille] ? encre(FAMILLES[e.famille].couleur) : undefined }}>{(FAMILLES[e.famille]?.label || "?").charAt(0)}</i>{e.nom || FAMILLES[e.famille]?.label}</button></li>)}</ul> : null}
+      {eq.length ? <ul className="ct-liste">{eq.map((e, i) => <li key={i}><button type="button" onClick={() => aller([e.coords[1], e.coords[0]], 15, { genre: "equipement", equipement: e })}><i style={{ background: FAMILLES[e.famille]?.couleur, color: FAMILLES[e.famille] ? encre(FAMILLES[e.famille].couleur) : undefined }}><Picto k={e.famille} /></i>{e.nom || FAMILLES[e.famille]?.label}</button></li>)}</ul> : null}
       {liens.length ? (
         <>
           <p className="eyebrow" style={{ marginTop: 22 }}>Sur le site</p>
@@ -292,7 +311,7 @@ function UniteFiche({ u, donnees, aller, fermer }: { u: Unite; donnees: Donnees;
       <p className="ct-source">Contour : GADM 4.1 (« {u.gadm.nom} », {u.gadm.departement.replace(/([a-z])([A-Z])/g, "$1 $2")}, {u.gadm.province.replace(/([a-z])([A-Z])/g, "$1 $2")}). {u.approx ? "Position du chef-lieu approchée. " : ""}{u.origine ? `Repère : ${u.origine}.` : ""}</p>
       <div className="ct-actions">
         <Link className="button primary" href={`/villages/${u.id}`}>Les villages de {u.nom} <span aria-hidden="true">→</span></Link>
-        <Link className="button secondary" href={`/dossiers/besoins?localite=${encodeURIComponent(u.nom)}`}>Signaler un besoin ici <span aria-hidden="true">↗</span></Link>
+        <Link className="button secondary" href={`/dossiers/besoins?localite=${encodeURIComponent(u.nom)}`}>Signaler un besoin ici <span aria-hidden="true">→</span></Link>
         <button type="button" className="text-link" onClick={() => aller([u.centre[1], u.centre[0]], 11)}>Centrer la carte</button>
         <button type="button" className="text-link" onClick={fermer}>Fermer la fiche</button>
       </div>

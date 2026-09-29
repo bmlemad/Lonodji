@@ -70,7 +70,7 @@ export default function DepotForm({ telephone, whatsapp }: { telephone: string; 
       </fieldset>
       {erreur ? <p className="form-note form-error" role="alert">{erreur}</p> : null}
       <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
-        <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Déposer ce document"} <span aria-hidden="true">↗</span></button>
+        <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Déposer ce document"} <span aria-hidden="true">→</span></button>
       </div>
       <p className="form-note">Un document volumineux, une série de tirages à photographier ? <a href={whatsapp} target="_blank" rel="noopener noreferrer">Écrivez-nous sur WhatsApp</a> ou appelez le {telephone}.</p>
     </form>

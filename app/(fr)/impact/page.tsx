@@ -36,7 +36,7 @@ export default function Impact() {
       <section className="hub-section">
         <SectionHead eyebrow="Et ensuite" title="Les preuves viendront" em="des dossiers eux-mêmes." text="Résultats vérifiés, projets documentés et témoignages authentifiés seront publiés ici, dossier par dossier, avec leur source. En attendant, les engagements publics et le journal des corrections disent ce que nous promettons et ce que nous rectifions." />
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
-          <Link className="button primary" href="/dossiers/engagements">Nos engagements publics <span aria-hidden="true">↗</span></Link>
+          <Link className="button primary" href="/dossiers/engagements">Nos engagements publics <span aria-hidden="true">→</span></Link>
           <Link className="button secondary" href="/transparence#corrections">Journal des corrections <span aria-hidden="true">→</span></Link>
         </div>
       </section>

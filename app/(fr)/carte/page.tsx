@@ -35,7 +35,7 @@ export default function Carte() {
         em="village par village."
         lead="Les quatorze unités du pays bedjond sur fond de carte ouverte, avec les localités et les équipements que les données publiques connaissent — et ceux qu’elles ignorent encore. Touchez un canton, un village ou un équipement : sa fiche dit ce que nous savons, ce que le site en a écrit, et comment signaler un besoin à cet endroit."
         crumbs={[{ label: "Territoire", href: "/dossiers/bedjondo" }, { label: "Carte" }]}
-        pills={[`${d.unites.length} unités`, `${d.villages.length} localités`, `${d.equipements.length} équipements`, `données du ${genere}`]}
+        pills={[`${d.unites.length} unités`, `${d.villages.length.toLocaleString("fr-FR")} localités`, `${d.equipements.length} équipements`, `données du ${genere}`]}
       />
 
       <CarteTerritoire />

@@ -66,7 +66,7 @@ export default function SiteFooter({ miseAJour, lang = "fr" }: { miseAJour?: str
             <p className="footer-title">Join the association</p>
             <p>A theme to coordinate, a skill to register, a story to share, a need to report: we answer within two working days.</p>
             <div className="footer-join-actions">
-              <Link className="button primary" href="/en/contact">Get in touch <span aria-hidden="true">↗</span></Link>
+              <Link className="button primary" href="/en/contact">Get in touch <span aria-hidden="true">→</span></Link>
               <Link className="button secondary" href="/diaspora" hrefLang="fr">Register my skills (in French) <span aria-hidden="true">→</span></Link>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function SiteFooter({ miseAJour, lang = "fr" }: { miseAJour?: str
             <p className="footer-title">Rejoindre l’association</p>
             <p>Une thématique à coordonner, une compétence à inscrire, un récit à envoyer, un besoin à signaler : nous répondons sous quarante-huit heures ouvrées.</p>
             <div className="footer-join-actions">
-              <Link className="button primary" href="/participer">Nous rejoindre <span aria-hidden="true">↗</span></Link>
+              <Link className="button primary" href="/participer">Nous rejoindre <span aria-hidden="true">→</span></Link>
               <Link className="button secondary" href="/diaspora">Inscrire mes compétences <span aria-hidden="true">→</span></Link>
             </div>
           </div>

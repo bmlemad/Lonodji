@@ -45,7 +45,7 @@ export default function Home() {
               Reconnue en 1995 — mise en conformité avec l’ordonnance de 2018 en vérification —, remise en mouvement en 2026 : quatre pôles, vingt thématiques, huit dossiers de plaidoyer publiés pour l’eau, l’électricité, l’école, les routes et la santé — et un territoire cartographié village par village.
             </p>
             <div className="hero-actions">
-              <Link className="button primary" href="/programmes">Découvrir nos actions <span aria-hidden="true">↗</span></Link>
+              <Link className="button primary" href="/programmes">Découvrir nos actions <span aria-hidden="true">→</span></Link>
               <Link className="text-link" href="/participer?coordo=1#contact">Rejoindre une thématique <span aria-hidden="true">→</span></Link>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function Home() {
               <article><strong>2026</strong><span>Réactivation et structuration en pôles et thématiques, quarante ans après.</span></article>
               <article><strong>{idx.articles.length}</strong><span>articles publiés au journal depuis le 11 septembre 2026.</span></article>
             </div>
-            <div className="section-actions"><Link className="text-link" href="/mission">Lire notre mission ↗</Link></div>
+            <div className="section-actions"><Link className="text-link" href="/mission">Lire notre mission →</Link></div>
           </div>
         </section>
 
@@ -95,7 +95,7 @@ export default function Home() {
             <p>Le journal date ses faits et cite ses sources. Chaque correction de fait est publiée, datée, dans le journal des corrections.</p>
           </div>
           <div className="art-grid">{latest.map((a) => <ArticleCard key={a.slug} a={a} />)}</div>
-          <div className="section-actions"><Link className="text-link" href="/journal">Tous les articles ↗</Link></div>
+          <div className="section-actions"><Link className="text-link" href="/journal">Tous les articles →</Link></div>
         </section>
 
         <section id="odeb" className="section od-band" aria-labelledby="odeb-title">
@@ -112,7 +112,7 @@ export default function Home() {
             </ul>
             <p className="od-band-note">Les six programmes du projet s’appuieront sur les vingt thématiques de l’association : <Link href="/odeb/programmes">voir quelles thématiques chaque programme mobilise →</Link></p>
             <div className="section-actions od-band-actions">
-              <Link className="button primary" href="/odeb">La vision 2030 <span aria-hidden="true">↗</span></Link>
+              <Link className="button primary" href="/odeb">La vision 2030 <span aria-hidden="true">→</span></Link>
               <Link className="button secondary" href="/odeb/livre-blanc">Le livre blanc <span aria-hidden="true">→</span></Link>
               <Link className="text-link" href="/odeb/feuille-de-route">Feuille de route 2026-2030 <span aria-hidden="true">→</span></Link>
             </div>
@@ -137,7 +137,7 @@ export default function Home() {
                   <h3 style={{ fontSize: 28 }}>{pole.name}</h3>
                   <p>{pole.items.slice(0, 3).map((t) => t.name).join(" · ")}{pole.items.length > 4 ? ` · et ${pole.items.length - 3} autres thématiques` : pole.items.length === 4 ? " · et 1 autre thématique" : ""}</p>
                 </div>
-                <span className="card-arrow" aria-hidden="true">↗</span>
+                <span className="card-arrow" aria-hidden="true">→</span>
               </Link>
             ))}
           </div>
@@ -160,7 +160,7 @@ export default function Home() {
               <Link key={p.id} href={`/actions#${p.id}`}><small>{p.theme} · {p.status}</small><strong>{p.title}</strong><span>{p.demand}</span></Link>
             ))}
           </div>
-          <div className="section-actions"><Link className="text-link" href="/actions">Tous les plaidoyers et leur suivi ↗</Link></div>
+          <div className="section-actions"><Link className="text-link" href="/actions">Tous les plaidoyers et leur suivi →</Link></div>
         </section>
 
         <section id="territoire" className="section heritage" aria-labelledby="territory-title">
@@ -190,11 +190,11 @@ export default function Home() {
             <p>De Narmbang à Donath Gari, onze chefs de canton ; des forums de 2000 et 2003 à la réactivation de 2026 ; une langue, le nangnda, et une <Link href="/bibliotheque">bibliothèque de quarante références</Link>.</p>
           </div>
           <div className="heritage-grid">
-            <article><span>01</span><h3>Grandes figures</h3><p>Tarouss Doumanbé, pilier de la création de l’association ; la lignée des chefs de canton ; les chercheurs qui ont écrit la mémoire bedjond.</p><Link className="text-link" href="/histoire#figures">Découvrir ↗</Link></article>
-            <article><span>02</span><h3>Lieux sacrés et généalogies</h3><p>Deux cahiers de terrain pour recenser les sites sacrés et écrire l’histoire de chaque famille.</p><Link className="text-link" href="/dossiers/lieux-sacres">Les lieux sacrés ↗</Link></article>
-            <article><span>03</span><h3>Nangnda, la langue</h3><p>Ce que nous en savons, le lexique de 2 650 mots que l’on peut écouter en ligne, et le dictionnaire numérique qui commence par vos mots.</p><Link className="text-link" href="/langue">La langue nangnda ↗</Link></article>
+            <article><span>01</span><h3>Grandes figures</h3><p>Tarouss Doumanbé, pilier de la création de l’association ; la lignée des chefs de canton ; les chercheurs qui ont écrit la mémoire bedjond.</p><Link className="text-link" href="/histoire#figures">Découvrir →</Link></article>
+            <article><span>02</span><h3>Lieux sacrés et généalogies</h3><p>Deux cahiers de terrain pour recenser les sites sacrés et écrire l’histoire de chaque famille.</p><Link className="text-link" href="/dossiers/lieux-sacres">Les lieux sacrés →</Link></article>
+            <article><span>03</span><h3>Nangnda, la langue</h3><p>Ce que nous en savons, le lexique de 2 650 mots que l’on peut écouter en ligne, et le dictionnaire numérique qui commence par vos mots.</p><Link className="text-link" href="/langue">La langue nangnda →</Link></article>
           </div>
-          <div className="section-actions"><Link className="text-link" href="/histoire">Toute l’histoire ↗</Link></div>
+          <div className="section-actions"><Link className="text-link" href="/histoire">Toute l’histoire →</Link></div>
         </section>
 
         <section id="impact" className="impact section" aria-labelledby="impact-title">
@@ -225,7 +225,7 @@ export default function Home() {
                 <span>{n}</span>
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <i aria-hidden="true">↗</i>
+                <i aria-hidden="true">→</i>
               </article>
             ))}
           </div>
@@ -253,7 +253,7 @@ export default function Home() {
                 <article>
                   <span>{n}</span>
                   <div><h3>{title}</h3><p>{description}</p></div>
-                  <b aria-hidden="true">↗</b>
+                  <b aria-hidden="true">→</b>
                 </article>
               </Link>
             ))}
@@ -266,12 +266,12 @@ export default function Home() {
             <h2 id="trust-title">Une association qui<br /><em>rend des comptes.</em></h2>
           </div>
           <div className="trust-card">
-            <span className="trust-mark" aria-hidden="true">◎</span>
+            <span className="trust-mark" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 10 4-1.7 7-5.6 7-10V6z" /><path d="m9 12 2 2 4-4" /></svg></span>
             <h3>Réponse sous 48 heures, plainte possible, corrections publiées</h3>
             <p>
               Mécanisme de plainte — même anonyme — avec recours jusqu’à l’assemblée générale, protection des enfants et des personnes vulnérables, charte d’écriture, et documents publiés au fur et à mesure de leur validation.
             </p>
-            <Link className="button primary" href="/transparence">Notre charte de redevabilité <span aria-hidden="true">↗</span></Link>
+            <Link className="button primary" href="/transparence">Notre charte de redevabilité <span aria-hidden="true">→</span></Link>
           </div>
         </section>
 

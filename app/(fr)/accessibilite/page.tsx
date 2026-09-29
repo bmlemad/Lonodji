@@ -54,7 +54,7 @@ export default function Accessibilite() {
           <p>Une page illisible, un formulaire impossible à remplir, un contraste trop faible, un document inaccessible : écrivez-nous en indiquant la page et ce qui bloque. Nous répondons sous quarante-huit heures ouvrées et nous corrigeons ; les corrections sont datées dans le <Link href="/transparence#corrections">journal des corrections</Link>. Par téléphone ou WhatsApp : {ORG.phone}.</p>
           <div className="hero-actions">
             <Link className="button primary" href="/participer?objet=question#contact">Signaler un obstacle <span aria-hidden="true">→</span></Link>
-            <Link className="text-link" href="/transparence">Notre charte de redevabilité <span aria-hidden="true">↗</span></Link>
+            <Link className="text-link" href="/transparence">Notre charte de redevabilité <span aria-hidden="true">→</span></Link>
           </div>
         </div>
         <p className="lg-footnote">Déclaration publiée le 28 septembre 2026, revue à chaque changement important du site. Référentiel : Web Content Accessibility Guidelines (WCAG) 2.1, niveau AA. Outils : axe-core 4, Playwright, captures multi-écrans. Les vérifications sont décrites dans la documentation technique du site.</p>

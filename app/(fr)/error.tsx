@@ -12,7 +12,7 @@ export default function GlobalError({
       <h1>Un instant, puis réessayez.</h1>
       <p>Une erreur inattendue est survenue. Vous pouvez relancer la page sans perdre votre navigation.</p>
       <button className="button primary" type="button" onClick={() => reset()}>
-        Réessayer <span aria-hidden="true">↗</span>
+        Réessayer <span aria-hidden="true">→</span>
       </button>
     </main>
   );

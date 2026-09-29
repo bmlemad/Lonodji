@@ -38,7 +38,7 @@ export default function Programmes() {
         { value: `${dir.pourvues}/${dir.total}`, label: "directions de pôle", note: "rang de chef de projet · à pourvoir" },
       ]} />
       <div className="section-actions" style={{ justifyContent: "flex-start", marginBottom: 40 }}>
-        <Link className="button primary" href="/participer?coordo=1#contact">Proposer ma candidature <span aria-hidden="true">↗</span></Link>
+        <Link className="button primary" href="/participer?coordo=1#contact">Proposer ma candidature <span aria-hidden="true">→</span></Link>
         <Link className="button secondary" href="/secteurs">Nos secteurs d’intervention : WASH, santé, urgences… <span aria-hidden="true">→</span></Link>
         <Link className="button secondary" href="/dossiers/trouver-ma-thematique">Trouver ma thématique <span aria-hidden="true">→</span></Link>
         <Link className="text-link" href="/impact">Tableau de suivi <span aria-hidden="true">→</span></Link>

@@ -220,7 +220,7 @@ export default function RedactionApp({ rubriques }: { rubriques: Rubrique[] }) {
         <label>Mot de passe<input type="password" name="motDePasse" autoComplete={etat === "creer" ? "new-password" : "current-password"} minLength={etat === "creer" ? 10 : 1} required autoFocus /></label>
         {etat === "creer" ? <label>Confirmer le mot de passe<input type="password" name="confirmation" autoComplete="new-password" minLength={10} required /></label> : null}
         {message ? <p className="rd-erreur" role="alert">{message}</p> : null}
-        <button className="button primary" type="submit">{etat === "creer" ? "Créer et entrer" : "Entrer"} <span aria-hidden="true">↗</span></button>
+        <button className="button primary" type="submit">{etat === "creer" ? "Créer et entrer" : "Entrer"} <span aria-hidden="true">→</span></button>
       </form>
     );
   }
