@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
+import OuvrirAncre from "@/components/ouvrir-ancre";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import { metaDescription, ogFor } from "@/lib/content";
 import { alternatesLangues } from "@/lib/langues";
@@ -92,14 +93,22 @@ export default function DonorsEn() {
         </div>
       </section>
 
-      {familles.map((g) => (
-        <section className="hub-section" id={`family-${g.f}`} key={g.f}>
-          <SectionHead eyebrow="Programmes" title={FAMILLES_EN[g.f]} text={`${g.items.length} programme${g.items.length > 1 ? "s" : ""}, from closest to Bédjondo to furthest.`} />
-          <div className="bl-grille">
-            {g.items.map((p) => <Card key={p.id} p={p} />)}
-          </div>
-        </section>
-      ))}
+      <section className="hub-section" id="programmes">
+        <SectionHead eyebrow="The programmes" title="Each programme," em="donor by donor." text="Amount, period, areas, how we connect and the source: one card per programme, from closest to Bédjondo to furthest. Open a donor family to read its cards." />
+        <div className="plier-liste">
+          {familles.map((g) => {
+            const near = g.items.filter((p) => PROCHE.includes(p.portee)).length;
+            return (
+              <details className="plier" id={`family-${g.f}`} key={g.f}>
+                <summary><strong>{FAMILLES_EN[g.f]}</strong><span>{g.items.length} programme{g.items.length > 1 ? "s" : ""}{near ? `, ${near} naming Mandoul, Koumra or Bédjondo` : ""}</span></summary>
+                <div className="bl-grille plier-cartes">
+                  {g.items.map((p) => <Card key={p.id} p={p} />)}
+                </div>
+              </details>
+            );
+          })}
+        </div>
+      </section>
 
       <section className="hub-section" id="windows">
         <SectionHead eyebrow="Funding windows" title="Where the association can apply" em="itself." text="All require an association in good standing — statutes, registration receipt, a bank account in its name — or a sister diaspora association registered abroad. Hence the importance of the formalities under way." />
@@ -120,11 +129,15 @@ export default function DonorsEn() {
 
       <section className="hub-section" id="closed">
         <SectionHead eyebrow="Good to know" title="Closed, or outside" em="our area." text="So as not to knock on the wrong door." />
-        <div className="bl-grille">
-          {aConnaitre.map((p) => <Card key={p.id} p={p} />)}
-        </div>
+        <details className="plier">
+          <summary><strong>{aConnaitre.length} programmes closed or outside our area</strong><span>{aConnaitre.map((p) => (PROGRAMMES_EN[p.id]?.nom ?? p.nom).split(" — ")[0]).join(" · ")}</span></summary>
+          <div className="bl-grille plier-cartes">
+            {aConnaitre.map((p) => <Card key={p.id} p={p} />)}
+          </div>
+        </details>
       </section>
 
+      <OuvrirAncre />
       <section className="hub-section">
         <p className="lg-footnote">
           Survey of {RELEVE_EN}, from official portals (World Bank, AfDB, the EU’s IATI register, Swiss cooperation, AFD, UNDP, UNICEF, UNFPA, IFAD, OCHA, Global Fund) and, failing that, the Chadian press, cited as such. Where an amount, a date or an area was not found, we say so. Programmes change quickly: this survey will be redone every six months. The French page adds, for each of our themes and projects, the programmes that match it: <Link href="/bailleurs#par-action" hrefLang="fr">programmes by theme and by project (French)</Link>. A mistake, a programme missed? <Link href="/participer?objet=partenariat#contact" hrefLang="fr">Write to us</Link>. See also <Link href="/en/sectors">our sectors of intervention</Link>.
