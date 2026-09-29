@@ -193,4 +193,5 @@ export const EN_PAGES_APP: { route: string; title: string }[] = [
   { route: "/en/villages", title: "Find your village — the Bedjond country, unit by unit" },
   { route: "/en/projects", title: "Projects — each one with its stage, what is missing and how to help" },
   { route: "/en/impact", title: "Impact dashboard — six dated, sourced indicators" },
+  { route: "/en/sectors", title: "Sectors of intervention — WASH, health, nutrition, relief, DRR" },
 ];

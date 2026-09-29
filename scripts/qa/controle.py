@@ -20,7 +20,7 @@ import urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-PAGES = ["/", "/mission", "/histoire", "/programmes", "/programmes/fiches-de-mission", "/actions", "/impact", "/projets", "/observatoire", "/villages", "/villages/bedjondo", "/villages/bedjondo/bedjondo", "/carte", "/journal", "/lettre",
+PAGES = ["/", "/mission", "/histoire", "/programmes", "/programmes/fiches-de-mission", "/secteurs", "/en/sectors", "/actions", "/impact", "/projets", "/observatoire", "/villages", "/villages/bedjondo", "/villages/bedjondo/bedjondo", "/carte", "/journal", "/lettre",
          "/bibliotheque", "/langue", "/diaspora", "/temoignages", "/documents", "/transparence", "/transparence/decisions", "/participer", "/presse", "/accessibilite", "/mentions-legales", "/plan-du-site", "/archives", "/recherche?q=odeb",
          "/odeb", "/odeb/livre-blanc", "/odeb/feuille-de-route", "/odeb/programmes", "/odeb/programmes/economie-sociale", "/odeb/programmes/memoire-patrimoine", "/odeb/identite",
          "/dossiers", "/dossiers/besoins", "/dossiers/identite-visuelle", "/dossiers/demarches", "/dossiers/lieux-sacres",

@@ -1,5 +1,6 @@
 import Link from "@/components/lien";
 import type { ArticleSummary, DocumentItem, Plaidoyer, Thematique } from "../lib/content";
+import { secteursDeThematique } from "../lib/secteurs";
 
 /* Adresse du site pour les données structurées (pas d'import de lib/content : ce module sert aussi côté client). */
 const SITE = "https://lonodji.org";
@@ -64,6 +65,7 @@ export function ThematiqueRow({ t, pole }: { t: Thematique; pole?: string }) {
         <p className="them-coord">
           {t.filled ? <><b>{t.coordinatorLabel || "Coordination"} :</b> {t.coordinator}</> : <>Coordination à pourvoir — <Link href={`/participer?theme=${t.number}&coordo=1#contact`}>proposer sa candidature</Link></>}
         </p>
+        {secteursDeThematique(t.id).length ? <p className="them-secteurs" aria-label="Secteurs d’intervention">{secteursDeThematique(t.id).map((s) => <Link key={s.id} href={`/secteurs#${s.id}`}>{s.sigle}</Link>)}</p> : null}
         <p className="them-desc" dangerouslySetInnerHTML={{ __html: t.description }} />
         {t.odd.length ? (
           <p className="them-odd"><span className="odd-legend">ODD</span>{t.odd.map((o) => (

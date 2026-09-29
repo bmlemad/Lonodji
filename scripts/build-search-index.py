@@ -116,6 +116,12 @@ PAGES_SITE.append({"t": "Espace presse et partenaires", "r": "/presse", "k": "Pa
 PAGES_SITE.append({"t": "Identité visuelle : le logo « Les Pas vers l’Avenir », adopté le 28 septembre 2026", "r": "/odeb/identite", "k": "Page",
      "d": "Trois empreintes — les ancêtres, la génération actuelle, les générations futures — vers un soleil levant : le logo du projet, ses versions, ses couleurs, ses règles, le kit à télécharger et le papier à en-tête.",
      "x": "logo ODEB identité visuelle charte graphique emblème empreintes pas générations soleil levant verre devise sur les traces de nos ancêtres bâtissons notre avenir couleurs vert profond acacia doré polices DM Sans Playfair kit ZIP SVG PNG papier à en-tête planche imprimeur règles zone de protection tailles minimales monochrome réserve blanche"})
+PAGES_SITE.append({"t": "Secteurs d’intervention : WASH, santé, nutrition, urgences…", "r": "/secteurs", "k": "Page",
+     "d": "Les vingt thématiques dans la langue des ONG de développement et d’aide : dix-sept secteurs, leurs clusters, codes CAD et ODD, ce qui est fait et ce qui n’est qu’une piste.",
+     "x": "secteurs secteur d’intervention WASH EAH eau assainissement hygiène santé nutrition éducation sécurité alimentaire FSL moyens d’existence livelihoods relief urgence humanitaire DRR RRC réduction des risques catastrophe protection enfance VBG gouvernance paix genre climat infrastructures ICT4D numérique culture diaspora cluster IASC CAD OCDE ODD bailleur ONG partenaire abris CCCM"})
+PAGES_SITE.append({"t": "Sectors of intervention — WASH, health, nutrition, relief, DRR (in English)", "r": "/en/sectors", "k": "In English",
+     "d": "Twenty themes mapped to NGO sectors: IASC clusters, OECD-DAC codes, SDGs.",
+     "x": "English sectors WASH health nutrition education food security livelihoods relief emergency DRR protection governance peace gender climate ICT4D culture diaspora cluster DAC SDG donor NGO partner"})
 PAGES_SITE.append({"t": "Fiches de mission : diriger un pôle, coordonner une thématique", "r": "/programmes/fiches-de-mission", "k": "Page",
      "d": "Vingt-six fiches en PDF — quatre directions de pôle au rang de chef de projet, vingt coordinations, deux cellules — avec le rôle, le périmètre, les quatre étapes et le lien pour candidater.",
      "x": "fiche de mission fiches poste directeur directrice de pôle chef de projet coordonnateur coordonnatrice coordination thématique cellule candidater candidature recrutement bénévole rôle périmètre étapes PDF recueil à pourvoir vacant"})

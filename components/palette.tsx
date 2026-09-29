@@ -18,6 +18,7 @@ const RACCOURCIS: Entry[] = [
   { t: "Le projet ODEB LONODJI", r: "/odeb", k: "Raccourci", d: "Vision 2030, six missions, six programmes, livre blanc" },
   { t: "Signaler un besoin", r: "/dossiers/besoins", k: "Raccourci", d: "Eau, école, santé, route : localité par localité" },
   { t: "Nos actions : pôles et thématiques", r: "/programmes", k: "Raccourci", d: "Quatre pôles, vingt thématiques, directions et coordonnateurs" },
+  { t: "Secteurs d’intervention", r: "/secteurs", k: "Raccourci", d: "WASH, santé, nutrition, urgences… nos thématiques en langue ONG" },
   { t: "Le journal", r: "/journal", k: "Raccourci", d: "Articles datés et sourcés, lettre d’information" },
   { t: "Adhérer, écrire, nous soutenir", r: "/participer", k: "Raccourci", d: "Formulaire, WhatsApp, téléphone ; réponse sous 48 h" },
   { t: "Carte du territoire", r: "/carte", k: "Raccourci", d: "Quatorze unités, localités, équipements" },

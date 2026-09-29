@@ -656,7 +656,7 @@ UPDATES_SOURCE = [
     # 28/09/2026 : chiffres figés de l'ancien site devenus inexacts (inspection de cohérence)
     ('The full site, the journal (29 articles), the research base', 'The full site, the journal, the research base'),
     ('<p>The full site, the journal, the research base and all PDFs are in French: <a href="../index.html">visit the French site</a>.</p>',
-     '<p>Also in English: <a href="villages.html">find your village</a> (fourteen units, 966 localities), <a href="projects.html">the projects and their stage</a>, <a href="impact.html">the impact dashboard</a> and <a href="odeb.html">the ODEB project</a>. The full site, the journal, the research base and all PDFs are in French: <a href="../index.html">visit the French site</a>.</p>'),
+     '<p>Also in English: <a href="villages.html">find your village</a> (fourteen units, 966 localities), <a href="projects.html">the projects and their stage</a>, <a href="impact.html">the impact dashboard</a>, <a href="sectors.html">our sectors (WASH, health, relief…)</a> and <a href="odeb.html">the ODEB project</a>. The full site, the journal, the research base and all PDFs are in French: <a href="../index.html">visit the French site</a>.</p>'),
     ('        <span class="bento-num">38</span>\n        <span class="bento-label">références réunies à ce jour</span>', '        <span class="bento-num">40</span>\n        <span class="bento-label">références réunies à ce jour</span>'),
     # nominations de coordonnateurs : générées depuis NOMINATIONS (voir plus bas), ajoutées à l'exécution
     # la tuile « à pourvoir » pointait vers la thématique 04, désormais pourvue

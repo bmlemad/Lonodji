@@ -30,6 +30,7 @@ EYEBROWS = {
     "/mission": "L’association",
     "/histoire": "Histoire & patrimoine",
     "/programmes": "Nos actions · 4 pôles, 20 thématiques",
+    "/secteurs": "Nos actions · secteurs d’intervention",
     "/actions": "Plaidoyers & engagements",
     "/impact": "Suivi & tableau de bord",
     "/journal": "Le journal",
