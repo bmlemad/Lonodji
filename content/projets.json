@@ -144,19 +144,19 @@
    ]
   },
   {
-   "slug": "air-bedjondo",
-   "nom": "Air Bedjondo",
+   "slug": "bedjondo-transport-logistique",
+   "nom": "Bedjondo Transport et Logistique",
    "stade": "annonce",
    "libelle": "projet annoncé, sans financement ni calendrier",
-   "route": "/dossiers/air-bedjondo",
+   "route": "/dossiers/bedjondo-transport-logistique",
    "thematiques": [
     "desenclavement-urbanisation"
    ],
-   "resume": "Un dispositif de transport et de logistique terrestre — pas aérien, malgré son nom — pour désenclaver Bédjondo et relier ses terroirs entre eux. Annoncé par l’animateur de l’association ; tout reste à instruire.",
+   "resume": "Un dispositif de transport et de logistique terrestres pour désenclaver Bédjondo et relier ses cantons et villages entre eux. Annoncé le 19 septembre 2026 sous le nom d’Air Bedjondo, renommé le 29 septembre 2026 ; tout reste à instruire.",
    "existant": [
-    "Constat documenté : pistes de canton impraticables en saison des pluies, route vers N’Djamena dégradée",
-    "Une page qui dit ce que nous savons et ce que nous ne savons pas",
-    "Rattaché depuis le 28 septembre 2026 au programme Économie sociale et revenus (axe Transport et logistique terrestres) : l’entreprise de transport du programme"
+    "Constat documenté : pistes de canton impraticables en saison des pluies, traversée en pirogue à Hoblo d’août à octobre",
+    "Six propositions publiées le 29 septembre 2026 : services, véhicules, montage, étapes, règles, liens avec les autres chantiers",
+    "Rattaché depuis le 28 septembre 2026 au programme Économie sociale et revenus (axe Transport et logistique terrestres)"
    ],
    "manque": [
     "Une étude : besoin, véhicules, exploitation, coûts, gouvernance",

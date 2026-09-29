@@ -1611,3 +1611,5 @@ html.nav-compact .nav .logo-verre img{ width:37px; }
 html.nav-compact .nav .logo-verre img{ width:34px; }
 .logo-verre--pied img{ width:44px; transform:translateX(2px); }
 @media (max-width:800px){ .nav .logo-verre img{ width:37px; } html.nav-compact .nav .logo-verre img{ width:29px; } }
+.btl-points{ margin:0; padding-left:1.1em; display:grid; gap:6px; font-size:14.5px; line-height:1.55; }
+.btl-points li::marker{ color:var(--deep); }

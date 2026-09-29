@@ -13,7 +13,7 @@ import { ALIGNEMENT_PROJETS, GUICHETS, programmeParId } from "@/lib/bailleurs";
 
 export const metadata: Metadata = {
   title: "Plateforme de projets",
-  description: metaDescription("Espace numérique, application, complexe sportif, Air Bedjondo : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer — et le formulaire pour en proposer un."),
+  description: metaDescription("Espace numérique, application, complexe sportif, transport et logistique : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer — et le formulaire pour en proposer un."),
   alternates: { canonical: "/projets", languages: alternatesLangues("/projets") },
   openGraph: ogFor("/projets"),
 };
@@ -157,7 +157,7 @@ export default function Projets() {
         <LegacyEnhance hasForms />
       </section>
 
-      <Partager route="/projets" titre="Plateforme de projets" texte="Espace numérique, application, complexe sportif, Air Bedjondo : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer — et le formulaire pour en proposer un." />
+      <Partager route="/projets" titre="Plateforme de projets" texte="Espace numérique, application, complexe sportif, transport et logistique : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer — et le formulaire pour en proposer un." />
 
       <p className="lg-footnote">Plateforme ouverte le 28 septembre 2026, au titre de la phase 2 de la <Link href="/odeb/feuille-de-route#phase-2">feuille de route 2026-2030</Link> et de l’axe « Investissements » du <Link href="/odeb/programmes/diaspora">programme Diaspora</Link> du projet ODEB LONODJI. Chaque projet est décrit ici par l’animation ; les stades et les compteurs paraissent sur le <Link href="/impact">tableau de bord</Link>. Les propositions sont enregistrées par le service de formulaires de notre hébergeur (<Link href="/mentions-legales#donnees">où vont vos réponses</Link>).</p>
     </main>

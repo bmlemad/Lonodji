@@ -1,5 +1,5 @@
 {
- "genere": "2026-09-29T13:01:42Z",
+ "genere": "2026-09-29T16:42:17Z",
  "contenu": {
   "plaidoyers": {
    "publies": 8,
@@ -63,11 +63,11 @@
      "route": "/dossiers/complexe-sportif"
     },
     {
-     "slug": "air-bedjondo",
-     "nom": "Air Bedjondo",
+     "slug": "bedjondo-transport-logistique",
+     "nom": "Bedjondo Transport et Logistique",
      "stade": "annonce",
      "libelle": "projet annoncé, sans financement ni calendrier",
-     "route": "/dossiers/air-bedjondo"
+     "route": "/dossiers/bedjondo-transport-logistique"
     },
     {
      "slug": "complexe-hotelier",

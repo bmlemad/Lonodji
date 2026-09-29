@@ -61,10 +61,17 @@ export const DECISIONS: Decision[] = [
     suite: "L’adresse de chaque siège, sa date d’ouverture et le partage des responsabilités ne sont pas encore fixés publiquement.",
   },
   {
+    id: "2026-21", date: "2026-09-29", type: "annonce",
+    titre: "Air Bedjondo devient Bedjondo Transport et Logistique",
+    texte: "Le projet de transport et de logistique terrestres annoncé le 19 septembre 2026 change de nom : l’ancien laissait croire à un projet aérien. Six propositions pour le mener sont publiées avec lui, soumises au bureau et à l’assemblée.",
+    sources: [{ label: "Page du projet", href: "/dossiers/bedjondo-transport-logistique" }],
+    suite: "Rien n’est décidé sur le projet lui-même : ni étude, ni montage, ni financement, ni calendrier.",
+  },
+  {
     id: "2026-05", date: "2026-09-19", type: "annonce",
     titre: "Air Bedjondo, un projet de transport terrestre",
     texte: "Une intention annoncée par l’animateur de l’association et relayée par elle sans en être le porteur : ni étude, ni financement, ni calendrier. Depuis le 28 septembre 2026, l’entreprise de transport et de logistique figure parmi les quatre entreprises phares proposées du programme 06.",
-    sources: [{ label: "Article du 19 septembre 2026", href: "/journal/2026-09-19-annonce-air-bedjondo" }, { label: "Plateforme de projets", href: "/projets#air-bedjondo" }],
+    sources: [{ label: "Article du 19 septembre 2026", href: "/journal/2026-09-19-annonce-air-bedjondo" }, { label: "Plateforme de projets", href: "/projets#bedjondo-transport-logistique" }],
   },
   {
     id: "2026-06", date: "2026-09-21", type: "nomination",

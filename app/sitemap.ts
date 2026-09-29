@@ -8,13 +8,13 @@ const siteUrl = "https://lonodji.org";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const idx = getIndex();
-  const fixed = ["/", "/mission", "/histoire", "/programmes", "/programmes/fiches-de-mission", "/secteurs", "/bailleurs", "/en/sectors", "/en/donors", "/actions", "/impact", "/projets", "/journal", "/documents", "/dossiers", "/carte", "/villages", "/observatoire", "/bibliotheque", "/langue", "/diaspora", "/temoignages", "/odeb", "/en/odeb", "/en/villages", "/en/projects", "/en/impact", "/odeb/livre-blanc", "/odeb/feuille-de-route", "/odeb/programmes", "/odeb/identite", ...PROGRAMMES.map(routeProgramme), "/participer", "/presse", "/transparence", "/transparence/decisions", "/lettre", "/archives", "/accessibilite", "/mentions-legales", "/plan-du-site"];
+  const fixed = ["/", "/mission", "/histoire", "/programmes", "/programmes/fiches-de-mission", "/secteurs", "/bailleurs", "/dossiers/bedjondo-transport-logistique", "/en/sectors", "/en/donors", "/actions", "/impact", "/projets", "/journal", "/documents", "/dossiers", "/carte", "/villages", "/observatoire", "/bibliotheque", "/langue", "/diaspora", "/temoignages", "/odeb", "/en/odeb", "/en/villages", "/en/projects", "/en/impact", "/odeb/livre-blanc", "/odeb/feuille-de-route", "/odeb/programmes", "/odeb/identite", ...PROGRAMMES.map(routeProgramme), "/participer", "/presse", "/transparence", "/transparence/decisions", "/lettre", "/archives", "/accessibilite", "/mentions-legales", "/plan-du-site"];
   const entries: MetadataRoute.Sitemap = fixed.map((path) => ({
     url: new URL(path, siteUrl).toString(),
     changeFrequency: path === "/" || path === "/journal" ? "weekly" : "monthly",
     priority: path === "/" ? 1 : 0.7,
   }));
-  for (const p of idx.pages.filter((x) => x.kind === "dossier" || x.kind === "en")) {
+  for (const p of idx.pages.filter((x) => (x.kind === "dossier" || x.kind === "en") && x.slug !== "air-bedjondo")) {
     entries.push({ url: new URL(p.route, siteUrl).toString(), changeFrequency: "monthly", priority: 0.5 });
   }
   for (const a of idx.articles) {

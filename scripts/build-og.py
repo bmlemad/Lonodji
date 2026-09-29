@@ -32,6 +32,7 @@ EYEBROWS = {
     "/programmes": "Nos actions · 4 pôles, 20 thématiques",
     "/secteurs": "Nos actions · secteurs d’intervention",
     "/bailleurs": "Nos actions · programmes des bailleurs",
+    "/dossiers/bedjondo-transport-logistique": "Nos actions · projet annoncé",
     "/actions": "Plaidoyers & engagements",
     "/impact": "Suivi & tableau de bord",
     "/journal": "Le journal",

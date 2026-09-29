@@ -28,7 +28,7 @@
    "slug": "air-bedjondo",
    "route": "/dossiers/air-bedjondo",
    "kind": "dossier",
-   "title": "Air Bedjondo",
+   "title": "Bedjondo Transport et Logistique (ex-Air Bedjondo)",
    "eyebrow": "Nos projets",
    "lede": "Un projet de transport et de logistique terrestre annoncé pour désenclaver Bédjondo et relier ses terroirs entre eux. Malgré son nom, ce n’est pas un projet aérien : ce que nous savons, et surtout ce que nous ne savons pas encore.",
    "description": "Air Bedjondo : le projet de transport et de logistique terrestre annoncé par ADEB LONODJI pour désenclaver Bédjondo et relier ses terroirs. Malgré son nom, ce n’est pas un projet aérien.",
@@ -153,7 +153,7 @@
    "lede": "Un forage sans réparateur, un bois coupé pour la cuisine, une batterie abandonnée dans un champ : la durabilité se joue sur ces détails. Voici ce que nous savons déjà, la grille que nous appliquons désormais à chacun de nos projets, ce que l’économie verte et circulaire peut vouloir dire ici, et ce qui reste à établir.",
    "description": "Ce qu’ADEB LONODJI sait de l’environnement à Bédjondo, la règle « l’entretien avant l’inauguration » et la grille de durabilité en cinq questions appliquée à chacun de ses projets.",
    "parent": "Nos actions",
-   "words": 1560,
+   "words": 1562,
    "hasMap": false
   },
   {
@@ -357,7 +357,7 @@
    "lede": "Les Chantiers ADEB LONODJI sont les projets de réflexion, de recherche et d’action portés par l’association. Pour les organiser, ADEB LONODJI structure son action autour de vingt thématiques réparties en quatre pôles, appuyées par deux cellules transversales — dont un pôle spécialisé Numérique & innovation, créé en septembre 2026. Chaque thématique est animée par un coordonnateur. Cette organisation en pôles est notre méthodologie de travail en équipe : elle permet une bonne coordination des actions entre les thématiques, au lieu d’initiatives dispersées. Chaque thématique est en outre mise en regard des Objectifs de développement durable adoptés par les Nations unies, pour que nos partenaires situent immédiatement notre travail.",
    "description": "Quatre pôles, vingt thématiques et deux cellules transversales pour organiser l’action d’ADEB LONODJI.",
    "parent": "Accueil",
-   "words": 5624,
+   "words": 5632,
    "hasMap": false
   },
   {
@@ -734,7 +734,7 @@
    "category": "projets",
    "summary": "Un projet de transport et de logistique terrestre pour désenclaver Bédjondo et relier ses terroirs — malgré son nom, ce n’est pas un projet aérien. Ce que l’animateur d’ADEB LONODJI vient d’annoncer, et ce qui reste à préciser.",
    "readTime": "1 min de lecture",
-   "words": 219,
+   "words": 260,
    "byline": "Rédaction ADEB LONODJI",
    "pills": [
     "1 min de lecture",
@@ -1790,8 +1790,8 @@
       "filled": false,
       "coordinator": "à pourvoir",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la <a href=\"/programmes#jeunesse-reussite\">thématique Éducation, jeunesse &amp; formation</a>. Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir <a href=\"/journal/2026-09-16-bedjondo-village-devenu-ville\">nos douze propositions pour une ville moderne</a>). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir <a href=\"/dossiers/air-bedjondo\">Air Bedjondo</a>). <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’<strong>énergie</strong> (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo.",
-      "descriptionText": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la thématique Éducation, jeunesse & formation . Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir nos douze propositions pour une ville moderne ). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir Air Bedjondo ). Mise à jour du 29 septembre 2026 : la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’ énergie (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo.",
+      "description": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la <a href=\"/programmes#jeunesse-reussite\">thématique Éducation, jeunesse &amp; formation</a>. Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir <a href=\"/journal/2026-09-16-bedjondo-village-devenu-ville\">nos douze propositions pour une ville moderne</a>). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir <a href=\"https://lonodji.org/dossiers/bedjondo-transport-logistique\">Bedjondo Transport et Logistique</a>, ex-Air Bedjondo). <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’<strong>énergie</strong> (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo.",
+      "descriptionText": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la thématique Éducation, jeunesse & formation . Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir nos douze propositions pour une ville moderne ). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir Bedjondo Transport et Logistique , ex-Air Bedjondo). Mise à jour du 29 septembre 2026 : la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’ énergie (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo.",
       "tags": [
        "Désenclavement",
        "Urbanisation",
@@ -1828,8 +1828,8 @@
       ],
       "links": [
        {
-        "label": "Air Bedjondo →",
-        "href": "/dossiers/air-bedjondo"
+        "label": "Bedjondo Transport et Logistique →",
+        "href": "https://lonodji.org/dossiers/bedjondo-transport-logistique"
        },
        {
         "label": "Éducation, jeunesse & formation →",

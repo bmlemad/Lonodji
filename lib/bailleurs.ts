@@ -458,7 +458,7 @@ export const ALIGNEMENT_PROJETS: Record<string, AlignementProjet> = {
     guichets: [0, 1],
     lecture: "Aucun programme relevé ne finance le sport. Seuls les guichets ouverts aux associations pourraient contribuer à une première tranche (équipement, terrain), une fois le projet chiffré et l’association en règle.",
   },
-  "air-bedjondo": {
+  "bedjondo-transport-logistique": {
     programmes: [],
     guichets: [],
     lecture: "Aucun programme en cours ne finance le transport rural dans le Mandoul : le PMCR est clos depuis le 30 avril 2026. Le projet dépend d’investisseurs privés ; le plaidoyer routes s’adresse désormais au ministère des Infrastructures et au Fonds d’entretien routier.",

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const groups: [string, string[]][] = [
   ["Diagnostic et démarches", ["problematiques", "besoins", "enquetes", "demarches", "decentralisation", "ong-partenaires", "odd", "engagements"]],
-  ["Projets à l’étude", ["air-bedjondo", "complexe-sportif", "espace-numerique", "drones-innovation", "application", "agriculture-securite-alimentaire", "environnement"]],
+  ["Projets à l’étude", ["bedjondo-transport-logistique", "complexe-sportif", "espace-numerique", "drones-innovation", "application", "agriculture-securite-alimentaire", "environnement"]],
   ["Personnes vulnérables et paix", ["solidarite-inclusion", "veuves", "handicap", "agriculteurs-eleveurs"]],
   ["Bédjondo et patrimoine", ["bedjondo", "lieux-sacres", "genealogies", "recherche", "identite-visuelle", "evenements", "kit-mobilisation"]],
   ["Outils en ligne", ["trouver-ma-thematique", "genealogie-outil"]],
@@ -22,7 +22,9 @@ const groups: [string, string[]][] = [
 
 export default function Dossiers() {
   const pages = getIndex().pages.filter((p) => p.kind === "dossier");
-  const bySlug = new Map(pages.map((p) => [p.slug, p]));
+  const bySlug = new Map<string, { slug: string; route: string; eyebrow: string; title: string; lede: string }>(pages.map((p) => [p.slug, p]));
+  // dossiers écrits directement dans l'appli (hors import de l'ancien site)
+  bySlug.set("bedjondo-transport-logistique", { slug: "bedjondo-transport-logistique", route: "/dossiers/bedjondo-transport-logistique", eyebrow: "Projet annoncé", title: "Bedjondo Transport et Logistique", lede: "Le projet de transport et de logistique terrestres annoncé sous le nom d’Air Bedjondo, renommé le 29 septembre 2026 : pourquoi, ce que nous savons, et six propositions pour le mener." });
   return (
     <main id="main-content" className="hub-page">
       <PageHeader eyebrow="Nos actions · tous les dossiers" title="Tout ce que nous" em="avons documenté." lead={`${pages.length} dossiers de fond, chacun daté et sourcé, du diagnostic territorial aux projets à l’étude. Ils nourrissent les plaidoyers et les vingt thématiques.`} />

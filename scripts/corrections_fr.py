@@ -67,6 +67,10 @@ INTENTION_ONG = ('<span class="pole-status pole-status--vacant">Décision prise,
 
 CORRECTIONS = {
     "poles.html": [
+        # 29/09/2026 : Air Bedjondo devient Bedjondo Transport et Logistique
+        ('<span class="rubrique-card-title">Air Bedjondo</span>', '<span class="rubrique-card-title">Bedjondo Transport et Logistique</span>'),
+        ('(voir <a href="air-bedjondo.html">Air Bedjondo</a>).', '(voir <a href="https://lonodji.org/dossiers/bedjondo-transport-logistique">Bedjondo Transport et Logistique</a>, ex-Air Bedjondo).'),
+        ('<a class="pole-hub-link" href="air-bedjondo.html">Air Bedjondo &rarr;</a>', '<a class="pole-hub-link" href="https://lonodji.org/dossiers/bedjondo-transport-logistique">Bedjondo Transport et Logistique &rarr;</a>'),
         # 1. Thématique 07 : corps, étiquettes, ODD, suivi
         (T07_CORPS_ANCIEN, T07_CORPS_NOUVEAU),
         ('<div class="pole-tags"><span class="tag">Eau potable</span><span class="tag">Électricité</span><span class="tag">Solaire</span><span class="tag">Internet</span></div>',
@@ -258,6 +262,18 @@ CORRECTIONS = {
     "articles/2026-09-17-plaidoyer-eau-potable-bedjondo.html": [
         # coquille (29/09/2026) : « desserre » pour « dessert », sans changement de sens
         ("nous ignorons quel village exactement son réseau desserre,", "nous ignorons quel village exactement son réseau dessert,"),
+    ],
+    "articles/2026-09-19-annonce-air-bedjondo.html": [
+        # 29/09/2026 : nouveau nom (note datée ; le texte du 19 septembre reste tel quel)
+        ('<div class="wrap prose article-body">\n<p>L&rsquo;animateur d&rsquo;ADEB LONODJI vient d&rsquo;annoncer',
+         '<div class="wrap prose article-body">\n<p class="form-note"><strong>Mise à jour du 29 septembre 2026&nbsp;:</strong> le projet s&rsquo;appelle désormais <a href="https://lonodji.org/dossiers/bedjondo-transport-logistique">Bedjondo Transport et Logistique</a>&nbsp;; l&rsquo;ancien nom laissait croire à un projet aérien. Six propositions pour le mener y sont publiées. Le texte ci-dessous est celui du 19 septembre.</p>\n<p>L&rsquo;animateur d&rsquo;ADEB LONODJI vient d&rsquo;annoncer'),
+    ],
+    "air-bedjondo.html": [
+        ('<h1>Air Bedjondo</h1>', '<h1>Bedjondo Transport et Logistique (ex-Air Bedjondo)</h1>'),
+        ('<title>Air Bedjondo — transport et logistique terrestre — ADEB LONODJI</title>', '<title>Bedjondo Transport et Logistique (ex-Air Bedjondo) — ADEB LONODJI</title>'),
+    ],
+    "environnement.html": [
+        ('<a href="air-bedjondo.html#durabilite-titre">Air Bedjondo</a>', '<a href="https://lonodji.org/dossiers/bedjondo-transport-logistique">Bedjondo Transport et Logistique</a>'),
     ],
     "redevabilite.html": [
         # 10.

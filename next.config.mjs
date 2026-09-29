@@ -8,6 +8,8 @@ const nextConfig = {
   async redirects() {
     // Adresses de la première version du site (septembre 2026) : conservées pour les liens déjà partagés.
     return [
+      // 29/09/2026 : Air Bedjondo devient Bedjondo Transport et Logistique
+      { source: "/dossiers/air-bedjondo", destination: "/dossiers/bedjondo-transport-logistique", permanent: true },
       // doublons : pages de la première version servies aussi sous /dossiers/ (audit des doublons du 29/09/2026)
       { source: "/dossiers/mission", destination: "/mission", permanent: true },
       { source: "/dossiers/poles", destination: "/programmes", permanent: true },
