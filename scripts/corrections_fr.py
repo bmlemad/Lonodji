@@ -334,3 +334,13 @@ CORRECTIONS.setdefault("actualites.html", []).append((
     "Le nombre d&rsquo;abonn&eacute;s s&rsquo;affichera ici &agrave; partir du dixi&egrave;me. Inscrivez-vous pour recevoir le prochain num&eacute;ro.",
     "Le nombre d&rsquo;abonn&eacute;s est publi&eacute;, m&ecirc;me &agrave; z&eacute;ro, sur le <a href=\"suivi.html\">tableau de bord</a>. Inscrivez-vous pour recevoir le prochain num&eacute;ro.",
 ))
+
+# Programmes des bailleurs (relevé du 29 septembre 2026) : le PMCR est clos depuis le 30 avril 2026.
+CORRECTIONS.setdefault("plaidoyers.html", []).append((
+    "<dd>Ministère des Infrastructures · Délégation provinciale · PMCR (Banque mondiale) · Fonds d&rsquo;entretien routier · commune</dd>",
+    "<dd>Ministère des Infrastructures · Délégation provinciale · PMCR (Banque mondiale ; clos le 30 avril 2026, successeur à identifier — <a href=\"https://lonodji.org/bailleurs#pmcr\">voir les programmes des bailleurs</a>) · Fonds d&rsquo;entretien routier · commune</dd>",
+))
+CORRECTIONS.setdefault("ong-partenaires.html", []).append((
+    "Le <strong>PMCR</strong>, projet de mobilit&eacute; et de collectivit&eacute; rurale,",
+    "Le <strong>PMCR</strong>, projet de mobilit&eacute; et de collectivit&eacute; rurale (clos le 30 avril 2026&nbsp;; <a href=\"https://lonodji.org/bailleurs\">voir les programmes des bailleurs, relev&eacute; du 29 septembre 2026</a>),",
+))

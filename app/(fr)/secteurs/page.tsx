@@ -56,7 +56,7 @@ export default function Secteurs() {
             </tbody>
           </table>
         </div>
-        <p className="lg-footnote">La colonne Cluster indique le groupe de coordination humanitaire de référence (IASC) ; ADEB LONODJI n’est membre d’aucun cluster à ce jour. État des activités : <b>Publié</b> — une page, un document ou un formulaire existe ; ce n’est pas une activité réalisée sur le terrain. <b>Piste</b> — envisagée, ni engagée ni chiffrée.</p>
+        <p className="lg-footnote">La colonne Cluster indique le groupe de coordination humanitaire de référence (IASC) ; ADEB LONODJI n’est membre d’aucun cluster à ce jour. État des activités : <b>Publié</b> — une page, un document ou un formulaire existe ; ce n’est pas une activité réalisée sur le terrain. <b>Piste</b> — envisagée, ni engagée ni chiffrée. Qui finance aujourd’hui ces secteurs au Tchad, et dans le Mandoul : <Link href="/bailleurs">les programmes des bailleurs, et où nous nous raccrochons</Link>.</p>
       </section>
 
       <section className="hub-section" id="principes">

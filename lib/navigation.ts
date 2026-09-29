@@ -42,6 +42,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Numérique & innovation", href: "/programmes#pole-4", note: "Pôle IV" },
         { label: "Les deux cellules transversales", href: "/programmes#cellules", note: "Financement, communication" },
         { label: "Secteurs d’intervention", href: "/secteurs", note: "WASH, santé, nutrition, urgences… en langue ONG" },
+        { label: "Programmes des bailleurs au Tchad", href: "/bailleurs", note: "Banque mondiale, UE, ONU, BAD : où nous nous raccrochons" },
         { label: "Fiches de mission (PDF)", href: "/programmes/fiches-de-mission", note: "Diriger un pôle, coordonner une thématique" },
       ] },
       { titre: "Plaidoyers & suivi", liens: [
@@ -137,7 +138,7 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
     { label: "Redevabilité & transparence", href: "/transparence" }, { label: "Registre des décisions", href: "/transparence/decisions" }, { label: "Documents", href: "/documents" }, { label: "ONG & bailleurs : notre statut", href: "/dossiers/ong-partenaires" }, { label: "Presse & partenaires", href: "/presse" }, { label: "Accessibilité", href: "/accessibilite" }, { label: "Archives du site", href: "/archives" },
   ] },
   { titre: "Nos actions", liens: [
-    { label: "Quatre pôles, vingt thématiques", href: "/programmes" }, { label: "Secteurs d’intervention", href: "/secteurs" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }, { label: "Plaidoyers & engagements", href: "/actions" }, { label: "Tableau de bord d’impact", href: "/impact" },
+    { label: "Quatre pôles, vingt thématiques", href: "/programmes" }, { label: "Secteurs d’intervention", href: "/secteurs" }, { label: "Programmes des bailleurs", href: "/bailleurs" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }, { label: "Plaidoyers & engagements", href: "/actions" }, { label: "Tableau de bord d’impact", href: "/impact" },
     { label: "Plateforme de projets", href: "/projets" }, { label: "Diagnostic territorial", href: "/dossiers/problematiques" }, { label: "Carte des besoins", href: "/dossiers/besoins" }, { label: "Tous les dossiers", href: "/dossiers" }, { label: "Quelle thématique pour vous ?", href: "/dossiers/trouver-ma-thematique" },
   ] },
   { titre: "Territoire & patrimoine", liens: [

@@ -40,12 +40,6 @@ const nextConfig = {
       },
       {
         // adresse devinée couramment (revue du 29/09/2026)
-        source: "/bailleurs",
-        destination: "/dossiers/ong-partenaires",
-        permanent: true,
-      },
-      {
-        // adresse devinée couramment (revue du 29/09/2026)
         source: "/equipe",
         destination: "/mission",
         permanent: true,

@@ -1475,3 +1475,45 @@ main :where(ul, ol):not([class]):not(nav *) > li, main .plea-next > li, main .od
   .logo-verre img{ width:30px; }
 }
 @media (max-width:359px){ .brand-name{ display:none; } }
+
+/* Page « Programmes des bailleurs au Tchad » */
+.bl-bref{ list-style:none; padding:0; margin:0; display:grid; gap:12px; max-width:880px; }
+.bl-bref li{ padding:16px 20px; border-radius:var(--r-carte-s); border:1px solid var(--carte-filet); background:var(--carte-fond); line-height:1.6; }
+.bl-grille{ display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:16px; }
+.bl-carte{ padding:22px; border-radius:var(--r-carte-m); border:1px solid var(--carte-filet); background:var(--carte-fond); box-shadow:var(--carte-ombre); display:flex; flex-direction:column; gap:10px; scroll-margin-top:110px; }
+.bl-carte:target{ outline:3px solid var(--accent); outline-offset:3px; }
+.bl-carte h3{ margin:0; font-size:19px; line-height:1.25; letter-spacing:-.01em; }
+.bl-tete{ display:flex; flex-wrap:wrap; gap:6px; margin:0; }
+.bl-portee, .bl-statut{ display:inline-flex; align-items:center; padding:4px 10px; border-radius:99px; font-size:11.5px; font-weight:700; letter-spacing:.04em; }
+.bl-portee{ background:#eef2e9; color:#2e4a3c; }
+.bl-portee--bedjondo{ background:#173b2d; color:#fff; }
+.bl-portee--koumra, .bl-portee--mandoul{ background:#e6efcf; color:#2d4a14; }
+.bl-portee--hors-zone{ background:#f3ece6; color:#6b3e21; }
+.bl-statut{ background:#fff; border:1px solid var(--carte-filet); color:#3d4c45; }
+.bl-statut--preparation{ border-color:#c9a227; color:#6b5210; }
+.bl-statut--fin-proche{ border-color:#c26a2b; color:#7a3d12; }
+.bl-statut--clos{ background:#f1f1ee; color:#5a605c; }
+.bl-statut--incertain{ border-style:dashed; }
+.bl-qui{ margin:0; font-size:13.5px; color:#4f5e57; }
+.bl-ref{ font-variant-numeric:tabular-nums; }
+.bl-faits{ margin:0; display:grid; gap:6px; font-size:14px; }
+.bl-faits div{ display:grid; grid-template-columns:78px 1fr; gap:8px; }
+.bl-faits dt{ font-size:11.5px; text-transform:uppercase; letter-spacing:.1em; color:#4f5e57; padding-top:2px; }
+.bl-faits dd{ margin:0; line-height:1.5; }
+.bl-accroche{ margin:0; padding:12px 14px; border-radius:12px; background:#f3f7ec; line-height:1.55; font-size:14.5px; }
+.bl-liens{ display:flex; flex-wrap:wrap; gap:6px; margin:0; }
+.bl-liens a{ display:inline-flex; align-items:center; min-height:28px; padding:2px 10px; border-radius:99px; border:1px solid var(--carte-filet); font-size:12.5px; font-weight:600; background:#fff; }
+.bl-liens a.bl-lien-plaidoyer{ border-color:rgba(23,59,45,.35); background:#eef4e6; }
+.bl-source{ margin:auto 0 0; font-size:12.5px; color:#4f5e57; }
+.bl-source a{ text-decoration:underline; text-underline-offset:3px; }
+.bl-plaidoyers{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
+.bl-plaidoyer{ padding:18px 20px; border-radius:var(--r-carte-m); border:1px solid var(--carte-filet); background:var(--carte-fond); box-shadow:var(--carte-ombre); }
+.bl-plaidoyer h3{ margin:0 0 10px; font-size:17px; }
+.bl-plaidoyer ul{ margin:0; padding-left:1.1em; display:grid; gap:6px; }
+.bl-plaidoyer li::marker{ color:var(--deep); }
+.bl-plaidoyer a{ font-weight:600; }
+.bl-mini{ display:block; font-size:12.5px; color:#4f5e57; }
+.bl-table td a{ text-decoration:underline; text-underline-offset:3px; }
+@media (max-width:640px){ .bl-grille{ grid-template-columns:1fr; } .bl-faits div{ grid-template-columns:1fr; gap:0; } }
+/* Étiquette d’état dans une carte d’information : au-dessus du titre, jamais par-dessus */
+.legacy .info-card > .pole-status{ position:static; display:inline-flex; width:fit-content; max-width:100%; margin:0 0 12px; }
