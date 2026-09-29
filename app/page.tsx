@@ -98,7 +98,7 @@ export default function Home() {
             <img className="od-band-embleme" src={IDENTITE.superposable} alt="" width={140} height={140} loading="lazy" decoding="async" />
             <p className="eyebrow">03 — Vision 2030</p>
             <h2 id="odeb-title">Projet ODEB LONODJI.<br /><em>D’une association à un outil permanent.</em></h2>
-            <p className="od-band-note"><b>1986 → 2026.</b> Pour les quarante ans de ses fondations, l’association a lancé le {ODEB.presenteLabel} la réflexion ODEB LONODJI : six missions, six programmes, un livre blanc en version de travail. <Link href={ODEB.article}>L’article du jour →</Link></p>
+            <p className="od-band-note"><b>1986 → 2026.</b> Pour les quarante ans de ses fondations, l’association a lancé le {ODEB.presenteLabel} la réflexion ODEB LONODJI : six missions, six programmes, un livre blanc en version de travail. <Link href={ODEB.article}>L’article du 28 septembre →</Link></p>
           </div>
           <div>
             <p className="lead od-band-lead">{ODEB.formulation}</p>
@@ -126,7 +126,7 @@ export default function Home() {
           <div className="program-grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))" }}>
             {idx.structure.poles.map((pole) => (
               <Link className="program-card" href={`/programmes#${pole.id}`} key={pole.id}>
-                <div className="card-top"><span>Pôle {pole.roman}</span><small>{pole.items.filter((t) => t.filled).length}/{pole.items.length} pourvues{pole.direction && !pole.direction.filled ? " · direction à pourvoir" : ""}</small></div>
+                <div className="card-top card-top--pile"><span>Pôle {pole.roman}</span><small>{pole.items.filter((t) => t.filled).length}/{pole.items.length} pourvues{pole.direction && !pole.direction.filled ? " · direction à pourvoir" : ""}</small></div>
                 <div className="program-body">
                   <h3 style={{ fontSize: 28 }}>{pole.name}</h3>
                   <p>{pole.items.slice(0, 3).map((t) => t.name).join(" · ")}{pole.items.length > 4 ? ` · et ${pole.items.length - 3} autres thématiques` : pole.items.length === 4 ? " · et 1 autre thématique" : ""}</p>
@@ -134,6 +134,10 @@ export default function Home() {
                 <span className="card-arrow" aria-hidden="true">↗</span>
               </Link>
             ))}
+          </div>
+          <div className="section-actions" style={{ justifyContent: "flex-start", alignItems: "center", gap: 24, flexWrap: "wrap", marginTop: 22 }}>
+            <Link className="button secondary" href="/secteurs">Nos secteurs d’intervention : WASH, santé, nutrition, urgences… <span aria-hidden="true">→</span></Link>
+            <Link className="text-link" href="/programmes/fiches-de-mission">Les fiches de mission <span aria-hidden="true">→</span></Link>
           </div>
         </section>
 
@@ -159,7 +163,7 @@ export default function Home() {
               <p className="eyebrow">06 — Territoire</p>
               <h2 id="territory-title">Comprendre le terrain.<br /><em>Agir avec précision.</em></h2>
             </div>
-            <p>Bédjondo, chef-lieu du Mandoul Occidental, village devenu ville. Le pays bedjond compte sept sous-préfectures au cœur, des présences dans le Logone Oriental et une diaspora agricole au Moyen-Chari.</p>
+            <p>Bédjondo, chef-lieu du Mandoul Occidental, village devenu ville. Le pays bedjond compte sept sous-préfectures au cœur, des présences dans le Logone Oriental et une diaspora agricole au Moyen-Chari et à Moïssala.</p>
           </div>
           <div className="link-list">
             <Link href="/villages"><small>Retrouver son village</small><strong>966 localités, une fiche chacune</strong><span>Ce que les données ouvertes en savent, ce que le site en dit, ce qui reste à documenter — et le formulaire pour le faire.</span></Link>

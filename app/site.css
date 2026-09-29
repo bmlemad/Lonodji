@@ -1252,3 +1252,7 @@ body.feuille-open .tabbar{ display:none; }
 .them-secteurs{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 8px; }
 .them-secteurs a{ padding:3px 9px; border-radius:99px; background:rgba(23,59,45,.07); color:var(--deep); font-size:11.5px; font-weight:700; letter-spacing:.02em; }
 @media (max-width:760px){ .sec-table{ font-size:13px; } }
+
+/* accueil : en-tête des cartes de pôle sur deux lignes */
+.card-top--pile{ flex-direction:column; align-items:flex-start; gap:6px; }
+.card-top--pile span{ font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:11px; color:var(--deep); }
