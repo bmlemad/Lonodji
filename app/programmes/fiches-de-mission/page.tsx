@@ -29,7 +29,7 @@ export default function FichesDeMission() {
         pills={[`${m.directions.length + m.coordinations.length + m.cellules.length} fiches`, `${directionsVacantes} direction${directionsVacantes > 1 ? "s" : ""} à pourvoir`, `${vacantes} coordination${vacantes > 1 ? "s" : ""} à pourvoir`, `état au ${jour(m.genere)}`]}
       />
       <Stats items={[
-        { value: String(m.directions.length), label: "directions de pôle", note: "rang de chef de projet ; les quatre sont ouvertes à tout membre" },
+        { value: String(m.directions.length), label: "directions de pôle", note: "rang de chef de projet (Pillar Lead) ; les quatre sont ouvertes à tout membre" },
         { value: String(m.coordinations.length), label: "coordinations de thématique", note: `${m.coordinations.filter((c) => c.pourvue).length} pourvues, ${m.coordinations.filter((c) => !c.pourvue).length} à pourvoir` },
         { value: String(m.cellules.length), label: "cellules transversales", note: m.cellules.map((c) => `${c.nom} : ${c.pourvue ? "pourvue" : "à pourvoir"}`).join(" · ") },
         { value: "1", label: "recueil complet", note: "toutes les fiches dans un seul PDF, pour la réunion" },

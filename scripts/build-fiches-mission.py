@@ -118,9 +118,9 @@ def fiche_direction(pole: dict, logo: str, jour: str) -> str:
     pourvu = d["filled"]
     them = "".join(f'<div class="carte"><b>{t["number"]} · {h.escape(t["name"])}</b><span>{"Coordination : " + h.escape(t["coordinator"]) if t["filled"] else "Coordination à pourvoir"}</span></div>' for t in pole["items"])
     url = f"{SITE}/participer?direction={pole['roman']}&coordo=1"
-    return f"""<section class="fiche">{entete(logo, jour, "Direction de pôle · rang de chef de projet")}
+    return f"""<section class="fiche">{entete(logo, jour, "Direction de pôle · rang de chef de projet · Pillar Lead")}
 <p class="eyebrow">Pôle {pole['roman']} · {len(pole['items'])} thématiques</p>
-<h1>Direction du pôle {pole['roman']} — {h.escape(pole['name'])}<small>Directeur ou directrice de pôle, au rang de chef de projet</small></h1>
+<h1>Direction du pôle {pole['roman']} — {h.escape(pole['name'])}<small>Directeur ou directrice de pôle, au rang de chef de projet — en anglais : Pillar Lead (programme-manager level)</small></h1>
 <span class="etat{' pourvu' if pourvu else ''}">{'Pourvue : ' + h.escape(d['name']) if pourvu else 'À pourvoir'}</span>
 <h2>Ce que fait la direction du pôle</h2>
 <p>Le directeur ou la directrice de pôle :</p>

@@ -652,7 +652,7 @@ UPDATES_SOURCE = [
     # 28/09/2026 : la page anglaise renvoie au projet ODEB LONODJI et ne parle plus de « thirteen themes still open »
     ('      <div class="eyebrow">How to help</div>\n      <h2>Join, give, share your skills, spread the word</h2>\n',
      '      <div class="eyebrow">Vision 2030</div>\n      <h2>The ODEB LONODJI project</h2>\n      <p>On 28 September 2026, forty years after its founding reflections of 1986, the association launched the ODEB LONODJI reflection: a project to give the Bedjond country a permanent organisation for research, documentation, territorial development, innovation, heritage and diaspora mobilisation by 2030. Six missions, six programmes, a roadmap and a white paper (working draft, in French). <a href="odeb.html">Read the summary in English &rarr;</a></p>\n      <div class="eyebrow">How to help</div>\n      <h2>Join, give, share your skills, spread the word</h2>\n'),
-    ('coordinate one of the thirteen themes still open,', 'coordinate one of the themes still open (see the list on the themes page), lead one of the four poles (a project-manager role, all four open since 28 September 2026),'),
+    ('coordinate one of the thirteen themes still open,', 'coordinate one of the themes still open (see the list on the themes page), lead one of the four poles as Pillar Lead (programme-manager level; all four open since 28 September 2026),'),
     # 28/09/2026 : chiffres figés de l'ancien site devenus inexacts (inspection de cohérence)
     ('The full site, the journal (29 articles), the research base', 'The full site, the journal, the research base'),
     ('<p>The full site, the journal, the research base and all PDFs are in French: <a href="../index.html">visit the French site</a>.</p>',

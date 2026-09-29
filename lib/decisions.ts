@@ -106,6 +106,12 @@ export const DECISIONS: Decision[] = [
     suite: "La coordination d’Urgences & risques est à pourvoir ; rien n’est encore engagé, aucune collecte avant un compte au nom de l’association.",
   },
   {
+    id: "2026-13", date: "2026-09-29", type: "decision",
+    titre: "Directions de pôle : le titre reste, avec son équivalent international",
+    texte: "Le titre « directeur ou directrice de pôle », au rang de chef de projet, est maintenu : « directeur de programme » aurait prêté à confusion avec les six programmes du projet ODEB, qui croisent les pôles. Pour les partenaires internationaux, les fiches de mission et les pages anglaises donnent l’équivalent « Pillar Lead (programme-manager level) ».",
+    sources: [{ label: "Nos actions — diriger un pôle", href: "/programmes#diriger-un-pole" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }],
+  },
+  {
     id: "regle-01", date: "2026-09-11", type: "regle",
     titre: "Aucune collecte avant un compte bancaire au nom de l’association",
     texte: "La collecte est suspendue jusqu’à l’ouverture d’un compte au nom de l’association ; les intentions d’adhésion et les promesses de contribution n’engagent aucun paiement.",

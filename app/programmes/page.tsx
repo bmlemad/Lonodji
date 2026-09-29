@@ -79,7 +79,7 @@ export default function Programmes() {
       </div>
 
       <section className="hub-section" id="diriger-un-pole">
-        <SectionHead eyebrow="Diriger un pôle" title="Quatre directions de pôle," em="au rang de chef de projet." text="Depuis le 28 septembre 2026, chaque pôle a une direction, distincte de la coordination des thématiques. Le directeur ou la directrice de pôle a rang de chef de projet : il anime les coordonnateurs de ses thématiques, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets qui en relèvent, et rend compte au bureau et à l’assemblée. Les quatre postes sont ouverts à tout membre ; chaque poste a sa fiche de mission en PDF, comme chaque thématique." />
+        <SectionHead eyebrow="Diriger un pôle" title="Quatre directions de pôle," em="au rang de chef de projet." text="Depuis le 28 septembre 2026, chaque pôle a une direction, distincte de la coordination des thématiques. Le directeur ou la directrice de pôle a rang de chef de projet : il anime les coordonnateurs de ses thématiques, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets qui en relèvent, et rend compte au bureau et à l’assemblée. Dans le vocabulaire des ONG et des bailleurs, c’est un « Pillar Lead », au niveau d’un responsable de programme : l’équivalent figure sur les fiches de mission et les pages anglaises. Les six « programmes » du projet ODEB sont autre chose : ils croisent les pôles. Les quatre postes sont ouverts à tout membre ; chaque poste a sa fiche de mission en PDF, comme chaque thématique." />
         <div className="detail-grid">
           {poles.map((pole) => (
             <article key={pole.id}>
