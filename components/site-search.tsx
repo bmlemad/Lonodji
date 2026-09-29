@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/lien";
 import { useEffect, useMemo, useState } from "react";
 
 type Entry = { t: string; r: string; k: string; d: string; x: string; date?: string; tag?: string };

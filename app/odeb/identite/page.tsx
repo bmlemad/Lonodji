@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { SectionHead } from "../../../components/blocks";
 import { OdebHero } from "../../../components/odeb-marque";
 import OdebNav, { OdebEtat } from "../../../components/odeb-nav";

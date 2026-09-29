@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "../../../components/blocks";
 import { ogFor } from "../../../lib/content";
 import { getProjets, STADES_ACTIFS, stadeIndex } from "../../../lib/projets";

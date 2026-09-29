@@ -42,7 +42,27 @@ export default function NavTools() {
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
     maj();
-    return () => { window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onScroll); html.classList.remove("nav-compact", "nav-hidden"); };
+    // Les pages ne sont plus préchargées (économie de données) : au clic sur un
+    // lien interne, un fil d'attente apparaît en haut jusqu'à l'arrivée de la page.
+    let attente: ReturnType<typeof setTimeout> | undefined;
+    const onClick = (e: MouseEvent) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = (e.target as Element | null)?.closest?.("a[href]") as HTMLAnchorElement | null;
+      if (!a || a.target === "_blank" || a.hasAttribute("download")) return;
+      const href = a.getAttribute("href") || "";
+      if (!href.startsWith("/") || href.startsWith("//") || /\.(pdf|zip|docx?|xlsx?|pptx?|png|jpe?g|svg|webp|gif|json|xml|txt|ics|epub)(\?|#|$)/i.test(href)) return;
+      const cible = href.split("#")[0].split("?")[0];
+      if (cible === window.location.pathname || cible + "/" === window.location.pathname) return;
+      html.classList.add("nav-pending");
+      clearTimeout(attente);
+      attente = setTimeout(() => html.classList.remove("nav-pending"), 12000);
+    };
+    document.addEventListener("click", onClick, true);
+    return () => {
+      window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onScroll);
+      document.removeEventListener("click", onClick, true); clearTimeout(attente);
+      html.classList.remove("nav-compact", "nav-hidden", "nav-pending");
+    };
   }, [pathname]);
 
   const r = 20;

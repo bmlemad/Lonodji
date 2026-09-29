@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/lien";
 import type { ArticleSummary, DocumentItem, Plaidoyer, Thematique } from "../lib/content";
 
 /* Adresse du site pour les données structurées (pas d'import de lib/content : ce module sert aussi côté client). */

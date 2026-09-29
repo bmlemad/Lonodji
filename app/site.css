@@ -1099,3 +1099,8 @@ body.palette-open{ overflow:hidden; }
   body.palette-open .tabbar{ display:none; }
 }
 @media print{ .lecture, .rail, .palette, .tabbar{ display:none !important; } }
+
+/* ---- Fil d'attente de navigation (les pages ne sont plus préchargées) ---- */
+html.nav-pending::before{content:"";position:fixed;top:0;left:0;width:30%;height:3px;z-index:10000;background:var(--accent);border-radius:0 3px 3px 0;pointer-events:none;animation:nav-attente .9s ease-in-out infinite}
+@keyframes nav-attente{0%{transform:translateX(-100%)}100%{transform:translateX(340%)}}
+@media (prefers-reduced-motion: reduce){html.nav-pending::before{animation:none;width:100%;opacity:.55}}

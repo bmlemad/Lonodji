@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { PageHeader, SectionHead } from "../../components/blocks";
 import DiasporaCompteurs from "../../components/diaspora-compteurs";
 import LegacyEnhance from "../../components/legacy-enhance";

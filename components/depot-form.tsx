@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/lien";
 import { useEnvoiMultipart } from "./envoi-multipart";
 
 /* Dépôt d'un document pour la bibliothèque numérique : référence (titre,

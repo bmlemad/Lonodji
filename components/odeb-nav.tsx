@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/lien";
 import { IDENTITE, ODEB } from "../lib/odeb";
 
 /* Barre de section du projet ODEB : les mêmes entrées que le menu, en pilules,

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import fs from "node:fs";
 import path from "node:path";
 import { PageHeader, SectionHead, Stats } from "../../components/blocks";

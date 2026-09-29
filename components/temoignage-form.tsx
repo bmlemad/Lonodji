@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/lien";
 import { useEffect, useRef, useState } from "react";
 
 /* Formulaire « Racontez Bédjondo » : un récit, une photo, un son ou une courte

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { PageHeader, SectionHead } from "../../components/blocks";
 import ContactPrefill from "../../components/contact-prefill";
 import { LegacySections, Resume } from "../../components/legacy-content";

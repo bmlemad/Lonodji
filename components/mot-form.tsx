@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/lien";
 import { useEnvoiMultipart } from "./envoi-multipart";
 
 /* « Un mot, une expression » : première brique du dictionnaire nangnda. Un mot,

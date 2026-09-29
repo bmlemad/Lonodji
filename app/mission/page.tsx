@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { PageHeader, SectionHead, Timeline } from "../../components/blocks";
 import { LegacySections, Toc } from "../../components/legacy-content";
 import { getIndex, getPage, ogFor, ORG } from "../../lib/content";

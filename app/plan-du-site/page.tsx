@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { PageHeader } from "../../components/blocks";
 import { EN_PAGES_APP, getIndex, ogFor } from "../../lib/content";
 import { NAVIGATION } from "../../lib/navigation";

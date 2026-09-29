@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/lien";
 import { IDENTITE } from "../lib/odeb";
 import { ORG } from "../lib/content";
 import { PIED } from "../lib/navigation";

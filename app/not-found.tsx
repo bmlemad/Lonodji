@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/lien";
 
 export default function NotFound() {
   return (

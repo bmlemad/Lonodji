@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/lien";
 import { useMemo, useState } from "react";
 
 /* Recherche d'un village par son nom (sans tenir compte des accents), sur la

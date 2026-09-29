@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { notFound } from "next/navigation";
 import { ArticleCard } from "../../../components/blocks";
 import { LegacySections, Resume, splitTitle } from "../../../components/legacy-content";

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/lien";
 import type { LegacyPage, Section } from "../lib/content";
 import LegacyEnhance from "./legacy-enhance";
 

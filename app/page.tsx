@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/lien";
 import { ArticleCard } from "../components/blocks";
 import TableauDeBord from "../components/tableau-de-bord";
 import { enLettres, filledCount, getIndex, getPage, ORG, thematiqueCount } from "../lib/content";

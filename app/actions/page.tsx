@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { PageHeader, PlaidoyerCard, SectionHead } from "../../components/blocks";
 import { LegacySections } from "../../components/legacy-content";
 import LegacyEnhance from "../../components/legacy-enhance";

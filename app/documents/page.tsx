@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { DocumentCard, PageHeader, SectionHead } from "../../components/blocks";
 import { getIndex, ogFor, type DocumentItem } from "../../lib/content";
 import { IDENTITE, ODEB } from "../../lib/odeb";

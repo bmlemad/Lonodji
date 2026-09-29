@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/lien";
 import { useEffect, useState } from "react";
 import type { Indicateurs, Releve } from "../lib/indicateurs";
 
