@@ -38,7 +38,7 @@ export default function Home() {
             elle prendra la place de .hero-visual, le reste ne bouge pas. */}
         <section id="top" className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="eyebrow">Association • Bédjondo • Diaspora</p>
+            <p className="eyebrow">Association · Bédjondo · Diaspora</p>
             <h1 id="hero-title">Construire aujourd’hui.<br /><em>Transmettre demain.</em></h1>
             <p className="hero-text">
               ADEB LONODJI est l’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond.
@@ -142,7 +142,7 @@ export default function Home() {
             ))}
           </div>
           <div className="section-actions" style={{ justifyContent: "flex-start", alignItems: "center", gap: 24, flexWrap: "wrap", marginTop: 22 }}>
-            <Link className="button secondary" href="/secteurs">Nos secteurs d’intervention : WASH, santé, nutrition, urgences… <span aria-hidden="true">→</span></Link>
+            <Link className="button secondary" href="/secteurs">Nos secteurs d’intervention <span aria-hidden="true">→</span></Link>
             <Link className="text-link" href="/programmes/fiches-de-mission">Les fiches de mission <span aria-hidden="true">→</span></Link>
           </div>
         </section>

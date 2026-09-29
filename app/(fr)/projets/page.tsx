@@ -80,7 +80,7 @@ export default function Projets() {
                 <div className="pj-cols">
                   <div><p className="pj-label">Ce qui existe</p><ul>{p.existant.map((x) => <li key={x}>{x}</li>)}</ul></div>
                   <div><p className="pj-label">Ce qui manque</p><ul>{p.manque.map((x) => <li key={x}>{x}</li>)}</ul></div>
-                  <div><p className="pj-label">Contribuer</p><ul className="pj-contribuer">{p.contribuer.map((l) => <li key={l.href + l.label}><Link href={l.href}>{l.label} <span aria-hidden="true">→</span></Link></li>)}</ul><Link className="text-link" href={p.route}>Le dossier complet <span aria-hidden="true">→</span></Link></div>
+                  <div><p className="pj-label">Contribuer</p><ul className="pj-contribuer">{p.contribuer.map((l) => <li key={l.href + l.label}><Link href={l.href}>{l.label} <span aria-hidden="true">→</span></Link></li>)}</ul><Link className="text-link" href={p.route}>Le dossier complet<span className="sr-only"> : {p.nom}</span> <span aria-hidden="true">→</span></Link></div>
                 </div>
                 {ALIGNEMENT_PROJETS[p.slug] ? (() => {
                   const al = ALIGNEMENT_PROJETS[p.slug];

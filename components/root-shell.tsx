@@ -30,7 +30,7 @@ export const metadataFr: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "ADEB LONODJI",
   title: {
-    default: "ADEB LONODJI — Courage • Discipline • Héritage",
+    default: "ADEB LONODJI — Courage · Discipline · Héritage",
     template: "%s — ADEB LONODJI",
   },
   description:
@@ -41,10 +41,10 @@ export const metadataFr: Metadata = {
     locale: "fr_FR",
     url: siteUrl,
     siteName: "ADEB LONODJI",
-    title: "ADEB LONODJI — Courage • Discipline • Héritage",
+    title: "ADEB LONODJI — Courage · Discipline · Héritage",
     description:
       "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond. Quatre pôles, vingt thématiques, huit dossiers de plaidoyer publiés.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ADEB LONODJI — Courage • Discipline • Héritage" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ADEB LONODJI — Courage · Discipline · Héritage" }],
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
@@ -52,10 +52,10 @@ export const metadataFr: Metadata = {
 
 export const metadataEn: Metadata = {
   ...metadataFr,
-  title: { default: "ADEB LONODJI — Courage • Discipline • Heritage", template: "%s — ADEB LONODJI" },
+  title: { default: "ADEB LONODJI — Courage · Discipline · Heritage", template: "%s — ADEB LONODJI" },
   description: "The association of Bédjondo (Mandoul, Chad) and its diaspora, guardian of the Bedjond heritage: four pillars, twenty themes, eight advocacy briefs.",
   alternates: { canonical: "/en/index" },
-  openGraph: { ...metadataFr.openGraph, locale: "en_GB", url: `${siteUrl}/en/index`, title: "ADEB LONODJI — Courage • Discipline • Heritage", description: "The association of Bédjondo and its diaspora, guardian of the Bedjond heritage." },
+  openGraph: { ...metadataFr.openGraph, locale: "en_GB", url: `${siteUrl}/en/index`, title: "ADEB LONODJI — Courage · Discipline · Heritage", description: "The association of Bédjondo and its diaspora, guardian of the Bedjond heritage." },
 };
 
 export default function RootShell({
@@ -92,7 +92,7 @@ export default function RootShell({
                 telephone: ORG.phone,
                 foundingDate: "1995",
                 address: { "@type": "PostalAddress", addressLocality: "Bédjondo", addressRegion: "Mandoul", addressCountry: "TD" },
-                slogan: "Courage • Discipline • Héritage",
+                slogan: "Courage · Discipline · Héritage",
               },
               {
                 "@type": "WebSite",

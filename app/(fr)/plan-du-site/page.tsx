@@ -21,7 +21,7 @@ export default function PlanDuSite() {
   const idx = getIndex();
   return (
     <main id="main-content" className="hub-page">
-      <PageHeader eyebrow="Plan du site" title="Toutes les pages," em="au même endroit." />
+      <PageHeader eyebrow="Le site · plan du site" title="Toutes les pages," em="au même endroit." />
       <div className="footer-cols" style={{ marginBottom: 40, gridTemplateColumns: "repeat(auto-fill,minmax(240px,1fr))" }}>
         {main.map(([title, links]) => (
           <div key={title}><h2>{title}</h2>{links.map((l) => <Link key={l.href} href={l.href} style={{ fontSize: 15 }}>{l.label}</Link>)}</div>

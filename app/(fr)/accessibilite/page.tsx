@@ -15,7 +15,7 @@ export default function Accessibilite() {
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
-        eyebrow="Accessibilité"
+        eyebrow="Le site · accessibilité"
         title="Un site lisible"
         em="par tous, partout."
         lead="Beaucoup de ceux à qui ce site s’adresse le lisent sur un téléphone, avec une connexion lente ou coupée, parfois avec un lecteur d’écran ou au clavier seulement. Voici ce que nous faisons pour eux, ce que nous vérifions, ce qui reste imparfait, et comment nous le dire."

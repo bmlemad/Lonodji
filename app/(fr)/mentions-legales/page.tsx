@@ -10,5 +10,5 @@ export const metadata: Metadata = {
 };
 
 export default function MentionsLegales() {
-  return <LegacyDocument page={getPage("mentions-legales")} />;
+  return <LegacyDocument page={{ ...getPage("mentions-legales"), eyebrow: "Le site · mentions légales" }} />;
 }

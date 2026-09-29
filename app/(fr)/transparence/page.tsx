@@ -29,7 +29,8 @@ export default function Transparence() {
       <div className="legacy">
         <Resume items={page.resume} />
         <Toc items={page.toc} />
-        <LegacySections sections={page.sections} />
+        {/* la première section répète le titre de la page : son h2 est retiré, le texte reste */}
+        <LegacySections sections={page.sections} sansPremierTitre />
       </div>
       <LegacyEnhance hasForms={page.forms.length > 0} />
       <section className="hub-section">

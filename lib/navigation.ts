@@ -40,8 +40,6 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Gouvernance, paix & plaidoyer", href: "/programmes#pole-3", note: "Pôle III" },
         { label: "Numérique & innovation", href: "/programmes#pole-4", note: "Pôle IV" },
         { label: "Les deux cellules transversales", href: "/programmes#cellules", note: "Financement, communication" },
-        { label: "Secteurs d’intervention", href: "/secteurs", note: "WASH, santé, nutrition, urgences… en langue ONG" },
-        { label: "Programmes des bailleurs au Tchad", href: "/bailleurs", note: "Banque mondiale, UE, ONU, BAD : où nous nous raccrochons" },
         { label: "Fiches de mission (PDF)", href: "/programmes/fiches-de-mission", note: "Diriger un pôle, coordonner une thématique" },
       ] },
       { titre: "Plaidoyers & suivi", liens: [
@@ -51,7 +49,9 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Diagnostic territorial", href: "/dossiers/problematiques", note: "Eau, santé, école, routes, réseau" },
         { label: "Enquêtes de terrain", href: "/dossiers/enquetes", note: "Huit inconnues, huit enquêtes" },
       ] },
-      { titre: "Outils", liens: [
+      { titre: "Partenaires & outils", liens: [
+        { label: "Secteurs d’intervention", href: "/secteurs", note: "WASH, santé, nutrition, urgences… en langue ONG" },
+        { label: "Programmes des bailleurs au Tchad", href: "/bailleurs", note: "Banque mondiale, UE, ONU, BAD : où nous nous raccrochons" },
         { label: "Tous les dossiers", href: "/dossiers", note: "Par thème, de A à Z" },
         { label: "Quelle thématique pour vous ?", href: "/dossiers/trouver-ma-thematique", note: "Trois questions, une orientation" },
         { label: "Kit de mobilisation", href: "/dossiers/kit-mobilisation", note: "Relayer autour de vous" },
@@ -110,7 +110,6 @@ export const NAVIGATION: NavEntree[] = [
       { titre: "Rester en lien", liens: [
         { label: "Lettre d’information", href: "/lettre", note: "Les nouvelles de l’association" },
         { label: "Installer l’application", href: "/dossiers/application", note: "Android, iPhone, hors ligne" },
-        { label: "In English", href: "/en/index", note: "The association in English" },
       ] },
     ],
     vedette: { kicker: "Une place pour chaque contribution", titre: () => "Nous répondons sous 48 heures ouvrées", texte: () => "Par le formulaire, par WhatsApp ou par téléphone : le contact officiel est celui du président de l’association.", href: "/participer#contact", label: "Nous écrire" },
@@ -133,7 +132,7 @@ export function entreeCourante(pathname: string): string {
 export const PIED: { titre: string; liens: NavLien[] }[] = [
   { titre: "L’association", liens: [
     { label: "Notre mission", href: "/mission" }, { label: "Histoire & patrimoine", href: "/histoire" }, { label: "Le journal", href: "/journal" }, { label: "La lettre d’information", href: "/lettre" },
-    { label: "Redevabilité & transparence", href: "/transparence" }, { label: "Registre des décisions", href: "/transparence/decisions" }, { label: "Documents", href: "/documents" }, { label: "ONG & bailleurs : notre statut", href: "/dossiers/ong-partenaires" }, { label: "Presse & partenaires", href: "/presse" }, { label: "Accessibilité", href: "/accessibilite" }, { label: "Archives du site", href: "/archives" },
+    { label: "Redevabilité & transparence", href: "/transparence" }, { label: "Registre des décisions", href: "/transparence/decisions" }, { label: "Documents", href: "/documents" }, { label: "ONG & bailleurs : notre statut", href: "/dossiers/ong-partenaires" }, { label: "Presse & partenaires", href: "/presse" },
   ] },
   { titre: "Nos actions", liens: [
     { label: "Quatre pôles, vingt thématiques", href: "/programmes" }, { label: "Secteurs d’intervention", href: "/secteurs" }, { label: "Programmes des bailleurs", href: "/bailleurs" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }, { label: "Plaidoyers & engagements", href: "/actions" }, { label: "Tableau de bord d’impact", href: "/impact" },
@@ -144,10 +143,10 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
     { label: "Bibliothèque numérique", href: "/bibliotheque" }, { label: "La langue nangnda", href: "/langue" }, { label: "Lieux sacrés et sépultures", href: "/dossiers/lieux-sacres" }, { label: "Généalogies", href: "/dossiers/genealogies" },
   ] },
   { titre: "Participer", liens: [
-    { label: "Nous écrire", href: "/participer#contact" }, { label: "Adhérer (déclaration d’intention)", href: "/participer#adherer" }, { label: "Nous soutenir", href: "/participer#soutenir" },
-    { label: "Inscrire ses compétences", href: "/diaspora" }, { label: "Racontez Bédjondo", href: "/temoignages" }, { label: "Signaler un besoin", href: "/dossiers/besoins" }, { label: "Installer l’application", href: "/dossiers/application" },
+    { label: "Adhérer (déclaration d’intention)", href: "/participer#adherer" }, { label: "Nous soutenir", href: "/participer#soutenir" },
+    { label: "Racontez Bédjondo", href: "/temoignages" }, { label: "Signaler un besoin", href: "/dossiers/besoins" }, { label: "Installer l’application", href: "/dossiers/application" },
   ] },
-  { titre: "Projet ODEB · Vision 2030", liens: [
+  { titre: "Projet ODEB", liens: [
     { label: "La vision", href: "/odeb" }, { label: "Pourquoi créer l’ODEB ?", href: "/odeb#pourquoi" }, { label: "Livre blanc", href: "/odeb/livre-blanc" }, { label: "Feuille de route 2026-2030", href: "/odeb/feuille-de-route" },
     { label: "Les six programmes", href: "/odeb/programmes" }, { label: "Identité visuelle", href: "/odeb/identite" },
   ] },

@@ -97,7 +97,7 @@ export default function SiteFooter({ miseAJour, lang = "fr" }: { miseAJour?: str
         ))}
       </div>
       <div className="footer-bottom">
-        <span className="footer-motto">{en ? "Courage • Discipline • Heritage" : ORG.motto}</span>
+        <span className="footer-motto">{en ? "Courage · Discipline · Heritage" : ORG.motto}</span>
         {en ? (
           <span className="footer-legal">
             © 2026 {ORG.name} · Official website{miseAJour ? ` · updated ${miseAJour}` : ""} · <Link href="/mentions-legales" hrefLang="fr">Legal notice (in French)</Link> · <Link href="/accessibilite" hrefLang="fr">Accessibility (in French)</Link> · <Link href="/transparence#comment-nous-signaler-un-manquement" hrefLang="fr">Report a breach (in French)</Link> · <Link href="/plan-du-site" hrefLang="fr">Site map (in French)</Link> · <LienLangue />

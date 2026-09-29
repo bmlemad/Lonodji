@@ -67,7 +67,7 @@ export default function Bibliotheque() {
                   <p className="bb-auteurs">{x!.meta}</p>
                   {x!.resume ? <p className="bb-resume">{x!.resume}</p> : null}
                   <div className="bb-liens">
-                    <Link className="text-link" href={x!.route}>La fiche dans la base <span aria-hidden="true">→</span></Link>
+                    <Link className="text-link" href={x!.route}>La fiche dans la base<span className="sr-only"> : {x!.titre}</span> <span aria-hidden="true">→</span></Link>
                     {x!.liens.map((u) => <a className="text-link" key={u} href={u} target="_blank" rel="noopener noreferrer">{u.includes("wikipedia") ? "Wikipédia" : u.includes("sil.org") ? "SIL International" : "Consulter en ligne"} <span aria-hidden="true">↗</span></a>)}
                   </div>
                 </div>

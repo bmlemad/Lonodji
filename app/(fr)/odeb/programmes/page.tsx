@@ -45,7 +45,7 @@ export default function Programmes() {
               <ol className="od-axes-liste">{p.axes.map((a) => <li key={a.titre}><strong>{a.titre}</strong><span>{a.texte}</span></li>)}</ol>
               <p className="od-porte"><span>Porté par :</span>{ths.map((t) => <Link href={`/programmes#${t.id}`} key={t.id} className={t.filled ? "est-pourvue" : "est-vacante"}>{t.kind === "cellule" ? "Cellule " : `${t.number} · `}{t.name}{t.filled ? ` — ${t.coordinator}` : " — à pourvoir"}</Link>)}</p>
               <p className="od-missions-servies"><span>Missions :</span>{p.missions.map((id) => MISSIONS.find((m) => m.id === id)?.nom).filter(Boolean).join(" · ")}</p>
-              <Link className="button secondary" href={routeProgramme(p)}>Le programme en détail <span aria-hidden="true">→</span></Link>
+              <Link className="button secondary" href={routeProgramme(p)}>Le programme<span className="sr-only"> {p.nom}</span> en détail <span aria-hidden="true">→</span></Link>
             </article>
           );
         })}

@@ -1576,3 +1576,38 @@ main :where(ul, ol):not([class]):not(nav *) > li, main .plea-next > li, main .od
 .newsletter-form input[type=email]{ flex:1 1 220px; height:48px; min-height:48px; max-height:48px; }
 @media (max-width:640px){ .newsletter-form input[type=email]{ flex-basis:100%; } .newsletter-form button{ width:100%; justify-content:center; } }
 .legacy .newsletter-band{ border:0; box-shadow:none; background:transparent; padding:0; }
+/* Revue du 29/09 : pied de page plus court au téléphone (deux colonnes de liens, cibles tactiles conservées) */
+@media (max-width:560px){
+  .footer-cols.footer-cols--5{ grid-template-columns:1fr 1fr; gap:26px 18px; }
+  .footer-cols.footer-cols--5 a{ padding:4px 0; margin:0; min-height:32px; }
+}
+/* Appli installée : la barre d’onglets porte déjà Menu et Participer ; l’en-tête ne les répète pas */
+@media (max-width:800px){
+  html.is-standalone .nav .menu-toggle, html.is-standalone .nav .nav-cta{ display:none !important; }
+}
+.footer-address{ max-width:none; }
+/* Logo agrandi (29/09, demande « agrandir considérablement ») : médaillon de verre qui déborde de la barre,
+   sans épaissir le menu ; il se réduit quand la barre se compacte au défilement. */
+.nav .logo-verre{ width:78px; height:78px; margin:-16px 0 -24px; transition:width .22s ease, height .22s ease, margin .22s ease, transform .25s ease, box-shadow .25s ease; }
+.nav .logo-verre img{ width:52px; }
+.nav .brand{ gap:14px; }
+.nav .brand-name{ font-size:16px; }
+html.nav-compact .nav .logo-verre{ width:56px; height:56px; margin:-8px 0 -10px; }
+html.nav-compact .nav .logo-verre img{ width:37px; }
+.logo-verre--pied{ width:72px; height:72px; }
+.logo-verre--pied img{ width:48px; }
+.footer-brand{ gap:14px; font-size:15px; }
+@media (max-width:800px){
+  .nav .logo-verre{ width:62px; height:62px; margin:-12px 0 -18px; }
+  .nav .logo-verre img{ width:41px; }
+  html.nav-compact .nav .logo-verre{ width:48px; height:48px; margin:-6px 0 -8px; }
+  html.nav-compact .nav .logo-verre img{ width:32px; }
+}
+@media (max-width:520px){
+  .nav .brand-name{ font-size:11.5px; }
+}
+@media (prefers-reduced-motion:reduce){ .nav .logo-verre{ transition:none; } }
+.nav .logo-verre img{ width:47px; transform:translateX(2px); }
+html.nav-compact .nav .logo-verre img{ width:34px; }
+.logo-verre--pied img{ width:44px; transform:translateX(2px); }
+@media (max-width:800px){ .nav .logo-verre img{ width:37px; } html.nav-compact .nav .logo-verre img{ width:29px; } }

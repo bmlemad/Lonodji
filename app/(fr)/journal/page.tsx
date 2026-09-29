@@ -1,3 +1,4 @@
+import { getLettres } from "@/lib/lettres";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead } from "@/components/blocks";
@@ -18,11 +19,11 @@ export default function Journal() {
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
-        eyebrow="Le journal"
+        eyebrow="Journal"
         title="Ce que nous écrivons,"
         em="et ce que nous rectifions."
         lead={`${idx.articles.length} articles depuis le 11 septembre 2026 : annonces de l’association, dossiers de plaidoyer, histoire de Bédjondo et du peuple bedjond, lettre d’information. Chaque article date ses faits et cite ses sources.`}
-        pills={[`Dernier article : ${latest.dateLabel}`, "Lettre d’information n° 1 parue"]}
+        pills={[`Dernier article : ${latest.dateLabel}`, `Lettre d’information n° ${getLettres().lettres.length} parue`]}
       />
       <JournalList articles={idx.articles} categories={idx.journalCategories} />
       <section className="hub-section">

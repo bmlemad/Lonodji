@@ -26,7 +26,7 @@ export default function Odeb() {
   return (
     <main id="main-content" className="hub-page od-page">
       <OdebHero
-        eyebrow={`Projet ${ODEB.sigle} · Vision ${ODEB.horizon}`}
+        eyebrow={`Projet ${ODEB.sigle} · vision ${ODEB.horizon}`}
         title="Organisation pour le Développement"
         em="et l’Émergence Bedjonde."
         lead={ODEB.formulation}

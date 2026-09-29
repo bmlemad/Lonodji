@@ -8,3 +8,6 @@ __pycache__/
 .cache/
 tsconfig.tsbuildinfo
 .sync/
+
+# archives laissées par un déploiement Netlify interrompu
+deploy-*.zip

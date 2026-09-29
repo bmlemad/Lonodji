@@ -165,7 +165,7 @@ export const ORG = {
   name: "ADEB LONODJI",
   fullName: "Association de Développement et d’Entraide de Bédjondo",
   tagline: "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond.",
-  motto: "Courage • Discipline • Héritage",
+  motto: "Courage · Discipline · Héritage",
   place: "Bédjondo · Mandoul Occidental · Mandoul, Tchad",
   phone: "+235 66 29 94 03",
   phoneHref: "tel:+23566299403",

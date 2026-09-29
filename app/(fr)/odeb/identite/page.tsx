@@ -47,7 +47,7 @@ export default function Identite() {
   return (
     <main id="main-content" className="hub-page od-page">
       <OdebHero
-        eyebrow="ADEB LONODJI · projet ODEB LONODJI · identité visuelle"
+        eyebrow="Projet ODEB LONODJI · identité visuelle"
         title="Les Pas vers l’Avenir :"
         em="le logo de l’association et de son projet."
         lead={`Trois empreintes qui avancent vers un soleil levant : la première, la plus grande, ce sont les ancêtres ; la deuxième, la génération actuelle ; la troisième, la plus lumineuse, les générations futures. Sur les traces de nos ancêtres, bâtissons notre avenir. Dessiné pour le projet ODEB LONODJI et adopté le ${IDENTITE.adopteeLabel} par l’association comme son propre logo — un emblème, deux noms —, il est celui du site, de l’application et des images de partage. Ses fichiers, ses couleurs et ses règles sont ici.`}
