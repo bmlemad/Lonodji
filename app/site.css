@@ -1832,3 +1832,26 @@ html.nav-compact .nav .brand-sous{ display:none; }
   .dp-table th, .dp-table tr:nth-child(even) td, .dp-encadre{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
   body:has(.dossier-print) .nav, body:has(.dossier-print) .site-footer, body:has(.dossier-print) .tabbar, body:has(.dossier-print) .rail{ display:none !important; }
 }
+
+/* gouvernance locale (30/09/2026) */
+.gl-niveaux{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr)); gap:14px; }
+.gl-niveau{ padding:18px 20px; border:1px solid var(--carte-filet, var(--line)); border-radius:18px; background:var(--carte-fond, #fff); display:flex; flex-direction:column; gap:8px; }
+.gl-tete{ display:flex; gap:12px; align-items:flex-start; }
+.gl-tete h3{ margin:2px 0 0; font-size:19px; }
+.gl-qui{ margin:2px 0 0; font-size:13px; color:var(--muted); }
+.gl-role{ margin:0; font-size:14.5px; line-height:1.55; }
+.gl-label{ margin:6px 0 0; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#2d4a14; font-weight:700; }
+.gl-demandes{ margin:0; padding-left:1.05em; font-size:14px; line-height:1.5; }
+.gl-demandes li{ margin:0 0 6px; }
+.gl-demandes .pc-sources{ display:inline; font-size:12.5px; }
+details.gl-probs{ font-size:13.5px; }
+details.gl-probs > summary{ cursor:pointer; color:var(--deep); font-weight:600; text-decoration:underline; text-underline-offset:3px; width:max-content; max-width:100%; }
+details.gl-probs ul{ margin:6px 0 0; padding-left:1.05em; line-height:1.5; }
+.gl-artic{ display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:14px; }
+.gl-artic article{ padding:18px 20px; border-radius:18px; background:#eef4e6; }
+.gl-artic h3{ margin:4px 0 6px; font-size:17px; }
+.gl-artic p{ margin:0 0 8px; font-size:14.5px; line-height:1.55; }
+.gl-qui-tag{ margin:0; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#2d4a14; font-weight:700; }
+.gl-statut{ display:inline-block; padding:1px 8px; border-radius:999px; font-size:12px; font-weight:600; background:#f1f1ec; color:#4f5f58; }
+.gl-statut.est-publie{ background:#2d4a14; color:#fff; }
+.gl-regles{ margin:0; padding-left:1.2em; display:grid; gap:8px; max-width:880px; font-size:15px; line-height:1.55; }

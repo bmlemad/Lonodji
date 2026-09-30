@@ -76,6 +76,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Carte du territoire", href: "/carte", note: "Quatorze unités, localités, équipements" },
         { label: "Les villages", href: "/villages", note: "Une fiche par localité" },
         { label: "Bédjondo", href: "/territoire/bedjondo", note: "Village devenu ville" },
+        { label: "Gouvernance locale", href: "/territoire/gouvernance-locale", note: "Qui décide quoi, du canton à l’État" },
         { label: "Décentralisation & développement local", href: "/territoire/decentralisation", note: "Commune, canton, sous-préfecture" },
         { label: "Nos propositions à la commune", href: "/territoire/propositions-commune", note: "Dix projets prioritaires, mesures sourcées" },
       ] },
@@ -265,7 +266,7 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
   ] },
   { titre: "Territoire", liens: [
     { label: "Carte du territoire", href: "/carte" }, { label: "Les villages", href: "/villages" }, { label: "Bédjondo", href: "/territoire/bedjondo" },
-    { label: "Propositions à la commune", href: "/territoire/propositions-commune" }, { label: "Observatoire", href: "/observatoire" }, { label: "Diagnostic territorial", href: "/territoire/diagnostic" }, { label: "Enquêtes de terrain", href: "/territoire/enquetes" },
+    { label: "Gouvernance locale", href: "/territoire/gouvernance-locale" }, { label: "Propositions à la commune", href: "/territoire/propositions-commune" }, { label: "Observatoire", href: "/observatoire" }, { label: "Diagnostic territorial", href: "/territoire/diagnostic" }, { label: "Enquêtes de terrain", href: "/territoire/enquetes" },
   ] },
   { titre: "Patrimoine", liens: [
     { label: "Histoire & grandes figures", href: "/histoire" }, { label: "La langue nangnda", href: "/langue" }, { label: "Bibliothèque numérique", href: "/bibliotheque" },

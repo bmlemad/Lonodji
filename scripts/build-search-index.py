@@ -112,6 +112,9 @@ PAGES_SITE.append({"t": "Note de synthèse des huit dossiers de plaidoyer (PDF, 
 PAGES_SITE.append({"t": "Bedjondo Transport et Logistique (ex-Air Bedjondo)", "r": "/projets/bedjondo-transport-logistique", "k": "Dossier",
      "d": "Le projet de transport et de logistique terrestres de Bédjondo, renommé le 29 septembre 2026, et six propositions pour le mener.",
      "x": "Bedjondo Transport et Logistique Air Bedjondo transport logistique pistes navette marché récoltes fret colis diaspora évacuation sanitaire tricycle pick-up coopérative programme économie sociale"})
+PAGES_SITE.append({"t": "Gouvernance locale", "r": "/territoire/gouvernance-locale", "k": "Page",
+     "d": "Qui décide quoi — État, province, département, commune, chefferies, quartiers —, nos demandes à chacun, leurs articulations et les indicateurs pour les suivre.",
+     "x": "gouvernance locale décentralisation commune conseil communal maire préfet sous-préfet province gouverneur chefferie chef de canton chef de village chef de quartier comité de quartier doléances cahier de médiation subsidiarité indicateurs"})
 PAGES_SITE.append({"t": "Nos propositions à la commune de Bédjondo", "r": "/territoire/propositions-commune", "k": "Page",
      "d": "Dix projets prioritaires, un projet intégré de développement économique local, et toutes les mesures proposées à la mairie, chacune avec sa source.",
      "x": "projets prioritaires PNUD développement économique local marché moderne centre de transformation agricole Maison de la Femme et de la Jeunesse maraîchage irrigation reboisement fonds microprojets assainissement centre numérique commune mairie maire conseil communal propositions plan de développement communal schéma d’aménagement cadastre adressage droits de marché budget session publique comité de quartier doléances convention jumelage éclairage solaire marché voirie eau santé école formation"})

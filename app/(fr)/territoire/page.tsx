@@ -39,6 +39,7 @@ export default function Territoire() {
           <Link href="/villages"><small>Fiches</small><strong>Les villages</strong><span>Une fiche par localité : ce que les données ouvertes en savent, ce que le site en dit, ce qui reste à documenter.</span></Link>
           <Link href="/territoire/bedjondo"><small>Dossier</small><strong>Bédjondo, village devenu ville</strong><span>Le chef-lieu, sa croissance, ce qui manque à une ville qui a grandi plus vite que ses équipements.</span></Link>
           <Link href="/territoire/decentralisation"><small>Dossier</small><strong>Décentralisation & développement local</strong><span>Commune, canton, sous-préfecture : qui décide de quoi, et où se pose chaque demande.</span></Link>
+          <Link href="/territoire/gouvernance-locale"><small>Gouvernance</small><strong>Gouvernance locale</strong><span>Qui décide quoi — État, province, département, commune, chefferies, quartiers —, nos demandes à chacun et les indicateurs pour les suivre.</span></Link>
           <Link href="/territoire/propositions-commune"><small>Propositions</small><strong>Nos propositions à la commune de Bédjondo</strong><span>Dix projets prioritaires, le projet intégré que nous recommandons, et toutes les mesures déjà publiées : ce que nous proposons à la mairie, sur une page.</span></Link>
         </div>
       </section>
