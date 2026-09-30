@@ -1,0 +1,120 @@
+import type { Metadata } from "next";
+import Link from "@/components/lien";
+import Partager from "@/components/partager";
+import { PageHeader, SectionHead, Stats } from "@/components/blocks";
+import { getIndex, getPage, metaDescription, ogFor } from "@/lib/content";
+import { APPORTS, EN_RETOUR, GROUPES, nombrePropositions, nombreSansDepense, type Source } from "@/lib/propositions-commune";
+
+const ROUTE = "/territoire/propositions-commune";
+
+export const metadata: Metadata = {
+  title: "Nos propositions à la commune de Bédjondo",
+  description: metaDescription("Planifier la ville, financer et rendre des comptes, ouvrir le conseil, les services de base, les partenariats et un premier chantier : toutes les propositions d’ADEB LONODJI à la mairie de Bédjondo, réunies et sourcées."),
+  alternates: { canonical: ROUTE },
+  openGraph: { ...ogFor(ROUTE), title: "Nos propositions à la commune de Bédjondo", description: "Toutes nos propositions à la mairie, réunies sur une page, chacune avec sa source." },
+};
+
+function Sources({ sources }: { sources: Source[] }) {
+  return (
+    <span className="pc-sources">
+      {sources.map((s, i) => <span key={s.label}>{i ? " · " : ""}<Link href={s.href}>{s.label}</Link></span>)}
+    </span>
+  );
+}
+
+/* Les problématiques du diagnostic dont l'échelon de décision est la commune (lues dans le tableau publié). */
+function problematiquesCommune() {
+  const html = getPage("problematiques").sections.map((s) => s.html).join("");
+  const lignes: { id: string; domaine: string; texte: string; etat: string }[] = [];
+  let domaine = "";
+  for (const m of html.matchAll(/<tr[^>]*id="(prob-\d+)"[^>]*>([\s\S]*?)<\/tr>/g)) {
+    const cellules = [...m[2].matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/g)].map((c) => c[1].replace(/<a[\s\S]*?<\/a>/g, "").replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim());
+    if (cellules.length === 4) domaine = cellules.shift()!;
+    if (cellules.length === 3 && cellules[2] === "Commune") lignes.push({ id: m[1], domaine, texte: cellules[0].replace(/\s*\(\s*/g, " (").replace(/\s*\)/g, ")"), etat: cellules[1] });
+  }
+  return lignes;
+}
+
+export default function PropositionsCommune() {
+  const note = getIndex().plaidoyers.find((p) => p.id === "plaidoyer-commune");
+  const total = nombrePropositions();
+  const probs = problematiquesCommune();
+  const textes = new Set(GROUPES.flatMap((g) => g.items.flatMap((i) => i.sources.map((x) => x.href)))).size;
+  return (
+    <main id="main-content" className="hub-page pc-page">
+      <PageHeader
+        eyebrow="Territoire · la commune"
+        title="Nos propositions"
+        em="à la commune de Bédjondo."
+        lead={`Nos propositions à la mairie étaient dispersées : une note au conseil communal, un article, une section « À la commune » dans chacun des sept plaidoyers, des pages de fond. Les voici réunies en six chantiers, sans rien y ajouter : chacune renvoie au texte où elle a été publiée, avec ses sources. Plusieurs ne demandent qu’une décision.`}
+        crumbs={[{ label: "Territoire", href: "/territoire" }, { label: "Propositions à la commune" }]}
+        pills={[`${total} propositions`, `${GROUPES.length} chantiers`, `note publiée le ${note?.published ?? "16 septembre 2026"}`, `envoi : ${(note?.sent ?? "à envoyer").toLowerCase()}`]}
+      />
+      <Stats items={[
+        { value: String(total), label: "propositions à la commune", note: `tirées de ${textes} textes déjà publiés` },
+        { value: String(nombreSansDepense()), label: "ne demandent qu’une décision", note: "sans dépense, selon nos textes" },
+        { value: String(APPORTS.length), label: "engagements de l’association", note: "dans le cadre d’une convention" },
+        { value: String(probs.length), label: "problématiques relèvent de la commune", note: "sur les 34 du diagnostic" },
+      ]} />
+
+      <nav className="pc-sommaire" aria-label="Les six chantiers">
+        {GROUPES.map((g, i) => <a key={g.id} href={`#${g.id}`}><b>{i + 1}</b>{g.titre.replace(/[,:]$/, "")} <span>{g.items.length}</span></a>)}
+        <a href="#apports"><b>+</b>Ce que nous apportons</a>
+      </nav>
+
+      {GROUPES.map((g, i) => (
+        <section className="hub-section" id={g.id} key={g.id}>
+          <SectionHead eyebrow={`Chantier ${i + 1} · ${g.items.length} proposition${g.items.length > 1 ? "s" : ""}`} title={g.titre} em={g.em} text={g.intro} />
+          <ol className="pc-liste">
+            {g.items.map((p) => (
+              <li key={p.texte}>
+                <p>{g.id === "services" && p.texte.includes(" — ") ? <><strong>{p.texte.split(" — ")[0]}</strong> — {p.texte.split(" — ").slice(1).join(" — ")}</> : p.texte}{p.sansDepense ? <span className="pc-badge">une décision, sans dépense</span> : null}</p>
+                <Sources sources={p.sources} />
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+
+      <section className="hub-section" id="apports">
+        <SectionHead eyebrow="Notre part" title="Ce que l’association apporte," em="et ce qu’elle demande en retour." text="L’association ne se substitue pas à la commune ; elle la sert. Ces engagements prennent place dans une convention écrite, et leur avancement est publié." />
+        <div className="pc-deux">
+          <ol className="pc-liste">
+            {APPORTS.map((p) => <li key={p.texte}><p>{p.texte}</p><Sources sources={p.sources} /></li>)}
+          </ol>
+          <aside className="pc-retour">
+            <p className="eyebrow">En retour, nous demandons</p>
+            <ul>{EN_RETOUR.map((t) => <li key={t}>{t}</li>)}</ul>
+            <p className="pc-retour-note">Source : <Link href="/journal/2026-09-16-note-commune-bedjondo">note à la commune, § 6</Link>.</p>
+          </aside>
+        </div>
+      </section>
+
+      {probs.length ? (
+        <section className="hub-section" id="diagnostic">
+          <SectionHead eyebrow="Du diagnostic" title="Ce qui relève de la commune," em="d’après notre diagnostic." text="Parmi les trente-quatre problématiques recensées, celles dont l’échelon de décision est la commune, avec l’état de ce que nous en savons." />
+          <div className="table-wrap" tabIndex={0} role="region" aria-label="Problématiques relevant de la commune">
+            <table className="sec-table">
+              <thead><tr><th scope="col">Domaine</th><th scope="col">Problématique</th><th scope="col">Ce que nous en savons</th></tr></thead>
+              <tbody>
+                {probs.map((p) => <tr key={p.id}><td>{p.domaine}</td><td><Link href={`/territoire/diagnostic#${p.id}`}>{p.texte}</Link></td><td>{p.etat}</td></tr>)}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="hub-section" id="lire">
+        <SectionHead eyebrow="Les textes complets" title="La note, l’article," em="et le cadre légal." />
+        <div className="link-list">
+          <Link href="/journal/2026-09-16-note-commune-bedjondo"><small>Note · {note?.published}</small><strong>Note à la commune de Bédjondo : six propositions</strong><span>Adressée au maire et au conseil communal, copie au préfet et aux autorités traditionnelles. {note?.sent ? `Envoi : ${note.sent.toLowerCase()}.` : ""}</span></Link>
+          {note?.pdf ? <a href={note.pdf} target="_blank" rel="noopener noreferrer"><small>PDF</small><strong>La note à imprimer</strong><span>La version à déposer à la mairie ou à remettre aux conseillers.</span></a> : null}
+          <Link href="/journal/2026-09-16-bedjondo-village-devenu-ville"><small>Article</small><strong>Bédjondo, un village devenu ville : nos propositions</strong><span>Les douze propositions d’aménagement et leurs sources.</span></Link>
+          <Link href="/territoire/decentralisation"><small>Dossier</small><strong>Décentralisation & développement local</strong><span>Ce que la loi confie à la commune, avec quels moyens, et les quatre règles de gouvernance que nous demandons.</span></Link>
+        </div>
+        <p className="lg-footnote">Une proposition oubliée, une erreur ? Toute proposition est d’abord publiée dans son dossier, puis reprise ici avec son lien. Vous êtes conseiller communal ? <Link href="/participer?objet=partenariat#contact">Écrivez-nous</Link> : nos travaux sont à votre disposition.</p>
+        <Partager route={ROUTE} titre="Nos propositions à la commune de Bédjondo" texte="Toutes les propositions d’ADEB LONODJI à la mairie de Bédjondo, réunies et sourcées." />
+      </section>
+    </main>
+  );
+}

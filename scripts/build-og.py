@@ -33,6 +33,7 @@ EYEBROWS = {
     "/secteurs": "Nos actions · secteurs d’intervention",
     "/bailleurs": "Nos actions · programmes des bailleurs",
     "/territoire": "Territoire",
+    "/territoire/propositions-commune": "Territoire · la commune",
     "/patrimoine": "Patrimoine",
     "/projets/bedjondo-transport-logistique": "Nos actions · projet annoncé",
     "/actions": "Plaidoyers & engagements",

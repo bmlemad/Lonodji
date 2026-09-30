@@ -77,6 +77,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Les villages", href: "/villages", note: "Une fiche par localité" },
         { label: "Bédjondo", href: "/territoire/bedjondo", note: "Village devenu ville" },
         { label: "Décentralisation & développement local", href: "/territoire/decentralisation", note: "Commune, canton, sous-préfecture" },
+        { label: "Nos propositions à la commune", href: "/territoire/propositions-commune", note: "Toutes réunies, chacune sourcée" },
       ] },
       { titre: "Comprendre et mesurer", liens: [
         { label: "Observatoire du Mandoul Occidental", href: "/observatoire", note: "Le territoire en chiffres, unité par unité" },
@@ -157,7 +158,7 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
   ] },
   { titre: "Territoire", liens: [
     { label: "Carte du territoire", href: "/carte" }, { label: "Les villages", href: "/villages" }, { label: "Bédjondo", href: "/territoire/bedjondo" },
-    { label: "Observatoire", href: "/observatoire" }, { label: "Diagnostic territorial", href: "/territoire/diagnostic" }, { label: "Enquêtes de terrain", href: "/territoire/enquetes" },
+    { label: "Propositions à la commune", href: "/territoire/propositions-commune" }, { label: "Observatoire", href: "/observatoire" }, { label: "Diagnostic territorial", href: "/territoire/diagnostic" }, { label: "Enquêtes de terrain", href: "/territoire/enquetes" },
   ] },
   { titre: "Patrimoine", liens: [
     { label: "Histoire & grandes figures", href: "/histoire" }, { label: "La langue nangnda", href: "/langue" }, { label: "Bibliothèque numérique", href: "/bibliotheque" },

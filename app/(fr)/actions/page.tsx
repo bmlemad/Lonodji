@@ -21,6 +21,7 @@ const dossiers = [
   { href: "/territoire/besoins", label: "Carte des besoins", note: "Signaler un forage en panne, une école sans maître, un pont coupé : localité par localité." },
   { href: "/territoire/enquetes", label: "Enquêtes de terrain", note: "Huit inconnues de notre recensement, huit enquêtes à conduire, en combien de jours." },
   { href: "/association/demarches", label: "Les démarches, pas à pas", note: "À qui écrire, avec quelles pièces, et trois lettres modèles." },
+  { href: "/territoire/propositions-commune", label: "Nos propositions à la commune", note: "Toutes les demandes adressées à la mairie de Bédjondo, réunies par chantier, chacune avec sa source." },
   { href: "/territoire/decentralisation", label: "Décentralisation", note: "Ce que la commune peut décider, et ce qui reste à l’État." },
   { href: "/programmes/agriculteurs-eleveurs", label: "Paix agriculteurs-éleveurs", note: "Un protocole de prévention en six mesures et un cahier de médiation par canton." },
   { href: "/association/ong-partenaires", label: "ONG et partenaires au Mandoul", note: "Qui intervient vraiment dans la province, avec quel bailleur, sur quel secteur." },

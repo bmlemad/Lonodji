@@ -1711,3 +1711,26 @@ details.source-plus{ margin:4px 0 10px; }
 details.source-plus > summary{ cursor:pointer; color:var(--deep); font-weight:600; font-size:14px; text-decoration:underline; text-underline-offset:3px; padding:4px 0; width:max-content; max-width:100%; }
 details.source-plus > summary:focus-visible{ outline:3px solid var(--accent); outline-offset:3px; border-radius:6px; }
 details.source-plus > p{ margin-top:6px; }
+
+/* propositions à la commune (30/09/2026) */
+.pc-sommaire{ display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 12px; }
+.pc-sommaire a{ display:inline-flex; align-items:center; gap:8px; padding:9px 14px; border:1px solid var(--line); border-radius:999px; background:#fff; font-size:14px; font-weight:600; color:var(--deep); }
+.pc-sommaire a b{ display:grid; place-items:center; width:22px; height:22px; border-radius:50%; background:var(--deep); color:#fff; font-size:12px; }
+.pc-sommaire a span{ color:var(--muted); font-weight:500; }
+.pc-sommaire a:hover{ border-color:var(--deep); }
+.pc-liste{ margin:0; padding:0; list-style:none; counter-reset:pc; display:grid; gap:10px; max-width:980px; }
+.pc-liste > li{ counter-increment:pc; position:relative; padding:16px 18px 14px 58px; border:1px solid var(--carte-filet, var(--line)); border-radius:18px; background:var(--carte-fond, #fff); }
+.pc-liste > li::before{ content:counter(pc); position:absolute; left:16px; top:15px; width:28px; height:28px; border-radius:50%; display:grid; place-items:center; background:#eef4e6; color:var(--deep); font-weight:700; font-size:14px; }
+.pc-liste p{ margin:0 0 6px; line-height:1.6; font-size:16px; }
+.pc-badge{ display:inline-block; margin-left:8px; padding:2px 9px; border-radius:999px; background:#2d4a14; color:#fff; font-size:11.5px; font-weight:600; letter-spacing:.02em; vertical-align:2px; }
+.pc-sources{ display:block; font-size:13px; color:var(--muted); }
+.pc-sources a{ color:var(--muted); text-decoration:underline; text-underline-offset:3px; }
+.pc-sources a:hover{ color:var(--deep); }
+.pc-deux{ display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:20px; align-items:start; }
+.pc-retour{ padding:20px 22px; border-radius:18px; background:var(--deep); color:#fff; }
+.pc-retour .eyebrow{ color:var(--accent); }
+.pc-retour ul{ margin:8px 0 12px; padding-left:1.1em; line-height:1.6; }
+.pc-retour li{ margin:0 0 6px; }
+.pc-retour-note, .pc-retour-note a{ font-size:13px; color:#d9e4d3; }
+@media (max-width:900px){ .pc-deux{ grid-template-columns:1fr; } }
+@media (max-width:640px){ .pc-liste > li{ padding:14px 14px 12px 50px; } .pc-liste > li::before{ left:12px; } }
