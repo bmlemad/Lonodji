@@ -88,7 +88,7 @@ export default function CarteTerritoire() {
     const unitesById = new Map(donnees.unites.map((u) => [u.id, u]));
     const villagesByKey = new Map(donnees.villages.map((v) => [`${v[4]}\u0000${v[7]}`, v]));
     return { unitesById, villagesByKey };
-  }, [donnees, indexes]);
+  }, [donnees]);
 
   // données
   useEffect(() => {
@@ -212,19 +212,38 @@ export default function CarteTerritoire() {
     });
   }, [visibles]);
 
+  const rechercheIndex = useMemo(() => {
+    if (!donnees || !indexes) return null;
+    return [
+      ...donnees.unites.map((u) => ({
+        key: "u:" + u.id,
+        text: sansAccents(u.nom),
+        nom: u.nom,
+        type: u.gadm.type === "Sub-prefecture" ? "Sous-préfecture" : u.gadm.type,
+        unite: u.dep,
+        coords: [u.centre[1], u.centre[0]] as [number, number],
+        unit: u,
+      })),
+      ...donnees.villages.flatMap((v) => {
+        const nom = nomPropre(v[2]);
+        return nom ? [{
+          key: "v:" + v[4] + ":" + v[7],
+          text: sansAccents(nom),
+          nom,
+          type: TYPES[v[3]] || v[3],
+          unite: indexes.unitesById.get(v[4])?.nom || "",
+          coords: [v[1], v[0]] as [number, number],
+          village: v,
+        }] : [];
+      }),
+    ];
+  }, [donnees, indexes]);
+
   const resultats = useMemo(() => {
-    if (!donnees || requete.trim().length < 2) return [];
+    if (!rechercheIndex || requete.trim().length < 2) return [];
     const q = sansAccents(requete.trim());
-    const r: { nom: string; type: string; unite: string; coords: [number, number]; village?: Village; unit?: Unite }[] = [];
-    for (const u of donnees.unites) if (sansAccents(u.nom).includes(q)) r.push({ nom: u.nom, type: u.gadm.type === "Sub-prefecture" ? "Sous-préfecture" : u.gadm.type, unite: u.dep, coords: [u.centre[1], u.centre[0]], unit: u });
-    for (const v of donnees.villages) {
-      const nom = nomPropre(v[2]); if (!nom || !sansAccents(nom).includes(q)) continue;
-      const u = indexes?.unitesById.get(v[4]);
-      r.push({ nom, type: TYPES[v[3]] || v[3], unite: u?.nom || "", coords: [v[1], v[0]], village: v });
-      if (r.length > 30) break;
-    }
-    return r.slice(0, 30);
-  }, [donnees, requete, indexes]);
+    return rechercheIndex.filter((item) => item.text.includes(q)).slice(0, 30);
+  }, [rechercheIndex, requete]);
 
   const aller = (coords: [number, number], zoom = 12, sel?: Selection) => {
     carte.current?.flyTo(coords, zoom, { duration: 0.8 });
