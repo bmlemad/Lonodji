@@ -1,4 +1,5 @@
 import { alternatesLangues } from "@/lib/langues";
+import { breadcrumbSchema, jsonLd, webPageSchema } from "@/lib/schema";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -23,6 +24,7 @@ export default function Villages() {
   const cites = d.villages.filter((v) => v.mentions.length).length;
   return (
     <main id="main-content" className="hub-page vl-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", "@graph": [webPageSchema({ url: "/villages", name: "Les villages du pays bedjond : une fiche par localité", description: "Retrouvez votre village : 966 localités du pays bedjond, chacune avec ce que les données ouvertes en savent, ce que le site en dit et ce qui reste à documenter." }), breadcrumbSchema([{ name: "Accueil", url: "/" }, { name: "Territoire", url: "/territoire" }, { name: "Villages" }], "/villages")] }) }} />
       <PageHeader
         eyebrow="Territoire · fiches des villages"
         title="Retrouver son village,"
