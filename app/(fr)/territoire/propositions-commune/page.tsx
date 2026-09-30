@@ -3,13 +3,14 @@ import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import { getIndex, getPage, metaDescription, ogFor } from "@/lib/content";
-import { APPORTS, EN_RETOUR, GROUPES, nombrePropositions, nombreSansDepense, type Source } from "@/lib/propositions-commune";
+import { APPORTS, EN_RETOUR, GROUPES, nombrePropositions, nombreSansDepense, PORTEURS, PROJET_INTEGRE, PROJETS_PRIORITAIRES, type Source } from "@/lib/propositions-commune";
+import { programmeParId } from "@/lib/bailleurs";
 
 const ROUTE = "/territoire/propositions-commune";
 
 export const metadata: Metadata = {
   title: "Nos propositions à la commune de Bédjondo",
-  description: metaDescription("Planifier la ville, financer et rendre des comptes, ouvrir le conseil, les services de base, les partenariats et un premier chantier : toutes les propositions d’ADEB LONODJI à la mairie de Bédjondo, réunies et sourcées."),
+  description: metaDescription("Dix projets prioritaires et un projet intégré de développement économique local ; planifier la ville, financer et rendre des comptes, ouvrir le conseil, les services de base, les partenariats et un premier chantier : toutes les propositions d’ADEB LONODJI à la mairie de Bédjondo, réunies et sourcées."),
   alternates: { canonical: ROUTE },
   openGraph: { ...ogFor(ROUTE), title: "Nos propositions à la commune de Bédjondo", description: "Toutes nos propositions à la mairie, réunies sur une page, chacune avec sa source." },
 };
@@ -46,16 +47,51 @@ export default function PropositionsCommune() {
         eyebrow="Territoire · la commune"
         title="Nos propositions"
         em="à la commune de Bédjondo."
-        lead={`Nos propositions à la mairie étaient dispersées : une note au conseil communal, un article, une section « À la commune » dans chacun des sept plaidoyers, des pages de fond. Les voici réunies en six chantiers, sans rien y ajouter : chacune renvoie au texte où elle a été publiée, avec ses sources. Plusieurs ne demandent qu’une décision.`}
+        lead={`Tout ce que nous proposons à la mairie, sur une page. D’abord dix projets prioritaires, qui répondent aux besoins des habitants et rejoignent les priorités des partenaires du développement local — gouvernance locale, résilience, inclusion économique —, et le projet intégré que nous recommandons. Ensuite les mesures déjà publiées dans nos dossiers, réunies en six chantiers, chacune avec sa source. Plusieurs ne demandent qu’une décision.`}
         crumbs={[{ label: "Territoire", href: "/territoire" }, { label: "Propositions à la commune" }]}
-        pills={[`${total} propositions`, `${GROUPES.length} chantiers`, `note publiée le ${note?.published ?? "16 septembre 2026"}`, `envoi : ${(note?.sent ?? "à envoyer").toLowerCase()}`]}
+        pills={[`${PROJETS_PRIORITAIRES.length} projets prioritaires`, `${total} mesures en ${GROUPES.length} chantiers`, `note publiée le ${note?.published ?? "16 septembre 2026"}`, `envoi : ${(note?.sent ?? "à envoyer").toLowerCase()}`]}
       />
       <Stats items={[
-        { value: String(total), label: "propositions à la commune", note: `tirées de ${textes} textes déjà publiés` },
+        { value: String(PROJETS_PRIORITAIRES.length), label: "projets prioritaires", note: `dont ${PROJETS_PRIORITAIRES.filter((p) => p.porteur).length} parmi les plus porteurs` },
+        { value: String(total), label: "mesures déjà publiées", note: `tirées de ${textes} textes déjà publiés` },
         { value: String(nombreSansDepense()), label: "ne demandent qu’une décision", note: "sans dépense, selon nos textes" },
-        { value: String(APPORTS.length), label: "engagements de l’association", note: "dans le cadre d’une convention" },
         { value: String(probs.length), label: "problématiques relèvent de la commune", note: "sur les 34 du diagnostic" },
       ]} />
+
+      <section className="hub-section" id="projets-prioritaires">
+        <SectionHead eyebrow={`Proposition de l’association · 30 septembre 2026`} title="Dix projets prioritaires" em="pour la commune." text="Des projets qui répondent aux besoins réels des habitants et qui rejoignent les axes que les partenaires du développement local soutiennent : gouvernance locale, résilience communautaire, inclusion économique. Ce sont des propositions à débattre avec la commune : aucun n’a encore d’étude, de budget ni de financement. Pour chacun : ce que nos dossiers en disaient déjà, et les programmes de notre relevé des bailleurs dont le champ le recoupe — des portes à frapper, pas des financements acquis." />
+        <ol className="pp-grille">
+          {PROJETS_PRIORITAIRES.map((p, i) => {
+            const progs = p.programmes.map(programmeParId).filter((x) => x !== undefined);
+            return (
+              <li className={p.porteur ? "pp-carte est-porteur" : "pp-carte"} id={`projet-${p.id}`} key={p.id}>
+                <p className="pp-tete"><span className="pp-num">{i + 1}</span>{p.porteur ? <span className="pp-badge">parmi les plus porteurs</span> : null}</p>
+                <h3>{p.titre}</h3>
+                <ul className="pp-volets">{p.volets.map((v) => <li key={v}>{v}</li>)}</ul>
+                {p.deja.length ? <p className="pp-ligne"><b>Déjà dans nos dossiers</b><Sources sources={p.deja} /></p> : <p className="pp-ligne"><b>Déjà dans nos dossiers</b><span className="pc-sources">proposition nouvelle</span></p>}
+                {progs.length ? <p className="pp-ligne"><b>Programmes à rapprocher</b><span className="pp-progs">{progs.map((g) => <Link key={g.id} href={`/bailleurs#${g.id}`}>{g.nom.split(" — ")[0]}</Link>)}</span></p> : null}
+              </li>
+            );
+          })}
+        </ol>
+        <div className="pp-deux">
+          <div className="pp-porteurs">
+            <p className="eyebrow">Les plus porteurs pour un financement</p>
+            <ol>{PORTEURS.map((x) => <li key={x.titre}>{x.titre}</li>)}</ol>
+          </div>
+          <div className="pp-integre">
+            <p className="eyebrow">Notre recommandation</p>
+            <h3>{PROJET_INTEGRE.titre}</h3>
+            <p>Réunir {PROJET_INTEGRE.composantes.slice(0, -1).join(", ")} et {PROJET_INTEGRE.composantes[PROJET_INTEGRE.composantes.length - 1]} dans un seul projet, porté par la commune.</p>
+            <p className="pp-pourquoi">{PROJET_INTEGRE.pourquoi}</p>
+            <p className="pp-pourquoi">Aucun programme de notre relevé ne finance encore de tels projets à Bédjondo : le projet doit d’abord être inscrit au plan de développement communal, puis présenté par la commune. <Link href="/bailleurs">Le relevé des programmes des bailleurs</Link>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="hub-section pc-intro-chantiers" id="mesures">
+        <SectionHead eyebrow="Les mesures déjà publiées" title="Six chantiers," em={`${total} mesures, chacune sourcée.`} text="Nos propositions à la mairie étaient dispersées : une note au conseil communal, un article, une section « À la commune » dans chacun des sept plaidoyers, des pages de fond. Les voici réunies, sans rien y ajouter ; chacune renvoie au texte où elle a été publiée." />
+      </section>
 
       <nav className="pc-sommaire" aria-label="Les six chantiers">
         {GROUPES.map((g, i) => <a key={g.id} href={`#${g.id}`}><b>{i + 1}</b>{g.titre.replace(/[,:]$/, "")} <span>{g.items.length}</span></a>)}
@@ -64,7 +100,7 @@ export default function PropositionsCommune() {
 
       {GROUPES.map((g, i) => (
         <section className="hub-section" id={g.id} key={g.id}>
-          <SectionHead eyebrow={`Chantier ${i + 1} · ${g.items.length} proposition${g.items.length > 1 ? "s" : ""}`} title={g.titre} em={g.em} text={g.intro} />
+          <SectionHead eyebrow={`Chantier ${i + 1} · ${g.items.length} mesure${g.items.length > 1 ? "s" : ""}`} title={g.titre} em={g.em} text={g.intro} />
           <ol className="pc-liste">
             {g.items.map((p) => (
               <li key={p.texte}>

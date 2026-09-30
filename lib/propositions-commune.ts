@@ -120,3 +120,54 @@ export const EN_RETOUR = [
 
 export const nombrePropositions = () => GROUPES.reduce((n, g) => n + g.items.length, 0);
 export const nombreSansDepense = () => GROUPES.reduce((n, g) => n + g.items.filter((i) => i.sansDepense).length, 0);
+
+/* Dix projets prioritaires proposés à la commune (proposition de l'association, 30/09/2026).
+   Ce sont des propositions à débattre avec la commune : ni étude, ni budget, ni financement à ce jour.
+   « deja » : ce que le site avait déjà publié sur le même sujet ; « programmes » : identifiants du relevé
+   des bailleurs (lib/bailleurs.ts) dont le champ recoupe le projet — des portes à frapper, pas des financements acquis. */
+export type ProjetPrioritaire = { id: string; titre: string; volets: string[]; deja: Source[]; programmes: string[]; porteur?: boolean };
+
+export const PROJETS_PRIORITAIRES: ProjetPrioritaire[] = [
+  { id: "eau", titre: "Programme d’accès à l’eau potable", porteur: true,
+    volets: ["Forages équipés de pompes solaires", "Réhabilitation des points d’eau existants", "Comités locaux de gestion de l’eau"],
+    deja: [S.eau, { label: "Village devenu ville, proposition 4", href: VILLE }], programmes: ["paepa-2", "unicef", "nexsud", "hnrp"] },
+  { id: "marche", titre: "Marché moderne intercommunautaire", porteur: true,
+    volets: ["Construction d’un marché couvert", "Espaces de stockage et de conservation", "Aires de vente pour les femmes commerçantes"],
+    deja: [{ label: "Village devenu ville, proposition 7", href: VILLE }, S.note5], programmes: ["ddc-collectivites", "pea"] },
+  { id: "transformation", titre: "Centre de transformation agricole", porteur: true,
+    volets: ["Transformation du manioc, du maïs, de l’arachide et du sésame", "Formation des coopératives", "Création de valeur ajoutée locale"],
+    deja: [S.agriculture], programmes: ["sodefika", "pea", "renfort", "pfnl"] },
+  { id: "maison-femme-jeunesse", titre: "Maison de la Femme et de la Jeunesse", porteur: true,
+    volets: ["Formation professionnelle", "Alphabétisation fonctionnelle", "Appui à l’entrepreneuriat"],
+    deja: [S.formation], programmes: ["swedd", "renfort", "corridor-competences"] },
+  { id: "assainissement", titre: "Programme communal d’assainissement",
+    volets: ["Collecte et traitement des déchets", "Sensibilisation à l’hygiène", "Création d’emplois verts"],
+    deja: [{ label: "Village devenu ville, proposition 6", href: VILLE }, { label: "Diagnostic : assainissement", href: "/territoire/diagnostic#prob-12" }], programmes: ["unicef", "hnrp"] },
+  { id: "centre-numerique", titre: "Centre numérique communal", porteur: true,
+    volets: ["Services administratifs numérisés", "Formation aux compétences numériques", "Accès à Internet pour les jeunes"],
+    deja: [{ label: "Projet : espace numérique", href: "/projets/espace-numerique" }, S.internet], programmes: ["patn"] },
+  { id: "maraichage", titre: "Périmètres maraîchers irrigués",
+    volets: ["Irrigation solaire", "Production toute saison", "Coopératives de femmes et de jeunes"],
+    deja: [S.agriculture], programmes: ["renfort", "nexsud"] },
+  { id: "reboisement", titre: "Reboisement et protection de l’environnement",
+    volets: ["Bois communaux", "Lutte contre la déforestation", "Valorisation des produits forestiers"],
+    deja: [{ label: "Environnement et ressources", href: "/programmes/environnement" }], programmes: ["pfnl"] },
+  { id: "fonds-microprojets", titre: "Fonds communal d’appui aux microprojets",
+    volets: ["Financement des initiatives locales", "Appui aux groupements", "Développement de l’économie locale"],
+    deja: [], programmes: ["ddc-collectivites", "renfort", "swedd"] },
+  { id: "pdc", titre: "Actualisation du Plan de développement communal",
+    volets: ["Diagnostic participatif", "Planification des investissements", "Mobilisation des partenaires techniques et financiers"],
+    deja: [S.note1, S.ville12], programmes: ["pnud-rgdl", "ddc-collectivites", "unicef"] },
+];
+
+/* Les trois ensembles jugés les plus porteurs pour un financement, et le projet intégré recommandé. */
+export const PORTEURS = [
+  { titre: "L’eau potable et l’énergie solaire", projets: ["eau"] },
+  { titre: "Le centre de transformation agricole et le marché moderne", projets: ["transformation", "marche"] },
+  { titre: "La Maison de la Femme et de la Jeunesse, avec son centre numérique", projets: ["maison-femme-jeunesse", "centre-numerique"] },
+];
+export const PROJET_INTEGRE = {
+  titre: "Un projet intégré de développement économique local",
+  composantes: ["un marché moderne", "un centre de transformation agricole", "des forages solaires", "un fonds d’appui aux jeunes et aux femmes"],
+  pourquoi: "Ces projets combinent création d’emplois, réduction de la pauvreté, autonomisation des femmes et des jeunes et développement économique local : c’est le type de projet que les partenaires du développement local — PNUD, Banque mondiale, AFD — financent le plus souvent, par l’intermédiaire des communes et des ministères.",
+};

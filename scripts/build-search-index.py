@@ -113,8 +113,8 @@ PAGES_SITE.append({"t": "Bedjondo Transport et Logistique (ex-Air Bedjondo)", "r
      "d": "Le projet de transport et de logistique terrestres de Bédjondo, renommé le 29 septembre 2026, et six propositions pour le mener.",
      "x": "Bedjondo Transport et Logistique Air Bedjondo transport logistique pistes navette marché récoltes fret colis diaspora évacuation sanitaire tricycle pick-up coopérative programme économie sociale"})
 PAGES_SITE.append({"t": "Nos propositions à la commune de Bédjondo", "r": "/territoire/propositions-commune", "k": "Page",
-     "d": "Toutes les propositions d’ADEB LONODJI à la mairie, réunies en six chantiers, chacune avec sa source.",
-     "x": "commune mairie maire conseil communal propositions plan de développement communal schéma d’aménagement cadastre adressage droits de marché budget session publique comité de quartier doléances convention jumelage éclairage solaire marché voirie eau santé école formation"})
+     "d": "Dix projets prioritaires, un projet intégré de développement économique local, et toutes les mesures proposées à la mairie, chacune avec sa source.",
+     "x": "projets prioritaires PNUD développement économique local marché moderne centre de transformation agricole Maison de la Femme et de la Jeunesse maraîchage irrigation reboisement fonds microprojets assainissement centre numérique commune mairie maire conseil communal propositions plan de développement communal schéma d’aménagement cadastre adressage droits de marché budget session publique comité de quartier doléances convention jumelage éclairage solaire marché voirie eau santé école formation"})
 PAGES_SITE.append({"t": "Territoire — le pays bedjond", "r": "/territoire", "k": "Page",
      "d": "La carte, les villages, Bédjondo, la décentralisation, l’observatoire, le diagnostic territorial, les besoins et les enquêtes.",
      "x": "territoire carte villages Bédjondo décentralisation observatoire diagnostic besoins enquêtes Mandoul Occidental"})

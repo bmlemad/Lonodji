@@ -61,6 +61,13 @@ export const DECISIONS: Decision[] = [
     suite: "L’adresse de chaque siège, sa date d’ouverture et le partage des responsabilités ne sont pas encore fixés publiquement.",
   },
   {
+    id: "2026-22", date: "2026-09-30", type: "annonce",
+    titre: "Dix projets prioritaires proposés à la commune de Bédjondo",
+    texte: "L’association propose à la commune dix projets prioritaires — eau potable, marché moderne, transformation agricole, Maison de la Femme et de la Jeunesse, assainissement, centre numérique, maraîchage irrigué, reboisement, fonds de microprojets, actualisation du plan de développement communal — et recommande de réunir les plus porteurs dans un projet intégré de développement économique local.",
+    sources: [{ label: "Nos propositions à la commune", href: "/territoire/propositions-commune#projets-prioritaires" }],
+    suite: "Ce sont des propositions à débattre avec la commune : aucune étude, aucun budget, aucun financement à ce jour.",
+  },
+  {
     id: "2026-21", date: "2026-09-29", type: "annonce",
     titre: "Air Bedjondo devient Bedjondo Transport et Logistique",
     texte: "Le projet de transport et de logistique terrestres annoncé le 19 septembre 2026 change de nom : l’ancien laissait croire à un projet aérien. Six propositions pour le mener sont publiées avec lui, soumises au bureau et à l’assemblée.",

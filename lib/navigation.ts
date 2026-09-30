@@ -77,7 +77,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Les villages", href: "/villages", note: "Une fiche par localité" },
         { label: "Bédjondo", href: "/territoire/bedjondo", note: "Village devenu ville" },
         { label: "Décentralisation & développement local", href: "/territoire/decentralisation", note: "Commune, canton, sous-préfecture" },
-        { label: "Nos propositions à la commune", href: "/territoire/propositions-commune", note: "Toutes réunies, chacune sourcée" },
+        { label: "Nos propositions à la commune", href: "/territoire/propositions-commune", note: "Dix projets prioritaires, mesures sourcées" },
       ] },
       { titre: "Comprendre et mesurer", liens: [
         { label: "Observatoire du Mandoul Occidental", href: "/observatoire", note: "Le territoire en chiffres, unité par unité" },

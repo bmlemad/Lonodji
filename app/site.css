@@ -1734,3 +1734,31 @@ details.source-plus > p{ margin-top:6px; }
 .pc-retour-note, .pc-retour-note a{ font-size:13px; color:#d9e4d3; }
 @media (max-width:900px){ .pc-deux{ grid-template-columns:1fr; } }
 @media (max-width:640px){ .pc-liste > li{ padding:14px 14px 12px 50px; } .pc-liste > li::before{ left:12px; } }
+
+/* dix projets prioritaires (30/09/2026) */
+.pp-grille{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:14px; }
+.pp-carte{ padding:18px 20px; border:1px solid var(--carte-filet, var(--line)); border-radius:18px; background:var(--carte-fond, #fff); display:flex; flex-direction:column; gap:8px; }
+.pp-carte.est-porteur{ border-color:#b6cf45; box-shadow:0 0 0 1px #b6cf45 inset; }
+.pp-tete{ margin:0; display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.pp-num{ display:grid; place-items:center; width:32px; height:32px; border-radius:50%; background:var(--deep); color:#fff; font-weight:700; }
+.pp-badge{ padding:3px 10px; border-radius:999px; background:#eef4e6; color:#2d4a14; font-size:12px; font-weight:600; }
+.pp-carte h3{ margin:2px 0 0; font-size:19px; line-height:1.25; }
+.pp-volets{ margin:0; padding-left:1.1em; line-height:1.55; font-size:15px; }
+.pp-ligne{ margin:4px 0 0; font-size:13.5px; display:flex; flex-direction:column; gap:3px; }
+.pp-ligne > b{ font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+.pp-progs{ display:flex; flex-wrap:wrap; gap:6px; }
+.pp-progs a{ padding:3px 10px; border-radius:999px; border:1px solid var(--line); background:#f6f9f1; font-size:12.5px; color:var(--deep); }
+.pp-progs a:hover{ border-color:var(--deep); }
+.pp-deux{ margin-top:18px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr); gap:16px; align-items:stretch; }
+.pp-porteurs, .pp-integre{ padding:22px 24px; border-radius:18px; }
+.pp-porteurs{ border:1px solid var(--line); background:#fff; }
+.pp-porteurs ol{ margin:10px 0 0; padding-left:1.2em; line-height:1.6; font-weight:600; }
+.pp-porteurs li{ margin-bottom:6px; }
+.pp-integre{ background:var(--deep); color:#fff; }
+.pp-integre .eyebrow{ color:var(--accent); }
+.pp-integre h3{ margin:6px 0 8px; font-size:22px; color:#fff; }
+.pp-integre p{ margin:0 0 8px; line-height:1.6; }
+.pp-integre .pp-pourquoi{ font-size:14px; color:#d9e4d3; }
+.pp-integre a{ color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
+.pc-intro-chantiers{ padding-bottom:0; }
+@media (max-width:900px){ .pp-deux{ grid-template-columns:1fr; } }
