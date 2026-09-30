@@ -35,6 +35,7 @@ EYEBROWS = {
     "/territoire": "Territoire",
     "/territoire/propositions-commune": "Territoire · propositions à la commune",
     "/en/governance": "Territory · local governance",
+    "/en/subsoil": "Territory · subsoil & natural resources",
     "/en/commune": "Territory · the commune",
     "/territoire/gouvernance-locale": "Territoire · gouvernance locale",
     "/territoire/sous-sol": "Territoire · sous-sol & ressources naturelles",

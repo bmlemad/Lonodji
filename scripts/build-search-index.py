@@ -175,6 +175,9 @@ PAGES_SITE.append({"t": "The ODEB LONODJI project — Vision 2030 (in English)",
 PAGES_SITE.append({"t": "Local governance in Bédjondo — who decides what (in English)", "r": "/en/governance", "k": "In English",
      "d": "State, province, department, commune, chieftaincies, neighbourhoods: what our files ask of each level, where they must act together, and the indicators to follow it.",
      "x": "English local governance decentralisation commune council mayor prefect province governor chieftaincy canton chief village chief neighbourhood committee complaints register mediation logbook subsidiarity indicators"})
+PAGES_SITE.append({"t": "The subsoil of Mandoul Occidental — oil, iron, gold (in English)", "r": "/en/subsoil", "k": "In English",
+     "d": "What public sources establish about oil in the Doba basin, seismic surveys, iron and gold, what remains unknown, the lessons of Doba and our proposals before any drilling.",
+     "x": "English subsoil natural resources oil petroleum Doba basin Doseo seismic survey 2D 3D wells permits blocks iron ore laterite smelters gold artisanal mining EITI revenue producing region Komé extractive"})
 PAGES_SITE.append({"t": "Find your village — the Bedjond country, unit by unit (in English)", "r": "/en/villages", "k": "In English",
      "d": "Fourteen units, 966 named localities, one page per village: what open data knows, what the site says, what is still to document.",
      "x": "English villages units Mandoul Occidental localities map find your village canton neighbourhood diaspora report a need GADM OpenStreetMap"})

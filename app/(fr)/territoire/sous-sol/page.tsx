@@ -4,6 +4,7 @@ import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import PagesVoisines from "@/components/pages-voisines";
 import { metaDescription, ogFor } from "@/lib/content";
+import { alternatesLangues } from "@/lib/langues";
 import { ENGAGEMENTS, INCONNUES, LECONS, PROPOSITIONS, SAVOIRS, SOURCES, type Constat, type Lien } from "@/lib/sous-sol";
 
 const ROUTE = "/territoire/sous-sol";
@@ -13,7 +14,7 @@ const RESUME = "Pétrole du bassin voisin de Doba, fer des anciens fondeurs, or 
 export const metadata: Metadata = {
   title: "Sous-sol & ressources naturelles",
   description: metaDescription("Le sous-sol du Mandoul Occidental : ce que les sources publiques établissent (pétrole du bassin de Doba, fer des anciens fondeurs, or du Nord, connaissance géologique), ce qui reste inconnu, les leçons de Doba et ce que l’association propose avant tout forage."),
-  alternates: { canonical: ROUTE },
+  alternates: { canonical: ROUTE, languages: alternatesLangues(ROUTE) },
   openGraph: { ...ogFor(ROUTE), title: TITRE, description: RESUME },
 };
 
