@@ -78,14 +78,13 @@ export function articleSchema(args: {
 }) {
   return {
     "@id": `${SITE_URL}${args.url}#article`,
-    "@type": "NewsArticle",
+    "@type": "Article",
     headline: args.headline,
     description: args.description,
     datePublished: args.datePublished,
-    dateModified: args.datePublished,
     image: [args.image],
     inLanguage: args.lang === "en" ? "en-GB" : "fr-FR",
-    author: { "@type": "Organization", name: args.byline || "ADEB LONODJI", url: SITE_URL },
+    author: args.byline && args.byline !== "ADEB LONODJI" ? { "@type": "Person", name: args.byline } : { "@id": organizationId },
     publisher: { "@id": organizationId },
     mainEntityOfPage: { "@id": `${SITE_URL}${args.url}#webpage` },
   };
