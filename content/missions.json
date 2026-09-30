@@ -86,8 +86,8 @@
    "nom": "Entrepreneuriat & finance inclusive",
    "pole": "II",
    "poleNom": "Développement humain & moyens d’existence",
-   "pourvue": false,
-   "qui": "à pourvoir",
+   "pourvue": true,
+   "qui": "Tamar Neloum DOUMANBE",
    "pdf": "/missions/fiche-mission-coordination-entrepreneuriat-finance-inclusive.pdf"
   },
   {
@@ -237,7 +237,7 @@
    "pole": "IV",
    "poleNom": "Numérique & innovation",
    "pourvue": true,
-   "qui": "Bignéro Moïalbéi LE MADANG",
+   "qui": "Rosine Mbaïnodoum",
    "pdf": "/missions/fiche-mission-coordination-competences-entrepreneuriat-numerique.pdf"
   }
  ],

@@ -306,8 +306,8 @@
    "kind": "dossier",
    "title": "Quelle thématique pour vous ?",
    "eyebrow": "Agir avec nous",
-   "lede": "Vingt thématiques, dont cinq sans coordonnateur. Cochez ce que vous savez faire ou ce qui vous tient à cœur, dites-nous où vous êtes et combien de temps vous pouvez donner : nous vous proposons les thématiques où vous seriez le plus utile, et le bon interlocuteur. Rien n’est envoyé tant que vous n’avez pas écrit.",
-   "description": "Cochez ce que vous savez faire ou ce qui vous tient à cœur : nous vous proposons les thématiques d’ADEB LONODJI où vous seriez le plus utile. Cinq attendent un coordonnateur.",
+   "lede": "Vingt thématiques, dont quatre sans coordonnateur. Cochez ce que vous savez faire ou ce qui vous tient à cœur, dites-nous où vous êtes et combien de temps vous pouvez donner : nous vous proposons les thématiques où vous seriez le plus utile, et le bon interlocuteur. Rien n’est envoyé tant que vous n’avez pas écrit.",
+   "description": "Cochez ce que vous savez faire ou ce qui vous tient à cœur : nous vous proposons les thématiques d’ADEB LONODJI où vous seriez le plus utile. Quatre attendent un coordonnateur.",
    "parent": "Agir avec nous",
    "words": 349,
    "hasMap": false
@@ -345,7 +345,7 @@
    "lede": "Les Chantiers ADEB LONODJI sont les projets de réflexion, de recherche et d’action portés par l’association. Pour les organiser, ADEB LONODJI structure son action autour de vingt thématiques réparties en quatre pôles, appuyées par deux cellules transversales — dont un pôle spécialisé Numérique & innovation, créé en septembre 2026. Chaque thématique est animée par un coordonnateur. Cette organisation en pôles est notre méthodologie de travail en équipe : elle permet une bonne coordination des actions entre les thématiques, au lieu d’initiatives dispersées. Chaque thématique est en outre mise en regard des Objectifs de développement durable adoptés par les Nations unies, pour que nos partenaires situent immédiatement notre travail.",
    "description": "Quatre pôles, vingt thématiques et deux cellules transversales pour organiser l’action d’ADEB LONODJI.",
    "parent": "Accueil",
-   "words": 5620,
+   "words": 5661,
    "hasMap": false
   },
   {
@@ -369,7 +369,7 @@
    "lede": "Chaque problématique que nous avons recensée est reliée à la thématique qui doit la porter, et chaque thématique à son plaidoyer quand il existe. Une seule page pour voir où nous en sommes : ce qui avance, ce qui attend un coordonnateur ou une coordonnatrice, et ce que nous n’avons pas encore commencé à documenter.",
    "description": "Chaque problématique reliée à sa thématique, chaque thématique à son plaidoyer s’il existe : le tableau de bord de suivi des actions d’ADEB LONODJI, thématique par thématique.",
    "parent": "Nos actions",
-   "words": 1567,
+   "words": 1569,
    "hasMap": false
   },
   {
@@ -402,7 +402,7 @@
    "kind": "hub",
    "title": "Agir avec nous",
    "eyebrow": "Nous soutenir",
-   "lede": "Cinq des vingt thématiques d’ADEB LONODJI cherchent encore un coordonnateur, et l’association elle-même se réactive après des années de mise en veille : votre soutien, sous toutes ses formes, compte. Voici les façons d’y contribuer.",
+   "lede": "Quatre des vingt thématiques d’ADEB LONODJI cherchent encore un coordonnateur, et l’association elle-même se réactive après des années de mise en veille : votre soutien, sous toutes ses formes, compte. Voici les façons d’y contribuer.",
    "description": "Les façons de soutenir ADEB LONODJI : cotisation et don, temps et compétences, dons en nature — au service du peuple bedjond de Bédjondo.",
    "parent": "Accueil",
    "words": 479,
@@ -537,7 +537,7 @@
    "lede": "ADEB LONODJI organises its work into twenty themes grouped in four pillars, supported by two cross-cutting units. Each theme is meant to be led by a coordinator who reports to the membership. This page is the English summary; every theme has a fuller description en français .",
    "description": "How ADEB LONODJI organises its work: four pillars, twenty themes and two cross-cutting units, each set against the UN Sustainable Development Goals it touches.",
    "parent": "Home",
-   "words": 2944,
+   "words": 2975,
    "hasMap": false
   }
  ],
@@ -1603,12 +1603,12 @@
       "number": "05",
       "kind": "thematique",
       "name": "Entrepreneuriat & finance inclusive",
-      "status": "À pourvoir",
-      "filled": false,
-      "coordinator": "à pourvoir",
-      "coordinatorLabel": "Coordonnateur",
-      "description": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la <a href=\"/programmes#cellule-financement-ressources\">cellule Financement &amp; ressources</a> pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire, notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire (<a href=\"/programmes/environnement#economie-verte\">voir les pistes</a>).",
-      "descriptionText": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la cellule Financement & ressources pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire, notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire ( voir les pistes ).",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Tamar Neloum DOUMANBE",
+      "coordinatorLabel": "Coordonnatrice",
+      "description": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la <a href=\"/programmes#cellule-financement-ressources\">cellule Financement &amp; ressources</a> pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire, notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire (<a href=\"/programmes/environnement#economie-verte\">voir les pistes</a>). <strong>Mise à jour du 30 septembre 2026 :</strong> la coordination de la thématique est confiée à Tamar Neloum DOUMANBE.",
+      "descriptionText": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la cellule Financement & ressources pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire, notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire ( voir les pistes ). Mise à jour du 30 septembre 2026 : la coordination de la thématique est confiée à Tamar Neloum DOUMANBE.",
       "tags": [
        "Emploi",
        "Entrepreneuriat",
@@ -2510,10 +2510,10 @@
       "name": "Compétences & entrepreneuriat numérique",
       "status": "Pourvu",
       "filled": true,
-      "coordinator": "Bignéro Moïalbéi LE MADANG",
-      "coordinatorLabel": "Coordonnateur",
-      "description": "Former les jeunes de Bédjondo aux métiers du numérique et leur ouvrir des débouchés sur place : initiation à l’informatique, au code, au design et aux outils bureautiques ; académie numérique et parrainage par les professionnels bedjond du secteur, au Tchad comme dans la diaspora ; appui aux jeunes qui veulent vivre du numérique — freelance, services en ligne, petites entreprises tech — en lien avec la thématique <a href=\"#entrepreneuriat-finance-inclusive\">Entrepreneuriat &amp; finance inclusive</a>. Une réponse concrète à l’exode des jeunes évoqué par la thématique <a href=\"#jeunesse-reussite\">Éducation, jeunesse &amp; formation</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association.",
-      "descriptionText": "Former les jeunes de Bédjondo aux métiers du numérique et leur ouvrir des débouchés sur place : initiation à l’informatique, au code, au design et aux outils bureautiques ; académie numérique et parrainage par les professionnels bedjond du secteur, au Tchad comme dans la diaspora ; appui aux jeunes qui veulent vivre du numérique — freelance, services en ligne, petites entreprises tech — en lien avec la thématique Entrepreneuriat & finance inclusive . Une réponse concrète à l’exode des jeunes évoqué par la thématique Éducation, jeunesse & formation . Mise à jour du 28 septembre 2026 : les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association.",
+      "coordinator": "Rosine Mbaïnodoum",
+      "coordinatorLabel": "Coordonnatrice",
+      "description": "Former les jeunes de Bédjondo aux métiers du numérique et leur ouvrir des débouchés sur place : initiation à l’informatique, au code, au design et aux outils bureautiques ; académie numérique et parrainage par les professionnels bedjond du secteur, au Tchad comme dans la diaspora ; appui aux jeunes qui veulent vivre du numérique — freelance, services en ligne, petites entreprises tech — en lien avec la thématique <a href=\"#entrepreneuriat-finance-inclusive\">Entrepreneuriat &amp; finance inclusive</a>. Une réponse concrète à l’exode des jeunes évoqué par la thématique <a href=\"#jeunesse-reussite\">Éducation, jeunesse &amp; formation</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. <strong>Mise à jour du 30 septembre 2026 :</strong> la coordination de cette thématique est confiée à Rosine Mbaïnodoum, qui succède à Bignéro Moïalbéi LE MADANG.",
+      "descriptionText": "Former les jeunes de Bédjondo aux métiers du numérique et leur ouvrir des débouchés sur place : initiation à l’informatique, au code, au design et aux outils bureautiques ; académie numérique et parrainage par les professionnels bedjond du secteur, au Tchad comme dans la diaspora ; appui aux jeunes qui veulent vivre du numérique — freelance, services en ligne, petites entreprises tech — en lien avec la thématique Entrepreneuriat & finance inclusive . Une réponse concrète à l’exode des jeunes évoqué par la thématique Éducation, jeunesse & formation . Mise à jour du 28 septembre 2026 : les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. Mise à jour du 30 septembre 2026 : la coordination de cette thématique est confiée à Rosine Mbaïnodoum, qui succède à Bignéro Moïalbéi LE MADANG.",
       "tags": [
        "Formation",
        "Emploi",

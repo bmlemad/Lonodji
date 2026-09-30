@@ -1,7 +1,7 @@
 # Revue du 29 septembre 2026 — corrections exactes des pages anglaises héritées (en/*.html).
 # Chargé par scripts/import-legacy.py (corrections_revue), APRÈS RENOMMAGES_29_09 et COMPTES_29_09 :
 # « ancien » doit correspondre au HTML source à ce stade (entités &amp; &rsquo; &eacute; conservées).
-# Faits de référence : 20 thématiques, 15 pourvues, 5 ouvertes ; 4 piliers (Pillar Lead ouverts) ;
+# Faits de référence : 20 thématiques, 16 pourvues (30/09/2026), 4 ouvertes ; 4 piliers (Pillar Lead ouverts) ;
 # 2 cellules ; 8 plaidoyers ; lonodji.org en ligne depuis le 27/09/2026, pas encore d'e-mail.
 
 MAJ = "<strong>Update, 29 September 2026:</strong>"
@@ -21,7 +21,7 @@ CORRECTIONS = {
         ('<span class="bento-num">4</span><span class="bento-label">areas of action</span>',
          '<span class="bento-num">4</span><span class="bento-label">pillars</span>'),
         ('<span class="bento-num">19</span><span class="bento-label">themes of action, 6 with a coordinator so far</span>',
-         '<span class="bento-num">20</span><span class="bento-label">themes, 15 with a coordinator so far</span>'),
+         '<span class="bento-num">20</span><span class="bento-label">themes, 16 with a coordinator so far</span>'),
         ("before being relaunched in 2026 with four areas of action, twenty themes,",
          "before being relaunched in 2026 with four pillars, twenty themes,"),
         ("<h2>Four areas of action</h2>", "<h2>Four pillars</h2>"),
@@ -44,7 +44,7 @@ CORRECTIONS = {
          "twenty themes, each meant to be led by a coordinator who reports to the members,"),
         ("an executive bureau &mdash;", "an executive committee &mdash;"),
         ("Thirteen of the twenty themes are still looking for a coordinator.",
-         "Five of the twenty themes are still looking for a coordinator."),
+         "Four of the twenty themes are still looking for a coordinator."),
         ("Presentation file (PDF, in French)", "Presentation brochure (PDF, in French)"),
     ],
     "en/contact.html": [
@@ -62,7 +62,7 @@ CORRECTIONS = {
     ],
     "en/themes.html": [
         ('<span class="hero-pill">19 themes</span>', '<span class="hero-pill">20 themes</span>'),
-        ("<h2>Fifteen coordinators out of twenty</h2>", "<h2>Fifteen themes out of twenty have a coordinator</h2>"),
+        ("<h2>Sixteen coordinators out of twenty</h2>", "<h2>Sixteen themes out of twenty have a coordinator</h2>"),
         ("our themes carry forty-two of the one hundred and sixty-nine targets", "our themes carry forty-four of the one hundred and sixty-nine targets"),
         # thème 17 : note du 29/09 (avant le passage de « pole » à « pillar », qui touche aussi ce paragraphe)
         ("and digital inclusion. <strong>Update, 28 September 2026:</strong> the three themes of the Digital &amp; Innovation pole are now coordinated by Bign&eacute;ro Mo&iuml;alb&eacute;i LE MADANG, the association&rsquo;s general facilitator.</p>",

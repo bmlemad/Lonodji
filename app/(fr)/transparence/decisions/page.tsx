@@ -1,4 +1,4 @@
-import { metaDescription } from "@/lib/content";
+import { enLettres, filledCount, getIndex, metaDescription, thematiqueCount } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
@@ -33,7 +33,7 @@ export default function Decisions() {
       />
       <Stats items={[
         { value: String(compte("decision")), label: "décisions", note: "prises par l’association et rendues publiques" },
-        { value: String(compte("nomination")), label: "nominations", note: "quinze coordinations sur vingt pourvues, une cellule sur deux" },
+        { value: String(compte("nomination")), label: "nominations", note: (() => { const i = getIndex(); const cel = i.structure.cellules?.items ?? []; return `${enLettres(filledCount(i))} coordinations sur ${enLettres(thematiqueCount(i))} pourvues, ${enLettres(cel.filter((c) => c.filled).length)} cellule${cel.filter((c) => c.filled).length > 1 ? "s" : ""} sur ${enLettres(cel.length)}`; })() },
         { value: String(nProp), label: nProp > 1 ? "propositions à décider" : "proposition à décider", note: "les cinq règles du programme 06, par l’assemblée ; les cinq politiques d’intégrité, par le bureau" },
         { value: String(compte("regle")), label: "règles en vigueur", note: "que l’association s’impose depuis la mise en ligne du site" },
       ]} />

@@ -61,11 +61,25 @@ export const DECISIONS: Decision[] = [
     suite: "L’adresse de chaque siège, sa date d’ouverture et le partage des responsabilités ne sont pas encore fixés publiquement.",
   },
   {
+    id: "2026-25", date: "2026-09-30", type: "nomination",
+    titre: "Entrepreneuriat & finance inclusive : Tamar Neloum DOUMANBE coordonnatrice",
+    texte: "La coordination de la thématique 05, Entrepreneuriat & finance inclusive (pôle Développement humain & moyens d’existence), jusqu’ici à pourvoir, est confiée à Tamar Neloum DOUMANBE.",
+    sources: [{ label: "Nos actions", href: "/programmes#entrepreneuriat-finance-inclusive" }],
+    suite: "Seize thématiques sur vingt ont désormais leur coordination ; quatre restent à pourvoir, avec la cellule Financement & ressources.",
+  },
+  {
+    id: "2026-24", date: "2026-09-30", type: "nomination",
+    titre: "Compétences & entrepreneuriat numérique : Rosine Mbaïnodoum coordonnatrice",
+    texte: "La coordination de la thématique 19, Compétences & entrepreneuriat numérique (pôle Numérique & innovation), est confiée à Rosine Mbaïnodoum. Elle succède à Bignéro Moïalbéi LE MADANG, qui garde Connectivité & services numériques.",
+    sources: [{ label: "Nos actions", href: "/programmes#competences-entrepreneuriat-numerique" }],
+    suite: "Le nombre de thématiques pourvues ne change pas avec cette succession.",
+  },
+  {
     id: "2026-23", date: "2026-09-30", type: "nomination",
     titre: "Intelligence artificielle & données : Bonheur Allahaddje coordonnateur",
     texte: "La coordination de la thématique 18, Intelligence artificielle & données (pôle Numérique & innovation), est confiée à Bonheur Allahaddje. Il succède à Bignéro Moïalbéi LE MADANG, qui coordonnait depuis le 28 septembre 2026 les trois thématiques du pôle et garde les deux autres.",
     sources: [{ label: "Nos actions", href: "/programmes#intelligence-artificielle-donnees" }],
-    suite: "Le nombre de thématiques pourvues ne change pas : quinze sur vingt.",
+    suite: "Le nombre de thématiques pourvues ne change pas avec cette succession.",
   },
   {
     id: "2026-22", date: "2026-09-30", type: "annonce",

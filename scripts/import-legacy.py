@@ -828,7 +828,11 @@ NOMINATIONS = [
      "Bonheur Allahaddje", "Bonheur Allahaddje",
      NOTE_P4_FR + " <strong>Mise à jour du 30 septembre 2026&nbsp;:</strong> la coordination de cette thématique est confiée à Bonheur Allahaddje, qui succède à Bignéro Moïalbéi LE MADANG.",
      NOTE_P4_EN + " <strong>Update, 30 September 2026:</strong> this theme is now coordinated by Bonheur Allahaddje, who succeeds " + BIG_EN + "."),
-    ("competences-entrepreneuriat-numerique", "Compétences &amp; entrepreneuriat numérique", "Digital Skills &amp; Entrepreneurship", "Compétences & entrepreneuriat numérique", "Numérique &amp; innovation", BIG, BIG_EN, NOTE_P4_FR, NOTE_P4_EN),
+    # 30/09/2026 : Rosine Mbaïnodoum succède à Bignéro Moïalbéi LE MADANG ; la note du 28/09 reste, datée.
+    ("competences-entrepreneuriat-numerique", "Compétences &amp; entrepreneuriat numérique", "Digital Skills &amp; Entrepreneurship", "Compétences & entrepreneuriat numérique", "Numérique &amp; innovation",
+     "Rosine Mbaïnodoum", "Rosine Mba&iuml;nodoum",
+     NOTE_P4_FR + " <strong>Mise à jour du 30 septembre 2026&nbsp;:</strong> la coordination de cette thématique est confiée à Rosine Mbaïnodoum, qui succède à Bignéro Moïalbéi LE MADANG.",
+     NOTE_P4_EN + " <strong>Update, 30 September 2026:</strong> this theme is now coordinated by Rosine Mba&iuml;nodoum, who succeeds " + BIG_EN + "."),
     ("agriculture-elevage-securite-alimentaire", "Agriculture, élevage &amp; sécurité alimentaire", "Agriculture, Livestock &amp; Food Security", "Agriculture, élevage & sécurité alimentaire", "Développement humain &amp; moyens d’existence",
      "Olivier Allaramadji Nomaye, ingénieur agroéconomiste", "Olivier Allaramadji Nomaye, agricultural economist",
      " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée à Olivier Allaramadji Nomaye, ingénieur agroéconomiste.",
@@ -853,6 +857,11 @@ NOMINATIONS = [
      "Edgard Djerassem Djimhotengar", "Edgard Djerassem Djimhotengar",
      " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée à Edgard Djerassem Djimhotengar.",
      " <strong>Update, 28 September 2026:</strong> the theme is now coordinated by Edgard Djerassem Djimhotengar."),
+    # 30/09/2026 : thématique 05, jusqu'ici à pourvoir
+    ("entrepreneuriat-finance-inclusive", "Entrepreneuriat &amp; finance inclusive", "Entrepreneurship &amp; Inclusive Finance", "Entrepreneuriat & finance inclusive", "Développement humain &amp; moyens d’existence",
+     "Tamar Neloum DOUMANBE", "Tamar Neloum DOUMANBE",
+     " <strong>Mise à jour du 30 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée à Tamar Neloum DOUMANBE.",
+     " <strong>Update, 30 September 2026:</strong> the theme is now coordinated by Tamar Neloum DOUMANBE."),
     # cellule transversale : mêmes gabarits (tableau, carte, page anglaise, trouver.js), pas de fiche de suivi
     ("cellule-communication-numerique", "Communication &amp; numérique", "Communication &amp; Digital", "Communication & numérique", "Un appui à toutes les thématiques",
      "Djimtebaye Mahamat Mamadou Banadji", "Djimtebaye Mahamat Mamadou Banadji",
@@ -861,21 +870,28 @@ NOMINATIONS = [
 ]
 
 
+# Coordinatrices parmi les NOMINATIONS : libellé « Coordonnatrice » (l'anglais « Coordinator » est neutre).
+COORDINATRICES = {"competences-entrepreneuriat-numerique", "entrepreneuriat-finance-inclusive"}
+def libelle_coord(anc: str) -> str:
+    return "Coordonnatrice" if anc in COORDINATRICES else "Coordonnateur"
+
+
 def nominations_source() -> list[tuple[str, str]]:
     """Remplacements de source pour chaque nomination : tableau, carte, suivi, page anglaise, trouver.js."""
     out = []
     for anc, fr, en, js, pole, qui, qui_en, _nf, _ne in NOMINATIONS:
+        lib = libelle_coord(anc)
         out += [
             (f'<a class="coord-row" href="poles.html#{anc}"><span class="coord-etat">&Agrave; pourvoir</span><span class="coord-nom">{fr}</span><span class="coord-pole">{pole}</span><span class="coord-qui coord-qui--vide">&mdash;</span></a>',
              f'<a class="coord-row" href="poles.html#{anc}"><span class="coord-etat coord-etat--ok">Pourvu</span><span class="coord-nom">{fr}</span><span class="coord-pole">{pole}</span><span class="coord-qui">{qui}</span></a>'),
             (f'<span class="pole-status pole-status--vacant">À pourvoir</span>\n          <h3>{fr}</h3>\n          <p class="coord">Coordonnateur&nbsp;: à pourvoir</p>',
-             f'<span class="pole-status pole-status--pourvu">Pourvu</span>\n          <h3>{fr}</h3>\n          <p class="coord">Coordonnateur&nbsp;: {qui}</p>'),
+             f'<span class="pole-status pole-status--pourvu">Pourvu</span>\n          <h3>{fr}</h3>\n          <p class="coord">{lib}&nbsp;: {qui}</p>'),
             (f'<span class="pole-status pole-status--vacant">À pourvoir</span><h3><a href="poles.html#{anc}">{fr}</a></h3>',
-             f'<span class="pole-status pole-status--pourvu">Pourvu</span><h3><a href="poles.html#{anc}">{fr}</a></h3><p class="coord">Coordonnateur&nbsp;: {qui}</p>'),
+             f'<span class="pole-status pole-status--pourvu">Pourvu</span><h3><a href="poles.html#{anc}">{fr}</a></h3><p class="coord">{lib}&nbsp;: {qui}</p>'),
             (f'<span class="pole-status pole-status--vacant">Open</span>\n          <h3>{en}</h3>\n          <p class="coord">Coordinator: to be appointed</p>',
              f'<span class="pole-status pole-status--pourvu">Coordinator in post</span>\n          <h3>{en}</h3>\n          <p class="coord">Coordinator: {qui_en}</p>'),
             (f'"name": "{js}",\n    "status": "open",\n    "coord": "Coordonnateur : à pourvoir",',
-             f'"name": "{js}",\n    "status": "filled",\n    "coord": "Coordonnateur : {qui}",'),
+             f'"name": "{js}",\n    "status": "filled",\n    "coord": "{lib} : {qui}",'),
         ]
     return out
 
@@ -884,7 +900,7 @@ NOTES_COORDINATION = [
     # (marqueur dans la source, note ajoutée à la fin de la description de la carte, fichiers concernés)
     ('<p class="coord">Coordonnateur&nbsp;: Dr Yaphete Madjiradé</p>', " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée au Dr Yaphete Madjiradé, qui succède à Félix Mbété Nangmbatnan.", ("poles.html",)),
     ('<p class="coord">Coordinator: Dr Yaphete Madjirad&eacute;</p>', " <strong>Update, 28 September 2026:</strong> the theme is now coordinated by Dr Yaphete Madjirad&eacute;, who succeeds F&eacute;lix Mb&eacute;t&eacute; Nangmbatnan.", ("themes.html",)),
-] + [(f'<h3>{fr}</h3>\n          <p class="coord">Coordonnateur&nbsp;: {qui}</p>', nf, ("poles.html",)) for _a, fr, _en, _js, _p, qui, _qe, nf, _ne in NOMINATIONS] \
+] + [(f'<h3>{fr}</h3>\n          <p class="coord">{libelle_coord(_a)}&nbsp;: {qui}</p>', nf, ("poles.html",)) for _a, fr, _en, _js, _p, qui, _qe, nf, _ne in NOMINATIONS] \
   + [(f'<h3>{en}</h3>\n          <p class="coord">Coordinator: {qui_en}</p>', ne, ("themes.html",)) for _a, _fr, en, _js, _p, _q, qui_en, _nf, ne in NOMINATIONS]
 
 
@@ -947,6 +963,24 @@ COMPTES_29_09 = [
     # QA de cohérence du 29/09/2026 : chiffres figés de l'ancien site
     ("le nombre de th&eacute;matiques qui ont un coordonnateur&nbsp;: deux sur dix-neuf.", "le nombre de th&eacute;matiques qui ont un coordonnateur&nbsp;: quinze sur vingt au 29 septembre 2026."),
     ("<p>Dix-neuf fiches, une par thématique&nbsp;:", "<p>Une fiche par thématique (la vingtième, Urgences &amp; risques, créée le 29 septembre 2026, attend encore ses problématiques)&nbsp;:"),
+    # 30/09/2026 : Entrepreneuriat & finance inclusive pourvue — seize pourvues, quatre à pourvoir
+    ("cinq de ses vingt th&eacute;matiques", "quatre de ses vingt th&eacute;matiques"),
+    ("Cinq des vingt thématiques", "Quatre des vingt thématiques"),
+    ("<p>Cinq thématiques attendent un coordonnateur", "<p>Quatre thématiques attendent un coordonnateur"),
+    ("<p>Vingt thématiques, et cinq attendent encore leur coordonnateur.</p>", "<p>Vingt thématiques, et quatre attendent encore leur coordonnateur.</p>"),
+    ("pourvoir les cinq thématiques encore sans coordonnateur", "pourvoir les quatre thématiques encore sans coordonnateur"),
+    ("Vingt th&eacute;matiques, dont cinq sans coordonnateur.", "Vingt th&eacute;matiques, dont quatre sans coordonnateur."),
+    ("Cinq th&eacute;matiques &agrave; pourvoir</span>", "Quatre th&eacute;matiques &agrave; pourvoir</span>"),
+    ("<p>Cinq thématiques et une cellule cherchent", "<p>Quatre thématiques et une cellule cherchent"),
+    ("où vous seriez le plus utile. Cinq attendent un coordonnateur.", "où vous seriez le plus utile. Quatre attendent un coordonnateur."),
+    ('aria-label="5 thématiques encore à pourvoir — se porter volontaire">\n        <span class="bento-num">5</span>',
+     'aria-label="4 thématiques encore à pourvoir — se porter volontaire">\n        <span class="bento-num">4</span>'),
+    ('<a class="bento-tile" href="#entrepreneuriat-finance-inclusive" aria-label="', '<a class="bento-tile" href="#environnement-ressources" aria-label="'),
+    ('aria-label="15 coordonnateurs en poste — voir les thématiques pourvues">\n        <span class="bento-num">15</span>',
+     'aria-label="16 coordonnateurs en poste — voir les thématiques pourvues">\n        <span class="bento-num">16</span>'),
+    ("Five of ADEB LONODJI&rsquo;s twenty themes still have no coordinator.", "Four of ADEB LONODJI&rsquo;s twenty themes still have no coordinator."),
+    ("<h2>Fifteen coordinators out of twenty</h2>", "<h2>Sixteen coordinators out of twenty</h2>"),
+    ("five of the twenty themes have no coordinator today", "four of the twenty themes have no coordinator today"),
 ]
 # « dix-neuf thématiques » et variantes, hors articles (regex, casse conservée)
 COMPTES_RE_29_09 = [
