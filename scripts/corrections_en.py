@@ -31,7 +31,6 @@ CORRECTIONS = {
          "<p>Connectivity and digital services, artificial intelligence and data, digital skills and entrepreneurship.</p>"),
         ("On 28 September 2026, forty years after its founding reflections of 1986, the association launched the ODEB LONODJI reflection:",
          "On 28 September 2026, forty years after the first discussions of 1986, the association launched the ODEB LONODJI initiative:"),
-        ("lead one of the four poles as Pillar Lead", "lead one of the four pillars as Pillar Lead"),
     ],
     "en/about.html": [
         ("Bedjond executives began discussing it in 1986;", "Bedjond professionals began discussing it in 1986;"),

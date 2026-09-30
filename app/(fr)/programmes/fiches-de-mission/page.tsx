@@ -43,7 +43,7 @@ export default function FichesDeMission() {
       </div>
 
       <section className="hub-section" id="directions">
-        <SectionHead eyebrow="Quatre directions de pôle" title="Au rang de chef de projet," em="et toutes à pourvoir." text="Le directeur ou la directrice de pôle anime les coordonnateurs de ses thématiques, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets qui en relèvent, et rend compte au bureau et à l’assemblée. Il ne remplace pas les coordonnateurs : il les tient ensemble." />
+        <SectionHead eyebrow="Quatre directions de pôle" title="Au rang de chef de projet," em={directionsVacantes === m.directions.length ? "et toutes à pourvoir." : `${directionsVacantes} à pourvoir sur ${m.directions.length}.`} text="Le directeur ou la directrice de pôle anime les coordonnateurs de ses thématiques, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets qui en relèvent, et rend compte au bureau et à l’assemblée. Il ne remplace pas les coordonnateurs : il les tient ensemble." />
         <div className="link-list">
           {m.directions.map((d) => (
             <a key={d.pole} href={d.pdf} download>

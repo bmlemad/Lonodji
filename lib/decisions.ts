@@ -61,6 +61,13 @@ export const DECISIONS: Decision[] = [
     suite: "L’adresse de chaque siège, sa date d’ouverture et le partage des responsabilités ne sont pas encore fixés publiquement.",
   },
   {
+    id: "2026-26", date: "2026-09-30", type: "nomination",
+    titre: "Direction du pôle Mémoire, culture & patrimoine : Dr Bé-Rammaj Miaro-II",
+    texte: "La direction du pôle I, Mémoire, culture & patrimoine, au rang de chef de projet, est confiée au Dr Bé-Rammaj Miaro-II, déjà coordonnateur de la thématique Mémoire & héritage. C’est la première des quatre directions de pôle créées le 28 septembre 2026 à être pourvue.",
+    sources: [{ label: "Nos actions", href: "/programmes#pole-1" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }],
+    suite: "Les directions des pôles II, III et IV restent à pourvoir.",
+  },
+  {
     id: "2026-25", date: "2026-09-30", type: "nomination",
     titre: "Entrepreneuriat & finance inclusive : Tamar Neloum DOUMANBE coordonnatrice",
     texte: "La coordination de la thématique 05, Entrepreneuriat & finance inclusive (pôle Développement humain & moyens d’existence), jusqu’ici à pourvoir, est confiée à Tamar Neloum DOUMANBE.",

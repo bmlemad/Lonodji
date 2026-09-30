@@ -6,8 +6,8 @@
    "pole": "pole-1",
    "roman": "I",
    "nom": "Mémoire, culture & patrimoine",
-   "pourvue": false,
-   "qui": "à pourvoir",
+   "pourvue": true,
+   "qui": "Dr Bé-Rammaj Miaro-II",
    "pdf": "/missions/fiche-mission-direction-pole-1.pdf",
    "thematiques": 3
   },
