@@ -92,7 +92,7 @@
    "rubrique": "rapports",
    "titre": "Enquête sociolinguistique des variétés linguistiques de la région de Doba du Tchad : bebot, bedjond, gor et mango",
    "auteurs": "Eric Johnson",
-   "meta": "Eric Johnson — SIL Electronic Survey Report 2007-010, SIL International, 2007 (terrain : novembre 1999 – janvier 2000) · PDF",
+   "meta": "Eric Johnson — SIL Electronic Survey Report 2007-010, SIL International, 2007 (terrain : novembre 1999 – janvier 2000 ; première version : SIL-ATALTRAB, 2001 ; traduction anglaise avec Kendall Isaac : rapport 2007-015) · PDF",
    "resume": "Seule enquête publiée consacrée spécifiquement au bedjond : cantons où il est parlé, estimation des locuteurs, noms de la langue (bedjond, nangnda, ta-bedjond), similarité lexicale et tests d’intercompréhension avec le bebot, le gor, le mango, le mbay et le ngambay, vitalité, usages à l’église et à l’école, et état des…",
    "liens": [
     "https://www.sil.org/system/files/reapdata/17/11/23/17112357599868426173562598215635923193/silesr2007_010.pdf"
@@ -398,9 +398,11 @@
    "rubrique": "rapports",
    "titre": "Enquête sociolinguistique des variétés linguistiques de la région de Doba",
    "auteurs": "Éric Johnson",
-   "meta": "Éric Johnson — 2001",
-   "resume": "Enquête de terrain sur les variétés linguistiques sara de la région de Doba, à proximité de l’aire bedjond, mobilisée par les travaux universitaires sur l’identification des peuples du Kouh-Ouest et du Mandoul Occidental.",
-   "liens": [],
+   "meta": "Éric Johnson — SIL-ATALTRAB, 2001, 55 p.",
+   "resume": "Première version, en 2001, de l’enquête que SIL a publiée en ligne en 2007 ( voir la fiche de 2007 ) : c’est sous la date de 2001 que la citent les travaux universitaires sur l’identification des peuples du Kouh-Ouest et du Mandoul Occidental.",
+   "liens": [
+    "https://lonodji.org/patrimoine/base-de-recherche#src-enquete-sociolinguistique-des-varietes-l"
+   ],
    "route": "/patrimoine/base-de-recherche#src-enquete-sociolinguistique-des-varietes-l-2"
   },
   {

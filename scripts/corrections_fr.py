@@ -461,3 +461,25 @@ for _f in ("plaidoyers.html", "documents.html"):
         "les pistes cantonales dans le PMCR, le cantonnage local",
         "les pistes cantonales dans le PMCR (programme clos le 30 avril 2026, successeur à identifier), le cantonnage local",
     ))
+
+# 30/09/2026 : trois points de relecture tranchés sur pièces.
+# Lieux sacrés : les quatre règles de la page (conduite de l'association) et les cinq du cahier (tenue du registre)
+# sont deux listes différentes ; la page le dit.
+CORRECTIONS.setdefault("lieux-sacres.html", []).append(
+    (" &mdash; les cinq r&egrave;gles, deux feuilles de registre",
+     " &mdash; les cinq r&egrave;gles de tenue du cahier, distinctes des quatre r&egrave;gles ci-dessus, deux feuilles de registre"))
+# Généalogies : le cahier (public/documents/cahier-genealogique-adeb-lonodji-2026.pdf) s'ouvre sur six règles, pas sur
+# « deux avertissements » ; la page en commente trois.
+CORRECTIONS.setdefault("genealogies.html", []).append(
+    ("Deux avertissements figurent en t&ecirc;te du cahier, et le second est le plus important. D&rsquo;abord",
+     "Le cahier s&rsquo;ouvre sur six r&egrave;gles&nbsp;; trois demandent un mot de plus, et la deuxi&egrave;me ci-dessous est la plus importante. D&rsquo;abord"))
+# Johnson : une seule enquête, deux éditions. SIL-ATALTRAB 2001, 55 p. (bibliographie de Masnan Béoss, ACAREF 2024),
+# publiée en ligne par SIL en 2007 (Electronic Survey Report 2007-010) ; traduction anglaise, Kendall Isaac et Eric
+# Johnson, 2007-015 (sil.org/resources/archives/9030).
+CORRECTIONS.setdefault("recherche.html", []).extend([
+    ("Eric Johnson &mdash; SIL Electronic Survey Report 2007-010, SIL International, 2007 (terrain&nbsp;: novembre 1999 &ndash; janvier 2000) &middot; <a href=",
+     "Eric Johnson &mdash; SIL Electronic Survey Report 2007-010, SIL International, 2007 (terrain&nbsp;: novembre 1999 &ndash; janvier 2000&nbsp;; premi&egrave;re version&nbsp;: SIL-ATALTRAB, 2001&nbsp;; traduction anglaise avec Kendall Isaac&nbsp;: rapport 2007-015) &middot; <a href="),
+    ('<p class="source-meta">Éric Johnson &mdash; 2001</p>', '<p class="source-meta">Éric Johnson &mdash; SIL-ATALTRAB, 2001, 55 p.</p>'),
+    ("<p>Enquête de terrain sur les variétés linguistiques sara de la région de Doba, à proximité de l&rsquo;aire bedjond, mobilisée par les travaux universitaires sur l&rsquo;identification des peuples du Kouh-Ouest et du Mandoul Occidental.</p>",
+     "<p>Première version, en 2001, de l&rsquo;enquête que SIL a publiée en ligne en 2007 (<a href=\"https://lonodji.org/patrimoine/base-de-recherche#src-enquete-sociolinguistique-des-varietes-l\">voir la fiche de 2007</a>)&nbsp;: c&rsquo;est sous la date de 2001 que la citent les travaux universitaires sur l&rsquo;identification des peuples du Kouh-Ouest et du Mandoul Occidental.</p>"),
+])
