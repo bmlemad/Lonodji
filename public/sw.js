@@ -2,9 +2,13 @@
    But : qu'une page déjà ouverte reste lisible quand le réseau tombe.
    Ce n'est pas un mode hors ligne complet : ce qui n'a jamais été ouvert
    n'est pas disponible. Le réseau garde la priorité, pour que personne ne
-   lise une version périmée quand la connexion est là. */
+   lise une version périmée quand la connexion est là.
+   Réseau très lent (30/09/2026) : si une page déjà lue n'est pas arrivée au bout
+   de 4 secondes, sa copie enregistrée s'affiche ; la page reçue ensuite remplace
+   la copie pour la prochaine fois. */
+var ATTENTE_MAX = 4000;
 
-var VERSION = 'lonodji-next-v5';
+var VERSION = 'lonodji-next-v6';
 var PAGES = VERSION + '-pages';
 var ASSETS = VERSION + '-assets';
 var HORS_LIGNE = '/hors-ligne';
@@ -81,11 +85,20 @@ self.addEventListener('fetch', function (e) {
 
   if (req.mode === 'navigate') {
     // Réseau d'abord ; la page lue est gardée pour la prochaine coupure.
+    // Au-delà de ATTENTE_MAX, la copie enregistrée (s'il y en a une) répond à la place du réseau.
+    var reseau = fetch(req).then(function (rep) {
+      garder(PAGES, req, rep);
+      return rep;
+    });
+    var lent = new Promise(function (ok) {
+      setTimeout(function () {
+        caches.match(req, { ignoreSearch: true, cacheName: PAGES }).then(function (dep) { if (dep) ok(dep); });
+      }, ATTENTE_MAX);
+    });
+    // la page reçue après coup est quand même enregistrée
+    e.waitUntil(reseau.catch(function () {}));
     e.respondWith(
-      fetch(req).then(function (rep) {
-        garder(PAGES, req, rep);
-        return rep;
-      }).catch(function () {
+      Promise.race([reseau, lent]).catch(function () {
         return caches.match(req, { ignoreSearch: true, cacheName: PAGES }).then(function (dep) {
           return dep || caches.match(HORS_LIGNE, { cacheName: PAGES }).then(function (h) {
             return h || new Response(

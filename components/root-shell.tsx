@@ -17,7 +17,9 @@ import "../app/site.css";
 const siteUrl = "https://lonodji.org";
 
 const dmSans = DM_Sans({ subsets: ["latin"], display: "swap", variable: "--font-dm" });
-const playfair = Playfair_Display({ subsets: ["latin"], display: "swap", variable: "--font-playfair" });
+// police des titres en italique : pas de préchargement (30/09/2026). Sur une connexion lente, la feuille de style
+// et DM Sans passent d'abord ; les titres s'affichent en Georgia puis prennent Playfair dès qu'elle arrive.
+const playfair = Playfair_Display({ subsets: ["latin"], display: "swap", variable: "--font-playfair", preload: false, fallback: ["Georgia", "serif"] });
 
 export const viewport: Viewport = {
   width: "device-width",
