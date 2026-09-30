@@ -993,6 +993,58 @@ COMPTES_29_09 = [
     ("<h2>Fifteen coordinators out of twenty</h2>", "<h2>Sixteen coordinators out of twenty</h2>"),
     ("five of the twenty themes have no coordinator today", "four of the twenty themes have no coordinator today"),
 ]
+# Message du kit de mobilisation (à copier-coller) : resté à « dont 13 » depuis l'ancien site.
+COMPTES_29_09.append(("dont 13 cherchent encore un coordonnateur", "dont 4 cherchent encore un coordonnateur"))
+
+# ----------------------------------------------------------------------------
+# 30/09/2026 : comptes courants. Les remplacements ci-dessus et corrections_*.py amènent les phrases qui comptent
+# les coordinations à un état de référence (COMPTES_BASE : 4 thématiques à pourvoir, 16 pourvues, 1 cellule à
+# pourvoir). Une dernière passe (comptes_courants, fin de lire_source) les récrit avec les comptes réels, lus dans
+# poles.html après les nominations : une nomination n'a plus besoin que de sa ligne dans NOMINATIONS.
+COMPTES_BASE = (4, 16, 1)
+COMPTES_COURANTS: tuple[int, int, int] | None = None   # fixé au début de main()
+COMPTES_VUS: set[int] = set()
+_FR = ["zéro", "une", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "treize",
+       "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf", "vingt"]
+_EN = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen",
+       "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"]
+def _maj(t: str) -> str:
+    return t[:1].upper() + t[1:]
+
+
+def phrases_comptes(o: int, p: int, c: int) -> list[str]:
+    """Phrases (texte source, entités comprises) qui dépendent des comptes : o thématiques à pourvoir,
+    p pourvues, c cellules à pourvoir. Même ordre quels que soient les comptes."""
+    pl = o > 1
+    cel = "" if not c else (" et une cellule" if c == 1 else f" et {_FR[c]} cellules")
+    return [
+        # français
+        f"dont {_FR[p]} {'ont' if p > 1 else 'a'} déjà leur coordonnateur",                                   # mission
+        f"pourvoir {f'les {_FR[o]} thématiques' if pl else 'la thématique'} encore sans coordonnateur",        # mission
+        f"{_maj(_FR[o])} des vingt thématiques d&rsquo;ADEB LONODJI n&rsquo;{'ont' if pl else 'a'} pas encore de coordonnat",
+        f"{_maj(_FR[o])} des vingt thématiques d&rsquo;ADEB LONODJI {'cherchent' if pl else 'cherche'} encore un coordonnateur",
+        f"<p>{_maj(_FR[o])} thématique{'s' if pl else ''}{cel} {'cherchent' if o + c > 1 else 'cherche'} des coordonnateurs",
+        f"dont {o} {'cherchent' if pl else 'cherche'} encore un coordonnateur",                                # kit, message à copier
+        f"pas encore de coordonnateur pour {_FR[o]} de ses vingt th&eacute;matiques",
+        # anglais
+        f"{_maj(_EN[o])} of the twenty themes {'are' if pl else 'is'} still looking for a coordinator.",
+        f"{_maj(_EN[o])} of ADEB LONODJI&rsquo;s twenty themes still {'have' if pl else 'has'} no coordinator.",
+        f"themes, {p} with a coordinator so far",
+        f"{_maj(_EN[p])} themes out of twenty have a coordinator",
+        f"{_EN[o]} of the twenty themes {'have' if pl else 'has'} no coordinator today",
+    ]
+
+
+def comptes_courants(html: str) -> str:
+    if COMPTES_COURANTS is None:
+        return html
+    for i, (base, cour) in enumerate(zip(phrases_comptes(*COMPTES_BASE), phrases_comptes(*COMPTES_COURANTS))):
+        if base in html:
+            COMPTES_VUS.add(i)
+            html = html.replace(base, cour)
+    return html
+
+
 # « dix-neuf thématiques » et variantes, hors articles (regex, casse conservée)
 COMPTES_RE_29_09 = [
     (r"\bdix-neuf(\s+th(?:é|&eacute;)matiques)", r"vingt\1"),
@@ -1132,7 +1184,8 @@ def lire_source(path: Path) -> str:
         k = html.find("</p>", j)
         if j > 0 and k > 0:
             html = html[:k] + note + html[k:]
-    return corrections_revue(structure_29_09(html, path), path)
+    html = corrections_revue(structure_29_09(html, path), path)
+    return html if "articles" in path.parts else comptes_courants(html)
 
 
 # ---------------------------------------------------------------------------
@@ -1249,6 +1302,15 @@ def main():
     PUBLIC.mkdir(exist_ok=True)
     all_forms = {}
     index = {"pages": [], "articles": []}
+    # comptes réels (après les nominations), pour comptes_courants()
+    global COMPTES_COURANTS
+    s0 = structure(BeautifulSoup(lire_source(LEGACY / "poles.html"), "lxml"))
+    them0 = [t for pole in s0["poles"] for t in pole["items"]]
+    COMPTES_COURANTS = (sum(1 for t in them0 if not t["filled"]), sum(1 for t in them0 if t["filled"]),
+                        sum(1 for t in s0["cellules"]["items"] if not t["filled"]))
+    if COMPTES_COURANTS[0] == 0:
+        print("comptes : toutes les thématiques sont pourvues — les phrases d'appel à coordonner sont à réécrire à la main")
+        COMPTES_COURANTS = None
 
     # Pages de fond
     for name in DOSSIERS + HUB_PAGES:
@@ -1356,6 +1418,11 @@ def main():
     adapt_script("genealogie.js", "__initGenealogie", root_sel="#gn-outil")
     print(f"pages : {len(index['pages'])} · articles : {len(index['articles'])} · formulaires : {len(all_forms)} · "
           f"thématiques : {sum(len(p['items']) for p in index['structure']['poles'])} · plaidoyers : {len(index['plaidoyers'])} · documents : {len(index['documents'])}")
+    if COMPTES_COURANTS is not None:
+        for i, phrase in enumerate(phrases_comptes(*COMPTES_BASE)):
+            if i not in COMPTES_VUS:
+                print(f"correction sans effet : comptes courants · « {phrase[:60]}… »")
+        print(f"comptes courants : {COMPTES_COURANTS[1]} thématiques pourvues, {COMPTES_COURANTS[0]} à pourvoir, {COMPTES_COURANTS[2]} cellule(s) à pourvoir")
     for cle, debut in sorted(set(CORRECTIONS_MANQUEES)):
         print(f"correction sans effet : {cle} · « {debut}… »")
 

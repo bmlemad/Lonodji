@@ -211,7 +211,7 @@ CORRECTIONS = {
     "mission.html": [
         # 7.
         ("quatre pôles et vingt thématiques d&rsquo;action, chacune confiée à un coordonnateur qui rend compte devant l&rsquo;ensemble des membres.</p>",
-         "quatre pôles et vingt thématiques d&rsquo;action, dont quinze ont déjà leur coordonnateur&nbsp;; chaque coordonnateur rend compte devant l&rsquo;ensemble des membres.</p>"),
+         "quatre pôles et vingt thématiques d&rsquo;action, dont seize ont déjà leur coordonnateur&nbsp;; chaque coordonnateur rend compte devant l&rsquo;ensemble des membres.</p>"),
         ("la raison d&rsquo;être première de l&rsquo;association&nbsp;: agriculture, élevage et sécurité alimentaire, entrepreneuriat et finance inclusive, environnement et ressources naturelles, "
          "eau, énergie et connectivité, désenclavement et urbanisation, jeunesse et réussite, genre et autonomisation des femmes, santé et prévention, protection sociale et inclusion.",
          "la raison d&rsquo;être première de l&rsquo;association&nbsp;: agriculture, élevage et sécurité alimentaire&nbsp;; entrepreneuriat et finance inclusive&nbsp;; environnement, climat et ressources naturelles&nbsp;; "

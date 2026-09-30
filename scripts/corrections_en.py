@@ -1,7 +1,9 @@
 # Revue du 29 septembre 2026 — corrections exactes des pages anglaises héritées (en/*.html).
 # Chargé par scripts/import-legacy.py (corrections_revue), APRÈS RENOMMAGES_29_09 et COMPTES_29_09 :
 # « ancien » doit correspondre au HTML source à ce stade (entités &amp; &rsquo; &eacute; conservées).
-# Faits de référence : 20 thématiques, 16 pourvues (30/09/2026), 4 ouvertes ; 4 piliers (Pillar Lead ouverts) ;
+# Faits de référence : 20 thématiques, 16 pourvues (30/09/2026), 4 ouvertes ; 4 piliers ;
+# les phrases qui comptent les coordinations restent écrites pour 16/4 : import-legacy.py (comptes_courants) les
+# récrit ensuite avec les comptes réels — ne pas y changer ces nombres à la main ;
 # 2 cellules ; 8 plaidoyers ; lonodji.org en ligne depuis le 27/09/2026, pas encore d'e-mail.
 
 MAJ = "<strong>Update, 29 September 2026:</strong>"

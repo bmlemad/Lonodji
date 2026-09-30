@@ -42,6 +42,9 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
 - Les pages issues de l'ancien site se corrigent dans `scripts/corrections_fr.py` / `corrections_en.py`
   (remplacements exacts), puis `python3 scripts/import-legacy.py <ancien-site>` ; un remplacement sans effet est
   signalé à l'import. Ne pas éditer `content/pages/*.json` à la main : l'import les réécrit.
+- Nommer un coordonnateur : une ligne dans `NOMINATIONS` (`scripts/import-legacy.py`) et une entrée dans
+  `lib/decisions.ts`. Les phrases héritées qui comptent les coordinations (« quatre des vingt thématiques… »,
+  « Sixteen themes out of twenty… ») sont recalculées à l'import (`comptes_courants`) : ne pas les corriger à la main.
 - `import-legacy.py` **efface et recrée** `public/documents`, `public/identite`, `public/kit`, `public/app`.
   Les fichiers propres au site vont dans `public/og`, `carte`, `odeb`, `icones`, `missions`, `lettres`, `notes`.
 - Après un import (qui lance lui-même `build-kit-adhesion.py`) : `build-dossier-presentation.py`, `build-carte.py`,
