@@ -3,7 +3,7 @@ import AppShell from "@/components/app-shell";
 import SiteFooter from "@/components/site-footer";
 import DeferredChrome from "@/components/deferred-chrome";
 import SiteNav from "@/components/site-nav";
-import { ORG, getIndex, thematiqueCount } from "@/lib/content";
+import { ORG, enLettres, getIndex, thematiqueCount } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
 import { jsonLd, siteOrganization, siteWebSite } from "@/lib/schema";
 import { DM_Sans, Playfair_Display } from "next/font/google";
@@ -28,7 +28,7 @@ export const viewport: Viewport = {
 
 const themeCount = thematiqueCount(getIndex());
 const plaidoyerCount = getIndicateurs().contenu.plaidoyers.publies;
-const themeLabel = `${themeCount} thématiques structurées`;
+const themeLabel = `${enLettres(themeCount)} thématiques`;
 
 export const metadataFr: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -38,7 +38,7 @@ export const metadataFr: Metadata = {
     template: "%s — ADEB LONODJI",
   },
   description:
-    `L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : quatre pôles, ${themeLabel.toLowerCase()}, ${plaidoyerCount} dossiers de plaidoyer pour le Mandoul (Tchad).`,
+    `L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : quatre pôles, ${themeLabel}, ${enLettres(plaidoyerCount)} dossiers de plaidoyer pour le Mandoul (Tchad).`,
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -47,7 +47,7 @@ export const metadataFr: Metadata = {
     siteName: "ADEB LONODJI",
     title: "ADEB LONODJI — Courage · Discipline · Héritage",
     description:
-      `L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond. Quatre pôles, ${themeLabel.toLowerCase()}, ${plaidoyerCount} dossiers de plaidoyer publiés.`,
+      `L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond. Quatre pôles, ${themeLabel}, ${enLettres(plaidoyerCount)} dossiers de plaidoyer publiés.`,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ADEB LONODJI — Courage · Discipline · Héritage" }],
   },
   twitter: { card: "summary_large_image" },

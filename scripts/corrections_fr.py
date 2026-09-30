@@ -453,3 +453,11 @@ for _f, _paires in {
     "besoins.html": [("Forages isolés, pannes non réparées, pas de réseau", "Forages isolés, pannes non réparées, réseau limité à un seul village")],
 }.items():
     CORRECTIONS.setdefault(_f, []).extend(_paires)
+
+
+# Accueil / plaidoyer routes (audit du 30 septembre 2026) : le PMCR est clos ; le résumé le signale sans réécrire le dossier.
+for _f in ("plaidoyers.html", "documents.html"):
+    CORRECTIONS.setdefault(_f, []).append((
+        "les pistes cantonales dans le PMCR, le cantonnage local",
+        "les pistes cantonales dans le PMCR (programme clos le 30 avril 2026, successeur à identifier), le cantonnage local",
+    ))

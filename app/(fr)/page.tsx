@@ -3,9 +3,10 @@ import { alternatesLangues } from "@/lib/langues";
 import Link from "@/components/lien";
 import { ArticleCard } from "@/components/blocks";
 import TableauDeBord from "@/components/tableau-de-bord";
-import { enLettres, filledCount, getIndex, getPage, ORG, thematiqueCount } from "@/lib/content";
+import { directionsCount, enLettres, filledCount, getIndex, getPage, ORG, thematiqueCount } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
 import { IDENTITE, ODEB, PROGRAMMES, routeProgramme } from "@/lib/odeb";
+import { RESUME_PROPOSITIONS } from "@/lib/gouvernance-locale";
 
 
 export const metadata: Metadata = { alternates: { canonical: "/", languages: alternatesLangues("/") } };
@@ -16,8 +17,11 @@ const values = [
   ["03", "Héritage", "Préserver et transmettre ce que la communauté bedjond a construit, pour que les générations futures en héritent renforcé."],
 ]
 
-const participer = (vacantes: number) => [
-  ["01", "Rejoindre ou coordonner une thématique", `${enLettres(vacantes, true)} thématiques cherchent leur coordonnateur. Une compétence ponctuelle suffit souvent à faire avancer un dossier déjà prêt.`, "/participer?coordo=1#contact"],
+/* Postes ouverts, comptés dans content/index.json : thématiques, cellules transversales, directions de pôle. */
+const postesOuverts = (vacantes: number, cellules: number, directions: number) =>
+  `${enLettres(vacantes, true)} thématique${vacantes > 1 ? "s" : ""}${cellules ? ` et ${cellules > 1 ? `${enLettres(cellules)} cellules transversales` : "une cellule transversale"}` : ""} cherchent leur coordonnateur${directions ? ` ; ${directions > 1 ? `les ${enLettres(directions)} directions de pôle sont` : "une direction de pôle est"} à pourvoir` : ""}.`;
+const participer = (vacantes: number, cellules: number, directions: number) => [
+  ["01", "Rejoindre ou coordonner une thématique", `${postesOuverts(vacantes, cellules, directions)} Une compétence ponctuelle suffit souvent à faire avancer un dossier déjà prêt.`, "/participer?coordo=1#contact"],
   ["02", "Adhérer à l’association", "Déclarer son intention d’adhérer n’engage aucun argent : la collecte est suspendue jusqu’à l’ouverture d’un compte au nom de l’association.", "/participer#adherer"],
   ["03", "Inscrire ses compétences au répertoire de la diaspora", "Médecin, enseignante, ingénieur, juriste, informaticienne : cinq minutes pour dire ce que vous savez faire, et n’être sollicité que pour cela.", "/diaspora"],
   ["04", "Raconter Bédjondo : un récit, une photo, une voix", "Un ancien qui raconte, une femme qui fait bouger les choses, un jeune talent, un paysage, une photo des forums de 2000 et 2003 : rien n’est publié sans votre relecture.", "/temoignages"],
@@ -29,6 +33,10 @@ export default function Home() {
   const filled = filledCount(idx);
   const latest = idx.articles.slice(0, 3);
   const indicateurs = getIndicateurs();
+  const cellulesVacantes = (idx.structure.cellules?.items ?? []).filter((c) => !c.filled).length;
+  const dir = directionsCount(idx);
+  const inconnues = indicateurs.contenu.problematiques.inconnues;
+  const envoyes = idx.plaidoyers.filter((p) => /\d{4}/.test(p.sent ?? "")).length;
   const corrections = (getPage("redevabilite").sections.find((s) => s.id === "corrections")?.html.match(/class="info-card"/g) || []).length;
   return (
     <>
@@ -42,7 +50,7 @@ export default function Home() {
             <h1 id="hero-title">Construire aujourd’hui.<br /><em>Transmettre demain.</em></h1>
             <p className="hero-text">
               ADEB LONODJI est l’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond.
-              Reconnue en 1995 — mise en conformité avec l’ordonnance de 2018 en vérification —, remise en mouvement en 2026 : quatre pôles, {total} thématiques structurées en 2026, {indicateurs.contenu.plaidoyers.publies} dossiers de plaidoyer publiés pour l’eau, l’électricité, l’école, les routes et la santé — et un territoire cartographié village par village.
+              Reconnue en 1995 — mise en conformité avec l’ordonnance de 2018 en vérification —, remise en mouvement en 2026 : quatre pôles, {enLettres(total)} thématiques, {enLettres(indicateurs.contenu.plaidoyers.publies)} dossiers de plaidoyer publiés — l’eau, l’électricité, le haut débit, la santé, l’école, la formation professionnelle, les routes, et une note à la commune — et un territoire cartographié village par village.
             </p>
             <div className="hero-actions">
               <Link className="button primary" href="/programmes">Découvrir nos actions <span aria-hidden="true">→</span></Link>
@@ -78,7 +86,7 @@ export default function Home() {
               La sauvegarde de la langue, de l’histoire et du patrimoine du peuple bedjond reste au cœur de notre objet.
             </p>
             <div className="home-facts">
-              <article><strong>1995</strong><span>Reconnaissance officielle, après dix ans de réflexion engagée en 1986.</span></article>
+              <article><strong>1995</strong><span>Reconnaissance officielle, au terme d’une réflexion engagée dès 1986.</span></article>
               <article><strong>2026</strong><span>Réactivation et structuration en pôles et thématiques, quarante ans après.</span></article>
               <article><strong>{idx.articles.length}</strong><span>articles publiés au journal depuis le 11 septembre 2026.</span></article>
             </div>
@@ -123,7 +131,7 @@ export default function Home() {
           <div className="section-head">
             <div>
               <p className="eyebrow">Nos actions</p>
-              <h2 id="programmes-title">Quatre pôles.<br /><em>{total} thématiques structurées en 2026.</em></h2>
+              <h2 id="programmes-title">Quatre pôles.<br /><em>{enLettres(total, true)} thématiques.</em></h2>
             </div>
             <p>
               Chaque pôle sera dirigé par un directeur ou une directrice de pôle, au rang de chef de projet (les quatre postes sont à pourvoir) ; chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte publiquement. Deux cellules transversales — financement et communication — appuient l’ensemble.
@@ -153,11 +161,11 @@ export default function Home() {
               <p className="eyebrow">Plaidoyers</p>
               <h2 id="plaidoyers-title">Dossiers de plaidoyer,<br /><em>une note à la commune.</em></h2>
             </div>
-            <p>Sourcés, chiffrés, adressés à des destinataires nommés et suivis publiquement : ce que nous demandons pour Bédjondo et ses cantons.</p>
+            <p>Sourcés, chiffrés, chacun avec ses destinataires nommés : ce que nous demandons pour Bédjondo et ses cantons. {envoyes ? `${enLettres(envoyes, true)} sur ${enLettres(idx.plaidoyers.length)} ${envoyes > 1 ? "sont envoyés" : "est envoyé"} ; ` : "Aucun n’est encore envoyé : "}chaque envoi et chaque réponse seront datés sur le tableau de suivi.</p>
           </div>
           <div className="link-list">
             {idx.plaidoyers.map((p) => (
-              <Link key={p.id} href={`/actions#${p.id}`}><small>{p.theme} · {p.status}</small><strong>{p.title}</strong><span>{p.demand}</span></Link>
+              <Link key={p.id} href={`/actions#${p.id}`}><small>{p.theme} · {p.status}{/\d{4}/.test(p.sent ?? "") ? ` · envoyé le ${p.sent}` : " · à envoyer"}</small><strong>{p.title}</strong><span>{p.demand}</span></Link>
             ))}
           </div>
           <div className="section-actions"><Link className="text-link" href="/actions">Tous les plaidoyers et leur suivi →</Link></div>
@@ -191,7 +199,9 @@ export default function Home() {
             <Link href="/territoire/bedjondo"><small>Bédjondo</small><strong>Repères, langue, statut de commune</strong><span>Avec la carte interactive du pays bedjond, sur contours administratifs vérifiés.</span></Link>
             <Link href="/territoire/diagnostic"><small>Diagnostic territorial</small><strong>Les problématiques documentées</strong><span>Eau, électricité, santé, école, routes, réseau : classées par domaine et reliées à leur thématique.</span></Link>
             <Link href="/territoire/besoins"><small>Carte des besoins</small><strong>Signaler un besoin, localité par localité</strong><span>Un forage en panne, une école sans maître, un pont coupé.</span></Link>
-            <Link href="/territoire/enquetes"><small>Enquêtes de terrain</small><strong>Huit inconnues, huit enquêtes</strong><span>Qui détient la réponse, comment s’y prendre, en combien de jours.</span></Link>
+            <Link href="/territoire/gouvernance-locale"><small>Gouvernance locale</small><strong>Qui décide quoi, du quartier à l’État</strong><span>Commune, chefferies, préfecture, province : ce que nous demandons à chacun, et les indicateurs pour le suivre.</span></Link>
+            <Link href="/territoire/propositions-commune"><small>Propositions à la commune</small><strong>{RESUME_PROPOSITIONS}</strong><span>Tout ce que nous proposons à la mairie de Bédjondo, sur une page, chaque mesure avec sa source.</span></Link>
+            <Link href="/territoire/enquetes"><small>Enquêtes de terrain</small><strong>{enLettres(inconnues, true)} inconnues, huit enquêtes</strong><span>Qui détient la réponse, comment s’y prendre, en combien de jours.</span></Link>
           </div>
           <div className="section-actions"><Link className="text-link" href="/territoire">Tout le territoire →</Link></div>
         </section>
@@ -234,7 +244,7 @@ export default function Home() {
             <p>Nous répondons sous quarante-huit heures ouvrées, par le <Link className="lien-souligne" href="/participer#contact">formulaire</Link> ou au numéro officiel de l’association, celui de son président, Adoumbé Maoura : <a className="lien-souligne" href={ORG.phoneHref}>{ORG.phone}</a>, appel et <a className="lien-souligne" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
           </div>
           <div className="engagement-list">
-            {participer(total - filled).map(([n, title, description, href]) => (
+            {participer(total - filled, cellulesVacantes, dir.total - dir.pourvues).map(([n, title, description, href]) => (
               <Link href={href} key={n} style={{ display: "contents" }}>
                 <article>
                   <span>{n}</span>
