@@ -1,10 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import AppShell from "@/components/app-shell";
-import NavTools from "@/components/nav-tools";
-import Palette from "@/components/palette";
-import { FeuillePartage } from "@/components/partager";
-import SectionRail from "@/components/section-rail";
 import SiteFooter from "@/components/site-footer";
+import DeferredChrome from "@/components/deferred-chrome";
 import SiteNav from "@/components/site-nav";
 import { ORG, getIndex, thematiqueCount } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
@@ -84,10 +81,7 @@ export default function RootShell({
         </header>
         {children}
         <SiteFooter lang={lang} miseAJour={en ? new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "Africa/Ndjamena" }) : miseAJour} />
-        <NavTools />
-        <Palette />
-        <FeuillePartage />
-        <SectionRail />
+        <DeferredChrome />
         <AppShell lang={lang} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({
           "@context": "https://schema.org",
