@@ -9,7 +9,7 @@ import { getIndicateurs } from "@/lib/indicateurs";
 import { thematiquesParId } from "@/lib/odeb-chiffres";
 import { getProjets, STADES_ACTIFS, stadeIndex } from "@/lib/projets";
 import Partager from "@/components/partager";
-import { ALIGNEMENT_PROJETS, GUICHETS, programmeParId } from "@/lib/bailleurs";
+import { breadcrumbSchema, jsonLd, webPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Plateforme de projets",
@@ -30,6 +30,7 @@ export default function Projets() {
   const tries = [...d.projets].sort((a, b) => stadeIndex(d, b.stade) - stadeIndex(d, a.stade));
   return (
     <main id="main-content" className="hub-page pj-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", "@graph": [webPageSchema({ url: "/projets", name: "Plateforme de projets", description: metaDescription("Espace numérique, application, complexe sportif, transport et logistique : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer — et le formulaire pour en proposer un.") }), breadcrumbSchema([{ name: "Accueil", url: "/" }, { name: "Nos actions", url: "/programmes" }, { name: "Projets" }], "/projets")] }) }} />
       <PageHeader
         eyebrow="Nos actions · plateforme de projets"
         title="Chaque projet,"
