@@ -41,6 +41,7 @@ export default function Territoire() {
           <Link href="/territoire/decentralisation"><small>Dossier</small><strong>Décentralisation & développement local</strong><span>Commune, canton, sous-préfecture : qui décide de quoi, et où se pose chaque demande.</span></Link>
           <Link href="/territoire/gouvernance-locale"><small>Gouvernance</small><strong>Gouvernance locale</strong><span>Qui décide quoi — État, province, département, commune, chefferies, quartiers —, nos demandes à chacun et les indicateurs pour les suivre.</span></Link>
           <Link href="/territoire/propositions-commune"><small>Propositions</small><strong>Nos propositions à la commune de Bédjondo</strong><span>Dix projets prioritaires, le projet intégré que nous recommandons, et toutes les mesures déjà publiées : ce que nous proposons à la mairie, sur une page.</span></Link>
+          <Link href="/territoire/sous-sol"><small>Ressources</small><strong>Sous-sol & ressources naturelles</strong><span>Pétrole du bassin voisin de Doba, fer, or : ce qui est établi, ce qui reste inconnu, et les règles à fixer avant tout forage.</span></Link>
         </div>
       </section>
 
