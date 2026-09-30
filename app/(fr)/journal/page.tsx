@@ -5,6 +5,7 @@ import { PageHeader, SectionHead } from "@/components/blocks";
 import JournalList from "@/components/journal-list";
 import { getIndex, ogFor } from "@/lib/content";
 import Partager from "@/components/partager";
+import { breadcrumbSchema, jsonLd, webPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Le journal",
@@ -18,6 +19,17 @@ export default function Journal() {
   const latest = idx.articles[0];
   return (
     <main id="main-content" className="hub-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({
+        "@context": "https://schema.org",
+        "@graph": [
+          webPageSchema({ url: "/journal", name: "Le journal", description: "Articles, annonces, plaidoyers et lettre d’information : la vie de l’association, la mémoire bedjond et les dossiers de développement du Mandoul Occidental." }),
+          breadcrumbSchema([
+            { name: "Accueil", url: "/" },
+            { name: "Le journal", url: "/journal" },
+            
+          ], "/journal"),
+        ],
+      }) }} />
       <PageHeader
         eyebrow="Journal"
         title="Ce que nous écrivons,"
