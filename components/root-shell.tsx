@@ -6,7 +6,7 @@ import { FeuillePartage } from "@/components/partager";
 import SectionRail from "@/components/section-rail";
 import SiteFooter from "@/components/site-footer";
 import SiteNav from "@/components/site-nav";
-import { ORG, getIndex, getIndicateurs, thematiqueCount } from "@/lib/content";
+import { ORG, getIndex, thematiqueCount } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import "../app/globals.css";
