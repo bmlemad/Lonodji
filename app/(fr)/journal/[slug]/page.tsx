@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArticleCard } from "@/components/blocks";
 import { LegacySections, Resume, splitTitle } from "@/components/legacy-content";
 import { getArticle, getIndex, listArticleSlugs, metaDescription, ogFor, ogImage, ORG } from "@/lib/content";
+import { articleSchema, breadcrumbSchema, jsonLd, webPageSchema } from "@/lib/schema";
 
 export const dynamicParams = true; // adresse inconnue : notFound() dans la page (404 hydratée sans écart)
 
@@ -38,20 +39,26 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const [main, ...rest] = splitTitle(a.title);
   const ld = {
     "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    headline: a.title,
-    description: a.description || a.summary,
-    datePublished: a.date,
-    dateModified: a.date,
-    image: [`https://lonodji.org${ogImage(`/journal/${slug}`)[0].url}`],
-    inLanguage: "fr-FR",
-    author: { "@type": "Organization", name: ORG.name },
-    publisher: { "@type": "Organization", name: ORG.name, url: ORG.url, logo: { "@type": "ImageObject", url: "https://lonodji.org/odeb/identite/odeb-lonodji-embleme-1024.png" } },
-    mainEntityOfPage: url,
+    "@graph": [
+      webPageSchema({ url: `/journal/${slug}`, name: a.title, description: a.description || a.summary }),
+      breadcrumbSchema([
+        { name: "Accueil", url: "/" },
+        { name: "Le journal", url: "/journal" },
+        { name: a.tag || "Article" },
+      ], `/journal/${slug}`),
+      articleSchema({
+        url: `/journal/${slug}`,
+        headline: a.title,
+        description: a.description || a.summary,
+        datePublished: a.date,
+        image: `https://lonodji.org${ogImage(`/journal/${slug}`)[0].url}`,
+        byline: a.byline || ORG.name,
+      }),
+    ],
   };
   return (
     <main id="main-content" className="hub-page article-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(ld) }} />
       <div className="article-head">
         <nav className="lg-crumbs" aria-label="Fil d’Ariane"><ol><li><Link href="/">Accueil</Link></li><li><Link href="/journal">Le journal</Link></li><li aria-current="page">{a.tag || "Article"}</li></ol></nav>
         <p className="eyebrow">{a.tag || "Le journal"}</p>
