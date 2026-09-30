@@ -1,4 +1,5 @@
 import { alternatesLangues } from "@/lib/langues";
+import { breadcrumbSchema, jsonLd, webPageSchema } from "@/lib/schema";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats, ThematiqueRow, VuesThematiques } from "@/components/blocks";
@@ -28,6 +29,7 @@ export default function Programmes() {
   const extra = pickSections(page, { only: ["nos-actions-page-par-page", "odd-cadrage", "odd-index", "devenir-coordonnateur-dune-thematique"] });
   return (
     <main id="main-content" className="hub-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", "@graph": [webPageSchema({ url: "/programmes", name: "Nos actions — quatre pôles, vingt thématiques", description: "Quatre pôles, vingt thématiques et deux cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés." }), breadcrumbSchema([{ name: "Accueil", url: "/" }, { name: "Nos actions", url: "/programmes" }, { name: "Nos actions" }], "/programmes")] }) }} />
       <PageHeader
         eyebrow="Nos actions · pôles & thématiques"
         title="Quatre pôles,"
