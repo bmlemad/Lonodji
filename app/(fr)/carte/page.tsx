@@ -44,7 +44,7 @@ export default function Carte() {
         { value: String(villagesCoeur), label: "localités du Mandoul Occidental", note: "sur OpenStreetMap, dans les sept unités du cœur" },
         { value: String(equipementsCoeur), label: "équipements cartographiés au cœur", note: "écoles, santé, eau, marchés… présents dans les données ouvertes" },
         { value: String(sansEquipement.length), label: "unités sans aucun équipement connu", note: sansEquipement.slice(0, 5).join(", ") + (sansEquipement.length > 5 ? "…" : "") },
-        { value: String(d.villages.length), label: "localités sur les quatorze unités", note: "villes, bourgs, villages et hameaux" },
+        { value: d.villages.length.toLocaleString("fr-FR"), label: "localités sur les quatorze unités", note: "villes, bourgs, villages et hameaux" },
       ]} />
 
       <section className="hub-section">

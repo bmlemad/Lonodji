@@ -50,7 +50,7 @@ export default function Accessibilite() {
       </section>
 
       <section className="hub-section" id="signaler">
-        <SectionHead eyebrow="Un obstacle ?" title="Dites-le nous," em="nous répondons sous 48 heures." />
+        <SectionHead eyebrow="Un obstacle ?" title="Dites-le-nous," em="nous répondons sous 48 heures." />
         <div className="contact-card" style={{ maxWidth: 760 }}>
           <p>Une page illisible, un formulaire impossible à remplir, un contraste trop faible, un document inaccessible : écrivez-nous en indiquant la page et ce qui bloque. Nous répondons sous quarante-huit heures ouvrées et nous corrigeons ; les corrections sont datées dans le <Link href="/transparence#corrections">journal des corrections</Link>. Par téléphone ou WhatsApp : {ORG.phone}.</p>
           <div className="hero-actions">

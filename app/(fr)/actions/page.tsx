@@ -19,7 +19,7 @@ const dossiers = [
   { href: "/association/engagements", label: "Nos engagements publics", note: "Les douze engagements pris sur nos dossiers, aucun encore confirmé réalisé." },
   { href: "/territoire/diagnostic", label: "Diagnostic territorial", note: "Les problématiques documentées, classées par domaine et reliées à leur thématique." },
   { href: "/territoire/besoins", label: "Carte des besoins", note: "Signaler un forage en panne, une école sans maître, un pont coupé : localité par localité." },
-  { href: "/territoire/enquetes", label: "Enquêtes de terrain", note: "Huit inconnues de notre recensement, huit enquêtes à conduire, en combien de jours." },
+  { href: "/territoire/enquetes", label: "Enquêtes de terrain", note: "Huit des onze inconnues de notre recensement, huit enquêtes à conduire, en combien de jours." },
   { href: "/association/demarches", label: "Les démarches, pas à pas", note: "À qui écrire, avec quelles pièces, et trois lettres modèles." },
   { href: "/territoire/propositions-commune", label: "Nos propositions à la commune", note: "Dix projets prioritaires et toutes les demandes adressées à la mairie de Bédjondo, chacune avec sa source." },
   { href: "/territoire/decentralisation", label: "Décentralisation", note: "Ce que la commune peut décider, et ce qui reste à l’État." },

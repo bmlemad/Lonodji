@@ -662,7 +662,7 @@ window.__initTrouver = function () {
     });
     var cells = DATA.filter(function (d) { return d.status === 'open' && d.tier === 0; });
     if (cells.length) {
-      html += '<div class="tm-group"><h3>Et deux cellules qui appuient toutes les thématiques</h3><div class="tm-group-list">'
+      html += '<div class="tm-group"><h3>' + (cells.length > 1 ? 'Et ' + cells.length + ' cellules transversales à pourvoir' : 'Et une cellule transversale à pourvoir') + '</h3><div class="tm-group-list">'
         + cells.map(function (d) { return '<a href="/programmes#' + esc(d.id) + '">' + esc(d.name) + '</a>'; }).join('')
         + '</div></div>';
     }

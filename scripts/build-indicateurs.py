@@ -34,7 +34,7 @@ SITE_ID = "17ccf3c4-041d-471c-93c5-87730d0b8106"
 # Dernier relevé manuel des formulaires (console Netlify, envois de test retirés).
 RELEVE = {
     "date": "2026-09-28",
-    "methode": "Console Netlify Forms, après retrait des six envois de test des 20 et 21 septembre. Les intentions d'adhésion sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).",
+    "methode": "Console Netlify Forms, après retrait des six envois de test des 20 et 21 septembre. Les intentions d’adhésion sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).",
     "comptes": {
         "intention-adhesion": {"envois": 3, "personnes": 2},
         "signalement-besoin": {"envois": 0},
@@ -166,7 +166,7 @@ def releve_en_direct(jeton: str) -> dict | None:
                 print(f"dédoublonnage impossible ({e})", file=sys.stderr)
     return {
         "date": dt.date.today().isoformat(),
-        "methode": "API Netlify Forms, relevé automatique. Les intentions d'adhésion sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).",
+        "methode": "API Netlify Forms, relevé automatique. Les intentions d’adhésion sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).",
         "comptes": comptes,
     }
 

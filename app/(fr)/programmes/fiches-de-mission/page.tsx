@@ -17,7 +17,8 @@ const jour = (iso: string) => new Date(iso).toLocaleDateString("fr-FR", { day: "
 
 export default function FichesDeMission() {
   const m = getMissions();
-  const vacantes = m.coordinations.filter((c) => !c.pourvue).length + m.cellules.filter((c) => !c.pourvue).length;
+  const coordVacantes = m.coordinations.filter((c) => !c.pourvue).length;
+  const cellVacantes = m.cellules.filter((c) => !c.pourvue).length;
   const directionsVacantes = m.directions.filter((d) => !d.pourvue).length;
   return (
     <main id="main-content" className="hub-page">
@@ -27,7 +28,7 @@ export default function FichesDeMission() {
         em="coordonner une thématique : la fiche avant la candidature."
         lead="Une fiche de mission par poste, en PDF, à faire circuler : ce que la personne fait, le périmètre, les quatre étapes communes à toutes les thématiques, et le lien de candidature déjà rempli. Les textes sont ceux des pages Nos actions, Mission et Participer ; l’état — pourvu, à pourvoir — est celui du site à la date de la fiche."
         crumbs={[{ label: "Nos actions", href: "/programmes" }, { label: "Fiches de mission" }]}
-        pills={[`${m.directions.length + m.coordinations.length + m.cellules.length} fiches`, `${directionsVacantes} direction${directionsVacantes > 1 ? "s" : ""} à pourvoir`, `${vacantes} coordination${vacantes > 1 ? "s" : ""} à pourvoir`, `état au ${jour(m.genere)}`]}
+        pills={[`${m.directions.length + m.coordinations.length + m.cellules.length} fiches`, `${directionsVacantes} direction${directionsVacantes > 1 ? "s" : ""} à pourvoir`, `${coordVacantes} coordination${coordVacantes > 1 ? "s" : ""}${cellVacantes ? ` et ${cellVacantes} cellule${cellVacantes > 1 ? "s" : ""}` : ""} à pourvoir`, `état au ${jour(m.genere)}`]}
       />
       <Stats items={[
         { value: String(m.directions.length), label: "directions de pôle", note: "rang de chef de projet (Pillar Lead) ; les quatre sont ouvertes à tout membre" },

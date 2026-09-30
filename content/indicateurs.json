@@ -1,5 +1,5 @@
 {
- "genere": "2026-09-30T04:48:37Z",
+ "genere": "2026-09-30T09:21:51Z",
  "contenu": {
   "plaidoyers": {
    "publies": 8,
@@ -52,7 +52,7 @@
      "slug": "application",
      "nom": "Application pour téléphone",
      "stade": "essai",
-     "libelle": "version d'essai en ligne (Android 1.0.1, 28 septembre 2026)",
+     "libelle": "version d’essai en ligne (Android 1.0.1, 28 septembre 2026)",
      "route": "/projets/application"
     },
     {
@@ -95,7 +95,7 @@
  },
  "formulaires": {
   "date": "2026-09-28",
-  "methode": "Console Netlify Forms, après retrait des six envois de test des 20 et 21 septembre. Les intentions d'adhésion sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).",
+  "methode": "Console Netlify Forms, après retrait des six envois de test des 20 et 21 septembre. Les intentions d’adhésion sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).",
   "comptes": {
    "intention-adhesion": {
     "envois": 3,

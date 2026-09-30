@@ -73,7 +73,7 @@ export default function Participer() {
               <LegacySections sections={essentiel} />
               {details.length ? (
                 <details className="plier">
-                  <summary><strong>Les règles de l’adhésion en détail</strong><span>{details.length} sections : la carte, la grille proposée, l’argent, le registre, ce qui reste à décider</span></summary>
+                  <summary><strong>Les règles de l’adhésion en détail</strong><span>{details.length} sections, de la carte de membre à ce qui reste à décider</span></summary>
                   <LegacySections sections={details} />
                 </details>
               ) : null}

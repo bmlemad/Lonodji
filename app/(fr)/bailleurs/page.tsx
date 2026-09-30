@@ -125,7 +125,7 @@ export default function Bailleurs() {
       </section>
 
       <section className="hub-section" id="par-action">
-        <SectionHead eyebrow="Nos actions" title="Pour chaque thématique," em="les programmes qui la financent." text={`Nos ${toutesActions.length} thématiques et cellules, pôle par pôle, avec les programmes en cours ou en préparation qui financent le même domaine — du plus proche de Bédjondo au plus lointain. ${sansProgramme.length ? `${sansProgramme.length} n’en ont aucun : ${sansProgramme.map((t) => t.name).join(", ")}. Ce sont des angles morts des bailleurs, que l’association devra financer autrement.` : ""}`} />
+        <SectionHead eyebrow="Nos actions" title="Pour chaque thématique," em="les programmes qui la financent." text={`Nos ${toutesActions.filter((t) => t.kind !== "cellule").length} thématiques et ${(() => { const n = toutesActions.filter((t) => t.kind === "cellule").length; return n > 1 ? `${n} cellules transversales` : `${n} cellule transversale`; })()}, pôle par pôle, avec les programmes en cours ou en préparation qui financent le même domaine — du plus proche de Bédjondo au plus lointain. ${sansProgramme.length ? `${sansProgramme.length} n’en ont aucun : ${sansProgramme.map((t) => t.name).join(", ")}. Ce sont des angles morts des bailleurs, que l’association devra financer autrement.` : ""}`} />
         <div className="bl-actions">
           {groupesActions.map((g) => (
             <div className="bl-actions-pole" key={g.id}>

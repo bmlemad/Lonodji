@@ -32,7 +32,7 @@ export default function Decisions() {
         pills={[`${DECISIONS.length} entrées`, `${compte("decision")} décisions`, `${nProp} ${nProp > 1 ? "propositions à décider" : "proposition à décider"}`, dernier ? `dernier fait : ${jour(dernier.date)}` : ""].filter(Boolean)}
       />
       <Stats items={[
-        { value: String(compte("decision")), label: "décisions", note: TYPES.decision.note },
+        { value: String(compte("decision")), label: "décisions", note: "prises par l’association et rendues publiques" },
         { value: String(compte("nomination")), label: "nominations", note: "quinze coordinations sur vingt pourvues, une cellule sur deux" },
         { value: String(nProp), label: nProp > 1 ? "propositions à décider" : "proposition à décider", note: "les cinq règles du programme 06, par l’assemblée ; les cinq politiques d’intégrité, par le bureau" },
         { value: String(compte("regle")), label: "règles en vigueur", note: "que l’association s’impose depuis la mise en ligne du site" },

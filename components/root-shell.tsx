@@ -69,8 +69,10 @@ export default function RootShell({
   const chiffres = { pourvues: ind.contenu.coordinations.pourvues, total: ind.contenu.coordinations.total, fiches: ind.contenu.carte.localitesNommees, articles: ind.contenu.articles, corrections: ind.contenu.corrections };
   const miseAJour = new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "Africa/Ndjamena" });
   return (
-    <html lang={lang}>
+    <html lang={lang} suppressHydrationWarning>
       <body className={`${dmSans.variable} ${playfair.variable}`}>
+        {/* Téléphone modeste ou mode économie de données : pas de flou (verre plein), cf. site.css « Verre clair ». */}
+        <script dangerouslySetInnerHTML={{ __html: "try{var n=navigator,c=n.connection;if((n.deviceMemory&&n.deviceMemory<=2)||(c&&c.saveData))document.documentElement.classList.add('sobre')}catch(e){}" }} />
         <a className="skip-link" href="#main-content">{en ? "Skip to content" : "Aller au contenu"}</a>
         <header>
         <SiteNav lang={lang} chiffres={chiffres} whatsapp={ORG.whatsapp} telephone={ORG.phone} telephoneHref={ORG.phoneHref} devise={ORG.motto} />

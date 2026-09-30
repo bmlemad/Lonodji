@@ -1,6 +1,6 @@
 {
  "genere": "2026-09-28",
- "note": "Plateforme de projets (feuille de route ODEB, phase 2). Une entrée par projet décrit sur le site ; à tenir à jour à la main : stade, ce qui existe, ce qui manque, comment contribuer. Lu par lib/projets.ts (page /projets) et par scripts/build-indicateurs.py (tableau de bord). Les montants ne sont repris que s'ils figurent, sourcés, sur la page du projet.",
+ "note": "Plateforme de projets (feuille de route ODEB, phase 2). Une entrée par projet décrit sur le site ; à tenir à jour à la main : stade, ce qui existe, ce qui manque, comment contribuer. Lu par lib/projets.ts (page /projets) et par scripts/build-indicateurs.py (tableau de bord). Les montants ne sont repris que s’ils figurent, sourcés, sur la page du projet.",
  "stades": [
   {
    "id": "idee",
@@ -82,7 +82,7 @@
    "slug": "application",
    "nom": "Application pour téléphone",
    "stade": "essai",
-   "libelle": "version d'essai en ligne (Android 1.0.1, 28 septembre 2026)",
+   "libelle": "version d’essai en ligne (Android 1.0.1, 28 septembre 2026)",
    "route": "/projets/application",
    "thematiques": [
     "transformation-numerique-services"

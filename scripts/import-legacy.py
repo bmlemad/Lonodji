@@ -942,7 +942,7 @@ COMPTES_29_09 = [
     ("thirteen of the nineteen themes have no coordinator today", "five of the twenty themes have no coordinator today"),
     # QA de cohérence du 29/09/2026 : chiffres figés de l'ancien site
     ("le nombre de th&eacute;matiques qui ont un coordonnateur&nbsp;: deux sur dix-neuf.", "le nombre de th&eacute;matiques qui ont un coordonnateur&nbsp;: quinze sur vingt au 29 septembre 2026."),
-    ("<p>Dix-neuf fiches, une par thématique&nbsp;:", "<p>Une fiche par thématique — la vingtième, Urgences &amp; risques, créée le 29 septembre 2026, attend encore ses problématiques&nbsp;:"),
+    ("<p>Dix-neuf fiches, une par thématique&nbsp;:", "<p>Une fiche par thématique (la vingtième, Urgences &amp; risques, créée le 29 septembre 2026, attend encore ses problématiques)&nbsp;:"),
 ]
 # « dix-neuf thématiques » et variantes, hors articles (regex, casse conservée)
 COMPTES_RE_29_09 = [
@@ -956,7 +956,7 @@ COMPTES_RE_29_09 = [
 NOTES_PERIMETRE_29_09 = [
     # (titre de la carte après renommage, note ajoutée à la fin de sa description) — poles.html
     ("Eau, assainissement &amp; hygiène",
-     " <strong>Mise à jour du 29 septembre 2026&nbsp;:</strong> la thématique devient <strong>Eau, assainissement &amp; hygiène</strong> — ce que les ONG appellent « eau, assainissement, hygiène » (EAH, ou WASH) : l&rsquo;eau potable, les latrines, les eaux usées et les déchets, le lavage des mains à l&rsquo;école et au marché. L&rsquo;énergie rejoint la thématique 08, Énergie, routes &amp; urbanisme, et la connexion internet la thématique 17, Connectivité &amp; services numériques."),
+     " <strong>Mise à jour du 29 septembre 2026&nbsp;:</strong> la thématique devient <strong>Eau, assainissement &amp; hygiène</strong>. L&rsquo;énergie rejoint la thématique 08, Énergie, routes &amp; urbanisme, et la connexion internet la thématique 17, Connectivité &amp; services numériques."),
     ("Énergie, routes &amp; urbanisme",
      " <strong>Mise à jour du 29 septembre 2026&nbsp;:</strong> la thématique, jusqu&rsquo;ici « Désenclavement &amp; urbanisation », réunit désormais les infrastructures&nbsp;: l&rsquo;<strong>énergie</strong> (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l&rsquo;urbanisme de Bédjondo."),
     ("Éducation, jeunesse &amp; formation",
@@ -1295,7 +1295,11 @@ def main():
             shutil.copy2(LEGACY / f, PUBLIC / f)
     adapt_script("geo.js", "__initGeo", "var figures = document.querySelectorAll('[data-geo]');",
                  "var figures = document.querySelectorAll('[data-geo]:not([data-geo-pret])');")
-    adapt_script("trouver.js", "__initTrouver", root_sel="[data-tm]")
+    # 30/09/2026 : la liste ne montre que les cellules à pourvoir (une seule aujourd'hui) — le titre suit leur nombre.
+    adapt_script("trouver.js", "__initTrouver",
+                 "'<div class=\"tm-group\"><h3>Et deux cellules qui appuient toutes les thématiques</h3>",
+                 "'<div class=\"tm-group\"><h3>' + (cells.length > 1 ? 'Et ' + cells.length + ' cellules transversales à pourvoir' : 'Et une cellule transversale à pourvoir') + '</h3>",
+                 root_sel="[data-tm]")
     adapt_script("genealogie.js", "__initGenealogie", root_sel="#gn-outil")
     print(f"pages : {len(index['pages'])} · articles : {len(index['articles'])} · formulaires : {len(all_forms)} · "
           f"thématiques : {sum(len(p['items']) for p in index['structure']['poles'])} · plaidoyers : {len(index['plaidoyers'])} · documents : {len(index['documents'])}")

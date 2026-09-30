@@ -26,13 +26,16 @@ const STATUTS: [string, string, string][] = [
   ["inconnu", "Inconnu", "aucune donnée ; une enquête est nécessaire"],
 ];
 
+/* « 1 lieux de culte » → « 1 lieu de culte », « 1 écoles » → « 1 école ». */
+const singulier = (s: string) => s.replace(/^lieux\b/, "lieu").replace(/^(écoles|marchés|télécoms)$/, (m) => m.slice(0, -1));
+
 export default function Observatoire() {
   const o = getObservatoire();
   const th = thematiquesParId();
   const t = o.totaux;
   const famillesOrdre = Object.entries(o.familles);
   const decideurs = Object.entries(o.diagnostic.decideurs).sort((a, b) => b[1] - a[1]);
-  const transmis = o.plaidoyers.filter((p) => p.sent && !/aucun|non|—|pas/i.test(p.sent)).length;
+  const transmis = o.plaidoyers.filter((p) => p.sent && /\d{4}/.test(p.sent)).length; // « À envoyer » n'est pas une date d'envoi
   return (
     <main id="main-content" className="hub-page ob-page">
       <PageHeader
@@ -45,7 +48,7 @@ export default function Observatoire() {
       />
 
       <Stats items={[
-        { value: nf.format(t.equipements), label: "équipements connus des données ouvertes", note: famillesOrdre.filter(([, f]) => f.total).map(([, f]) => `${f.total} ${f.libelle}`).join(", ") },
+        { value: nf.format(t.equipements), label: "équipements connus des données ouvertes", note: famillesOrdre.filter(([, f]) => f.total).map(([, f]) => `${f.total} ${f.total > 1 ? f.libelle : singulier(f.libelle)}`).join(", ") },
         { value: `${pct(t.couvertes, t.nommees)} %`, label: "des localités à moins de 10 km d’un équipement connu", note: `${nf.format(t.couvertes)} sur ${nf.format(t.nommees)} localités nommées — le reste n’est pas dépourvu, il est non relevé` },
         { value: String(o.besoins.signales), label: o.besoins.signales > 1 ? "besoins signalés" : "besoin signalé", note: `par le formulaire, relevé du ${date(o.sources.releve)} ; résolus : ${o.besoins.resolus == null ? "non publié" : o.besoins.resolus}` },
         { value: `${o.plaidoyers.length} / ${transmis}`, label: "plaidoyers publiés / transmis", note: "aucune réponse écrite reçue à ce jour" },
@@ -70,7 +73,7 @@ export default function Observatoire() {
                     <td>{nf.format(u.nommees)}{u.localites > u.nommees ? <small>+ {nf.format(u.localites - u.nommees)} sans nom</small> : null}</td>
                     <td className={u.equipements.total ? undefined : "est-vide"}>{u.equipements.total || "aucun relevé"}</td>
                     <td className="ob-fam">{[f.ecole, f.sante, f.eau, f.marche].map((n, i) => <span key={i} className={n ? undefined : "est-vide"}>{n}</span>)}</td>
-                    <td><span className="ob-barre" aria-hidden="true"><i style={{ width: `${c}%` }} /></span><b>{c} %</b><small>{u.couvertes} localités</small></td>
+                    <td><span className="ob-barre" aria-hidden="true"><i style={{ width: `${c}%` }} /></span><b>{c} %</b><small>{u.couvertes} {u.couvertes > 1 ? "localités" : "localité"}</small></td>
                     <td>{u.citees}</td>
                     <td>{u.pages}{u.plaidoyers ? <small>dont {u.plaidoyers} {u.plaidoyers > 1 ? "plaidoyers" : "plaidoyer"}</small> : null}</td>
                   </tr>
@@ -106,7 +109,7 @@ export default function Observatoire() {
             </tbody>
           </table>
         </div>
-        <p className="lg-footnote">Échelons de décision sur l’ensemble du diagnostic : {decideurs.map(([k, n]) => `${k} (${n})`).join(", ")}. Les {o.diagnostic.statuts.inconnu} problématiques « inconnues » sont l’objet des <Link href="/territoire/enquetes">huit enquêtes de terrain</Link>, qui ne demandent pas d’argent.</p>
+        <p className="lg-footnote">Échelons de décision sur l’ensemble du diagnostic : {decideurs.map(([k, n]) => `${k} (${n})`).join(", ")}. Sur les {o.diagnostic.statuts.inconnu} problématiques « inconnues », huit sont l’objet des <Link href="/territoire/enquetes">huit enquêtes de terrain</Link>, qui ne demandent pas d’argent.</p>
       </section>
 
       <section className="hub-section" id="plaidoyers">
@@ -138,7 +141,7 @@ export default function Observatoire() {
         <div className="link-list">
           <Link href="/territoire/besoins"><small>Besoins</small><strong>Signaler un besoin, localité par localité</strong><span>Un forage en panne, une école sans maître, un pont coupé : compté ici dès l’envoi, jamais nommé.</span></Link>
           <Link href="/villages"><small>Équipements</small><strong>Dire ce qu’il y a dans son village</strong><span>Chaque fiche pose six questions — eau, école, santé, réseau, histoire, habitants — avec le formulaire pour y répondre.</span></Link>
-          <Link href="/territoire/enquetes"><small>Diagnostic</small><strong>Mener une des huit enquêtes de terrain</strong><span>Les onze problématiques inconnues ont chacune leur détenteur de réponse, leur méthode et leur fiche de relevé.</span></Link>
+          <Link href="/territoire/enquetes"><small>Diagnostic</small><strong>Mener une des huit enquêtes de terrain</strong><span>Huit des onze problématiques inconnues, chacune avec son détenteur de réponse, sa méthode et sa fiche de relevé.</span></Link>
           <Link href="/actions#mesure-debit"><small>Connectivité</small><strong>Mesurer le débit internet chez soi</strong><span>Une mesure datée et située, pour le plaidoyer haut débit.</span></Link>
         </div>
         <Partager route="/observatoire" titre="Observatoire du Mandoul Occidental" texte="Localités, équipements connus, couverture, diagnostic par domaine, plaidoyers et besoins signalés : les chiffres du pays bedjond par unité, datés et sourcés, et ce que l’observatoire ne sait pas encore." />

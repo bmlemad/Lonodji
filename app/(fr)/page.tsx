@@ -57,7 +57,7 @@ export default function Home() {
                 <strong>{filled} thématiques pourvues sur {total} ; {enLettres(total - filled)} cherchent encore leur coordonnateur.</strong>
                 <ul className="card-faits">
                   <li><b>{indicateurs.contenu.plaidoyers.publies}</b> dossiers de plaidoyer publiés</li>
-                  <li><b>{new Intl.NumberFormat("fr-FR").format(indicateurs.contenu.carte.localites)}</b> points cartographiés, {new Intl.NumberFormat("fr-FR").format(indicateurs.contenu.carte.localitesNommees)} localités nommées</li>
+                  <li><b>{new Intl.NumberFormat("fr-FR").format(indicateurs.contenu.carte.localites).replace(/\u202f/g, "\u00a0")}</b> points cartographiés, {new Intl.NumberFormat("fr-FR").format(indicateurs.contenu.carte.localitesNommees)} localités nommées</li>
                   <li><b>{indicateurs.contenu.corrections}</b> corrections publiées à découvert</li>
                 </ul>
                 <div className="mini-line" />

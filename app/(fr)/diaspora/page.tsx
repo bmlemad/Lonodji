@@ -52,7 +52,7 @@ export default function Diaspora() {
       <section className="hub-section" id="regles">
         <SectionHead eyebrow="Ce que nous demandons, ce que nous en faisons" title="Un répertoire," em="pas un annuaire." />
         <div className="detail-grid">
-          <article><h3>Qui lit vos réponses</h3><p>Le bureau de l’association et, pour une demande précise, le coordonnateur ou la coordonnatrice de la thématique concernée. Personne d’autre. Vos coordonnées ne sont jamais transmises à un tiers, ni à une entreprise, ni à une administration, sans vous avoir demandé d’abord.</p></article>
+          <article><h3>Qui lit vos réponses</h3><p>Le bureau de l’association et, pour une demande précise, le coordonnateur ou la coordonnatrice de la thématique concernée. Personne d’autre. Vos coordonnées ne sont jamais transmises à un tiers, ni à une entreprise, ni à une administration, sans votre accord préalable.</p></article>
           <article><h3>Ce qui est publié</h3><p>Des nombres seulement : combien de personnes inscrites, dans combien de pays, dans quels domaines. Votre nom, votre métier et votre pays ne figurent dans l’annuaire public que si vous cochez la case prévue — et rien d’autre n’y figure jamais.</p></article>
           <article><h3>Vos droits</h3><p>Vous pouvez consulter, corriger ou retirer votre inscription à tout moment par <Link href="/participer#contact">le formulaire de contact</Link>, objet « Mes données personnelles ». Les inscriptions sont revues chaque année ; le détail est dans nos <Link href="/mentions-legales#donnees">mentions légales</Link>.</p></article>
         </div>

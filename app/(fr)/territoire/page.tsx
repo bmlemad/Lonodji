@@ -29,7 +29,7 @@ export default function Territoire() {
         { value: String(c.unites), label: "unités du pays bedjond", note: "du cœur de Bédjondo à la diaspora" },
         { value: nf.format(c.localites), label: "localités cartographiées", note: `dont ${nf.format(c.fiches)} avec une fiche` },
         { value: String(c.problematiques), label: "problématiques documentées", note: `${c.chantiersPrioritaires} chantiers prioritaires` },
-        { value: String(c.inconnues), label: "inconnues à enquêter", note: "une enquête de terrain pour chacune" },
+        { value: String(c.inconnues), label: "inconnues dans notre diagnostic", note: "huit font l’objet d’une enquête de terrain" },
       ]} />
 
       <section className="hub-section" id="pays">
@@ -50,7 +50,7 @@ export default function Territoire() {
           <Link href="/observatoire"><small>Observatoire</small><strong>Observatoire du Mandoul Occidental</strong><span>Le territoire en chiffres, unité par unité, et l’état de ce qu’on en sait.</span></Link>
           <Link href="/territoire/diagnostic"><small>Diagnostic</small><strong>Diagnostic territorial</strong><span>{c.problematiques} problématiques classées par domaine — eau, santé, école, routes, réseau — et {c.chantiersPrioritaires} chantiers prioritaires.</span></Link>
           <Link href="/territoire/besoins"><small>Signalements</small><strong>Carte des besoins</strong><span>Signaler ce qui manque chez vous ; seules la localité et la nature du besoin sont publiées.</span></Link>
-          <Link href="/territoire/enquetes"><small>Enquêtes</small><strong>Enquêtes de terrain</strong><span>{c.inconnues} inconnues, une enquête pour chacune, et le carnet pour les mener.</span></Link>
+          <Link href="/territoire/enquetes"><small>Enquêtes</small><strong>Enquêtes de terrain</strong><span>{c.inconnues} inconnues, huit enquêtes de terrain, et le carnet pour les mener.</span></Link>
         </div>
       </section>
 

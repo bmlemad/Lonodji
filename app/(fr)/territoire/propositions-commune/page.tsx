@@ -32,7 +32,7 @@ function problematiquesCommune() {
   for (const m of html.matchAll(/<tr[^>]*id="(prob-\d+)"[^>]*>([\s\S]*?)<\/tr>/g)) {
     const cellules = [...m[2].matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/g)].map((c) => c[1].replace(/<a[\s\S]*?<\/a>/g, "").replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim());
     if (cellules.length === 4) domaine = cellules.shift()!;
-    if (cellules.length === 3 && cellules[2] === "Commune") lignes.push({ id: m[1], domaine, texte: cellules[0].replace(/\s*\(\s*/g, " (").replace(/\s*\)/g, ")"), etat: cellules[1] });
+    if (cellules.length === 3 && cellules[2] === "Commune") lignes.push({ id: m[1], domaine, texte: cellules[0].replace(/\s*\(\s*\)/g, "").replace(/\s*\(\s*/g, " (").replace(/\s*\)/g, ")").trim(), etat: cellules[1] });
   }
   return lignes;
 }

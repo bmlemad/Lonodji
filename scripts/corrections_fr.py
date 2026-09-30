@@ -360,3 +360,96 @@ CORRECTIONS.setdefault("ong-partenaires.html", []).append((
     "Le <strong>PMCR</strong>, projet de mobilit&eacute; et de collectivit&eacute; rurale,",
     "Le <strong>PMCR</strong>, projet de mobilit&eacute; et de collectivit&eacute; rurale (clos le 30 avril 2026&nbsp;; <a href=\"https://lonodji.org/bailleurs\">voir les programmes des bailleurs, relev&eacute; du 29 septembre 2026</a>),",
 ))
+
+
+# Relecture complète du 30 septembre 2026 : fautes, accords, chiffres contradictoires entre pages.
+# Les entrées datées du journal des corrections (redevabilite.html) retrouvent les chiffres de leur date.
+for _f, _paires in {
+    "handicap.html": [("puis rest&eacute;e identique", "puis rester identique")],
+    "recherche.html": [
+        ("dont s&rsquo;inscrit la communauté", "dans lequel s&rsquo;inscrit la communauté"),
+        ("un classement distinct de l&rsquo;enquête de terrain de la SIL ci-dessus", "un classement distinct de l&rsquo;enquête de terrain de la SIL"),
+        ("mission comboniana de Bédjondo", "mission combonienne de Bédjondo"),
+        ("Délégation comboniana autonome", "Délégation combonienne autonome"),
+    ],
+    "mission.html": [
+        ("Délégation comboniana autonome", "Délégation combonienne autonome"),
+        ("cela signifie que ADEB", "cela signifie qu&rsquo;ADEB"),
+        ("une coïncidence que ses membres ont choisi de faire de sa réactivation", "une coïncidence dont ses membres ont choisi de faire le point de départ de sa réactivation"),
+        ("Compte-rendu</h3>", "Compte rendu</h3>"),
+    ],
+    "genealogies.html": [
+        ("mission comboniana de B&eacute;djondo", "mission combonienne de B&eacute;djondo"),
+        ("Dix feuilles</span>", "Huit feuilles</span>"),
+    ],
+    "drones-innovation.html": [('note sur la ville devenue ville</a>', 'note sur le village devenu ville</a>')],
+    "complexe-sportif.html": [
+        ("Vous voulez coordonner la thématique", "Vous voulez contribuer à la thématique"),
+        ("elle attend encore son coordonnateur.</li>", "sa coordination, pourvue depuis le 28 septembre 2026, vous répondra.</li>"),
+    ],
+    "genealogie-outil.html": [("Les trois interdits du cahier papier", "Les interdits du cahier papier")],
+    "identite-visuelle.html": [("Trois signes, tir&eacute;s", "Quatre signes, tir&eacute;s")],
+    "poles.html": [("Ce sont aujourd&rsquo;hui le vocabulaire commun", "Ils sont aujourd&rsquo;hui le vocabulaire commun")],
+    "problematiques.html": [
+        ("Huit lignes de notre tableau sont entièrement inconnues, et il faut les nommer",
+         "Huit lignes de notre tableau étaient entièrement inconnues à sa publication — onze aujourd&rsquo;hui —, et il faut les nommer"),
+    ],
+    "veuves.html": [
+        ("dans aucun de nos soixante-quatre pages", "dans aucune de nos soixante-quatre pages"),
+        ("Tchad, &Ordre national des notaires", "Tchad, Ordre national des notaires"),
+        ("Un sujet absent, l&agrave; o&ugrave; le handicap &eacute;tait au moins &laquo;&nbsp;inconnu&nbsp;&raquo;",
+         "Un sujet absent de tout le site, et pas seulement du recensement"),
+    ],
+    "application.html": [
+        ("Dans un d&eacute;partement o&ucirc;", "Dans un d&eacute;partement o&ugrave;"),
+        ("Le nom dans la boutique</strong>", "Le nom dans la boutique&nbsp;?</strong>"),
+        ("exig&eacute;e par les boutiques</strong>", "exig&eacute;e par les boutiques&nbsp;?</strong>"),
+        ("mais il faut d&rsquo;abord un nom de domaine&nbsp;: c&rsquo;est aussi ce qui bloque l&rsquo;installation hors ligne sur l&rsquo;aper&ccedil;u actuel.</p>",
+         "et le nom de domaine lonodji.org, en service depuis le 27 septembre 2026, leur donne cette adresse stable.</p>"),
+    ],
+    "decentralisation.html": [("l&rsquo;ouvrage appartient à personne", "l&rsquo;ouvrage n&rsquo;appartient à personne")],
+    "mentions-legales.html": [
+        ("vers <strong>ODEB</strong> (Organisation de D&eacute;veloppement et d&rsquo;Entraide des Bedjond)",
+         "vers <strong>ODEB LONODJI</strong> (Organisation pour le Développement et l&rsquo;Émergence Bedjonde — voir <a href=\"https://lonodji.org/odeb\">le projet ODEB LONODJI</a>)"),
+    ],
+    "ong-partenaires.html": [
+        ("vers <strong>ODEB</strong> (Organisation de D&eacute;veloppement et d&rsquo;Entraide des Bedjond)",
+         "vers <strong>ODEB LONODJI</strong> (Organisation pour le Développement et l&rsquo;Émergence Bedjonde — voir <a href=\"https://lonodji.org/odeb\">le projet ODEB LONODJI</a>)"),
+        ("corridor N&rsquo;Djam&eacute;na&ndash;Douala</strong>", "corridor N&rsquo;Djamena&ndash;Douala</strong>"),
+    ],
+    "redevabilite.html": [
+        ("a été refait le 21 septembre&nbsp;: il reprend cette correction, ainsi que la structure en quatre pôles et vingt thématiques",
+         "a été refait le 23 septembre&nbsp;: il reprend cette correction, ainsi que la structure en quatre pôles et dix-neuf thématiques"),
+        ("et r&eacute;unissent vingt th&eacute;matiques, telles que",
+         "et r&eacute;unissent dix-neuf th&eacute;matiques (vingt depuis le 29 septembre 2026), telles que"),
+    ],
+    "lieux-sacres.html": [("dites-le nous", "dites-le-nous")],
+    "kit-mobilisation.html": [("transmettez-la nous", "transmettez-la-nous")],
+    "trouver-ma-thematique.html": [("Compte-rendu</strong><p>", "Compte rendu</strong><p>")],
+    "contact.html": [("P&ocirc;le II &middot; 9 th&eacute;matiques", "P&ocirc;le II &middot; 10 th&eacute;matiques")],
+    "index.html": [("P&ocirc;le II &middot; 9 th&eacute;matiques", "P&ocirc;le II &middot; 10 th&eacute;matiques")],
+    "agriculture-securite-alimentaire.html": [
+        ("a fait un mort et un blessé", "a fait un mort et plusieurs blessés"),
+        ("récoltes repoussées d&rsquo;octobre au lieu de septembre", "récoltes repoussées à octobre au lieu de septembre"),
+        ("118,9 milliards de FCFA soit 118,9 millions de dollars", "118,9 millions de dollars"),
+        ("un miel d&rsquo;origine arboricole et non florale, l&rsquo;a", "un miel d&rsquo;origine arboricole et non florale &mdash;, l&rsquo;a"),
+    ],
+    "demarches.html": [
+        ("article 23 et 24", "articles 23 et 24"),
+        ("Une association qui ne demande que ne pèse rien", "Une association qui ne fait que demander ne pèse rien"),
+        ("et ce que coûte de la sauter", "et ce qu&rsquo;il en coûte de la sauter"),
+    ],
+    "enquetes.html": [
+        ("C&rsquo;est la seule enqu&ecirc;te du carnet qui doit &ecirc;tre conduite par deux personnes au moins",
+         "C&rsquo;est, avec l&rsquo;enquête 2, l&rsquo;une des deux enqu&ecirc;tes du carnet qui doivent &ecirc;tre conduites par deux personnes au moins"),
+        ("dont elle reprend les huit lignes marquées", "dont elle reprend huit des onze lignes marquées"),
+    ],
+    "documents.html": [("pour lever les huit inconnues", "pour lever huit des onze inconnues")],
+    "bedjondo.html": [
+        ("Forages isolés, pas de réseau", "Forages isolés, réseau limité à un seul village"),
+        ('aria-label="11086 habitants', 'aria-label="11 086 habitants'),
+        ('<span class="bento-num">11086</span>', '<span class="bento-num">11&nbsp;086</span>'),
+    ],
+    "besoins.html": [("Forages isolés, pannes non réparées, pas de réseau", "Forages isolés, pannes non réparées, réseau limité à un seul village")],
+}.items():
+    CORRECTIONS.setdefault(_f, []).extend(_paires)

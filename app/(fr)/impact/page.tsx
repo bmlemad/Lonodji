@@ -54,7 +54,7 @@ export default function Impact() {
                   <td>{pl.theme}</td>
                   <td><small>{pl.recipients}</small></td>
                   <td>{pl.published}</td>
-                  <td className={/aucun|non|—|pas/i.test(pl.sent) || !pl.sent ? "ob-manque" : "ob-ok"}>{pl.sent || "—"}</td>
+                  <td className={!/\d{4}/.test(pl.sent ?? "") ? "ob-manque" : "ob-ok"}>{pl.sent || "—"}</td>
                   <td className={/aucun|non|—|pas/i.test(pl.answer) || !pl.answer ? "est-vide" : "ob-ok"}>{pl.answer || "—"}</td>
                 </tr>
               ))}

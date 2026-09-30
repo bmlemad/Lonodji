@@ -97,7 +97,7 @@ export async function releverFormulaires(jeton: string): Promise<Releve | null> 
   }
   return {
     date: new Date().toISOString().slice(0, 10),
-    methode: "API Netlify Forms, relevé automatique. Les intentions d'adhésion et les inscriptions au répertoire des compétences sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).",
+    methode: "API Netlify Forms, relevé automatique. Les intentions d’adhésion et les inscriptions au répertoire des compétences sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).",
     comptes,
     live: true,
   };

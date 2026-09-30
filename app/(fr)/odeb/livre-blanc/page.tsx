@@ -86,7 +86,7 @@ export default function LivreBlanc() {
           <section id="vision" className="od-chap">
             <h2><span>4.</span> La vision 2030</h2>
             <p>En 2030, l’ODEB LONODJI devra être devenu :</p>
-            <ol className="od-liste">{REPERES_2030.map((r) => <li key={r}>{r} ;</li>)}</ol>
+            <ol className="od-liste">{REPERES_2030.map((r, i) => <li key={r}>{r}{i < REPERES_2030.length - 1 ? " ;" : "."}</li>)}</ol>
             <p>Ces cinq repères ne sont pas des résultats : ils sont ce à quoi les résultats seront comparés, année après année, sur le tableau de bord. Ils ont été énoncés par l’association le {ODEB.presenteLabel}, avec sa feuille de route en trois phases.</p>
           </section>
 

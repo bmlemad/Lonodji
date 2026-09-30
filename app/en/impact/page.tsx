@@ -22,9 +22,9 @@ const date = (iso: string) => { const d = new Date(iso.length === 10 ? iso + "T1
 /* Textes tenus en français dans content/indicateurs.json et lib/indicateurs.ts : traduction locale.
    Un texte nouveau, pas encore traduit, s'affiche en français, balisé comme tel. */
 const TRADUCTIONS: Record<string, string> = {
-  "Console Netlify Forms, après retrait des six envois de test des 20 et 21 septembre. Les intentions d'adhésion sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).":
+  "Console Netlify Forms, après retrait des six envois de test des 20 et 21 septembre. Les intentions d’adhésion sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).":
     "Netlify Forms console, after removing the six test submissions of 20 and 21 September. Intentions to join are counted per person (the same e-mail address sent several times counts once).",
-  "API Netlify Forms, relevé automatique. Les intentions d'adhésion et les inscriptions au répertoire des compétences sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).":
+  "API Netlify Forms, relevé automatique. Les intentions d’adhésion et les inscriptions au répertoire des compétences sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).":
     "Netlify Forms API, automatic reading. Intentions to join and entries in the skills register are counted per person (the same e-mail address sent several times counts once).",
   "Le nombre d'adhérents à jour de cotisation est tenu par le bureau ; il paraîtra ici, daté, dès sa première transmission. Aucun besoin recensé n'est à ce jour confirmé résolu.":
     "The number of paid-up members is kept by the executive committee; it will appear here, dated, as soon as it is first transmitted. No recorded need has been confirmed solved so far.",
