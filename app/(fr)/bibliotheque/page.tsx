@@ -7,6 +7,7 @@ import DepotForm from "@/components/depot-form";
 import { ogFor, ORG } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
 import Partager from "@/components/partager";
+import OuvrirAncre from "@/components/ouvrir-ancre";
 
 export const metadata: Metadata = {
   title: "Bibliothèque numérique bedjond",
@@ -55,27 +56,33 @@ export default function Bibliotheque() {
         <a href="#deposer">Déposer un document</a>
       </nav>
 
-      {b.rubriques.map((r) => (
-        <section className="hub-section" id={r.id} key={r.id}>
-          <SectionHead eyebrow={`${r.references.length} ${r.references.length > 1 ? "références" : "référence"}`} title={r.titre} />
-          <ol className="bb-liste">
-            {r.references.map((id) => parId.get(id)).filter(Boolean).map((x) => (
-              <li key={x!.id}>
-                <div className="bb-ref">
-                  <small>{CATS[x!.cat] || x!.cat} · {x!.type}</small>
-                  <h3><Link href={x!.route}>{x!.titre}</Link></h3>
-                  <p className="bb-auteurs">{x!.meta}</p>
-                  {x!.resume ? <p className="bb-resume">{x!.resume}</p> : null}
-                  <div className="bb-liens">
-                    <Link className="text-link" href={x!.route}>La fiche dans la base<span className="sr-only"> : {x!.titre}</span> <span aria-hidden="true">→</span></Link>
-                    {x!.liens.map((u) => <a className="text-link" key={u} href={u} target="_blank" rel="noopener noreferrer">{u.includes("wikipedia") ? "Wikipédia" : u.includes("sil.org") ? "SIL International" : "Consulter en ligne"} <span aria-hidden="true">↗</span></a>)}
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </section>
-      ))}
+      <section className="hub-section" id="references">
+        <SectionHead eyebrow="Les références, par type" title={`${b.references.length} références,`} em="rangées par type de document." text="Ouvrez un type pour en voir la liste. Chaque titre mène à sa fiche complète dans la base de recherche, avec sa présentation et sa citation à copier ; la base se cherche aussi par titre, auteur ou mot-clé." />
+        <div className="plier-liste">
+          {b.rubriques.map((r) => (
+            <details className="plier" id={r.id} key={r.id}>
+              <summary><strong>{r.titre}</strong><span>{r.references.length} {r.references.length > 1 ? "références" : "référence"}</span></summary>
+              <ol className="bb-liste plier-cartes">
+                {r.references.map((id) => parId.get(id)).filter(Boolean).map((x) => (
+                  <li key={x!.id}>
+                    <div className="bb-ref">
+                      <small>{CATS[x!.cat] || x!.cat} · {x!.type}</small>
+                      <h3><Link href={x!.route}>{x!.titre}</Link></h3>
+                      <p className="bb-auteurs">{x!.meta}</p>
+                      {x!.resume ? <p className="bb-resume">{x!.resume}</p> : null}
+                      <div className="bb-liens">
+                        <Link className="text-link" href={x!.route}>La fiche dans la base<span className="sr-only"> : {x!.titre}</span> <span aria-hidden="true">→</span></Link>
+                        {x!.liens.map((u) => <a className="text-link" key={u} href={u} target="_blank" rel="noopener noreferrer">{u.includes("wikipedia") ? "Wikipédia" : u.includes("sil.org") ? "SIL International" : "Consulter en ligne"} <span aria-hidden="true">↗</span></a>)}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </details>
+          ))}
+        </div>
+        <p className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="text-link" href="/patrimoine/base-de-recherche#base">Chercher dans la base de recherche <span aria-hidden="true">→</span></Link></p>
+      </section>
 
       <section className="hub-section" id="adeb">
         <SectionHead eyebrow="Publications d’ADEB LONODJI" title="Ce que l’association" em="a écrit et publié." text="Nos plaidoyers, nos cahiers de terrain, notre dossier de présentation, et les articles du journal : des textes sourcés, datés, corrigés à découvert quand il le faut." />
@@ -121,6 +128,7 @@ export default function Bibliotheque() {
         </div>
       </section>
 
+      <OuvrirAncre />
       <Partager route="/bibliotheque" titre="Bibliothèque numérique bedjond" texte="Thèses, articles, ouvrages, rapports, archives et publications d’ADEB LONODJI sur le pays bedjond, les Sara et le nangnda ; les chercheurs ; dépôt de document." />
 
       <p className="lg-footnote">La base de recherche est coordonnée par Sylvain Nomaye (thématique Recherche &amp; savoirs, programme Bedjond Digital Heritage) ; chaque référence y a sa fiche avec sa citation. Cette bibliothèque en est le classement par rubrique, régénéré automatiquement à chaque mise en ligne. Une référence fausse, une attribution douteuse ? <Link href="/transparence#corrections">Signalez-la</Link>. Voir aussi <Link href="/langue">la langue nangnda</Link> et <Link href="/temoignages">la collecte des témoignages</Link>.</p>

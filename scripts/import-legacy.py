@@ -118,6 +118,8 @@ def route_for(name: str, base_dir: str) -> str:
 
 ANCHOR_MAP = {
     "/journal#formulaire-newsletter": "/participer#newsletter",
+    # 30/09/2026 : l'étagère quitte la base de recherche (doublon du classement de la bibliothèque)
+    "/patrimoine/base-de-recherche#shelf-title": "/bibliotheque",
 }
 
 
@@ -296,8 +298,28 @@ def plier_sources(main: Tag) -> None:
             det.append(x.extract())
 
 
+def dedoublonner_recherche(main: Tag) -> None:
+    """Base de recherche (30/09/2026) : les 40 références y figuraient deux fois (l'étagère de couvertures, puis
+    les fiches), et une troisième sur la bibliothèque. La base garde les fiches ; l'étagère devient un renvoi
+    vers la bibliothèque, qui range les mêmes références par type."""
+    h = main.select_one("#shelf-title")
+    sec = h.find_parent("section") if h else None
+    if sec:
+        wrap = sec.select_one(".wrap") or sec
+        wrap.clear()
+        wrap.append(BeautifulSoup(
+            '<div class="section-head"><div><div class="eyebrow">La bibliothèque</div>'
+            '<h2 id="shelf-title">Les mêmes références, rangées par type</h2>'
+            '<p class="lede">Thèses, articles, ouvrages, rapports et archives, avec les publications de l’association, '
+            'les chercheurs du pays bedjond et le dépôt d’un document : <a href="/bibliotheque">la bibliothèque</a>. '
+            'Ici, chaque référence a sa fiche complète et sa citation à copier ; cherchez par titre, auteur ou mot-clé, '
+            'ou filtrez par catégorie.</p></div></div>', "lxml").find("div"))
+        sec["class"] = [c for c in (sec.get("class") or []) if c != "shelf-section"]
+
+
 def plier_blocs(main: Tag, nom: str) -> None:
     if nom == "recherche.html":
+        dedoublonner_recherche(main)
         plier_sources(main)
     for sel, titre, sous in PLIER_BLOCS.get(nom, []):
         for el in main.select(sel):
@@ -369,12 +391,12 @@ def parse_page(path: Path):
     if sommaire:
         data["toc"] = [{"href": a.get("href", ""), "label": text(a)} for a in sommaire.select("a")]
         sommaire.decompose()
-    plier_blocs(main, path.name)
     # Article : corps
     body = main.select_one(".article-body")
     sections = []
     if body:
         clean_tree(main, base_dir, forms)
+        plier_blocs(main, path.name)  # après la réécriture des liens : les liens ajoutés sont déjà des routes
         for child in [c for c in main.find_all(recursive=False) if isinstance(c, Tag)]:
             cls = child.get("class") or []
             if child.select_one(".article-body"):
@@ -385,6 +407,7 @@ def parse_page(path: Path):
                 sections.append({"id": child.get("id", "") or "", "alt": "alt" in cls, "cls": " ".join(k for k in cls if k != "alt"), "tag": child.name, "html": unwrap_wrap(child)})
     else:
         clean_tree(main, base_dir, forms)
+        plier_blocs(main, path.name)  # après la réécriture des liens : les liens ajoutés sont déjà des routes
         for child in [c for c in main.find_all(recursive=False) if isinstance(c, Tag)]:
             cls = child.get("class") or []
             if child.name in ("section", "div", "nav", "aside", "figure", "article"):
