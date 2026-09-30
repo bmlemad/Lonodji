@@ -823,7 +823,11 @@ NOTE_P4_FR = " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> les tro
 NOTE_P4_EN = " <strong>Update, 28 September 2026:</strong> the three themes of the Digital &amp; Innovation pole are now coordinated by " + BIG_EN + ", the association&rsquo;s general facilitator."
 NOMINATIONS = [
     ("transformation-numerique-services", "Transformation numérique &amp; services", "Digital Transformation &amp; Services", "Transformation numérique & services", "Numérique &amp; innovation", BIG, BIG_EN, NOTE_P4_FR, NOTE_P4_EN),
-    ("intelligence-artificielle-donnees", "Intelligence artificielle &amp; données", "Artificial Intelligence &amp; Data", "Intelligence artificielle & données", "Numérique &amp; innovation", BIG, BIG_EN, NOTE_P4_FR, NOTE_P4_EN),
+    # 30/09/2026 : Bonheur Allahaddje succède à Bignéro Moïalbéi LE MADANG ; la note du 28/09 reste, datée.
+    ("intelligence-artificielle-donnees", "Intelligence artificielle &amp; données", "Artificial Intelligence &amp; Data", "Intelligence artificielle & données", "Numérique &amp; innovation",
+     "Bonheur Allahaddje", "Bonheur Allahaddje",
+     NOTE_P4_FR + " <strong>Mise à jour du 30 septembre 2026&nbsp;:</strong> la coordination de cette thématique est confiée à Bonheur Allahaddje, qui succède à Bignéro Moïalbéi LE MADANG.",
+     NOTE_P4_EN + " <strong>Update, 30 September 2026:</strong> this theme is now coordinated by Bonheur Allahaddje, who succeeds " + BIG_EN + "."),
     ("competences-entrepreneuriat-numerique", "Compétences &amp; entrepreneuriat numérique", "Digital Skills &amp; Entrepreneurship", "Compétences & entrepreneuriat numérique", "Numérique &amp; innovation", BIG, BIG_EN, NOTE_P4_FR, NOTE_P4_EN),
     ("agriculture-elevage-securite-alimentaire", "Agriculture, élevage &amp; sécurité alimentaire", "Agriculture, Livestock &amp; Food Security", "Agriculture, élevage & sécurité alimentaire", "Développement humain &amp; moyens d’existence",
      "Olivier Allaramadji Nomaye, ingénieur agroéconomiste", "Olivier Allaramadji Nomaye, agricultural economist",

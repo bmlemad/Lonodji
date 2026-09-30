@@ -345,7 +345,7 @@
    "lede": "Les Chantiers ADEB LONODJI sont les projets de réflexion, de recherche et d’action portés par l’association. Pour les organiser, ADEB LONODJI structure son action autour de vingt thématiques réparties en quatre pôles, appuyées par deux cellules transversales — dont un pôle spécialisé Numérique & innovation, créé en septembre 2026. Chaque thématique est animée par un coordonnateur. Cette organisation en pôles est notre méthodologie de travail en équipe : elle permet une bonne coordination des actions entre les thématiques, au lieu d’initiatives dispersées. Chaque thématique est en outre mise en regard des Objectifs de développement durable adoptés par les Nations unies, pour que nos partenaires situent immédiatement notre travail.",
    "description": "Quatre pôles, vingt thématiques et deux cellules transversales pour organiser l’action d’ADEB LONODJI.",
    "parent": "Accueil",
-   "words": 5599,
+   "words": 5620,
    "hasMap": false
   },
   {
@@ -369,7 +369,7 @@
    "lede": "Chaque problématique que nous avons recensée est reliée à la thématique qui doit la porter, et chaque thématique à son plaidoyer quand il existe. Une seule page pour voir où nous en sommes : ce qui avance, ce qui attend un coordonnateur ou une coordonnatrice, et ce que nous n’avons pas encore commencé à documenter.",
    "description": "Chaque problématique reliée à sa thématique, chaque thématique à son plaidoyer s’il existe : le tableau de bord de suivi des actions d’ADEB LONODJI, thématique par thématique.",
    "parent": "Nos actions",
-   "words": 1569,
+   "words": 1567,
    "hasMap": false
   },
   {
@@ -537,7 +537,7 @@
    "lede": "ADEB LONODJI organises its work into twenty themes grouped in four pillars, supported by two cross-cutting units. Each theme is meant to be led by a coordinator who reports to the membership. This page is the English summary; every theme has a fuller description en français .",
    "description": "How ADEB LONODJI organises its work: four pillars, twenty themes and two cross-cutting units, each set against the UN Sustainable Development Goals it touches.",
    "parent": "Home",
-   "words": 2928,
+   "words": 2944,
    "hasMap": false
   }
  ],
@@ -2444,10 +2444,10 @@
       "name": "Intelligence artificielle & données",
       "status": "Pourvu",
       "filled": true,
-      "coordinator": "Bignéro Moïalbéi LE MADANG",
+      "coordinator": "Bonheur Allahaddje",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Mettre l’intelligence artificielle et les données au service de la communauté. Premières pistes : constituer un corpus de la langue bedjond (textes, enregistrements, lexique) pour permettre demain la reconnaissance vocale, la traduction et l’apprentissage assisté ; structurer les données de la communauté — villages, cantons, membres, patrimoine — dans des bases fiables et ouvertes ; et explorer les usages de l’IA et des drones pour l’agriculture, la cartographie, la santé et l’éducation locales. La thématique veille à la maîtrise de nos données par la communauté elle-même, et prolonge le programme <a href=\"#savoirs-innovation\">Bedjond Digital Heritage</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association.",
-      "descriptionText": "Mettre l’intelligence artificielle et les données au service de la communauté. Premières pistes : constituer un corpus de la langue bedjond (textes, enregistrements, lexique) pour permettre demain la reconnaissance vocale, la traduction et l’apprentissage assisté ; structurer les données de la communauté — villages, cantons, membres, patrimoine — dans des bases fiables et ouvertes ; et explorer les usages de l’IA et des drones pour l’agriculture, la cartographie, la santé et l’éducation locales. La thématique veille à la maîtrise de nos données par la communauté elle-même, et prolonge le programme Bedjond Digital Heritage . Mise à jour du 28 septembre 2026 : les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association.",
+      "description": "Mettre l’intelligence artificielle et les données au service de la communauté. Premières pistes : constituer un corpus de la langue bedjond (textes, enregistrements, lexique) pour permettre demain la reconnaissance vocale, la traduction et l’apprentissage assisté ; structurer les données de la communauté — villages, cantons, membres, patrimoine — dans des bases fiables et ouvertes ; et explorer les usages de l’IA et des drones pour l’agriculture, la cartographie, la santé et l’éducation locales. La thématique veille à la maîtrise de nos données par la communauté elle-même, et prolonge le programme <a href=\"#savoirs-innovation\">Bedjond Digital Heritage</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. <strong>Mise à jour du 30 septembre 2026 :</strong> la coordination de cette thématique est confiée à Bonheur Allahaddje, qui succède à Bignéro Moïalbéi LE MADANG.",
+      "descriptionText": "Mettre l’intelligence artificielle et les données au service de la communauté. Premières pistes : constituer un corpus de la langue bedjond (textes, enregistrements, lexique) pour permettre demain la reconnaissance vocale, la traduction et l’apprentissage assisté ; structurer les données de la communauté — villages, cantons, membres, patrimoine — dans des bases fiables et ouvertes ; et explorer les usages de l’IA et des drones pour l’agriculture, la cartographie, la santé et l’éducation locales. La thématique veille à la maîtrise de nos données par la communauté elle-même, et prolonge le programme Bedjond Digital Heritage . Mise à jour du 28 septembre 2026 : les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. Mise à jour du 30 septembre 2026 : la coordination de cette thématique est confiée à Bonheur Allahaddje, qui succède à Bignéro Moïalbéi LE MADANG.",
       "tags": [
        "IA",
        "Données",

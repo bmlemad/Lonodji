@@ -295,7 +295,7 @@ window.__initTrouver = function () {
     "pole": "Pôle IV · Thématique 18",
     "name": "Intelligence artificielle & données",
     "status": "filled",
-    "coord": "Coordonnateur : Bignéro Moïalbéi LE MADANG",
+    "coord": "Coordonnateur : Bonheur Allahaddje",
     "desc": "Mettre l’intelligence artificielle et les données au service de la communauté.",
     "page": [
       "/projets/drones-innovation",
