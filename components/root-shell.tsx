@@ -6,7 +6,7 @@ import { FeuillePartage } from "@/components/partager";
 import SectionRail from "@/components/section-rail";
 import SiteFooter from "@/components/site-footer";
 import SiteNav from "@/components/site-nav";
-import { ORG, getIndex, thematiqueCount, metaDescription } from "@/lib/content";
+import { ORG, getIndex, thematiqueCount } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import "../app/globals.css";
@@ -39,7 +39,7 @@ export const metadataFr: Metadata = {
     template: "%s — ADEB LONODJI",
   },
   description:
-    "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : quatre pôles, ${themeLabel.toLowerCase()}, huit dossiers de plaidoyer pour le Mandoul (Tchad).",
+    `L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : quatre pôles, ${themeLabel.toLowerCase()}, huit dossiers de plaidoyer pour le Mandoul (Tchad).`,
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -48,7 +48,7 @@ export const metadataFr: Metadata = {
     siteName: "ADEB LONODJI",
     title: "ADEB LONODJI — Courage · Discipline · Héritage",
     description:
-      "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond. Quatre pôles, ${themeLabel.toLowerCase()}, huit dossiers de plaidoyer publiés.",
+      `L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond. Quatre pôles, ${themeLabel.toLowerCase()}, huit dossiers de plaidoyer publiés.`,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ADEB LONODJI — Courage · Discipline · Héritage" }],
   },
   twitter: { card: "summary_large_image" },
@@ -58,9 +58,9 @@ export const metadataFr: Metadata = {
 export const metadataEn: Metadata = {
   ...metadataFr,
   title: { default: "ADEB LONODJI — Courage · Discipline · Heritage", template: "%s — ADEB LONODJI" },
-  description: "The association of Bédjondo (Mandoul, Chad) and its diaspora, guardian of the Bedjond heritage: four pillars, ${themeCount} structured themes, eight advocacy briefs.",
+  description: `The association of Bédjondo (Mandoul, Chad) and its diaspora, guardian of the Bedjond heritage: four pillars, ${themeCount} structured themes, eight advocacy briefs.`,
   alternates: { canonical: "/en/index" },
-  openGraph: { ...metadataFr.openGraph, locale: "en_GB", url: `${siteUrl}/en/index`, title: "ADEB LONODJI — Courage · Discipline · Heritage", description: "The association of Bédjondo and its diaspora, guardian of the Bedjond heritage." },
+  openGraph: { ...metadataFr.openGraph, locale: "en_GB", url: `${siteUrl}/en/index`, title: "ADEB LONODJI — Courage · Discipline · Heritage", description: `The association of Bédjondo and its diaspora, guardian of the Bedjond heritage: four pillars, ${themeCount} structured themes, eight published advocacy briefs.` },
 };
 
 export default function RootShell({
