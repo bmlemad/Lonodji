@@ -53,13 +53,14 @@ export default function PropositionsCommune() {
       />
       <Stats items={[
         { value: String(PROJETS_PRIORITAIRES.length), label: "projets prioritaires", note: `dont ${PROJETS_PRIORITAIRES.filter((p) => p.porteur).length} parmi les plus porteurs` },
+        { value: `${PROJETS_PRIORITAIRES.filter((p) => p.apport.length).length}/${PROJETS_PRIORITAIRES.length}`, label: "projets avec un appui de LONODJI", note: "engagements déjà publiés dans nos dossiers" },
         { value: String(total), label: "mesures déjà publiées", note: `tirées de ${textes} textes déjà publiés` },
         { value: String(nombreSansDepense()), label: "ne demandent qu’une décision", note: "sans dépense, selon nos textes" },
         { value: String(probs.length), label: "problématiques relèvent de la commune", note: "sur les 34 du diagnostic" },
       ]} />
 
       <section className="hub-section" id="projets-prioritaires">
-        <SectionHead eyebrow={`Proposition de l’association · 30 septembre 2026`} title="Dix projets prioritaires" em="pour la commune." text="Des projets qui répondent aux besoins réels des habitants et qui rejoignent les axes que les partenaires du développement local soutiennent : gouvernance locale, résilience communautaire, inclusion économique. Ce sont des propositions à débattre avec la commune : aucun n’a encore d’étude, de budget ni de financement. Pour chacun : ce que nos dossiers en disaient déjà, et les programmes de notre relevé des bailleurs dont le champ le recoupe — des portes à frapper, pas des financements acquis." />
+        <SectionHead eyebrow={`Proposition de l’association · 30 septembre 2026`} title="Dix projets prioritaires" em="pour la commune." text="Des projets qui répondent aux besoins réels des habitants et qui rejoignent les axes que les partenaires du développement local soutiennent : gouvernance locale, résilience communautaire, inclusion économique. Ce sont des propositions à débattre avec la commune : aucun n’a encore d’étude, de budget ni de financement. Pour chacun : ce que nos dossiers en disaient déjà, ce que LONODJI pourrait apporter — uniquement des engagements déjà publiés, dans le cadre d’une convention avec la commune —, et les programmes de notre relevé des bailleurs dont le champ le recoupe : des portes à frapper, pas des financements acquis." />
         <ol className="pp-grille">
           {PROJETS_PRIORITAIRES.map((p, i) => {
             const progs = p.programmes.map(programmeParId).filter((x) => x !== undefined);
@@ -69,6 +70,12 @@ export default function PropositionsCommune() {
                 <h3>{p.titre}</h3>
                 <ul className="pp-volets">{p.volets.map((v) => <li key={v}>{v}</li>)}</ul>
                 {p.deja.length ? <p className="pp-ligne"><b>Déjà dans nos dossiers</b><Sources sources={p.deja} /></p> : <p className="pp-ligne"><b>Déjà dans nos dossiers</b><span className="pc-sources">proposition nouvelle</span></p>}
+                <div className={p.apport.length ? "pp-apport" : "pp-apport est-vide"}>
+                  <p className="pp-apport-titre">Ce que LONODJI pourrait apporter</p>
+                  {p.apport.length ? (
+                    <ul>{p.apport.map((a) => <li key={a.texte}>{a.texte.charAt(0).toUpperCase() + a.texte.slice(1)}. <Sources sources={a.sources} /></li>)}</ul>
+                  ) : <p className="pp-apport-vide">Aucun engagement publié à ce jour : il reste à le définir avec la thématique concernée.</p>}
+                </div>
                 {progs.length ? <p className="pp-ligne"><b>Programmes à rapprocher</b><span className="pp-progs">{progs.map((g) => <Link key={g.id} href={`/bailleurs#${g.id}`}>{g.nom.split(" — ")[0]}</Link>)}</span></p> : null}
               </li>
             );

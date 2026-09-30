@@ -125,39 +125,82 @@ export const nombreSansDepense = () => GROUPES.reduce((n, g) => n + g.items.filt
    Ce sont des propositions à débattre avec la commune : ni étude, ni budget, ni financement à ce jour.
    « deja » : ce que le site avait déjà publié sur le même sujet ; « programmes » : identifiants du relevé
    des bailleurs (lib/bailleurs.ts) dont le champ recoupe le projet — des portes à frapper, pas des financements acquis. */
-export type ProjetPrioritaire = { id: string; titre: string; volets: string[]; deja: Source[]; programmes: string[]; porteur?: boolean };
+export type ProjetPrioritaire = { id: string; titre: string; volets: string[]; deja: Source[]; programmes: string[]; porteur?: boolean;
+  /* Ce que LONODJI pourrait apporter : uniquement des engagements déjà publiés dans nos dossiers, avec leur source ;
+     sans engagement publié, « apport » reste vide et la carte le dit. */
+  apport: Proposition[] };
+const NOTE6: Source = { label: "Note à la commune, § 6", href: NOTE };
+const SOLIDARITE: Source = { label: "Solidarité et inclusion", href: "/programmes/solidarite-inclusion" };
 
 export const PROJETS_PRIORITAIRES: ProjetPrioritaire[] = [
   { id: "eau", titre: "Programme d’accès à l’eau potable", porteur: true,
     volets: ["Forages équipés de pompes solaires", "Réhabilitation des points d’eau existants", "Comités locaux de gestion de l’eau"],
-    deja: [S.eau, { label: "Village devenu ville, proposition 4", href: VILLE }], programmes: ["paepa-2", "unicef", "nexsud", "hnrp"] },
+    deja: [S.eau, { label: "Village devenu ville, proposition 4", href: VILLE }], programmes: ["paepa-2", "unicef", "nexsud", "hnrp"],
+    apport: [
+      { texte: "l’inventaire des points d’eau (état, débit, comité de gestion) et le relevé du réseau existant", sources: [S.eau] },
+      { texte: "la réparation d’urgence, avec la diaspora, des forages en panne relevés par l’inventaire, et la formation d’artisans réparateurs", sources: [S.eau] },
+      { texte: "l’appui aux comités de gestion et leur formation à la tenue des comptes", sources: [S.eau] },
+    ] },
   { id: "marche", titre: "Marché moderne intercommunautaire", porteur: true,
     volets: ["Construction d’un marché couvert", "Espaces de stockage et de conservation", "Aires de vente pour les femmes commerçantes"],
-    deja: [{ label: "Village devenu ville, proposition 7", href: VILLE }, S.note5], programmes: ["ddc-collectivites", "pea"] },
+    deja: [{ label: "Village devenu ville, proposition 7", href: VILLE }, S.note5], programmes: ["ddc-collectivites", "pea"],
+    apport: [
+      { texte: "les études et le dossier de demande de financement, confiés gratuitement aux compétences de la diaspora", sources: [NOTE6] },
+      { texte: "la souscription de la diaspora pour l’éclairage solaire du marché, premier chantier proposé", sources: [S.note5] },
+    ] },
   { id: "transformation", titre: "Centre de transformation agricole", porteur: true,
     volets: ["Transformation du manioc, du maïs, de l’arachide et du sésame", "Formation des coopératives", "Création de valeur ajoutée locale"],
-    deja: [S.agriculture], programmes: ["sodefika", "pea", "renfort", "pfnl"] },
+    deja: [S.agriculture], programmes: ["sodefika", "pea", "renfort", "pfnl"],
+    apport: [
+      { texte: "le recensement des producteurs, des surfaces et des groupements, canton par canton, remis aux services agricoles et aux programmes", sources: [S.agriculture] },
+      { texte: "le recensement des ateliers et des maîtres artisans, métier par métier", sources: [S.formation] },
+    ] },
   { id: "maison-femme-jeunesse", titre: "Maison de la Femme et de la Jeunesse", porteur: true,
     volets: ["Formation professionnelle", "Alphabétisation fonctionnelle", "Appui à l’entrepreneuriat"],
-    deja: [S.formation], programmes: ["swedd", "renfort", "corridor-competences"] },
+    deja: [S.formation], programmes: ["swedd", "renfort", "corridor-competences"],
+    apport: [
+      { texte: "un atelier-école pilote en installation solaire, avec les ingénieurs et techniciens de la diaspora", sources: [S.formation] },
+      { texte: "un réseau de parrainage des élèves par les cadres et étudiants bedjond, et un fonds de bourses", sources: [S.education] },
+      { texte: "l’ouverture du fonds de bourses en priorité aux orphelins et aux jeunes mères qui reprennent leur scolarité", sources: [SOLIDARITE] },
+    ] },
   { id: "assainissement", titre: "Programme communal d’assainissement",
     volets: ["Collecte et traitement des déchets", "Sensibilisation à l’hygiène", "Création d’emplois verts"],
-    deja: [{ label: "Village devenu ville, proposition 6", href: VILLE }, { label: "Diagnostic : assainissement", href: "/territoire/diagnostic#prob-12" }], programmes: ["unicef", "hnrp"] },
+    deja: [{ label: "Village devenu ville, proposition 6", href: VILLE }, { label: "Diagnostic : assainissement", href: "/territoire/diagnostic#prob-12" }], programmes: ["unicef", "hnrp"],
+    apport: [] },
   { id: "centre-numerique", titre: "Centre numérique communal", porteur: true,
     volets: ["Services administratifs numérisés", "Formation aux compétences numériques", "Accès à Internet pour les jeunes"],
-    deja: [{ label: "Projet : espace numérique", href: "/projets/espace-numerique" }, S.internet], programmes: ["patn"] },
+    deja: [{ label: "Projet : espace numérique", href: "/projets/espace-numerique" }, S.internet], programmes: ["patn"],
+    apport: [
+      { texte: "le cofinancement, avec la diaspora, d’un premier espace numérique communautaire (connexion satellitaire, alimentation solaire), ouvert aussi aux services de la commune", sources: [S.internet, { label: "Projet : espace numérique", href: "/projets/espace-numerique" }] },
+      { texte: "l’installation des outils numériques de la mairie et la formation de ceux qui les tiendront", sources: [S.note4] },
+      { texte: "la formation de jeunes de la ville à l’entretien des équipements", sources: [S.internet] },
+    ] },
   { id: "maraichage", titre: "Périmètres maraîchers irrigués",
     volets: ["Irrigation solaire", "Production toute saison", "Coopératives de femmes et de jeunes"],
-    deja: [S.agriculture], programmes: ["renfort", "nexsud"] },
+    deja: [S.agriculture], programmes: ["renfort", "nexsud"],
+    apport: [
+      { texte: "le recensement des producteurs, des surfaces et des groupements, canton par canton", sources: [S.agriculture] },
+      { texte: "la formation de jeunes à l’installation et à la maintenance solaire, utile à l’irrigation", sources: [S.electricite] },
+    ] },
   { id: "reboisement", titre: "Reboisement et protection de l’environnement",
     volets: ["Bois communaux", "Lutte contre la déforestation", "Valorisation des produits forestiers"],
-    deja: [{ label: "Environnement et ressources", href: "/programmes/environnement" }], programmes: ["pfnl"] },
+    deja: [{ label: "Environnement et ressources", href: "/programmes/environnement" }], programmes: ["pfnl"],
+    apport: [] },
   { id: "fonds-microprojets", titre: "Fonds communal d’appui aux microprojets",
     volets: ["Financement des initiatives locales", "Appui aux groupements", "Développement de l’économie locale"],
-    deja: [], programmes: ["ddc-collectivites", "renfort", "swedd"] },
+    deja: [], programmes: ["ddc-collectivites", "renfort", "swedd"],
+    apport: [
+      { texte: "la proposition, en assemblée générale, d’une caisse de solidarité avec règlement écrit et trésorier désigné", sources: [SOLIDARITE] },
+      { texte: "le recensement, avec l’accord des intéressés, des groupes de tontine déjà actifs, et la recherche d’une institution de microfinance intervenant dans le Mandoul", sources: [SOLIDARITE] },
+    ] },
   { id: "pdc", titre: "Actualisation du Plan de développement communal",
     volets: ["Diagnostic participatif", "Planification des investissements", "Mobilisation des partenaires techniques et financiers"],
-    deja: [S.note1, S.ville12], programmes: ["pnud-rgdl", "ddc-collectivites", "unicef"] },
+    deja: [S.note1, S.ville12], programmes: ["pnud-rgdl", "ddc-collectivites", "unicef"],
+    apport: [
+      { texte: "le diagnostic participatif des équipements existants, avec les comités de quartier, et la synthèse des signalements de la carte des besoins", sources: [NOTE6, { label: "Carte des besoins", href: "/territoire/besoins" }] },
+      { texte: "le relevé et le plan de la ville, par les urbanistes et géomètres de la diaspora", sources: [NOTE6] },
+      { texte: "les dossiers de demande de financement auprès des partenaires", sources: [NOTE6] },
+    ] },
 ];
 
 /* Les trois ensembles jugés les plus porteurs pour un financement, et le projet intégré recommandé. */
