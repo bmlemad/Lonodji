@@ -4,6 +4,7 @@ import Link from "@/components/lien";
 import { PageHeader } from "@/components/blocks";
 import { getIndex, ogFor } from "@/lib/content";
 import Partager from "@/components/partager";
+import { breadcrumbSchema, jsonLd, webPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Tous les dossiers",
@@ -27,6 +28,17 @@ export default function Dossiers() {
   bySlug.set("bedjondo-transport-logistique", { slug: "bedjondo-transport-logistique", route: "/projets/bedjondo-transport-logistique", eyebrow: "Projet annoncé", title: "Bedjondo Transport et Logistique", lede: "Le projet de transport et de logistique terrestres annoncé sous le nom d’Air Bedjondo, renommé le 29 septembre 2026 : pourquoi, ce que nous savons, et six propositions pour le mener." });
   return (
     <main id="main-content" className="hub-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({
+        "@context": "https://schema.org",
+        "@graph": [
+          webPageSchema({ url: "/dossiers", name: "Tous les dossiers", description: "Les dossiers de fond d’ADEB LONODJI : diagnostic territorial, projets à l’étude, plans pour les personnes vulnérables, patrimoine, outils de terrain et cadre légal." }),
+          breadcrumbSchema([
+            { name: "Accueil", url: "/" },
+            { name: "Nos actions", url: "/programmes" },
+            { name: "Tous les dossiers" },
+          ], "/dossiers"),
+        ],
+      }) }} />
       <PageHeader crumbs={[{ label: "Nos actions", href: "/programmes" }, { label: "Tous les dossiers" }]} eyebrow="Nos actions · tous les dossiers" title="Tout ce que nous" em="avons documenté." lead={`${pages.length} dossiers de fond, chacun daté et sourcé, du diagnostic territorial aux projets à l’étude. Ils nourrissent les plaidoyers et les vingt thématiques.`} />
       {groups.map(([title, slugs]) => (
         <section className="hub-section" key={title}>
