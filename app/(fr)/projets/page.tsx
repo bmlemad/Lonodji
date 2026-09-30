@@ -9,6 +9,7 @@ import { getIndicateurs } from "@/lib/indicateurs";
 import { thematiquesParId } from "@/lib/odeb-chiffres";
 import { getProjets, STADES_ACTIFS, stadeIndex } from "@/lib/projets";
 import Partager from "@/components/partager";
+import { ALIGNEMENT_PROJETS, GUICHETS, programmeParId } from "@/lib/bailleurs";
 import { breadcrumbSchema, jsonLd, webPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
