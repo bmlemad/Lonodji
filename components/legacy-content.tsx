@@ -4,6 +4,7 @@ import type { LegacyPage, Section } from "../lib/content";
 import LegacyEnhance from "./legacy-enhance";
 import OuvrirAncre from "./ouvrir-ancre";
 import SommaireLateral from "./sommaire-lateral";
+import { breadcrumbSchema, jsonLd, webPageSchema } from "../lib/schema";
 import { NAVIGATION } from "../lib/navigation";
 
 /** Rendu des sections importées de l'ancien site, dans le style du site moderne. */
@@ -173,6 +174,7 @@ export function LegacyDocument({ page, children, eyebrowPrefix }: { page: Legacy
   const en = page.lang === "en";
   return (
     <main id="main-content" className="detail-page lg-page" lang={page.lang !== "fr" ? page.lang : undefined}>
+      <script id="legacy-webpage-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", "@graph": [webPageSchema({ url: page.route, name: page.title, description: page.description, lang: en ? "en" : "fr" })] }) }} />
       {en && page.route === "/en/index" ? null : (() => {
         // rubrique d'après l'adresse (restructuration du 29/09/2026), sinon le parent de l'ancien site
         const r = RUBRIQUES.find(([pre]) => page.route.startsWith(pre));
