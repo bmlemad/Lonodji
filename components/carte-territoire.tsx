@@ -144,14 +144,21 @@ export default function CarteTerritoire() {
       rendreVillages();
 
       const equipementsCouche = L.layerGroup().addTo(m);
-      for (const e of donnees.equipements) {
-        const fam = FAMILLES[e.famille] || { label: e.famille, couleur: "#607069" };
-        const ic = L.divIcon({ className: "ct-eq", html: `<span style="background:${fam.couleur};color:${encre(fam.couleur)}" title="${fam.label}">${picto(e.famille)}</span>`, iconSize: [24, 24], iconAnchor: [12, 12] });
-        const mk = L.marker([e.coords[1], e.coords[0]], { icon: ic, keyboard: true, alt: `${fam.label} : ${e.nom || "sans nom"}` });
-        mk.bindTooltip(`${fam.label} · ${e.nom || "sans nom"}`, { direction: "top", offset: [0, -10], className: "ct-info" });
-        mk.on("click", () => setSelection({ genre: "equipement", equipement: e }));
-        mk.addTo(equipementsCouche);
-      }
+      let equipementsRendus = false;
+      const rendreEquipements = () => {
+        if (equipementsRendus || m.getZoom() < 9 || !m.hasLayer(equipementsCouche)) return;
+        equipementsRendus = true;
+        for (const e of donnees.equipements) {
+          const fam = FAMILLES[e.famille] || { label: e.famille, couleur: "#607069" };
+          const ic = L.divIcon({ className: "ct-eq", html: `<span style="background:${fam.couleur};color:${encre(fam.couleur)}" title="${fam.label}">${picto(e.famille)}</span>`, iconSize: [24, 24], iconAnchor: [12, 12] });
+          const mk = L.marker([e.coords[1], e.coords[0]], { icon: ic, keyboard: true, alt: fam.label + " : " + (e.nom || "sans nom") });
+          mk.bindTooltip(fam.label + " · " + (e.nom || "sans nom"), { direction: "top", offset: [0, -10], className: "ct-info" });
+          mk.on("click", () => setSelection({ genre: "equipement", equipement: e }));
+          mk.addTo(equipementsCouche);
+        }
+      };
+      m.on("zoomend", rendreEquipements);
+      rendreEquipements();
 
       couches.current = { L, unites: unitesCouche, villages: villagesCouche, equipements: equipementsCouche };
       carte.current = m;
