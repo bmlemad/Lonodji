@@ -42,7 +42,7 @@ export default function Home() {
             <h1 id="hero-title">Construire aujourd’hui.<br /><em>Transmettre demain.</em></h1>
             <p className="hero-text">
               ADEB LONODJI est l’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond.
-              Reconnue en 1995 — mise en conformité avec l’ordonnance de 2018 en vérification —, remise en mouvement en 2026 : quatre pôles, vingt thématiques, huit dossiers de plaidoyer publiés pour l’eau, l’électricité, l’école, les routes et la santé — et un territoire cartographié village par village.
+              Reconnue en 1995 — mise en conformité avec l’ordonnance de 2018 en vérification —, remise en mouvement en 2026 : quatre pôles, des thématiques en cours d’inventaire, huit dossiers de plaidoyer publiés pour l’eau, l’électricité, l’école, les routes et la santé — et un territoire cartographié village par village.
             </p>
             <div className="hero-actions">
               <Link className="button primary" href="/programmes">Découvrir nos actions <span aria-hidden="true">→</span></Link>
@@ -110,7 +110,7 @@ export default function Home() {
             <ul className="od-band-programmes">
               {PROGRAMMES.map((p) => <li key={p.slug}><Link href={routeProgramme(p)}><span>{p.numero}</span>{p.nom}</Link></li>)}
             </ul>
-            <p className="od-band-note">Les six programmes du projet s’appuieront sur les vingt thématiques de l’association : <Link href="/odeb/programmes">voir quelles thématiques chaque programme mobilise →</Link></p>
+            <p className="od-band-note">Les six programmes du projet s’appuieront sur les thématiques structurées de l’association : <Link href="/odeb/programmes">voir quelles thématiques chaque programme mobilise →</Link></p>
             <div className="section-actions od-band-actions">
               <Link className="button primary" href="/odeb">La vision 2030 <span aria-hidden="true">→</span></Link>
               <Link className="button secondary" href="/odeb/livre-blanc">Le livre blanc <span aria-hidden="true">→</span></Link>
@@ -123,7 +123,7 @@ export default function Home() {
           <div className="section-head">
             <div>
               <p className="eyebrow">Nos actions</p>
-              <h2 id="programmes-title">Quatre pôles.<br /><em>Vingt thématiques.</em></h2>
+              <h2 id="programmes-title">Quatre pôles.<br /><em>Thématiques en cours d’inventaire.</em></h2>
             </div>
             <p>
               Chaque pôle sera dirigé par un directeur ou une directrice de pôle, au rang de chef de projet (les quatre postes sont à pourvoir) ; chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte publiquement. Deux cellules transversales — financement et communication — appuient l’ensemble.
@@ -151,7 +151,7 @@ export default function Home() {
           <div className="section-head">
             <div>
               <p className="eyebrow">Plaidoyers</p>
-              <h2 id="plaidoyers-title">Sept plaidoyers,<br /><em>une note à la commune.</em></h2>
+              <h2 id="plaidoyers-title">Dossiers de plaidoyer,<br /><em>une note à la commune.</em></h2>
             </div>
             <p>Sourcés, chiffrés, adressés à des destinataires nommés et suivis publiquement : ce que nous demandons pour Bédjondo et ses cantons.</p>
           </div>
