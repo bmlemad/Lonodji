@@ -43,7 +43,7 @@ export const NAVIGATION: NavEntree[] = [
   {
     id: "actions", label: "Nos actions", href: "/programmes",
     colonnes: [
-      { titre: "Quatre pôles, vingt thématiques", liens: [
+      { titre: "Quatre pôles · thématiques en cours d’inventaire", liens: [
         { label: "Mémoire, culture & patrimoine", href: "/programmes#pole-1", note: "Pôle I" },
         { label: "Développement humain & moyens d’existence", href: "/programmes#pole-2", note: "Pôle II" },
         { label: "Gouvernance, paix & plaidoyer", href: "/programmes#pole-3", note: "Pôle III" },
@@ -164,12 +164,12 @@ export const NAVIGATION_EN: NavEntree[] = [
     id: "actions", label: "Our work", href: "/en/themes",
     colonnes: [
       { titre: "How we are organised", liens: [
-        { label: "Four pillars, twenty themes", href: "/en/themes", note: "Coordinators, objectives, SDGs" },
+        { label: "Four pillars · themes being inventoried", href: "/en/themes", note: "Coordinators, objectives, SDGs" },
         { label: "Sectors", href: "/en/sectors", note: "Our work in the donors’ sector vocabulary" },
         { label: "Mission descriptions", href: "/programmes/fiches-de-mission", note: "One PDF per role", fr: true },
       ] },
       { titre: "Advocacy & projects", liens: [
-        { label: "Advocacy", href: "/en/advocacy", note: "Seven advocacy files and a note to the commune" },
+        { label: "Advocacy", href: "/en/advocacy", note: "Advocacy files and a note to the commune" },
         { label: "Projects", href: "/en/projects", note: "What is under way, what is waiting" },
         { label: "Impact dashboard", href: "/en/impact", note: "Every figure with its source and date" },
       ] },
