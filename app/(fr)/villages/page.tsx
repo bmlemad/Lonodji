@@ -1,5 +1,5 @@
 import { alternatesLangues } from "@/lib/langues";
-import { breadcrumbSchema, jsonLd, webPageSchema } from "@/lib/schema";
+import { jsonLd, webPageSchema } from "@/lib/schema";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -8,9 +8,13 @@ import { ogFor } from "@/lib/content";
 import { getVillages, GROUPES, km, nf, ORDRE_GROUPES, TYPES } from "@/lib/villages";
 import Partager from "@/components/partager";
 
+/* nombre de fiches, compté dans content/villages.json (jamais écrit en dur) */
+const NB_VILLAGES = nf.format(getVillages().villages.length);
+const DESCRIPTION = `Retrouvez votre village : ${NB_VILLAGES} localités du pays bedjond, chacune avec ce que les données ouvertes en savent, ce que le site en dit et ce qui reste à documenter.`;
+
 export const metadata: Metadata = {
   title: "Les villages du pays bedjond : une fiche par localité",
-  description: "Retrouvez votre village : 966 localités du pays bedjond, chacune avec ce que les données ouvertes en savent, ce que le site en dit et ce qui reste à documenter.",
+  description: DESCRIPTION,
   alternates: { canonical: "/villages", languages: alternatesLangues("/villages") },
   openGraph: ogFor("/villages"),
 };
@@ -24,7 +28,7 @@ export default function Villages() {
   const cites = d.villages.filter((v) => v.mentions.length).length;
   return (
     <main id="main-content" className="hub-page vl-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", "@graph": [webPageSchema({ url: "/villages", name: "Les villages du pays bedjond : une fiche par localité", description: "Retrouvez votre village : 966 localités du pays bedjond, chacune avec ce que les données ouvertes en savent, ce que le site en dit et ce qui reste à documenter." }), breadcrumbSchema([{ name: "Accueil", url: "/" }, { name: "Territoire", url: "/territoire" }, { name: "Villages" }], "/villages")] }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", "@graph": [webPageSchema({ url: "/villages", name: "Les villages du pays bedjond : une fiche par localité", description: DESCRIPTION })] }) }} />
       <PageHeader
         eyebrow="Territoire · fiches des villages"
         title="Retrouver son village,"
@@ -77,7 +81,7 @@ export default function Villages() {
           <article><h3>Ce que la fiche attend</h3><p>L’eau, l’école, la santé, le réseau, l’histoire du nom, les lieux sacrés, le nombre d’habitants : chaque manque renvoie au formulaire qui permet de le combler, et ce qui est reçu et vérifié paraît sur la fiche, daté et sourcé.</p></article>
           <article><h3>Votre village manque ?</h3><p>Il n’est pas dans les données ouvertes, ou son nom y est écrit autrement. Ajoutez-le ou corrigez-le sur OpenStreetMap — un compte gratuit suffit — ou <Link href="/participer#contact">écrivez-nous</Link> : il apparaîtra à la mise à jour suivante.</p></article>
         </div>
-        <Partager route="/villages" titre="Les villages du pays bedjond" texte="Retrouvez votre village : 966 localités du pays bedjond, chacune avec ce que les données ouvertes en savent, ce que le site en dit et ce qui reste à documenter." />
+        <Partager route="/villages" titre="Les villages du pays bedjond" texte={DESCRIPTION} />
         <p className="lg-footnote">Fiches établies automatiquement à partir des données de la carte ({d.sources.localites}). Une erreur de nom ou de position ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
       </section>
     </main>

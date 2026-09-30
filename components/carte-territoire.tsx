@@ -136,12 +136,10 @@ export default function CarteTerritoire() {
 
       const villagesCouche = L.layerGroup().addTo(m);
       const rayon: Record<string, number> = { city: 7, town: 6, village: 3.5, hamlet: 2.5 };
-      // Les données restent disponibles pour la recherche, mais les ~966 marqueurs
-      // ne sont créés qu'à partir d'un zoom utile, afin d'alléger le premier rendu.
-      let villagesRendus = false;
+      // Tous les points (1 259, sur canvas) sont posés dès l'ouverture : visibles au cadrage initial,
+      // ils coûtent peu. (Un report « jusqu'au zoom utile » ne se déclenchait jamais, le zoom n'étant pas
+      // encore connu avant fitBounds ; retiré le 30/09/2026.)
       const rendreVillages = () => {
-        if (villagesRendus || m.getZoom() < 9 || !m.hasLayer(villagesCouche)) return;
-        villagesRendus = true;
         for (const v of donnees.villages) {
           const u = indexes!.unitesById.get(v[4]);
           const couleur = u ? GROUPES[u.groupe].couleur : "#607069";
@@ -152,14 +150,10 @@ export default function CarteTerritoire() {
           marker.addTo(villagesCouche);
         }
       };
-      m.on("zoomend", rendreVillages);
       rendreVillages();
 
       const equipementsCouche = L.layerGroup().addTo(m);
-      let equipementsRendus = false;
       const rendreEquipements = () => {
-        if (equipementsRendus || m.getZoom() < 9 || !m.hasLayer(equipementsCouche)) return;
-        equipementsRendus = true;
         for (const e of donnees.equipements) {
           const fam = FAMILLES[e.famille] || { label: e.famille, couleur: "#607069" };
           const ic = L.divIcon({ className: "ct-eq", html: `<span style="background:${fam.couleur};color:${encre(fam.couleur)}" title="${fam.label}">${picto(e.famille)}</span>`, iconSize: [24, 24], iconAnchor: [12, 12] });
@@ -169,7 +163,6 @@ export default function CarteTerritoire() {
           mk.addTo(equipementsCouche);
         }
       };
-      m.on("zoomend", rendreEquipements);
       rendreEquipements();
 
       couches.current = { L, unites: unitesCouche, villages: villagesCouche, equipements: equipementsCouche };
@@ -184,7 +177,11 @@ export default function CarteTerritoire() {
       setPret(true);
       })();
     };
-    if ("IntersectionObserver" in window) {
+    // Arrivée avec une cible (?village=, ?unite=, ancre) : la carte s'initialise tout de suite, sinon
+    // l'ouverture de la fiche attendrait un défilement que seule cette ouverture provoque.
+    const q = new URLSearchParams(window.location.search);
+    const cible = q.has("village") || q.has("unite") || window.location.hash.length > 1;
+    if (!cible && "IntersectionObserver" in window) {
       observer = new IntersectionObserver((entries) => {
         if (entries.some((entry) => entry.isIntersecting)) {
           observer?.disconnect();
@@ -282,8 +279,8 @@ export default function CarteTerritoire() {
         </label>
         {resultats.length ? (
           <ul className="ct-resultats" id="ct-resultats" role="listbox" aria-label="Résultats">
-            {resultats.map((r, i) => (
-              <li key={i}><button type="button" onClick={() => aller(r.coords, r.unit ? 10 : 13, r.unit ? { genre: "unite", unite: r.unit } : r.village ? { genre: "village", village: r.village } : null)}><strong>{r.nom}</strong> <span>{r.type}{r.unite ? ` · ${r.unite}` : ""}</span></button></li>
+            {resultats.map((r) => (
+              <li key={r.key}><button type="button" onClick={() => aller(r.coords, r.unit ? 10 : 13, r.unit ? { genre: "unite", unite: r.unit } : r.village ? { genre: "village", village: r.village } : null)}><strong>{r.nom}</strong> <span>{r.type}{r.unite ? ` · ${r.unite}` : ""}</span></button></li>
             ))}
           </ul>
         ) : requete.trim().length >= 2 && donnees ? <p className="ct-vide" id="ct-resultats">Aucun lieu de ce nom dans les données ouvertes. Vous le connaissez ? <Link href={`/territoire/besoins?localite=${encodeURIComponent(requete.trim())}`}>Signalez-le-nous</Link>.</p> : null}

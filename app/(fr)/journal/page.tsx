@@ -25,8 +25,7 @@ export default function Journal() {
           webPageSchema({ url: "/journal", name: "Le journal", description: "Articles, annonces, plaidoyers et lettre d’information : la vie de l’association, la mémoire bedjond et les dossiers de développement du Mandoul Occidental." }),
           breadcrumbSchema([
             { name: "Accueil", url: "/" },
-            { name: "Le journal", url: "/journal" },
-            
+            { name: "Le journal" },
           ], "/journal"),
         ],
       }) }} />

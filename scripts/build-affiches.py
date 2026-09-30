@@ -16,6 +16,7 @@ import sys
 from pathlib import Path
 
 import segno
+from org import TELEPHONE  # seule source : lib/contact.ts
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "public" / "carte" / "affiches"
@@ -23,7 +24,7 @@ SITE = "https://lonodji.org"
 LOGO = ROOT / "public" / "odeb" / "identite" / "adeb-lonodji-logo-horizontal-superposable.png"
 EMBLEME = ROOT / "public" / "odeb" / "identite" / "odeb-lonodji-embleme-plat.svg"
 GROUPES = {"coeur": "cœur du pays bedjond", "sud": "présence bedjond attestée", "signale": "présence bedjond signalée", "diaspora": "diaspora agricole, présence signalée"}  # mêmes libellés que lib/villages.ts
-WHATSAPP = "+235 66 29 94 03"
+WHATSAPP = TELEPHONE
 
 
 def charger(nom: str, chemin: Path):

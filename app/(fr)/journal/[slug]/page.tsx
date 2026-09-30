@@ -35,7 +35,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const newer = pos > 0 ? idx.articles[pos - 1] : null;
   const older = pos < idx.articles.length - 1 ? idx.articles[pos + 1] : null;
   const related = idx.articles.filter((x) => x.slug !== slug && x.category === a.category).slice(0, 3);
-  const url = `${ORG.url}/journal/${slug}`;
   const [main, ...rest] = splitTitle(a.title);
   const ld = {
     "@context": "https://schema.org",

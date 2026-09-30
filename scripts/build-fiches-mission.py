@@ -19,12 +19,13 @@ import re
 import sys
 from datetime import date
 from pathlib import Path
+from org import TELEPHONE  # seule source : lib/contact.ts
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "public" / "missions"
 SITE = "https://lonodji.org"
 LOGO = ROOT / "public" / "odeb" / "identite" / "adeb-lonodji-logo-horizontal-clair-superposable.png"
-TEL = "+235 66 29 94 03"
+TEL = TELEPHONE
 MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
 
 

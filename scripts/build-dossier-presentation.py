@@ -17,6 +17,7 @@ import re
 import sys
 from datetime import date
 from pathlib import Path
+from org import TELEPHONE  # seule source : lib/contact.ts
 
 ROOT = Path(__file__).resolve().parent.parent
 LEGACY = Path("/home/claude/lonodji")
@@ -163,7 +164,7 @@ footer {{ position:fixed; bottom:-9mm; left:0; right:0; text-align:center; font-
 </div>
 <div class="eyebrow">Contact</div>
 <h2>Nous joindre</h2>
-<p><b>Téléphone et WhatsApp :</b> +235 66 29 94 03 (Adoumbé Maoura, président, contact officiel). <b>Site :</b> lonodji.org — formulaire de contact sur la page Participer. Aucune adresse électronique n'est encore rattachée au domaine : elle sera publiée sur le site dès qu'elle fonctionnera. Les plaidoyers et documents sont libres de reproduction avec mention de l'association.</p>
+<p><b>Téléphone et WhatsApp :</b> {TELEPHONE} (Adoumbé Maoura, président, contact officiel). <b>Site :</b> lonodji.org — formulaire de contact sur la page Participer. Aucune adresse électronique n'est encore rattachée au domaine : elle sera publiée sur le site dès qu'elle fonctionnera. Les plaidoyers et documents sont libres de reproduction avec mention de l'association.</p>
 <p class="sources">Sources des chiffres : INSEED (recensements 1993 et 2009, via City Population) ; Alwihda Info (session budgétaire de la commune, janv. 2026 ; cérémonie d'excellence, juil. 2025) ; Banque mondiale (accès à l'électricité, PAAET) ; Agence Ecofin (télécoms nov. 2024, électricité sept. 2025) ; ARCEP ; BAD (PAEPA SU MR) ; UNICEF Data Must Speak 2024 ; OMS ; Primature du Tchad (suivi des engagements 2024). Organisation et plaidoyers : état du site au {jour}.</p>
 </body></html>"""
 

@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { TELEPHONE, TELEPHONE_HREF, WHATSAPP } from "./contact";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
@@ -155,9 +156,6 @@ export function pickSections(page: LegacyPage, opts: { only?: string[]; exclude?
 
 export const thematiqueCount = (idx: ContentIndex) => idx.structure.poles.reduce((n, p) => n + p.items.length, 0);
 
-export function getIndicateurs(): { contenu: { plaidoyers: { publies: number } } } {
-  return JSON.parse(fs.readFileSync(path.join(CONTENT_DIR, "indicateurs.json"), "utf8")) as { contenu: { plaidoyers: { publies: number } } };
-}
 export const filledCount = (idx: ContentIndex) => idx.structure.poles.reduce((n, p) => n + p.items.filter((t) => t.filled).length, 0);
 /* Directions de pôle (rang de chef de projet) : pourvues / total. */
 export const directionsCount = (idx: ContentIndex) => ({ total: idx.structure.poles.filter((p) => p.direction).length, pourvues: idx.structure.poles.filter((p) => p.direction?.filled).length });
@@ -171,9 +169,9 @@ export const ORG = {
   tagline: "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond.",
   motto: "Courage · Discipline · Héritage",
   place: "Bédjondo · Mandoul Occidental · Mandoul, Tchad",
-  phone: "+235 66 29 94 03",
-  phoneHref: "tel:+23566299403",
-  whatsapp: "https://wa.me/23566299403",
+  phone: TELEPHONE,
+  phoneHref: TELEPHONE_HREF,
+  whatsapp: WHATSAPP,
   url: "https://lonodji.org",
   bureau: [
     { role: "Président", name: "Adoumbé Maoura", note: "Contact officiel de l’association : appel et WhatsApp" },

@@ -28,6 +28,7 @@ import shutil
 import sys
 import zipfile
 from pathlib import Path
+from org import TELEPHONE  # seule source : lib/contact.ts
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "public" / "odeb" / "identite"
@@ -48,7 +49,7 @@ og = charger("build_og", ROOT / "scripts" / "build-og.py")
 
 DEVISE = "« Sur les traces de nos ancêtres, bâtissons notre avenir. »"
 SOUS_TITRE = ("ORGANISATION POUR LE DÉVELOPPEMENT", "ET L’ÉMERGENCE BEDJONDE")
-TEL = "+235 66 29 94 03"
+TEL = TELEPHONE
 # Un emblème, deux noms : l'association (logo adopté le 28/09/2026) et son projet.
 MARQUES = {
     "odeb": {"sigle": "ODEB", "nom": "LONODJI", "sous_titre": SOUS_TITRE, "devise": DEVISE},

@@ -111,6 +111,10 @@ export function FeuillePartage() {
       setOuverte(true);
     };
     window.addEventListener("lonodji:partager", ouvrir);
+    // demande faite avant le chargement de la feuille (deferred-chrome.tsx)
+    const w = window as Window & { __lonodjiEnAttente?: Set<string>; __lonodjiPret?: Set<string> };
+    (w.__lonodjiPret ??= new Set()).add("partager");
+    if (w.__lonodjiEnAttente?.delete("partager")) ouvrir();
     return () => window.removeEventListener("lonodji:partager", ouvrir);
   }, []);
   useEffect(() => {

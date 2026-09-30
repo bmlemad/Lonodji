@@ -7,3 +7,51 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+# Règles du projet lonodji.org (à lire avant toute modification)
+
+Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.js 16, hébergé sur Netlify ;
+**chaque push sur `main` déclenche une construction et une mise en ligne**. Le dépôt GitHub est public.
+
+## Publier
+- Grouper les modifications : un seul push par série de travail, pas un commit poussé par fichier. Chaque push
+  coûte une construction Netlify ; le quota du compte a déjà été épuisé une fois (30/09/2026).
+- Avant chaque push : `npm run build` doit réussir en local. Ne jamais pousser un état qui ne se construit pas.
+- Contrôle complet : `npm run qa` (liens, pages, console, accessibilité) et `npm run qa:coherence` (chiffres).
+- Récupérer d'abord le travail des autres (`git pull --rebase`) ; ne jamais forcer un push.
+
+## Contenu : ce qui ne se négocie pas
+- **Aucun chiffre inventé.** Tout chiffre affiché vient des données (`content/*.json`, `lib/*`) ou d'une source
+  citée sur la page. Les compteurs se calculent (`thematiqueCount`, `getIndicateurs`, `villages.length`…),
+  jamais écrits en dur — y compris dans les métadonnées et le JSON-LD.
+- **Ce qui n'est pas fait s'écrit au conditionnel** ou comme proposition. Un indicateur proposé n'a pas de cible
+  chiffrée tant que le bureau ne l'a pas validée.
+- **Lieux sacrés et sépultures : jamais sur la carte publique**, ni leurs coordonnées nulle part.
+- Écrire **« coordonnateur »** (jamais « coordinateur »).
+- **Téléphone et contacts** : une seule source, `lib/contact.ts` (reprise par `ORG` dans `lib/content.ts`, par `scripts/org.py` pour les scripts Python et lue par `scripts/build-diaporama.js`) ; jamais en dur ailleurs dans le code.
+- **Aucune donnée personnelle** issue des formulaires dans le dépôt (noms, courriels, téléphones des personnes).
+- **Articles datés** (`content/articles/`, `/journal/…`) : leur texte ne se réécrit pas ; on ajoute au besoin une
+  note datée. Même règle pour les entrées datées du journal des corrections (`/transparence`).
+- Pages en arabe : non publiées tant qu'un locuteur natif ne les a pas relues. Les brouillons (`content/brouillons/`)
+  sont hors dépôt.
+- Auteur des articles dans le JSON-LD : l'association (`organizationId`), sauf signature nominative réelle.
+
+## Contenu hérité et génération
+- Les pages issues de l'ancien site se corrigent dans `scripts/corrections_fr.py` / `corrections_en.py`
+  (remplacements exacts), puis `python3 scripts/import-legacy.py <ancien-site>` ; un remplacement sans effet est
+  signalé à l'import. Ne pas éditer `content/pages/*.json` à la main : l'import les réécrit.
+- `import-legacy.py` **efface et recrée** `public/documents`, `public/identite`, `public/kit`, `public/app`.
+  Les fichiers propres au site vont dans `public/og`, `carte`, `odeb`, `icones`, `missions`, `lettres`, `notes`.
+- Après un import : `build-dossier-presentation.py`, `build-kit-adhesion.py`, `build-carte.py`,
+  `build-search-index.py`, puis `build-bibliotheque`, `build-villages`, `build-observatoire`,
+  `build-indicateurs`, `build-fiches-mission` (voir README).
+- Ne régénérer un PDF, un ZIP ou une présentation que si son contenu change : chaque version reste dans
+  l'historique git (le dépôt dépasse déjà 270 Mo).
+- Une nouvelle page s'enregistre dans `app/sitemap.ts`, `scripts/build-og.py`, `scripts/qa/controle.py` et
+  `scripts/build-search-index.py`.
+
+## Performance et cache
+- Cache immuable seulement sur les fichiers à empreinte (`/_next/static/*`). Les index et données sans empreinte
+  (`search-index.json`, `search-palette.json`, `carte/donnees.json`, `sw.js`) se revalident à chaque visite.
+- Le site doit rester utilisable en 3G lente : pas de bibliothèque lourde ajoutée sans mesure ; tout ce qui est
+  différé doit rester utilisable pendant son chargement (voir `components/deferred-chrome.tsx`).

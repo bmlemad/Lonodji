@@ -123,7 +123,7 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 - **Lettre d’information** : `scripts/build-lettre.py` → PDF de chaque numéro (`public/lettres/`, index `content/lettres.json`), page `/lettre` ; `--brouillon AAAA-MM` prépare le numéro du mois dans `content/brouillons/` (articles par rubrique, postes ouverts, chiffres datés), à compléter puis publier avec `publier-article.py`.
 - **Registre des décisions** : `lib/decisions.ts` (une entrée par fait daté et sourcé, statut décidé/nommé/annoncé/à voter/publié/en vigueur), page `/transparence/decisions`.
 - **Contrôles qualité** : `scripts/qa/` (`controle.py`, `coherence.py`, `local.sh`), `npm run qa` (site construit sur le port 3100, liens, ancres, console, axe-core, visuel), `npm run qa:live` (site en ligne + poids), `npm run qa:coherence` ; une tâche planifiée hebdomadaire (lundi 6 h 59, Ndjamena) contrôle le site en ligne en lecture seule.
-- **Version arabe** : `content/brouillons/ar/` (accueil, contact, DOCX de relecture, marche à suivre) — non publiée tant qu’un locuteur natif n’a pas relu.
+- **Version arabe** : `content/brouillons/ar/` (accueil, contact, DOCX de relecture, marche à suivre) — non publiée tant qu’un locuteur natif n’a pas relu. Depuis le 30 septembre 2026, `content/brouillons/` est hors dépôt (le dépôt est public) : copie de travail sur le Mac, `~/Documents/Lonodji-brouillons`.
 
 ## Outils de navigation (28 septembre 2026, soir)
 

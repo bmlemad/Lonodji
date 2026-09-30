@@ -11,3 +11,7 @@ tsconfig.tsbuildinfo
 
 # archives laissées par un déploiement Netlify interrompu
 deploy-*.zip
+
+# brouillons (pages arabes avant relecture, lettre du mois) : hors dépôt public, copie de travail sur le Mac
+# dans ~/Documents/Lonodji-brouillons ; scripts/build-lettre.py les écrit ici en local.
+content/brouillons/

@@ -13,6 +13,8 @@ const fs = require("node:fs");
 const path = require("node:path");
 const ts = require("typescript");
 const pptxgen = require("pptxgenjs");
+// Contact officiel : seule source lib/contact.ts
+const TELEPHONE = /TELEPHONE = "([^"]+)"/.exec(require("fs").readFileSync(require("path").join(__dirname, "..", "lib", "contact.ts"), "utf8"))[1];
 
 const ROOT = path.resolve(__dirname, "..");
 const ID = path.join(ROOT, "public", "odeb", "identite");
@@ -187,7 +189,7 @@ async function modeles() {
     diapoColonnes(pres, m, 4, total, { eyebrow: "Deux ou trois colonnes", titre: "Comparer, mettre côte à côte", colonnes: [{ numero: "1", titre: "Première colonne", texte: "Ce qu’elle contient.", points: ["Un point", "Un autre"] }, { numero: "2", titre: "Deuxième colonne", texte: "Ce qu’elle contient.", points: ["Un point", "Un autre"] }, { numero: "3", titre: "Troisième colonne", texte: "Ce qu’elle contient.", points: ["Un point", "Un autre"] }] });
     diapoChiffres(pres, m, 5, total, { eyebrow: "Chiffres", titre: "Trois chiffres, datés et sourcés", chiffres: [{ valeur: "12", label: "Ce que le chiffre compte", note: "Source, date" }, { valeur: "345", label: "Ce que le chiffre compte", note: "Source, date" }, { valeur: "6 %", label: "Ce que le chiffre compte", note: "Source, date" }], note: "Un chiffre sans sa source et sa date ne se présente pas." });
     diapoEtapes(pres, m, 6, total, { eyebrow: "Étapes", titre: "Ce qui vient ensuite", etapes: [{ titre: "Première étape", texte: "Ce qu’elle demande, qui la porte, quand." }, { titre: "Deuxième étape", texte: "Ce qu’elle demande, qui la porte, quand." }, { titre: "Troisième étape", texte: "Ce qu’elle demande, qui la porte, quand." }] });
-    diapoFin(pres, m, { titre: m.devise, lignes: [m.long, `${m.url} · +235 66 29 94 03 (appel et WhatsApp)`] });
+    diapoFin(pres, m, { titre: m.devise, lignes: [m.long, `${m.url} · ${TELEPHONE} (appel et WhatsApp)`] });
     const out = path.join(ID, `modele-diaporama-${cle}-lonodji.pptx`);
     await pres.writeFile({ fileName: out });
     console.log("modèle :", path.relative(ROOT, out));
@@ -257,7 +259,7 @@ async function assemblee() {
   const aDecider = phases.flatMap((ph) => ph.chantiers.filter((ch) => ch.etat === "a-decider").map((ch) => `${ch.titre} — ${ch.note}`));
   diapoTexte(pres, m, n, total, { eyebrow: "Ce que l’assemblée décide", titre: "Les décisions attendues", points: ["Les cinq règles du programme 06 (règle d’affectation des bénéfices comprise)", "Les quatre directions de pôle, au rang de chef de projet : quatre candidatures à recevoir", `Les coordinations restant à pourvoir : ${thematiques - pourvues} thématique${thematiques - pourvues > 1 ? "s" : ""}${cellules.filter((x) => !x.filled).length ? ` et ${cellules.filter((x) => !x.filled).length} cellule${cellules.filter((x) => !x.filled).length > 1 ? "s" : ""}` : ""}`, ...aDecider] });
 
-  diapoFin(pres, m, { titre: ODEB.devise, lignes: ["Livre blanc, programmes, feuille de route : lonodji.org/odeb", "Écrire à l’association : lonodji.org/participer · +235 66 29 94 03"] });
+  diapoFin(pres, m, { titre: ODEB.devise, lignes: ["Livre blanc, programmes, feuille de route : lonodji.org/odeb", `Écrire à l’association : lonodji.org/participer · ${TELEPHONE}`] });
 
   const out = path.join(ROOT, "public", "odeb", "odeb-lonodji-presentation-assemblee-2026.pptx");
   await pres.writeFile({ fileName: out });

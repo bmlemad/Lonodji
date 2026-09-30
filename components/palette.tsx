@@ -67,10 +67,16 @@ export default function Palette() {
     };
     window.addEventListener("lonodji:palette", ouvrir);
     document.addEventListener("keydown", onKey);
+    // demande faite avant le chargement de la palette (deferred-chrome.tsx)
+    const w = window as Window & { __lonodjiEnAttente?: Set<string>; __lonodjiPret?: Set<string> };
+    (w.__lonodjiPret ??= new Set()).add("palette");
+    if (w.__lonodjiEnAttente?.delete("palette")) ouvrir();
     return () => { window.removeEventListener("lonodji:palette", ouvrir); document.removeEventListener("keydown", onKey); };
   }, []);
 
-  useEffect(() => { setOuverte(false); }, [pathname]);
+  // fermer à la navigation, pas au montage (sinon une demande rejouée au montage serait aussitôt refermée)
+  const cheminPrec = useRef(pathname);
+  useEffect(() => { if (cheminPrec.current !== pathname) { cheminPrec.current = pathname; setOuverte(false); } }, [pathname]);
 
   useEffect(() => {
     if (!ouverte) { document.body.classList.remove("palette-open"); setQ(""); setSel(0); return; }

@@ -12,9 +12,14 @@ import { programmesUtilesDe } from "@/lib/bailleurs";
 
 const partenairesDe = (id: string) => programmesUtilesDe(id).map((p) => ({ id: p.id, nom: p.nom.split(" — ")[0], proche: ["bedjondo", "koumra", "mandoul"].includes(p.portee) }));
 
+/* nombre de thématiques et de cellules, comptés dans content/index.json */
+const NB = (() => { const i = getIndex(); return { them: enLettres(thematiqueCount(i)), cell: enLettres(i.structure.cellules?.items.length ?? 0) }; })();
+const TITRE = `Nos actions — quatre pôles, ${NB.them} thématiques`;
+const DESCRIPTION = `Quatre pôles, ${NB.them} thématiques et ${NB.cell} cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés.`;
+
 export const metadata: Metadata = {
-  title: "Nos actions — quatre pôles, vingt thématiques",
-  description: "Quatre pôles, vingt thématiques et deux cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés.",
+  title: TITRE,
+  description: DESCRIPTION,
   alternates: { canonical: "/programmes", languages: alternatesLangues("/programmes") },
   openGraph: ogFor("/programmes"),
 };
@@ -29,11 +34,11 @@ export default function Programmes() {
   const extra = pickSections(page, { only: ["nos-actions-page-par-page", "odd-cadrage", "odd-index", "devenir-coordonnateur-dune-thematique"] });
   return (
     <main id="main-content" className="hub-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", "@graph": [webPageSchema({ url: "/programmes", name: "Nos actions — quatre pôles, vingt thématiques", description: "Quatre pôles, vingt thématiques et deux cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés." }), breadcrumbSchema([{ name: "Accueil", url: "/" }, { name: "Nos actions", url: "/programmes" }, { name: "Nos actions" }], "/programmes")] }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", "@graph": [webPageSchema({ url: "/programmes", name: TITRE, description: DESCRIPTION }), breadcrumbSchema([{ name: "Accueil", url: "/" }, { name: "Nos actions" }], "/programmes")] }) }} />
       <PageHeader
         eyebrow="Nos actions · pôles & thématiques"
         title="Quatre pôles,"
-        em="vingt thématiques."
+        em={`${NB.them} thématiques.`}
         lead={`Les Chantiers ADEB LONODJI : chaque pôle sera dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ; chaque thématique est animée par un coordonnateur ou une coordonnatrice, avance à son rythme et rend compte ici. ${enLettres(filled, true)} thématiques sont pourvues ; ${enLettres(total - filled)} cherchent encore la personne qui les portera, et les ${enLettres(dir.total - dir.pourvues)} directions de pôle sont à pourvoir.`}
       />
       <VuesThematiques active="poles" />
@@ -105,7 +110,7 @@ export default function Programmes() {
         <LegacyEnhance hasForms={page.forms.length > 0} />
       </section>
       <OuvrirAncre />
-      <Partager route="/programmes" titre="Nos actions" texte="Quatre pôles, vingt thématiques et deux cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés." />
+      <Partager route="/programmes" titre="Nos actions" texte={DESCRIPTION} />
     </main>
   );
 }

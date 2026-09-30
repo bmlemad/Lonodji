@@ -84,7 +84,9 @@ export function articleSchema(args: {
     datePublished: args.datePublished,
     image: [args.image],
     inLanguage: args.lang === "en" ? "en-GB" : "fr-FR",
-    author: args.byline && args.byline !== "ADEB LONODJI" ? { "@type": "Person", name: args.byline } : { "@id": organizationId },
+    // Une Person seulement pour une vraie signature nominative : « Rédaction ADEB LONODJI » ou « ADEB LONODJI »
+    // désignent l'association elle-même, pas une personne.
+    author: args.byline && !/ADEB LONODJI|^Rédaction\b/i.test(args.byline) ? { "@type": "Person", name: args.byline } : { "@id": organizationId },
     publisher: { "@id": organizationId },
     mainEntityOfPage: { "@id": `${SITE_URL}${args.url}#webpage` },
   };
