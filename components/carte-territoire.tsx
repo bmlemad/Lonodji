@@ -99,7 +99,10 @@ export default function CarteTerritoire() {
   useEffect(() => {
     if (!donnees || !boite.current || carte.current) return;
     let annule = false;
-    (async () => {
+    let observer: IntersectionObserver | undefined;
+    const initialiser = () => {
+      if (annule || carte.current || !boite.current) return;
+      (async () => {
       const L = (await import("leaflet")).default as unknown as typeof Leaflet;
       await import("leaflet/dist/leaflet.css");
       if (annule || !boite.current) return;
@@ -177,8 +180,23 @@ export default function CarteTerritoire() {
         m.fitBounds([[b[1], b[0]], [b[3], b[2]]]);
       }
       setPret(true);
-    })();
-    return () => { annule = true; };
+      })();
+    };
+    if ("IntersectionObserver" in window) {
+      observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          observer?.disconnect();
+          initialiser();
+        }
+      }, { rootMargin: "300px 0px" });
+      observer.observe(boite.current);
+    } else {
+      initialiser();
+    }
+    return () => {
+      annule = true;
+      observer?.disconnect();
+    };
   }, [donnees]);
 
   useEffect(() => () => { carte.current?.remove(); carte.current = null; }, []);
