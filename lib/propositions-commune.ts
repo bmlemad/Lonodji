@@ -214,3 +214,19 @@ export const PROJET_INTEGRE = {
   composantes: ["un marché moderne", "un centre de transformation agricole", "des forages solaires", "un fonds d’appui aux jeunes et aux femmes"],
   pourquoi: "Ces projets combinent création d’emplois, réduction de la pauvreté, autonomisation des femmes et des jeunes et développement économique local : c’est le type de projet que les partenaires du développement local — PNUD, Banque mondiale, AFD — financent le plus souvent, par l’intermédiaire des communes et des ministères.",
 };
+
+/* La démarche avec la commune et les autorités locales (30/09/2026) : ce que l'association fera, dans l'ordre.
+   « etat » dit où en est chaque étape ; à mettre à jour au fil des rencontres (et au journal des décisions). */
+export const DEMARCHE: { etape: string; texte: string; etat: string }[] = [
+  { etape: "Se mettre en règle", texte: "Récépissé à jour, bureau reconnu, compte bancaire au nom de l’association, et un point focal qui réside à Bédjondo : sans cela, aucune convention ne peut être signée.", etat: "en cours" },
+  { etape: "Ouvrir le dialogue", texte: "Une audience chez le maire pour remettre la note et ces propositions ; des visites au préfet du Mandoul Occidental, au sous-préfet de Péni, aux chefs de canton de Bébopen, Nderguigui et Yomi et à la chefferie de Bédjondo.", etat: "à venir" },
+  { etape: "Formaliser par écrit", texte: "Une convention-cadre d’une page — engagements de chacun, propriété et entretien des ouvrages, publication — et un comité de concertation trimestriel : mairie, association, autorités administratives et traditionnelles, femmes et jeunes.", etat: "à venir" },
+  { etape: "Un premier résultat en six mois", texte: "Le diagnostic participatif et l’inventaire des points d’eau remis à la commune, ou les outils numériques de la mairie ; puis l’éclairage solaire du marché, premier chantier visible.", etat: "à venir" },
+  { etape: "Chercher les financements avec la commune", texte: "La commune porte, l’association prépare : Bédjondo proposée comme commune pilote de l’appui suisse aux collectivités et du programme de gouvernance locale du PNUD.", etat: "à venir" },
+];
+export const REGLES_DEMARCHE = [
+  "ni parti ni candidat, et aucune substitution à la commune ou aux chefferies ;",
+  "aucune collecte d’argent avant l’ouverture d’un compte au nom de l’association ;",
+  "rien de promis qui ne soit écrit ;",
+  "chaque rencontre et chaque accord publiés et datés sur ce site.",
+];

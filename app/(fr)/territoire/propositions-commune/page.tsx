@@ -3,7 +3,7 @@ import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import { getIndex, getPage, metaDescription, ogFor } from "@/lib/content";
-import { APPORTS, EN_RETOUR, GROUPES, nombrePropositions, nombreSansDepense, PORTEURS, PROJET_INTEGRE, PROJETS_PRIORITAIRES, type Source } from "@/lib/propositions-commune";
+import { APPORTS, DEMARCHE, REGLES_DEMARCHE, EN_RETOUR, GROUPES, nombrePropositions, nombreSansDepense, PORTEURS, PROJET_INTEGRE, PROJETS_PRIORITAIRES, type Source } from "@/lib/propositions-commune";
 import { programmeParId } from "@/lib/bailleurs";
 
 const ROUTE = "/territoire/propositions-commune";
@@ -102,6 +102,7 @@ export default function PropositionsCommune() {
 
       <nav className="pc-sommaire" aria-label="Les six chantiers">
         {GROUPES.map((g, i) => <a key={g.id} href={`#${g.id}`}><b>{i + 1}</b>{g.titre.replace(/[,:]$/, "")} <span>{g.items.length}</span></a>)}
+        <a href="#demarche"><b>+</b>Notre démarche</a>
         <a href="#apports"><b>+</b>Ce que nous apportons</a>
       </nav>
 
@@ -118,6 +119,19 @@ export default function PropositionsCommune() {
           </ol>
         </section>
       ))}
+
+      <section className="hub-section" id="demarche">
+        <SectionHead eyebrow="Notre démarche" title="Travailler avec la commune" em="et les autorités locales." text="Cinq étapes, dans cet ordre. Chaque étape franchie sera datée ici et au journal des décisions." />
+        <ol className="pc-etapes">
+          {DEMARCHE.map((d) => (
+            <li key={d.etape}>
+              <p className="pc-etape-tete"><strong>{d.etape}</strong><span className={d.etat === "en cours" ? "pc-etat est-en-cours" : "pc-etat"}>{d.etat}</span></p>
+              <p>{d.texte}</p>
+            </li>
+          ))}
+        </ol>
+        <p className="pc-regles"><strong>Quatre règles tout du long :</strong> {REGLES_DEMARCHE.join(" ")}</p>
+      </section>
 
       <section className="hub-section" id="apports">
         <SectionHead eyebrow="Notre part" title="Ce que l’association apporte," em="et ce qu’elle demande en retour." text="L’association ne se substitue pas à la commune ; elle la sert. Ces engagements prennent place dans une convention écrite, et leur avancement est publié." />

@@ -1769,3 +1769,12 @@ details.source-plus > p{ margin-top:6px; }
 .pp-apport li{ margin:0 0 5px; }
 .pp-apport .pc-sources{ display:inline; font-size:12.5px; }
 .pp-apport-vide{ margin:0; font-size:13.5px; color:var(--muted); }
+.pc-etapes{ list-style:none; margin:0; padding:0; counter-reset:et; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr)); gap:12px; }
+.pc-etapes > li{ counter-increment:et; padding:16px 18px; border-radius:18px; border:1px solid var(--line); background:#fff; }
+.pc-etapes > li::before{ content:counter(et); display:grid; place-items:center; width:28px; height:28px; margin-bottom:10px; border-radius:50%; background:var(--deep); color:#fff; font-weight:700; font-size:14px; }
+.pc-etape-tete{ margin:0 0 6px; display:flex; flex-direction:column; gap:6px; align-items:flex-start; }
+.pc-etape-tete strong{ font-size:16px; }
+.pc-etapes p{ margin:0; font-size:14.5px; line-height:1.55; }
+.pc-etat{ padding:2px 9px; border-radius:999px; background:#f1f1ec; color:#4f5f58; font-size:12px; font-weight:600; }
+.pc-etat.est-en-cours{ background:#2d4a14; color:#fff; }
+.pc-regles{ margin:16px 0 0; max-width:980px; font-size:14.5px; line-height:1.6; }
