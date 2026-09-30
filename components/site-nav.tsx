@@ -185,7 +185,7 @@ export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephone, te
   return (
     <>
       <nav className="nav" aria-label={en ? "Main navigation" : "Navigation principale"} ref={navRef}>
-        <Link className="brand" href={en ? "/en/index" : "/"} aria-label={en ? "ADEB LONODJI — home" : "ADEB LONODJI — accueil"} onClick={() => { fermer(); setMenu(false); }}><span className="logo-verre" aria-hidden="true"><img src="/icones/logo-motif-verre.svg" alt="" width={30} height={34} decoding="async" /></span><span className="brand-name"><span>ADEB</span>{" "}<b>LONODJI</b></span></Link>
+        <Link className="brand" href={en ? "/en/index" : "/"} aria-label={en ? "ADEB LONODJI — home" : "ADEB LONODJI — accueil"} onClick={() => { fermer(); setMenu(false); }}><span className="logo-verre" aria-hidden="true"><img src="/icones/logo-motif-verre.svg" alt="" width={30} height={34} decoding="async" /></span><span className="brand-name"><span className="brand-mot"><span>ADEB</span>{" "}<b>LONODJI</b></span><span className="brand-sous">{en ? "Bédjondo & its diaspora" : "Bédjondo & sa diaspora"}</span></span></Link>
         <div className="links">
           {en
             ? <>

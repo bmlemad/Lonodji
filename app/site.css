@@ -1422,60 +1422,6 @@ main :where(ul, ol):not([class]):not(nav *) > li, main .plea-next > li, main .od
 .requis{ color:#8a3b12; font-weight:700; }
 .form-requis{ font-size:13px; color:var(--muted); margin:0 0 14px; }
 
-/* ==========================================================================
-   Logo en verre (29 septembre 2026) : plus grand, disque de verre dépoli
-   (fond flouté, bord de lumière, reflet), motif net « Les Pas vers l’Avenir ».
-   ========================================================================== */
-.logo-verre{
-  position:relative; flex:none; display:grid; place-items:center;
-  width:50px; height:50px; border-radius:50%; isolation:isolate; overflow:hidden;
-  background:
-    radial-gradient(120% 90% at 28% 12%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.55) 38%, rgba(255,255,255,.18) 70%),
-    linear-gradient(160deg, rgba(246,211,92,.22), rgba(182,207,69,.16) 45%, rgba(23,59,45,.14));
-  -webkit-backdrop-filter:blur(14px) saturate(170%); backdrop-filter:blur(14px) saturate(170%);
-  border:1px solid rgba(255,255,255,.95);
-  box-shadow:
-    inset 0 1.5px 0 rgba(255,255,255,1),
-    inset 0 -8px 14px rgba(23,59,45,.12),
-    inset 0 0 0 1px rgba(255,255,255,.35),
-    0 10px 24px rgba(23,59,45,.20),
-    0 0 0 1px rgba(23,59,45,.10);
-  transition:transform .25s ease, box-shadow .25s ease;
-}
-/* reflet en arc sur le haut du verre */
-.logo-verre::before{
-  content:""; position:absolute; z-index:2; left:12%; right:12%; top:5%; height:42%;
-  border-radius:50% 50% 45% 45% / 60% 60% 40% 40%;
-  background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,0));
-  opacity:.55; pointer-events:none;
-}
-/* halo doré du soleil, derrière le motif */
-.logo-verre::after{
-  content:""; position:absolute; z-index:0; left:50%; top:30%; width:70%; height:50%; transform:translate(-50%,-50%);
-  background:radial-gradient(closest-side, rgba(246,211,92,.55), rgba(246,211,92,0)); pointer-events:none;
-}
-.logo-verre img{ position:relative; z-index:1; width:31px; height:auto; filter:drop-shadow(0 1px 1px rgba(255,255,255,.7)); }
-.brand:hover .logo-verre, .brand:focus-visible .logo-verre{ transform:translateY(-1px) scale(1.04); box-shadow:inset 0 1.5px 0 #fff, inset 0 -8px 14px rgba(23,59,45,.12), 0 14px 30px rgba(23,59,45,.26), 0 0 0 1px rgba(23,59,45,.12); }
-.brand{ gap:12px; }
-.brand-name{ font-size:14px; letter-spacing:.09em; }
-.logo-verre--pied{ width:44px; height:44px; }
-.logo-verre--pied img{ width:27px; }
-.footer-brand{ gap:12px; font-size:13px; }
-@media (max-width:800px){
-  .logo-verre{ width:44px; height:44px; }
-  .logo-verre img{ width:27px; }
-}
-@media (prefers-reduced-motion:reduce){ .logo-verre{ transition:none; } .brand:hover .logo-verre{ transform:none; } }
-.logo-verre img{ width:34px; }
-.logo-verre--pied img{ width:29px; }
-/* téléphone : le nom revient à côté du logo, sur deux lignes */
-@media (max-width:520px){
-  .brand{ gap:8px; }
-  .brand-name{ display:flex; flex-direction:column; gap:0; font-size:10.5px; line-height:1.15; letter-spacing:.1em; }
-  .logo-verre img{ width:30px; }
-}
-@media (max-width:359px){ .brand-name{ display:none; } }
-
 /* Page « Programmes des bailleurs au Tchad » */
 .bl-bref{ list-style:none; padding:0; margin:0; display:grid; gap:12px; max-width:880px; }
 .bl-bref li{ padding:16px 20px; border-radius:var(--r-carte-s); border:1px solid var(--carte-filet); background:var(--carte-fond); line-height:1.6; }
@@ -1586,31 +1532,6 @@ main :where(ul, ol):not([class]):not(nav *) > li, main .plea-next > li, main .od
   html.is-standalone .nav .menu-toggle, html.is-standalone .nav .nav-cta{ display:none !important; }
 }
 .footer-address{ max-width:none; }
-/* Logo agrandi (29/09, demande « agrandir considérablement ») : médaillon de verre qui déborde de la barre,
-   sans épaissir le menu ; il se réduit quand la barre se compacte au défilement. */
-.nav .logo-verre{ width:78px; height:78px; margin:-16px 0 -24px; transition:width .22s ease, height .22s ease, margin .22s ease, transform .25s ease, box-shadow .25s ease; }
-.nav .logo-verre img{ width:52px; }
-.nav .brand{ gap:14px; }
-.nav .brand-name{ font-size:16px; }
-html.nav-compact .nav .logo-verre{ width:56px; height:56px; margin:-8px 0 -10px; }
-html.nav-compact .nav .logo-verre img{ width:37px; }
-.logo-verre--pied{ width:72px; height:72px; }
-.logo-verre--pied img{ width:48px; }
-.footer-brand{ gap:14px; font-size:15px; }
-@media (max-width:800px){
-  .nav .logo-verre{ width:62px; height:62px; margin:-12px 0 -18px; }
-  .nav .logo-verre img{ width:41px; }
-  html.nav-compact .nav .logo-verre{ width:48px; height:48px; margin:-6px 0 -8px; }
-  html.nav-compact .nav .logo-verre img{ width:32px; }
-}
-@media (max-width:520px){
-  .nav .brand-name{ font-size:11.5px; }
-}
-@media (prefers-reduced-motion:reduce){ .nav .logo-verre{ transition:none; } }
-.nav .logo-verre img{ width:47px; transform:translateX(2px); }
-html.nav-compact .nav .logo-verre img{ width:34px; }
-.logo-verre--pied img{ width:44px; transform:translateX(2px); }
-@media (max-width:800px){ .nav .logo-verre img{ width:37px; } html.nav-compact .nav .logo-verre img{ width:29px; } }
 .btl-points{ margin:0; padding-left:1.1em; display:grid; gap:6px; font-size:14.5px; line-height:1.55; }
 .btl-points li::marker{ color:var(--deep); }
 /* contraste AA du compteur « documenté » du diagnostic territorial */
@@ -1778,3 +1699,51 @@ details.source-plus > p{ margin-top:6px; }
 .pc-etat{ padding:2px 9px; border-radius:999px; background:#f1f1ec; color:#4f5f58; font-size:12px; font-weight:600; }
 .pc-etat.est-en-cours{ background:#2d4a14; color:#fff; }
 .pc-regles{ margin:16px 0 0; max-width:980px; font-size:14.5px; line-height:1.6; }
+
+/* ==========================================================================
+   Logo (30 septembre 2026, « meilleure intégration ») — une seule règle, ici.
+   Le médaillon de verre tient DANS la barre (il n'en déborde plus), le motif
+   « Les Pas vers l'Avenir » remplit le disque, et le nom forme avec lui une
+   signature : ADEB LONODJI sur une ligne, « Bédjondo & sa diaspora » dessous.
+   ========================================================================== */
+.brand{ display:inline-flex; align-items:center; gap:12px; text-decoration:none; color:var(--deep); }
+.logo-verre{
+  position:relative; flex:none; display:grid; place-items:center;
+  width:58px; height:58px; border-radius:50%; isolation:isolate; overflow:hidden;
+  background:
+    radial-gradient(120% 90% at 28% 12%, rgba(255,255,255,.96) 0%, rgba(255,255,255,.6) 40%, rgba(255,255,255,.22) 72%),
+    linear-gradient(160deg, rgba(246,211,92,.2), rgba(182,207,69,.16) 45%, rgba(23,59,45,.12));
+  -webkit-backdrop-filter:blur(12px) saturate(160%); backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.95);
+  box-shadow:inset 0 1.5px 0 #fff, inset 0 -6px 12px rgba(23,59,45,.10), 0 0 0 1px rgba(23,59,45,.12), 0 4px 12px rgba(23,59,45,.14);
+  transition:width .22s ease, height .22s ease, transform .25s ease, box-shadow .25s ease;
+}
+.logo-verre::before{ content:""; position:absolute; z-index:2; left:14%; right:14%; top:5%; height:40%; border-radius:50% 50% 45% 45% / 60% 60% 40% 40%; background:linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,0)); opacity:.5; pointer-events:none; }
+.logo-verre::after{ content:""; position:absolute; z-index:0; left:54%; top:32%; width:70%; height:50%; transform:translate(-50%,-50%); background:radial-gradient(closest-side, rgba(246,211,92,.5), rgba(246,211,92,0)); pointer-events:none; }
+/* le motif occupe 70 % du disque, recentré optiquement (le soleil est à droite, les pas à gauche) */
+.logo-verre img{ position:relative; z-index:1; width:70%; height:auto; transform:translate(1px,1px); filter:drop-shadow(0 1px 1px rgba(255,255,255,.7)); }
+.brand:hover .logo-verre, .brand:focus-visible .logo-verre{ transform:scale(1.04); box-shadow:inset 0 1.5px 0 #fff, inset 0 -6px 12px rgba(23,59,45,.10), 0 0 0 1px rgba(23,59,45,.18), 0 8px 18px rgba(23,59,45,.2); }
+.brand-name{ display:flex; flex-direction:column; gap:3px; line-height:1.1; }
+.brand-mot{ font-size:16px; letter-spacing:.09em; white-space:nowrap; }
+.brand-mot b{ font-weight:400; }
+.brand-sous{ font-size:11.5px; letter-spacing:.02em; color:var(--muted); font-weight:500; white-space:nowrap; }
+/* barre de navigation : le médaillon est contenu, la barre prend 4 px de plus au lieu de déborder */
+.nav .logo-verre{ margin:-4px 0; }
+html.nav-compact .nav .logo-verre{ width:46px; height:46px; margin:-2px 0; }
+html.nav-compact .nav .brand-sous{ display:none; }
+@media (max-width:1180px){ .nav .brand-sous{ display:none; } }
+@media (max-width:800px){
+  .nav .logo-verre{ width:50px; height:50px; margin:-3px 0; }
+  html.nav-compact .nav .logo-verre{ width:42px; height:42px; margin:0; }
+  .nav .brand{ gap:9px; }
+}
+/* téléphone : ADEB au-dessus de LONODJI, à côté du médaillon */
+@media (max-width:520px){
+  .nav .brand-mot{ display:flex; flex-direction:column; font-size:11.5px; line-height:1.15; letter-spacing:.1em; }
+}
+@media (max-width:359px){ .nav .brand-name{ display:none; } }
+/* pied de page : même signature, plus grande */
+.footer-brand{ display:flex; align-items:center; gap:14px; color:var(--deep); }
+.logo-verre--pied{ width:68px; height:68px; }
+.footer-brand .brand-mot{ font-size:18px; }
+@media (prefers-reduced-motion:reduce){ .logo-verre{ transition:none; } .brand:hover .logo-verre{ transform:none; } }
