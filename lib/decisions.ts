@@ -61,11 +61,25 @@ export const DECISIONS: Decision[] = [
     suite: "L’adresse de chaque siège, sa date d’ouverture et le partage des responsabilités ne sont pas encore fixés publiquement.",
   },
   {
+    id: "2026-28", date: "2026-09-30", type: "nomination",
+    titre: "Mémoire & héritage : Félix Mbété Nangmbatnan coordonnateur",
+    texte: "La coordination de la thématique 01, Mémoire & héritage (pôle Mémoire, culture & patrimoine), est confiée à Félix Mbété Nangmbatnan. Il succède au Dr Bé-Rammaj Miaro-II, qui dirige le pôle depuis le même jour (2026-26). Félix Mbété Nangmbatnan avait coordonné Culture & patrimoine vivant du 22 au 28 septembre 2026.",
+    sources: [{ label: "Nos actions", href: "/programmes#memoire-heritage" }],
+    suite: "Le nombre de thématiques pourvues ne change pas avec cette succession.",
+  },
+  {
+    id: "2026-27", date: "2026-09-30", type: "nomination",
+    titre: "Direction du pôle Développement humain & moyens d’existence : Franco Joseph Ngarlena",
+    texte: "La direction du pôle II, Développement humain & moyens d’existence, au rang de chef de projet, est confiée à Franco Joseph Ngarlena. C’est la deuxième des quatre directions de pôle créées le 28 septembre 2026 à être pourvue, après celle du pôle I.",
+    sources: [{ label: "Nos actions", href: "/programmes#pole-2" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }],
+    suite: "Les directions des pôles III et IV restent à pourvoir.",
+  },
+  {
     id: "2026-26", date: "2026-09-30", type: "nomination",
     titre: "Direction du pôle Mémoire, culture & patrimoine : Dr Bé-Rammaj Miaro-II",
     texte: "La direction du pôle I, Mémoire, culture & patrimoine, au rang de chef de projet, est confiée au Dr Bé-Rammaj Miaro-II, déjà coordonnateur de la thématique Mémoire & héritage. C’est la première des quatre directions de pôle créées le 28 septembre 2026 à être pourvue.",
     sources: [{ label: "Nos actions", href: "/programmes#pole-1" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }],
-    suite: "Les directions des pôles II, III et IV restent à pourvoir.",
+    suite: "Le même jour, la direction du pôle II est confiée à Franco Joseph Ngarlena (2026-27).",
   },
   {
     id: "2026-25", date: "2026-09-30", type: "nomination",
@@ -139,7 +153,7 @@ export const DECISIONS: Decision[] = [
     titre: "Création des directions de pôle, au rang de chef de projet",
     texte: "Chaque pôle a désormais une direction, distincte de la coordination des thématiques : elle anime les coordonnateurs, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets, rend compte au bureau et à l’assemblée. Quatre postes ouverts à tout membre.",
     sources: [{ label: "Article du 28 septembre 2026", href: "/journal/2026-09-28-directions-de-pole" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }],
-    suite: "Les quatre directions sont à pourvoir.",
+    suite: "Les quatre directions étaient à pourvoir à leur création ; celles des pôles I et II sont pourvues le 30 septembre 2026 (2026-26, 2026-27).",
   },
   {
     id: "2026-11", date: "2026-09-28", type: "proposition",

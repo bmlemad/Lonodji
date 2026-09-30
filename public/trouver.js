@@ -19,7 +19,7 @@ window.__initTrouver = function () {
     "pole": "Pôle I · Thématique 01",
     "name": "Mémoire & héritage",
     "status": "filled",
-    "coord": "Coordonnateur : Dr Bé-Rammaj Miaro-II, historien",
+    "coord": "Coordonnateur : Félix Mbété Nangmbatnan",
     "desc": "Origines, histoire des cantons, grandes figures, archives physiques et numériques et témoignages.",
     "page": [
       "/mission",

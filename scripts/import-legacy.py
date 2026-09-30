@@ -443,8 +443,10 @@ ROMAN = {"pole-1": "I", "pole-2": "II", "pole-3": "III", "pole-4": "IV"}
 # ou une directrice de pôle, au rang de chef de projet (project manager), qui anime les
 # coordonnateurs de ses thématiques, tient le plan d'action et le calendrier, et rend
 # compte au bureau. Nommer quelqu'un : DIRECTIONS_POLES["pole-2"] = "Prénom Nom, qualité".
-# 30/09/2026 : direction du pôle I confiée au Dr Bé-Rammaj Miaro-II (déjà coordonnateur de Mémoire & héritage).
-DIRECTIONS_POLES: dict[str, str | None] = {"pole-1": "Dr Bé-Rammaj Miaro-II", "pole-2": None, "pole-3": None, "pole-4": None}
+# 30/09/2026 : direction du pôle I confiée au Dr Bé-Rammaj Miaro-II (qui laisse la coordination de Mémoire & héritage
+# à Félix Mbété Nangmbatnan) ;
+# direction du pôle II (Développement humain & moyens d'existence) confiée à Franco Joseph Ngarlena.
+DIRECTIONS_POLES: dict[str, str | None] = {"pole-1": "Dr Bé-Rammaj Miaro-II", "pole-2": "Franco Joseph Ngarlena", "pole-3": None, "pole-4": None}
 DIRECTION_LABEL = "Directeur ou directrice de pôle"
 DIRECTION_RANG = "rang de chef de projet"
 
@@ -781,6 +783,12 @@ UPDATES_SOURCE = [
     ('<p class="coord">Coordonnateur&nbsp;: Félix Mbété Nangmbatnan</p>', '<p class="coord">Coordonnateur&nbsp;: Dr Yaphete Madjiradé</p>'),
     ('<p class="coord">Coordinator: F&eacute;lix Mb&eacute;t&eacute; Nangmbatnan</p>', '<p class="coord">Coordinator: Dr Yaphete Madjirad&eacute;</p>'),
     ('"coord": "Coordonnateur : Félix Mbété Nangmbatnan",', '"coord": "Coordonnateur : Dr Yaphete Madjiradé",'),
+    # 30/09/2026 : la coordination de Mémoire & héritage est confiée à Félix Mbété Nangmbatnan ; le Dr Bé-Rammaj
+    # Miaro-II, qui la tenait, dirige depuis le même jour le pôle Mémoire, culture & patrimoine.
+    ('<span class="coord-qui">Dr Bé-Rammaj Miaro-II, historien</span>', '<span class="coord-qui">Félix Mbété Nangmbatnan</span>'),
+    ('<p class="coord">Coordonnateur&nbsp;: Dr Bé-Rammaj Miaro-II, historien</p>', '<p class="coord">Coordonnateur&nbsp;: Félix Mbété Nangmbatnan</p>'),
+    ('<p class="coord">Coordinator: Dr B&eacute;-Rammaj Miaro-II, historian</p>', '<p class="coord">Coordinator: F&eacute;lix Mb&eacute;t&eacute; Nangmbatnan</p>'),
+    ('"coord": "Coordonnateur : Dr Bé-Rammaj Miaro-II, historien",', '"coord": "Coordonnateur : Félix Mbété Nangmbatnan",'),
     # 28/09/2026 : objet « Le projet ODEB LONODJI » dans le formulaire de contact (remarques sur le livre blanc)
     ('              <option data-objet="partenariat">Partenariat, presse ou recherche</option>\n',
      '              <option data-objet="odeb">Le projet ODEB LONODJI (livre blanc, remarques, contributions)</option>\n              <option data-objet="partenariat">Partenariat, presse ou recherche</option>\n'),
@@ -900,6 +908,8 @@ def nominations_source() -> list[tuple[str, str]]:
 NOTES_COORDINATION = [
     # (marqueur dans la source, note ajoutée à la fin de la description de la carte, fichiers concernés)
     ('<p class="coord">Coordonnateur&nbsp;: Dr Yaphete Madjiradé</p>', " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée au Dr Yaphete Madjiradé, qui succède à Félix Mbété Nangmbatnan.", ("poles.html",)),
+    ('<p class="coord">Coordonnateur&nbsp;: Félix Mbété Nangmbatnan</p>', " <strong>Mise à jour du 30 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée à Félix Mbété Nangmbatnan, qui succède au Dr Bé-Rammaj Miaro-II, devenu directeur du pôle Mémoire, culture &amp; patrimoine.", ("poles.html",)),
+    ('<p class="coord">Coordinator: F&eacute;lix Mb&eacute;t&eacute; Nangmbatnan</p>', " <strong>Update, 30 September 2026:</strong> the theme is now coordinated by F&eacute;lix Mb&eacute;t&eacute; Nangmbatnan, who succeeds Dr B&eacute;-Rammaj Miaro-II, now Pillar Lead of Memory, Culture &amp; Heritage.", ("themes.html",)),
     ('<p class="coord">Coordinator: Dr Yaphete Madjirad&eacute;</p>', " <strong>Update, 28 September 2026:</strong> the theme is now coordinated by Dr Yaphete Madjirad&eacute;, who succeeds F&eacute;lix Mb&eacute;t&eacute; Nangmbatnan.", ("themes.html",)),
 ] + [(f'<h3>{fr}</h3>\n          <p class="coord">{libelle_coord(_a)}&nbsp;: {qui}</p>', nf, ("poles.html",)) for _a, fr, _en, _js, _p, qui, _qe, nf, _ne in NOMINATIONS] \
   + [(f'<h3>{en}</h3>\n          <p class="coord">Coordinator: {qui_en}</p>', ne, ("themes.html",)) for _a, _fr, en, _js, _p, _q, qui_en, _nf, ne in NOMINATIONS]

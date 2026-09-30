@@ -206,6 +206,7 @@ async function assemblee() {
   const phases = feuilleDeRoute(c);
   const poles = index.structure.poles;
   const cellules = (index.structure.cellules && index.structure.cellules.items) || [];
+  const dirOuvertes = poles.filter((p) => p.direction && !p.direction.filled).length;
   const m = marque("odeb");
   const pres = nouveau("Projet ODEB LONODJI — présentation à l’assemblée", "Vision 2030, six programmes, cinq règles à voter");
   const p06 = PROGRAMMES.find((p) => p.numero === "06");
@@ -257,7 +258,7 @@ async function assemblee() {
 
   n += 1;
   const aDecider = phases.flatMap((ph) => ph.chantiers.filter((ch) => ch.etat === "a-decider").map((ch) => `${ch.titre} — ${ch.note}`));
-  diapoTexte(pres, m, n, total, { eyebrow: "Ce que l’assemblée décide", titre: "Les décisions attendues", points: ["Les cinq règles du programme 06 (règle d’affectation des bénéfices comprise)", "Les quatre directions de pôle, au rang de chef de projet : quatre candidatures à recevoir", `Les coordinations restant à pourvoir : ${thematiques - pourvues} thématique${thematiques - pourvues > 1 ? "s" : ""}${cellules.filter((x) => !x.filled).length ? ` et ${cellules.filter((x) => !x.filled).length} cellule${cellules.filter((x) => !x.filled).length > 1 ? "s" : ""}` : ""}`, ...aDecider] });
+  diapoTexte(pres, m, n, total, { eyebrow: "Ce que l’assemblée décide", titre: "Les décisions attendues", points: ["Les cinq règles du programme 06 (règle d’affectation des bénéfices comprise)", ...(dirOuvertes ? [dirOuvertes === poles.length ? "Les quatre directions de pôle, au rang de chef de projet : quatre candidatures à recevoir" : `Les directions de pôle encore à pourvoir, au rang de chef de projet : ${dirOuvertes === 1 ? "une" : enLettresMaj(dirOuvertes).toLowerCase()} sur quatre (pôles ${poles.filter((p) => !p.direction.filled).map((p) => p.roman).join(", ")})`] : []), `Les coordinations restant à pourvoir : ${thematiques - pourvues} thématique${thematiques - pourvues > 1 ? "s" : ""}${cellules.filter((x) => !x.filled).length ? ` et ${cellules.filter((x) => !x.filled).length} cellule${cellules.filter((x) => !x.filled).length > 1 ? "s" : ""}` : ""}`, ...aDecider] });
 
   diapoFin(pres, m, { titre: ODEB.devise, lignes: ["Livre blanc, programmes, feuille de route : lonodji.org/odeb", `Écrire à l’association : lonodji.org/participer · ${TELEPHONE}`] });
 

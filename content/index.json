@@ -345,7 +345,7 @@
    "lede": "Les Chantiers ADEB LONODJI sont les projets de réflexion, de recherche et d’action portés par l’association. Pour les organiser, ADEB LONODJI structure son action autour de vingt thématiques réparties en quatre pôles, appuyées par deux cellules transversales — dont un pôle spécialisé Numérique & innovation, créé en septembre 2026. Chaque thématique est animée par un coordonnateur. Cette organisation en pôles est notre méthodologie de travail en équipe : elle permet une bonne coordination des actions entre les thématiques, au lieu d’initiatives dispersées. Chaque thématique est en outre mise en regard des Objectifs de développement durable adoptés par les Nations unies, pour que nos partenaires situent immédiatement notre travail.",
    "description": "Quatre pôles, vingt thématiques et deux cellules transversales pour organiser l’action d’ADEB LONODJI.",
    "parent": "Accueil",
-   "words": 5661,
+   "words": 5692,
    "hasMap": false
   },
   {
@@ -369,7 +369,7 @@
    "lede": "Chaque problématique que nous avons recensée est reliée à la thématique qui doit la porter, et chaque thématique à son plaidoyer quand il existe. Une seule page pour voir où nous en sommes : ce qui avance, ce qui attend un coordonnateur ou une coordonnatrice, et ce que nous n’avons pas encore commencé à documenter.",
    "description": "Chaque problématique reliée à sa thématique, chaque thématique à son plaidoyer s’il existe : le tableau de bord de suivi des actions d’ADEB LONODJI, thématique par thématique.",
    "parent": "Nos actions",
-   "words": 1569,
+   "words": 1568,
    "hasMap": false
   },
   {
@@ -537,7 +537,7 @@
    "lede": "ADEB LONODJI organises its work into twenty themes grouped in four pillars, supported by two cross-cutting units. Each theme is meant to be led by a coordinator who reports to the membership. This page is the English summary; every theme has a fuller description en français .",
    "description": "How ADEB LONODJI organises its work: four pillars, twenty themes and two cross-cutting units, each set against the UN Sustainable Development Goals it touches.",
    "parent": "Home",
-   "words": 2975,
+   "words": 3000,
    "hasMap": false
   }
  ],
@@ -1348,10 +1348,10 @@
       "name": "Mémoire & héritage",
       "status": "Pourvu",
       "filled": true,
-      "coordinator": "Dr Bé-Rammaj Miaro-II, historien",
+      "coordinator": "Félix Mbété Nangmbatnan",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Origines, histoire des cantons, <a href=\"/histoire\">grandes figures</a>, archives physiques et numériques et témoignages. Documentation systématique de la tradition et de la transmission orale (récits des anciens, généalogies, rites, savoirs pratiques) avant qu’elles ne se perdent. Démarches pour que des monuments, routes, places, écoles et édifices publics portent le nom des grandes figures de la communauté. Piste envisagée à plus long terme : un musée dédié au peuple bedjond, à Bédjondo, un lieu physique où seraient rassemblés objets, archives et témoignages, en écho au musée virtuel porté par la thématique Recherche & savoirs. Lieu d’implantation, statut, financement et calendrier restent à définir avec la commune et les partenaires. Ce que nous ne savons pas encore, nous le disons ; ce chantier avancera au rythme des décisions prises collectivement, pas avant.",
-      "descriptionText": "Origines, histoire des cantons, grandes figures , archives physiques et numériques et témoignages. Documentation systématique de la tradition et de la transmission orale (récits des anciens, généalogies, rites, savoirs pratiques) avant qu’elles ne se perdent. Démarches pour que des monuments, routes, places, écoles et édifices publics portent le nom des grandes figures de la communauté. Piste envisagée à plus long terme : un musée dédié au peuple bedjond, à Bédjondo, un lieu physique où seraient rassemblés objets, archives et témoignages, en écho au musée virtuel porté par la thématique Recherche & savoirs. Lieu d’implantation, statut, financement et calendrier restent à définir avec la commune et les partenaires. Ce que nous ne savons pas encore, nous le disons ; ce chantier avancera au rythme des décisions prises collectivement, pas avant.",
+      "description": "Origines, histoire des cantons, <a href=\"/histoire\">grandes figures</a>, archives physiques et numériques et témoignages. Documentation systématique de la tradition et de la transmission orale (récits des anciens, généalogies, rites, savoirs pratiques) avant qu’elles ne se perdent. Démarches pour que des monuments, routes, places, écoles et édifices publics portent le nom des grandes figures de la communauté. Piste envisagée à plus long terme : un musée dédié au peuple bedjond, à Bédjondo, un lieu physique où seraient rassemblés objets, archives et témoignages, en écho au musée virtuel porté par la thématique Recherche & savoirs. Lieu d’implantation, statut, financement et calendrier restent à définir avec la commune et les partenaires. Ce que nous ne savons pas encore, nous le disons ; ce chantier avancera au rythme des décisions prises collectivement, pas avant. <strong>Mise à jour du 30 septembre 2026 :</strong> la coordination de la thématique est confiée à Félix Mbété Nangmbatnan, qui succède au Dr Bé-Rammaj Miaro-II, devenu directeur du pôle Mémoire, culture & patrimoine.",
+      "descriptionText": "Origines, histoire des cantons, grandes figures , archives physiques et numériques et témoignages. Documentation systématique de la tradition et de la transmission orale (récits des anciens, généalogies, rites, savoirs pratiques) avant qu’elles ne se perdent. Démarches pour que des monuments, routes, places, écoles et édifices publics portent le nom des grandes figures de la communauté. Piste envisagée à plus long terme : un musée dédié au peuple bedjond, à Bédjondo, un lieu physique où seraient rassemblés objets, archives et témoignages, en écho au musée virtuel porté par la thématique Recherche & savoirs. Lieu d’implantation, statut, financement et calendrier restent à définir avec la commune et les partenaires. Ce que nous ne savons pas encore, nous le disons ; ce chantier avancera au rythme des décisions prises collectivement, pas avant. Mise à jour du 30 septembre 2026 : la coordination de la thématique est confiée à Félix Mbété Nangmbatnan, qui succède au Dr Bé-Rammaj Miaro-II, devenu directeur du pôle Mémoire, culture & patrimoine.",
       "tags": [
        "Origines",
        "Archives",
@@ -2127,8 +2127,8 @@
     "direction": {
      "label": "Directeur ou directrice de pôle",
      "rang": "rang de chef de projet",
-     "name": "à pourvoir",
-     "filled": false
+     "name": "Franco Joseph Ngarlena",
+     "filled": true
     }
    },
    {

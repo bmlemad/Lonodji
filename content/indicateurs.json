@@ -1,5 +1,5 @@
 {
- "genere": "2026-09-30T18:14:15Z",
+ "genere": "2026-09-30T19:05:05Z",
  "contenu": {
   "plaidoyers": {
    "publies": 8,
@@ -10,7 +10,9 @@
    "pourvues": 16,
    "total": 20,
    "cellulesPourvues": 1,
-   "cellulesTotal": 2
+   "cellulesTotal": 2,
+   "directionsPourvues": 2,
+   "directionsTotal": 4
   },
   "articles": 43,
   "premierArticle": "2026-09-11",

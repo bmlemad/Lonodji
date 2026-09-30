@@ -39,7 +39,7 @@ export default function Programmes() {
         eyebrow="Nos actions · pôles & thématiques"
         title="Quatre pôles,"
         em={`${NB.them} thématiques.`}
-        lead={`Les Chantiers ADEB LONODJI : chaque pôle sera dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ; chaque thématique est animée par un coordonnateur ou une coordonnatrice, avance à son rythme et rend compte ici. ${enLettres(filled, true)} thématiques sont pourvues ; ${enLettres(total - filled)} cherchent encore la personne qui les portera, et les ${enLettres(dir.total - dir.pourvues)} directions de pôle sont à pourvoir.`}
+        lead={`Les Chantiers ADEB LONODJI : chaque pôle sera dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ; chaque thématique est animée par un coordonnateur ou une coordonnatrice, avance à son rythme et rend compte ici. ${enLettres(filled, true)} thématiques sont pourvues ; ${enLettres(total - filled)} cherchent encore la personne qui les portera, ${dir.pourvues === dir.total ? "et chaque pôle a sa direction." : dir.pourvues ? (dir.total - dir.pourvues > 1 ? `et ${enLettres(dir.total - dir.pourvues)} directions de pôle sur ${enLettres(dir.total)} sont à pourvoir.` : `et une direction de pôle sur ${enLettres(dir.total)} est à pourvoir.`) : `et les ${enLettres(dir.total)} directions de pôle sont à pourvoir.`}`}
       />
       <VuesThematiques active="poles" />
       <Stats items={[

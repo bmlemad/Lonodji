@@ -15,8 +15,8 @@
    "pole": "pole-2",
    "roman": "II",
    "nom": "Développement humain & moyens d’existence",
-   "pourvue": false,
-   "qui": "à pourvoir",
+   "pourvue": true,
+   "qui": "Franco Joseph Ngarlena",
    "pdf": "/missions/fiche-mission-direction-pole-2.pdf",
    "thematiques": 10
   },
@@ -47,7 +47,7 @@
    "pole": "I",
    "poleNom": "Mémoire, culture & patrimoine",
    "pourvue": true,
-   "qui": "Dr Bé-Rammaj Miaro-II, historien",
+   "qui": "Félix Mbété Nangmbatnan",
    "pdf": "/missions/fiche-mission-coordination-memoire-heritage.pdf"
   },
   {

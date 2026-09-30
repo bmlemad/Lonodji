@@ -19,7 +19,7 @@ const values = [
 
 /* Postes ouverts, comptés dans content/index.json : thématiques, cellules transversales, directions de pôle. */
 const postesOuverts = (vacantes: number, cellules: number, directions: number) =>
-  `${enLettres(vacantes, true)} thématique${vacantes > 1 ? "s" : ""}${cellules ? ` et ${cellules > 1 ? `${enLettres(cellules)} cellules transversales` : "une cellule transversale"}` : ""} cherchent leur coordonnateur${directions ? ` ; ${directions > 1 ? `les ${enLettres(directions)} directions de pôle sont` : "une direction de pôle est"} à pourvoir` : ""}.`;
+  `${enLettres(vacantes, true)} thématique${vacantes > 1 ? "s" : ""}${cellules ? ` et ${cellules > 1 ? `${enLettres(cellules)} cellules transversales` : "une cellule transversale"}` : ""} cherchent leur coordonnateur${directions ? ` ; ${directions === 4 ? "les quatre directions de pôle sont" : directions > 1 ? `${enLettres(directions)} directions de pôle sur quatre sont` : "une direction de pôle sur quatre est"} à pourvoir` : ""}.`;
 const participer = (vacantes: number, cellules: number, directions: number) => [
   ["01", "Rejoindre ou coordonner une thématique", `${postesOuverts(vacantes, cellules, directions)} Une compétence ponctuelle suffit souvent à faire avancer un dossier déjà prêt.`, "/participer?coordo=1#contact"],
   ["02", "Adhérer à l’association", "Déclarer son intention d’adhérer n’engage aucun argent : la collecte est suspendue jusqu’à l’ouverture d’un compte au nom de l’association.", "/participer#adherer"],

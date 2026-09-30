@@ -18,7 +18,7 @@ export type Indicateurs = {
   genere: string;
   contenu: {
     plaidoyers: { publies: number; envoyes: number; reponses: number };
-    coordinations: { pourvues: number; total: number; cellulesPourvues: number; cellulesTotal: number };
+    coordinations: { pourvues: number; total: number; cellulesPourvues: number; cellulesTotal: number; directionsPourvues: number; directionsTotal: number };
     articles: number;
     premierArticle: string | null;
     documentsPdf: number;

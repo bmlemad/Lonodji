@@ -32,6 +32,10 @@ function cartesDuPlan(d: Indicateurs, f: Releve): Carte[] {
   const releve = f.live ? "compteur en direct" : `relevé du ${dateLongue(f.date)}`;
   const vacantes = c.coordinations.total - c.coordinations.pourvues;
   const cellulesVacantes = c.coordinations.cellulesTotal - c.coordinations.cellulesPourvues;
+  const dirVacantes = c.coordinations.directionsTotal - c.coordinations.directionsPourvues;
+  const dirTexte = dirVacantes === 0 ? "chaque pôle a sa direction (rang de chef de projet)"
+    : dirVacantes === c.coordinations.directionsTotal ? `les ${n(dirVacantes)} directions de pôle (rang de chef de projet) sont à pourvoir`
+    : `${dirVacantes > 1 ? `${n(dirVacantes)} directions` : "une direction"} de pôle sur ${n(c.coordinations.directionsTotal)} (rang de chef de projet) ${dirVacantes > 1 ? "sont" : "est"} à pourvoir`;
   const actif = c.projets.liste.find((p) => p.stade === "essai" || p.stade === "realisation" || p.stade === "service");
   return [
     {
@@ -52,7 +56,7 @@ function cartesDuPlan(d: Indicateurs, f: Releve): Carte[] {
       valeur: n(c.coordinations.pourvues),
       unite: `/ ${c.coordinations.total}`,
       libelle: "thématiques pourvues d’un coordonnateur",
-      detail: `${n(vacantes)} thématiques et ${n(cellulesVacantes)} ${pluriel(cellulesVacantes, "cellule transversale cherchent", "cellules transversales cherchent")} encore la personne qui les portera ; les quatre directions de pôle (rang de chef de projet) sont à pourvoir.`,
+      detail: `${n(vacantes)} thématiques et ${n(cellulesVacantes)} ${pluriel(cellulesVacantes, "cellule transversale cherchent", "cellules transversales cherchent")} encore la personne qui les portera ; ${dirTexte}.`,
       source: "Structure publiée · mise en ligne",
       courte: "Structure publiée",
       href: "/programmes",

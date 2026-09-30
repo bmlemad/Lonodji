@@ -57,6 +57,12 @@ def main() -> None:
     jour = f"{auj.day} {MOIS[auj.month - 1]} {auj.year}"
     b = dict((r, n) for r, n in bureau())
 
+    def direction_de(p):
+        d = p.get("direction") or {}
+        return d["name"] if vrai(d.get("filled")) else "à pourvoir"
+
+    dir_ouvertes = sum(1 for p in poles if not vrai((p.get("direction") or {}).get("filled")))
+
     def pole_html(p):
         items = []
         for t in p["items"]:
@@ -67,7 +73,7 @@ def main() -> None:
             items.append(f'<li{cls}><b>{e(t["name"])}</b> — {e(qui)}</li>')
         n = len(items)
         return (f'<div class="pole"><h3>{e(p["name"])} — {n}</h3>'
-                f'<p class="dir">Direction de pôle : à pourvoir (rang de chef de projet)</p><ul>{"".join(items)}</ul></div>')
+                f'<p class="dir">Direction de pôle : {e(direction_de(p))} (rang de chef de projet)</p><ul>{"".join(items)}</ul></div>')
 
     lignes_plaidoyers = "".join(
         f'<tr><td>{e(p["title"])}</td><td>{e(p["recipients"])}</td><td>{e(p.get("sent") or "—")}</td></tr>' for p in plaidoyers)
@@ -138,7 +144,7 @@ footer {{ position:fixed; bottom:-9mm; left:0; right:0; text-align:center; font-
 <div class="eyebrow">Notre organisation</div>
 <h2>Quatre pôles, {NOMBRES.get(total, total)} thématiques</h2>
 <div class="poles">{"".join(pole_html(p) for p in poles)}</div>
-<p style="margin-top:8px"><b>Cellules transversales :</b> {cell}. <b>Bureau exécutif :</b> {bureau_txt}. <b>Animation :</b> {e(b.get("Animateur", ""))}. Les {NOMBRES.get(ouvertes, ouvertes)} thématiques et les quatre directions de pôle encore à pourvoir sont ouvertes aux candidatures (fiches de mission : lonodji.org/programmes/fiches-de-mission).</p>
+<p style="margin-top:8px"><b>Cellules transversales :</b> {cell}. <b>Bureau exécutif :</b> {bureau_txt}. <b>Animation :</b> {e(b.get("Animateur", ""))}. Les {NOMBRES.get(ouvertes, ouvertes)} thématiques{f" et les {NOMBRES.get(dir_ouvertes, dir_ouvertes)} directions de pôle" if dir_ouvertes > 1 else (" et la direction de pôle" if dir_ouvertes else "")} encore à pourvoir sont ouvertes aux candidatures (fiches de mission : lonodji.org/programmes/fiches-de-mission).</p>
 
 <div class="saut"></div>
 <div class="eyebrow">Bédjondo aujourd'hui</div>

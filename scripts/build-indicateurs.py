@@ -120,7 +120,8 @@ def compter_contenu() -> dict:
 
     return {
         "plaidoyers": {"publies": len(plaidoyers), "envoyes": len(envoyes), "reponses": len(repondus)},
-        "coordinations": {"pourvues": sum(1 for t in thematiques if t["filled"]), "total": len(thematiques), "cellulesPourvues": sum(1 for c in cellules if c["filled"]), "cellulesTotal": len(cellules)},
+        "coordinations": {"pourvues": sum(1 for t in thematiques if t["filled"]), "total": len(thematiques), "cellulesPourvues": sum(1 for c in cellules if c["filled"]), "cellulesTotal": len(cellules),
+                          "directionsPourvues": sum(1 for p in poles if (p.get("direction") or {}).get("filled")), "directionsTotal": sum(1 for p in poles if p.get("direction"))},
         "articles": len(idx["articles"]),
         "premierArticle": min(a["date"] for a in idx["articles"]) if idx["articles"] else None,
         "documentsPdf": len(pdf) + len(pdf_site),

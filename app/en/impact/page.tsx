@@ -7,6 +7,11 @@ import { alternatesLangues } from "@/lib/langues";
 import { getIndicateurs } from "@/lib/indicateurs";
 import Partager from "@/components/partager";
 
+/* Pillar Lead posts still open, read from content/indicateurs.json. */
+const pillarLeads = (open: number, total: number) => open === 0 ? "every pillar has its Pillar Lead (programme-manager level)"
+  : open === total ? `the ${total === 4 ? "four" : total} Pillar Lead posts (programme-manager level) are open`
+  : `${["no", "one", "two", "three"][open] ?? open} of the ${total === 4 ? "four" : total} Pillar Lead posts (programme-manager level) ${open > 1 ? "are" : "is"} still open`;
+
 export const metadata: Metadata = {
   title: "Impact dashboard — six dated, sourced indicators",
   description: metaDescription("Members, coordinators, advocacy briefs, needs recorded and solved, active projects: six indicators, dated and sourced, plus what the site produces and receives. Zeros are published as zeros."),
@@ -53,7 +58,7 @@ export default function ImpactEn() {
       />
       <Stats items={[
         { value: adhesions?.personnes != null ? String(adhesions.personnes) : "0", label: "people declared an intention to join", note: `${adhesions?.envois ?? 0} membership forms received; paid-up members are counted by the executive committee and will appear here, dated` },
-        { value: `${c.coordinations.pourvues}/${c.coordinations.total}`, label: "themes with a coordinator", note: `${vacantes} themes and ${c.coordinations.cellulesTotal - c.coordinations.cellulesPourvues} cross-cutting unit still look for their person; the four Pillar Lead posts (programme-manager level) are open` },
+        { value: `${c.coordinations.pourvues}/${c.coordinations.total}`, label: "themes with a coordinator", note: `${vacantes} themes and ${c.coordinations.cellulesTotal - c.coordinations.cellulesPourvues} cross-cutting unit still look for their person; ${pillarLeads(c.coordinations.directionsTotal - c.coordinations.directionsPourvues, c.coordinations.directionsTotal)}` },
         { value: String(c.plaidoyers.publies), label: "advocacy briefs published", note: `${c.plaidoyers.envoyes} officially sent, ${c.plaidoyers.reponses} answers received; recipients named in each brief` },
         { value: String(c.problematiques.total), label: "issues and needs recorded", note: `${c.problematiques.documentees} documented, ${c.problematiques.partielles} partly, ${c.problematiques.inconnues} unknown; ${c.problematiques.chantiersPrioritaires} priority works` },
         { value: String(i.bureau.besoinsResolus ?? 0), label: "needs confirmed solved", note: "nothing is counted here without dated evidence" },

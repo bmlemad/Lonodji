@@ -22,8 +22,9 @@ KIT_JAMAIS = ["déclare", "avoir pris connaissance"]
 REGENERES = {
     "kit-adhesion-adeb-lonodji-2026.pdf": "build-kit-adhesion.py, lancé par l'import",
     "carnet-enquete-terrain-adeb-lonodji-2026.pdf": "build-kit-adhesion.py, lancé par l'import",
-    "dossier-presentation-adeb-lonodji-2026.pdf": "build-dossier-presentation.py",
 }
+# (le dossier de présentation n'y figure pas : build-dossier-presentation.py recopie sa sortie dans l'ancien site,
+#  l'original et la version publiée y sont donc identiques par construction)
 ANCIEN = Path(sys.argv[1] if len(sys.argv) > 1 else "/home/claude/lonodji") / "documents"
 
 

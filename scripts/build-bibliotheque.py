@@ -31,7 +31,7 @@ RUBRIQUES = [
 
 # Chercheurs du pays bedjond (recommandation « centre de documentation », 28/09/2026) : motifs de reconnaissance dans les auteurs
 CHERCHEURS = [
-    ("be-rammaj-miaro-ii", "Bé-Rammaj Miaro-II", "historien ; coordonnateur de la thématique Mémoire & héritage", r"miaro"),
+    ("be-rammaj-miaro-ii", "Bé-Rammaj Miaro-II", "historien ; directeur du pôle Mémoire, culture & patrimoine (coordonnateur de Mémoire & héritage jusqu’au 30 septembre 2026)", r"miaro"),
     ("john-m-keegan", "John M. Keegan", "linguiste, Sara Bagirmi Language Project (Morkeg Books)", r"keegan"),
     ("roger-dinguemrebeye", "Roger Dinguemrebeye", "linguiste-traducteur, co-auteur du Lexique Nangnda", r"dinguemrebeye"),
     ("eric-c-johnson", "Eric C. Johnson", "SIL International, enquête sociolinguistique de la région de Doba", r"johnson"),
