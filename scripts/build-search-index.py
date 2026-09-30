@@ -16,7 +16,7 @@ MAX_TEXT = 3500
 
 KIND_LABEL = {"hub": "Page", "dossier": "Dossier", "en": "In English", "article": "Article"}
 HUB_TITLES = {
-    "mission": "Notre mission", "poles": "Nos actions : quatre pôles, vingt thématiques", "plaidoyers": "Plaidoyers & engagements",
+    "mission": "Notre mission", "poles": "Nos actions : quatre pôles, vingt et une thématiques", "plaidoyers": "Plaidoyers & engagements",
     "suivi": "Suivi & tableau de bord", "contact": "Participer : nous écrire", "adherer": "Adhérer et cotiser", "soutenir": "Nous soutenir",
     "redevabilite": "Redevabilité & transparence", "mentions-legales": "Mentions légales & confidentialité", "figures": "Histoire : grandes figures",
     "documents": "Documents à télécharger", "actualites": "Le journal",
@@ -143,16 +143,16 @@ PAGES_SITE.append({"t": "Programmes des bailleurs au Tchad, et où nous nous rac
      "d": "Banque mondiale, Union européenne, Nations unies, BAD, coopération suisse, AFD : les programmes en cours au Tchad, ceux qui touchent le Mandoul, et nos points d’entrée par plaidoyer.",
      "x": "bailleurs bailleur partenaires techniques et financiers PTF Banque mondiale IDA Union européenne UE délégation AFD coopération suisse DDC GIZ Nations unies ONU PNUD UNICEF UNFPA PAM FAO FIDA OCHA BAD Banque africaine de développement PAEPA PAAET PRPSS SWEDD PATN SmartEd Fonds mondial financement guichet appel à projets subvention"})
 PAGES_SITE.append({"t": "Secteurs d’intervention : WASH, santé, nutrition, urgences…", "r": "/secteurs", "k": "Page",
-     "d": "Les vingt thématiques dans la langue des ONG de développement et d’aide : dix-sept secteurs, leurs clusters, codes CAD et ODD, ce qui est fait et ce qui n’est qu’une piste.",
+     "d": "Les vingt et une thématiques dans la langue des ONG de développement et d’aide : dix-sept secteurs, leurs clusters, codes CAD et ODD, ce qui est fait et ce qui n’est qu’une piste.",
      "x": "secteurs secteur d’intervention WASH EAH eau assainissement hygiène santé nutrition éducation sécurité alimentaire FSL moyens d’existence livelihoods relief urgence humanitaire DRR RRC réduction des risques catastrophe protection enfance VBG gouvernance paix genre climat infrastructures ICT4D numérique culture diaspora cluster IASC CAD OCDE ODD bailleur ONG partenaire abris CCCM"})
 PAGES_SITE.append({"t": "Donor programmes in Chad — World Bank, EU, UN, AfDB (in English)", "r": "/en/donors", "k": "In English",
      "d": "Programmes under way in Chad, those reaching Mandoul, and how the association connects to each.",
      "x": "English donors funders World Bank European Union United Nations UNICEF UNDP UNFPA AfDB IFAD AFD Swiss cooperation GIZ programme project Mandoul Koumra water health education energy digital funding window grant"})
 PAGES_SITE.append({"t": "Sectors of intervention — WASH, health, nutrition, relief, DRR (in English)", "r": "/en/sectors", "k": "In English",
-     "d": "Twenty themes mapped to NGO sectors: IASC clusters, OECD-DAC codes, SDGs.",
+     "d": "Twenty-one themes mapped to NGO sectors: IASC clusters, OECD-DAC codes, SDGs.",
      "x": "English sectors WASH health nutrition education food security livelihoods relief emergency DRR protection governance peace gender climate ICT4D culture diaspora cluster DAC SDG donor NGO partner"})
 PAGES_SITE.append({"t": "Fiches de mission : diriger un pôle, coordonner une thématique", "r": "/programmes/fiches-de-mission", "k": "Page",
-     "d": "Vingt-six fiches en PDF — quatre directions de pôle au rang de chef de projet, vingt coordinations, deux cellules — avec le rôle, le périmètre, les quatre étapes et le lien pour candidater.",
+     "d": "Vingt-sept fiches en PDF — quatre directions de pôle au rang de chef de projet, vingt et une coordinations, deux cellules — avec le rôle, le périmètre, les quatre étapes et le lien pour candidater.",
      "x": "fiche de mission fiches poste directeur directrice de pôle chef de projet coordonnateur coordonnatrice coordination thématique cellule candidater candidature recrutement bénévole rôle périmètre étapes PDF recueil à pourvoir vacant"})
 PAGES_SITE.append({"t": "La lettre d’information : chaque mois, publié, décidé, ouvert", "r": "/lettre", "k": "Page",
      "d": "Les numéros de la lettre d’ADEB LONODJI, à lire en ligne ou à transmettre en PDF sur WhatsApp ; l’abonnement par e-mail ; la règle de la lettre.",

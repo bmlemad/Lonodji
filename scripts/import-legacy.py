@@ -13,6 +13,7 @@ Produit :
 
 Le script est idempotent : il écrase les fichiers générés.
 """
+import importlib.util
 import json
 import os
 import re
@@ -1002,7 +1003,7 @@ COMPTES_29_09.append(("dont 13 cherchent encore un coordonnateur", "dont 4 cherc
 # pourvoir). Une dernière passe (comptes_courants, fin de lire_source) les récrit avec les comptes réels, lus dans
 # poles.html après les nominations : une nomination n'a plus besoin que de sa ligne dans NOMINATIONS.
 COMPTES_BASE = (4, 16, 1)
-COMPTES_COURANTS: tuple[int, int, int] | None = None   # fixé au début de main()
+COMPTES_COURANTS: tuple[int, int, int, int] | None = None   # (à pourvoir, pourvues, cellules à pourvoir, total), fixé dans main()
 COMPTES_VUS: set[int] = set()
 _FR = ["zéro", "une", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "treize",
        "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf", "vingt"]
@@ -1012,33 +1013,39 @@ def _maj(t: str) -> str:
     return t[:1].upper() + t[1:]
 
 
-def phrases_comptes(o: int, p: int, c: int) -> list[str]:
+_TOTAL_FR = {20: "vingt", 21: "vingt et une", 22: "vingt-deux", 23: "vingt-trois", 24: "vingt-quatre"}
+_TOTAL_EN = {20: "twenty", 21: "twenty-one", 22: "twenty-two", 23: "twenty-three", 24: "twenty-four"}
+
+
+def phrases_comptes(o: int, p: int, c: int, t: int = 20) -> list[str]:
     """Phrases (texte source, entités comprises) qui dépendent des comptes : o thématiques à pourvoir,
-    p pourvues, c cellules à pourvoir. Même ordre quels que soient les comptes."""
+    p pourvues, c cellules à pourvoir, t thématiques en tout. Même ordre quels que soient les comptes."""
     pl = o > 1
+    tf, te = _TOTAL_FR.get(t, str(t)), _TOTAL_EN.get(t, str(t))
     cel = "" if not c else (" et une cellule" if c == 1 else f" et {_FR[c]} cellules")
     return [
         # français
         f"dont {_FR[p]} {'ont' if p > 1 else 'a'} déjà leur coordonnateur",                                   # mission
         f"pourvoir {f'les {_FR[o]} thématiques' if pl else 'la thématique'} encore sans coordonnateur",        # mission
-        f"{_maj(_FR[o])} des vingt thématiques d&rsquo;ADEB LONODJI n&rsquo;{'ont' if pl else 'a'} pas encore de coordonnat",
-        f"{_maj(_FR[o])} des vingt thématiques d&rsquo;ADEB LONODJI {'cherchent' if pl else 'cherche'} encore un coordonnateur",
+        f"{_maj(_FR[o])} des {tf} thématiques d&rsquo;ADEB LONODJI n&rsquo;{'ont' if pl else 'a'} pas encore de coordonnat",
+        f"{_maj(_FR[o])} des {tf} thématiques d&rsquo;ADEB LONODJI {'cherchent' if pl else 'cherche'} encore un coordonnateur",
         f"<p>{_maj(_FR[o])} thématique{'s' if pl else ''}{cel} {'cherchent' if o + c > 1 else 'cherche'} des coordonnateurs",
         f"dont {o} {'cherchent' if pl else 'cherche'} encore un coordonnateur",                                # kit, message à copier
-        f"pas encore de coordonnateur pour {_FR[o]} de ses vingt th&eacute;matiques",
+        f"pas encore de coordonnateur pour {_FR[o]} de ses {tf} th&eacute;matiques",
         # anglais
-        f"{_maj(_EN[o])} of the twenty themes {'are' if pl else 'is'} still looking for a coordinator.",
-        f"{_maj(_EN[o])} of ADEB LONODJI&rsquo;s twenty themes still {'have' if pl else 'has'} no coordinator.",
+        f"{_maj(_EN[o])} of the {te} themes {'are' if pl else 'is'} still looking for a coordinator.",
+        f"{_maj(_EN[o])} of ADEB LONODJI&rsquo;s {te} themes still {'have' if pl else 'has'} no coordinator.",
         f"themes, {p} with a coordinator so far",
-        f"{_maj(_EN[p])} themes out of twenty have a coordinator",
-        f"{_EN[o]} of the twenty themes {'have' if pl else 'has'} no coordinator today",
+        f"{_maj(_EN[p])} themes out of {te} have a coordinator",
+        f"{_EN[o]} of the {te} themes {'have' if pl else 'has'} no coordinator today",
     ]
 
 
 def comptes_courants(html: str) -> str:
     if COMPTES_COURANTS is None:
         return html
-    for i, (base, cour) in enumerate(zip(phrases_comptes(*COMPTES_BASE), phrases_comptes(*COMPTES_COURANTS))):
+    t = COMPTES_COURANTS[3]   # le total est déjà écrit en toutes lettres dans la source (COMPTES_RE_30_09)
+    for i, (base, cour) in enumerate(zip(phrases_comptes(*COMPTES_BASE, t), phrases_comptes(*COMPTES_COURANTS))):
         if base in html:
             COMPTES_VUS.add(i)
             html = html.replace(base, cour)
@@ -1170,6 +1177,221 @@ def structure_29_09(html: str, path: Path) -> str:
     return html
 
 
+
+# ----------------------------------------------------------------------------
+# 30/09/2026 : l'énergie devient une thématique à part, la 21 (pôle II) ; la 08 devient « Routes & urbanisme ».
+# Précise la décision du 29/09/2026 (registre 2026-14 et 2026-29). Appliqué après structure_29_09 et corrections_*.py,
+# avant comptes_courants ; les notes datées du 29/09 gardent leur texte d'alors.
+ECLAIR = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" '
+          'stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>')
+ENERGIE_TEXTE = ("L&rsquo;accès à l&rsquo;énergie dans le pays bedjond&nbsp;: électricité par le réseau, par des mini-réseaux "
+                 "ou par le solaire, éclairage public, électrification des écoles, des centres de santé et de la mairie — notre "
+                 "diagnostic ne connaît aujourd&rsquo;hui aucun équipement public électrifié à Bédjondo. La thématique porte le "
+                 "plaidoyer <a href=\"articles/2026-09-16-plaidoyer-electricite-bedjondo.html\">«&nbsp;De la lumière pour "
+                 "Bédjondo&nbsp;»</a> et suit les programmes de l&rsquo;État et des bailleurs qui financent l&rsquo;électrification. "
+                 "Avec la thématique Environnement, climat &amp; ressources naturelles, elle suit aussi ce que le "
+                 "<a href=\"https://lonodji.org/territoire/sous-sol\">sous-sol</a> pourrait un jour apporter. "
+                 "<strong>Thématique créée le 30 septembre 2026</strong>&nbsp;; elle reprend l&rsquo;énergie, rattachée depuis le "
+                 "29 septembre à la thématique 08, qui devient Routes &amp; urbanisme. Rien n&rsquo;est encore engagé.")
+ENERGIE_CARTE = f"""
+        <article class="pole-card" id="energie">
+          <div class="pole-head-row">
+            <span class="pole-icon">{ECLAIR}</span>
+            <span class="pole-num">THÉMATIQUE 21</span>
+          </div>
+          <span class="pole-status pole-status--vacant">À pourvoir</span>
+          <h3>Énergie</h3>
+          <p class="coord">Coordonnateur&nbsp;: à pourvoir</p>
+          <p>{ENERGIE_TEXTE}</p>
+          <div class="pole-tags"><span class="tag">Électricité</span><span class="tag">Solaire</span><span class="tag">Éclairage public</span><span class="tag">Mini-réseaux</span></div>
+          <div class="pole-odd"><span class="odd-legend">ODD</span>@@CHIP_7@@</div>
+          <div class="pole-hub-links">
+          <a class="pole-hub-link" href="suivi.html#energie">Suivi : 1 problématique &middot; 1 plaidoyer &rarr;</a>
+          <a class="pole-hub-link pole-hub-link--join" href="contact.html?theme=21">Rejoindre cette th&eacute;matique &rarr;</a>
+          </div>
+        </article>
+"""
+ENERGIE_EN = """
+        <article class="pole-card">
+          <div class="pole-head-row"><span class="pole-num">THEME 21</span></div>
+          <span class="pole-status pole-status--vacant">Open</span>
+          <h3>Energy</h3>
+          <p class="coord">Coordinator: to be appointed</p>
+          <p>Access to energy in the Bedjond country: grid, mini-grid and solar electricity, public lighting, power for schools, health centres and the town hall &mdash; our diagnosis knows of no electrified public facility in B&eacute;djondo today. The theme carries the electricity advocacy file and follows the State and donor programmes that fund electrification. Created on 30 September 2026; it takes over energy, attached since 29 September to theme 08, which becomes Roads &amp; Urban Planning. Nothing is committed yet.</p>
+          <div class="pole-odd"><span class="odd-legend">SDG</span>@@SDG_7@@</div>
+          <div class="pole-hub-links">
+          <a class="pole-hub-link" href="../poles.html#energie">Full description <span lang="fr">en fran&ccedil;ais</span> &rarr;</a>
+          </div>
+        </article>"""
+ENERGIE_JS = """  {
+    "id": "energie",
+    "num": "21",
+    "key": "21",
+    "pole": "Pôle II · Thématique 21",
+    "name": "Énergie",
+    "status": "open",
+    "coord": "Coordonnateur : à pourvoir",
+    "desc": "L’accès à l’énergie dans le pays bedjond : électricité par le réseau, les mini-réseaux ou le solaire, éclairage public, électrification des écoles, des centres de santé et de la mairie.",
+    "page": [
+      "articles/2026-09-16-plaidoyer-electricite-bedjondo.html",
+      "Plaidoyer électricité"
+    ],
+    "suivi": true,
+    "tier": 1
+  },
+"""
+ENERGIE_SUIVI = (f'<article class="pole-card" id="energie"><div class="pole-head-row"><span class="pole-icon">{ECLAIR}</span>'
+                 '<span class="pole-num">THÉMATIQUE 21</span></div><span class="pole-status pole-status--vacant">À pourvoir</span>'
+                 '<h3><a href="poles.html#energie">Énergie</a></h3><p class="kanban-card-meta">1 problématique reliée &mdash; '
+                 'Partiel&nbsp;: 1 &mdash; 1 plaidoyer actif</p><div class="pole-hub-links">'
+                 '<a class="pole-hub-link" href="problematiques.html#prob-10">Aucun équipement public électrifié connu &rarr;</a>'
+                 '<a class="pole-hub-link" href="plaidoyers.html#plaidoyer-electricite">&laquo;&nbsp;De la lumière pour Bédjondo&nbsp;&raquo; &rarr;</a>'
+                 '<a class="pole-hub-link pole-hub-link--join" href="poles.html#energie">Voir la fiche thématique &rarr;</a></div></article>')
+NOTE_08_30_09 = (" <strong>Mise à jour du 30 septembre 2026&nbsp;:</strong> l&rsquo;énergie devient une thématique à part entière, "
+                 "la 21, Énergie&nbsp;; la thématique 08, qui prend le nom de Routes &amp; urbanisme, garde les routes, les ponts, "
+                 "les pistes et l&rsquo;urbanisme de Bédjondo.")
+NOTE_08_30_09_EN = (" <strong>Update, 30 September 2026:</strong> energy becomes a theme of its own, theme 21, Energy; theme 08, "
+                    "renamed Roads &amp; Urban Planning, keeps roads, bridges, tracks and the planning of B&eacute;djondo.")
+SDG_7_EN = ('<a class="odd-chip" href="#sdg-7" style="--odd-accent:#FCC30B;--odd-ink:#10181f" title="SDG 7 &mdash; Affordable and Clean '
+            'Energy | target 7.1 &mdash; access to reliable energy services &middot; target 7.2 &mdash; share of renewable energy">'
+            '<span class="odd-num">7</span><span class="odd-name">Energy</span><span class="odd-cible">7.1&thinsp;/&thinsp;7.2</span></a>')
+# Textes datés du 29/09 qui citent l'ancien nom : conservés tels quels.
+_DATES_29_09 = ["L&rsquo;énergie rejoint la thématique 08, Énergie, routes &amp; urbanisme",
+                "Energy moves to theme 08, Energy, Roads &amp; Urban Planning"]
+# Comptes : vingt thématiques → vingt et une (hors articles, journal des actualités et journal des corrections).
+COMPTES_RE_30_09 = [
+    (r"\bvingt(\s+th(?:é|&eacute;)matiques)", r"vingt et une\1"),
+    (r"\bVingt(\s+th(?:é|&eacute;)matiques)", r"Vingt et une\1"),
+    (r"\b20(\s+th(?:é|&eacute;)matiques)", r"21\1"),
+    (r"\bvingt(\s+coordinations)", r"vingt et une\1"),
+    (r"\btwenty(\s+themes)", r"twenty-one\1"),
+    (r"\bTwenty(\s+themes)", r"Twenty-one\1"),
+    (r"\b20(\s+themes)", r"21\1"),
+    (r"themes out of twenty\b", "themes out of twenty-one"),
+    (r'<span class="bento-num">20</span><span class="bento-label">themes', '<span class="bento-num">21</span><span class="bento-label">themes'),
+]
+_CHIP_7 = None
+
+
+def structure_30_09(html: str, path: Path) -> str:
+    global _CHIP_7
+    if "articles" in path.parts:
+        return html
+    if _CHIP_7 is None:
+        spec = importlib.util.spec_from_file_location("corrections_fr_chips", Path(__file__).with_name("corrections_fr.py"))
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        _CHIP_7 = mod.CHIP_7
+    for i, t in enumerate(_DATES_29_09):
+        html = html.replace(t, f"@@DATE{i}@@")
+    # 1. ce qui concerne l'électricité passe à la 21
+    for old, new in [
+        ('<a class="plea-theme" href="poles.html#desenclavement-urbanisation">Énergie</a>', '<a class="plea-theme" href="poles.html#energie">Énergie</a>'),
+        ('Électricité <a class="prob-theme-lien" href="poles.html#desenclavement-urbanisation">&rarr; Énergie, routes & urbanisme</a>',
+         'Électricité <a class="prob-theme-lien" href="poles.html#energie">&rarr; Énergie</a>'),
+        ('<a class="prob-theme-lien" href="poles.html#desenclavement-urbanisation">&rarr; Énergie, routes & urbanisme</a></th><td>Équipements publics électrifiés',
+         '<a class="prob-theme-lien" href="poles.html#energie">&rarr; Énergie</a></th><td>Équipements publics électrifiés'),
+        ('(<a href="articles/2026-09-16-plaidoyer-electricite-bedjondo.html">&eacute;lectricit&eacute;</a>) <a class="prob-theme-lien" href="poles.html#desenclavement-urbanisation">→ Énergie, routes & urbanisme</a>',
+         '(<a href="articles/2026-09-16-plaidoyer-electricite-bedjondo.html">&eacute;lectricit&eacute;</a>) <a class="prob-theme-lien" href="poles.html#energie">→ Énergie</a>'),
+        ('mairie (&eacute;lectricit&eacute;)</div><div class="kanban-card-meta">Qui d&eacute;cide&nbsp;: National</div><div class="kanban-card-theme">→ Énergie, routes & urbanisme</div>',
+         'mairie (&eacute;lectricit&eacute;)</div><div class="kanban-card-meta">Qui d&eacute;cide&nbsp;: National</div><div class="kanban-card-theme">→ Énergie</div>'),
+        ('énergie conventionnelle portée par la <a href="poles.html#desenclavement-urbanisation">thématique Énergie, routes &amp; urbanisme</a>',
+         'énergie conventionnelle portée par la <a href="poles.html#energie">thématique Énergie</a>'),
+        ('l&rsquo;énergie solaire portée par la thématique <a href="#desenclavement-urbanisation">Énergie, routes &amp; urbanisme</a>',
+         'l&rsquo;énergie solaire portée par la thématique <a href="#energie">Énergie</a>'),
+        # renvois « énergie » des cartes 07 et 17 (celui de la carte 09, qui parle des routes, garde la 08)
+        ('<a class="pole-hub-link" href="poles.html#desenclavement-urbanisation">Énergie, routes &amp; urbanisme &rarr;</a>\n          <a class="pole-hub-link" href="suivi.html#eau-energie-connectivite">',
+         '<a class="pole-hub-link" href="poles.html#energie">Énergie &rarr;</a>\n          <a class="pole-hub-link" href="suivi.html#eau-energie-connectivite">'),
+        ('<a class="pole-hub-link" href="poles.html#desenclavement-urbanisation">Énergie, routes &amp; urbanisme &rarr;</a>\n          <a class="pole-hub-link" href="suivi.html#transformation-numerique-services">',
+         '<a class="pole-hub-link" href="poles.html#energie">Énergie &rarr;</a>\n          <a class="pole-hub-link" href="suivi.html#transformation-numerique-services">'),
+        ('<a href="poles.html#desenclavement-urbanisation">08 &middot; &Eacute;nergie, routes &amp; urbanisme <span class="odd-cible">7.1&thinsp;/&thinsp;7.2</span></a>',
+         '<a href="poles.html#energie">21 &middot; &Eacute;nergie <span class="odd-cible">7.1&thinsp;/&thinsp;7.2</span></a>'),
+        ('<a href="#theme-list">07 &middot; Water, Sanitation &amp; Hygiene <span class="odd-cible">7.1&thinsp;/&thinsp;7.2</span></a>',
+         '<a href="#theme-list">21 &middot; Energy <span class="odd-cible">7.1&thinsp;/&thinsp;7.2</span></a>'),
+    ]:
+        html = html.replace(old, new)
+    html = html.replace("P&ocirc;le II &middot; 10 th&eacute;matiques", "P&ocirc;le II &middot; 11 th&eacute;matiques")
+    # 2. la 08 : étiquettes, ODD 7, suivi, note datée
+    html = html.replace('<span class="tag">Routes</span><span class="tag">Électricité</span><span class="tag">Solaire</span><span class="tag">Plan de ville</span></div>',
+                        '<span class="tag">Routes</span><span class="tag">Ponts</span><span class="tag">Plan de ville</span></div>')
+    html = html.replace('<span class="odd-cible">11.3&thinsp;/&thinsp;11.6</span></a>' + _CHIP_7 + "</div>",
+                        '<span class="odd-cible">11.3&thinsp;/&thinsp;11.6</span></a></div>')
+    html = html.replace('<a class="pole-hub-link" href="suivi.html#desenclavement-urbanisation">Suivi : 4 problématiques &middot; 2 plaidoyers &rarr;</a>',
+                        '<a class="pole-hub-link" href="suivi.html#desenclavement-urbanisation">Suivi : 3 problématiques &middot; 1 plaidoyer &rarr;</a>')
+    if path.name == "suivi.html":
+        html = html.replace('<p class="kanban-card-meta">4 problématiques reliées &mdash; Documenté&nbsp;: 1 &middot; Partiel&nbsp;: 2 &middot; Ailleurs&nbsp;: 1 &mdash; 2 plaidoyers actifs</p>'
+                            '<div class="pole-hub-links"><a class="pole-hub-link" href="problematiques.html#prob-10">Aucun équipement public électrifié connu &rarr;</a>',
+                            '<p class="kanban-card-meta">3 problématiques reliées &mdash; Documenté&nbsp;: 1 &middot; Partiel&nbsp;: 1 &middot; Ailleurs&nbsp;: 1 &mdash; 1 plaidoyer actif</p>'
+                            '<div class="pole-hub-links">')
+        html = html.replace('<a class="pole-hub-link" href="plaidoyers.html#plaidoyer-electricite">&laquo;&nbsp;De la lumière pour Bédjondo&nbsp;&raquo; &rarr;</a><a class="pole-hub-link" href="plaidoyers.html#plaidoyer-routes">',
+                            '<a class="pole-hub-link" href="plaidoyers.html#plaidoyer-routes">')
+        html = html.replace('<p>Ces deux thématiques ont des problématiques documentées', '<p>Ces trois thématiques ont des problématiques documentées')
+        html = html.replace('<a href="poles.html#desenclavement-urbanisation">Énergie, routes &amp; urbanisme</a>. Il ne leur manque',
+                            '<a href="poles.html#desenclavement-urbanisation">Routes &amp; urbanisme</a> &middot; <a href="poles.html#energie">Énergie</a>. Il ne leur manque')
+        i = html.find('<article class="pole-card" id="solidarite-inclusion">')
+        k = html.find("</article>", i)
+        if i > 0 and k > 0 and 'id="energie"' not in html:
+            html = html[:k + len("</article>")] + ENERGIE_SUIVI + html[k + len("</article>"):]
+    # 3. le nouveau nom de la 08
+    for old, new in [("Énergie, routes &amp; urbanisme", "Routes &amp; urbanisme"), ("Énergie, routes & urbanisme", "Routes & urbanisme"),
+                     ("&Eacute;nergie, routes &amp; urbanisme", "Routes &amp; urbanisme"), ("Energy, Roads &amp; Urban Planning", "Roads &amp; Urban Planning"),
+                     ("Energy, Roads & Urban Planning", "Roads & Urban Planning")]:
+        html = html.replace(old, new)
+    for i, t in enumerate(_DATES_29_09):
+        html = html.replace(f"@@DATE{i}@@", t)
+    # 4. la 21 : carte, ligne du tableau, note sur la 08, formulaire, page anglaise, outil « trouver »
+    if path.name == "poles.html":
+        i = html.find("<h3>Routes &amp; urbanisme</h3>")
+        j = html.find("<p>", html.find('<p class="coord">', i) + 1) if i > 0 else -1
+        k = html.find("</p>", j)
+        if j > 0 and k > 0:
+            html = html[:k] + NOTE_08_30_09 + html[k:]
+        i = html.find('<article class="pole-card" id="urgences-risques">')
+        k = html.find("</article>", i)
+        if i > 0 and k > 0 and 'id="energie"' not in html:
+            html = html[:k + len("</article>")] + "\n" + ENERGIE_CARTE.replace("@@CHIP_7@@", _CHIP_7).rstrip() + html[k + len("</article>"):]
+        m = re.search(r'<a class="coord-row" href="poles\.html#urgences-risques">.*?</a>', html)
+        if m and "poles.html#energie" not in html[m.end():m.end() + 400]:
+            ligne = ('\n        <a class="coord-row" href="poles.html#energie"><span class="coord-etat">&Agrave; pourvoir</span><span class="coord-nom">Énergie</span>'
+                     '<span class="coord-pole">Développement humain &amp; moyens d’existence</span><span class="coord-qui coord-qui--vide">à pourvoir</span></a>')
+            html = html[:m.end()] + ligne + html[m.end():]
+    if path.name == "contact.html":
+        html = re.sub(r"(<option>20\. Urgences &amp; risques</option>\n)(\s*)", lambda m: m.group(1) + m.group(2) + "<option>21. Énergie</option>\n" + m.group(2), html)
+    if path.name == "themes.html":
+        html = html.replace(SDG_7_EN, "", 1) if html.count(SDG_7_EN) == 1 else html
+        i = html.find("<h3>Roads &amp; Urban Planning</h3>")
+        j = html.find("<p>", html.find('<p class="coord">', i) + 1) if i > 0 else -1
+        k = html.find("</p>", j)
+        if j > 0 and k > 0:
+            html = html[:k] + NOTE_08_30_09_EN + html[k:]
+        if "THEME 21" not in html:
+            i = html.find('<span class="pole-num">THEME 20</span>')
+            k = html.find("</article>", i)
+            if i > 0 and k > 0:
+                html = html[:k + len("</article>")] + ENERGIE_EN.replace("@@SDG_7@@", SDG_7_EN) + html[k + len("</article>"):]
+    if path.name == "trouver.js" and '"id": "energie"' not in html:
+        i = html.find('    "id": "gouvernance-plaidoyer",')
+        i = html.rfind("  {", 0, i)
+        if i > 0:
+            html = html[:i] + ENERGIE_JS + html[i:]
+        for cle, cle_liste in (('"envi"', '"p": ['), ('"urba"', '"s": [')):
+            j = html.find(f"  {cle}: {{")
+            s_ = html.find(cle_liste, j)
+            if j > 0 and s_ > 0:
+                html = html[:s_ + len(cle_liste)] + '\n      "energie",' + html[s_ + len(cle_liste):]
+        j = html.find('"terrain": {')
+        s_ = html.find('"ids": [', j)
+        if j > 0 and s_ > 0:
+            html = html[:s_ + len('"ids": [')] + '\n      "energie",' + html[s_ + len('"ids": ['):]
+    # 5. comptes : vingt et une thématiques (les journaux datés restent tels qu'écrits ; sur la page de redevabilité,
+    #    seules les deux phrases de règles en vigueur changent)
+    if path.name == "redevabilite.html":
+        html = re.sub(r"(Les noms de nos |Deux de nos )vingt(\s+th(?:é|&eacute;)matiques)", r"\1vingt et une\2", html)
+    if path.name not in ("actualites.html", "redevabilite.html"):
+        for rx, rep in COMPTES_RE_30_09:
+            html = re.sub(rx, rep, html)
+    return html
+
 def lire_source(path: Path) -> str:
     """Lit un fichier de l'ancien site en y appliquant les mises à jour de source."""
     html = path.read_text(encoding="utf-8")
@@ -1184,7 +1406,7 @@ def lire_source(path: Path) -> str:
         k = html.find("</p>", j)
         if j > 0 and k > 0:
             html = html[:k] + note + html[k:]
-    html = corrections_revue(structure_29_09(html, path), path)
+    html = structure_30_09(corrections_revue(structure_29_09(html, path), path), path)
     return html if "articles" in path.parts else comptes_courants(html)
 
 
@@ -1307,7 +1529,7 @@ def main():
     s0 = structure(BeautifulSoup(lire_source(LEGACY / "poles.html"), "lxml"))
     them0 = [t for pole in s0["poles"] for t in pole["items"]]
     COMPTES_COURANTS = (sum(1 for t in them0 if not t["filled"]), sum(1 for t in them0 if t["filled"]),
-                        sum(1 for t in s0["cellules"]["items"] if not t["filled"]))
+                        sum(1 for t in s0["cellules"]["items"] if not t["filled"]), len(them0))
     if COMPTES_COURANTS[0] == 0:
         print("comptes : toutes les thématiques sont pourvues — les phrases d'appel à coordonner sont à réécrire à la main")
         COMPTES_COURANTS = None
@@ -1363,7 +1585,7 @@ def main():
         if d.get("source") == "redaction" and d.get("slug") not in {a["slug"] for a in index["articles"]}:
             index["articles"].append({k: d.get(k, "") for k in ("slug", "route", "title", "date", "dateLabel", "tag", "category", "summary", "readTime", "words", "byline", "pills")})
     for a in index["articles"]:  # l'étiquette suit le nom actuel de la rubrique ; le texte daté de l'article ne change pas
-        for o, n in RENOMMAGES_29_09:
+        for o, n in RENOMMAGES_29_09 + [("Énergie, routes & urbanisme", "Routes & urbanisme")]:
             if a.get("tag") == o:
                 a["tag"] = n
     index["articles"].sort(key=lambda a: a["date"], reverse=True)
@@ -1419,10 +1641,10 @@ def main():
     print(f"pages : {len(index['pages'])} · articles : {len(index['articles'])} · formulaires : {len(all_forms)} · "
           f"thématiques : {sum(len(p['items']) for p in index['structure']['poles'])} · plaidoyers : {len(index['plaidoyers'])} · documents : {len(index['documents'])}")
     if COMPTES_COURANTS is not None:
-        for i, phrase in enumerate(phrases_comptes(*COMPTES_BASE)):
+        for i, phrase in enumerate(phrases_comptes(*COMPTES_BASE, COMPTES_COURANTS[3])):
             if i not in COMPTES_VUS:
                 print(f"correction sans effet : comptes courants · « {phrase[:60]}… »")
-        print(f"comptes courants : {COMPTES_COURANTS[1]} thématiques pourvues, {COMPTES_COURANTS[0]} à pourvoir, {COMPTES_COURANTS[2]} cellule(s) à pourvoir")
+        print(f"comptes courants : {COMPTES_COURANTS[3]} thématiques, {COMPTES_COURANTS[1]} pourvues, {COMPTES_COURANTS[0]} à pourvoir, {COMPTES_COURANTS[2]} cellule(s) à pourvoir")
     for cle, debut in sorted(set(CORRECTIONS_MANQUEES)):
         print(f"correction sans effet : {cle} · « {debut}… »")
 

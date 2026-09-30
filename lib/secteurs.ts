@@ -1,4 +1,4 @@
-/* Secteurs d'intervention : les vingt thématiques de l'association lues dans la
+/* Secteurs d'intervention : les vingt et une thématiques de l'association lues dans la
    langue des ONG de développement et d'aide (clusters humanitaires de l'IASC,
    codes-objet du CAD de l'OCDE, ODD). Chaque activité dit son état réel :
    « fait » (affiché « Publié ») quand une page, un document ou un formulaire existe
@@ -123,7 +123,7 @@ export const SECTEURS: Secteur[] = [
     id: "infrastructures", groupe: "existence", nom: "Énergie, routes et connectivité", sigle: "Infrastructures", en: "Energy, connectivity and transport",
     enTexte: "Advocacy for electricity, broadband, roads and bridges; a community digital space; a land transport project.",
     cadre: { cad: "CAD 210-230", odd: "ODD 7 · 9" }, etat: "couvert",
-    thematiques: ["desenclavement-urbanisation", "transformation-numerique-services"],
+    thematiques: ["energie", "desenclavement-urbanisation", "transformation-numerique-services"],
     activites: [
       { texte: "Plaidoyer : de la lumière pour Bédjondo", etat: "fait", href: "/journal/2026-09-16-plaidoyer-electricite-bedjondo" },
       { texte: "Plaidoyer : Bédjondo a droit au haut débit", etat: "fait", href: "/journal/2026-09-16-plaidoyer-internet-haut-debit-bedjondo" },

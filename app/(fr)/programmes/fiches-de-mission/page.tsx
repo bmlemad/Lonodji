@@ -8,9 +8,9 @@ import { getMissions } from "@/lib/missions";
 
 export const metadata: Metadata = {
   title: "Fiches de mission des pôles et thématiques",
-  description: metaDescription("Vingt-six fiches de mission en PDF — quatre directions de pôle au rang de chef de projet, vingt coordinations de thématique, deux cellules transversales — avec ce que la personne fait, le périmètre, les quatre étapes et le lien pour candidater."),
+  description: metaDescription("Vingt-sept fiches de mission en PDF — quatre directions de pôle au rang de chef de projet, vingt et une coordinations de thématique, deux cellules transversales — avec ce que la personne fait, le périmètre, les quatre étapes et le lien pour candidater."),
   alternates: { canonical: "/programmes/fiches-de-mission" },
-  openGraph: { ...ogFor("/programmes/fiches-de-mission"), title: "Fiches de mission : diriger un pôle, coordonner une thématique", description: "Vingt-six fiches en PDF : ce que la personne fait, le périmètre, les quatre étapes, le lien pour candidater." },
+  openGraph: { ...ogFor("/programmes/fiches-de-mission"), title: "Fiches de mission : diriger un pôle, coordonner une thématique", description: "Vingt-sept fiches en PDF : ce que la personne fait, le périmètre, les quatre étapes, le lien pour candidater." },
 };
 
 const jour = (iso: string) => new Date(iso).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
@@ -56,7 +56,7 @@ export default function FichesDeMission() {
       </section>
 
       <section className="hub-section" id="coordinations">
-        <SectionHead eyebrow="Vingt coordinations" title="Une thématique," em="une fiche." text="Le coordonnateur ou la coordonnatrice réunit les membres intéressés, propose un plan d’action simple, fait avancer la thématique au quotidien avec l’appui des cellules transversales, et rend compte lors des assemblées. Coordonner demande de la régularité ; contribuer ponctuellement est déjà précieux." />
+        <SectionHead eyebrow="Vingt et une coordinations" title="Une thématique," em="une fiche." text="Le coordonnateur ou la coordonnatrice réunit les membres intéressés, propose un plan d’action simple, fait avancer la thématique au quotidien avec l’appui des cellules transversales, et rend compte lors des assemblées. Coordonner demande de la régularité ; contribuer ponctuellement est déjà précieux." />
         <div className="link-list">
           {m.coordinations.map((c) => (
             <a key={c.id} href={c.pdf} download>
@@ -81,7 +81,7 @@ export default function FichesDeMission() {
         </div>
       </section>
 
-      <Partager route="/programmes/fiches-de-mission" titre="Fiches de mission" texte="Diriger un pôle, coordonner une thématique : vingt-six fiches de mission en PDF, avec le rôle, le périmètre, les étapes et le lien pour candidater." />
+      <Partager route="/programmes/fiches-de-mission" titre="Fiches de mission" texte="Diriger un pôle, coordonner une thématique : vingt-sept fiches de mission en PDF, avec le rôle, le périmètre, les étapes et le lien pour candidater." />
       <p className="lg-footnote">Fiches établies automatiquement depuis la structure publiée sur <Link href="/programmes">Nos actions</Link> ; état au {jour(m.genere)}. Une nomination est publiée, datée, dans le <Link href="/journal">journal</Link>, puis les fiches sont régénérées.</p>
     </main>
   );

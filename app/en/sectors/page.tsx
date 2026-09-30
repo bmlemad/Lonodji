@@ -10,9 +10,9 @@ import { ETATS_SECTEUR, GROUPES_SECTEURS, NON_COUVERTS, SECTEURS } from "@/lib/s
 
 export const metadata: Metadata = {
   title: "Sectors of intervention",
-  description: metaDescription("ADEB LONODJI’s twenty themes mapped to the sectors development and humanitarian partners use: IASC clusters, OECD-DAC purpose codes and SDGs, what is done and what is only an idea."),
+  description: metaDescription("ADEB LONODJI’s twenty-one themes mapped to the sectors development and humanitarian partners use: IASC clusters, OECD-DAC purpose codes and SDGs, what is done and what is only an idea."),
   alternates: { canonical: "/en/sectors", languages: alternatesLangues("/en/sectors") },
-  openGraph: { ...ogFor("/en/sectors", "en"), title: "Sectors of intervention — WASH, health, nutrition, relief, DRR…", description: "Twenty themes mapped to NGO sectors, clusters, DAC codes and SDGs." },
+  openGraph: { ...ogFor("/en/sectors", "en"), title: "Sectors of intervention — WASH, health, nutrition, relief, DRR…", description: "Twenty-one themes mapped to NGO sectors, clusters, DAC codes and SDGs." },
 };
 
 export default function SectorsEn() {
@@ -26,7 +26,7 @@ export default function SectorsEn() {
         lead="Seventeen sectors, as IASC clusters, OECD-DAC purpose codes and the SDGs name them, each with the association’s themes that carry it and a line on what it means in Bédjondo. Links lead to the French pages, where each activity says whether it is done or only an idea. Nothing is funded yet, and no money is collected before the association has a bank account in its name."
         crumbs={[{ label: "Sectors" }]}
         lang="en"
-        pills={[`${SECTEURS.length} sectors`, "20 themes", "Relief and DRR added on 29 September 2026"]}
+        pills={[`${SECTEURS.length} sectors`, "21 themes", "Relief and DRR added on 29 September 2026"]}
       />
       <section className="hub-section" id="mapping">
         <SectionHead eyebrow="At a glance" title="Sectors, themes" em="and reference frameworks." />
@@ -62,7 +62,7 @@ export default function SectorsEn() {
           <Link href="/en/projects"><small>Projects</small><strong>Projects and their stage</strong><span>From idea to service, what exists and what is missing.</span></Link>
         </div>
       </section>
-      <Partager route="/en/sectors" titre="ADEB LONODJI — sectors of intervention" texte="WASH, health, nutrition, education, food security, relief, DRR, protection: twenty themes mapped to NGO sectors" lang="en" />
+      <Partager route="/en/sectors" titre="ADEB LONODJI — sectors of intervention" texte="WASH, health, nutrition, education, food security, relief, DRR, protection: twenty-one themes mapped to NGO sectors" lang="en" />
     </main>
   );
 }

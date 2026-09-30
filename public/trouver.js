@@ -123,7 +123,7 @@ window.__initTrouver = function () {
     "num": "08",
     "key": "08",
     "pole": "Pôle II · Thématique 08",
-    "name": "Énergie, routes & urbanisme",
+    "name": "Routes & urbanisme",
     "status": "open",
     "coord": "Coordonnateur : à pourvoir",
     "desc": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par…",
@@ -207,6 +207,22 @@ window.__initTrouver = function () {
     ],
     "suivi": false,
     "tier": 3
+  },
+  {
+    "id": "energie",
+    "num": "21",
+    "key": "21",
+    "pole": "Pôle II · Thématique 21",
+    "name": "Énergie",
+    "status": "open",
+    "coord": "Coordonnateur : à pourvoir",
+    "desc": "L’accès à l’énergie dans le pays bedjond : électricité par le réseau, les mini-réseaux ou le solaire, éclairage public, électrification des écoles, des centres de santé et de la mairie.",
+    "page": [
+      "articles/2026-09-16-plaidoyer-electricite-bedjondo.html",
+      "Plaidoyer électricité"
+    ],
+    "suivi": true,
+    "tier": 1
   },
   {
     "id": "gouvernance-plaidoyer",
@@ -367,6 +383,7 @@ window.__initTrouver = function () {
   "envi": {
     "label": "Environnement, eau, énergie",
     "p": [
+      "energie",
       "environnement-ressources",
       "eau-energie-connectivite"
     ],
@@ -493,6 +510,7 @@ window.__initTrouver = function () {
       "desenclavement-urbanisation"
     ],
     "s": [
+      "energie",
       "eau-energie-connectivite"
     ]
   },
@@ -532,6 +550,7 @@ window.__initTrouver = function () {
   "terrain": {
     "label": "Vous êtes à Bédjondo ou dans le Mandoul",
     "ids": [
+      "energie",
       "agriculture-elevage-securite-alimentaire",
       "environnement-ressources",
       "eau-energie-connectivite",

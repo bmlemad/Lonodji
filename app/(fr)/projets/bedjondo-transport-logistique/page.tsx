@@ -114,7 +114,7 @@ export default function BedjondoTransportLogistique() {
         <ul className="bl-bref">
           <li>Le mode d’exploitation retenu, les axes prioritaires, le nombre et le type de véhicules.</li>
           <li>Le coût, le montage financier, les autorisations nécessaires et le calendrier.</li>
-          <li>Qui porte le projet au quotidien : la thématique Énergie, routes & urbanisme est encore à pourvoir.</li>
+          <li>Qui porte le projet au quotidien : la thématique Routes & urbanisme est encore à pourvoir.</li>
         </ul>
       </section>
 
@@ -131,7 +131,7 @@ export default function BedjondoTransportLogistique() {
         <SectionHead eyebrow="Participer" title="Vous savez faire" em="une partie de ce travail ?" text="Logistique, transport routier, mécanique, entretien de pistes, assurance, gestion d’une coopérative, financement de projet : une compétence suffit pour faire avancer l’étude." />
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
           <Link className="button primary" href="/diaspora#inscription">Inscrire ma compétence <span aria-hidden="true">→</span></Link>
-          <Link className="button secondary" href="/participer?theme=08&coordo=1#contact">Coordonner Énergie, routes & urbanisme <span aria-hidden="true">→</span></Link>
+          <Link className="button secondary" href="/participer?theme=08&coordo=1#contact">Coordonner Routes & urbanisme <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/projets#bedjondo-transport-logistique">Le projet sur la plateforme <span aria-hidden="true">→</span></Link>
         </div>
       </section>

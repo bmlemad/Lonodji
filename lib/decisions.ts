@@ -61,6 +61,13 @@ export const DECISIONS: Decision[] = [
     suite: "L’adresse de chaque siège, sa date d’ouverture et le partage des responsabilités ne sont pas encore fixés publiquement.",
   },
   {
+    id: "2026-29", date: "2026-09-30", type: "decision",
+    titre: "Une thématique 21, Énergie ; la 08 devient Routes & urbanisme",
+    texte: "L’énergie, rattachée le 29 septembre 2026 à la thématique 08 (décision 2026-14), devient une thématique à part entière, la 21, au pôle Développement humain & moyens d’existence : électricité par le réseau, les mini-réseaux ou le solaire, éclairage public, électrification des équipements publics. Elle porte le plaidoyer « De la lumière pour Bédjondo ». La 08 prend le nom de Routes & urbanisme et garde les routes, les ponts, les pistes et l’urbanisme de Bédjondo, avec le plaidoyer pour la voirie. Les deux métiers, leurs interlocuteurs et leurs bailleurs sont distincts.",
+    sources: [{ label: "Nos actions", href: "/programmes#energie" }, { label: "Programmes des bailleurs", href: "/bailleurs" }],
+    suite: "L’association compte vingt et une thématiques, dont cinq à pourvoir, parmi lesquelles la 21.",
+  },
+  {
     id: "2026-28", date: "2026-09-30", type: "nomination",
     titre: "Mémoire & héritage : Félix Mbété Nangmbatnan coordonnateur",
     texte: "La coordination de la thématique 01, Mémoire & héritage (pôle Mémoire, culture & patrimoine), est confiée à Félix Mbété Nangmbatnan. Il succède au Dr Bé-Rammaj Miaro-II, qui dirige le pôle depuis le même jour (2026-26). Félix Mbété Nangmbatnan avait coordonné Culture & patrimoine vivant du 22 au 28 septembre 2026.",
@@ -180,6 +187,7 @@ export const DECISIONS: Decision[] = [
     titre: "Quatre intitulés alignés sur les activités",
     texte: "07 Eau, assainissement & hygiène (le WASH des ONG) ; 08 Énergie, routes & urbanisme (les infrastructures, dont l’énergie venue de la 07) ; 09 Éducation, jeunesse & formation (jusqu’ici Jeunesse & réussite) ; 17 Connectivité & services numériques (la connexion internet venue de la 07). Numéros, liens et coordinations inchangés.",
     sources: [{ label: "Nos actions", href: "/programmes#pole-2" }, { label: "Secteurs d’intervention", href: "/secteurs" }],
+    suite: "Le 30 septembre 2026, l’énergie devient une thématique à part, la 21 ; la 08 devient Routes & urbanisme (2026-29).",
   },
   {
     id: "2026-20", date: "2026-09-22", type: "nomination",

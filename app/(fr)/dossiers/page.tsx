@@ -34,7 +34,7 @@ export default function Dossiers() {
           webPageSchema({ url: "/dossiers", name: "Tous les dossiers", description: "Les dossiers de fond d’ADEB LONODJI : diagnostic territorial, projets à l’étude, plans pour les personnes vulnérables, patrimoine, outils de terrain et cadre légal." }),
         ],
       }) }} />
-      <PageHeader crumbs={[{ label: "Nos actions", href: "/programmes" }, { label: "Tous les dossiers" }]} eyebrow="Nos actions · tous les dossiers" title="Tout ce que nous" em="avons documenté." lead={`${pages.length} dossiers de fond, chacun daté et sourcé, du diagnostic territorial aux projets à l’étude. Ils nourrissent les plaidoyers et les vingt thématiques.`} />
+      <PageHeader crumbs={[{ label: "Nos actions", href: "/programmes" }, { label: "Tous les dossiers" }]} eyebrow="Nos actions · tous les dossiers" title="Tout ce que nous" em="avons documenté." lead={`${pages.length} dossiers de fond, chacun daté et sourcé, du diagnostic territorial aux projets à l’étude. Ils nourrissent les plaidoyers et les vingt et une thématiques.`} />
       {groups.map(([title, slugs]) => (
         <section className="hub-section" key={title}>
           <p className="eyebrow">{title}</p>

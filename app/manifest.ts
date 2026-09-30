@@ -36,7 +36,7 @@ export default function manifest(): MetadataRoute.Manifest {
     screenshots: [
       { src: "/icones/capture-accueil.jpg", sizes: "1080x1920", type: "image/jpeg", form_factor: "narrow", label: "Accueil" },
       { src: "/icones/capture-villages.jpg", sizes: "1080x1920", type: "image/jpeg", form_factor: "narrow", label: "Retrouver son village" },
-      { src: "/icones/capture-programmes.jpg", sizes: "1080x1920", type: "image/jpeg", form_factor: "narrow", label: "Quatre pôles, vingt thématiques" },
+      { src: "/icones/capture-programmes.jpg", sizes: "1080x1920", type: "image/jpeg", form_factor: "narrow", label: "Quatre pôles, vingt et une thématiques" },
       { src: "/icones/capture-carte.jpg", sizes: "1080x1920", type: "image/jpeg", form_factor: "narrow", label: "Carte du territoire" },
       { src: "/icones/capture-ordinateur.jpg", sizes: "1280x800", type: "image/jpeg", form_factor: "wide", label: "Accueil sur ordinateur" },
     ],

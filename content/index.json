@@ -81,7 +81,7 @@
    "lede": "Depuis les élections communales de décembre 2024, l’essentiel de ce que Bédjondo attend ne se décide plus seulement à N’Djamena. Cette page expose le cadre tel qu’il est, l’écart entre les textes et les moyens, et la méthode que nous nous appliquons.",
    "description": "Ce que la décentralisation tchadienne change pour Bédjondo : cadre légal, moyens réels de la commune, et la méthode de développement local d’ADEB LONODJI.",
    "parent": "Nos actions",
-   "words": 1620,
+   "words": 1619,
    "hasMap": false
   },
   {
@@ -237,7 +237,7 @@
    "lede": "Pour chaque objectif des Nations unies, les thématiques d’ADEB LONODJI qui le touchent. C’est notre lecture, pas un label.",
    "description": "Les dix-sept Objectifs de développement durable des Nations unies, objectif par objectif, et les thématiques d'ADEB LONODJI qui les touchent.",
    "parent": "Nos actions",
-   "words": 607,
+   "words": 602,
    "hasMap": false
   },
   {
@@ -261,7 +261,7 @@
    "lede": "Trente-quatre problématiques recensées, avec pour chacune ce que nous savons vraiment et qui peut décider. Cinq causes racines plutôt qu’une litanie de manques, sept priorités dont cinq ne demandent pas d’argent — et onze points que nous ignorons entièrement.",
    "description": "Trente-quatre problématiques du Mandoul Occidental recensées, avec l’état de la connaissance, qui décide, cinq causes racines et sept priorités.",
    "parent": "Nos actions",
-   "words": 5215,
+   "words": 5203,
    "hasMap": false
   },
   {
@@ -273,7 +273,7 @@
    "lede": "Un premier socle documentaire sur le peuple sara, les Bedjond et leur langue, réuni dans le cadre du programme Bedjond Digital Heritage coordonné par Sylvain Nomaye. Cherchez par titre, auteur ou mot-clé.",
    "description": "Base de recherche bibliographique sur le peuple sara, les Bedjond et leur langue.",
    "parent": "Bédjondo & héritage",
-   "words": 3617,
+   "words": 3616,
    "hasMap": false
   },
   {
@@ -306,7 +306,7 @@
    "kind": "dossier",
    "title": "Quelle thématique pour vous ?",
    "eyebrow": "Agir avec nous",
-   "lede": "Vingt thématiques, dont quatre sans coordonnateur. Cochez ce que vous savez faire ou ce qui vous tient à cœur, dites-nous où vous êtes et combien de temps vous pouvez donner : nous vous proposons les thématiques où vous seriez le plus utile, et le bon interlocuteur. Rien n’est envoyé tant que vous n’avez pas écrit.",
+   "lede": "Vingt et une thématiques, dont quatre sans coordonnateur. Cochez ce que vous savez faire ou ce qui vous tient à cœur, dites-nous où vous êtes et combien de temps vous pouvez donner : nous vous proposons les thématiques où vous seriez le plus utile, et le bon interlocuteur. Rien n’est envoyé tant que vous n’avez pas écrit.",
    "description": "Cochez ce que vous savez faire ou ce qui vous tient à cœur : nous vous proposons les thématiques d’ADEB LONODJI où vous seriez le plus utile. Quatre attendent un coordonnateur.",
    "parent": "Agir avec nous",
    "words": 349,
@@ -333,19 +333,19 @@
    "lede": "ADEB LONODJI, Association de Développement et d’Entraide de Bédjondo, rassemble Bédjondo et sa diaspora et fait vivre les valeurs, l’héritage et l’histoire du peuple bedjond : peuple d’origine de Bédjondo, dans le Mandoul, selon les travaux de Djarangar Djita Issa, et composante du grand ensemble sara. Portée par ses membres, elle agit pour le développement de Bédjondo au service de tous ses habitants, sans distinction d’origine.",
    "description": "Notre vision : faire d’ADEB LONODJI un cadre de promotion des valeurs et de l’héritage du peuple bedjond de Bédjondo (Mandoul), composante du peuple sara.",
    "parent": "Accueil",
-   "words": 4467,
+   "words": 4473,
    "hasMap": false
   },
   {
    "slug": "poles",
    "route": "/programmes",
    "kind": "hub",
-   "title": "Quatre pôles, vingt thématiques",
+   "title": "Quatre pôles, vingt et une thématiques",
    "eyebrow": "Les Chantiers ADEB LONODJI",
-   "lede": "Les Chantiers ADEB LONODJI sont les projets de réflexion, de recherche et d’action portés par l’association. Pour les organiser, ADEB LONODJI structure son action autour de vingt thématiques réparties en quatre pôles, appuyées par deux cellules transversales — dont un pôle spécialisé Numérique & innovation, créé en septembre 2026. Chaque thématique est animée par un coordonnateur. Cette organisation en pôles est notre méthodologie de travail en équipe : elle permet une bonne coordination des actions entre les thématiques, au lieu d’initiatives dispersées. Chaque thématique est en outre mise en regard des Objectifs de développement durable adoptés par les Nations unies, pour que nos partenaires situent immédiatement notre travail.",
-   "description": "Quatre pôles, vingt thématiques et deux cellules transversales pour organiser l’action d’ADEB LONODJI.",
+   "lede": "Les Chantiers ADEB LONODJI sont les projets de réflexion, de recherche et d’action portés par l’association. Pour les organiser, ADEB LONODJI structure son action autour de vingt et une thématiques réparties en quatre pôles, appuyées par deux cellules transversales — dont un pôle spécialisé Numérique & innovation, créé en septembre 2026. Chaque thématique est animée par un coordonnateur. Cette organisation en pôles est notre méthodologie de travail en équipe : elle permet une bonne coordination des actions entre les thématiques, au lieu d’initiatives dispersées. Chaque thématique est en outre mise en regard des Objectifs de développement durable adoptés par les Nations unies, pour que nos partenaires situent immédiatement notre travail.",
+   "description": "Quatre pôles, vingt et une thématiques et deux cellules transversales pour organiser l’action d’ADEB LONODJI.",
    "parent": "Accueil",
-   "words": 5692,
+   "words": 5871,
    "hasMap": false
   },
   {
@@ -357,7 +357,7 @@
    "lede": "Ce que nous demandons à l’État, aux régulateurs, aux opérateurs et à la commune pour Bédjondo et le Mandoul Occidental — avec, pour chaque dossier, l’état d’avancement et la possibilité d’y joindre votre soutien.",
    "description": "Internet, électricité, commune : les plaidoyers d’ADEB LONODJI pour Bédjondo, leur suivi public, et comment les soutenir.",
    "parent": "Nos actions",
-   "words": 2015,
+   "words": 2011,
    "hasMap": false
   },
   {
@@ -369,7 +369,7 @@
    "lede": "Chaque problématique que nous avons recensée est reliée à la thématique qui doit la porter, et chaque thématique à son plaidoyer quand il existe. Une seule page pour voir où nous en sommes : ce qui avance, ce qui attend un coordonnateur ou une coordonnatrice, et ce que nous n’avons pas encore commencé à documenter.",
    "description": "Chaque problématique reliée à sa thématique, chaque thématique à son plaidoyer s’il existe : le tableau de bord de suivi des actions d’ADEB LONODJI, thématique par thématique.",
    "parent": "Nos actions",
-   "words": 1568,
+   "words": 1591,
    "hasMap": false
   },
   {
@@ -381,7 +381,7 @@
    "lede": "Une question, une proposition, l’envie d’animer une thématique : c’est ici. Pour devenir membre, remplissez plutôt la déclaration d’intention d’adhésion , sans paiement.",
    "description": "Écrire à ADEB LONODJI ou rejoindre une thématique : formulaire en ligne, téléphone et WhatsApp du président. Pour adhérer, une déclaration d’intention sans paiement.",
    "parent": "Agir avec nous",
-   "words": 1098,
+   "words": 1100,
    "hasMap": false
   },
   {
@@ -402,7 +402,7 @@
    "kind": "hub",
    "title": "Agir avec nous",
    "eyebrow": "Nous soutenir",
-   "lede": "Quatre des vingt thématiques d’ADEB LONODJI cherchent encore un coordonnateur, et l’association elle-même se réactive après des années de mise en veille : votre soutien, sous toutes ses formes, compte. Voici les façons d’y contribuer.",
+   "lede": "Cinq des vingt et une thématiques d’ADEB LONODJI cherchent encore un coordonnateur, et l’association elle-même se réactive après des années de mise en veille : votre soutien, sous toutes ses formes, compte. Voici les façons d’y contribuer.",
    "description": "Les façons de soutenir ADEB LONODJI : cotisation et don, temps et compétences, dons en nature — au service du peuple bedjond de Bédjondo.",
    "parent": "Accueil",
    "words": 479,
@@ -417,7 +417,7 @@
    "lede": "Nous demandons aux institutions de publier leurs données, d’annoncer leurs décisions et de répondre à leurs courriers. Voici ce à quoi nous nous engageons de notre côté — et comment nous saisir si nous y manquons.",
    "description": "Nos engagements : réponse sous 48 heures, mécanisme de plainte ouvert et anonyme, protection des enfants et des témoins, usage des fonds, non-discrimination.",
    "parent": "L’association",
-   "words": 7346,
+   "words": 7350,
    "hasMap": false
   },
   {
@@ -465,7 +465,7 @@
    "lede": "Le journal des décisions, réunions et actions menées par ADEB LONODJI et ses pôles.",
    "description": "Le journal d’ADEB LONODJI : annonces de l’association, travaux sur le peuple bedjond, plaidoyers et comptes rendus de terrain au Mandoul Occidental.",
    "parent": "Accueil",
-   "words": 1754,
+   "words": 1753,
    "hasMap": false
   },
   {
@@ -532,12 +532,12 @@
    "slug": "en/themes",
    "route": "/en/themes",
    "kind": "en",
-   "title": "Four pillars, twenty themes",
+   "title": "Four pillars, twenty-one themes",
    "eyebrow": "How we are organised",
-   "lede": "ADEB LONODJI organises its work into twenty themes grouped in four pillars, supported by two cross-cutting units. Each theme is meant to be led by a coordinator who reports to the membership. This page is the English summary; every theme has a fuller description en français .",
-   "description": "How ADEB LONODJI organises its work: four pillars, twenty themes and two cross-cutting units, each set against the UN Sustainable Development Goals it touches.",
+   "lede": "ADEB LONODJI organises its work into twenty-one themes grouped in four pillars, supported by two cross-cutting units. Each theme is meant to be led by a coordinator who reports to the membership. This page is the English summary; every theme has a fuller description en français .",
+   "description": "How ADEB LONODJI organises its work: four pillars, twenty-one themes and two cross-cutting units, each set against the UN Sustainable Development Goals it touches.",
    "parent": "Home",
-   "words": 3000,
+   "words": 3116,
    "hasMap": false
   }
  ],
@@ -854,7 +854,7 @@
    "title": "Bédjondo, un village devenu ville : nos propositions",
    "date": "2026-09-16",
    "dateLabel": "16 septembre 2026",
-   "tag": "Énergie, routes & urbanisme",
+   "tag": "Routes & urbanisme",
    "category": "urbanisation",
    "summary": "Bédjondo a grandi sans plan ni équipements. Urbanisme, voirie, eau, énergie, assainissement, marché, santé : douze propositions pour une ville moderne.",
    "readTime": "11 min de lecture",
@@ -1305,7 +1305,7 @@
   },
   {
    "slug": "urbanisation",
-   "label": "Énergie, routes & urbanisme"
+   "label": "Routes & urbanisme"
   },
   {
    "slug": "agriculture",
@@ -1666,8 +1666,8 @@
       "filled": false,
       "coordinator": "à pourvoir",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la <a href=\"/programmes#desenclavement-urbanisation\">thématique Énergie, routes &amp; urbanisme</a>. La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page <a href=\"/programmes/environnement#economie-verte\">Environnement &amp; durabilité</a>. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique s’élargit à l’<strong>adaptation au changement climatique</strong> — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Urgences & risques.",
-      "descriptionText": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la thématique Énergie, routes & urbanisme . La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page Environnement & durabilité . Mise à jour du 29 septembre 2026 : la thématique s’élargit à l’ adaptation au changement climatique — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Urgences & risques.",
+      "description": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la <a href=\"/programmes#energie\">thématique Énergie</a>. La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page <a href=\"/programmes/environnement#economie-verte\">Environnement &amp; durabilité</a>. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique s’élargit à l’<strong>adaptation au changement climatique</strong> — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Urgences & risques.",
+      "descriptionText": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la thématique Énergie . La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page Environnement & durabilité . Mise à jour du 29 septembre 2026 : la thématique s’élargit à l’ adaptation au changement climatique — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Urgences & risques.",
       "tags": [
        "Foncier",
        "Environnement",
@@ -1756,8 +1756,8 @@
         "href": "/programmes#sante-prevention"
        },
        {
-        "label": "Énergie, routes & urbanisme →",
-        "href": "/programmes#desenclavement-urbanisation"
+        "label": "Énergie →",
+        "href": "/programmes#energie"
        },
        {
         "label": "Suivi : 2 problématiques · 1 plaidoyer →",
@@ -1773,19 +1773,18 @@
       "id": "desenclavement-urbanisation",
       "number": "08",
       "kind": "thematique",
-      "name": "Énergie, routes & urbanisme",
+      "name": "Routes & urbanisme",
       "status": "À pourvoir",
       "filled": false,
       "coordinator": "à pourvoir",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la <a href=\"/programmes#jeunesse-reussite\">thématique Éducation, jeunesse &amp; formation</a>. Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir <a href=\"/journal/2026-09-16-bedjondo-village-devenu-ville\">nos douze propositions pour une ville moderne</a>). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir <a href=\"https://lonodji.org/projets/bedjondo-transport-logistique\">Bedjondo Transport et Logistique</a>, ex-Air Bedjondo). <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’<strong>énergie</strong> (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo.",
-      "descriptionText": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la thématique Éducation, jeunesse & formation . Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir nos douze propositions pour une ville moderne ). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir Bedjondo Transport et Logistique , ex-Air Bedjondo). Mise à jour du 29 septembre 2026 : la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’ énergie (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo.",
+      "description": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la <a href=\"/programmes#jeunesse-reussite\">thématique Éducation, jeunesse &amp; formation</a>. Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir <a href=\"/journal/2026-09-16-bedjondo-village-devenu-ville\">nos douze propositions pour une ville moderne</a>). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir <a href=\"https://lonodji.org/projets/bedjondo-transport-logistique\">Bedjondo Transport et Logistique</a>, ex-Air Bedjondo). <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’<strong>énergie</strong> (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo. <strong>Mise à jour du 30 septembre 2026 :</strong> l’énergie devient une thématique à part entière, la 21, Énergie ; la thématique 08, qui prend le nom de Routes & urbanisme, garde les routes, les ponts, les pistes et l’urbanisme de Bédjondo.",
+      "descriptionText": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la thématique Éducation, jeunesse & formation . Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir nos douze propositions pour une ville moderne ). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir Bedjondo Transport et Logistique , ex-Air Bedjondo). Mise à jour du 29 septembre 2026 : la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’ énergie (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo. Mise à jour du 30 septembre 2026 : l’énergie devient une thématique à part entière, la 21, Énergie ; la thématique 08, qui prend le nom de Routes & urbanisme, garde les routes, les ponts, les pistes et l’urbanisme de Bédjondo.",
       "tags": [
        "Désenclavement",
        "Urbanisation",
        "Routes",
-       "Électricité",
-       "Solaire",
+       "Ponts",
        "Plan de ville"
       ],
       "odd": [
@@ -1804,14 +1803,6 @@
         "title": "ODD 11 — Villes et communautés durables | cible 11.3 — urbanisation participative et planifiée · cible 11.6 — gestion des déchets municipaux",
         "accent": "#FD9D24",
         "ink": "#10181f"
-       },
-       {
-        "num": "7",
-        "name": "Énergie",
-        "cible": "7.1 / 7.2",
-        "title": "ODD 7 — Énergie propre et d’un coût abordable | cible 7.1 — accès à des services énergétiques fiables · cible 7.2 — part des énergies renouvelables",
-        "accent": "#FCC30B",
-        "ink": "#10181f"
        }
       ],
       "links": [
@@ -1824,7 +1815,7 @@
         "href": "/programmes#jeunesse-reussite"
        },
        {
-        "label": "Suivi : 4 problématiques · 2 plaidoyers →",
+        "label": "Suivi : 3 problématiques · 1 plaidoyer →",
         "href": "/impact#desenclavement-urbanisation"
        },
        {
@@ -1874,7 +1865,7 @@
         "href": "/projets/complexe-sportif"
        },
        {
-        "label": "Énergie, routes & urbanisme →",
+        "label": "Routes & urbanisme →",
         "href": "/programmes#desenclavement-urbanisation"
        },
        {
@@ -2120,6 +2111,44 @@
        {
         "label": "Rejoindre cette thématique →",
         "href": "/participer?theme=20#contact"
+       }
+      ]
+     },
+     {
+      "id": "energie",
+      "number": "21",
+      "kind": "thematique",
+      "name": "Énergie",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "L’accès à l’énergie dans le pays bedjond : électricité par le réseau, par des mini-réseaux ou par le solaire, éclairage public, électrification des écoles, des centres de santé et de la mairie — notre diagnostic ne connaît aujourd’hui aucun équipement public électrifié à Bédjondo. La thématique porte le plaidoyer <a href=\"/journal/2026-09-16-plaidoyer-electricite-bedjondo\">« De la lumière pour Bédjondo »</a> et suit les programmes de l’État et des bailleurs qui financent l’électrification. Avec la thématique Environnement, climat & ressources naturelles, elle suit aussi ce que le <a href=\"https://lonodji.org/territoire/sous-sol\">sous-sol</a> pourrait un jour apporter. <strong>Thématique créée le 30 septembre 2026</strong> ; elle reprend l’énergie, rattachée depuis le 29 septembre à la thématique 08, qui devient Routes & urbanisme. Rien n’est encore engagé.",
+      "descriptionText": "L’accès à l’énergie dans le pays bedjond : électricité par le réseau, par des mini-réseaux ou par le solaire, éclairage public, électrification des écoles, des centres de santé et de la mairie — notre diagnostic ne connaît aujourd’hui aucun équipement public électrifié à Bédjondo. La thématique porte le plaidoyer « De la lumière pour Bédjondo » et suit les programmes de l’État et des bailleurs qui financent l’électrification. Avec la thématique Environnement, climat & ressources naturelles, elle suit aussi ce que le sous-sol pourrait un jour apporter. Thématique créée le 30 septembre 2026 ; elle reprend l’énergie, rattachée depuis le 29 septembre à la thématique 08, qui devient Routes & urbanisme. Rien n’est encore engagé.",
+      "tags": [
+       "Électricité",
+       "Solaire",
+       "Éclairage public",
+       "Mini-réseaux"
+      ],
+      "odd": [
+       {
+        "num": "7",
+        "name": "Énergie",
+        "cible": "7.1 / 7.2",
+        "title": "ODD 7 — Énergie propre et d’un coût abordable | cible 7.1 — accès à des services énergétiques fiables · cible 7.2 — part des énergies renouvelables",
+        "accent": "#FCC30B",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Suivi : 1 problématique · 1 plaidoyer →",
+        "href": "/impact#energie"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=21#contact"
        }
       ]
      }
@@ -2380,8 +2409,8 @@
       "filled": true,
       "coordinator": "Bignéro Moïalbéi LE MADANG",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons : accompagnement à l’état civil et aux démarches administratives en ligne, mobile money et paiements numériques pour les producteurs et les commerçants, outils simples pour les écoles, les centres de santé et les coopératives. La thématique porte aussi l’inclusion numérique — initier les aînés, les femmes et les villages éloignés aux usages de base — et l’équipement, en lien avec l’énergie solaire portée par la thématique <a href=\"#desenclavement-urbanisation\">Énergie, routes &amp; urbanisme</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique, jusqu’ici « Transformation numérique & services », reprend la <strong>connectivité</strong> — réseau mobile, haut débit, espace numérique — venue de la thématique 07. Sa coordination ne change pas.",
-      "descriptionText": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons : accompagnement à l’état civil et aux démarches administratives en ligne, mobile money et paiements numériques pour les producteurs et les commerçants, outils simples pour les écoles, les centres de santé et les coopératives. La thématique porte aussi l’inclusion numérique — initier les aînés, les femmes et les villages éloignés aux usages de base — et l’équipement, en lien avec l’énergie solaire portée par la thématique Énergie, routes & urbanisme . Mise à jour du 28 septembre 2026 : les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. Mise à jour du 29 septembre 2026 : la thématique, jusqu’ici « Transformation numérique & services », reprend la connectivité — réseau mobile, haut débit, espace numérique — venue de la thématique 07. Sa coordination ne change pas.",
+      "description": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons : accompagnement à l’état civil et aux démarches administratives en ligne, mobile money et paiements numériques pour les producteurs et les commerçants, outils simples pour les écoles, les centres de santé et les coopératives. La thématique porte aussi l’inclusion numérique — initier les aînés, les femmes et les villages éloignés aux usages de base — et l’équipement, en lien avec l’énergie solaire portée par la thématique <a href=\"#energie\">Énergie</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique, jusqu’ici « Transformation numérique & services », reprend la <strong>connectivité</strong> — réseau mobile, haut débit, espace numérique — venue de la thématique 07. Sa coordination ne change pas.",
+      "descriptionText": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons : accompagnement à l’état civil et aux démarches administratives en ligne, mobile money et paiements numériques pour les producteurs et les commerçants, outils simples pour les écoles, les centres de santé et les coopératives. La thématique porte aussi l’inclusion numérique — initier les aînés, les femmes et les villages éloignés aux usages de base — et l’équipement, en lien avec l’énergie solaire portée par la thématique Énergie . Mise à jour du 28 septembre 2026 : les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. Mise à jour du 29 septembre 2026 : la thématique, jusqu’ici « Transformation numérique & services », reprend la connectivité — réseau mobile, haut débit, espace numérique — venue de la thématique 07. Sa coordination ne change pas.",
       "tags": [
        "Internet",
        "E-administration",
@@ -2420,8 +2449,8 @@
         "href": "/projets/espace-numerique"
        },
        {
-        "label": "Énergie, routes & urbanisme →",
-        "href": "/programmes#desenclavement-urbanisation"
+        "label": "Énergie →",
+        "href": "/programmes#energie"
        },
        {
         "label": "Suivi : 1 problématique · 1 plaidoyer →",
@@ -2712,7 +2741,7 @@
    "title": "De la lumière pour Bédjondo",
    "href": "/journal/2026-09-16-plaidoyer-electricite-bedjondo",
    "theme": "Énergie",
-   "themeHref": "/programmes#desenclavement-urbanisation",
+   "themeHref": "/programmes#energie",
    "status": "Publié",
    "demand": "Inscription de Bédjondo et de ses cantons dans le PAAET et la Mission 300, équipements publics d’abord, kits solaires subventionnés, chefs-lieux non électrifiés ciblés.",
    "recipients": "Ministère de l’Énergie · SNE · CEP-TchadElec (PAAET) · ARSE · Banque mondiale / Mission 300 · opérateurs de mini-réseaux",
@@ -3084,7 +3113,7 @@
   {
    "year": "2026",
    "title": "Réactivation et structuration — 40 ans après 1986",
-   "text": "La communauté engage la réactivation d’ADEB LONODJI et se structure en pôles et thématiques d’action : trois pôles et douze thématiques le 11 septembre, portés à quatre pôles et vingt thématiques dans les jours qui suivent. Le projet de modernisation est piloté par Bignéro Moïalbéi LE MADANG , animateur de l’association. Cette réactivation tombe l’année même des 40 ans des premières réflexions de 1986 : ADEB LONODJI en fait un repère plutôt qu’un hasard de calendrier."
+   "text": "La communauté engage la réactivation d’ADEB LONODJI et se structure en pôles et thématiques d’action : trois pôles et douze thématiques le 11 septembre, portés à quatre pôles et vingt et une thématiques dans les jours qui suivent. Le projet de modernisation est piloté par Bignéro Moïalbéi LE MADANG , animateur de l’association. Cette réactivation tombe l’année même des 40 ans des premières réflexions de 1986 : ADEB LONODJI en fait un repère plutôt qu’un hasard de calendrier."
   }
  ],
  "generatedFrom": {

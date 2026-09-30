@@ -116,7 +116,7 @@ export default function SubsoilEn() {
         <div className="link-list">
           <Link href="/en/governance"><small>Territory</small><strong>Local governance</strong><span>Who decides what, from the canton to the State: to whom our proposals are addressed.</span></Link>
           <Link href="/en/commune"><small>Proposals</small><strong>Our proposals to the commune</strong><span>Priority projects and measures for the town of Bédjondo.</span></Link>
-          <Link href="/en/themes"><small>Our work</small><strong>Four pillars, twenty themes</strong><span>Including Environment, climate & natural resources, which will carry this file.</span></Link>
+          <Link href="/en/themes"><small>Our work</small><strong>Four pillars, twenty-one themes</strong><span>Including Environment, climate & natural resources, which will carry this file.</span></Link>
         </div>
       </section>
 

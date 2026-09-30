@@ -557,7 +557,7 @@
     },
     "thematiques": {
      "eau-energie-connectivite": 2,
-     "desenclavement-urbanisation": 1,
+     "energie": 1,
      "transformation-numerique-services": 1
     },
     "problemes": [
@@ -573,7 +573,7 @@
       "texte": "Aucun équipement public électrifié connu — centre de santé, lycée, mairie ( électricité )",
       "statut": "Partiel",
       "decideur": "National",
-      "thematique": "desenclavement-urbanisation"
+      "thematique": "energie"
      },
      {
       "id": "prob-11",

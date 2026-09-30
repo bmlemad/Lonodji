@@ -18,7 +18,7 @@
    "pourvue": true,
    "qui": "Franco Joseph Ngarlena",
    "pdf": "/missions/fiche-mission-direction-pole-2.pdf",
-   "thematiques": 10
+   "thematiques": 11
   },
   {
    "pole": "pole-3",
@@ -113,7 +113,7 @@
   {
    "id": "desenclavement-urbanisation",
    "numero": "08",
-   "nom": "Énergie, routes & urbanisme",
+   "nom": "Routes & urbanisme",
    "pole": "II",
    "poleNom": "Développement humain & moyens d’existence",
    "pourvue": false,
@@ -169,6 +169,16 @@
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-coordination-urgences-risques.pdf"
+  },
+  {
+   "id": "energie",
+   "numero": "21",
+   "nom": "Énergie",
+   "pole": "II",
+   "poleNom": "Développement humain & moyens d’existence",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-coordination-energie.pdf"
   },
   {
    "id": "gouvernance-plaidoyer",

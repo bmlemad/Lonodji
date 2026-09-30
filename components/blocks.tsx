@@ -179,15 +179,15 @@ export function Timeline({ items }: { items: { year: string; title: string; text
   );
 }
 
-/* Deux vues d'une même grille : les vingt thématiques par pôle (/programmes) ou par secteur, en langue ONG (/secteurs). */
+/* Deux vues d'une même grille : les vingt et une thématiques par pôle (/programmes) ou par secteur, en langue ONG (/secteurs). */
 export function VuesThematiques({ active }: { active: "poles" | "secteurs" }) {
   const vues = [
     { id: "poles", href: "/programmes", label: "Par pôle", note: "l’organisation de l’association" },
     { id: "secteurs", href: "/secteurs", label: "Par secteur", note: "la langue des ONG et des bailleurs" },
   ] as const;
   return (
-    <nav className="vues-them" aria-label="Deux vues des vingt thématiques">
-      <span className="vues-them-titre">Les vingt thématiques</span>
+    <nav className="vues-them" aria-label="Deux vues des vingt et une thématiques">
+      <span className="vues-them-titre">Les vingt et une thématiques</span>
       {vues.map((v) => v.id === active
         ? <span key={v.id} className="vues-them-vue est-active" aria-current="page"><strong>{v.label}</strong><small>{v.note}</small></span>
         : <Link key={v.id} className="vues-them-vue" href={v.href}><strong>{v.label}</strong><small>{v.note}</small></Link>)}

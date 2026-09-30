@@ -150,7 +150,7 @@ def fiche_coordination(t: dict, pole: dict | None, logo: str, jour: str, cellule
     if cellule:
         url = f"{SITE}/participer#contact"
         kind, eyebrow, titre, sous = "Cellule transversale", "Cellule transversale · appui à toutes les thématiques", f"Cellule {h.escape(t['name'])}", "Coordonnateur ou coordonnatrice de la cellule"
-        direction = "<p>Les deux cellules transversales — Financement &amp; ressources, Communication &amp; numérique — appuient chacune des vingt thématiques et les quatre pôles.</p>"
+        direction = "<p>Les deux cellules transversales — Financement &amp; ressources, Communication &amp; numérique — appuient chacune des vingt et une thématiques et les quatre pôles.</p>"
     else:
         assert pole
         url = f"{SITE}/participer?theme={t['number']}&coordo=1"
