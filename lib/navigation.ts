@@ -187,6 +187,7 @@ export const NAVIGATION_EN: NavEntree[] = [
         { label: "Villages", href: "/en/villages", note: "One record per locality" },
         { label: "Bédjondo, our town", href: "/en/bedjondo", note: "A village that became a town" },
         { label: "Map of the territory", href: "/carte", note: "Fourteen units, localities, facilities", fr: true },
+        { label: "Local governance", href: "/en/governance", note: "Who decides what, from the canton to the State" },
         { label: "Decentralisation", href: "/territoire/decentralisation", note: "Commune, canton, sub-prefecture", fr: true },
       ] },
       { titre: "Understand and measure", liens: [

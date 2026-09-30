@@ -3,7 +3,7 @@
    reprend un texte déjà publié, avec son lien. Les problématiques du diagnostic sont comptées depuis le
    tableau publié (colonne « Qui décide »), pas recopiées. */
 
-import { enLettres } from "./content";
+import { enLettres, getPage } from "./content";
 import { nombrePropositions, PROJETS_PRIORITAIRES } from "./propositions-commune";
 
 export type Lien = { label: string; href: string };
@@ -112,3 +112,16 @@ export const INDICATEURS: { indicateur: string; depart: string; cible: string; e
   { indicateur: "Cahiers de médiation tenus", depart: "0", cible: "un par canton", echeance: "à fixer", verification: "Cahiers, à la chefferie et à la mairie", statut: "proposé" },
   { indicateur: "Femmes et jeunes au comité de concertation", depart: "comité non réuni", cible: "à fixer par le comité", echeance: "à fixer", verification: "Liste de présence publiée", statut: "proposé" },
 ];
+
+/* Problématiques du diagnostic, par échelon de décision (colonne « Qui décide » du tableau publié). */
+export function problemesParDecideur(): Record<string, { id: string; texte: string }[]> {
+  const html = getPage("problematiques").sections.map((s) => s.html).join("");
+  const out: Record<string, { id: string; texte: string }[]> = {};
+  for (const m of html.matchAll(/<tr[^>]*id="(prob-\d+)"[^>]*>([\s\S]*?)<\/tr>/g)) {
+    const c = [...m[2].matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/g)].map((x) => x[1].replace(/<a[\s\S]*?<\/a>/g, "").replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim());
+    if (c.length === 4) c.shift();
+    if (c.length !== 3) continue;
+    (out[c[2]] ??= []).push({ id: m[1], texte: c[0].replace(/\s*\(\s*\)\s*$/, "").split(" — ")[0] });
+  }
+  return out;
+}

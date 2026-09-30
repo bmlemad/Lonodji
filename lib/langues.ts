@@ -13,6 +13,7 @@ export const FR_VERS_EN: Record<string, string> = {
   "/villages": "/en/villages",
   "/odeb": "/en/odeb",
   "/territoire/propositions-commune": "/en/commune",
+  "/territoire/gouvernance-locale": "/en/governance",
 };
 
 export const EN_VERS_FR: Record<string, string> = Object.fromEntries(Object.entries(FR_VERS_EN).map(([fr, en]) => [en, fr]));

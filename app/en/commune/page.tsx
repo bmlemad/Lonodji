@@ -140,7 +140,7 @@ export default function CommuneEn() {
       </section>
 
       <section className="hub-section" id="lire">
-        <p className="lg-footnote">This page translates the French page <Link href="/territoire/propositions-commune" hrefLang="fr">Nos propositions à la commune de Bédjondo</Link>, which is the reference and also lists the problems in our territorial diagnosis that fall to the commune. The full note, the article and the legal framework are in French. A development partner interested in one of these projects? <Link href="/en/contact">Write to us</Link>.</p>
+        <p className="lg-footnote">This page translates the French page <Link href="/territoire/propositions-commune" hrefLang="fr">Nos propositions à la commune de Bédjondo</Link>, which is the reference and also lists the problems in our territorial diagnosis that fall to the commune. The full note, the article and the legal framework are in French. Who decides what, level by level: <Link href="/en/governance">local governance in Bédjondo</Link>. A development partner interested in one of these projects? <Link href="/en/contact">Write to us</Link>.</p>
         <Partager route={ROUTE} titre="Our proposals to the commune of Bédjondo" texte="Every proposal ADEB LONODJI makes to the town hall of Bédjondo, gathered and sourced." lang="en" />
       </section>
     </main>

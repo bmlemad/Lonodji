@@ -3,15 +3,16 @@ import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import PagesVoisines from "@/components/pages-voisines";
-import { enLettres, getPage, metaDescription, ogFor } from "@/lib/content";
-import { ARTICULATIONS, INDICATEURS, LIENS_GOUVERNANCE as L, NIVEAUX, RESUME_PROPOSITIONS, type Lien } from "@/lib/gouvernance-locale";
+import { enLettres, metaDescription, ogFor } from "@/lib/content";
+import { alternatesLangues } from "@/lib/langues";
+import { ARTICULATIONS, INDICATEURS, LIENS_GOUVERNANCE as L, NIVEAUX, problemesParDecideur, RESUME_PROPOSITIONS, type Lien } from "@/lib/gouvernance-locale";
 
 const ROUTE = "/territoire/gouvernance-locale";
 
 export const metadata: Metadata = {
   title: "Gouvernance locale",
   description: metaDescription("Qui décide quoi à Bédjondo — État, province, département, commune, chefferies, quartiers —, ce que nos dossiers demandent à chaque niveau, comment ils s’articulent, et les indicateurs pour le suivre."),
-  alternates: { canonical: ROUTE },
+  alternates: { canonical: ROUTE, languages: alternatesLangues(ROUTE) },
   openGraph: { ...ogFor(ROUTE), title: "Gouvernance locale à Bédjondo : qui décide quoi", description: "Chaque niveau de décision, nos demandes, leurs articulations et les indicateurs pour les suivre." },
 };
 
@@ -19,21 +20,9 @@ function Sources({ sources }: { sources: Lien[] }) {
   return <span className="pc-sources">{sources.map((s, i) => <span key={s.label}>{i ? " · " : ""}<Link href={s.href}>{s.label}</Link></span>)}</span>;
 }
 
-/* Problématiques du diagnostic, par échelon de décision (colonne « Qui décide » du tableau publié). */
-function parDecideur(): Record<string, { id: string; texte: string }[]> {
-  const html = getPage("problematiques").sections.map((s) => s.html).join("");
-  const out: Record<string, { id: string; texte: string }[]> = {};
-  for (const m of html.matchAll(/<tr[^>]*id="(prob-\d+)"[^>]*>([\s\S]*?)<\/tr>/g)) {
-    const c = [...m[2].matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/g)].map((x) => x[1].replace(/<a[\s\S]*?<\/a>/g, "").replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim());
-    if (c.length === 4) c.shift();
-    if (c.length !== 3) continue;
-    (out[c[2]] ??= []).push({ id: m[1], texte: c[0].replace(/\s*\(\s*\)\s*$/, "").split(" — ")[0] });
-  }
-  return out;
-}
 
 export default function GouvernanceLocale() {
-  const probs = parDecideur();
+  const probs = problemesParDecideur();
   const publies = INDICATEURS.filter((i) => i.statut === "publié").length;
   return (
     <main id="main-content" className="hub-page gl-page">
