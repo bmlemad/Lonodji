@@ -6,6 +6,7 @@ const ROUTES_DOSSIERS = JSON.parse(readFileSync(new URL("./content/routes-dossie
 const nextConfig = {
   // les brouillons (arabes notamment) ne doivent jamais être embarqués dans les fonctions serveur
   outputFileTracingExcludes: { "*": ["content/brouillons/**"] },
+  compress: true,
   reactStrictMode: true,
   experimental: { globalNotFound: true },
   poweredByHeader: false,
