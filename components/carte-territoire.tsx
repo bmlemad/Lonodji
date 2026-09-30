@@ -124,15 +124,24 @@ export default function CarteTerritoire() {
 
       const villagesCouche = L.layerGroup().addTo(m);
       const rayon: Record<string, number> = { city: 7, town: 6, village: 3.5, hamlet: 2.5 };
-      for (const v of donnees.villages) {
-        const u = donnees.unites.find((x) => x.id === v[4]);
-        const couleur = u ? GROUPES[u.groupe].couleur : "#607069";
-        const c = L.circleMarker([v[1], v[0]], { renderer: canvas, radius: rayon[v[3]] || 3, color: "#fff", weight: v[3] === "village" || v[3] === "hamlet" ? 0.8 : 1.5, fillColor: couleur, fillOpacity: 0.9 });
-        const nom = nomPropre(v[2]);
-        if (nom) c.bindTooltip(`${nom} · ${TYPES[v[3]] || v[3]}`, { direction: "top", offset: [0, -4], className: "ct-info" });
-        c.on("click", () => setSelection({ genre: "village", village: v }));
-        c.addTo(villagesCouche);
-      }
+      // Les données restent disponibles pour la recherche, mais les ~966 marqueurs
+      // ne sont créés qu'à partir d'un zoom utile, afin d'alléger le premier rendu.
+      let villagesRendus = false;
+      const rendreVillages = () => {
+        if (villagesRendus || m.getZoom() < 9 || !m.hasLayer(villagesCouche)) return;
+        villagesRendus = true;
+        for (const v of donnees.villages) {
+          const u = donnees.unites.find((x) => x.id === v[4]);
+          const couleur = u ? GROUPES[u.groupe].couleur : "#607069";
+          const marker = L.circleMarker([v[1], v[0]], { renderer: canvas, radius: rayon[v[3]] || 3, color: "#fff", weight: v[3] === "village" || v[3] === "hamlet" ? 0.8 : 1.5, fillColor: couleur, fillOpacity: 0.9 });
+          const nom = nomPropre(v[2]);
+          if (nom) marker.bindTooltip(nom + " · " + (TYPES[v[3]] || v[3]), { direction: "top", offset: [0, -4], className: "ct-info" });
+          marker.on("click", () => setSelection({ genre: "village", village: v }));
+          marker.addTo(villagesCouche);
+        }
+      };
+      m.on("zoomend", rendreVillages);
+      rendreVillages();
 
       const equipementsCouche = L.layerGroup().addTo(m);
       for (const e of donnees.equipements) {
