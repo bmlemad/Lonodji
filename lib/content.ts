@@ -154,6 +154,10 @@ export function pickSections(page: LegacyPage, opts: { only?: string[]; exclude?
 }
 
 export const thematiqueCount = (idx: ContentIndex) => idx.structure.poles.reduce((n, p) => n + p.items.length, 0);
+
+export function getIndicateurs(): { contenu: { plaidoyers: { publies: number } } } {
+  return JSON.parse(fs.readFileSync(path.join(CONTENT_DIR, "indicateurs.json"), "utf8")) as { contenu: { plaidoyers: { publies: number } } };
+}
 export const filledCount = (idx: ContentIndex) => idx.structure.poles.reduce((n, p) => n + p.items.filter((t) => t.filled).length, 0);
 /* Directions de pôle (rang de chef de projet) : pourvues / total. */
 export const directionsCount = (idx: ContentIndex) => ({ total: idx.structure.poles.filter((p) => p.direction).length, pourvues: idx.structure.poles.filter((p) => p.direction?.filled).length });
