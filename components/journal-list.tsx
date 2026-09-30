@@ -7,6 +7,7 @@ import { ArticleCard } from "./blocks";
 export default function JournalList({ articles, categories }: { articles: ArticleSummary[]; categories: { slug: string; label: string }[] }) {
   const [cat, setCat] = useState("all");
   const [q, setQ] = useState("");
+  const [tout, setTout] = useState(false);
   // ?rubrique=<slug> (depuis la bibliothèque) : ouvre le journal sur une rubrique
   useEffect(() => {
     const r = new URLSearchParams(window.location.search).get("rubrique");
@@ -16,6 +17,13 @@ export default function JournalList({ articles, categories }: { articles: Articl
   const cats = categories.filter((c) => c.slug === "all" || used.has(c.slug));
   const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   const list = articles.filter((a) => (cat === "all" || a.category === cat) && (!q || norm(a.title + " " + a.summary + " " + a.tag).includes(norm(q))));
+  // les douze plus récents d'abord ; le reste reste dans la page (moteurs de recherche) mais masqué jusqu'au clic
+  const LIMITE = 12;
+  const replie = !tout && cat === "all" && !q && list.length > LIMITE + 3;
+  const afficherTout = () => {
+    setTout(true);
+    requestAnimationFrame(() => (document.querySelectorAll<HTMLAnchorElement>("#articles > .art-card h3 a")[LIMITE])?.focus());
+  };
   return (
     <>
       <div className="journal-tools">
@@ -32,8 +40,13 @@ export default function JournalList({ articles, categories }: { articles: Articl
       </div>
       <h2 className="sr-only">Tous les articles</h2>
       <div className="art-grid" id="articles">
-        {list.map((a) => <ArticleCard key={a.slug} a={a} />)}
+        {list.map((a, i) => (replie && i >= LIMITE ? <div key={a.slug} hidden><ArticleCard a={a} /></div> : <ArticleCard key={a.slug} a={a} />))}
       </div>
+      {replie ? (
+        <p className="section-actions journal-plus">
+          <button type="button" className="button secondary" onClick={afficherTout}>Afficher les {list.length - LIMITE} articles plus anciens <span aria-hidden="true">↓</span></button>
+        </p>
+      ) : null}
       {list.length === 0 ? <p className="lg-footnote">Aucun article ne correspond à cette recherche.</p> : null}
     </>
   );
