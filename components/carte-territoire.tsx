@@ -22,6 +22,8 @@ type Donnees = {
 };
 type Selection = { genre: "unite"; unite: Unite } | { genre: "village"; village: Village } | { genre: "equipement"; equipement: Equipement } | null;
 
+type ResultatRecherche = { key: string; text: string; nom: string; type: string; unite: string; coords: [number, number]; unit?: Unite; village?: Village };
+
 const GROUPES: Record<Unite["groupe"], { label: string; couleur: string; fond: number }> = {
   coeur: { label: "Mandoul Occidental, cœur du pays bedjond", couleur: "#173b2d", fond: 0.22 },
   sud: { label: "Logone Oriental, présence attestée", couleur: "#5b7a3a", fond: 0.16 },
@@ -233,7 +235,7 @@ export default function CarteTerritoire() {
   const rechercheIndex = useMemo(() => {
     if (!donnees || !indexes) return null;
     return [
-      ...donnees.unites.map((u) => ({
+      ...donnees.unites.map((u): ResultatRecherche => ({
         key: "u:" + u.id,
         text: sansAccents(u.nom),
         nom: u.nom,
@@ -242,7 +244,7 @@ export default function CarteTerritoire() {
         coords: [u.centre[1], u.centre[0]] as [number, number],
         unit: u,
       })),
-      ...donnees.villages.flatMap((v) => {
+      ...donnees.villages.flatMap((v): ResultatRecherche[] => {
         const nom = nomPropre(v[2]);
         return nom ? [{
           key: "v:" + v[4] + ":" + v[7],
