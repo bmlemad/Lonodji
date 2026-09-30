@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
-import { getPage, metaDescription, ogFor } from "@/lib/content";
-import { ARTICULATIONS, INDICATEURS, LIENS_GOUVERNANCE as L, NIVEAUX, type Lien } from "@/lib/gouvernance-locale";
+import PagesVoisines from "@/components/pages-voisines";
+import { enLettres, getPage, metaDescription, ogFor } from "@/lib/content";
+import { ARTICULATIONS, INDICATEURS, LIENS_GOUVERNANCE as L, NIVEAUX, RESUME_PROPOSITIONS, type Lien } from "@/lib/gouvernance-locale";
 
 const ROUTE = "/territoire/gouvernance-locale";
 
@@ -51,6 +52,14 @@ export default function GouvernanceLocale() {
         { value: "2,1 %", label: "des recettes publiques", note: "dépensées par les collectivités (2020)" },
       ]} />
 
+      <nav className="pc-sommaire" aria-label="Sur cette page">
+        <a href="#niveaux"><b>1</b>Qui décide quoi <span>{NIVEAUX.length}</span></a>
+        <a href="#articulations"><b>2</b>Agir ensemble <span>{ARTICULATIONS.length}</span></a>
+        <a href="#indicateurs"><b>3</b>Indicateurs <span>{INDICATEURS.length}</span></a>
+        <a href="#methode"><b>4</b>Notre méthode</a>
+        <a href="#lire"><b>+</b>Les dossiers reliés</a>
+      </nav>
+
       <section className="hub-section" id="niveaux">
         <SectionHead eyebrow="Qui décide quoi" title="Six niveaux," em="du plus national au plus proche." text="Pour chaque niveau : qui il est, ce qui relève de lui d’après nos dossiers, les problématiques du diagnostic qui en dépendent, et ce que nous lui demandons. La règle qui guide nos plaidoyers est la subsidiarité : ce qui peut être décidé à Bédjondo doit l’être à Bédjondo." />
         <ol className="gl-niveaux">
@@ -92,7 +101,7 @@ export default function GouvernanceLocale() {
       </section>
 
       <section className="hub-section" id="indicateurs">
-        <SectionHead eyebrow="Suivre" title="Des indicateurs," em="publiés et proposés." text={`Les ${publies} premiers figurent déjà dans le cadre de résultats de nos plaidoyers. Les suivants sont proposés le 30 septembre 2026 et restent à valider par le bureau ; leurs cibles et échéances seront fixées avec la commune, pas avant.`} />
+        <SectionHead eyebrow="Suivre" title="Des indicateurs," em="publiés et proposés." text={`Les ${enLettres(publies)} premiers figurent déjà dans le cadre de résultats de nos plaidoyers. Les suivants sont proposés le 30 septembre 2026 et restent à valider par le bureau ; leurs cibles et échéances seront fixées avec la commune, pas avant.`} />
         <div className="table-wrap" tabIndex={0} role="region" aria-label="Indicateurs de gouvernance locale">
           <table className="sec-table gl-table">
             <thead><tr><th scope="col">Indicateur</th><th scope="col">Départ</th><th scope="col">Cible</th><th scope="col">Échéance</th><th scope="col">Vérification</th><th scope="col">Statut</th></tr></thead>
@@ -123,14 +132,17 @@ export default function GouvernanceLocale() {
         <SectionHead eyebrow="Aller plus loin" title="Les dossiers" em="que cette page relie." />
         <div className="link-list">
           <Link href={L.decentralisation.href}><small>Dossier</small><strong>Décentralisation & développement local</strong><span>Le cadre légal, l’écart entre les textes et les moyens, les quatre règles demandées au conseil.</span></Link>
-          <Link href={L.propositions.href}><small>Propositions</small><strong>Nos propositions à la commune</strong><span>Dix projets prioritaires, vingt-neuf mesures, notre démarche avec la commune et les autorités locales.</span></Link>
+          <Link href={L.propositions.href}><small>Propositions</small><strong>Nos propositions à la commune</strong><span>{RESUME_PROPOSITIONS}, notre démarche avec la commune et les autorités locales.</span></Link>
           <Link href={L.paix.href}><small>Dossier</small><strong>Paix entre agriculteurs et éleveurs</strong><span>Six mesures à l’échelle des cantons, dont le comité mixte et le cahier de médiation.</span></Link>
           <Link href={L.lieux.href}><small>Dossier</small><strong>Lieux sacrés et sépultures</strong><span>Le registre tenu par la chefferie, et l’inscription au plan communal.</span></Link>
           <Link href="/programmes#gouvernance-plaidoyer"><small>Thématique</small><strong>Gouvernance & plaidoyer</strong><span>La thématique qui porte ces dossiers, au pôle Gouvernance, paix & plaidoyer.</span></Link>
           <Link href={L.enquetes.href}><small>Enquêtes</small><strong>Enquêtes de terrain</strong><span>Ce que nous demandons aux chefs de quartier et de village, et comment.</span></Link>
         </div>
-        <Partager route={ROUTE} titre="Gouvernance locale à Bédjondo : qui décide quoi" texte="Chaque niveau de décision, nos demandes, leurs articulations et les indicateurs pour les suivre." />
       </section>
+
+      <PagesVoisines route={ROUTE} />
+      <Partager route={ROUTE} titre="Gouvernance locale à Bédjondo : qui décide quoi" texte="Chaque niveau de décision, nos demandes, leurs articulations et les indicateurs pour les suivre." />
+      <p className="lg-footnote">Page créée le 30 septembre 2026 à partir des dossiers publiés ; chaque demande renvoie au texte d’origine. Une erreur de fait ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
     </main>
   );
 }

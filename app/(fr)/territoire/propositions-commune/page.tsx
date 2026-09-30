@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
+import PagesVoisines from "@/components/pages-voisines";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
-import { getIndex, getPage, metaDescription, ogFor } from "@/lib/content";
+import { enLettres, getIndex, getPage, metaDescription, ogFor } from "@/lib/content";
 import { APPORTS, DEMARCHE, REGLES_DEMARCHE, EN_RETOUR, GROUPES, nombrePropositions, nombreSansDepense, PORTEURS, PROJET_INTEGRE, PROJETS_PRIORITAIRES, type Source } from "@/lib/propositions-commune";
 import { programmeParId } from "@/lib/bailleurs";
 import { alternatesLangues } from "@/lib/langues";
@@ -45,10 +46,10 @@ export default function PropositionsCommune() {
   return (
     <main id="main-content" className="hub-page pc-page">
       <PageHeader
-        eyebrow="Territoire · la commune"
+        eyebrow="Territoire · propositions à la commune"
         title="Nos propositions"
         em="à la commune de Bédjondo."
-        lead={`Tout ce que nous proposons à la mairie, sur une page. D’abord dix projets prioritaires, qui répondent aux besoins des habitants et rejoignent les priorités des partenaires du développement local — gouvernance locale, résilience, inclusion économique —, et le projet intégré que nous recommandons. Ensuite les mesures déjà publiées dans nos dossiers, réunies en six chantiers, chacune avec sa source. Plusieurs ne demandent qu’une décision.`}
+        lead={`Tout ce que nous proposons à la mairie, sur une page. D’abord ${enLettres(PROJETS_PRIORITAIRES.length)} projets prioritaires, qui répondent aux besoins des habitants et rejoignent les priorités des partenaires du développement local — gouvernance locale, résilience, inclusion économique —, et le projet intégré que nous recommandons. Ensuite les mesures déjà publiées dans nos dossiers, réunies en six chantiers, chacune avec sa source. Plusieurs ne demandent qu’une décision.`}
         crumbs={[{ label: "Territoire", href: "/territoire" }, { label: "Propositions à la commune" }]}
         pills={[`${PROJETS_PRIORITAIRES.length} projets prioritaires`, `${total} mesures en ${GROUPES.length} chantiers`, `note publiée le ${note?.published ?? "16 septembre 2026"}`, `envoi : ${(note?.sent ?? "à envoyer").toLowerCase()}`]}
       />
@@ -61,7 +62,7 @@ export default function PropositionsCommune() {
       ]} />
 
       <section className="hub-section" id="projets-prioritaires">
-        <SectionHead eyebrow={`Proposition de l’association · 30 septembre 2026`} title="Dix projets prioritaires" em="pour la commune." text="Des projets qui répondent aux besoins réels des habitants et qui rejoignent les axes que les partenaires du développement local soutiennent : gouvernance locale, résilience communautaire, inclusion économique. Ce sont des propositions à débattre avec la commune : aucun n’a encore d’étude, de budget ni de financement. Pour chacun : ce que nos dossiers en disaient déjà, ce que LONODJI pourrait apporter — uniquement des engagements déjà publiés, dans le cadre d’une convention avec la commune —, et les programmes de notre relevé des bailleurs dont le champ le recoupe : des portes à frapper, pas des financements acquis." />
+        <SectionHead eyebrow={`Proposition de l’association · 30 septembre 2026`} title={`${enLettres(PROJETS_PRIORITAIRES.length, true)} projets prioritaires`} em="pour la commune." text="Des projets qui répondent aux besoins réels des habitants et qui rejoignent les axes que les partenaires du développement local soutiennent : gouvernance locale, résilience communautaire, inclusion économique. Ce sont des propositions à débattre avec la commune : aucun n’a encore d’étude, de budget ni de financement. Pour chacun : ce que nos dossiers en disaient déjà, ce que LONODJI pourrait apporter — uniquement des engagements déjà publiés, dans le cadre d’une convention avec la commune —, et les programmes de notre relevé des bailleurs dont le champ le recoupe : des portes à frapper, pas des financements acquis." />
         <ol className="pp-grille">
           {PROJETS_PRIORITAIRES.map((p, i) => {
             const progs = p.programmes.map(programmeParId).filter((x) => x !== undefined);
@@ -173,8 +174,10 @@ export default function PropositionsCommune() {
           <Link href="/territoire/decentralisation"><small>Dossier</small><strong>Décentralisation & développement local</strong><span>Ce que la loi confie à la commune, avec quels moyens, et les quatre règles de gouvernance que nous demandons.</span></Link>
         </div>
         <p className="lg-footnote">Une proposition oubliée, une erreur ? Toute proposition est d’abord publiée dans son dossier, puis reprise ici avec son lien. Vous êtes conseiller communal ? <Link href="/participer?objet=partenariat#contact">Écrivez-nous</Link> : nos travaux sont à votre disposition.</p>
-        <Partager route={ROUTE} titre="Nos propositions à la commune de Bédjondo" texte="Toutes les propositions d’ADEB LONODJI à la mairie de Bédjondo, réunies et sourcées." />
       </section>
+
+      <PagesVoisines route={ROUTE} />
+      <Partager route={ROUTE} titre="Nos propositions à la commune de Bédjondo" texte="Toutes les propositions d’ADEB LONODJI à la mairie de Bédjondo, réunies et sourcées." />
     </main>
   );
 }

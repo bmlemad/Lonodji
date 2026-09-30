@@ -277,3 +277,11 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
     { label: "Le journal", href: "/journal" }, { label: "La lettre d’information", href: "/lettre" }, { label: "Installer l’application", href: "/projets/application" },
   ] },
 ];
+
+/* Les autres pages de la même rubrique du menu (six au plus) : bloc « Dans la même rubrique » en pied
+   des pages de fond, importées ou conçues (components/pages-voisines.tsx). */
+export function voisinesDe(route: string): { label: string; href: string; note?: string }[] {
+  const entree = NAVIGATION.find((e) => e.colonnes?.some((c) => c.liens.some((l) => l.href === route)));
+  if (!entree?.colonnes) return [];
+  return entree.colonnes.flatMap((c) => c.liens).filter((l) => l.href !== route && !l.href.includes("#") && !l.externe).slice(0, 6);
+}

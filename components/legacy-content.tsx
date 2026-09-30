@@ -5,7 +5,7 @@ import LegacyEnhance from "./legacy-enhance";
 import OuvrirAncre from "./ouvrir-ancre";
 import SommaireLateral from "./sommaire-lateral";
 import { breadcrumbSchema, jsonLd, webPageSchema } from "../lib/schema";
-import { NAVIGATION } from "../lib/navigation";
+import PagesVoisines from "./pages-voisines";
 
 /** Rendu des sections importées de l'ancien site, dans le style du site moderne. */
 /* sansPremierTitre : quand la page pose déjà son propre titre de section (SectionHead) juste au-dessus,
@@ -161,12 +161,6 @@ function sommaireDe(page: LegacyPage): { href: string; label: string }[] {
   return items.length >= 3 ? items : [];
 }
 
-/* Les autres pages de la même rubrique du menu (six au plus). */
-function voisines(route: string): { label: string; href: string; note?: string }[] {
-  const entree = NAVIGATION.find((e) => e.colonnes?.some((c) => c.liens.some((l) => l.href === route)));
-  if (!entree?.colonnes) return [];
-  return entree.colonnes.flatMap((c) => c.liens).filter((l) => l.href !== route && !l.href.includes("#") && !l.externe).slice(0, 6);
-}
 
 /** Page de fond complète (dossier) : en-tête conçu + contenu importé. */
 export function LegacyDocument({ page, children, eyebrowPrefix }: { page: LegacyPage; children?: React.ReactNode; eyebrowPrefix?: string }) {
@@ -213,14 +207,7 @@ export function LegacyDocument({ page, children, eyebrowPrefix }: { page: Legacy
           </div>
         ) : legacy;
       })()}
-      {!en && voisines(page.route).length ? (
-        <section className="hub-section lg-voisines" aria-labelledby="lg-voisines-titre">
-          <p className="eyebrow" id="lg-voisines-titre">Dans la même rubrique</p>
-          <div className="link-list">
-            {voisines(page.route).map((l) => <Link key={l.href} href={l.href}><strong>{l.label}</strong>{l.note ? <span>{l.note}</span> : null}</Link>)}
-          </div>
-        </section>
-      ) : null}
+      {!en ? <PagesVoisines route={page.route} /> : null}
       <LegacyEnhance hasMap={page.hasMap} hasForms={page.forms.length > 0} scripts={page.scripts} />
       <OuvrirAncre />
       <Partager route={page.route} titre={page.title.replace(/\s+/g, " ")} texte={page.description} lang={page.lang === "en" ? "en" : "fr"} />

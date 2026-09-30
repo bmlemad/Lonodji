@@ -159,9 +159,17 @@ export const thematiqueCount = (idx: ContentIndex) => idx.structure.poles.reduce
 export const filledCount = (idx: ContentIndex) => idx.structure.poles.reduce((n, p) => n + p.items.filter((t) => t.filled).length, 0);
 /* Directions de pôle (rang de chef de projet) : pourvues / total. */
 export const directionsCount = (idx: ContentIndex) => ({ total: idx.structure.poles.filter((p) => p.direction).length, pourvues: idx.structure.poles.filter((p) => p.direction?.filled).length });
-/* Nombres en lettres (0 à 20), pour les phrases qui comptent les thématiques. */
+/* Nombres en lettres (0 à 69), pour les phrases qui comptent thématiques, mesures, projets. */
 const LETTRES = ["zéro", "une", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf", "vingt"];
-export const enLettres = (n: number, majuscule = false) => { const t = LETTRES[n] ?? String(n); return majuscule ? t.charAt(0).toUpperCase() + t.slice(1) : t; };
+/* 21 à 69 (au féminin, comme « une ») : « vingt et une », « vingt-neuf », « trente-quatre »… ; au-delà, en chiffres. */
+const DIZAINES: Record<number, string> = { 2: "vingt", 3: "trente", 4: "quarante", 5: "cinquante", 6: "soixante" };
+const lettres = (n: number): string => {
+  if (LETTRES[n]) return LETTRES[n];
+  const d = Math.floor(n / 10), u = n % 10;
+  if (!DIZAINES[d]) return String(n);
+  return u === 0 ? DIZAINES[d] : u === 1 ? `${DIZAINES[d]} et une` : `${DIZAINES[d]}-${LETTRES[u]}`;
+};
+export const enLettres = (n: number, majuscule = false) => { const t = lettres(n); return majuscule ? t.charAt(0).toUpperCase() + t.slice(1) : t; };
 
 export const ORG = {
   name: "ADEB LONODJI",

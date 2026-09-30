@@ -3,7 +3,13 @@
    reprend un texte déjà publié, avec son lien. Les problématiques du diagnostic sont comptées depuis le
    tableau publié (colonne « Qui décide »), pas recopiées. */
 
+import { enLettres } from "./content";
+import { nombrePropositions, PROJETS_PRIORITAIRES } from "./propositions-commune";
+
 export type Lien = { label: string; href: string };
+
+/* « Dix projets prioritaires et vingt-neuf mesures », compté dans lib/propositions-commune.ts */
+export const RESUME_PROPOSITIONS = `${enLettres(PROJETS_PRIORITAIRES.length, true)} projets prioritaires et ${enLettres(nombrePropositions())} mesures`;
 export type Niveau = {
   id: string; nom: string; qui: string;
   decideurs: string[];            // valeurs de la colonne « Qui décide » du diagnostic rattachées à ce niveau
@@ -61,7 +67,7 @@ export const NIVEAUX: Niveau[] = [
     role: "Collectivité autonome de catégorie urbaine. Treize domaines partagés avec l’État, dont l’eau, l’assainissement, le marché, la voirie, l’urbanisme, l’appui aux écoles et aux centres de santé.",
     demandes: [
       { texte: "Quatre règles, sans dépense : un plan de développement communal public et opposable, des ressources propres collectées et rendues, des sessions annoncées et ouvertes, des conventions écrites avec les associations.", sources: [L.decentralisation, L.note] },
-      { texte: "Dix projets prioritaires et vingt-neuf mesures, réunis sur une page.", sources: [L.propositions] },
+      { texte: `${RESUME_PROPOSITIONS}, réunis sur une page.`, sources: [L.propositions] },
     ],
   },
   {
