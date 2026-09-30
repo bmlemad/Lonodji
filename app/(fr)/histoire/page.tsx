@@ -42,6 +42,7 @@ export default function Histoire() {
     <main id="main-content" className="hub-page">
       <PageHeader
         eyebrow="Patrimoine · histoire & grandes figures"
+        crumbs={[{ label: "Patrimoine", href: "/patrimoine" }, { label: "Histoire" }]}
         title="Bédjondo, berceau"
         em="du peuple bedjond."
         lead="Les Bedjond — « nangnda » de leur nom d’origine — ont pour berceau Bédjondo, dans le Mandoul Occidental, selon les travaux de Djarangar Djita Issa. Cette page rassemble ce que nous savons de leur histoire, ce qui reste à établir, et les personnes qui portent cette mémoire."

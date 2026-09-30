@@ -27,7 +27,7 @@ export default function Dossiers() {
   bySlug.set("bedjondo-transport-logistique", { slug: "bedjondo-transport-logistique", route: "/projets/bedjondo-transport-logistique", eyebrow: "Projet annoncé", title: "Bedjondo Transport et Logistique", lede: "Le projet de transport et de logistique terrestres annoncé sous le nom d’Air Bedjondo, renommé le 29 septembre 2026 : pourquoi, ce que nous savons, et six propositions pour le mener." });
   return (
     <main id="main-content" className="hub-page">
-      <PageHeader eyebrow="Nos actions · tous les dossiers" title="Tout ce que nous" em="avons documenté." lead={`${pages.length} dossiers de fond, chacun daté et sourcé, du diagnostic territorial aux projets à l’étude. Ils nourrissent les plaidoyers et les vingt thématiques.`} />
+      <PageHeader crumbs={[{ label: "Nos actions", href: "/programmes" }, { label: "Tous les dossiers" }]} eyebrow="Nos actions · tous les dossiers" title="Tout ce que nous" em="avons documenté." lead={`${pages.length} dossiers de fond, chacun daté et sourcé, du diagnostic territorial aux projets à l’étude. Ils nourrissent les plaidoyers et les vingt thématiques.`} />
       {groups.map(([title, slugs]) => (
         <section className="hub-section" key={title}>
           <p className="eyebrow">{title}</p>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/components/lien";
+import Partager from "@/components/partager";
 import { DocumentCard, PageHeader, SectionHead } from "@/components/blocks";
 import { getIndex, ogFor, type DocumentItem } from "@/lib/content";
 import { IDENTITE, ODEB } from "@/lib/odeb";
@@ -25,6 +26,7 @@ export default function Documents() {
     <main id="main-content" className="hub-page">
       <PageHeader
         eyebrow="Association · documents"
+        crumbs={[{ label: "L’association", href: "/mission" }, { label: "Documents" }]}
         title="Nos documents,"
         em="à lire et à imprimer."
         lead="Tout ce que l’association publie tient ici, au format PDF : outils de terrain, dossier de présentation, note à la commune et les sept plaidoyers. Les pièces constitutives suivront à mesure qu’elles seront adoptées."
@@ -45,6 +47,7 @@ export default function Documents() {
           <Link className="button secondary" href="/transparence">Notre charte de redevabilité <span aria-hidden="true">→</span></Link>
         </div>
       </section>
+      <Partager route="/documents" titre="Documents d’ADEB LONODJI" texte="Notes, propositions, outils de terrain et documents constitutifs de l’association." />
     </main>
   );
 }

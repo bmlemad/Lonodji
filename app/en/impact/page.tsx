@@ -80,7 +80,7 @@ export default function ImpactEn() {
           <article><h3>What the executive committee holds</h3><p><Traduit fr={i.bureau.note} /></p></article>
         </div>
         <Partager route="/en/impact" titre="Impact dashboard" texte="Members, coordinators, advocacy briefs, needs recorded and solved, active projects: six indicators, dated and sourced, plus what the site produces and receives. Zeros are published as zeros." lang="en" />
-        <p className="lg-footnote">Same figures as the French dashboard (<Link href="/impact" hrefLang="fr">Tableau de bord d’impact</Link>), read from the same file at the same release. The four Pillar Lead posts (programme-manager level) and the sixth ODEB programme are described in French on <Link href="/programmes" hrefLang="fr">Nos actions</Link> and <Link href="/en/odeb">the ODEB project in English</Link>.</p>
+        <p className="lg-footnote">Same figures as the French dashboard (<Link href="/impact" hrefLang="fr">Tableau de suivi</Link>), read from the same file at the same release. The four Pillar Lead posts (programme-manager level) and the sixth ODEB programme are described in French on <Link href="/programmes" hrefLang="fr">Nos actions</Link> and <Link href="/en/odeb">the ODEB project in English</Link>.</p>
       </section>
     </main>
   );

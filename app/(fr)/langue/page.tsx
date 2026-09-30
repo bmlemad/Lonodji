@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/components/lien";
+import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import MotForm from "@/components/mot-form";
 import { getIndex, ogFor, ORG } from "@/lib/content";
@@ -124,6 +125,7 @@ export default function Langue() {
       </section>
 
       <p className="lg-footnote">Sources : références de la <Link href="/bibliotheque">bibliothèque</Link> (Lexique Nangnda ; SIL ESR 2007-010 ; Djarangar Djita Issa ; Madjidéné Altana Lydie) et articles du journal. Page ouverte le 28 septembre 2026 ; les chiffres du lexique sont ceux qu’annonce sa page d’accueil, consultée ce jour. Une erreur ? <Link href="/transparence#corrections">Signalez-la</Link>.</p>
+      <Partager route="/langue" titre="La langue nangnda" texte="Ce que l’on sait de la langue bedjond, les ressources qui existent, et comment contribuer au lexique." />
     </main>
   );
 }

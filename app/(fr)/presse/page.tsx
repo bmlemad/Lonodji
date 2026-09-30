@@ -83,7 +83,7 @@ export default function Presse() {
       </section>
 
       <section className="hub-section" id="chiffres">
-        <SectionHead eyebrow="Les chiffres" title="Datés, sourcés," em="tels qu’ils sont." text="Chaque nombre vient du tableau de bord du site, où il porte sa source et sa méthode. Ce qui n’est pas fait est écrit comme tel : aucun plaidoyer n’a encore été transmis, aucun projet n’est financé, la collecte est suspendue." />
+        <SectionHead eyebrow="Les chiffres" title="Datés, sourcés," em="tels qu’ils sont." text="Chaque nombre vient du tableau de suivi du site, où il porte sa source et sa méthode. Ce qui n’est pas fait est écrit comme tel : aucun plaidoyer n’a encore été transmis, aucun projet n’est financé, la collecte est suspendue." />
         <Stats items={[
           { value: `${pourvues}/${total}`, label: "thématiques pourvues", note: `${total - pourvues} cherchent leur coordonnateur ; ${c.coordinations.cellulesPourvues}/${c.coordinations.cellulesTotal} cellules` },
           { value: String(c.plaidoyers.publies), label: "dossiers de plaidoyer publiés", note: `${c.plaidoyers.envoyes} transmis, ${c.plaidoyers.reponses} réponses` },
@@ -92,7 +92,7 @@ export default function Presse() {
           { value: String(c.articles), label: "articles au journal", note: `depuis le ${new Date((c.premierArticle ?? "2026-09-11") + "T12:00:00Z").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}` },
           { value: String(c.corrections), label: "corrections publiées", note: "journal des corrections, à découvert" },
         ]} />
-        <div className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="button secondary" href="/impact">Le tableau de bord complet <span aria-hidden="true">→</span></Link></div>
+        <div className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="button secondary" href="/impact">Le tableau de suivi complet <span aria-hidden="true">→</span></Link></div>
       </section>
 
       <section className="hub-section" id="dates">
@@ -204,7 +204,7 @@ export default function Presse() {
           </div>
         </div>
         <Partager route="/presse" titre="Espace presse" texte="Pour les journalistes et les partenaires : ADEB LONODJI en cinq lignes, les chiffres datés, les dates, le bureau, les communiqués, les logos et visuels, le dossier de présentation, et à qui écrire." />
-        <p className="lg-footnote">Espace ouvert le 28 septembre 2026 pour accompagner le lancement de la réflexion ODEB LONODJI. Les chiffres sont ceux du site à sa mise en ligne (<Link href="/impact">tableau de bord</Link>) ; le logo et ses règles sont dans l’<Link href="/odeb/identite">identité visuelle</Link>, l’ancien logo dans l’<Link href="/association/ancienne-identite-visuelle">identité précédente</Link>.</p>
+        <p className="lg-footnote">Espace ouvert le 28 septembre 2026 pour accompagner le lancement de la réflexion ODEB LONODJI. Les chiffres sont ceux du site à sa mise en ligne (<Link href="/impact">tableau de suivi</Link>) ; le logo et ses règles sont dans l’<Link href="/odeb/identite">identité visuelle</Link>, l’ancien logo dans l’<Link href="/association/ancienne-identite-visuelle">identité précédente</Link>.</p>
       </section>
     </main>
   );

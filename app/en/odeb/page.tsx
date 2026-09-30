@@ -80,7 +80,7 @@ export default function OdebEn() {
   const phases = feuilleDeRoute(c);
   const tous = phases.flatMap((p) => p.chantiers);
   const faits = tous.filter((x) => x.etat === "fait").length;
-  // thématiques encore sans coordinateur, calculées depuis la structure (pas de liste figée)
+  // thématiques encore sans coordonnateur, calculées depuis la structure (pas de liste figée)
   const ouvertes = Object.values(th).filter((t) => t.kind === "thematique" && !t.filled).sort((a, b) => Number(a.number) - Number(b.number));
   return (
     <main id="main-content" className="hub-page od-page" lang="en">

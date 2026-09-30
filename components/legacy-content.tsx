@@ -63,6 +63,38 @@ export function Crumbs({ items, parentHref, lang = "fr" }: { items: string[]; pa
   );
 }
 
+/* Surtitres des pages de fond (30/09/2026) : même forme que le reste du site, « Rubrique · page ».
+   L'ancien surtitre de chaque page (« Agir », « Relayer », « Notre ville »…) est remplacé ici. */
+const SURTITRES: Record<string, string> = {
+  "/programmes/agriculteurs-eleveurs": "Nos actions · paix entre agriculteurs et éleveurs",
+  "/programmes/agriculture-securite-alimentaire": "Nos actions · agriculture & sécurité alimentaire",
+  "/programmes/environnement": "Nos actions · environnement & durabilité",
+  "/programmes/handicap": "Nos actions · plan handicap",
+  "/programmes/veuves": "Nos actions · plan veuves",
+  "/programmes/solidarite-inclusion": "Nos actions · protection sociale & inclusion",
+  "/programmes/odd": "Nos actions · objectifs de développement durable",
+  "/projets/application": "Nos actions · projets",
+  "/projets/complexe-sportif": "Nos actions · projets",
+  "/projets/drones-innovation": "Nos actions · projets",
+  "/projets/espace-numerique": "Nos actions · projets",
+  "/territoire/bedjondo": "Territoire · Bédjondo",
+  "/territoire/besoins": "Territoire · carte des besoins",
+  "/territoire/decentralisation": "Territoire · décentralisation",
+  "/territoire/diagnostic": "Territoire · diagnostic territorial",
+  "/territoire/enquetes": "Territoire · enquêtes de terrain",
+  "/patrimoine/base-de-recherche": "Patrimoine · base de recherche",
+  "/patrimoine/genealogies": "Patrimoine · généalogies",
+  "/patrimoine/genealogie-outil": "Patrimoine · cahier généalogique",
+  "/patrimoine/lieux-sacres": "Patrimoine · lieux sacrés",
+  "/association/demarches": "Association · démarches",
+  "/association/engagements": "Association · engagements publics",
+  "/association/evenements": "Association · événements",
+  "/association/ancienne-identite-visuelle": "Association · ancienne identité visuelle",
+  "/association/ong-partenaires": "Association · ONG et partenaires",
+  "/participer/kit-mobilisation": "Participer · kit de mobilisation",
+  "/participer/trouver-ma-thematique": "Participer · trouver ma thématique",
+};
+
 /* Rubriques du site (29/09/2026) : préfixe d'adresse → libellé et page d'entrée du fil d'Ariane. */
 const RUBRIQUES: [string, string, string][] = [
   ["/projets/", "Projets", "/projets"],
@@ -111,7 +143,7 @@ export function LegacyDocument({ page, children, eyebrowPrefix }: { page: Legacy
         const r = RUBRIQUES.find(([pre]) => page.route.startsWith(pre));
         return r ? <Crumbs items={["Accueil", r[1], page.crumbs?.[page.crumbs.length - 1] ?? page.title]} parentHref={r[2]} /> : <Crumbs items={page.crumbs} parentHref={PARENT_ROUTES[page.parent]} lang={en ? "en" : "fr"} />;
       })()}
-      <p className="eyebrow">{[eyebrowPrefix, page.eyebrow].filter(Boolean).join(" — ")}</p>
+      <p className="eyebrow">{SURTITRES[page.route] ?? (en && eyebrowPrefix ? [page.eyebrow, "in English"].filter(Boolean).join(" · ") : [eyebrowPrefix, page.eyebrow].filter(Boolean).join(" · "))}</p>
       <h1>{main}{rest.length ? <><br /><em>{rest.join(" ")}</em></> : null}</h1>
       {page.lede ? <p className="detail-lead">{page.lede}</p> : null}
       {page.pills?.length ? <div className="status-list lg-pills">{page.pills.map((p) => <span key={p}>{p}</span>)}</div> : null}

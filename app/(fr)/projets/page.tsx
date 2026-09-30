@@ -115,7 +115,7 @@ export default function Projets() {
         <SectionHead eyebrow="Les règles de la plateforme" title="Publié avant d’être demandé," em="suivi après avoir été promis." />
         <div className="detail-grid">
           <article><h3>Aucun franc sans compte</h3><p>La collecte de l’association est suspendue tant qu’elle n’a pas de compte à son nom et de récépissé publié. D’ici là, un projet ne reçoit que des promesses, du matériel et du temps — jamais d’argent.</p><Link className="text-link" href="/participer#soutenir">Pourquoi la collecte est suspendue <span aria-hidden="true">→</span></Link></article>
-          <article><h3>Un budget publié, sur devis</h3><p>Aucun chiffre non sourcé : les repères de coût disent d’où ils viennent, et le budget réel se fait sur devis locaux, publié ici avant toute demande de financement — puis suivi, dépense par dépense.</p><Link className="text-link" href="/impact">Le tableau de bord <span aria-hidden="true">→</span></Link></article>
+          <article><h3>Un budget publié, sur devis</h3><p>Aucun chiffre non sourcé : les repères de coût disent d’où ils viennent, et le budget réel se fait sur devis locaux, publié ici avant toute demande de financement — puis suivi, dépense par dépense.</p><Link className="text-link" href="/impact">Le tableau de suivi <span aria-hidden="true">→</span></Link></article>
           <article><h3>Un porteur, une thématique, un compte rendu</h3><p>Chaque projet est rattaché à une thématique et à son coordonnateur ; les promesses sont comptées, jamais nommées sans accord ; ce qui n’avance pas est écrit comme tel, et les erreurs sont corrigées à découvert.</p><Link className="text-link" href="/transparence">Notre charte de redevabilité <span aria-hidden="true">→</span></Link></article>
         </div>
       </section>
@@ -166,7 +166,7 @@ export default function Projets() {
 
       <Partager route="/projets" titre="Plateforme de projets" texte="Espace numérique, application, complexe sportif, transport et logistique : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer — et le formulaire pour en proposer un." />
 
-      <p className="lg-footnote">Plateforme ouverte le 28 septembre 2026, au titre de la phase 2 de la <Link href="/odeb/feuille-de-route#phase-2">feuille de route 2026-2030</Link> et de l’axe « Investissements » du <Link href="/odeb/programmes/diaspora">programme Diaspora</Link> du projet ODEB LONODJI. Chaque projet est décrit ici par l’animation ; les stades et les compteurs paraissent sur le <Link href="/impact">tableau de bord</Link>. Les propositions sont enregistrées par le service de formulaires de notre hébergeur (<Link href="/mentions-legales#donnees">où vont vos réponses</Link>).</p>
+      <p className="lg-footnote">Plateforme ouverte le 28 septembre 2026, au titre de la phase 2 de la <Link href="/odeb/feuille-de-route#phase-2">feuille de route 2026-2030</Link> et de l’axe « Investissements » du <Link href="/odeb/programmes/diaspora">programme Diaspora</Link> du projet ODEB LONODJI. Chaque projet est décrit ici par l’animation ; les stades et les compteurs paraissent sur le <Link href="/impact">tableau de suivi</Link>. Les propositions sont enregistrées par le service de formulaires de notre hébergeur (<Link href="/mentions-legales#donnees">où vont vos réponses</Link>).</p>
     </main>
   );
 }

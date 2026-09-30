@@ -22,6 +22,7 @@ export default function Archives() {
     <main id="main-content" className="hub-page">
       <PageHeader
         eyebrow="Le site · archives"
+        crumbs={[{ label: "Plan du site", href: "/plan-du-site" }, { label: "Archives" }]}
         title="Rien n’a été perdu :"
         em="la première version est ici."
         lead="Le site publié du 11 au 24 septembre 2026 comptait 87 pages, 36 articles et 14 documents. Le 28 septembre 2026, son contenu a été intégralement repris dans cette nouvelle version, page par page, liens réécrits, formulaires conservés. Cette page en tient le registre."

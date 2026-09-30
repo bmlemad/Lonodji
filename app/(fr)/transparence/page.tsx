@@ -36,6 +36,7 @@ export default function Transparence() {
     <main id="main-content" className="hub-page">
       <PageHeader
         eyebrow="Association · redevabilité & transparence"
+        crumbs={[{ label: "L’association", href: "/mission" }, { label: "Redevabilité" }]}
         title="Une association qui demande des comptes"
         em="doit en rendre."
         lead={page.lede}

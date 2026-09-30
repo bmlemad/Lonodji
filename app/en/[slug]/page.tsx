@@ -26,7 +26,7 @@ export default async function EnglishPage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   if (!hasPage("en/" + slug)) notFound();
   const page = getPage("en/" + slug);
-  // accueil anglais : surtitre « In English — Home » (l'ancien site disait « English »)
+  // accueil anglais : surtitre « Home · in English » (l'ancien site disait « English »)
   const eyebrow = slug === "index" && page.eyebrow === "English" ? "Home" : page.eyebrow;
   return <LegacyDocument page={{ ...page, eyebrow }} eyebrowPrefix="In English" />;
 }
