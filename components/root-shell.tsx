@@ -8,6 +8,7 @@ import SiteFooter from "@/components/site-footer";
 import SiteNav from "@/components/site-nav";
 import { ORG, getIndex, thematiqueCount } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
+import { jsonLd, siteOrganization, siteWebSite } from "@/lib/schema";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import "../app/globals.css";
 import "../app/legacy.css";
@@ -88,34 +89,10 @@ export default function RootShell({
         <FeuillePartage />
         <SectionRail />
         <AppShell lang={lang} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: (JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@id": `${siteUrl}/#organization`,
-                "@type": "NGO",
-                name: ORG.name,
-                legalName: ORG.fullName,
-                alternateName: "ADEB LONODJI",
-                url: siteUrl,
-                logo: `${siteUrl}/odeb/identite/odeb-lonodji-embleme-1024.png`,
-                image: `${siteUrl}/og-image.png`,
-                telephone: ORG.phone,
-                foundingDate: "1995",
-                address: { "@type": "PostalAddress", addressLocality: "Bédjondo", addressRegion: "Mandoul", addressCountry: "TD" },
-                areaServed: { "@type": "AdministrativeArea", name: "Mandoul Occidental, Tchad" },
-                slogan: ORG.motto,
-              },
-              {
-                "@id": `${siteUrl}/#website`,
-                "@type": "WebSite",
-                name: ORG.name,
-                url: siteUrl,
-                inLanguage: en ? "en-GB" : "fr-FR",
-                publisher: { "@id": `${siteUrl}/#organization` },
-              },
-            ],
-          })).replace(/</g, "\\u003c") }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({
+          "@context": "https://schema.org",
+          "@graph": [siteOrganization(ORG), siteWebSite(ORG.name, lang)],
+        }) }} />
       </body>
     </html>
   );
