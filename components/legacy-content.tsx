@@ -3,6 +3,8 @@ import Partager from "@/components/partager";
 import type { LegacyPage, Section } from "../lib/content";
 import LegacyEnhance from "./legacy-enhance";
 import OuvrirAncre from "./ouvrir-ancre";
+import SommaireLateral from "./sommaire-lateral";
+import { NAVIGATION } from "../lib/navigation";
 
 /** Rendu des sections importées de l'ancien site, dans le style du site moderne. */
 /* sansPremierTitre : quand la page pose déjà son propre titre de section (SectionHead) juste au-dessus,
@@ -132,6 +134,39 @@ const LIENS_EN: { label: string; href: string }[] = [
   { label: "Projects", href: "/en/projects" }, { label: "ODEB", href: "/en/odeb" }, { label: "Contact", href: "/en/contact" },
 ];
 
+
+/* Sommaire d'une page de fond : celui de l'ancien site, sinon construit depuis les titres de ses sections (trois au moins). */
+const titreH2 = (html: string) => (html.match(/<h2\b[^>]*>([\s\S]*?)<\/h2>/)?.[1] ?? "").replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+/* Ancre d'une section sans id : tirée de son titre (« Le cadre » → le-cadre), pour que le sommaire puisse y mener. */
+function avecAncres(sections: Section[]): Section[] {
+  const vus = new Set(sections.map((x) => x.id).filter(Boolean));
+  return sections.map((x) => {
+    if (x.id) return x;
+    const t = titreH2(x.html);
+    if (!t) return x;
+    let id = t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 48);
+    while (vus.has(id)) id += "-2";
+    vus.add(id);
+    return { ...x, id };
+  });
+}
+
+function sommaireDe(page: LegacyPage): { href: string; label: string }[] {
+  if (page.toc?.length) return page.toc;
+  const items = page.sections
+    .filter((s) => s.id && !/rubrique-nav/.test(s.cls || ""))
+    .map((s) => ({ href: `#${s.id}`, label: titreH2(s.html) }))
+    .filter((t) => t.label);
+  return items.length >= 3 ? items : [];
+}
+
+/* Les autres pages de la même rubrique du menu (six au plus). */
+function voisines(route: string): { label: string; href: string; note?: string }[] {
+  const entree = NAVIGATION.find((e) => e.colonnes?.some((c) => c.liens.some((l) => l.href === route)));
+  if (!entree?.colonnes) return [];
+  return entree.colonnes.flatMap((c) => c.liens).filter((l) => l.href !== route && !l.href.includes("#") && !l.externe).slice(0, 6);
+}
+
 /** Page de fond complète (dossier) : en-tête conçu + contenu importé. */
 export function LegacyDocument({ page, children, eyebrowPrefix }: { page: LegacyPage; children?: React.ReactNode; eyebrowPrefix?: string }) {
   const [main, ...rest] = splitTitle(page.title);
@@ -148,11 +183,42 @@ export function LegacyDocument({ page, children, eyebrowPrefix }: { page: Legacy
       {page.lede ? <p className="detail-lead">{page.lede}</p> : null}
       {page.pills?.length ? <div className="status-list lg-pills">{page.pills.map((p) => <span key={p}>{p}</span>)}</div> : null}
       {children}
-      <div className="legacy" {...(page.rootAttrs ?? {})}>
-        <Resume items={page.resume} lang={en ? "en" : "fr"} />
-        <Toc items={page.toc} lang={en ? "en" : "fr"} />
-        <LegacySections sections={page.sections} />
-      </div>
+      {(() => {
+        // grand écran : le texte à gauche, le sommaire à droite (collant) ; pages à carte : pleine largeur
+        const sections = avecAncres(page.sections);
+        const sommaire = page.hasMap ? [] : sommaireDe({ ...page, sections });
+        const legacy = (
+          <div className="legacy" {...(page.rootAttrs ?? {})}>
+            {sommaire.length ? null : <Resume items={page.resume} lang={en ? "en" : "fr"} />}
+            {sommaire.length ? null : <Toc items={page.toc} lang={en ? "en" : "fr"} />}
+            <LegacySections sections={sections} />
+          </div>
+        );
+        // avec sommaire latéral, le résumé « en trois phrases » passe au-dessus des deux colonnes
+        if (sommaire.length && page.resume?.length) return (
+          <>
+            <div className="legacy lg-resume-haut"><Resume items={page.resume} lang={en ? "en" : "fr"} /></div>
+            <div className="lg-corps">
+              <aside className="lg-aside"><SommaireLateral items={sommaire} titre={en ? "On this page" : "Sur cette page"} /></aside>
+              {legacy}
+            </div>
+          </>
+        );
+        return sommaire.length ? (
+          <div className="lg-corps">
+            <aside className="lg-aside"><SommaireLateral items={sommaire} titre={en ? "On this page" : "Sur cette page"} /></aside>
+            {legacy}
+          </div>
+        ) : legacy;
+      })()}
+      {!en && voisines(page.route).length ? (
+        <section className="hub-section lg-voisines" aria-labelledby="lg-voisines-titre">
+          <p className="eyebrow" id="lg-voisines-titre">Dans la même rubrique</p>
+          <div className="link-list">
+            {voisines(page.route).map((l) => <Link key={l.href} href={l.href}><strong>{l.label}</strong>{l.note ? <span>{l.note}</span> : null}</Link>)}
+          </div>
+        </section>
+      ) : null}
       <LegacyEnhance hasMap={page.hasMap} hasForms={page.forms.length > 0} scripts={page.scripts} />
       <OuvrirAncre />
       <Partager route={page.route} titre={page.title.replace(/\s+/g, " ")} texte={page.description} lang={page.lang === "en" ? "en" : "fr"} />
@@ -174,6 +240,9 @@ export function LegacyDocument({ page, children, eyebrowPrefix }: { page: Legacy
 
 /** Coupe un titre en deux parties pour l'emphase de la seconde (style de la maquette). */
 export function splitTitle(title: string): string[] {
+  // coupure naturelle d'abord (« : », « & », virgule), comme les titres des pages d'accueil de rubrique
+  const m = title.match(/^(.{6,}?(?: :| &|,))\s+(.{6,})$/);
+  if (m) return [m[1], m[2]];
   const words = title.split(" ");
   if (words.length < 5) return [title];
   const cut = Math.ceil(words.length * 0.55);

@@ -1750,3 +1750,36 @@ html.nav-compact .nav .brand-sous{ display:none; }
 
 /* menu anglais : lien vers une page en français (30/09/2026) */
 .mega-fr{ display:inline-block; margin-left:6px; padding:0 5px; border-radius:4px; border:1px solid var(--line); color:var(--muted); font-size:10px; font-style:normal; font-weight:600; letter-spacing:.06em; line-height:16px; vertical-align:2px; }
+
+/* ==========================================================================
+   Pages de fond modernisées (30/09/2026) : texte + sommaire latéral collant,
+   « Dans la même rubrique » en pied de page.
+   ========================================================================== */
+.lg-sommaire{ padding:18px 18px 14px; border:1px solid var(--carte-filet, var(--line)); border-radius:18px; background:var(--carte-fond, #fff); }
+.lg-sommaire .eyebrow{ margin:0 0 10px; }
+.lg-sommaire ol{ list-style:none; margin:0; padding:0; display:grid; gap:2px; counter-reset:som; }
+.lg-sommaire li{ counter-increment:som; }
+.lg-sommaire a{ display:grid; grid-template-columns:22px 1fr; gap:6px; padding:6px 8px; border-radius:10px; font-size:14px; line-height:1.4; color:#3d4c45; text-decoration:none; border-left:2px solid transparent; }
+.lg-sommaire a::before{ content:counter(som); color:var(--muted); font-size:12px; font-weight:600; padding-top:1px; }
+.lg-sommaire a:hover{ background:#f1f5ec; color:var(--deep); }
+.lg-sommaire a.is-active{ background:#eef4e6; color:var(--deep); font-weight:600; border-left-color:var(--accent); }
+.lg-corps{ margin-top:28px; }
+.lg-corps .lg-aside{ margin-bottom:24px; }
+@media (min-width:1180px){
+  .lg-corps{ display:grid; grid-template-columns:minmax(0,1fr) 270px; column-gap:56px; align-items:start; }
+  .lg-corps .lg-aside{ grid-column:2; grid-row:1; position:sticky; top:104px; margin:0; max-height:calc(100vh - 128px); overflow:auto; }
+  .lg-corps > .legacy{ grid-column:1; grid-row:1; min-width:0; }
+}
+/* titres de section des pages de fond : un peu moins hauts, sur des lignes plus longues */
+.lg-page .legacy .lg-section h2{ font-size:clamp(28px, 3vw, 42px); line-height:1.1; max-width:26ch; }
+.lg-voisines{ margin-top:48px; }
+.lg-voisines .eyebrow{ margin-bottom:14px; }
+.lg-sommaire summary{ list-style:none; cursor:pointer; margin:0 0 10px; display:flex; align-items:center; gap:4px; }
+.lg-sommaire summary::-webkit-details-marker{ display:none; }
+.lg-sommaire summary::after{ content:"+"; margin-left:auto; font-size:16px; letter-spacing:0; color:var(--deep); }
+.lg-sommaire details[open] summary::after{ content:"–"; }
+.lg-sommaire details:not([open]) summary{ margin:0; }
+.lg-sommaire summary span{ display:none; }
+@media (max-width:1179px){ .lg-sommaire summary span{ display:inline; } }
+@media (min-width:1180px){ .lg-sommaire summary{ pointer-events:none; } .lg-sommaire summary::after{ display:none; } }
+.lg-resume-haut{ margin-top:24px; }

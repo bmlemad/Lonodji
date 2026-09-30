@@ -19,7 +19,7 @@ export default function SectionRail() {
     setItems([]);
     setActif("");
     const main = document.querySelector("main");
-    if (!main || main.querySelector(".od-sommaire")) return;
+    if (!main || main.querySelector(".od-sommaire, .lg-sommaire")) return;   // la page a déjà son sommaire
     const trouves: Item[] = [];
     const vus = new Set<string>();   // deux sections au même libellé (eyebrow répété) : une seule entrée
     for (const sec of Array.from(main.querySelectorAll<HTMLElement>("section[id], div[id].hub-section"))) {
