@@ -3,7 +3,7 @@
 import Link from "@/components/lien";
 import { useChemin } from "@/components/chemin";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { entreeCourante, NAVIGATION, type NavChiffres, type NavEntree } from "../lib/navigation";
+import { entreeCourante, entreeCouranteEn, NAVIGATION, NAVIGATION_EN, type NavChiffres, type NavEntree } from "../lib/navigation";
 import { IDENTITE } from "../lib/odeb";
 import { equivalent } from "@/lib/langues";
 
@@ -15,27 +15,11 @@ import { equivalent } from "@/lib/langues";
 type Props = { lang?: "fr" | "en"; chiffres: NavChiffres; whatsapp: string; telephone: string; telephoneHref: string; devise: string };
 
 /* Pages anglaises : pas de méga-menu (ses libellés sont en français), une liste simple. */
-const NAV_EN: { label: string; href: string; mobile?: boolean }[] = [
-  // même ordre que les rubriques françaises : l'association (et sa vision 2030), nos actions, le territoire, participer
-  { label: "Home", href: "/en/index" },
-  { label: "About", href: "/en/about" },
-  { label: "Vision 2030", href: "/en/odeb" },
-  { label: "Themes", href: "/en/themes" },
-  { label: "Sectors", href: "/en/sectors", mobile: true },
-  { label: "Advocacy", href: "/en/advocacy" },
-  { label: "Projects", href: "/en/projects" },
-  { label: "Donors", href: "/en/donors", mobile: true },
-  { label: "Impact", href: "/en/impact", mobile: true },
-  { label: "Villages", href: "/en/villages" },
-  { label: "Bédjondo", href: "/en/bedjondo", mobile: true },
-  { label: "Contact", href: "/en/contact" },
-];
 
 const Fleche = () => <svg className="nav-chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>;
 
 export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephone, telephoneHref, devise }: Props) {
   const pathname = useChemin();
-  const courante = entreeCourante(pathname);
   const [ouvert, setOuvert] = useState<string | null>(null);   // panneau ouvert (ordinateur)
   const [menu, setMenu] = useState(false);                     // menu plein écran (tablette, mobile)
   const [large, setLarge] = useState(true);                    // ≥ 641 px : groupes du menu mobile dépliés
@@ -44,6 +28,8 @@ export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephone, te
   const toggleRef = useRef<HTMLButtonElement>(null);
   const en = lang === "en";
   const chemin = (pathname || "/").replace(/\/$/, "") || "/";
+  const courante = en ? entreeCouranteEn(chemin) : entreeCourante(pathname);
+  const MENU = en ? NAVIGATION_EN : NAVIGATION;                // mêmes six rubriques dans les deux langues
   const autre = equivalent(chemin);                            // la même page dans l'autre langue
   const timer = useRef<number | undefined>(undefined);
   const fine = useRef(false);                                  // pointeur précis (souris) : ouverture au survol
@@ -160,7 +146,7 @@ export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephone, te
                           ? <a href={l.href} target="_blank" rel="noopener noreferrer"><b>{l.label}</b>{l.note ? <span>{l.note}</span> : null}</a>
                           : l.href === "/en/index"
                             ? <Link href={autre.href} lang="en" hrefLang="en" onClick={fermer}><b>English</b>{l.note ? <span>{autre.exact ? "This page in English" : l.note}</span> : null}</Link>
-                            : <Link href={l.href} onClick={fermer} aria-current={pathname === l.href ? "page" : undefined}><b>{l.label}</b>{l.note ? <span>{l.note}</span> : null}</Link>}
+                            : <Link href={l.href} onClick={fermer} aria-current={pathname === l.href ? "page" : undefined} hrefLang={l.fr ? "fr" : undefined}><b>{l.label}{l.fr ? <i className="mega-fr" title="Page in French">FR<span className="sr-only"> (in French)</span></i> : null}</b>{l.note ? <span>{l.note}</span> : null}</Link>}
                       </li>
                     ))}
                   </ul>
@@ -187,12 +173,7 @@ export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephone, te
       <nav className="nav" aria-label={en ? "Main navigation" : "Navigation principale"} ref={navRef}>
         <Link className="brand" href={en ? "/en/index" : "/"} aria-label={en ? "ADEB LONODJI — home" : "ADEB LONODJI — accueil"} onClick={() => { fermer(); setMenu(false); }}><span className="logo-verre" aria-hidden="true"><img src="/icones/logo-motif-verre.svg" alt="" width={30} height={34} decoding="async" /></span><span className="brand-name"><span className="brand-mot"><span>ADEB</span>{" "}<b>LONODJI</b></span><span className="brand-sous">{en ? "Bédjondo & its diaspora" : "Bédjondo & sa diaspora"}</span></span></Link>
         <div className="links">
-          {en
-            ? <>
-                {/* barre d'ordinateur : l'essentiel ; Bédjondo et Impact restent dans le menu mobile et le pied, le bouton FR fait le reste */}
-                {NAV_EN.filter((l) => !l.mobile).map((l) => <Link className={chemin === l.href ? "nav-lien is-current" : "nav-lien"} href={l.href} key={l.href} aria-current={chemin === l.href ? "page" : undefined}>{l.label}</Link>)}
-              </>
-            : NAVIGATION.map(rendreEntree)}
+          {MENU.map(rendreEntree)}
         </div>
         <Link className="nav-search" href="/recherche" aria-label={en ? "Search" : "Rechercher ou aller à une page (touche / ou Ctrl+K)"} title={en ? "Search · / or Ctrl+K" : "Rechercher · / ou Ctrl+K"} onClick={(e) => { e.preventDefault(); fermer(); setMenu(false); window.dispatchEvent(new CustomEvent("lonodji:palette")); }}><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg></Link>
         <Link className="nav-langue" href={autre.href} lang={autre.lang} hrefLang={autre.lang} aria-label={en ? "Lire cette page en français" : "Read this page in English"} title={en ? "Lire cette page en français" : "Read this page in English"} onClick={fermer}>{en ? "FR" : "EN"}</Link>
@@ -211,9 +192,7 @@ export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephone, te
             <button type="submit" aria-label={en ? "Search" : "Lancer la recherche"}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg></button>
           </form>
           <div className="mm-groups">
-            {en ? [...NAV_EN.map((l) => (
-              <Link className={chemin === l.href ? "mm-lien is-current" : "mm-lien"} href={l.href} key={l.href} aria-current={chemin === l.href ? "page" : undefined} onClick={() => setMenu(false)}><span>{l.label}</span><b aria-hidden="true">→</b></Link>
-            )), <Link className="mm-lien" href={autre.href} key="fr" lang="fr" hrefLang="fr" onClick={() => setMenu(false)}><span>Site en français</span><b aria-hidden="true">→</b></Link>] : NAVIGATION.map((e) => {
+            {MENU.map((e) => {
               const estCourante = courante === e.id;
               if (!e.colonnes) {
                 return <Link className={estCourante ? "mm-lien is-current" : "mm-lien"} href={e.href} key={e.id} aria-current={estCourante ? "page" : undefined} onClick={() => setMenu(false)}><span>{e.label}</span><b aria-hidden="true">→</b></Link>;
@@ -222,7 +201,7 @@ export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephone, te
                 <details className="mm-group" key={e.id} open={large || estCourante || undefined}>
                   <summary><span className={estCourante ? "is-current" : undefined}>{e.label}</span><Fleche /></summary>
                   <div className="mm-group-body">
-                    <Link className="mm-tout" href={e.href} onClick={() => setMenu(false)}>Tout sur « {e.label} » <span aria-hidden="true">→</span></Link>
+                    <Link className="mm-tout" href={e.href} onClick={() => setMenu(false)}>{en ? <>All of “{e.label}”</> : <>Tout sur « {e.label} »</>} <span aria-hidden="true">→</span></Link>
                     <ul>
                       {e.colonnes.flatMap((c) => c.liens).map((l) => (
                         <li key={l.href + l.label}>
@@ -230,7 +209,7 @@ export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephone, te
                             ? <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>
                             : l.href === "/en/index"
                               ? <Link href={autre.href} lang="en" hrefLang="en" onClick={() => setMenu(false)}>English</Link>
-                              : <Link href={l.href} aria-current={pathname === l.href ? "page" : undefined} onClick={() => setMenu(false)}>{l.label}</Link>}
+                              : <Link href={l.href} aria-current={pathname === l.href ? "page" : undefined} hrefLang={l.fr ? "fr" : undefined} onClick={() => setMenu(false)}>{l.label}{l.fr ? <i className="mega-fr">FR<span className="sr-only"> (in French)</span></i> : null}</Link>}
                         </li>
                       ))}
                     </ul>

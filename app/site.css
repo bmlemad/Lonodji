@@ -1747,3 +1747,6 @@ html.nav-compact .nav .brand-sous{ display:none; }
 .logo-verre--pied{ width:68px; height:68px; }
 .footer-brand .brand-mot{ font-size:18px; }
 @media (prefers-reduced-motion:reduce){ .logo-verre{ transition:none; } .brand:hover .logo-verre{ transform:none; } }
+
+/* menu anglais : lien vers une page en français (30/09/2026) */
+.mega-fr{ display:inline-block; margin-left:6px; padding:0 5px; border-radius:4px; border:1px solid var(--line); color:var(--muted); font-size:10px; font-style:normal; font-weight:600; letter-spacing:.06em; line-height:16px; vertical-align:2px; }

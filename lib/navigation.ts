@@ -3,7 +3,7 @@
    ce module est aussi chargé côté client (composants « use client »). */
 import { IDENTITE, ODEB } from "./odeb";
 
-export type NavLien = { label: string; href: string; note?: string; externe?: boolean };
+export type NavLien = { label: string; href: string; note?: string; externe?: boolean; fr?: boolean };
 export type NavColonne = { titre: string; liens: NavLien[] };
 /* Chiffres du site passés à l'en-tête pour les cartes en vedette des panneaux. */
 export type NavChiffres = { pourvues: number; total: number; fiches: number; articles: number; corrections: number };
@@ -132,6 +132,113 @@ export const NAVIGATION: NavEntree[] = [
     vedette: { kicker: "Une place pour chaque contribution", titre: () => "Nous répondons sous 48 heures ouvrées", texte: () => "Par le formulaire, par WhatsApp ou par téléphone : le contact officiel est celui du président de l’association.", href: "/participer#contact", label: "Nous écrire" },
   },
 ];
+
+/* Menu anglais (30/09/2026) : les mêmes six rubriques que le menu français. Un lien vers une page qui n'existe
+   qu'en français porte fr: true (marque « FR » dans le menu, hreflang="fr"). */
+export const NAVIGATION_EN: NavEntree[] = [
+  {
+    id: "association", label: "The association", court: "About", href: "/en/about",
+    colonnes: [
+      { titre: "Who we are", liens: [
+        { label: "About us", href: "/en/about", note: "Purpose, values, executive board, milestones" },
+        { label: "Press & partners", href: "/presse", note: "Key facts, figures, logos, contacts", fr: true },
+        { label: "NGOs & funders: our status", href: "/association/ong-partenaires", note: "Our status, partners present in Mandoul", fr: true },
+      ] },
+      { titre: "Accountability", liens: [
+        { label: "Accountability & transparency", href: "/transparence", note: "48-hour reply, complaints, safeguarding", fr: true },
+        { label: "Decision register", href: "/transparence/decisions", note: "Decided, appointed, announced, proposed", fr: true },
+        { label: "Public commitments", href: "/association/engagements", note: "What we promise, where we stand", fr: true },
+        { label: "Documents", href: "/documents", note: "Kits, field notebooks, advocacy files (PDF)", fr: true },
+      ] },
+      { titre: "Vision 2030 — the ODEB project", liens: [
+        { label: "The vision", href: "/en/odeb", note: "From an association to a permanent institution" },
+        { label: "The six programmes", href: "/odeb/programmes", note: "And the themes they draw on", fr: true },
+        { label: "White paper", href: "/odeb/livre-blanc", note: "The founding document, working version", fr: true },
+        { label: "Roadmap 2026-2030", href: "/odeb/feuille-de-route", note: "What is done, what remains", fr: true },
+      ] },
+    ],
+    vedette: { kicker: `1986 → 2026 · ${ODEB.sigle} · vision ${ODEB.horizon}`, titre: () => ODEB.nom, texte: () => "The association’s project to give the Bedjond country a permanent institution for research, development, heritage and the diaspora.", href: "/en/odeb", label: "Read about the vision", image: IDENTITE.superposable },
+  },
+  {
+    id: "actions", label: "Our work", href: "/en/themes",
+    colonnes: [
+      { titre: "How we are organised", liens: [
+        { label: "Four pillars, twenty themes", href: "/en/themes", note: "Coordinators, objectives, SDGs" },
+        { label: "Sectors", href: "/en/sectors", note: "Our work in the donors’ sector vocabulary" },
+        { label: "Mission descriptions", href: "/programmes/fiches-de-mission", note: "One PDF per role", fr: true },
+      ] },
+      { titre: "Advocacy & projects", liens: [
+        { label: "Advocacy", href: "/en/advocacy", note: "Seven advocacy files and a note to the commune" },
+        { label: "Projects", href: "/en/projects", note: "What is under way, what is waiting" },
+        { label: "Impact dashboard", href: "/en/impact", note: "Every figure with its source and date" },
+      ] },
+      { titre: "Partners", liens: [
+        { label: "Donor programmes in Chad", href: "/en/donors", note: "World Bank, EU, UN, AfDB: where we connect" },
+        { label: "Proposals to the commune", href: "/territoire/propositions-commune", note: "Ten priority projects for Bédjondo", fr: true },
+      ] },
+    ],
+    vedette: { kicker: "Where we stand", titre: (c) => `${c.pourvues} of ${c.total} themes have a coordinator`, texte: (c) => `${c.total - c.pourvues} are still looking for someone to lead them. Occasional help is often enough to move a file forward.`, href: "/en/contact", label: "Offer your help" },
+  },
+  {
+    id: "territoire", label: "Territory", href: "/en/villages",
+    colonnes: [
+      { titre: "The Bedjond country", liens: [
+        { label: "Villages", href: "/en/villages", note: "One record per locality" },
+        { label: "Bédjondo, our town", href: "/en/bedjondo", note: "A village that became a town" },
+        { label: "Map of the territory", href: "/carte", note: "Fourteen units, localities, facilities", fr: true },
+        { label: "Decentralisation", href: "/territoire/decentralisation", note: "Commune, canton, sub-prefecture", fr: true },
+      ] },
+      { titre: "Understand and measure", liens: [
+        { label: "Observatory", href: "/observatoire", note: "The territory in figures, unit by unit", fr: true },
+        { label: "Territorial diagnosis", href: "/territoire/diagnostic", note: "Water, health, school, roads, network", fr: true },
+        { label: "Needs map", href: "/territoire/besoins", note: "Report a need, locality by locality", fr: true },
+      ] },
+    ],
+    vedette: { kicker: "Find your village", titre: (c) => `${new Intl.NumberFormat("en-GB").format(c.fiches)} locality records`, texte: () => "What open data says about each locality, what the site says, and what remains to be documented.", href: "/en/villages", label: "Search a village" },
+  },
+  {
+    id: "patrimoine", label: "Heritage", href: "/patrimoine",
+    colonnes: [
+      { titre: "Memory", liens: [
+        { label: "History & great figures", href: "/histoire", note: "From Narmbang to 2026", fr: true },
+        { label: "Sacred sites and burial grounds", href: "/patrimoine/lieux-sacres", note: "Recorded, never published", fr: true },
+        { label: "Genealogies", href: "/patrimoine/genealogies", note: "Field notebook and online notebook", fr: true },
+        { label: "Tell us about Bédjondo", href: "/temoignages", note: "Stories, photos, voices", fr: true },
+      ] },
+      { titre: "Knowledge", liens: [
+        { label: "The Nangnda language", href: "/langue", note: "Audio lexicon, digital dictionary", fr: true },
+        { label: "Digital library", href: "/bibliotheque", note: "Theses, articles, archives, researchers", fr: true },
+        { label: "Research base", href: "/patrimoine/base-de-recherche", note: "Forty annotated references", fr: true },
+      ] },
+    ],
+  },
+  { id: "journal", label: "News", href: "/journal" },
+  {
+    id: "participer", label: "Get involved", href: "/en/contact",
+    colonnes: [
+      { titre: "Act", liens: [
+        { label: "Write to us", href: "/en/contact", note: "Reply within 48 working hours" },
+        { label: "Join (declaration of intent)", href: "/participer#adherer", note: "No payment until the bank account is open", fr: true },
+        { label: "Support us", href: "/participer#soutenir", note: "Pledge a contribution", fr: true },
+      ] },
+      { titre: "Contribute", liens: [
+        { label: "Register your skills", href: "/diaspora", note: "Diaspora skills directory", fr: true },
+        { label: "Report a need", href: "/territoire/besoins", note: "Borehole, school, bridge, network", fr: true },
+        { label: "Send a story, a photo, a voice", href: "/temoignages#envoyer", note: "Nothing published without review", fr: true },
+      ] },
+    ],
+    vedette: { kicker: "A place for every contribution", titre: () => "We reply within 48 working hours", texte: () => "By the form, by WhatsApp or by phone: the official contact is the president of the association.", href: "/en/contact", label: "Write to us" },
+  },
+];
+
+/* Rubrique courante d'une page anglaise (ou d'une page française atteinte depuis le menu anglais). */
+export function entreeCouranteEn(pathname: string): string {
+  if (/^\/en\/(about|odeb)/.test(pathname)) return "association";
+  if (/^\/en\/(themes|sectors|advocacy|projects|donors|impact)/.test(pathname)) return "actions";
+  if (/^\/en\/(villages|bedjondo)/.test(pathname)) return "territoire";
+  if (/^\/en\/contact/.test(pathname)) return "participer";
+  return pathname.startsWith("/en/") ? "" : entreeCourante(pathname);
+}
 
 /* Section courante d'une page, pour surligner l'entrée du menu. */
 export function entreeCourante(pathname: string): string {
