@@ -42,7 +42,7 @@ export default function Home() {
             <h1 id="hero-title">Construire aujourd’hui.<br /><em>Transmettre demain.</em></h1>
             <p className="hero-text">
               ADEB LONODJI est l’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond.
-              Reconnue en 1995 — mise en conformité avec l’ordonnance de 2018 en vérification —, remise en mouvement en 2026 : quatre pôles, des thématiques en cours d’inventaire, huit dossiers de plaidoyer publiés pour l’eau, l’électricité, l’école, les routes et la santé — et un territoire cartographié village par village.
+              Reconnue en 1995 — mise en conformité avec l’ordonnance de 2018 en vérification —, remise en mouvement en 2026 : quatre pôles, {total} thématiques structurées en 2026, {indicateurs.contenu.plaidoyers.publies} dossiers de plaidoyer publiés pour l’eau, l’électricité, l’école, les routes et la santé — et un territoire cartographié village par village.
             </p>
             <div className="hero-actions">
               <Link className="button primary" href="/programmes">Découvrir nos actions <span aria-hidden="true">→</span></Link>
@@ -123,7 +123,7 @@ export default function Home() {
           <div className="section-head">
             <div>
               <p className="eyebrow">Nos actions</p>
-              <h2 id="programmes-title">Quatre pôles.<br /><em>Thématiques en cours d’inventaire.</em></h2>
+              <h2 id="programmes-title">Quatre pôles.<br /><em>{total} thématiques structurées en 2026.</em></h2>
             </div>
             <p>
               Chaque pôle sera dirigé par un directeur ou une directrice de pôle, au rang de chef de projet (les quatre postes sont à pourvoir) ; chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte publiquement. Deux cellules transversales — financement et communication — appuient l’ensemble.
@@ -186,7 +186,7 @@ export default function Home() {
             <p>Bédjondo, chef-lieu du Mandoul Occidental, village devenu ville. Le pays bedjond compte sept unités au cœur (sous-préfectures selon GADM), des présences dans le Logone Oriental et une diaspora agricole au Moyen-Chari et à Moïssala.</p>
           </div>
           <div className="link-list">
-            <Link href="/villages"><small>Retrouver son village</small><strong>966 localités, une fiche chacune</strong><span>Ce que les données ouvertes en savent, ce que le site en dit, ce qui reste à documenter — et le formulaire pour le faire.</span></Link>
+            <Link href="/villages"><small>Retrouver son village</small><strong>{new Intl.NumberFormat("fr-FR").format(indicateurs.contenu.carte.localites)} localités recensées</strong><span>dont {new Intl.NumberFormat("fr-FR").format(indicateurs.contenu.carte.localitesNommees)} localités nommées ; ce que les données ouvertes en savent, ce qui reste à documenter — et le formulaire pour le faire.</span></Link>
             <Link href="/carte"><small>Carte du territoire</small><strong>Le pays bedjond, village par village</strong><span>Quatorze unités, leurs localités et équipements connus des données ouvertes ; une fiche par lieu, un bouton pour signaler.</span></Link>
             <Link href="/territoire/bedjondo"><small>Bédjondo</small><strong>Repères, langue, statut de commune</strong><span>Avec la carte interactive du pays bedjond, sur contours administratifs vérifiés.</span></Link>
             <Link href="/territoire/diagnostic"><small>Diagnostic territorial</small><strong>Les problématiques documentées</strong><span>Eau, électricité, santé, école, routes, réseau : classées par domaine et reliées à leur thématique.</span></Link>
