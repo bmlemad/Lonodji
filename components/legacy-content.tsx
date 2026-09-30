@@ -2,6 +2,7 @@ import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import type { LegacyPage, Section } from "../lib/content";
 import LegacyEnhance from "./legacy-enhance";
+import OuvrirAncre from "./ouvrir-ancre";
 
 /** Rendu des sections importées de l'ancien site, dans le style du site moderne. */
 /* sansPremierTitre : quand la page pose déjà son propre titre de section (SectionHead) juste au-dessus,
@@ -121,6 +122,7 @@ export function LegacyDocument({ page, children, eyebrowPrefix }: { page: Legacy
         <LegacySections sections={page.sections} />
       </div>
       <LegacyEnhance hasMap={page.hasMap} hasForms={page.forms.length > 0} scripts={page.scripts} />
+      <OuvrirAncre />
       <Partager route={page.route} titre={page.title.replace(/\s+/g, " ")} texte={page.description} lang={page.lang === "en" ? "en" : "fr"} />
       {en ? (
         <>

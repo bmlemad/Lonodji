@@ -6,6 +6,7 @@ import { LegacySections } from "@/components/legacy-content";
 import LegacyEnhance from "@/components/legacy-enhance";
 import { getIndex, getPage, ogFor, pickSections } from "@/lib/content";
 import Partager from "@/components/partager";
+import OuvrirAncre from "@/components/ouvrir-ancre";
 
 export const metadata: Metadata = {
   title: "Plaidoyers, engagements et dossiers",
@@ -62,6 +63,7 @@ export default function Actions() {
           <LegacySections sections={rest} />
         </div>
         <LegacyEnhance hasForms={page.forms.length > 0} />
+        <OuvrirAncre />
       </section>
 
       <section className="hub-section" id="dossiers">

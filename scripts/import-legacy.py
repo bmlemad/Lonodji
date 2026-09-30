@@ -269,6 +269,30 @@ def unwrap_wrap(section: Tag) -> str:
     return inner_html(section)
 
 
+# Allègement du 30/09/2026 : les longs tableaux de détail sont repliés (details.plier) sous un titre qui dit
+# ce qu'ils contiennent ; une ancre qui vise une ligne ouvre le bloc (components/ouvrir-ancre.tsx).
+# fichier de l'ancien site → [(sélecteur du bloc, titre, sous-titre)]
+PLIER_BLOCS = {
+    "problematiques.html": [(".table-wrap:has(> table.indic-table)", "Le tableau détaillé, domaine par domaine",
+                             "34 lignes : constat, thématique, état de la connaissance, qui décide")],
+    "plaidoyers.html": [(".table-wrap:has(> table.indic-table)", "Les indicateurs, dossier par dossier",
+                         "22 indicateurs : valeur de départ, cible, échéance, moyen de vérification")],
+}
+
+
+def plier_blocs(main: Tag, nom: str) -> None:
+    for sel, titre, sous in PLIER_BLOCS.get(nom, []):
+        for el in main.select(sel):
+            soup = BeautifulSoup("", "lxml")
+            det = soup.new_tag("details", attrs={"class": "plier plier--tableau"})
+            summ = soup.new_tag("summary")
+            st = soup.new_tag("strong"); st.string = titre
+            sp = soup.new_tag("span"); sp.string = sous
+            summ.append(st); summ.append(sp)
+            el.wrap(det)
+            det.insert(0, summ)
+
+
 def parse_page(path: Path):
     html = lire_source(path)
     soup = BeautifulSoup(html, "lxml")
@@ -327,6 +351,7 @@ def parse_page(path: Path):
     if sommaire:
         data["toc"] = [{"href": a.get("href", ""), "label": text(a)} for a in sommaire.select("a")]
         sommaire.decompose()
+    plier_blocs(main, path.name)
     # Article : corps
     body = main.select_one(".article-body")
     sections = []

@@ -59,6 +59,22 @@ export function SectionHead({ eyebrow, title, em, text, id }: { eyebrow: string;
   );
 }
 
+/* Coupe une description HTML après sa première phrase (au moins 90 signes), hors balise ouverte : le reste se replie. */
+function couperDescription(html: string): [string, string] {
+  const re = /[.!?»]\s+(?=[A-ZÀ-Ý<«])/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(html))) {
+    const avant = html.slice(0, m.index + 1);
+    if (avant.replace(/<[^>]+>/g, "").length < 90) continue;
+    const ouvertes = (avant.match(/<(a|strong|em|b|i|span)\b/g) || []).length;
+    const fermees = (avant.match(/<\/(a|strong|em|b|i|span)>/g) || []).length;
+    if (ouvertes !== fermees || /<[^>]*$/.test(avant)) continue;
+    const reste = html.slice(m.index + m[0].length);
+    return reste.replace(/<[^>]+>/g, "").trim().length > 60 ? [avant, reste] : [html, ""];
+  }
+  return [html, ""];
+}
+
 export function ThematiqueRow({ t, pole, partenaires }: { t: Thematique; pole?: string; partenaires?: { id: string; nom: string; proche: boolean }[] }) {
   // candidature : numéro de la thématique, ou code court de la cellule (même logique que /odeb/programmes/[programme])
   const cle = t.kind === "cellule" ? t.id.replace("cellule-", "").split("-")[0] : t.number;
@@ -71,7 +87,18 @@ export function ThematiqueRow({ t, pole, partenaires }: { t: Thematique; pole?: 
           {t.filled ? <><b>{t.coordinatorLabel || "Coordination"} :</b> {t.coordinator}</> : <>Coordination à pourvoir — <Link href={`/participer?theme=${cle}&coordo=1#contact`}>{t.kind === "cellule" ? <>Rejoindre cette cellule <span aria-hidden="true">→</span></> : "proposer sa candidature"}</Link></>}
         </p>
         {secteursDeThematique(t.id).length ? <p className="them-secteurs" aria-label="Secteurs d’intervention">{secteursDeThematique(t.id).map((s) => <Link key={s.id} href={`/secteurs#${s.id}`}>{s.sigle}</Link>)}</p> : null}
-        <p className="them-desc" dangerouslySetInnerHTML={{ __html: t.description }} />
+        {(() => {
+          const [debut, suite] = couperDescription(t.description);
+          return suite ? (
+            <>
+              <p className="them-desc them-desc-debut" dangerouslySetInnerHTML={{ __html: debut }} />
+              <details className="them-plus">
+                <summary><span className="them-plus-lien">Lire la suite<span className="sr-only"> : {t.name}</span></span><span className="them-plus-moins">Réduire</span></summary>
+                <p className="them-desc them-desc-suite" dangerouslySetInnerHTML={{ __html: suite }} />
+              </details>
+            </>
+          ) : <p className="them-desc" dangerouslySetInnerHTML={{ __html: t.description }} />;
+        })()}
         {t.odd.length ? (
           <p className="them-odd"><span className="odd-legend">ODD</span>{t.odd.map((o) => (
             <a key={o.num + o.cible} className="odd-chip" href={`/programmes/odd#odd-${o.num}`} title={o.title} style={{ ["--odd-accent" as string]: o.accent, ["--odd-ink" as string]: o.ink }}>
