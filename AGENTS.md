@@ -17,7 +17,9 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
 - Grouper les modifications : un seul push par série de travail, pas un commit poussé par fichier. Chaque push
   coûte une construction Netlify ; le quota du compte a déjà été épuisé une fois (30/09/2026).
 - Avant chaque push : `npm run build` doit réussir en local. Ne jamais pousser un état qui ne se construit pas.
-- Contrôle complet : `npm run qa` (liens, pages, console, accessibilité) et `npm run qa:coherence` (chiffres).
+- Contrôle complet : `npm run qa` (PDF publiés, liens, pages, console, accessibilité) et `npm run qa:coherence` (chiffres).
+- Aucune adresse de messagerie personnelle dans un PDF publié, même sous un cache : le texte doit être retiré
+  (`scripts/qa/documents.py` échoue sinon). Le contact public est lonodji.org/participer.
 - Récupérer d'abord le travail des autres (`git pull --rebase`) ; ne jamais forcer un push.
 
 ## Contenu : ce qui ne se négocie pas
@@ -42,7 +44,7 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
   signalé à l'import. Ne pas éditer `content/pages/*.json` à la main : l'import les réécrit.
 - `import-legacy.py` **efface et recrée** `public/documents`, `public/identite`, `public/kit`, `public/app`.
   Les fichiers propres au site vont dans `public/og`, `carte`, `odeb`, `icones`, `missions`, `lettres`, `notes`.
-- Après un import : `build-dossier-presentation.py`, `build-kit-adhesion.py`, `build-carte.py`,
+- Après un import (qui lance lui-même `build-kit-adhesion.py`) : `build-dossier-presentation.py`, `build-carte.py`,
   `build-search-index.py`, puis `build-bibliotheque`, `build-villages`, `build-observatoire`,
   `build-indicateurs`, `build-fiches-mission` (voir README).
 - Ne régénérer un PDF, un ZIP ou une présentation que si son contenu change : chaque version reste dans

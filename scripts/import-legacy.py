@@ -1332,6 +1332,10 @@ def main():
     for f in ("favicon.svg",):
         if (LEGACY / f).exists():
             shutil.copy2(LEGACY / f, PUBLIC / f)
+    # Deux PDF de l'ancien site ne se publient jamais tels quels (adresse personnelle, collecte suspendue) :
+    # ils sont corrigés ici, aussitôt recopiés, pour qu'aucun import ne remette l'original en ligne.
+    import subprocess
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "build-kit-adhesion.py"), str(LEGACY)], check=True)
     adapt_script("geo.js", "__initGeo", "var figures = document.querySelectorAll('[data-geo]');",
                  "var figures = document.querySelectorAll('[data-geo]:not([data-geo-pret])');")
     # 30/09/2026 : la liste ne montre que les cellules à pourvoir (une seule aujourd'hui) — le titre suit leur nombre.

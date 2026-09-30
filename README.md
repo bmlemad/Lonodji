@@ -122,7 +122,7 @@ Déploiement : Netlify (plugin Next.js), à partir de la branche `main`.
 - **Présentation ODEB à l’assemblée** : `node scripts/build-diaporama.js --assemblee` (26 diapositives depuis `lib/odeb.ts` et `content/`) puis `python3 scripts/build-diaporama-pdf.py` (LibreOffice, vraies polices) → `public/odeb/odeb-lonodji-presentation-assemblee-2026.pptx/.pdf`, liée depuis `/odeb#presentation`.
 - **Lettre d’information** : `scripts/build-lettre.py` → PDF de chaque numéro (`public/lettres/`, index `content/lettres.json`), page `/lettre` ; `--brouillon AAAA-MM` prépare le numéro du mois dans `content/brouillons/` (articles par rubrique, postes ouverts, chiffres datés), à compléter puis publier avec `publier-article.py`.
 - **Registre des décisions** : `lib/decisions.ts` (une entrée par fait daté et sourcé, statut décidé/nommé/annoncé/à voter/publié/en vigueur), page `/transparence/decisions`.
-- **Contrôles qualité** : `scripts/qa/` (`controle.py`, `coherence.py`, `local.sh`), `npm run qa` (site construit sur le port 3100, liens, ancres, console, axe-core, visuel), `npm run qa:live` (site en ligne + poids), `npm run qa:coherence` ; une tâche planifiée hebdomadaire (lundi 6 h 59, Ndjamena) contrôle le site en ligne en lecture seule.
+- **Contrôles qualité** : `scripts/qa/` (`controle.py`, `coherence.py`, `documents.py`, `local.sh`), `npm run qa` (PDF publiés : aucune messagerie personnelle, kit d'adhésion à jour, aucun original de l'ancien site resté à la place d'un PDF régénéré ; puis site construit sur le port 3100, liens, ancres, console, axe-core, visuel), `npm run qa:live` (site en ligne + poids), `npm run qa:coherence` ; une tâche planifiée hebdomadaire (lundi 6 h 59, Ndjamena) contrôle le site en ligne en lecture seule.
 - **Version arabe** : `content/brouillons/ar/` (accueil, contact, DOCX de relecture, marche à suivre) — non publiée tant qu’un locuteur natif n’a pas relu. Depuis le 30 septembre 2026, `content/brouillons/` est hors dépôt (le dépôt est public) : copie de travail sur le Mac, `~/Documents/Lonodji-brouillons`.
 
 ## Outils de navigation (28 septembre 2026, soir)
@@ -166,5 +166,8 @@ Les formulaires postent vers `/__forms.html` (Netlify Forms). Toute modification
 - Corrections de texte des pages héritées : `scripts/corrections_fr.py` et `scripts/corrections_en.py`
   (remplacements exacts par fichier source ; l'import signale « correction sans effet » s'il en reste un inopérant).
 - Après `import-legacy.py`, relancer aussi `build-dossier-presentation.py` (dossier de présentation régénéré depuis les
-  données) et `build-kit-adhesion.py` (kit d'adhésion : collecte suspendue, contact, engagement).
+  données). `build-kit-adhesion.py` est lancé par l'import lui-même, dès la copie des documents (30/09/2026) : kit
+  d'adhésion (collecte suspendue, contact, engagement) et carnet d'enquête (contact). L'adresse personnelle et
+  l'ancien engagement sont retirés de la couche texte (caviardage PyMuPDF, `pip install pymupdf`), pas seulement
+  recouverts ; `scripts/qa/documents.py` le vérifie.
 - Espace de rédaction : la création du mot de passe exige le code d'invitation `REDACTION_INVITATION` (variable Netlify).
