@@ -32,7 +32,7 @@ const PIED_EN: Colonne[] = [
     { label: "Projects", href: "/en/projects" }, { label: "Donor programmes in Chad", href: "/en/donors" }, { label: "Impact dashboard", href: "/en/impact" },
   ] },
   { titre: "Territory", liens: [
-    { label: "Villages", href: "/en/villages" }, { label: "Bédjondo, our town", href: "/en/bedjondo" }, { label: "Proposals to the commune", href: "/territoire/propositions-commune", fr: true }, { label: "Map of the territory", href: "/carte", fr: true }, { label: "Observatory", href: "/observatoire", fr: true },
+    { label: "Villages", href: "/en/villages" }, { label: "Bédjondo, our town", href: "/en/bedjondo" }, { label: "Proposals to the commune", href: "/en/commune" }, { label: "Map of the territory", href: "/carte", fr: true }, { label: "Observatory", href: "/observatoire", fr: true },
   ] },
   { titre: "Heritage", liens: [
     { label: "History", href: "/histoire", fr: true }, { label: "The Nangnda language", href: "/langue", fr: true }, { label: "Digital library", href: "/bibliotheque", fr: true },

@@ -174,7 +174,7 @@ export const NAVIGATION_EN: NavEntree[] = [
       ] },
       { titre: "Partners", liens: [
         { label: "Donor programmes in Chad", href: "/en/donors", note: "World Bank, EU, UN, AfDB: where we connect" },
-        { label: "Proposals to the commune", href: "/territoire/propositions-commune", note: "Ten priority projects for Bédjondo", fr: true },
+        { label: "Proposals to the commune", href: "/en/commune", note: "Ten priority projects for Bédjondo" },
       ] },
     ],
     vedette: { kicker: "Where we stand", titre: (c) => `${c.pourvues} of ${c.total} themes have a coordinator`, texte: (c) => `${c.total - c.pourvues} are still looking for someone to lead them. Occasional help is often enough to move a file forward.`, href: "/en/contact", label: "Offer your help" },
@@ -234,7 +234,7 @@ export const NAVIGATION_EN: NavEntree[] = [
 /* Rubrique courante d'une page anglaise (ou d'une page française atteinte depuis le menu anglais). */
 export function entreeCouranteEn(pathname: string): string {
   if (/^\/en\/(about|odeb)/.test(pathname)) return "association";
-  if (/^\/en\/(themes|sectors|advocacy|projects|donors|impact)/.test(pathname)) return "actions";
+  if (/^\/en\/(themes|sectors|advocacy|projects|donors|impact|commune)/.test(pathname)) return "actions";
   if (/^\/en\/(villages|bedjondo)/.test(pathname)) return "territoire";
   if (/^\/en\/contact/.test(pathname)) return "participer";
   return pathname.startsWith("/en/") ? "" : entreeCourante(pathname);

@@ -5,13 +5,14 @@ import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import { getIndex, getPage, metaDescription, ogFor } from "@/lib/content";
 import { APPORTS, DEMARCHE, REGLES_DEMARCHE, EN_RETOUR, GROUPES, nombrePropositions, nombreSansDepense, PORTEURS, PROJET_INTEGRE, PROJETS_PRIORITAIRES, type Source } from "@/lib/propositions-commune";
 import { programmeParId } from "@/lib/bailleurs";
+import { alternatesLangues } from "@/lib/langues";
 
 const ROUTE = "/territoire/propositions-commune";
 
 export const metadata: Metadata = {
   title: "Nos propositions à la commune de Bédjondo",
   description: metaDescription("Dix projets prioritaires et un projet intégré de développement économique local ; planifier la ville, financer et rendre des comptes, ouvrir le conseil, les services de base, les partenariats et un premier chantier : toutes les propositions d’ADEB LONODJI à la mairie de Bédjondo, réunies et sourcées."),
-  alternates: { canonical: ROUTE },
+  alternates: { canonical: ROUTE, languages: alternatesLangues(ROUTE) },
   openGraph: { ...ogFor(ROUTE), title: "Nos propositions à la commune de Bédjondo", description: "Toutes nos propositions à la mairie, réunies sur une page, chacune avec sa source." },
 };
 
