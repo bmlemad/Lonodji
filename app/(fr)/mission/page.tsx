@@ -1,4 +1,5 @@
 import { alternatesLangues } from "@/lib/langues";
+import { breadcrumbSchema, jsonLd, webPageSchema } from "@/lib/schema";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Timeline } from "@/components/blocks";
@@ -25,6 +26,7 @@ export default function Mission() {
   const toc = (page.toc ?? []).filter((t) => t.href !== `#${DOUBLON}` && !PATRIMOINE.includes(t.href.slice(1)));
   return (
     <main id="main-content" className="hub-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", "@graph": [webPageSchema({ url: "/mission", name: "Notre mission", description: "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : mission, valeurs, repères depuis 1986, bureau exécutif et organisation." }), breadcrumbSchema([{ name: "Accueil", url: "/" }, { name: "L’association", url: "/mission" }, { name: "Notre mission" }], "/mission")] }) }} />
       <PageHeader
         eyebrow="Association · notre mission"
         title="L’association de Bédjondo et de sa diaspora,"
