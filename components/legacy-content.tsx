@@ -132,7 +132,8 @@ const PARENT_LABELS: Record<string, string> = {
 const LIENS_EN: { label: string; href: string }[] = [
   { label: "About", href: "/en/about" }, { label: "Themes", href: "/en/themes" }, { label: "Sectors", href: "/en/sectors" }, { label: "Donors", href: "/en/donors" },
   { label: "Advocacy", href: "/en/advocacy" }, { label: "Bédjondo", href: "/en/bedjondo" }, { label: "Villages", href: "/en/villages" },
-  { label: "Projects", href: "/en/projects" }, { label: "ODEB", href: "/en/odeb" }, { label: "Contact", href: "/en/contact" },
+  { label: "Projects", href: "/en/projects" }, { label: "Governance", href: "/en/governance" }, { label: "Proposals to the commune", href: "/en/commune" },
+  { label: "ODEB", href: "/en/odeb" }, { label: "Contact", href: "/en/contact" },
 ];
 
 

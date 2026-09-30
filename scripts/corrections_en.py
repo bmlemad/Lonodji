@@ -100,3 +100,12 @@ CORRECTIONS = {
          '06 &middot; Environment, Climate &amp; Natural Resources <span class="odd-cible">13.1</span></a><a href="#theme-list">20 &middot; Emergencies &amp; Risks <span class="odd-cible">13.1</span></a>'),
     ],
 }
+
+
+# Accueil anglais mis en cohérence avec l'accueil français (audit du 30 septembre 2026).
+CORRECTIONS.setdefault("en/index.html", []).extend([
+    ("no piped water", "a water network that serves a single village and often stops for lack of fuel"),
+    ("knowledge and innovation", "research and knowledge"),
+    ("the network of experts and the diaspora.</p></article>", "the network of experts and the diaspora, justice and human rights.</p></article>"),
+    ("and our own commitments.</p>", "and our own commitments. Each dispatch and each reply is dated on the <a href=\"impact.html\">impact dashboard</a>.</p>"),
+])
