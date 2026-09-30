@@ -280,7 +280,25 @@ PLIER_BLOCS = {
 }
 
 
+def plier_sources(main: Tag) -> None:
+    """Base de recherche : la présentation de chaque source se replie sous « Ce que contient cette source »."""
+    for carte in main.select("article.source-card"):
+        paras = [c for c in carte.find_all("p", recursive=False) if "source-meta" not in (c.get("class") or [])]
+        if not paras or sum(len(text(x)) for x in paras) < 160:
+            continue
+        soup = BeautifulSoup("", "lxml")
+        det = soup.new_tag("details", attrs={"class": "source-plus"})
+        summ = soup.new_tag("summary")
+        summ.string = "Ce que contient cette source"
+        paras[0].insert_before(det)
+        det.append(summ)
+        for x in paras:
+            det.append(x.extract())
+
+
 def plier_blocs(main: Tag, nom: str) -> None:
+    if nom == "recherche.html":
+        plier_sources(main)
     for sel, titre, sous in PLIER_BLOCS.get(nom, []):
         for el in main.select(sel):
             soup = BeautifulSoup("", "lxml")

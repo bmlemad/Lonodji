@@ -1687,3 +1687,27 @@ details.them-plus[open] .them-plus-lien{ display:none; }
 details.them-plus[open] .them-plus-moins{ display:inline; }
 details.them-plus > summary:focus-visible{ outline:3px solid var(--accent); outline-offset:3px; border-radius:6px; }
 .them-desc-suite{ margin:0 0 6px; }
+
+/* projets : l'état détaillé se replie, « Contribuer » reste visible (30/09/2026) */
+details.pj-detail{ margin-top:14px; border:1px solid var(--line); border-radius:18px; background:rgba(255,255,255,.72); }
+details.pj-detail > summary{ list-style:none; cursor:pointer; display:flex; flex-direction:column; gap:2px; padding:14px 52px 14px 18px; position:relative; }
+details.pj-detail > summary::-webkit-details-marker{ display:none; }
+details.pj-detail > summary strong{ font-size:16px; }
+details.pj-detail > summary span{ font-size:13.5px; color:var(--muted); }
+details.pj-detail > summary::after{ content:"+"; position:absolute; right:14px; top:50%; transform:translateY(-50%); width:28px; height:28px; border-radius:50%; display:grid; place-items:center; background:#eef4e6; color:var(--deep); font-size:19px; font-weight:600; }
+details.pj-detail[open] > summary::after{ content:"–"; }
+details.pj-detail > summary:focus-visible{ outline:3px solid var(--accent); outline-offset:3px; border-radius:18px; }
+details.pj-detail > .pj-cols, details.pj-detail > .pj-partenaires{ margin:0 14px 14px; }
+.pj-cols.pj-cols--2{ grid-template-columns:1fr 1fr; }
+@media(max-width:980px){ .pj-cols.pj-cols--2{ grid-template-columns:1fr; } }
+.pj-contribuer-bloc{ margin-top:12px; padding:16px 18px; border-radius:18px; background:var(--deep); color:#fff; display:flex; flex-wrap:wrap; align-items:center; gap:8px 20px; }
+.pj-contribuer-bloc .pj-label{ color:var(--accent); margin:0; width:100%; }
+.pj-contribuer-bloc ul.pj-contribuer{ margin:0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:6px 18px; font-size:14px; }
+.pj-contribuer-bloc ul.pj-contribuer li{ margin:0; }
+.pj-contribuer-bloc a{ color:#fff; }
+.pj-contribuer-bloc .text-link{ color:var(--accent); margin-left:auto; }
+/* base de recherche : présentation de chaque source repliée */
+details.source-plus{ margin:4px 0 10px; }
+details.source-plus > summary{ cursor:pointer; color:var(--deep); font-weight:600; font-size:14px; text-decoration:underline; text-underline-offset:3px; padding:4px 0; width:max-content; max-width:100%; }
+details.source-plus > summary:focus-visible{ outline:3px solid var(--accent); outline-offset:3px; border-radius:6px; }
+details.source-plus > p{ margin-top:6px; }

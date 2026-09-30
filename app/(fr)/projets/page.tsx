@@ -77,27 +77,34 @@ export default function Projets() {
                     <div><dt>Porté par</dt><dd>{ths.length ? ths.map((t, i) => <span key={t.id}>{i ? " · " : ""}<Link href={`/programmes#${t.id}`}>{t.name}</Link>{t.filled ? ` (${t.coordinator})` : " (à pourvoir)"}</span>) : "—"}</dd></div>
                   </dl>
                 </div>
-                <div className="pj-cols">
-                  <div><p className="pj-label">Ce qui existe</p><ul>{p.existant.map((x) => <li key={x}>{x}</li>)}</ul></div>
-                  <div><p className="pj-label">Ce qui manque</p><ul>{p.manque.map((x) => <li key={x}>{x}</li>)}</ul></div>
-                  <div><p className="pj-label">Contribuer</p><ul className="pj-contribuer">{p.contribuer.map((l) => <li key={l.href + l.label}><Link href={l.href}>{l.label} <span aria-hidden="true">→</span></Link></li>)}</ul><Link className="text-link" href={p.route}>Le dossier complet<span className="sr-only"> : {p.nom}</span> <span aria-hidden="true">→</span></Link></div>
+                <details className="pj-detail">
+                  <summary><strong>Où en est ce projet</strong><span>Ce qui existe ({p.existant.length}), ce qui manque ({p.manque.length}){ALIGNEMENT_PROJETS[p.slug] ? ", les programmes des partenaires" : ""}</span></summary>
+                  <div className="pj-cols pj-cols--2">
+                    <div><p className="pj-label">Ce qui existe</p><ul>{p.existant.map((x) => <li key={x}>{x}</li>)}</ul></div>
+                    <div><p className="pj-label">Ce qui manque</p><ul>{p.manque.map((x) => <li key={x}>{x}</li>)}</ul></div>
+                  </div>
+                  {ALIGNEMENT_PROJETS[p.slug] ? (() => {
+                    const al = ALIGNEMENT_PROJETS[p.slug];
+                    const progs = al.programmes.map(programmeParId).filter((x) => x !== undefined);
+                    return (
+                      <div className="pj-partenaires">
+                        <p className="pj-label">Programmes des partenaires</p>
+                        <p>{al.lecture}</p>
+                        {progs.length || al.guichets.length ? (
+                          <p className="pj-partenaires-liens">
+                            {progs.map((g) => <Link key={g.id} href={`/bailleurs#${g.id}`}>{g.nom.split(" — ")[0]}</Link>)}
+                            {al.guichets.map((i) => <Link key={i} className="est-guichet" href="/bailleurs#guichets">Guichet : {GUICHETS[i].nom}</Link>)}
+                          </p>
+                        ) : null}
+                      </div>
+                    );
+                  })() : null}
+                </details>
+                <div className="pj-contribuer-bloc">
+                  <p className="pj-label">Contribuer</p>
+                  <ul className="pj-contribuer">{p.contribuer.map((l) => <li key={l.href + l.label}><Link href={l.href}>{l.label} <span aria-hidden="true">→</span></Link></li>)}</ul>
+                  <Link className="text-link" href={p.route}>Le dossier complet<span className="sr-only"> : {p.nom}</span> <span aria-hidden="true">→</span></Link>
                 </div>
-                {ALIGNEMENT_PROJETS[p.slug] ? (() => {
-                  const al = ALIGNEMENT_PROJETS[p.slug];
-                  const progs = al.programmes.map(programmeParId).filter((x) => x !== undefined);
-                  return (
-                    <div className="pj-partenaires">
-                      <p className="pj-label">Programmes des partenaires</p>
-                      <p>{al.lecture}</p>
-                      {progs.length || al.guichets.length ? (
-                        <p className="pj-partenaires-liens">
-                          {progs.map((g) => <Link key={g.id} href={`/bailleurs#${g.id}`}>{g.nom.split(" — ")[0]}</Link>)}
-                          {al.guichets.map((i) => <Link key={i} className="est-guichet" href="/bailleurs#guichets">Guichet : {GUICHETS[i].nom}</Link>)}
-                        </p>
-                      ) : null}
-                    </div>
-                  );
-                })() : null}
               </article>
             );
           })}
