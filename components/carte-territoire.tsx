@@ -83,6 +83,13 @@ export default function CarteTerritoire() {
   const [requete, setRequete] = useState("");
   const [pret, setPret] = useState(false);
 
+  const indexes = useMemo(() => {
+    if (!donnees) return null;
+    const unitesById = new Map(donnees.unites.map((u) => [u.id, u]));
+    const villagesByKey = new Map(donnees.villages.map((v) => [`${v[4]}\u0000${v[7]}`, v]));
+    return { unitesById, villagesByKey };
+  }, [donnees, indexes]);
+
   // données
   useEffect(() => {
     fetch("/carte/donnees.json").then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); }).then(setDonnees).catch(() => setErreur("Les données de la carte n’ont pas pu être chargées. Réessayez quand le réseau revient."));
@@ -111,9 +118,9 @@ export default function CarteTerritoire() {
       const unitesCouche = L.geoJSON(
         collection,
         {
-          style: (f) => { const u = donnees.unites.find((x) => x.id === f?.properties.id)!; const g = GROUPES[u.groupe]; return { color: g.couleur, weight: 1.4, fillColor: g.couleur, fillOpacity: g.fond, dashArray: u.groupe === "signale" || u.groupe === "diaspora" ? "5 4" : undefined }; },
+          style: (f) => { const u = indexes!.unitesById.get(f?.properties.id)!; const g = GROUPES[u.groupe]; return { color: g.couleur, weight: 1.4, fillColor: g.couleur, fillOpacity: g.fond, dashArray: u.groupe === "signale" || u.groupe === "diaspora" ? "5 4" : undefined }; },
           onEachFeature: (f, layer) => {
-            const u = donnees.unites.find((x) => x.id === f.properties.id)!;
+            const u = indexes!.unitesById.get(f.properties.id)!;
             layer.bindTooltip(u.nom, { sticky: true, direction: "top", className: "ct-info" });
             layer.on("click", () => { setSelection({ genre: "unite", unite: u }); });
             layer.on("mouseover", () => (layer as Leaflet.Path).setStyle({ weight: 2.6, fillOpacity: GROUPES[u.groupe].fond + 0.12 }));
@@ -131,7 +138,7 @@ export default function CarteTerritoire() {
         if (villagesRendus || m.getZoom() < 9 || !m.hasLayer(villagesCouche)) return;
         villagesRendus = true;
         for (const v of donnees.villages) {
-          const u = donnees.unites.find((x) => x.id === v[4]);
+          const u = indexes!.unitesById.get(v[4]);
           const couleur = u ? GROUPES[u.groupe].couleur : "#607069";
           const marker = L.circleMarker([v[1], v[0]], { renderer: canvas, radius: rayon[v[3]] || 3, color: "#fff", weight: v[3] === "village" || v[3] === "hamlet" ? 0.8 : 1.5, fillColor: couleur, fillOpacity: 0.9 });
           const nom = nomPropre(v[2]);
@@ -185,11 +192,11 @@ export default function CarteTerritoire() {
     const village = q.get("village"); const unite = q.get("unite");
     if (village) {
       const [uid, slug] = village.split("/");
-      const v = donnees.villages.find((x) => x[4] === uid && x[7] === slug);
+      const v = indexes?.villagesByKey.get(`${uid}\u0000${slug}`);
       if (v) { setTimeout(() => { aller([v[1], v[0]], 13, { genre: "village", village: v }); boite.current?.scrollIntoView({ behavior: "smooth", block: "start" }); }, 300); return; }
     }
     if (unite) {
-      const u = donnees.unites.find((x) => x.id === unite);
+      const u = indexes?.unitesById.get(unite);
       if (u) setTimeout(() => { aller([u.centre[1], u.centre[0]], 11, { genre: "unite", unite: u }); boite.current?.scrollIntoView({ behavior: "smooth", block: "start" }); }, 300);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -212,12 +219,12 @@ export default function CarteTerritoire() {
     for (const u of donnees.unites) if (sansAccents(u.nom).includes(q)) r.push({ nom: u.nom, type: u.gadm.type === "Sub-prefecture" ? "Sous-préfecture" : u.gadm.type, unite: u.dep, coords: [u.centre[1], u.centre[0]], unit: u });
     for (const v of donnees.villages) {
       const nom = nomPropre(v[2]); if (!nom || !sansAccents(nom).includes(q)) continue;
-      const u = donnees.unites.find((x) => x.id === v[4]);
+      const u = indexes?.unitesById.get(v[4]);
       r.push({ nom, type: TYPES[v[3]] || v[3], unite: u?.nom || "", coords: [v[1], v[0]], village: v });
       if (r.length > 30) break;
     }
     return r.slice(0, 30);
-  }, [donnees, requete]);
+  }, [donnees, requete, indexes]);
 
   const aller = (coords: [number, number], zoom = 12, sel?: Selection) => {
     carte.current?.flyTo(coords, zoom, { duration: 0.8 });
@@ -225,7 +232,7 @@ export default function CarteTerritoire() {
     setRequete("");
   };
 
-  const unitePour = (id: string) => donnees?.unites.find((u) => u.id === id);
+  const unitePour = (id: string) => indexes?.unitesById.get(id);
 
   return (
     <div className="ct">
