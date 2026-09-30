@@ -43,7 +43,7 @@ export const NAVIGATION: NavEntree[] = [
   {
     id: "actions", label: "Nos actions", href: "/programmes",
     colonnes: [
-      { titre: "Quatre pôles · thématiques en cours d’inventaire", liens: [
+      { titre: "Quatre pôles · thématiques structurées", liens: [
         { label: "Mémoire, culture & patrimoine", href: "/programmes#pole-1", note: "Pôle I" },
         { label: "Développement humain & moyens d’existence", href: "/programmes#pole-2", note: "Pôle II" },
         { label: "Gouvernance, paix & plaidoyer", href: "/programmes#pole-3", note: "Pôle III" },
