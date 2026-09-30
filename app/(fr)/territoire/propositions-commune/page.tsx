@@ -166,6 +166,7 @@ export default function PropositionsCommune() {
         <SectionHead eyebrow="Les textes complets" title="La note, l’article," em="et le cadre légal." />
         <div className="link-list">
           <Link href="/journal/2026-09-16-note-commune-bedjondo"><small>Note · {note?.published}</small><strong>Note à la commune de Bédjondo : six propositions</strong><span>Adressée au maire et au conseil communal, copie au préfet et aux autorités traditionnelles. {note?.sent ? `Envoi : ${note.sent.toLowerCase()}.` : ""}</span></Link>
+          <a href="/notes/propositions-commune-bedjondo.pdf" target="_blank" rel="noopener noreferrer"><small>PDF · 3 pages</small><strong>Ce dossier à imprimer</strong><span>Les dix projets, la démarche, les mesures et nos apports, à remettre au maire, au préfet et aux chefs de canton.</span></a>
           {note?.pdf ? <a href={note.pdf} target="_blank" rel="noopener noreferrer"><small>PDF</small><strong>La note à imprimer</strong><span>La version à déposer à la mairie ou à remettre aux conseillers.</span></a> : null}
           <Link href="/journal/2026-09-16-bedjondo-village-devenu-ville"><small>Article</small><strong>Bédjondo, un village devenu ville : nos propositions</strong><span>Les douze propositions d’aménagement et leurs sources.</span></Link>
           <Link href="/territoire/decentralisation"><small>Dossier</small><strong>Décentralisation & développement local</strong><span>Ce que la loi confie à la commune, avec quels moyens, et les quatre règles de gouvernance que nous demandons.</span></Link>
