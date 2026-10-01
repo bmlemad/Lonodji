@@ -99,7 +99,7 @@ export default function SubsoilEn() {
         <ul className="gl-demandes">
           {ENGAGEMENTS_EN.map((p) => <li key={p.texte}><strong>{p.qui}.</strong> {p.texte} <Links liens={p.liens} /></li>)}
         </ul>
-        <p className="lg-footnote">This subject falls under the theme Environment, Climate & Natural Resources, which is still looking for its coordinator (see the <Link href="/en/themes">themes page</Link>). Geologists, petroleum and mining engineers, lawyers and environmental specialists: <Link href="/en/contact">offer your skills</Link>.</p>
+        <p className="lg-footnote">This subject falls under the theme Environment, Climate & Natural Resources, which is still looking for its coordinator (see <Link href="/en/themes#theme-06">theme 06</Link>). Geologists, petroleum and mining engineers, lawyers and environmental specialists: <Link href="/en/contact">offer your skills</Link>.</p>
       </section>
 
       <section className="hub-section" id="sources">
@@ -118,7 +118,7 @@ export default function SubsoilEn() {
         <div className="link-list">
           <Link href="/en/governance"><small>Territory</small><strong>Local governance</strong><span>Who decides what, from the canton to the State: to whom our proposals are addressed.</span></Link>
           <Link href="/en/commune"><small>Proposals</small><strong>Our proposals to the commune</strong><span>Priority projects and measures for the town of Bédjondo.</span></Link>
-          <Link href="/en/themes"><small>Our work</small><strong>Five pillars, twenty-one themes</strong><span>Including Environment, Climate & Natural Resources, which will carry this file.</span></Link>
+          <Link href="/en/themes#theme-06"><small>Our work</small><strong>Five pillars, twenty-one themes</strong><span>Including Environment, Climate & Natural Resources, which will carry this file.</span></Link>
         </div>
       </section>
 

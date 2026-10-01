@@ -12,7 +12,7 @@ const LIENS_EN: Record<string, Lien> = {
   "Lieux sacrés et sépultures": { label: "Sacred sites and burial grounds (in French)", href: "/patrimoine/lieux-sacres" },
   "Plaidoyer formation professionnelle": { label: "Vocational training advocacy (in French)", href: "/journal/2026-09-17-plaidoyer-formation-professionnelle-bedjondo" },
   "Plaidoyer électricité": { label: "Electricity advocacy (in French)", href: "/journal/2026-09-16-plaidoyer-electricite-bedjondo" },
-  "Protection sociale, enfance & inclusion": { label: "Social Protection, Children & Inclusion", href: "/en/themes" },
+  "Protection sociale, enfance & inclusion": { label: "Social Protection, Children & Inclusion", href: "/en/themes#theme-12" },
   "Bibliothèque": { label: "Library (in French)", href: "/bibliotheque" },
   "Enquêtes de terrain": { label: "Field surveys (in French)", href: "/territoire/enquetes" },
 };

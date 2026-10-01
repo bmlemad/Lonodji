@@ -1606,6 +1606,16 @@ def structure_01_10(html: str, path: Path) -> str:
     return html
 
 
+def ancres_en(html: str, path: Path) -> str:
+    """Page anglaise des thématiques : chaque carte reçoit une ancre (#theme-04…), et les renvois de l'index des ODD
+    mènent à la carte plutôt qu'en haut de la liste (1er octobre 2026)."""
+    if path.name != "themes.html" or "en" not in path.parts:
+        return html
+    html = re.sub(r'<article class="pole-card">(\s*<div class="pole-head-row"><span class="pole-num">THEME (\d{2})</span>)',
+                  r'<article class="pole-card" id="theme-\2">\1', html)
+    return re.sub(r'<a href="#theme-list">(\d{2}) &middot;', r'<a href="#theme-\1">\1 &middot;', html)
+
+
 def lire_source(path: Path) -> str:
     """Lit un fichier de l'ancien site en y appliquant les mises à jour de source."""
     html = path.read_text(encoding="utf-8")
@@ -1620,7 +1630,7 @@ def lire_source(path: Path) -> str:
         k = html.find("</p>", j)
         if j > 0 and k > 0:
             html = html[:k] + note + html[k:]
-    html = structure_01_10(structure_30_09(corrections_revue(structure_29_09(html, path), path), path), path)
+    html = ancres_en(structure_01_10(structure_30_09(corrections_revue(structure_29_09(html, path), path), path), path), path)
     if path.name == "kit-mobilisation.html":
         html = kit_liens(html)
     return html if "articles" in path.parts else comptes_courants(html)
