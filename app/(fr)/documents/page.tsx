@@ -4,6 +4,7 @@ import Partager from "@/components/partager";
 import { DocumentCard, PageHeader, SectionHead } from "@/components/blocks";
 import { getIndex, ogFor, type DocumentItem } from "@/lib/content";
 import { IDENTITE, ODEB } from "@/lib/odeb";
+import { getMagazine } from "@/lib/magazine";
 
 export const metadata: Metadata = {
   title: "Documents à télécharger",
@@ -20,7 +21,9 @@ export default function Documents() {
   const presentation: DocumentItem = { title: "Présentation du projet ODEB LONODJI à l’assemblée", status: "Diaporama", meta: `29 septembre 2026 · ${IDENTITE.presentation.diapositives} diapositives · PDF et PowerPoint`, description: "Le projet en diapositives, faites depuis les pages du site : pourquoi, les cinq repères 2030, les six missions, les six programmes et leurs axes, les cinq règles du programme 06 à voter, qui porte le projet, la feuille de route et les décisions attendues.", pdf: IDENTITE.presentation.pdf, links: [{ label: "Version PowerPoint", href: IDENTITE.presentation.pptx }, { label: "Le projet ODEB", href: "/odeb#presentation" }] };
   const fiches: DocumentItem = { title: "Fiches de mission : vice-présidences de pôle, coordinations, cellules", status: "Recueil", meta: "1er octobre 2026 · A4 · 28 fiches · produites à partir de la structure publiée", description: "Une fiche par poste — cinq vice-présidences de pôle, pourvues par élection, vingt et une coordinations de thématique, deux cellules transversales — avec le rôle, le périmètre, les quatre étapes et le lien pour candidater ; l’état pourvu ou à pourvoir est celui du site à la date de la fiche.", pdf: "/missions/fiches-de-mission-adeb-lonodji.pdf", links: [{ label: "Les fiches une par une", href: "/programmes/fiches-de-mission" }, { label: "Nos actions", href: "/programmes" }] };
   const affiches: DocumentItem = { title: "Affiches « Retrouvez votre village »", status: "À imprimer", meta: "29 septembre 2026 · A4 · quinze affiches", description: "Une affiche par unité et une affiche générale, avec un code QR vers les villages et l’adresse en toutes lettres, pour les chefs, les relais, les écoles et les centres de santé ; chaque fiche de village s’imprime aussi telle quelle.", pdf: "/carte/affiches/affiche-villages.pdf", links: [{ label: "Les quinze affiches", href: "/villages#affiches" }, { label: "Les villages", href: "/villages" }] };
-  const available = [...docs.filter((d) => d.pdf), livreBlanc, charte, presentation, fiches, affiches];
+  const mag = getMagazine().numeros[0];
+  const magazine: DocumentItem[] = mag ? [{ title: `Lonodji n° ${mag.numero}, le magazine trimestriel`, status: "Magazine", meta: `${mag.parutionLabel} · A4 · ${mag.pages} pages`, description: `${mag.titre} : ${mag.chapo} Avec les décisions du trimestre, l’état des plaidoyers, un grand format, la mémoire et la culture bedjond, et les postes ouverts.`, pdf: mag.pdf, links: [{ label: "Tous les numéros", href: "/magazine" }, { label: "La lettre mensuelle", href: "/lettre" }] }] : [];
+  const available = [...magazine, ...docs.filter((d) => d.pdf), livreBlanc, charte, presentation, fiches, affiches];
   const pending = docs.filter((d) => !d.pdf);
   return (
     <main id="main-content" className="hub-page">

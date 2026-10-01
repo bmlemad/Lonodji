@@ -1,0 +1,75 @@
+{
+ "numeros": [
+  {
+   "numero": 1,
+   "periode": "octobre 2026",
+   "parution": "2026-10-01",
+   "parutionLabel": "1er octobre 2026",
+   "prochain": "janvier 2027",
+   "titre": "Cinq pôles, sept priorités",
+   "chapo": "Le 1er octobre 2026, le bureau exécutif a adopté huit décisions : un pôle de plus, sept thématiques prioritaires avec chacune un titulaire et un adjoint, et des vice-présidences élues.",
+   "pdf": "/magazine/lonodji-01-2026-10.pdf",
+   "couverture": "/magazine/lonodji-01-couverture.jpg",
+   "pages": 22,
+   "taille": "2,3 Mo",
+   "sommaire": [
+    {
+     "rubrique": "Le trimestre",
+     "titre": "Ce que l’association a décidé, en dates",
+     "page": 3
+    },
+    {
+     "rubrique": "Dossier",
+     "titre": "Cinq pôles et sept thématiques prioritaires : le bureau réorganise l’association",
+     "page": 5
+    },
+    {
+     "rubrique": "Plaidoyers",
+     "titre": "Huit dossiers, 47 lettres à signer",
+     "page": 7
+    },
+    {
+     "rubrique": "Grand format",
+     "titre": "Bédjondo, un village devenu ville : nos propositions",
+     "page": 9
+    },
+    {
+     "rubrique": "Projet ODEB",
+     "titre": "Quarante ans après 1986, ADEB LONODJI ouvre la réflexion ODEB LONODJI",
+     "page": 13
+    },
+    {
+     "rubrique": "Mémoire",
+     "titre": "Le Kul et les monnaies de fer du pays sara",
+     "page": 15
+    },
+    {
+     "rubrique": "Culture",
+     "titre": "Ce que veut vraiment dire « nangnda »",
+     "page": 17
+    },
+    {
+     "rubrique": "En bref",
+     "titre": "Aussi publié ce trimestre",
+     "page": 19
+    },
+    {
+     "rubrique": "Écrire dans Lonodji",
+     "titre": "Le magazine s’écrit sur le site",
+     "page": 20
+    },
+    {
+     "rubrique": "Participer",
+     "titre": "Treize postes cherchent quelqu’un",
+     "page": 21
+    }
+   ]
+  }
+ ],
+ "rythme": [
+  "janvier",
+  "avril",
+  "juillet",
+  "octobre"
+ ]
+}

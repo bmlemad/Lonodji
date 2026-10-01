@@ -130,6 +130,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Quelle thématique pour vous ?", href: "/participer/trouver-ma-thematique", note: "Trois questions, une orientation" },
         { label: "Kit de mobilisation", href: "/participer/kit-mobilisation", note: "Relayer autour de vous" },
         { label: "Lettre d’information", href: "/lettre", note: "Les nouvelles de l’association" },
+        { label: "Lonodji, le magazine", href: "/magazine", note: "Trimestriel, en PDF à imprimer" },
         { label: "Installer l’application", href: "/projets/application", note: "Android, iPhone, hors ligne" },
       ] },
     ],
@@ -249,7 +250,7 @@ export function entreeCouranteEn(pathname: string): string {
 /* Section courante d'une page, pour surligner l'entrée du menu. */
 export function entreeCourante(pathname: string): string {
   if (pathname === "/") return "";
-  if (pathname.startsWith("/journal") || pathname.startsWith("/lettre")) return "journal";
+  if (pathname.startsWith("/journal") || pathname.startsWith("/lettre") || pathname.startsWith("/magazine")) return "journal";
   if (/^\/(participer|diaspora)/.test(pathname)) return "participer";
   if (/^\/(territoire|carte|villages|observatoire)/.test(pathname)) return "territoire";
   if (/^\/(patrimoine|histoire|langue|bibliotheque|temoignages)/.test(pathname)) return "patrimoine";
@@ -279,7 +280,7 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
   ] },
   { titre: "Participer", liens: [
     { label: "Adhérer (déclaration d’intention)", href: "/participer#adherer" }, { label: "Nous soutenir", href: "/participer#soutenir" }, { label: "Signaler un besoin", href: "/territoire/besoins" },
-    { label: "Le journal", href: "/journal" }, { label: "La lettre d’information", href: "/lettre" }, { label: "Installer l’application", href: "/projets/application" },
+    { label: "Le journal", href: "/journal" }, { label: "La lettre d’information", href: "/lettre" }, { label: "Lonodji, le magazine", href: "/magazine" }, { label: "Installer l’application", href: "/projets/application" },
   ] },
 ];
 

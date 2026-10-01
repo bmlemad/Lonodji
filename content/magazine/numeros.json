@@ -1,0 +1,54 @@
+{
+  "_lisezmoi": "Magazine trimestriel « Lonodji » : un numéro en octobre, janvier, avril et juillet. Chaque numéro reprend, sans les réécrire, des textes publiés sur lonodji.org (articles, registre des décisions, plaidoyers, postes ouverts) ; seul l'édito est propre au magazine, et ses chiffres sont calculés à la génération ({articles}, {plaidoyers}…). PDF et couverture : python3 scripts/build-magazine.py (après npm run build). Page : /magazine.",
+  "rythme": ["janvier", "avril", "juillet", "octobre"],
+  "numeros": [
+    {
+      "numero": 1,
+      "parution": "2026-10-01",
+      "periode": "octobre 2026",
+      "couvre": ["2026-09-01", "2026-10-01"],
+      "prochain": "janvier 2027",
+      "une": {
+        "surtitre": "Organisation",
+        "titre": "Cinq pôles, <em>sept priorités</em>",
+        "chapo": "Le 1er octobre 2026, le bureau exécutif a adopté huit décisions : un pôle de plus, sept thématiques prioritaires avec chacune un titulaire et un adjoint, et des vice-présidences élues."
+      },
+      "accroches": [
+        ["Plaidoyers", "Huit dossiers prêts à partir"],
+        ["Grand format", "Bédjondo, un village devenu ville"],
+        ["Mémoire", "Le Kul et les monnaies de fer"],
+        ["Culture", "Ce que veut vraiment dire « nangnda »"],
+        ["Participer", "{postes} postes ouverts"]
+      ],
+      "edito": [
+        "Le site lonodji.org publie au jour le jour ; la lettre d’information fait le point chaque mois. Il manquait un objet que l’on garde : un numéro qu’on imprime, qu’on fait circuler à Bédjondo, qu’on envoie en PDF à un parent de la diaspora, et qu’on relit trois mois plus tard. Ce sera <em>Lonodji</em>, quatre fois par an : en janvier, avril, juillet et octobre.",
+        "Ce premier numéro couvre une rentrée chargée. Depuis le 11 septembre 2026, l’association a publié {articles} articles, sept plaidoyers et une note à la commune de Bédjondo. Le 28 septembre, elle a fêté les quarante ans de ses fondations en ouvrant la réflexion ODEB LONODJI. Le 1er octobre, son bureau exécutif a adopté une nouvelle organisation : cinq pôles, sept thématiques prioritaires, des vice-présidences élues.",
+        "<em>Lonodji</em> suit les règles du site : chaque fait cite sa source, chaque chiffre porte sa date, et ce que nous ignorons est écrit comme tel. Les textes repris ici ont été publiés en ligne, où ils gardent leurs liens ; ils sont reproduits tels quels, avec leurs sources.",
+        "Le prochain numéro paraîtra en {prochain}. Il dira où en sont les plaidoyers : lesquels sont partis, et ce qu’on nous aura répondu."
+      ],
+      "sommaire": [
+        {"type": "trimestre", "rubrique": "Le trimestre", "titre": "Ce que l’association a décidé, en dates"},
+        {"type": "article", "rubrique": "Dossier", "slug": "2026-10-01-cinq-poles-sept-priorites", "poles": true},
+        {"type": "plaidoyers", "rubrique": "Plaidoyers", "titre": "Huit dossiers, {lettres} lettres à signer"},
+        {"type": "article", "rubrique": "Grand format", "slug": "2026-09-16-bedjondo-village-devenu-ville", "image": "/carte/territoire.svg", "legende": "Bédjondo et ses cantons : la carte du territoire publiée sur lonodji.org/carte."},
+        {"type": "article", "rubrique": "Projet ODEB", "slug": "2026-09-28-quarante-ans-reflexion-odeb-lonodji"},
+        {"type": "article", "rubrique": "Mémoire", "slug": "2026-09-15-monnaie-kul-echanges-economiques"},
+        {"type": "article", "rubrique": "Culture", "slug": "2026-09-22-ce-que-veut-dire-nangnda"},
+        {"type": "breves", "rubrique": "En bref", "titre": "Aussi publié ce trimestre", "slugs": [
+          "2026-09-19-annonce-deux-sieges",
+          "2026-09-14-caisse-entraide-solidarite-en-acte",
+          "2026-09-14-diaspora-bedjond-pont-vers-terroir",
+          "2026-09-16-bibliotheques-mandoul-occidental",
+          "2026-09-15-sil-enquete-langue-bedjond",
+          "2026-09-13-kokotan-langue-nangnda",
+          "2026-09-15-cooperation-suisse-mandoul",
+          "2026-09-28-sixieme-programme-economie-sociale",
+          "2026-09-28-identite-visuelle-odeb-lonodji",
+          "2026-09-19-annonce-air-bedjondo"
+        ]},
+        {"type": "contribuer", "rubrique": "Écrire dans Lonodji", "titre": "Le magazine s’écrit sur le site"},
+        {"type": "postes", "rubrique": "Participer", "titre": "{postes} postes cherchent quelqu’un"}
+      ]
+    }
+  ]
+}

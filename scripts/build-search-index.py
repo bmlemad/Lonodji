@@ -157,6 +157,9 @@ PAGES_SITE.append({"t": "Sectors of intervention — WASH, health, nutrition, re
 PAGES_SITE.append({"t": "Fiches de mission : vice-présider un pôle, coordonner une thématique", "r": "/programmes/fiches-de-mission", "k": "Page",
      "d": "Vingt-huit fiches en PDF — cinq vice-présidences de pôle, vingt et une coordinations, deux cellules — avec le rôle, le périmètre, les quatre étapes et le lien pour candidater.",
      "x": "fiche de mission fiches poste vice-président vice-présidence directeur directrice de pôle coordonnateur coordonnatrice coordination thématique cellule candidater candidature recrutement bénévole rôle périmètre étapes PDF recueil à pourvoir vacant"})
+PAGES_SITE.append({"t": "Lonodji, le magazine trimestriel d’ADEB LONODJI", "r": "/magazine", "k": "Page",
+     "d": "Quatre numéros par an (janvier, avril, juillet, octobre), en PDF à imprimer ou à transmettre sur WhatsApp : décisions du trimestre, dossier, plaidoyers, mémoire, culture, postes ouverts.",
+     "x": "magazine trimestriel revue Lonodji numéro PDF imprimer WhatsApp couverture sommaire édito trimestre"})
 PAGES_SITE.append({"t": "La lettre d’information : chaque mois, publié, décidé, ouvert", "r": "/lettre", "k": "Page",
      "d": "Les numéros de la lettre d’ADEB LONODJI, à lire en ligne ou à transmettre en PDF sur WhatsApp ; l’abonnement par e-mail ; la règle de la lettre.",
      "x": "lettre d’information newsletter infolettre numéros abonnement s’abonner e-mail mensuelle PDF WhatsApp transmettre publié décidé ouvert archive"})

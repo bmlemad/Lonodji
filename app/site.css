@@ -2023,3 +2023,15 @@ input[type=checkbox], input[type=radio]{ min-width:24px; min-height:24px; }
 .poste-actions{ margin:auto 0 0; padding-top:10px; display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; }
 .poste-actions .button{ min-height:40px; }
 .poste-actions .text-link{ font-size:13.5px; min-height:24px; display:inline-flex; align-items:center; }
+/* Magazine « Lonodji » (1er octobre 2026) */
+.mag-numero{ display:grid; grid-template-columns:minmax(220px,340px) 1fr; gap:clamp(20px,4vw,48px); align-items:start; }
+.mag-couv{ display:block; border-radius:var(--r-carte-s); overflow:hidden; box-shadow:0 20px 50px rgba(16,36,30,.22); transition:transform .2s ease; }
+.mag-couv:hover{ transform:translateY(-3px); }
+.mag-couv img{ display:block; width:100%; height:auto; }
+.mag-sommaire-titre{ margin:0 0 10px; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+.mag-sommaire{ list-style:none; margin:0; padding:0; border-top:1px solid var(--carte-filet); }
+.mag-sommaire li{ display:grid; grid-template-columns:52px 1fr; gap:12px; padding:10px 0; border-bottom:1px solid var(--carte-filet); font-size:15px; line-height:1.35; }
+.mag-sommaire li b{ font-family:var(--font-playfair),Georgia,serif; font-weight:500; font-size:17px; color:var(--deep, #173b2d); }
+.mag-sommaire li small{ display:block; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:700; margin-bottom:2px; }
+.mag-meta{ margin:14px 0 0; font-size:13px; color:var(--muted); }
+@media (max-width:720px){ .mag-numero{ grid-template-columns:1fr; } .mag-couv{ max-width:300px; } }
