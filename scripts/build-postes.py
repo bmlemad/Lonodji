@@ -29,6 +29,14 @@ BROUILLON = ROOT / "content" / "brouillons" / "postes-ouverts-whatsapp.md"
 SITE = "https://lonodji.org"
 
 
+MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+
+
+def date_fr(iso: str) -> str:
+    a, m, j = (int(x) for x in iso.split("-"))
+    return f"{'1er' if j == 1 else j} {MOIS[m - 1]} {a}"
+
+
 def prioritaires() -> list[str]:
     src = (ROOT / "lib" / "organisation.ts").read_text("utf8")
     bloc = src.split("export const PRIORITAIRES", 1)[1].split("= [", 1)[1].split("\n];", 1)[0]
@@ -56,6 +64,8 @@ def postes() -> list[dict]:
                 "fiche": f"/missions/fiche-mission-coordination-{t['id']}.pdf",
                 "message": f"ADEB LONODJI cherche {role} pour la thématique prioritaire « {t['number']}. {t['name']} » (pôle {p['roman']}). Bénévole, au Tchad ou dans la diaspora. La fiche de mission et le formulaire : {SITE}{q}#contact — ou par WhatsApp au {TELEPHONE}.",
             })
+    el = json.loads((ROOT / "content" / "election.json").read_text("utf8"))
+    cal = {e["cle"]: date_fr(e["date"]) for e in el["calendrier"]}
     for p in idx["structure"]["poles"]:
         d = p.get("direction")
         if not d or d.get("filled"):
@@ -66,7 +76,8 @@ def postes() -> list[dict]:
             "eyebrow": "Poste ouvert · élection", "role": f"Vice-présidence du pôle {p['roman']}",
             "nom": p["name"], "pole": f"Pôle {p['roman']} · vice-présidence déléguée, élue",
             "fiche": f"/missions/fiche-mission-direction-{p['id']}.pdf",
-            "message": f"ADEB LONODJI élira la vice-présidente ou le vice-président délégué du pôle {p['roman']}, « {p['name']} ». Candidatures ouvertes, au Tchad comme dans la diaspora. La fiche de mission et le formulaire : {SITE}{q}#contact — ou par WhatsApp au {TELEPHONE}.",
+            "lignes": [f"Pôle {p['roman']} · vice-présidence déléguée, élue", f"Candidatures jusqu’au {cal['cloture']}", f"Vote le {cal['vote']} · bénévole"],
+            "message": f"ADEB LONODJI élira la vice-présidente ou le vice-président délégué du pôle {p['roman']}, « {p['name']} ». Candidatures jusqu’au {cal['cloture']}, vote le {cal['vote']} ; au Tchad comme dans la diaspora. Le formulaire : {SITE}{q}#contact — la procédure : {SITE}/association/election-vice-presidences — ou par WhatsApp au {TELEPHONE}.",
         })
     return out
 
@@ -87,7 +98,7 @@ def main() -> None:
             titre = f"{_v.esc(p['role'])}<br><em>{_v.esc(p['nom'])}</em>"
             brut = len(p["role"]) + len(p["nom"])
             size = 72 if brut < 50 else 64 if brut < 66 else 56
-            lignes = [p["pole"], "Bénévole · au Tchad ou dans la diaspora", "Fiche de mission et candidature en ligne"]
+            lignes = p.get("lignes") or [p["pole"], "Bénévole · au Tchad ou dans la diaspora", "Fiche de mission et candidature en ligne"]
             html = _v.TEMPLATE.format(mois=mois, fonts=fonts, logo=_v.LOGO, eyebrow=_v.esc(p["eyebrow"]), titre=titre,
                                       lignes="".join(f"<li>{_v.esc(l)}</li>" for l in lignes), url="lonodji.org/participer",
                                       size=size, classe="", odeb="")

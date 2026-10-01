@@ -3,6 +3,7 @@
    vice-présidence pour chaque pôle qui n'en a pas. Visuels et messages WhatsApp : scripts/build-postes.py (même calcul). Un poste pourvu disparaît de la liste au prochain import. */
 import { getIndex, ORG } from "@/lib/content";
 import { PRIORITAIRES } from "@/lib/organisation";
+import { dateFr, etape } from "@/lib/election";
 
 export type Poste = { cle: string; genre: "titulaire" | "adjoint" | "vice-presidence"; titre: string; numero?: string; pole: string; href: string; fiche: string; visuel: string; message: string };
 
@@ -27,13 +28,14 @@ export function getPostes(): Poste[] {
       });
     }
   }
+  const cloture = dateFr(etape("cloture").date), vote = dateFr(etape("vote").date);
   for (const p of idx.structure.poles) {
     if (!p.direction || p.direction.filled) continue;
     const href = `/participer?direction=${p.roman}&coordo=1#contact`;
     postes.push({
-      cle: `vice-presidence-${p.roman}`, genre: "vice-presidence", titre: p.name, pole: `Pôle ${p.roman} · vice-présidence déléguée, élue`, href,
+      cle: `vice-presidence-${p.roman}`, genre: "vice-presidence", titre: p.name, pole: `Pôle ${p.roman} · candidatures jusqu’au ${cloture}, vote le ${vote}`, href,
       fiche: `/missions/fiche-mission-direction-${p.id}.pdf`, visuel: `/partage/postes/poste-vice-presidence-${p.roman}.png`,
-      message: `ADEB LONODJI élira la vice-présidente ou le vice-président délégué du pôle ${p.roman}, « ${p.name} ». Candidatures ouvertes, au Tchad comme dans la diaspora. La fiche de mission et le formulaire : ${SITE}${href.replace("#contact", "")}#contact — ou par WhatsApp au ${ORG.phone}.`,
+      message: `ADEB LONODJI élira la vice-présidente ou le vice-président délégué du pôle ${p.roman}, « ${p.name} ». Candidatures jusqu’au ${cloture}, vote le ${vote} ; au Tchad comme dans la diaspora. Le formulaire : ${SITE}${href.replace("#contact", "")}#contact — la procédure : ${SITE}/association/election-vice-presidences — ou par WhatsApp au ${ORG.phone}.`,
     });
   }
   return postes;

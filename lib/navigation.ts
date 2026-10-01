@@ -23,6 +23,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "ONG & bailleurs : notre statut", href: "/association/ong-partenaires", note: "Statut, partenaires présents au Mandoul" },
         { label: "Les démarches, pas à pas", href: "/association/demarches", note: "Statut, récépissé, vers l’ONG" },
         { label: "Décisions d’organisation", href: "/association/propositions-organisation", note: "Cinq pôles, sept priorités : décidé le 1er octobre 2026" },
+        { label: "Élection des vice-présidences", href: "/association/election-vice-presidences", note: "Candidatures du 2 au 15 octobre, vote le 22" },
       ] },
       { titre: "Rendre des comptes", liens: [
         { label: "Redevabilité & transparence", href: "/transparence", note: "Réponse sous 48 h, plainte, protection" },

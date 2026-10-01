@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deux documents de travail pour le bureau exécutif, qui appliquent les décisions d'organisation du
+"""Élection des vice-présidences et plans annuels des priorités : documents des décisions 2026-33 et 2026-34 du
 1er octobre 2026 (lib/organisation.ts) :
 
   1. Élire les vice-présidences des pôles sans titulaire (décision 5) : projet de procédure, avec les
@@ -33,6 +33,17 @@ CONTENT = ROOT / "content"
 SITE = "lonodji.org"
 LOGO = ROOT / "public" / "odeb" / "identite" / "adeb-lonodji-logo-horizontal-clair-superposable.png"
 PREPARE = "1er octobre 2026"
+PUBLIC = ROOT / "public" / "organisation"
+MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+
+
+def date_fr(iso: str) -> str:
+    a, m, j = (int(x) for x in iso.split("-"))
+    return f"{'1er' if j == 1 else j} {MOIS[m - 1]} {a}"
+
+
+def election_json() -> dict:
+    return json.loads((CONTENT / "election.json").read_text("utf8"))
 
 
 def charger(nom: str, chemin: Path):
@@ -109,6 +120,7 @@ html,body{margin:0;color:#10241e;font-family:'DM Sans',system-ui,sans-serif;font
 .tete{display:flex;justify-content:space-between;align-items:center;gap:8mm;padding-bottom:3mm;border-bottom:1px solid #d5ddd6;margin-bottom:6mm}
 .tete img{height:13mm}
 .tete .meta{text-align:right;font-size:7.6pt;color:#526159;line-height:1.5}
+.projet.adopte{color:#173b2d;background:#e9f0cf;border-color:#c7d98a}
 .projet{display:inline-block;font-size:7.4pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7a4b00;background:#fdf1d6;border:1px solid #f0d48a;border-radius:3mm;padding:1mm 3mm;margin-bottom:3mm}
 h1{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:22pt;line-height:1.1;margin:0 0 3mm}
 h1 small{display:block;font-family:'DM Sans',sans-serif;font-size:10pt;color:#526159;margin-top:2mm;font-weight:400}
@@ -124,6 +136,7 @@ td{border-bottom:1px solid #d5ddd6;padding:2.2mm 1.5mm;vertical-align:top}
 tr{break-inside:avoid}
 td.blanc{color:#9aa59f;white-space:nowrap}
 .choix td:first-child{font-weight:700;width:30mm}
+.nowrap{white-space:nowrap}
 .prop{background:#eef5dd}
 .case{display:inline-block;width:3.4mm;height:3.4mm;border:1px solid #10241e;border-radius:.6mm;vertical-align:-.6mm;margin-right:1.5mm}
 .ligne{border-bottom:1px solid #9aa59f;height:7mm}
@@ -154,7 +167,11 @@ def entete(logo: str, droite: str) -> str:
 
 # ---------------------------------------------------------------- 1. élection
 
-def election(idx: dict, logo: str, bureau: list[dict]) -> tuple[str, str]:
+def election(idx: dict, logo: str, bureau: list[dict], tete_droite: str) -> tuple[dict, str]:
+    """Procédure adoptée (content/election.json) et ses annexes ; renvoie les sections par nom, et le texte WhatsApp."""
+    el = election_json()
+    cal = {e["cle"]: e for e in el["calendrier"]}
+    adoptee = date_fr(el["adoptee"])
     poles = idx["structure"]["poles"]
     vacants = [p for p in poles if p.get("direction") and not p["direction"].get("filled")]
     pourvus = [p for p in poles if p.get("direction") and p["direction"].get("filled")]
@@ -181,66 +198,30 @@ def election(idx: dict, logo: str, bureau: list[dict]) -> tuple[str, str]:
     lignes_vacants = "".join(
         f"<tr><td>Pôle {p['roman']}</td><td>{esc(p['name'])}</td><td>{', '.join(esc(t['number'] + '. ' + t['name']) for t in p['items'])}</td><td>{SITE}/participer?direction={p['roman']}&amp;coordo=1</td></tr>"
         for p in vacants)
-    tete = entete(logo, f"Bureau exécutif · document de travail<br>préparé le {PREPARE}")
-    jalons = [
-        ("J", "Le bureau adopte la procédure et fixe les dates ci-dessous."),
-        ("J + 1", "L’appel à candidatures est publié : site, page Facebook, compte X, groupes WhatsApp (annexe A)."),
-        ("J + 14", "Clôture des candidatures (formulaire en ligne ou fiche papier, annexe B)."),
-        ("J + 16", "Le bureau vérifie les candidatures et publie la liste des candidats, avec la présentation d’une page de chacun."),
-        ("J + 21", "Réunion du collège électoral : vote, dépouillement, procès-verbal (annexes C et D)."),
-        ("J + 22", "Résultats publiés : registre des décisions, page Nos actions, fiches de mission."),
-        ("J + 29", "Fin du délai de réclamation, adressée au bureau ; l’élection devient définitive."),
-    ]
-    cal = "".join(f'<tr><td><b>{j}</b></td><td>{esc(t)}</td><td class="blanc">…… / …… / 20……</td></tr>' for j, t in jalons)
-    choix = [
-        ("Qui peut se présenter",
-         "Toute personne membre de l’association, ou qui a déposé sa déclaration d’adhésion, au Tchad comme dans la diaspora. Une personne ne se présente qu’à une seule vice-présidence.",
-         "Les statuts de 1995 ne sont pas publiés : le bureau vérifie qu’ils ne posent pas d’autre condition."),
-        ("Le cumul",
-         f"Décision 6 : « {r6['texte']} » Une personne élue qui coordonne déjà une thématique la garde jusqu’à ce que le bureau ait revu les cumuls avec elle.",
-         cumul_note),
-        ("Qui vote",
-         f"Le collège des responsables : les membres du bureau exécutif et les coordonnateurs titulaires des thématiques et des cellules, soit {college} personnes distinctes à ce jour. La prochaine assemblée générale confirme les élus.",
-         "Autres options : le bureau exécutif seul (plus rapide, moins représentatif) ; l’assemblée des membres (plus légitime, mais la liste des membres et la grille de cotisation ne sont pas encore arrêtées)."),
-        ("Le quorum",
-         "La moitié au moins du collège, présente ou à distance. Sans quorum, une seconde réunion se tient sept jours plus tard, sans condition de quorum.",
-         ""),
-        ("Le vote",
-         "En réunion, sur place et à distance (appel vidéo), à main levée ; au scrutin secret si un membre du collège le demande. Le vote secret à distance se fait par message individuel adressé aux deux scrutateurs, qui ne communiquent que le décompte.",
-         "Les scrutateurs ne sont pas candidats ; le secrétaire général tient le procès-verbal (décision 4)."),
-        ("La majorité",
-         "Majorité absolue des suffrages exprimés au premier tour ; majorité relative au second. Candidat unique : vote pour ou contre, majorité absolue. Sans candidat, l’appel est rouvert pour quatorze jours.",
-         ""),
-        ("Le mandat",
-         "Jusqu’à la prochaine assemblée générale ordinaire, qui confirme l’élu ou organise une nouvelle élection. La durée définitive relève des statuts.",
-         "Pas de durée fixée ici : elle dépend des statuts et de l’assemblée."),
-    ]
-    tab_choix = "".join(f'<tr><td>{esc(q)}</td><td class="prop">{esc(p)}</td><td>{esc(n)}</td></tr>' for q, p, n in choix)
+    tete = entete(logo, tete_droite)
+    cal_html = "".join(f'<tr><td class="nowrap"><b>{esc(date_fr(e["date"]))}</b></td><td>{esc(e["quoi"])}</td></tr>' for e in el["calendrier"])
+    choix = [(r["point"], r["texte"].replace("{college}", str(college)), r["note"] or (cumul_note if r["point"] == "Le cumul" else "")) for r in el["regles"]]
+    tab_choix = "".join(f'<tr><td>{esc(q)}</td><td>{esc(p)}</td><td>{esc(n)}</td></tr>' for q, p, n in choix)
     titulaires = "; ".join(f"pôle {p['roman']} : {esc(p['direction']['name'])}" for p in pourvus)
 
     doc = f"""<section class="doc">{tete}
-<span class="projet">Projet · non adopté · à délibérer par le bureau exécutif</span>
-<h1>Élire les vice-présidences des pôles {', '.join(p['roman'] for p in vacants[:-1])} et {vacants[-1]['roman']}<small>Projet de procédure, en application de la décision 5 du {PREPARE}</small></h1>
+<span class="projet adopte">Adoptée par le bureau exécutif le {adoptee} · registre 2026-33</span>
+<h1>Élire les vice-présidences des pôles {', '.join(p['roman'] for p in vacants[:-1])} et {vacants[-1]['roman']}<small>Procédure d’élection, en application de la décision 5 du {PREPARE} · vote le {date_fr(cal['vote']['date'])}</small></h1>
 <h2>1. Ce que le bureau a décidé</h2>
 <p class="cite">« {esc(r5['texte'])} » — {esc(r5['change'])}</p>
 <p>Les vice-présidences déjà tenues restent en place ({titulaires}). Trois sont à pourvoir :</p>
 <table><thead><tr><th>Pôle</th><th>Nom</th><th>Thématiques</th><th>Candidater</th></tr></thead><tbody>{lignes_vacants}</tbody></table>
 <h2>2. Ce que fait une vice-présidence</h2>
 <p>D’après la fiche de mission publiée, le vice-président délégué ou la vice-présidente déléguée réunit chaque trimestre les coordonnateurs et coordonnatrices des thématiques de son pôle ; tient le plan d’action et le calendrier du pôle ; suit les plaidoyers et les projets qui en relèvent ; rend compte au bureau et à l’assemblée. La fonction est bénévole et élue.</p>
-<h2>3. Sept points à trancher</h2>
-<p>Pour chaque point, une proposition (en vert) et ce qu’il faut savoir. Le bureau adopte, modifie ou écarte chaque proposition.</p>
-<table class="choix"><thead><tr><th>Point</th><th>Proposition</th><th>À savoir</th></tr></thead><tbody>{tab_choix}</tbody></table>
+<h2>3. Les règles</h2>
+<table class="choix"><thead><tr><th>Point</th><th>Règle</th><th>À savoir</th></tr></thead><tbody>{tab_choix}</tbody></table>
 <h2>4. Le calendrier</h2>
-<p>En jours à compter de l’adoption ; le bureau inscrit les dates.</p>
-<table><thead><tr><th>Quand</th><th>Quoi</th><th>Date</th></tr></thead><tbody>{cal}</tbody></table>
+<table><thead><tr><th>Date</th><th>Étape</th></tr></thead><tbody>{cal_html}</tbody></table>
 <h2>5. Qui organise</h2>
-<ul><li>Le président de l’association préside la réunion de vote ; s’il est candidat, la vice-présidente de l’association le remplace.</li>
-<li>Le bureau désigne deux scrutateurs parmi les membres du collège qui ne sont pas candidats.</li>
-<li>Le secrétaire général tient le procès-verbal et la liste d’émargement (décision 4).</li>
-<li>Les candidatures en ligne arrivent par le formulaire de la page Participer ; aucune donnée personnelle n’est publiée sans l’accord du candidat.</li></ul>
+<ul>{''.join(f'<li>{esc(o)}</li>' for o in el['organisation'])}</ul>
 <h2>6. Ce qui est publié</h2>
 <p>La liste des candidats (nom, pôle, présentation d’une page, avec leur accord), puis les résultats : nombre de votants, suffrages exprimés, voix par candidat, élu. Les résultats entrent dans le registre public des décisions, sur la page Nos actions et dans le magazine suivant. Le procès-verbal signé est conservé par le secrétariat général.</p>
-<p class="note">Sources : décisions d’organisation du {PREPARE} ({SITE}/association/propositions-organisation) ; fiches de mission ({SITE}/programmes/fiches-de-mission) ; registre des décisions ({SITE}/transparence/decisions), dont la décision 2026-16 sur la collecte et la grille de cotisation. Le décompte du collège est fait d’après la page Nos actions au {PREPARE}.</p>
+<p class="note">Sources : décisions d’organisation du {PREPARE} ({SITE}/association/propositions-organisation) ; fiches de mission ({SITE}/programmes/fiches-de-mission) ; registre des décisions ({SITE}/transparence/decisions), dont la décision 2026-16 sur la collecte et la grille de cotisation. Le décompte du collège est fait d’après la page Nos actions au {PREPARE}. En ligne : {SITE}/association/election-vice-presidences.</p>
 </section>"""
 
     # annexes
@@ -248,20 +229,21 @@ def election(idx: dict, logo: str, bureau: list[dict]) -> tuple[str, str]:
     for p in vacants:
         appel_txt.append(f"Pôle {p['roman']} — {p['name']} : {SITE}/participer?direction={p['roman']}&coordo=1")
     annexe_a = f"""<section class="doc">{tete}
-<span class="projet">Annexe A · à publier le jour J + 1</span>
+<span class="projet adopte">Annexe A · publiée le {date_fr(cal['appel']['date'])}</span>
 <h1>Appel à candidatures<small>Vice-présidences des pôles {', '.join(p['roman'] for p in vacants)}</small></h1>
 <p>ADEB LONODJI élit les vice-présidents délégués ou vice-présidentes déléguées de trois de ses cinq pôles. Chacun réunit chaque trimestre les coordonnateurs de son pôle, tient son plan d’action et son calendrier, suit ses plaidoyers et ses projets, et rend compte au bureau et à l’assemblée. Fonction bénévole et élue, ouverte au Tchad comme dans la diaspora ; les candidatures de femmes sont particulièrement attendues.</p>
 <ul>{''.join(f'<li><b>{esc(x.split(" : ")[0])}</b> : {esc(x.split(" : ")[1])}</li>' for x in appel_txt)}</ul>
-<p>Candidatures jusqu’au …… / …… / 20…… : par le formulaire en ligne (le lien ci-dessus le remplit pour le pôle choisi), par la fiche papier, ou par WhatsApp au {esc(TELEPHONE)}. Liste des candidats publiée le …… / …… / 20…… ; vote le …… / …… / 20…….</p>
+<p>Candidatures du {date_fr(cal['appel']['date'])} au {date_fr(cal['cloture']['date'])} : par le formulaire en ligne (le lien ci-dessus le remplit pour le pôle choisi), par la fiche papier, ou par WhatsApp au {esc(TELEPHONE)}. Liste des candidats publiée le {date_fr(cal['liste']['date'])} ; vote le {date_fr(cal['vote']['date'])} ; résultats le {date_fr(cal['resultats']['date'])}.</p>
+<p>La procédure complète : {SITE}/association/election-vice-presidences</p>
 <p>Les fiches de mission : {SITE}/programmes/fiches-de-mission</p>
 <h2>Version WhatsApp</h2>
-<p class="cite">ADEB LONODJI élit les vice-présidences de trois pôles : {'; '.join(f"pôle {p['roman']}, {p['name']}" for p in vacants)}. Bénévole, au Tchad ou dans la diaspora. Candidatures jusqu’au …… : {SITE}/participer#postes-ouverts</p>
+<p class="cite">ADEB LONODJI élit les vice-présidences de trois pôles : {'; '.join(f"pôle {p['roman']}, {p['name']}" for p in vacants)}. Bénévole, au Tchad ou dans la diaspora. Candidatures jusqu’au {date_fr(cal['cloture']['date'])}, vote le {date_fr(cal['vote']['date'])} : {SITE}/association/election-vice-presidences</p>
 </section>"""
 
     def champ(l: str, zone: str = "ligne") -> str:
         return f'<div class="champ"><b>{esc(l)}</b><div class="{zone}"></div></div>'
     annexe_b = f"""<section class="doc">{tete}
-<span class="projet">Annexe B · fiche de candidature</span>
+<span class="projet adopte">Fiche de candidature · à remettre avant le {date_fr(cal['cloture']['date'])}</span>
 <h1>Candidature à une vice-présidence de pôle</h1>
 <p>Pôle choisi (une seule case) : {''.join(f'&nbsp;&nbsp;<span class="case"></span>Pôle {p["roman"]} — {esc(p["name"])}' for p in vacants)}</p>
 {champ("Nom et prénoms")}{champ("Lieu de résidence (ville, pays)")}{champ("Téléphone ou WhatsApp, e-mail (non publiés)")}
@@ -288,7 +270,7 @@ def election(idx: dict, logo: str, bureau: list[dict]) -> tuple[str, str]:
     annexe_d = f"""<section class="doc">{tete}
 <span class="projet">Annexe D · procès-verbal</span>
 <h1>Procès-verbal de l’élection des vice-présidences</h1>
-<p>Le …… / …… / 20……, à …… h ……, à …………………… et à distance, le collège électoral d’ADEB LONODJI s’est réuni sous la présidence de ……………………………………, conformément à la procédure adoptée par le bureau exécutif le …… / …… / 20…….</p>
+<p>Le …… / …… / 20……, à …… h ……, à …………………… et à distance, le collège électoral d’ADEB LONODJI s’est réuni sous la présidence de ……………………………………, conformément à la procédure adoptée par le bureau exécutif le {adoptee} (registre 2026-33).</p>
 <p>Membres du collège : …… ; présents ou à distance : …… (liste d’émargement jointe). Quorum : <span class="case"></span>atteint <span class="case"></span>non atteint. Scrutateurs : …………………………………… et ……………………………………. Mode de vote : <span class="case"></span>main levée <span class="case"></span>scrutin secret.</p>
 <table><thead><tr><th>Pôle</th><th>Candidats et voix</th><th>Votants</th><th>Exprimés</th><th>Blancs</th><th>Élu(e)</th></tr></thead><tbody>{pv_lignes}</tbody></table>
 <h2>Observations et réclamations</h2><div class="zone"></div>
@@ -296,21 +278,21 @@ def election(idx: dict, logo: str, bureau: list[dict]) -> tuple[str, str]:
 </section>"""
     liste = "; ".join(f"pôle {p['roman']}, {p['name']}" for p in vacants)
     note = "\n".join(["# Appel à candidatures — vice-présidences (texte WhatsApp)", "",
-                      f"ADEB LONODJI élit les vice-présidences de trois pôles : {liste}. Bénévole, au Tchad ou dans la diaspora. Candidatures jusqu’au …… : https://{SITE}/participer#postes-ouverts", ""]
+                      f"ADEB LONODJI élit les vice-présidences de trois pôles : {liste}. Bénévole, au Tchad ou dans la diaspora. Candidatures jusqu’au {date_fr(cal['cloture']['date'])}, vote le {date_fr(cal['vote']['date'])} : https://{SITE}/association/election-vice-presidences", ""]
                      + [f"- {x}" for x in appel_txt])
-    return doc + annexe_a + annexe_b + annexe_c + annexe_d, note
+    return {"procedure": doc, "appel": annexe_a, "fiche": annexe_b, "bulletins": annexe_c, "pv": annexe_d}, note
 
 
 # ---------------------------------------------------------------- 2. plans annuels
 
-def plans(idx: dict, logo: str) -> str:
+def plans(idx: dict, logo: str, tete_droite: str) -> str:
     r1 = recommandation("r1")
     tr = {k: v for k, v in json.loads((CONTENT / "transmissions.json").read_text("utf8")).items() if not k.startswith("_")}
     plaid_par_route = {p["href"]: p for p in idx["plaidoyers"]}
     themes = {t["id"]: (t, p) for p in idx["structure"]["poles"] for t in p["items"]}
-    tete = entete(logo, f"Bureau exécutif · document de travail<br>préparé le {PREPARE}")
+    tete = entete(logo, tete_droite)
     pages = [f"""<section class="doc serre">{tete}
-<span class="projet">Projet · à compléter par chaque titulaire, puis à valider par la vice-présidence du pôle</span>
+<span class="projet adopte">Modèle adopté par le bureau exécutif le {PREPARE} · registre 2026-34 · à compléter par chaque titulaire</span>
 <h1>Les plans annuels des sept thématiques prioritaires<small>En application des décisions 1, 5, 6 et 8 du {PREPARE}</small></h1>
 <p class="cite">Décision 1 : « {esc(r1['texte'])} »</p>
 <h2>Comment remplir le plan</h2>
@@ -352,7 +334,7 @@ def plans(idx: dict, logo: str) -> str:
         lignes = "".join(f"<tr><td>{i}</td><td>{esc(a)}<br><span class='note'>{esc(src)}</span></td><td class='blanc'></td><td class='blanc'></td><td class='blanc'></td><td class='blanc'></td><td class='blanc'></td></tr>" for i, (a, src) in enumerate(actions, 1))
         lignes += "".join(f"<tr><td>{i}</td><td class='blanc'>Autre action proposée par le titulaire</td><td></td><td></td><td></td><td></td><td></td></tr>" for i in range(len(actions) + 1, len(actions) + 3))
         corps.append(f"""<section class="doc">{tete}
-<span class="projet">Plan annuel · projet à compléter</span>
+<span class="projet">Plan annuel · à compléter</span>
 <h1>{t['number']}. {esc(t['name'])}<small>Pôle {p['roman']} · {esc(p['name'])} · thématique prioritaire depuis le {PREPARE}</small></h1>
 <div class="cartouche"><div><b>Titulaire</b>{esc(titulaire)}</div><div><b>Adjoint ou adjointe</b>à trouver</div><div><b>Vice-présidence du pôle</b>{esc(vp)}</div><div><b>Plan validé le</b>…… / …… / 20……</div></div>
 <h2>Ce qui est déjà publié</h2>
@@ -378,27 +360,40 @@ def main() -> None:
     logo = "data:image/png;base64," + base64.b64encode(LOGO.read_bytes()).decode()
     fonts = og.font_faces()
     OUT.mkdir(parents=True, exist_ok=True)
-    elec, note = election(idx, logo, bureau)
-    docs = {
-        "election-vice-presidences-projet.pdf": ("Élire les vice-présidences — projet de procédure", elec),
-        "plans-annuels-priorites-projet.pdf": ("Plans annuels des thématiques prioritaires — projet", plans(idx, logo)),
-    }
+    PUBLIC.mkdir(parents=True, exist_ok=True)
+    interne = f"Bureau exécutif · document interne<br>{SITE}"
+    public = f"ADEB LONODJI · Bédjondo, Mandoul Occidental<br>{SITE}/association/election-vice-presidences"
+    el_int, note = election(idx, logo, bureau, interne)
+    el_pub, _ = election(idx, logo, bureau, public)
+    pied_public = ('<div style="width:100%;font:7pt DM Sans,Arial,sans-serif;color:#6a776f;padding:0 17mm;display:flex;justify-content:space-between">'
+                   '<span>ADEB LONODJI · lonodji.org</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>')
+    pied_interne = pied_public.replace("ADEB LONODJI · lonodji.org", "ADEB LONODJI · bureau exécutif · document interne")
+    plans_pub = plans(idx, logo, f"ADEB LONODJI · plans annuels des priorités<br>{SITE}/association/propositions-organisation")
+    docs = [
+        # (fichier, titre, corps, pied)
+        (OUT / "election-vice-presidences-dossier.pdf", "Élection des vice-présidences — dossier du bureau",
+         "".join(el_int[k] for k in ("procedure", "appel", "fiche", "bulletins", "pv")), pied_interne),
+        (PUBLIC / "election-vice-presidences-2026.pdf", "Élection des vice-présidences de pôle — procédure et appel",
+         "".join(el_pub[k] for k in ("procedure", "appel", "fiche")), pied_public),
+        (PUBLIC / "fiche-candidature-vice-presidence.pdf", "Fiche de candidature — vice-présidence de pôle", el_pub["fiche"], pied_public),
+        (PUBLIC / "plans-annuels-priorites.pdf", "Plans annuels des thématiques prioritaires", plans_pub, pied_public),
+    ]
     tmp = ROOT / ".next" / "dossier-bureau-tmp.html"
-    pied = ('<div style="width:100%;font:7pt DM Sans,Arial,sans-serif;color:#6a776f;padding:0 17mm;display:flex;justify-content:space-between">'
-            '<span>ADEB LONODJI · bureau exécutif · document de travail, non publié</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>')
     with sync_playwright() as pw:
         b = pw.chromium.launch()
         pg = b.new_page()
-        for nom, (titre, corps) in docs.items():
+        for chemin, titre, corps, pied in docs:
             tmp.write_text(f'<!doctype html><html lang="fr"><meta charset="utf-8"><title>{esc(titre)}</title><style>{fonts}{CSS}</style><body>{corps}</body></html>', encoding="utf-8")
             pg.goto(tmp.as_uri(), wait_until="load")
             pg.evaluate("document.fonts.ready")
-            pg.pdf(path=str(OUT / nom), format="A4", print_background=True, prefer_css_page_size=True,
+            pg.pdf(path=str(chemin), format="A4", print_background=True, prefer_css_page_size=True,
                    display_header_footer=True, header_template="<span></span>", footer_template=pied)
-            print(f"{(OUT / nom).relative_to(ROOT)}")
+            print(chemin.relative_to(ROOT))
         b.close()
     tmp.unlink(missing_ok=True)
     (OUT / "appel-candidatures-whatsapp.md").write_text(note + "\n", encoding="utf-8")
+    for vieux in ("election-vice-presidences-projet.pdf", "plans-annuels-priorites-projet.pdf"):
+        (OUT / vieux).unlink(missing_ok=True)
 
 
 if __name__ == "__main__":

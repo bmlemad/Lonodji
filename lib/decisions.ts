@@ -61,11 +61,27 @@ export const DECISIONS: Decision[] = [
     suite: "L’adresse de chaque siège, sa date d’ouverture et le partage des responsabilités ne sont pas encore fixés publiquement.",
   },
   {
+    id: "2026-33", date: "2026-10-01", type: "decision",
+    titre: "Élection des vice-présidences des pôles III, IV et V : procédure et calendrier",
+    texte: "En application de la décision 2026-31, le bureau exécutif adopte la procédure d’élection des vice-présidences sans titulaire. Candidats : membres de l’association ou personnes ayant déposé leur déclaration d’adhésion, au Tchad comme dans la diaspora, une seule vice-présidence chacun. Électeurs : le collège des responsables — bureau exécutif, vice-présidences en fonction, coordonnateurs titulaires des thématiques et des cellules —, la prochaine assemblée générale confirmant les élus. Quorum de la moitié du collège ; vote en réunion, sur place et à distance, à main levée ou au scrutin secret si un membre le demande ; majorité absolue au premier tour, relative au second. Mandat jusqu’à la prochaine assemblée générale ordinaire. Candidatures du 2 au 15 octobre 2026, liste des candidats le 17, vote le 22, résultats le 23, réclamations jusqu’au 30 octobre.",
+    sources: [{ label: "Article du 1er octobre 2026", href: "/journal/2026-10-01-election-vice-presidences" }, { label: "L’élection des vice-présidences", href: "/association/election-vice-presidences" }, { label: "Postes ouverts", href: "/participer#postes-ouverts" }],
+    suite: "Candidatures ouvertes du 2 au 15 octobre 2026 ; vote le 22 octobre 2026.",
+    instance: "Bureau exécutif",
+  },
+  {
+    id: "2026-34", date: "2026-10-01", type: "decision",
+    titre: "Un plan annuel pour chacune des sept thématiques prioritaires",
+    texte: "En application de la décision 2026-31, le bureau exécutif adopte le modèle de plan annuel des thématiques prioritaires. Chaque plan reprend ce que l’association a déjà publié — plaidoyers et leurs destinataires, engagements écrits, chantier des propositions à la commune — ; le titulaire, avec son adjoint, y fixe pour chaque action l’échéance, le responsable, les moyens et l’indicateur. La vice-présidence du pôle le valide et le suit chaque trimestre ; là où elle est à pourvoir, le bureau exécutif le fait. Le plan couvre douze mois à compter de sa validation ; toute dépense attend les trois conditions de la décision 2026-16.",
+    sources: [{ label: "Les plans annuels à compléter (PDF)", href: "/organisation/plans-annuels-priorites.pdf" }, { label: "Décisions d’organisation", href: "/association/propositions-organisation#plans-annuels" }],
+    suite: "Plans à compléter par les titulaires ; chacun sera publié, daté, une fois validé.",
+    instance: "Bureau exécutif",
+  },
+  {
     id: "2026-31", date: "2026-10-01", type: "decision",
     titre: "Le bureau adopte les huit décisions d’organisation : cinq pôles, sept thématiques prioritaires",
     texte: "Le bureau exécutif adopte les huit propositions du même jour (2026-30). Le pôle II est scindé : il devient « Services essentiels » (07, 09, 10, 11, 12), et un pôle V, « Économie, territoire & risques », réunit les thématiques 04, 05, 06, 08, 20 et 21, sans renumérotation. Sept thématiques sont prioritaires — 07, 08, 09, 11, 13, 17 et 21, celles des huit dossiers de plaidoyer —, chacune avec un titulaire et un adjoint, et rattachée à un chantier des propositions à la commune. Les directions de pôle deviennent des vice-présidences déléguées, pourvues par élection ; les deux titulaires gardent leur fonction. Une personne coordonne une seule thématique. La fonction « Projets, suivi & redevabilité » devient une mission du secrétariat général. On pilote par pôles et thématiques seulement : programmes ODEB et secteurs deviennent des tables de correspondance.",
     sources: [{ label: "Article du 1er octobre 2026", href: "/journal/2026-10-01-cinq-poles-sept-priorites" }, { label: "Décisions d’organisation", href: "/association/propositions-organisation" }, { label: "Nos actions", href: "/programmes" }],
-    suite: "Vice-présidences des pôles III, IV et V à pourvoir par élection ; adjoints des thématiques prioritaires à trouver ; cumuls à revoir avec les personnes concernées. Pas de nouveau redécoupage avant au moins un trimestre.",
+    suite: "Vice-présidences des pôles III, IV et V : élection le 22 octobre 2026 (2026-33) ; plans annuels des priorités à compléter (2026-34) ; adjoints des thématiques prioritaires à trouver ; cumuls à revoir avec les personnes concernées. Pas de nouveau redécoupage avant au moins un trimestre.",
     instance: "Bureau exécutif",
   },
   {

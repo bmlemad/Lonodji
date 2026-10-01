@@ -1,0 +1,32 @@
+{
+  "_lisezmoi": "Élection des vice-présidences de pôle sans titulaire (décision 5 du 1er octobre 2026 ; procédure adoptée le même jour par le bureau exécutif, registre 2026-33). Seule source des règles et du calendrier : la page /association/election-vice-presidences, les postes ouverts (lib/postes.ts, scripts/build-postes.py) et les documents (scripts/build-dossier-bureau.py) la lisent. {college} est remplacé par le nombre de personnes du collège, calculé sur la page Nos actions. Les candidats n'entrent dans « candidats » qu'avec leur accord, après la clôture ; les résultats n'entrent dans « resultats » qu'une fois le procès-verbal signé.",
+  "adoptee": "2026-10-01",
+  "instance": "Bureau exécutif",
+  "poles": ["III", "IV", "V"],
+  "calendrier": [
+    {"cle": "adoption", "date": "2026-10-01", "quoi": "Le bureau exécutif adopte la procédure et le calendrier."},
+    {"cle": "appel", "date": "2026-10-02", "quoi": "L’appel à candidatures est publié : site, page Facebook, compte X, groupes WhatsApp."},
+    {"cle": "cloture", "date": "2026-10-15", "quoi": "Clôture des candidatures : formulaire en ligne, fiche papier ou WhatsApp."},
+    {"cle": "liste", "date": "2026-10-17", "quoi": "Le bureau vérifie les candidatures et publie la liste des candidats, avec la présentation d’une page de chacun."},
+    {"cle": "vote", "date": "2026-10-22", "quoi": "Réunion du collège électoral, sur place et à distance : vote, dépouillement, procès-verbal."},
+    {"cle": "resultats", "date": "2026-10-23", "quoi": "Résultats publiés : registre des décisions, page Nos actions, fiches de mission."},
+    {"cle": "reclamations", "date": "2026-10-30", "quoi": "Fin du délai de réclamation, adressée au bureau ; l’élection devient définitive."}
+  ],
+  "regles": [
+    {"point": "Qui peut se présenter", "texte": "Toute personne membre de l’association, ou qui a déposé sa déclaration d’adhésion, au Tchad comme dans la diaspora. Une personne ne se présente qu’à une seule vice-présidence.", "note": "Les statuts de 1995 ne sont pas publiés ; s’ils posaient une autre condition, elle s’appliquerait."},
+    {"point": "Le cumul", "texte": "Une personne coordonne une seule thématique (décision 6). Une personne élue qui coordonne déjà une thématique la garde jusqu’à ce que le bureau ait revu les cumuls avec elle.", "note": ""},
+    {"point": "Qui vote", "texte": "Le collège des responsables : les membres du bureau exécutif, les vice-présidences de pôle en fonction et les coordonnateurs titulaires des thématiques et des cellules, soit {college} personnes distinctes au 1er octobre 2026. La prochaine assemblée générale confirme les élus.", "note": "Pourquoi pas l’assemblée des membres : la liste des membres et la grille de cotisation ne sont pas encore arrêtées (décision 2026-16)."},
+    {"point": "Le quorum", "texte": "La moitié au moins du collège, présente ou à distance. Sans quorum, une seconde réunion se tient sept jours plus tard, sans condition de quorum.", "note": ""},
+    {"point": "Le vote", "texte": "En réunion, sur place et à distance (appel vidéo), à main levée ; au scrutin secret si un membre du collège le demande. Le vote secret à distance se fait par message individuel adressé aux deux scrutateurs, qui ne communiquent que le décompte.", "note": "Les scrutateurs ne sont pas candidats ; le secrétaire général tient le procès-verbal et la liste d’émargement."},
+    {"point": "La majorité", "texte": "Majorité absolue des suffrages exprimés au premier tour ; majorité relative au second. Candidat unique : vote pour ou contre, à la majorité absolue. Sans candidat, l’appel est rouvert pour quatorze jours.", "note": ""},
+    {"point": "Le mandat", "texte": "Jusqu’à la prochaine assemblée générale ordinaire, qui confirme l’élu ou organise une nouvelle élection.", "note": "La durée définitive relève des statuts et de l’assemblée."}
+  ],
+  "organisation": [
+    "Le président de l’association préside la réunion de vote ; s’il est candidat, la vice-présidente de l’association le remplace.",
+    "Le bureau désigne deux scrutateurs parmi les membres du collège qui ne sont pas candidats.",
+    "Le secrétaire général tient le procès-verbal et la liste d’émargement.",
+    "Aucune donnée personnelle d’un candidat n’est publiée sans son accord : seuls son nom, son pôle et sa présentation le sont."
+  ],
+  "candidats": [],
+  "resultats": null
+}

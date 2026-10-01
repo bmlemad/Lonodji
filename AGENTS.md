@@ -56,6 +56,8 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
   bureau ; `/actions#transmission` l'affiche. Les lettres d'envoi (`build-lettres-envoi.py`) restent hors dépôt.
 - Magazine « Lonodji » : un numéro paru (`public/magazine/*.pdf`) est un texte daté, jamais régénéré (pas de
   `--forcer` sans demande). Il ne reprend que ce que le site a publié ; seul l'édito de `numeros.json` lui est propre.
+- Élection des vice-présidences : ne rien inscrire dans `content/election.json` (candidats, résultats) sans l'accord
+  des candidats et le procès-verbal signé ; un changement de date passe par le bureau et par une ligne du registre.
 - `import-legacy.py` **efface et recrée** `public/documents`, `public/identite`, `public/kit`, `public/app`.
   Les fichiers propres au site vont dans `public/og`, `carte`, `odeb`, `icones`, `missions`, `lettres`, `notes`.
 - Après un import (qui lance lui-même `build-kit-adhesion.py`) : `build-dossier-presentation.py`, `build-carte.py`,
