@@ -4,9 +4,10 @@ import Link from "@/components/lien";
 import { PageHeader, PlaidoyerCard, SectionHead } from "@/components/blocks";
 import { LegacySections } from "@/components/legacy-content";
 import LegacyEnhance from "@/components/legacy-enhance";
-import { getIndex, getPage, ogFor, pickSections } from "@/lib/content";
+import { enLettres, getIndex, getPage, ogFor, pickSections } from "@/lib/content";
 import Partager from "@/components/partager";
 import OuvrirAncre from "@/components/ouvrir-ancre";
+import { getTransmissions, STATUTS } from "@/lib/transmissions";
 
 export const metadata: Metadata = {
   title: "Plaidoyers, engagements et dossiers",
@@ -56,6 +57,38 @@ export default function Actions() {
         <div className="plea-grid">
           {idx.plaidoyers.map((p) => <PlaidoyerCard key={p.id} p={p} />)}
         </div>
+      </section>
+
+      <section className="hub-section" id="transmission">
+        {(() => {
+          const tr = getTransmissions();
+          const tous = Object.values(tr).flatMap((t) => t.destinataires);
+          const envoyes = tous.filter((d) => d.statut !== "a-signer").length;
+          const reponses = tous.filter((d) => d.statut === "reponse").length;
+          return (
+            <>
+              <SectionHead eyebrow="Transmission" title="Qui a reçu quoi," em="et quand." text={`Chaque plaidoyer part avec une lettre d’envoi par destinataire, signée par le président et le secrétaire général. Les ${enLettres(tous.length)} lettres sont prêtes depuis le 1er octobre 2026 ; ${envoyes ? `${enLettres(envoyes)} sont parties` : "aucune n’est encore partie : elles attendent la signature du bureau"}${reponses ? `, ${enLettres(reponses)} réponse${reponses > 1 ? "s" : ""} reçue${reponses > 1 ? "s" : ""}` : ""}. Chaque envoi, accusé de réception et réponse sera daté ici le jour où il a lieu.`} />
+              <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Transmission des plaidoyers">
+                <table className="ob-table">
+                  <thead><tr><th scope="col">Dossier</th><th scope="col">Destinataires</th><th scope="col">Envoyées</th><th scope="col">Réponses</th></tr></thead>
+                  <tbody>
+                    {idx.plaidoyers.filter((p) => tr[p.id]).map((p) => {
+                      const t = tr[p.id];
+                      return (
+                        <tr key={p.id}>
+                          <th scope="row"><a href={`#${p.id}`}>{p.title}</a></th>
+                          <td><details><summary>{t.destinataires.length} destinataire{t.destinataires.length > 1 ? "s" : ""}</summary><ul className="tr-liste">{t.destinataires.map((d) => <li key={d.nom}>{d.nom} — <em>{STATUTS[d.statut]}{d.envoye ? ` le ${d.envoye}` : ""}</em>{d.resume ? ` : ${d.resume}` : ""}</li>)}{(t.a_identifier ?? []).map((x) => <li key={x}>{x} — <em>à identifier avant envoi</em></li>)}</ul></details></td>
+                          <td>{t.destinataires.filter((d) => d.statut !== "a-signer").length} / {t.destinataires.length}</td>
+                          <td>{t.destinataires.filter((d) => d.statut === "reponse").length}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          );
+        })()}
       </section>
 
       <section className="hub-section">

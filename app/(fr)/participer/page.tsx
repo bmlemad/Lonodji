@@ -7,6 +7,7 @@ import OuvrirAncre from "@/components/ouvrir-ancre";
 import { LegacySections, Resume } from "@/components/legacy-content";
 import LegacyEnhance from "@/components/legacy-enhance";
 import { getIndicateurs } from "@/lib/indicateurs";
+import { GENRES, getPostes } from "@/lib/postes";
 import { enLettres, filledCount, getIndex, getPage, ogFor, ORG, thematiqueCount } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function Participer() {
   const forms = [...contact.forms, ...adherer.forms, ...soutenir.forms, ...journal.forms];
   const [choisir, ecrire, proposer, avant] = contact.sections;
   const newsletter = journal.sections[0];
+  const postes = getPostes();
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
@@ -42,6 +44,27 @@ export default function Participer() {
         <small>Adoumbé Maoura, président — appel et WhatsApp, le contact officiel de l’association</small>
         <a className="button secondary" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp <span aria-hidden="true">↗</span></a>
       </div>
+
+      {postes.length ? (
+        <section className="hub-section" id="postes-ouverts">
+          <SectionHead eyebrow="Postes ouverts" title={`${enLettres(postes.length, true)} postes`} em="cherchent quelqu’un." text="Depuis le 1er octobre 2026, chacune des sept thématiques prioritaires a un titulaire et un adjoint, et chaque pôle une vice-présidence élue. Ces postes sont encore libres. Tous sont bénévoles et s’exercent depuis Bédjondo, N’Djamena ou la diaspora. Le bouton prépare le formulaire ci-dessous ; le lien WhatsApp partage l’annonce à quelqu’un que vous connaissez." />
+          <ul className="postes-grille">
+            {postes.map((p) => (
+              <li key={p.cle} className={`poste poste-${p.genre}`}>
+                <span className="poste-genre">{GENRES[p.genre]}</span>
+                <h3>{p.numero ? <span className="poste-num">{p.numero}</span> : null}{p.titre}</h3>
+                <p className="poste-pole">{p.pole}</p>
+                <p className="poste-actions">
+                  <a className="button primary" href={p.href}>Je me propose</a>
+                  <a className="text-link" href={p.fiche}>Fiche de mission <span className="sr-only">(PDF)</span></a>
+                  <a className="text-link" href={p.visuel} download>Visuel <span className="sr-only">à partager (image carrée)</span></a>
+                  <a className="text-link" href={`https://wa.me/?text=${encodeURIComponent(p.message)}`} target="_blank" rel="noopener noreferrer">Partager sur WhatsApp <span aria-hidden="true">↗</span></a>
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section id="contact" aria-label="Nous écrire">
         <div className="legacy">

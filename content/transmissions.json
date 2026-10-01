@@ -1,0 +1,327 @@
+{
+ "_lisezmoi": "Suivi de transmission des plaidoyers (1er octobre 2026). Une lettre d'envoi par destinataire, signée par le président et le secrétaire général (scripts/build-lettres-envoi.py, hors dépôt). Statuts : a-signer, envoye (date AAAA-MM-JJ), accuse (date), reponse (date + resume). Ne rien inventer : une date n'entre ici que quand l'envoi a eu lieu.",
+ "plaidoyer-internet": {
+  "copie": "Monsieur le Maire et le conseil communal de Bédjondo ; Monsieur le Préfet du Mandoul Occidental ; les élus provinciaux et nationaux du Mandoul",
+  "destinataires": [
+   {
+    "nom": "Ministère des Télécommunications et de l’Économie numérique",
+    "type": "ministre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Autorité de Régulation des Communications Électroniques et des Postes (ARCEP)",
+    "attention": "la Direction générale",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Airtel Tchad",
+    "attention": "la Direction générale",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Moov Africa Tchad",
+    "attention": "la Direction générale",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "SOTEL Tchad (Salam)",
+    "attention": "la Direction générale",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Starlink Tchad",
+    "attention": "la direction ou le distributeur agréé",
+    "type": "autre",
+    "statut": "a-signer"
+   }
+  ]
+ },
+ "plaidoyer-electricite": {
+  "copie": "Monsieur le Maire et le conseil communal de Bédjondo ; Monsieur le Préfet du Mandoul Occidental ; les élus provinciaux et nationaux du Mandoul",
+  "a_identifier": [
+   "opérateurs privés de mini-réseaux et de kits solaires"
+  ],
+  "destinataires": [
+   {
+    "nom": "Ministère en charge de l’Énergie",
+    "type": "ministre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Société Nationale d’Électricité (SNE)",
+    "attention": "la Direction générale",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Cellule d’Exécution des Projets CEP-TchadElec (PAAET)",
+    "attention": "la Coordination",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Autorité de Régulation du Secteur de l’Énergie (ARSE)",
+    "attention": "la Direction générale",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Banque mondiale, bureau du Tchad",
+    "attention": "la Représentation, au titre de la Mission 300",
+    "type": "autre",
+    "statut": "a-signer"
+   }
+  ]
+ },
+ "plaidoyer-commune": {
+  "copie": "Monsieur le Préfet du Mandoul Occidental ; autorités traditionnelles de Bédjondo et des cantons de Bébopen, Péni, Nderguigui et Yomi",
+  "destinataires": [
+   {
+    "nom": "Commune de Bédjondo",
+    "attention": "Monsieur le Maire et Mesdames et Messieurs les conseillers communaux",
+    "type": "maire",
+    "statut": "a-signer"
+   }
+  ]
+ },
+ "plaidoyer-eau": {
+  "copie": "Monsieur le Maire et le conseil communal de Bédjondo ; Monsieur le Préfet du Mandoul Occidental ; les élus provinciaux et nationaux du Mandoul",
+  "destinataires": [
+   {
+    "nom": "Ministère en charge de l’Hydraulique et de l’Assainissement",
+    "type": "ministre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Délégation provinciale de l’hydraulique du Mandoul",
+    "attention": "Madame ou Monsieur le Délégué provincial",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Programme d’approvisionnement en eau potable et d’assainissement en milieux semi-urbain et rural (PAEPA SU MR)",
+    "attention": "la Coordination",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "UNICEF Tchad",
+    "attention": "la Représentation",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Caritas Suisse au Tchad",
+    "attention": "la Direction du programme NexSud",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Commune de Bédjondo",
+    "attention": "Monsieur le Maire",
+    "type": "maire",
+    "statut": "a-signer"
+   }
+  ]
+ },
+ "plaidoyer-sante": {
+  "copie": "Monsieur le Maire et le conseil communal de Bédjondo ; Monsieur le Préfet du Mandoul Occidental ; les élus provinciaux et nationaux du Mandoul",
+  "a_identifier": [
+   "réseau des mutuelles de santé du Mandoul"
+  ],
+  "destinataires": [
+   {
+    "nom": "Ministère de la Santé publique et de la Prévention",
+    "type": "ministre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Délégation sanitaire provinciale du Mandoul",
+    "attention": "Madame ou Monsieur le Délégué sanitaire provincial",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "District sanitaire dont relève Bédjondo",
+    "attention": "Madame ou Monsieur le Médecin-chef de district",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Hôpital provincial de Koumra",
+    "attention": "la Direction",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Organisation mondiale de la santé (OMS), bureau du Tchad",
+    "attention": "la Représentation",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "UNICEF Tchad",
+    "attention": "la Représentation",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Bureau de la coopération suisse au Tchad",
+    "attention": "la Direction",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Commune de Bédjondo",
+    "attention": "Monsieur le Maire",
+    "type": "maire",
+    "statut": "a-signer"
+   }
+  ]
+ },
+ "plaidoyer-routes": {
+  "copie": "Monsieur le Maire et le conseil communal de Bédjondo ; Monsieur le Préfet du Mandoul Occidental ; les élus provinciaux et nationaux du Mandoul",
+  "a_identifier": [
+   "programme qui succède au PMCR (clos le 30 avril 2026)"
+  ],
+  "destinataires": [
+   {
+    "nom": "Ministère des Infrastructures et du Désenclavement",
+    "type": "ministre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Délégation provinciale des infrastructures du Mandoul",
+    "attention": "Madame ou Monsieur le Délégué provincial",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Banque mondiale, bureau du Tchad",
+    "attention": "la Représentation, au titre de la suite du Projet de mobilité et de connectivité rurales (PMCR)",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Fonds d’entretien routier",
+    "attention": "la Direction générale",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Commune de Bédjondo",
+    "attention": "Monsieur le Maire",
+    "type": "maire",
+    "statut": "a-signer"
+   }
+  ]
+ },
+ "plaidoyer-education": {
+  "copie": "Monsieur le Maire et le conseil communal de Bédjondo ; Monsieur le Préfet du Mandoul Occidental ; les élus provinciaux et nationaux du Mandoul",
+  "destinataires": [
+   {
+    "nom": "Ministère de l’Éducation nationale et de la Promotion civique",
+    "type": "ministre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Délégation provinciale de l’éducation nationale du Mandoul",
+    "attention": "Madame ou Monsieur le Délégué provincial",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Inspection départementale de l’éducation du Mandoul Occidental",
+    "attention": "Madame ou Monsieur l’Inspecteur départemental",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Programme de qualité de l’éducation de base (ProQEB), Enfants du Monde",
+    "attention": "la Coordination",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Bureau de la coopération suisse au Tchad",
+    "attention": "la Direction",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "UNICEF Tchad",
+    "attention": "la Représentation",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Commune de Bédjondo",
+    "attention": "Monsieur le Maire",
+    "type": "maire",
+    "statut": "a-signer"
+   }
+  ]
+ },
+ "plaidoyer-formation-pro": {
+  "copie": "Monsieur le Maire et le conseil communal de Bédjondo ; Monsieur le Préfet du Mandoul Occidental ; les élus provinciaux et nationaux du Mandoul",
+  "destinataires": [
+   {
+    "nom": "Ministère en charge de l’Enseignement supérieur, de la Recherche scientifique et de la Formation professionnelle",
+    "type": "ministre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Direction de l’enseignement professionnel",
+    "attention": "Madame ou Monsieur le Directeur",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Fonds national d’appui à la formation professionnelle (FONAP)",
+    "attention": "la Direction générale",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Office national pour la promotion de l’emploi (ONAPE)",
+    "attention": "la Direction générale",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Agence française de développement (AFD), agence de N’Djamena",
+    "attention": "la Direction, au titre du projet AFPACET",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Bureau de la coopération suisse au Tchad",
+    "attention": "la Direction",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Caritas Suisse au Tchad",
+    "attention": "la Direction des programmes NexSud et filières",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Chambre de commerce, d’industrie, d’agriculture, des mines et d’artisanat (CCIAMA)",
+    "attention": "la Présidence",
+    "type": "autre",
+    "statut": "a-signer"
+   },
+   {
+    "nom": "Commune de Bédjondo",
+    "attention": "Monsieur le Maire",
+    "type": "maire",
+    "statut": "a-signer"
+   }
+  ]
+ }
+}

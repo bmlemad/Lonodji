@@ -2009,3 +2009,17 @@ input[type=checkbox], input[type=radio]{ min-width:24px; min-height:24px; }
 .them-odd .odd-chip{ min-height:24px; }
 .legacy .frise-lignee .fl-sub{ font-size:11.5px; }
 .sec-table td small{ font-size:11px; }
+.tr-liste{ margin:8px 0 0; padding-left:1.1em; font-size:13.5px; line-height:1.5; }
+.tr-liste em{ color:var(--muted); font-style:normal; }
+/* Postes ouverts (Participer, 1er octobre 2026) */
+.postes-grille{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; }
+.poste{ display:flex; flex-direction:column; gap:6px; padding:18px 18px 16px; border:1px solid var(--carte-filet); border-radius:var(--r-carte-s); background:var(--carte-fond); box-shadow:var(--carte-ombre); }
+.poste-genre{ align-self:flex-start; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:3px 10px; border-radius:99px; background:#e9f0cf; color:var(--ink); }
+.poste-adjoint .poste-genre{ background:#eef2ef; }
+.poste-vice-presidence .poste-genre{ background:#173b2d; color:#fff; }
+.poste h3{ margin:4px 0 0; font-size:19px; line-height:1.25; }
+.poste-num{ font-family:var(--font-playfair),Georgia,serif; font-weight:500; color:var(--muted); margin-right:8px; }
+.poste-pole{ margin:0; font-size:13.5px; color:var(--muted); }
+.poste-actions{ margin:auto 0 0; padding-top:10px; display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; }
+.poste-actions .button{ min-height:40px; }
+.poste-actions .text-link{ font-size:13.5px; min-height:24px; display:inline-flex; align-items:center; }

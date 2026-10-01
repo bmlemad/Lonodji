@@ -52,6 +52,8 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
   (plus « directions de pôle, rang de chef de projet »), sept thématiques prioritaires (`lib/organisation.ts`). Le
   nombre de pôles se lit dans `content/index.json` ; s'il change encore, chercher aussi « cinq pôles », « 5 pôles » et
   « five pillars », encore écrits en dur dans quelques libellés (menus, palette, manifeste, métadonnées).
+- `content/transmissions.json` : n'y porter un envoi, un accusé ou une réponse qu'avec sa date réelle, donnée par le
+  bureau ; `/actions#transmission` l'affiche. Les lettres d'envoi (`build-lettres-envoi.py`) restent hors dépôt.
 - `import-legacy.py` **efface et recrée** `public/documents`, `public/identite`, `public/kit`, `public/app`.
   Les fichiers propres au site vont dans `public/og`, `carte`, `odeb`, `icones`, `missions`, `lettres`, `notes`.
 - Après un import (qui lance lui-même `build-kit-adhesion.py`) : `build-dossier-presentation.py`, `build-carte.py`,
