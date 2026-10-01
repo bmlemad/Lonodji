@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { jsonLd, webPageSchema } from "@/lib/schema";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -51,6 +52,7 @@ function Cartes({ items }: { items: Constat[] }) {
 export default function SousSol() {
   return (
     <main id="main-content" className="hub-page gl-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", ...webPageSchema({ url: ROUTE, name: TITRE, description: RESUME, lang: "fr" }) }) }} />
       <PageHeader
         eyebrow="Territoire · sous-sol & ressources naturelles"
         title="Le sous-sol du Mandoul Occidental :"

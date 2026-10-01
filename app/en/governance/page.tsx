@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { jsonLd, webPageSchema } from "@/lib/schema";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -34,6 +35,7 @@ export default function GovernanceEn() {
   const publies = INDICATEURS_EN.filter((i) => i.statut === "publié").length;
   return (
     <main id="main-content" className="hub-page gl-page" lang="en">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", ...webPageSchema({ url: ROUTE, name: "Local governance in Bédjondo: who decides what", description: "Each level of decision, our requests, how they fit together and the indicators to follow them.", lang: "en" }) }) }} />
       <PageHeader
         eyebrow="Territory · local governance · in English"
         title="Local governance:"

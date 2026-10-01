@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { jsonLd, webPageSchema } from "@/lib/schema";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import PagesVoisines from "@/components/pages-voisines";
@@ -45,6 +46,7 @@ export default function PropositionsCommune() {
   const textes = new Set(GROUPES.flatMap((g) => g.items.flatMap((i) => i.sources.map((x) => x.href)))).size;
   return (
     <main id="main-content" className="hub-page pc-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", ...webPageSchema({ url: ROUTE, name: "Nos propositions à la commune de Bédjondo", description: "Dix projets prioritaires et un projet intégré de développement économique local ; planifier la ville, financer et rendre des comptes, ouvrir le conseil, les services de base, les partenariats et un premier chantier : toutes les propositions d’ADEB LONODJI à la mairie de Bédjondo, réunies et sourcées.", lang: "fr" }) }) }} />
       <PageHeader
         eyebrow="Territoire · propositions à la commune"
         title="Nos propositions"

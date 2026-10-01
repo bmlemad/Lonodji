@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { jsonLd, webPageSchema } from "@/lib/schema";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -26,6 +27,7 @@ export default function GouvernanceLocale() {
   const publies = INDICATEURS.filter((i) => i.statut === "publié").length;
   return (
     <main id="main-content" className="hub-page gl-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", ...webPageSchema({ url: ROUTE, name: "Gouvernance locale à Bédjondo : qui décide quoi", description: "Chaque niveau de décision, nos demandes, leurs articulations et les indicateurs pour les suivre.", lang: "fr" }) }) }} />
       <PageHeader
         eyebrow="Territoire · gouvernance locale"
         title="Gouvernance locale :"

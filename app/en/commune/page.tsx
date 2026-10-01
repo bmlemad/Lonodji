@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { jsonLd, webPageSchema } from "@/lib/schema";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -36,6 +37,7 @@ export default function CommuneEn() {
   const avecAppui = PROJETS_EN.filter((p) => p.apport.length).length;
   return (
     <main id="main-content" className="hub-page pc-page" lang="en">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", ...webPageSchema({ url: ROUTE, name: "Our proposals to the commune of Bédjondo", description: "Ten priority projects and an integrated local economic development project; planning the town, finance and accountability, an open council, basic services, partnerships and a first project: every proposal ADEB LONODJI makes to the town hall of Bédjondo, gathered and sourced.", lang: "en" }) }) }} />
       <PageHeader
         eyebrow="Territory · the commune · in English"
         title="Our proposals"
