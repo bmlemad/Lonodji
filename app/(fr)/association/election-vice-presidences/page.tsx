@@ -32,7 +32,7 @@ export default function ElectionVicePresidences() {
       <PageHeader
         eyebrow="L’association · élection"
         title={`${enLettres(poles.length, true)} vice-présidences`}
-        em="à élire en octobre 2026."
+        em={e.resultats ? `élues le ${dateFr(vote.date)}.` : "à élire en octobre 2026."}
         lead={`Depuis le 1er octobre 2026, chaque pôle est conduit par un vice-président délégué ou une vice-présidente déléguée, élu. Les pôles ${poles.map((p) => p.roman).join(", ").replace(/, ([^,]+)$/, " et $1")} n’ont pas encore le leur. Le bureau exécutif a adopté le même jour la procédure ci-dessous : candidatures ${periodeCandidatures()}, vote le ${dateFr(vote.date)}.`}
         crumbs={[{ label: "L’association", href: "/mission" }, { label: "Décisions d’organisation", href: "/association/propositions-organisation" }, { label: "Élection" }]}
         pills={[`Adoptée le ${dateFr(e.adoptee)}`, etatElection(), `Collège de ${n} personnes`]}
@@ -83,6 +83,21 @@ export default function ElectionVicePresidences() {
         <h3 className="el-sous-titre">Qui organise</h3>
         <ul className="el-liste">{e.organisation.map((o) => <li key={o}>{o}</li>)}</ul>
       </section>
+
+      {e.resultats ? (
+        <section className="hub-section" id="resultats">
+          <SectionHead eyebrow="Les résultats" title="Le vote du" em={`${dateFr(vote.date)}.`} text={`Recopiés du procès-verbal${e.pv ? ` signé le ${dateFr(e.pv)}` : " signé"}, conservé par le secrétariat général. Réclamations au bureau jusqu’au ${dateFr(etape("reclamations").date)} ; la prochaine assemblée générale confirme les élus.`} />
+          <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Résultats de l’élection">
+            <table className="ob-table">
+              <thead><tr><th scope="col">Pôle</th><th scope="col">Élu ou élue</th><th scope="col">Votants</th><th scope="col">Suffrages exprimés</th><th scope="col">Voix</th></tr></thead>
+              <tbody>{e.resultats.map((r) => {
+                const p = idx.structure.poles.find((x) => x.roman === r.pole);
+                return <tr key={r.pole}><th scope="row">Pôle {r.pole}{p ? ` — ${p.name}` : ""}</th><td>{r.elu || "Personne n’est élu"}{r.note ? <><br /><small>{r.note}</small></> : null}</td><td>{r.votants}</td><td>{r.exprimes}{r.blancs ? ` (et ${r.blancs} blanc${r.blancs > 1 ? "s" : ""})` : ""}</td><td>{(r.voix ?? []).map((v) => `${v.nom} : ${v.voix}`).join(" ; ")}{r.tour && r.tour > 1 ? ` (${r.tour}e tour)` : ""}</td></tr>;
+              })}</tbody>
+            </table>
+          </div>
+        </section>
+      ) : null}
 
       <section className="hub-section" id="candidats">
         <SectionHead eyebrow="Les candidats" title={e.candidats.length ? `${enLettres(e.candidats.length, true)} candidature${e.candidats.length > 1 ? "s" : ""}` : "La liste des candidats"} em={e.candidats.length ? "retenues." : `le ${dateFr(etape("liste").date)}.`} text={e.candidats.length ? "Avec l’accord de chacun : nom, pôle et présentation." : "Elle sera publiée ici après vérification par le bureau, avec l’accord de chaque candidat : nom, pôle et présentation d’une page. Aucune autre donnée personnelle n’est publiée."} />

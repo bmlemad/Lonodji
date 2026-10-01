@@ -8,9 +8,11 @@ import { getIndex, ORG } from "@/lib/content";
 export type Etape = { cle: string; date: string; quoi: string; quoi_en?: string };
 export type Regle = { point: string; texte: string; note: string; point_en?: string; texte_en?: string; note_en?: string };
 export type Candidat = { nom: string; pole: string; presentation: string };
+/* Une ligne par pôle, recopiée du procès-verbal signé : « elu » vide si personne n'est élu (appel rouvert, cf. note). */
+export type Resultat = { pole: string; elu: string; votants: number; exprimes: number; blancs?: number; tour?: number; voix?: { nom: string; voix: number }[]; note?: string; note_en?: string };
 export type Election = {
   adoptee: string; instance: string; poles: string[]; calendrier: Etape[]; regles: Regle[]; organisation: string[]; organisation_en?: string[];
-  candidats: Candidat[]; resultats: null | { pole: string; elu: string; votants: number; exprimes: number }[];
+  candidats: Candidat[]; resultats: null | Resultat[]; pv?: string;
 };
 
 let cache: Election | null = null;

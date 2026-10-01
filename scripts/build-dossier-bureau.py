@@ -4,7 +4,7 @@
 
   1. Élire les vice-présidences des pôles sans titulaire (décision 5) : projet de procédure, avec les
      points que le bureau doit trancher, un calendrier en jours relatifs, et quatre annexes prêtes
-     (appel à candidatures, fiche de candidature, bulletin, procès-verbal).
+     (appel à candidatures, fiche de candidature, bulletin, procès-verbal, liste d’émargement).
   2. Les plans annuels des thématiques prioritaires (décision 1) : un plan par priorité, prérempli
      avec ce que le site a publié — titulaire, pôle, plaidoyers et leurs destinataires, engagements
      pris par l'association dans chaque plaidoyer, chantier de la commune (décision 8), ce qui reste à
@@ -277,11 +277,35 @@ def election(idx: dict, logo: str, bureau: list[dict], tete_droite: str) -> tupl
 <h2>Observations et réclamations</h2><div class="zone"></div>
 <div class="sign"><div>Le président de séance</div><div>Les scrutateurs</div><div>Le secrétaire général</div></div>
 </section>"""
+    # Annexe E : liste d'émargement — le collège nommément, d'après la page Nos actions (mêmes règles que le décompte)
+    qualites: dict[str, list[str]] = {}
+    for m in bureau:
+        qualites.setdefault(m["name"], []).append(m["role"])
+    for p in pourvus:
+        qualites.setdefault(p["direction"]["name"], []).append(f"vice-présidence du pôle {p['roman']}")
+    for p in poles + [idx["structure"]["cellules"]]:
+        for t in p["items"]:
+            if t["filled"] and t["coordinator"]:
+                n = re.sub(r",.*$", "", t["coordinator"]).strip()
+                qualites.setdefault(n, []).append(f"coordination {t['number'] + ' · ' if t.get('number') else ''}{t['name']}"
+                                                  + (" (par intérim)" if "intérim" in t["coordinator"] else ""))
+    assert len(qualites) == college, (len(qualites), college)
+    emarg = "".join(f"<tr><td class='nowrap'>{i}</td><td><b>{esc(n)}</b></td><td>{esc(' ; '.join(q)[:1].upper() + ' ; '.join(q)[1:])}</td>"
+                    "<td class='nowrap'><span class=\"case\"></span>sur place <span class=\"case\"></span>à distance</td><td class='blanc'></td></tr>"
+                    for i, (n, q) in enumerate(qualites.items(), 1))
+    annexe_e = f"""<section class="doc">{tete}
+<span class="projet">Annexe E · liste d’émargement · à joindre au procès-verbal</span>
+<h1>Liste d’émargement du collège électoral<small>Réunion du {date_fr(cal['vote']['date'])} · {college} personnes · quorum : {(college + 1) // 2} présentes ou à distance</small></h1>
+<p class="note">Établie d’après la page Nos actions au {PREPARE} : bureau exécutif, vice-présidences en fonction, coordonnateurs titulaires des thématiques et des cellules, chaque personne une fois. Si le collège a changé d’ici le vote, le secrétaire général corrige la liste à la main et l’indique au procès-verbal. Pour une personne à distance, la colonne « émargement » porte les initiales du secrétaire général qui constate sa présence.</p>
+<table><thead><tr><th>N°</th><th>Nom</th><th>Qualité</th><th>Présence</th><th>Émargement</th></tr></thead><tbody>{emarg}</tbody></table>
+<p>Présents : …… ; à distance : …… ; total : …… sur {college}. &nbsp; Quorum : <span class="case"></span>atteint <span class="case"></span>non atteint.</p>
+<div class="sign"><div>Le président de séance</div><div>Les scrutateurs</div><div>Le secrétaire général</div></div>
+</section>"""
     liste = "; ".join(f"pôle {p['roman']}, {p['name']}" for p in vacants)
     note = "\n".join(["# Appel à candidatures — vice-présidences (texte WhatsApp)", "",
                       f"ADEB LONODJI élit les vice-présidences de {LETTRES_F[len(vacants)]} pôles : {liste}. Bénévole, au Tchad ou dans la diaspora. Candidatures jusqu’au {date_fr(cal['cloture']['date'])}, vote le {date_fr(cal['vote']['date'])} : https://{SITE}/association/election-vice-presidences", ""]
                      + [f"- {x}" for x in appel_txt])
-    return {"procedure": doc, "appel": annexe_a, "fiche": annexe_b, "bulletins": annexe_c, "pv": annexe_d}, note
+    return {"procedure": doc, "appel": annexe_a, "fiche": annexe_b, "bulletins": annexe_c, "pv": annexe_d, "emargement": annexe_e}, note
 
 
 # ---------------------------------------------------------------- 2. plans annuels
@@ -373,7 +397,7 @@ def main() -> None:
     docs = [
         # (fichier, titre, corps, pied)
         (OUT / "election-vice-presidences-dossier.pdf", "Élection des vice-présidences — dossier du bureau",
-         "".join(el_int[k] for k in ("procedure", "appel", "fiche", "bulletins", "pv")), pied_interne),
+         "".join(el_int[k] for k in ("procedure", "appel", "fiche", "bulletins", "pv", "emargement")), pied_interne),
         (PUBLIC / "election-vice-presidences-2026.pdf", "Élection des vice-présidences de pôle — procédure et appel",
          "".join(el_pub[k] for k in ("procedure", "appel", "fiche")), pied_public),
         (PUBLIC / "fiche-candidature-vice-presidence.pdf", "Fiche de candidature — vice-présidence de pôle", el_pub["fiche"], pied_public),

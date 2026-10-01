@@ -33,7 +33,7 @@ export default function ElectionEn() {
       <PageHeader
         eyebrow="The association · election · in English"
         title={`${inWordsEn(poles.length, true)} vice-presidents`}
-        em="to be elected in October 2026."
+        em={e.resultats ? `elected on ${dateEn(vote.date)}.` : "to be elected in October 2026."}
         lead={`Since 1 October 2026, each pillar is led by an elected vice-president. Pillars ${poles.map((p) => p.roman).join(", ").replace(/, ([^,]+)$/, " and $1")} do not have one yet. The executive board adopted the procedure below the same day: candidacies from ${dateEn(call.date, false)} to ${dateEn(close.date)}, vote on ${dateEn(vote.date)}. The application form is in French; you can also write to us in English.`}
         crumbs={[{ label: "How we are organised", href: "/en/organisation" }, { label: "Election" }]}
         pills={[`Adopted on ${dateEn(e.adoptee)}`, `Vote on ${dateEn(vote.date)}`, `College of ${n} people`]}
@@ -84,6 +84,18 @@ export default function ElectionEn() {
         <h3 className="el-sous-titre">Who runs it</h3>
         <ul className="el-liste">{(e.organisation_en ?? e.organisation).map((o) => <li key={o}>{o}</li>)}</ul>
       </section>
+
+      {e.resultats ? (
+        <section className="hub-section" id="results">
+          <SectionHead eyebrow="Results" title="The vote of" em={`${dateEn(vote.date)}.`} text={`Copied from the signed minutes${e.pv ? ` of ${dateEn(e.pv)}` : ""}, kept by the secretary-general. Complaints to the board until ${dateEn(etape("reclamations").date)}; the next general assembly confirms those elected.`} />
+          <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Election results">
+            <table className="ob-table">
+              <thead><tr><th scope="col">Pillar</th><th scope="col">Elected</th><th scope="col">Voters</th><th scope="col">Votes cast</th><th scope="col">Votes</th></tr></thead>
+              <tbody>{e.resultats.map((r) => <tr key={r.pole}><th scope="row">Pillar {r.pole}{piliers[r.pole] ? ` — ${piliers[r.pole]}` : ""}</th><td>{r.elu || "No one elected"}{r.note_en ? <><br /><small>{r.note_en}</small></> : null}</td><td>{r.votants}</td><td>{r.exprimes}{r.blancs ? ` (plus ${r.blancs} blank)` : ""}</td><td>{(r.voix ?? []).map((v) => `${v.nom}: ${v.voix}`).join("; ")}</td></tr>)}</tbody>
+            </table>
+          </div>
+        </section>
+      ) : null}
 
       <section className="hub-section" id="documents">
         <SectionHead eyebrow="Documents" title="In French," em="to print and share." />
