@@ -209,7 +209,7 @@ export const PROGRAMMES: Programme[] = [
   {
     slug: "developpement-territorial", numero: "03", nom: "Développement territorial",
     accroche: "Un observatoire, des données, des diagnostics : savoir ce qui manque, où, et suivre ce qui change.",
-    objet: "Le programme fait du diagnostic territorial une fonction permanente : des données village par village, des diagnostics tenus à jour, un observatoire qui suit les besoins signalés jusqu’à leur résolution et les plaidoyers jusqu’à leur réponse. Il s’appuie sur le pôle II de l’association et sur la thématique Gouvernance & plaidoyer.",
+    objet: "Le programme fait du diagnostic territorial une fonction permanente : des données village par village, des diagnostics tenus à jour, un observatoire qui suit les besoins signalés jusqu’à leur résolution et les plaidoyers jusqu’à leur réponse. Il s’appuie sur les pôles II et V de l’association et sur le pôle III : Gouvernance & plaidoyer, et, depuis le 1er octobre 2026, Paix & cohésion — les conflits entre agriculteurs et éleveurs, la médiation — et Justice & droits humains — l’accès au droit et à l’état civil.",
     missions: ["developpement", "recherche"],
     axes: [
       { titre: "Observatoire", texte: "Suivre, dans la durée et publiquement, les besoins du Mandoul Occidental : signalés, vérifiés, portés, résolus.",
@@ -222,7 +222,7 @@ export const PROGRAMMES: Programme[] = [
         existant: [{ label: "Diagnostic territorial du Mandoul Occidental", href: "/territoire/diagnostic" }, { label: "Huit enquêtes de terrain", href: "/territoire/enquetes" }, { label: "Décentralisation & développement local", href: "/territoire/decentralisation" }],
         suite: "Les diagnostics seraient déclinés par unité et actualisés chaque année ; les plaidoyers, transmis à leurs destinataires — aucun ne l’a encore été — et suivis jusqu’à la réponse." },
     ],
-    thematiques: ["agriculture-elevage-securite-alimentaire", "environnement-ressources", "eau-energie-connectivite", "energie", "desenclavement-urbanisation", "sante-prevention", "urgences-risques", "gouvernance-plaidoyer"],
+    thematiques: ["agriculture-elevage-securite-alimentaire", "environnement-ressources", "eau-energie-connectivite", "energie", "desenclavement-urbanisation", "sante-prevention", "urgences-risques", "gouvernance-plaidoyer", "paix-cohesion", "justice-droits-homme"],
     contribuer: [{ label: "Signaler un besoin, localité par localité", href: "/territoire/besoins" }, { label: "Soutenir un plaidoyer", href: "/actions" }, { label: "Coordonner une thématique à pourvoir", href: "/participer?coordo=1#contact" }],
   },
   {
