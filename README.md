@@ -171,3 +171,14 @@ Les formulaires postent vers `/__forms.html` (Netlify Forms). Toute modification
   l'ancien engagement sont retirés de la couche texte (caviardage PyMuPDF, `pip install pymupdf`), pas seulement
   recouverts ; `scripts/qa/documents.py` le vérifie.
 - Espace de rédaction : la création du mot de passe exige le code d'invitation `REDACTION_INVITATION` (variable Netlify).
+
+## Trente septembre 2026
+
+- **Trois pages de fond « Territoire »**, chacune doublée en anglais. Le français fait référence ; les fichiers `-en.ts` ne portent que la traduction, élément par élément dans le même ordre (un élément sans traduction garde son texte français, visible) :
+  - `/territoire/gouvernance-locale` et `/en/governance` : `lib/gouvernance-locale.ts` et `lib/gouvernance-locale-en.ts` ;
+  - `/territoire/propositions-commune` et `/en/commune` : `lib/propositions-commune.ts` et `lib/propositions-commune-en.ts`, plus une version imprimable `/territoire/propositions-commune/dossier` (hors menu, non indexée) et son PDF `public/notes/propositions-commune-bedjondo.pdf` ;
+  - `/territoire/sous-sol` et `/en/subsoil` : `lib/sous-sol.ts` (`SOURCES` numérotées en bas de page, constats, inconnues, leçons de Doba, propositions, engagements) et `lib/sous-sol-en.ts`. Chaque constat cite ses sources ; ce qui n'est pas établi va dans les inconnues, jamais dans les constats.
+- **Thématique 21 Énergie** : l'énergie quitte la 08, qui devient « Routes & urbanisme ». Le découpage se fait à l'import (`structure_30_09` dans `scripts/import-legacy.py` : carte de la thématique, note datée, renvois) ; côté site, slug `energie` dans `lib/bailleurs.ts`, `lib/secteurs.ts` et `lib/odeb.ts`.
+- **Comptes recalculés** : les phrases héritées qui comptent les coordinations (`comptes_courants` à l'import) et le nombre de directions de pôle pourvues (`directionsPourvues` et `directionsTotal` dans `content/indicateurs.json`) ne s'écrivent plus à la main.
+- **Couleurs** : gris secondaire `--muted: #53625b`, contour des champs `--champ-contour: #7f8b85` et anneau de focus en fin de `app/site.css`. Utiliser ces variables plutôt qu'une couleur écrite en dur.
+- **Données structurées** : les six pages ci-dessus portent un bloc `WebPage` (`webPageSchema` de `lib/schema.ts`), comme les autres pages de fond.

@@ -53,7 +53,12 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
 - Ne régénérer un PDF, un ZIP ou une présentation que si son contenu change : chaque version reste dans
   l'historique git (le dépôt dépasse déjà 270 Mo).
 - Une nouvelle page s'enregistre dans `app/sitemap.ts`, `scripts/build-og.py`, `scripts/qa/controle.py` et
-  `scripts/build-search-index.py`.
+  `scripts/build-search-index.py` ; si elle a une version anglaise, aussi dans `FR_VERS_EN` (`lib/langues.ts`),
+  `lib/navigation.ts` (FR et EN), `components/site-footer.tsx` et, au besoin, `LIENS_EN` de
+  `components/legacy-content.tsx`. Une page de fond porte un bloc JSON-LD `WebPage` (`webPageSchema`).
+- Couleurs : passer par les variables (`--muted`, `--champ-contour`, `--deep`, `--accent`) . Ne pas éclaircir
+  `--muted` sans mesurer le contraste sur les fonds teintés : l'ancien `#607069` tombait à 4,1:1 sur `#dfe7cf`
+  (AA demande 4,5:1), `#53625b` y tient 5,0:1.
 
 ## Performance et cache
 - Cache immuable seulement sur les fichiers à empreinte (`/_next/static/*`). Les index et données sans empreinte
