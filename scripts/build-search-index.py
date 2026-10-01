@@ -16,7 +16,7 @@ MAX_TEXT = 3500
 
 KIND_LABEL = {"hub": "Page", "dossier": "Dossier", "en": "In English", "article": "Article"}
 HUB_TITLES = {
-    "mission": "Notre mission", "poles": "Nos actions : quatre pôles, vingt et une thématiques", "plaidoyers": "Plaidoyers & engagements",
+    "mission": "Notre mission", "poles": "Nos actions : cinq pôles, vingt et une thématiques", "plaidoyers": "Plaidoyers & engagements",
     "suivi": "Suivi & tableau de bord", "contact": "Participer : nous écrire", "adherer": "Adhérer et cotiser", "soutenir": "Nous soutenir",
     "redevabilite": "Redevabilité & transparence", "mentions-legales": "Mentions légales & confidentialité", "figures": "Histoire : grandes figures",
     "documents": "Documents à télécharger", "actualites": "Le journal",
@@ -118,9 +118,9 @@ PAGES_SITE.append({"t": "Gouvernance locale", "r": "/territoire/gouvernance-loca
 PAGES_SITE.append({"t": "Sous-sol & ressources naturelles", "r": "/territoire/sous-sol", "k": "Page",
      "d": "Le sous-sol du Mandoul Occidental : pétrole du bassin voisin de Doba, fer des anciens fondeurs, or du Nord, ce qui reste inconnu, les leçons de Doba et nos propositions avant tout forage.",
      "x": "sous-sol ressources naturelles pétrole hydrocarbures bassin de Doba Doseo Komé Belanga mines minerais fer minerai de fer hauts fourneaux fondeurs métallurgie or orpaillage carrières latérite permis sismique levés sismiques 2D 3D BGP Glencore Delonex ERHC puits ITIE transparence revenus pétroliers 5 % région productrice Logone Oriental géologie"})
-PAGES_SITE.append({"t": "Propositions d’organisation de l’association", "r": "/association/propositions-organisation", "k": "Page",
-     "d": "Huit propositions soumises au bureau le 1er octobre 2026 : peu de thématiques actives à la fois, un pôle II rééquilibré, la cellule Financement tenue par le bureau, une seule grille de pilotage.",
-     "x": "organisation structure pôles thématiques benchmark comparaison propositions bureau prioritaires veille réorganisation cellule financement projets suivi redevabilité vice-présidence direction de pôle cumul adjoint grille pilotage plan communal"})
+PAGES_SITE.append({"t": "Décisions d’organisation de l’association", "r": "/association/propositions-organisation", "k": "Page",
+     "d": "Huit décisions du bureau du 1er octobre 2026 : cinq pôles, sept thématiques prioritaires avec un adjoint, des vice-présidences de pôle élues, la cellule Financement à la trésorière, une seule grille de pilotage.",
+     "x": "organisation structure pôles thématiques benchmark comparaison propositions bureau prioritaires veille réorganisation cellule financement projets suivi redevabilité vice-présidence vice-président direction de pôle cumul adjoint grille pilotage plan communal décision pôle V économie territoire risques services essentiels"})
 PAGES_SITE.append({"t": "Nos propositions à la commune de Bédjondo", "r": "/territoire/propositions-commune", "k": "Page",
      "d": "Dix projets prioritaires, un projet intégré de développement économique local, et toutes les mesures proposées à la mairie, chacune avec sa source.",
      "x": "projets prioritaires PNUD développement économique local marché moderne centre de transformation agricole Maison de la Femme et de la Jeunesse maraîchage irrigation reboisement fonds microprojets assainissement centre numérique commune mairie maire conseil communal propositions plan de développement communal schéma d’aménagement cadastre adressage droits de marché budget session publique comité de quartier doléances convention jumelage éclairage solaire marché voirie eau santé école formation"})
@@ -154,9 +154,9 @@ PAGES_SITE.append({"t": "Donor programmes in Chad — World Bank, EU, UN, AfDB (
 PAGES_SITE.append({"t": "Sectors of intervention — WASH, health, nutrition, relief, DRR (in English)", "r": "/en/sectors", "k": "In English",
      "d": "Twenty-one themes mapped to NGO sectors: IASC clusters, OECD-DAC codes, SDGs.",
      "x": "English sectors WASH health nutrition education food security livelihoods relief emergency DRR protection governance peace gender climate ICT4D culture diaspora cluster DAC SDG donor NGO partner"})
-PAGES_SITE.append({"t": "Fiches de mission : diriger un pôle, coordonner une thématique", "r": "/programmes/fiches-de-mission", "k": "Page",
-     "d": "Vingt-sept fiches en PDF — quatre directions de pôle au rang de chef de projet, vingt et une coordinations, deux cellules — avec le rôle, le périmètre, les quatre étapes et le lien pour candidater.",
-     "x": "fiche de mission fiches poste directeur directrice de pôle chef de projet coordonnateur coordonnatrice coordination thématique cellule candidater candidature recrutement bénévole rôle périmètre étapes PDF recueil à pourvoir vacant"})
+PAGES_SITE.append({"t": "Fiches de mission : vice-présider un pôle, coordonner une thématique", "r": "/programmes/fiches-de-mission", "k": "Page",
+     "d": "Vingt-huit fiches en PDF — cinq vice-présidences de pôle, vingt et une coordinations, deux cellules — avec le rôle, le périmètre, les quatre étapes et le lien pour candidater.",
+     "x": "fiche de mission fiches poste vice-président vice-présidence directeur directrice de pôle coordonnateur coordonnatrice coordination thématique cellule candidater candidature recrutement bénévole rôle périmètre étapes PDF recueil à pourvoir vacant"})
 PAGES_SITE.append({"t": "La lettre d’information : chaque mois, publié, décidé, ouvert", "r": "/lettre", "k": "Page",
      "d": "Les numéros de la lettre d’ADEB LONODJI, à lire en ligne ou à transmettre en PDF sur WhatsApp ; l’abonnement par e-mail ; la règle de la lettre.",
      "x": "lettre d’information newsletter infolettre numéros abonnement s’abonner e-mail mensuelle PDF WhatsApp transmettre publié décidé ouvert archive"})
@@ -212,13 +212,13 @@ for pole in idx["structure"]["poles"] + ([idx["structure"]["cellules"]] if idx["
             "x": plain(t["description"])[:MAX_TEXT],
         })
 
-# directions de pôle (rang de chef de projet), décision du 28/09/2026
+# vice-présidences de pôle (directions créées le 28/09/2026, renommées le 01/10/2026)
 for pole in idx["structure"]["poles"]:
     d = pole.get("direction")
     if d:
-        entries.append({"t": f"Direction du pôle {pole['roman']} — {pole['name']}", "r": f"/programmes#{pole['id']}", "k": "Direction de pôle",
-                        "d": (f"Direction : {d['name']}. " if d["filled"] else "Direction à pourvoir. ") + f"{d['label']}, {d['rang']} : anime les coordonnateurs des thématiques du pôle, tient le plan d’action et le calendrier, rend compte au bureau.",
-                        "x": "directeur de pôle directrice direction rang de chef de projet project manager diriger un pôle candidater " + " ".join(t["name"] for t in pole["items"])})
+        entries.append({"t": f"Vice-présidence du pôle {pole['roman']} — {pole['name']}", "r": f"/programmes#{pole['id']}", "k": "Vice-présidence de pôle",
+                        "d": (f"Vice-présidence : {d['name']}. " if d["filled"] else "Vice-présidence à pourvoir, par élection. ") + "Réunit chaque trimestre les coordonnateurs des thématiques du pôle, tient le plan d’action et le calendrier, rend compte au bureau.",
+                        "x": "vice-président vice-présidente vice-présidence directeur de pôle directrice direction diriger un pôle élection candidater " + " ".join(t["name"] for t in pole["items"])})
 
 for p in idx["plaidoyers"]:
     entries.append({"t": p["title"], "r": f"/actions#{p['id']}", "k": "Plaidoyer", "d": p["demand"], "x": f"{p['theme']} {p['recipients']} {p['status']} {p['published']}"})

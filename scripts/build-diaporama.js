@@ -124,7 +124,7 @@ function diapoColonnes(pres, m, n, total, { eyebrow, titre, intro, colonnes, tai
     const x = 0.6 + i * (w + gap);
     carte(s, x, y, w, h);
     if (c.numero) pastille(s, x + 0.3, y + 0.3, c.numero, { d: 0.5 });
-    s.addText(c.titre, { x: x + (c.numero ? 0.95 : 0.3), y: y + 0.27, w: w - (c.numero ? 1.25 : 0.6), h: 0.6, fontFace: F.texte, fontSize: 15, bold: true, color: C.deep, valign: "middle", margin: 0, isTextBox: true, fit: "shrink" });
+    s.addText(c.titre, { x: x + (c.numero ? 0.95 : 0.3), y: y + 0.27, w: w - (c.numero ? 1.15 : 0.6), h: 0.6, fontFace: F.texte, fontSize: k > 4 ? 10.5 : 15, bold: true, color: C.deep, valign: "middle", margin: 0, isTextBox: true, fit: "shrink" });
     const corps = (c.points || []).map((p, j, a) => ({ text: p, options: { bullet: { indent: 14 }, breakLine: j < a.length - 1, paraSpaceAfter: 6 } }));
     if (c.texte) corps.unshift({ text: c.texte, options: { breakLine: corps.length > 0, paraSpaceAfter: 8 } });
     s.addText(corps, { x: x + 0.3, y: y + 1.05, w: w - 0.6, h: h - 1.35, fontFace: F.texte, fontSize: taille || 12.5, color: C.ink, valign: "top", margin: 0, isTextBox: true, fit: "shrink", lineSpacingMultiple: 1.1 });
@@ -251,14 +251,14 @@ async function assemblee() {
   n += 1;
   const pourvues = poles.flatMap((p) => p.items).filter((t) => t.filled).length;
   const thematiques = poles.flatMap((p) => p.items).length;
-  diapoColonnes(pres, m, n, total, { eyebrow: "Qui porte le projet", titre: `Quatre pôles, ${thematiques === 21 ? "vingt et une" : enLettresMaj(thematiques).toLowerCase()} thématiques, ${pourvues} coordinations pourvues`, colonnes: poles.map((p) => ({ numero: p.roman, titre: p.name, texte: `Direction du pôle : ${p.direction.name} (${p.direction.rang}).`, points: p.items.map((t) => `${t.name} — ${t.filled ? t.coordinator : "à pourvoir"}`) })), taille: 9.5 });
+  diapoColonnes(pres, m, n, total, { eyebrow: "Qui porte le projet", titre: `${enLettresMaj(poles.length)} pôles, ${thematiques === 21 ? "vingt et une" : enLettresMaj(thematiques).toLowerCase()} thématiques, ${pourvues} coordinations pourvues`, colonnes: poles.map((p) => ({ numero: p.roman, titre: p.name, texte: `Vice-présidence : ${p.direction.filled ? p.direction.name : "à pourvoir, par élection"}.`, points: p.items.map((t) => `${t.name} — ${t.filled ? t.coordinator : "à pourvoir"}`) })), taille: 9.5 });
 
   n += 1;
   diapoEtapes(pres, m, n, total, { eyebrow: "Feuille de route 2026-2030", titre: `${enLettresMaj(phases.length)} phases`, etapes: phases.map((ph) => ({ titre: `${ph.periode} · ${ph.titre}`, texte: ph.texte })) });
 
   n += 1;
   const aDecider = phases.flatMap((ph) => ph.chantiers.filter((ch) => ch.etat === "a-decider").map((ch) => `${ch.titre} — ${ch.note}`));
-  diapoTexte(pres, m, n, total, { eyebrow: "Ce que l’assemblée décide", titre: "Les décisions attendues", points: ["Les cinq règles du programme 06 (règle d’affectation des bénéfices comprise)", ...(dirOuvertes ? [dirOuvertes === poles.length ? "Les quatre directions de pôle, au rang de chef de projet : quatre candidatures à recevoir" : `Les directions de pôle encore à pourvoir, au rang de chef de projet : ${dirOuvertes === 1 ? "une" : enLettresMaj(dirOuvertes).toLowerCase()} sur quatre (pôles ${poles.filter((p) => !p.direction.filled).map((p) => p.roman).join(", ")})`] : []), `Les coordinations restant à pourvoir : ${thematiques - pourvues} thématique${thematiques - pourvues > 1 ? "s" : ""}${cellules.filter((x) => !x.filled).length ? ` et ${cellules.filter((x) => !x.filled).length} cellule${cellules.filter((x) => !x.filled).length > 1 ? "s" : ""}` : ""}`, ...aDecider] });
+  diapoTexte(pres, m, n, total, { eyebrow: "Ce que l’assemblée décide", titre: "Les décisions attendues", points: ["Les cinq règles du programme 06 (règle d’affectation des bénéfices comprise)", ...(dirOuvertes ? [dirOuvertes === poles.length ? `Les ${enLettresMaj(poles.length).toLowerCase()} vice-présidences de pôle, à élire` : `Les vice-présidences de pôle à élire : ${dirOuvertes === 1 ? "une" : enLettresMaj(dirOuvertes).toLowerCase()} sur ${enLettresMaj(poles.length).toLowerCase()} (pôles ${poles.filter((p) => !p.direction.filled).map((p) => p.roman).join(", ")})`] : []), `Les coordinations restant à pourvoir : ${thematiques - pourvues} thématique${thematiques - pourvues > 1 ? "s" : ""}${cellules.filter((x) => !x.filled).length ? ` et ${cellules.filter((x) => !x.filled).length} cellule${cellules.filter((x) => !x.filled).length > 1 ? "s" : ""}` : ""}`, ...aDecider] });
 
   diapoFin(pres, m, { titre: ODEB.devise, lignes: ["Livre blanc, programmes, feuille de route : lonodji.org/odeb", `Écrire à l’association : lonodji.org/participer · ${TELEPHONE}`] });
 

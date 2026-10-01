@@ -73,7 +73,7 @@ def main() -> None:
             items.append(f'<li{cls}><b>{e(t["name"])}</b> — {e(qui)}</li>')
         n = len(items)
         return (f'<div class="pole"><h3>{e(p["name"])} — {n}</h3>'
-                f'<p class="dir">Direction de pôle : {e(direction_de(p))} (rang de chef de projet)</p><ul>{"".join(items)}</ul></div>')
+                f'<p class="dir">Vice-présidence : {e(direction_de(p))}{" (par élection)" if direction_de(p) == "à pourvoir" else ""}</p><ul>{"".join(items)}</ul></div>')
 
     lignes_plaidoyers = "".join(
         f'<tr><td>{e(p["title"])}</td><td>{e(p["recipients"])}</td><td>{e(p.get("sent") or "—")}</td></tr>' for p in plaidoyers)
@@ -102,7 +102,7 @@ p {{ margin:0 0 7px; text-align:justify; }}
 .chiffres div {{ flex:1; background:#e9f0fb; border-radius:6px; padding:7px 9px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }}
 .chiffres b {{ display:block; font-family:"DejaVu Serif",serif; font-size:17pt; color:#173b8a; }}
 .chiffres small {{ font-size:7pt; color:#3d4c6b; }}
-.poles {{ display:grid; grid-template-columns:1fr 1fr; gap:6px; }}
+.poles {{ display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }}
 .pole {{ border:1px solid #cfdcf0; border-radius:6px; padding:7px 9px; background:#f6f9fe; break-inside:avoid; -webkit-print-color-adjust:exact; print-color-adjust:exact; }}
 .pole h3 {{ font-size:9.5pt; margin-bottom:2px; }}
 .pole .dir {{ font-size:7pt; color:#5a6780; margin:0 0 3px; text-align:left; }}
@@ -126,7 +126,7 @@ footer {{ position:fixed; bottom:-9mm; left:0; right:0; text-align:center; font-
   <div class="sous">Association de Développement et d'Entraide de Bédjondo · Mandoul · Tchad</div>
   <h1>Bâtir ensemble<br>l'héritage de<br>Bédjondo</h1>
   <p class="chapo">Dossier de présentation — édition du {jour}. Qui nous sommes, ce que nous faisons, ce que nous demandons, et comment nous aider.</p>
-  <div class="pills"><span>4 pôles</span><span>{total} thématiques</span><span>{pourvues} pourvues</span><span>8 dossiers de plaidoyer</span><span>{refs} références</span></div>
+  <div class="pills"><span>{NOMBRES.get(len(poles), len(poles))} pôles</span><span>{total} thématiques</span><span>{pourvues} pourvues</span><span>8 dossiers de plaidoyer</span><span>{refs} références</span></div>
   <div class="devise">COURAGE · DISCIPLINE · HÉRITAGE · lonodji.org</div>
 </section>
 
@@ -134,17 +134,17 @@ footer {{ position:fixed; bottom:-9mm; left:0; right:0; text-align:center; font-
 <div class="eyebrow">Qui nous sommes</div>
 <h2>L'association de Bédjondo et de sa diaspora</h2>
 <p>ADEB LONODJI — Association de Développement et d'Entraide de Bédjondo — rassemble Bédjondo et sa diaspora et fait vivre les valeurs, l'héritage et l'histoire du peuple bedjond, peuple d'origine de Bédjondo, chef-lieu du département du Mandoul Occidental, dans la province du Mandoul, au sud du Tchad. Composante du grand ensemble sara, le peuple bedjond vit dans les cantons de Bédjondo, Bébopen, Nderguigui et Yomi ainsi que dans la sous-préfecture de Péni, à N'Djamena et dans une diaspora nombreuse et qualifiée. Ses actions de développement servent tous les habitants de Bédjondo, sans distinction d'origine.</p>
-<p>Les réflexions ont commencé en 1986 ; l'association a été reconnue officiellement en 1995 (sa mise en conformité avec l'ordonnance n° 023/PR/2018 est en vérification), a tenu un premier forum à Bédjondo en 2000, puis un second à Bébopen en décembre 2003. Après des années de mise en veille, ses membres ont engagé en 2026 sa réactivation et sa modernisation : quatre pôles, {NOMBRES.get(total, total)} thématiques d'action — {NOMBRES.get(pourvues, pourvues)} ont déjà leur coordonnateur —, deux cellules transversales, un bureau exécutif et un animateur. L'association fédère les initiatives existantes plutôt que de les concurrencer.</p>
+<p>Les réflexions ont commencé en 1986 ; l'association a été reconnue officiellement en 1995 (sa mise en conformité avec l'ordonnance n° 023/PR/2018 est en vérification), a tenu un premier forum à Bédjondo en 2000, puis un second à Bébopen en décembre 2003. Après des années de mise en veille, ses membres ont engagé en 2026 sa réactivation et sa modernisation : {NOMBRES.get(len(poles), len(poles))} pôles, {NOMBRES.get(total, total)} thématiques d'action — {NOMBRES.get(pourvues, pourvues)} ont déjà leur coordonnateur —, deux cellules transversales, un bureau exécutif et un animateur. L'association fédère les initiatives existantes plutôt que de les concurrencer.</p>
 <div class="chiffres">
   <div><b>1995</b><small>reconnaissance officielle</small></div>
-  <div><b>4</b><small>pôles d'action</small></div>
+  <div><b>{len(poles)}</b><small>pôles d'action</small></div>
   <div><b>{total}</b><small>thématiques, {pourvues} pourvues</small></div>
   <div><b>8</b><small>dossiers de plaidoyer</small></div>
 </div>
 <div class="eyebrow">Notre organisation</div>
-<h2>Quatre pôles, {NOMBRES.get(total, total)} thématiques</h2>
+<h2>{NOMBRES.get(len(poles), len(poles)).capitalize()} pôles, {NOMBRES.get(total, total)} thématiques</h2>
 <div class="poles">{"".join(pole_html(p) for p in poles)}</div>
-<p style="margin-top:8px"><b>Cellules transversales :</b> {cell}. <b>Bureau exécutif :</b> {bureau_txt}. <b>Animation :</b> {e(b.get("Animateur", ""))}. Les {NOMBRES.get(ouvertes, ouvertes)} thématiques{f" et les {NOMBRES.get(dir_ouvertes, dir_ouvertes)} directions de pôle" if dir_ouvertes > 1 else (" et la direction de pôle" if dir_ouvertes else "")} encore à pourvoir sont ouvertes aux candidatures (fiches de mission : lonodji.org/programmes/fiches-de-mission).</p>
+<p style="margin-top:8px"><b>Cellules transversales :</b> {cell}. <b>Bureau exécutif :</b> {bureau_txt}. <b>Animation :</b> {e(b.get("Animateur", ""))}. Les {NOMBRES.get(ouvertes, ouvertes)} thématiques{f" et les {NOMBRES.get(dir_ouvertes, dir_ouvertes)} vice-présidences de pôle" if dir_ouvertes > 1 else (" et la vice-présidence de pôle" if dir_ouvertes else "")} encore à pourvoir sont ouvertes aux candidatures (fiches de mission : lonodji.org/programmes/fiches-de-mission).</p>
 
 <div class="saut"></div>
 <div class="eyebrow">Bédjondo aujourd'hui</div>
@@ -163,7 +163,7 @@ footer {{ position:fixed; bottom:-9mm; left:0; right:0; text-align:center; font-
 <div class="eyebrow">Comment nous aider</div>
 <h2>Quatre façons de contribuer</h2>
 <div class="cartes">
-  <div><h3>Rejoindre</h3><p>Adhérer par la déclaration d'intention (lonodji.org/participer) ; candidater à la coordination de l'une des {NOMBRES.get(ouvertes, ouvertes)} thématiques encore à pourvoir, à une direction de pôle, ou rejoindre une thématique existante.</p></div>
+  <div><h3>Rejoindre</h3><p>Adhérer par la déclaration d'intention (lonodji.org/participer) ; candidater à la coordination de l'une des {NOMBRES.get(ouvertes, ouvertes)} thématiques encore à pourvoir, à une vice-présidence de pôle (par élection), ou rejoindre une thématique existante.</p></div>
   <div><h3>Donner</h3><p>La collecte est suspendue depuis le 23 septembre 2026, jusqu'à l'autorisation de l'association, au vote de la grille par l'assemblée générale et à l'ouverture d'un compte à son nom, à double signature. Ne remettez aucun argent à qui que ce soit en son nom. D'ici là, les promesses de contribution restent ouvertes, sans paiement.</p></div>
   <div><h3>Apporter ses compétences</h3><p>Urbanistes, géomètres, ingénieurs, hydrauliciens, médecins, enseignants, informaticiens : répertoire des compétences de la diaspora (lonodji.org/diaspora).</p></div>
   <div><h3>Relayer et témoigner</h3><p>Partager les plaidoyers, signaler un besoin sur la carte, mesurer son débit, confier un récit ou une photo (lonodji.org/temoignages).</p></div>

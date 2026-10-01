@@ -182,3 +182,12 @@ Les formulaires postent vers `/__forms.html` (Netlify Forms). Toute modification
 - **Comptes recalculés** : les phrases héritées qui comptent les coordinations (`comptes_courants` à l'import) et le nombre de directions de pôle pourvues (`directionsPourvues` et `directionsTotal` dans `content/indicateurs.json`) ne s'écrivent plus à la main.
 - **Couleurs** : gris secondaire `--muted: #53625b`, contour des champs `--champ-contour: #7f8b85` et anneau de focus en fin de `app/site.css`. Utiliser ces variables plutôt qu'une couleur écrite en dur.
 - **Données structurées** : les six pages ci-dessus portent un bloc `WebPage` (`webPageSchema` de `lib/schema.ts`), comme les autres pages de fond.
+
+## Premier octobre 2026 : organisation décidée
+
+Le bureau exécutif a adopté le 1er octobre 2026 les huit propositions tirées du benchmark de la structure (registre 2026-30 à 2026-32, page `/association/propositions-organisation`, données `lib/organisation.ts`).
+
+- **Cinq pôles** : le pôle II devient « Services essentiels » (07, 09, 10, 11, 12) ; un pôle V, « Économie, territoire & risques », reçoit 04, 05, 06, 08, 20 et 21, sans renumérotation. Le partage se fait à l'import (`structure_01_10` dans `scripts/import-legacy.py`) sur `poles.html`, `suivi.html`, `contact.html`, `trouver.js` et `en/themes.html` ; textes datés et charte d'identité exclus (la charte reçoit une note).
+- **Vice-présidences de pôle** : les directions de pôle deviennent des vice-présidences déléguées, pourvues par élection (`DIRECTION_LABEL`, `DIRECTIONS_POLES`, pôle V à pourvoir). Les fichiers PDF gardent leur nom `fiche-mission-direction-pole-N.pdf`.
+- **Cellule Financement** : confiée par intérim à la trésorière (ligne dans `NOMINATIONS`).
+- **Sept thématiques prioritaires** (`PRIORITAIRES`, `estPrioritaire`) : mention sur chaque ligne de thématique (`ThematiqueRow`), liste sur `/programmes#propositions-organisation`, adjoint à trouver (`?adjoint=1` préremplit le message du formulaire).

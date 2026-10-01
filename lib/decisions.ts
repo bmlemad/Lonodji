@@ -61,11 +61,27 @@ export const DECISIONS: Decision[] = [
     suite: "L’adresse de chaque siège, sa date d’ouverture et le partage des responsabilités ne sont pas encore fixés publiquement.",
   },
   {
-    id: "2026-30", date: "2026-10-01", type: "proposition",
+    id: "2026-31", date: "2026-10-01", type: "decision",
+    titre: "Le bureau adopte les huit décisions d’organisation : cinq pôles, sept thématiques prioritaires",
+    texte: "Le bureau exécutif adopte les huit propositions du même jour (2026-30). Le pôle II est scindé : il devient « Services essentiels » (07, 09, 10, 11, 12), et un pôle V, « Économie, territoire & risques », réunit les thématiques 04, 05, 06, 08, 20 et 21, sans renumérotation. Sept thématiques sont prioritaires — 07, 08, 09, 11, 13, 17 et 21, celles des huit dossiers de plaidoyer —, chacune avec un titulaire et un adjoint, et rattachée à un chantier des propositions à la commune. Les directions de pôle deviennent des vice-présidences déléguées, pourvues par élection ; les deux titulaires gardent leur fonction. Une personne coordonne une seule thématique. La fonction « Projets, suivi & redevabilité » devient une mission du secrétariat général. On pilote par pôles et thématiques seulement : programmes ODEB et secteurs deviennent des tables de correspondance.",
+    sources: [{ label: "Décisions d’organisation", href: "/association/propositions-organisation" }, { label: "Nos actions", href: "/programmes" }],
+    suite: "Vice-présidences des pôles III, IV et V à pourvoir par élection ; adjoints des thématiques prioritaires à trouver ; cumuls à revoir avec les personnes concernées. Pas de nouveau redécoupage avant au moins un trimestre.",
+    instance: "Bureau exécutif",
+  },
+  {
+    id: "2026-32", date: "2026-10-01", type: "nomination",
+    titre: "Cellule Financement & ressources : la trésorière, par intérim",
+    texte: "En application de la décision 2026-31, la cellule Financement & ressources, vacante depuis sa création, est confiée par intérim à la trésorière élue, Élisabeth Neloumngaye Ndodinguem : l’argent relève du bureau. Un commissaire aux comptes sera prévu avant toute réouverture de la collecte.",
+    sources: [{ label: "Nos actions", href: "/programmes#cellule-financement-ressources" }],
+    suite: "La collecte reste suspendue jusqu’aux trois conditions déjà publiées (décision 2026-16).",
+    instance: "Bureau exécutif",
+  },
+  {
+    id: "2026-30", date: "2026-10-01", type: "publication",
     titre: "Huit propositions d’organisation soumises au bureau",
     texte: "Tirées d’une comparaison avec dix organisations et cadres : n’avoir que cinq à sept thématiques prioritaires à la fois, d’abord les sept qui portent les huit dossiers de plaidoyer ; scinder le pôle II en « Services essentiels » et « Économie, territoire & risques » ; confier la cellule Financement & ressources à la trésorerie élue par intérim ; créer une fonction « Projets, suivi & redevabilité » ; faire des directions de pôle des vice-présidences déléguées ; une personne par thématique, avec un adjoint ; une seule grille de pilotage ; rattacher chaque thématique prioritaire au plan de la commune.",
     sources: [{ label: "Propositions d’organisation", href: "/association/propositions-organisation" }],
-    suite: "À décider par le bureau exécutif ; la structure publiée sur la page Nos actions ne change pas d’ici là.",
+    suite: "Adoptées le jour même par le bureau exécutif (2026-31).",
   },
   {
     id: "2026-29", date: "2026-09-30", type: "decision",
@@ -167,7 +183,7 @@ export const DECISIONS: Decision[] = [
     titre: "Création des directions de pôle, au rang de chef de projet",
     texte: "Chaque pôle a désormais une direction, distincte de la coordination des thématiques : elle anime les coordonnateurs, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets, rend compte au bureau et à l’assemblée. Quatre postes ouverts à tout membre.",
     sources: [{ label: "Article du 28 septembre 2026", href: "/journal/2026-09-28-directions-de-pole" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }],
-    suite: "Les quatre directions étaient à pourvoir à leur création ; celles des pôles I et II sont pourvues le 30 septembre 2026 (2026-26, 2026-27).",
+    suite: "Les quatre directions étaient à pourvoir à leur création ; celles des pôles I et II sont pourvues le 30 septembre 2026 (2026-26, 2026-27). Le 1er octobre 2026, elles deviennent des vice-présidences, et un cinquième pôle est créé (2026-31).",
   },
   {
     id: "2026-11", date: "2026-09-28", type: "proposition",
@@ -187,7 +203,8 @@ export const DECISIONS: Decision[] = [
     id: "2026-13", date: "2026-09-29", type: "decision",
     titre: "Directions de pôle : le titre reste, avec son équivalent international",
     texte: "Le titre « directeur ou directrice de pôle », au rang de chef de projet, est maintenu : « directeur de programme » aurait prêté à confusion avec les six programmes du projet ODEB, qui croisent les pôles. Pour les partenaires internationaux, les fiches de mission et les pages anglaises donnent l’équivalent « Pillar Lead (programme-manager level) ».",
-    sources: [{ label: "Nos actions — diriger un pôle", href: "/programmes#diriger-un-pole" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }],
+    sources: [{ label: "Nos actions — vice-présider un pôle", href: "/programmes#diriger-un-pole" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" }],
+    suite: "Remplacée le 1er octobre 2026 (2026-31) : les directions de pôle deviennent des vice-présidences déléguées, pourvues par élection ; en anglais, « Pillar Vice-President ».",
   },
   {
     id: "2026-14", date: "2026-09-29", type: "decision",

@@ -8,10 +8,11 @@ export default function ContactPrefill() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const theme = params.get("theme");
-    const direction = (params.get("direction") || "").toUpperCase();  // ?direction=I|II|III|IV : la direction d'un pôle
+    const direction = (params.get("direction") || "").toUpperCase();  // ?direction=I|II|III|IV|V : la direction d'un pôle
     const coordo = params.get("coordo");
+    const adjoint = params.get("adjoint");  // ?adjoint=1 : se proposer comme adjoint d'une thématique prioritaire
     const objetDemande = (params.get("objet") || "").toLowerCase();
-    if (!theme && !direction && !coordo && !objetDemande) return;
+    if (!theme && !direction && !coordo && !adjoint && !objetDemande) return;
     const form = document.querySelector<HTMLFormElement>("form[name='contact'], form#formulaire-contact");
     if (!form) return;
     const objet = form.querySelector<HTMLSelectElement>("select[name='objet']");
@@ -30,11 +31,14 @@ export default function ContactPrefill() {
       if (opt) pole.value = opt.value || opt.text;
     }
     if (pole && direction) {
-      const opt = Array.from(pole.options).find((o) => o.text.trim().toLowerCase().startsWith(`direction du pôle ${direction.toLowerCase()} `));
+      // 01/10/2026 : les directions de pôle sont devenues des vice-présidences (l'ancien libellé reste reconnu)
+      const opt = Array.from(pole.options).find((o) => [`vice-présidence du pôle ${direction.toLowerCase()} `, `direction du pôle ${direction.toLowerCase()} `].some((d) => o.text.trim().toLowerCase().startsWith(d)));
       if (opt) pole.value = opt.value || opt.text;
     }
     const cb = form.querySelector<HTMLInputElement>("input[name='candidature_coordo']");
     if (cb && coordo === "1") cb.checked = true;
+    const message = form.querySelector<HTMLTextAreaElement>("textarea[name='message']");
+    if (message && adjoint === "1" && !message.value) message.value = "Je me propose comme adjoint ou adjointe de cette thématique.";
     const anchor = document.getElementById("contact");
     if (anchor && !window.location.hash) anchor.scrollIntoView({ block: "start" });
   }, []);

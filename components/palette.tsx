@@ -19,7 +19,7 @@ const RACCOURCIS: Entry[] = [
   { t: "Retrouver mon village", r: "/villages", k: "Raccourci", d: "966 fiches de localités, une par village, quartier ou canton" },
   { t: "Le projet ODEB LONODJI", r: "/odeb", k: "Raccourci", d: "Vision 2030, six missions, six programmes, livre blanc" },
   { t: "Signaler un besoin", r: "/territoire/besoins", k: "Raccourci", d: "Eau, école, santé, route : localité par localité" },
-  { t: "Nos actions : pôles et thématiques", r: "/programmes", k: "Raccourci", d: "Quatre pôles, vingt et une thématiques, directions et coordonnateurs" },
+  { t: "Nos actions : pôles et thématiques", r: "/programmes", k: "Raccourci", d: "Cinq pôles, vingt et une thématiques, sept prioritaires, vice-présidences et coordonnateurs" },
   { t: "Secteurs d’intervention", r: "/secteurs", k: "Raccourci", d: "WASH, santé, nutrition, urgences… nos thématiques en langue ONG" },
   { t: "Le journal", r: "/journal", k: "Raccourci", d: "Articles datés et sourcés, lettre d’information" },
   { t: "Adhérer, écrire, nous soutenir", r: "/participer", k: "Raccourci", d: "Formulaire, WhatsApp, téléphone ; réponse sous 48 h" },
@@ -30,7 +30,7 @@ const RACCOURCIS: Entry[] = [
 const RACCOURCIS_EN: Entry[] = [
   { t: "Find your village", r: "/en/villages", k: "Raccourci", d: "Fourteen units, 966 named localities" },
   { t: "About the association", r: "/en/about", k: "Raccourci", d: "Who we are, since 1986" },
-  { t: "Themes and pillars", r: "/en/themes", k: "Raccourci", d: "Four pillars, twenty-one themes, coordinators" },
+  { t: "Themes and pillars", r: "/en/themes", k: "Raccourci", d: "Five pillars, twenty-one themes, coordinators" },
   { t: "Donor programmes in Chad", r: "/en/donors", k: "Raccourci", d: "World Bank, EU, UN, AfDB programmes reaching Mandoul, and our entry points" },
   { t: "Our sectors of work", r: "/en/sectors", k: "Raccourci", d: "WASH, health, nutrition, emergencies… our themes in NGO terms" },
   { t: "Advocacy", r: "/en/advocacy", k: "Raccourci", d: "Seven briefs and a note to the commune" },

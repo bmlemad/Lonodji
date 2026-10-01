@@ -25,7 +25,7 @@ export default function Programmes() {
         eyebrow={`Projet ${ODEB.sigle} · programmes`}
         title="Six programmes"
         em="pour six missions."
-        lead="Chaque programme a trois axes (quatre pour le sixième), s’appuie sur des thématiques nommées de l’association et dit ce qui existe déjà et ce qu’il construira. Les programmes ne créent pas de nouvelles équipes : ils donnent un cadre commun à ce que les thématiques font, et un horizon à ce qu’elles feront. Le pilotage, lui, se fait par pôles et thématiques : les programmes en sont une table de correspondance (proposition du 1er octobre 2026)."
+        lead="Chaque programme a trois axes (quatre pour le sixième), s’appuie sur des thématiques nommées de l’association et dit ce qui existe déjà et ce qu’il construira. Les programmes ne créent pas de nouvelles équipes : ils donnent un cadre commun à ce que les thématiques font, et un horizon à ce qu’elles feront. Le pilotage, lui, se fait par pôles et thématiques : les programmes en sont une table de correspondance (décision du bureau du 1er octobre 2026)."
         crumbs={[{ label: "Vision 2030 — projet ODEB", href: "/odeb" }, { label: "Programmes" }]}
         pills={["Six programmes", `${enLettresMaj(PROGRAMMES.reduce((n, p) => n + p.axes.length, 0))} axes`, `${mobilisees.filter((id) => th[id]?.kind !== "cellule").length} thématiques${mobilisees.some((id) => th[id]?.kind === "cellule") ? " et une cellule" : ""} mobilisées`]}
       />
@@ -53,7 +53,7 @@ export default function Programmes() {
       </div>
 
       <section className="hub-section" id="articulation">
-        <SectionHead eyebrow="Programmes et thématiques" title="Deux grilles," em="une seule association." text="Les quatre pôles et vingt et une thématiques restent l’organisation de travail de l’ADEB LONODJI ; les six programmes sont la grille de l’ODEB, tournée vers 2030. Une thématique peut servir plusieurs programmes ; un programme s’appuie sur plusieurs thématiques. Le tableau ci-dessous dit qui porte quoi." />
+        <SectionHead eyebrow="Programmes et thématiques" title="Deux grilles," em="une seule association." text="Les cinq pôles et vingt et une thématiques restent la seule organisation de travail de l’ADEB LONODJI ; les six programmes sont la grille de l’ODEB, tournée vers 2030. Une thématique peut servir plusieurs programmes ; un programme s’appuie sur plusieurs thématiques. Le tableau ci-dessous dit qui porte quoi." />
         <div className="od-table-wrap">
           <table className="od-table">
             <thead><tr><th scope="col">Programme</th><th scope="col">Thématiques mobilisées</th><th scope="col">Coordination</th></tr></thead>

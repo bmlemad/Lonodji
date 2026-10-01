@@ -437,7 +437,7 @@ def parse_page(path: Path):
 # ----------------------------------------------------------------------------
 # Données structurées des hubs
 # ----------------------------------------------------------------------------
-ROMAN = {"pole-1": "I", "pole-2": "II", "pole-3": "III", "pole-4": "IV"}
+ROMAN = {"pole-1": "I", "pole-2": "II", "pole-3": "III", "pole-4": "IV", "pole-5": "V"}   # pôle V : 01/10/2026
 
 
 # Direction des pôles (décision du 28/09/2026) : chaque pôle est dirigé par un directeur
@@ -447,9 +447,12 @@ ROMAN = {"pole-1": "I", "pole-2": "II", "pole-3": "III", "pole-4": "IV"}
 # 30/09/2026 : direction du pôle I confiée au Dr Bé-Rammaj Miaro-II (qui laisse la coordination de Mémoire & héritage
 # à Félix Mbété Nangmbatnan) ;
 # direction du pôle II (Développement humain & moyens d'existence) confiée à Franco Joseph Ngarlena.
-DIRECTIONS_POLES: dict[str, str | None] = {"pole-1": "Dr Bé-Rammaj Miaro-II", "pole-2": "Franco Joseph Ngarlena", "pole-3": None, "pole-4": None}
-DIRECTION_LABEL = "Directeur ou directrice de pôle"
-DIRECTION_RANG = "rang de chef de projet"
+# 01/10/2026 (registre 2026-31) : les directions de pôle deviennent des vice-présidences déléguées, pourvues par
+# élection ; les deux titulaires gardent leur fonction. Le pôle II est scindé : le pôle II (Services essentiels) garde
+# sa vice-présidence, le pôle V (Économie, territoire & risques) est à pourvoir.
+DIRECTIONS_POLES: dict[str, str | None] = {"pole-1": "Dr Bé-Rammaj Miaro-II", "pole-2": "Franco Joseph Ngarlena", "pole-3": None, "pole-4": None, "pole-5": None}
+DIRECTION_LABEL = "Vice-président délégué ou vice-présidente déléguée du pôle"
+DIRECTION_RANG = "vice-présidence déléguée"
 
 
 def structure(soup_poles: BeautifulSoup, base_dir="") -> dict:
@@ -877,11 +880,16 @@ NOMINATIONS = [
      "Djimtebaye Mahamat Mamadou Banadji", "Djimtebaye Mahamat Mamadou Banadji",
      " <strong>Mise à jour du 28 septembre 2026&nbsp;:</strong> la coordination de la cellule est confiée à Djimtebaye Mahamat Mamadou Banadji.",
      " <strong>Update, 28 September 2026:</strong> the unit is now coordinated by Djimtebaye Mahamat Mamadou Banadji."),
+    # 01/10/2026 (registre 2026-31, proposition 3) : la cellule, vacante, est confiée à la trésorière élue, par intérim.
+    ("cellule-financement-ressources", "Financement &amp; ressources", "Funding &amp; Resources", "Financement & ressources", "Un appui à toutes les thématiques",
+     "Élisabeth Neloumngaye Ndodinguem, trésorière de l’association, par intérim", "&Eacute;lisabeth Neloumngaye Ndodinguem, treasurer of the association (interim)",
+     " <strong>Mise à jour du 1er octobre 2026&nbsp;:</strong> sur décision du bureau exécutif, la cellule est confiée par intérim à la trésorière élue, Élisabeth Neloumngaye Ndodinguem&nbsp;; l&rsquo;argent relève du bureau. La collecte reste suspendue jusqu&rsquo;aux trois conditions publiées.",
+     " <strong>Update, 1 October 2026:</strong> by decision of the executive board, the unit is entrusted, on an interim basis, to the elected treasurer, &Eacute;lisabeth Neloumngaye Ndodinguem; money is a matter for the board. Fundraising remains suspended."),
 ]
 
 
 # Coordinatrices parmi les NOMINATIONS : libellé « Coordonnatrice » (l'anglais « Coordinator » est neutre).
-COORDINATRICES = {"competences-entrepreneuriat-numerique", "entrepreneuriat-finance-inclusive"}
+COORDINATRICES = {"competences-entrepreneuriat-numerique", "entrepreneuriat-finance-inclusive", "cellule-financement-ressources"}
 def libelle_coord(anc: str) -> str:
     return "Coordonnatrice" if anc in COORDINATRICES else "Coordonnateur"
 
@@ -1397,6 +1405,207 @@ def structure_30_09(html: str, path: Path) -> str:
             html = re.sub(rx, rep, html)
     return html
 
+# ----------------------------------------------------------------------------
+# 01/10/2026 : le bureau exécutif adopte les huit propositions d'organisation (registre 2026-31,
+# /association/propositions-organisation). Ici, ce qui touche la source : le pôle II, Développement humain & moyens
+# d'existence, est scindé en deux — le pôle II, Services essentiels (07, 09, 10, 11, 12), et un pôle V, Économie,
+# territoire & risques (04, 05, 06, 08, 20, 21) ; aucune thématique n'est renumérotée. Les articles, le journal des
+# actualités et le journal des corrections, datés, gardent leur texte ; la charte d'identité (barre des quatre pôles)
+# reçoit une note. Appliqué après structure_30_09, avant comptes_courants.
+P2_FR, P5_FR = "Services essentiels", "Économie, territoire &amp; risques"
+P2_EN, P5_EN = "Essential Services", "Economy, Territory &amp; Risks"
+ANCIEN_P2 = ("Développement humain &amp; moyens d’existence", "Développement humain &amp; moyens d&rsquo;existence",
+             "D&eacute;veloppement humain &amp; moyens d&rsquo;existence", "D&eacute;veloppement humain &amp; moyens d’existence")
+VERS_P5 = ["agriculture-elevage-securite-alimentaire", "entrepreneuriat-finance-inclusive", "environnement-ressources",
+           "desenclavement-urbanisation", "urgences-risques", "energie"]
+NUMS_P5 = ["04", "05", "06", "08", "20", "21"]
+NOTE_P5_FR = (" <strong>Mise à jour du 1er octobre 2026&nbsp;:</strong> la thématique passe au nouveau pôle V, Économie, "
+              "territoire &amp; risques, issu du partage du pôle Développement humain &amp; moyens d&rsquo;existence&nbsp;; "
+              "son numéro ne change pas.")
+NOTE_P5_EN = (" <strong>Update, 1 October 2026:</strong> the theme moves to the new Pillar V, Economy, Territory &amp; Risks, "
+              "split from the Human Development &amp; Livelihoods pillar; its number does not change.")
+PROSE_P5_EN = ('<p class="prose-note">Earning a living, the land and its risks: farming, business, environment, roads, energy and '
+               'emergencies in B&eacute;djondo. Pillar Vice-President (elected): post open &mdash; <a href="contact.html">write to us</a>.</p>')
+NOTE_IDENTITE_01_10 = ('<p class="prose-note"><strong>Mise à jour du 1er octobre 2026&nbsp;:</strong> l&rsquo;association compte '
+                       'désormais cinq pôles&nbsp;; le pôle II s&rsquo;appelle Services essentiels, et le pôle V, Économie, '
+                       'territoire &amp; risques, n&rsquo;a pas encore de couleur propre dans la charte.</p>')
+COMPTES_RE_01_10 = [
+    (r"\bquatre(\s+|&nbsp;)p(ô|&ocirc;)les", r"cinq\1p\2les"),
+    (r"\bQuatre(\s+|&nbsp;)p(ô|&ocirc;)les", r"Cinq\1p\2les"),
+    (r"\b4(\s+|&nbsp;)p(ô|&ocirc;)les", r"5\1p\2les"),
+    (r"\bfour(\s+)(pillars|poles)", r"five\1\2"),
+    (r"\bFour(\s+)(pillars|poles)", r"Five\1\2"),
+    (r"\b4(\s+)(pillars|poles)", r"5\1\2"),
+]
+# phrases datées ou qui décrivent la charte : protégées des remplacements ci-dessus
+_GARDES_01_10 = ["barre des quatre p", "portés à quatre pôles", "quatre pôles et dix-neuf", "quatre pôles et dix-huit",
+                 "quatre p&ocirc;les et dix-huit", "quatre pôles et vingt thématiques"]
+
+
+def _articles(sec: str):
+    """(début, fin, texte) de chaque <article>…</article> de la section (non imbriqués)."""
+    out, i = [], 0
+    while True:
+        a = sec.find("<article", i)
+        if a < 0:
+            return out
+        b = sec.find("</article>", a) + len("</article>")
+        out.append((a, b, sec[a:b]))
+        i = b
+
+
+def _sans(sec: str, garder) -> str:
+    """La section sans les cartes que garder() refuse (et sans l'espace qui les précède)."""
+    for a, b, art in reversed(_articles(sec)):
+        if not garder(art):
+            debut = a
+            while debut > 0 and sec[debut - 1] in " \n":
+                debut -= 1
+            sec = sec[:debut] + sec[b:]
+    return sec
+
+
+def _noter(art: str, note: str) -> str:
+    """Ajoute la note à la fin de la description de la carte (premier <p> après la coordination)."""
+    if "1er octobre 2026" in art or "1 October 2026" in art:
+        return art
+    c = art.find('<p class="coord">')
+    j = art.find("<p>", c + 1 if c >= 0 else 0)
+    k = art.find("</p>", j)
+    return art[:k] + note + art[k:] if j > 0 and k > 0 else art
+
+
+def scinder_pole_2(html: str, debut_sec: int, est_v, tete, note: str, avant: str) -> str:
+    fin_sec = html.find("</section>", debut_sec) + len("</section>")
+    sec = html[debut_sec:fin_sec]
+    p2 = _sans(sec, lambda a: not est_v(a))
+    p5 = _sans(sec, est_v)
+    for a, b, art in reversed(_articles(p5)):
+        p5 = p5[:a] + _noter(art, note) + p5[b:]
+    p5 = re.sub(r'<div class="pole-odd-sum">.*?</div>\s*', "", p5, count=1, flags=re.S)
+    p5 = tete(p5)
+    html = html[:debut_sec] + p2 + html[fin_sec:]
+    k = html.find(avant)          # le pôle V se place avant la section qui contient ce repère (les cellules)
+    if k < 0:
+        print(f"structure_01_10 : repère introuvable pour le pôle V ({avant[:40]})")
+        return html
+    k = html.rfind("<section", 0, k + len("<section"))
+    return html[:k] + p5 + "\n\n  " + html[k:]
+
+
+def structure_01_10(html: str, path: Path) -> str:
+    if "articles" in path.parts:
+        return html
+    nom = path.name
+    est_en = "en" in path.parts
+    # 1. le pôle II scindé, là où les pôles ont leurs sections (cartes avec identifiant, ou numéro en anglais)
+    if nom in ("poles.html", "suivi.html") and 'id="pole-5"' not in html:
+        m = re.search(r'<section class="[^"]*pole-group[^"]*" id="pole-2"', html)
+        if m:
+            def tete_fr(sec):
+                sec = sec.replace('id="pole-2"', 'id="pole-5"').replace('data-group="2"', 'data-group="5"')
+                sec = sec.replace('<div class="eyebrow">Pôle II</div>', '<div class="eyebrow">Pôle V</div>')
+                for a in ANCIEN_P2:
+                    sec = sec.replace(f"<h2>{a}</h2>", f"<h2>{P5_FR}</h2>")
+                return sec
+            html = scinder_pole_2(html, m.start(), lambda a: any(f'id="{i}"' in a for i in VERS_P5), tete_fr, NOTE_P5_FR,
+                                  'id="cellules"' if nom == "poles.html" else '<section id="priorites">')
+    if nom == "themes.html" and est_en and "Pillar V<" not in html:
+        i = html.find('<div class="eyebrow">Pillar II</div>')
+        d = html.rfind("<section", 0, i)
+        if i > 0:
+            def tete_en(sec):
+                sec = sec.replace('<div class="eyebrow">Pillar II</div>', '<div class="eyebrow">Pillar V</div>')
+                sec = re.sub(r'<p class="prose-note">Everyday life and the future:.*?</p>', PROSE_P5_EN, sec, count=1, flags=re.S)
+                return sec.replace("<h2>Human Development &amp; Livelihoods</h2>", f"<h2>{P5_EN}</h2>")
+            html = scinder_pole_2(html, d, lambda a: any(f'<span class="pole-num">THEME {n}</span>' in a for n in NUMS_P5),
+                                  tete_en, NOTE_P5_EN, "<h2>Support to every theme</h2>")
+    # 2. le pôle de chaque thématique déplacée, puis le nouveau nom du pôle II
+    for anc in VERS_P5:
+        html = re.sub(rf'(<a class="coord-row" href="poles\.html#{anc}">(?:(?!</a>).)*?<span class="coord-pole">)[^<]*(</span>)',
+                      rf"\g<1>{P5_FR}\2", html, flags=re.S)
+    html = re.sub(r'"pole": "Pôle II · Thématique (04|05|06|08|20|21)"', r'"pole": "Pôle V · Thématique \1"', html)
+    if nom == "mission.html":
+        html = html.replace('<a href="poles.html#pole-2">Pôle II &mdash; Développement humain &amp; moyens d’existence</a>, le plus vaste des quatre,',
+                            f'<a href="poles.html#pole-2">Pôle II &mdash; {P2_FR}</a> et du <a href="poles.html#pole-5">Pôle V &mdash; {P5_FR}</a>, '
+                            'nés le 1er octobre 2026 du partage de l&rsquo;ancien pôle Développement humain &amp; moyens d&rsquo;existence,')
+        html = html.replace("thématiques dans les semaines qui suivent.", "thématiques dans les semaines qui suivent, puis à cinq pôles le 1er octobre 2026.", 1)
+    if nom == "contact.html":
+        html = html.replace("P&ocirc;le II &middot; 11 th&eacute;matiques</span>\n          <h3>D&eacute;veloppement humain &amp; moyens d&rsquo;existence</h3>\n          <p>Agriculture, eau, sant&eacute;, jeunesse, femmes et inclusion.</p>",
+                            "P&ocirc;le II &middot; 5 th&eacute;matiques</span>\n          <h3>Services essentiels</h3>\n          <p>Eau, &eacute;cole, sant&eacute;, femmes, enfance et protection sociale.</p>")
+        i = html.find('<a class="pole-card action-tile" href="poles.html#pole-4">')
+        k = html.find("</a>", i) + len("</a>")
+        if i > 0 and "poles.html#pole-5" not in html:
+            tuile = ('\n        <a class="pole-card action-tile" href="poles.html#pole-5">\n          <span class="action-icon"><svg viewBox="0 0 24 24" fill="none" '
+                     'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M5 20V10l4-3 4 3v10"/>'
+                     '<path d="M13 20v-6h6v6"/><path d="M9 13v2"/></svg></span>\n          <span class="pole-num">P&ocirc;le V &middot; 6 th&eacute;matiques</span>\n'
+                     '          <h3>&Eacute;conomie, territoire &amp; risques</h3>\n          <p>Agriculture, entreprises, environnement, routes, &eacute;nergie et urgences.</p>\n        </a>')
+            html = html[:k] + tuile + html[k:]
+        html = html.replace("Direction d’un pôle — rang de chef de projet", "Vice-présidence d’un pôle — fonction élue")
+        html = html.replace("<option>Direction du pôle II — Développement humain &amp; moyens d’existence</option>",
+                            f"<option>Direction du pôle II — {P2_FR}</option>")
+        html = html.replace("<option>Direction du pôle IV — Numérique &amp; innovation</option>\n",
+                            f"<option>Direction du pôle IV — Numérique &amp; innovation</option>\n                  <option>Direction du pôle V — {P5_FR}</option>\n", 1)
+        html = html.replace("<option>Direction du pôle ", "<option>Vice-présidence du pôle ")
+        html = html.replace("<label for=\"pole\">Thématique, ou direction d’un pôle</label>", "<label for=\"pole\">Thématique, ou vice-présidence d’un pôle</label>")
+        # listes de thématiques : un groupe « Pôle V » après le pôle IV
+        def groupes(m):
+            bloc, ind = m.group(0), m.group(1)
+            opts = re.findall(r"\s*<option>(?:04|05|06|08|20|21)\. [^<]*</option>", bloc)
+            for o in opts:
+                bloc = bloc.replace(o, "", 1)
+            return bloc, ind, opts
+        for m in list(re.finditer(r'(\s*)<optgroup label="Pôle II — Développement humain &amp; moyens d’existence">.*?</optgroup>', html, flags=re.S))[::-1]:
+            bloc, ind, opts = groupes(m)
+            bloc = bloc.replace("Développement humain &amp; moyens d’existence", P2_FR)
+            html = html[:m.start()] + bloc + html[m.end():]
+            j = html.find('<optgroup label="Pôle IV', m.start())
+            j = html.find("</optgroup>", j) + len("</optgroup>")
+            html = html[:j] + f'{ind}<optgroup label="Pôle V — {P5_FR}">' + "".join(opts) + f"{ind}</optgroup>" + html[j:]
+    for a in ANCIEN_P2:
+        html = html.replace(f"<h2>{a}</h2>", f"<h2>{P2_FR}</h2>")
+        html = html.replace(f'<span class="coord-pole">{a}</span>', f'<span class="coord-pole">{P2_FR}</span>')
+        html = html.replace(f"Pôle II &mdash; {a}</button>", f"Pôle II &mdash; {P2_FR}</button>")
+        html = html.replace(f'<a href="#pole-2">{a}</a>', f'<a href="#pole-2">{P2_FR}</a>')
+    if nom == "poles.html" and 'data-filter="5"' not in html:
+        html = html.replace('aria-controls="pole-1 pole-2 pole-3 pole-4 cellules"', 'aria-controls="pole-1 pole-2 pole-3 pole-4 pole-5 cellules"')
+        i = html.find('data-filter="4" aria-controls="pole-4">')
+        k = html.find("</button>", i) + len("</button>")
+        if i > 0:
+            html = html[:k] + f'\n      <button class="filter-tab" type="button" role="tab" aria-selected="false" data-filter="5" aria-controls="pole-5">Pôle V &mdash; {P5_FR}</button>' + html[k:]
+        i = html.find('<li><a href="#pole-4">')
+        k = html.find("</li>", i) + len("</li>")
+        if i > 0:
+            html = html[:k] + f'<li><a href="#pole-5">{P5_FR}</a></li>' + html[k:]
+    if est_en:
+        html = re.sub(r'<p class="prose-note">Everyday life and the future: feeding, treating, teaching, connecting and doing business in B&eacute;djondo\.',
+                      '<p class="prose-note">Essential services: water and sanitation, school, health, women and social protection in B&eacute;djondo.', html)
+        html = html.replace("Pillar Lead (programme-manager level):", "Pillar Vice-President (elected):")
+        html = html.replace("lead one of the pillars still without a Pillar Lead (programme-manager level; posts created on 28 September 2026, see the themes page),",
+                            "stand for election as Vice-President of one of the pillars still without one (see the themes page),")
+        html = html.replace("<h3>II &mdash; Human Development &amp; Livelihoods</h3>", f"<h3>II &mdash; {P2_EN} &middot; V &mdash; {P5_EN}</h3>")
+        html = html.replace("Human Development &amp; Livelihoods; Governance", f"{P2_EN}; Governance")
+        html = html.replace("Digital &amp; Innovation), twenty-one themes", f"Digital &amp; Innovation; {P5_EN}), twenty-one themes")
+        html = html.replace("<h3>II — Human Development &amp; Livelihoods</h3>", f"<h3>II — {P2_EN} · V — {P5_EN}</h3>")
+        html = html.replace("<h2>Human Development &amp; Livelihoods</h2>", f"<h2>{P2_EN}</h2>")
+    # 3. comptes : quatre pôles → cinq (hors textes datés et charte)
+    if nom == "redevabilite.html":
+        html = html.replace("vingt et une depuis le 30 septembre) r&eacute;parties en quatre p&ocirc;les,",
+                            "vingt et une depuis le 30 septembre) r&eacute;parties en quatre p&ocirc;les (cinq depuis le 1er octobre 2026),")
+    elif nom == "identite-visuelle.html":
+        if NOTE_IDENTITE_01_10 not in html:
+            html = html.replace("<h3>Les quatre p&ocirc;les</h3>", "<h3>Les quatre p&ocirc;les</h3>\n" + NOTE_IDENTITE_01_10, 1)
+        html = html.replace("P&ocirc;le II, D&eacute;veloppement humain &middot;", "P&ocirc;le II, Services essentiels (D&eacute;veloppement humain jusqu&rsquo;au 1er octobre 2026) &middot;")
+    elif nom != "actualites.html":
+        for i, g in enumerate(_GARDES_01_10):
+            html = html.replace(g, f"@@G{i}@@")
+        for rx, rep_ in COMPTES_RE_01_10:
+            html = re.sub(rx, rep_, html)
+        for i, g in enumerate(_GARDES_01_10):
+            html = html.replace(f"@@G{i}@@", g)
+    return html
+
+
 def lire_source(path: Path) -> str:
     """Lit un fichier de l'ancien site en y appliquant les mises à jour de source."""
     html = path.read_text(encoding="utf-8")
@@ -1411,7 +1620,7 @@ def lire_source(path: Path) -> str:
         k = html.find("</p>", j)
         if j > 0 and k > 0:
             html = html[:k] + note + html[k:]
-    html = structure_30_09(corrections_revue(structure_29_09(html, path), path), path)
+    html = structure_01_10(structure_30_09(corrections_revue(structure_29_09(html, path), path), path), path)
     if path.name == "kit-mobilisation.html":
         html = kit_liens(html)
     return html if "articles" in path.parts else comptes_courants(html)

@@ -12,9 +12,10 @@ import { RESUME_PROPOSITIONS } from "@/lib/gouvernance-locale";
 /* Description propre à l'accueil : celle du gabarit (components/root-shell.tsx) dépasse 160 caractères ;
    l'aperçu de partage (openGraph) reste celui du gabarit, complet et à jour. */
 const nbThemes = thematiqueCount(getIndex());
+const nbPoles = getIndex().structure.poles.length;
 const nbPlaidoyers = getIndicateurs().contenu.plaidoyers.publies;
 export const metadata: Metadata = {
-  description: `L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : quatre pôles, ${enLettres(nbThemes)} thématiques, ${enLettres(nbPlaidoyers)} dossiers de plaidoyer.`,
+  description: `L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : ${enLettres(nbPoles)} pôles, ${enLettres(nbThemes)} thématiques, ${enLettres(nbPlaidoyers)} dossiers de plaidoyer.`,
   alternates: { canonical: "/", languages: alternatesLangues("/") },
 };
 
@@ -24,9 +25,9 @@ const values = [
   ["03", "Héritage", "Préserver et transmettre ce que la communauté bedjond a construit, pour que les générations futures le reçoivent renforcé."],
 ]
 
-/* Postes ouverts, comptés dans content/index.json : thématiques, cellules transversales, directions de pôle. */
+/* Postes ouverts, comptés dans content/index.json : thématiques, cellules transversales, vice-présidences de pôle. */
 const postesOuverts = (vacantes: number, cellules: number, directions: number) =>
-  `${enLettres(vacantes, true)} thématique${vacantes > 1 ? "s" : ""}${cellules ? ` et ${cellules > 1 ? `${enLettres(cellules)} cellules transversales` : "une cellule transversale"}` : ""} cherchent leur coordonnateur${directions ? ` ; ${directions === 4 ? "les quatre directions de pôle sont" : directions > 1 ? `${enLettres(directions)} directions de pôle sur quatre sont` : "une direction de pôle sur quatre est"} à pourvoir` : ""}.`;
+  `${enLettres(vacantes, true)} thématique${vacantes > 1 ? "s" : ""}${cellules ? ` et ${cellules > 1 ? `${enLettres(cellules)} cellules transversales` : "une cellule transversale"}` : ""} cherchent leur coordonnateur${directions ? ` ; ${directions === nbPoles ? `les ${enLettres(nbPoles)} vice-présidences de pôle sont` : directions > 1 ? `${enLettres(directions)} vice-présidences de pôle sur ${enLettres(nbPoles)} sont` : `une vice-présidence de pôle sur ${enLettres(nbPoles)} est`} à pourvoir, par élection` : ""}.`;
 const participer = (vacantes: number, cellules: number, directions: number) => [
   ["01", "Rejoindre ou coordonner une thématique", `${postesOuverts(vacantes, cellules, directions)} Une compétence ponctuelle suffit souvent à faire avancer un dossier déjà prêt.`, "/participer?coordo=1#contact"],
   ["02", "Adhérer à l’association", "Déclarer son intention d’adhérer n’engage aucun argent : la collecte est suspendue jusqu’à l’ouverture d’un compte au nom de l’association.", "/participer#adherer"],
@@ -57,7 +58,7 @@ export default function Home() {
             <h1 id="hero-title">Construire aujourd’hui.<br /><em>Transmettre demain.</em></h1>
             <p className="hero-text">
               ADEB LONODJI est l’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond.
-              Reconnue en 1995 — mise en conformité avec l’ordonnance de 2018 en vérification —, remise en mouvement en 2026 : quatre pôles, {enLettres(total)} thématiques, {enLettres(indicateurs.contenu.plaidoyers.publies)} dossiers de plaidoyer publiés — l’eau, l’électricité, le haut débit, la santé, l’école, la formation professionnelle, les routes, et une note à la commune — et un territoire cartographié village par village.
+              Reconnue en 1995 — mise en conformité avec l’ordonnance de 2018 en vérification —, remise en mouvement en 2026 : {enLettres(idx.structure.poles.length)} pôles, {enLettres(total)} thématiques, {enLettres(indicateurs.contenu.plaidoyers.publies)} dossiers de plaidoyer publiés — l’eau, l’électricité, le haut débit, la santé, l’école, la formation professionnelle, les routes, et une note à la commune — et un territoire cartographié village par village.
             </p>
             <div className="hero-actions">
               <Link className="button primary" href="/programmes">Découvrir nos actions <span aria-hidden="true">→</span></Link>
@@ -138,16 +139,16 @@ export default function Home() {
           <div className="section-head">
             <div>
               <p className="eyebrow">Nos actions</p>
-              <h2 id="programmes-title">Quatre pôles.<br /><em>{enLettres(total, true)} thématiques.</em></h2>
+              <h2 id="programmes-title">{enLettres(idx.structure.poles.length, true)} pôles.<br /><em>{enLettres(total, true)} thématiques.</em></h2>
             </div>
             <p>
-              Chaque pôle sera dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ({dir.pourvues ? `${enLettres(dir.pourvues)} direction${dir.pourvues > 1 ? "s" : ""} pourvue${dir.pourvues > 1 ? "s" : ""}, ${enLettres(dir.total - dir.pourvues)} à pourvoir` : "les quatre postes sont à pourvoir"}) ; chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte publiquement. Deux cellules transversales — financement et communication — appuient l’ensemble.
+              Chaque pôle a une vice-présidence élue ({dir.pourvues ? `${enLettres(dir.pourvues)} pourvue${dir.pourvues > 1 ? "s" : ""}, ${enLettres(dir.total - dir.pourvues)} à pourvoir` : "toutes à pourvoir"}) ; chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte publiquement. Sept thématiques sont prioritaires depuis le 1er octobre 2026 : celles de nos huit dossiers de plaidoyer. Deux cellules transversales — financement et communication — appuient l’ensemble.
             </p>
           </div>
           <div className="program-grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))" }}>
             {idx.structure.poles.map((pole) => (
               <Link className="program-card" href={`/programmes#${pole.id}`} key={pole.id}>
-                <div className="card-top card-top--pile"><span>Pôle {pole.roman}</span><small>{pole.items.filter((t) => t.filled).length}/{pole.items.length} pourvues{pole.direction ? (pole.direction.filled ? " · direction pourvue" : " · direction à pourvoir") : ""}</small></div>
+                <div className="card-top card-top--pile"><span>Pôle {pole.roman}</span><small>{pole.items.filter((t) => t.filled).length}/{pole.items.length} pourvues{pole.direction ? (pole.direction.filled ? " · vice-présidence pourvue" : " · vice-présidence à pourvoir") : ""}</small></div>
                 <div className="program-body">
                   <h3 style={{ fontSize: 28 }}>{pole.name}</h3>
                   <p>{pole.items.slice(0, 3).map((t) => t.name).join(" · ")}{pole.items.length > 4 ? ` · et ${pole.items.length - 3} autres thématiques` : pole.items.length === 4 ? " · et 1 autre thématique" : ""}</p>

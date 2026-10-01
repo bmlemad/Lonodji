@@ -1,5 +1,5 @@
 {
- "genere": "2026-09-30T20:23:36Z",
+ "genere": "2026-10-01T07:43:44Z",
  "contenu": {
   "plaidoyers": {
    "publies": 8,
@@ -9,10 +9,10 @@
   "coordinations": {
    "pourvues": 16,
    "total": 21,
-   "cellulesPourvues": 1,
+   "cellulesPourvues": 2,
    "cellulesTotal": 2,
    "directionsPourvues": 2,
-   "directionsTotal": 4
+   "directionsTotal": 5
   },
   "articles": 43,
   "premierArticle": "2026-09-11",
@@ -35,7 +35,7 @@
    "localites": 1259,
    "localitesNommees": 966,
    "equipements": 24,
-   "genere": "2026-09-30"
+   "genere": "2026-10-01"
   },
   "pages": 45,
   "projets": {

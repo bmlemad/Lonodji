@@ -33,9 +33,9 @@ function cartesDuPlan(d: Indicateurs, f: Releve): Carte[] {
   const vacantes = c.coordinations.total - c.coordinations.pourvues;
   const cellulesVacantes = c.coordinations.cellulesTotal - c.coordinations.cellulesPourvues;
   const dirVacantes = c.coordinations.directionsTotal - c.coordinations.directionsPourvues;
-  const dirTexte = dirVacantes === 0 ? "chaque pôle a sa direction (rang de chef de projet)"
-    : dirVacantes === c.coordinations.directionsTotal ? `les ${n(dirVacantes)} directions de pôle (rang de chef de projet) sont à pourvoir`
-    : `${dirVacantes > 1 ? `${n(dirVacantes)} directions` : "une direction"} de pôle sur ${n(c.coordinations.directionsTotal)} (rang de chef de projet) ${dirVacantes > 1 ? "sont" : "est"} à pourvoir`;
+  const dirTexte = dirVacantes === 0 ? "chaque pôle a sa vice-présidence"
+    : dirVacantes === c.coordinations.directionsTotal ? `les ${n(dirVacantes)} vice-présidences de pôle sont à pourvoir, par élection`
+    : `${dirVacantes > 1 ? `${n(dirVacantes)} vice-présidences` : "une vice-présidence"} de pôle sur ${n(c.coordinations.directionsTotal)} ${dirVacantes > 1 ? "sont" : "est"} à pourvoir, par élection`;
   const actif = c.projets.liste.find((p) => p.stade === "essai" || p.stade === "realisation" || p.stade === "service");
   return [
     {

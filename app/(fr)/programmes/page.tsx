@@ -9,13 +9,14 @@ import { directionsCount, enLettres, filledCount, getIndex, getPage, ogFor, pick
 import Partager from "@/components/partager";
 import OuvrirAncre from "@/components/ouvrir-ancre";
 import { programmesUtilesDe } from "@/lib/bailleurs";
+import { PRIORITAIRES } from "@/lib/organisation";
 
 const partenairesDe = (id: string) => programmesUtilesDe(id).map((p) => ({ id: p.id, nom: p.nom.split(" — ")[0], proche: ["bedjondo", "koumra", "mandoul"].includes(p.portee) }));
 
 /* nombre de thématiques et de cellules, comptés dans content/index.json */
-const NB = (() => { const i = getIndex(); return { them: enLettres(thematiqueCount(i)), cell: enLettres(i.structure.cellules?.items.length ?? 0) }; })();
-const TITRE = `Nos actions — quatre pôles, ${NB.them} thématiques`;
-const DESCRIPTION = `Quatre pôles, ${NB.them} thématiques et ${NB.cell} cellules transversales : coordonnateurs, objectifs et Objectifs de développement durable associés.`;
+const NB = (() => { const i = getIndex(); return { poles: enLettres(i.structure.poles.length), Poles: enLettres(i.structure.poles.length, true), them: enLettres(thematiqueCount(i)), cell: enLettres(i.structure.cellules?.items.length ?? 0) }; })();
+const TITRE = `Nos actions — ${NB.poles} pôles, ${NB.them} thématiques`;
+const DESCRIPTION = `${NB.Poles} pôles, ${NB.them} thématiques et ${NB.cell} cellules transversales : coordonnateurs, thématiques prioritaires, objectifs et Objectifs de développement durable associés.`;
 
 export const metadata: Metadata = {
   title: TITRE,
@@ -37,17 +38,17 @@ export default function Programmes() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", "@graph": [webPageSchema({ url: "/programmes", name: TITRE, description: DESCRIPTION }), breadcrumbSchema([{ name: "Accueil", url: "/" }, { name: "Nos actions" }], "/programmes")] }) }} />
       <PageHeader
         eyebrow="Nos actions · pôles & thématiques"
-        title="Quatre pôles,"
+        title={`${NB.Poles} pôles,`}
         em={`${NB.them} thématiques.`}
-        lead={`Les Chantiers ADEB LONODJI : chaque pôle sera dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ; chaque thématique est animée par un coordonnateur ou une coordonnatrice, avance à son rythme et rend compte ici. ${enLettres(filled, true)} thématiques sont pourvues ; ${enLettres(total - filled)} cherchent encore la personne qui les portera, ${dir.pourvues === dir.total ? "et chaque pôle a sa direction." : dir.pourvues ? (dir.total - dir.pourvues > 1 ? `et ${enLettres(dir.total - dir.pourvues)} directions de pôle sur ${enLettres(dir.total)} sont à pourvoir.` : `et une direction de pôle sur ${enLettres(dir.total)} est à pourvoir.`) : `et les ${enLettres(dir.total)} directions de pôle sont à pourvoir.`}`}
+        lead={`Les Chantiers ADEB LONODJI : chaque pôle a une vice-présidence, pourvue par élection ; chaque thématique est animée par un coordonnateur ou une coordonnatrice, avance à son rythme et rend compte ici. Depuis le 1er octobre 2026, sept thématiques sont prioritaires. ${enLettres(filled, true)} thématiques sont pourvues ; ${enLettres(total - filled)} cherchent encore la personne qui les portera, ${dir.pourvues === dir.total ? "et chaque pôle a sa vice-présidence." : dir.pourvues ? (dir.total - dir.pourvues > 1 ? `et ${enLettres(dir.total - dir.pourvues)} vice-présidences de pôle sur ${enLettres(dir.total)} sont à pourvoir.` : `et une vice-présidence de pôle sur ${enLettres(dir.total)} est à pourvoir.`) : `et les ${enLettres(dir.total)} vice-présidences de pôle sont à pourvoir.`}`}
       />
       <VuesThematiques active="poles" />
       <Stats items={[
-        { value: String(poles.length), label: "pôles d’action", note: "Mémoire · Développement · Gouvernance · Numérique" },
-        { value: String(total), label: "thématiques", note: "+ 2 cellules transversales" },
+        { value: String(poles.length), label: "pôles d’action", note: poles.map((p) => p.name.split(/[ ,]/)[0]).join(" · ") },
+        { value: String(total), label: "thématiques", note: `dont ${PRIORITAIRES.length} prioritaires · + ${cellules?.items.length ?? 0} cellules` },
         { value: String(filled), label: "pourvues", note: `${Math.round((filled / total) * 100)} % des thématiques` },
         { value: String(total - filled), label: "à pourvoir", note: "candidatures ouvertes à tout membre" },
-        { value: `${dir.pourvues}/${dir.total}`, label: "directions de pôle", note: `rang de chef de projet · ${dir.total - dir.pourvues} à pourvoir` },
+        { value: `${dir.pourvues}/${dir.total}`, label: "vice-présidences de pôle", note: `fonction élue · ${dir.total - dir.pourvues} à pourvoir` },
       ]} />
       <div className="section-actions" style={{ justifyContent: "flex-start", marginBottom: 40 }}>
         <Link className="button primary" href="/participer?coordo=1#contact">Proposer ma candidature <span aria-hidden="true">→</span></Link>
@@ -69,7 +70,7 @@ export default function Programmes() {
                 {pole.direction ? (
                   <p className="pole-direction">
                     <span className={pole.direction.filled ? "status" : "status status--vacant"}>{pole.direction.filled ? "Pourvue" : "À pourvoir"}</span>
-                    <span><strong>Direction du pôle</strong> · {pole.direction.rang} · {pole.direction.filled ? pole.direction.name : <Link href={`/participer?direction=${pole.roman}&coordo=1#contact`}>candidater à la direction de ce pôle</Link>} · <a href={`/missions/fiche-mission-direction-${pole.id}.pdf`} download>fiche de mission (PDF) ↓</a></span>
+                    <span><strong>Vice-présidence du pôle</strong> · {pole.direction.filled ? pole.direction.name : <Link href={`/participer?direction=${pole.roman}&coordo=1#contact`}>à pourvoir par élection : se porter candidat</Link>} · <a href={`/missions/fiche-mission-direction-${pole.id}.pdf`} download>fiche de mission (PDF) ↓</a></span>
                   </p>
                 ) : null}
               </div>
@@ -93,12 +94,15 @@ export default function Programmes() {
       </div>
 
       <section className="hub-section" id="propositions-organisation">
-        <SectionHead eyebrow="À décider par le bureau" title="Sept thématiques prioritaires," em="proposées le 1er octobre 2026." text="Comparée à dix organisations, notre structure compte bien plus de sujets que d’habitude, chacun porté par une seule personne. Huit propositions sont soumises au bureau : n’avoir que quelques thématiques prioritaires à la fois — d’abord les sept qui portent nos huit dossiers de plaidoyer —, rééquilibrer le pôle II, confier la cellule Financement au bureau, et d’autres. Rien ne change ici avant sa décision." />
-        <p className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="text-link" href="/association/propositions-organisation">Lire les huit propositions <span aria-hidden="true">→</span></Link></p>
+        <SectionHead eyebrow="Décidé le 1er octobre 2026" title="Sept thématiques prioritaires," em="et une organisation resserrée." text="Comparée à dix organisations, notre structure comptait bien plus de sujets que d’habitude, chacun porté par une seule personne. Le bureau exécutif a adopté huit décisions : le pôle II scindé en deux (d’où le pôle V), sept thématiques prioritaires — celles de nos huit dossiers de plaidoyer —, chacune avec un titulaire et un adjoint, une personne par thématique, des vice-présidences de pôle élues, la cellule Financement confiée à la trésorière par intérim, le suivi et la redevabilité confiés au secrétariat général, et une seule grille de pilotage." />
+        <ul className="prio-liste">
+          {PRIORITAIRES.map((p) => { const t = poles.flatMap((x) => x.items).find((x) => x.id === p.id); return t ? <li key={p.id}><a href={`#${t.id}`}><b>{t.number}</b> {t.name}</a></li> : null; })}
+        </ul>
+        <p className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="text-link" href="/association/propositions-organisation">Les huit décisions et leurs sources <span aria-hidden="true">→</span></Link></p>
       </section>
 
       <section className="hub-section" id="diriger-un-pole">
-        <SectionHead eyebrow="Diriger un pôle" title="Quatre directions de pôle," em="au rang de chef de projet." text={`Depuis le 28 septembre 2026, chaque pôle est doté d’une direction, distincte de la coordination des thématiques. Le directeur ou la directrice de pôle a rang de chef de projet : il anime les coordonnateurs de ses thématiques, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets qui en relèvent, et rend compte au bureau et à l’assemblée. Pour les partenaires internationaux, nous traduisons par « Pillar Lead » (niveau « Programme Manager ») : l’équivalent figure sur les fiches de mission et les pages anglaises. Les six « programmes » du projet ODEB sont autre chose : ils croisent les pôles. ${dir.total - dir.pourvues > 0 ? `${enLettres(dir.total - dir.pourvues, true)} des ${enLettres(dir.total)} postes restent à pourvoir et sont ouverts à tout membre` : `Les ${enLettres(dir.total)} postes sont pourvus`} ; chaque poste a sa fiche de mission en PDF, comme chaque thématique.`} />
+        <SectionHead eyebrow="Vice-présider un pôle" title={`${NB.Poles} vice-présidences de pôle,`} em="pourvues par élection." text={`Depuis le 1er octobre 2026, chaque pôle a une vice-présidence déléguée, distincte de la coordination des thématiques : une personne élue qui réunit les coordonnateurs du pôle chaque trimestre, tient son plan d’action et son calendrier, suit les plaidoyers et les projets qui en relèvent, et rend compte au bureau et à l’assemblée. Ces fonctions s’appelaient « directions de pôle, au rang de chef de projet » depuis le 28 septembre 2026 ; ce rang est réservé à la future ONG, quand elle aura des moyens, et les deux titulaires gardent leur fonction sous le nouvel intitulé. Pour les partenaires internationaux, nous traduisons par « Pillar Vice-President ». Une même personne ne coordonne qu’une thématique. ${dir.total - dir.pourvues > 0 ? `${enLettres(dir.total - dir.pourvues, true)} des ${enLettres(dir.total)} vice-présidences restent à pourvoir` : `Les ${enLettres(dir.total)} vice-présidences sont pourvues`} ; chaque fonction a sa fiche de mission en PDF, comme chaque thématique.`} />
         <p className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="text-link" href="/programmes/fiches-de-mission">Toutes les fiches de mission <span aria-hidden="true">→</span></Link></p>
       </section>
 

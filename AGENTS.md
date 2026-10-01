@@ -48,6 +48,10 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
 - Nommer un coordonnateur : une ligne dans `NOMINATIONS` (`scripts/import-legacy.py`) et une entrée dans
   `lib/decisions.ts`. Les phrases héritées qui comptent les coordinations (« quatre des vingt thématiques… »,
   « Sixteen themes out of twenty… ») sont recalculées à l'import (`comptes_courants`) : ne pas les corriger à la main.
+- Structure en vigueur depuis le 1er octobre 2026 : cinq pôles (le V issu du pôle II), vice-présidences de pôle élues
+  (plus « directions de pôle, rang de chef de projet »), sept thématiques prioritaires (`lib/organisation.ts`). Le
+  nombre de pôles se lit dans `content/index.json` ; s'il change encore, chercher aussi « cinq pôles », « 5 pôles » et
+  « five pillars », encore écrits en dur dans quelques libellés (menus, palette, manifeste, métadonnées).
 - `import-legacy.py` **efface et recrée** `public/documents`, `public/identite`, `public/kit`, `public/app`.
   Les fichiers propres au site vont dans `public/og`, `carte`, `odeb`, `icones`, `missions`, `lettres`, `notes`.
 - Après un import (qui lance lui-même `build-kit-adhesion.py`) : `build-dossier-presentation.py`, `build-carte.py`,

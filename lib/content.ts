@@ -157,7 +157,7 @@ export function pickSections(page: LegacyPage, opts: { only?: string[]; exclude?
 export const thematiqueCount = (idx: ContentIndex) => idx.structure.poles.reduce((n, p) => n + p.items.length, 0);
 
 export const filledCount = (idx: ContentIndex) => idx.structure.poles.reduce((n, p) => n + p.items.filter((t) => t.filled).length, 0);
-/* Directions de pôle (rang de chef de projet) : pourvues / total. */
+/* Vice-présidences de pôle (directions de pôle jusqu'au 01/10/2026) : pourvues / total. */
 export const directionsCount = (idx: ContentIndex) => ({ total: idx.structure.poles.filter((p) => p.direction).length, pourvues: idx.structure.poles.filter((p) => p.direction?.filled).length });
 /* Nombres en lettres (0 à 69), pour les phrases qui comptent thématiques, mesures, projets. */
 const LETTRES = ["zéro", "une", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf", "vingt"];

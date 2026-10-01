@@ -1,5 +1,6 @@
 import Link from "@/components/lien";
 import type { ArticleSummary, DocumentItem, Plaidoyer, Thematique } from "../lib/content";
+import { estPrioritaire } from "@/lib/organisation";
 import { secteursDeThematique } from "../lib/secteurs";
 
 /* Adresse du site pour les données structurées (pas d'import de lib/content : ce module sert aussi côté client). */
@@ -83,6 +84,7 @@ export function ThematiqueRow({ t, pole, partenaires }: { t: Thematique; pole?: 
       <span className="them-num">{t.kind === "cellule" ? "Cellule" : t.number}</span>
       <div className="them-body">
         <h3>{t.name}</h3>
+        {estPrioritaire(t.id) ? <p className="them-prio"><Link href="/association/propositions-organisation#prioritaires">Thématique prioritaire</Link> · titulaire et adjoint{t.filled ? <> · <Link href={`/participer?theme=${cle}&adjoint=1#contact`}>devenir adjoint</Link></> : null}</p> : null}
         <p className="them-coord">
           {t.filled ? <><b>{t.coordinatorLabel || "Coordination"} :</b> {t.coordinator}</> : <>Coordination à pourvoir — <Link href={`/participer?theme=${cle}&coordo=1#contact`}>{t.kind === "cellule" ? <>Rejoindre cette cellule <span aria-hidden="true">→</span></> : "proposer sa candidature"}</Link></>}
         </p>

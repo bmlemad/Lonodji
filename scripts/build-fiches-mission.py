@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Fiches de mission en PDF (A4) : les quatre directions de pôle, les vingt
+"""Fiches de mission en PDF (A4) : les vice-présidences de pôle (directions de
+pôle jusqu'au 1er octobre 2026), les vingt et une
 coordinations de thématique et les deux cellules transversales, dans
 public/missions/, plus un recueil complet. Tout le texte vient de
 content/index.json (structure importée du site) et des formulations déjà
@@ -41,19 +42,24 @@ og = charger("build_og", ROOT / "scripts" / "build-og.py")
 
 # Formulations du site, reprises telles quelles.
 DIRECTION_FAIT = [
-    "anime les coordonnateurs et coordonnatrices des thématiques de son pôle ;",
+    "réunit chaque trimestre les coordonnateurs et coordonnatrices des thématiques de son pôle ;",
     "tient le plan d’action et le calendrier du pôle ;",
     "suit les plaidoyers et les projets qui en relèvent ;",
     "rend compte au bureau et à l’assemblée.",
 ]
-DIRECTION_NOTE = "Il ou elle ne remplace pas les coordonnateurs : il les tient ensemble. La direction de pôle a rang de chef de projet ; elle est distincte de la coordination des thématiques et ouverte à tout membre (décision du 28 septembre 2026)."
+DIRECTION_NOTE = ("Il ou elle ne remplace pas les coordonnateurs : il les tient ensemble. La vice-présidence de pôle est une fonction élue, distincte de la coordination des thématiques ; "
+                  "créée le 28 septembre 2026 sous le nom de direction de pôle, au rang de chef de projet, elle a pris son nom actuel le 1er octobre 2026 (décision du bureau exécutif). "
+                  "Une même personne ne coordonne qu’une thématique.")
 COORDINATION_FAIT = [
     "réunit les membres intéressés par la thématique ;",
     "propose un plan d’action simple à la thématique ;",
     "fait avancer la thématique de manière autonome au quotidien, avec l’appui des deux cellules transversales si besoin ;",
     "rend compte de l’avancement lors des assemblées de l’association, devant l’ensemble des membres.",
 ]
-COORDINATION_NOTE = "Coordonner une thématique demande de la régularité ; contribuer ponctuellement est déjà précieux. Depuis le 28 septembre 2026, le coordonnateur ou la coordonnatrice travaille avec la direction de son pôle, qui tient le plan d’action et le calendrier de l’ensemble."
+COORDINATION_NOTE = "Coordonner une thématique demande de la régularité ; contribuer ponctuellement est déjà précieux. Le coordonnateur ou la coordonnatrice travaille avec la vice-présidence de son pôle, qui tient le plan d’action et le calendrier de l’ensemble ; une même personne ne coordonne qu’une thématique (décision du 1er octobre 2026)."
+# Thématiques prioritaires (décision du 1er octobre 2026, lib/organisation.ts PRIORITAIRES) : un titulaire et un adjoint.
+PRIORITAIRES = {"eau-energie-connectivite", "energie", "desenclavement-urbanisation", "sante-prevention", "jeunesse-reussite",
+                "transformation-numerique-services", "gouvernance-plaidoyer"}
 # Engagement commun à toutes les fiches : la charte de redevabilité (/transparence) exige déjà
 # la déclaration de tout intérêt personnel ou familial dans une décision.
 ENGAGEMENT = ("<b>Fonction bénévole.</b> La personne retenue s’engage à respecter la charte de redevabilité (lonodji.org/transparence), "
@@ -125,12 +131,12 @@ def fiche_direction(pole: dict, logo: str, jour: str) -> str:
     pourvu = d["filled"]
     them = "".join(f'<div class="carte"><b>{t["number"]} · {h.escape(t["name"])}</b><span>{"Coordination : " + h.escape(t["coordinator"]) if t["filled"] else "Coordination à pourvoir"}</span></div>' for t in pole["items"])
     url = f"{SITE}/participer?direction={pole['roman']}&coordo=1"
-    return f"""<section class="fiche">{entete(logo, jour, "Direction de pôle · rang de chef de projet · Pillar Lead")}
+    return f"""<section class="fiche">{entete(logo, jour, "Vice-présidence de pôle · fonction élue · Pillar Vice-President")}
 <p class="eyebrow">Pôle {pole['roman']} · {len(pole['items'])} thématiques</p>
-<h1>Direction du pôle {pole['roman']} — {h.escape(pole['name'])}<small>Directeur ou directrice de pôle, au rang de chef de projet — en anglais : Pillar Lead (programme-manager level)</small></h1>
+<h1>Vice-présidence du pôle {pole['roman']} — {h.escape(pole['name'])}<small>Vice-président délégué ou vice-présidente déléguée, pourvu par élection — en anglais : Pillar Vice-President</small></h1>
 <span class="etat{' pourvu' if pourvu else ''}">{'Pourvue : ' + h.escape(d['name']) if pourvu else 'À pourvoir'}</span>
-<h2>Ce que fait la direction du pôle</h2>
-<p>Le directeur ou la directrice de pôle :</p>
+<h2>Ce que fait la vice-présidence du pôle</h2>
+<p>Le vice-président délégué ou la vice-présidente déléguée :</p>
 <ul>{''.join(f'<li>{x}</li>' for x in DIRECTION_FAIT)}</ul>
 <p>{DIRECTION_NOTE}</p>
 <h2>Le périmètre : les thématiques du pôle</h2>
@@ -138,8 +144,8 @@ def fiche_direction(pole: dict, logo: str, jour: str) -> str:
 <h2>Comment cela se passe</h2>
 {etapes_html()}
 <p class="engagement">{ENGAGEMENT}</p>
-{candidater(url, "Candidater à la direction du pôle " + pole['roman'])}
-<p class="pied">Sources : page Nos actions (lonodji.org/programmes), article « Chaque pôle aura un directeur ou une directrice, au rang de chef de projet » du 28 septembre 2026, page Mission (comment l’association est organisée). Les coordinations indiquées sont celles publiées sur le site à la date de la fiche ; les nominations sont publiées, datées, dans le journal.</p>
+{candidater(url, "Se porter candidat à la vice-présidence du pôle " + pole['roman'])}
+<p class="pied">Sources : page Nos actions (lonodji.org/programmes), décisions d’organisation du 1er octobre 2026 (lonodji.org/association/propositions-organisation), article du 28 septembre 2026 sur les directions de pôle, page Mission (comment l’association est organisée). Les coordinations indiquées sont celles publiées sur le site à la date de la fiche ; les nominations sont publiées, datées, dans le journal.</p>
 </section>"""
 
 
@@ -150,13 +156,13 @@ def fiche_coordination(t: dict, pole: dict | None, logo: str, jour: str, cellule
     if cellule:
         url = f"{SITE}/participer#contact"
         kind, eyebrow, titre, sous = "Cellule transversale", "Cellule transversale · appui à toutes les thématiques", f"Cellule {h.escape(t['name'])}", "Coordonnateur ou coordonnatrice de la cellule"
-        direction = "<p>Les deux cellules transversales — Financement &amp; ressources, Communication &amp; numérique — appuient chacune des vingt et une thématiques et les quatre pôles.</p>"
+        direction = "<p>Les deux cellules transversales — Financement &amp; ressources, Communication &amp; numérique — appuient chacune des vingt et une thématiques et les cinq pôles.</p>"
     else:
         assert pole
         url = f"{SITE}/participer?theme={t['number']}&coordo=1"
         kind, eyebrow, titre, sous = "Coordination de thématique", f"Pôle {pole['roman']} · {h.escape(pole['name'])} · thématique {t['number']}", f"Coordination de la thématique {t['number']} — {h.escape(t['name'])}", "Coordonnateur ou coordonnatrice de thématique"
         d = pole["direction"]
-        direction = f"<p>La thématique relève du pôle {pole['roman']} ({h.escape(pole['name'])}), dont la direction est {('assurée par ' + h.escape(d['name'])) if d['filled'] else 'à pourvoir'} — rang de chef de projet.</p>"
+        direction = f"<p>La thématique relève du pôle {pole['roman']} ({h.escape(pole['name'])}), dont la vice-présidence est {('assurée par ' + h.escape(d['name'])) if d['filled'] else 'à pourvoir, par élection'}.</p>" + ("<p><b>Thématique prioritaire</b> depuis le 1er octobre 2026 : un titulaire et un adjoint ; l’adjoint est à trouver (lonodji.org/participer).</p>" if t['id'] in PRIORITAIRES else "")
     return f"""<section class="fiche">{entete(logo, jour, kind)}
 <p class="eyebrow">{eyebrow}</p>
 <h1>{titre}<small>{sous}</small></h1>

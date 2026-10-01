@@ -1,5 +1,5 @@
 {
- "genere": "2026-09-30",
+ "genere": "2026-10-01",
  "recueil": "/missions/fiches-de-mission-adeb-lonodji.pdf",
  "directions": [
   {
@@ -14,11 +14,11 @@
   {
    "pole": "pole-2",
    "roman": "II",
-   "nom": "Développement humain & moyens d’existence",
+   "nom": "Services essentiels",
    "pourvue": true,
    "qui": "Franco Joseph Ngarlena",
    "pdf": "/missions/fiche-mission-direction-pole-2.pdf",
-   "thematiques": 11
+   "thematiques": 5
   },
   {
    "pole": "pole-3",
@@ -37,6 +37,15 @@
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-direction-pole-4.pdf",
    "thematiques": 3
+  },
+  {
+   "pole": "pole-5",
+   "roman": "V",
+   "nom": "Économie, territoire & risques",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-direction-pole-5.pdf",
+   "thematiques": 6
   }
  ],
  "coordinations": [
@@ -71,61 +80,21 @@
    "pdf": "/missions/fiche-mission-coordination-savoirs-innovation.pdf"
   },
   {
-   "id": "agriculture-elevage-securite-alimentaire",
-   "numero": "04",
-   "nom": "Agriculture, élevage & sécurité alimentaire",
-   "pole": "II",
-   "poleNom": "Développement humain & moyens d’existence",
-   "pourvue": true,
-   "qui": "Olivier Allaramadji Nomaye, ingénieur agroéconomiste",
-   "pdf": "/missions/fiche-mission-coordination-agriculture-elevage-securite-alimentaire.pdf"
-  },
-  {
-   "id": "entrepreneuriat-finance-inclusive",
-   "numero": "05",
-   "nom": "Entrepreneuriat & finance inclusive",
-   "pole": "II",
-   "poleNom": "Développement humain & moyens d’existence",
-   "pourvue": true,
-   "qui": "Tamar Neloum DOUMANBE",
-   "pdf": "/missions/fiche-mission-coordination-entrepreneuriat-finance-inclusive.pdf"
-  },
-  {
-   "id": "environnement-ressources",
-   "numero": "06",
-   "nom": "Environnement, climat & ressources naturelles",
-   "pole": "II",
-   "poleNom": "Développement humain & moyens d’existence",
-   "pourvue": false,
-   "qui": "à pourvoir",
-   "pdf": "/missions/fiche-mission-coordination-environnement-ressources.pdf"
-  },
-  {
    "id": "eau-energie-connectivite",
    "numero": "07",
    "nom": "Eau, assainissement & hygiène",
    "pole": "II",
-   "poleNom": "Développement humain & moyens d’existence",
+   "poleNom": "Services essentiels",
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-coordination-eau-energie-connectivite.pdf"
-  },
-  {
-   "id": "desenclavement-urbanisation",
-   "numero": "08",
-   "nom": "Routes & urbanisme",
-   "pole": "II",
-   "poleNom": "Développement humain & moyens d’existence",
-   "pourvue": false,
-   "qui": "à pourvoir",
-   "pdf": "/missions/fiche-mission-coordination-desenclavement-urbanisation.pdf"
   },
   {
    "id": "jeunesse-reussite",
    "numero": "09",
    "nom": "Éducation, jeunesse & formation",
    "pole": "II",
-   "poleNom": "Développement humain & moyens d’existence",
+   "poleNom": "Services essentiels",
    "pourvue": true,
    "qui": "Bruno Kodjadoum NGARTEL",
    "pdf": "/missions/fiche-mission-coordination-jeunesse-reussite.pdf"
@@ -135,7 +104,7 @@
    "numero": "10",
    "nom": "Genre & autonomisation des femmes",
    "pole": "II",
-   "poleNom": "Développement humain & moyens d’existence",
+   "poleNom": "Services essentiels",
    "pourvue": true,
    "qui": "Odette Tolmbaye",
    "pdf": "/missions/fiche-mission-coordination-leadership-feminin.pdf"
@@ -145,7 +114,7 @@
    "numero": "11",
    "nom": "Santé, nutrition & prévention",
    "pole": "II",
-   "poleNom": "Développement humain & moyens d’existence",
+   "poleNom": "Services essentiels",
    "pourvue": true,
    "qui": "Dr Nestor Alladoumdjim",
    "pdf": "/missions/fiche-mission-coordination-sante-prevention.pdf"
@@ -155,30 +124,10 @@
    "numero": "12",
    "nom": "Protection sociale, enfance & inclusion",
    "pole": "II",
-   "poleNom": "Développement humain & moyens d’existence",
+   "poleNom": "Services essentiels",
    "pourvue": true,
    "qui": "Solkem Ngarmbatina",
    "pdf": "/missions/fiche-mission-coordination-solidarite-inclusion.pdf"
-  },
-  {
-   "id": "urgences-risques",
-   "numero": "20",
-   "nom": "Urgences & risques",
-   "pole": "II",
-   "poleNom": "Développement humain & moyens d’existence",
-   "pourvue": false,
-   "qui": "à pourvoir",
-   "pdf": "/missions/fiche-mission-coordination-urgences-risques.pdf"
-  },
-  {
-   "id": "energie",
-   "numero": "21",
-   "nom": "Énergie",
-   "pole": "II",
-   "poleNom": "Développement humain & moyens d’existence",
-   "pourvue": false,
-   "qui": "à pourvoir",
-   "pdf": "/missions/fiche-mission-coordination-energie.pdf"
   },
   {
    "id": "gouvernance-plaidoyer",
@@ -249,14 +198,74 @@
    "pourvue": true,
    "qui": "Rosine Mbaïnodoum",
    "pdf": "/missions/fiche-mission-coordination-competences-entrepreneuriat-numerique.pdf"
+  },
+  {
+   "id": "agriculture-elevage-securite-alimentaire",
+   "numero": "04",
+   "nom": "Agriculture, élevage & sécurité alimentaire",
+   "pole": "V",
+   "poleNom": "Économie, territoire & risques",
+   "pourvue": true,
+   "qui": "Olivier Allaramadji Nomaye, ingénieur agroéconomiste",
+   "pdf": "/missions/fiche-mission-coordination-agriculture-elevage-securite-alimentaire.pdf"
+  },
+  {
+   "id": "entrepreneuriat-finance-inclusive",
+   "numero": "05",
+   "nom": "Entrepreneuriat & finance inclusive",
+   "pole": "V",
+   "poleNom": "Économie, territoire & risques",
+   "pourvue": true,
+   "qui": "Tamar Neloum DOUMANBE",
+   "pdf": "/missions/fiche-mission-coordination-entrepreneuriat-finance-inclusive.pdf"
+  },
+  {
+   "id": "environnement-ressources",
+   "numero": "06",
+   "nom": "Environnement, climat & ressources naturelles",
+   "pole": "V",
+   "poleNom": "Économie, territoire & risques",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-coordination-environnement-ressources.pdf"
+  },
+  {
+   "id": "desenclavement-urbanisation",
+   "numero": "08",
+   "nom": "Routes & urbanisme",
+   "pole": "V",
+   "poleNom": "Économie, territoire & risques",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-coordination-desenclavement-urbanisation.pdf"
+  },
+  {
+   "id": "urgences-risques",
+   "numero": "20",
+   "nom": "Urgences & risques",
+   "pole": "V",
+   "poleNom": "Économie, territoire & risques",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-coordination-urgences-risques.pdf"
+  },
+  {
+   "id": "energie",
+   "numero": "21",
+   "nom": "Énergie",
+   "pole": "V",
+   "poleNom": "Économie, territoire & risques",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-coordination-energie.pdf"
   }
  ],
  "cellules": [
   {
    "id": "cellule-financement-ressources",
    "nom": "Financement & ressources",
-   "pourvue": false,
-   "qui": "à pourvoir",
+   "pourvue": true,
+   "qui": "Élisabeth Neloumngaye Ndodinguem, trésorière de l’association, par intérim",
    "pdf": "/missions/fiche-mission-cellule-financement-ressources.pdf"
   },
   {

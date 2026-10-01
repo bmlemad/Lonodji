@@ -7,10 +7,11 @@ import { alternatesLangues } from "@/lib/langues";
 import { getIndicateurs } from "@/lib/indicateurs";
 import Partager from "@/components/partager";
 
-/* Pillar Lead posts still open, read from content/indicateurs.json. */
-const pillarLeads = (open: number, total: number) => open === 0 ? "every pillar has its Pillar Lead (programme-manager level)"
-  : open === total ? `the ${total === 4 ? "four" : total} Pillar Lead posts (programme-manager level) are open`
-  : `${["no", "one", "two", "three"][open] ?? open} of the ${total === 4 ? "four" : total} Pillar Lead posts (programme-manager level) ${open > 1 ? "are" : "is"} still open`;
+/* Pillar Vice-President posts still open (Pillar Leads until 1 October 2026), read from content/indicateurs.json. */
+const MOTS = ["no", "one", "two", "three", "four", "five", "six"];
+const pillarLeads = (open: number, total: number) => open === 0 ? "every pillar has its elected Pillar Vice-President"
+  : open === total ? `the ${MOTS[total] ?? total} Pillar Vice-President posts, filled by election, are open`
+  : `${MOTS[open] ?? open} of the ${MOTS[total] ?? total} Pillar Vice-President posts, filled by election, ${open > 1 ? "are" : "is"} still open`;
 
 export const metadata: Metadata = {
   title: "Impact dashboard — six dated, sourced indicators",
@@ -87,7 +88,7 @@ export default function ImpactEn() {
           <article><h3>What the executive committee holds</h3><p><Traduit fr={i.bureau.note} /></p></article>
         </div>
         <Partager route="/en/impact" titre="Impact dashboard" texte="Members, coordinators, advocacy briefs, needs recorded and solved, active projects: six indicators, dated and sourced, plus what the site produces and receives. Zeros are published as zeros." lang="en" />
-        <p className="lg-footnote">Same figures as the French dashboard (<Link href="/impact" hrefLang="fr">Tableau de suivi</Link>), read from the same file at the same release. The four Pillar Lead posts (programme-manager level) are described in French on <Link href="/programmes" hrefLang="fr">Nos actions</Link>; the sixth ODEB programme is described in English on <Link href="/en/odeb">the ODEB project page</Link>.</p>
+        <p className="lg-footnote">Same figures as the French dashboard (<Link href="/impact" hrefLang="fr">Tableau de suivi</Link>), read from the same file at the same release. The five Pillar Vice-President posts (called Pillar Leads until 1 October 2026) are described in French on <Link href="/programmes" hrefLang="fr">Nos actions</Link>; the sixth ODEB programme is described in English on <Link href="/en/odeb">the ODEB project page</Link>.</p>
       </section>
     </main>
   );

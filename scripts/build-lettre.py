@@ -154,7 +154,7 @@ def brouillon(mois: str) -> None:
         mj = json.loads(miss.read_text(encoding="utf-8"))
         dv = [f"pôle {x['roman']} ({x['nom']})" for x in mj["directions"] if not x["pourvue"]]
         cv = [f"{x['numero']} {x['nom']}" for x in mj["coordinations"] if not x["pourvue"]] + [f"cellule {x['nom']}" for x in mj["cellules"] if not x["pourvue"]]
-        lignes += ["## Ce qui est ouvert", "", f"- Directions de pôle à pourvoir, au rang de chef de projet : {', '.join(dv) if dv else 'aucune'} — [les fiches de mission]({SITE}/programmes/fiches-de-mission).",
+        lignes += ["## Ce qui est ouvert", "", f"- Vice-présidences de pôle à pourvoir, par élection : {', '.join(dv) if dv else 'aucune'} — [les fiches de mission]({SITE}/programmes/fiches-de-mission).",
                    f"- Coordinations à pourvoir : {', '.join(cv) if cv else 'aucune'} — [candidater]({SITE}/participer?coordo=1#contact).", ""]
     ind = ROOT / "content" / "indicateurs.json"
     if ind.exists():
