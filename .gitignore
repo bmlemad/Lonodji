@@ -15,3 +15,6 @@ deploy-*.zip
 # brouillons (pages arabes avant relecture, lettre du mois) : hors dépôt public, copie de travail sur le Mac
 # dans ~/Documents/Lonodji-brouillons ; scripts/build-lettre.py les écrit ici en local.
 content/brouillons/
+
+# captures d’audit (01/10/2026 : retirées de l’historique)
+mob/
