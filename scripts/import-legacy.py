@@ -1038,6 +1038,11 @@ def phrases_comptes(o: int, p: int, c: int, t: int = 20) -> list[str]:
         f"themes, {p} with a coordinator so far",
         f"{_maj(_EN[p])} themes out of {te} have a coordinator",
         f"{_EN[o]} of the {te} themes {'have' if pl else 'has'} no coordinator today",
+        # 01/10/2026 : outil « Trouver ma thématique » (chapeau, pastille, description), restés au compte de référence
+        f"<p>{_maj(_FR[o])} thématique{'s' if pl else ''} {'attendent' if pl else 'attend'} un coordonnateur",
+        f"{_maj(_FR[o])} th&eacute;matique{'s' if pl else ''} &agrave; pourvoir</span>",
+        f"où vous seriez le plus utile. {_maj(_FR[o])} {'attendent' if pl else 'attend'} un coordonnateur.",
+        f"th&eacute;matiques, dont {_FR[o]} sans coordonnateur.",
     ]
 
 
@@ -1407,7 +1412,19 @@ def lire_source(path: Path) -> str:
         if j > 0 and k > 0:
             html = html[:k] + note + html[k:]
     html = structure_30_09(corrections_revue(structure_29_09(html, path), path), path)
+    if path.name == "kit-mobilisation.html":
+        html = kit_liens(html)
     return html if "articles" in path.parts else comptes_courants(html)
+
+
+def kit_liens(html: str) -> str:
+    """Kit de mobilisation : chaque message à copier finissait par « {url} », que remplissait un script de l'ancien
+    site (absent ici) : on écrit l'adresse absolue de la page visée (attribut data-kit-url), pour qu'un message
+    copié sur WhatsApp ou Facebook porte un vrai lien (1er octobre 2026)."""
+    def rep(m):
+        cible = rewrite_href(m.group(2), "")
+        return m.group(1) + m.group(3).replace("{url}", "https://lonodji.org" + ("" if cible == "/" else cible))
+    return re.sub(r'(<textarea[^>]*data-kit-url="([^"]*)"[^>]*>)(.*?)(?=</textarea>)', rep, html, flags=re.S)
 
 
 # ---------------------------------------------------------------------------

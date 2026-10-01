@@ -1,4 +1,3 @@
-import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead } from "@/components/blocks";
@@ -6,7 +5,7 @@ import { ogFor, ORG } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Déclaration d’accessibilité",
-  description: metaDescription("Ce que lonodji.org fait pour être lisible et utilisable par tous — lecteurs d’écran, clavier, petits écrans, connexions lentes —, ce qui est testé, les limites connues, et à qui signaler un obstacle."),
+  description: "Ce que lonodji.org fait pour être lisible par tous — lecteur d’écran, clavier, téléphone, connexion lente —, ce qui est testé et à qui signaler un obstacle.",
   alternates: { canonical: "/accessibilite" },
   openGraph: ogFor("/accessibilite"),
 };
@@ -28,7 +27,7 @@ export default function Accessibilite() {
         <div className="detail-grid">
           <article><h3>Le niveau visé</h3><p>Les pages du site visent le niveau AA des règles internationales WCAG 2.1 : contrastes suffisants, navigation au clavier, structure de titres, textes de remplacement, formulaires étiquetés, pas de contenu qui bouge sans commande.</p></article>
           <article><h3>Léger et hors ligne</h3><p>Aucune image lourde, aucun script de suivi, aucune bannière de consentement : le site n’en a pas besoin. Une fois ouvertes, les pages restent lisibles sans réseau, et le site s’installe sur l’écran d’accueil du téléphone.</p></article>
-          <article><h3>En français simple, et en anglais</h3><p>Nous écrivons court, nous datons nos faits, nous nommons ce que nous ne savons pas. Onze pages existent en anglais — accueil, l’association, les thématiques, les plaidoyers, Bédjondo, contact, les villages, les projets, le tableau de suivi, les secteurs, le projet ODEB — ; l’arabe et le nangnda restent à venir, et nous le disons plutôt que de le promettre.</p></article>
+          <article><h3>En français simple, et en anglais</h3><p>Nous écrivons court, nous datons nos faits, nous nommons ce que nous ne savons pas. Quinze pages existent en anglais — accueil, l’association, les thématiques, les plaidoyers, Bédjondo, contact, les villages, les projets, le tableau de suivi, les secteurs, le projet ODEB, les programmes des bailleurs, la gouvernance locale, les propositions à la commune et le sous-sol — ; l’arabe et le nangnda restent à venir, et nous le disons plutôt que de le promettre.</p></article>
         </div>
       </section>
 
@@ -50,7 +49,7 @@ export default function Accessibilite() {
       </section>
 
       <section className="hub-section" id="signaler">
-        <SectionHead eyebrow="Un obstacle ?" title="Dites-le-nous," em="nous répondons sous 48 heures." />
+        <SectionHead eyebrow="Un obstacle ?" title="Dites-le-nous," em="nous répondons sous 48 heures ouvrées." />
         <div className="contact-card" style={{ maxWidth: 760 }}>
           <p>Une page illisible, un formulaire impossible à remplir, un contraste trop faible, un document inaccessible : écrivez-nous en indiquant la page et ce qui bloque. Nous répondons sous quarante-huit heures ouvrées et nous corrigeons ; les corrections sont datées dans le <Link href="/transparence#corrections">journal des corrections</Link>. Par téléphone ou WhatsApp : {ORG.phone}.</p>
           <div className="hero-actions">

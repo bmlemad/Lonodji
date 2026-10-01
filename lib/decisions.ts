@@ -126,7 +126,7 @@ export const DECISIONS: Decision[] = [
   {
     id: "2026-05", date: "2026-09-19", type: "annonce",
     titre: "Air Bedjondo, un projet de transport terrestre",
-    texte: "Une intention annoncée par l’animateur de l’association et relayée par elle sans en être le porteur : ni étude, ni financement, ni calendrier. Depuis le 28 septembre 2026, l’entreprise de transport et de logistique figure parmi les quatre entreprises phares proposées du programme 06.",
+    texte: "Une intention annoncée par l’animateur de l’association et relayée par elle sans en être le porteur : ni étude, ni financement, ni calendrier. Depuis le 28 septembre 2026, l’entreprise de transport et de logistique figure parmi les quatre entreprises phares proposées par le programme 06.",
     sources: [{ label: "Article du 19 septembre 2026", href: "/journal/2026-09-19-annonce-air-bedjondo" }, { label: "Plateforme de projets", href: "/projets#bedjondo-transport-logistique" }],
   },
   {
@@ -231,8 +231,8 @@ export const DECISIONS: Decision[] = [
   },
   {
     id: "regle-01", date: "2026-09-23", type: "regle", datee: true,
-    titre: "Aucune collecte avant un compte bancaire au nom de l’association",
-    texte: "Collecte suspendue depuis le 23 septembre 2026 (journal des corrections, 23 septembre 2026), jusqu’à l’ouverture d’un compte au nom de l’association ; les intentions d’adhésion et les promesses de contribution n’engagent aucun paiement.",
+    titre: "Aucune collecte avant l’autorisation, le vote de la grille et un compte au nom de l’association",
+    texte: "Collecte suspendue depuis le 23 septembre 2026 (journal des corrections, 23 septembre 2026), jusqu’à ce que les trois conditions de la décision 2026-16 soient réunies ; les intentions d’adhésion et les promesses de contribution n’engagent aucun paiement.",
     sources: [{ label: "Journal des corrections, 23 septembre 2026", href: "/transparence#corrections" }, { label: "Notre mission — le bureau", href: "/mission" }, { label: "Plateforme de projets", href: "/projets" }],
   },
   {

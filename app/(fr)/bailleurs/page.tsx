@@ -3,7 +3,7 @@ import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import OuvrirAncre from "@/components/ouvrir-ancre";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
-import { getIndex, metaDescription, ogFor } from "@/lib/content";
+import { getIndex, ogFor } from "@/lib/content";
 import { getProjets } from "@/lib/projets";
 import { thematiquesParId } from "@/lib/odeb-chiffres";
 import {
@@ -13,7 +13,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Programmes des bailleurs au Tchad",
-  description: metaDescription("Banque mondiale, Union européenne, Nations unies, BAD, coopération suisse, AFD : les programmes en cours au Tchad, ceux qui touchent le Mandoul, et pour chacun comment ADEB LONODJI peut s’y raccrocher, thématique par thématique et plaidoyer par plaidoyer."),
+  description: "Banque mondiale, UE, Nations unies, BAD, coopération suisse, AFD : les programmes en cours au Tchad, ceux qui touchent le Mandoul, et comment s’y raccrocher.",
   alternates: { canonical: "/bailleurs" },
   openGraph: { ...ogFor("/bailleurs"), title: "Programmes des bailleurs au Tchad, et où nous nous raccrochons", description: "Les programmes en cours, ceux qui touchent le Mandoul, et nos points d’entrée." },
 };
@@ -107,7 +107,7 @@ export default function Bailleurs() {
       </section>
 
       <section className="hub-section" id="par-plaidoyer">
-        <SectionHead eyebrow="Nos plaidoyers" title="Pour chaque plaidoyer," em="les programmes à saisir." text="Les destinataires publiés dans nos plaidoyers en septembre restent valables ; voici les programmes qui financent aujourd’hui ce que chacun demande." />
+        <SectionHead eyebrow="Nos plaidoyers" title="Pour chaque plaidoyer," em="les programmes à saisir." text="Les destinataires publiés dans nos plaidoyers en septembre restent valables, sauf deux : le PMCR, clos, et le PASER, hors du Mandoul. Voici les programmes qui financent aujourd’hui ce que chacun demande." />
         <div className="bl-plaidoyers">
           {plaidoyers.map((pl) => (
             <article key={pl.id} className="bl-plaidoyer">

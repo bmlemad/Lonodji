@@ -6,6 +6,7 @@ import ContactPrefill from "@/components/contact-prefill";
 import OuvrirAncre from "@/components/ouvrir-ancre";
 import { LegacySections, Resume } from "@/components/legacy-content";
 import LegacyEnhance from "@/components/legacy-enhance";
+import { getIndicateurs } from "@/lib/indicateurs";
 import { enLettres, filledCount, getIndex, getPage, ogFor, ORG, thematiqueCount } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -18,6 +19,8 @@ export const metadata: Metadata = {
 export default function Participer() {
   const idx = getIndex();
   const vacantes = thematiqueCount(idx) - filledCount(idx);
+  const { directionsPourvues, directionsTotal } = getIndicateurs().contenu.coordinations;
+  const dirVacantes = directionsTotal - directionsPourvues;
   const contact = getPage("contact");
   const adherer = getPage("adherer");
   const soutenir = getPage("soutenir");
@@ -47,7 +50,7 @@ export default function Participer() {
       </section>
 
       <section className="hub-section" id="thematiques">
-        <SectionHead eyebrow="Avant de vous lancer" title="Choisissez un pôle," em="puis une thématique." text={`Vingt et une thématiques, ${enLettres(vacantes)} sans coordonnateur ; et les quatre pôles cherchent leur directeur ou directrice, au rang de chef de projet. La page Nos actions les détaille ; ce raccourci vous oriente en quelques questions.`} />
+        <SectionHead eyebrow="Avant de vous lancer" title="Choisissez un pôle," em="puis une thématique." text={`Vingt et une thématiques, ${enLettres(vacantes)} sans coordonnateur ; et ${dirVacantes === 0 ? "chaque pôle a sa direction" : `${dirVacantes === 4 ? "les quatre" : enLettres(dirVacantes) + " des quatre"} pôles ${dirVacantes > 1 ? "cherchent" : "cherche"} encore leur directeur ou directrice, au rang de chef de projet`}. La page Nos actions les détaille ; ce raccourci vous oriente en quelques questions.`} />
         <div className="legacy"><LegacySections sections={[choisir, avant]} sansPremierTitre /></div>
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
           <Link className="button primary" href="/participer/trouver-ma-thematique">Trouver ma thématique en trois questions <span aria-hidden="true">→</span></Link>
@@ -60,7 +63,7 @@ export default function Participer() {
       </section>
 
       <section className="hub-section" id="adherer">
-        <SectionHead eyebrow="Adhésion" title="Adhérer" em="à l’association." text={adherer.lede} />
+        <SectionHead eyebrow="Adhésion" title="Adhérer" em="à l’association." />
         <div className="notice"><strong>Collecte suspendue depuis le 23 septembre 2026.</strong> Aucune cotisation ni don n’est encaissé, en espèces comme par Mobile Money, tant que trois conditions ne sont pas réunies : l’autorisation de l’association, le vote de la grille de cotisation par l’assemblée générale et un compte bancaire à double signature au nom de l’association. Les intentions d’adhésion, elles, restent ouvertes : elles n’engagent aucun argent.</div>
         {(() => {
           // en vue : l'essentiel et le formulaire ; repliées : les règles détaillées (rien n'est retiré)

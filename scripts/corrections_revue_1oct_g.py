@@ -75,7 +75,7 @@ CORRECTIONS = {
     ],
     "trouver-ma-thematique.html": [
         # 5 thématiques à pourvoir (16/21) ; « Vingt » devient « Vingt et une » à l'étape COMPTES_RE_30_09
-        ("Vingt th&eacute;matiques, dont quatre sans coordonnateur.", "Vingt th&eacute;matiques, dont cinq sans coordonnateur."),
+        # « dont quatre sans coordonnateur » : recalculé à l'import (phrases_comptes), plus de paire ici
     ],
     "application.html": [
         # une version d'essai Android 1.0.1 est en ligne depuis le 28/09 (content/projets.json, /impact)

@@ -1,4 +1,4 @@
-import { enLettres, filledCount, getIndex, metaDescription, thematiqueCount } from "@/lib/content";
+import { enLettres, filledCount, getIndex, thematiqueCount } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
@@ -8,7 +8,7 @@ import { DECISIONS, decisionsTriees, INSTANCE_PAR_DEFAUT, TYPES, type TypeDecisi
 
 export const metadata: Metadata = {
   title: "Registre public des décisions",
-  description: metaDescription("Ce que l’association a décidé, nommé, annoncé ou proposé depuis septembre 2026, tel que le site l’a publié, avec la source de chaque ligne et ce qui reste attendu. Les procès-verbaux ne sont pas encore publiés : le registre reprend ce qui a été rendu public."),
+  description: "Ce que l’association a décidé, nommé, annoncé ou proposé depuis septembre 2026, avec la source de chaque ligne et ce qui reste attendu.",
   alternates: { canonical: "/transparence/decisions" },
   openGraph: { ...ogFor("/transparence/decisions"), title: "Registre public des décisions", description: "Décidé, nommé, annoncé, proposé : chaque ligne avec sa date, sa source et ce qui reste attendu." },
 };
@@ -68,8 +68,8 @@ export default function Decisions() {
       <section className="hub-section" id="methode">
         <SectionHead eyebrow="Comment le registre est tenu" title="Une source par ligne," em="et rien sans source." />
         <div className="detail-grid">
-          <article><h3>Ce qui y entre</h3><p>Un fait daté que le site a publié : une décision de l’association, une nomination, une annonce, une proposition soumise à l’assemblée, un texte qui l’engage, une règle qu’elle s’impose. Pas les intentions, pas les projets d’articles, pas ce qui se dit hors du site.</p></article>
-          <article><h3>Ce qui manque encore</h3><p>Les procès-verbaux des assemblées et les décisions du bureau qui n’ont pas été rendues publiques. Quand ils seront transmis, ils seront publiés sur la page <Link href="/transparence">Redevabilité & transparence</Link> et le registre citera leur numéro.</p></article>
+          <article><h3>Ce qui y entre</h3><p>Un fait daté que le site a publié : une décision de l’association, une nomination, une annonce, une proposition soumise à l’assemblée, un texte qui l’engage, une règle qu’elle s’impose. Pas les intentions restées privées, pas les projets d’articles, pas ce qui se dit hors du site.</p></article>
+          <article><h3>Ce qui manque encore</h3><p>Les procès-verbaux des assemblées et les décisions du bureau qui n’ont pas été rendues publiques. Quand ils seront transmis, ils seront publiés sur la page <Link href="/documents">Documents</Link> et le registre citera leur numéro.</p></article>
           <article><h3>Corriger une ligne</h3><p>Une date fausse, une décision mal résumée, un oubli : <Link href="/transparence#corrections">signalez-le</Link>. La correction est publiée et datée dans le journal des corrections, comme pour toute page du site.</p></article>
         </div>
       </section>
