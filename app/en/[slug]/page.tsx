@@ -10,7 +10,7 @@ export const dynamicParams = false;
 const TITRES: Record<string, string> = { bedjondo: "Bédjondo, Chad" };
 
 export function generateStaticParams() {
-  return listEnSlugs().map((slug) => ({ slug }));
+  return listEnSlugs().filter((slug) => slug !== "index").map((slug) => ({ slug }));   // /en/index : app/en/index/page.tsx
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {

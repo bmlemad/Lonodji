@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 /* Frise « En ce moment » de l'accueil : marque, au jour du lecteur, les étapes passées et la prochaine
    (la page est statique ; sans JavaScript, la frise reste lisible, sans marque). */
-export default function EnCeMoment({ etapes }: { etapes: { date: string; jour: string; mois: string; quoi: string; href: string }[] }) {
+export default function EnCeMoment({ etapes, prochaine = "Prochaine étape" }: { etapes: { date: string; jour: string; mois: string; quoi: string; href: string }[]; prochaine?: string }) {
   const ref = useRef<HTMLOListElement>(null);
   useEffect(() => {
     const auj = new Date().toISOString().slice(0, 10);
@@ -22,7 +22,7 @@ export default function EnCeMoment({ etapes }: { etapes: { date: string; jour: s
         <li key={e.date + e.quoi} data-date={e.date}>
           <a href={e.href}>
             <time dateTime={e.date}><b>{e.jour}</b> {e.mois}</time>
-            <span>{e.quoi}</span>
+            <span data-prochaine={prochaine}>{e.quoi}</span>
           </a>
         </li>
       ))}

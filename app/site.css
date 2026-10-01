@@ -2112,7 +2112,7 @@ input[type=checkbox], input[type=radio]{ min-width:24px; min-height:24px; }
 .acc-frise span{ font-size:15px; line-height:1.4; font-weight:600; }
 .acc-frise a:hover span{ text-decoration:underline; text-underline-offset:4px; }
 .acc-frise li.fait time b{ color:#5f6f67; }
-.acc-frise li.prochaine span::after{ content:"Prochaine étape"; display:block; margin-top:6px; font-size:12.5px; font-weight:700; color:var(--acc-foret); }
+.acc-frise li.prochaine span::after{ content:attr(data-prochaine); display:block; margin-top:6px; font-size:12.5px; font-weight:700; color:var(--acc-foret); }
 .acc-duo{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px; margin-top:44px; }
 .acc-mag, .acc-postes{ display:flex; gap:22px; padding:22px; border-radius:20px; background:#fff; border:1px solid var(--acc-filet); color:var(--acc-encre); text-decoration:none; transition:border-color .2s ease; }
 .acc-mag:hover, .acc-postes:hover{ border-color:var(--acc-foret); }
@@ -2223,3 +2223,10 @@ input[type=checkbox], input[type=radio]{ min-width:24px; min-height:24px; }
 @media (prefers-reduced-motion:reduce){ .acc-unite path, .acc-etiquette, .acc-bouton{ transition:none; } }
 /* Accueil : la barre de verre passe sur le vert du héros ; on l'opacifie pour garder le contraste du texte (axe). */
 body:has(.acc-hero) .nav, body:has(.acc-hero) .tabbar{ background:rgba(248,250,246,.97); }
+/* accueil anglais : chiffres du tableau de suivi, en liste (le tableau de bord interactif est en français) */
+.acc-chiffres{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:0; }
+.acc-chiffres div{ padding:18px 20px; border-radius:16px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.04); }
+.acc-chiffres dt{ font-size:13px; color:#c2d1c7; margin-bottom:6px; }
+.acc-chiffres dd{ margin:0; color:#fff; font-size:15px; }
+.acc-chiffres b{ font-family:var(--font-playfair),Georgia,serif; font-weight:500; font-size:36px; margin-right:6px; }
+@media (max-width:720px){ .acc-chiffres{ grid-template-columns:1fr; } }
