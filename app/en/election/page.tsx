@@ -76,9 +76,9 @@ export default function ElectionEn() {
       <section className="hub-section" id="rules">
         <SectionHead eyebrow="Rules" title="How the" em="vote works." text={`The ${inWordsEn(e.regles.length)} rules adopted by the executive board on ${dateEn(e.adoptee)}.`} />
         <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Election rules">
-          <table className="ob-table">
+          <table className="ob-table ob-table--empile">
             <thead><tr><th scope="col">Point</th><th scope="col">Rule</th><th scope="col">Good to know</th></tr></thead>
-            <tbody>{e.regles.map((r) => <tr key={r.point}><th scope="row">{r.point_en ?? r.point}</th><td>{(r.texte_en ?? r.texte).replace("{college}", inWordsEn(n))}</td><td>{r.note_en ?? r.note}</td></tr>)}</tbody>
+            <tbody>{e.regles.map((r) => <tr key={r.point}><th scope="row">{r.point_en ?? r.point}</th><td>{(r.texte_en ?? r.texte).replace("{college}", inWordsEn(n))}</td><td data-label="Good to know">{r.note_en ?? r.note}</td></tr>)}</tbody>
           </table>
         </div>
         <h3 className="el-sous-titre">Who runs it</h3>
@@ -89,9 +89,9 @@ export default function ElectionEn() {
         <section className="hub-section" id="results">
           <SectionHead eyebrow="Results" title="The vote of" em={`${dateEn(vote.date)}.`} text={`Copied from the signed minutes${e.pv ? ` of ${dateEn(e.pv)}` : ""}, kept by the secretary-general. Complaints to the board until ${dateEn(etape("reclamations").date)}; the next general assembly confirms those elected.`} />
           <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Election results">
-            <table className="ob-table">
+            <table className="ob-table ob-table--empile">
               <thead><tr><th scope="col">Pillar</th><th scope="col">Elected</th><th scope="col">Voters</th><th scope="col">Votes cast</th><th scope="col">Votes</th></tr></thead>
-              <tbody>{e.resultats.map((r) => <tr key={r.pole}><th scope="row">Pillar {r.pole}{piliers[r.pole] ? ` — ${piliers[r.pole]}` : ""}</th><td>{r.elu || "No one elected"}{r.note_en ? <><br /><small>{r.note_en}</small></> : null}</td><td>{r.votants}</td><td>{r.exprimes}{r.blancs ? ` (plus ${r.blancs} blank)` : ""}</td><td>{(r.voix ?? []).map((v) => `${v.nom}: ${v.voix}`).join("; ")}</td></tr>)}</tbody>
+              <tbody>{e.resultats.map((r) => <tr key={r.pole}><th scope="row">Pillar {r.pole}{piliers[r.pole] ? ` — ${piliers[r.pole]}` : ""}</th><td>{r.elu || "No one elected"}{r.note_en ? <><br /><small>{r.note_en}</small></> : null}</td><td data-label="Voters">{r.votants}</td><td data-label="Votes cast">{r.exprimes}{r.blancs ? ` (plus ${r.blancs} blank)` : ""}</td><td data-label="Votes">{(r.voix ?? []).map((v) => `${v.nom}: ${v.voix}`).join("; ")}</td></tr>)}</tbody>
             </table>
           </div>
         </section>

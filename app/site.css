@@ -848,6 +848,19 @@ html.is-standalone .haut{ bottom:calc(76px + env(safe-area-inset-bottom,0px)); }
 .ob-table td{ font-variant-numeric:tabular-nums; }
 .ob-table .est-vide{ color:#9aa6a0; }
 .ob-table .ob-ok{ color:#1f4a2e; font-weight:600; }
+/* sur téléphone, les tableaux de règles et de résultats s'empilent : une carte par ligne */
+@media(max-width:640px){
+  .ob-table--empile thead{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .ob-table--empile, .ob-table--empile tbody, .ob-table--empile tr, .ob-table--empile tbody th, .ob-table--empile td{ display:block; width:auto; }
+  .ob-table--empile tr{ padding:16px 18px; border-top:1px solid var(--line); }
+  .ob-table--empile tbody tr:first-child{ border-top:0; }
+  .ob-table--empile tbody th, .ob-table--empile td{ border-top:0; padding:0; min-width:0; }
+  .ob-table--empile tbody th{ margin-bottom:6px; }
+  .ob-table--empile td + td{ margin-top:8px; }
+  .ob-table--empile td:empty{ display:none; }
+  .ob-table--empile td[data-label]{ font-size:13px; color:#53625b; }
+  .ob-table--empile td[data-label]::before{ content:attr(data-label) " · "; font-weight:700; color:var(--ink); }
+}
 .ob-table .ob-manque{ color:#7a2d1a; font-weight:600; }
 .ob-fam{ white-space:nowrap; }
 .ob-fam span{ display:inline-block; min-width:26px; text-align:center; padding:2px 6px; margin-right:4px; border-radius:8px; background:var(--soft); font-weight:600; }
@@ -1272,10 +1285,12 @@ input[type=checkbox], input[type=radio]{ flex:0 0 auto; }
   .plea-facts dt, .vl-faits dt, .pj-faits dt, .them-odd .odd-legend, .tm-series .tm-exemple, .card-top small{ font-size:11px; }
   .tb-lien{ padding:6px 0; }
   /* inline (et non inline-block) : un lien qui passe à la ligne garde son numéro de liste en face de la première ligne */
-  .legacy li > a:only-child, .hub-section li > a:only-child{ display:inline; padding:4px 0; }
+  /* liens de texte seulement : une carte cliquable (a.classe) garde sa mise en page */
+  .legacy li > a:only-child:not([class]), .hub-section li > a:only-child:not([class]){ display:inline; padding:4px 0; }
 }
 
 /* Page 404 */
+.not-found{ padding:clamp(108px,12vw,140px) 24px 64px; }  /* sous la barre de navigation fixe */
 .not-found-recherche{ display:flex; flex-wrap:wrap; gap:10px; align-items:end; margin:22px 0; max-width:560px; }
 .not-found-recherche label{ flex:1 0 100%; font-size:13px; font-weight:600; }
 .not-found-recherche input{ flex:1 1 240px; min-height:48px; padding:0 14px; border:1px solid var(--line); border-radius:14px; font:inherit; background:#fff; }
@@ -2098,6 +2113,12 @@ input[type=checkbox], input[type=radio]{ min-width:24px; min-height:24px; }
 .acc-legende--sud::before{ border-color:#9fbf6a !important; }
 .acc-legende--signale::before{ border-color:#c9cf8a !important; border-top-style:dashed !important; }
 .acc-legende--diaspora::before{ border-color:#e3b98f !important; border-top-style:dotted !important; }
+.acc-unites-liste{ display:none; }
+@media(max-width:700px){
+  .acc-unites-liste{ display:flex; flex-wrap:wrap; gap:8px; list-style:none; margin:18px 0 0; padding:0; }
+  .acc-unites-liste a{ display:inline-flex; align-items:center; min-height:34px; padding:6px 13px; border:1px solid rgba(255,255,255,.28); border-radius:99px; color:#eef3ef; font-size:13px; }
+  .acc-unites-liste a:focus-visible{ outline:3px solid var(--acc-citron); outline-offset:2px; }
+}
 
 /* 2. en ce moment */
 .acc-moment{ background:var(--acc-papier); }
@@ -2182,7 +2203,7 @@ input[type=checkbox], input[type=radio]{ min-width:24px; min-height:24px; }
 .acc-pays li a:hover strong{ text-decoration:underline; text-underline-offset:4px; }
 
 /* 8. comptes : la section .impact garde sa mise en page */
-.acc-comptes.impact{ padding:clamp(56px,8vw,104px) clamp(18px,7vw,112px); }
+.acc-comptes.impact{ padding:clamp(56px,8vw,104px) clamp(18px,7vw,112px); row-gap:clamp(36px,6vw,72px); }  /* un écart en % sur les lignes déborde en une colonne */
 .acc-comptes h2{ margin:0 0 18px; font-size:clamp(30px,3.3vw,46px); line-height:1.05; letter-spacing:-.035em; max-width:16ch; }
 
 /* 9. participer */

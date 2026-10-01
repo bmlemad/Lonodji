@@ -75,9 +75,9 @@ export default function ElectionVicePresidences() {
       <section className="hub-section" id="regles">
         <SectionHead eyebrow="Les règles" title="Les règles" em="du vote." text={`Les ${enLettres(e.regles.length)} règles adoptées par le bureau exécutif le ${dateFr(e.adoptee)}.`} />
         <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Règles de l’élection">
-          <table className="ob-table">
+          <table className="ob-table ob-table--empile">
             <thead><tr><th scope="col">Point</th><th scope="col">Règle</th><th scope="col">À savoir</th></tr></thead>
-            <tbody>{e.regles.map((r) => <tr key={r.point}><th scope="row">{r.point}</th><td>{r.texte.replace("{college}", enLettres(n))}</td><td>{r.note}</td></tr>)}</tbody>
+            <tbody>{e.regles.map((r) => <tr key={r.point}><th scope="row">{r.point}</th><td>{r.texte.replace("{college}", enLettres(n))}</td><td data-label="À savoir">{r.note}</td></tr>)}</tbody>
           </table>
         </div>
         <h3 className="el-sous-titre">Qui organise</h3>
@@ -88,11 +88,11 @@ export default function ElectionVicePresidences() {
         <section className="hub-section" id="resultats">
           <SectionHead eyebrow="Les résultats" title="Le vote du" em={`${dateFr(vote.date)}.`} text={`Recopiés du procès-verbal${e.pv ? ` signé le ${dateFr(e.pv)}` : " signé"}, conservé par le secrétariat général. Réclamations au bureau jusqu’au ${dateFr(etape("reclamations").date)} ; la prochaine assemblée générale confirme les élus.`} />
           <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Résultats de l’élection">
-            <table className="ob-table">
+            <table className="ob-table ob-table--empile">
               <thead><tr><th scope="col">Pôle</th><th scope="col">Élu ou élue</th><th scope="col">Votants</th><th scope="col">Suffrages exprimés</th><th scope="col">Voix</th></tr></thead>
               <tbody>{e.resultats.map((r) => {
                 const p = idx.structure.poles.find((x) => x.roman === r.pole);
-                return <tr key={r.pole}><th scope="row">Pôle {r.pole}{p ? ` — ${p.name}` : ""}</th><td>{r.elu || "Personne n’est élu"}{r.note ? <><br /><small>{r.note}</small></> : null}</td><td>{r.votants}</td><td>{r.exprimes}{r.blancs ? ` (et ${r.blancs} blanc${r.blancs > 1 ? "s" : ""})` : ""}</td><td>{(r.voix ?? []).map((v) => `${v.nom} : ${v.voix}`).join(" ; ")}{r.tour && r.tour > 1 ? ` (${r.tour}e tour)` : ""}</td></tr>;
+                return <tr key={r.pole}><th scope="row">Pôle {r.pole}{p ? ` — ${p.name}` : ""}</th><td>{r.elu || "Personne n’est élu"}{r.note ? <><br /><small>{r.note}</small></> : null}</td><td data-label="Votants">{r.votants}</td><td data-label="Suffrages exprimés">{r.exprimes}{r.blancs ? ` (et ${r.blancs} blanc${r.blancs > 1 ? "s" : ""})` : ""}</td><td data-label="Voix">{(r.voix ?? []).map((v) => `${v.nom} : ${v.voix}`).join(" ; ")}{r.tour && r.tour > 1 ? ` (${r.tour}e tour)` : ""}</td></tr>;
               })}</tbody>
             </table>
           </div>

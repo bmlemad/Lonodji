@@ -56,6 +56,12 @@ export default function CarteAccueil({ lang = "fr" }: { lang?: "fr" | "en" }) {
         <ul className="acc-legende">
           {ORDRE_GROUPES.map((g) => <li key={g} className={`acc-legende--${g}`}>{en ? GROUPES_EN[g] : GROUPES[g]}</li>)}
         </ul>
+        {/* sur téléphone, les unités de la carte sont trop petites pour le doigt : la même liste en pastilles */}
+        <ul className="acc-unites-liste" aria-label={en ? "The fourteen units" : "Les quatorze unités"}>
+          {ORDRE_GROUPES.flatMap((g) => carte.unites.filter((u) => u.groupe === g)).sort((a, b) => Number(b.id === "bedjondo") - Number(a.id === "bedjondo")).map((u) => (
+            <li key={u.id}><a href={`/villages/${u.id}`} hrefLang={en ? "fr" : undefined}>{u.nom}</a></li>
+          ))}
+        </ul>
       </figcaption>
     </figure>
   );
