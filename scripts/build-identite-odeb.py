@@ -273,7 +273,9 @@ autre utilisation, écrire à l'association (lonodji.org/participer).
 
 def page_html(corps: str, fonts: str, largeur: int, hauteur: int, fond: str = "transparent") -> str:
     return (f'<!doctype html><html lang="fr"><meta charset="utf-8"><style>{fonts} *{{box-sizing:border-box}} html,body{{margin:0;width:{largeur}px;height:{hauteur}px;background:{fond};overflow:hidden}} '
-            f'svg{{display:block;width:{largeur}px;height:{hauteur}px}}</style><body>{corps}</body></html>')
+            f'body>svg{{display:block;width:{largeur}px;height:{hauteur}px}} div>svg{{display:block;width:100%;height:100%}}</style><body>{corps}</body></html>')
+    # 01/10/2026 : la règle visait tous les svg ; un logo placé dans un bloc prenait la taille de la page entière
+    # (bannières coupées, emblème décalé dans l'image de profil). Elle ne vise plus que le svg posé seul dans la page.
 
 
 def prefixe(svg: str, p: str) -> str:
