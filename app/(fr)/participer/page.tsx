@@ -78,7 +78,7 @@ export default function Participer() {
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
           <Link className="button primary" href="/participer/trouver-ma-thematique">Trouver ma thématique en trois questions <span aria-hidden="true">→</span></Link>
           <Link className="button secondary" href="/programmes#thematiques">Voir les vingt-deux thématiques <span aria-hidden="true">→</span></Link>
-          <Link className="text-link" href="/programmes#diriger-un-pole">Diriger un pôle <span aria-hidden="true">→</span></Link>
+          <Link className="text-link" href="/association/election-vice-presidences">Se présenter à une vice-présidence de pôle <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/programmes/fiches-de-mission">Les fiches de mission (PDF) <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/diaspora">Diaspora : inscrire mes compétences <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/temoignages">Raconter Bédjondo : témoignages &amp; photos <span aria-hidden="true">→</span></Link>

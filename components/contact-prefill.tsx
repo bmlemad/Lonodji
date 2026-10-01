@@ -8,7 +8,7 @@ export default function ContactPrefill() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const theme = params.get("theme");
-    const direction = (params.get("direction") || "").toUpperCase();  // ?direction=I|II|III|IV|V : la direction d'un pôle
+    const direction = (params.get("direction") || "").toUpperCase();  // ?direction=I…VI : la vice-présidence d'un pôle
     const coordo = params.get("coordo");
     const adjoint = params.get("adjoint");  // ?adjoint=1 : se proposer comme adjoint d'une thématique prioritaire
     const objetDemande = (params.get("objet") || "").toLowerCase();

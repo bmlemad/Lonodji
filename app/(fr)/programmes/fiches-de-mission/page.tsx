@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
-import { ogFor } from "@/lib/content";
+import { enLettres, ogFor } from "@/lib/content";
 import { getMissions } from "@/lib/missions";
 
 export const metadata: Metadata = {
@@ -81,7 +81,7 @@ export default function FichesDeMission() {
         </div>
       </section>
 
-      <Partager route="/programmes/fiches-de-mission" titre="Fiches de mission" texte="Diriger un pôle, coordonner une thématique : vingt-sept fiches de mission en PDF, avec le rôle, le périmètre, les étapes et le lien pour candidater." />
+      <Partager route="/programmes/fiches-de-mission" titre="Fiches de mission" texte={`Vice-présider un pôle, coordonner une thématique : ${enLettres(m.directions.length + m.coordinations.length + m.cellules.length)} fiches de mission en PDF, avec le rôle, le périmètre, les étapes et le lien pour candidater.`} />
       <p className="lg-footnote">Fiches établies automatiquement depuis la structure publiée sur <Link href="/programmes">Nos actions</Link> ; état au {jour(m.genere)}. Une nomination est publiée, datée, dans le <Link href="/journal">journal</Link>, puis les fiches sont régénérées.</p>
     </main>
   );

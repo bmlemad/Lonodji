@@ -1593,6 +1593,12 @@ def structure_01_10(html: str, path: Path) -> str:
                             f"                  <option>Direction du pôle VI — {P6_FR}</option>\n", 1)
         html = html.replace("<option>Direction du pôle ", "<option>Vice-présidence du pôle ")
         html = html.replace("<label for=\"pole\">Thématique, ou direction d’un pôle</label>", "<label for=\"pole\">Thématique, ou vice-présidence d’un pôle</label>")
+        # 01/10/2026 : les vice-présidences sont élues ; le formulaire ne parle plus de « diriger un pôle »
+        for _a, _b in (("la coordonner, ou diriger un pôle</option>", "la coordonner, ou se présenter à une vice-présidence de pôle</option>"),
+                       ("<legend>Si vous voulez rejoindre une thématique ou diriger un pôle</legend>",
+                        "<legend>Si vous voulez rejoindre une thématique ou vous présenter à une vice-présidence</legend>"),
+                       ("cette thématique, ou pour diriger ce pôle</label>", "cette thématique, ou à la vice-présidence de ce pôle</label>")):
+            html = html.replace(_a, _b)
         # listes de thématiques : un groupe « Pôle V » après le pôle IV
         def groupes(m):
             bloc, ind = m.group(0), m.group(1)
