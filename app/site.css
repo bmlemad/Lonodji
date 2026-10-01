@@ -1286,7 +1286,7 @@ input[type=checkbox], input[type=radio]{ flex:0 0 auto; }
   .tb-lien{ padding:6px 0; }
   /* inline (et non inline-block) : un lien qui passe à la ligne garde son numéro de liste en face de la première ligne */
   /* liens de texte seulement : une carte cliquable (a.classe) garde sa mise en page */
-  .legacy li > a:only-child:not([class]), .hub-section li > a:only-child:not([class]){ display:inline; padding:4px 0; }
+  .legacy li > a:only-child:not([class], .vl-affiches-liste a, .vl-voisins a), .hub-section li > a:only-child:not([class], .vl-affiches-liste a, .vl-voisins a){ display:inline; padding:4px 0; }
 }
 
 /* Page 404 */
@@ -2021,6 +2021,7 @@ input[type=checkbox], input[type=radio]{ min-width:24px; min-height:24px; }
 }
 .plea-top .tag, .prob-theme-lien{ display:inline-flex; align-items:center; min-height:24px; }
 .bl-action-nom, .odd-row-links a, .od-version-liens a, .footer-cols a, .them-secteurs a{ display:flex; align-items:center; min-height:24px; }
+.odd-row-links .odd-cible{ margin-left:.45em; padding-left:.45em; border-left:1px solid var(--line); }  /* la cible (« 8.3 ») ne colle plus au nom : flex supprime l'espace */
 .them-odd .odd-chip{ min-height:24px; }
 .legacy .frise-lignee .fl-sub{ font-size:11.5px; }
 .sec-table td small{ font-size:11px; }
@@ -2251,3 +2252,13 @@ body:has(.acc-hero) .nav, body:has(.acc-hero) .tabbar{ background:rgba(248,250,2
 .acc-chiffres dd{ margin:0; color:#fff; font-size:15px; }
 .acc-chiffres b{ font-family:var(--font-playfair),Georgia,serif; font-weight:500; font-size:36px; margin-right:6px; }
 @media (max-width:720px){ .acc-chiffres{ grid-template-columns:1fr; } }
+
+/* Trouver ma thématique : les thématiques qui attendent un coordonnateur (listes construites par public/trouver.js) */
+.tm-group{ margin:24px 0 0; }
+.tm-group h3{ margin:0 0 10px; font-size:17px; letter-spacing:-.01em; }
+.tm-group-list{ display:flex; flex-wrap:wrap; gap:8px; }
+.tm-group-list a{ display:inline-flex; align-items:center; gap:9px; min-height:40px; padding:6px 14px 6px 7px; border:1px solid var(--line); border-radius:999px; background:#fff; font-size:14px; font-weight:600; color:var(--ink); }
+.tm-group-list a:hover, .tm-group-list a:focus-visible{ border-color:rgba(23,59,45,.35); box-shadow:0 6px 18px -10px rgba(23,59,45,.4); }
+.tm-group-num{ display:inline-grid; place-items:center; min-width:28px; height:28px; padding:0 6px; border-radius:999px; background:var(--soft); color:var(--deep); font-size:12px; font-weight:700; font-variant-numeric:tabular-nums; }
+.sec-table td small{ display:block; margin-top:2px; font-size:11.5px; color:#53625b; }  /* précision sous l'ODD (cadre de Sendai) */
+.legacy .tm-group-list a, .tm-group-list a{ text-decoration:none; }
