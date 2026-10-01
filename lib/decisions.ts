@@ -61,6 +61,13 @@ export const DECISIONS: Decision[] = [
     suite: "L’adresse de chaque siège, sa date d’ouverture et le partage des responsabilités ne sont pas encore fixés publiquement.",
   },
   {
+    id: "2026-30", date: "2026-10-01", type: "proposition",
+    titre: "Huit propositions d’organisation soumises au bureau",
+    texte: "Tirées d’une comparaison avec dix organisations et cadres : n’avoir que cinq à sept thématiques prioritaires à la fois, d’abord les sept qui portent les huit dossiers de plaidoyer ; scinder le pôle II en « Services essentiels » et « Économie, territoire & risques » ; confier la cellule Financement & ressources à la trésorerie élue par intérim ; créer une fonction « Projets, suivi & redevabilité » ; faire des directions de pôle des vice-présidences déléguées ; une personne par thématique, avec un adjoint ; une seule grille de pilotage ; rattacher chaque thématique prioritaire au plan de la commune.",
+    sources: [{ label: "Propositions d’organisation", href: "/association/propositions-organisation" }],
+    suite: "À décider par le bureau exécutif ; la structure publiée sur la page Nos actions ne change pas d’ici là.",
+  },
+  {
     id: "2026-29", date: "2026-09-30", type: "decision",
     titre: "Une thématique 21, Énergie ; la 08 devient Routes & urbanisme",
     texte: "L’énergie, rattachée le 29 septembre 2026 à la thématique 08 (décision 2026-14), devient une thématique à part entière, la 21, au pôle Développement humain & moyens d’existence : électricité par le réseau, les mini-réseaux ou le solaire, éclairage public, électrification des équipements publics. Elle porte le plaidoyer « De la lumière pour Bédjondo ». La 08 prend le nom de Routes & urbanisme et garde les routes, les ponts, les pistes et l’urbanisme de Bédjondo, avec le plaidoyer pour la voirie. Les deux métiers, leurs interlocuteurs et leurs bailleurs sont distincts.",

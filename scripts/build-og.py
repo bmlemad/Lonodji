@@ -39,6 +39,7 @@ EYEBROWS = {
     "/en/commune": "Territory · the commune",
     "/territoire/gouvernance-locale": "Territoire · gouvernance locale",
     "/territoire/sous-sol": "Territoire · sous-sol & ressources naturelles",
+    "/association/propositions-organisation": "L’association · propositions au bureau",
     "/patrimoine": "Patrimoine",
     "/projets/bedjondo-transport-logistique": "Nos actions · projet annoncé",
     "/actions": "Plaidoyers & engagements",

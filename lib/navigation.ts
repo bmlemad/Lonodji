@@ -22,6 +22,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Événements", href: "/association/evenements", note: "Réunions, assemblées, activités" },
         { label: "ONG & bailleurs : notre statut", href: "/association/ong-partenaires", note: "Statut, partenaires présents au Mandoul" },
         { label: "Les démarches, pas à pas", href: "/association/demarches", note: "Statut, récépissé, vers l’ONG" },
+        { label: "Propositions d’organisation", href: "/association/propositions-organisation", note: "Huit propositions au bureau, 1er octobre 2026" },
       ] },
       { titre: "Rendre des comptes", liens: [
         { label: "Redevabilité & transparence", href: "/transparence", note: "Réponse sous 48 h, plainte, protection" },

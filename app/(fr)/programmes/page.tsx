@@ -92,6 +92,11 @@ export default function Programmes() {
         ) : null}
       </div>
 
+      <section className="hub-section" id="propositions-organisation">
+        <SectionHead eyebrow="À décider par le bureau" title="Sept thématiques prioritaires," em="proposées le 1er octobre 2026." text="Comparée à dix organisations, notre structure compte bien plus de sujets que d’habitude, chacun porté par une seule personne. Huit propositions sont soumises au bureau : n’avoir que quelques thématiques prioritaires à la fois — d’abord les sept qui portent nos huit dossiers de plaidoyer —, rééquilibrer le pôle II, confier la cellule Financement au bureau, et d’autres. Rien ne change ici avant sa décision." />
+        <p className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="text-link" href="/association/propositions-organisation">Lire les huit propositions <span aria-hidden="true">→</span></Link></p>
+      </section>
+
       <section className="hub-section" id="diriger-un-pole">
         <SectionHead eyebrow="Diriger un pôle" title="Quatre directions de pôle," em="au rang de chef de projet." text={`Depuis le 28 septembre 2026, chaque pôle est doté d’une direction, distincte de la coordination des thématiques. Le directeur ou la directrice de pôle a rang de chef de projet : il anime les coordonnateurs de ses thématiques, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets qui en relèvent, et rend compte au bureau et à l’assemblée. Pour les partenaires internationaux, nous traduisons par « Pillar Lead » (niveau « Programme Manager ») : l’équivalent figure sur les fiches de mission et les pages anglaises. Les six « programmes » du projet ODEB sont autre chose : ils croisent les pôles. ${dir.total - dir.pourvues > 0 ? `${enLettres(dir.total - dir.pourvues, true)} des ${enLettres(dir.total)} postes restent à pourvoir et sont ouverts à tout membre` : `Les ${enLettres(dir.total)} postes sont pourvus`} ; chaque poste a sa fiche de mission en PDF, comme chaque thématique.`} />
         <p className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="text-link" href="/programmes/fiches-de-mission">Toutes les fiches de mission <span aria-hidden="true">→</span></Link></p>

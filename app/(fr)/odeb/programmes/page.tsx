@@ -25,7 +25,7 @@ export default function Programmes() {
         eyebrow={`Projet ${ODEB.sigle} · programmes`}
         title="Six programmes"
         em="pour six missions."
-        lead="Chaque programme a trois axes (quatre pour le sixième), s’appuie sur des thématiques nommées de l’association et dit ce qui existe déjà et ce qu’il construira. Les programmes ne créent pas de nouvelles équipes : ils donnent un cadre commun à ce que les thématiques font, et un horizon à ce qu’elles feront."
+        lead="Chaque programme a trois axes (quatre pour le sixième), s’appuie sur des thématiques nommées de l’association et dit ce qui existe déjà et ce qu’il construira. Les programmes ne créent pas de nouvelles équipes : ils donnent un cadre commun à ce que les thématiques font, et un horizon à ce qu’elles feront. Le pilotage, lui, se fait par pôles et thématiques : les programmes en sont une table de correspondance (proposition du 1er octobre 2026)."
         crumbs={[{ label: "Vision 2030 — projet ODEB", href: "/odeb" }, { label: "Programmes" }]}
         pills={["Six programmes", `${enLettresMaj(PROGRAMMES.reduce((n, p) => n + p.axes.length, 0))} axes`, `${mobilisees.filter((id) => th[id]?.kind !== "cellule").length} thématiques${mobilisees.some((id) => th[id]?.kind === "cellule") ? " et une cellule" : ""} mobilisées`]}
       />
