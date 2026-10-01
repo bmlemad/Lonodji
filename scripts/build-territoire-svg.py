@@ -3,7 +3,8 @@
 
 Tirée des mêmes tracés que la carte (public/carte/donnees.json) : les sept
 unités du cœur en aplat, les autres en contour, Bédjondo marquée d'un point.
-Décorative : la page la charge en image, cachée aux lecteurs d'écran.
+Décorative : la page la charge en image, cachée aux lecteurs d'écran. Écrit aussi content/territoire-carte.json
+(tracés en données) pour la carte cliquable de l'accueil.
 
     python3 scripts/build-territoire-svg.py
 """
@@ -63,6 +64,14 @@ def main() -> None:
         f'<text x="{bx + 16:.1f}" y="{by - 12:.1f}" font-family="DM Sans, system-ui, sans-serif" font-size="22" font-weight="600" letter-spacing=".08em" fill="#173b2d">BÉDJONDO</text>\n</svg>\n'
     )
     OUT.write_text(svg, "utf8")
+    # même tracé, en données, pour la carte cliquable de l'accueil (components/carte-accueil.tsx)
+    unites = []
+    for u in sorted(d["unites"], key=lambda u: ordre[u["groupe"]]):
+        dd = " ".join("M" + " ".join(f"{px:.1f},{py:.1f}" for px, py in (proj(x, y) for x, y in r)) + "Z" for r in rings(u["geometrie"]))
+        cx, cy = proj(*u["centre"])
+        unites.append({"id": u["id"], "nom": u["nom"], "groupe": u["groupe"], "d": dd, "cx": round(cx, 1), "cy": round(cy, 1)})
+    (ROOT / "content" / "territoire-carte.json").write_text(
+        json.dumps({"largeur": W, "hauteur": H, "bedjondo": [round(bx, 1), round(by, 1)], "unites": unites}, ensure_ascii=False), "utf8")
     print(f"{OUT.relative_to(ROOT)} : {W}×{H}, {len(paths)} unités, {OUT.stat().st_size // 1024} Ko")
 
 

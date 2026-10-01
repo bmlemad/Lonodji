@@ -2040,3 +2040,186 @@ input[type=checkbox], input[type=radio]{ min-width:24px; min-height:24px; }
 .el-liste{ margin:0; padding-left:20px; line-height:1.6; color:var(--ink); max-width:820px; }
 .el-liste li{ margin-bottom:6px; }
 .el-candidat{ display:flex; flex-direction:column; gap:6px; padding:20px 22px; border:1px solid var(--line); border-radius:20px; background:rgba(255,255,255,.72); }
+
+/* ============================================================================
+   Accueil, refait le 1er octobre 2026 (app/(fr)/page.tsx). Une seule audace : la carte cliquable du pays
+   bedjond en tête, sur le vert profond de la charte ; le reste est sobre. Préfixe acc-.
+   ========================================================================== */
+.accueil{ --acc-foret:#173b2d; --acc-nuit:#10291f; --acc-citron:#b6cf45; --acc-soleil:#f2c94c; --acc-papier:#f4f6f1; --acc-encre:#10241e; --acc-gris:#4f5f58; --acc-filet:rgba(16,36,30,.14); }
+.accueil h2, .accueil h3{ text-wrap:balance; }
+.acc-section{ padding:clamp(56px,8vw,104px) clamp(18px,7vw,112px); }
+.acc-tete{ display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); gap:clamp(18px,6vw,80px); align-items:end; margin-bottom:clamp(28px,4vw,44px); }
+.acc-tete h2{ margin:0; font-size:clamp(30px,3.3vw,46px); line-height:1.05; letter-spacing:-.035em; color:var(--acc-encre); max-width:20ch; }
+.acc-tete p{ margin:0; max-width:56ch; color:var(--acc-gris); font-size:16.5px; line-height:1.65; }
+.acc-liens{ display:flex; flex-wrap:wrap; gap:10px 28px; margin:28px 0 0; font-size:14.5px; font-weight:600; }
+.acc-liens a{ color:var(--acc-foret); text-decoration:underline; text-decoration-color:rgba(23,59,45,.35); text-underline-offset:5px; min-height:24px; display:inline-flex; align-items:center; }
+.acc-liens a:hover{ text-decoration-color:currentColor; }
+.acc-liens--clair a{ color:#fff; text-decoration-color:rgba(255,255,255,.45); }
+
+/* 1. héros */
+.acc-hero{ position:relative; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:clamp(20px,4vw,64px); align-items:center;
+  padding:clamp(120px,14vw,168px) clamp(18px,7vw,112px) clamp(48px,6vw,80px); background:var(--acc-foret); color:#fff; overflow:hidden; }
+.acc-hero h1{ margin:0; font-size:clamp(38px,4.6vw,66px); line-height:1; letter-spacing:-.04em; font-weight:700; max-width:15ch; }
+.acc-hero-lead{ margin:26px 0 0; max-width:52ch; font-size:clamp(16.5px,1.35vw,19px); line-height:1.6; color:#d3dfd6; }
+.acc-hero-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:32px; }
+.acc-bouton{ display:inline-flex; align-items:center; min-height:48px; padding:0 22px; border-radius:99px; border:1.5px solid rgba(255,255,255,.55); color:#fff; font-weight:600; font-size:15px; text-decoration:none; transition:background .2s ease, border-color .2s ease; }
+.acc-bouton:hover{ border-color:#fff; background:rgba(255,255,255,.08); }
+.acc-bouton--plein{ background:var(--acc-citron); border-color:var(--acc-citron); color:var(--acc-encre); }
+.acc-bouton--plein:hover{ background:#c6dc5c; border-color:#c6dc5c; }
+.acc-bouton:focus-visible{ outline:3px solid var(--acc-soleil); outline-offset:3px; }
+.acc-unite:focus-visible path{ stroke:var(--acc-soleil) !important; stroke-width:3.5 !important; }
+.acc-hero-carte-aide{ margin:40px 0 0; padding-top:22px; border-top:1px solid rgba(255,255,255,.18); max-width:52ch; font-size:14.5px; line-height:1.6; color:#c2d1c7; }
+.acc-hero-carte-aide b{ color:#fff; font-weight:600; }
+.acc-hero-carte-aide a{ color:#fff; text-decoration:underline; text-underline-offset:4px; }
+
+/* la carte */
+.acc-carte{ margin:0; }
+.acc-carte svg{ display:block; width:100%; height:auto; overflow:visible; }
+.acc-unite path{ stroke-linejoin:round; transition:fill .18s ease, stroke-opacity .18s ease; }
+.acc-unite--coeur path{ fill:rgba(182,207,69,.2); stroke:var(--acc-citron); stroke-width:2.2; }
+.acc-unite--sud path{ fill:rgba(182,207,69,.09); stroke:#9fbf6a; stroke-width:1.8; }
+.acc-unite--signale path{ fill:rgba(255,255,255,.04); stroke:#c9cf8a; stroke-width:1.6; stroke-dasharray:6 5; }
+.acc-unite--diaspora path{ fill:rgba(255,255,255,.03); stroke:#e3b98f; stroke-opacity:.8; stroke-width:1.6; stroke-dasharray:3 5; }
+.acc-unite:hover path, .acc-unite:focus path{ fill:rgba(182,207,69,.48); stroke:#fff; stroke-dasharray:none; }
+.acc-unite:focus, .acc-unite:focus-visible{ outline:none; }
+.acc-etiquette{ opacity:0; pointer-events:none; transition:opacity .15s ease; }
+.acc-etiquette text{ fill:#fff; font:700 30px var(--font-dm),system-ui,sans-serif; paint-order:stroke; stroke:var(--acc-nuit); stroke-width:7px; stroke-linejoin:round; }
+.acc-etiquette .acc-etiquette-n{ font-size:22px; font-weight:500; fill:#d3dfd6; }
+.acc-etiquette circle{ fill:#fff; }
+.acc-bedjondo{ pointer-events:none; }
+.acc-bedjondo circle{ fill:var(--acc-soleil); }
+.acc-bedjondo .acc-bedjondo-halo{ fill:var(--acc-soleil); fill-opacity:.28; }
+.acc-bedjondo text{ fill:var(--acc-soleil); font:700 24px var(--font-dm),system-ui,sans-serif; letter-spacing:.02em; paint-order:stroke; stroke:var(--acc-foret); stroke-width:6px; }
+.acc-carte svg:has(.acc-unite:is(:hover,:focus):not([data-u="bedjondo"])) .acc-bedjondo text{ opacity:.3; }
+.acc-legende{ list-style:none; display:flex; flex-wrap:wrap; gap:8px 20px; margin:14px 0 0; padding:0; font-size:12.5px; color:#c2d1c7; }
+.acc-legende li{ display:inline-flex; align-items:center; gap:8px; }
+.acc-legende li::before{ content:""; width:18px; height:0; border-top:2px solid; }
+.acc-legende--coeur::before{ border-color:var(--acc-citron) !important; }
+.acc-legende--sud::before{ border-color:#9fbf6a !important; }
+.acc-legende--signale::before{ border-color:#c9cf8a !important; border-top-style:dashed !important; }
+.acc-legende--diaspora::before{ border-color:#e3b98f !important; border-top-style:dotted !important; }
+
+/* 2. en ce moment */
+.acc-moment{ background:var(--acc-papier); }
+.acc-frise{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); border-top:2px solid var(--acc-foret); }
+.acc-frise li{ position:relative; }
+.acc-frise li::before{ content:""; position:absolute; top:-8px; left:0; width:14px; height:14px; border-radius:50%; background:var(--acc-papier); border:2px solid var(--acc-foret); }
+.acc-frise li.fait::before{ background:var(--acc-foret); }
+.acc-frise li.prochaine::before{ background:var(--acc-citron); border-color:var(--acc-foret); width:18px; height:18px; top:-10px; }
+.acc-frise a{ display:flex; flex-direction:column; gap:8px; padding:26px 18px 6px 0; color:var(--acc-encre); text-decoration:none; }
+.acc-frise time{ font-family:var(--font-playfair),Georgia,serif; font-size:17px; color:var(--acc-gris); }
+.acc-frise time b{ display:block; font-weight:500; font-size:clamp(38px,3.6vw,54px); line-height:1; color:var(--acc-foret); letter-spacing:-.02em; }
+.acc-frise span{ font-size:15px; line-height:1.4; font-weight:600; }
+.acc-frise a:hover span{ text-decoration:underline; text-underline-offset:4px; }
+.acc-frise li.fait time b{ color:#5f6f67; }
+.acc-frise li.prochaine span::after{ content:"Prochaine étape"; display:block; margin-top:6px; font-size:12.5px; font-weight:700; color:var(--acc-foret); }
+.acc-duo{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px; margin-top:44px; }
+.acc-mag, .acc-postes{ display:flex; gap:22px; padding:22px; border-radius:20px; background:#fff; border:1px solid var(--acc-filet); color:var(--acc-encre); text-decoration:none; transition:border-color .2s ease; }
+.acc-mag:hover, .acc-postes:hover{ border-color:var(--acc-foret); }
+.acc-mag img{ width:112px; height:auto; flex:none; border-radius:6px; box-shadow:0 10px 24px rgba(16,36,30,.22); }
+.acc-mag > span, .acc-postes{ display:flex; flex-direction:column; gap:8px; }
+.acc-mag small{ font-size:13px; color:var(--acc-gris); }
+.acc-mag strong, .acc-postes strong{ font-size:21px; line-height:1.2; letter-spacing:-.02em; }
+.acc-mag span span, .acc-postes > span{ font-size:14.5px; line-height:1.55; color:var(--acc-gris); }
+.accueil .acc-postes-genres{ list-style:none; margin:6px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:6px; }
+.accueil .acc-postes-genres li{ margin:0; font-size:13.5px; padding:5px 12px; border-radius:99px; background:#eef3e1; }
+.acc-postes-genres b{ font-weight:700; color:var(--acc-foret); }
+
+/* 3. pôles */
+.acc-poles{ background:#fff; }
+.acc-poles-grille{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.acc-pole{ position:relative; padding:24px 24px 22px; border-radius:20px; background:var(--acc-papier); border:1px solid var(--acc-filet); }
+.acc-pole-num{ display:block; font-family:var(--font-playfair),Georgia,serif; font-size:44px; line-height:1; color:var(--acc-foret); margin-bottom:14px; }
+.acc-pole h3{ margin:0; font-size:21px; line-height:1.2; letter-spacing:-.02em; }
+.acc-pole h3 a{ color:var(--acc-encre); text-decoration:none; }
+.acc-pole h3 a::after{ content:""; position:absolute; inset:0; border-radius:20px; }
+.acc-pole h3 a:focus-visible{ outline:none; }
+.acc-pole:has(h3 a:focus-visible){ outline:3px solid var(--acc-foret); outline-offset:3px; }
+.acc-pole:hover{ border-color:var(--acc-foret); }
+.acc-pole-vp{ margin:8px 0 16px; font-size:13.5px; color:var(--acc-gris); }
+.acc-pole-vp a{ position:relative; z-index:1; color:var(--acc-foret); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
+.accueil .acc-pole ul{ list-style:none; margin:0; padding:0; border-top:1px solid var(--acc-filet); }
+.accueil .acc-pole li{ display:grid; grid-template-columns:28px 1fr; gap:6px; padding:8px 0 0; margin:0; font-size:14.5px; line-height:1.4; }
+.acc-them-num{ font-variant-numeric:tabular-nums; color:#56665e; font-size:13px; padding-top:1px; }
+.acc-pole li small{ color:#9a5a2c; font-size:12.5px; font-weight:600; white-space:nowrap; }
+.acc-prio{ font-style:normal; font-size:12px; font-weight:700; color:var(--acc-foret); background:#e4eec0; border-radius:99px; padding:1px 8px; margin-left:6px; white-space:nowrap; }
+
+/* 4. plaidoyers */
+.acc-plaidoyers{ background:var(--acc-papier); }
+.accueil .acc-plaidoyers-liste{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:40px; counter-reset:pl; }
+.accueil .acc-plaidoyers-liste li{ margin:0; padding:0; border-bottom:1px solid var(--acc-filet); }
+.acc-plaidoyers-liste a{ display:flex; flex-direction:column; gap:4px; padding:16px 0; color:var(--acc-encre); text-decoration:none; }
+.acc-plaidoyers-liste small{ font-size:13px; color:var(--acc-gris); }
+.acc-plaidoyers-liste strong{ font-family:var(--font-playfair),Georgia,serif; font-weight:500; font-size:22px; line-height:1.2; }
+.acc-plaidoyers-liste a:hover strong{ text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:1px; }
+
+/* 5. ODEB */
+.acc-odeb{ background:var(--acc-nuit); color:#fff; }
+.acc-odeb .acc-tete h2{ color:#fff; }
+.acc-odeb .acc-tete p{ color:#c2d1c7; }
+.accueil .acc-odeb-programmes{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+.accueil .acc-odeb-programmes li{ margin:0; padding:0; }
+.acc-odeb-programmes a{ display:flex; gap:14px; align-items:baseline; padding:16px 18px; border-radius:14px; border:1px solid rgba(255,255,255,.16); color:#fff; text-decoration:none; font-weight:600; font-size:16px; }
+.acc-odeb-programmes a:hover{ border-color:var(--acc-citron); }
+.acc-odeb-programmes span{ font-family:var(--font-playfair),Georgia,serif; color:var(--acc-citron); font-weight:500; }
+
+/* 6. journal */
+.acc-journal{ background:#fff; }
+.acc-journal-grille{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+.acc-journal-grille .art-card{ min-height:0; padding:20px; }
+.acc-journal-grille .art-card h3{ font-size:18px; }
+.acc-journal-grille .art-card p{ font-size:14px; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden; }
+
+/* 7. pays bedjond */
+.acc-pays{ background:var(--acc-papier); }
+.acc-pays-cols{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(24px,5vw,72px); }
+.acc-pays h3{ margin:0 0 6px; font-size:15px; font-weight:700; color:var(--acc-foret); }
+.accueil .acc-pays ul{ list-style:none; margin:0; padding:0; }
+.accueil .acc-pays li{ margin:0; padding:0; border-bottom:1px solid var(--acc-filet); }
+.acc-pays li a{ display:flex; flex-direction:column; gap:3px; padding:15px 0; color:var(--acc-encre); text-decoration:none; }
+.acc-pays li strong{ font-size:19px; letter-spacing:-.01em; }
+.acc-pays li span{ font-size:14.5px; color:var(--acc-gris); }
+.acc-pays li a:hover strong{ text-decoration:underline; text-underline-offset:4px; }
+
+/* 8. comptes : la section .impact garde sa mise en page */
+.acc-comptes.impact{ padding:clamp(56px,8vw,104px) clamp(18px,7vw,112px); }
+.acc-comptes h2{ margin:0 0 18px; font-size:clamp(30px,3.3vw,46px); line-height:1.05; letter-spacing:-.035em; max-width:16ch; }
+
+/* 9. participer */
+.acc-participer{ background:#fff; }
+.accueil .acc-participer-grille{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+.accueil .acc-participer-grille li{ margin:0; padding:0; }
+.acc-participer-grille a{ display:flex; flex-direction:column; gap:8px; height:100%; padding:22px; border-radius:18px; border:1px solid var(--acc-filet); background:var(--acc-papier); color:var(--acc-encre); text-decoration:none; }
+.acc-participer-grille a:hover{ border-color:var(--acc-foret); }
+.acc-participer-grille strong{ font-size:19px; letter-spacing:-.01em; }
+.acc-participer-grille span{ font-size:14.5px; line-height:1.55; color:var(--acc-gris); }
+.acc-valeurs{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(18px,4vw,48px); margin:clamp(48px,7vw,80px) 0 0; padding-top:28px; border-top:1px solid var(--acc-filet); }
+.acc-valeurs dt{ font-family:var(--font-playfair),Georgia,serif; font-size:clamp(26px,2.6vw,36px); color:var(--acc-foret); margin-bottom:6px; }
+.acc-valeurs dd{ margin:0; font-size:14.5px; line-height:1.55; color:var(--acc-gris); }
+
+/* tablette */
+@media (max-width:1100px){
+  .acc-hero{ grid-template-columns:1fr; }
+  .acc-hero h1{ max-width:16ch; }
+  .acc-frise{ grid-template-columns:repeat(3,minmax(0,1fr)); row-gap:10px; }
+  .acc-frise li:nth-child(n+4){ border-top:2px solid var(--acc-foret); margin-top:18px; }
+  .acc-poles-grille{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .acc-journal-grille, .accueil .acc-participer-grille{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .accueil .acc-odeb-programmes{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+/* téléphone */
+@media (max-width:720px){
+  .acc-tete{ grid-template-columns:1fr; }
+  .acc-frise{ grid-template-columns:1fr; border-top:0; border-left:2px solid var(--acc-foret); margin-left:7px; }
+  .acc-frise li:nth-child(n+4){ border-top:0; margin-top:0; }
+  .acc-frise li::before{ top:28px; left:-8px; }
+  .acc-frise li.prochaine::before{ top:26px; left:-10px; }
+  .acc-frise a{ flex-direction:row; align-items:baseline; gap:14px; padding:18px 0 18px 22px; }
+  .acc-frise time{ min-width:78px; }
+  .acc-frise time b{ font-size:36px; }
+  .acc-duo, .acc-poles-grille, .accueil .acc-plaidoyers-liste, .acc-pays-cols, .acc-journal-grille, .accueil .acc-participer-grille, .accueil .acc-odeb-programmes, .acc-valeurs{ grid-template-columns:1fr; }
+  .acc-mag img{ width:84px; }
+}
+@media (prefers-reduced-motion:reduce){ .acc-unite path, .acc-etiquette, .acc-bouton{ transition:none; } }
+/* Accueil : la barre de verre passe sur le vert du héros ; on l'opacifie pour garder le contraste du texte (axe). */
+body:has(.acc-hero) .nav, body:has(.acc-hero) .tabbar{ background:rgba(248,250,246,.97); }
