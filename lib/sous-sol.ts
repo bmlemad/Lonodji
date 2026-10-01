@@ -6,7 +6,7 @@ export type Source = { id: string; titre: string; editeur: string; date: string;
 export type Lien = { label: string; href: string };
 
 export const SOURCES: Record<string, Source> = {
-  manara: { id: "manara", titre: "Tchad : 8 dates qui ont marqué 22 ans d’exploitation pétrolière", editeur: "Manara Radio Télévision", date: "s. d.", href: "https://manara.td/tchad-8-dates-qui-ont-marque-22-ans-dexploitation-petroliere/" },
+  manara: { id: "manara", titre: "Tchad : 8 dates qui ont marqué 22 ans d’exploitation pétrolière", editeur: "Manara Radio Télévision", date: "10 octobre 2025", href: "https://manara.td/tchad-8-dates-qui-ont-marque-22-ans-dexploitation-petroliere/" },
   itie2018: { id: "itie2018", titre: "Rapport ITIE Tchad 2018", editeur: "ITIE Tchad", date: "exercice 2018", href: "https://eiti.org/sites/default/files/attachments/rapport-itie-tchad-2018-signe.pdf" },
   doba: { id: "doba", titre: "Doba, Chad", editeur: "Wikipédia (en)", date: "consulté le 30 septembre 2026", href: "https://en.wikipedia.org/wiki/Doba,_Chad" },
   ecofin2014: { id: "ecofin2014", titre: "Tchad : United Hydrocarbon croise 16,5 m de pétrole avec Belanga North-1 sur le bassin Doba", editeur: "Agence Ecofin", date: "2 avril 2014", href: "https://www.agenceecofin.com/hydrocarbures/0204-18894-tchad-united-hydrocarbon-croise-16-5-m-de-petrole-avec-belanga-north-1-sur-le-bassin-doba" },

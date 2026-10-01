@@ -72,7 +72,7 @@ export const ENGAGEMENTS_EN = propositions(ENGAGEMENTS, ENGAGEMENTS_TEXTE);
 /* Publisher and date of each source in English, by source id (lib/sous-sol.ts keeps them in French).
    Titles stay in their original language. A source with no entry here keeps its French publisher and date. */
 const SOURCES_EN: Record<string, { editeur?: string; date?: string }> = {
-  manara: { date: "n.d." },
+  manara: { date: "10 October 2025" },
   itie2018: { editeur: "EITI Chad", date: "2018 financial year" },
   doba: { editeur: "Wikipedia (English)", date: "accessed 30 September 2026" },
   ecofin2014: { date: "2 April 2014" },

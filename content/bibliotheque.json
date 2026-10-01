@@ -361,8 +361,8 @@
    "type": "Étude universitaire",
    "rubrique": "theses",
    "titre": "Identification des peuples sara du sud du Tchad : cas des Gōr, Bédjond et Bébotɨ̀",
-   "auteurs": "Masnan Beoss",
-   "meta": "Masnan Beoss — ACAREF (Association Camerounaise pour la Recherche Éducative et Formative)",
+   "auteurs": "Masnan Béoss",
+   "meta": "Masnan Béoss — ACAREF (Association Camerounaise pour la Recherche Éducative et Formative)",
    "resume": "Étude universitaire qui fait remonter les Bédjond à un ancêtre nommé Narmbang et détaille la succession des chefs de canton de Bédjondo jusqu’à l’actuel Donath Gari, ainsi que l’organisation administrative traditionnelle du Mandoul Occidental (quatre sous-préfectures, cinq cantons, 256 villages) et des éléments de cult…",
    "liens": [],
    "route": "/patrimoine/base-de-recherche#src-identification-des-peuples-sara-du-sud-d"
@@ -397,8 +397,8 @@
    "type": "Enquête de terrain",
    "rubrique": "rapports",
    "titre": "Enquête sociolinguistique des variétés linguistiques de la région de Doba",
-   "auteurs": "Éric Johnson",
-   "meta": "Éric Johnson — SIL-ATALTRAB, 2001, 55 p.",
+   "auteurs": "Eric Johnson",
+   "meta": "Eric Johnson — SIL-ATALTRAB, 2001, 55 p.",
    "resume": "Première version, en 2001, de l’enquête que SIL a publiée en ligne en 2007 (voir la fiche de 2007) : c’est sous la date de 2001 que la citent les travaux universitaires sur l’identification des peuples du Kouh-Ouest et du Mandoul Occidental.",
    "liens": [
     "https://lonodji.org/patrimoine/base-de-recherche#src-enquete-sociolinguistique-des-varietes-l"
@@ -437,7 +437,7 @@
    "titre": "Kokotan — association pour la promotion de la langue bedjond",
    "auteurs": "Tchadinfos.com, 2023",
    "meta": "Tchadinfos.com, 2023",
-   "resume": "Rend compte de la 10e assemblée générale de Kokotan, tenue à Bédjondo (Mandoul Occidental) en avril 2023 sous la présidence de Benayal Ndoloum Yassa, avec l’ouverture officielle du préfet Maïmara Abba Adji — confirme l’étendue du pays bedjond, de l’ouest du Mandoul jusqu’à environ un kilomètre de Nya Pende, à travers l…",
+   "resume": "Rend compte de la 10e assemblée générale de Kokotan, tenue à Bédjondo (Mandoul Occidental) en avril 2023 sous la présidence de Benayal Ndoloum Yassa, avec l’ouverture officielle du préfet Maïmara Abba Adji — confirme l’étendue du pays bedjond, de l’ouest du Mandoul jusqu’à environ un kilomètre de Nya Pendé, à travers l…",
    "liens": [],
    "route": "/patrimoine/base-de-recherche#src-kokotan-association-pour-la-promotion-de"
   },
@@ -471,8 +471,8 @@
    "type": "Source secondaire",
    "rubrique": "archives",
    "titre": "Bernard Lanne (1968), sur les formes de pouvoir précoloniales",
-   "auteurs": "Cité dans Masnan Beoss (ACAREF)",
-   "meta": "Cité dans Masnan Beoss (ACAREF)",
+   "auteurs": "Cité dans Masnan Béoss (ACAREF)",
+   "meta": "Cité dans Masnan Béoss (ACAREF)",
    "resume": "L’historien Bernard Lanne relevait dès 1968 qu’on retrouvait à Béboto, à Bédjondo et à Koumra « les formes de pouvoir que l’on connaît dans les royaumes sahéliens précoloniaux » — une source universitaire indépendante qui recoupe la tradition orale d’une chefferie bédjond organisée avant la colonisation.",
    "liens": [],
    "route": "/patrimoine/base-de-recherche#src-bernard-lanne-1968-sur-les-formes-de-pou"
@@ -640,7 +640,7 @@
  ],
  "auteurs": [
   {
-   "nom": "Masnan Beoss",
+   "nom": "Masnan Béoss",
    "references": [
     "src-identification-des-peuples-sara-du-sud-d"
    ]

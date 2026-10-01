@@ -159,7 +159,7 @@ footer {{ position:fixed; bottom:-9mm; left:0; right:0; text-align:center; font-
 <div class="saut"></div>
 <div class="eyebrow">Savoirs</div>
 <h2>La bibliothèque bedjond et sara</h2>
-<p>La base de recherche du site réunit {refs} références — thèses, ouvrages, enquêtes de terrain, articles scientifiques, données publiques — sur le peuple bedjond et l'ensemble sara : la thèse de Djarangar Djita Issa sur la langue bedjond, les travaux de Joseph Fortier, Robert Jaulin, Jean-Pierre Magnant, Bé-Rammaj Miaro-II, Rosalie Kantiebo, Josette Rivallain, l'enquête SIL de 2007, l'étude ACAREF de Masnan Beoss. L'association publie ses propres synthèses dans son journal et souhaite travailler avec les bibliothèques du Mandoul Occidental pour constituer sur place un fonds documentaire bedjond et sara.</p>
+<p>La base de recherche du site réunit {refs} références — thèses, ouvrages, enquêtes de terrain, articles scientifiques, données publiques — sur le peuple bedjond et l'ensemble sara : la thèse de Djarangar Djita Issa sur la langue bedjond, les travaux de Joseph Fortier, Robert Jaulin, Jean-Pierre Magnant, Bé-Rammaj Miaro-II, Rosalie Kantiebo, Josette Rivallain, l'enquête SIL de 2007, l'étude ACAREF de Masnan Béoss. L'association publie ses propres synthèses dans son journal et souhaite travailler avec les bibliothèques du Mandoul Occidental pour constituer sur place un fonds documentaire bedjond et sara.</p>
 <div class="eyebrow">Comment nous aider</div>
 <h2>Quatre façons de contribuer</h2>
 <div class="cartes">
