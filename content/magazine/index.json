@@ -6,11 +6,12 @@
    "parution": "2026-10-01",
    "parutionLabel": "1er octobre 2026",
    "prochain": "janvier 2027",
-   "titre": "Cinq pôles, sept priorités",
-   "chapo": "Le 1er octobre 2026, le bureau exécutif a adopté huit décisions : un pôle de plus, sept thématiques prioritaires avec chacune un titulaire et un adjoint, et des vice-présidences élues.",
+   "titre": "Six pôles, sept priorités",
+   "chapo": "Le 1er octobre 2026, le bureau exécutif a réorganisé l’association : six pôles, vingt-deux thématiques, sept priorités avec chacune un titulaire et un adjoint, et quatre vice-présidences à élire le 22 octobre.",
+   "edition": "édition mise à jour le 1er octobre 2026 à 16 h, après la décision 2026-35 (six pôles, vingt-deux thématiques)",
    "pdf": "/magazine/lonodji-01-2026-10.pdf",
    "couverture": "/magazine/lonodji-01-couverture.jpg",
-   "pages": 22,
+   "pages": 24,
    "taille": "2,3 Mo",
    "sommaire": [
     {
@@ -24,44 +25,54 @@
      "page": 5
     },
     {
+     "rubrique": "Dossier",
+     "titre": "Six pôles et vingt-deux thématiques : l’association retient des nombres pairs",
+     "page": 6
+    },
+    {
+     "rubrique": "Élection",
+     "titre": "Trois vice-présidences de pôle à élire : candidatures du 2 au 15 octobre 2026",
+     "page": 8
+    },
+    {
      "rubrique": "Plaidoyers",
      "titre": "Huit dossiers, 47 lettres à signer",
-     "page": 7
+     "page": 9
     },
     {
      "rubrique": "Grand format",
      "titre": "Bédjondo, un village devenu ville : nos propositions",
-     "page": 9
+     "page": 11
     },
     {
      "rubrique": "Projet ODEB",
      "titre": "Quarante ans après 1986, ADEB LONODJI ouvre la réflexion ODEB LONODJI",
-     "page": 13
+     "page": 15
     },
     {
      "rubrique": "Mémoire",
      "titre": "Le Kul et les monnaies de fer du pays sara",
-     "page": 15
+     "page": 17
     },
     {
      "rubrique": "Culture",
      "titre": "Ce que veut vraiment dire « nangnda »",
-     "page": 17
+     "page": 19
     },
     {
      "rubrique": "En bref",
      "titre": "Aussi publié ce trimestre",
-     "page": 19
+     "page": 21
     },
     {
      "rubrique": "Écrire dans Lonodji",
      "titre": "Le magazine s’écrit sur le site",
-     "page": 20
+     "page": 22
     },
     {
      "rubrique": "Participer",
-     "titre": "Treize postes cherchent quelqu’un",
-     "page": 21
+     "titre": "Quatorze postes cherchent quelqu’un",
+     "page": 23
     }
    ]
   }

@@ -171,16 +171,16 @@ figcaption{font-size:7.6pt;color:#5a6962;margin-top:1.5mm}
 
 .ouverture{display:grid;grid-template-columns:1.12fr .88fr;gap:9mm}
 .edito h1{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:24pt;margin:0 0 4mm}
-.edito p{font-size:10.3pt;line-height:1.52;margin:0 0 3.2mm;text-align:justify}
+.edito p{font-size:10pt;line-height:1.5;margin:0 0 3.2mm;text-align:justify}
 .edito p:first-of-type:first-letter{float:left;font-family:'Playfair Display',Georgia,serif;font-size:39pt;line-height:.9;padding:1mm 2mm 0 0;color:#173b2d}
 .signature{font-size:9pt;color:#5a6962;margin-top:4mm}
 .sommaire{background:#f2f5ef;border-radius:4mm;padding:6mm 6mm 4mm}
 .sommaire h2{margin:0 0 4mm;font-size:8pt;letter-spacing:.2em;text-transform:uppercase;color:#173b2d}
 .sommaire ol{list-style:none;margin:0;padding:0}
-.sommaire li{display:grid;grid-template-columns:9mm 1fr;gap:2mm;padding:1.7mm 0;border-bottom:1px solid #d5ddd6}
+.sommaire li{display:grid;grid-template-columns:9mm 1fr;gap:2mm;padding:1.25mm 0;border-bottom:1px solid #d5ddd6}
 .sommaire li b{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:16pt;line-height:1;color:#173b2d}
 .sommaire li span{display:block;font-size:7pt;letter-spacing:.16em;text-transform:uppercase;color:#6a776f;font-weight:700}
-.sommaire li strong{display:block;font-size:9.4pt;line-height:1.25;margin-top:.4mm}
+.sommaire li strong{display:block;font-size:9pt;line-height:1.22;margin-top:.3mm}
 .ours{margin-top:4mm;font-size:7pt;line-height:1.5;color:#5a6962}
 .ours b{color:#10241e}
 
@@ -267,7 +267,7 @@ def ouverture(n: dict, ctx: dict, pages: dict, entrees: list[tuple[str, str]]) -
     return f"""<section class="page"><div class="rub">Édito<span>Lonodji n° {n['numero']} · {esc(n['periode'])}</span></div>
 <div class="ouverture"><div class="edito"><h1>Un numéro <em>qu’on garde</em></h1>{edito}<p class="signature">La rédaction d’ADEB LONODJI</p></div>
 <div><div class="sommaire"><h2>Au sommaire</h2><ol>{items}</ol></div>
-<p class="ours"><b>Lonodji</b>, magazine trimestriel d’ADEB LONODJI, Association de Développement et d’Entraide de Bédjondo (Mandoul Occidental, Tchad), reconnue en 1995. Sièges : N’Djamena et Bédjondo. Numéro {n['numero']}, paru le {date_fr(n['parution'])}. Textes : rédaction d’ADEB LONODJI, sauf mention ; tous publiés d’abord sur {SITE}, où ils gardent leurs liens et leurs sources. Libre de reproduction et de diffusion, sans modification et avec mention de la source. Contact : {esc(ctx['telephone'])} (appel et WhatsApp) · {SITE}/participer.</p></div></div></section>"""
+<p class="ours"><b>Lonodji</b>, magazine trimestriel d’ADEB LONODJI, Association de Développement et d’Entraide de Bédjondo (Mandoul Occidental, Tchad), reconnue en 1995. Sièges : N’Djamena et Bédjondo. Numéro {n['numero']}, paru le {date_fr(n['parution'])}{(' ; ' + esc(n['edition'])) if n.get('edition') else ''}. Textes : rédaction d’ADEB LONODJI, sauf mention ; tous publiés d’abord sur {SITE}, où ils gardent leurs liens et leurs sources. Libre de reproduction et de diffusion, sans modification et avec mention de la source. Contact : {esc(ctx['telephone'])} (appel et WhatsApp) · {SITE}/participer.</p></div></div></section>"""
 
 
 def section_article(e: dict, art: dict, n: dict) -> str:
@@ -346,7 +346,7 @@ def section_contribuer(e: dict, n: dict) -> str:
 <div class="dos"><div><h2>Imprimer et faire circuler</h2><ul>
 <li>Le PDF s’imprime en A4, recto verso ; il se partage tel quel sur WhatsApp.</li>
 <li>Il peut être reproduit et distribué librement, sans modification et avec sa source.</li>
-<li>Les numéros parus restent en ligne sur {SITE}/magazine ; un numéro paru n’est jamais modifié.</li></ul></div>
+<li>Les numéros parus restent en ligne sur {SITE}/magazine ; après son jour de parution, un numéro n’est plus modifié.</li></ul></div>
 <div class="qr"><img src="{qr("https://lonodji.org/magazine")}" alt="">{SITE}/magazine</div></div></section>"""
 
 
@@ -521,7 +521,7 @@ def main() -> None:
             total = fitz.open(pdf).page_count
             sortie["numeros"].append({
                 "numero": n["numero"], "periode": n["periode"], "parution": n["parution"], "parutionLabel": date_fr(n["parution"]),
-                "prochain": n["prochain"], "titre": re.sub(r"<[^>]+>", "", n["une"]["titre"]), "chapo": n["une"]["chapo"],
+                "prochain": n["prochain"], "titre": re.sub(r"<[^>]+>", "", n["une"]["titre"]), "chapo": n["une"]["chapo"], "edition": n.get("edition", ""),
                 "pdf": f"/magazine/{pdf.name}", "couverture": f"/magazine/{couv.with_suffix('.jpg').name}", "pages": total,
                 "taille": f"{pdf.stat().st_size / 1_000_000:.1f} Mo".replace(".", ","),
                 "sommaire": [{"rubrique": r, "titre": h.unescape(re.sub(r"<[^>]+>", "", t)), "page": pages.get(i)} for i, (r, t) in enumerate(entrees)],

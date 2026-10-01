@@ -48,7 +48,7 @@ export default function MagazinePage() {
                 <a className="button primary" href={dernier.pdf} download>Télécharger le PDF <span aria-hidden="true">↓</span></a>
                 <a className="button secondary" href={`https://wa.me/?text=${encodeURIComponent(message)}`} target="_blank" rel="noopener noreferrer">Envoyer sur WhatsApp <span aria-hidden="true">↗</span></a>
               </div>
-              <p className="mag-meta">Paru le {dernier.parutionLabel} · {dernier.pages} pages A4 · {dernier.taille} · à imprimer recto verso, à reproduire librement sans modification.</p>
+              <p className="mag-meta">Paru le {dernier.parutionLabel}{dernier.edition ? ` (${dernier.edition})` : ""} · {dernier.pages} pages A4 · {dernier.taille} · à imprimer recto verso, à reproduire librement sans modification.</p>
             </div>
           </div>
         </section>
@@ -64,7 +64,7 @@ export default function MagazinePage() {
       ) : null}
 
       <section className="hub-section" id="principes">
-        <SectionHead eyebrow="Comment il se fait" title="Rien qui n’ait paru" em="sur le site." text="Chaque numéro reprend, tels qu’ils ont été publiés, les textes du trimestre : le registre des décisions, un dossier, l’état des plaidoyers, un grand format, la mémoire et la culture bedjond, les brèves et les postes ouverts. Seul l’édito est écrit pour le magazine. Un numéro paru n’est jamais modifié ; une erreur se corrige dans le journal des corrections et le numéro suivant la signale." />
+        <SectionHead eyebrow="Comment il se fait" title="Rien qui n’ait paru" em="sur le site." text="Chaque numéro reprend, tels qu’ils ont été publiés, les textes du trimestre : le registre des décisions, un dossier, l’état des plaidoyers, un grand format, la mémoire et la culture bedjond, les brèves et les postes ouverts. Seul l’édito est écrit pour le magazine. Après son jour de parution, un numéro n’est plus modifié ; une erreur se corrige dans le journal des corrections et le numéro suivant la signale." />
         <div className="detail-grid">
           <article><h3>Écrire dans Lonodji</h3><p>On écrit dans le magazine en écrivant sur le site : <Link href="/participer#proposer">proposez un article</Link>, <Link href="/temoignages">confiez un témoignage</Link> ou <Link href="/territoire/besoins">signalez un besoin</Link> ; le numéro suivant reprend ce qui a paru.</p></article>
           <article><h3>Le faire circuler</h3><p>Le PDF se transmet tel quel dans un groupe WhatsApp et s’imprime en A4 pour le chef de village, l’école ou le centre de santé. Il peut être reproduit librement, sans modification et avec sa source.</p></article>
