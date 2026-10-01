@@ -191,3 +191,4 @@ Le bureau exécutif a adopté le 1er octobre 2026 les huit propositions tirées 
 - **Vice-présidences de pôle** : les directions de pôle deviennent des vice-présidences déléguées, pourvues par élection (`DIRECTION_LABEL`, `DIRECTIONS_POLES`, pôle V à pourvoir). Les fichiers PDF gardent leur nom `fiche-mission-direction-pole-N.pdf`.
 - **Cellule Financement** : confiée par intérim à la trésorière (ligne dans `NOMINATIONS`).
 - **Sept thématiques prioritaires** (`PRIORITAIRES`, `estPrioritaire`) : mention sur chaque ligne de thématique (`ThematiqueRow`), liste sur `/programmes#propositions-organisation`, adjoint à trouver (`?adjoint=1` préremplit le message du formulaire).
+- **Réseaux sociaux** (1er octobre 2026) : page Facebook « Lonodji », compte X @adeb_lonodji, chaîne YouTube @adeb.lonodji. Adresses dans `ORG` (`lib/content.ts` : `facebook`, `x`, `youtube`), reprises par le pied de page et le `sameAs` de `lib/schema.ts`. TikTok : pas encore de compte.
