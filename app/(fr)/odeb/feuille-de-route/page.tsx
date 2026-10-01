@@ -11,7 +11,7 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Feuille de route 2026-2030 du projet ODEB LONODJI",
-  description: metaDescription("Trois phases, de la relance de 2026 à l’organisation de référence de 2030 : ce qui est réalisé, en cours, à venir ou à décider, chantier par chantier, avec l’état réel du site."),
+  description: metaDescription("Trois phases, de la relance de 2026 à l’organisation de référence de 2030 : chaque chantier réalisé, en cours, à venir ou à décider, avec l’état réel du site."),
   alternates: { canonical: "/odeb/feuille-de-route" },
   openGraph: ogFor("/odeb/feuille-de-route"),
 };
@@ -29,7 +29,7 @@ export default function FeuilleDeRoute() {
         em="phase par phase."
         lead="La feuille de route énoncée par l’association le 28 septembre 2026 : trois phases de six, douze et dix-huit mois, puis le bilan du plan d’action 2026-2028 et la constitution de l’organisation. Chaque chantier porte son état réel — réalisé, en cours, à venir, à décider — tel que le site le constate à sa mise en ligne."
         crumbs={[{ label: "Vision 2030 — projet ODEB", href: "/odeb" }, { label: "Feuille de route" }]}
-        pills={["Trois phases", "Horizon 2030", `État au ${new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "Africa/Ndjamena" })}`]}
+        pills={["Trois phases", "Horizon 2030", `État au ${new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "Africa/Ndjamena" }).replace(/^1 /, "1er ")}`]}
       />
       <OdebNav actif="feuille-de-route" />
 

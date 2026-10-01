@@ -137,7 +137,7 @@ export function PlaidoyerCard({ p }: { p: Plaidoyer }) {
       <h3><Link href={p.href}>{p.title}</Link></h3>
       <p>{p.demand}</p>
       <dl className="plea-facts">
-        <div><dt>Destinataires</dt><dd>{p.recipients}</dd></div>
+        <div><dt>Destinataires</dt><dd>{p.recipients.replace(/\s+\)/g, ")")}</dd></div>
         <div><dt>Publié</dt><dd>{p.published}</dd></div>
         <div><dt>Envoyé</dt><dd>{p.sent}</dd></div>
         <div><dt>Réponse</dt><dd>{p.answer}</dd></div>

@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { getIndex, ORG } from "@/lib/content";
 import { programmeParId } from "@/lib/bailleurs";
-import { APPORTS, DEMARCHE, EN_RETOUR, GROUPES, PORTEURS, PROJET_INTEGRE, PROJETS_PRIORITAIRES, REGLES_DEMARCHE } from "@/lib/propositions-commune";
+import { APPORTS, DEMARCHE, nombrePropositions, EN_RETOUR, GROUPES, PORTEURS, PROJET_INTEGRE, PROJETS_PRIORITAIRES, REGLES_DEMARCHE } from "@/lib/propositions-commune";
 
 /* Version imprimable de /territoire/propositions-commune (30/09/2026) : le dossier remis au maire, au préfet
    et aux chefs de canton. Mêmes données que la page (lib/propositions-commune.ts), en tableaux compacts ;
    le PDF est tiré de cette page par scripts/build-propositions-pdf.py. Hors menu, non indexée. */
 export const metadata: Metadata = {
-  title: "Dossier imprimable — nos propositions à la commune de Bédjondo",
+  title: "Propositions à la commune — dossier imprimable",
+  description: `Version imprimable de nos propositions à la commune de Bédjondo : dix projets prioritaires, notre démarche, ${nombrePropositions()} mesures sourcées et nos engagements.`,
   robots: { index: false, follow: true },
   alternates: { canonical: "/territoire/propositions-commune" },
 };
@@ -57,7 +58,7 @@ export default function DossierCommune() {
       <h2>3. Les mesures déjà publiées, en six chantiers</h2>
       {GROUPES.map((g, i) => (
         <section key={g.id} className="dp-chantier">
-          <h3>{String.fromCharCode(65 + i)}. {g.titre.replace(/[,:]$/, "")} {g.em}</h3>
+          <h3>{String.fromCharCode(65 + i)}. {g.titre} {g.em}</h3>
           <ol>{g.items.map((p) => <li key={p.texte}>{p.texte}{p.sansDepense ? <span className="dp-decision"> — une décision, sans dépense</span> : null}</li>)}</ol>
         </section>
       ))}

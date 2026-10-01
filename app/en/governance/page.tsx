@@ -15,7 +15,7 @@ const FR = "/territoire/gouvernance-locale";
 
 export const metadata: Metadata = {
   title: "Local governance in Bédjondo: who decides what",
-  description: metaDescription("Who decides what for Bédjondo — State, province, department, commune, chieftaincies, neighbourhoods —, what our files ask of each level, how they fit together, and the indicators to follow it."),
+  description: metaDescription("Who decides what for Bédjondo, from the State to the neighbourhoods: what we ask of each level, where they must act together, and how we follow it up."),
   alternates: { canonical: ROUTE, languages: alternatesLangues(ROUTE) },
   openGraph: { ...ogFor(ROUTE, "en"), title: "Local governance in Bédjondo: who decides what", description: "Each level of decision, our requests, how they fit together and the indicators to follow them." },
 };
@@ -40,7 +40,7 @@ export default function GovernanceEn() {
         eyebrow="Territory · local governance · in English"
         title="Local governance:"
         em="who decides what, and how we take part."
-        lead="Since the elections of 29 December 2024, much of what Bédjondo is waiting for is no longer decided in N’Djamena alone. This page gathers, level by level, what our files say about each decision-maker — from the State to the neighbourhoods, by way of the chieftaincies —, what we ask of each, where several must act together, and the indicators to follow it. It does not replace the files: it connects them. The source documents are in French."
+        lead="Since the elections of 29 December 2024, much of what Bédjondo is waiting for is no longer decided in N’Djamena alone. This page gathers, level by level, what our files say about each decision-maker — from the State to the neighbourhoods, by way of the chieftaincies — what we ask of each, where several must act together, and the indicators to follow it. It does not replace the files: it connects them. The source documents are in French."
         crumbs={[{ label: "Our work", href: "/en/themes" }, { label: "Local governance" }]}
         lang="en"
         pills={[`${NIVEAUX_EN.length} levels of decision`, `${ARTICULATIONS_EN.length} points of joint action`, `${INDICATEURS_EN.length} indicators, ${publies} published`]}
@@ -49,7 +49,7 @@ export default function GovernanceEn() {
         { value: "18", label: "municipal councillors", note: "elected for six years, renewable once" },
         { value: "2", label: "ordinary sessions a year", note: "plus the budget session" },
         { value: "13", label: "shared areas", note: "between the State and local authorities" },
-        { value: "2.1 %", label: "of public revenue", note: "spent by local authorities (2020)" },
+        { value: "2.1%", label: "of public revenue", note: "spent by local authorities (2020)" },
       ]} />
 
       <nav className="pc-sommaire" aria-label="On this page">
@@ -96,7 +96,7 @@ export default function GovernanceEn() {
       </section>
 
       <section className="hub-section" id="indicators">
-        <SectionHead eyebrow="Following up" title="Indicators," em="published and proposed." text={`The first ${inWords(publies)} already appear in the results framework of our advocacy files. The others were proposed on 30 September 2026 and are still to be approved by the association’s board; their targets and deadlines will be set with the commune, not before.`} />
+        <SectionHead eyebrow="Following up" title="Indicators," em="published and proposed." text={`The first ${inWords(publies)} already appear in the results framework of our advocacy briefs. The others were proposed on 30 September 2026 and are still to be approved by the association’s executive committee; their targets and deadlines will be set with the commune, not before.`} />
         <div className="table-wrap" tabIndex={0} role="region" aria-label="Local governance indicators">
           <table className="sec-table gl-table">
             <thead><tr><th scope="col">Indicator</th><th scope="col">Baseline</th><th scope="col">Target</th><th scope="col">Deadline</th><th scope="col">Evidence</th><th scope="col">Status</th></tr></thead>
@@ -107,11 +107,11 @@ export default function GovernanceEn() {
             </tbody>
           </table>
         </div>
-        <p className="lg-footnote">Source of the published indicators: <Link href="/actions#resultats" hrefLang="fr">results framework of the advocacy files</Link> (in French). Their follow-up appears on the <Link href="/en/impact">impact dashboard</Link>.</p>
+        <p className="lg-footnote">Source of the published indicators: <Link href="/actions#resultats" hrefLang="fr">results framework of the advocacy briefs</Link> (in French). Their follow-up appears on the <Link href="/en/impact">impact dashboard</Link>.</p>
       </section>
 
       <section className="hub-section" id="method">
-        <SectionHead eyebrow="Our method" title="Six rules," em="that we apply to ourselves first." />
+        <SectionHead eyebrow="Our method" title="Six rules" em="that we apply to ourselves first." />
         <ol className="gl-regles">
           {REGLES_EN.map((r) => <li key={r.titre}><strong>{r.titre}</strong> {r.texte}</li>)}
         </ol>
@@ -123,7 +123,7 @@ export default function GovernanceEn() {
           <Link href="/en/commune"><small>Proposals</small><strong>Our proposals to the commune</strong><span>{RESUME_PROPOSITIONS_EN}, and our approach with the commune and local authorities.</span></Link>
           <Link href="/territoire/decentralisation" hrefLang="fr"><small>File · in French</small><strong>Decentralisation & local development</strong><span>The legal framework, the gap between the texts and the means, the four rules we ask of the council.</span></Link>
           <Link href="/programmes/agriculteurs-eleveurs" hrefLang="fr"><small>File · in French</small><strong>Peace between farmers and herders</strong><span>Six measures at canton level, including the joint committee and the mediation logbook.</span></Link>
-          <Link href="/en/advocacy"><small>Advocacy</small><strong>Our advocacy files</strong><span>What we ask of the State and the commune, file by file.</span></Link>
+          <Link href="/en/advocacy"><small>Advocacy</small><strong>Our advocacy briefs</strong><span>What we ask of the State and the commune, brief by brief.</span></Link>
         </div>
       </section>
 

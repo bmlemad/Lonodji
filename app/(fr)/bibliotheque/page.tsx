@@ -45,7 +45,7 @@ export default function Bibliotheque() {
       <Stats items={[
         { value: String(b.references.length), label: "références vérifiées", note: "dans quatre domaines : histoire, linguistique, anthropologie, société" },
         { value: String(b.auteurs.length), label: "auteurs et autrices", note: `dont ${avecOeuvres.length} chercheurs du pays bedjond` },
-        { value: String(b.documents.length), label: "documents publiés par l’association", note: "plaidoyers, cahiers de terrain, kits, dossier" },
+        { value: String(b.documents.length), label: "documents de fond publiés par l’association", note: "plaidoyers, cahiers de terrain, kit, dossier, livre blanc" },
         { value: String(depots), label: depots === 1 ? "dépôt reçu" : "dépôts reçus", note: `relevé du ${new Date(ind.formulaires.date + "T12:00:00Z").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}` },
       ]} />
 

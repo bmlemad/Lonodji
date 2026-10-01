@@ -1,4 +1,3 @@
-import { metaDescription } from "@/lib/content";
 import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
@@ -10,9 +9,9 @@ import { ETATS_SECTEUR, GROUPES_SECTEURS, NON_COUVERTS, SECTEURS } from "@/lib/s
 
 export const metadata: Metadata = {
   title: "Secteurs d’intervention et thématiques",
-  description: metaDescription("Les vingt et une thématiques de l’association lues dans la langue des ONG de développement et d’aide : dix-sept secteurs (WASH, santé, nutrition, éducation, sécurité alimentaire, relief, réduction des risques, protection…), leurs clusters, codes CAD et ODD, ce qui est publié et ce qui n’est qu’une piste."),
+  description: "Nos vingt et une thématiques dans la langue des ONG : dix-sept secteurs (WASH, santé, nutrition, éducation, urgences, protection), clusters, codes CAD et ODD.",
   alternates: { canonical: "/secteurs", languages: alternatesLangues("/secteurs") },
-  openGraph: { ...ogFor("/secteurs"), title: "Secteurs d’intervention : WASH, santé, nutrition, urgences…", description: "Dix-sept secteurs des ONG, nos vingt et une thématiques, ce qui est publié et ce qui n’est qu’une piste." },
+  openGraph: { ...ogFor("/secteurs"), title: "Secteurs d’intervention : WASH, santé, nutrition et urgences", description: "Dix-sept secteurs des ONG, nos vingt et une thématiques, ce qui est publié et ce qui n’est qu’une piste." },
 };
 
 export default function Secteurs() {
@@ -24,7 +23,7 @@ export default function Secteurs() {
     <main id="main-content" className="hub-page">
       <PageHeader
         eyebrow="Nos actions · secteurs d’intervention"
-        title="WASH, santé, relief…"
+        title="WASH, santé, urgences…"
         em="nos thématiques dans la langue des ONG."
         lead="Les partenaires du développement et de l’aide classent le travail par secteurs — les clusters humanitaires, les codes du Comité d’aide au développement de l’OCDE, les Objectifs de développement durable. Voici les vingt et une thématiques de l’association rangées dans ces secteurs, avec pour chacun ce qui est déjà publié (un lien vers la page, le document ou le formulaire — pas une activité réalisée sur le terrain) et ce qui n’est encore qu’une piste. Rien n’est chiffré ni financé à ce jour."
         crumbs={[{ label: "Nos actions", href: "/programmes" }, { label: "Secteurs d’intervention" }]}
@@ -69,7 +68,7 @@ export default function Secteurs() {
           <article><span>04</span><h3>Genre</h3><p>Une thématique, Genre & autonomisation des femmes, porte l’égalité femmes-hommes ; la charte interdit d’écarter quiconque d’une activité ou d’une coordination en raison de son sexe. <Link href="/programmes#leadership-feminin">La thématique 10</Link></p></article>
           <article><span>05</span><h3>Organisation locale</h3><p>Une association de Bédjondo et de sa diaspora, avec un siège des opérations à Bédjondo, des coordonnateurs issus de ses membres et des besoins signalés localité par localité. <Link href="/mission#sieges">Les deux sièges</Link> · <Link href="/territoire/besoins">Signaler un besoin</Link></p></article>
         </div>
-        <p className="lg-footnote">Logique d’intervention, telle que le site l’organise — à valider par l’assemblée générale : le <Link href="/territoire/diagnostic">diagnostic territorial</Link> recense les problèmes et ce que l’on en sait ; chaque problème est rattaché à une thématique ; la thématique porte un <Link href="/actions">plaidoyer</Link> ou un <Link href="/projets">projet</Link> ; le <Link href="/impact">tableau de bord</Link> suit ce qui avance.</p>
+        <p className="lg-footnote">Logique d’intervention, telle que le site l’organise — à valider par l’assemblée générale : le <Link href="/territoire/diagnostic">diagnostic territorial</Link> recense les problèmes et ce que l’on en sait ; chaque problème est rattaché à une thématique ; la thématique porte un <Link href="/actions">plaidoyer</Link> ou un <Link href="/projets">projet</Link> ; le <Link href="/impact">tableau de suivi</Link> suit ce qui avance.</p>
       </section>
 
       {GROUPES_SECTEURS.map((g) => (
@@ -118,7 +117,7 @@ export default function Secteurs() {
         </div>
       </section>
 
-      <Partager route="/secteurs" titre="Secteurs d’intervention d’ADEB LONODJI" texte="WASH, santé, nutrition, éducation, sécurité alimentaire, urgences, protection… nos vingt et une thématiques dans la langue des ONG" />
+      <Partager route="/secteurs" titre="Secteurs d’intervention d’ADEB LONODJI" texte="WASH, santé, nutrition, éducation, sécurité alimentaire, urgences et protection : nos vingt et une thématiques dans la langue des ONG." />
       <p className="lg-footnote">Nomenclatures : clusters du Comité permanent interorganisations (IASC), codes-objet du Comité d’aide au développement de l’OCDE (CAD), Objectifs de développement durable. Correspondance établie par l’association le 29 septembre 2026. Une erreur de classement ? <Link href="/transparence#corrections">Signalez-la</Link>.</p>
     </main>
   );

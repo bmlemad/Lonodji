@@ -14,7 +14,7 @@ const ROUTE = "/en/commune";
 
 export const metadata: Metadata = {
   title: "Our proposals to the commune of Bédjondo",
-  description: metaDescription("Ten priority projects and an integrated local economic development project; planning the town, finance and accountability, an open council, basic services, partnerships and a first project: every proposal ADEB LONODJI makes to the town hall of Bédjondo, gathered and sourced."),
+  description: metaDescription("Ten priority projects and the measures already published for the commune of Bédjondo: town planning, finance, an open council, basic services, partnerships."),
   alternates: { canonical: ROUTE, languages: alternatesLangues(ROUTE) },
   openGraph: { ...ogFor(ROUTE, "en"), title: "Our proposals to the commune of Bédjondo", description: "Every proposal we make to the town hall, on one page, each with its source." },
 };
@@ -105,7 +105,7 @@ export default function CommuneEn() {
       </section>
 
       <section className="hub-section pc-intro-chantiers" id="mesures">
-        <SectionHead eyebrow="Measures already published" title="Six areas of work," em={`${total} measures, each sourced.`} text="Our proposals to the town hall were scattered: a note to the council, an article, a “to the commune” section in each of the seven advocacy files, background pages. Here they are together, with nothing added; each links to the text where it was published (in French)." />
+        <SectionHead eyebrow="Measures already published" title="Six areas of work," em={`${total} measures, each sourced.`} text="Our proposals to the town hall were scattered: a note to the council, an article, a “to the commune” section in each of the seven advocacy briefs, background pages. Here they are together, with nothing added; each links to the text where it was published (in French)." />
       </section>
 
       <nav className="pc-sommaire" aria-label="The six areas of work">

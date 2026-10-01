@@ -15,6 +15,11 @@ export function generateStaticParams() {
   return getVillages().villages.map((v) => ({ unite: v.unite, village: v.slug }));
 }
 
+/* nombre réel de pages qui citent la localité (mentionsTotal, écrit par scripts/build-villages.py) ; la liste affichée reste limitée à 6 */
+const nbMentions = (v: { mentions: unknown[] }) => (v as { mentionsTotal?: number }).mentionsTotal ?? v.mentions.length;
+/* « cette ville », « ce hameau », « cette localité » */
+const ceType = (type: string) => (type === "Ville" || type === "Localité" ? "cette " : "ce ") + type.toLowerCase();
+
 function description(nom: string, type: string, unite: string, kmB: number, eq: number, mentions: number) {
   const t = (TYPES[type] || "Localité").toLowerCase();
   return `${nom}, ${t} de ${unite}${kmB >= 1 ? `, à ${km(kmB)} de Bédjondo` : ""} : ${eq ? `${eq} équipement${eq > 1 ? "s" : ""} connu${eq > 1 ? "s" : ""} à moins de 10 km` : "aucun équipement connu des données ouvertes"}, ${mentions ? `${mentions} page${mentions > 1 ? "s" : ""} du site qui le cite${mentions > 1 ? "nt" : ""}` : "pas encore cité sur le site"}, et ce qui reste à documenter.`;
@@ -26,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ unite: st
   const u = getVillages().unites[unite];
   if (!v || !u) return {};
   const route = routeVillage(v);
-  const desc = metaDescription(description(v.nom, v.type, u.nom, v.kmBedjondo, v.equipements.length, v.mentions.length));
+  const desc = metaDescription(description(v.nom, v.type, u.nom, v.kmBedjondo, v.equipements.length, nbMentions(v)));
   // homonymes dans la même unité (Kemdili, Kemdili 2…) : la distance à Bédjondo les distingue dans les résultats
   const homonymes = getVillages().villages.filter((x) => x.unite === unite && x.nom === v.nom).length > 1;
   const titre = homonymes ? `${v.nom} (${u.nom}, ${km(v.kmBedjondo)} de Bédjondo)` : `${v.nom} (${u.nom})`;
@@ -54,6 +59,7 @@ export default async function Village({ params }: { params: Promise<{ unite: str
   const u = d.unites[unite];
   if (!v || !u) notFound();
   const type = TYPES[v.type] || "Localité";
+  const nbPages = nbMentions(v);
   const estBedjondo = v.kmBedjondo < 1 && unite === "bedjondo";
   const aDocumenter = A_DOCUMENTER(v.nom);
   const osm = `https://www.openstreetmap.org/?mlat=${v.lat}&mlon=${v.lon}#map=15/${v.lat}/${v.lon}`;
@@ -69,14 +75,14 @@ export default async function Village({ params }: { params: Promise<{ unite: str
         em={estBedjondo ? "chef-lieu du pays bedjond." : `${type.toLowerCase()} de ${u.nom}.`}
         lead={`${estBedjondo ? "Chef-lieu du Mandoul Occidental et berceau du peuple bedjond" : `${type} de ${u.nom} (${u.dep}${u.prov && u.prov !== u.dep ? `, ${u.prov}` : ""}), à ${km(v.kmBedjondo)} de Bédjondo`}. Voici ce que les données ouvertes en savent, ce que le site en a écrit, et ce qui reste à documenter — chaque manque renvoie au formulaire qui permet de le combler.`}
         crumbs={[{ label: "Territoire", href: "/territoire" }, { label: "Villages", href: "/villages" }, { label: u.nom, href: `/villages/${unite}` }, { label: v.nom }]}
-        pills={[GROUPES[u.groupe], `${v.equipements.length ? nf.format(v.equipements.length) : "aucun"} équipement${v.equipements.length > 1 ? "s" : ""} connu${v.equipements.length > 1 ? "s" : ""} à moins de 10 km`, v.mentions.length ? `cité par ${nf.format(v.mentions.length)} page${v.mentions.length > 1 ? "s" : ""}` : "pas encore cité sur le site"]}
+        pills={[GROUPES[u.groupe], `${v.equipements.length ? nf.format(v.equipements.length) : "aucun"} équipement${v.equipements.length > 1 ? "s" : ""} connu${v.equipements.length > 1 ? "s" : ""} à moins de 10 km`, nbPages ? `cité par ${nf.format(nbPages)} page${nbPages > 1 ? "s" : ""}` : "pas encore cité sur le site"]}
       />
 
       <Stats items={[
         { value: estBedjondo ? "0" : km(v.kmBedjondo).replace(/ (km|m)$/, ""), label: estBedjondo ? "km : c’est Bédjondo même" : `${v.kmBedjondo < 1 ? "m" : "km"} de Bédjondo`, note: "à vol d’oiseau, d’après les positions OpenStreetMap" },
         { value: nf.format(v.equipements.length), label: v.equipements.length === 1 ? "équipement connu à moins de 10 km" : "équipements connus à moins de 10 km", note: v.equipements.length ? v.equipements.slice(0, 3).map((e) => FAMILLES[e.famille] || e.famille).join(" · ") : "école, santé, eau, marché : rien dans les données ouvertes" },
         { value: nf.format(v.voisins.length), label: "localités voisines les plus proches", note: v.voisins.length ? `${v.voisins[0].nom} à ${km(v.voisins[0].km)}` : "aucune à moins de 15 km" },
-        { value: nf.format(v.mentions.length), label: v.mentions.length === 1 ? "page du site le cite" : "pages du site le citent", note: v.mentions.length ? v.mentions[0].titre : "la première ligne reste à écrire" },
+        { value: nf.format(nbPages), label: nbPages === 1 ? "page du site le cite" : "pages du site le citent", note: v.mentions.length ? v.mentions[0].titre : "la première ligne reste à écrire" },
       ]} />
 
       <div className="section-actions" style={{ justifyContent: "flex-start", marginBottom: 8 }}>
@@ -113,7 +119,7 @@ export default async function Village({ params }: { params: Promise<{ unite: str
       </section>
 
       <section className="hub-section" id="documenter">
-        <SectionHead eyebrow="Ce qu’il reste à documenter" title="Six questions," em={`une fiche à écrire pour ${v.nom}.`} text="Personne n’a encore répondu à ces questions pour ce village. Chaque réponse reçue est vérifiée, puis publiée ici, datée et sourcée. Vous y vivez, vous en venez, vous y avez de la famille : vous savez." />
+        <SectionHead eyebrow="Ce qu’il reste à documenter" title="Six questions," em={`une fiche à écrire pour ${v.nom}.`} text={`Personne n’a encore répondu à ces questions pour ${ceType(type)}. Chaque réponse reçue est vérifiée, puis publiée ici, datée et sourcée. Vous y vivez, vous en venez, vous y avez de la famille : vous savez.`} />
         <div className="vl-questions">
           {aDocumenter.map((q) => (
             <article key={q.titre}>
@@ -157,7 +163,7 @@ export default async function Village({ params }: { params: Promise<{ unite: str
         </div>
       </aside>
 
-      <Partager route={routeVillage(v)} titre={`${v.nom} (${u.nom})`} texte={`fiche de ${type.toLowerCase() === "localité" ? "la localité" : "ce " + type.toLowerCase()} sur le site de l’association ADEB LONODJI : ce que l’on sait, ce qu’il reste à documenter`} />
+      <Partager route={routeVillage(v)} titre={`${v.nom} (${u.nom})`} texte={`Fiche de ${ceType(type)} sur le site de l’association ADEB LONODJI : ce que l’on sait, ce qu’il reste à documenter.`} />
 
       <p className="lg-footnote">Nom et position : OpenStreetMap (export humanitaire HOT, données du {genere}) ; rattachement à {u.nom} : contours GADM 4.1. Un nom mal écrit, une position fausse ? Corrigez-la sur OpenStreetMap ou <Link href="/transparence#corrections">signalez-la</Link> : elle sera corrigée et datée. Fiche établie automatiquement à partir des données de la carte.</p>
     </main>

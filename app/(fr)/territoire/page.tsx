@@ -7,7 +7,7 @@ import { chiffresOdeb } from "@/lib/odeb-chiffres";
 
 export const metadata: Metadata = {
   title: "Territoire",
-  description: metaDescription("Le pays bedjond, unité par unité : la carte, les fiches des villages, Bédjondo, la décentralisation, l’observatoire du Mandoul Occidental, le diagnostic territorial, les besoins signalés et les enquêtes de terrain."),
+  description: metaDescription("Le pays bedjond, unité par unité : carte, fiches des villages, Bédjondo, décentralisation, observatoire, diagnostic, besoins signalés et enquêtes de terrain."),
   alternates: { canonical: "/territoire" },
   openGraph: ogFor("/territoire"),
 };
@@ -23,12 +23,12 @@ export default function Territoire() {
         title="Le pays bedjond,"
         em="ce qu’on en sait et ce qui manque."
         lead="Tout ce que le site dit du territoire, rangé au même endroit : où sont les villages, ce qu’ils ont et n’ont pas, ce que nous avons diagnostiqué et ce qu’il reste à enquêter. Les données viennent de sources ouvertes et de vos signalements ; les lieux sacrés ne figurent jamais sur la carte publique."
-        pills={[`${c.unites} unités`, `${nf.format(c.localites)} localités cartographiées`, `${nf.format(c.fiches)} fiches de villages`, `${c.problematiques} problématiques documentées`]}
+        pills={[`${c.unites} unités`, `${nf.format(c.localites)} localités cartographiées`, `${nf.format(c.fiches)} fiches de villages`, `${c.problematiques} problématiques recensées`]}
       />
       <Stats items={[
         { value: String(c.unites), label: "unités du pays bedjond", note: "du cœur de Bédjondo à la diaspora" },
         { value: nf.format(c.localites), label: "localités cartographiées", note: `dont ${nf.format(c.fiches)} avec une fiche` },
-        { value: String(c.problematiques), label: "problématiques documentées", note: `${c.chantiersPrioritaires} chantiers prioritaires` },
+        { value: String(c.problematiques), label: "problématiques recensées", note: `${c.chantiersPrioritaires} chantiers prioritaires` },
         { value: String(c.inconnues), label: "inconnues dans notre diagnostic", note: "huit font l’objet d’une enquête de terrain" },
       ]} />
 

@@ -14,7 +14,7 @@ const RESUME = "Pétrole du bassin voisin de Doba, fer des anciens fondeurs, or 
 
 export const metadata: Metadata = {
   title: "Sous-sol & ressources naturelles",
-  description: metaDescription("Le sous-sol du Mandoul Occidental : ce que les sources publiques établissent (pétrole du bassin de Doba, fer des anciens fondeurs, or du Nord, connaissance géologique), ce qui reste inconnu, les leçons de Doba et ce que l’association propose avant tout forage."),
+  description: metaDescription("Pétrole du bassin voisin de Doba, fer des anciens fondeurs, or du Nord : ce qui est établi, ce qui reste inconnu, les leçons de Doba et nos propositions."),
   alternates: { canonical: ROUTE, languages: alternatesLangues(ROUTE) },
   openGraph: { ...ogFor(ROUTE), title: TITRE, description: RESUME },
 };
@@ -108,7 +108,7 @@ export default function SousSol() {
         <ol className="gl-regles">
           {ORDRE.map((id) => {
             const s = SOURCES[id];
-            return <li key={id} id={`source-${id}`}><a href={s.href} rel="noopener">{s.titre}</a> — {s.editeur}, {s.date}.</li>;
+            return <li key={id} id={`source-${id}`}><a href={s.href} rel="noopener">{s.titre}</a> — {s.editeur}, {s.date}{s.date.endsWith(".") ? "" : "."}</li>;
           })}
         </ol>
       </section>

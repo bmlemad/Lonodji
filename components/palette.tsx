@@ -32,7 +32,7 @@ const RACCOURCIS_EN: Entry[] = [
   { t: "About the association", r: "/en/about", k: "Raccourci", d: "Who we are, since 1986" },
   { t: "Themes and pillars", r: "/en/themes", k: "Raccourci", d: "Four pillars, twenty-one themes, coordinators" },
   { t: "Donor programmes in Chad", r: "/en/donors", k: "Raccourci", d: "World Bank, EU, UN, AfDB programmes reaching Mandoul, and our entry points" },
-  { t: "Sectors of intervention", r: "/en/sectors", k: "Raccourci", d: "WASH, health, nutrition, relief… our themes in NGO terms" },
+  { t: "Our sectors of work", r: "/en/sectors", k: "Raccourci", d: "WASH, health, nutrition, emergencies… our themes in NGO terms" },
   { t: "Advocacy", r: "/en/advocacy", k: "Raccourci", d: "Seven briefs and a note to the commune" },
   { t: "Projects", r: "/en/projects", k: "Raccourci", d: "Each project with its stage and what is missing" },
   { t: "Impact dashboard", r: "/en/impact", k: "Raccourci", d: "Six dated, sourced indicators" },

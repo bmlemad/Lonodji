@@ -7,7 +7,7 @@ import { chiffresOdeb } from "@/lib/odeb-chiffres";
 
 export const metadata: Metadata = {
   title: "Patrimoine",
-  description: metaDescription("La mémoire et les savoirs du pays bedjond : histoire et grandes figures, lieux sacrés, généalogies, témoignages, la langue nangnda, la bibliothèque numérique et la base de recherche."),
+  description: metaDescription("La mémoire et les savoirs du pays bedjond : histoire, lieux sacrés, généalogies, témoignages, langue nangnda, bibliothèque et base de recherche."),
   alternates: { canonical: "/patrimoine" },
   openGraph: ogFor("/patrimoine"),
 };
@@ -20,7 +20,7 @@ export default function Patrimoine() {
         eyebrow="Patrimoine"
         title="La mémoire du pays bedjond,"
         em="et ce qui s’en écrit."
-        lead="L’histoire, les lieux, les familles, la langue et les savoirs : ce que l’association recueille pour que les générations qui viennent en héritent. Tout est sourcé ; ce qui relève de la tradition orale est dit comme tel, et les lieux sacrés sont recensés sans être publiés."
+        lead="L’histoire, les lieux, les familles, la langue et les savoirs : ce que l’association recueille pour que les générations qui viennent en héritent. Tout est sourcé ; ce qui relève de la tradition orale est dit comme tel, et les lieux sacrés ne sont jamais localisés publiquement."
         pills={["Onze chefs de canton depuis Narmbang", `${c.references} références`, `${c.chercheurs} chercheurs`, "Dictionnaire nangnda en collecte"]}
       />
       <Stats items={[

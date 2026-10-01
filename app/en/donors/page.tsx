@@ -10,7 +10,7 @@ import { FAMILLES_EN, FENETRES_EN, GUICHETS_EN, PLAIDOYERS_EN, PORTEES_EN, PROGR
 
 export const metadata: Metadata = {
   title: "Donor programmes in Chad",
-  description: metaDescription("World Bank, European Union, United Nations, AfDB, Swiss cooperation, AFD: the programmes under way in Chad, those reaching Mandoul province, and for each how ADEB LONODJI can connect to it."),
+  description: metaDescription("World Bank, EU, UN, AfDB, Swiss cooperation, AFD: donor programmes under way in Chad, those reaching Mandoul, and how the association can connect to each."),
   alternates: { canonical: "/en/donors", languages: alternatesLangues("/en/donors") },
   openGraph: { ...ogFor("/en/donors", "en"), title: "Donor programmes in Chad, and where we connect", description: "Programmes under way, those reaching Mandoul, and our entry points." },
 };
@@ -73,7 +73,7 @@ export default function DonorsEn() {
         <SectionHead eyebrow="In brief" title="What this survey changes" em="for our advocacy." />
         <ul className="bl-bref">
           <li><strong>Bédjondo is named in no programme document.</strong> Mandoul often is (health, water, women, agriculture), Koumra sometimes. Our task: get Bédjondo and its cantons onto the locality lists being drawn up now.</li>
-          <li><strong>Two addressees of our advocacy have changed.</strong> The World Bank rural roads project (PMCR) closed on 30 April 2026; the World Bank water project PASER does not cover Mandoul. For water, the right doors are the AfDB (PAEPA II), UNICEF and Swiss cooperation.</li>
+          <li><strong>Two recipients of our advocacy have changed.</strong> The World Bank rural roads project (PMCR) closed on 30 April 2026; the World Bank water project PASER does not cover Mandoul. For water, the right doors are the AfDB (PAEPA II), UNICEF and Swiss cooperation.</li>
           <li><strong>The south is treated as a development area, not a humanitarian one</strong> — except for water: the 2026 Humanitarian Response Plan lists Mandoul Occidental among the priority departments for water, sanitation and hygiene.</li>
           <li><strong>Donors do not fund associations directly</strong>: they work through ministries and their project units. The few windows open to an organisation like ours are listed below.</li>
         </ul>
@@ -140,9 +140,9 @@ export default function DonorsEn() {
       <OuvrirAncre />
       <section className="hub-section">
         <p className="lg-footnote">
-          Survey of {RELEVE_EN}, from official portals (World Bank, AfDB, the EU’s IATI register, Swiss cooperation, AFD, UNDP, UNICEF, UNFPA, IFAD, OCHA, Global Fund) and, failing that, the Chadian press, cited as such. Where an amount, a date or an area was not found, we say so. Programmes change quickly: this survey will be redone every six months. The French page adds, for each of our themes and projects, the programmes that match it: <Link href="/bailleurs#par-action" hrefLang="fr">programmes by theme and by project (French)</Link>. A mistake, a programme missed? <Link href="/participer?objet=partenariat#contact" hrefLang="fr">Write to us</Link>. See also <Link href="/en/sectors">our sectors of intervention</Link>.
+          Survey of {RELEVE_EN}, from official portals (World Bank, AfDB, the EU’s IATI register, Swiss cooperation, AFD, UNDP, UNICEF, UNFPA, IFAD, OCHA, Global Fund) and, failing that, the Chadian press, cited as such. Where an amount, a date or an area was not found, we say so. Programmes change quickly: this survey will be redone every six months. The French page adds, for each of our themes and projects, the programmes that match it: <Link href="/bailleurs#par-action" hrefLang="fr">programmes by theme and by project (French)</Link>. A mistake, a programme missed? <Link href="/participer?objet=partenariat#contact" hrefLang="fr">Write to us</Link>. See also <Link href="/en/sectors">our sectors of work</Link>.
         </p>
-        <Partager route="/en/donors" titre="Donor programmes in Chad, and where ADEB LONODJI connects" texte="World Bank, EU, United Nations, AfDB: programmes reaching Mandoul province, and our entry points." />
+        <Partager route="/en/donors" titre="Donor programmes in Chad, and where ADEB LONODJI connects" texte="World Bank, EU, United Nations, AfDB: programmes reaching Mandoul province, and our entry points." lang="en" />
       </section>
     </main>
   );

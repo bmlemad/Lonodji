@@ -25,6 +25,10 @@ OUT = ROOT / "public" / "partage"
 CONTENT = ROOT / "content"
 
 
+EN_LETTRES = {1: "Une", 2: "Deux", 3: "Trois", 4: "Quatre", 5: "Cinq", 6: "Six", 7: "Sept", 8: "Huit", 9: "Neuf", 10: "Dix"}
+MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+
+
 def visuels() -> list[dict]:
     idx = json.loads((CONTENT / "index.json").read_text("utf8"))
     ind = json.loads((CONTENT / "indicateurs.json").read_text("utf8"))
@@ -42,8 +46,8 @@ def visuels() -> list[dict]:
          "lignes": ["D’où nous partons, pourquoi une organisation, la vision 2030", "Six missions, six programmes, une feuille de route 2026-2030", "Version de travail n° 1 · en ligne et en PDF"],
          "url": "lonodji.org/odeb/livre-blanc"},
         {"nom": "thematiques-a-pourvoir", "eyebrow": f"{pourvues} thématiques pourvues sur {len(them)}",
-         "titre": f"{'Quatre' if len(vacantes) == 4 else len(vacantes)} thématiques <em>cherchent leur coordonnateur</em>",
-         "lignes": [t["name"] for t in vacantes][:4],
+         "titre": f"{EN_LETTRES.get(len(vacantes), str(len(vacantes)))} {'thématique' if len(vacantes) == 1 else 'thématiques'} <em>{'cherche' if len(vacantes) == 1 else 'cherchent'} leur coordonnateur</em>",
+         "lignes": [t["name"] for t in vacantes][:5],
          "url": "lonodji.org/participer"},
         {"nom": "retrouver-son-village", "eyebrow": "Territoire · fiches des villages",
          "titre": f"{c['carte']['localitesNommees']} localités, <em>une fiche chacune</em>",
@@ -97,7 +101,7 @@ body.avec-odeb .eyebrow{{margin-top:220px}} body.avec-odeb h1{{max-width:900px}}
 <p class="eyebrow">{eyebrow}</p><div class="line"></div>
 <h1>{titre}</h1>
 <ul>{lignes}</ul>
-<p class="url"><span>{url}</span><small>Site officiel · septembre 2026</small></p>
+<p class="url"><span>{url}</span><small>Site officiel · {mois}</small></p>
 </div>
 </body></html>"""
 
@@ -108,6 +112,10 @@ def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     fonts = font_faces()
     tmp = ROOT / ".next" / "visuel-tmp.html"
+    import hashlib
+    from datetime import date
+    MANIFESTE = ROOT / "content" / "og-textes.json"
+    vus = json.loads(MANIFESTE.read_text("utf8")) if MANIFESTE.exists() else {}
     with sync_playwright() as p:
         b = p.chromium.launch()
         page = b.new_page(viewport={"width": 1080, "height": 1080}, device_scale_factor=1)
@@ -115,8 +123,14 @@ def main() -> None:
             brut = len(v["titre"].replace("<em>", "").replace("</em>", ""))
             size = 76 if brut < 40 else 66 if brut < 60 else 58
             odeb = v.get("odeb") and ODEB_EMBLEME.exists()
-            html = TEMPLATE.format(fonts=fonts, logo=LOGO, eyebrow=esc(v["eyebrow"]), titre=v["titre"], lignes="".join(f"<li>{esc(l)}</li>" for l in v["lignes"]), url=esc(v["url"]), size=size,
+            html = TEMPLATE.format(mois=f"{MOIS[date.today().month - 1]} {date.today().year}", fonts=fonts, logo=LOGO, eyebrow=esc(v["eyebrow"]), titre=v["titre"], lignes="".join(f"<li>{esc(l)}</li>" for l in v["lignes"]), url=esc(v["url"]), size=size,
                                    classe="avec-odeb" if odeb else "", odeb=f'<img class="odeb" src="file://{ODEB_EMBLEME}" alt="">' if odeb else "")
+            # même règle que build-og.py : on ne refait que les visuels dont le texte a changé (hors mention du mois)
+            cle = "partage/" + v["nom"]
+            empreinte = hashlib.sha1(html.replace(f"Site officiel · {MOIS[date.today().month - 1]} {date.today().year}", "").encode("utf-8")).hexdigest()[:16]
+            if vus.get(cle) == empreinte and (OUT / f"{v['nom']}.png").exists():
+                continue
+            vus[cle] = empreinte
             tmp.write_text(html, encoding="utf-8")
             page.goto(tmp.as_uri(), wait_until="load")
             page.wait_for_timeout(150)
@@ -124,6 +138,7 @@ def main() -> None:
             print(f"public/partage/{v['nom']}.png")
         b.close()
     tmp.unlink(missing_ok=True)
+    MANIFESTE.write_text(json.dumps(dict(sorted(vus.items())), ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

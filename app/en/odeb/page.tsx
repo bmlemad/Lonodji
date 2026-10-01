@@ -12,7 +12,7 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "The ODEB LONODJI project — Vision 2030",
-  description: metaDescription("ODEB LONODJI, the Organisation for the Development and Emergence of the Bedjond people: a project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030. Six missions, six programmes, a roadmap, a white paper."),
+  description: metaDescription("ODEB LONODJI, the Organisation for the Development and Emergence of the Bedjond people: a project to give the Bedjond country a permanent institution by 2030."),
   alternates: { canonical: "/en/odeb", languages: alternatesLangues("/en/odeb") },
   openGraph: { ...ogFor("/en/odeb", "en"), title: "The ODEB LONODJI project — Vision 2030", description: "A project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030: six missions, six programmes, a roadmap, a white paper." },
 };
@@ -22,7 +22,7 @@ const MISSIONS_EN: [string, string][] = [
   ["Documentation", "Keep, classify, date and make accessible documents, data and testimonies."],
   ["Territorial development", "Diagnose, prioritise, advocate and follow up, village by village, what is missing and what is moving."],
   ["Innovation", "Put digital tools, data and artificial intelligence at the service of the territory, the language and young people."],
-  ["Heritage preservation", "Protect and pass on the Nangnda language, the places, the genealogies and the memory of the elders."],
+  ["Heritage preservation", "Protect and pass on the Nangnda (Bedjond) language, the places, the genealogies and the memory of the elders."],
   ["Diaspora mobilisation", "Connect the skills, means and attention of the diaspora with the needs of the Bedjond country."],
 ];
 const PROGRAMMES_EN: Record<string, [string, string]> = {
@@ -38,7 +38,7 @@ const REPERES_EN = [
   "the main mobilisation platform of the Bedjond diaspora",
   "a citizens’ observatory of Mandoul Occidental",
   "a community skills centre",
-  "an African reference for community-led territorial development",
+  "an African benchmark for community-led territorial development",
 ];
 
 /* Feuille de route : titres et périodes des phases (lib/odeb.ts, en français), traduits à l'affichage. */
@@ -47,8 +47,8 @@ const PHASES_EN: Record<string, [string, string]> = {
   "phase-1": ["Phase 1 · 0 to 6 months", "Bringing the site to life"],
   "phase-2": ["Phase 2 · 6 to 18 months", "Equipping the community"],
   "phase-3": ["Phase 3 · 18 to 36 months", "The observatory and the academy"],
-  "2028": ["2028", "Review of the 2026-2028 action plan"],
-  "2030": ["2029-2030", "The reference organisation"],
+  "2028": ["2028", "Review of the 2026–2028 action plan"],
+  "2030": ["2029–2030", "The leading organisation"],
 };
 
 /* Intitulés anglais actuels des thématiques (mêmes que /en/themes), par identifiant de lib/content. */
@@ -90,7 +90,7 @@ export default function OdebEn() {
         eyebrow="ODEB LONODJI project · Vision 2030 · in English"
         title="Organisation for the Development"
         em="and Emergence of the Bedjond people."
-        lead="ODEB LONODJI is a strategic project led by ADEB LONODJI, aiming to establish, in time, a reference organisation dedicated to sustainable development, research, heritage and the emergence of the Bedjond country (Mandoul Occidental, Chad). It was launched on 28 September 2026, the day the association celebrated forty years since the first discussions of 1986."
+        lead="ODEB LONODJI is a strategic project led by ADEB LONODJI, aiming to establish, in time, a leading organisation dedicated to sustainable development, research, heritage and the emergence of the Bedjond country (Mandoul Occidental, Chad). It was launched on 28 September 2026, the day the association celebrated forty years since the first discussions of 1986."
         crumbs={[{ label: "ODEB project" }]}
         lang="en"
         pills={["Led by ADEB LONODJI", "Launched 28 September 2026", "Six missions, six programmes", "White paper: working draft, in French"]}
@@ -111,7 +111,7 @@ export default function OdebEn() {
       </section>
 
       <section className="hub-section" id="programmes">
-        <SectionHead eyebrow="Six programmes" title="Programmes," em="not promises." text="Each programme has three strands, relies on named themes of the association and states, on its French page, what already exists and what it would build by 2030 — in the conditional, because nothing is funded. The sixth, added on the evening of 28 September 2026, proposes income-generating businesses — a hotel, a boarding school from year 7, a transport company — whose profits would fund the development and welfare projects." />
+        <SectionHead eyebrow="Six programmes" title="Programmes," em="not promises." text="Each programme has three strands, relies on named themes of the association and states, on its French page, what already exists and what it would build by 2030 — in the conditional, because nothing is funded. The sixth, added on the evening of 28 September 2026, proposes income-generating businesses — a hotel, a boarding school from Year 7, a transport company — whose profits would fund the development and welfare projects." />
         <div className="od-programmes">
           {PROGRAMMES.map((p) => {
             const [nom, texte] = PROGRAMMES_EN[p.slug];

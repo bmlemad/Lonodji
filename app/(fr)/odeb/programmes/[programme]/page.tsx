@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ programme
   const route = routeProgramme(p);
   return {
     title: `Programme ${p.nom} — ODEB`,
-    description: metaDescription(`${p.axes.map((a) => a.titre).join(", ")} : ${p.accroche}`),
+    description: metaDescription(`Programme ${p.numero} du projet ${ODEB.sigle}. ${p.accroche}`),
     alternates: { canonical: route },
     openGraph: ogFor(route),
   };
@@ -33,6 +33,8 @@ export default async function ProgrammePage({ params }: { params: Promise<{ prog
   if (!p) notFound();
   const th = thematiquesParId();
   const ths = p.thematiques.map((id) => th[id]).filter(Boolean);
+  const themes = ths.filter((t) => t.kind !== "cellule");
+  const cellules = ths.filter((t) => t.kind === "cellule");
   const partenaires = programmesUtilesDes(p.thematiques);
   const i = PROGRAMMES.indexOf(p);
   const prec = PROGRAMMES[(i + PROGRAMMES.length - 1) % PROGRAMMES.length];
@@ -45,7 +47,7 @@ export default async function ProgrammePage({ params }: { params: Promise<{ prog
         em={p.axes.map((a) => a.titre).join(" · ") + "."}
         lead={p.objet}
         crumbs={[{ label: "Vision 2030 — projet ODEB", href: "/odeb" }, { label: "Programmes", href: "/odeb/programmes" }, { label: p.nom }]}
-        pills={[`Missions : ${p.missions.map((id) => MISSIONS.find((m) => m.id === id)?.nom).filter(Boolean).join(", ")}`, `${ths.length} ${ths.length > 1 ? "thématiques" : "thématique"}, ${ths.filter((t) => t.filled).length} ${ths.filter((t) => t.filled).length > 1 ? "pourvues" : "pourvue"}`]}
+        pills={[`Missions : ${p.missions.map((id) => MISSIONS.find((m) => m.id === id)?.nom).filter(Boolean).join(", ")}`, `${themes.length} ${themes.length > 1 ? "thématiques" : "thématique"}${cellules.length ? ` et ${cellules.length > 1 ? `${cellules.length} cellules` : "une cellule"}` : ""}, ${ths.filter((t) => t.filled).length} ${ths.filter((t) => t.filled).length > 1 ? "pourvues" : "pourvue"}`]}
       />
       <OdebNav actif="programmes" />
 
@@ -133,7 +135,7 @@ export default async function ProgrammePage({ params }: { params: Promise<{ prog
       </section>
 
       <section className="hub-section" id="partenaires">
-        <SectionHead eyebrow="Programmes des bailleurs" title="Qui finance déjà" em="ce que ce programme vise." text={partenaires.length ? `${partenaires.length} programme${partenaires.length > 1 ? "s" : ""} en cours ou en préparation au Tchad touche${partenaires.length > 1 ? "nt" : ""} les thématiques de ce programme, du plus proche de Bédjondo au plus lointain. Aucun ne finance l’association : ce sont des portes à pousser, avec une demande écrite ou une liste de localités à rejoindre.` : "Aucun programme de bailleur relevé ne finance aujourd’hui les thématiques de ce programme : il repose sur les membres, la diaspora et, plus tard, les guichets ouverts aux associations."} />
+        <SectionHead eyebrow="Programmes des bailleurs" title="Qui finance déjà" em="ce que ce programme vise." text={partenaires.length ? `${partenaires.length} programme${partenaires.length > 1 ? "s" : ""} en cours ou en préparation au Tchad touche${partenaires.length > 1 ? "nt" : ""} les thématiques de ce programme${partenaires.length > 1 ? ", du plus proche de Bédjondo au plus lointain" : ""}. Aucun ne finance l’association : ce sont des portes à pousser, avec une demande écrite ou une liste de localités à rejoindre.` : "Aucun programme de bailleur relevé ne finance aujourd’hui les thématiques de ce programme : il repose sur les membres, la diaspora et, plus tard, les guichets ouverts aux associations."} />
         {partenaires.length ? (
           <ul className="od-partenaires">
             {partenaires.map((b) => (

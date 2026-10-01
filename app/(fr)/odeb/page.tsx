@@ -12,7 +12,7 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Projet ODEB LONODJI — Vision 2030",
-  description: metaDescription("L’ODEB LONODJI, Organisation pour le Développement et l’Émergence Bedjonde : un projet porté par ADEB LONODJI pour doter le pays bedjond d’un outil permanent, à l’horizon 2030."),
+  description: metaDescription("Organisation pour le Développement et l’Émergence Bedjonde : le projet ODEB LONODJI d’ADEB LONODJI, un outil permanent pour le pays bedjond à l’horizon 2030."),
   alternates: { canonical: "/odeb", languages: alternatesLangues("/odeb") },
   openGraph: ogFor("/odeb"),
 };
@@ -39,7 +39,7 @@ export default function Odeb() {
         { value: "6", label: "missions permanentes", note: "recherche, documentation, développement territorial, innovation, patrimoine, diaspora" },
         { value: String(PROGRAMMES.length), label: "programmes", note: "mémoire et patrimoine, recherche, développement territorial, jeunesse et innovation, diaspora, économie sociale et revenus" },
         { value: ODEB.horizon, label: "l’horizon", note: "une feuille de route en trois phases, de 2026 à 2030" },
-        { value: `${c.pourvues}/${c.total}`, label: "thématiques déjà pourvues", note: `${nf.format(coordonnateurs.size)} coordonnateurs et coordonnatrices portent déjà les programmes` },
+        { value: `${c.pourvues}/${c.total}`, label: "thématiques déjà pourvues", note: `${nf.format(coordonnateurs.size)} des ${c.pourvues} coordonnateurs et coordonnatrices portent déjà les programmes` },
       ]} />
 
       <section className="hub-section" id="pourquoi">
@@ -69,7 +69,7 @@ export default function Odeb() {
       </section>
 
       <section className="hub-section" id="programmes">
-        <SectionHead eyebrow="Six programmes" title="Des programmes," em="pas des promesses." text="Chaque programme a trois axes, s’appuie sur des thématiques nommées et dit, page par page, ce qui existe déjà et ce qu’il construira. Ce qui n’est pas fait est écrit au conditionnel. Le sixième, ajouté le soir du 28 septembre 2026, propose des entreprises dont les bénéfices financeraient les projets." />
+        <SectionHead eyebrow="Six programmes" title="Des programmes," em="pas des promesses." text="Chaque programme a trois axes (quatre pour le sixième), s’appuie sur des thématiques nommées et dit, page par page, ce qui existe déjà et ce qu’il construira. Ce qui n’est pas fait est écrit au conditionnel. Le sixième, ajouté le soir du 28 septembre 2026, propose des entreprises dont les bénéfices financeraient les projets." />
         <div className="od-programmes">
           {PROGRAMMES.map((p) => {
             const ths = p.thematiques.map((id) => th[id]).filter(Boolean);

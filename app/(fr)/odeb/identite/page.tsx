@@ -10,7 +10,7 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Identité visuelle « Les Pas vers l’Avenir »",
-  description: metaDescription("Trois empreintes — les ancêtres, la génération actuelle, les générations futures — qui avancent vers un soleil levant : le logo d’ADEB LONODJI et de son projet ODEB LONODJI, ses versions, ses couleurs, ses règles d’usage, le kit à télécharger et les papiers à en-tête."),
+  description: metaDescription("Trois empreintes vers un soleil levant : le logo d’ADEB LONODJI et du projet ODEB LONODJI, ses versions, ses couleurs, ses règles et le kit à télécharger."),
   alternates: { canonical: "/odeb/identite" },
   openGraph: ogFor("/odeb/identite"),
 };
@@ -122,7 +122,7 @@ export default function Identite() {
       <section className="hub-section" id="documents">
         <SectionHead eyebrow="À télécharger" title="Le kit," em="et les documents qui vont avec." />
         <div className="link-list">
-          <a href={IDENTITE.kit} download><small>ZIP · tous les fichiers</small><strong>Kit du logo « Les Pas vers l’Avenir »</strong><span>Les dix-neuf SVG (emblèmes, logos ADEB LONODJI et ODEB LONODJI), les PNG jusqu’à 2048 px, la planche PDF, les papiers à en-tête, les bannières, les images de profil, les signatures e-mail, les cartes de visite, les modèles de diaporama et un LISEZMOI avec les règles courtes.</span></a>
+          <a href={IDENTITE.kit} download><small>ZIP · tous les fichiers</small><strong>Kit du logo « Les Pas vers l’Avenir »</strong><span>Les dix-neuf SVG (emblèmes, logos ADEB LONODJI et ODEB LONODJI), les PNG jusqu’à 2 048 px, la planche PDF, les papiers à en-tête, les bannières, les images de profil, les signatures e-mail, les cartes de visite, les modèles de diaporama et un LISEZMOI avec les règles courtes.</span></a>
           <a href={IDENTITE.charte} download><small>PDF · charte</small><strong>Identité visuelle d’ADEB LONODJI et du projet ODEB</strong><span>Cette page, en PDF, pour la joindre à un dossier ou l’envoyer à un partenaire.</span></a>
           <a href={IDENTITE.planche} download><small>PDF · 3 pages</small><strong>Planche pour l’imprimeur</strong><span>Toutes les versions, les couleurs avec leurs équivalents CMJN, les règles ; les textes en tracés.</span></a>
           <a href={IDENTITE.adeb.enTeteDocx} download><small>DOCX · A4</small><strong>Papier à en-tête de l’association</strong><span>Logo ADEB LONODJI, reconnaissance de 1995, devise, pied avec le contact ; le corps de la lettre est à vous.</span></a>
@@ -144,7 +144,7 @@ export default function Identite() {
           ))}
         </div>
         <div className="link-list">
-          <a href={IDENTITE.reseaux.profil} download><small>PNG · 1024 × 1024</small><strong>Image de profil</strong><span>L’emblème sur fond vert profond, pour Facebook, LinkedIn, WhatsApp : rien n’est coupé par le recadrage rond.</span></a>
+          <a href={IDENTITE.reseaux.profil} download><small>PNG · 1 024 × 1 024</small><strong>Image de profil</strong><span>L’emblème sur fond vert profond, pour Facebook, LinkedIn, WhatsApp : rien n’est coupé par le recadrage rond.</span></a>
           <a href={IDENTITE.reseaux.whatsapp} download><small>PNG · 640 × 640</small><strong>Icône de groupe WhatsApp</strong><span>La même image, à la taille que WhatsApp accepte.</span></a>
           <a href={IDENTITE.signature.adeb} download><small>HTML · messagerie</small><strong>Signature e-mail de l’association</strong><span>Ouvrir, tout sélectionner, copier, coller dans Gmail ou Outlook ; trois lignes entre crochets à remplacer. Le logo est hébergé ici, rien à joindre.</span></a>
           <a href={IDENTITE.signature.odeb} download><small>HTML · messagerie</small><strong>Signature e-mail du projet ODEB</strong><span>La même, au nom du projet.</span></a>

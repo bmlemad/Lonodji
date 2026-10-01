@@ -11,8 +11,8 @@ import { getObservatoire } from "@/lib/observatoire";
 import { decisionsTriees, TYPES } from "@/lib/decisions";
 
 export const metadata: Metadata = {
-  title: "Tableau de suivi — indicateurs, plaidoyers, engagements, décisions",
-  description: "Le seul tableau de suivi de l’association : six indicateurs datés et sourcés, la transmission de chaque plaidoyer, les engagements publics, les dernières décisions, puis le suivi thématique par thématique.",
+  title: "Tableau de suivi : indicateurs, plaidoyers, engagements",
+  description: "Six indicateurs datés et sourcés, la transmission de chaque plaidoyer, les engagements publics, les dernières décisions et le suivi thématique par thématique.",
   alternates: { canonical: "/impact", languages: alternatesLangues("/impact") },
   openGraph: ogFor("/impact"),
 };
@@ -52,7 +52,7 @@ export default function Impact() {
                 <tr key={pl.id}>
                   <th scope="row"><Link href={pl.href}>{pl.title}</Link></th>
                   <td>{pl.theme}</td>
-                  <td><small>{pl.recipients}</small></td>
+                  <td><small>{pl.recipients.replace(/\s+\)/g, ")")}</small></td>
                   <td>{pl.published}</td>
                   <td className={!/\d{4}/.test(pl.sent ?? "") ? "ob-manque" : "ob-ok"}>{pl.sent || "—"}</td>
                   <td className={/aucun|non|—|pas/i.test(pl.answer) || !pl.answer ? "est-vide" : "ob-ok"}>{pl.answer || "—"}</td>

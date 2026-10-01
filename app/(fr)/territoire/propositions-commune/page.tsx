@@ -13,7 +13,7 @@ const ROUTE = "/territoire/propositions-commune";
 
 export const metadata: Metadata = {
   title: "Nos propositions à la commune de Bédjondo",
-  description: metaDescription("Dix projets prioritaires et un projet intégré de développement économique local ; planifier la ville, financer et rendre des comptes, ouvrir le conseil, les services de base, les partenariats et un premier chantier : toutes les propositions d’ADEB LONODJI à la mairie de Bédjondo, réunies et sourcées."),
+  description: metaDescription("Dix projets prioritaires, un projet intégré et 29 mesures sourcées : toutes les propositions d’ADEB LONODJI à la mairie de Bédjondo, réunies sur une page."),
   alternates: { canonical: ROUTE, languages: alternatesLangues(ROUTE) },
   openGraph: { ...ogFor(ROUTE), title: "Nos propositions à la commune de Bédjondo", description: "Toutes nos propositions à la mairie, réunies sur une page, chacune avec sa source." },
 };
@@ -73,7 +73,7 @@ export default function PropositionsCommune() {
                 <p className="pp-tete"><span className="pp-num">{i + 1}</span>{p.porteur ? <span className="pp-badge">parmi les plus porteurs</span> : null}</p>
                 <h3>{p.titre}</h3>
                 <ul className="pp-volets">{p.volets.map((v) => <li key={v}>{v}</li>)}</ul>
-                {p.deja.length ? <p className="pp-ligne"><b>Déjà dans nos dossiers</b><Sources sources={p.deja} /></p> : <p className="pp-ligne"><b>Déjà dans nos dossiers</b><span className="pc-sources">proposition nouvelle</span></p>}
+                {p.deja.length ? <p className="pp-ligne"><b>Déjà dans nos dossiers</b><Sources sources={p.deja} /></p> : <p className="pp-ligne"><b>Déjà dans nos dossiers</b><span className="pc-sources">rien encore : proposition nouvelle</span></p>}
                 <div className={p.apport.length ? "pp-apport" : "pp-apport est-vide"}>
                   <p className="pp-apport-titre">Ce que LONODJI pourrait apporter</p>
                   {p.apport.length ? (

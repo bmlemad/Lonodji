@@ -6,7 +6,7 @@ import { getIndex } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Espace de rédaction",
-  description: "Espace privé de rédaction des articles du journal d’ADEB LONODJI.",
+  description: "Espace privé de rédaction du journal d’ADEB LONODJI : écrire, relire, puis transmettre l’article à la rédaction.",
   alternates: { canonical: "/redaction" },
   robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
 };

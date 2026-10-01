@@ -9,12 +9,19 @@ import { IDENTITE, ODEB, PROGRAMMES, routeProgramme } from "@/lib/odeb";
 import { RESUME_PROPOSITIONS } from "@/lib/gouvernance-locale";
 
 
-export const metadata: Metadata = { alternates: { canonical: "/", languages: alternatesLangues("/") } };
+/* Description propre à l'accueil : celle du gabarit (components/root-shell.tsx) dépasse 160 caractères ;
+   l'aperçu de partage (openGraph) reste celui du gabarit, complet et à jour. */
+const nbThemes = thematiqueCount(getIndex());
+const nbPlaidoyers = getIndicateurs().contenu.plaidoyers.publies;
+export const metadata: Metadata = {
+  description: `L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : quatre pôles, ${enLettres(nbThemes)} thématiques, ${enLettres(nbPlaidoyers)} dossiers de plaidoyer.`,
+  alternates: { canonical: "/", languages: alternatesLangues("/") },
+};
 
 const values = [
   ["01", "Courage", "Affronter les défis de la communauté sans attendre qu’une solution vienne d’ailleurs ; agir en premier, avec responsabilité."],
   ["02", "Discipline", "Tenir les engagements pris envers l’association, respecter l’organisation en pôles et rendre compte des actions menées."],
-  ["03", "Héritage", "Préserver et transmettre ce que la communauté bedjond a construit, pour que les générations futures en héritent renforcé."],
+  ["03", "Héritage", "Préserver et transmettre ce que la communauté bedjond a construit, pour que les générations futures le reçoivent renforcé."],
 ]
 
 /* Postes ouverts, comptés dans content/index.json : thématiques, cellules transversales, directions de pôle. */
@@ -134,7 +141,7 @@ export default function Home() {
               <h2 id="programmes-title">Quatre pôles.<br /><em>{enLettres(total, true)} thématiques.</em></h2>
             </div>
             <p>
-              Chaque pôle sera dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ({dir.pourvues ? `${enLettres(dir.pourvues)} pourvue${dir.pourvues > 1 ? "s" : ""}, ${enLettres(dir.total - dir.pourvues)} à pourvoir` : "les quatre postes sont à pourvoir"}) ; chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte publiquement. Deux cellules transversales — financement et communication — appuient l’ensemble.
+              Chaque pôle sera dirigé par un directeur ou une directrice de pôle, au rang de chef de projet ({dir.pourvues ? `${enLettres(dir.pourvues)} direction${dir.pourvues > 1 ? "s" : ""} pourvue${dir.pourvues > 1 ? "s" : ""}, ${enLettres(dir.total - dir.pourvues)} à pourvoir` : "les quatre postes sont à pourvoir"}) ; chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte publiquement. Deux cellules transversales — financement et communication — appuient l’ensemble.
             </p>
           </div>
           <div className="program-grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))" }}>
@@ -263,7 +270,7 @@ export default function Home() {
           </div>
           <div className="trust-card">
             <span className="trust-mark" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 10 4-1.7 7-5.6 7-10V6z" /><path d="m9 12 2 2 4-4" /></svg></span>
-            <h3>Réponse sous 48 heures, plainte possible, corrections publiées</h3>
+            <h3>Réponse sous 48 heures ouvrées, plainte possible, corrections publiées</h3>
             <p>
               Mécanisme de plainte — même anonyme — avec recours jusqu’à l’assemblée générale, protection des enfants et des personnes vulnérables, charte d’écriture, et documents publiés au fur et à mesure de leur validation.
             </p>

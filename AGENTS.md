@@ -41,7 +41,10 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
 ## Contenu hérité et génération
 - Les pages issues de l'ancien site se corrigent dans `scripts/corrections_fr.py` / `corrections_en.py`
   (remplacements exacts), puis `python3 scripts/import-legacy.py <ancien-site>` ; un remplacement sans effet est
-  signalé à l'import. Ne pas éditer `content/pages/*.json` à la main : l'import les réécrit.
+  signalé à l'import.
+  Les relectures suivantes ont leur propre fichier, `scripts/corrections_revue_<date>_<lot>.py`, chargé après les deux
+  premiers. `python3 scripts/trouver-texte.py "texte affiché"` donne le fichier source et l'extrait exact à remplacer ;
+  `--verifier` liste les corrections sans effet sans rien écrire. Ne pas éditer `content/pages/*.json` à la main : l'import les réécrit.
 - Nommer un coordonnateur : une ligne dans `NOMINATIONS` (`scripts/import-legacy.py`) et une entrée dans
   `lib/decisions.ts`. Les phrases héritées qui comptent les coordinations (« quatre des vingt thématiques… »,
   « Sixteen themes out of twenty… ») sont recalculées à l'import (`comptes_courants`) : ne pas les corriger à la main.
@@ -50,6 +53,8 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
 - Après un import (qui lance lui-même `build-kit-adhesion.py`) : `build-dossier-presentation.py`, `build-carte.py`,
   `build-search-index.py`, puis `build-bibliotheque`, `build-villages`, `build-observatoire`,
   `build-indicateurs`, `build-fiches-mission` (voir README).
+- Images de partage (`build-og.py`, toutes les pages) et visuels carrés (`build-visuels.py`) : seules celles dont le
+  texte a changé sont refaites (empreintes dans `content/og-textes.json`). Les relancer après chaque build.
 - Ne régénérer un PDF, un ZIP ou une présentation que si son contenu change : chaque version reste dans
   l'historique git (le dépôt dépasse déjà 270 Mo).
 - Une nouvelle page s'enregistre dans `app/sitemap.ts`, `scripts/build-og.py`, `scripts/qa/controle.py` et

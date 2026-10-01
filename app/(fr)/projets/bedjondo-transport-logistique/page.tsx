@@ -10,7 +10,7 @@ import { metaDescription, ogFor } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Bedjondo Transport et Logistique",
-  description: metaDescription("Le projet de transport et de logistique terrestres de Bédjondo, annoncé sous le nom d’Air Bedjondo : pourquoi, ce que nous savons, ce que nous ne savons pas, et nos propositions pour le mener — services, véhicules, montage, étapes, règles."),
+  description: metaDescription("Le projet de transport et de logistique terrestres de Bédjondo, annoncé sous le nom d’Air Bedjondo : pourquoi, ce que nous savons et nos six propositions."),
   alternates: { canonical: "/projets/bedjondo-transport-logistique" },
   openGraph: { ...ogFor("/projets/bedjondo-transport-logistique"), title: "Bedjondo Transport et Logistique — désenclaver par la route", description: "Le projet annoncé sous le nom d’Air Bedjondo, et nos propositions pour le mener." },
 };

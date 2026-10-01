@@ -47,7 +47,7 @@ export default function Programmes() {
         { value: String(total), label: "thématiques", note: "+ 2 cellules transversales" },
         { value: String(filled), label: "pourvues", note: `${Math.round((filled / total) * 100)} % des thématiques` },
         { value: String(total - filled), label: "à pourvoir", note: "candidatures ouvertes à tout membre" },
-        { value: `${dir.pourvues}/${dir.total}`, label: "directions de pôle", note: "rang de chef de projet · à pourvoir" },
+        { value: `${dir.pourvues}/${dir.total}`, label: "directions de pôle", note: `rang de chef de projet · ${dir.total - dir.pourvues} à pourvoir` },
       ]} />
       <div className="section-actions" style={{ justifyContent: "flex-start", marginBottom: 40 }}>
         <Link className="button primary" href="/participer?coordo=1#contact">Proposer ma candidature <span aria-hidden="true">→</span></Link>
@@ -93,7 +93,7 @@ export default function Programmes() {
       </div>
 
       <section className="hub-section" id="diriger-un-pole">
-        <SectionHead eyebrow="Diriger un pôle" title="Quatre directions de pôle," em="au rang de chef de projet." text="Depuis le 28 septembre 2026, chaque pôle a une direction, distincte de la coordination des thématiques. Le directeur ou la directrice de pôle a rang de chef de projet : il anime les coordonnateurs de ses thématiques, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets qui en relèvent, et rend compte au bureau et à l’assemblée. Pour les partenaires internationaux, nous traduisons par « Pillar Lead » (niveau « Programme Manager ») : l’équivalent figure sur les fiches de mission et les pages anglaises. Les six « programmes » du projet ODEB sont autre chose : ils croisent les pôles. Les quatre postes sont ouverts à tout membre ; chaque poste a sa fiche de mission en PDF, comme chaque thématique." />
+        <SectionHead eyebrow="Diriger un pôle" title="Quatre directions de pôle," em="au rang de chef de projet." text={`Depuis le 28 septembre 2026, chaque pôle est doté d’une direction, distincte de la coordination des thématiques. Le directeur ou la directrice de pôle a rang de chef de projet : il anime les coordonnateurs de ses thématiques, tient le plan d’action et le calendrier du pôle, suit les plaidoyers et les projets qui en relèvent, et rend compte au bureau et à l’assemblée. Pour les partenaires internationaux, nous traduisons par « Pillar Lead » (niveau « Programme Manager ») : l’équivalent figure sur les fiches de mission et les pages anglaises. Les six « programmes » du projet ODEB sont autre chose : ils croisent les pôles. ${dir.total - dir.pourvues > 0 ? `${enLettres(dir.total - dir.pourvues, true)} des ${enLettres(dir.total)} postes restent à pourvoir et sont ouverts à tout membre` : `Les ${enLettres(dir.total)} postes sont pourvus`} ; chaque poste a sa fiche de mission en PDF, comme chaque thématique.`} />
         <p className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="text-link" href="/programmes/fiches-de-mission">Toutes les fiches de mission <span aria-hidden="true">→</span></Link></p>
       </section>
 

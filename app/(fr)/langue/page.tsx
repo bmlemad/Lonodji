@@ -56,7 +56,7 @@ export default function Langue() {
           <article>
             <span>Lexique · en ligne, avec l’audio</span>
             <h3>Lexique Nangnda (Bediondo)</h3>
-            <p>Roger Dinguemrebeye et John M. Keegan, avec l’association Kokotan (KOKOTAN) ; 2e édition, avril 2014 ; environ 2 650 mots, 1 820 phrases d’exemple et 700 expressions, chaque mot accompagné de son enregistrement. Produit dans le cadre du Sara Bagirmi Language Project, avec le soutien du National Endowment for the Humanities.</p>
+            <p>Roger Dinguemrebeye et John M. Keegan, avec l’association Kokotan ; 2e édition, avril 2014 ; environ 2 650 mots, 1 820 phrases d’exemple et 700 expressions, chaque mot accompagné de son enregistrement. Produit dans le cadre du Sara Bagirmi Language Project, avec le soutien du National Endowment for the Humanities.</p>
             <div className="bb-liens">
               <a className="text-link" href="https://morkegbooks.com/Services/World/Languages/SaraBagirmi/SoundDictionary/Nangnda/" target="_blank" rel="noopener noreferrer">Consulter le lexique sonore <span aria-hidden="true">↗</span></a>
               <a className="text-link" href="https://morkegbooks.com/Services/World/Languages/SaraBagirmi/pdfs/Bediondo.pdf" target="_blank" rel="noopener noreferrer">Le lexique en PDF <span aria-hidden="true">↗</span></a>

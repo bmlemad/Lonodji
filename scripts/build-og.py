@@ -230,6 +230,12 @@ def main():
     fonts = font_faces()
     tmp = ROOT / ".next" / "og-tmp.html"
     n = 0
+    # empreinte du gabarit rempli, par image : une image dont le texte n'a pas changé n'est pas refaite
+    # (le dépôt garde chaque version d'une image ; content/og-textes.json est versionné avec elles)
+    import hashlib
+    MANIFESTE = ROOT / "content" / "og-textes.json"
+    vus = json.loads(MANIFESTE.read_text("utf8")) if MANIFESTE.exists() else {}
+    saute = 0
     with sync_playwright() as p:
         b = p.chromium.launch()
         page = b.new_page(viewport={"width": 1200, "height": 630}, device_scale_factor=1)
@@ -239,6 +245,12 @@ def main():
             size = 66 if len(pg["title"]) < 60 else 56 if len(pg["title"]) < 90 else 48
             classe, odeb = odeb_bloc(pg["route"])
             html = TEMPLATE.format(lang=pg["lang"], fonts=fonts, logo=LOGO, eyebrow=esc(pg["eyebrow"]), title=split_title(pg["title"]), desc=esc(pg["desc"]), size=size, classe=classe, odeb=odeb)
+            dest = OUT / (pg["name"] + ".jpg")
+            empreinte = hashlib.sha1(html.encode("utf-8")).hexdigest()[:16]
+            if vus.get(pg["name"]) == empreinte and dest.exists() and (pg["route"] != "/" or (ROOT / "public" / "og-image.png").exists()):
+                saute += 1
+                continue
+            vus[pg["name"]] = empreinte
             tmp.write_text(html, encoding="utf-8")
             page.goto(tmp.as_uri(), wait_until="load")   # ouvert en file:// pour que polices et logo (file://) se chargent
             page.evaluate("document.fonts.ready")
@@ -246,14 +258,14 @@ def main():
             page.evaluate("""() => { const t = document.getElementById('t'); const limite = 630 - 30 - 30 - 60 - 22; let fs = parseFloat(getComputedStyle(t).fontSize);
                 while (t.getBoundingClientRect().bottom > limite && fs > 30) { fs -= 2; t.style.fontSize = fs + 'px'; } }""")
             page.wait_for_timeout(50)
-            dest = OUT / (pg["name"] + ".jpg")
             page.screenshot(path=str(dest), type="jpeg", quality=82)
             if pg["route"] == "/":
                 page.screenshot(path=str(ROOT / "public" / "og-image.png"), type="png")
             n += 1
         b.close()
     tmp.unlink(missing_ok=True)
-    print(f"{n} images de partage dans {OUT.relative_to(ROOT)}/")
+    MANIFESTE.write_text(json.dumps(dict(sorted(vus.items())), ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
+    print(f"{n} images de partage refaites, {saute} inchangées, dans {OUT.relative_to(ROOT)}/")
 
 
 if __name__ == "__main__":

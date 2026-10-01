@@ -1,9 +1,9 @@
 {
  "legacy": "identite-visuelle.html",
  "lang": "fr",
- "documentTitle": "Identité visuelle — ADEB LONODJI",
- "description": "Le logo d’ADEB LONODJI, ses couleurs, ses polices et ses signes (barre des quatre pôles, carte du pays bedjond, frise des chefs de canton) : la charte graphique de l’association, avec les fichiers à télécharger.",
- "title": "Identité visuelle",
+ "documentTitle": "Ancienne identité visuelle — ADEB LONODJI",
+ "description": "L’identité visuelle d’ADEB LONODJI avant le 28 septembre 2026 : logo bleu, couleurs, polices, signes bedjond et fichiers à télécharger.",
+ "title": "Ancienne identité visuelle",
  "eyebrow": "Charte graphique",
  "lede": "Un logo, deux registres de couleurs, trois polices et quelques signes qui n’appartiennent qu’au pays bedjond : tout ce qu’il faut pour que les documents, les affiches et les publications de l’association se reconnaissent au premier coup d’œil. Les fichiers sont libres d’usage pour les membres et les partenaires, dans le respect des règles ci-dessous.",
  "pills": [
@@ -82,7 +82,7 @@
    "alt": false,
    "cls": "",
    "tag": "section",
-   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Deux registres</div>\n<h2>Préserver et rendre compte</h2>\n<p>Le site fait deux choses que la devise distingue : il préserve (Héritage) et il rend compte (Discipline). Chacune a son registre. Les pages de mémoire, Mission, Bédjondo, Grandes figures, Lieux sacrés, Généalogies, Base de recherche et les articles d’histoire, sont sur fond de sable, avec des cartes de papier plein, des surtitres latérite, des chiffres en serif, une lettrine et la carte du pays bedjond en tête. Les pages d’action et de redevabilité, Suivi, Engagements, Carte des besoins, Thématiques, gardent le registre bleu : compteurs, jauges, étiquettes, tableau de bord. Le bleu d’action reste le même partout : un bouton se reconnaît d’un registre à l’autre.</p>\n</div>"
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Deux registres</div>\n<h2>Préserver et rendre compte</h2>\n<p>Le site fait deux choses que la devise distingue : il préserve (Héritage) et il rend compte (Discipline). Chacune a son registre. Les pages de mémoire (Mission, Bédjondo, Grandes figures, Lieux sacrés, Généalogies, Base de recherche et articles d’histoire) sont sur fond d’argile, avec des cartes de papier plein, des surtitres latérite, des chiffres en serif, une lettrine et la carte du pays bedjond en tête. Les pages d’action et de redevabilité, Suivi, Engagements, Carte des besoins, Thématiques, gardent le registre bleu : compteurs, jauges, étiquettes, tableau de bord. Le bleu d’action reste le même partout : un bouton se reconnaît d’un registre à l’autre.</p>\n</div>"
   },
   {
    "id": "regles",
@@ -96,7 +96,7 @@
    "alt": false,
    "cls": "",
    "tag": "section",
-   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Téléchargements</div>\n<h2>Les fichiers</h2>\n<p>Tous les fichiers sont en SVG, le format vectoriel qui s’agrandit sans perte et s’ouvre dans n’importe quel logiciel de dessin, de bureautique récente ou de mise en page. Pour WhatsApp, Facebook ou un document Word, le PNG du logo en 1024 pixels suffit.</p>\n<div class=\"id-dl\">\n<a download=\"\" href=\"/identite/logo-adeb-lonodji.svg\">Logo couleur (SVG)</a>\n<a download=\"\" href=\"/identite/logo-adeb-lonodji-sombre.svg\">Logo couleur, fond sombre (SVG)</a>\n<a download=\"\" href=\"/identite/logo-adeb-lonodji-mono.svg\">Logo monochrome (SVG)</a>\n<a download=\"\" href=\"/identite/logo-adeb-lonodji-blanc.svg\">Logo en réserve blanche (SVG)</a>\n<a download=\"\" href=\"/identite/logo-adeb-lonodji-pictogramme.svg\">Pictogramme (SVG)</a>\n<a download=\"\" href=\"/identite/logo-adeb-lonodji-1024.png\">Logo couleur (PNG 1024 px)</a>\n<a download=\"\" href=\"/identite/carte-pays-bedjond.svg\">Carte du pays bedjond (SVG)</a>\n<a download=\"\" href=\"/identite/frise-lignee-chefs-bedjondo.svg\">Frise de la lignée (SVG)</a>\n</div>\n<p>Cette page tient lieu de charte graphique. Toute évolution du logo ou des couleurs y sera consignée, avec sa date, comme le reste du site.</p>\n</div>"
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Téléchargements</div>\n<h2>Les fichiers</h2>\n<p>Tous les fichiers sont en SVG, le format vectoriel qui s’agrandit sans perte et s’ouvre dans n’importe quel logiciel de dessin, de bureautique récente ou de mise en page. Pour WhatsApp, Facebook ou un document Word, le PNG du logo en 1024 pixels suffit.</p>\n<div class=\"id-dl\">\n<a download=\"\" href=\"/identite/logo-adeb-lonodji.svg\">Logo couleur (SVG)</a>\n<a download=\"\" href=\"/identite/logo-adeb-lonodji-sombre.svg\">Logo couleur, fond sombre (SVG)</a>\n<a download=\"\" href=\"/identite/logo-adeb-lonodji-mono.svg\">Logo monochrome (SVG)</a>\n<a download=\"\" href=\"/identite/logo-adeb-lonodji-blanc.svg\">Logo en réserve blanche (SVG)</a>\n<a download=\"\" href=\"/identite/logo-adeb-lonodji-pictogramme.svg\">Pictogramme (SVG)</a>\n<a download=\"\" href=\"/identite/logo-adeb-lonodji-1024.png\">Logo couleur (PNG 1024 px)</a>\n<a download=\"\" href=\"/identite/carte-pays-bedjond.svg\">Carte du pays bedjond (SVG)</a>\n<a download=\"\" href=\"/identite/frise-lignee-chefs-bedjondo.svg\">Frise de la lignée (SVG)</a>\n</div>\n<p>Cette page a tenu lieu de charte graphique jusqu’au 28 septembre 2026 ; la charte en vigueur est celle de l’identité « Les Pas vers l’Avenir ».</p>\n</div>"
   }
  ],
  "words": 1213,

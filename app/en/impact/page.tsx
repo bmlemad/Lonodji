@@ -14,7 +14,7 @@ const pillarLeads = (open: number, total: number) => open === 0 ? "every pillar 
 
 export const metadata: Metadata = {
   title: "Impact dashboard — six dated, sourced indicators",
-  description: metaDescription("Members, coordinators, advocacy briefs, needs recorded and solved, active projects: six indicators, dated and sourced, plus what the site produces and receives. Zeros are published as zeros."),
+  description: metaDescription("Members, coordinators, advocacy briefs, needs recorded and solved, active projects: six dated, sourced indicators. Zeros are published as zeros."),
   alternates: { canonical: "/en/impact", languages: alternatesLangues("/en/impact") },
   openGraph: { ...ogFor("/en/impact", "en"), title: "Impact dashboard — six dated, sourced indicators", description: "Members, coordinators, advocacy, needs, projects: dated and sourced. Zeros are published as zeros." },
 };
@@ -45,6 +45,8 @@ export default function ImpactEn() {
   const f = i.formulaires;
   const adhesions = f.comptes["intention-adhesion"] as { envois: number; personnes?: number } | undefined;
   const vacantes = c.coordinations.total - c.coordinations.pourvues;
+  /* lignes du diagnostic documentées ailleurs seulement (province voisine, niveau national) : le reste du total */
+  const ailleurs = c.problematiques.total - c.problematiques.documentees - c.problematiques.partielles - c.problematiques.inconnues;
   return (
     <main id="main-content" className="hub-page" lang="en">
       <PageHeader
@@ -58,9 +60,9 @@ export default function ImpactEn() {
       />
       <Stats items={[
         { value: adhesions?.personnes != null ? String(adhesions.personnes) : "0", label: "people declared an intention to join", note: `${adhesions?.envois ?? 0} membership forms received; paid-up members are counted by the executive committee and will appear here, dated` },
-        { value: `${c.coordinations.pourvues}/${c.coordinations.total}`, label: "themes with a coordinator", note: `${vacantes} themes and ${c.coordinations.cellulesTotal - c.coordinations.cellulesPourvues} cross-cutting unit still look for their person; ${pillarLeads(c.coordinations.directionsTotal - c.coordinations.directionsPourvues, c.coordinations.directionsTotal)}` },
+        { value: `${c.coordinations.pourvues}/${c.coordinations.total}`, label: "themes with a coordinator", note: `${vacantes} themes and ${c.coordinations.cellulesTotal - c.coordinations.cellulesPourvues} cross-cutting unit are still looking for someone to lead them; ${pillarLeads(c.coordinations.directionsTotal - c.coordinations.directionsPourvues, c.coordinations.directionsTotal)}` },
         { value: String(c.plaidoyers.publies), label: "advocacy briefs published", note: `${c.plaidoyers.envoyes} officially sent, ${c.plaidoyers.reponses} answers received; recipients named in each brief` },
-        { value: String(c.problematiques.total), label: "issues and needs recorded", note: `${c.problematiques.documentees} documented, ${c.problematiques.partielles} partly, ${c.problematiques.inconnues} unknown; ${c.problematiques.chantiersPrioritaires} priority works` },
+        { value: String(c.problematiques.total), label: "issues and needs recorded", note: `${c.problematiques.documentees} documented, ${ailleurs} documented only elsewhere, ${c.problematiques.partielles} partly, ${c.problematiques.inconnues} unknown; ${c.problematiques.chantiersPrioritaires} priority areas for action` },
         { value: String(i.bureau.besoinsResolus ?? 0), label: "needs confirmed solved", note: "nothing is counted here without dated evidence" },
         { value: String(c.projets.actifs), label: c.projets.actifs === 1 ? "active project" : "active projects", note: `${c.projets.annonces} more at earlier stages (idea, study, announced, pledges open); ${c.projets.finances} funded` },
       ]} />
@@ -85,7 +87,7 @@ export default function ImpactEn() {
           <article><h3>What the executive committee holds</h3><p><Traduit fr={i.bureau.note} /></p></article>
         </div>
         <Partager route="/en/impact" titre="Impact dashboard" texte="Members, coordinators, advocacy briefs, needs recorded and solved, active projects: six indicators, dated and sourced, plus what the site produces and receives. Zeros are published as zeros." lang="en" />
-        <p className="lg-footnote">Same figures as the French dashboard (<Link href="/impact" hrefLang="fr">Tableau de suivi</Link>), read from the same file at the same release. The four Pillar Lead posts (programme-manager level) and the sixth ODEB programme are described in French on <Link href="/programmes" hrefLang="fr">Nos actions</Link> and <Link href="/en/odeb">the ODEB project in English</Link>.</p>
+        <p className="lg-footnote">Same figures as the French dashboard (<Link href="/impact" hrefLang="fr">Tableau de suivi</Link>), read from the same file at the same release. The four Pillar Lead posts (programme-manager level) are described in French on <Link href="/programmes" hrefLang="fr">Nos actions</Link>; the sixth ODEB programme is described in English on <Link href="/en/odeb">the ODEB project page</Link>.</p>
       </section>
     </main>
   );

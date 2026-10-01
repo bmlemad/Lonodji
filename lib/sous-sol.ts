@@ -22,6 +22,7 @@ export const SOURCES: Record<string, Source> = {
   doseo2023: { id: "doseo2023", titre: "Role of two-stage strike slip faulting in the tectonic evolution of the Doseo depression (Zhang et al.)", editeur: "Frontiers in Earth Science", date: "2023", href: "https://www.frontiersin.org/journals/earth-science/articles/10.3389/feart.2023.1087217/full" },
   erhc2014: { id: "erhc2014", titre: "Airborne Gravity/Magnetic Survey Confirms Viability of Leads in ERHC Energy’s BDS 2008 in Chad", editeur: "ERHC Energy", date: "octobre 2014", href: "https://www.erhc.com/news/airborne-gravity/magnetic-survey-confirms-viability-of-leads-in-erhc-energys-bds-2008-in-chad/" },
   kome2021: { id: "kome2021", titre: "À Komé, où est passé le magot du pétrole ? (reportage de Libération)", editeur: "Le Tchadanthropus-tribune", date: "21 mai 2021", href: "https://www.letchadanthropus-tribune.com/tchad-petrole-a-kome-ou-est-passe-le-magot-du-petrole-reportage/" },
+  rivallain1988: { id: "rivallain1988", titre: "Sara : échanges et instruments monétaires (Josette Rivallain), dans D. Barreteau et H. Tourneux (dir.), Le milieu et les hommes : recherches comparatives et historiques dans le bassin du lac Tchad, p. 195-213", editeur: "ORSTOM", date: "1988", href: "/patrimoine/base-de-recherche#src-sara-echanges-et-instruments-monetaires" },
 };
 
 export type Constat = { titre: string; texte: string; sources: string[]; liens?: Lien[] };
@@ -56,7 +57,7 @@ export const SAVOIRS: Constat[] = [
   {
     titre: "Le fer, une richesse ancienne du pays sara",
     texte: "Dans le pays sara, le fer venait d’un minerai local, extrait puis fondu dans des hauts fourneaux par des fondeurs installés dans les régions riches en minerai ; c’est le fer, plutôt que les cauris ou le bétail, qui servait de monnaie au sud du lac Tchad (Josette Rivallain, ORSTOM, 1988). Les Ndjan, à l’origine de Bédjondo et de Bédaya, sont reconnus pour leur maîtrise de cette métallurgie. Les équipes sismiques ont rencontré dans certaines zones du sud du Tchad des sols argileux rouges riches en fer et de la latérite en surface, sans que la source dise où ; une latérite ferrugineuse n’est pas pour autant un minerai exploitable. Qu’il existe aujourd’hui dans le département un minerai de fer exploitable en quantité, aucune source publique que nous avons consultée ne le dit : c’est à vérifier.",
-    sources: ["cseg2015"],
+    sources: ["cseg2015", "rivallain1988"],
     liens: [{ label: "Le Kul et les monnaies de fer", href: "/journal/2026-09-15-monnaie-kul-echanges-economiques" }, { label: "La fondation ndjan", href: "/journal/2026-09-13-bedjondo-bedaya-fondation-ndjan" }],
   },
   {

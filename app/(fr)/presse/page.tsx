@@ -1,4 +1,3 @@
-import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -9,14 +8,14 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Espace presse : l’association en bref",
-  description: metaDescription("Pour les journalistes et les partenaires : ADEB LONODJI en cinq lignes, les chiffres datés, les dates, le bureau, les communiqués, les logos et visuels, le dossier de présentation, et à qui écrire."),
+  description: "Pour journalistes et partenaires : ADEB LONODJI en cinq lignes, chiffres datés, bureau, communiqués, logos, dossier de présentation et à qui écrire.",
   alternates: { canonical: "/presse" },
   openGraph: ogFor("/presse"),
 };
 
 const nf = new Intl.NumberFormat("fr-FR");
 const DATES: [string, string][] = [
-  ["1986", "Premières réflexions de cadres bedjond pour un cadre associatif au service du peuple bedjond de Bédjondo."],
+  ["1986", "Premières réflexions de cadres bedjond pour une structure associative au service du peuple bedjond de Bédjondo."],
   ["1995", "Reconnaissance officielle de l’Association de Développement et d’Entraide de Bédjondo."],
   ["2000", "Premier forum communautaire, à Bédjondo."],
   ["2003", "Second forum, à Bébopen ; puis une longue mise en veille."],
@@ -85,8 +84,8 @@ export default function Presse() {
       <section className="hub-section" id="chiffres">
         <SectionHead eyebrow="Les chiffres" title="Datés, sourcés," em="tels qu’ils sont." text="Chaque nombre vient du tableau de suivi du site, où il porte sa source et sa méthode. Ce qui n’est pas fait est écrit comme tel : aucun plaidoyer n’a encore été transmis, aucun projet n’est financé, la collecte est suspendue." />
         <Stats items={[
-          { value: `${pourvues}/${total}`, label: "thématiques pourvues", note: `${total - pourvues} cherchent leur coordonnateur ; ${c.coordinations.cellulesPourvues}/${c.coordinations.cellulesTotal} cellules` },
-          { value: String(c.plaidoyers.publies), label: "dossiers de plaidoyer publiés", note: `${c.plaidoyers.envoyes} transmis, ${c.plaidoyers.reponses} réponses` },
+          { value: `${pourvues}/${total}`, label: "thématiques pourvues", note: `${total - pourvues} cherchent leur coordonnateur ; ${c.coordinations.cellulesPourvues} cellule${c.coordinations.cellulesPourvues > 1 ? "s" : ""} sur ${c.coordinations.cellulesTotal}` },
+          { value: String(c.plaidoyers.publies), label: "dossiers de plaidoyer publiés", note: `${c.plaidoyers.envoyes} transmis, ${c.plaidoyers.reponses} réponse${c.plaidoyers.reponses > 1 ? "s" : ""}` },
           { value: nf.format(c.carte.localitesNommees), label: "fiches de villages", note: `${c.carte.unites} unités, ${nf.format(c.carte.localites)} localités cartographiées` },
           { value: String(c.problematiques.total), label: "problématiques diagnostiquées", note: `${c.problematiques.inconnues} inconnues, ${c.problematiques.chantiersPrioritaires} chantiers prioritaires` },
           { value: String(c.articles), label: "articles au journal", note: `depuis le ${new Date((c.premierArticle ?? "2026-09-11") + "T12:00:00Z").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}` },
@@ -176,7 +175,7 @@ export default function Presse() {
       </section>
 
       <section className="hub-section" id="partage">
-        <SectionHead eyebrow="Visuels à partager" title="Cinq cartes" em="pour WhatsApp et les réseaux." text="Format carré 1080 × 1080, aux couleurs du site, avec l’adresse de la page. Téléchargez, partagez tel quel ; le texte des cartes est repris ci-dessous pour l’accompagner." />
+        <SectionHead eyebrow="Visuels à partager" title="Cinq cartes" em="pour WhatsApp et les réseaux." text="Format carré 1080 × 1080, aux couleurs du site, avec l’adresse de la page. Téléchargez, partagez tel quel ; chaque carte porte l’adresse de sa page sur le site." />
         <ul className="pr-visuels">
           {VISUELS.map(([href, label]) => (
             <li key={href}><a href={href} download className="pr-visuel"><img src={href} alt="" width={1080} height={1080} loading="lazy" /><span>{label} <b aria-hidden="true">↓</b></span></a></li>
@@ -203,7 +202,7 @@ export default function Presse() {
             <a className="text-link" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <Partager route="/presse" titre="Espace presse" texte="Pour les journalistes et les partenaires : ADEB LONODJI en cinq lignes, les chiffres datés, les dates, le bureau, les communiqués, les logos et visuels, le dossier de présentation, et à qui écrire." />
+        <Partager route="/presse" titre="Espace presse d’ADEB LONODJI" texte="Pour journalistes et partenaires : ADEB LONODJI en cinq lignes, chiffres datés, bureau, communiqués, logos, dossier de présentation et à qui écrire." />
         <p className="lg-footnote">Espace ouvert le 28 septembre 2026 pour accompagner le lancement de la réflexion ODEB LONODJI. Les chiffres sont ceux du site à sa mise en ligne (<Link href="/impact">tableau de suivi</Link>) ; le logo et ses règles sont dans l’<Link href="/odeb/identite">identité visuelle</Link>, l’ancien logo dans l’<Link href="/association/ancienne-identite-visuelle">identité précédente</Link>.</p>
       </section>
     </main>

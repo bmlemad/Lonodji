@@ -1931,3 +1931,59 @@ html.sobre .nav{ background:#f7f9f5; } html.sobre .mega-inner{ background:linear
 html body input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]):not([aria-invalid=true]),
 html body select:not([aria-invalid=true]), html body textarea:not([aria-invalid=true]){ border-color:var(--champ-contour); }
 .status, .pole-status{ font-size:11px; }
+
+/* QA du 1er octobre 2026 : lisibilité et cibles tactiles.
+   Aucune étiquette sous 11 px (les petites capitales espacées à 10 px se lisaient mal sur téléphone). */
+.eyebrow,
+.card-kicker,
+.card-note,
+.card-top small,
+.status,
+.mobile-menu-links small,
+.nav-cta,
+.module-tag,
+.map-label,
+.detail-grid small,
+.status-list span,
+.them-odd .odd-legend,
+.article-nav small,
+.plea-facts dt,
+.bureau-card small,
+.link-list small,
+.search-results small,
+.ct-liens small,
+.tb-source,
+.vl-unite small,
+.vl-lettre i,
+.vl-legende i,
+.vl-faits dt,
+.bb-ref small,
+.lg-ressources article>span,
+.status-list.lg-pills span,
+.mega-titre,
+.links .mega-vedette small,
+.od-nav-sigle,
+.od-pill,
+.od-porte > span,
+.od-missions-servies > span,
+.od-table thead th,
+.od-axe-label,
+.pj-stade,
+.pj-faits dt,
+.pj-label,
+.ob-table thead th,
+.links a small,
+.vl-imprimer-actions .button span,
+.vl-affiche small,
+.vl-affiches-liste small,
+/* menu anglais : lien vers une page en français (30/09/2026) */
+.mega-fr{ font-size:11px; }
+/* Cibles d'au moins 24 × 24 px (WCAG 2.5.8) : sommaires repliables, cases à cocher, renvois de sources, liens des pages anglaises. */
+.lg-sommaire summary, details > summary{ min-height:24px; }
+input[type=checkbox], input[type=radio]{ min-width:24px; min-height:24px; }
+.pc-sources a{ display:inline-block; min-width:24px; min-height:24px; padding:3px 4px; text-align:center; }
+.lg-liens-en a{ display:inline-block; padding:4px 2px; min-height:24px; }
+/* Dossier imprimable : sur téléphone, le tableau défile dans son cadre au lieu d'élargir la page. */
+@media (max-width: 640px){ .dp-table{ display:block; overflow-x:auto; } }
+.od-nav a{ display:inline-flex; align-items:center; min-height:24px; }
+.legacy .pole-status, .legacy .plea-status, .plea-status{ font-size:11px; }

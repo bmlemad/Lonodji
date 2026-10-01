@@ -721,7 +721,7 @@ UPDATES = [
      "Le nom de domaine lonodji.org héberge le site depuis le 27 septembre 2026, mais aucune adresse électronique n’y est encore rattachée\u00a0: nous publierons les adresses ici dès qu’elles fonctionneront."),
     # Projet d'application : la réserve sur l'aperçu partagé n'a plus lieu d'être ; l'état des applis du 24/09 est daté.
     ('<p class="form-note">Une réserve d’honnêteté\xa0: sur l’aperçu actuel du site, l’installation hors ligne est <strong>volontairement désactivée</strong>. Le site y est servi depuis un domaine partagé avec d’autres\xa0; y installer un cache serait s’approprier un espace qui n’est pas le nôtre, et l’aperçu doit montrer exactement le fichier publié. La lecture hors ligne s’activera d’elle-même le jour où le site vivra sur le nom de domaine de l’association — qui reste à acquérir.</p>',
-     '<p class="form-note"><strong>Mise à jour du 28 septembre 2026\xa0:</strong> le site vit sur lonodji.org depuis le 27 septembre, et la lecture hors ligne y est active. Une première version d’essai de l’application Android (1.0.0) et le projet de l’application iPhone ont été préparés le 24 septembre 2026\xa0; leur publication sur Google Play et sur l’App Store attend, comme cette page le prévoit, le récépissé de l’association et l’ouverture des comptes en son nom.</p>'),
+     '<p class="form-note"><strong>Mise à jour du 28 septembre 2026\xa0:</strong> le site vit sur lonodji.org depuis le 27 septembre, et la lecture hors ligne y est active. Une première version d’essai de l’application Android (1.0.0) et le projet de l’application iPhone ont été préparés le 24 septembre 2026\xa0; leur publication sur Google Play et sur l’App Store attend, comme cette page le prévoit, le récépissé de l’association et l’ouverture des comptes en son nom.</p>\n<p class="form-note"><strong>Mise à jour du 1er octobre 2026\xa0:</strong> une version d’essai Android 1.0.1, datée du 28 septembre 2026, est en ligne pour être testée\xa0; voir <a href="/projets">la plateforme de projets</a>. La publication sur les boutiques attend toujours les mêmes conditions.</p>'),
     # Plaidoyers : lettres de transmission préparées le 24/09, en attente de signature (note datée).
     ('<p class="form-note">Statuts\xa0: <span class="plea-status st-publie">Publié</span> le texte est en ligne · <span class="plea-status st-envoye">Envoyé</span> transmis officiellement aux destinataires · <span class="plea-status st-reponse">Réponse reçue</span> une réponse écrite est arrivée et publiée · <span class="plea-status st-obtenu">Obtenu</span> une décision ou un chantier concret a suivi. Cette page est mise à jour à chaque étape.</p>',
      '<p class="form-note">Statuts\xa0: <span class="plea-status st-publie">Publié</span> le texte est en ligne · <span class="plea-status st-envoye">Envoyé</span> transmis officiellement aux destinataires · <span class="plea-status st-reponse">Réponse reçue</span> une réponse écrite est arrivée et publiée · <span class="plea-status st-obtenu">Obtenu</span> une décision ou un chantier concret a suivi. Cette page est mise à jour à chaque étape.</p>\n<p class="form-note"><strong>Mise à jour du 28 septembre 2026\xa0:</strong> les lettres de transmission des huit plaidoyers — au ministre concerné, avec copie aux services, aux partenaires et aux autorités du Mandoul Occidental — ont été préparées le 24 septembre 2026 et attendent la signature du bureau. La date d’envoi de chaque dossier sera inscrite dans ce tableau dès la transmission.</p>'),
@@ -1104,7 +1104,7 @@ URGENCES_EN = """
           <p class="coord">Coordinator: to be appointed</p>
           <p>Preparing the Bedjond country for crises rather than suffering them: rainy-season floods, epidemics, drought, bush fires, displaced families. Ideas under consideration: mapping flood-prone areas with the villages, a simple contingency plan per canton, an alert network over WhatsApp and community radio, and, when a crisis hits, informing, guiding and recording needs for the State services, the Chad Red Cross and humanitarian agencies rather than duplicating them. Created on 29 September 2026; nothing is committed yet, and no money is collected before the association has an account in its name.</p>
           <div class="pole-hub-links">
-          <a class="pole-hub-link" href="../poles.html#urgences-risques">Full description <span lang="fr">en fran&ccedil;ais</span> &rarr;</a>
+          <a class="pole-hub-link" href="../poles.html#urgences-risques">Full description <span>(in French)</span> &rarr;</a>
           </div>
         </article>"""
 URGENCES_JS = """  {
@@ -1217,10 +1217,10 @@ ENERGIE_EN = """
           <span class="pole-status pole-status--vacant">Open</span>
           <h3>Energy</h3>
           <p class="coord">Coordinator: to be appointed</p>
-          <p>Access to energy in the Bedjond country: grid, mini-grid and solar electricity, public lighting, power for schools, health centres and the town hall &mdash; our diagnosis knows of no electrified public facility in B&eacute;djondo today. The theme carries the electricity advocacy file and follows the State and donor programmes that fund electrification. Created on 30 September 2026; it takes over energy, attached since 29 September to theme 08, which becomes Roads &amp; Urban Planning. Nothing is committed yet.</p>
+          <p>Access to energy in the Bedjond country: grid, mini-grid and solar electricity, public lighting, power for schools, health centres and the town hall &mdash; our diagnosis knows of no electrified public facility in B&eacute;djondo today. The theme carries the electricity advocacy brief and follows the State and donor programmes that fund electrification. Created on 30 September 2026; it takes over energy, attached since 29 September to theme 08, which becomes Roads &amp; Urban Planning. Nothing is committed yet.</p>
           <div class="pole-odd"><span class="odd-legend">SDG</span>@@SDG_7@@</div>
           <div class="pole-hub-links">
-          <a class="pole-hub-link" href="../poles.html#energie">Full description <span lang="fr">en fran&ccedil;ais</span> &rarr;</a>
+          <a class="pole-hub-link" href="../poles.html#energie">Full description <span>(in French)</span> &rarr;</a>
           </div>
         </article>"""
 ENERGIE_JS = """  {
@@ -1417,7 +1417,9 @@ def lire_source(path: Path) -> str:
 def _charger_corrections() -> dict:
     import importlib.util
     tout: dict = {}
-    for nom in ("corrections_fr", "corrections_en"):
+    # corrections_fr, corrections_en, puis les relectures suivantes (corrections_revue_*.py), dans l'ordre des noms
+    autres = sorted(f.stem for f in Path(__file__).parent.glob("corrections_revue_*.py"))
+    for nom in ["corrections_fr", "corrections_en"] + autres:
         f = Path(__file__).with_name(nom + ".py")
         if not f.exists():
             continue

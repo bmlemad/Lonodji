@@ -31,7 +31,7 @@ export default function HorsLigne() {
       </section>
 
       <section className="hub-section">
-        <SectionHead eyebrow="À portée de main" title="Garder le site" em="sur l’écran d’accueil." text="Depuis le navigateur du téléphone, le menu propose « Ajouter à l’écran d’accueil » (ou « Installer l’application »). Le site s’ouvre alors comme une application, en plein écran, avec son icône — le même site, simplement posé sur l’écran d’accueil. L’application Android et iPhone de l’association, préparée en septembre 2026, ouvrira ce même site." />
+        <SectionHead eyebrow="À portée de main" title="Garder le site" em="sur l’écran d’accueil." text="Depuis le navigateur du téléphone, le menu propose « Ajouter à l’écran d’accueil » (ou « Installer l’application »). Le site s’ouvre alors comme une application, en plein écran, avec son icône — le même site, simplement posé sur l’écran d’accueil. L’application de l’association, en version d’essai Android depuis le 28 septembre 2026, ouvre ce même site." />
         <p className="lg-footnote">Cette page ne s’affiche que hors ligne. Si vous la voyez alors que votre connexion fonctionne, c’est le site qui a un problème : signalez-le par la <Link href="/participer#contact">page contact</Link>.</p>
         <p className="button-row">
           <a className="button primary" href="/">Réessayer l’accueil</a>

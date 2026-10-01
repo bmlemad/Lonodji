@@ -135,6 +135,9 @@ def texte_de(html: str) -> str:
     return unescape(re.sub(r"<[^>]+>", " ", html))
 
 
+LIENS_TOTAL: dict = {}
+
+
 def liens_par_unite(unites: dict) -> dict:
     idx = json.loads((CONTENT / "index.json").read_text(encoding="utf-8"))
     corpus = []  # (type, titre, route, texte)
@@ -148,6 +151,7 @@ def liens_par_unite(unites: dict) -> dict:
         corpus.append(("article", a["title"], a["route"], texte_de(" ".join(s["html"] for s in d["sections"]))))
     plaid = [("plaidoyer", p["title"], p["href"], p.get("demand", "") + " " + p.get("recipients", "")) for p in idx["plaidoyers"]]
     liens = {}
+    LIENS_TOTAL.clear()
     for uid, u in unites.items():
         nom = unescape(u["nom"])
         variantes = {nom, nom.replace("é", "e").replace("ï", "i"), u.get("gadm", "")}
@@ -165,6 +169,7 @@ def liens_par_unite(unites: dict) -> dict:
         for t in sorted(trouves, key=lambda x: {"dossier": 0, "plaidoyer": 1, "article": 2}[x["type"]]):
             if t["route"] not in vus:
                 vus.add(t["route"]); propres.append(t)
+        LIENS_TOTAL[uid] = len(propres)   # nombre réel de pages qui citent l'unité, avant la limite d'affichage
         liens[uid] = propres[:8]
     return liens
 
@@ -293,6 +298,7 @@ def main() -> None:
         "villages": villages,
         "equipements": equipements,
         "liens": liens,
+        "liensTotal": dict(LIENS_TOTAL),
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(donnees, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

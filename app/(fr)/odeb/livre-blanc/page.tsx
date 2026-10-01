@@ -10,7 +10,7 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Livre blanc du projet ODEB LONODJI (version de travail)",
-  description: metaDescription("Le document fondateur de l’ODEB LONODJI : d’où nous partons, pourquoi une organisation, la vision 2030, six missions, six programmes, principes, ressources et feuille de route."),
+  description: metaDescription("Le document fondateur de l’ODEB LONODJI : d’où nous partons, la vision 2030, six missions, six programmes, principes, ressources et feuille de route."),
   alternates: { canonical: "/odeb/livre-blanc" },
   openGraph: ogFor("/odeb/livre-blanc"),
 };
@@ -71,8 +71,8 @@ export default function LivreBlanc() {
 
           <section id="depart" className="od-chap">
             <h2><span>2.</span> D’où nous partons</h2>
-            <p>L’Association de Développement et d’Entraide de Bédjondo est née de réflexions engagées dès 1986 par des cadres bedjond et a été reconnue officiellement en 1995. Deux forums, en 2000 et 2003, ont marqué ses premières années ; une longue mise en veille a suivi. En 2026, l’association s’est remise en mouvement et s’est organisée en quatre pôles, {enLettres(c.total)} thématiques et deux cellules transversales, chaque thématique animée par un coordonnateur ou une coordonnatrice qui rend compte publiquement.</p>
-            <p>En quelques semaines, cette organisation a produit ce que le site lonodji.org tient à jour : {enLettres(c.plaidoyers)} dossiers de plaidoyer publiés — sept plaidoyers et une note à la commune —, à destinataires nommés ; un diagnostic territorial de {c.problematiques} problématiques, dont {c.inconnues} restent « inconnues » ; une carte du pays bedjond sur contours administratifs vérifiés — {c.unites} unités, {nf.format(c.localites)} localités — et {nf.format(c.fiches)} fiches de villages ; une bibliothèque de {c.references} références et {c.chercheurs} chercheurs ; un répertoire des compétences de la diaspora ; un journal de {c.articles} articles et {c.formulaires} formulaires par lesquels chacun peut signaler, déposer, raconter, proposer. À la dernière mise à jour du site, {c.pourvues} coordinations sur {c.total} sont pourvues.</p>
+            <p>L’Association de Développement et d’Entraide de Bédjondo est née de réflexions engagées dès 1986 par des cadres bedjond et a été reconnue officiellement en 1995. Deux forums, en 2000 et 2003, ont marqué ses premières années ; une longue mise en veille a suivi. En 2026, l’association s’est remise en mouvement et s’est organisée en quatre pôles, {enLettres(c.total)} thématiques et deux cellules transversales, chaque thématique devant être animée par un coordonnateur ou une coordonnatrice qui rend compte publiquement.</p>
+            <p>En quelques semaines, cette organisation a produit ce que le site lonodji.org tient à jour : {enLettres(c.plaidoyers)} dossiers de plaidoyer publiés — sept plaidoyers et une note à la commune —, à destinataires nommés ; un diagnostic territorial de {c.problematiques} problématiques, dont {c.inconnues} restent « inconnues » ; une carte du pays bedjond sur contours administratifs vérifiés — {c.unites} unités, {nf.format(c.localites)} localités — et {nf.format(c.fiches)} fiches de villages ; une bibliothèque de {c.references} références et {c.chercheurs} chercheurs ; un répertoire des compétences de la diaspora ; un journal de {c.articles} articles ; {c.formulaires} formulaires par lesquels chacun peut signaler, déposer, raconter, proposer. À la dernière mise à jour du site, {c.pourvues} coordinations sur {c.total} sont pourvues.</p>
             <p>Ce socle a deux limites, que nous préférons nommer. La première est humaine : tout repose sur des bénévoles, et une thématique sans coordonnateur reste une page. La seconde est institutionnelle : l’association n’a ni compte bancaire en son nom — la collecte est suspendue jusqu’à son ouverture —, ni statut lui permettant d’être l’interlocuteur crédible des bailleurs et des programmes ; sa conversion en ONG est annoncée, aucun dossier n’est déposé. Ce que le site sait produire, il ne sait pas encore le garantir dans la durée.</p>
           </section>
 
@@ -105,15 +105,18 @@ export default function LivreBlanc() {
 
           <section id="programmes" className="od-chap">
             <h2><span>6.</span> Six programmes</h2>
-            <p>Les missions s’exécutent à travers six programmes. Chacun a trois axes, s’appuie sur des thématiques nommées de l’association et dit, sur sa page, ce qui existe et ce qu’il construira. Le sixième, Économie sociale et revenus, proposé le soir du 28 septembre 2026, est d’une autre nature : des entreprises distinctes de l’association, dont les bénéfices reviendraient aux projets de développement et de bien-être — un complexe hôtelier, un collège-lycée avec internat, une société de transport, un centre hospitalier universitaire moderne avec ses annexes monté avec des partenaires financiers, et d’autres activités à étudier —, sous cinq règles : une société et non l’association, des comptes publiés et des bénéfices affectés aux projets, ce qui manque au pays et non ce qui y existe, de l’argent propre sans promesse de rendement, une entreprise à la fois.</p>
+            <p>Les missions s’exécutent à travers six programmes. Chacun a trois axes (quatre pour le sixième), s’appuie sur des thématiques nommées de l’association et dit, sur sa page, ce qui existe et ce qu’il construira. Le sixième, Économie sociale et revenus, proposé le soir du 28 septembre 2026, est d’une autre nature : des entreprises distinctes de l’association, dont les bénéfices reviendraient aux projets de développement et de bien-être — un complexe hôtelier, un collège-lycée avec internat, une société de transport, un centre hospitalier universitaire moderne avec ses annexes monté avec des partenaires financiers, et d’autres activités à étudier —, sous cinq règles : une société et non l’association, des comptes publiés et des bénéfices affectés aux projets, ce qui manque au pays et non ce qui y existe, de l’argent propre sans promesse de rendement, une entreprise à la fois.</p>
             <dl className="od-dl">
               {PROGRAMMES.map((p) => {
                 const ths = p.thematiques.map((id) => th[id]).filter(Boolean);
                 const noms = [...new Set(ths.filter((t) => t.filled).map((t) => t.coordinator))];
+                const vacantes = ths.filter((t) => !t.filled);
+                const vt = vacantes.filter((t) => t.kind !== "cellule").length;
+                const vacants = [...(vt ? [vt === 1 ? "une thématique" : `${enLettres(vt)} thématiques`] : []), ...vacantes.filter((t) => t.kind === "cellule").map((t) => `la cellule ${t.name}`)];
                 return (
                   <div key={p.slug}>
                     <dt>{p.numero}. <Link href={routeProgramme(p)}>{p.nom}</Link></dt>
-                    <dd>{p.axes.map((a) => a.titre).join(" · ")}. {p.objet} <span className="od-porte">Thématiques : {ths.map((t) => t.name).join(", ")}{noms.length ? ` — coordination : ${noms.join(" ; ")}` : ""}{ths.some((t) => !t.filled) ? ` ; ${ths.filter((t) => !t.filled).length === 1 ? "une thématique reste" : `${enLettres(ths.filter((t) => !t.filled).length)} thématiques restent`} à pourvoir.` : "."}</span></dd>
+                    <dd>{p.axes.map((a) => a.titre).join(" · ")}. {p.objet} <span className="od-porte">Thématiques : {ths.map((t) => t.name).join(", ")}{noms.length ? ` — coordination : ${noms.join(" ; ")}` : ""}{vacants.length ? ` ; ${vacants.join(" et ")} ${vacantes.length === 1 ? "reste" : "restent"} à pourvoir.` : "."}</span></dd>
                   </div>
                 );
               })}

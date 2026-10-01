@@ -11,22 +11,23 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Les six programmes du projet ODEB LONODJI",
-  description: metaDescription("Mémoire et Patrimoine, Recherche, Développement territorial, Jeunesse et Innovation, Diaspora, Économie sociale et revenus : six programmes, leurs axes, les thématiques et coordonnateurs qui les portent."),
+  description: metaDescription("Mémoire et Patrimoine, Recherche, Développement territorial, Jeunesse et Innovation, Diaspora, Économie sociale et revenus : six programmes et qui les porte."),
   alternates: { canonical: "/odeb/programmes" },
   openGraph: ogFor("/odeb/programmes"),
 };
 
 export default function Programmes() {
   const th = thematiquesParId();
+  const mobilisees = [...new Set(PROGRAMMES.flatMap((p) => p.thematiques))];
   return (
     <main id="main-content" className="hub-page od-page">
       <OdebHero
         eyebrow={`Projet ${ODEB.sigle} · programmes`}
         title="Six programmes"
         em="pour six missions."
-        lead="Chaque programme a trois axes, s’appuie sur des thématiques nommées de l’association et dit ce qui existe déjà et ce qu’il construira. Les programmes ne créent pas de nouvelles équipes : ils donnent un cadre commun à ce que les thématiques font, et un horizon à ce qu’elles feront."
+        lead="Chaque programme a trois axes (quatre pour le sixième), s’appuie sur des thématiques nommées de l’association et dit ce qui existe déjà et ce qu’il construira. Les programmes ne créent pas de nouvelles équipes : ils donnent un cadre commun à ce que les thématiques font, et un horizon à ce qu’elles feront."
         crumbs={[{ label: "Vision 2030 — projet ODEB", href: "/odeb" }, { label: "Programmes" }]}
-        pills={["Six programmes", `${enLettresMaj(PROGRAMMES.reduce((n, p) => n + p.axes.length, 0))} axes`, `${new Set(PROGRAMMES.flatMap((p) => p.thematiques)).size} thématiques mobilisées`]}
+        pills={["Six programmes", `${enLettresMaj(PROGRAMMES.reduce((n, p) => n + p.axes.length, 0))} axes`, `${mobilisees.filter((id) => th[id]?.kind !== "cellule").length} thématiques${mobilisees.some((id) => th[id]?.kind === "cellule") ? " et une cellule" : ""} mobilisées`]}
       />
       <OdebNav actif="programmes" />
 

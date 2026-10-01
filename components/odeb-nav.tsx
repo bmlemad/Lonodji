@@ -25,7 +25,7 @@ export default function OdebNav({ actif }: { actif: string }) {
 export function OdebEtat() {
   return (
     <div className="notice od-etat">
-      <strong>Où en est le projet.</strong> La réflexion ODEB LONODJI a été lancée le {ODEB.presenteLabel}, jour où ADEB LONODJI a fêté {ODEB.anniversaire} (<Link href={ODEB.article}>l’article du jour</Link>). L’ODEB n’est pas encore constituée : ni statut, ni budget, ni personnel. Le livre blanc est une version de travail ; son adoption, comme le calendrier de la transformation, appartient à l’association. Une remarque, une objection, une compétence à apporter : <Link href="/participer?objet=odeb#contact">écrivez-nous</Link>, objet « Le projet ODEB LONODJI ».
+      <strong>Où en est le projet.</strong> La réflexion ODEB LONODJI a été lancée le {ODEB.presenteLabel}, jour où ADEB LONODJI a fêté {ODEB.anniversaire}, comme le raconte <Link href={ODEB.article}>l’article du jour</Link>. L’ODEB n’est pas encore constituée : ni statut, ni budget, ni personnel. Le livre blanc est une version de travail ; son adoption, comme le calendrier de la transformation, appartient à l’association. Une remarque, une objection, une compétence à apporter : <Link href="/participer?objet=odeb#contact">écrivez-nous</Link>, objet « Le projet ODEB LONODJI ».
     </div>
   );
 }

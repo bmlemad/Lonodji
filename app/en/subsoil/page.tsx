@@ -6,7 +6,7 @@ import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import { metaDescription, ogFor } from "@/lib/content";
 import { alternatesLangues } from "@/lib/langues";
 import { SOURCES, type Lien } from "@/lib/sous-sol";
-import { ENGAGEMENTS_EN, INCONNUES_EN_LISTE, LECONS_EN, PROPOSITIONS_EN, SAVOIRS_EN } from "@/lib/sous-sol-en";
+import { ENGAGEMENTS_EN, INCONNUES_EN_LISTE, LECONS_EN, PROPOSITIONS_EN, SAVOIRS_EN, sourceEn } from "@/lib/sous-sol-en";
 
 /* English version of /territoire/sous-sol (30/09/2026). The French page is the reference; the data and sources
    come from lib/sous-sol.ts, only the wording is translated (lib/sous-sol-en.ts). */
@@ -17,7 +17,7 @@ const RESUME = "Oil from the neighbouring Doba basin, iron of the old smelters, 
 
 export const metadata: Metadata = {
   title: "Subsoil and natural resources of Mandoul Occidental",
-  description: metaDescription("The subsoil of Mandoul Occidental, Chad: what public sources establish (oil in the Doba basin, seismic surveys, iron of the old smelters, gold in the north), what remains unknown, the lessons of Doba and what the association proposes before any drilling."),
+  description: metaDescription("The subsoil of Mandoul Occidental, Chad: what public sources establish — Doba oil, old iron smelting, gold in the north — what is unknown, and our proposals."),
   alternates: { canonical: ROUTE, languages: alternatesLangues(ROUTE) },
   openGraph: { ...ogFor(ROUTE, "en"), title: TITRE, description: RESUME },
 };
@@ -86,12 +86,12 @@ export default function SubsoilEn() {
       </section>
 
       <section className="hub-section" id="doba">
-        <SectionHead eyebrow="Lessons of Doba" title="More than twenty years of oil," em="right next door." text="Logone Oriental has lived what Mandoul Occidental might live. What happened there tells what must be settled before, not after." />
+        <SectionHead eyebrow="Lessons of Doba" title="More than twenty years of oil," em="right next door." text="Logone Oriental has been through what Mandoul Occidental may one day face. What happened there shows what must be settled before, not after." />
         <Cards items={LECONS_EN} />
       </section>
 
       <section className="hub-section" id="proposals">
-        <SectionHead eyebrow="Our proposals" title="Set the rules" em="before the first well." text="Proposals of 30 September 2026, to be approved by the association’s board. They assume no deposit: they apply to a laterite quarry as much as to an oil well." />
+        <SectionHead eyebrow="Our proposals" title="Set the rules" em="before the first well." text="Proposals of 30 September 2026, to be approved by the association’s executive committee. They assume no deposit: they apply to a laterite quarry as much as to an oil well." />
         <ul className="gl-demandes">
           {PROPOSITIONS_EN.map((p) => <li key={p.texte}><strong>{p.qui}.</strong> {p.texte} <Links liens={p.liens} /></li>)}
         </ul>
@@ -99,18 +99,18 @@ export default function SubsoilEn() {
         <ul className="gl-demandes">
           {ENGAGEMENTS_EN.map((p) => <li key={p.texte}><strong>{p.qui}.</strong> {p.texte} <Links liens={p.liens} /></li>)}
         </ul>
-        <p className="lg-footnote">This subject falls under the theme Environment, climate & natural resources, which is still looking for its coordinator (see the <Link href="/en/themes">themes page</Link>). Geologists, petroleum and mining engineers, lawyers and environmental specialists: <Link href="/en/contact">offer your skills</Link>.</p>
+        <p className="lg-footnote">This subject falls under the theme Environment, Climate & Natural Resources, which is still looking for its coordinator (see the <Link href="/en/themes">themes page</Link>). Geologists, petroleum and mining engineers, lawyers and environmental specialists: <Link href="/en/contact">offer your skills</Link>.</p>
       </section>
 
       <section className="hub-section" id="sources">
         <SectionHead eyebrow="Sources" title="Where each finding" em="comes from." />
         <ol className="gl-regles">
           {ORDRE.map((id) => {
-            const s = SOURCES[id];
-            return <li key={id} id={`source-${id}`}><a href={s.href} rel="noopener">{s.titre}</a> — {s.editeur}, {s.date}.</li>;
+            const s = sourceEn(id);
+            return <li key={id} id={`source-${id}`}><a href={s.href} rel="noopener">{s.titre}</a> — {s.editeur}, {s.date}{s.date.endsWith(".") ? "" : "."}</li>;
           })}
         </ol>
-        <p className="lg-footnote">Titles and dates of sources are given in their original language.</p>
+        <p className="lg-footnote">Titles of sources are given in their original language.</p>
       </section>
 
       <section className="hub-section" id="read">
@@ -118,7 +118,7 @@ export default function SubsoilEn() {
         <div className="link-list">
           <Link href="/en/governance"><small>Territory</small><strong>Local governance</strong><span>Who decides what, from the canton to the State: to whom our proposals are addressed.</span></Link>
           <Link href="/en/commune"><small>Proposals</small><strong>Our proposals to the commune</strong><span>Priority projects and measures for the town of Bédjondo.</span></Link>
-          <Link href="/en/themes"><small>Our work</small><strong>Four pillars, twenty-one themes</strong><span>Including Environment, climate & natural resources, which will carry this file.</span></Link>
+          <Link href="/en/themes"><small>Our work</small><strong>Four pillars, twenty-one themes</strong><span>Including Environment, Climate & Natural Resources, which will carry this file.</span></Link>
         </div>
       </section>
 

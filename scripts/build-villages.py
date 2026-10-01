@@ -91,11 +91,12 @@ def main() -> None:
                     mentions.append({"titre": e["t"], "route": e["r"], "type": e.get("k", "Page")})
             ordre = {"Dossier": 0, "Plaidoyer": 1, "Page": 2, "Article": 3, "In English": 4}
             mentions.sort(key=lambda m: ordre.get(m["type"], 9))
-            mentions = mentions[:MAX_MENTIONS]
+        mentions_total = len(mentions)  # avant la limite d'affichage
+        mentions = mentions[:MAX_MENTIONS]
         fiches.append({
             "slug": slug, "nom": nom, "type": typ, "unite": uid, "lon": lon, "lat": lat,
             "kmBedjondo": round(km(pos, bedjondo), 1),
-            "equipements": eq[:MAX_EQUIPEMENTS], "voisins": voisins, "mentions": mentions,
+            "equipements": eq[:MAX_EQUIPEMENTS], "voisins": voisins, "mentions": mentions, "mentionsTotal": mentions_total,
         })
 
     unites_out = {}
@@ -104,6 +105,7 @@ def main() -> None:
             "id": uid, "nom": u["nom"], "groupe": u["groupe"], "dep": u.get("dep", ""), "prov": u.get("prov", ""),
             "notice": u.get("notice", ""), "approx": u.get("approx", False), "origine": u.get("origine", ""),
             "centre": u["centre"], "comptes": carte["comptes"][uid], "liens": carte["liens"].get(uid, []),
+            "liensTotal": carte.get("liensTotal", {}).get(uid, len(carte["liens"].get(uid, []))),
             "kmBedjondo": round(km(tuple(u["centre"]), bedjondo), 1),
         }
     data = {"genere": carte["genere"], "sources": carte["sources"], "bedjondo": list(bedjondo), "unites": unites_out, "villages": fiches}

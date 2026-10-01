@@ -194,6 +194,11 @@ export const ORG = {
 export function metaDescription(text: string, max = 160): string {
   const t = text.replace(/\s+/g, " ").trim();
   if (t.length <= max) return t;
+  // QA du 1er octobre 2026 : un aperçu de partage (WhatsApp, Facebook, moteurs) qui finit par « … » au milieu d'une
+  // phrase se lit mal. On garde d'abord les phrases entières qui tiennent (70 caractères au moins), sinon on coupe
+  // au dernier mot.
+  const phrases = t.slice(0, max + 1).match(/^.*[.!?][»)]?(?=\s|$)/);
+  if (phrases && phrases[0].length >= 70 && phrases[0].length <= max) return phrases[0];
   const cut = t.slice(0, max - 1);
   return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:\s]+$/, "") + "…";
 }
@@ -219,6 +224,6 @@ export const EN_PAGES_APP: { route: string; title: string }[] = [
   { route: "/en/villages", title: "Find your village — the Bedjond country, unit by unit" },
   { route: "/en/projects", title: "Projects — each one with its stage, what is missing and how to help" },
   { route: "/en/impact", title: "Impact dashboard — six dated, sourced indicators" },
-  { route: "/en/sectors", title: "Sectors of intervention — WASH, health, nutrition, relief, DRR" },
+  { route: "/en/sectors", title: "Our sectors of work — WASH, health, nutrition, emergencies, DRR" },
   { route: "/en/donors", title: "Donor programmes in Chad — World Bank, EU, UN, AfDB, and where we connect" },
 ];

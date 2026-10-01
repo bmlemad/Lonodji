@@ -55,7 +55,7 @@ def unites() -> list[dict]:
             "equipements": {"total": sum(fam.values()), "familles": {k: fam.get(k, 0) for k in FAMILLES}},
             "couvertes": sum(1 for v in vs if v["equipements"]),
             "citees": sum(1 for v in vs if v["mentions"]),
-            "pages": len(uj.get("liens", [])),
+            "pages": uj.get("liensTotal", len(uj.get("liens", []))),
             "plaidoyers": sum(1 for l in uj.get("liens", []) if l.get("type") == "plaidoyer"),
             "route": f"/villages/{u['id']}",
         })

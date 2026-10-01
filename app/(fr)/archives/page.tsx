@@ -1,4 +1,3 @@
-import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -6,7 +5,7 @@ import { getIndex, ogFor } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Archives du site",
-  description: metaDescription("La première version du site (septembre 2026, 87 pages) est intégralement reprise ici : ce qu’elle contenait, comment, et ce que des sources extérieures en disent."),
+  description: "La première version du site (septembre 2026, 87 pages), intégralement reprise ici : ce qu’elle contenait et ce que des sources extérieures en disent.",
   alternates: { canonical: "/archives" },
   openGraph: ogFor("/archives"),
 };
@@ -29,7 +28,7 @@ export default function Archives() {
       />
       <Stats items={[
         { value: "87", label: "pages reprises", note: "dont 6 pages en anglais" },
-        { value: String(idx.articles.length), label: "articles du journal", note: `du ${premier} au ${dernier}` },
+        { value: String(idx.articles.length), label: "articles au journal aujourd’hui", note: `du ${premier} au ${dernier}, dont 36 repris` },
         { value: String(dossiers), label: "dossiers de fond", note: "diagnostic, projets, patrimoine" },
         { value: String(idx.documents.filter((d) => d.pdf).length), label: "documents PDF", note: "kit, cahiers, plaidoyers" },
       ]} />
@@ -39,7 +38,7 @@ export default function Archives() {
         <div className="link-list">
           <Link href="/programmes"><small>Nos actions</small><strong>4 pôles, 21 thématiques, 2 cellules</strong><span>Avec leurs coordonnateurs, leurs objectifs et les ODD associés.</span></Link>
           <Link href="/actions"><small>Plaidoyers</small><strong>7 plaidoyers et la note à la commune</strong><span>Destinataires, état d’envoi, cadre de résultats à 22 indicateurs.</span></Link>
-          <Link href="/journal"><small>Journal</small><strong>{idx.articles.length} articles</strong><span>Vie de l’association, histoire, plaidoyers, lettre d’information.</span></Link>
+          <Link href="/journal"><small>Journal</small><strong>36 articles repris ({idx.articles.length} aujourd’hui)</strong><span>Vie de l’association, histoire, plaidoyers, lettre d’information.</span></Link>
           <Link href="/dossiers"><small>Dossiers</small><strong>{dossiers} dossiers de fond</strong><span>Du diagnostic territorial aux projets à l’étude.</span></Link>
           <Link href="/transparence#corrections"><small>Redevabilité</small><strong>Le journal des corrections</strong><span>Chaque correction de fait, datée, du 17 au 24 septembre 2026.</span></Link>
           <Link href="/documents"><small>Documents</small><strong>Les PDF à télécharger</strong><span>Kit d’adhésion, cahiers de terrain, dossier de présentation, plaidoyers.</span></Link>

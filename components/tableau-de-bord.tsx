@@ -96,7 +96,7 @@ function cartesDuPlan(d: Indicateurs, f: Releve): Carte[] {
       eyebrow: "Projets actifs",
       valeur: n(c.projets.actifs),
       libelle: pluriel(c.projets.actifs, "projet en cours", "projets en cours"),
-      detail: `${actif ? `${actif.nom}, ${actif.libelle}. ` : ""}${n(c.projets.annonces)} ${pluriel(c.projets.annonces, "projet annoncé ou à l’étude", "projets annoncés ou à l’étude")}, ${n(c.projets.finances)} ${pluriel(c.projets.finances, "financé", "financés")}.`,
+      detail: `${actif ? `${actif.nom}, ${actif.libelle}. ` : ""}${n(c.projets.annonces)} ${pluriel(c.projets.annonces, "autre projet, de l’idée à la souscription", "autres projets, de l’idée à la souscription")}, ${n(c.projets.finances)} ${pluriel(c.projets.finances, "financé", "financés")}.`,
       source: "Plateforme de projets · mise en ligne",
       courte: "Plateforme de projets",
       href: "/projets",
@@ -104,21 +104,22 @@ function cartesDuPlan(d: Indicateurs, f: Releve): Carte[] {
   ];
 }
 
-const FORMULAIRES: { cle: string; libelle: string; note?: string; href: string }[] = [
-  { cle: "intention-adhesion", libelle: "intentions d’adhésion", href: "/participer#adherer" },
-  { cle: "signalement-besoin", libelle: "signalements de besoin", href: "/territoire/besoins" },
-  { cle: "soutien-plaidoyer", libelle: "soutiens à un plaidoyer", href: "/actions" },
-  { cle: "promesse-contribution", libelle: "promesses de contribution", href: "/participer#soutenir" },
-  { cle: "proposition-article", libelle: "propositions d’article", href: "/participer#proposer" },
-  { cle: "lettre-info", libelle: "abonnés à la lettre", href: "/participer#newsletter" },
-  { cle: "temoignage-lignee", libelle: "témoignages de lignée", href: "/histoire" },
-  { cle: "lieu-sacre", libelle: "lieux sacrés signalés", href: "/patrimoine/lieux-sacres" },
-  { cle: "mesure-debit", libelle: "mesures de débit internet", href: "/actions#mesure-debit" },
-  { cle: "diaspora-competences", libelle: "compétences inscrites au répertoire", href: "/diaspora" },
-  { cle: "temoignage", libelle: "récits, photos et enregistrements reçus", href: "/temoignages" },
-  { cle: "depot-document", libelle: "documents déposés à la bibliothèque", href: "/bibliotheque" },
-  { cle: "mot-nangnda", libelle: "mots versés au dictionnaire nangnda", href: "/langue" },
-  { cle: "proposition-projet", libelle: "projets proposés", href: "/projets#proposer" },
+/* libellé au pluriel, et au singulier pour 0 et 1 (« 0 signalement de besoin », comme « 0 besoin confirmé résolu ») */
+const FORMULAIRES: { cle: string; libelle: string; un: string; note?: string; href: string }[] = [
+  { cle: "intention-adhesion", libelle: "intentions d’adhésion", un: "intention d’adhésion", href: "/participer#adherer" },
+  { cle: "signalement-besoin", libelle: "signalements de besoin", un: "signalement de besoin", href: "/territoire/besoins" },
+  { cle: "soutien-plaidoyer", libelle: "soutiens à un plaidoyer", un: "soutien à un plaidoyer", href: "/actions" },
+  { cle: "promesse-contribution", libelle: "promesses de contribution", un: "promesse de contribution", href: "/participer#soutenir" },
+  { cle: "proposition-article", libelle: "propositions d’article", un: "proposition d’article", href: "/participer#proposer" },
+  { cle: "lettre-info", libelle: "abonnés à la lettre", un: "abonné à la lettre", href: "/participer#newsletter" },
+  { cle: "temoignage-lignee", libelle: "témoignages de lignée", un: "témoignage de lignée", href: "/histoire" },
+  { cle: "lieu-sacre", libelle: "lieux sacrés signalés", un: "lieu sacré signalé", href: "/patrimoine/lieux-sacres" },
+  { cle: "mesure-debit", libelle: "mesures de débit internet", un: "mesure de débit internet", href: "/actions#mesure-debit" },
+  { cle: "diaspora-competences", libelle: "compétences inscrites au répertoire", un: "compétence inscrite au répertoire", href: "/diaspora" },
+  { cle: "temoignage", libelle: "récits, photos et enregistrements reçus", un: "récit, photo ou enregistrement reçu", href: "/temoignages" },
+  { cle: "depot-document", libelle: "documents déposés à la bibliothèque", un: "document déposé à la bibliothèque", href: "/bibliotheque" },
+  { cle: "mot-nangnda", libelle: "mots versés au dictionnaire nangnda", un: "mot versé au dictionnaire nangnda", href: "/langue" },
+  { cle: "proposition-projet", libelle: "projets proposés", un: "projet proposé", href: "/projets#proposer" },
 ];
 
 export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: Indicateurs; mode?: "complet" | "compact" }) {
@@ -172,7 +173,7 @@ export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: 
             <span className="tb-libelle">{k.libelle}</span>
             <p className="tb-detail">{k.detail}</p>
             <span className="tb-source">{k.source}</span>
-            {k.href ? <Link className="tb-lien" href={k.href}>Voir<span className="sr-only"> {k.libelle}</span> <span aria-hidden="true">→</span></Link> : null}
+            {k.href ? <Link className="tb-lien" href={k.href}>Voir<span className="sr-only"> le détail : {k.eyebrow.toLowerCase()}</span> <span aria-hidden="true">→</span></Link> : null}
           </article>
         ))}
       </div>
@@ -203,7 +204,7 @@ export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: 
           return (
             <li key={f.cle}><Link className="tb-mini" href={f.href}>
               <strong>{n(personnes ?? cpt.envois)}</strong>
-              <span>{f.libelle}</span>
+              <span>{pluriel(personnes ?? cpt.envois, f.un, f.libelle)}</span>
               <small>{personnes != null && personnes !== cpt.envois ? `${n(cpt.envois)} envois, ${n(personnes)} personnes distinctes` : cpt.envois === 0 ? "aucun envoi à ce jour" : `${n(cpt.envois)} ${pluriel(cpt.envois, "envoi", "envois")}`}</small>
             </Link></li>
           );
@@ -211,7 +212,7 @@ export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: 
       </ul>
 
       <div className="tb-methode">
-        <strong>Comment ces chiffres sont faits.</strong> Les contenus (plaidoyers, articles, documents, corrections, coordinations, localités) sont comptés dans les pages elles-mêmes à chaque mise en ligne : un chiffre change quand la page change. Les envois de formulaires sont comptés sur la plateforme qui les reçoit, après retrait des envois de test ; une même personne qui envoie deux fois compte une fois. Aucune donnée personnelle ne quitte la boîte de réception. Les chiffres que seule l’association détient — adhérents à jour de cotisation, besoins effectivement résolus — ne sont pas estimés : ils paraîtront datés quand le bureau les transmettra. Méthode du relevé : {formulaires.methode}
+        <strong>Comment ces chiffres sont faits.</strong> Les contenus (plaidoyers, articles, documents, corrections, coordinations, localités) sont comptés dans les pages elles-mêmes à chaque mise en ligne : un chiffre change quand la page change. Les envois de formulaires sont comptés sur la plateforme qui les reçoit — méthode du relevé : {formulaires.methode} Aucune donnée personnelle ne quitte la boîte de réception. Les chiffres que seule l’association détient — adhérents à jour de cotisation, besoins effectivement résolus — ne sont pas estimés : ils paraîtront datés quand le bureau les transmettra.
       </div>
     </section>
   );

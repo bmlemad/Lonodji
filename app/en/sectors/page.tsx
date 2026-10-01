@@ -9,10 +9,10 @@ import { thematiquesParId } from "@/lib/odeb-chiffres";
 import { ETATS_SECTEUR, GROUPES_SECTEURS, NON_COUVERTS, SECTEURS } from "@/lib/secteurs";
 
 export const metadata: Metadata = {
-  title: "Sectors of intervention",
-  description: metaDescription("ADEB LONODJI’s twenty-one themes mapped to the sectors development and humanitarian partners use: IASC clusters, OECD-DAC purpose codes and SDGs, what is done and what is only an idea."),
+  title: "Our sectors of work",
+  description: metaDescription("ADEB LONODJI’s twenty-one themes mapped to the sectors NGOs and donors use — IASC clusters, OECD-DAC codes, SDGs — and what is actually done."),
   alternates: { canonical: "/en/sectors", languages: alternatesLangues("/en/sectors") },
-  openGraph: { ...ogFor("/en/sectors", "en"), title: "Sectors of intervention — WASH, health, nutrition, relief, DRR…", description: "Twenty-one themes mapped to NGO sectors, clusters, DAC codes and SDGs." },
+  openGraph: { ...ogFor("/en/sectors", "en"), title: "Our sectors of work — WASH, health, nutrition, relief, DRR…", description: "Twenty-one themes mapped to NGO sectors, clusters, DAC codes and SDGs." },
 };
 
 export default function SectorsEn() {
@@ -62,7 +62,7 @@ export default function SectorsEn() {
           <Link href="/en/projects"><small>Projects</small><strong>Projects and their stage</strong><span>From idea to service, what exists and what is missing.</span></Link>
         </div>
       </section>
-      <Partager route="/en/sectors" titre="ADEB LONODJI — sectors of intervention" texte="WASH, health, nutrition, education, food security, relief, DRR, protection: twenty-one themes mapped to NGO sectors" lang="en" />
+      <Partager route="/en/sectors" titre="ADEB LONODJI — our sectors of work" texte="WASH, health, nutrition, education, food security, relief, DRR, protection: twenty-one themes mapped to NGO sectors" lang="en" />
     </main>
   );
 }

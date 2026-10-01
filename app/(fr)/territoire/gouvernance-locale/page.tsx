@@ -12,7 +12,7 @@ const ROUTE = "/territoire/gouvernance-locale";
 
 export const metadata: Metadata = {
   title: "Gouvernance locale",
-  description: metaDescription("Qui décide quoi à Bédjondo — État, province, département, commune, chefferies, quartiers —, ce que nos dossiers demandent à chaque niveau, comment ils s’articulent, et les indicateurs pour le suivre."),
+  description: metaDescription("Qui décide quoi à Bédjondo, de l’État aux quartiers : ce que nos dossiers demandent à chaque niveau, comment ils s’articulent et les indicateurs de suivi."),
   alternates: { canonical: ROUTE, languages: alternatesLangues(ROUTE) },
   openGraph: { ...ogFor(ROUTE), title: "Gouvernance locale à Bédjondo : qui décide quoi", description: "Chaque niveau de décision, nos demandes, leurs articulations et les indicateurs pour les suivre." },
 };

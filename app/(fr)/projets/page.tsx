@@ -14,7 +14,7 @@ import { jsonLd, webPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Plateforme de projets",
-  description: metaDescription("Espace numérique, application, complexe sportif, transport et logistique : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer — et le formulaire pour en proposer un."),
+  description: metaDescription("Espace numérique, application, complexe sportif, transport : chaque projet avec son stade, ce qui manque, son budget, comment contribuer, et un formulaire."),
   alternates: { canonical: "/projets", languages: alternatesLangues("/projets") },
   openGraph: ogFor("/projets"),
 };
@@ -31,7 +31,7 @@ export default function Projets() {
   const tries = [...d.projets].sort((a, b) => stadeIndex(d, b.stade) - stadeIndex(d, a.stade));
   return (
     <main id="main-content" className="hub-page pj-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", "@graph": [webPageSchema({ url: "/projets", name: "Plateforme de projets", description: metaDescription("Espace numérique, application, complexe sportif, transport et logistique : chaque projet avec son stade, ce qui existe, ce qui manque, son budget et comment contribuer — et le formulaire pour en proposer un.") })] }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", "@graph": [webPageSchema({ url: "/projets", name: "Plateforme de projets", description: metaDescription("Espace numérique, application, complexe sportif, transport : chaque projet avec son stade, ce qui manque, son budget, comment contribuer, et un formulaire.") })] }) }} />
       <PageHeader
         eyebrow="Nos actions · plateforme de projets"
         title="Chaque projet,"

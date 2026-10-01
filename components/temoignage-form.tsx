@@ -75,7 +75,7 @@ export default function TemoignageForm({ telephone, whatsapp }: { telephone: str
         <div className="field"><label htmlFor="tm-titre">Un titre, si vous en avez un</label><input id="tm-titre" name="titre" placeholder="« Le jour où le forage a coulé », « Ma grand-mère et le marché de Bédjondo »…" type="text" /></div>
         <div className="field">
           <label htmlFor="tm-recit">Votre récit *</label>
-          <textarea id="tm-recit" name="recit" required rows={9} placeholder="En français ou en bedjond, comme vous parlez. Qui, où, quand ; ce qui s’est passé ; ce que cela a changé. Quelques lignes suffisent, nous vous rappellerons pour le reste." />
+          <textarea id="tm-recit" name="recit" required rows={9} placeholder="En français ou en nangnda, comme vous parlez. Qui, où, quand ; ce qui s’est passé ; ce que cela a changé. Quelques lignes suffisent, nous vous rappellerons pour le reste." />
           <span className="hint">Vous pouvez aussi enregistrer votre voix sur votre téléphone et joindre le fichier ci-dessous.</span>
         </div>
         <div className="field">

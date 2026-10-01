@@ -1,4 +1,3 @@
-import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader } from "@/components/blocks";
@@ -8,7 +7,7 @@ import { jsonLd, webPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Tous les dossiers",
-  description: metaDescription("Les dossiers de fond d’ADEB LONODJI : diagnostic territorial, projets à l’étude, plans pour les personnes vulnérables, patrimoine, outils de terrain et cadre légal."),
+  description: "Les dossiers de fond d’ADEB LONODJI : diagnostic territorial, projets à l’étude, personnes vulnérables, patrimoine, outils de terrain et cadre légal.",
   alternates: { canonical: "/dossiers" },
   openGraph: ogFor("/dossiers"),
 };
@@ -26,15 +25,17 @@ export default function Dossiers() {
   const bySlug = new Map<string, { slug: string; route: string; eyebrow: string; title: string; lede: string }>(pages.map((p) => [p.slug, p]));
   // dossiers écrits directement dans l'appli (hors import de l'ancien site)
   bySlug.set("bedjondo-transport-logistique", { slug: "bedjondo-transport-logistique", route: "/projets/bedjondo-transport-logistique", eyebrow: "Projet annoncé", title: "Bedjondo Transport et Logistique", lede: "Le projet de transport et de logistique terrestres annoncé sous le nom d’Air Bedjondo, renommé le 29 septembre 2026 : pourquoi, ce que nous savons, et six propositions pour le mener." });
+  // le compte est celui des cartes affichées (dossier ajouté à la main compris)
+  const nbDossiers = groups.reduce((n, [, slugs]) => n + slugs.filter((x) => bySlug.has(x)).length, 0);
   return (
     <main id="main-content" className="hub-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({
         "@context": "https://schema.org",
         "@graph": [
-          webPageSchema({ url: "/dossiers", name: "Tous les dossiers", description: "Les dossiers de fond d’ADEB LONODJI : diagnostic territorial, projets à l’étude, plans pour les personnes vulnérables, patrimoine, outils de terrain et cadre légal." }),
+          webPageSchema({ url: "/dossiers", name: "Tous les dossiers", description: "Les dossiers de fond d’ADEB LONODJI : diagnostic territorial, projets à l’étude, personnes vulnérables, patrimoine, outils de terrain et cadre légal." }),
         ],
       }) }} />
-      <PageHeader crumbs={[{ label: "Nos actions", href: "/programmes" }, { label: "Tous les dossiers" }]} eyebrow="Nos actions · tous les dossiers" title="Tout ce que nous" em="avons documenté." lead={`${pages.length} dossiers de fond, chacun daté et sourcé, du diagnostic territorial aux projets à l’étude. Ils nourrissent les plaidoyers et les vingt et une thématiques.`} />
+      <PageHeader crumbs={[{ label: "Nos actions", href: "/programmes" }, { label: "Tous les dossiers" }]} eyebrow="Nos actions · tous les dossiers" title="Tout ce que nous" em="avons documenté." lead={`${nbDossiers} dossiers de fond, chacun daté et sourcé, du diagnostic territorial aux projets à l’étude. Ils nourrissent les plaidoyers et les vingt et une thématiques.`} />
       {groups.map(([title, slugs]) => (
         <section className="hub-section" key={title}>
           <p className="eyebrow">{title}</p>
@@ -45,7 +46,7 @@ export default function Dossiers() {
           </div>
         </section>
       ))}
-      <Partager route="/dossiers" titre="Tous les dossiers" texte="Les dossiers de fond d’ADEB LONODJI : diagnostic territorial, projets à l’étude, plans pour les personnes vulnérables, patrimoine, outils de terrain et cadre légal." />
+      <Partager route="/dossiers" titre="Tous les dossiers" texte="Les dossiers de fond d’ADEB LONODJI : diagnostic territorial, projets à l’étude, personnes vulnérables, patrimoine, outils de terrain et cadre légal." />
     </main>
   );
 }

@@ -20,8 +20,8 @@ const dossiers = [
   { href: "/patrimoine/genealogies", label: "Généalogies", note: "Écrire l’histoire de sa famille avec le cahier généalogique." },
   { href: "/patrimoine/genealogie-outil", label: "Cahier généalogique en ligne", note: "Saisie, vue par maison, liste de descendance, export : tout reste dans votre navigateur." },
   { href: "/patrimoine/base-de-recherche", label: "Base de recherche", note: "Quarante références sur le peuple sara, les Bedjond et leur langue, dont les travaux de Djarangar Djita Issa." },
-  { href: "/association/ancienne-identite-visuelle", label: "Identité visuelle", note: "Logo, couleurs et signes : la carte des sept unités du cœur, la frise des onze chefs." },
-  { href: "/association/evenements", label: "Événements", note: "Assemblées, lancements et rencontres : les dates annoncées et celles à fixer." },
+  { href: "/association/ancienne-identite-visuelle", label: "Ancienne identité visuelle", note: "Logo bleu, couleurs et signes d’avant le 28 septembre 2026 : la carte des sept unités du cœur, la frise des onze chefs." },
+  { href: "/association/evenements", label: "Événements", note: "Assemblées, lancements et rencontres : toutes les dates restent à fixer." },
 ];
 
 const secondary = [
@@ -45,7 +45,7 @@ export default function Histoire() {
         crumbs={[{ label: "Patrimoine", href: "/patrimoine" }, { label: "Histoire" }]}
         title="Bédjondo, berceau"
         em="du peuple bedjond."
-        lead="Les Bedjond — « nangnda » de leur nom d’origine — ont pour berceau Bédjondo, dans le Mandoul Occidental, selon les travaux de Djarangar Djita Issa. Cette page rassemble ce que nous savons de leur histoire, ce qui reste à établir, et les personnes qui portent cette mémoire."
+        lead="Les Bedjond — dont la langue est aussi appelée « nangnda » — ont pour berceau Bédjondo, dans le Mandoul Occidental, selon les travaux de Djarangar Djita Issa. Cette page rassemble ce que nous savons de leur histoire, ce qui reste à établir, et les personnes qui portent cette mémoire."
         pills={["Onze chefs de canton depuis Narmbang", `${articles.length} articles d’histoire et de culture`, "40 références en base de recherche"]}
       />
 

@@ -1,4 +1,3 @@
-import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -10,7 +9,7 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Observatoire du Mandoul Occidental",
-  description: metaDescription("Localités, équipements connus, couverture, diagnostic par domaine, plaidoyers et besoins signalés : les chiffres du pays bedjond par unité, datés et sourcés, et ce que l’observatoire ne sait pas encore."),
+  description: "Localités, équipements, couverture, diagnostic, plaidoyers et besoins signalés : les chiffres du pays bedjond par unité, datés et sourcés.",
   alternates: { canonical: "/observatoire" },
   openGraph: ogFor("/observatoire"),
 };
@@ -42,7 +41,7 @@ export default function Observatoire() {
         eyebrow="Territoire · observatoire"
         title="Observatoire"
         em="du Mandoul Occidental."
-        lead="Les mêmes règles que le tableau de bord — un chiffre, sa source, sa date — appliquées au territoire, unité par unité : ce que l’on sait des localités et des équipements, l’état du diagnostic par domaine, le suivi des plaidoyers et des besoins signalés. Et, tout aussi précisément, ce que l’observatoire ne sait pas encore."
+        lead="Les mêmes règles que le tableau de suivi — un chiffre, sa source, sa date — appliquées au territoire, unité par unité : ce que l’on sait des localités et des équipements, l’état du diagnostic par domaine, le suivi des plaidoyers et des besoins signalés. Et, tout aussi précisément, ce que l’observatoire ne sait pas encore."
         crumbs={[{ label: "Territoire", href: "/territoire" }, { label: "Observatoire" }]}
         pills={[`${t.unites} unités`, `${nf.format(t.localites)} localités`, `${o.diagnostic.total} problématiques`, `données du ${date(o.sources.carte)}`]}
       />
@@ -144,7 +143,7 @@ export default function Observatoire() {
           <Link href="/territoire/enquetes"><small>Diagnostic</small><strong>Mener une des huit enquêtes de terrain</strong><span>Huit des onze problématiques inconnues, chacune avec son détenteur de réponse, sa méthode et sa fiche de relevé.</span></Link>
           <Link href="/actions#mesure-debit"><small>Connectivité</small><strong>Mesurer le débit internet chez soi</strong><span>Une mesure datée et située, pour le plaidoyer haut débit.</span></Link>
         </div>
-        <Partager route="/observatoire" titre="Observatoire du Mandoul Occidental" texte="Localités, équipements connus, couverture, diagnostic par domaine, plaidoyers et besoins signalés : les chiffres du pays bedjond par unité, datés et sourcés, et ce que l’observatoire ne sait pas encore." />
+        <Partager route="/observatoire" titre="Observatoire du Mandoul Occidental" texte="Localités, équipements, couverture, diagnostic, plaidoyers et besoins signalés : les chiffres du pays bedjond par unité, datés et sourcés." />
         <p className="lg-footnote">Observatoire ouvert le 28 septembre 2026, première version, au titre de la phase 3 de la <Link href="/odeb/feuille-de-route#phase-3">feuille de route 2026-2030</Link> et de l’axe « Observatoire » du <Link href="/odeb/programmes/developpement-territorial">programme Développement territorial</Link>. Données établies automatiquement (carte du {date(o.sources.carte)}, fiches du {date(o.sources.villages)}, relevé des formulaires du {date(o.sources.releve)}). Une erreur ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
       </section>
     </main>

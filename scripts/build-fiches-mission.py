@@ -186,7 +186,7 @@ def main() -> None:
     fonts = og.font_faces()
     logo = "data:image/png;base64," + base64.b64encode(LOGO.read_bytes()).decode()
     auj = date.today()
-    jour = f"{auj.day} {MOIS[auj.month - 1]} {auj.year}"
+    jour = f"{'1er' if auj.day == 1 else auj.day} {MOIS[auj.month - 1]} {auj.year}"
     OUT.mkdir(parents=True, exist_ok=True)
     fiches: list[tuple[str, str]] = []
     for p in s["poles"]:

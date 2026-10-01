@@ -43,8 +43,13 @@ CHERCHEURS = [
 ]
 
 
+# balises « en ligne » (italique, exposant, lien…) : retirées sans espace, pour ne pas produire « XX e siècle »
+# ou « Nature Communications , 2017 » ; les autres balises valent une espace.
+INLINE = re.compile(r"</?(?:a|abbr|b|cite|em|i|q|small|span|strong|sub|sup)\b[^>]*>")
+
+
 def plain(html: str) -> str:
-    t = re.sub(r"<[^>]+>", " ", html)
+    t = re.sub(r"<[^>]+>", " ", INLINE.sub("", html))
     return re.sub(r"\s+", " ", unescape(t)).strip()
 
 
@@ -95,7 +100,7 @@ def main() -> None:
     documents = [{"titre": d["title"], "pdf": d["pdf"], "description": d.get("description", ""), "meta": d.get("meta", "")} for d in idx["documents"] if d.get("pdf")]
     # documents produits hors de l'ancien site (voir app/documents/page.tsx)
     if (ROOT / "public" / "odeb" / "livre-blanc-odeb-lonodji-2026.pdf").exists():
-        documents.append({"titre": "Livre blanc du projet ODEB LONODJI (version de travail)", "pdf": "/odeb/livre-blanc-odeb-lonodji-2026.pdf", "description": "Le document fondateur de l’Organisation pour le Développement et l’Émergence Bedjonde : vision 2030, six missions, cinq programmes, feuille de route. Non adopté à ce jour.", "meta": "28 septembre 2026 · A4 · version de travail n° 1"})
+        documents.append({"titre": "Livre blanc du projet ODEB LONODJI (version de travail)", "pdf": "/odeb/livre-blanc-odeb-lonodji-2026.pdf", "description": "Le document fondateur de l’Organisation pour le Développement et l’Émergence Bedjonde : vision 2030, six missions, six programmes, feuille de route. Non adopté à ce jour.", "meta": "28 septembre 2026 · A4 · version de travail n° 1"})
     articles_par_rubrique: dict[str, int] = {}
     for a in idx["articles"]:
         articles_par_rubrique[a["category"]] = articles_par_rubrique.get(a["category"], 0) + 1

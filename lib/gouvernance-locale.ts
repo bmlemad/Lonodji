@@ -25,7 +25,7 @@ const L = {
   lieux: { label: "Lieux sacrés et sépultures", href: "/patrimoine/lieux-sacres" },
   routes: { label: "Plaidoyer routes et ponts", href: "/journal/2026-09-17-plaidoyer-routes-ponts-bedjondo" },
   electricite: { label: "Plaidoyer électricité", href: "/journal/2026-09-16-plaidoyer-electricite-bedjondo" },
-  plaidoyers: { label: "Les huit plaidoyers", href: "/actions" },
+  plaidoyers: { label: "Les huit dossiers de plaidoyer", href: "/actions" },
   sante: { label: "Plaidoyer santé", href: "/journal/2026-09-17-plaidoyer-sante-bedjondo" },
   enquetes: { label: "Enquêtes de terrain", href: "/territoire/enquetes" },
   besoins: { label: "Carte des besoins", href: "/territoire/besoins" },
@@ -49,8 +49,8 @@ export const NIVEAUX: Niveau[] = [
     decideurs: ["Province"],
     role: "Collectivité dotée de la libre administration, comme la commune : elle s’administre par une assemblée élue. Nos dossiers lui rattachent les limites et rattachements des cantons, et le bois-énergie.",
     demandes: [
-      { texte: "Saisir l’État et la province sur le pont de l’axe Bédjondo–Békamba, demandé par les femmes de la ville dès novembre 2023.", sources: [L.note, L.routes] },
-      { texte: "Porter la demande d’électrification de Bédjondo dans les instances provinciales et nationales.", sources: [L.electricite] },
+      { texte: "Que la province, saisie par la commune, porte auprès de l’État le pont de l’axe Bédjondo–Békamba, demandé par les femmes de la ville dès novembre 2023.", sources: [L.note, L.routes] },
+      { texte: "Que la demande d’électrification de Bédjondo, portée par la commune, soit relayée par la province auprès de l’État.", sources: [L.electricite] },
     ],
   },
   {

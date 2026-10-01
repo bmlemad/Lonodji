@@ -34,7 +34,7 @@ export default function Temoignages() {
         em="à celles et ceux qui viennent."
         lead="Ce site sait compter, documenter, plaider. Il ne sait pas encore faire entendre les voix de Bédjondo ni la montrer. Un ancien qui raconte le forum de 2003, une femme qui tient le marché, un jeune qui a réussi, un paysage au petit matin : c’est ce qui manque, et c’est vous qui l’avez."
         crumbs={[{ label: "Patrimoine", href: "/patrimoine" }, { label: "Témoignages" }]}
-        pills={["En français ou en bedjond", "Photo, son ou vidéo, 10 Mo au plus", "Rien de publié sans votre relecture"]}
+        pills={["En français ou en nangnda", "Photo, son ou vidéo, 10 Mo au plus", "Rien de publié sans votre relecture"]}
       />
 
       <Stats items={[
@@ -74,7 +74,7 @@ export default function Temoignages() {
 
       <Partager route="/temoignages" titre="Racontez Bédjondo" texte="Un ancien qui raconte, une femme leader, un jeune talent, un paysage : envoyez votre récit, votre photo ou votre voix. Rien n’est publié sans votre relecture." />
 
-      <p className="lg-footnote">Page ouverte le 28 septembre 2026 au titre des actions 1.2 (banque d’images) et 5.2 (patrimoine vivant) du plan d’action 2026-2028, qui prévoit aussi une campagne de photographies professionnelles ; en attendant, ce sont vos photos qui font exister la banque d’images. Les récits validés paraissent dans <Link href="/journal">le journal</Link>, signés et datés ; les photos, sur les pages qu’elles illustrent, avec leur crédit. Les envois sont enregistrés par le service de formulaires de notre hébergeur (<Link href="/mentions-legales#donnees">où vont vos réponses</Link>) ; les compteurs paraissent sur le <Link href="/impact">tableau de bord</Link>.</p>
+      <p className="lg-footnote">Page ouverte le 28 septembre 2026 au titre des actions 1.2 (banque d’images) et 5.2 (patrimoine vivant) du plan d’action 2026-2028, qui prévoit aussi une campagne de photographies professionnelles ; en attendant, ce sont vos photos qui font exister la banque d’images. Les récits validés paraissent dans <Link href="/journal">le journal</Link>, signés et datés ; les photos, sur les pages qu’elles illustrent, avec leur crédit. Les envois sont enregistrés par le service de formulaires de notre hébergeur (<Link href="/mentions-legales#donnees">où vont vos réponses</Link>) ; les compteurs paraissent sur le <Link href="/impact">tableau de suivi</Link>.</p>
     </main>
   );
 }

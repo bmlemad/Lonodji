@@ -14,7 +14,7 @@ const LIENS_EN: Record<string, string> = {
   "Lieux sacrés et sépultures": "Sacred sites and burial grounds",
   "Plaidoyer routes et ponts": "Roads and bridges advocacy",
   "Plaidoyer électricité": "Electricity advocacy",
-  "Les huit plaidoyers": "The eight advocacy files",
+  "Les huit dossiers de plaidoyer": "The eight advocacy briefs",
   "Plaidoyer santé": "Health advocacy",
   "Enquêtes de terrain": "Field surveys",
   "Carte des besoins": "Needs map",
@@ -37,13 +37,13 @@ const NIVEAUX_TEXTE: Record<string, { nom: string; qui: string; role: string; de
     nom: "The State", qui: "Ministries, agencies, national programmes",
     role: "What the commune cannot do alone: electricity and telecommunications networks, major infrastructure, teachers and health workers, donor-funded programmes.",
     demandes: [
-      "Our advocacy files separate what falls to the State from what falls to the commune: we write to N’Djamena only about what the commune cannot do alone.",
+      "Our advocacy briefs separate what falls to the State from what falls to the commune: we write to N’Djamena only about what the commune cannot do alone.",
       "That national programmes and donors name Bédjondo among their targets.",
     ],
   },
   province: {
     nom: "The province of Mandoul", qui: "Governor; provincial council elected on 29 December 2024",
-    role: "A self-governing local authority, like the commune: it is run by an elected assembly. Our files attach to it the boundaries and attachments of the cantons, and fuelwood.",
+    role: "A self-governing local authority, like the commune: it is run by an elected assembly. Our files assign to it the boundaries and administrative attachment of the cantons, and fuelwood.",
     demandes: [
       "Bring the State and the province in on the bridge on the Bédjondo–Békamba road, requested by the town’s women since November 2023.",
       "Carry the request to bring electricity to Bédjondo to provincial and national bodies.",
@@ -51,7 +51,7 @@ const NIVEAUX_TEXTE: Record<string, { nom: string; qui: string; role: string; de
   },
   departement: {
     nom: "The department of Mandoul Occidental", qui: "Prefect; sub-prefectures (Bédjondo, Bébopen, Békamba, Péni)",
-    role: "The State’s representative in the department. Our files address to it the boundary disputes between cantons and the departure of children to gold-mining sites, which the diagnosis attaches to the department.",
+    role: "The State’s representative in the department. Our files refer to it the boundary disputes between cantons and children leaving for gold-mining sites, which the diagnosis assigns to the department.",
     demandes: [
       "That the disputed boundaries between the department’s cantons be surveyed, discussed and settled, rather than reawakened every season; the association undertakes to hand the prefecture its survey of disputed boundaries.",
     ],
@@ -75,10 +75,10 @@ const NIVEAUX_TEXTE: Record<string, { nom: string; qui: string; role: string; de
   },
   quartiers: {
     nom: "Neighbourhoods and residents", qui: "Neighbourhood chiefs; neighbourhood committees (proposed); residents",
-    role: "The first informants and the first relays: needs reported, upkeep of local facilities, health relays.",
+    role: "The first to know and the first to pass things on: reporting needs, looking after local facilities, community health volunteers.",
     demandes: [
-      "Recognise by municipal order a committee in each neighbourhood: to relay needs, organise clean-up days, and see to the upkeep of local facilities.",
-      "Organise, with neighbourhood chiefs, a community health relay and the upkeep of the town’s streets.",
+      "Recognise by municipal by-law a committee in each neighbourhood: to relay needs, organise clean-up days, and see to the upkeep of local facilities.",
+      "Organise, with neighbourhood chiefs, community health volunteers and the upkeep of the town’s streets.",
       "Keep a register of complaints at the town hall, read out in session; report needs on the participatory map.",
     ],
   },
@@ -94,7 +94,7 @@ const ARTICULATIONS_TEXTE: { titre: string; qui: string; texte: string }[] = [
   { titre: "The town plan", qui: "Commune · chieftaincy", texte: "The commune adopts the plan and issues building permits; the chieftaincy asks it to record the perimeter of sacred sites and burial grounds — an outline, with no reason given and no name." },
   { titre: "Land for facilities", qui: "Commune · chieftaincy", texte: "Land guaranteed in writing, by the commune and the chieftaincy, before any building work: not one bag of cement without an agreement." },
   { titre: "Peace between farmers and herders", qui: "Canton chiefs · commune · prefecture", texte: "Corridors traced with the canton chiefs, adopted by the commune and posted; a joint committee chaired by the chieftaincy; a mediation logbook in two copies, at the chieftaincy and at the town hall; disputed boundaries taken to the prefecture." },
-  { titre: "Neighbourhoods", qui: "Commune · neighbourhood chiefs · residents", texte: "Neighbourhood committees recognised by municipal order, a register of complaints read out in session, health relays and street upkeep organised with the neighbourhood chiefs." },
+  { titre: "Neighbourhoods", qui: "Commune · neighbourhood chiefs · residents", texte: "Neighbourhood committees recognised by municipal by-law, a register of complaints read out in session, community health volunteers and street upkeep organised with the neighbourhood chiefs." },
   { titre: "Consultation", qui: "All levels", texte: "A quarterly consultation committee: town hall, association, prefecture or sub-prefecture, chieftaincies, women’s representatives and youth representatives." },
 ];
 export const ARTICULATIONS_EN = ARTICULATIONS.map((a, i) => ({ ...a, ...(ARTICULATIONS_TEXTE[i] ?? {}), sources: a.sources.map(lienEn) }));
@@ -103,7 +103,7 @@ const INDICATEURS_TEXTE: { indicateur: string; verification: string }[] = [
   { indicateur: "Ordinary council sessions announced in advance", verification: "Posted notice and agenda" },
   { indicateur: "The commune’s own revenues published", verification: "Communal administrative account" },
   { indicateur: "Framework agreement between commune and association signed and published", verification: "Agreement published on the site" },
-  { indicateur: "Neighbourhood committees recognised by municipal order", verification: "Municipal orders" },
+  { indicateur: "Neighbourhood committees recognised by municipal by-law", verification: "Municipal by-laws" },
   { indicateur: "Register of complaints kept and read out in session", verification: "Session minutes" },
   { indicateur: "Mediation logbooks kept", verification: "Logbooks, at the chieftaincy and the town hall" },
   { indicateur: "Women and young people on the consultation committee", verification: "Attendance list published" },

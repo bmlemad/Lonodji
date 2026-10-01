@@ -205,7 +205,7 @@ export const SECTEURS: Secteur[] = [
   },
   {
     id: "culture", groupe: "singularites", nom: "Culture et patrimoine", sigle: "Culture", en: "Culture and heritage",
-    enTexte: "History, the Nangnda language, genealogies, a digital library; sacred sites protected by publishing nothing.",
+    enTexte: "History, the Nangnda (Bedjond) language, genealogies, a digital library; sacred sites protected by publishing nothing.",
     cadre: { cad: "CAD 16061", odd: "ODD 11.4" }, etat: "couvert",
     thematiques: ["memoire-heritage", "culture-patrimoine-vivant", "savoirs-innovation"],
     activites: [

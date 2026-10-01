@@ -1,8 +1,8 @@
 {
- "genere": "2026-09-30",
+ "genere": "2026-10-01",
  "sources": {
   "carte": "2026-09-30",
-  "villages": "2026-09-30",
+  "villages": "2026-10-01",
   "releve": "2026-09-28"
  },
  "familles": {
@@ -67,7 +67,7 @@
    },
    "couvertes": 7,
    "citees": 7,
-   "pages": 8,
+   "pages": 10,
    "plaidoyers": 6,
    "route": "/villages/bedjondo"
   },
@@ -94,7 +94,7 @@
    },
    "couvertes": 0,
    "citees": 2,
-   "pages": 8,
+   "pages": 13,
    "plaidoyers": 0,
    "route": "/villages/yomi"
   },
@@ -121,7 +121,7 @@
    },
    "couvertes": 1,
    "citees": 5,
-   "pages": 8,
+   "pages": 11,
    "plaidoyers": 0,
    "route": "/villages/nderguigui"
   },
@@ -175,7 +175,7 @@
    },
    "couvertes": 28,
    "citees": 6,
-   "pages": 8,
+   "pages": 14,
    "plaidoyers": 0,
    "route": "/villages/peni"
   },
@@ -202,7 +202,7 @@
    },
    "couvertes": 21,
    "citees": 5,
-   "pages": 8,
+   "pages": 11,
    "plaidoyers": 1,
    "route": "/villages/bekamba"
   },
@@ -229,7 +229,7 @@
    },
    "couvertes": 0,
    "citees": 3,
-   "pages": 8,
+   "pages": 20,
    "plaidoyers": 0,
    "route": "/villages/bebopen"
   },
@@ -256,7 +256,7 @@
    },
    "couvertes": 26,
    "citees": 2,
-   "pages": 8,
+   "pages": 9,
    "plaidoyers": 0,
    "route": "/villages/beti"
   },

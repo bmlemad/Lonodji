@@ -54,7 +54,7 @@ def main() -> None:
     refs = len(biblio.get("references", []))
     auj = date.today()
     edition = f"{MOIS[auj.month - 1]} {auj.year}"
-    jour = f"{auj.day} {MOIS[auj.month - 1]} {auj.year}"
+    jour = f"{'1er' if auj.day == 1 else auj.day} {MOIS[auj.month - 1]} {auj.year}"
     b = dict((r, n) for r, n in bureau())
 
     def direction_de(p):
@@ -149,7 +149,7 @@ footer {{ position:fixed; bottom:-9mm; left:0; right:0; text-align:center; font-
 <div class="saut"></div>
 <div class="eyebrow">Bédjondo aujourd'hui</div>
 <h2>Un village devenu ville, sans les infrastructures d'une ville</h2>
-<p>Le centre urbain de Bédjondo est passé de 4 344 habitants (recensement de 1993) à 11 086 (recensement de 2009) et dépasse très probablement 15 000 habitants aujourd'hui. Bédjondo est une commune dotée d'un maire, d'un conseil et d'un plan de développement communal. Mais la ville reste, pour l'essentiel, sans électricité, sans réseau d'eau potable, en zone blanche du haut débit, reliée à Koumra par une piste impraticable en saison des pluies, avec un centre de santé sans laboratoire et des écoles surchargées.</p>
+<p>Le centre urbain de Bédjondo est passé de 4 344 habitants (recensement de 1993) à 11 086 (recensement de 2009) et dépasse très probablement 15 000 habitants aujourd'hui. Bédjondo est une commune dotée d'un maire, d'un conseil et d'un plan de développement communal. Mais la ville reste, pour l'essentiel, sans électricité, avec un réseau d'eau qui ne dessert qu'un village et s'arrête faute de carburant, en zone blanche du haut débit, desservie par la nationale mais sans voirie urbaine, avec un centre de santé sans laboratoire et des écoles surchargées.</p>
 <div class="eyebrow">Nos plaidoyers</div>
 <h2>Sept plaidoyers et une note à la commune, un suivi public</h2>
 <p>Chaque plaidoyer expose un constat chiffré et sourcé, ce que le changement rendrait possible, des demandes précises à des destinataires nommés, et ce que l'association s'engage à faire en retour. Ils sont publiés sur le site ; ils seront transmis officiellement après signature du bureau, et leur suivi (envoi, réponses, résultats) sera public. Au {jour} : {envoyes} transmis sur {len(plaidoyers)}.</p>

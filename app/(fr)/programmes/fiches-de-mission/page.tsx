@@ -8,7 +8,7 @@ import { getMissions } from "@/lib/missions";
 
 export const metadata: Metadata = {
   title: "Fiches de mission des pôles et thématiques",
-  description: metaDescription("Vingt-sept fiches de mission en PDF — quatre directions de pôle au rang de chef de projet, vingt et une coordinations de thématique, deux cellules transversales — avec ce que la personne fait, le périmètre, les quatre étapes et le lien pour candidater."),
+  description: metaDescription("Vingt-sept fiches de mission en PDF : quatre directions de pôle, vingt et une coordinations de thématique et deux cellules, avec le lien pour candidater."),
   alternates: { canonical: "/programmes/fiches-de-mission" },
   openGraph: { ...ogFor("/programmes/fiches-de-mission"), title: "Fiches de mission : diriger un pôle, coordonner une thématique", description: "Vingt-sept fiches en PDF : ce que la personne fait, le périmètre, les quatre étapes, le lien pour candidater." },
 };
@@ -31,7 +31,7 @@ export default function FichesDeMission() {
         pills={[`${m.directions.length + m.coordinations.length + m.cellules.length} fiches`, `${directionsVacantes} direction${directionsVacantes > 1 ? "s" : ""} à pourvoir`, `${coordVacantes} coordination${coordVacantes > 1 ? "s" : ""}${cellVacantes ? ` et ${cellVacantes} cellule${cellVacantes > 1 ? "s" : ""}` : ""} à pourvoir`, `état au ${jour(m.genere)}`]}
       />
       <Stats items={[
-        { value: String(m.directions.length), label: "directions de pôle", note: "rang de chef de projet (Pillar Lead) ; les quatre sont ouvertes à tout membre" },
+        { value: String(m.directions.length), label: "directions de pôle", note: `rang de chef de projet (Pillar Lead) ; ${m.directions.length - directionsVacantes} pourvue${m.directions.length - directionsVacantes > 1 ? "s" : ""}, ${directionsVacantes} ouverte${directionsVacantes > 1 ? "s" : ""} à tout membre` },
         { value: String(m.coordinations.length), label: "coordinations de thématique", note: `${m.coordinations.filter((c) => c.pourvue).length} pourvues, ${m.coordinations.filter((c) => !c.pourvue).length} à pourvoir` },
         { value: String(m.cellules.length), label: "cellules transversales", note: m.cellules.map((c) => `${c.nom} : ${c.pourvue ? "pourvue" : "à pourvoir"}`).join(" · ") },
         { value: "1", label: "recueil complet", note: "toutes les fiches dans un seul PDF, pour la réunion" },
