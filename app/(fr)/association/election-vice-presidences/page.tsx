@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternatesLangues } from "@/lib/langues";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -15,7 +16,7 @@ const RESUME = "Trois vice-présidences de pôle à élire en octobre 2026 : qui
 export const metadata: Metadata = {
   title: "Élection des vice-présidences",
   description: RESUME,
-  alternates: { canonical: ROUTE },
+  alternates: { canonical: ROUTE, languages: alternatesLangues(ROUTE) },
   openGraph: { ...ogFor(ROUTE), title: TITRE, description: RESUME },
 };
 

@@ -12,74 +12,102 @@
     {
       "cle": "adoption",
       "date": "2026-10-01",
-      "quoi": "Le bureau exécutif adopte la procédure et le calendrier."
+      "quoi": "Le bureau exécutif adopte la procédure et le calendrier.",
+      "quoi_en": "The executive board adopts the procedure and the calendar."
     },
     {
       "cle": "appel",
       "date": "2026-10-02",
-      "quoi": "L’appel à candidatures est publié : site, page Facebook, compte X, groupes WhatsApp."
+      "quoi": "L’appel à candidatures est publié : site, page Facebook, compte X, groupes WhatsApp.",
+      "quoi_en": "The call for candidates is published: website, Facebook page, X account, WhatsApp groups."
     },
     {
       "cle": "cloture",
       "date": "2026-10-15",
-      "quoi": "Clôture des candidatures : formulaire en ligne, fiche papier ou WhatsApp."
+      "quoi": "Clôture des candidatures : formulaire en ligne, fiche papier ou WhatsApp.",
+      "quoi_en": "Candidacies close: online form, paper form or WhatsApp."
     },
     {
       "cle": "liste",
       "date": "2026-10-17",
-      "quoi": "Le bureau vérifie les candidatures et publie la liste des candidats, avec la présentation d’une page de chacun."
+      "quoi": "Le bureau vérifie les candidatures et publie la liste des candidats, avec la présentation d’une page de chacun.",
+      "quoi_en": "The board checks the candidacies and publishes the list of candidates, with a one-page statement from each."
     },
     {
       "cle": "vote",
       "date": "2026-10-22",
-      "quoi": "Réunion du collège électoral, sur place et à distance : vote, dépouillement, procès-verbal."
+      "quoi": "Réunion du collège électoral, sur place et à distance : vote, dépouillement, procès-verbal.",
+      "quoi_en": "Meeting of the electoral college, in person and remotely: vote, count, minutes."
     },
     {
       "cle": "resultats",
       "date": "2026-10-23",
-      "quoi": "Résultats publiés : registre des décisions, page Nos actions, fiches de mission."
+      "quoi": "Résultats publiés : registre des décisions, page Nos actions, fiches de mission.",
+      "quoi_en": "Results published: register of decisions, Our work page, mission sheets."
     },
     {
       "cle": "reclamations",
       "date": "2026-10-30",
-      "quoi": "Fin du délai de réclamation, adressée au bureau ; l’élection devient définitive."
+      "quoi": "Fin du délai de réclamation, adressée au bureau ; l’élection devient définitive.",
+      "quoi_en": "End of the period for complaints, addressed to the board; the election becomes final."
     }
   ],
   "regles": [
     {
       "point": "Qui peut se présenter",
       "texte": "Toute personne membre de l’association, ou qui a déposé sa déclaration d’adhésion, au Tchad comme dans la diaspora. Une personne ne se présente qu’à une seule vice-présidence.",
-      "note": "Les statuts de 1995 ne sont pas publiés ; s’ils posaient une autre condition, elle s’appliquerait."
+      "note": "Les statuts de 1995 ne sont pas publiés ; s’ils posaient une autre condition, elle s’appliquerait.",
+      "point_en": "Who may stand",
+      "texte_en": "Any member of the association, or anyone who has filed a declaration of membership, in Chad or in the diaspora. A person stands for one vice-presidency only.",
+      "note_en": "The 1995 statutes are not published; if they set another condition, it would apply."
     },
     {
       "point": "Le cumul",
       "texte": "Une personne coordonne une seule thématique (décision 6). Une personne élue qui coordonne déjà une thématique la garde jusqu’à ce que le bureau ait revu les cumuls avec elle.",
-      "note": ""
+      "note": "",
+      "point_en": "Holding two roles",
+      "texte_en": "A person coordinates one theme only (decision 6). An elected person who already coordinates a theme keeps it until the board has reviewed overlapping roles with them.",
+      "note_en": ""
     },
     {
       "point": "Qui vote",
       "texte": "Le collège des responsables : les membres du bureau exécutif, les vice-présidences de pôle en fonction et les coordonnateurs titulaires des thématiques et des cellules, soit {college} personnes distinctes au 1er octobre 2026. La prochaine assemblée générale confirme les élus.",
-      "note": "Pourquoi pas l’assemblée des membres : la liste des membres et la grille de cotisation ne sont pas encore arrêtées (décision 2026-16)."
+      "note": "Pourquoi pas l’assemblée des membres : la liste des membres et la grille de cotisation ne sont pas encore arrêtées (décision 2026-16).",
+      "point_en": "Who votes",
+      "texte_en": "The college of officers: members of the executive board, the pillar vice-presidents in office and the lead coordinators of the themes and units — {college} distinct people on 1 October 2026. The next general assembly confirms those elected.",
+      "note_en": "Why not all members: the membership list and the dues scale have not yet been adopted (decision 2026-16)."
     },
     {
       "point": "Le quorum",
       "texte": "La moitié au moins du collège, présente ou à distance. Sans quorum, une seconde réunion se tient sept jours plus tard, sans condition de quorum.",
-      "note": ""
+      "note": "",
+      "point_en": "Quorum",
+      "texte_en": "At least half of the college, present or remote. Without a quorum, a second meeting is held seven days later with no quorum required.",
+      "note_en": ""
     },
     {
       "point": "Le vote",
       "texte": "En réunion, sur place et à distance (appel vidéo), à main levée ; au scrutin secret si un membre du collège le demande. Le vote secret à distance se fait par message individuel adressé aux deux scrutateurs, qui ne communiquent que le décompte.",
-      "note": "Les scrutateurs ne sont pas candidats ; le secrétaire général tient le procès-verbal et la liste d’émargement."
+      "note": "Les scrutateurs ne sont pas candidats ; le secrétaire général tient le procès-verbal et la liste d’émargement.",
+      "point_en": "Voting",
+      "texte_en": "In a meeting, in person and remotely (video call), by show of hands; by secret ballot if a member of the college asks. A remote secret vote is cast by individual message to the two tellers, who report only the count.",
+      "note_en": "Tellers are not candidates; the secretary-general keeps the minutes and the attendance list."
     },
     {
       "point": "La majorité",
       "texte": "Majorité absolue des suffrages exprimés au premier tour ; majorité relative au second. Candidat unique : vote pour ou contre, à la majorité absolue. Sans candidat, l’appel est rouvert pour quatorze jours.",
-      "note": ""
+      "note": "",
+      "point_en": "Majority",
+      "texte_en": "Absolute majority of votes cast in the first round; relative majority in the second. Single candidate: vote for or against, absolute majority. With no candidate, the call reopens for fourteen days.",
+      "note_en": ""
     },
     {
       "point": "Le mandat",
       "texte": "Jusqu’à la prochaine assemblée générale ordinaire, qui confirme l’élu ou organise une nouvelle élection.",
-      "note": "La durée définitive relève des statuts et de l’assemblée."
+      "note": "La durée définitive relève des statuts et de l’assemblée.",
+      "point_en": "Term of office",
+      "texte_en": "Until the next ordinary general assembly, which confirms the person elected or holds a new election.",
+      "note_en": "The final length of the term depends on the statutes and the assembly."
     }
   ],
   "organisation": [
@@ -89,5 +117,11 @@
     "Aucune donnée personnelle d’un candidat n’est publiée sans son accord : seuls son nom, son pôle et sa présentation le sont."
   ],
   "candidats": [],
-  "resultats": null
+  "resultats": null,
+  "organisation_en": [
+    "The president of the association chairs the voting meeting; if he stands, the vice-president of the association takes his place.",
+    "The board appoints two tellers from among the members of the college who are not candidates.",
+    "The secretary-general keeps the minutes and the attendance list.",
+    "No personal data of a candidate is published without their consent: only their name, pillar and statement."
+  ]
 }

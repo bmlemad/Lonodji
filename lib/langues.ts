@@ -15,6 +15,8 @@ export const FR_VERS_EN: Record<string, string> = {
   "/territoire/propositions-commune": "/en/commune",
   "/territoire/gouvernance-locale": "/en/governance",
   "/territoire/sous-sol": "/en/subsoil",
+  "/association/propositions-organisation": "/en/organisation",
+  "/association/election-vice-presidences": "/en/election",
 };
 
 export const EN_VERS_FR: Record<string, string> = Object.fromEntries(Object.entries(FR_VERS_EN).map(([fr, en]) => [en, fr]));

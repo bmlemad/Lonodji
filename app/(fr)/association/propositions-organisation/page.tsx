@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternatesLangues } from "@/lib/langues";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
@@ -17,7 +18,7 @@ const RESUME = "Notre structure comparée à dix organisations, et ce que le bur
 export const metadata: Metadata = {
   title: "Décisions d’organisation",
   description: RESUME,
-  alternates: { canonical: ROUTE },
+  alternates: { canonical: ROUTE, languages: alternatesLangues(ROUTE) },
   openGraph: { ...ogFor(ROUTE), title: TITRE, description: RESUME },
 };
 

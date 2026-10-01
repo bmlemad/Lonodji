@@ -148,6 +148,8 @@ export const NAVIGATION_EN: NavEntree[] = [
     colonnes: [
       { titre: "Who we are", liens: [
         { label: "About us", href: "/en/about", note: "Purpose, values, executive board, milestones" },
+        { label: "How we are organised", href: "/en/organisation", note: "Six pillars, twenty-two themes, seven priorities" },
+        { label: "Election of the vice-presidents", href: "/en/election", note: "Vote on 22 October 2026" },
         { label: "Press & partners", href: "/presse", note: "Key facts, figures, logos, contacts", fr: true },
         { label: "NGOs & funders: our status", href: "/association/ong-partenaires", note: "Our status, partners present in Mandoul", fr: true },
       ] },

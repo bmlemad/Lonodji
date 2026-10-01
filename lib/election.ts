@@ -5,11 +5,11 @@ import { getIndex, ORG } from "@/lib/content";
 /* Élection des vice-présidences de pôle sans titulaire : procédure et calendrier adoptés par le bureau exécutif le
    1er octobre 2026 (registre 2026-33). Seule source : content/election.json (lu aussi par scripts/build-postes.py et
    scripts/build-dossier-bureau.py). */
-export type Etape = { cle: string; date: string; quoi: string };
-export type Regle = { point: string; texte: string; note: string };
+export type Etape = { cle: string; date: string; quoi: string; quoi_en?: string };
+export type Regle = { point: string; texte: string; note: string; point_en?: string; texte_en?: string; note_en?: string };
 export type Candidat = { nom: string; pole: string; presentation: string };
 export type Election = {
-  adoptee: string; instance: string; poles: string[]; calendrier: Etape[]; regles: Regle[]; organisation: string[];
+  adoptee: string; instance: string; poles: string[]; calendrier: Etape[]; regles: Regle[]; organisation: string[]; organisation_en?: string[];
   candidats: Candidat[]; resultats: null | { pole: string; elu: string; votants: number; exprimes: number }[];
 };
 
