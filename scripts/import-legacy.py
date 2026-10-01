@@ -437,7 +437,7 @@ def parse_page(path: Path):
 # ----------------------------------------------------------------------------
 # Données structurées des hubs
 # ----------------------------------------------------------------------------
-ROMAN = {"pole-1": "I", "pole-2": "II", "pole-3": "III", "pole-4": "IV", "pole-5": "V"}   # pôle V : 01/10/2026
+ROMAN = {"pole-1": "I", "pole-2": "II", "pole-3": "III", "pole-4": "IV", "pole-5": "V", "pole-6": "VI"}   # pôles V et VI : 01/10/2026
 
 
 # Direction des pôles (décision du 28/09/2026) : chaque pôle est dirigé par un directeur
@@ -450,7 +450,7 @@ ROMAN = {"pole-1": "I", "pole-2": "II", "pole-3": "III", "pole-4": "IV", "pole-5
 # 01/10/2026 (registre 2026-31) : les directions de pôle deviennent des vice-présidences déléguées, pourvues par
 # élection ; les deux titulaires gardent leur fonction. Le pôle II est scindé : le pôle II (Services essentiels) garde
 # sa vice-présidence, le pôle V (Économie, territoire & risques) est à pourvoir.
-DIRECTIONS_POLES: dict[str, str | None] = {"pole-1": "Dr Bé-Rammaj Miaro-II", "pole-2": "Franco Joseph Ngarlena", "pole-3": None, "pole-4": None, "pole-5": None}
+DIRECTIONS_POLES: dict[str, str | None] = {"pole-1": "Dr Bé-Rammaj Miaro-II", "pole-2": "Franco Joseph Ngarlena", "pole-3": None, "pole-4": None, "pole-5": None, "pole-6": None}
 DIRECTION_LABEL = "Vice-président délégué ou vice-présidente déléguée du pôle"
 DIRECTION_RANG = "vice-présidence déléguée"
 
@@ -1412,30 +1412,38 @@ def structure_30_09(html: str, path: Path) -> str:
 # territoire & risques (04, 05, 06, 08, 20, 21) ; aucune thématique n'est renumérotée. Les articles, le journal des
 # actualités et le journal des corrections, datés, gardent leur texte ; la charte d'identité (barre des quatre pôles)
 # reçoit une note. Appliqué après structure_30_09, avant comptes_courants.
-P2_FR, P5_FR = "Services essentiels", "Économie, territoire &amp; risques"
-P2_EN, P5_EN = "Essential Services", "Economy, Territory &amp; Risks"
+P2_FR, P5_FR, P6_FR = "Services essentiels", "Économie &amp; ressources naturelles", "Infrastructures, territoire &amp; risques"
+P2_EN, P5_EN, P6_EN = "Essential Services", "Economy &amp; Natural Resources", "Infrastructure, Territory &amp; Risks"
 ANCIEN_P2 = ("Développement humain &amp; moyens d’existence", "Développement humain &amp; moyens d&rsquo;existence",
              "D&eacute;veloppement humain &amp; moyens d&rsquo;existence", "D&eacute;veloppement humain &amp; moyens d’existence")
 VERS_P5 = ["agriculture-elevage-securite-alimentaire", "entrepreneuriat-finance-inclusive", "environnement-ressources",
            "desenclavement-urbanisation", "urgences-risques", "energie"]
 NUMS_P5 = ["04", "05", "06", "08", "20", "21"]
-NOTE_P5_FR = (" <strong>Mise à jour du 1er octobre 2026&nbsp;:</strong> la thématique passe au nouveau pôle V, Économie, "
-              "territoire &amp; risques, issu du partage du pôle Développement humain &amp; moyens d&rsquo;existence&nbsp;; "
-              "son numéro ne change pas.")
-NOTE_P5_EN = (" <strong>Update, 1 October 2026:</strong> the theme moves to the new Pillar V, Economy, Territory &amp; Risks, "
+# Le même jour (registre 2026-35), le pôle V est à son tour partagé : le pôle VI reçoit 08, 20 et 21.
+VERS_P6 = ["desenclavement-urbanisation", "urgences-risques", "energie"]
+NUMS_P6 = ["08", "20", "21"]
+NOTE_P5_FR = (f" <strong>Mise à jour du 1er octobre 2026&nbsp;:</strong> la thématique passe au nouveau pôle V, {P5_FR}, "
+              "issu du partage du pôle Développement humain &amp; moyens d&rsquo;existence&nbsp;; son numéro ne change pas.")
+NOTE_P6_FR = (f" <strong>Mise à jour du 1er octobre 2026&nbsp;:</strong> la thématique passe au nouveau pôle VI, {P6_FR}, "
+              "issu du partage du pôle Développement humain &amp; moyens d&rsquo;existence&nbsp;; son numéro ne change pas.")
+NOTE_P5_EN = (f" <strong>Update, 1 October 2026:</strong> the theme moves to the new Pillar V, {P5_EN}, "
               "split from the Human Development &amp; Livelihoods pillar; its number does not change.")
-PROSE_P5_EN = ('<p class="prose-note">Earning a living, the land and its risks: farming, business, environment, roads, energy and '
-               'emergencies in B&eacute;djondo. Pillar Vice-President (elected): post open &mdash; <a href="contact.html">write to us</a>.</p>')
+NOTE_P6_EN = (f" <strong>Update, 1 October 2026:</strong> the theme moves to the new Pillar VI, {P6_EN}, "
+              "split from the Human Development &amp; Livelihoods pillar; its number does not change.")
+PROSE_P5_EN = ('<p class="prose-note">Earning a living from the land and its resources: farming, livestock, business and the '
+               'environment in B&eacute;djondo. Pillar Vice-President (elected): post open &mdash; <a href="contact.html">write to us</a>.</p>')
+PROSE_P6_EN = ('<p class="prose-note">What holds the town together, and what threatens it: roads, energy, emergencies and risks in '
+               'B&eacute;djondo. Pillar Vice-President (elected): post open &mdash; <a href="contact.html">write to us</a>.</p>')
 NOTE_IDENTITE_01_10 = ('<p class="prose-note"><strong>Mise à jour du 1er octobre 2026&nbsp;:</strong> l&rsquo;association compte '
-                       'désormais cinq pôles&nbsp;; le pôle II s&rsquo;appelle Services essentiels, et le pôle V, Économie, '
-                       'territoire &amp; risques, n&rsquo;a pas encore de couleur propre dans la charte.</p>')
+                       f'désormais six pôles&nbsp;; le pôle II s&rsquo;appelle Services essentiels, et les pôles V, {P5_FR}, et VI, '
+                       f'{P6_FR}, n&rsquo;ont pas encore de couleur propre dans la charte.</p>')
 COMPTES_RE_01_10 = [
-    (r"\bquatre(\s+|&nbsp;)p(ô|&ocirc;)les", r"cinq\1p\2les"),
-    (r"\bQuatre(\s+|&nbsp;)p(ô|&ocirc;)les", r"Cinq\1p\2les"),
-    (r"\b4(\s+|&nbsp;)p(ô|&ocirc;)les", r"5\1p\2les"),
-    (r"\bfour(\s+)(pillars|poles)", r"five\1\2"),
-    (r"\bFour(\s+)(pillars|poles)", r"Five\1\2"),
-    (r"\b4(\s+)(pillars|poles)", r"5\1\2"),
+    (r"\bquatre(\s+|&nbsp;)p(ô|&ocirc;)les", r"six\1p\2les"),
+    (r"\bQuatre(\s+|&nbsp;)p(ô|&ocirc;)les", r"Six\1p\2les"),
+    (r"\b4(\s+|&nbsp;)p(ô|&ocirc;)les", r"6\1p\2les"),
+    (r"\bfour(\s+)(pillars|poles)", r"six\1\2"),
+    (r"\bFour(\s+)(pillars|poles)", r"Six\1\2"),
+    (r"\b4(\s+)(pillars|poles)", r"6\1\2"),
 ]
 # phrases datées ou qui décrivent la charte : protégées des remplacements ci-dessus
 _GARDES_01_10 = ["barre des quatre p", "portés à quatre pôles", "quatre pôles et dix-neuf", "quatre pôles et dix-huit",
@@ -1519,6 +1527,16 @@ def structure_01_10(html: str, path: Path) -> str:
                 return sec
             html = scinder_pole_2(html, m.start(), lambda a: any(f'id="{i}"' in a for i in VERS_P5), tete_fr, NOTE_P5_FR,
                                   'id="cellules"' if nom == "poles.html" else '<section id="priorites">')
+    if nom in ("poles.html", "suivi.html") and 'id="pole-5"' in html and 'id="pole-6"' not in html:
+        m = re.search(r'<section class="[^"]*pole-group[^"]*" id="pole-5"', html)
+        if m:
+            def tete_vi(sec):
+                sec = sec.replace('id="pole-5"', 'id="pole-6"').replace('data-group="5"', 'data-group="6"')
+                sec = sec.replace('<div class="eyebrow">Pôle V</div>', '<div class="eyebrow">Pôle VI</div>')
+                sec = sec.replace(f"<h2>{P5_FR}</h2>", f"<h2>{P6_FR}</h2>")
+                return sec.replace(NOTE_P5_FR, NOTE_P6_FR)
+            html = scinder_pole_2(html, m.start(), lambda a: any(f'id="{i}"' in a for i in VERS_P6), tete_vi, NOTE_P6_FR,
+                                  'id="cellules"' if nom == "poles.html" else '<section id="priorites">')
     if nom == "themes.html" and est_en and "Pillar V<" not in html:
         i = html.find('<div class="eyebrow">Pillar II</div>')
         d = html.rfind("<section", 0, i)
@@ -1529,32 +1547,50 @@ def structure_01_10(html: str, path: Path) -> str:
                 return sec.replace("<h2>Human Development &amp; Livelihoods</h2>", f"<h2>{P5_EN}</h2>")
             html = scinder_pole_2(html, d, lambda a: any(f'<span class="pole-num">THEME {n}</span>' in a for n in NUMS_P5),
                                   tete_en, NOTE_P5_EN, "<h2>Support to every theme</h2>")
+    if nom == "themes.html" and est_en and "Pillar V<" in html and "Pillar VI<" not in html:
+        i = html.find('<div class="eyebrow">Pillar V</div>')
+        d = html.rfind("<section", 0, i)
+        if i > 0:
+            def tete_en6(sec):
+                sec = sec.replace('<div class="eyebrow">Pillar V</div>', '<div class="eyebrow">Pillar VI</div>')
+                sec = sec.replace(PROSE_P5_EN, PROSE_P6_EN, 1)
+                sec = sec.replace(f"<h2>{P5_EN}</h2>", f"<h2>{P6_EN}</h2>")
+                return sec.replace(NOTE_P5_EN, NOTE_P6_EN)
+            html = scinder_pole_2(html, d, lambda a: any(f'<span class="pole-num">THEME {n}</span>' in a for n in NUMS_P6),
+                                  tete_en6, NOTE_P6_EN, "<h2>Support to every theme</h2>")
     # 2. le pôle de chaque thématique déplacée, puis le nouveau nom du pôle II
     for anc in VERS_P5:
         html = re.sub(rf'(<a class="coord-row" href="poles\.html#{anc}">(?:(?!</a>).)*?<span class="coord-pole">)[^<]*(</span>)',
-                      rf"\g<1>{P5_FR}\2", html, flags=re.S)
-    html = re.sub(r'"pole": "Pôle II · Thématique (04|05|06|08|20|21)"', r'"pole": "Pôle V · Thématique \1"', html)
+                      rf"\g<1>{P6_FR if anc in VERS_P6 else P5_FR}\2", html, flags=re.S)
+    html = re.sub(r'"pole": "Pôle II · Thématique (04|05|06)"', r'"pole": "Pôle V · Thématique \1"', html)
+    html = re.sub(r'"pole": "Pôle II · Thématique (08|20|21)"', r'"pole": "Pôle VI · Thématique \1"', html)
     if nom == "mission.html":
         html = html.replace('<a href="poles.html#pole-2">Pôle II &mdash; Développement humain &amp; moyens d’existence</a>, le plus vaste des quatre,',
-                            f'<a href="poles.html#pole-2">Pôle II &mdash; {P2_FR}</a> et du <a href="poles.html#pole-5">Pôle V &mdash; {P5_FR}</a>, '
+                            f'<a href="poles.html#pole-2">Pôle II &mdash; {P2_FR}</a>, du <a href="poles.html#pole-5">Pôle V &mdash; {P5_FR}</a> et du '
+                            f'<a href="poles.html#pole-6">Pôle VI &mdash; {P6_FR}</a>, '
                             'nés le 1er octobre 2026 du partage de l&rsquo;ancien pôle Développement humain &amp; moyens d&rsquo;existence,')
-        html = html.replace("thématiques dans les semaines qui suivent.", "thématiques dans les semaines qui suivent, puis à cinq pôles le 1er octobre 2026.", 1)
+        html = html.replace("thématiques dans les semaines qui suivent.", "thématiques dans les semaines qui suivent, puis à six pôles et vingt-deux thématiques le 1er octobre 2026.", 1)
     if nom == "contact.html":
         html = html.replace("P&ocirc;le II &middot; 11 th&eacute;matiques</span>\n          <h3>D&eacute;veloppement humain &amp; moyens d&rsquo;existence</h3>\n          <p>Agriculture, eau, sant&eacute;, jeunesse, femmes et inclusion.</p>",
-                            "P&ocirc;le II &middot; 5 th&eacute;matiques</span>\n          <h3>Services essentiels</h3>\n          <p>Eau, &eacute;cole, sant&eacute;, femmes, enfance et protection sociale.</p>")
+                            "P&ocirc;le II &middot; 6 th&eacute;matiques</span>\n          <h3>Services essentiels</h3>\n          <p>Eau, &eacute;cole, sant&eacute;, femmes, enfance, protection sociale, sport et loisirs.</p>")
         i = html.find('<a class="pole-card action-tile" href="poles.html#pole-4">')
         k = html.find("</a>", i) + len("</a>")
         if i > 0 and "poles.html#pole-5" not in html:
             tuile = ('\n        <a class="pole-card action-tile" href="poles.html#pole-5">\n          <span class="action-icon"><svg viewBox="0 0 24 24" fill="none" '
                      'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M5 20V10l4-3 4 3v10"/>'
-                     '<path d="M13 20v-6h6v6"/><path d="M9 13v2"/></svg></span>\n          <span class="pole-num">P&ocirc;le V &middot; 6 th&eacute;matiques</span>\n'
-                     '          <h3>&Eacute;conomie, territoire &amp; risques</h3>\n          <p>Agriculture, entreprises, environnement, routes, &eacute;nergie et urgences.</p>\n        </a>')
+                     '<path d="M13 20v-6h6v6"/><path d="M9 13v2"/></svg></span>\n          <span class="pole-num">P&ocirc;le V &middot; 3 th&eacute;matiques</span>\n'
+                     '          <h3>&Eacute;conomie &amp; ressources naturelles</h3>\n          <p>Agriculture, &eacute;levage, entreprises, environnement et ressources naturelles.</p>\n        </a>'
+                     '\n        <a class="pole-card action-tile" href="poles.html#pole-6">\n          <span class="action-icon"><svg viewBox="0 0 24 24" fill="none" '
+                     'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16"/><path d="M6 19 10 5h4l4 14"/>'
+                     '<path d="M12 9v2"/><path d="M12 14v2"/></svg></span>\n          <span class="pole-num">P&ocirc;le VI &middot; 3 th&eacute;matiques</span>\n'
+                     '          <h3>Infrastructures, territoire &amp; risques</h3>\n          <p>Routes et urbanisme, &eacute;nergie, urgences et risques.</p>\n        </a>')
             html = html[:k] + tuile + html[k:]
         html = html.replace("Direction d’un pôle — rang de chef de projet", "Vice-présidence d’un pôle — fonction élue")
         html = html.replace("<option>Direction du pôle II — Développement humain &amp; moyens d’existence</option>",
                             f"<option>Direction du pôle II — {P2_FR}</option>")
         html = html.replace("<option>Direction du pôle IV — Numérique &amp; innovation</option>\n",
-                            f"<option>Direction du pôle IV — Numérique &amp; innovation</option>\n                  <option>Direction du pôle V — {P5_FR}</option>\n", 1)
+                            f"<option>Direction du pôle IV — Numérique &amp; innovation</option>\n                  <option>Direction du pôle V — {P5_FR}</option>\n"
+                            f"                  <option>Direction du pôle VI — {P6_FR}</option>\n", 1)
         html = html.replace("<option>Direction du pôle ", "<option>Vice-présidence du pôle ")
         html = html.replace("<label for=\"pole\">Thématique, ou direction d’un pôle</label>", "<label for=\"pole\">Thématique, ou vice-présidence d’un pôle</label>")
         # listes de thématiques : un groupe « Pôle V » après le pôle IV
@@ -1570,37 +1606,41 @@ def structure_01_10(html: str, path: Path) -> str:
             html = html[:m.start()] + bloc + html[m.end():]
             j = html.find('<optgroup label="Pôle IV', m.start())
             j = html.find("</optgroup>", j) + len("</optgroup>")
-            html = html[:j] + f'{ind}<optgroup label="Pôle V — {P5_FR}">' + "".join(opts) + f"{ind}</optgroup>" + html[j:]
+            o5 = [o for o in opts if re.search(r"<option>(04|05|06)\.", o)]
+            o6 = [o for o in opts if o not in o5]
+            html = (html[:j] + f'{ind}<optgroup label="Pôle V — {P5_FR}">' + "".join(o5) + f"{ind}</optgroup>"
+                    + f'{ind}<optgroup label="Pôle VI — {P6_FR}">' + "".join(o6) + f"{ind}</optgroup>" + html[j:])
     for a in ANCIEN_P2:
         html = html.replace(f"<h2>{a}</h2>", f"<h2>{P2_FR}</h2>")
         html = html.replace(f'<span class="coord-pole">{a}</span>', f'<span class="coord-pole">{P2_FR}</span>')
         html = html.replace(f"Pôle II &mdash; {a}</button>", f"Pôle II &mdash; {P2_FR}</button>")
         html = html.replace(f'<a href="#pole-2">{a}</a>', f'<a href="#pole-2">{P2_FR}</a>')
     if nom == "poles.html" and 'data-filter="5"' not in html:
-        html = html.replace('aria-controls="pole-1 pole-2 pole-3 pole-4 cellules"', 'aria-controls="pole-1 pole-2 pole-3 pole-4 pole-5 cellules"')
+        html = html.replace('aria-controls="pole-1 pole-2 pole-3 pole-4 cellules"', 'aria-controls="pole-1 pole-2 pole-3 pole-4 pole-5 pole-6 cellules"')
         i = html.find('data-filter="4" aria-controls="pole-4">')
         k = html.find("</button>", i) + len("</button>")
         if i > 0:
-            html = html[:k] + f'\n      <button class="filter-tab" type="button" role="tab" aria-selected="false" data-filter="5" aria-controls="pole-5">Pôle V &mdash; {P5_FR}</button>' + html[k:]
+            html = (html[:k] + f'\n      <button class="filter-tab" type="button" role="tab" aria-selected="false" data-filter="5" aria-controls="pole-5">Pôle V &mdash; {P5_FR}</button>'
+                    f'\n      <button class="filter-tab" type="button" role="tab" aria-selected="false" data-filter="6" aria-controls="pole-6">Pôle VI &mdash; {P6_FR}</button>' + html[k:])
         i = html.find('<li><a href="#pole-4">')
         k = html.find("</li>", i) + len("</li>")
         if i > 0:
-            html = html[:k] + f'<li><a href="#pole-5">{P5_FR}</a></li>' + html[k:]
+            html = html[:k] + f'<li><a href="#pole-5">{P5_FR}</a></li><li><a href="#pole-6">{P6_FR}</a></li>' + html[k:]
     if est_en:
         html = re.sub(r'<p class="prose-note">Everyday life and the future: feeding, treating, teaching, connecting and doing business in B&eacute;djondo\.',
                       '<p class="prose-note">Essential services: water and sanitation, school, health, women and social protection in B&eacute;djondo.', html)
         html = html.replace("Pillar Lead (programme-manager level):", "Pillar Vice-President (elected):")
         html = html.replace("lead one of the pillars still without a Pillar Lead (programme-manager level; posts created on 28 September 2026, see the themes page),",
                             "stand for election as Vice-President of one of the pillars still without one (see the themes page),")
-        html = html.replace("<h3>II &mdash; Human Development &amp; Livelihoods</h3>", f"<h3>II &mdash; {P2_EN} &middot; V &mdash; {P5_EN}</h3>")
+        html = html.replace("<h3>II &mdash; Human Development &amp; Livelihoods</h3>", f"<h3>II &mdash; {P2_EN} &middot; V &mdash; {P5_EN} &middot; VI &mdash; {P6_EN}</h3>")
         html = html.replace("Human Development &amp; Livelihoods; Governance", f"{P2_EN}; Governance")
-        html = html.replace("Digital &amp; Innovation), twenty-one themes", f"Digital &amp; Innovation; {P5_EN}), twenty-one themes")
-        html = html.replace("<h3>II — Human Development &amp; Livelihoods</h3>", f"<h3>II — {P2_EN} · V — {P5_EN}</h3>")
+        html = html.replace("Digital &amp; Innovation), twenty-one themes", f"Digital &amp; Innovation; {P5_EN}; {P6_EN}), twenty-one themes")
+        html = html.replace("<h3>II — Human Development &amp; Livelihoods</h3>", f"<h3>II — {P2_EN} · V — {P5_EN} · VI — {P6_EN}</h3>")
         html = html.replace("<h2>Human Development &amp; Livelihoods</h2>", f"<h2>{P2_EN}</h2>")
     # 3. comptes : quatre pôles → cinq (hors textes datés et charte)
     if nom == "redevabilite.html":
         html = html.replace("vingt et une depuis le 30 septembre) r&eacute;parties en quatre p&ocirc;les,",
-                            "vingt et une depuis le 30 septembre) r&eacute;parties en quatre p&ocirc;les (cinq depuis le 1er octobre 2026),")
+                            "vingt et une depuis le 30 septembre, vingt-deux depuis le 1er octobre 2026) r&eacute;parties en quatre p&ocirc;les (six depuis le 1er octobre 2026),")
     elif nom == "identite-visuelle.html":
         if NOTE_IDENTITE_01_10 not in html:
             html = html.replace("<h3>Les quatre p&ocirc;les</h3>", "<h3>Les quatre p&ocirc;les</h3>\n" + NOTE_IDENTITE_01_10, 1)
@@ -1612,6 +1652,136 @@ def structure_01_10(html: str, path: Path) -> str:
             html = re.sub(rx, rep_, html)
         for i, g in enumerate(_GARDES_01_10):
             html = html.replace(f"@@G{i}@@", g)
+    return html
+
+
+# ----------------------------------------------------------------------------
+# 01/10/2026, après-midi (registre 2026-35) : des nombres pairs — six pôles (le pôle V partagé, voir structure_01_10)
+# et vingt-deux thématiques : la 22, Sport, arts & loisirs, rejoint le pôle II, Services essentiels. Aucune thématique
+# n'est supprimée ni renumérotée. Appliqué après structure_01_10, avant comptes_courants.
+SPORT_ID = "sport-arts-loisirs"
+BALLON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" '
+          'stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a14 14 0 0 1 0 18"/>'
+          '<path d="M12 3a14 14 0 0 0 0 18"/><path d="M3 12h18"/></svg>')
+SPORT_TEXTE = ("Le sport, la musique, la danse, le théâtre et les fêtes qui font vivre Bédjondo et ses quartiers&nbsp;: terrains "
+               "et équipes de jeunes, troupes et artistes, lieux où se retrouvent toutes les générations. La thématique commence "
+               "par recenser ce qui existe — clubs, associations, terrains, salles, festivals — avant de proposer quoi que ce soit, "
+               "avec <a href=\"poles.html#jeunesse-reussite\">Éducation, jeunesse &amp; formation</a>, "
+               "<a href=\"poles.html#culture-patrimoine-vivant\">Culture &amp; patrimoine vivant</a> pour les arts traditionnels, "
+               "et le projet de <a href=\"complexe-sportif.html\">complexe sportif</a> annoncé par l&rsquo;association. "
+               "<strong>Thématique créée le 1er octobre 2026</strong>&nbsp;; rien n&rsquo;est encore engagé.")
+CHIP_3_4 = ('<a class="odd-chip" href="odd.html#odd-3" style="--odd-accent:#4C9F38;--odd-ink:#10181f" title="ODD 3 &mdash; Bonne '
+            'sant&eacute; et bien-&ecirc;tre | cible 3.4 &mdash; sant&eacute; mentale et bien-&ecirc;tre"><span class="odd-num">3</span>'
+            '<span class="odd-name">Sant&eacute;</span><span class="odd-cible">3.4</span></a>')
+CHIP_11_7 = ('<a class="odd-chip" href="odd.html#odd-11" style="--odd-accent:#FD9D24;--odd-ink:#10181f" title="ODD 11 &mdash; Villes '
+             'et communaut&eacute;s durables | cible 11.7 &mdash; espaces publics s&ucirc;rs et ouverts &agrave; tous"><span class="odd-num">11</span>'
+             '<span class="odd-name">Villes durables</span><span class="odd-cible">11.7</span></a>')
+SPORT_CARTE = f"""
+        <article class="pole-card" id="{SPORT_ID}">
+          <div class="pole-head-row">
+            <span class="pole-icon">{BALLON}</span>
+            <span class="pole-num">THÉMATIQUE 22</span>
+          </div>
+          <span class="pole-status pole-status--vacant">À pourvoir</span>
+          <h3>Sport, arts &amp; loisirs</h3>
+          <p class="coord">Coordonnateur&nbsp;: à pourvoir</p>
+          <p>{SPORT_TEXTE}</p>
+          <div class="pole-tags"><span class="tag">Sport</span><span class="tag">Arts</span><span class="tag">Loisirs</span><span class="tag">Jeunesse</span></div>
+          <div class="pole-odd"><span class="odd-legend">ODD</span>{CHIP_3_4}{CHIP_11_7}</div>
+          <div class="pole-hub-links">
+          <a class="pole-hub-link" href="complexe-sportif.html">Projet de complexe sportif &rarr;</a>
+          <a class="pole-hub-link pole-hub-link--join" href="contact.html?theme=22">Rejoindre cette th&eacute;matique &rarr;</a>
+          </div>
+        </article>"""
+SPORT_EN = f"""
+        <article class="pole-card">
+          <div class="pole-head-row"><span class="pole-num">THEME 22</span></div>
+          <span class="pole-status pole-status--vacant">Open</span>
+          <h3>Sport, Arts &amp; Leisure</h3>
+          <p class="coord">Coordinator: to be appointed</p>
+          <p>The sport, music, dance, theatre and festivities that bring B&eacute;djondo and its neighbourhoods to life: pitches and youth teams, troupes and artists, places where every generation meets. The theme starts by listing what exists &mdash; clubs, associations, pitches, halls, festivals &mdash; before proposing anything. Created on 1 October 2026; nothing is committed yet.</p>
+          <div class="pole-odd"><span class="odd-legend">SDG</span><a class="odd-chip" href="#sdg-3" style="--odd-accent:#4C9F38;--odd-ink:#10181f" title="SDG 3 &mdash; Good Health and Well-being | target 3.4 &mdash; mental health and well-being"><span class="odd-num">3</span><span class="odd-name">Health</span><span class="odd-cible">3.4</span></a><a class="odd-chip" href="#sdg-11" style="--odd-accent:#FD9D24;--odd-ink:#10181f" title="SDG 11 &mdash; Sustainable Cities and Communities | target 11.7 &mdash; safe, inclusive public spaces"><span class="odd-num">11</span><span class="odd-name">Cities</span><span class="odd-cible">11.7</span></a></div>
+          <div class="pole-hub-links">
+          <a class="pole-hub-link" href="../poles.html#{SPORT_ID}">Full description <span>(in French)</span> &rarr;</a>
+          </div>
+        </article>"""
+SPORT_JS = f"""  {{
+    "id": "{SPORT_ID}",
+    "num": "22",
+    "key": "22",
+    "pole": "Pôle II · Thématique 22",
+    "name": "Sport, arts & loisirs",
+    "status": "open",
+    "coord": "Coordonnateur : à pourvoir",
+    "desc": "Le sport, la musique, la danse, le théâtre et les fêtes qui font vivre Bédjondo et ses quartiers : terrains, équipes, troupes, lieux de rencontre.",
+    "page": [
+      "complexe-sportif.html",
+      "Projet de complexe sportif"
+    ],
+    "suivi": true,
+    "tier": 2
+  }},
+"""
+SPORT_SUIVI = (f'<article class="pole-card" id="{SPORT_ID}"><div class="pole-head-row"><span class="pole-icon">{BALLON}</span>'
+               '<span class="pole-num">THÉMATIQUE 22</span></div><span class="pole-status pole-status--vacant">À pourvoir</span>'
+               f'<h3><a href="poles.html#{SPORT_ID}">Sport, arts &amp; loisirs</a></h3><p class="kanban-card-meta">Aucune problématique '
+               'reliée pour l&rsquo;instant &mdash; thématique créée le 1er octobre 2026</p><div class="pole-hub-links">'
+               f'<a class="pole-hub-link pole-hub-link--join" href="poles.html#{SPORT_ID}">Voir la fiche thématique &rarr;</a></div></article>')
+COMPTES_RE_SPORT = [
+    (r"\bvingt et une(\s+|&nbsp;)th(é|&eacute;)matiques", r"vingt-deux\1th\2matiques"),
+    (r"\bVingt et une(\s+|&nbsp;)th(é|&eacute;)matiques", r"Vingt-deux\1th\2matiques"),
+    (r"\b21(\s+|&nbsp;)th(é|&eacute;)matiques", r"22\1th\2matiques"),
+    (r"\bvingt et une(\s+)coordinations", r"vingt-deux\1coordinations"),
+    (r"\btwenty-one(\s+)themes", r"twenty-two\1themes"),
+    (r"\bTwenty-one(\s+)themes", r"Twenty-two\1themes"),
+    (r"\b21(\s+)themes", r"22\1themes"),
+    (r"themes out of twenty-one\b", "themes out of twenty-two"),
+    (r'<span class="bento-num">21</span><span class="bento-label">themes', '<span class="bento-num">22</span><span class="bento-label">themes'),
+]
+
+
+def _apres_article(html: str, ident_ou_marque: str, ajout: str) -> str:
+    i = html.find(ident_ou_marque)
+    k = html.find("</article>", i)
+    return html[:k + len("</article>")] + ajout + html[k + len("</article>"):] if i > 0 and k > 0 else html
+
+
+def structure_sport(html: str, path: Path) -> str:
+    if "articles" in path.parts:
+        return html
+    nom = path.name
+    est_en = "en" in path.parts
+    if nom == "poles.html" and f'id="{SPORT_ID}"' not in html:
+        html = _apres_article(html, '<article class="pole-card" id="solidarite-inclusion">', SPORT_CARTE)
+        m = re.search(r'<a class="coord-row" href="poles\.html#solidarite-inclusion">.*?</a>', html, re.S)
+        if m:
+            html = html[:m.end()] + (f'\n        <a class="coord-row" href="poles.html#{SPORT_ID}"><span class="coord-etat">&Agrave; pourvoir</span>'
+                                     f'<span class="coord-nom">Sport, arts &amp; loisirs</span><span class="coord-pole">{P2_FR}</span>'
+                                     '<span class="coord-qui coord-qui--vide">à pourvoir</span></a>') + html[m.end():]
+    if nom == "suivi.html" and f'id="{SPORT_ID}"' not in html:
+        html = _apres_article(html, '<article class="pole-card" id="solidarite-inclusion">', SPORT_SUIVI)
+    if nom == "themes.html" and est_en and "THEME 22" not in html:
+        html = _apres_article(html, '<span class="pole-num">THEME 12</span>', SPORT_EN)
+    if nom == "contact.html" and "<option>22." not in html:
+        html = re.sub(r"(<option>12\. [^<]*</option>\n)(\s*)", lambda m: m.group(1) + m.group(2) + "<option>22. Sport, arts &amp; loisirs</option>\n" + m.group(2), html)
+    if nom == "trouver.js" and f'"id": "{SPORT_ID}"' not in html:
+        i = html.find('    "id": "gouvernance-plaidoyer",')
+        i = html.rfind("  {", 0, i)
+        if i > 0:
+            html = html[:i] + SPORT_JS + html[i:]
+        j = html.find('  "educ": {')
+        s_ = html.find('"s": [', j)
+        if j > 0 and s_ > 0:
+            html = html[:s_ + len('"s": [')] + f'\n      "{SPORT_ID}",' + html[s_ + len('"s": ['):]
+        j = html.find('"terrain": {')
+        s_ = html.find('"ids": [', j)
+        if j > 0 and s_ > 0:
+            html = html[:s_ + len('"ids": [')] + f'\n      "{SPORT_ID}",' + html[s_ + len('"ids": ['):]
+    if nom not in ("actualites.html", "redevabilite.html"):
+        for rx, rep_ in COMPTES_RE_SPORT:
+            html = re.sub(rx, rep_, html)
+    elif nom == "redevabilite.html":
+        html = re.sub(r"(Les noms de nos |Deux de nos )vingt et une(\s+th(?:é|&eacute;)matiques)", r"\1vingt-deux\2", html)
     return html
 
 
@@ -1639,7 +1809,7 @@ def lire_source(path: Path) -> str:
         k = html.find("</p>", j)
         if j > 0 and k > 0:
             html = html[:k] + note + html[k:]
-    html = ancres_en(structure_01_10(structure_30_09(corrections_revue(structure_29_09(html, path), path), path), path), path)
+    html = ancres_en(structure_sport(structure_01_10(structure_30_09(corrections_revue(structure_29_09(html, path), path), path), path), path), path)
     if path.name == "kit-mobilisation.html":
         html = kit_liens(html)
     return html if "articles" in path.parts else comptes_courants(html)

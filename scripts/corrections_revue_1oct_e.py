@@ -18,9 +18,9 @@ CORRECTIONS = {
          "nomme ce chef simplement &laquo;&nbsp;Gari&nbsp;&raquo;&nbsp;; au rang pr&eacute;c&eacute;dent, elle &eacute;crit &laquo;&nbsp;Bignero&nbsp;&raquo;, sans accent, graphie que nous conservons, alors que l&rsquo;association &eacute;crit Bign&eacute;ro."),
     ],
     "documents.html": [
-        # 21 thématiques depuis le 30/09 (résultat de corrections_fr.py, l. 311, remplacé ici)
+        # nombre de thématiques en vigueur (résultat de corrections_fr.py, l. 311, remplacé ici ; 22 depuis le 01/10)
         ("(dix-neuf dans cette édition de septembre 2026&nbsp;; vingt depuis le 29 septembre)",
-         "(vingt et une)"),
+         "(vingt-deux)"),
         # /patrimoine/lieux-sacres : cinq règles « de tenue du cahier », distinctes des quatre règles de discrétion
         ("Les cinq r&egrave;gles de discr&eacute;tion",
          "Les cinq r&egrave;gles de tenue du cahier"),

@@ -18,7 +18,7 @@
    "pourvue": true,
    "qui": "Franco Joseph Ngarlena",
    "pdf": "/missions/fiche-mission-direction-pole-2.pdf",
-   "thematiques": 5
+   "thematiques": 6
   },
   {
    "pole": "pole-3",
@@ -41,11 +41,20 @@
   {
    "pole": "pole-5",
    "roman": "V",
-   "nom": "Économie, territoire & risques",
+   "nom": "Économie & ressources naturelles",
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-direction-pole-5.pdf",
-   "thematiques": 6
+   "thematiques": 3
+  },
+  {
+   "pole": "pole-6",
+   "roman": "VI",
+   "nom": "Infrastructures, territoire & risques",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-direction-pole-6.pdf",
+   "thematiques": 3
   }
  ],
  "coordinations": [
@@ -130,6 +139,16 @@
    "pdf": "/missions/fiche-mission-coordination-solidarite-inclusion.pdf"
   },
   {
+   "id": "sport-arts-loisirs",
+   "numero": "22",
+   "nom": "Sport, arts & loisirs",
+   "pole": "II",
+   "poleNom": "Services essentiels",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-coordination-sport-arts-loisirs.pdf"
+  },
+  {
    "id": "gouvernance-plaidoyer",
    "numero": "13",
    "nom": "Gouvernance & plaidoyer",
@@ -204,7 +223,7 @@
    "numero": "04",
    "nom": "Agriculture, élevage & sécurité alimentaire",
    "pole": "V",
-   "poleNom": "Économie, territoire & risques",
+   "poleNom": "Économie & ressources naturelles",
    "pourvue": true,
    "qui": "Olivier Allaramadji Nomaye, ingénieur agroéconomiste",
    "pdf": "/missions/fiche-mission-coordination-agriculture-elevage-securite-alimentaire.pdf"
@@ -214,7 +233,7 @@
    "numero": "05",
    "nom": "Entrepreneuriat & finance inclusive",
    "pole": "V",
-   "poleNom": "Économie, territoire & risques",
+   "poleNom": "Économie & ressources naturelles",
    "pourvue": true,
    "qui": "Tamar Neloum DOUMANBE",
    "pdf": "/missions/fiche-mission-coordination-entrepreneuriat-finance-inclusive.pdf"
@@ -224,7 +243,7 @@
    "numero": "06",
    "nom": "Environnement, climat & ressources naturelles",
    "pole": "V",
-   "poleNom": "Économie, territoire & risques",
+   "poleNom": "Économie & ressources naturelles",
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-coordination-environnement-ressources.pdf"
@@ -233,8 +252,8 @@
    "id": "desenclavement-urbanisation",
    "numero": "08",
    "nom": "Routes & urbanisme",
-   "pole": "V",
-   "poleNom": "Économie, territoire & risques",
+   "pole": "VI",
+   "poleNom": "Infrastructures, territoire & risques",
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-coordination-desenclavement-urbanisation.pdf"
@@ -243,8 +262,8 @@
    "id": "urgences-risques",
    "numero": "20",
    "nom": "Urgences & risques",
-   "pole": "V",
-   "poleNom": "Économie, territoire & risques",
+   "pole": "VI",
+   "poleNom": "Infrastructures, territoire & risques",
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-coordination-urgences-risques.pdf"
@@ -253,8 +272,8 @@
    "id": "energie",
    "numero": "21",
    "nom": "Énergie",
-   "pole": "V",
-   "poleNom": "Économie, territoire & risques",
+   "pole": "VI",
+   "poleNom": "Infrastructures, territoire & risques",
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-coordination-energie.pdf"

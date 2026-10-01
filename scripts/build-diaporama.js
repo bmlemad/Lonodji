@@ -251,7 +251,7 @@ async function assemblee() {
   n += 1;
   const pourvues = poles.flatMap((p) => p.items).filter((t) => t.filled).length;
   const thematiques = poles.flatMap((p) => p.items).length;
-  diapoColonnes(pres, m, n, total, { eyebrow: "Qui porte le projet", titre: `${enLettresMaj(poles.length)} pôles, ${thematiques === 21 ? "vingt et une" : enLettresMaj(thematiques).toLowerCase()} thématiques, ${pourvues} coordinations pourvues`, colonnes: poles.map((p) => ({ numero: p.roman, titre: p.name, texte: `Vice-présidence : ${p.direction.filled ? p.direction.name : "à pourvoir, par élection"}.`, points: p.items.map((t) => `${t.name} — ${t.filled ? t.coordinator : "à pourvoir"}`) })), taille: 9.5 });
+  diapoColonnes(pres, m, n, total, { eyebrow: "Qui porte le projet", titre: `${enLettresMaj(poles.length)} pôles, ${thematiques === 21 ? "vingt et une" : thematiques === 22 ? "vingt-deux" : enLettresMaj(thematiques).toLowerCase()} thématiques, ${pourvues} coordinations pourvues`, colonnes: poles.map((p) => ({ numero: p.roman, titre: p.name, texte: `Vice-présidence : ${p.direction.filled ? p.direction.name : "à pourvoir, par élection"}.`, points: p.items.map((t) => `${t.name} — ${t.filled ? t.coordinator : "à pourvoir"}`) })), taille: 9.5 });
 
   n += 1;
   diapoEtapes(pres, m, n, total, { eyebrow: "Feuille de route 2026-2030", titre: `${enLettresMaj(phases.length)} phases`, etapes: phases.map((ph) => ({ titre: `${ph.periode} · ${ph.titre}`, texte: ph.texte })) });

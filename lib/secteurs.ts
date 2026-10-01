@@ -1,4 +1,4 @@
-/* Secteurs d'intervention : les vingt et une thématiques de l'association lues dans la
+/* Secteurs d'intervention : les vingt-deux thématiques de l'association lues dans la
    langue des ONG de développement et d'aide (clusters humanitaires de l'IASC,
    codes-objet du CAD de l'OCDE, ODD). Chaque activité dit son état réel :
    « fait » (affiché « Publié ») quand une page, un document ou un formulaire existe
@@ -207,7 +207,7 @@ export const SECTEURS: Secteur[] = [
     id: "culture", groupe: "singularites", nom: "Culture et patrimoine", sigle: "Culture", en: "Culture and heritage",
     enTexte: "History, the Nangnda (Bedjond) language, genealogies, a digital library; sacred sites protected by publishing nothing.",
     cadre: { cad: "CAD 16061", odd: "ODD 11.4" }, etat: "couvert",
-    thematiques: ["memoire-heritage", "culture-patrimoine-vivant", "savoirs-innovation"],
+    thematiques: ["memoire-heritage", "culture-patrimoine-vivant", "savoirs-innovation", "sport-arts-loisirs"],
     activites: [
       { texte: "Histoire et patrimoine bedjond", etat: "fait", href: "/histoire" },
       { texte: "La langue nangnda et son dictionnaire", etat: "fait", href: "/langue" },

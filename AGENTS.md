@@ -48,10 +48,10 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
 - Nommer un coordonnateur : une ligne dans `NOMINATIONS` (`scripts/import-legacy.py`) et une entrée dans
   `lib/decisions.ts`. Les phrases héritées qui comptent les coordinations (« quatre des vingt thématiques… »,
   « Sixteen themes out of twenty… ») sont recalculées à l'import (`comptes_courants`) : ne pas les corriger à la main.
-- Structure en vigueur depuis le 1er octobre 2026 : cinq pôles (le V issu du pôle II), vice-présidences de pôle élues
+- Structure en vigueur depuis le 1er octobre 2026 : six pôles (V et VI issus du pôle II), vingt-deux thématiques (la 22, Sport, arts & loisirs), vice-présidences de pôle élues
   (plus « directions de pôle, rang de chef de projet »), sept thématiques prioritaires (`lib/organisation.ts`). Le
-  nombre de pôles se lit dans `content/index.json` ; s'il change encore, chercher aussi « cinq pôles », « 5 pôles » et
-  « five pillars », encore écrits en dur dans quelques libellés (menus, palette, manifeste, métadonnées).
+  nombre de pôles se lit dans `content/index.json` ; s'il change encore, chercher aussi « six pôles », « 6 pôles », « six pillars »,
+  « vingt-deux thématiques » et « twenty-two themes », encore écrits en dur dans quelques libellés (menus, palette, manifeste, métadonnées).
 - `content/transmissions.json` : n'y porter un envoi, un accusé ou une réponse qu'avec sa date réelle, donnée par le
   bureau ; `/actions#transmission` l'affiche. Les lettres d'envoi (`build-lettres-envoi.py`) restent hors dépôt.
 - Magazine « Lonodji » : un numéro paru (`public/magazine/*.pdf`) est un texte daté, jamais régénéré (pas de

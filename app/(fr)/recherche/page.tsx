@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function Recherche() {
   return (
     <main id="main-content" className="hub-page">
-      <PageHeader eyebrow="Recherche" title="Chercher" em="dans tout le site." lead="Pages, articles du journal, vingt et une thématiques, plaidoyers et documents. Tout se calcule dans votre navigateur ; rien n’est envoyé." />
+      <PageHeader eyebrow="Recherche" title="Chercher" em="dans tout le site." lead="Pages, articles du journal, vingt-deux thématiques, plaidoyers et documents. Tout se calcule dans votre navigateur ; rien n’est envoyé." />
       <SiteSearch />
     </main>
   );

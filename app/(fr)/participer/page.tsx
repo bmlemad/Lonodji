@@ -73,11 +73,11 @@ export default function Participer() {
       </section>
 
       <section className="hub-section" id="thematiques">
-        <SectionHead eyebrow="Avant de vous lancer" title="Choisissez un pôle," em="puis une thématique." text={`Vingt et une thématiques, ${enLettres(vacantes)} sans coordonnateur ; et ${dirVacantes === 0 ? "chaque pôle a sa vice-présidence" : `${enLettres(dirVacantes)} des ${enLettres(idx.structure.poles.length)} pôles ${dirVacantes > 1 ? "attendent" : "attend"} encore leur vice-présidence, pourvue par élection`}. La page Nos actions les détaille ; ce raccourci vous oriente en quelques questions.`} />
+        <SectionHead eyebrow="Avant de vous lancer" title="Choisissez un pôle," em="puis une thématique." text={`Vingt-deux thématiques, ${enLettres(vacantes)} sans coordonnateur ; et ${dirVacantes === 0 ? "chaque pôle a sa vice-présidence" : `${enLettres(dirVacantes)} des ${enLettres(idx.structure.poles.length)} pôles ${dirVacantes > 1 ? "attendent" : "attend"} encore leur vice-présidence, pourvue par élection`}. La page Nos actions les détaille ; ce raccourci vous oriente en quelques questions.`} />
         <div className="legacy"><LegacySections sections={[choisir, avant]} sansPremierTitre /></div>
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
           <Link className="button primary" href="/participer/trouver-ma-thematique">Trouver ma thématique en trois questions <span aria-hidden="true">→</span></Link>
-          <Link className="button secondary" href="/programmes#thematiques">Voir les vingt et une thématiques <span aria-hidden="true">→</span></Link>
+          <Link className="button secondary" href="/programmes#thematiques">Voir les vingt-deux thématiques <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/programmes#diriger-un-pole">Diriger un pôle <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/programmes/fiches-de-mission">Les fiches de mission (PDF) <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/diaspora">Diaspora : inscrire mes compétences <span aria-hidden="true">→</span></Link>

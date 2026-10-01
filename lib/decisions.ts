@@ -61,11 +61,19 @@ export const DECISIONS: Decision[] = [
     suite: "L’adresse de chaque siège, sa date d’ouverture et le partage des responsabilités ne sont pas encore fixés publiquement.",
   },
   {
+    id: "2026-35", date: "2026-10-01", type: "decision",
+    titre: "Six pôles et vingt-deux thématiques : des nombres pairs",
+    texte: "Le bureau exécutif complète le même jour la décision 2026-31 et revient sur sa clause « pas de nouveau redécoupage avant au moins un trimestre » : l’association compte six pôles et vingt-deux thématiques. Le pôle V devient « Économie & ressources naturelles » (04 Agriculture, élevage & sécurité alimentaire ; 05 Entrepreneuriat & finance inclusive ; 06 Environnement, climat & ressources naturelles) ; un pôle VI, « Infrastructures, territoire & risques », reçoit 08 Routes & urbanisme, 20 Urgences & risques et 21 Énergie. Une thématique 22, Sport, arts & loisirs, rejoint le pôle II, Services essentiels. Aucune thématique n’est supprimée ni renumérotée ; les sept thématiques prioritaires ne changent pas. La vice-présidence du pôle VI est élue avec les autres, selon la procédure et le calendrier de la décision 2026-33.",
+    sources: [{ label: "Article du 1er octobre 2026", href: "/journal/2026-10-01-six-poles-vingt-deux-thematiques" }, { label: "Nos actions", href: "/programmes" }, { label: "L’élection des vice-présidences", href: "/association/election-vice-presidences" }],
+    suite: "Thématique 22 à pourvoir ; vice-présidences des pôles III, IV, V et VI élues le 22 octobre 2026.",
+    instance: "Bureau exécutif",
+  },
+  {
     id: "2026-33", date: "2026-10-01", type: "decision",
     titre: "Élection des vice-présidences des pôles III, IV et V : procédure et calendrier",
     texte: "En application de la décision 2026-31, le bureau exécutif adopte la procédure d’élection des vice-présidences sans titulaire. Candidats : membres de l’association ou personnes ayant déposé leur déclaration d’adhésion, au Tchad comme dans la diaspora, une seule vice-présidence chacun. Électeurs : le collège des responsables — bureau exécutif, vice-présidences en fonction, coordonnateurs titulaires des thématiques et des cellules —, la prochaine assemblée générale confirmant les élus. Quorum de la moitié du collège ; vote en réunion, sur place et à distance, à main levée ou au scrutin secret si un membre le demande ; majorité absolue au premier tour, relative au second. Mandat jusqu’à la prochaine assemblée générale ordinaire. Candidatures du 2 au 15 octobre 2026, liste des candidats le 17, vote le 22, résultats le 23, réclamations jusqu’au 30 octobre.",
     sources: [{ label: "Article du 1er octobre 2026", href: "/journal/2026-10-01-election-vice-presidences" }, { label: "L’élection des vice-présidences", href: "/association/election-vice-presidences" }, { label: "Postes ouverts", href: "/participer#postes-ouverts" }],
-    suite: "Candidatures ouvertes du 2 au 15 octobre 2026 ; vote le 22 octobre 2026.",
+    suite: "Candidatures ouvertes du 2 au 15 octobre 2026 ; vote le 22 octobre 2026. Le pôle VI, créé le même jour (2026-35), est ajouté à l’élection.",
     instance: "Bureau exécutif",
   },
   {
@@ -104,7 +112,7 @@ export const DECISIONS: Decision[] = [
     titre: "Une thématique 21, Énergie ; la 08 devient Routes & urbanisme",
     texte: "L’énergie, rattachée le 29 septembre 2026 à la thématique 08 (décision 2026-14), devient une thématique à part entière, la 21, au pôle Développement humain & moyens d’existence : électricité par le réseau, les mini-réseaux ou le solaire, éclairage public, électrification des équipements publics. Elle porte le plaidoyer « De la lumière pour Bédjondo ». La 08 prend le nom de Routes & urbanisme et garde les routes, les ponts, les pistes et l’urbanisme de Bédjondo, avec le plaidoyer pour la voirie. Les deux métiers, leurs interlocuteurs et leurs bailleurs sont distincts.",
     sources: [{ label: "Nos actions", href: "/programmes#energie" }, { label: "Programmes des bailleurs", href: "/bailleurs" }],
-    suite: "L’association compte vingt et une thématiques, dont cinq à pourvoir, parmi lesquelles la 21.",
+    suite: "La 21 est à pourvoir ; depuis le 1er octobre 2026, elle relève du pôle VI, Infrastructures, territoire & risques (2026-35).",
   },
   {
     id: "2026-28", date: "2026-09-30", type: "nomination",

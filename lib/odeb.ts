@@ -241,7 +241,7 @@ export const PROGRAMMES: Programme[] = [
         existant: [{ label: "Éducation, jeunesse & formation", href: "/programmes#jeunesse-reussite" }, { label: "Jeunes talents : racontez-vous", href: "/temoignages#series" }, { label: "Complexe de formation sportive (à l’étude)", href: "/projets/complexe-sportif" }],
         suite: "Le mentorat proposé par les inscrits du répertoire de la diaspora serait organisé en parcours, avec la plateforme d’engagement prévue par le plan d’action 2026-2028." },
     ],
-    thematiques: ["jeunesse-reussite", "transformation-numerique-services", "intelligence-artificielle-donnees", "competences-entrepreneuriat-numerique", "entrepreneuriat-finance-inclusive"],
+    thematiques: ["jeunesse-reussite", "transformation-numerique-services", "intelligence-artificielle-donnees", "competences-entrepreneuriat-numerique", "entrepreneuriat-finance-inclusive", "sport-arts-loisirs"],
     contribuer: [{ label: "Souscrire à l’espace numérique", href: "/projets/espace-numerique" }, { label: "Offrir un mentorat ou une formation à distance", href: "/diaspora#inscription" }, { label: "Trouver sa thématique", href: "/participer/trouver-ma-thematique" }],
   },
   {
@@ -340,7 +340,7 @@ export function feuilleDeRoute(c: Chiffres): Phase[] {
       id: "2026", periode: "2026", titre: "Relance et fondations",
       texte: "Quarante ans après les premières réflexions, l’association se remet en mouvement : une structure, un site qui date ses faits, des plaidoyers, un diagnostic, une carte. Tout ce qui suit s’appuie dessus.",
       chantiers: [
-        { titre: "Cinq pôles, vingt et une thématiques, deux cellules", etat: c.vacantes + c.cellulesVacantes ? "en-cours" : "fait", note: `${c.pourvues} coordinations pourvues sur ${c.total}${c.vacantes ? ` ; ${c.vacantes} ${pluriel(c.vacantes, "thématique reste", "thématiques restent")} à pourvoir` : ""}${c.cellulesVacantes ? (c.cellulesVacantes === 1 ? ", et une des deux cellules" : ", et les deux cellules") : ""}`, href: "/programmes" },
+        { titre: "Six pôles, vingt-deux thématiques, deux cellules", etat: c.vacantes + c.cellulesVacantes ? "en-cours" : "fait", note: `${c.pourvues} coordinations pourvues sur ${c.total}${c.vacantes ? ` ; ${c.vacantes} ${pluriel(c.vacantes, "thématique reste", "thématiques restent")} à pourvoir` : ""}${c.cellulesVacantes ? (c.cellulesVacantes === 1 ? ", et une des deux cellules" : ", et les deux cellules") : ""}`, href: "/programmes" },
         { titre: "Le site lonodji.org", etat: "fait", note: `${c.pages} pages, ${c.articles} articles, ${c.formulaires} formulaires, une version anglaise, une appli installable`, href: "/" },
         { titre: `${enLettresMaj(c.plaidoyers)} dossiers de plaidoyer publiés`, etat: c.plaidoyersEnvoyes ? "fait" : "en-cours", note: c.plaidoyersEnvoyes ? `${c.plaidoyersEnvoyes} sur ${c.plaidoyers} transmis à leurs destinataires` : "publiés, aucun encore transmis : les lettres attendent la signature du bureau", href: "/actions" },
         { titre: "Diagnostic territorial", etat: "fait", note: `${c.problematiques} problématiques, ${c.chantiersPrioritaires} chantiers prioritaires, huit enquêtes de terrain`, href: "/territoire/diagnostic" },

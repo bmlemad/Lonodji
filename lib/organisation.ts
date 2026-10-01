@@ -45,7 +45,7 @@ export const RECOMMANDATIONS: Recommandation[] = [
     texte: "Le pôle Développement humain & moyens d’existence portait onze thématiques sur vingt et une, et les cinq postes vacants. Il est scindé : le pôle II devient « Services essentiels » (07 Eau, assainissement & hygiène, 09 Éducation, 10 Genre, 11 Santé, 12 Protection sociale) ; un pôle V, « Économie, territoire & risques », réunit 04 Agriculture, 05 Entrepreneuriat, 06 Environnement, 08 Routes & urbanisme, 20 Urgences & risques et 21 Énergie.",
     change: "Cinq pôles au lieu de quatre ; aucune thématique supprimée ni renumérotée. Plus de redécoupage pendant au moins un trimestre.",
     sources: ["chari", "fafd", "mandjafa"],
-    applique: "Cinq pôles sur la page Nos actions ; la vice-présidence du pôle V est à pourvoir." },
+    applique: "Le même jour, le bureau partage à son tour le pôle V et crée une thématique 22 (décision 2026-35) : six pôles et vingt-deux thématiques sur la page Nos actions ; les vice-présidences des pôles V et VI sont à élire." },
   { id: "r3", titre: "La cellule Financement tenue par le bureau",
     texte: "Chez toutes les associations comparées, l’argent relève du bureau élu. La cellule Financement & ressources, vacante, est confiée par intérim à la trésorière élue, Élisabeth Neloumngaye Ndodinguem ; un commissaire aux comptes sera prévu avant toute réouverture de la collecte.",
     change: "La cellule n’est plus un poste vacant ; la collecte reste suspendue jusqu’aux trois conditions déjà publiées.",

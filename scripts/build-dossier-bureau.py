@@ -33,6 +33,7 @@ CONTENT = ROOT / "content"
 SITE = "lonodji.org"
 LOGO = ROOT / "public" / "odeb" / "identite" / "adeb-lonodji-logo-horizontal-clair-superposable.png"
 PREPARE = "1er octobre 2026"
+LETTRES_F = ["zéro", "une", "deux", "trois", "quatre", "cinq", "six", "sept", "huit"]
 PUBLIC = ROOT / "public" / "organisation"
 MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
 
@@ -209,7 +210,7 @@ def election(idx: dict, logo: str, bureau: list[dict], tete_droite: str) -> tupl
 <h1>Élire les vice-présidences des pôles {', '.join(p['roman'] for p in vacants[:-1])} et {vacants[-1]['roman']}<small>Procédure d’élection, en application de la décision 5 du {PREPARE} · vote le {date_fr(cal['vote']['date'])}</small></h1>
 <h2>1. Ce que le bureau a décidé</h2>
 <p class="cite">« {esc(r5['texte'])} » — {esc(r5['change'])}</p>
-<p>Les vice-présidences déjà tenues restent en place ({titulaires}). Trois sont à pourvoir :</p>
+<p>Les vice-présidences déjà tenues restent en place ({titulaires}). {LETTRES_F[len(vacants)].capitalize()} sont à pourvoir{' ; celle du pôle VI, créé le même jour, s’ajoute à l’élection (décision 2026-35)' if any(p['roman'] == 'VI' for p in vacants) else ''} :</p>
 <table><thead><tr><th>Pôle</th><th>Nom</th><th>Thématiques</th><th>Candidater</th></tr></thead><tbody>{lignes_vacants}</tbody></table>
 <h2>2. Ce que fait une vice-présidence</h2>
 <p>D’après la fiche de mission publiée, le vice-président délégué ou la vice-présidente déléguée réunit chaque trimestre les coordonnateurs et coordonnatrices des thématiques de son pôle ; tient le plan d’action et le calendrier du pôle ; suit les plaidoyers et les projets qui en relèvent ; rend compte au bureau et à l’assemblée. La fonction est bénévole et élue.</p>
@@ -231,13 +232,13 @@ def election(idx: dict, logo: str, bureau: list[dict], tete_droite: str) -> tupl
     annexe_a = f"""<section class="doc">{tete}
 <span class="projet adopte">Annexe A · publiée le {date_fr(cal['appel']['date'])}</span>
 <h1>Appel à candidatures<small>Vice-présidences des pôles {', '.join(p['roman'] for p in vacants)}</small></h1>
-<p>ADEB LONODJI élit les vice-présidents délégués ou vice-présidentes déléguées de trois de ses cinq pôles. Chacun réunit chaque trimestre les coordonnateurs de son pôle, tient son plan d’action et son calendrier, suit ses plaidoyers et ses projets, et rend compte au bureau et à l’assemblée. Fonction bénévole et élue, ouverte au Tchad comme dans la diaspora ; les candidatures de femmes sont particulièrement attendues.</p>
+<p>ADEB LONODJI élit les vice-présidents délégués ou vice-présidentes déléguées de {LETTRES_F[len(vacants)]} de ses {LETTRES_F[len(poles)]} pôles. Chacun réunit chaque trimestre les coordonnateurs de son pôle, tient son plan d’action et son calendrier, suit ses plaidoyers et ses projets, et rend compte au bureau et à l’assemblée. Fonction bénévole et élue, ouverte au Tchad comme dans la diaspora ; les candidatures de femmes sont particulièrement attendues.</p>
 <ul>{''.join(f'<li><b>{esc(x.split(" : ")[0])}</b> : {esc(x.split(" : ")[1])}</li>' for x in appel_txt)}</ul>
 <p>Candidatures du {date_fr(cal['appel']['date'])} au {date_fr(cal['cloture']['date'])} : par le formulaire en ligne (le lien ci-dessus le remplit pour le pôle choisi), par la fiche papier, ou par WhatsApp au {esc(TELEPHONE)}. Liste des candidats publiée le {date_fr(cal['liste']['date'])} ; vote le {date_fr(cal['vote']['date'])} ; résultats le {date_fr(cal['resultats']['date'])}.</p>
 <p>La procédure complète : {SITE}/association/election-vice-presidences</p>
 <p>Les fiches de mission : {SITE}/programmes/fiches-de-mission</p>
 <h2>Version WhatsApp</h2>
-<p class="cite">ADEB LONODJI élit les vice-présidences de trois pôles : {'; '.join(f"pôle {p['roman']}, {p['name']}" for p in vacants)}. Bénévole, au Tchad ou dans la diaspora. Candidatures jusqu’au {date_fr(cal['cloture']['date'])}, vote le {date_fr(cal['vote']['date'])} : {SITE}/association/election-vice-presidences</p>
+<p class="cite">ADEB LONODJI élit les vice-présidences de {LETTRES_F[len(vacants)]} pôles : {'; '.join(f"pôle {p['roman']}, {p['name']}" for p in vacants)}. Bénévole, au Tchad ou dans la diaspora. Candidatures jusqu’au {date_fr(cal['cloture']['date'])}, vote le {date_fr(cal['vote']['date'])} : {SITE}/association/election-vice-presidences</p>
 </section>"""
 
     def champ(l: str, zone: str = "ligne") -> str:
@@ -278,7 +279,7 @@ def election(idx: dict, logo: str, bureau: list[dict], tete_droite: str) -> tupl
 </section>"""
     liste = "; ".join(f"pôle {p['roman']}, {p['name']}" for p in vacants)
     note = "\n".join(["# Appel à candidatures — vice-présidences (texte WhatsApp)", "",
-                      f"ADEB LONODJI élit les vice-présidences de trois pôles : {liste}. Bénévole, au Tchad ou dans la diaspora. Candidatures jusqu’au {date_fr(cal['cloture']['date'])}, vote le {date_fr(cal['vote']['date'])} : https://{SITE}/association/election-vice-presidences", ""]
+                      f"ADEB LONODJI élit les vice-présidences de {LETTRES_F[len(vacants)]} pôles : {liste}. Bénévole, au Tchad ou dans la diaspora. Candidatures jusqu’au {date_fr(cal['cloture']['date'])}, vote le {date_fr(cal['vote']['date'])} : https://{SITE}/association/election-vice-presidences", ""]
                      + [f"- {x}" for x in appel_txt])
     return {"procedure": doc, "appel": annexe_a, "fiche": annexe_b, "bulletins": annexe_c, "pv": annexe_d}, note
 

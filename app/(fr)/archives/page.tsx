@@ -36,7 +36,7 @@ export default function Archives() {
       <section className="hub-section">
         <SectionHead eyebrow="Ce qui a été repris" title="Page par page," em="sans réécrire l’histoire." text="Les dates, les faits et les corrections publiées dans la première version sont conservés tels quels. Les articles gardent les intitulés en vigueur à leur date ; le journal des corrections garde chaque entrée." />
         <div className="link-list">
-          <Link href="/programmes"><small>Nos actions</small><strong>5 pôles, 21 thématiques, 2 cellules</strong><span>Avec leurs coordonnateurs, leurs objectifs et les ODD associés.</span></Link>
+          <Link href="/programmes"><small>Nos actions</small><strong>6 pôles, 22 thématiques, 2 cellules</strong><span>Avec leurs coordonnateurs, leurs objectifs et les ODD associés.</span></Link>
           <Link href="/actions"><small>Plaidoyers</small><strong>7 plaidoyers et la note à la commune</strong><span>Destinataires, état d’envoi, cadre de résultats à 22 indicateurs.</span></Link>
           <Link href="/journal"><small>Journal</small><strong>36 articles repris ({idx.articles.length} aujourd’hui)</strong><span>Vie de l’association, histoire, plaidoyers, lettre d’information.</span></Link>
           <Link href="/dossiers"><small>Dossiers</small><strong>{dossiers} dossiers de fond</strong><span>Du diagnostic territorial aux projets à l’étude.</span></Link>

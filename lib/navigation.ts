@@ -22,7 +22,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Événements", href: "/association/evenements", note: "Réunions, assemblées, activités" },
         { label: "ONG & bailleurs : notre statut", href: "/association/ong-partenaires", note: "Statut, partenaires présents au Mandoul" },
         { label: "Les démarches, pas à pas", href: "/association/demarches", note: "Statut, récépissé, vers l’ONG" },
-        { label: "Décisions d’organisation", href: "/association/propositions-organisation", note: "Cinq pôles, sept priorités : décidé le 1er octobre 2026" },
+        { label: "Décisions d’organisation", href: "/association/propositions-organisation", note: "Six pôles, sept priorités : décidé le 1er octobre 2026" },
         { label: "Élection des vice-présidences", href: "/association/election-vice-presidences", note: "Candidatures du 2 au 15 octobre, vote le 22" },
       ] },
       { titre: "Rendre des comptes", liens: [
@@ -45,12 +45,13 @@ export const NAVIGATION: NavEntree[] = [
   {
     id: "actions", label: "Nos actions", href: "/programmes",
     colonnes: [
-      { titre: "Cinq pôles · thématiques structurées", liens: [
+      { titre: "Six pôles · thématiques structurées", liens: [
         { label: "Mémoire, culture & patrimoine", href: "/programmes#pole-1", note: "Pôle I" },
         { label: "Services essentiels", href: "/programmes#pole-2", note: "Pôle II" },
         { label: "Gouvernance, paix & plaidoyer", href: "/programmes#pole-3", note: "Pôle III" },
         { label: "Numérique & innovation", href: "/programmes#pole-4", note: "Pôle IV" },
-        { label: "Économie, territoire & risques", href: "/programmes#pole-5", note: "Pôle V" },
+        { label: "Économie & ressources naturelles", href: "/programmes#pole-5", note: "Pôle V" },
+        { label: "Infrastructures, territoire & risques", href: "/programmes#pole-6", note: "Pôle VI" },
         { label: "Secteurs d’intervention", href: "/secteurs", note: "Les mêmes thématiques, en langue ONG" },
         { label: "Fiches de mission (PDF)", href: "/programmes/fiches-de-mission", note: "Vice-présider un pôle, coordonner une thématique" },
       ] },
@@ -169,7 +170,7 @@ export const NAVIGATION_EN: NavEntree[] = [
     id: "actions", label: "Our work", href: "/en/themes",
     colonnes: [
       { titre: "How we are organised", liens: [
-        { label: "Five pillars · themes being inventoried", href: "/en/themes", note: "Coordinators, objectives, SDGs" },
+        { label: "Six pillars · themes being inventoried", href: "/en/themes", note: "Coordinators, objectives, SDGs" },
         { label: "Sectors", href: "/en/sectors", note: "Our work in the donors’ sector vocabulary" },
         { label: "Mission descriptions", href: "/programmes/fiches-de-mission", note: "One PDF per role", fr: true },
       ] },

@@ -122,7 +122,7 @@ window.__initTrouver = function () {
     "id": "desenclavement-urbanisation",
     "num": "08",
     "key": "08",
-    "pole": "Pôle V · Thématique 08",
+    "pole": "Pôle VI · Thématique 08",
     "name": "Routes & urbanisme",
     "status": "open",
     "coord": "Coordonnateur : à pourvoir",
@@ -196,7 +196,7 @@ window.__initTrouver = function () {
     "id": "urgences-risques",
     "num": "20",
     "key": "20",
-    "pole": "Pôle V · Thématique 20",
+    "pole": "Pôle VI · Thématique 20",
     "name": "Urgences & risques",
     "status": "open",
     "coord": "Coordonnateur : à pourvoir",
@@ -212,7 +212,7 @@ window.__initTrouver = function () {
     "id": "energie",
     "num": "21",
     "key": "21",
-    "pole": "Pôle V · Thématique 21",
+    "pole": "Pôle VI · Thématique 21",
     "name": "Énergie",
     "status": "open",
     "coord": "Coordonnateur : à pourvoir",
@@ -223,6 +223,22 @@ window.__initTrouver = function () {
     ],
     "suivi": true,
     "tier": 1
+  },
+  {
+    "id": "sport-arts-loisirs",
+    "num": "22",
+    "key": "22",
+    "pole": "Pôle II · Thématique 22",
+    "name": "Sport, arts & loisirs",
+    "status": "open",
+    "coord": "Coordonnateur : à pourvoir",
+    "desc": "Le sport, la musique, la danse, le théâtre et les fêtes qui font vivre Bédjondo et ses quartiers : terrains, équipes, troupes, lieux de rencontre.",
+    "page": [
+      "/projets/complexe-sportif",
+      "Projet de complexe sportif"
+    ],
+    "suivi": true,
+    "tier": 2
   },
   {
     "id": "gouvernance-plaidoyer",
@@ -409,6 +425,7 @@ window.__initTrouver = function () {
       "competences-entrepreneuriat-numerique"
     ],
     "s": [
+      "sport-arts-loisirs",
       "savoirs-innovation"
     ]
   },
@@ -550,6 +567,7 @@ window.__initTrouver = function () {
   "terrain": {
     "label": "Vous êtes à Bédjondo ou dans le Mandoul",
     "ids": [
+      "sport-arts-loisirs",
       "energie",
       "agriculture-elevage-securite-alimentaire",
       "environnement-ressources",

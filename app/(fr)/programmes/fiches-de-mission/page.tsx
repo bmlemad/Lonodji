@@ -8,9 +8,9 @@ import { getMissions } from "@/lib/missions";
 
 export const metadata: Metadata = {
   title: "Fiches de mission des pôles et thématiques",
-  description: metaDescription("Vingt-huit fiches de mission en PDF : cinq vice-présidences de pôle, vingt et une coordinations de thématique et deux cellules, avec le lien pour candidater."),
+  description: metaDescription("Trente fiches de mission en PDF : six vice-présidences de pôle, vingt-deux coordinations de thématique et deux cellules, avec le lien pour candidater."),
   alternates: { canonical: "/programmes/fiches-de-mission" },
-  openGraph: { ...ogFor("/programmes/fiches-de-mission"), title: "Fiches de mission : vice-présider un pôle, coordonner une thématique", description: "Vingt-huit fiches en PDF : ce que la personne fait, le périmètre, les quatre étapes, le lien pour candidater." },
+  openGraph: { ...ogFor("/programmes/fiches-de-mission"), title: "Fiches de mission : vice-présider un pôle, coordonner une thématique", description: "Trente fiches en PDF : ce que la personne fait, le périmètre, les quatre étapes, le lien pour candidater." },
 };
 
 const jour = (iso: string) => new Date(iso).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
@@ -56,7 +56,7 @@ export default function FichesDeMission() {
       </section>
 
       <section className="hub-section" id="coordinations">
-        <SectionHead eyebrow="Vingt et une coordinations" title="Une thématique," em="une fiche." text="Le coordonnateur ou la coordonnatrice réunit les membres intéressés, propose un plan d’action simple, fait avancer la thématique au quotidien avec l’appui des cellules transversales, et rend compte lors des assemblées. Coordonner demande de la régularité ; contribuer ponctuellement est déjà précieux." />
+        <SectionHead eyebrow="Vingt-deux coordinations" title="Une thématique," em="une fiche." text="Le coordonnateur ou la coordonnatrice réunit les membres intéressés, propose un plan d’action simple, fait avancer la thématique au quotidien avec l’appui des cellules transversales, et rend compte lors des assemblées. Coordonner demande de la régularité ; contribuer ponctuellement est déjà précieux." />
         <div className="link-list">
           {m.coordinations.map((c) => (
             <a key={c.id} href={c.pdf} download>

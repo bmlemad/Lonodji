@@ -12,7 +12,7 @@ import { dateFr, etatElection, etape } from "@/lib/election";
    Données : lib/organisation.ts ; structure : scripts/import-legacy.py (structure_01_10). */
 const ROUTE = "/association/propositions-organisation";
 const TITRE = "Huit décisions pour organiser l’association";
-const RESUME = "Notre structure comparée à dix organisations, et ce que le bureau en a décidé le 1er octobre 2026 : cinq pôles, sept thématiques prioritaires, des vice-présidences élues, une seule grille.";
+const RESUME = "Notre structure comparée à dix organisations, et ce que le bureau en a décidé le 1er octobre 2026 : six pôles, sept thématiques prioritaires, des vice-présidences élues, une seule grille.";
 
 export const metadata: Metadata = {
   title: "Décisions d’organisation",
@@ -46,7 +46,7 @@ export default function PropositionsOrganisation() {
       <Stats items={[
         { value: String(total), label: "thématiques chez ADEB LONODJI", note: `${pourvues} pourvues` },
         { value: `${minBenevole} à ${maxBenevole}`, label: "domaines chez les structures bénévoles comparées", note: `${benevoles.length} cas, sources en bas de page` },
-        { value: String(poles.length), label: "pôles depuis le 1er octobre 2026", note: "le pôle II, qui portait onze thématiques, scindé en deux" },
+        { value: String(poles.length), label: "pôles depuis le 1er octobre 2026", note: "le pôle II, qui portait onze thématiques, partagé en trois (décisions 2026-31 et 2026-35)" },
       ]} />
 
       <nav className="pc-sommaire" aria-label="Sur cette page">
@@ -110,7 +110,7 @@ export default function PropositionsOrganisation() {
       </section>
 
       <section className="hub-section" id="mise-en-oeuvre">
-        <SectionHead eyebrow="Mise en œuvre" title="Une élection," em="sept plans annuels." text="Le même 1er octobre 2026, le bureau exécutif a adopté de quoi appliquer les décisions 1 et 5 : la procédure d’élection des vice-présidences sans titulaire (registre 2026-33) et le modèle de plan annuel des thématiques prioritaires (registre 2026-34)." />
+        <SectionHead eyebrow="Mise en œuvre" title="Une élection," em="sept plans annuels." text="Le même 1er octobre 2026, le bureau exécutif a adopté de quoi appliquer les décisions 1 et 5 : la procédure d’élection des vice-présidences sans titulaire (registre 2026-33) et le modèle de plan annuel des thématiques prioritaires (registre 2026-34). L’après-midi, il a retenu des nombres pairs (registre 2026-35) : le pôle V est partagé à son tour — V, Économie & ressources naturelles ; VI, Infrastructures, territoire & risques — et une thématique 22, Sport, arts & loisirs, rejoint le pôle II." />
         <div className="link-list" id="plans-annuels">
           <Link href="/association/election-vice-presidences"><small>Décision 5 · élection</small><strong>Les vice-présidences des pôles III, IV et V</strong><span>{etatElection()}. Qui peut se présenter, qui vote, comment.</span></Link>
           <a href="/organisation/plans-annuels-priorites.pdf"><small>Décision 1 · plans annuels (PDF)</small><strong>Un plan par thématique prioritaire</strong><span>Prérempli avec ce que nous avons publié — plaidoyers, destinataires, engagements écrits, chantier de la commune — ; le titulaire et son adjoint fixent échéances, responsables, moyens et indicateurs, la vice-présidence du pôle le valide et le suit chaque trimestre.</span></a>
