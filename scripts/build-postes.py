@@ -126,6 +126,25 @@ def main() -> None:
             png = OUT.parent / "election-vice-presidences.png"
             page.screenshot(path=str(png), type="png")
             _v.alleger(png)
+        # thématiques sans coordonnateur qui ne sont pas prioritaires : un visuel chacune (public/partage/theme-NN.png)
+        idx_ = json.loads((ROOT / "content" / "index.json").read_text("utf8"))
+        prio_ = set(prioritaires())
+        for pole_ in idx_["structure"]["poles"]:
+            for t in pole_["items"]:
+                png = OUT.parent / f"theme-{t['number']}.png"
+                if t["filled"] or t["id"] in prio_:
+                    png.unlink(missing_ok=True)
+                    continue
+                titre = f"Coordonnateur ou coordonnatrice<br><em>{_v.esc(t['name'])}</em>"
+                lignes = [f"Pôle {pole_['roman']} · {pole_['name']}", "Bénévole · au Tchad ou dans la diaspora", "Fiche de mission et candidature en ligne"]
+                html = _v.TEMPLATE.format(mois=mois, fonts=fonts, logo=_v.LOGO, eyebrow=_v.esc(f"Poste ouvert · thématique {t['number']}"),
+                                          titre=titre, lignes="".join(f"<li>{_v.esc(l)}</li>" for l in lignes), url="lonodji.org/participer",
+                                          size=64, classe="", odeb="")
+                tmp.write_text(html, encoding="utf-8")
+                page.goto(tmp.as_uri(), wait_until="load")
+                page.wait_for_timeout(150)
+                page.screenshot(path=str(png), type="png")
+                _v.alleger(png)
         b.close()
     tmp.unlink(missing_ok=True)
     for vieux in OUT.glob("poste-*.png"):
