@@ -5,6 +5,7 @@ import { enLettres, filledCount, getIndex, ogFor, ORG, thematiqueCount } from "@
 import { getIndicateurs } from "@/lib/indicateurs";
 import { IDENTITE, ODEB } from "@/lib/odeb";
 import Partager from "@/components/partager";
+import { dateFr, etape, nombreAElire } from "@/lib/election";
 
 export const metadata: Metadata = {
   title: "Espace presse : l’association en bref",
@@ -26,7 +27,7 @@ const VISUELS: [string, string][] = [
   ["/partage/40-ans-reflexion-odeb.png", "Quarante ans des fondations : la réflexion ODEB LONODJI"],
   ["/partage/livre-blanc-odeb.png", "Le livre blanc, à lire et à discuter"],
   ["/partage/thematiques-a-pourvoir.png", "Les thématiques qui cherchent leur coordonnateur"],
-  ["/partage/election-vice-presidences.png", "Trois vice-présidences de pôle à élire (vote le 22 octobre 2026)"],
+  ["/partage/election-vice-presidences.png", `${nombreAElire(true)} vice-présidences de pôle à élire (vote le ${dateFr(etape("vote").date)})`],
   ["/partage/retrouver-son-village.png", "Retrouver son village : une fiche par localité"],
   ["/partage/racontez-bedjondo.png", "Racontez Bédjondo : témoignages et photos"],
 ];

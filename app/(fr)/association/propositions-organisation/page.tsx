@@ -6,7 +6,7 @@ import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import { enLettres, getIndex, ogFor } from "@/lib/content";
 import { COMPARES, PRIORITAIRES, RECOMMANDATIONS, SOURCES } from "@/lib/organisation";
 import { jsonLd, webPageSchema } from "@/lib/schema";
-import { dateFr, etatElection, etape } from "@/lib/election";
+import { dateFr, etatElection, etape, polesAElire } from "@/lib/election";
 
 /* 1er octobre 2026 : huit propositions d'organisation tirées d'un benchmark, soumises au bureau exécutif et adoptées
    par lui le même jour (registre 2026-31). L'adresse garde « propositions » : c'est d'elles que viennent les décisions.
@@ -113,7 +113,7 @@ export default function PropositionsOrganisation() {
       <section className="hub-section" id="mise-en-oeuvre">
         <SectionHead eyebrow="Mise en œuvre" title="Une élection," em="sept plans annuels." text="Le même 1er octobre 2026, le bureau exécutif a adopté de quoi appliquer les décisions 1 et 5 : la procédure d’élection des vice-présidences sans titulaire (registre 2026-33) et le modèle de plan annuel des thématiques prioritaires (registre 2026-34). L’après-midi, il a retenu des nombres pairs (registre 2026-35) : le pôle V est partagé à son tour — V, Économie & ressources naturelles ; VI, Infrastructures, territoire & risques — et une thématique 22, Sport, arts & loisirs, rejoint le pôle II." />
         <div className="link-list" id="plans-annuels">
-          <Link href="/association/election-vice-presidences"><small>Décision 5 · élection</small><strong>Les vice-présidences des pôles III, IV et V</strong><span>{etatElection()}. Qui peut se présenter, qui vote, comment.</span></Link>
+          <Link href="/association/election-vice-presidences"><small>Décision 5 · élection</small><strong>{`Les vice-présidences des pôles ${polesAElire()}`}</strong><span>{etatElection()}. Qui peut se présenter, qui vote, comment.</span></Link>
           <a href="/organisation/plans-annuels-priorites.pdf"><small>Décision 1 · plans annuels (PDF)</small><strong>Un plan par thématique prioritaire</strong><span>Prérempli avec ce que nous avons publié — plaidoyers, destinataires, engagements écrits, chantier de la commune — ; le titulaire et son adjoint fixent échéances, responsables, moyens et indicateurs, la vice-présidence du pôle le valide et le suit chaque trimestre.</span></a>
         </div>
         <p className="lg-footnote">{`Chaque plan sera publié, daté, une fois validé ; ceux des pôles sans vice-présidence sont validés par le bureau exécutif jusqu’à l’élection du ${dateFr(etape("vote").date)}.`}</p>

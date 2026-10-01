@@ -5,6 +5,7 @@ import { DocumentCard, PageHeader, SectionHead } from "@/components/blocks";
 import { getIndex, ogFor, type DocumentItem } from "@/lib/content";
 import { IDENTITE, ODEB } from "@/lib/odeb";
 import { getMagazine } from "@/lib/magazine";
+import { polesAElire } from "@/lib/election";
 
 export const metadata: Metadata = {
   title: "Documents à télécharger",
@@ -24,7 +25,7 @@ export default function Documents() {
   const mag = getMagazine().numeros[0];
   const magazine: DocumentItem[] = mag ? [{ title: `Lonodji n° ${mag.numero}, le magazine trimestriel`, status: "Magazine", meta: `${mag.parutionLabel} · A4 · ${mag.pages} pages`, description: `${mag.titre} : ${mag.chapo} Avec les décisions du trimestre, l’état des plaidoyers, un grand format, la mémoire et la culture bedjond, et les postes ouverts.`, pdf: mag.pdf, links: [{ label: "Tous les numéros", href: "/magazine" }, { label: "La lettre mensuelle", href: "/lettre" }] }] : [];
   const organisation: DocumentItem[] = [
-    { title: "Élection des vice-présidences de pôle : procédure et appel", status: "Adoptée", meta: "1er octobre 2026 · A4 · procédure, calendrier, fiche de candidature", description: "Les règles adoptées par le bureau exécutif pour élire les vice-présidences des pôles III, IV et V — qui se présente, qui vote, comment —, le calendrier (candidatures du 2 au 15 octobre 2026, vote le 22) et la fiche de candidature à imprimer.", pdf: "/organisation/election-vice-presidences-2026.pdf", links: [{ label: "La page de l’élection", href: "/association/election-vice-presidences" }, { label: "La fiche de candidature seule", href: "/organisation/fiche-candidature-vice-presidence.pdf" }] },
+    { title: "Élection des vice-présidences de pôle : procédure et appel", status: "Adoptée", meta: "1er octobre 2026 · A4 · procédure, calendrier, fiche de candidature", description: `Les règles adoptées par le bureau exécutif pour élire les vice-présidences des pôles ${polesAElire()} — qui se présente, qui vote, comment —, le calendrier (candidatures du 2 au 15 octobre 2026, vote le 22) et la fiche de candidature à imprimer.`, pdf: "/organisation/election-vice-presidences-2026.pdf", links: [{ label: "La page de l’élection", href: "/association/election-vice-presidences" }, { label: "La fiche de candidature seule", href: "/organisation/fiche-candidature-vice-presidence.pdf" }] },
     { title: "Plans annuels des sept thématiques prioritaires", status: "À compléter", meta: "1er octobre 2026 · A4 · un plan par priorité", description: "Le modèle adopté par le bureau exécutif, prérempli avec les plaidoyers, leurs destinataires, les engagements écrits de l’association et les chantiers de la commune ; les titulaires y fixent échéances, responsables, moyens et indicateurs.", pdf: "/organisation/plans-annuels-priorites.pdf", links: [{ label: "Décisions d’organisation", href: "/association/propositions-organisation#mise-en-oeuvre" }] },
   ];
   const available = [...magazine, ...organisation, ...docs.filter((d) => d.pdf), livreBlanc, charte, presentation, fiches, affiches];

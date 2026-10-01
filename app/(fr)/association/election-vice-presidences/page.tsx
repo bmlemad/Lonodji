@@ -4,14 +4,14 @@ import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import { enLettres, getIndex, ogFor } from "@/lib/content";
-import { college, dateFr, etape, etatElection, getElection, periodeCandidatures } from "@/lib/election";
+import { college, dateFr, etape, etatElection, getElection, nombreAElire, periodeCandidatures } from "@/lib/election";
 import { jsonLd, webPageSchema } from "@/lib/schema";
 
 /* Élection des vice-présidences de pôle sans titulaire (décision 5 du 1er octobre 2026, procédure adoptée le même
    jour : registre 2026-33). Règles, calendrier, candidats et résultats : content/election.json. */
 const ROUTE = "/association/election-vice-presidences";
 const TITRE = "L’élection des vice-présidences de pôle";
-const RESUME = "Trois vice-présidences de pôle à élire en octobre 2026 : qui peut se présenter, qui vote, comment, et quand. Procédure adoptée par le bureau exécutif le 1er octobre 2026.";
+const RESUME = `${nombreAElire(true)} vice-présidences de pôle à élire en octobre 2026 : qui peut se présenter, qui vote, comment, et quand. Procédure adoptée par le bureau exécutif le 1er octobre 2026.`;
 
 export const metadata: Metadata = {
   title: "Élection des vice-présidences",
@@ -102,7 +102,7 @@ export default function ElectionVicePresidences() {
         </div>
       </section>
 
-      <Partager route={ROUTE} titre={TITRE} texte={`trois vice-présidences de pôle à élire : candidatures ${periodeCandidatures()}, vote le ${dateFr(vote.date)}`} />
+      <Partager route={ROUTE} titre={TITRE} texte={`${nombreAElire()} vice-présidences de pôle à élire : candidatures ${periodeCandidatures()}, vote le ${dateFr(vote.date)}`} />
     </main>
   );
 }

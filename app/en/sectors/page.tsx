@@ -26,7 +26,7 @@ export default function SectorsEn() {
         lead="Seventeen sectors, as IASC clusters, OECD-DAC purpose codes and the SDGs name them, each with the association’s themes that carry it and a line on what it means in Bédjondo. Links lead to the French pages, where each activity says whether it is done or only an idea. Nothing is funded yet, and no money is collected before the association has a bank account in its name."
         crumbs={[{ label: "Sectors" }]}
         lang="en"
-        pills={[`${SECTEURS.length} sectors`, "21 themes", "Relief and DRR added on 29 September 2026"]}
+        pills={[`${SECTEURS.length} sectors`, "22 themes", "Relief and DRR added on 29 September 2026"]}
       />
       <section className="hub-section" id="mapping">
         <SectionHead eyebrow="At a glance" title="Sectors, themes" em="and reference frameworks." />

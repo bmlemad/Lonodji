@@ -118,8 +118,11 @@ PAGES_SITE.append({"t": "Gouvernance locale", "r": "/territoire/gouvernance-loca
 PAGES_SITE.append({"t": "Sous-sol & ressources naturelles", "r": "/territoire/sous-sol", "k": "Page",
      "d": "Le sous-sol du Mandoul Occidental : pétrole du bassin voisin de Doba, fer des anciens fondeurs, or du Nord, ce qui reste inconnu, les leçons de Doba et nos propositions avant tout forage.",
      "x": "sous-sol ressources naturelles pétrole hydrocarbures bassin de Doba Doseo Komé Belanga mines minerais fer minerai de fer hauts fourneaux fondeurs métallurgie or orpaillage carrières latérite permis sismique levés sismiques 2D 3D BGP Glencore Delonex ERHC puits ITIE transparence revenus pétroliers 5 % région productrice Logone Oriental géologie"})
+_EL = json.loads((ROOT / "content" / "election.json").read_text(encoding="utf-8"))["poles"]
+_A_ELIRE = (["Une", "Deux", "Trois", "Quatre", "Cinq", "Six"][len(_EL) - 1] + " vice-présidences à élire (pôles "
+            + ", ".join(_EL[:-1]) + " et " + _EL[-1] + ")")
 PAGES_SITE.append({"t": "Élection des vice-présidences de pôle (octobre 2026)", "r": "/association/election-vice-presidences", "k": "Page",
-     "d": "Trois vice-présidences à élire (pôles III, IV et V) : candidatures du 2 au 15 octobre 2026, vote le 22 octobre ; qui peut se présenter, qui vote, comment ; fiche de candidature.",
+     "d": f"{_A_ELIRE} : candidatures du 2 au 15 octobre 2026, vote le 22 octobre ; qui peut se présenter, qui vote, comment ; fiche de candidature.",
      "x": "élection vice-présidence vice-président pôle candidature candidater vote scrutin collège électoral quorum majorité mandat calendrier fiche procès-verbal"})
 PAGES_SITE.append({"t": "Décisions d’organisation de l’association", "r": "/association/propositions-organisation", "k": "Page",
      "d": "Huit décisions du bureau du 1er octobre 2026 : six pôles, sept thématiques prioritaires avec un adjoint, des vice-présidences de pôle élues, la cellule Financement à la trésorière, une seule grille de pilotage.",

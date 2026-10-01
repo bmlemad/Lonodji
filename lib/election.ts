@@ -50,3 +50,10 @@ export function etatElection(): string {
   if (e.resultats) return "Élection faite : résultats publiés";
   return `Candidatures ${periodeCandidatures()} · vote le ${dateFr(etape("vote").date)}`;
 }
+
+/* « III, IV, V et VI » et « quatre » : les pôles à élire, tels que content/election.json les donne. */
+export const polesAElire = () => getElection().poles.join(", ").replace(/, ([^,]+)$/, " et $1");
+export const nombreAElire = (majuscule = false) => {
+  const n = ["zéro", "une", "deux", "trois", "quatre", "cinq", "six"][getElection().poles.length];
+  return majuscule ? n.charAt(0).toUpperCase() + n.slice(1) : n;
+};
