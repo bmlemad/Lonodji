@@ -29,6 +29,13 @@ EN_LETTRES = {1: "Une", 2: "Deux", 3: "Trois", 4: "Quatre", 5: "Cinq", 6: "Six",
 MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
 
 
+def alleger(png: Path) -> None:
+    """PNG en 256 couleurs tramées : 650 ko → 150 ko environ, pour un envoi WhatsApp en 3G (1er octobre 2026)."""
+    from PIL import Image
+    im = Image.open(png).convert("RGB")
+    im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.FLOYDSTEINBERG).save(png, optimize=True)
+
+
 def visuels() -> list[dict]:
     idx = json.loads((CONTENT / "index.json").read_text("utf8"))
     ind = json.loads((CONTENT / "indicateurs.json").read_text("utf8"))
@@ -135,6 +142,7 @@ def main() -> None:
             page.goto(tmp.as_uri(), wait_until="load")
             page.wait_for_timeout(150)
             page.screenshot(path=str(OUT / f"{v['nom']}.png"), type="png")
+            alleger(OUT / f"{v['nom']}.png")
             print(f"public/partage/{v['nom']}.png")
         b.close()
     tmp.unlink(missing_ok=True)

@@ -208,7 +208,7 @@ export function metaDescription(text: string, max = 160): string {
 export function ogImage(route: string) {
   const name = route === "/" ? "index" : route.replace(/^\//, "").replace(/\//g, "--");
   const file = path.join(process.cwd(), "public", "og", `${name}.jpg`);
-  const url = fs.existsSync(file) ? `/og/${name}.jpg` : "/og-image.png";
+  const url = fs.existsSync(file) ? `/og/${name}.jpg` : "/og/index.jpg";   // JPEG léger : WhatsApp ignore les aperçus de plus de 300 ko environ
   return [{ url, width: 1200, height: 630, alt: "ADEB LONODJI" }];
 }
 

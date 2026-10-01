@@ -55,6 +55,9 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
   `build-indicateurs`, `build-fiches-mission` (voir README).
 - Images de partage (`build-og.py`, toutes les pages) et visuels carrés (`build-visuels.py`) : seules celles dont le
   texte a changé sont refaites (empreintes dans `content/og-textes.json`). Les relancer après chaque build.
+  Les visuels du kit de mobilisation (`public/kit/`) sont refaits par `build-kit-visuels.py` juste après l'import, qui
+  recopie ceux de l'ancien site. Images de partage en JPEG ou PNG allégé : WhatsApp n'affiche pas d'aperçu au-delà de
+  300 ko environ.
 - Ne régénérer un PDF, un ZIP ou une présentation que si son contenu change : chaque version reste dans
   l'historique git (le dépôt dépasse déjà 270 Mo).
 - Une nouvelle page s'enregistre dans `app/sitemap.ts`, `scripts/build-og.py`, `scripts/qa/controle.py` et

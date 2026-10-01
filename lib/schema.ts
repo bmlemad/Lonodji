@@ -16,7 +16,7 @@ export function siteOrganization(org: {
     legalName: org.fullName,
     url: SITE_URL,
     logo: `${SITE_URL}/odeb/identite/odeb-lonodji-embleme-1024.png`,
-    image: `${SITE_URL}/og-image.png`,
+    image: `${SITE_URL}/og/index.jpg`,
     telephone: org.phone,
     foundingDate: "1995",
     address: { "@type": "PostalAddress", addressLocality: "Bédjondo", addressRegion: "Mandoul", addressCountry: "TD" },
