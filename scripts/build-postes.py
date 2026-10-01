@@ -109,6 +109,23 @@ def main() -> None:
             page.screenshot(path=str(png), type="png")
             _v.alleger(png)
             gardes.add(png.name)
+        # visuel d'ensemble de l'élection (public/partage/election-vice-presidences.png), tant qu'une vice-présidence est à pourvoir
+        vps = [p for p in liste if p["genre"] == "vice-presidence"]
+        if vps:
+            el = json.loads((ROOT / "content" / "election.json").read_text("utf8"))
+            cal = {e["cle"]: date_fr(e["date"]) for e in el["calendrier"]}
+            n = len(vps)
+            titre = f"{['', 'Une', 'Deux', 'Trois', 'Quatre', 'Cinq'][n]} vice-présidence{'s' if n > 1 else ''}<br><em>à élire</em>"
+            lignes = [f"{p['role'].replace('Vice-présidence du pôle', 'Pôle')} · {p['nom']}" for p in vps] + [f"Candidatures jusqu’au {cal['cloture']}"]
+            html = _v.TEMPLATE.format(mois=mois, fonts=fonts, logo=_v.LOGO, eyebrow=_v.esc(f"Élection · vote le {cal['vote']}"),
+                                      titre=titre, lignes="".join(f"<li>{_v.esc(l)}</li>" for l in lignes), url="lonodji.org/participer",
+                                      size=76, classe="", odeb="")
+            tmp.write_text(html, encoding="utf-8")
+            page.goto(tmp.as_uri(), wait_until="load")
+            page.wait_for_timeout(150)
+            png = OUT.parent / "election-vice-presidences.png"
+            page.screenshot(path=str(png), type="png")
+            _v.alleger(png)
         b.close()
     tmp.unlink(missing_ok=True)
     for vieux in OUT.glob("poste-*.png"):

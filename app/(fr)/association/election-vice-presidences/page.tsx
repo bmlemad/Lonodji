@@ -94,6 +94,7 @@ export default function ElectionVicePresidences() {
         <SectionHead eyebrow="Documents" title="À imprimer," em="à faire circuler." />
         <div className="link-list">
           <a href="/organisation/election-vice-presidences-2026.pdf"><small>PDF · A4</small><strong>La procédure et l’appel à candidatures</strong><span>Les règles, le calendrier, l’appel et la fiche de candidature, tels qu’adoptés le {dateFr(e.adoptee)}.</span></a>
+          <a href="/partage/election-vice-presidences.png" download><small>Image carrée · WhatsApp, Facebook</small><strong>Le visuel de l’élection</strong><span>À partager avec le lien de cette page, dans les groupes de Bédjondo et de la diaspora.</span></a>
           <a href="/organisation/fiche-candidature-vice-presidence.pdf"><small>PDF · une page</small><strong>La fiche de candidature</strong><span>À remplir et à remettre au secrétariat général, ou à photographier et envoyer par WhatsApp.</span></a>
           <Link href="/programmes/fiches-de-mission"><small>Fiches de mission</small><strong>Ce que fait chaque vice-présidence</strong><span>Une fiche par pôle, avec ses thématiques et ses coordonnateurs.</span></Link>
           <Link href="/transparence/decisions"><small>Registre · 2026-33</small><strong>La décision du bureau</strong><span>Inscrite au registre public des décisions ; les résultats y entreront le {dateFr(etape("resultats").date)}.</span></Link>

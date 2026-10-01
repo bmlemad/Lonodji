@@ -26,6 +26,7 @@ const VISUELS: [string, string][] = [
   ["/partage/40-ans-reflexion-odeb.png", "Quarante ans des fondations : la réflexion ODEB LONODJI"],
   ["/partage/livre-blanc-odeb.png", "Le livre blanc, à lire et à discuter"],
   ["/partage/thematiques-a-pourvoir.png", "Les thématiques qui cherchent leur coordonnateur"],
+  ["/partage/election-vice-presidences.png", "Trois vice-présidences de pôle à élire (vote le 22 octobre 2026)"],
   ["/partage/retrouver-son-village.png", "Retrouver son village : une fiche par localité"],
   ["/partage/racontez-bedjondo.png", "Racontez Bédjondo : témoignages et photos"],
 ];
@@ -175,7 +176,7 @@ export default function Presse() {
       </section>
 
       <section className="hub-section" id="partage">
-        <SectionHead eyebrow="Visuels à partager" title="Cinq cartes" em="pour WhatsApp et les réseaux." text="Format carré 1080 × 1080, aux couleurs du site, avec l’adresse de la page. Téléchargez, partagez tel quel ; chaque carte porte l’adresse de sa page sur le site." />
+        <SectionHead eyebrow="Visuels à partager" title={`${enLettres(VISUELS.length, true)} cartes`} em="pour WhatsApp et les réseaux." text="Format carré 1080 × 1080, aux couleurs du site, avec l’adresse de la page. Téléchargez, partagez tel quel ; chaque carte porte l’adresse de sa page sur le site." />
         <ul className="pr-visuels">
           {VISUELS.map(([href, label]) => (
             <li key={href}><a href={href} download className="pr-visuel"><img src={href} alt="" width={1080} height={1080} loading="lazy" /><span>{label} <b aria-hidden="true">↓</b></span></a></li>
