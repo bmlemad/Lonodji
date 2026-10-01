@@ -1475,6 +1475,16 @@ def _noter(art: str, note: str) -> str:
     return art[:k] + note + art[k:] if j > 0 and k > 0 else art
 
 
+def _cibles_du_pole(sec: str) -> str:
+    """Le résumé des cibles ODD d'un pôle (pole-odd-sum) ne garde que les cibles de ses propres cartes."""
+    cibles = set()
+    for m in re.finditer(r'<span class="odd-cible">(.*?)</span>', sec):
+        cibles |= {c.strip() for c in re.split(r"&thinsp;/&thinsp;|/", m.group(1))}
+    def garder(m):
+        return m.group(0) if m.group(2).strip() in cibles else ""
+    return re.sub(r'(<a class="odd-dot odd-dot--cible"[^>]*><span class="sr-only">[^<]*</span>)([^<]*)</a>', garder, sec)
+
+
 def scinder_pole_2(html: str, debut_sec: int, est_v, tete, note: str, avant: str) -> str:
     fin_sec = html.find("</section>", debut_sec) + len("</section>")
     sec = html[debut_sec:fin_sec]
@@ -1482,8 +1492,7 @@ def scinder_pole_2(html: str, debut_sec: int, est_v, tete, note: str, avant: str
     p5 = _sans(sec, est_v)
     for a, b, art in reversed(_articles(p5)):
         p5 = p5[:a] + _noter(art, note) + p5[b:]
-    p5 = re.sub(r'<div class="pole-odd-sum">.*?</div>\s*', "", p5, count=1, flags=re.S)
-    p5 = tete(p5)
+    p2, p5 = _cibles_du_pole(p2), _cibles_du_pole(tete(p5))
     html = html[:debut_sec] + p2 + html[fin_sec:]
     k = html.find(avant)          # le pôle V se place avant la section qui contient ce repère (les cellules)
     if k < 0:

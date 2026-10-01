@@ -96,7 +96,7 @@ export default function PropositionsOrganisation() {
                 <tr key={p.id}>
                   <th scope="row"><Link href={`/programmes#${p.id}`}>{p.t!.number} {p.t!.name}</Link></th>
                   <td>{p.t!.filled ? p.t!.coordinator.split(",")[0] : <Link href={`/participer?theme=${p.t!.number}&coordo=1#contact`}>à pourvoir</Link>}</td>
-                  <td><Link href={`/participer?theme=${p.t!.number}&adjoint=1#contact`}>à trouver</Link></td>
+                  <td className="nowrap"><Link href={`/participer?theme=${p.t!.number}&adjoint=1#contact`}>à trouver</Link></td>
                   <td>{p.plaidoyers.map((l, k) => <span key={l.href}>{k ? " · " : ""}<Link href={l.href}>{l.label}</Link></span>)}</td>
                   <td>{p.commune.map((l, k) => <span key={l.href}>{k ? " · " : ""}<Link href={l.href}>{l.label}</Link></span>)}</td>
                 </tr>

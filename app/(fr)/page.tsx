@@ -145,7 +145,7 @@ export default function Home() {
               Chaque pôle a une vice-présidence élue ({dir.pourvues ? `${enLettres(dir.pourvues)} pourvue${dir.pourvues > 1 ? "s" : ""}, ${enLettres(dir.total - dir.pourvues)} à pourvoir` : "toutes à pourvoir"}) ; chaque thématique est animée par un coordonnateur, avance à son rythme et rend compte publiquement. Sept thématiques sont prioritaires depuis le 1er octobre 2026 : celles de nos huit dossiers de plaidoyer. Deux cellules transversales — financement et communication — appuient l’ensemble.
             </p>
           </div>
-          <div className="program-grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))" }}>
+          <div className="program-grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(190px,1fr))" }}>
             {idx.structure.poles.map((pole) => (
               <Link className="program-card" href={`/programmes#${pole.id}`} key={pole.id}>
                 <div className="card-top card-top--pile"><span>Pôle {pole.roman}</span><small>{pole.items.filter((t) => t.filled).length}/{pole.items.length} pourvues{pole.direction ? (pole.direction.filled ? " · vice-présidence pourvue" : " · vice-présidence à pourvoir") : ""}</small></div>
