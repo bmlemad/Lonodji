@@ -180,6 +180,7 @@ export const ORG = {
   phone: TELEPHONE,
   phoneHref: TELEPHONE_HREF,
   whatsapp: WHATSAPP,
+  facebook: "https://www.facebook.com/profile.php?id=61594849805565",   // page « Lonodji », créée le 1er octobre 2026
   url: "https://lonodji.org",
   bureau: [
     { role: "Président", name: "Adoumbé Maoura", note: "Contact officiel de l’association : appel et WhatsApp" },
