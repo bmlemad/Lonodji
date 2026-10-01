@@ -64,7 +64,7 @@ export const DECISIONS: Decision[] = [
     id: "2026-31", date: "2026-10-01", type: "decision",
     titre: "Le bureau adopte les huit décisions d’organisation : cinq pôles, sept thématiques prioritaires",
     texte: "Le bureau exécutif adopte les huit propositions du même jour (2026-30). Le pôle II est scindé : il devient « Services essentiels » (07, 09, 10, 11, 12), et un pôle V, « Économie, territoire & risques », réunit les thématiques 04, 05, 06, 08, 20 et 21, sans renumérotation. Sept thématiques sont prioritaires — 07, 08, 09, 11, 13, 17 et 21, celles des huit dossiers de plaidoyer —, chacune avec un titulaire et un adjoint, et rattachée à un chantier des propositions à la commune. Les directions de pôle deviennent des vice-présidences déléguées, pourvues par élection ; les deux titulaires gardent leur fonction. Une personne coordonne une seule thématique. La fonction « Projets, suivi & redevabilité » devient une mission du secrétariat général. On pilote par pôles et thématiques seulement : programmes ODEB et secteurs deviennent des tables de correspondance.",
-    sources: [{ label: "Décisions d’organisation", href: "/association/propositions-organisation" }, { label: "Nos actions", href: "/programmes" }],
+    sources: [{ label: "Article du 1er octobre 2026", href: "/journal/2026-10-01-cinq-poles-sept-priorites" }, { label: "Décisions d’organisation", href: "/association/propositions-organisation" }, { label: "Nos actions", href: "/programmes" }],
     suite: "Vice-présidences des pôles III, IV et V à pourvoir par élection ; adjoints des thématiques prioritaires à trouver ; cumuls à revoir avec les personnes concernées. Pas de nouveau redécoupage avant au moins un trimestre.",
     instance: "Bureau exécutif",
   },
