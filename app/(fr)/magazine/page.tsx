@@ -5,6 +5,7 @@ import { PageHeader, SectionHead } from "@/components/blocks";
 import NewsletterForm from "@/components/newsletter-form";
 import { ogFor } from "@/lib/content";
 import { getMagazine } from "@/lib/magazine";
+import { apercu } from "@/lib/apercu";
 
 export const metadata: Metadata = {
   title: "Lonodji, le magazine trimestriel",
@@ -35,7 +36,7 @@ export default function MagazinePage() {
           <div className="mag-numero">
             <a className="mag-couv" href={dernier.pdf} aria-label={`Ouvrir le PDF du n° ${dernier.numero}`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={dernier.couverture} alt={`Couverture de Lonodji n° ${dernier.numero}, ${dernier.periode} : ${dernier.titre}`} width={800} height={1131} loading="eager" />
+              <img src={apercu(dernier.couverture)} alt={`Couverture de Lonodji n° ${dernier.numero}, ${dernier.periode} : ${dernier.titre}`} width={800} height={1131} loading="eager" />
             </a>
             <div>
               <h3 className="mag-sommaire-titre">Au sommaire</h3>

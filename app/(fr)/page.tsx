@@ -13,6 +13,7 @@ import { dateFr, etape, getElection } from "@/lib/election";
 import { getMagazine } from "@/lib/magazine";
 import { getPostes } from "@/lib/postes";
 import { getTransmissions } from "@/lib/transmissions";
+import { apercu } from "@/lib/apercu";
 
 /* Accueil, refait le 1er octobre 2026 : la carte cliquable du pays bedjond en tête (chaque unité mène à ses
    villages), puis ce qui se passe en ce moment (élection, magazine, postes), les six pôles, les plaidoyers, le
@@ -96,7 +97,7 @@ export default function Home() {
           {mag ? (
             <a className="acc-mag" href={mag.pdf}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={mag.couverture} alt="" width={800} height={1131} loading="lazy" decoding="async" />
+              <img src={apercu(mag.couverture)} alt="" width={800} height={1131} loading="lazy" decoding="async" />
               <span>
                 <small>Magazine trimestriel · n° {mag.numero}, {mag.periode}</small>
                 <strong>Lonodji : {mag.titre.toLowerCase().replace(/^./, (x) => x.toUpperCase())}</strong>

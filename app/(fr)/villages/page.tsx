@@ -7,6 +7,7 @@ import VillagesRecherche, { type EntreeVillage } from "@/components/villages-rec
 import { ogFor } from "@/lib/content";
 import { getVillages, GROUPES, km, nf, ORDRE_GROUPES, TYPES } from "@/lib/villages";
 import Partager from "@/components/partager";
+import { apercu } from "@/lib/apercu";
 
 /* nombre de fiches, compté dans content/villages.json (jamais écrit en dur) */
 const NB_VILLAGES = nf.format(getVillages().villages.length);
@@ -65,7 +66,7 @@ export default function Villages() {
         <SectionHead eyebrow="Sur papier" title="Quinze affiches" em="à imprimer et à accrocher." text="Pour les chefs de canton et de village, les relais, les écoles, les centres de santé, les lieux de culte : une affiche A4 par unité, avec un code QR vers ses villages et l’adresse en toutes lettres, et une affiche générale. Chaque fiche de village s’imprime aussi telle quelle, avec ses six questions à remplir à la main." />
         <div className="vl-affiches">
           <a className="vl-affiche vl-affiche--generale" href="/carte/affiches/affiche-villages.pdf">
-            <img src="/carte/affiches/affiche-villages.jpg" alt="Aperçu de l’affiche générale « Retrouvez votre village »" width="397" height="562" loading="lazy" />
+            <img src={apercu("/carte/affiches/affiche-villages.jpg")} alt="Aperçu de l’affiche générale « Retrouvez votre village »" width="397" height="562" loading="lazy" />
             <span><small>Affiche générale · A4 · PDF</small><strong>Retrouvez votre village</strong><em>{nf.format(d.villages.length)} localités, {Object.keys(d.unites).length} unités, une fiche par village</em></span>
           </a>
           <ul className="vl-affiches-liste">

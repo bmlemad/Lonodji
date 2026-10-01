@@ -5,6 +5,7 @@ import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import { ogFor } from "@/lib/content";
 import { getVillages, GROUPES, km, nf, routeVillage, TYPES, villagesDe } from "@/lib/villages";
 import Partager from "@/components/partager";
+import { apercu } from "@/lib/apercu";
 
 /* « Repère » des unités (champ origine de content/villages.json, écrit sans accents dans les données) : typographie française. */
 const repere = (o: string) => o.replace(/ a moins de /g, " à moins de ").replace(/(\d)\.(\d)/g, "$1,$2").replace(/d'ecart/g, "d’écart")
@@ -89,7 +90,7 @@ export default async function Unite({ params }: { params: Promise<{ unite: strin
       ) : null}
 
       <aside className="vl-imprimer" aria-label="Affiche à imprimer">
-        <img className="vl-affiche-mini" src="/carte/affiches/affiche-villages.jpg" alt="" width="120" height="170" loading="lazy" />
+        <img className="vl-affiche-mini" src={apercu("/carte/affiches/affiche-villages.jpg")} alt="" width="120" height="170" loading="lazy" />
         <div className="vl-imprimer-texte">
           <span className="eyebrow">Sur papier</span>
           <strong>L’affiche de {u.nom}, à accrocher au village.</strong>

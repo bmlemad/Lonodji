@@ -6,6 +6,7 @@ import OuvrirAncre from "./ouvrir-ancre";
 import SommaireLateral from "./sommaire-lateral";
 import { breadcrumbSchema, jsonLd, webPageSchema } from "../lib/schema";
 import PagesVoisines from "./pages-voisines";
+import { apercusHtml } from "../lib/apercu";
 
 /** Rendu des sections importées de l'ancien site, dans le style du site moderne. */
 /* sansPremierTitre : quand la page pose déjà son propre titre de section (SectionHead) juste au-dessus,
@@ -20,7 +21,7 @@ export function LegacySections({ sections, className = "", sansPremierTitre = fa
             key={s.id || i}
             id={s.id || undefined}
             className={classes}
-            dangerouslySetInnerHTML={{ __html: sansPremierTitre && i === 0 ? s.html.replace(/<h2\b[^>]*>[\s\S]*?<\/h2>/, "") : s.html }}
+            dangerouslySetInnerHTML={{ __html: apercusHtml(sansPremierTitre && i === 0 ? s.html.replace(/<h2\b[^>]*>[\s\S]*?<\/h2>/, "") : s.html) }}
           />
         );
       })}

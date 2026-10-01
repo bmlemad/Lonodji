@@ -5,6 +5,7 @@ import { enLettres, filledCount, getIndex, ogFor, ORG, thematiqueCount } from "@
 import { getIndicateurs } from "@/lib/indicateurs";
 import { IDENTITE, ODEB } from "@/lib/odeb";
 import Partager from "@/components/partager";
+import { apercu } from "@/lib/apercu";
 import { dateFr, etape, nombreAElire } from "@/lib/election";
 
 export const metadata: Metadata = {
@@ -136,7 +137,7 @@ export default function Presse() {
           {LOGOS_ODEB.map(([href, label, note]) => (
             <li key={href}>
               <a href={href} download className="pr-logo">
-                <span className={href.includes("superposable") ? "pr-logo-apercu est-sombre" : "pr-logo-apercu"}><img src={href} alt="" width={120} height={120} loading="lazy" /></span>
+                <span className={href.includes("superposable") ? "pr-logo-apercu est-sombre" : "pr-logo-apercu"}><img src={apercu(href)} alt="" width={120} height={120} loading="lazy" /></span>
                 <strong>{label}</strong><small>{note}</small>
               </a>
             </li>
@@ -146,7 +147,7 @@ export default function Presse() {
           {LOGOS_MARQUES.map(([href, label, note]) => (
             <li key={href}>
               <a href={href} download className="pr-logo">
-                <span className={href.includes("clair") ? "pr-logo-apercu pr-logo-apercu--large" : "pr-logo-apercu pr-logo-apercu--large est-sombre"}><img src={href} alt="" width={240} height={77} loading="lazy" /></span>
+                <span className={href.includes("clair") ? "pr-logo-apercu pr-logo-apercu--large" : "pr-logo-apercu pr-logo-apercu--large est-sombre"}><img src={apercu(href)} alt="" width={240} height={77} loading="lazy" /></span>
                 <strong>{label}</strong><small>{note}</small>
               </a>
             </li>
@@ -167,7 +168,7 @@ export default function Presse() {
             {LOGOS.map(([href, label, note]) => (
               <li key={href}>
                 <a href={href} download className="pr-logo">
-                  <span className={href.includes("sombre") || href.includes("blanc") ? "pr-logo-apercu est-sombre" : "pr-logo-apercu"}><img src={href} alt="" width={120} height={120} loading="lazy" /></span>
+                  <span className={href.includes("sombre") || href.includes("blanc") ? "pr-logo-apercu est-sombre" : "pr-logo-apercu"}><img src={apercu(href)} alt="" width={120} height={120} loading="lazy" /></span>
                   <strong>{label}</strong><small>{note}</small>
                 </a>
               </li>
@@ -180,7 +181,7 @@ export default function Presse() {
         <SectionHead eyebrow="Visuels à partager" title={`${enLettres(VISUELS.length, true)} cartes`} em="pour WhatsApp et les réseaux." text="Format carré 1080 × 1080, aux couleurs du site, avec l’adresse de la page. Téléchargez, partagez tel quel ; chaque carte porte l’adresse de sa page sur le site." />
         <ul className="pr-visuels">
           {VISUELS.map(([href, label]) => (
-            <li key={href}><a href={href} download className="pr-visuel"><img src={href} alt="" width={1080} height={1080} loading="lazy" /><span>{label} <b aria-hidden="true">↓</b></span></a></li>
+            <li key={href}><a href={href} download className="pr-visuel"><img src={apercu(href)} alt="" width={1080} height={1080} loading="lazy" /><span>{label} <b aria-hidden="true">↓</b></span></a></li>
           ))}
         </ul>
       </section>

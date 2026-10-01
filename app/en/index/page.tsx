@@ -11,6 +11,7 @@ import { getMagazine } from "@/lib/magazine";
 import { getPostes } from "@/lib/postes";
 import { getTransmissions } from "@/lib/transmissions";
 import { dateEn, inWordsEn, nomsEn } from "@/lib/structure-en";
+import { apercu } from "@/lib/apercu";
 
 /* English home (1 October 2026), same layout as the French home (app/(fr)/page.tsx): clickable map of the Bedjond
    country, what is happening now, the six pillars, the advocacy briefs, the dashboard and how to help. Pillar and
@@ -91,7 +92,7 @@ export default function HomeEn() {
           {mag ? (
             <a className="acc-mag" href={mag.pdf} hrefLang="fr">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={mag.couverture} alt="" width={800} height={1131} loading="lazy" decoding="async" />
+              <img src={apercu(mag.couverture)} alt="" width={800} height={1131} loading="lazy" decoding="async" />
               <span>
                 <small>Quarterly magazine · no. {mag.numero}, October 2026 · in French</small>
                 <strong>Lonodji: six pillars, seven priorities</strong>
