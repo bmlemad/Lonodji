@@ -27,7 +27,8 @@ export const ODEB = {
   /* Phrase de l'identité visuelle « Les Pas vers l'Avenir » (28 septembre 2026) : le sens de l'emblème ; elle était
      dans les logos complets jusqu'au 2 octobre 2026, qui portent depuis la devise ci-dessus. */
   signature: "Sur les traces de nos ancêtres, bâtissons notre avenir.",
-  ambition: "2035",
+  /* horizon gardé à 2030 (2 octobre 2026), le compte rendu du 18 septembre écrivant « Ambition 2035 » */
+  ambition: "2030",
 };
 
 /* Ce que le bureau exécutif élargi a retenu le 18 septembre 2026 pour l'ODEB LONODJI (compte rendu CR-BE-2026-01,
@@ -41,7 +42,8 @@ export const BUREAU_18_SEPTEMBRE = {
   vision: "Unir le peuple bedjonde autour d’une vision commune de solidarité, d’entraide et de développement durable, afin de bâtir un avenir prospère, inclusif et solidaire pour les générations présentes et futures.",
   mission: "Mobiliser les filles et fils bedjonde, promouvoir l’entraide et mettre en œuvre des initiatives de développement socio-économique, culturel et éducatif au service du bien-être des communautés.",
   valeurs: ["Unité", "Solidarité", "Respect", "Intégrité", "Responsabilité", "Excellence", "Innovation"],
-  ambition2035: "Faire de l’ODEB Lonodji l’organisation de référence du peuple bedjonde en matière d’entraide, de développement communautaire, de promotion culturelle et de représentation auprès des partenaires nationaux et internationaux.",
+  /* « Ambition 2035 » dans le compte rendu ; l'association garde l'horizon 2030 (2 octobre 2026) */
+  ambition: "Faire de l’ODEB Lonodji l’organisation de référence du peuple bedjonde en matière d’entraide, de développement communautaire, de promotion culturelle et de représentation auprès des partenaires nationaux et internationaux.",
   /* les huit axes stratégiques prioritaires ; « portePar » : où le site range aujourd'hui ce travail (correspondance
      établie le 2 octobre 2026, pas dans le compte rendu) */
   axes: [

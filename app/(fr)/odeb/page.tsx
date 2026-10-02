@@ -43,11 +43,11 @@ export default function Odeb() {
       ]} />
 
       <section className="hub-section" id="bureau-18-septembre">
-        <SectionHead eyebrow={`Bureau exécutif · ${B18.dateLabel}`} title="Vision, mission, valeurs :" em="ce que le bureau a retenu." text={`Le bureau exécutif élargi a adopté le principe de la transformation progressive de l’ADEB LONODJI en ODEB LONODJI, sous réserve de l’approbation de l’assemblée générale de relance, et retenu pour elle la vision, la mission, les valeurs, la devise, l’ambition 2035 et les huit axes ci-dessous (compte rendu ${B18.reference}). La vision, la mission et les valeurs seront finalisées d’ici le 17 novembre 2026.`} />
+        <SectionHead eyebrow={`Bureau exécutif · ${B18.dateLabel}`} title="Vision, mission, valeurs :" em="ce que le bureau a retenu." text={`Le bureau exécutif élargi a adopté le principe de la transformation progressive de l’ADEB LONODJI en ODEB LONODJI, sous réserve de l’approbation de l’assemblée générale de relance, et retenu pour elle la vision, la mission, les valeurs, la devise, l’ambition et les huit axes ci-dessous (compte rendu ${B18.reference}). La vision, la mission et les valeurs seront finalisées d’ici le 17 novembre 2026.`} />
         <div className="detail-grid od-bureau">
           <article><h3>Vision</h3><p className="od-citation">« {B18.vision} »</p></article>
           <article><h3>Mission</h3><p className="od-citation">« {B18.mission} »</p></article>
-          <article><h3>Ambition {ODEB.ambition}</h3><p className="od-citation">« {B18.ambition2035} »</p></article>
+          <article><h3>Ambition {ODEB.ambition}</h3><p className="od-citation">« {B18.ambition} »</p><p className="form-note"><strong>Mise à jour du 2 octobre 2026 :</strong> le compte rendu fixe cette ambition à 2035 ; l’association garde l’horizon 2030 de son projet.</p></article>
           <article><h3>Valeurs et devise</h3><p className="od-valeurs">{B18.valeurs.map((v) => <span className="tag" key={v}>{v}</span>)}</p><p className="od-devise">« {ODEB.devise} »</p></article>
         </div>
         <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Les huit axes stratégiques prioritaires">
