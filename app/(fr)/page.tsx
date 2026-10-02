@@ -63,8 +63,12 @@ export default function Home() {
       };
       return { date: e.date, ...jourMois(e.date), quoi: quoi[cle], href: "/association/election-vice-presidences#calendrier" };
     }),
+    // relance de l'association (compte rendu du bureau du 18 septembre 2026, chronogramme indicatif)
+    { date: "2026-10-18", ...jourMois("2026-10-18"), quoi: "Fin du recensement des membres", href: "/participer/recensement" },
+    { date: "2026-11-17", ...jourMois("2026-11-17"), quoi: "Projets de statuts, date de l’assemblée de relance", href: "/odeb/feuille-de-route#calendrier-bureau" },
+    { date: "2026-12-17", ...jourMois("2026-12-17"), quoi: "Assemblée générale de relance, au plus tard", href: "/odeb/feuille-de-route#calendrier-bureau" },
     ...(mag ? [{ date: "2027-01-01", jour: "Janv.", mois: "2027", quoi: `Magazine Lonodji n° ${mag.numero + 1}`, href: "/magazine" }] : []),
-  ];
+  ].sort((a, b) => a.date.localeCompare(b.date));
 
   return (
     <main id="main-content" className="accueil">
@@ -90,7 +94,7 @@ export default function Home() {
       <section className="acc-section acc-moment" aria-labelledby="moment-title">
         <div className="acc-tete">
           <h2 id="moment-title">En ce moment</h2>
-          <p>{enLettres(el.poles.length, true)} vice-présidences de pôle à élire le {dateFr(vote.date, false)}, {enLettres(postes.length)} postes ouverts, et un magazine qui paraît chaque trimestre.</p>
+          <p>La relance de l’association, avec le <Link href="/participer/recensement">recensement des membres</Link> jusqu’au 18 octobre, {enLettres(el.poles.length)} vice-présidences de pôle à élire le {dateFr(vote.date, false)}, {enLettres(postes.length)} postes ouverts, et un magazine qui paraît chaque trimestre.</p>
         </div>
         <EnCeMoment etapes={etapes} />
         <div className="acc-duo">

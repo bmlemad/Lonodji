@@ -59,8 +59,12 @@ export default function HomeEn() {
   };
   const etapes = [
     ...Object.keys(steps).map((cle) => { const e = etape(cle); const [, m, j] = e.date.split("-").map(Number); return { date: e.date, jour: String(j), mois: MONTHS[m - 1], quoi: steps[cle], href: "/en/election#calendar" }; }),
+    // relaunch of the association (executive board, 18 September 2026, indicative timetable)
+    { date: "2026-10-18", jour: "18", mois: MONTHS[9], quoi: "Member census closes (form in French)", href: "/participer/recensement" },
+    { date: "2026-11-17", jour: "17", mois: MONTHS[10], quoi: "Draft statutes; date of the relaunch general assembly", href: "/en/organisation#decisions" },
+    { date: "2026-12-17", jour: "17", mois: MONTHS[11], quoi: "Relaunch general assembly, at the latest", href: "/en/organisation#decisions" },
     ...(mag ? [{ date: "2027-01-01", jour: "Jan", mois: "2027", quoi: `Lonodji magazine no. ${mag.numero + 1} (in French)`, href: "/magazine" }] : []),
-  ];
+  ].sort((a, b) => a.date.localeCompare(b.date));
   const genres = [["titulaire", "lead", "leads"], ["adjoint", "deputy", "deputies"], ["vice-presidence", "pillar vice-presidency", "pillar vice-presidencies"]] as const;
 
   return (
