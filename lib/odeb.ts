@@ -22,7 +22,69 @@ export const ODEB = {
     "L’ODEB LONODJI est un projet stratégique porté par l’ADEB LONODJI visant à constituer, à terme, une organisation de référence dédiée au développement durable, à la recherche, au patrimoine et à l’émergence du pays bedjond.",
   objet: "Projet de transformation institutionnelle visant à doter le pays bedjond d’un outil permanent de recherche, de documentation, de développement territorial, d’innovation, de préservation du patrimoine et de mobilisation de la diaspora.",
   livreBlancPdf: "/odeb/livre-blanc-odeb-lonodji-2026.pdf",
-  devise: "Sur les traces de nos ancêtres, bâtissons notre avenir.",
+  /* Devise retenue par le bureau exécutif élargi le 18 septembre 2026 (compte rendu CR-BE-2026-01). */
+  devise: "Unité • Solidarité • Développement",
+  /* Phrase de l'identité visuelle « Les Pas vers l'Avenir » (28 septembre 2026), écrite dans les logos complets. */
+  signature: "Sur les traces de nos ancêtres, bâtissons notre avenir.",
+  ambition: "2035",
+};
+
+/* Ce que le bureau exécutif élargi a retenu le 18 septembre 2026 pour l'ODEB LONODJI (compte rendu CR-BE-2026-01,
+   publié le 2 octobre 2026 ; version signée à suivre). Textes recopiés du compte rendu. La vision, la mission et les
+   valeurs sont à finaliser en phase 2 (au 17 novembre 2026) ; la transformation reste soumise à l'assemblée générale. */
+export const BUREAU_18_SEPTEMBRE = {
+  date: "2026-09-18",
+  dateLabel: "18 septembre 2026",
+  reference: "CR-BE-2026-01",
+  pdf: "/organisation/compte-rendu-bureau-2026-09-18.pdf",
+  vision: "Unir le peuple bedjonde autour d’une vision commune de solidarité, d’entraide et de développement durable, afin de bâtir un avenir prospère, inclusif et solidaire pour les générations présentes et futures.",
+  mission: "Mobiliser les filles et fils bedjonde, promouvoir l’entraide et mettre en œuvre des initiatives de développement socio-économique, culturel et éducatif au service du bien-être des communautés.",
+  valeurs: ["Unité", "Solidarité", "Respect", "Intégrité", "Responsabilité", "Excellence", "Innovation"],
+  ambition2035: "Faire de l’ODEB Lonodji l’organisation de référence du peuple bedjonde en matière d’entraide, de développement communautaire, de promotion culturelle et de représentation auprès des partenaires nationaux et internationaux.",
+  /* les huit axes stratégiques prioritaires ; « portePar » : où le site range aujourd'hui ce travail (correspondance
+     établie le 2 octobre 2026, pas dans le compte rendu) */
+  axes: [
+    { titre: "Unité et cohésion communautaire", contenu: "Renforcement de l’unité du peuple bedjonde ; promotion du dialogue et du vivre-ensemble ; organisation de rencontres communautaires.", portePar: [{ label: "14 Paix & cohésion", href: "/programmes#paix-cohesion" }, { label: "15 Réseau d’experts & diaspora", href: "/programmes#reseau-experts-diaspora" }] },
+    { titre: "Éducation et jeunesse", contenu: "Promotion de l’excellence scolaire et universitaire ; formation professionnelle ; mentorat et accompagnement des jeunes.", portePar: [{ label: "09 Éducation, jeunesse & formation", href: "/programmes#jeunesse-reussite" }, { label: "19 Compétences & entrepreneuriat numérique", href: "/programmes#competences-entrepreneuriat-numerique" }] },
+    { titre: "Développement économique", contenu: "Appui à l’entrepreneuriat ; promotion des initiatives économiques ; soutien aux activités génératrices de revenus.", portePar: [{ label: "Pôle V : 04, 05, 06", href: "/programmes#entrepreneuriat-finance-inclusive" }] },
+    { titre: "Entraide et action sociale", contenu: "Renforcement de la solidarité communautaire ; assistance aux membres en situation de besoin ; mise en place progressive d’un mécanisme de solidarité.", portePar: [{ label: "12 Protection sociale, enfance & inclusion", href: "/programmes#solidarite-inclusion" }] },
+    { titre: "Culture et patrimoine", contenu: "Préservation de la langue et des traditions bedjonde ; valorisation de l’histoire et de l’identité culturelle ; transmission du patrimoine aux générations futures.", portePar: [{ label: "Pôle I : 01, 02, 03", href: "/programmes#memoire-heritage" }] },
+    { titre: "Partenariats et coopération", contenu: "Développement de partenariats institutionnels ; coopération avec les acteurs du développement ; mobilisation de ressources techniques et financières.", portePar: [{ label: "Cellule Financement & ressources", href: "/programmes#cellule-financement-ressources" }, { label: "Bailleurs", href: "/bailleurs" }] },
+    { titre: "Transformation numérique", contenu: "Modernisation des outils de communication ; digitalisation de la gestion associative ; renforcement de la présence numérique.", portePar: [{ label: "Pôle IV : 17, 18, 19", href: "/programmes#transformation-numerique-services" }, { label: "Cellule Communication & numérique", href: "/programmes#cellule-communication-numerique" }] },
+    { titre: "Gouvernance et leadership", contenu: "Renforcement des capacités des dirigeants ; promotion du leadership des jeunes et des femmes ; transparence, redevabilité et bonne gouvernance.", portePar: [{ label: "13 Gouvernance & plaidoyer", href: "/programmes#gouvernance-plaidoyer" }, { label: "10 Genre & autonomisation des femmes", href: "/programmes#leadership-feminin" }, { label: "Redevabilité", href: "/transparence" }] },
+  ],
+  resolutions: [
+    "Engager officiellement le processus de réactivation de l’ADEB Lonodji.",
+    "Mettre en place le Comité de réactivation, de modernisation et de transformation institutionnelle.",
+    "Préparer une assemblée générale de relance.",
+    "Élaborer de nouveaux statuts et un règlement intérieur adaptés aux ambitions futures de l’organisation.",
+    "Adopter le principe de la transformation progressive de l’ADEB Lonodji en Organisation pour le Développement et l’Émergence Bedjonde (ODEB Lonodji), sous réserve de l’approbation de l’assemblée générale.",
+    "Définir une feuille de route devant conduire, à terme, à l’obtention du statut d’ONG.",
+  ],
+  comite: {
+    nom: "Comité de réactivation, de modernisation et de transformation institutionnelle",
+    mandat: ["préparer les nouveaux statuts", "élaborer le règlement intérieur", "définir le futur organigramme", "préparer l’assemblée générale de relance", "élaborer le plan stratégique de l’ODEB Lonodji", "étudier les conditions d’accès au statut d’ONG", "assurer le suivi de la mise en œuvre des résolutions adoptées"],
+    composition: "à arrêter par le bureau exécutif (coordonnateur, membres, personnes ressources) au plus tard le 3 octobre 2026",
+  },
+  /* chronogramme indicatif, J = 18 septembre 2026 */
+  chronogramme: [
+    { phase: "Phase 1 — Organisation et préparation", echeance: "J + 30, au 18 octobre 2026", actions: "Mise en place officielle du Comité ; recensement des membres ; mise à jour de la base de données ; collecte et examen des documents administratifs ; réactivation des canaux officiels de communication ; note d’orientation stratégique." },
+    { phase: "Phase 2 — Réformes et mobilisation", echeance: "J + 30 à J + 60, au 17 novembre 2026", actions: "Consultation des membres et personnes ressources ; nouveaux statuts et règlement intérieur ; finalisation de la vision, de la mission et des valeurs ; campagne de mobilisation et d’adhésion ; préparation de l’assemblée générale." },
+    { phase: "Phase 3 — Relance institutionnelle", echeance: "J + 60 à J + 90, au 17 décembre 2026", actions: "Assemblée générale de relance ; adoption des nouveaux textes ; validation de la transformation en ODEB Lonodji ; mise en place ou renouvellement des organes de gouvernance ; adoption du plan d’actions prioritaires." },
+    { phase: "Phase 4 — Déploiement et développement", echeance: "J + 90 à J + 180, au 17 mars 2027", actions: "Lancement officiel des activités de l’ODEB Lonodji ; premiers projets ; partenariats stratégiques ; structuration des commissions thématiques ; programme pluriannuel de développement." },
+    { phase: "Perspective à moyen terme", echeance: "1 à 3 ans, 2027-2029", actions: "Consolidation institutionnelle ; rayonnement national et international ; projets structurants ; mise en conformité réglementaire ; dossier d’obtention du statut d’ONG." },
+  ],
+  /* suivi des décisions du compte rendu */
+  suivi: [
+    { action: "Arrêter la composition du Comité et désigner son coordonnateur", qui: "Bureau exécutif", echeance: "2026-10-03" },
+    { action: "Lancer le recensement des membres et la mise à jour de la base de données", qui: "Comité", echeance: "2026-10-18" },
+    { action: "Réactiver les canaux officiels de communication (groupe WhatsApp, site web, réseaux sociaux)", qui: "Comité", echeance: "2026-10-18", fait: "Groupe WhatsApp, site, pages Facebook et X, chaîne YouTube en ligne au 2 octobre 2026" },
+    { action: "Rédiger la note d’orientation stratégique", qui: "Comité", echeance: "2026-10-18" },
+    { action: "Produire les projets de statuts et de règlement intérieur", qui: "Comité", echeance: "2026-11-17" },
+    { action: "Fixer la date et le lieu de l’assemblée générale de relance", qui: "Bureau exécutif", echeance: "2026-11-17" },
+    { action: "Étudier les conditions et le calendrier d’accès au statut d’ONG", qui: "Comité", echeance: "2026-12-17" },
+    { action: "Diffuser le compte rendu aux membres du bureau exécutif", qui: "Secrétaire général", echeance: "2026-10-02", fait: "Publié sur le site le 2 octobre 2026" },
+  ] as { action: string; qui: string; echeance: string; fait?: string }[],
 };
 
 /* L'identité visuelle « Les Pas vers l'Avenir », adoptée le 28 septembre 2026

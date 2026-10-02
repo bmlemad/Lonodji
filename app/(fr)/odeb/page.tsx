@@ -6,7 +6,7 @@ import { SectionHead, Stats } from "@/components/blocks";
 import { OdebHero } from "@/components/odeb-marque";
 import OdebNav, { OdebEtat } from "@/components/odeb-nav";
 import { enLettres, ogFor } from "@/lib/content";
-import { IDENTITE, MISSIONS, ODEB, PROGRAMMES, REPERES_2030, routeProgramme } from "@/lib/odeb";
+import { BUREAU_18_SEPTEMBRE as B18, IDENTITE, MISSIONS, ODEB, PROGRAMMES, REPERES_2030, routeProgramme } from "@/lib/odeb";
 import { chiffresOdeb, thematiquesParId } from "@/lib/odeb-chiffres";
 import Partager from "@/components/partager";
 
@@ -31,7 +31,7 @@ export default function Odeb() {
         em="et l’Émergence Bedjonde."
         lead={ODEB.formulation}
         crumbs={[{ label: "L’association", href: "/mission" }, { label: "Vision 2030 — projet ODEB" }]}
-        pills={["Projet porté par ADEB LONODJI", `Réflexion lancée le ${ODEB.presenteLabel}`, "Pour les quarante ans des fondations, 1986-2026", "Six missions, six programmes", "Livre blanc en version de travail"]}
+        pills={[`Principe adopté par le bureau le ${B18.dateLabel}`, "Projet porté par ADEB LONODJI", `Réflexion lancée le ${ODEB.presenteLabel}`, "Pour les quarante ans des fondations, 1986-2026", "Six missions, six programmes", "Livre blanc en version de travail"]}
       />
       <OdebNav actif="vision" />
 
@@ -41,6 +41,31 @@ export default function Odeb() {
         { value: ODEB.horizon, label: "l’horizon", note: "une feuille de route en trois phases, de 2026 à 2030" },
         { value: `${c.pourvues}/${c.total}`, label: "thématiques déjà pourvues", note: `${nf.format(coordonnateurs.size)} des ${c.pourvues} coordonnateurs et coordonnatrices portent déjà les programmes` },
       ]} />
+
+      <section className="hub-section" id="bureau-18-septembre">
+        <SectionHead eyebrow={`Bureau exécutif · ${B18.dateLabel}`} title="Vision, mission, valeurs :" em="ce que le bureau a retenu." text={`Le bureau exécutif élargi a adopté le principe de la transformation progressive de l’ADEB LONODJI en ODEB LONODJI, sous réserve de l’approbation de l’assemblée générale de relance, et retenu pour elle la vision, la mission, les valeurs, la devise, l’ambition 2035 et les huit axes ci-dessous (compte rendu ${B18.reference}). La vision, la mission et les valeurs seront finalisées d’ici le 17 novembre 2026.`} />
+        <div className="detail-grid od-bureau">
+          <article><h3>Vision</h3><p className="od-citation">« {B18.vision} »</p></article>
+          <article><h3>Mission</h3><p className="od-citation">« {B18.mission} »</p></article>
+          <article><h3>Ambition {ODEB.ambition}</h3><p className="od-citation">« {B18.ambition2035} »</p></article>
+          <article><h3>Valeurs et devise</h3><p className="od-valeurs">{B18.valeurs.map((v) => <span className="tag" key={v}>{v}</span>)}</p><p className="od-devise">« {ODEB.devise} »</p></article>
+        </div>
+        <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Les huit axes stratégiques prioritaires">
+          <table className="ob-table ob-table--empile">
+            <thead><tr><th scope="col">Axe</th><th scope="col">Contenu</th><th scope="col">Sur le site aujourd’hui</th></tr></thead>
+            <tbody>
+              {B18.axes.map((a, i) => (
+                <tr key={a.titre}>
+                  <th scope="row" data-label="Axe">{i + 1}. {a.titre}</th>
+                  <td data-label="Contenu">{a.contenu}</td>
+                  <td data-label="Sur le site aujourd’hui">{a.portePar.map((l, k) => <span key={l.href}>{k ? " · " : ""}<Link href={l.href}>{l.label}</Link></span>)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="lg-footnote">Textes recopiés du <a href={B18.pdf}>compte rendu du {B18.dateLabel}</a> (version non signée, approuvée par tous les participants ; la version signée suivra). La dernière colonne n’est pas dans le compte rendu : elle dit quelle thématique porte déjà chaque axe. Le calendrier de la transformation est sur la <Link href="/odeb/feuille-de-route#calendrier-bureau">feuille de route</Link>. <strong>Mise à jour du 2 octobre 2026 :</strong> la devise de l’ODEB est désormais « {ODEB.devise} » ; la phrase « {ODEB.signature} » reste celle du logo.</p>
+      </section>
 
       <section className="hub-section" id="pourquoi">
         <SectionHead eyebrow="Pourquoi créer l’ODEB ?" title="Une association agit ;" em="un territoire a besoin d’un outil permanent." text={`${ODEB.objet} Quarante ans après les premières réflexions de 1986, l’association a choisi de fêter ses fondations par ce pas plutôt que par une cérémonie.`} />

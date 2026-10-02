@@ -2275,3 +2275,11 @@ body:has(.acc-hero) .nav, body:has(.acc-hero) .tabbar{ background:rgba(248,250,2
 .them-reperes{ margin:0 0 8px; display:flex; flex-wrap:wrap; gap:3px 14px; align-items:baseline; font-size:12.5px; line-height:1.45; color:#53625b; }
 .them-reperes .odd-legend{ font-size:10px; text-transform:uppercase; letter-spacing:.14em; color:#53625b; margin-right:4px; text-decoration:underline; text-decoration-color:rgba(83,98,91,.35); text-underline-offset:3px; }
 .them-reperes b{ font-weight:600; color:var(--ink); }
+
+/* 02/10/2026 : /odeb, ce que le bureau a retenu le 18 septembre 2026 */
+.od-bureau{ margin-bottom:22px; grid-template-columns:repeat(2,minmax(0,1fr)); }
+@media (max-width:760px){ .od-bureau{ grid-template-columns:1fr; } }
+.od-bureau h3{ margin:0 0 4px; }
+.od-bureau .od-citation{ font-size:16px !important; margin:8px 0 0; }
+.od-valeurs{ display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 12px; }
+.od-suivi-titre{ margin:26px 0 10px; font-size:18px; }

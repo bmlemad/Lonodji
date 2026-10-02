@@ -5,7 +5,7 @@ import { SectionHead, Stats } from "@/components/blocks";
 import { OdebHero } from "@/components/odeb-marque";
 import OdebNav, { OdebEtat } from "@/components/odeb-nav";
 import { ogFor } from "@/lib/content";
-import { ETATS, feuilleDeRoute, ODEB, type Etat } from "@/lib/odeb";
+import { BUREAU_18_SEPTEMBRE as B18, ETATS, feuilleDeRoute, ODEB, type Etat } from "@/lib/odeb";
 import { chiffresOdeb } from "@/lib/odeb-chiffres";
 import Partager from "@/components/partager";
 
@@ -21,6 +21,7 @@ export default function FeuilleDeRoute() {
   const phases = feuilleDeRoute(c);
   const tous = phases.flatMap((p) => p.chantiers);
   const compte = (e: Etat) => tous.filter((x) => x.etat === e).length;
+  const jour = (d: string) => new Date(d + "T12:00:00Z").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "Africa/Ndjamena" }).replace(/^1 /, "1er ");
   return (
     <main id="main-content" className="hub-page od-page">
       <OdebHero
@@ -39,6 +40,24 @@ export default function FeuilleDeRoute() {
         { value: String(compte("a-venir")), label: "à venir", note: "prévus, pas commencés" },
         { value: String(compte("a-decider")), label: "à décider", note: "une décision de l’association manque" },
       ]} />
+
+      <section className="hub-section" id="calendrier-bureau">
+        <SectionHead eyebrow={`Bureau exécutif · ${B18.dateLabel}`} title="Le calendrier" em="de la transformation." text={`Le chronogramme indicatif adopté par le bureau exécutif élargi (compte rendu ${B18.reference}) : quatre phases jusqu’au lancement de l’ODEB LONODJI en mars 2027, puis le dossier du statut d’ONG. Il fixe le calendrier institutionnel ; les trois phases détaillées plus bas, énoncées le ${ODEB.presenteLabel}, disent ce que le site construit pendant ce temps.`} />
+        <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Chronogramme de la transformation">
+          <table className="ob-table ob-table--empile">
+            <thead><tr><th scope="col">Phase</th><th scope="col">Échéance</th><th scope="col">Actions</th></tr></thead>
+            <tbody>{B18.chronogramme.map((r) => <tr key={r.phase}><th scope="row" data-label="Phase">{r.phase}</th><td data-label="Échéance">{r.echeance}</td><td data-label="Actions">{r.actions}</td></tr>)}</tbody>
+          </table>
+        </div>
+        <h3 className="od-suivi-titre">Le suivi des décisions</h3>
+        <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Suivi des décisions du 18 septembre 2026">
+          <table className="ob-table ob-table--empile">
+            <thead><tr><th scope="col">Action</th><th scope="col">Responsable</th><th scope="col">Échéance</th><th scope="col">État</th></tr></thead>
+            <tbody>{B18.suivi.map((r) => <tr key={r.action}><th scope="row" data-label="Action">{r.action}</th><td data-label="Responsable">{r.qui}</td><td data-label="Échéance">{jour(r.echeance)}</td><td data-label="État">{r.fait ? <><span className="od-pill od-pill--fait">{ETATS.fait}</span> <small>{r.fait}</small></> : <span className="od-pill od-pill--a-venir">{ETATS["a-venir"]}</span>}</td></tr>)}</tbody>
+          </table>
+        </div>
+        <p className="lg-footnote">Source : <a href={B18.pdf}>compte rendu du {B18.dateLabel}</a>, version non signée approuvée par tous les participants ; la version signée suivra. Le Comité de réactivation, de modernisation et de transformation institutionnelle, chargé de la plupart de ces actions, est {B18.comite.composition}.</p>
+      </section>
 
       <ol className="od-phases">
         {phases.map((p, i) => (
