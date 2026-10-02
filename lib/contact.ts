@@ -4,3 +4,5 @@
 export const TELEPHONE = "+235 66 29 94 03";
 export const TELEPHONE_HREF = "tel:+23566299403";
 export const WHATSAPP = "https://wa.me/23566299403";
+/* Groupe WhatsApp de l’association (lien d’invitation communiqué le 2 octobre 2026). */
+export const GROUPE_WHATSAPP = "https://chat.whatsapp.com/HcbIMO4PBBc2r6u7IjByQz";

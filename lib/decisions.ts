@@ -35,6 +35,14 @@ export const TYPES: Record<TypeDecision, { label: string; court: string; note: s
 
 export const DECISIONS: Decision[] = [
   {
+    id: "2026-36", date: "2026-09-18", type: "decision",
+    titre: "Réactivation de l’association et principe de l’ODEB LONODJI",
+    texte: "Le bureau exécutif élargi, réuni à N’Djamena, adopte six résolutions : engager officiellement la réactivation de l’association ; mettre en place un Comité de réactivation, de modernisation et de transformation institutionnelle ; préparer une assemblée générale de relance ; élaborer de nouveaux statuts et un règlement intérieur ; adopter le principe de la transformation progressive en ODEB LONODJI (Organisation pour le Développement et l’Émergence Bedjonde), sous réserve de l’approbation de l’assemblée générale ; définir une feuille de route vers le statut d’ONG. Compte rendu publié le 2 octobre 2026, approuvé par tous les participants ; la version signée suivra.",
+    sources: [{ label: "Compte rendu CR-BE-2026-01 (PDF)", href: "/organisation/compte-rendu-bureau-2026-09-18.pdf" }, { label: "Documents", href: "/documents" }],
+    suite: "Composition du Comité et désignation de son coordonnateur (échéance du 3 octobre 2026) ; date et lieu de l’assemblée générale de relance (17 novembre 2026) ; version signée du compte rendu.",
+    instance: "Bureau exécutif élargi",
+  },
+  {
     id: "2026-01", date: "2026-09-11", type: "decision",
     titre: "L’association s’organise en pôles et thématiques",
     texte: "Trois pôles et douze thématiques le 11 septembre 2026, élargis avant le 14 septembre à quatre pôles, dix-neuf thématiques et deux cellules transversales — la structure que présente la page Nos actions.",

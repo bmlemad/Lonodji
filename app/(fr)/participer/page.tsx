@@ -43,6 +43,7 @@ export default function Participer() {
         <a className="big" href={ORG.phoneHref}>{ORG.phone}</a>
         <small>Adoumbé Maoura, président — appel et WhatsApp, le contact officiel de l’association</small>
         <a className="button secondary" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp <span aria-hidden="true">↗</span></a>
+        <a className="button secondary" href={ORG.whatsappGroupe} target="_blank" rel="noopener noreferrer">Rejoindre le groupe WhatsApp <span aria-hidden="true">↗</span></a>
       </div>
 
       {postes.length ? (
