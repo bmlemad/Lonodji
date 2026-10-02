@@ -1828,7 +1828,7 @@ html.nav-compact .nav .brand-sous{ display:none; }
 .dp-table tr:nth-child(even) td{ background:#f4f7ef; }
 .dp-table td:first-child{ width:19%; } .dp-table td:nth-child(2){ width:22%; } .dp-table td:nth-child(4){ width:20%; }
 .dp-porteur{ display:block; margin-top:3px; font-size:10.5px; color:#2d4a14; font-weight:600; }
-.dp-deux{ display:grid; grid-template-columns:1fr 1.4fr; gap:16px; margin-top:10px; align-items:start; }
+.dossier-print .dp-deux{ display:grid; grid-template-columns:1fr 1.4fr; gap:16px; margin-top:10px; align-items:start; }
 .dp-titre{ margin:0 0 4px; font-weight:700; color:#173b2d; }
 .dp-encadre{ background:#eef4e6; border-radius:10px; padding:10px 12px; }
 .dp-encadre p{ margin:0 0 4px; }
@@ -1837,7 +1837,7 @@ html.nav-compact .nav .brand-sous{ display:none; }
 .dp-etat{ font-size:11px; padding:0 6px; border-radius:6px; background:#f1f1ec; color:#4f5f58; }
 .dp-regles{ margin:8px 0 0; }
 .dp-decision{ color:#2d4a14; font-weight:600; }
-.dp-deux--inverse{ grid-template-columns:1.5fr 1fr; }
+.dossier-print .dp-deux--inverse{ grid-template-columns:1.5fr 1fr; }
 .dp-contact{ margin-top:18px; padding-top:8px; border-top:1px solid #d7ded3; font-size:12.5px; }
 @media print{
   .dossier-print{ padding:0; max-width:none; font-size:9.8px; line-height:1.42; }

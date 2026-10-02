@@ -53,7 +53,7 @@ export default function FeuilleDeRoute() {
         <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Suivi des décisions du 18 septembre 2026">
           <table className="ob-table ob-table--empile">
             <thead><tr><th scope="col">Action</th><th scope="col">Responsable</th><th scope="col">Échéance</th><th scope="col">État</th></tr></thead>
-            <tbody>{B18.suivi.map((r) => <tr key={r.action}><th scope="row" data-label="Action">{r.action}</th><td data-label="Responsable">{r.qui}</td><td data-label="Échéance">{jour(r.echeance)}</td><td data-label="État">{r.fait ? <><span className="od-pill od-pill--fait">{ETATS.fait}</span> <small>{r.fait}</small></> : <span className="od-pill od-pill--a-venir">{ETATS["a-venir"]}</span>}</td></tr>)}</tbody>
+            <tbody>{B18.suivi.map((r) => <tr key={r.action}><th scope="row" data-label="Action">{r.href ? <Link href={r.href}>{r.action}</Link> : r.action}</th><td data-label="Responsable">{r.qui}</td><td data-label="Échéance">{jour(r.echeance)}</td><td data-label="État">{r.fait ? <><span className="od-pill od-pill--fait">{ETATS.fait}</span> <small>{r.fait}</small></> : r.enCours ? <><span className="od-pill od-pill--en-cours">{ETATS["en-cours"]}</span> <small>{r.enCours}</small></> : <span className="od-pill od-pill--a-venir">{ETATS["a-venir"]}</span>}</td></tr>)}</tbody>
           </table>
         </div>
         <p className="lg-footnote">Source : <a href={B18.pdf}>compte rendu du {B18.dateLabel}</a>, version non signée approuvée par tous les participants ; la version signée suivra. Le Comité de réactivation, de modernisation et de transformation institutionnelle, chargé de la plupart de ces actions, est {B18.comite.composition}.</p>

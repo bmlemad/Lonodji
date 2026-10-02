@@ -614,6 +614,20 @@ def journal_categories(soup_news: BeautifulSoup) -> tuple:
 # que public/__forms.html le garde à chaque import. Les cases à cocher ont chacune
 # leur nom (domaine-*, offre-*) : Netlify ne fusionne pas les valeurs multiples.
 FORMULAIRES_SITE = {
+    # 02/10/2026 : recensement des membres (compte rendu du bureau du 18 septembre 2026, phase 1), /participer/recensement
+    "recensement-membres": (
+        '<form name="recensement-membres"><input type="hidden" name="_honey"><input type="text" name="nom">'
+        '<select name="tranche_age"><option value="">Choisir</option><option value="Moins de 18 ans">Moins de 18 ans</option><option value="18 à 35 ans">18 à 35 ans</option>'
+        '<option value="36 à 60 ans">36 à 60 ans</option><option value="Plus de 60 ans">Plus de 60 ans</option></select>'
+        '<input type="text" name="parent_tuteur"><input type="tel" name="telephone"><input type="email" name="email">'
+        '<select name="residence"><option value="">Choisir</option><option value="À Bédjondo ou dans ses cantons">À Bédjondo ou dans ses cantons</option>'
+        '<option value="Ailleurs au Tchad">Ailleurs au Tchad</option><option value="Hors du Tchad">Hors du Tchad</option></select>'
+        '<input type="text" name="ville"><input type="text" name="origine">'
+        '<select name="statut"><option value="">Choisir</option><option value="Membre de l’association (adhérent, ancien ou actuel)">Membre de l’association (adhérent, ancien ou actuel)</option>'
+        '<option value="Pas encore membre : je veux adhérer">Pas encore membre : je veux adhérer</option><option value="Sympathisant, sans adhérer pour l’instant">Sympathisant, sans adhérer pour l’instant</option></select>'
+        '<input type="text" name="membre_depuis"><input type="text" name="metier"><input type="text" name="thematique"><textarea name="message"></textarea>'
+        '<input type="checkbox" name="contact_ok"><input type="checkbox" name="consentement"></form>'
+    ),
     "temoignage": (
         '<form name="temoignage"><input type="hidden" name="_honey">'
         '<select name="type"><option value="">Choisir</option><option value="Un ancien ou une ancienne raconte">Un ancien ou une ancienne raconte</option>'
@@ -755,6 +769,15 @@ UPDATES = [
      "l’association prendra alors le nom d’<strong>ODEB LONODJI</strong> — Organisation pour le Développement et l’Émergence Bedjonde — en cohérence avec son nouveau statut. Le nom ADEB LONODJI reste, à ce jour, celui de l’association telle qu’elle existe\u00a0; ODEB est le nom prévu pour l’ONG à venir, pas encore effectif.</p>\n<p class=\"form-note\"><strong>Mise à jour du 28 septembre 2026\u00a0:</strong> le développement du sigle, que nous écrivions «\u00a0Organisation de Développement et d’Entraide des Bedjond\u00a0», est désormais «\u00a0Organisation pour le Développement et l’Émergence Bedjonde\u00a0», conformément au projet ODEB LONODJI présenté ce jour — vision 2030, six missions, cinq programmes et livre blanc en version de travail, sur <a href=\"/odeb\">sa page</a>. Le statut, lui, n’a pas changé\u00a0: aucun dossier déposé.</p>"),
     # Redevabilité : le nombre de formulaires (vingt au 28/09/2026)
     ("Le site compte quinze formulaires, dont les réponses sont enregistrées par Netlify", "Le site compte vingt formulaires, dont les réponses sont enregistrées par Netlify"),
+    # 02/10/2026 : vingt et unième formulaire, le recensement des membres (/participer/recensement)
+    ("Le site compte vingt formulaires", "Le site compte vingt et un formulaires"),
+    ('aria-label="Les vingt formulaires du site et le sort de vos données"', 'aria-label="Les vingt et un formulaires du site et le sort de vos données"'),
+    ("puis les publier après votre relecture</td><td>Pas encore fixée\u00a0: vous pouvez demander à tout moment que ces données soient effacées</td></tr></tbody>",
+     "puis les publier après votre relecture</td><td>Pas encore fixée\u00a0: vous pouvez demander à tout moment que ces données soient effacées</td></tr>"
+     '<tr><th scope="row"><a href="/participer/recensement">Recensement des membres</a><span class="notice-page">Participer</span></th>'
+     "<td>Nom, tranche d’âge, parent ou tuteur pour un mineur, téléphone, e-mail facultatif, lieu de vie, quartier ou village d’attache, lien avec l’association, année d’adhésion, métier, thématique, message, accord pour être contacté</td>"
+     "<td>Tenir le registre des membres et préparer l’assemblée générale de relance ; consulté par le bureau et le Comité de réactivation, jamais publié</td>"
+     "<td>Pas encore fixée\u00a0: vous pouvez demander à tout moment que ces données soient effacées</td></tr></tbody>"),
     # Journal des corrections : le nom du coordonnateur de Culture & patrimoine vivant, mal orthographié le 28/09.
     ('seulement les cas où <strong>nous avons affirmé quelque chose d’inexact</strong>.</p>\n<article class="info-card">\n<p class="form-note">24 septembre 2026 · Identité',
      'seulement les cas où <strong>nous avons affirmé quelque chose d’inexact</strong>.</p>\n<article class="info-card">\n<p class="form-note">28 septembre 2026 · Nom · Relevé par l’intéressé, corrigé dans l’heure</p>\n<h3>Le nom du coordonnateur de Culture &amp; patrimoine vivant était mal orthographié</h3>\n<p><strong>Ce que nous écrivions\u00a0:</strong> en annonçant, le 28 septembre en fin de matinée, que la thématique Culture &amp; patrimoine vivant était confiée à un nouveau coordonnateur, nous avons écrit son nom «\u00a0Madjirabé\u00a0» sur la page Nos actions, le suivi, la page anglaise et l’outil «\u00a0Trouver ma thématique\u00a0».</p>\n<p><strong>Ce qui est exact\u00a0:</strong> le Dr Yaphete Madjiradé. Toutes les pages sont corrigées.</p>\n<p><strong>Comment nous nous en sommes aperçus\u00a0:</strong> par la comparaison, moins d’une heure après la mise en ligne, avec une liste de chercheurs du pays bedjond transmise à l’animation, où le nom est correctement écrit\u00a0; l’animation l’a confirmé.</p>\n</article>\n<article class="info-card">\n<p class="form-note">24 septembre 2026 · Identité'),

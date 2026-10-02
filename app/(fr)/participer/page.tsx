@@ -45,6 +45,7 @@ export default function Participer() {
         <a className="button secondary" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp <span aria-hidden="true">↗</span></a>
         <a className="button secondary" href={ORG.whatsappGroupe} target="_blank" rel="noopener noreferrer">Rejoindre le groupe WhatsApp <span aria-hidden="true">↗</span></a>
       </div>
+      <p className="notice"><strong>Relance de l’association :</strong> membres et sympathisants, au pays comme dans la diaspora, faites-vous recenser avant le 18 octobre 2026 (bureau du 18 septembre). <Link href="/participer/recensement">Se faire recenser <span aria-hidden="true">→</span></Link></p>
 
       {postes.length ? (
         <section className="hub-section" id="postes-ouverts">

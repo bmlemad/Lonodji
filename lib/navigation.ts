@@ -118,6 +118,7 @@ export const NAVIGATION: NavEntree[] = [
       { titre: "Agir", liens: [
         { label: "Nous écrire", href: "/participer#contact", note: "Réponse sous 48 h ouvrées" },
         { label: "Rejoindre ou coordonner une thématique", href: "/participer?coordo=1#contact", note: "Proposer sa candidature" },
+        { label: "Se faire recenser", href: "/participer/recensement", note: "Membres et sympathisants, deux minutes" },
         { label: "Adhérer (déclaration d’intention)", href: "/participer#adherer", note: "Aucun paiement tant que le compte n’est pas ouvert" },
         { label: "Nous soutenir", href: "/participer#soutenir", note: "Promesse de contribution" },
       ] },
@@ -283,7 +284,7 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
     { label: "Lieux sacrés et sépultures", href: "/patrimoine/lieux-sacres" }, { label: "Généalogies", href: "/patrimoine/genealogies" }, { label: "Racontez Bédjondo", href: "/temoignages" },
   ] },
   { titre: "Participer", liens: [
-    { label: "Adhérer (déclaration d’intention)", href: "/participer#adherer" }, { label: "Nous soutenir", href: "/participer#soutenir" }, { label: "Signaler un besoin", href: "/territoire/besoins" },
+    { label: "Se faire recenser", href: "/participer/recensement" }, { label: "Adhérer (déclaration d’intention)", href: "/participer#adherer" }, { label: "Nous soutenir", href: "/participer#soutenir" }, { label: "Signaler un besoin", href: "/territoire/besoins" },
     { label: "Le journal", href: "/journal" }, { label: "La lettre d’information", href: "/lettre" }, { label: "Lonodji, le magazine", href: "/magazine" }, { label: "Installer l’application", href: "/projets/application" },
   ] },
 ];

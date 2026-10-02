@@ -78,14 +78,14 @@ export const BUREAU_18_SEPTEMBRE = {
   /* suivi des décisions du compte rendu */
   suivi: [
     { action: "Arrêter la composition du Comité et désigner son coordonnateur", qui: "Bureau exécutif", echeance: "2026-10-03" },
-    { action: "Lancer le recensement des membres et la mise à jour de la base de données", qui: "Comité", echeance: "2026-10-18" },
+    { action: "Lancer le recensement des membres et la mise à jour de la base de données", qui: "Comité", echeance: "2026-10-18", enCours: "Formulaire de recensement en ligne depuis le 2 octobre 2026", href: "/participer/recensement" },
     { action: "Réactiver les canaux officiels de communication (groupe WhatsApp, site web, réseaux sociaux)", qui: "Comité", echeance: "2026-10-18", fait: "Groupe WhatsApp, site, pages Facebook et X, chaîne YouTube en ligne au 2 octobre 2026" },
     { action: "Rédiger la note d’orientation stratégique", qui: "Comité", echeance: "2026-10-18" },
     { action: "Produire les projets de statuts et de règlement intérieur", qui: "Comité", echeance: "2026-11-17" },
     { action: "Fixer la date et le lieu de l’assemblée générale de relance", qui: "Bureau exécutif", echeance: "2026-11-17" },
     { action: "Étudier les conditions et le calendrier d’accès au statut d’ONG", qui: "Comité", echeance: "2026-12-17" },
     { action: "Diffuser le compte rendu aux membres du bureau exécutif", qui: "Secrétaire général", echeance: "2026-10-02", fait: "Publié sur le site le 2 octobre 2026" },
-  ] as { action: string; qui: string; echeance: string; fait?: string }[],
+  ] as { action: string; qui: string; echeance: string; fait?: string; enCours?: string; href?: string }[],
 };
 
 /* L'identité visuelle « Les Pas vers l'Avenir », adoptée le 28 septembre 2026

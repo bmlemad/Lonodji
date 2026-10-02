@@ -52,6 +52,9 @@ for f in sorted((CONTENT / "pages").glob("*.json")):
 
 # Pages conçues hors de l'ancien site (app/…), sans JSON dans content/
 PAGES_SITE = [
+    {"t": "Recensement des membres et des sympathisants", "r": "/participer/recensement", "k": "Page",
+     "d": "Décidé par le bureau exécutif le 18 septembre 2026 pour relancer l’association : anciens membres, nouveaux venus, au pays ou dans la diaspora, se faire recenser en deux minutes.",
+     "x": "recensement membres sympathisants adhérents anciens membres base de données registre relance réactivation Comité assemblée générale de relance diaspora formulaire inscription ODEB"},
     {"t": "Carte du territoire bedjond", "r": "/carte", "k": "Page",
      "d": "Les quatorze unités du pays bedjond, leurs localités et équipements connus des données ouvertes ; une fiche par lieu, un bouton pour signaler un besoin.",
      "x": "carte interactive territoire pays bedjond Mandoul Occidental cantons sous-préfectures villages localités écoles centres de santé forages marchés OpenStreetMap signaler un besoin Bédjondo Bébopen Bédaya Bessada Koumra Moïssala Logone Oriental Moyen-Chari diaspora agricole"},
