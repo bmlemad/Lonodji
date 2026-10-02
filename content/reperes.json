@@ -1,0 +1,187 @@
+{
+ "_lisezmoi": "Repères internationaux de chaque thématique (revue du 2 octobre 2026 face aux références ONG, ONU et World Vision) : cluster humanitaire de l'IASC, domaine ou modèle de projet World Vision, pilier du plan national « Tchad Connexion 2030 ». null = aucun équivalent. Une thématique absente de « fr » n'a aucun des trois : « sans » donne sa phrase, sinon la phrase par défaut (singularité de l'association). Lu par scripts/import-legacy.py (pages FR et EN) et lib/reperes.ts (page /programmes).",
+ "fr": {
+  "04": {
+   "cluster": "sécurité alimentaire",
+   "worldVision": "développement économique (régénération naturelle, FMNR)",
+   "tchadConnexion2030": "pilier 3, diversification"
+  },
+  "05": {
+   "cluster": "relèvement précoce",
+   "worldVision": "développement économique (groupes d’épargne)",
+   "tchadConnexion2030": "pilier 3, diversification"
+  },
+  "06": {
+   "cluster": null,
+   "worldVision": "régénération naturelle (FMNR), foyers améliorés",
+   "tchadConnexion2030": "pilier 3, diversification"
+  },
+  "07": {
+   "cluster": "EAH (eau, assainissement, hygiène)",
+   "worldVision": "eau",
+   "tchadConnexion2030": "pilier 1, électricité et eau"
+  },
+  "08": {
+   "cluster": null,
+   "worldVision": null,
+   "tchadConnexion2030": "pilier 1, réseaux de transport"
+  },
+  "09": {
+   "cluster": "éducation",
+   "worldVision": "éducation (Unlock Literacy)",
+   "tchadConnexion2030": "pilier 2, capital humain"
+  },
+  "10": {
+   "cluster": "protection (violences basées sur le genre)",
+   "worldVision": "Channels of Hope",
+   "tchadConnexion2030": "pilier 2, capital humain"
+  },
+  "11": {
+   "cluster": "santé, nutrition",
+   "worldVision": "santé et nutrition",
+   "tchadConnexion2030": "pilier 2, capital humain"
+  },
+  "12": {
+   "cluster": "protection (protection de l’enfance)",
+   "worldVision": "protection de l’enfance",
+   "tchadConnexion2030": "pilier 2, capital humain"
+  },
+  "13": {
+   "cluster": null,
+   "worldVision": "Citizen Voice and Action",
+   "tchadConnexion2030": "programmes transversaux (réforme de l’administration, décentralisation)"
+  },
+  "14": {
+   "cluster": null,
+   "worldVision": "consolidation de la paix",
+   "tchadConnexion2030": null
+  },
+  "16": {
+   "cluster": "protection (accès à la justice)",
+   "worldVision": "plaidoyer pour la protection de l’enfance",
+   "tchadConnexion2030": null
+  },
+  "17": {
+   "cluster": null,
+   "worldVision": null,
+   "tchadConnexion2030": "pilier 1, digitalisation"
+  },
+  "18": {
+   "cluster": null,
+   "worldVision": null,
+   "tchadConnexion2030": "pilier 1, digitalisation"
+  },
+  "19": {
+   "cluster": "éducation",
+   "worldVision": "formation technique et professionnelle",
+   "tchadConnexion2030": "pilier 2, capital humain"
+  },
+  "20": {
+   "cluster": "aucun (la réduction des risques n’est pas un cluster)",
+   "worldVision": "gestion des catastrophes",
+   "tchadConnexion2030": null
+  },
+  "21": {
+   "cluster": null,
+   "worldVision": "foyers améliorés (en partie)",
+   "tchadConnexion2030": "pilier 1, électricité et eau"
+  }
+ },
+ "en": {
+  "04": {
+   "cluster": "food security",
+   "worldVision": "economic development (farmer-managed natural regeneration, FMNR)",
+   "tchadConnexion2030": "pillar 3, diversification"
+  },
+  "05": {
+   "cluster": "early recovery",
+   "worldVision": "economic development (savings groups)",
+   "tchadConnexion2030": "pillar 3, diversification"
+  },
+  "06": {
+   "cluster": null,
+   "worldVision": "farmer-managed natural regeneration (FMNR), improved cookstoves",
+   "tchadConnexion2030": "pillar 3, diversification"
+  },
+  "07": {
+   "cluster": "WASH",
+   "worldVision": "water",
+   "tchadConnexion2030": "pillar 1, electricity and water"
+  },
+  "08": {
+   "cluster": null,
+   "worldVision": null,
+   "tchadConnexion2030": "pillar 1, transport networks"
+  },
+  "09": {
+   "cluster": "education",
+   "worldVision": "education (Unlock Literacy)",
+   "tchadConnexion2030": "pillar 2, human capital"
+  },
+  "10": {
+   "cluster": "protection (gender-based violence)",
+   "worldVision": "Channels of Hope",
+   "tchadConnexion2030": "pillar 2, human capital"
+  },
+  "11": {
+   "cluster": "health, nutrition",
+   "worldVision": "health and nutrition",
+   "tchadConnexion2030": "pillar 2, human capital"
+  },
+  "12": {
+   "cluster": "protection (child protection)",
+   "worldVision": "child protection",
+   "tchadConnexion2030": "pillar 2, human capital"
+  },
+  "13": {
+   "cluster": null,
+   "worldVision": "Citizen Voice and Action",
+   "tchadConnexion2030": "cross-cutting programmes (public administration reform, decentralisation)"
+  },
+  "14": {
+   "cluster": null,
+   "worldVision": "peacebuilding",
+   "tchadConnexion2030": null
+  },
+  "16": {
+   "cluster": "protection (access to justice)",
+   "worldVision": "child protection advocacy",
+   "tchadConnexion2030": null
+  },
+  "17": {
+   "cluster": null,
+   "worldVision": null,
+   "tchadConnexion2030": "pillar 1, digitalisation"
+  },
+  "18": {
+   "cluster": null,
+   "worldVision": null,
+   "tchadConnexion2030": "pillar 1, digitalisation"
+  },
+  "19": {
+   "cluster": "education",
+   "worldVision": "technical and vocational training",
+   "tchadConnexion2030": "pillar 2, human capital"
+  },
+  "20": {
+   "cluster": "none (disaster risk reduction is not a cluster)",
+   "worldVision": "disaster management",
+   "tchadConnexion2030": null
+  },
+  "21": {
+   "cluster": null,
+   "worldVision": "improved cookstoves (in part)",
+   "tchadConnexion2030": "pillar 1, electricity and water"
+  }
+ },
+ "sans": {
+  "22": {
+   "fr": "Ni cluster ni domaine World Vision : le secteur « culture et loisirs » des bailleurs (code CAD 16061).",
+   "en": "No cluster or World Vision domain: the donors’ “culture and recreation” sector (DAC code 16061)."
+  }
+ },
+ "defaut": {
+  "fr": "Ni cluster humanitaire, ni domaine World Vision, ni pilier du plan national : une singularité de l’association.",
+  "en": "No humanitarian cluster, World Vision domain or national-plan pillar: one of the association’s own strands."
+ }
+}

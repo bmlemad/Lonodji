@@ -2264,3 +2264,14 @@ body:has(.acc-hero) .nav, body:has(.acc-hero) .tabbar{ background:rgba(248,250,2
 .legacy .tm-group-list a, .tm-group-list a{ text-decoration:none; }
 .kit-dl{ display:inline-flex; align-items:center; gap:6px; min-height:36px; margin:10px 0 0; font-size:13px; font-weight:700; color:var(--deep); text-decoration:underline; text-underline-offset:3px; }
 .legacy .kit-card .kit-dl{ align-self:flex-start; margin:12px 1.1rem 0; }
+
+/* 02/10/2026 : repères internationaux de chaque thématique (cluster, World Vision, Tchad Connexion 2030) */
+.legacy .pole-reperes{display:flex; flex-wrap:wrap; align-items:baseline; gap:.25rem .9rem;
+  margin:.55rem 0 0; font-size:var(--fs-xs); line-height:1.45; color:var(--ink-soft);}
+.legacy .pole-reperes .odd-legend{font-family:var(--font-dm),system-ui,sans-serif;
+  font-size:var(--fs-2xs); letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft);}
+.legacy .pole-reperes a.odd-legend{text-decoration:underline; text-decoration-color:var(--sable-line); text-underline-offset:3px;}
+.legacy .pole-reperes strong{font-weight:600; color:var(--ink);}
+.them-reperes{ margin:0 0 8px; display:flex; flex-wrap:wrap; gap:3px 14px; align-items:baseline; font-size:12.5px; line-height:1.45; color:#53625b; }
+.them-reperes .odd-legend{ font-size:10px; text-transform:uppercase; letter-spacing:.14em; color:#53625b; margin-right:4px; text-decoration:underline; text-decoration-color:rgba(83,98,91,.35); text-underline-offset:3px; }
+.them-reperes b{ font-weight:600; color:var(--ink); }

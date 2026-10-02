@@ -2,6 +2,7 @@ import Link from "@/components/lien";
 import type { ArticleSummary, DocumentItem, Plaidoyer, Thematique } from "../lib/content";
 import { estPrioritaire } from "@/lib/organisation";
 import { secteursDeThematique } from "../lib/secteurs";
+import { reperesFr } from "../lib/reperes";
 
 /* Adresse du site pour les données structurées (pas d'import de lib/content : ce module sert aussi côté client). */
 const SITE = "https://lonodji.org";
@@ -108,6 +109,14 @@ export function ThematiqueRow({ t, pole, partenaires }: { t: Thematique; pole?: 
             </a>
           ))}</p>
         ) : null}
+        {t.kind === "thematique" ? (() => {
+          const r = reperesFr(t.number);
+          return (
+            <p className="them-reperes"><Link className="odd-legend" href="/secteurs">Repères</Link>
+              {r.phrase ? <span>{r.phrase}</span> : r.parts.map((p) => <span key={p.nom}><b>{p.nom}</b>&nbsp;: {p.valeur}</span>)}
+            </p>
+          );
+        })() : null}
         {partenaires ? (
           <p className="them-partenaires">
             <span className="them-partenaires-titre">Programmes partenaires</span>

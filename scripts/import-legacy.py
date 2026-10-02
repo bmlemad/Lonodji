@@ -1926,6 +1926,49 @@ def odd_enfance(html: str, path: Path) -> str:
     return html
 
 
+# ----------------------------------------------------------------------------
+# 02/10/2026 : repères internationaux sous les cibles ODD de chaque thématique (revue face aux références ONG,
+# ONU et World Vision du même jour). Les titres ne changent pas avant l'élection du 22 octobre : un bailleur
+# retrouve ses repères sans renommage. Par numéro : (cluster humanitaire de l'IASC, domaine ou modèle World Vision,
+# pilier du plan « Tchad Connexion 2030 ») ; None = aucun équivalent.
+# Données : content/reperes.json (lu aussi par lib/reperes.ts pour la page /programmes).
+_REPERES = json.loads((ROOT / "content" / "reperes.json").read_text(encoding="utf-8"))
+REPERES_FR = {k: (v["cluster"], v["worldVision"], v["tchadConnexion2030"]) for k, v in _REPERES["fr"].items()}
+REPERES_EN = {k: (v["cluster"], v["worldVision"], v["tchadConnexion2030"]) for k, v in _REPERES["en"].items()}
+REPERES_SANS = {k: (v["fr"], v["en"]) for k, v in _REPERES["sans"].items()}
+
+
+def _ligne_reperes(num: str, en: bool) -> str:
+    cl, wv, pnd = (REPERES_EN if en else REPERES_FR).get(num, (None, None, None))
+    legende = ('<span class="odd-legend">Benchmarks</span>' if en else
+               '<a class="odd-legend" href="/secteurs">Repères</a>')
+    if not (cl or wv or pnd):
+        fr, eng = REPERES_SANS.get(num, (_REPERES["defaut"]["fr"], _REPERES["defaut"]["en"]))
+        return f'<p class="pole-reperes">{legende} <span>{eng if en else fr}</span></p>'
+    noms = ("Humanitarian cluster", "World Vision", "Tchad Connexion 2030") if en else \
+           ("Cluster humanitaire", "World Vision", "Tchad Connexion 2030")
+    sep = ": " if en else "&nbsp;: "
+    morceaux = [f"<span><strong>{n}</strong>{sep}{v}</span>" for n, v in zip(noms, (cl, wv, pnd)) if v]
+    return f'<p class="pole-reperes">{legende} ' + " ".join(morceaux) + "</p>"
+
+
+def reperes_internationaux(html: str, path: Path) -> str:
+    nom, en = path.name, "en" in path.parts
+    if not ((nom == "poles.html" and not en) or (nom == "themes.html" and en)) or 'class="pole-reperes"' in html:
+        return html
+    out, pos = [], 0
+    for m in re.finditer(r'<article class="pole-card"[^>]*>', html):
+        fin = html.find("</article>", m.end())
+        num = re.search(r'<span class="pole-num">[^<]*?(\d{2})</span>', html[m.end():fin])
+        d = html.find('<div class="pole-odd">', m.end(), fin)
+        if not num or d < 0:
+            continue
+        e = html.find("</div>", d) + len("</div>")
+        out.append(html[pos:e] + "\n" + _ligne_reperes(num.group(1), en))
+        pos = e
+    return "".join(out) + html[pos:]
+
+
 def lire_source(path: Path) -> str:
     """Lit un fichier de l'ancien site en y appliquant les mises à jour de source."""
     html = path.read_text(encoding="utf-8")
@@ -1940,7 +1983,7 @@ def lire_source(path: Path) -> str:
         k = html.find("</p>", j)
         if j > 0 and k > 0:
             html = html[:k] + note + html[k:]
-    html = odd_enfance(ancres_en(structure_sport(structure_01_10(structure_30_09(corrections_revue(structure_29_09(html, path), path), path), path), path), path), path)
+    html = reperes_internationaux(odd_enfance(ancres_en(structure_sport(structure_01_10(structure_30_09(corrections_revue(structure_29_09(html, path), path), path), path), path), path), path), path)
     if path.name == "kit-mobilisation.html":
         html = kit_liens(html)
     return html if "articles" in path.parts else comptes_courants(html)
