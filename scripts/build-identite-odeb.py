@@ -47,7 +47,8 @@ plat = charger("build_logo", ROOT / "design" / "odeb" / "build-logo.py")
 verre = charger("build_logo_verre", ROOT / "design" / "odeb" / "build-logo-verre.py")
 og = charger("build_og", ROOT / "scripts" / "build-og.py")
 
-DEVISE = "« Sur les traces de nos ancêtres, bâtissons notre avenir. »"
+# devise retenue par le bureau exécutif élargi le 18 septembre 2026 (CR-BE-2026-01), dans les logos depuis le 2 octobre 2026
+DEVISE = "Unité • Solidarité • Développement"
 SOUS_TITRE = ("ORGANISATION POUR LE DÉVELOPPEMENT", "ET L’ÉMERGENCE BEDJONDE")
 TEL = TELEPHONE
 # Un emblème, deux noms : l'association (logo adopté le 28/09/2026) et son projet.
@@ -206,7 +207,7 @@ projet ODEB LONODJI (fichiers odeb-lonodji-…). Les emblèmes seuls sont commun
 Le sens : trois empreintes, une par génération — les ancêtres (la plus grande,
 la plus transparente), la génération actuelle, les générations futures (la plus
 petite, la plus lumineuse) — avancent vers un soleil levant posé sur l'horizon.
-Devise : « Sur les traces de nos ancêtres, bâtissons notre avenir. »
+Devise : Unité • Solidarité • Développement (bureau exécutif, 18 septembre 2026)
 
 Fichiers
   odeb-lonodji-embleme.svg / -2048.png / -1024.png / -512.png

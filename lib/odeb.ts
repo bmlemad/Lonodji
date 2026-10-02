@@ -24,7 +24,8 @@ export const ODEB = {
   livreBlancPdf: "/odeb/livre-blanc-odeb-lonodji-2026.pdf",
   /* Devise retenue par le bureau exécutif élargi le 18 septembre 2026 (compte rendu CR-BE-2026-01). */
   devise: "Unité • Solidarité • Développement",
-  /* Phrase de l'identité visuelle « Les Pas vers l'Avenir » (28 septembre 2026), écrite dans les logos complets. */
+  /* Phrase de l'identité visuelle « Les Pas vers l'Avenir » (28 septembre 2026) : le sens de l'emblème ; elle était
+     dans les logos complets jusqu'au 2 octobre 2026, qui portent depuis la devise ci-dessus. */
   signature: "Sur les traces de nos ancêtres, bâtissons notre avenir.",
   ambition: "2035",
 };

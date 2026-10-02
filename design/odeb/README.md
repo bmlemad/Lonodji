@@ -22,7 +22,9 @@ levant (doré → vert acacia, sept rayons) dit l’espoir, le développement,
 l’avenir. Le disque vert profond reprend la couleur du site et le disque du
 logo d’ADEB LONODJI, dont l’ODEB est la suite.
 
-Devise associée : « Sur les traces de nos ancêtres, bâtissons notre avenir. »
+Devise associée : « Sur les traces de nos ancêtres, bâtissons notre avenir. » (28 septembre 2026).
+Depuis le 2 octobre 2026, les logos complets portent la devise retenue par le bureau exécutif le
+18 septembre 2026 : Unité • Solidarité • Développement ; la phrase ci-dessus dit le sens de l’emblème.
 
 ## Fichiers
 

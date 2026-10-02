@@ -34,7 +34,7 @@ const W = 13.333, H = 7.5;
 function marque(m) {
   return m === "adeb"
     ? { nom: "ADEB LONODJI", long: "Association de Développement et d’Entraide de Bédjondo", devise: "Courage · Discipline · Héritage", url: "lonodji.org", logoSombre: IMG("adeb-lonodji-logo-horizontal-superposable-1000.png"), logoClair: IMG("adeb-lonodji-logo-horizontal-clair-superposable.png") }
-    : { nom: "ODEB LONODJI", long: "Organisation pour le Développement et l’Émergence Bedjonde", devise: "Sur les traces de nos ancêtres, bâtissons notre avenir.", url: "lonodji.org/odeb", logoSombre: IMG("odeb-lonodji-logo-horizontal-superposable-1000.png"), logoClair: IMG("odeb-lonodji-logo-horizontal-clair-superposable.png") };
+    : { nom: "ODEB LONODJI", long: "Organisation pour le Développement et l’Émergence Bedjonde", devise: "Unité • Solidarité • Développement", url: "lonodji.org/odeb", logoSombre: IMG("odeb-lonodji-logo-horizontal-superposable-1000.png"), logoClair: IMG("odeb-lonodji-logo-horizontal-clair-superposable.png") };
 }
 
 /* ------------------------------------------------------------ briques */

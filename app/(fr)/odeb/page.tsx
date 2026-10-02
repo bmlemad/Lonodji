@@ -64,7 +64,7 @@ export default function Odeb() {
             </tbody>
           </table>
         </div>
-        <p className="lg-footnote">Textes recopiés du <a href={B18.pdf}>compte rendu du {B18.dateLabel}</a> (version non signée, approuvée par tous les participants ; la version signée suivra). La dernière colonne n’est pas dans le compte rendu : elle dit quelle thématique porte déjà chaque axe. Le calendrier de la transformation est sur la <Link href="/odeb/feuille-de-route#calendrier-bureau">feuille de route</Link>. <strong>Mise à jour du 2 octobre 2026 :</strong> la devise de l’ODEB est désormais « {ODEB.devise} » ; la phrase « {ODEB.signature} » reste celle du logo.</p>
+        <p className="lg-footnote">Textes recopiés du <a href={B18.pdf}>compte rendu du {B18.dateLabel}</a> (version non signée, approuvée par tous les participants ; la version signée suivra). La dernière colonne n’est pas dans le compte rendu : elle dit quelle thématique porte déjà chaque axe. Le calendrier de la transformation est sur la <Link href="/odeb/feuille-de-route#calendrier-bureau">feuille de route</Link>. <strong>Mise à jour du 2 octobre 2026 :</strong> la devise de l’ODEB est désormais « {ODEB.devise} » ; elle figure sur les logos complets, et la phrase « {ODEB.signature.replace(/\.$/, "")} » reste le sens de l’emblème.</p>
       </section>
 
       <section className="hub-section" id="pourquoi">

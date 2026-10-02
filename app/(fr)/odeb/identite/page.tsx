@@ -64,7 +64,8 @@ export default function Identite() {
           <article><span className="od-num">03</span><h3>Les générations futures</h3><p>La troisième empreinte, la plus petite et la plus lumineuse, juste sous le soleil : les jeunes, les enfants, ceux pour qui l’on documente, l’on plaide, l’on construit.</p></article>
           <article><span className="od-num" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M4 18h16M7 18a5 5 0 0 1 10 0M12 7V4M5.6 10.6 3.8 8.8M18.4 10.6l1.8-1.8M3 14h1.5M19.5 14H21" /></svg></span><h3>Le soleil levant</h3><p>Posé sur l’horizon, sept rayons, du doré au vert acacia : l’espoir, le développement, l’avenir. Le disque vert profond reprend la couleur du site et le disque du logo d’ADEB LONODJI, dont l’ODEB est la suite : les empreintes de pas sont déjà dans le logo de l’association.</p></article>
         </div>
-        <p className="od-devise">« {ODEB.signature} »</p>
+        <p className="od-devise">{ODEB.devise}</p>
+        <p className="lg-footnote"><strong>Mise à jour du 2 octobre 2026 :</strong> les logos complets de l’ODEB portent la devise retenue par le bureau exécutif le 18 septembre 2026, « {ODEB.devise} », à la place de « {ODEB.signature.replace(/\.$/, "")} », qui reste le sens de l’emblème.</p>
       </section>
 
       <section className="hub-section" id="versions">
