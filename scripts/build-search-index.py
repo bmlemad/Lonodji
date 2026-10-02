@@ -202,6 +202,17 @@ PAGES_SITE.append({"t": "Impact dashboard — six dated, sourced indicators (in 
 PAGES_SITE.append({"t": "Déclaration d’accessibilité", "r": "/accessibilite", "k": "Page",
      "d": "Niveau visé WCAG 2.1 AA, ce qui est vérifié avant chaque mise en ligne, les limites connues (carte, PDF, contenus importés) et comment signaler un obstacle.",
      "x": "accessibilité déclaration WCAG 2.1 AA lecteur d’écran clavier contraste hors ligne téléphone connexion lente axe-core limites carte PDF signaler un obstacle réponse 48 heures"})
+# une page servie sous la même route par l'ancien site et par une page conçue ici (ex. /impact, ancien « suivi ») :
+# une seule entrée, celle d'ici, qui garde les mots de l'ancienne pour la recherche (audit des doublons, 02/10/2026)
+_ici = {(e["r"], e["k"]): e for e in PAGES_SITE}
+_gardees = []
+for e in entries:
+    double = _ici.get((e["r"], e["k"]))
+    if double is not None:
+        double["x"] = (double.get("x", "") + " " + e.get("x", ""))[:MAX_TEXT]
+    else:
+        _gardees.append(e)
+entries = _gardees
 entries.extend(PAGES_SITE)
 
 for f in sorted((CONTENT / "articles").glob("*.json")):
