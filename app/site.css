@@ -2283,3 +2283,6 @@ body:has(.acc-hero) .nav, body:has(.acc-hero) .tabbar{ background:rgba(248,250,2
 .od-bureau .od-citation{ font-size:16px !important; margin:8px 0 0; }
 .od-valeurs{ display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 12px; }
 .od-suivi-titre{ margin:26px 0 10px; font-size:18px; }
+/* 02/10/2026 : le téléphone n'apparaît plus qu'en icône dans le pied de page et le menu mobile */
+.footer-contact a.footer-contact-icone{ padding:8px 11px; }
+.mm-foot a[aria-label] svg{ vertical-align:-3px; }

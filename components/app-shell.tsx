@@ -51,6 +51,15 @@ function ongletActif(pathname: string) {
 
 /* Lien vers la même page dans l'autre langue (pied de page) : page équivalente
    si elle existe (lib/langues.ts), accueil de l'autre langue sinon. */
+/* Pied de page : « Demander une mise à jour », avec la page courante préremplie (2 octobre 2026). */
+export function LienMiseAJour({ en }: { en?: boolean } = {}) {
+  const pathname = useChemin() || "/";
+  const href = `/participer/mise-a-jour?page=${encodeURIComponent(pathname)}`;
+  return en
+    ? <Link href={href} hrefLang="fr">Report an error or an update (in French)</Link>
+    : <Link href={href}>Demander une mise à jour</Link>;
+}
+
 export function LienLangue({ className }: { className?: string } = {}) {
   const pathname = useChemin() || "/";
   const eq = equivalent(pathname);

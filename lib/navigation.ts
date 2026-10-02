@@ -128,6 +128,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Envoyer un récit, une photo, une voix", href: "/temoignages#envoyer", note: "Rien de publié sans relecture" },
         { label: "Déposer un document", href: "/bibliotheque#deposer", note: "Thèse, article, archive" },
         { label: "Proposer un article", href: "/participer#proposer", note: "Pour le journal" },
+        { label: "Demander une mise à jour du site", href: "/participer/mise-a-jour", note: "Une erreur, une information, une fiche" },
       ] },
       { titre: "Outils", liens: [
         { label: "Quelle thématique pour vous ?", href: "/participer/trouver-ma-thematique", note: "Trois questions, une orientation" },

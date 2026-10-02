@@ -52,6 +52,9 @@ for f in sorted((CONTENT / "pages").glob("*.json")):
 
 # Pages conçues hors de l'ancien site (app/…), sans JSON dans content/
 PAGES_SITE = [
+    {"t": "Demander une mise à jour du site", "r": "/participer/mise-a-jour", "k": "Page",
+     "d": "Une erreur à corriger, une information à publier, une thématique ou une fiche à actualiser : envoyer sa demande, avec sa source. Réponse sous 48 heures ouvrées.",
+     "x": "mise à jour site corriger erreur correction signaler information publier actualiser fiche thématique coordonnateur page lien cassé journal des corrections source"},
     {"t": "Recensement des membres et des sympathisants", "r": "/participer/recensement", "k": "Page",
      "d": "Décidé par le bureau exécutif le 18 septembre 2026 pour relancer l’association : anciens membres, nouveaux venus, au pays ou dans la diaspora, se faire recenser en deux minutes.",
      "x": "recensement membres sympathisants adhérents anciens membres base de données registre relance réactivation Comité assemblée générale de relance diaspora formulaire inscription ODEB"},

@@ -26,7 +26,7 @@ MOTIFS = [
     (r"\b(treize|quatorze|douze|onze|dix|neuf|huit|sept|six|cinq|quatre|trois)\s+(des dix-neuf\s+)?thématiques\s+(attendent|cherchent|restent|encore|sans|à pourvoir|et deux cellules|et une cellule)", "thématiques à pourvoir", f"{vacantes}"),
     (r"\b(\d+|treize|quatorze|quinze|seize)\s*(thématiques|coordinations)\s+(pourvues|sur dix-neuf|sur 19)", "pourvues", f"{pourvues}"),
     (r"\b(\d+)/(19|20)\b", "x/20", f"{pourvues}"),
-    (r"\b(quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|vingt et un)\s+formulaires", "formulaires (total)", f"{forms}"),
+    (r"\b(quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|vingt et un|vingt-deux|vingt-trois|vingt-quatre)\s+formulaires", "formulaires (total)", f"{forms}"),
     (r"Pour (\w+) de ces formulaires", "formulaires comptés", "quinze"),
     (r"\b(sept|huit|neuf)\s+(plaidoyers|dossiers de plaidoyer)", "plaidoyers", "huit"),
     (r"\b(\d+)\s+articles", "articles", f"{len(idx['articles'])}"),

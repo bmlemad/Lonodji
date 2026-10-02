@@ -614,6 +614,17 @@ def journal_categories(soup_news: BeautifulSoup) -> tuple:
 # que public/__forms.html le garde à chaque import. Les cases à cocher ont chacune
 # leur nom (domaine-*, offre-*) : Netlify ne fusionne pas les valeurs multiples.
 FORMULAIRES_SITE = {
+    # 02/10/2026 : demande de mise à jour du site (/participer/mise-a-jour), lien dans le pied de chaque page
+    "demande-mise-a-jour": (
+        '<form name="demande-mise-a-jour"><input type="hidden" name="_honey"><input type="text" name="page">'
+        '<select name="type"><option value="">Choisir</option><option value="Une erreur à corriger : un fait, un nom, une date, un chiffre">Une erreur à corriger : un fait, un nom, une date, un chiffre</option>'
+        '<option value="Une information nouvelle à publier">Une information nouvelle à publier</option>'
+        '<option value="La mise à jour d’une thématique, d’une fiche ou d’une page que je suis">La mise à jour d’une thématique, d’une fiche ou d’une page que je suis</option>'
+        '<option value="Un lien ou une page qui ne fonctionne pas">Un lien ou une page qui ne fonctionne pas</option><option value="Autre">Autre</option></select>'
+        '<textarea name="texte_actuel"></textarea><textarea name="demande"></textarea><input type="text" name="source">'
+        '<input type="text" name="nom"><input type="text" name="qualite"><input type="text" name="contact">'
+        '<input type="checkbox" name="citer"><input type="checkbox" name="consentement"></form>'
+    ),
     # 02/10/2026 : recensement des membres (compte rendu du bureau du 18 septembre 2026, phase 1), /participer/recensement
     "recensement-membres": (
         '<form name="recensement-membres"><input type="hidden" name="_honey"><input type="text" name="nom">'
@@ -770,13 +781,17 @@ UPDATES = [
     # Redevabilité : le nombre de formulaires (vingt au 28/09/2026)
     ("Le site compte quinze formulaires, dont les réponses sont enregistrées par Netlify", "Le site compte vingt formulaires, dont les réponses sont enregistrées par Netlify"),
     # 02/10/2026 : vingt et unième formulaire, le recensement des membres (/participer/recensement)
-    ("Le site compte vingt formulaires", "Le site compte vingt et un formulaires"),
-    ('aria-label="Les vingt formulaires du site et le sort de vos données"', 'aria-label="Les vingt et un formulaires du site et le sort de vos données"'),
+    ("Le site compte vingt formulaires", "Le site compte vingt-deux formulaires"),
+    ('aria-label="Les vingt formulaires du site et le sort de vos données"', 'aria-label="Les vingt-deux formulaires du site et le sort de vos données"'),
     ("puis les publier après votre relecture</td><td>Pas encore fixée\u00a0: vous pouvez demander à tout moment que ces données soient effacées</td></tr></tbody>",
      "puis les publier après votre relecture</td><td>Pas encore fixée\u00a0: vous pouvez demander à tout moment que ces données soient effacées</td></tr>"
      '<tr><th scope="row"><a href="/participer/recensement">Recensement des membres</a><span class="notice-page">Participer</span></th>'
      "<td>Nom, tranche d’âge, parent ou tuteur pour un mineur, téléphone, e-mail facultatif, lieu de vie, quartier ou village d’attache, lien avec l’association, année d’adhésion, métier, thématique, message, accord pour être contacté</td>"
      "<td>Tenir le registre des membres et préparer l’assemblée générale de relance ; consulté par le bureau et le Comité de réactivation, jamais publié</td>"
+     "<td>Pas encore fixée\u00a0: vous pouvez demander à tout moment que ces données soient effacées</td></tr>"
+     '<tr><th scope="row"><a href="/participer/mise-a-jour">Demande de mise à jour du site</a><span class="notice-page">Toutes les pages (pied de page)</span></th>'
+     "<td>Page concernée, type de demande, texte actuel, texte demandé, source, nom, lien avec la page, contact, accord pour être cité au journal des corrections</td>"
+     "<td>Vérifier la demande et corriger la page ; une erreur de fait corrigée est inscrite au journal des corrections, avec votre nom seulement si vous l’acceptez</td>"
      "<td>Pas encore fixée\u00a0: vous pouvez demander à tout moment que ces données soient effacées</td></tr></tbody>"),
     # Journal des corrections : le nom du coordonnateur de Culture & patrimoine vivant, mal orthographié le 28/09.
     ('seulement les cas où <strong>nous avons affirmé quelque chose d’inexact</strong>.</p>\n<article class="info-card">\n<p class="form-note">24 septembre 2026 · Identité',

@@ -18,7 +18,7 @@ type Props = { lang?: "fr" | "en"; chiffres: NavChiffres; whatsapp: string; tele
 
 const Fleche = () => <svg className="nav-chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>;
 
-export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephone, telephoneHref, devise }: Props) {
+export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephoneHref, devise }: Props) {
   const pathname = useChemin();
   const [ouvert, setOuvert] = useState<string | null>(null);   // panneau ouvert (ordinateur)
   const [menu, setMenu] = useState(false);                     // menu plein écran (tablette, mobile)
@@ -225,7 +225,7 @@ export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephone, te
           </div>
           <p className="mm-foot">
             <span>{devise}</span>
-            <a href={telephoneHref}>{telephone}</a>
+            <a href={telephoneHref} aria-label={en ? "Call the association" : "Appeler l’association"} title={en ? "Call the association" : "Appeler l’association"}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg></a>
             <Link href={autre.href} lang={autre.lang} hrefLang={autre.lang} onClick={() => setMenu(false)}>{en ? "Français" : "English"}</Link>
             <Link href="/plan-du-site" lang={en ? "fr" : undefined} hrefLang={en ? "fr" : undefined} onClick={() => setMenu(false)}>Plan du site</Link>
           </p>

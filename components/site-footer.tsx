@@ -2,7 +2,7 @@ import Link from "@/components/lien";
 import { IDENTITE } from "../lib/odeb";
 import { ORG } from "../lib/content";
 import { PIED } from "../lib/navigation";
-import { LienLangue } from "./app-shell";
+import { LienLangue, LienMiseAJour } from "./app-shell";
 import NewsletterForm from "./newsletter-form";
 
 type Colonne = { titre: string; liens: { label: string; href: string; fr?: boolean }[] };
@@ -56,7 +56,7 @@ export default function SiteFooter({ miseAJour, lang = "fr" }: { miseAJour?: str
           <p className="footer-tagline">{en ? "The association of Bédjondo and its diaspora, guardian of the Bedjond heritage." : ORG.tagline}</p>
           <p className="footer-place">{en ? <span lang="fr">{ORG.fullName}</span> : ORG.fullName}<br />{en ? "Bédjondo · Mandoul Occidental · Mandoul, Chad" : ORG.place}</p>
           <div className="footer-contact">
-            <a href={ORG.phoneHref}><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg>{ORG.phone}</a>
+            <a className="footer-contact-icone" href={ORG.phoneHref} aria-label={en ? "Call the association" : "Appeler l’association"} title={en ? "Call the association" : "Appeler l’association"}><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg></a>
             <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.6-4A8 8 0 1 1 20 11.5z" /></svg>WhatsApp</a>
             <a href={ORG.whatsappGroupe} target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3" /><circle cx="17" cy="9" r="2.5" /><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M14.5 14.6c3 .1 5.5 2.4 5.5 5.4" /></svg>{en ? "WhatsApp group" : "Groupe WhatsApp"}</a>
             <a href={ORG.facebook} target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z" /></svg>Facebook</a>
@@ -104,11 +104,11 @@ export default function SiteFooter({ miseAJour, lang = "fr" }: { miseAJour?: str
         <span className="footer-motto">{en ? "Courage · Discipline · Heritage" : ORG.motto}</span>
         {en ? (
           <span className="footer-legal">
-            © 2026 {ORG.name} · Official website{miseAJour ? ` · updated ${miseAJour}` : ""} · <Link href="/mentions-legales" hrefLang="fr">Legal notice (in French)</Link> · <Link href="/accessibilite" hrefLang="fr">Accessibility (in French)</Link> · <Link href="/transparence#comment-nous-signaler-un-manquement" hrefLang="fr">Report a breach (in French)</Link> · <Link href="/plan-du-site" hrefLang="fr">Site map (in French)</Link> · <LienLangue />
+            © 2026 {ORG.name} · Official website{miseAJour ? ` · updated ${miseAJour}` : ""} · <Link href="/mentions-legales" hrefLang="fr">Legal notice (in French)</Link> · <Link href="/accessibilite" hrefLang="fr">Accessibility (in French)</Link> · <Link href="/transparence#comment-nous-signaler-un-manquement" hrefLang="fr">Report a breach (in French)</Link> · <LienMiseAJour en /> · <Link href="/plan-du-site" hrefLang="fr">Site map (in French)</Link> · <LienLangue />
           </span>
         ) : (
           <span className="footer-legal">
-            © 2026 {ORG.name} · Site officiel{miseAJour ? ` · mis à jour le ${miseAJour}` : ""} · <Link href="/mentions-legales">Mentions légales</Link> · <Link href="/accessibilite">Accessibilité</Link> · <Link href="/transparence#comment-nous-signaler-un-manquement">Signaler un manquement</Link> · <Link href="/plan-du-site">Plan du site</Link> · <Link href="/archives">Archives</Link> · <LienLangue />
+            © 2026 {ORG.name} · Site officiel{miseAJour ? ` · mis à jour le ${miseAJour}` : ""} · <Link href="/mentions-legales">Mentions légales</Link> · <Link href="/accessibilite">Accessibilité</Link> · <Link href="/transparence#comment-nous-signaler-un-manquement">Signaler un manquement</Link> · <LienMiseAJour /> · <Link href="/plan-du-site">Plan du site</Link> · <Link href="/archives">Archives</Link> · <LienLangue />
           </span>
         )}
         <a className="footer-top-link" href="#main-content">{en ? "Back to top" : "Retour en haut"} <span aria-hidden="true">↑</span></a>
