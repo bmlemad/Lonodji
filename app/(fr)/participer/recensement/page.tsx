@@ -53,6 +53,7 @@ export default function Recensement() {
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
           <a className="button secondary" href={ORG.whatsappGroupe} target="_blank" rel="noopener noreferrer">Rejoindre le groupe WhatsApp <span aria-hidden="true">↗</span></a>
           <a className="button secondary" href={B18.pdf}>Le compte rendu du {B18.dateLabel} <span aria-hidden="true">↓</span></a>
+          <a className="button secondary" href="/partage/recensement-membres.png" download>L’image à partager <span aria-hidden="true">↓</span></a>
         </div>
       </section>
 

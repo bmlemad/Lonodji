@@ -29,6 +29,7 @@ const VISUELS: [string, string][] = [
   ["/partage/livre-blanc-odeb.png", "Le livre blanc, à lire et à discuter"],
   ["/partage/thematiques-a-pourvoir.png", "Les thématiques qui cherchent leur coordonnateur"],
   ["/partage/election-vice-presidences.png", `${nombreAElire(true)} vice-présidences de pôle à élire (vote le ${dateFr(etape("vote").date)})`],
+  ["/partage/recensement-membres.png", "Recensement des membres, avant le 18 octobre 2026"],
   ["/partage/retrouver-son-village.png", "Retrouver son village : une fiche par localité"],
   ["/partage/racontez-bedjondo.png", "Racontez Bédjondo : témoignages et photos"],
 ];
