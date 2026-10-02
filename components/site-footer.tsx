@@ -92,12 +92,12 @@ export default function SiteFooter({ miseAJour, lang = "fr" }: { miseAJour?: str
       </div>
       <div className="footer-cols footer-cols--5">
         {colonnes.map((col) => (
-          <div key={col.titre}>
-            <p className="footer-title">{col.titre}</p>
+          <details className="footer-col" key={col.titre} open>
+            <summary className="footer-title">{col.titre}</summary>
             {col.liens.map((l) => (
               <Link href={l.href} key={l.href + l.label} hrefLang={l.fr ? "fr" : undefined}>{l.label}{l.fr ? <span className="sr-only"> (in French)</span> : null}</Link>
             ))}
-          </div>
+          </details>
         ))}
       </div>
       <div className="footer-bottom">

@@ -2286,3 +2286,33 @@ body:has(.acc-hero) .nav, body:has(.acc-hero) .tabbar{ background:rgba(248,250,2
 /* 02/10/2026 : le téléphone n'apparaît plus qu'en icône dans le pied de page et le menu mobile */
 .footer-contact a.footer-contact-icone{ padding:8px 11px; }
 .mm-foot a[aria-label] svg{ vertical-align:-3px; }
+
+/* 02/10/2026 : sur téléphone, tous les tableaux à en-tête s'empilent (components/tables-mobiles.tsx pose les
+   intitulés) : une carte par ligne au lieu d'un tableau qui défile de côté. */
+@media(max-width:640px){
+  table.t-empile thead{ display:none; }
+  table.t-empile a, table.t-empile .prob-theme-lien{ white-space:normal !important; max-width:100%; overflow-wrap:anywhere; }
+  table.t-empile, table.t-empile tbody, table.t-empile tr, table.t-empile tbody th, table.t-empile td{ display:block; width:auto !important; min-width:0 !important; max-width:none !important; }
+  table.t-empile{ min-width:0 !important; }
+  table.t-empile tr{ padding:14px 16px; border-top:1px solid var(--line); }
+  table.t-empile tbody tr:first-child{ border-top:0; }
+  table.t-empile tbody th, table.t-empile td{ border:0 !important; padding:0 !important; text-align:left !important; white-space:normal !important; }
+  table.t-empile tr > :first-child{ font-weight:700; color:var(--ink); margin-bottom:6px; font-size:14.5px; }
+  table.t-empile td + td, table.t-empile th + td{ margin-top:6px; }
+  table.t-empile td:empty{ display:none; }
+  table.t-empile td[data-label]{ font-size:13.5px; }
+  table.t-empile td[data-label]::before{ content:attr(data-label) " · "; font-weight:700; color:#53625b; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; }
+  table.t-empile tr:nth-child(even) td, table.t-empile tr:nth-child(even) th{ background:transparent !important; }
+}
+/* pied de page : colonnes en <details> ; ouvertes et non repliables sur grand écran, repliées sur téléphone */
+details.footer-col > summary{ list-style:none; cursor:default; }
+details.footer-col > summary::-webkit-details-marker{ display:none; }
+@media(min-width:641px){ details.footer-col > summary{ pointer-events:none; } }
+@media(max-width:640px){
+  .footer-cols.footer-cols--5{ grid-template-columns:1fr !important; gap:0 !important; }
+  details.footer-col{ border-top:1px solid var(--line); }
+  details.footer-col > summary{ cursor:pointer; display:flex; justify-content:space-between; align-items:center; min-height:48px; margin:0 !important; }
+  details.footer-col > summary::after{ content:"+"; font-size:18px; font-weight:400; color:#53625b; }
+  details.footer-col[open] > summary::after{ content:"−"; }
+  details.footer-col[open]{ padding-bottom:10px; }
+}

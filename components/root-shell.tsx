@@ -3,6 +3,7 @@ import AppShell from "@/components/app-shell";
 import SiteFooter from "@/components/site-footer";
 import DeferredChrome from "@/components/deferred-chrome";
 import SiteNav from "@/components/site-nav";
+import TablesMobiles from "@/components/tables-mobiles";
 import { ORG, enLettres, getIndex, thematiqueCount } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
 import { jsonLd, siteOrganization, siteWebSite } from "@/lib/schema";
@@ -83,6 +84,7 @@ export default function RootShell({
         <SiteFooter lang={lang} miseAJour={en ? new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "Africa/Ndjamena" }) : miseAJour} />
         <DeferredChrome />
         <AppShell lang={lang} />
+        <TablesMobiles />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({
           "@context": "https://schema.org",
           "@graph": [siteOrganization(ORG), siteWebSite(ORG.name, lang)],
