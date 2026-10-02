@@ -109,6 +109,7 @@ export default function OrganisationEn() {
           {DECISIONS_EN.map(([t, x]) => <li key={t}><strong>{t}.</strong> {x}</li>)}
         </ol>
         <p className="lg-footnote">The same day, the board adopted the election procedure for the pillar vice-presidents and the annual plan template (register 2026-33 and 2026-34), then six pillars and twenty-two themes (register 2026-35). The French texts, with their sources: <Link href="/association/propositions-organisation" hrefLang="fr">Décisions d’organisation</Link> and the <Link href="/transparence/decisions" hrefLang="fr">register of decisions</Link>.</p>
+        <p className="lg-footnote"><strong>Before that, on 18 September 2026,</strong> the enlarged executive board formally relaunched the association: a committee for reactivation, modernisation and institutional transformation, new statutes and rules of procedure, a relaunch general assembly by 17 December 2026, and the principle of a gradual transformation into ODEB LONODJI, subject to the general assembly, with the motto “Unity • Solidarity • Development” (<a href="/organisation/compte-rendu-bureau-2026-09-18.pdf" hrefLang="fr">minutes in French, PDF</a>; the signed version will follow).</p>
       </section>
 
       {mag ? (
