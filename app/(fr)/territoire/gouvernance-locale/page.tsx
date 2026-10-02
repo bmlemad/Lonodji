@@ -133,7 +133,7 @@ export default function GouvernanceLocale() {
 
       <PagesVoisines route={ROUTE} />
       <Partager route={ROUTE} titre="Gouvernance locale à Bédjondo : qui décide quoi" texte="Chaque niveau de décision, nos demandes, leurs articulations et les indicateurs pour les suivre." />
-      <p className="lg-footnote">Page créée le 30 septembre 2026 à partir des dossiers publiés ; chaque demande renvoie au texte d’origine. Une erreur de fait ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
+      <p className="lg-footnote">Page créée le 30 septembre 2026 à partir des dossiers publiés ; chaque demande renvoie au texte d’origine. Une erreur de fait ? <Link href="/participer/mise-a-jour?page=%2Fterritoire%2Fgouvernance-locale">Signalez-la</Link> : elle sera corrigée et datée.</p>
     </main>
   );
 }

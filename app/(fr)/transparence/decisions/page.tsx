@@ -70,7 +70,7 @@ export default function Decisions() {
         <div className="detail-grid">
           <article><h3>Ce qui y entre</h3><p>Un fait daté que le site a publié : une décision de l’association, une nomination, une annonce, une proposition soumise à l’assemblée, un texte qui l’engage, une règle qu’elle s’impose. Pas les intentions restées privées, pas les projets d’articles, pas ce qui se dit hors du site.</p></article>
           <article><h3>Ce qui manque encore</h3><p>Les procès-verbaux des assemblées et les décisions du bureau qui n’ont pas été rendues publiques. Quand ils seront transmis, ils seront publiés sur la page <Link href="/documents">Documents</Link> et le registre citera leur numéro.</p></article>
-          <article><h3>Corriger une ligne</h3><p>Une date fausse, une décision mal résumée, un oubli : <Link href="/transparence#corrections">signalez-le</Link>. La correction est publiée et datée dans le journal des corrections, comme pour toute page du site.</p></article>
+          <article><h3>Corriger une ligne</h3><p>Une date fausse, une décision mal résumée, un oubli : <Link href="/participer/mise-a-jour?page=%2Ftransparence%2Fdecisions">signalez-le</Link>. La correction est publiée et datée dans le journal des corrections, comme pour toute page du site.</p></article>
         </div>
       </section>
 

@@ -125,7 +125,7 @@ export default function SousSol() {
 
       <PagesVoisines route={ROUTE} />
       <Partager route={ROUTE} titre={TITRE} texte={RESUME} />
-      <p className="lg-footnote">Page créée le 30 septembre 2026 à partir de sources publiques ; les liens externes s’ouvrent sur les sites de leurs éditeurs. Une erreur de fait, une source plus récente ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
+      <p className="lg-footnote">Page créée le 30 septembre 2026 à partir de sources publiques ; les liens externes s’ouvrent sur les sites de leurs éditeurs. Une erreur de fait, une source plus récente ? <Link href="/participer/mise-a-jour?page=%2Fterritoire%2Fsous-sol">Signalez-la</Link> : elle sera corrigée et datée.</p>
     </main>
   );
 }

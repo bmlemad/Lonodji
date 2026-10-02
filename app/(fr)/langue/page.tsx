@@ -124,7 +124,7 @@ export default function Langue() {
         </div>
       </section>
 
-      <p className="lg-footnote">Sources : références de la <Link href="/bibliotheque">bibliothèque</Link> (Lexique Nangnda ; SIL ESR 2007-010 ; Djarangar Djita Issa ; Madjidéné Altana Lydie) et articles du journal. Page ouverte le 28 septembre 2026 ; les chiffres du lexique sont ceux qu’annonce sa page d’accueil, consultée ce jour. Une erreur ? <Link href="/transparence#corrections">Signalez-la</Link>.</p>
+      <p className="lg-footnote">Sources : références de la <Link href="/bibliotheque">bibliothèque</Link> (Lexique Nangnda ; SIL ESR 2007-010 ; Djarangar Djita Issa ; Madjidéné Altana Lydie) et articles du journal. Page ouverte le 28 septembre 2026 ; les chiffres du lexique sont ceux qu’annonce sa page d’accueil, consultée ce jour. Une erreur ? <Link href="/participer/mise-a-jour?page=%2Flangue">Signalez-la</Link>.</p>
       <Partager route="/langue" titre="La langue nangnda" texte="Ce que l’on sait de la langue bedjond, les ressources qui existent, et comment contribuer au lexique." />
     </main>
   );

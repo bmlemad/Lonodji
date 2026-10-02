@@ -165,7 +165,7 @@ export default async function Village({ params }: { params: Promise<{ unite: str
 
       <Partager route={routeVillage(v)} titre={`${v.nom} (${u.nom})`} texte={`Fiche de ${ceType(type)} sur le site de l’association ADEB LONODJI : ce que l’on sait, ce qu’il reste à documenter.`} />
 
-      <p className="lg-footnote">Nom et position : OpenStreetMap (export humanitaire HOT, données du {genere}) ; rattachement à {u.nom} : contours GADM 4.1. Un nom mal écrit, une position fausse ? Corrigez-la sur OpenStreetMap ou <Link href="/transparence#corrections">signalez-la</Link> : elle sera corrigée et datée. Fiche établie automatiquement à partir des données de la carte.</p>
+      <p className="lg-footnote">Nom et position : OpenStreetMap (export humanitaire HOT, données du {genere}) ; rattachement à {u.nom} : contours GADM 4.1. Un nom mal écrit, une position fausse ? Corrigez-la sur OpenStreetMap ou <Link href={`/participer/mise-a-jour?page=${encodeURIComponent(`/villages/${unite}/${village}`)}`}>signalez-la</Link> : elle sera corrigée et datée. Fiche établie automatiquement à partir des données de la carte.</p>
     </main>
   );
 }

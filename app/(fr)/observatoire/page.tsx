@@ -144,7 +144,7 @@ export default function Observatoire() {
           <Link href="/actions#mesure-debit"><small>Connectivité</small><strong>Mesurer le débit internet chez soi</strong><span>Une mesure datée et située, pour le plaidoyer haut débit.</span></Link>
         </div>
         <Partager route="/observatoire" titre="Observatoire du Mandoul Occidental" texte="Localités, équipements, couverture, diagnostic, plaidoyers et besoins signalés : les chiffres du pays bedjond par unité, datés et sourcés." />
-        <p className="lg-footnote">Observatoire ouvert le 28 septembre 2026, première version, au titre de la phase 3 de la <Link href="/odeb/feuille-de-route#phase-3">feuille de route 2026-2030</Link> et de l’axe « Observatoire » du <Link href="/odeb/programmes/developpement-territorial">programme Développement territorial</Link>. Données établies automatiquement (carte du {date(o.sources.carte)}, fiches du {date(o.sources.villages)}, relevé des formulaires du {date(o.sources.releve)}). Une erreur ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
+        <p className="lg-footnote">Observatoire ouvert le 28 septembre 2026, première version, au titre de la phase 3 de la <Link href="/odeb/feuille-de-route#phase-3">feuille de route 2026-2030</Link> et de l’axe « Observatoire » du <Link href="/odeb/programmes/developpement-territorial">programme Développement territorial</Link>. Données établies automatiquement (carte du {date(o.sources.carte)}, fiches du {date(o.sources.villages)}, relevé des formulaires du {date(o.sources.releve)}). Une erreur ? <Link href="/participer/mise-a-jour?page=%2Fobservatoire">Signalez-la</Link> : elle sera corrigée et datée.</p>
       </section>
     </main>
   );

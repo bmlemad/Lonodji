@@ -112,7 +112,7 @@ export function ThematiqueRow({ t, pole, partenaires }: { t: Thematique; pole?: 
         {t.kind === "thematique" ? (() => {
           const r = reperesFr(t.number);
           return (
-            <p className="them-reperes"><Link className="odd-legend" href="/secteurs">Repères</Link>
+            <p className="them-reperes"><span className="odd-legend">Repères</span>
               {r.phrase ? <span>{r.phrase}</span> : r.parts.map((p) => <span key={p.nom}><b>{p.nom}</b>&nbsp;: {p.valeur}</span>)}
             </p>
           );

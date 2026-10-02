@@ -118,7 +118,7 @@ export default function Secteurs() {
       </section>
 
       <Partager route="/secteurs" titre="Secteurs d’intervention d’ADEB LONODJI" texte="WASH, santé, nutrition, éducation, sécurité alimentaire, urgences et protection : nos vingt-deux thématiques dans la langue des ONG." />
-      <p className="lg-footnote">Nomenclatures : clusters du Comité permanent interorganisations (IASC), codes-objet du Comité d’aide au développement de l’OCDE (CAD), Objectifs de développement durable. Correspondance établie par l’association le 29 septembre 2026. Une erreur de classement ? <Link href="/transparence#corrections">Signalez-la</Link>.</p>
+      <p className="lg-footnote">Nomenclatures : clusters du Comité permanent interorganisations (IASC), codes-objet du Comité d’aide au développement de l’OCDE (CAD), Objectifs de développement durable. Correspondance établie par l’association le 29 septembre 2026. Une erreur de classement ? <Link href="/participer/mise-a-jour?page=%2Fsecteurs">Signalez-la</Link>.</p>
     </main>
   );
 }

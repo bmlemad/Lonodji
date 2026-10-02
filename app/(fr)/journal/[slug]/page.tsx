@@ -84,7 +84,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <div className="art-grid">{related.map((r) => <ArticleCard key={r.slug} a={r} />)}</div>
         </section>
       ) : null}
-      <p className="lg-footnote"><Link href="/journal">← Tous les articles</Link> · Une erreur de fait ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
+      <p className="lg-footnote"><Link href="/journal">← Tous les articles</Link> · Une erreur de fait ? <Link href={`/participer/mise-a-jour?page=${encodeURIComponent(`/journal/${slug}`)}`}>Signalez-la</Link> : elle sera corrigée et datée.</p>
     </main>
   );
 }

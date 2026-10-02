@@ -83,7 +83,7 @@ export default function Villages() {
           <article><h3>Votre village manque ?</h3><p>Il n’est pas dans les données ouvertes, ou son nom y est écrit autrement. Ajoutez-le ou corrigez-le sur OpenStreetMap — un compte gratuit suffit — ou <Link href="/participer#contact">écrivez-nous</Link> : il apparaîtra à la mise à jour suivante.</p></article>
         </div>
         <Partager route="/villages" titre="Les villages du pays bedjond" texte={DESCRIPTION} />
-        <p className="lg-footnote">Fiches établies automatiquement à partir des données de la carte ({d.sources.localites}). Une erreur de nom ou de position ? <Link href="/transparence#corrections">Signalez-la</Link> : elle sera corrigée et datée.</p>
+        <p className="lg-footnote">Fiches établies automatiquement à partir des données de la carte ({d.sources.localites}). Une erreur de nom ou de position ? <Link href="/participer/mise-a-jour?page=%2Fvillages">Signalez-la</Link> : elle sera corrigée et datée.</p>
       </section>
     </main>
   );

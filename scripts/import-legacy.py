@@ -1979,7 +1979,7 @@ REPERES_SANS = {k: (v["fr"], v["en"]) for k, v in _REPERES["sans"].items()}
 def _ligne_reperes(num: str, en: bool) -> str:
     cl, wv, pnd = (REPERES_EN if en else REPERES_FR).get(num, (None, None, None))
     legende = ('<span class="odd-legend">Benchmarks</span>' if en else
-               '<a class="odd-legend" href="/secteurs">Repères</a>')
+               '<span class="odd-legend">Repères</span>')
     if not (cl or wv or pnd):
         fr, eng = REPERES_SANS.get(num, (_REPERES["defaut"]["fr"], _REPERES["defaut"]["en"]))
         return f'<p class="pole-reperes">{legende} <span>{eng if en else fr}</span></p>'
