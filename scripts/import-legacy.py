@@ -1801,6 +1801,131 @@ def ancres_en(html: str, path: Path) -> str:
     return re.sub(r'<a href="#theme-list">(\d{2}) &middot;', r'<a href="#theme-\1">\1 &middot;', html)
 
 
+# ----------------------------------------------------------------------------
+# 02/10/2026 : revue des pôles face aux références ONG, ONU et World Vision.
+# La thématique 12 couvre la protection de l'enfance depuis le 29 septembre : ses cibles ODD le disent
+# (16.2 violences contre les enfants, 16.9 état civil, 5.3 mariages précoces), sur sa carte, dans le résumé
+# du pôle II et dans l'index des ODD (FR et EN). La 09 renvoie le sport à la thématique 22 (décision 2026-35).
+ODD12_FR = [("16", "16.2&thinsp;/&thinsp;16.9", "cible 16.2 &mdash; mettre fin &agrave; la maltraitance et &agrave; la violence envers les enfants &middot; cible 16.9 &mdash; identit&eacute; juridique pour tous, dont l&rsquo;&eacute;tat civil"),
+            ("5", "5.3", "cible 5.3 &mdash; &eacute;liminer les mariages d&rsquo;enfants, pr&eacute;coces ou forc&eacute;s")]
+ODD12_EN = [("16", "16.2&thinsp;/&thinsp;16.9", "target 16.2 &mdash; end abuse and violence against children &middot; target 16.9 &mdash; legal identity for all, including civil registration"),
+            ("5", "5.3", "target 5.3 &mdash; eliminate child, early and forced marriage")]
+NOTE_09_FR = (" <strong>Mise à jour du 2 octobre 2026&nbsp;:</strong> le sport, les arts et les loisirs ont leur propre thématique "
+              "depuis le 1er octobre, la 22, Sport, arts &amp; loisirs (décision 2026-35) ; la 09 y garde le lien avec les jeunes.")
+NOTE_09_EN = (" <strong>Update, 2 October 2026:</strong> sport, arts and leisure have had their own theme since 1 October, "
+              "theme 22, Sport, Arts &amp; Leisure; theme 09 keeps the link with young people.")
+
+
+def _chip_modele(html: str, odd: str, en: bool) -> str | None:
+    m = re.search(r'<a class="odd-chip" href="[^"]*(?:odd|sdg)-' + odd + r'"[^>]*>.*?</a>', html, re.S)
+    return m.group(0) if m else None
+
+
+def _chip_cible(modele: str, cible: str, titre_cibles: str) -> str:
+    chip = re.sub(r'<span class="odd-cible">.*?</span>', f'<span class="odd-cible">{cible}</span>', modele)
+    return re.sub(r'title="([^"|]*)\|[^"]*"', lambda m: f'title="{m.group(1)}| {titre_cibles}"', chip)
+
+
+def _ajouter_note(html: str, debut_article: str, note: str) -> str:
+    i = html.find(debut_article)
+    if i < 0 or note.strip()[:30] in html[i:html.find("</article>", i)]:
+        return html
+    c = html.find('<p class="coord">', i)
+    j = html.find("<p>", c + 1)
+    k = html.find("</p>", j)
+    return html[:k] + note + html[k:] if 0 < j < html.find("</article>", i) and k > 0 else html
+
+
+def _cible_cle(c: str) -> tuple:
+    return tuple(int(x) if x.isdigit() else ord(x[0]) + 1000 for x in re.split(r"\.", c))
+
+
+def _resumes_odd(html: str, en: bool) -> str:
+    """Le résumé « Cibles ODD visées » de chaque pôle reprend exactement les cibles de ses cartes, triées par ODD
+    puis par cible (une cible ajoutée à une carte y apparaît ; 02/10/2026)."""
+    out, pos = [], 0
+    for m in re.finditer(r'<div class="pole-odd-sum">.*?</div>', html, re.S):
+        s0 = html.rfind("<section", 0, m.start())
+        s1 = html.find("</section>", m.end())
+        sec = html[s0:s1]
+        cibles = {}
+        for ch in re.finditer(r'<a class="odd-chip" href="([^"]*?(?:odd|sdg)-(\d+))" style="([^"]*)" title="([^"|]*)\| ([^"]*)">.*?<span class="odd-cible">(.*?)</span></a>', sec, re.S):
+            href, num, style, tete, detail, cs = ch.groups()
+            parts = re.split(r" &middot; | · ", detail)
+            for k, c in enumerate(re.split(r"&thinsp;/&thinsp;|\s/\s|/", cs)):
+                c = c.strip()
+                if c and (num, c) not in cibles:
+                    titre = parts[k] if k < len(parts) else parts[-1]
+                    cibles[(num, c)] = (href, style, tete, titre)
+        if not cibles:
+            continue
+        sr = "SDG {n}, target " if en else "ODD {n}, cible "
+        points = "".join(
+            f'<a class="odd-dot odd-dot--cible" href="{h}" style="{st}" title="{te}| {ti}"><span class="sr-only">{sr.format(n=n)}</span>{c}</a>'
+            for (n, c), (h, st, te, ti) in sorted(cibles.items(), key=lambda kv: (int(kv[0][0]), _cible_cle(kv[0][1]))))
+        legende = re.match(r'<div class="pole-odd-sum">(<span class="odd-legend">.*?</span>)', m.group(0), re.S)
+        out.append(html[pos:m.start()] + '<div class="pole-odd-sum">' + (legende.group(1) if legende else "") + points + "</div>")
+        pos = m.end()
+    return "".join(out) + html[pos:]
+
+
+def odd_enfance(html: str, path: Path) -> str:
+    if "articles" in path.parts:
+        return html
+    nom, en = path.name, "en" in path.parts
+    cibles = ODD12_EN if en else ODD12_FR
+    if (nom == "poles.html" and not en) or (nom == "themes.html" and en):
+        debut = '<article class="pole-card" id="theme-12">' if en else '<article class="pole-card" id="solidarite-inclusion">'
+        i = html.find(debut)
+        fin = html.find("</article>", i)
+        bloc = html[i:fin]
+        if i >= 0 and "16.2" not in bloc:
+            d = bloc.find('<div class="pole-odd">')
+            e = bloc.find("</div>", d)
+            ajout = "".join(_chip_cible(_chip_modele(html, o, en), c, t) for o, c, t in cibles if _chip_modele(html, o, en))
+            if d >= 0 and ajout:
+                bloc = bloc[:e] + ajout + bloc[e:]
+                html = html[:i] + bloc + html[fin:]
+        html = _resumes_odd(html, en)
+        html = _ajouter_note(html, '<article class="pole-card" id="theme-09">' if en else '<article class="pole-card" id="jeunesse-reussite">',
+                             NOTE_09_EN if en else NOTE_09_FR)
+    if nom == "themes.html" and en:
+        # la 07 anglaise gardait les cibles de l'ancienne « Eau, énergie & connectivité » (6.1 et 9.c) : comme en
+        # français, 6.1 et 6.2, la connectivité étant passée à la 17 le 29 septembre
+        i = html.find('<article class="pole-card" id="theme-07">')
+        fin = html.find("</article>", i)
+        if i >= 0:
+            bloc = html[i:fin]
+            bloc = re.sub(r'<a class="odd-chip" href="#sdg-9"[^>]*>.*?</a>', "", bloc, flags=re.S)
+            bloc = re.sub(r'(<a class="odd-chip" href="#sdg-6"[^>]*title=")[^"]*(">.*?<span class="odd-cible">)6\.1(</span>)',
+                          r"\1SDG 6 &mdash; Clean Water and Sanitation | target 6.1 &mdash; universal access to safe drinking water &middot; target 6.2 &mdash; sanitation and hygiene\g<2>6.1&thinsp;/&thinsp;6.2\3",
+                          bloc, flags=re.S)
+            html = html[:i] + bloc + html[fin:]
+        html = re.sub(r'<a href="#theme-07">07 &middot; [^<]*<span class="odd-cible">9\.c</span></a>', "", html)
+        html = re.sub(r'(<a href="#theme-07">07 &middot; [^<]*<span class="odd-cible">)6\.1(</span>)', r"\g<1>6.1&thinsp;/&thinsp;6.2\2", html)
+        html = _resumes_odd(html, True)
+    if (nom == "odd.html" and not en) or (nom == "themes.html" and en):
+        pre = "sdg" if en else "odd"
+        lien = ('<a href="#theme-12">12 &middot; Social Protection, Children &amp; Inclusion <span class="odd-cible">{c}</span></a>' if en else
+                '<a href="poles.html#solidarite-inclusion">12 &middot; Protection sociale, enfance &amp; inclusion <span class="odd-cible">{c}</span></a>')
+        for o, c, _t in cibles:
+            i = html.find(f'id="{pre}-{o}"')
+            if i < 0:
+                continue
+            j = html.find('<div class="odd-row-links">', i) + len('<div class="odd-row-links">')
+            k = html.find("</div>", j)
+            ligne = html[j:k]
+            if "12 &middot;" in ligne:
+                continue
+            pos = k
+            for mm in re.finditer(r'<a href="[^"]*">(\d{2}) &middot;', ligne):
+                if int(mm.group(1)) > 12:
+                    pos = j + mm.start()
+                    break
+            html = html[:pos] + lien.format(c=c) + html[pos:]
+    return html
+
+
 def lire_source(path: Path) -> str:
     """Lit un fichier de l'ancien site en y appliquant les mises à jour de source."""
     html = path.read_text(encoding="utf-8")
@@ -1815,7 +1940,7 @@ def lire_source(path: Path) -> str:
         k = html.find("</p>", j)
         if j > 0 and k > 0:
             html = html[:k] + note + html[k:]
-    html = ancres_en(structure_sport(structure_01_10(structure_30_09(corrections_revue(structure_29_09(html, path), path), path), path), path), path)
+    html = odd_enfance(ancres_en(structure_sport(structure_01_10(structure_30_09(corrections_revue(structure_29_09(html, path), path), path), path), path), path), path)
     if path.name == "kit-mobilisation.html":
         html = kit_liens(html)
     return html if "articles" in path.parts else comptes_courants(html)
