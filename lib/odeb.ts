@@ -81,7 +81,7 @@ export const BUREAU_18_SEPTEMBRE = {
   suivi: [
     { action: "Arrêter la composition du Comité et désigner son coordonnateur", qui: "Bureau exécutif", echeance: "2026-10-03" },
     { action: "Lancer le recensement des membres et la mise à jour de la base de données", qui: "Comité", echeance: "2026-10-18", enCours: "Formulaire de recensement en ligne depuis le 2 octobre 2026", href: "/participer/recensement" },
-    { action: "Réactiver les canaux officiels de communication (groupe WhatsApp, site web, réseaux sociaux)", qui: "Comité", echeance: "2026-10-18", fait: "Groupe WhatsApp, site, pages Facebook et X, chaîne YouTube en ligne au 2 octobre 2026" },
+    { action: "Réactiver les canaux officiels de communication (groupe WhatsApp, site web, réseaux sociaux)", qui: "Comité", echeance: "2026-10-18", fait: "Groupe WhatsApp, site, pages Facebook et X, chaîne YouTube en ligne au 2 octobre 2026 ; page LinkedIn le 3 octobre" },
     { action: "Rédiger la note d’orientation stratégique", qui: "Comité", echeance: "2026-10-18" },
     { action: "Produire les projets de statuts et de règlement intérieur", qui: "Comité", echeance: "2026-11-17" },
     { action: "Fixer la date et le lieu de l’assemblée générale de relance", qui: "Bureau exécutif", echeance: "2026-11-17" },

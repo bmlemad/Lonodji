@@ -22,7 +22,7 @@ export function siteOrganization(org: {
     address: { "@type": "PostalAddress", addressLocality: "Bédjondo", addressRegion: "Mandoul", addressCountry: "TD" },
     areaServed: { "@type": "AdministrativeArea", name: "Mandoul Occidental, Tchad" },
     slogan: org.motto,
-    sameAs: ["https://www.facebook.com/profile.php?id=61594849805565", "https://x.com/adeb_lonodji", "https://www.youtube.com/@adeb.lonodji"],
+    sameAs: ["https://www.facebook.com/profile.php?id=61594849805565", "https://x.com/adeb_lonodji", "https://www.youtube.com/@adeb.lonodji", "https://www.linkedin.com/company/lonodji/"],
   };
 }
 

@@ -184,6 +184,7 @@ export const ORG = {
   facebook: "https://www.facebook.com/profile.php?id=61594849805565",   // page « Lonodji », créée le 1er octobre 2026
   x: "https://x.com/adeb_lonodji",   // compte X « Lonodji », créé le 1er octobre 2026
   youtube: "https://www.youtube.com/@adeb.lonodji",   // chaîne YouTube « Lonodji », créée le 1er octobre 2026
+  linkedin: "https://www.linkedin.com/company/lonodji/",   // page LinkedIn « Lonodji », créée le 3 octobre 2026
   url: "https://lonodji.org",
   bureau: [
     { role: "Président", name: "Adoumbé Maoura", note: "Contact officiel de l’association : appel et WhatsApp" },
