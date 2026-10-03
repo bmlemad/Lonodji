@@ -7,6 +7,9 @@ import { GROUPES, getVillages, ORDRE_GROUPES } from "@/lib/villages";
    Le nom et le nombre de localités apparaissent au survol et au focus clavier ; Bédjondo reste marquée. */
 type Carte = { largeur: number; hauteur: number; bedjondo: [number, number]; unites: { id: string; nom: string; groupe: string; d: string; cx: number; cy: number }[] };
 
+/* légende courte, sur téléphone (3 octobre 2026) : le libellé complet reste lu par les lecteurs d'écran */
+const COURT: Record<string, string> = { coeur: "Cœur du pays bedjond", sud: "Présence attestée", signale: "Présence signalée", diaspora: "Diaspora agricole" };
+const COURT_EN: Record<string, string> = { coeur: "Bedjond heartland", sud: "Presence attested", signale: "Presence reported", diaspora: "Farming diaspora" };
 const GROUPES_EN: Record<string, string> = {
   coeur: "Mandoul Occidental, heart of the Bedjond country",
   sud: "Logone Oriental, attested Bedjond presence",
@@ -54,7 +57,7 @@ export default function CarteAccueil({ lang = "fr" }: { lang?: "fr" | "en" }) {
       </svg>
       <figcaption>
         <ul className="acc-legende">
-          {ORDRE_GROUPES.map((g) => <li key={g} className={`acc-legende--${g}`}>{en ? GROUPES_EN[g] : GROUPES[g]}</li>)}
+          {ORDRE_GROUPES.map((g) => <li key={g} className={`acc-legende--${g}`}><span className="acc-leg-long">{en ? GROUPES_EN[g] : GROUPES[g]}</span><span className="acc-leg-court" aria-hidden="true">{en ? COURT_EN[g] : COURT[g]}</span></li>)}
         </ul>
         {/* sur téléphone, les unités de la carte sont trop petites pour le doigt : la même liste en pastilles */}
         <ul className="acc-unites-liste" aria-label={en ? "The fourteen units" : "Les quatorze unités"}>

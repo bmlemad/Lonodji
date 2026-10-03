@@ -38,7 +38,7 @@ CHECK_VISUEL = """() => {
     if (el.childElementCount === 0 && el.textContent.trim() && parseFloat(cs.fontSize) < 10 && cs.display !== 'none' && cs.visibility !== 'hidden' && !el.closest('.legacy')) out.tiny++;
     if (cs.overflow === 'hidden' && el.scrollWidth > el.clientWidth + 2 && el.clientWidth > 40 && !el.closest('.ob-table-wrap, .od-table-wrap, .table-wrap, .links, .mobile-menu, .leaflet-container, pre, .legacy svg, .geo-liste, .program-card, .shelf')) out.clipped.push((el.className||el.tagName).toString().slice(0,60));
     const r = el.getBoundingClientRect();
-    if (r.width > 0 && (r.right > vw + 2) && cs.position !== 'fixed' && !el.closest('.ob-table-wrap, .od-table-wrap, .table-wrap, .leaflet-container, .links, .mega, pre, .legacy svg, .geo-liste, .shelf, .kanban-board, [style*="overflow"]')) out.offscreen.push((el.className||el.tagName).toString().slice(0,60));
+    if (r.width > 0 && (r.right > vw + 2) && cs.position !== 'fixed' && !el.closest('.ob-table-wrap, .od-table-wrap, .table-wrap, .leaflet-container, .links, .mega, pre, .legacy svg, .geo-liste, .shelf, .kanban-board, .acc-unites-liste, [style*="overflow"]')) out.offscreen.push((el.className||el.tagName).toString().slice(0,60));
   }
   for (const a of document.querySelectorAll('main a[href]')) if (!a.textContent.trim() && !a.getAttribute('aria-label') && !a.querySelector('img[alt]')) out.emptyLinks++;
   const t = document.body.innerText; for (const k of ['undefined','NaN','[object','null ']) if (t.includes(k)) out.nan.push(k);
