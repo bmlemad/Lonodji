@@ -8,6 +8,7 @@ import { ogFor } from "@/lib/content";
 import { BUREAU_18_SEPTEMBRE as B18, ETATS, feuilleDeRoute, ODEB, type Etat } from "@/lib/odeb";
 import { chiffresOdeb } from "@/lib/odeb-chiffres";
 import Partager from "@/components/partager";
+import EtatEcheance from "@/components/etat-echeance";
 
 export const metadata: Metadata = {
   title: "Feuille de route 2026-2030 du projet ODEB LONODJI",
@@ -53,7 +54,7 @@ export default function FeuilleDeRoute() {
         <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Suivi des décisions du 18 septembre 2026">
           <table className="ob-table ob-table--empile">
             <thead><tr><th scope="col">Action</th><th scope="col">Responsable</th><th scope="col">Échéance</th><th scope="col">État</th></tr></thead>
-            <tbody>{B18.suivi.map((r) => <tr key={r.action}><th scope="row" data-label="Action">{r.href ? <Link href={r.href}>{r.action}</Link> : r.action}</th><td data-label="Responsable">{r.qui}</td><td data-label="Échéance">{jour(r.echeance)}</td><td data-label="État">{r.fait ? <><span className="od-pill od-pill--fait">{ETATS.fait}</span> <small>{r.fait}</small></> : r.enCours ? <><span className="od-pill od-pill--en-cours">{ETATS["en-cours"]}</span> <small>{r.enCours}</small></> : <span className="od-pill od-pill--a-venir">{ETATS["a-venir"]}</span>}</td></tr>)}</tbody>
+            <tbody>{B18.suivi.map((r) => <tr key={r.action}><th scope="row" data-label="Action">{r.href ? <Link href={r.href}>{r.action}</Link> : r.action}</th><td data-label="Responsable">{r.qui}</td><td data-label="Échéance">{jour(r.echeance)}</td><td data-label="État">{r.fait ? <><span className="od-pill od-pill--fait">{ETATS.fait}</span> <small>{r.fait}</small></> : r.enCours ? <><span className="od-pill od-pill--en-cours">{ETATS["en-cours"]}</span> <small>{r.enCours}</small></> : <EtatEcheance echeance={r.echeance} aVenir={ETATS["a-venir"]} />}</td></tr>)}</tbody>
           </table>
         </div>
         <p className="lg-footnote">Source : <a href={B18.pdf}>compte rendu du {B18.dateLabel}</a>, version non signée approuvée par tous les participants ; la version signée suivra. Le Comité de réactivation, de modernisation et de transformation institutionnelle, chargé de la plupart de ces actions, est {B18.comite.composition}.</p>
@@ -90,7 +91,7 @@ export default function FeuilleDeRoute() {
         <div className="detail-grid">
           <article><h3>Réalisé</h3><p>La chose existe et se vérifie sur le site : une page, une carte, un formulaire en service, un document publié. Le lien mène à la preuve.</p></article>
           <article><h3>En cours</h3><p>Le chantier est commencé et une partie se voit déjà ; le reste dépend d’une étape nommée — une signature, une nomination, un compte à ouvrir.</p></article>
-          <article><h3>À venir, à décider</h3><p>« À venir » : prévu par la feuille de route, pas commencé. « À décider » : le chantier attend une décision de l’association que le site ne peut ni prendre ni anticiper.</p></article>
+          <article><h3>À venir, à décider</h3><p>« À venir » : prévu par la feuille de route, pas commencé. « À décider » : le chantier attend une décision de l’association que le site ne peut ni prendre ni anticiper. Dans le suivi des décisions du bureau, « Échéance passée » signale seulement qu’aucune avancée n’a encore été annoncée à la date prévue.</p></article>
         </div>
         <Partager route="/odeb/feuille-de-route" titre="Feuille de route 2026-2030 du projet ODEB LONODJI" texte="Trois phases, de la relance de 2026 à l’organisation de référence de 2030 : ce qui est réalisé, en cours, à venir ou à décider, chantier par chantier, avec l’état réel du site." />
         <p className="lg-footnote">Phases et contenu : feuille de route énoncée par l’association le {ODEB.presenteLabel} (phase 1 : tableau de bord dynamique, cartographie communautaire, espace membre ; phase 2 : registre des compétences de la diaspora, plateforme de projets, bibliothèque numérique bedjond ; phase 3 : observatoire du Mandoul Occidental, patrimoine vivant multimédia, académie numérique, application mobile) ; plan d’action 2026-2028 ; recommandations 2027-2030. Les dates sont comptées depuis cette présentation. L’état des chantiers est celui du site à sa mise en ligne ; le <Link href="/impact">tableau de bord</Link> en donne les chiffres.</p>
