@@ -2357,3 +2357,36 @@ details.footer-col > summary::-webkit-details-marker{ display:none; }
   .acc-unites-liste li{ flex:none; scroll-snap-align:start; }
   .acc-unites-liste a{ min-height:36px; white-space:nowrap; }
 }
+
+/* Verre transparent (3 octobre 2026) : en-tête, méga-menu, menu mobile, barre d'onglets et pied de page laissent
+   voir la page, floutée. Opacités calculées pour un contraste du texte ≥ 4,5:1 même au-dessus du vert profond de
+   l'accueil (barre 0,58 ; menus 0,8 avec textes secondaires assombris). Le flou de la barre passe sur un
+   pseudo-élément : la barre n'est plus « racine de fond », et le méga-menu qu'elle contient peut flouter la page. */
+:root{ --verre-barre:rgba(248,250,246,.58); --verre-menu:rgba(246,248,243,.8); --verre-flou-fort:blur(20px) saturate(170%); }
+.nav, body:has(.acc-hero) .nav{ background:transparent; -webkit-backdrop-filter:none; backdrop-filter:none; }
+.nav::before{ content:""; position:absolute; inset:0; z-index:-1; border-radius:inherit; background:var(--verre-barre); -webkit-backdrop-filter:var(--verre-flou-fort); backdrop-filter:var(--verre-flou-fort); pointer-events:none; }
+.links{ color:var(--ink); }
+.mega-inner{ background:var(--verre-menu); -webkit-backdrop-filter:var(--verre-flou-fort); backdrop-filter:var(--verre-flou-fort); }
+.mega-inner .links a small, .mega-col a small, .mega-tete p{ color:#3c4a44; }
+.tabbar, body:has(.acc-hero) .tabbar{ background:var(--verre-barre); -webkit-backdrop-filter:var(--verre-flou-fort); backdrop-filter:var(--verre-flou-fort); }
+.tabbar .tab{ color:var(--ink); }
+@media(max-width:800px){
+  .mobile-menu{ background:var(--verre-menu); -webkit-backdrop-filter:var(--verre-flou-fort); backdrop-filter:var(--verre-flou-fort); }
+  .mm-group-body li a{ color:#24342d; }
+}
+footer.site-footer{ background-color:transparent; }
+.footer-contact a{ background:rgba(255,255,255,.42) !important; -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); }
+/* replis : sans flou possible, ou transparence réduite demandée, ou mode sobre → fonds pleins comme avant */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .nav::before{ background:#f7f9f5; } .mega-inner{ background:linear-gradient(180deg,#f9fbf7,#f3f6f0); }
+  .tabbar, body:has(.acc-hero) .tabbar{ background:#f7f9f5; } .mobile-menu{ background:rgba(244,246,241,.98) !important; }
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav::before, .mega-inner, .tabbar, .mobile-menu{ -webkit-backdrop-filter:none !important; backdrop-filter:none !important; }
+  .nav::before{ background:#f7f9f5; } .mega-inner{ background:linear-gradient(180deg,#f9fbf7,#f3f6f0); }
+  .tabbar, body:has(.acc-hero) .tabbar{ background:#f7f9f5; } .mobile-menu{ background:rgba(244,246,241,.98) !important; }
+  footer.site-footer{ background-color:#f1f4ed; }
+}
+html.sobre .nav::before, html.sobre .mega-inner, html.sobre .tabbar, html.sobre .mobile-menu{ -webkit-backdrop-filter:none !important; backdrop-filter:none !important; }
+html.sobre .nav::before{ background:#f7f9f5; } html.sobre .mega-inner{ background:linear-gradient(180deg,#f9fbf7,#f3f6f0); }
+html.sobre .tabbar{ background:#f7f9f5; } html.sobre .mobile-menu{ background:rgba(244,246,241,.98) !important; } html.sobre footer.site-footer{ background-color:#f1f4ed; }
