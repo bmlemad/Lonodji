@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { GROUPE_WHATSAPP, TELEPHONE, TELEPHONE_HREF, WHATSAPP } from "./contact";
+import { GROUPE_WHATSAPP, RESEAUX, TELEPHONE, TELEPHONE_HREF, WHATSAPP } from "./contact";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
@@ -181,10 +181,7 @@ export const ORG = {
   phoneHref: TELEPHONE_HREF,
   whatsapp: WHATSAPP,
   whatsappGroupe: GROUPE_WHATSAPP,   // groupe WhatsApp « Lonodji », lien communiqué le 2 octobre 2026
-  facebook: "https://www.facebook.com/profile.php?id=61594849805565",   // page « Lonodji », créée le 1er octobre 2026
-  x: "https://x.com/adeb_lonodji",   // compte X « Lonodji », créé le 1er octobre 2026
-  youtube: "https://www.youtube.com/@adeb.lonodji",   // chaîne YouTube « Lonodji », créée le 1er octobre 2026
-  linkedin: "https://www.linkedin.com/company/lonodji/",   // page LinkedIn « Lonodji », créée le 3 octobre 2026
+  ...RESEAUX,   // Facebook, X, YouTube, LinkedIn : lib/contact.ts
   url: "https://lonodji.org",
   bureau: [
     { role: "Président", name: "Adoumbé Maoura", note: "Contact officiel de l’association : appel et WhatsApp" },

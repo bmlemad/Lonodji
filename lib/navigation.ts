@@ -1,6 +1,7 @@
 /* Navigation du site : une seule source pour le méga-menu de l'en-tête, le
    menu mobile, le pied de page et le plan du site. Pas d'accès au disque :
    ce module est aussi chargé côté client (composants « use client »). */
+import { RESEAUX, GROUPE_WHATSAPP } from "./contact";
 import { IDENTITE, ODEB } from "./odeb";
 
 export type NavLien = { label: string; href: string; note?: string; externe?: boolean; fr?: boolean };
@@ -11,14 +12,13 @@ export type NavVedette = { kicker: string; titre: (c: NavChiffres) => string; te
 export type NavEntree = { id: string; label: string; court?: string; href: string; colonnes?: NavColonne[]; vedette?: NavVedette };
 
 /* Six entrées depuis la restructuration du 29/09/2026 : l'association (et sa vision 2030), nos actions,
-   le territoire, le patrimoine, le journal, participer. Une page n'apparaît qu'à un seul endroit du menu. */
+   le territoire, le patrimoine, les médias (le journal, la lettre, le magazine, la presse et les réseaux, depuis le 3/10/2026), participer. Une page n'apparaît qu'à un seul endroit du menu. */
 export const NAVIGATION: NavEntree[] = [
   {
     id: "association", label: "L’association", court: "Association", href: "/mission",
     colonnes: [
       { titre: "Qui nous sommes", liens: [
         { label: "Notre mission", href: "/mission", note: "Objet, valeurs, bureau exécutif, repères" },
-        { label: "Presse & partenaires", href: "/presse", note: "En bref, chiffres, logos, contacts" },
         { label: "Événements", href: "/association/evenements", note: "Réunions, assemblées, activités" },
         { label: "ONG & bailleurs : notre statut", href: "/association/ong-partenaires", note: "Statut, partenaires présents au Mandoul" },
         { label: "Les démarches, pas à pas", href: "/association/demarches", note: "Statut, récépissé, vers l’ONG" },
@@ -111,7 +111,27 @@ export const NAVIGATION: NavEntree[] = [
     ],
     vedette: { kicker: "Le dictionnaire commence par vos mots", titre: () => "La langue nangnda", texte: () => "Un mot, sa prononciation, son sens : chaque proposition est relue avant d’entrer dans le dictionnaire numérique.", href: "/langue#dictionnaire", label: "Proposer un mot" },
   },
-  { id: "journal", label: "Journal", href: "/journal" },
+  {
+    id: "journal", label: "Médias", href: "/journal",
+    colonnes: [
+      { titre: "Lire", liens: [
+        { label: "Le journal", href: "/journal", note: "Annonces, plaidoyers, histoire, corrections" },
+        { label: "Lettre d’information", href: "/lettre", note: "Les nouvelles de l’association" },
+        { label: "Lonodji, le magazine", href: "/magazine", note: "Trimestriel, en PDF à imprimer" },
+      ] },
+      { titre: "Presse", liens: [
+        { label: "Presse & partenaires", href: "/presse", note: "En bref, chiffres, logos, visuels, contacts" },
+      ] },
+      { titre: "Nous suivre", liens: [
+        { label: "Facebook", href: RESEAUX.facebook, note: "Page « Lonodji »", externe: true },
+        { label: "X", href: RESEAUX.x, note: "@adeb_lonodji", externe: true },
+        { label: "YouTube", href: RESEAUX.youtube, note: "Chaîne « Lonodji »", externe: true },
+        { label: "LinkedIn", href: RESEAUX.linkedin, note: "Page « Lonodji »", externe: true },
+        { label: "Groupe WhatsApp", href: GROUPE_WHATSAPP, note: "Le groupe « Lonodji »", externe: true },
+      ] },
+    ],
+    vedette: { kicker: "Le journal", titre: (c) => `${c.articles} articles depuis le 11 septembre 2026`, texte: (c) => `Chaque article date ses faits et cite ses sources ; chaque erreur corrigée est publiée (${c.corrections} à ce jour).`, href: "/journal", label: "Lire le journal" },
+  },
   {
     id: "participer", label: "Participer", href: "/participer",
     colonnes: [
@@ -133,8 +153,6 @@ export const NAVIGATION: NavEntree[] = [
       { titre: "Outils", liens: [
         { label: "Quelle thématique pour vous ?", href: "/participer/trouver-ma-thematique", note: "Trois questions, une orientation" },
         { label: "Kit de mobilisation", href: "/participer/kit-mobilisation", note: "Relayer autour de vous" },
-        { label: "Lettre d’information", href: "/lettre", note: "Les nouvelles de l’association" },
-        { label: "Lonodji, le magazine", href: "/magazine", note: "Trimestriel, en PDF à imprimer" },
         { label: "Installer l’application", href: "/projets/application", note: "Android, iPhone, hors ligne" },
       ] },
     ],
@@ -152,7 +170,6 @@ export const NAVIGATION_EN: NavEntree[] = [
         { label: "About us", href: "/en/about", note: "Purpose, values, executive board, milestones" },
         { label: "How we are organised", href: "/en/organisation", note: "Six pillars, twenty-two themes, seven priorities" },
         { label: "Election of the vice-presidents", href: "/en/election", note: "Vote on 22 October 2026" },
-        { label: "Press & partners", href: "/presse", note: "Key facts, figures, logos, contacts", fr: true },
         { label: "NGOs & funders: our status", href: "/association/ong-partenaires", note: "Our status, partners present in Mandoul", fr: true },
       ] },
       { titre: "Accountability", liens: [
@@ -225,7 +242,27 @@ export const NAVIGATION_EN: NavEntree[] = [
       ] },
     ],
   },
-  { id: "journal", label: "News", href: "/journal" },
+  {
+    id: "journal", label: "Media", href: "/journal",
+    colonnes: [
+      { titre: "Read", liens: [
+        { label: "News", href: "/journal", note: "Announcements, advocacy, history, corrections", fr: true },
+        { label: "Newsletter", href: "/lettre", note: "News from the association", fr: true },
+        { label: "Lonodji magazine", href: "/magazine", note: "Quarterly, printable PDF", fr: true },
+      ] },
+      { titre: "Press", liens: [
+        { label: "Press & partners", href: "/presse", note: "Key facts, figures, logos, visuals, contacts", fr: true },
+      ] },
+      { titre: "Follow us", liens: [
+        { label: "Facebook", href: RESEAUX.facebook, note: "“Lonodji” page", externe: true },
+        { label: "X", href: RESEAUX.x, note: "@adeb_lonodji", externe: true },
+        { label: "YouTube", href: RESEAUX.youtube, note: "“Lonodji” channel", externe: true },
+        { label: "LinkedIn", href: RESEAUX.linkedin, note: "“Lonodji” page", externe: true },
+        { label: "WhatsApp group", href: GROUPE_WHATSAPP, note: "The “Lonodji” group", externe: true },
+      ] },
+    ],
+    vedette: { kicker: "News", titre: (c) => `${c.articles} articles since 11 September 2026`, texte: (c) => `Every article dates its facts and cites its sources; every correction is published (${c.corrections} so far).`, href: "/journal", label: "Read the news" },
+  },
   {
     id: "participer", label: "Get involved", href: "/en/contact",
     colonnes: [
@@ -256,11 +293,11 @@ export function entreeCouranteEn(pathname: string): string {
 /* Section courante d'une page, pour surligner l'entrée du menu. */
 export function entreeCourante(pathname: string): string {
   if (pathname === "/") return "";
-  if (pathname.startsWith("/journal") || pathname.startsWith("/lettre") || pathname.startsWith("/magazine")) return "journal";
+  if (/^\/(journal|lettre|magazine|presse)/.test(pathname)) return "journal";
   if (/^\/(participer|diaspora)/.test(pathname)) return "participer";
   if (/^\/(territoire|carte|villages|observatoire)/.test(pathname)) return "territoire";
   if (/^\/(patrimoine|histoire|langue|bibliotheque|temoignages)/.test(pathname)) return "patrimoine";
-  if (/^\/(mission|odeb|association|transparence|documents|presse|accessibilite|mentions-legales|archives|plan-du-site)/.test(pathname)) return "association";
+  if (/^\/(mission|odeb|association|transparence|documents|accessibilite|mentions-legales|archives|plan-du-site)/.test(pathname)) return "association";
   if (/^\/(programmes|actions|impact|dossiers|projets|secteurs|bailleurs)/.test(pathname)) return "actions";
   return "";
 }

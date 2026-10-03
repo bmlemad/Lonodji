@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 };
 
 /* Les groupes du plan reprennent le menu (lib/navigation.ts), plus le projet ODEB en détail. */
-const main: [string, { href: string; label: string }[]][] = NAVIGATION.filter((e) => e.colonnes).map((e) => [e.label, [{ href: e.href, label: `${e.label} — vue d’ensemble` }, ...e.colonnes!.flatMap((c) => c.liens.map((l) => ({ href: l.href, label: l.label })))]]);
+const main: [string, { href: string; label: string }[]][] = NAVIGATION.filter((e) => e.colonnes).map((e) => [e.label, [{ href: e.href, label: `${e.label} — vue d’ensemble` }, ...e.colonnes!.flatMap((c) => c.liens.filter((l) => !l.externe).map((l) => ({ href: l.href, label: l.label })))]]);
 main.push(["Projet ODEB LONODJI — programmes", PROGRAMMES.map((p) => ({ href: routeProgramme(p), label: `${p.numero} · ${p.nom}` }))]);
-main.push(["Outils", [{ href: "/journal", label: "Le journal" }, { href: "/recherche", label: "Rechercher dans le site" }, { href: "/plan-du-site", label: "Plan du site" }, { href: "/mentions-legales", label: "Mentions légales" }, { href: "/archives", label: "Archives du site" }, { href: "/hors-ligne", label: "Page hors ligne de l’application" }]]);
+main.push(["Outils", [{ href: "/recherche", label: "Rechercher dans le site" }, { href: "/plan-du-site", label: "Plan du site" }, { href: "/mentions-legales", label: "Mentions légales" }, { href: "/archives", label: "Archives du site" }, { href: "/hors-ligne", label: "Page hors ligne de l’application" }]]);
 
 export default function PlanDuSite() {
   const idx = getIndex();
