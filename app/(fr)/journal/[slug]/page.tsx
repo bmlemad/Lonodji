@@ -67,7 +67,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <p className="article-facts">
           <time dateTime={a.date}>{a.dateLabel}</time>
           {a.readTime ? <span>· {a.readTime}</span> : null}
-          {a.byline ? <span>· {a.byline}</span> : null}
+          {a.byline ? <span className="af-par"><span className="af-sep" aria-hidden="true">· </span>{a.byline}</span> : null}
         </p>
       </div>
       <div className="legacy">

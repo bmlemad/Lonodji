@@ -2333,3 +2333,6 @@ details.footer-col > summary::-webkit-details-marker{ display:none; }
   .chapo-suite{ display:inline-flex; align-items:center; gap:6px; margin:0 0 26px; padding:9px 14px; min-height:40px; border:1px solid var(--line); border-radius:99px; background:rgba(255,255,255,.72); color:var(--deep); font:600 13px/1.2 var(--font-dm),system-ui,sans-serif; cursor:pointer; }
 }
 .contact-cta .contact-appel{ gap:10px; } .contact-cta .contact-appel svg{ color:var(--accent); }
+/* Articles sur téléphone : la signature passe à la ligne, sans point de séparation orphelin (3 octobre 2026). */
+.article-facts span{ white-space:nowrap; }
+@media(max-width:640px){ .article-facts{ gap:4px 14px; } .article-facts .af-par{ flex-basis:100%; } .article-facts .af-sep{ display:none; } }
