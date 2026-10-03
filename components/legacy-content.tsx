@@ -1,4 +1,5 @@
 import Link from "@/components/lien";
+import { insecables } from "@/lib/typo";
 import Partager from "@/components/partager";
 import type { LegacyPage, Section } from "../lib/content";
 import LegacyEnhance from "./legacy-enhance";
@@ -177,7 +178,7 @@ export function LegacyDocument({ page, children, eyebrowPrefix }: { page: Legacy
         return r ? <Crumbs items={["Accueil", r[1], page.crumbs?.[page.crumbs.length - 1] ?? page.title]} parentHref={r[2]} /> : <Crumbs items={page.crumbs} parentHref={PARENT_ROUTES[page.parent]} lang={en ? "en" : "fr"} />;
       })()}
       <p className="eyebrow">{SURTITRES[page.route] ?? (en && eyebrowPrefix ? [page.eyebrow, "in English"].filter(Boolean).join(" · ") : [eyebrowPrefix, page.eyebrow].filter(Boolean).join(" · "))}</p>
-      <h1>{main}{rest.length ? <><br /><em>{rest.join(" ")}</em></> : null}</h1>
+      <h1>{insecables(main)}{rest.length ? <><br /><em>{insecables(rest.join(" "))}</em></> : null}</h1>
       {page.lede ? <p className="detail-lead">{page.lede}</p> : null}
       {page.pills?.length ? <div className="status-list lg-pills">{page.pills.map((p) => <span key={p}>{p}</span>)}</div> : null}
       {children}

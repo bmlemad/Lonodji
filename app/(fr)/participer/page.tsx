@@ -40,7 +40,7 @@ export default function Participer() {
       />
 
       <div className="contact-cta">
-        <a className="big" href={ORG.phoneHref}>{ORG.phone}</a>
+        <a className="button primary contact-appel" href={ORG.phoneHref} title="Appeler l’association"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg>Appeler l’association</a>
         <small>Adoumbé Maoura, président — appel et WhatsApp, le contact officiel de l’association</small>
         <a className="button secondary" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp <span aria-hidden="true">↗</span></a>
         <a className="button secondary" href={ORG.whatsappGroupe} target="_blank" rel="noopener noreferrer">Rejoindre le groupe WhatsApp <span aria-hidden="true">↗</span></a>

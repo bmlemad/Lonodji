@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { insecables } from "@/lib/typo";
 
 /* Espace de rédaction privé du journal (client). Le mot de passe part en POST,
    le jeton de session voyage en en-tête Authorization et vit dans
@@ -289,7 +290,7 @@ export default function RedactionApp({ rubriques }: { rubriques: Rubrique[] }) {
             <div className="hub-page article-page rd-apercu-page">
               <div className="article-head">
                 <p className="eyebrow">{rubriqueLabel}</p>
-                <h1>{titre1}{titre2 ? <><br /><em>{titre2}</em></> : null}</h1>
+                <h1>{insecables(titre1)}{titre2 ? <><br /><em>{insecables(titre2)}</em></> : null}</h1>
                 {courant.chapo ? <p className="detail-lead">{courant.chapo}</p> : null}
                 <p className="article-facts"><time>{dateFr(courant.maj || new Date().toISOString())}</time><span>· {Math.max(1, Math.round(mots / 200))} min de lecture</span><span>· {courant.auteur}</span></p>
               </div>

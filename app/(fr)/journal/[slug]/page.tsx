@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { insecables } from "@/lib/typo";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
 import { notFound } from "next/navigation";
@@ -61,7 +62,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <div className="article-head">
         <nav className="lg-crumbs" aria-label="Fil d’Ariane"><ol><li><Link href="/">Accueil</Link></li><li><Link href="/journal">Le journal</Link></li><li aria-current="page">{a.tag || "Article"}</li></ol></nav>
         <p className="eyebrow">{a.tag || "Le journal"}</p>
-        <h1>{main}{rest.length ? <><br /><em>{rest.join(" ")}</em></> : null}</h1>
+        <h1>{insecables(main)}{rest.length ? <><br /><em>{insecables(rest.join(" "))}</em></> : null}</h1>
         {a.lede ? <p className="detail-lead">{a.lede}</p> : null}
         <p className="article-facts">
           <time dateTime={a.date}>{a.dateLabel}</time>

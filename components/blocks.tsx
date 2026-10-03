@@ -3,12 +3,13 @@ import type { ArticleSummary, DocumentItem, Plaidoyer, Thematique } from "../lib
 import { estPrioritaire } from "@/lib/organisation";
 import { secteursDeThematique } from "../lib/secteurs";
 import { reperesFr } from "../lib/reperes";
+import { insecables } from "../lib/typo";
 
 /* Adresse du site pour les données structurées (pas d'import de lib/content : ce module sert aussi côté client). */
 const SITE = "https://lonodji.org";
 
-export function PageHeader({ eyebrow, title, em, lead, crumbs, pills, lang }: {
-  eyebrow: string; title: string; em?: string; lead?: string; crumbs?: { label: string; href?: string }[]; pills?: string[]; lang?: "fr" | "en";
+export function PageHeader({ eyebrow, title, em, sousTitre, lead, crumbs, pills, lang }: {
+  eyebrow: string; title: string; em?: string; sousTitre?: string; lead?: string; crumbs?: { label: string; href?: string }[]; pills?: string[]; lang?: "fr" | "en";
 }) {
   // pages anglaises : premier maillon « Home » → /en/index (lang explicite, ou fil qui pointe vers /en/…)
   const en = lang ? lang === "en" : Boolean(crumbs?.some((c) => c.href?.startsWith("/en/")));
@@ -28,7 +29,8 @@ export function PageHeader({ eyebrow, title, em, lead, crumbs, pills, lang }: {
         </nav>
       ) : null}
       <p className="eyebrow">{eyebrow}</p>
-      <h1>{title}{em ? <><br /><em>{em}</em></> : null}</h1>
+      <h1>{insecables(title)}{em ? <><br /><em>{insecables(em)}</em></> : null}</h1>
+      {sousTitre ? <p className="h1-sous">{insecables(sousTitre)}</p> : null}
       {lead ? <p className="detail-lead">{lead}</p> : null}
       {pills?.length ? <div className="status-list lg-pills">{pills.map((p) => <span key={p}>{p}</span>)}</div> : null}
     </>
