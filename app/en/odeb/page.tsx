@@ -1,10 +1,11 @@
 import { metaDescription } from "@/lib/content";
+import Appel from "@/components/appel";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { SectionHead, Stats } from "@/components/blocks";
 import { OdebHero } from "@/components/odeb-marque";
 import { ogFor } from "@/lib/content";
-import { TELEPHONE, TELEPHONE_HREF } from "@/lib/contact";
+import { WHATSAPP } from "@/lib/contact";
 import { alternatesLangues } from "@/lib/langues";
 import { feuilleDeRoute, ODEB, PROGRAMMES, routeProgramme } from "@/lib/odeb";
 import { chiffresOdeb, thematiquesParId } from "@/lib/odeb-chiffres";
@@ -155,7 +156,7 @@ export default function OdebEn() {
           <Link href="/projets" hrefLang="fr"><small>Projects</small><strong>Propose or support a project</strong><span>Each project with its stage, what is missing and how to contribute. No money is collected until the association has a bank account in its name.</span></Link>
         </div>
         <Partager route="/en/odeb" titre="The ODEB LONODJI project" texte="ODEB LONODJI, the Organisation for the Development and Emergence of the Bedjond people: a project led by ADEB LONODJI to give the Bedjond country a permanent institution by 2030. Six missions, six programmes, a roadmap, a white paper." lang="en" />
-        <p className="lg-footnote">This page summarises, in English, the French pages of the ODEB LONODJI project: <Link href="/odeb" hrefLang="fr">vision</Link>, <Link href="/odeb/programmes" hrefLang="fr">programmes</Link>, <Link href="/odeb/feuille-de-route" hrefLang="fr">roadmap</Link> and <Link href="/odeb/livre-blanc" hrefLang="fr">white paper</Link>. Figures are those of the site at publication; the white paper is a working draft, not yet adopted by the association. Official contact: the association’s president, <a href={TELEPHONE_HREF}>{TELEPHONE}</a> (calls and WhatsApp). {ODEB.sigle} · <span lang="fr">{ODEB.nom}</span>.</p>
+        <p className="lg-footnote">This page summarises, in English, the French pages of the ODEB LONODJI project: <Link href="/odeb" hrefLang="fr">vision</Link>, <Link href="/odeb/programmes" hrefLang="fr">programmes</Link>, <Link href="/odeb/feuille-de-route" hrefLang="fr">roadmap</Link> and <Link href="/odeb/livre-blanc" hrefLang="fr">white paper</Link>. Figures are those of the site at publication; the white paper is a working draft, not yet adopted by the association. Official contact: the association’s president, <Appel texte="call" en /> or <a href={WHATSAPP}>WhatsApp</a>. {ODEB.sigle} · <span lang="fr">{ODEB.nom}</span>.</p>
       </section>
     </main>
   );

@@ -34,7 +34,7 @@ export function useEnvoiMultipart(telephone: string) {
       setEtat("ok");
     } catch {
       setEtat("erreur");
-      setErreur(`L’envoi n’a pas abouti. Réessayez dans un instant, ou envoyez-le par WhatsApp au ${telephone}.`);
+      setErreur(`L’envoi n’a pas abouti. Réessayez dans un instant, ou envoyez-le par WhatsApp (lien ci-dessous).`);
     }
   }
 

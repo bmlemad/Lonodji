@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Appel from "@/components/appel";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead } from "@/components/blocks";
 import DiasporaCompteurs from "@/components/diaspora-compteurs";
@@ -138,7 +139,7 @@ export default function Diaspora() {
             <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
               <button className="button primary" type="submit">M’inscrire au répertoire <span aria-hidden="true">→</span></button>
             </div>
-            <p className="form-note">Vous préférez en parler d’abord ? <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">Écrivez-nous sur WhatsApp</a> ou appelez le {ORG.phone}.</p>
+            <p className="form-note">Vous préférez en parler d’abord ? <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">Écrivez-nous sur WhatsApp</a> ou <Appel texte="appelez-nous" />.</p>
           </form>
         </div>
         <LegacyEnhance hasForms />

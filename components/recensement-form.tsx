@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "@/components/lien";
+import Appel from "@/components/appel";
 import { useRef, useState } from "react";
 
 /* Recensement des membres et des sympathisants (Netlify « recensement-membres »), décidé par le bureau
@@ -121,11 +122,11 @@ export default function RecensementForm({ thematiques, telephone, whatsapp }: { 
         <label className="check check--consentement"><input name="consentement" required type="checkbox" value="oui" /> <span>J’accepte que ces informations soient conservées dans le registre des membres d’ADEB LONODJI, chez notre hébergeur aux États-Unis, et consultées par le bureau et le Comité seulement ; elles ne sont jamais publiées, et je peux demander à tout moment qu’elles soient effacées (<Link href="/mentions-legales#donnees">données et droits</Link>). *</span></label>
       </fieldset>
 
-      {etat === "erreur" ? <p className="form-note form-error" role="alert">L’envoi n’a pas abouti. Réessayez dans un instant, ou envoyez ces informations par WhatsApp au {telephone}.</p> : null}
+      {etat === "erreur" ? <p className="form-note form-error" role="alert">L’envoi n’a pas abouti. Réessayez dans un instant, ou envoyez ces informations <a href={whatsapp} target="_blank" rel="noopener noreferrer">par WhatsApp</a>.</p> : null}
       <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
         <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Me faire recenser"} <span aria-hidden="true">→</span></button>
       </div>
-      <p className="form-note">Un proche sans accès à Internet ? Il peut se faire recenser <a href={whatsapp} target="_blank" rel="noopener noreferrer">par WhatsApp</a> ou en appelant le {telephone} : nous prenons note.</p>
+      <p className="form-note">Un proche sans accès à Internet ? Il peut se faire recenser <a href={whatsapp} target="_blank" rel="noopener noreferrer">par WhatsApp</a> ou <Appel texte="par téléphone" /> : nous prenons note.</p>
     </form>
   );
 }

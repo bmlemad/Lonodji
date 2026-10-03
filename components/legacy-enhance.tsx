@@ -1,7 +1,6 @@
 "use client";
 
 import Script from "next/script";
-import { TELEPHONE } from "@/lib/contact";
 import { useEffect, useRef } from "react";
 
 declare global {
@@ -54,8 +53,8 @@ export default function LegacyEnhance({ hasMap = false, hasForms = false, script
             form.appendChild(err);
           }
           err.textContent = en
-            ? `Your message could not be sent. Please try again in a moment, or write to us on WhatsApp at ${TELEPHONE}.`
-            : `L’envoi n’a pas abouti. Réessayez dans un instant, ou écrivez-nous par WhatsApp au ${TELEPHONE}.`;
+            ? `Your message could not be sent. Please try again in a moment, or write to us on WhatsApp (link at the bottom of the page).`
+            : `L’envoi n’a pas abouti. Réessayez dans un instant, ou écrivez-nous par WhatsApp (lien en bas de page).`;
         }
       };
       form.addEventListener("submit", handler);

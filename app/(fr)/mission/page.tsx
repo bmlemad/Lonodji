@@ -1,4 +1,5 @@
 import { alternatesLangues } from "@/lib/langues";
+import Appel from "@/components/appel";
 import { breadcrumbSchema, jsonLd, webPageSchema } from "@/lib/schema";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
@@ -46,7 +47,7 @@ export default function Mission() {
           {ORG.bureau.map((m) => (
             <article className="bureau-card" key={m.role}><small>{m.role}</small><strong>{m.name}</strong>{m.note ? <p>{m.note}</p> : null}</article>
           ))}
-          <article className="bureau-card"><small>Contact officiel</small><strong><a href={ORG.phoneHref}>{ORG.phone}</a></strong><p>Appel et WhatsApp — numéro du président. <Link href="/participer#contact">Formulaire de contact</Link>.</p></article>
+          <article className="bureau-card"><small>Contact officiel</small><strong><Appel /></strong><p>Appel et WhatsApp — numéro du président. <Link href="/participer#contact">Formulaire de contact</Link>.</p></article>
         </div>
       </section>
 

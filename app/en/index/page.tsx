@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Appel from "@/components/appel";
 import Link from "@/components/lien";
 import CarteAccueil from "@/components/carte-accueil";
 import EnCeMoment from "@/components/en-ce-moment";
@@ -171,7 +172,7 @@ export default function HomeEn() {
       <section className="acc-section acc-participer" aria-labelledby="participer-title">
         <div className="acc-tete">
           <h2 id="participer-title">A place for every contribution</h2>
-          <p>We reply within 48 working hours, by the <Link className="lien-souligne" href="/en/contact">contact form</Link> or on the association’s number, that of its president, Adoumbé Maoura: <a className="lien-souligne" href={ORG.phoneHref}>{ORG.phone}</a>, calls and <a className="lien-souligne" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
+          <p>We reply within 48 working hours, by the <Link className="lien-souligne" href="/en/contact">contact form</Link> or on the association’s number, that of its president, Adoumbé Maoura: <Appel texte="call" en /> and <a className="lien-souligne" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
         </div>
         <ul className="acc-participer-grille">
           <li><Link href="/en/organisation#priorities"><strong>Take on a post</strong><span>{inWordsEn(postes.length, true)} open posts: lead, deputise, chair a pillar.</span></Link></li>

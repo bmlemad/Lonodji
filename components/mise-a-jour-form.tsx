@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "@/components/lien";
+import Appel from "@/components/appel";
 import { useEffect, useRef, useState } from "react";
 
 /* Demande de mise à jour du site (Netlify « demande-mise-a-jour », 2 octobre 2026) : une erreur à corriger,
@@ -99,7 +100,7 @@ export default function MiseAJourForm({ telephone, whatsapp }: { telephone: stri
         <label className="check check--consentement"><input name="consentement" required type="checkbox" value="oui" /> <span>J’accepte qu’ADEB LONODJI conserve cette demande, chez notre hébergeur aux États-Unis, et me recontacte pour la vérifier ; je peux demander à tout moment qu’elle soit effacée (<Link href="/mentions-legales#donnees">données et droits</Link>). *</span></label>
       </fieldset>
 
-      {etat === "erreur" ? <p className="form-note form-error" role="alert">L’envoi n’a pas abouti. Réessayez dans un instant, ou envoyez votre demande par WhatsApp au {telephone}.</p> : null}
+      {etat === "erreur" ? <p className="form-note form-error" role="alert">L’envoi n’a pas abouti. Réessayez dans un instant, ou envoyez votre demande <a href={whatsapp} target="_blank" rel="noopener noreferrer">par WhatsApp</a>.</p> : null}
       <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
         <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Envoyer la demande"} <span aria-hidden="true">→</span></button>
       </div>

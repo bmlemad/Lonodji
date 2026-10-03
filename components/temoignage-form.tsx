@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "@/components/lien";
+import Appel from "@/components/appel";
 import { useEffect, useRef, useState } from "react";
 
 /* Formulaire « Racontez Bédjondo » : un récit, une photo, un son ou une courte
@@ -46,7 +47,7 @@ export default function TemoignageForm({ telephone, whatsapp }: { telephone: str
       setEtat("ok");
     } catch {
       setEtat("erreur");
-      setErreur(`L’envoi n’a pas abouti. Réessayez dans un instant, ou envoyez votre récit par WhatsApp au ${telephone}.`);
+      setErreur(`L’envoi n’a pas abouti. Réessayez dans un instant, ou envoyez votre récit par WhatsApp (lien ci-dessous).`);
     }
   }
 
@@ -118,7 +119,7 @@ export default function TemoignageForm({ telephone, whatsapp }: { telephone: str
       <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
         <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Envoyer mon récit"} <span aria-hidden="true">→</span></button>
       </div>
-      <p className="form-note">Vous préférez raconter de vive voix ? <a href={whatsapp} target="_blank" rel="noopener noreferrer">Écrivez-nous sur WhatsApp</a> ou appelez le {telephone} : nous prenons note, puis vous relisez.</p>
+      <p className="form-note">Vous préférez raconter de vive voix ? <a href={whatsapp} target="_blank" rel="noopener noreferrer">Écrivez-nous sur WhatsApp</a> ou <Appel texte="appelez-nous" /> : nous prenons note, puis vous relisez.</p>
     </form>
   );
 }

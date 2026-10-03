@@ -2336,3 +2336,7 @@ details.footer-col > summary::-webkit-details-marker{ display:none; }
 /* Articles sur téléphone : la signature passe à la ligne, sans point de séparation orphelin (3 octobre 2026). */
 .article-facts span{ white-space:nowrap; }
 @media(max-width:640px){ .article-facts{ gap:4px 14px; } .article-facts .af-par{ flex-basis:100%; } .article-facts .af-sep{ display:none; } }
+/* Lien d'appel sans numéro en clair (3 octobre 2026) : icône du téléphone et un mot, dans le texte comme ailleurs. */
+.lien-appel{ display:inline-flex; align-items:center; gap:5px; color:var(--deep, #173b2d); font-weight:600; text-decoration:underline; text-underline-offset:3px; white-space:nowrap; }
+.lien-appel svg{ flex:none; position:relative; top:-1px; }
+.contact-cta .lien-appel, .bureau-card .lien-appel{ text-decoration:none; }

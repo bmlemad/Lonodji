@@ -2024,7 +2024,37 @@ def lire_source(path: Path) -> str:
     html = reperes_internationaux(odd_enfance(ancres_en(structure_sport(structure_01_10(structure_30_09(corrections_revue(structure_29_09(html, path), path), path), path), path), path), path), path)
     if path.name == "kit-mobilisation.html":
         html = kit_liens(html)
+    html = numero_en_icone(html, path)
     return html if "articles" in path.parts else comptes_courants(html)
+
+
+ICONE_APPEL = ('<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+               'stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>')
+
+
+def numero_en_icone(html: str, path: Path) -> str:
+    """Le numéro du président ne s'affiche plus en clair (demande du 2 octobre 2026, étendue le 3 octobre) : un lien
+    d'appel avec l'icône du téléphone le remplace ; « WhatsApp au … » devient un lien WhatsApp. Le lien tel: reste."""
+    import importlib.util as _iu
+    spec = _iu.spec_from_file_location("org", Path(__file__).with_name("org.py")); org = _iu.module_from_spec(spec); spec.loader.exec_module(org)
+    chiffres = re.sub(r"\D", "", org.TELEPHONE)
+    sep = r"(?:\s|&nbsp;|&#160;|\u00a0|\u202f|\.|-)?"
+    esp = r"(?:\s|&nbsp;|&#160;|\u00a0)"
+    num = r"\+?" + sep.join(chiffres[:3]) + sep + sep.join(chiffres[3:])
+    en = path.parts[:1] == ("en",) or "/en/" in str(path)
+    libelle, aria = ("call", "Call the association") if en else ("appeler", "Appeler l’association")
+    wa = org.WHATSAPP
+    tel = r'<a href="(tel:[^"]+)">(?:<strong>)?' + num + r'(?:</strong>)?</a>'
+    appel = lambda m: f'<a class="lien-appel" href="{m.group(1)}" aria-label="{aria}" title="{aria}">{ICONE_APPEL}<span>{libelle}</span></a>'
+    # « par WhatsApp au <numéro> » : le lien WhatsApp suffit
+    html = re.sub(r"(par|ou)" + esp + "WhatsApp" + esp + "au" + esp + tel, lambda m: f'{m.group(1)} <a href="{wa}" rel="noopener" target="_blank">WhatsApp</a>', html)
+    # « … au <numéro> » : deux-points et lien d'appel
+    html = re.sub(esp + "au" + esp + tel, lambda m: "&nbsp;: " + appel(m), html)
+    html = re.sub(tel, appel, html)
+    # texte d'un lien WhatsApp ou étiquette qui portait le numéro
+    html = re.sub(r"(WhatsApp)" + esp + "au" + esp + num, r"\1", html)
+    html = re.sub(r"(WhatsApp)" + esp + "?:" + esp + num + esp, r"\1 ", html)
+    return html
 
 
 def kit_liens(html: str) -> str:

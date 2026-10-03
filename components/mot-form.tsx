@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "@/components/lien";
+import Appel from "@/components/appel";
 import { useEnvoiMultipart } from "./envoi-multipart";
 
 /* « Un mot, une expression » : première brique du dictionnaire nangnda. Un mot,
@@ -59,7 +60,7 @@ export default function MotForm({ telephone, whatsapp }: { telephone: string; wh
       <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
         <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Envoyer ce mot"} <span aria-hidden="true">→</span></button>
       </div>
-      <p className="form-note">Vous préférez dicter ? <a href={whatsapp} target="_blank" rel="noopener noreferrer">Un message vocal sur WhatsApp</a> ou un appel au {telephone} : nous transcrivons, puis vous relisez.</p>
+      <p className="form-note">Vous préférez dicter ? <a href={whatsapp} target="_blank" rel="noopener noreferrer">Un message vocal sur WhatsApp</a> ou un <Appel texte="appel" /> : nous transcrivons, puis vous relisez.</p>
     </form>
   );
 }

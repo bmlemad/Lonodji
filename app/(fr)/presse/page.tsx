@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Appel from "@/components/appel";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import { enLettres, filledCount, getIndex, ogFor, ORG, thematiqueCount } from "@/lib/content";
@@ -75,7 +76,7 @@ export default function Presse() {
         crumbs={[{ label: "L’association", href: "/mission" }, { label: "Presse" }]}
         pills={["Association reconnue en 1995", "Bédjondo · Mandoul · Tchad", `Chiffres au ${releve}`]}
       />
-      <p className="detail-lead">Contact presse : {ORG.bureau[0].name}, président — <a href={ORG.phoneHref}>{ORG.phone}</a> (appel, WhatsApp) · <Link href="/participer?objet=presse#contact">Formulaire, objet presse</Link></p>
+      <p className="detail-lead">Contact presse : {ORG.bureau[0].name}, président — <Appel /> ou <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a> · <Link href="/participer?objet=presse#contact">Formulaire, objet presse</Link></p>
 
       <section className="hub-section" id="en-bref">
         <SectionHead eyebrow="En cinq lignes" title="Qui nous sommes," em="en une citation prête à l’emploi." />
@@ -200,7 +201,7 @@ export default function Presse() {
       <section className="hub-section" id="contact">
         <SectionHead eyebrow="Contact presse" title="À qui écrire," em="et comment." />
         <div className="contact-card pr-contact">
-          <p>Le contact officiel de l’association est celui de son président, {ORG.bureau[0].name} : <a href={ORG.phoneHref}><strong>{ORG.phone}</strong></a>, appel et WhatsApp. Pour une demande écrite, le formulaire est le plus sûr, objet « Partenariat, presse ou recherche » ; aucune adresse électronique n’est encore rattachée au domaine lonodji.org.</p>
+          <p>Le contact officiel de l’association est celui de son président, {ORG.bureau[0].name} : <Appel /> ou <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>. Pour une demande écrite, le formulaire est le plus sûr, objet « Partenariat, presse ou recherche » ; aucune adresse électronique n’est encore rattachée au domaine lonodji.org.</p>
           <div className="hero-actions">
             <Link className="button primary" href="/participer?objet=presse#contact">Nous écrire <span aria-hidden="true">→</span></Link>
             <a className="text-link" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>

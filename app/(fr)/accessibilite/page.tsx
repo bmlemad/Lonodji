@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Appel from "@/components/appel";
 import Link from "@/components/lien";
 import { PageHeader, SectionHead } from "@/components/blocks";
 import { ogFor, ORG } from "@/lib/content";
@@ -51,7 +52,7 @@ export default function Accessibilite() {
       <section className="hub-section" id="signaler">
         <SectionHead eyebrow="Un obstacle ?" title="Dites-le-nous," em="nous répondons sous 48 heures ouvrées." />
         <div className="contact-card" style={{ maxWidth: 760 }}>
-          <p>Une page illisible, un formulaire impossible à remplir, un contraste trop faible, un document inaccessible : écrivez-nous en indiquant la page et ce qui bloque. Nous répondons sous quarante-huit heures ouvrées et nous corrigeons ; les corrections sont datées dans le <Link href="/transparence#corrections">journal des corrections</Link>. Par téléphone ou WhatsApp : {ORG.phone}.</p>
+          <p>Une page illisible, un formulaire impossible à remplir, un contraste trop faible, un document inaccessible : écrivez-nous en indiquant la page et ce qui bloque. Nous répondons sous quarante-huit heures ouvrées et nous corrigeons ; les corrections sont datées dans le <Link href="/transparence#corrections">journal des corrections</Link>. Par <Appel texte="téléphone" /> ou <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
           <div className="hero-actions">
             <Link className="button primary" href="/participer?objet=question#contact">Signaler un obstacle <span aria-hidden="true">→</span></Link>
             <Link className="text-link" href="/transparence">Notre charte de redevabilité <span aria-hidden="true">→</span></Link>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Appel from "@/components/appel";
 import { alternatesLangues } from "@/lib/langues";
 import Link from "@/components/lien";
 import { ArticleCard } from "@/components/blocks";
@@ -228,7 +229,7 @@ export default function Home() {
       <section className="acc-section acc-participer" aria-labelledby="participer-title">
         <div className="acc-tete">
           <h2 id="participer-title">Une place pour chaque contribution</h2>
-          <p>Nous répondons sous quarante-huit heures ouvrées, par le <Link className="lien-souligne" href="/participer#contact">formulaire</Link> ou au numéro de l’association, celui de son président, Adoumbé Maoura : <a className="lien-souligne" href={ORG.phoneHref}>{ORG.phone}</a>, appel et <a className="lien-souligne" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
+          <p>Nous répondons sous quarante-huit heures ouvrées, par le <Link className="lien-souligne" href="/participer#contact">formulaire</Link> ou au numéro de l’association, celui de son président, Adoumbé Maoura : <Appel texte="appel" /> et <a className="lien-souligne" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
         </div>
         <ul className="acc-participer-grille">
           <li><Link href="/participer#postes-ouverts"><strong>Prendre un poste</strong><span>{enLettres(postes.length, true)} postes ouverts : coordonner, seconder, présider un pôle.</span></Link></li>

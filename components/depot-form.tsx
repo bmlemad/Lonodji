@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "@/components/lien";
+import Appel from "@/components/appel";
 import { useEnvoiMultipart } from "./envoi-multipart";
 
 /* Dépôt d'un document pour la bibliothèque numérique : référence (titre,
@@ -72,7 +73,7 @@ export default function DepotForm({ telephone, whatsapp }: { telephone: string; 
       <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
         <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Déposer ce document"} <span aria-hidden="true">→</span></button>
       </div>
-      <p className="form-note">Un document volumineux, une série de tirages à photographier ? <a href={whatsapp} target="_blank" rel="noopener noreferrer">Écrivez-nous sur WhatsApp</a> ou appelez le {telephone}.</p>
+      <p className="form-note">Un document volumineux, une série de tirages à photographier ? <a href={whatsapp} target="_blank" rel="noopener noreferrer">Écrivez-nous sur WhatsApp</a> ou <Appel texte="appelez-nous" />.</p>
     </form>
   );
 }

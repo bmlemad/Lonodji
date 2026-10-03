@@ -1,4 +1,5 @@
 import { metaDescription } from "@/lib/content";
+import Appel from "@/components/appel";
 import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
@@ -160,7 +161,7 @@ export default function Projets() {
             <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
               <button className="button primary" type="submit">Proposer ce projet <span aria-hidden="true">→</span></button>
             </div>
-            <p className="form-note">Vous préférez en parler d’abord ? <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">Écrivez-nous sur WhatsApp</a> ou appelez le {ORG.phone}.</p>
+            <p className="form-note">Vous préférez en parler d’abord ? <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">Écrivez-nous sur WhatsApp</a> ou <Appel texte="appelez-nous" />.</p>
           </form>
         </div>
         <LegacyEnhance hasForms />

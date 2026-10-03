@@ -57,7 +57,7 @@
    "lede": "Un formulaire simple pour dire, quartier par quartier et canton par canton, ce qui manque. Les signalements seront synthétisés, remis à la commune et joints à nos plaidoyers.",
    "description": "Signalez un besoin à Bédjondo ou dans les cantons du Mandoul Occidental : eau, électricité, réseau, santé, route, école.",
    "parent": "Nos actions",
-   "words": 1363,
+   "words": 1357,
    "hasMap": true
   },
   {
@@ -189,7 +189,7 @@
    "lede": "Nous avions signalé ce trou deux fois sans savoir le combler. Voici la méthode : six questions qui ne disent jamais le mot, un inventaire d’obstacles plutôt qu’une liste de noms, huit textes tchadiens dont personne ne se sert — et les cinq défauts que nous avons corrigés sur ce site avant de publier cette page.",
    "description": "Le plan d’ADEB LONODJI pour les personnes en situation de handicap : compter sans humilier, et les droits tchadiens que personne n’utilise.",
    "parent": "Personnes vulnérables",
-   "words": 4137,
+   "words": 4133,
    "hasMap": false
   },
   {
@@ -249,7 +249,7 @@
    "lede": "Nous avons cherché non pas qui dit travailler au Tchad, mais qui intervient dans notre province avec une trace datée. Onze entrées, une vingtaine de structures, aucune basée à Bédjondo — et un modèle déjà installé dans le Mandoul qu’il suffit de demander une quatrième fois.",
    "description": "Qui intervient vraiment dans le Mandoul, avec quel bailleur et sur quel secteur — et l’acteur que nous approchons pour chaque dossier.",
    "parent": "L’association",
-   "words": 2862,
+   "words": 2856,
    "hasMap": false
   },
   {
@@ -357,7 +357,7 @@
    "lede": "Ce que nous demandons à l’État, aux régulateurs, aux opérateurs et à la commune pour Bédjondo et le Mandoul Occidental — avec, pour chaque dossier, l’état d’avancement et la possibilité d’y joindre votre soutien.",
    "description": "Internet, électricité, commune : les plaidoyers d’ADEB LONODJI pour Bédjondo, leur suivi public, et comment les soutenir.",
    "parent": "Nos actions",
-   "words": 2014,
+   "words": 2008,
    "hasMap": false
   },
   {
@@ -381,7 +381,7 @@
    "lede": "Une question, une proposition, l’envie d’animer une thématique : c’est ici. Pour devenir membre, remplissez plutôt la déclaration d’intention d’adhésion , sans paiement.",
    "description": "Écrire à ADEB LONODJI ou rejoindre une thématique : formulaire en ligne, téléphone et WhatsApp du président. Pour adhérer, une déclaration d’intention sans paiement.",
    "parent": "Agir avec nous",
-   "words": 1175,
+   "words": 1171,
    "hasMap": false
   },
   {
@@ -393,7 +393,7 @@
    "lede": "L’association se dote de cartes d’adhérent et invite ses membres à cotiser. Voici ce que la carte donne et ce qu’elle n’achète pas, la grille proposée au vote, où va l’argent, et les règles qui protègent l’adhérent autant que le trésorier.",
    "description": "Carte d’adhérent au format bancaire, grille de cotisation proposée au vote, règle de caisse et registre protégé.",
    "parent": "Agir avec nous",
-   "words": 2398,
+   "words": 2394,
    "hasMap": false
   },
   {
@@ -405,7 +405,7 @@
    "lede": "Six des vingt-deux thématiques d’ADEB LONODJI cherchent encore un coordonnateur, et l’association elle-même se réactive après des années de mise en veille : votre soutien, sous toutes ses formes, compte. Voici les façons d’y contribuer.",
    "description": "Les façons de soutenir ADEB LONODJI : cotisation et don, temps et compétences, dons en nature — au service du peuple bedjond de Bédjondo.",
    "parent": "Accueil",
-   "words": 490,
+   "words": 486,
    "hasMap": false
   },
   {
@@ -417,7 +417,7 @@
    "lede": "Nous demandons aux institutions de publier leurs données, d’annoncer leurs décisions et de répondre à leurs courriers. Voici ce à quoi nous nous engageons de notre côté — et comment nous saisir si nous y manquons.",
    "description": "Nos engagements : réponse sous 48 heures, mécanisme de plainte ouvert et anonyme, protection des enfants et des témoins, usage des fonds, non-discrimination.",
    "parent": "L’association",
-   "words": 7399,
+   "words": 7393,
    "hasMap": false
   },
   {
@@ -429,7 +429,7 @@
    "lede": "Qui publie ce site, quelles données sont collectées via ses formulaires, et comment les faire corriger ou supprimer.",
    "description": "Mentions légales d’ADEB LONODJI et informations sur les données collectées via les formulaires du site.",
    "parent": "L’association",
-   "words": 2012,
+   "words": 2002,
    "hasMap": false
   },
   {
@@ -525,7 +525,7 @@
    "lede": "Write to the association in English or French; we answer every message.",
    "description": "Contact ADEB LONODJI in English: partners, researchers, media and diaspora.",
    "parent": "Home",
-   "words": 236,
+   "words": 232,
    "hasMap": false
   },
   {
