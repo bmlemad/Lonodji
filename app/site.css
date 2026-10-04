@@ -2416,3 +2416,16 @@ html.sobre .hero-visual{ box-shadow:none; }
 
 .participer-choix{ margin-bottom:32px; }
 .participer-choix + .contact-cta{ margin-top:0; }
+
+/* Revue mobile du 4 octobre : champs lisibles sans zoom automatique iOS,
+   cibles de l'en-tête accessibles au toucher, y compris sur petit écran. */
+@media(max-width:800px){
+  html body :is(input, select, textarea):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=hidden]):not([type=submit]):not([type=button]){ font-size:16px; min-height:44px; }
+  .footer-top > *{ min-width:0; }
+  .nav{ gap:6px; }
+  .nav .nav-search, .nav .nav-share{ width:44px; height:44px; }
+  .nav .nav-cta, .nav .menu-toggle{ min-width:44px; min-height:44px; justify-content:center; }
+  .mm-group-body li a, .mm-tout{ min-height:44px; display:flex; align-items:center; }
+  .mm-foot a{ min-height:44px; display:inline-flex; align-items:center; }
+  .chapo-suite{ min-height:44px; }
+}

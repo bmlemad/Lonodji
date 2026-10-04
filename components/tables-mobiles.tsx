@@ -32,7 +32,12 @@ export default function TablesMobiles() {
     };
     poser();
     // pied de page : sur téléphone, les colonnes de liens se replient (titre seul, on ouvre au toucher)
-    if (window.matchMedia("(max-width: 640px)").matches) for (const d of Array.from(document.querySelectorAll<HTMLDetailsElement>("details.footer-col"))) d.open = false;
+    const mobile = window.matchMedia("(max-width: 640px)");
+    const adapterPied = () => {
+      for (const d of Array.from(document.querySelectorAll<HTMLDetailsElement>("details.footer-col"))) d.open = !mobile.matches;
+    };
+    adapterPied();
+    mobile.addEventListener("change", adapterPied);
     // héros : un chapô de plus de neuf lignes est replié à sept, avec « Lire la suite » (revue du 3 octobre 2026)
     if (window.matchMedia("(max-width: 640px)").matches) {
       const chapo = document.querySelector<HTMLElement>("main h1 ~ .detail-lead, main .h1-sous ~ .detail-lead");
@@ -55,7 +60,10 @@ export default function TablesMobiles() {
       }
     }
     const id = window.setTimeout(poser, 600);
-    return () => window.clearTimeout(id);
+    return () => {
+      window.clearTimeout(id);
+      mobile.removeEventListener("change", adapterPied);
+    };
   }, [chemin]);
   return null;
 }
