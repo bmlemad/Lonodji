@@ -4,6 +4,7 @@ import Partager from "@/components/partager";
 import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import { metaDescription, ogFor } from "@/lib/content";
 import { chiffresOdeb } from "@/lib/odeb-chiffres";
+import { getIndicateurs } from "@/lib/indicateurs";
 
 export const metadata: Metadata = {
   title: "Territoire",
@@ -16,6 +17,9 @@ const nf = new Intl.NumberFormat("fr-FR");
 
 export default function Territoire() {
   const c = chiffresOdeb();
+  const ind = getIndicateurs();
+  const carte = ind.contenu.carte;
+  const dateCarte = new Date(carte.genere + "T12:00:00Z").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   return (
     <main id="main-content" className="hub-page">
       <PageHeader
@@ -31,6 +35,20 @@ export default function Territoire() {
         { value: String(c.problematiques), label: "problématiques recensées", note: `${c.chantiersPrioritaires} chantiers prioritaires` },
         { value: String(c.inconnues), label: "inconnues dans notre diagnostic", note: "huit font l’objet d’une enquête de terrain" },
       ]} />
+
+      <section className="hub-section" id="chiffres">
+        <SectionHead eyebrow="Bédjondo en chiffres" title="Une valeur," em="une date, une source — ou un manque déclaré." text="Ce tableau ne transforme pas les absences de données en certitudes. Les chiffres cartographiques sont issus du relevé ouvert utilisé par l’Observatoire ; quand une donnée locale fiable manque, le site le dit explicitement." />
+        <Stats items={[
+          { value: nf.format(carte.localitesNommees), label: "localités nommées", note: `carte générée le ${dateCarte}` },
+          { value: String(carte.unites), label: "unités suivies", note: "périmètre de l’Observatoire du Mandoul Occidental" },
+          { value: String(carte.equipements), label: "équipements connus", note: "relevés dans les données ouvertes ; inventaire local encore incomplet" },
+          { value: "Non publiée", label: "population actuelle du département", note: "aucun chiffre local récent n’est présenté comme certain sans publication officielle" },
+        ]} />
+        <p className="section-actions" style={{ justifyContent: "flex-start" }}>
+          <Link className="button primary" href="/observatoire">Voir les données et leurs sources <span aria-hidden="true">→</span></Link>
+          <Link className="button secondary" href="/territoire/diagnostic">Voir les données manquantes <span aria-hidden="true">→</span></Link>
+        </p>
+      </section>
 
       <section className="hub-section" id="pays">
         <SectionHead eyebrow="Le pays bedjond" title="Où, et" em="village par village." />
