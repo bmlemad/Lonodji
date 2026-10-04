@@ -41,7 +41,8 @@ export default function Home() {
   const total = thematiqueCount(idx);
   const filled = filledCount(idx);
   const indicateurs = getIndicateurs();
-  const c = indicateurs.contenu;\n  const genereLe = new Date(indicateurs.genere).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  const c = indicateurs.contenu;
+  const genereLe = new Date(indicateurs.genere).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   const poles = idx.structure.poles;
   const prio = new Set(PRIORITAIRES.map((p) => p.id));
   const el = getElection();
