@@ -39,6 +39,13 @@ export default function Participer() {
         lead="Rejoindre une thématique, la coordonner, proposer un article, adhérer, transmettre un document ou une information : tout passe par cette page. Nous répondons sous quarante-huit heures ouvrées."
       />
 
+      <div className="link-list" aria-label="Choisir comment participer">
+        <Link href="/territoire/besoins"><small>Habitants</small><strong>Signaler un besoin local</strong><span>Eau, école, santé, route, énergie, réseau : documenter ce qui manque sur le territoire.</span></Link>
+        <Link href="/diaspora"><small>Diaspora</small><strong>Mettre une compétence à disposition</strong><span>Choisir une mission précise, ponctuelle ou régulière, sans être sollicité hors de son domaine.</span></Link>
+        <Link href="/association/ong-partenaires"><small>Organisations</small><strong>Préparer un partenariat</strong><span>Comprendre le statut de l’association, ses priorités, ses projets et les documents disponibles.</span></Link>
+        <Link href="/observatoire"><small>Données</small><strong>Vérifier les faits avant d’agir</strong><span>Consulter l’observatoire, les besoins, les plaidoyers et les données manquantes.</span></Link>
+      </div>
+
       <div className="contact-cta">
         <a className="button primary contact-appel" href={ORG.phoneHref} title="Appeler l’association"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg>Appeler l’association</a>
         <small>Adoumbé Maoura, président — appel et WhatsApp, le contact officiel de l’association</small>

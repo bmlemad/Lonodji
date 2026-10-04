@@ -39,7 +39,22 @@ export default function Diaspora() {
         pills={["Inscription en cinq minutes", "Rien de publié sans votre accord", "Retrait à tout moment"]}
       />
 
+      <p className="section-actions" style={{ justifyContent: "flex-start" }}>
+        <a className="button primary" href="#inscription">Inscrire mes compétences <span aria-hidden="true">↓</span></a>
+        <Link className="button secondary" href="/participer#postes-ouverts">Voir les missions ouvertes <span aria-hidden="true">→</span></Link>
+        <Link className="text-link" href="/actions">Aider sur un dossier précis <span aria-hidden="true">→</span></Link>
+      </p>
       <DiasporaCompteurs releve={indicateurs.formulaires} vacantes={vacantes} />
+
+      <section className="hub-section" id="missions">
+        <SectionHead eyebrow="Comment contribuer" title="Choisir une mission," em="pas un engagement vague." text="Vous pouvez aider sans prendre un poste : relire un dossier, vérifier un budget, conseiller à distance, former quelqu’un, ouvrir un contact ou effectuer une mission courte." />
+        <div className="link-list">
+          <Link href="/actions"><small>Dossiers</small><strong>Relire ou renforcer un plaidoyer</strong><span>Apporter une expertise ciblée sur l’eau, la santé, l’école, les routes, l’énergie, le numérique ou la formation.</span></Link>
+          <Link href="/participer#postes-ouverts"><small>Responsabilités</small><strong>Prendre une mission structurée</strong><span>Coordination, adjoint ou vice-présidence de pôle : les postes actuellement ouverts sont publiés avec leur fiche.</span></Link>
+          <Link href="/territoire/enquetes"><small>Terrain</small><strong>Aider à produire une donnée manquante</strong><span>Participer à une enquête, vérifier une information locale ou documenter un besoin précis.</span></Link>
+          <Link href="/bibliotheque#deposer"><small>Connaissance</small><strong>Partager un document ou une ressource</strong><span>Thèse, archive, étude, rapport ou référence utile pour Bédjondo et le pays bedjond.</span></Link>
+        </div>
+      </section>
 
       <section className="hub-section" id="pourquoi">
         <SectionHead eyebrow="Pourquoi un répertoire" title="Une question précise," em="la bonne personne." text="Nous ne cherchons pas des volontaires pour tout : nous cherchons, pour chaque dossier, la compétence qui manque. Un plaidoyer santé a besoin d’un médecin pour relire deux pages ; un projet de forage, d’un hydraulicien pour lire un devis ; une thématique sans coordonnateur, d’une personne qui accepte de la porter." />
