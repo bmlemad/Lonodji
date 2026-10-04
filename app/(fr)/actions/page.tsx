@@ -42,6 +42,7 @@ export default function Actions() {
         pills={["8 dossiers publiés", "22 indicateurs de résultats", "12 engagements publics"]}
       />
       <p className="section-actions" style={{ justifyContent: "flex-start", marginTop: 0 }}>
+        <Link className="button primary" href="/impact#plaidoyers">Voir le suivi public des dossiers <span aria-hidden="true">→</span></Link>
         <a className="button secondary" href="/notes/note-synthese-bedjondo.pdf" download>Les huit dossiers en deux pages (PDF) <span aria-hidden="true">↓</span></a>
         <Link className="text-link" href="/bailleurs">Les programmes des bailleurs à rejoindre <span aria-hidden="true">→</span></Link>
       </p>
