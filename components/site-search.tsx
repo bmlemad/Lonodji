@@ -26,18 +26,32 @@ const SYNONYMES: Record<string, string> = {
   bureau: "bureau", equipe: "bureau", statuts: "statuts",
 };
 
-export default function SiteSearch({ initialQuery = "" }: { initialQuery?: string }) {
+export default function SiteSearch({ villageCount, initialQuery = "" }: { villageCount: number; initialQuery?: string }) {
   const [index, setIndex] = useState<Entry[] | null>(null);
   const [q, setQ] = useState(initialQuery);
   const [kind, setKind] = useState("Tous");
   const [error, setError] = useState(false);
+  const [essai, setEssai] = useState(0);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const fromUrl = params.get("q");
     if (fromUrl) setQ(fromUrl);
-    fetch("/search-index.json").then((r) => r.json()).then(setIndex).catch(() => setError(true));
   }, []);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    setError(false);
+    setIndex(null);
+    fetch("/search-index.json", { signal: controller.signal }).then((r) => {
+      if (!r.ok) throw new Error("Index indisponible");
+      return r.json();
+    }).then((data) => {
+      if (!Array.isArray(data)) throw new Error("Index illisible");
+      setIndex(data);
+    }).catch(() => { if (!controller.signal.aborted) setError(true); });
+    return () => controller.abort();
+  }, [essai]);
 
   useEffect(() => {
     const url = new URL(window.location.href);
@@ -69,17 +83,19 @@ export default function SiteSearch({ initialQuery = "" }: { initialQuery?: strin
   }, [index, terms]);
 
   const kinds = useMemo(() => ["Tous", ...Array.from(new Set(results.map((r) => r.e.k)))], [results]);
-  const shown = results.filter((r) => kind === "Tous" || r.e.k === kind).slice(0, 40);
+  const filtered = results.filter((r) => kind === "Tous" || r.e.k === kind);
+  const shown = filtered.slice(0, 40);
 
   return (
     <div className="search-box">
       <label className="journal-search" htmlFor="site-search">
         <span className="sr-only">Rechercher dans le site</span>
-        <input id="site-search" type="search" autoFocus placeholder="Un mot, un lieu, un nom : Bédjondo, forage, Tarouss Doumanbé, cotisation…" value={q} onChange={(e) => setQ(e.target.value)} />
+        <input id="site-search" type="search" autoFocus aria-controls="resultats" placeholder="Un mot, un lieu, un nom : Bédjondo, forage, Tarouss Doumanbé, cotisation…" value={q} onChange={(e) => { setQ(e.target.value); setKind("Tous"); }} />
       </label>
       <p className="journal-count" aria-live="polite">
-        {error ? "L’index de recherche n’a pas pu être chargé." : !index ? "Chargement de l’index…" : terms.length ? `${results.length} résultat${results.length > 1 ? "s" : ""}` : `${index.length} pages, articles, thématiques et documents indexés.`}
+        {error ? "L’index de recherche n’a pas pu être chargé." : !index ? "Chargement de l’index…" : terms.length ? `${filtered.length} résultat${filtered.length > 1 ? "s" : ""}${kind === "Tous" ? "" : ` (${results.length} au total)`}` : `${index.length} pages, articles, thématiques et documents indexés.`}
       </p>
+      {error ? <button className="button secondary" type="button" onClick={() => setEssai((n) => n + 1)}>Réessayer le chargement</button> : null}
       {results.length ? (
         <div className="cat-list">
           {kinds.map((k) => <a key={k} href="#resultats" aria-current={kind === k ? "true" : undefined} onClick={(e) => { e.preventDefault(); setKind(k); }}>{k}</a>)}
@@ -97,7 +113,7 @@ export default function SiteSearch({ initialQuery = "" }: { initialQuery?: strin
           );
         })}
       </ol>
-      {terms.length ? <p className="search-villages">Un village ? <Link href={`/villages?q=${encodeURIComponent(q.trim())}`}>Chercher « {q.trim()} » parmi les 966 localités →</Link></p> : null}
+      {terms.length ? <p className="search-villages">Un village ? <Link href={`/villages?q=${encodeURIComponent(q.trim())}`}>Chercher « {q.trim()} » parmi les {villageCount.toLocaleString("fr-FR")} localités →</Link></p> : null}
       {index && terms.length && !results.length ? <p className="lg-footnote">Aucun résultat dans les pages. C’est peut-être un village : le lien ci-dessus cherche parmi les localités. Sinon, parcourez <Link href="/plan-du-site">le plan du site</Link>.</p> : null}
     </div>
   );

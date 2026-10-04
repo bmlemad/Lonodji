@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import type { ArticleSummary } from "../lib/content";
 import { ArticleCard } from "./blocks";
+import { mettreAJourFiltres } from "@/lib/url-recherche";
 
 export default function JournalList({ articles, categories }: { articles: ArticleSummary[]; categories: { slug: string; label: string }[] }) {
   const [cat, setCat] = useState("all");
@@ -10,7 +11,10 @@ export default function JournalList({ articles, categories }: { articles: Articl
   const [tout, setTout] = useState(false);
   // ?rubrique=<slug> (depuis la bibliothèque) : ouvre le journal sur une rubrique
   useEffect(() => {
-    const r = new URLSearchParams(window.location.search).get("rubrique");
+    const params = new URLSearchParams(window.location.search);
+    const r = params.get("rubrique");
+    setQ(params.get("q") || "");
+    setTout(params.get("tout") === "1");
     if (r && categories.some((c) => c.slug === r)) setCat(r);
   }, [categories]);
   const used = new Set(articles.map((a) => a.category));
@@ -22,6 +26,7 @@ export default function JournalList({ articles, categories }: { articles: Articl
   const replie = !tout && cat === "all" && !q && list.length > LIMITE + 3;
   const afficherTout = () => {
     setTout(true);
+    mettreAJourFiltres({ tout: "1" });
     requestAnimationFrame(() => (document.querySelectorAll<HTMLAnchorElement>("#articles > .art-card h3 a")[LIMITE])?.focus());
   };
   return (
@@ -29,13 +34,13 @@ export default function JournalList({ articles, categories }: { articles: Articl
       <div className="journal-tools">
         <label className="journal-search">
           <span className="sr-only">Rechercher un article</span>
-          <input type="search" placeholder="Rechercher un article ou un mot-clé…" value={q} onChange={(e) => setQ(e.target.value)} />
+          <input type="search" placeholder="Rechercher un article ou un mot-clé…" value={q} autoComplete="off" aria-controls="articles" onChange={(e) => { setQ(e.target.value); mettreAJourFiltres({ q: e.target.value }); }} />
         </label>
         <p className="journal-count" aria-live="polite">{list.length} article{list.length > 1 ? "s" : ""}</p>
       </div>
       <div className="cat-list">
         {cats.map((c) => (
-          <a key={c.slug} href="#articles" aria-current={cat === c.slug ? "true" : undefined} onClick={(e) => { e.preventDefault(); setCat(c.slug); }}>{c.label}</a>
+          <a key={c.slug} href="#articles" aria-current={cat === c.slug ? "true" : undefined} onClick={(e) => { e.preventDefault(); setCat(c.slug); mettreAJourFiltres({ rubrique: c.slug === "all" ? "" : c.slug }); }}>{c.label}</a>
         ))}
       </div>
       <h2 className="sr-only">Tous les articles</h2>
