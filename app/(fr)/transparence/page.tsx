@@ -60,6 +60,16 @@ export default function Transparence() {
         ) : <LegacySections key={sec.id || i} sections={[sec]} sansPremierTitre={i === 0} />)}
       </div>
       <LegacyEnhance hasForms={page.forms.length > 0} />
+      <section className="hub-section" id="gouvernance">
+        <SectionHead eyebrow="Gouvernance vérifiable" title="Qui décide," em="avec quel document et quel statut." text="Nous séparons les personnes, les décisions, les règles et les pièces justificatives pour qu’un visiteur puisse vérifier sans connaître l’organisation de l’association." />
+        <div className="link-list">
+          <Link href="/mission"><small>Responsables</small><strong>Bureau, rôles et mission</strong><span>Qui porte l’association, son rôle et les repères publics disponibles.</span></Link>
+          <Link href="/transparence/decisions"><small>Décisions</small><strong>Registre public des décisions</strong><span>Chaque décision, nomination, annonce ou proposition avec sa date, son statut et sa source.</span></Link>
+          <Link href="/documents"><small>Pièces</small><strong>Documents disponibles et documents attendus</strong><span>Les pièces publiées sont téléchargeables ; celles qui manquent restent affichées comme « à venir » ou « en vérification ».</span></Link>
+          <Link href="/association/engagements"><small>Promesses</small><strong>Engagements publics</strong><span>Ce que l’association a promis, ce qui est confirmé réalisé et ce qui ne l’est pas encore.</span></Link>
+        </div>
+      </section>
+
       <section className="hub-section">
         <SectionHead eyebrow="Pour aller plus loin" title="Documents, mentions légales" em="et données personnelles." />
         <div className="link-list">
