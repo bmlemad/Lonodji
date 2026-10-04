@@ -81,7 +81,7 @@ export default function Presse() {
       <section className="hub-section" id="en-bref">
         <SectionHead eyebrow="En cinq lignes" title="Qui nous sommes," em="en une citation prête à l’emploi." />
         <blockquote className="pr-citation">
-          <p>« ADEB LONODJI, l’Association de Développement et d’Entraide de Bédjondo, est l’association de Bédjondo (Mandoul Occidental, Tchad) et de sa diaspora, gardienne du patrimoine bedjond. Née de réflexions engagées en 1986 et reconnue en 1995, remise en mouvement en 2026, elle agit par {enLettres(total)} thématiques bénévoles pour l’eau, la santé, l’école, les routes et le réseau, et garde la mémoire, la langue et le patrimoine bedjond. Sa devise : Courage, Discipline, Héritage. Depuis le {ODEB.presenteLabel}, elle porte la réflexion ODEB LONODJI, projet d’organisation permanente à l’horizon 2030. »</p>
+          <p>« ADEB LONODJI, l’Association de Développement et d’Entraide de Bédjondo, s’adresse à tout le peuple bedjond, au Tchad et dans la diaspora. Ancrée à Bédjondo (Mandoul Occidental, Tchad), elle est gardienne du patrimoine bedjond. Née de réflexions engagées en 1986 et reconnue en 1995, remise en mouvement en 2026, elle agit par {enLettres(total)} thématiques bénévoles pour l’eau, la santé, l’école, les routes et le réseau, et garde la mémoire, la langue et le patrimoine bedjond. Sa devise : Courage, Discipline, Héritage. Depuis le {ODEB.presenteLabel}, elle porte la réflexion ODEB LONODJI, projet d’organisation permanente à l’horizon 2030. »</p>
           <footer>Texte libre de reprise, à citer « ADEB LONODJI, lonodji.org ». Le nom s’écrit en capitales : ADEB LONODJI ; le peuple s’écrit « bedjond », sa langue « nangnda ».</footer>
         </blockquote>
       </section>

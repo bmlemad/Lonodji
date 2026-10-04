@@ -3,7 +3,7 @@ import Appel from "@/components/appel";
 import Link from "@/components/lien";
 import CarteAccueil from "@/components/carte-accueil";
 import EnCeMoment from "@/components/en-ce-moment";
-import { filledCount, getIndex, getPage, metaDescription, ogFor, ORG, thematiqueCount } from "@/lib/content";
+import { filledCount, getIndex, ogFor, ORG, thematiqueCount } from "@/lib/content";
 import { alternatesLangues } from "@/lib/langues";
 import { getIndicateurs } from "@/lib/indicateurs";
 import { PRIORITAIRES } from "@/lib/organisation";
@@ -18,12 +18,11 @@ import { apercu } from "@/lib/apercu";
    country, what is happening now, the six pillars, the advocacy briefs, the dashboard and how to help. Pillar and
    theme names come from the English themes page; figures from content/. */
 const ROUTE = "/en/index";
-const legacy = getPage("en/index");
 export const metadata: Metadata = {
-  title: { absolute: "ADEB LONODJI — the association of Bédjondo and its diaspora" },
-  description: metaDescription(legacy.description || legacy.lede),
+  title: { absolute: "ADEB LONODJI — serving all Bedjond people" },
+  description: "ADEB LONODJI serves all Bedjond people, in Bédjondo, elsewhere in Chad and across the diaspora: local development, advocacy and Bedjond heritage.",
   alternates: { canonical: ROUTE, languages: alternatesLangues(ROUTE) },
-  openGraph: { ...ogFor(ROUTE, "en"), title: "ADEB LONODJI — the association of Bédjondo and its diaspora" },
+  openGraph: { ...ogFor(ROUTE, "en"), title: "ADEB LONODJI — serving all Bedjond people" },
 };
 
 const BRIEFS_EN: Record<string, string> = {
@@ -72,9 +71,9 @@ export default function HomeEn() {
     <main id="main-content" className="accueil" lang="en">
       <section className="acc-hero" aria-labelledby="hero-title">
         <div className="acc-hero-texte">
-          <h1 id="hero-title">Bédjondo and its diaspora, acting together.</h1>
+          <h1 id="hero-title">All Bedjond people, acting together.</h1>
           <p className="acc-hero-lead">
-            ADEB LONODJI connects the people of Bédjondo, its diaspora and its partners to document local needs, advocate for the territory’s priorities and preserve Bedjond heritage.
+            ADEB LONODJI serves all Bedjond people, in Bédjondo, elsewhere in Chad and across the diaspora. Together with its partners, it documents needs, advocates for the priorities of Bedjond country and preserves its heritage.
           </p>
           <div className="acc-hero-actions">
             <Link className="acc-bouton acc-bouton--plein" href="/en/impact">See public progress</Link>

@@ -21,7 +21,7 @@ import { apercu } from "@/lib/apercu";
    Tous les chiffres sont lus dans content/ à la construction. */
 const idx0 = getIndex();
 export const metadata: Metadata = {
-  description: `Depuis 1995, ADEB LONODJI relie Bédjondo et sa diaspora : ${enLettres(idx0.structure.poles.length)} pôles, ${enLettres(thematiqueCount(idx0))} thématiques et ${enLettres(getIndicateurs().contenu.plaidoyers.publies)} dossiers de plaidoyer suivis publiquement.`,
+  description: `Depuis 1995, ADEB LONODJI est au service de tout le peuple bedjond, au Tchad et dans la diaspora : ${enLettres(idx0.structure.poles.length)} pôles, ${enLettres(thematiqueCount(idx0))} thématiques et ${enLettres(getIndicateurs().contenu.plaidoyers.publies)} dossiers de plaidoyer suivis publiquement.`,
   alternates: { canonical: "/", languages: alternatesLangues("/") },
 };
 
@@ -76,9 +76,9 @@ export default function Home() {
       {/* 1. La carte du pays bedjond, cliquable */}
       <section className="acc-hero" aria-labelledby="hero-title">
         <div className="acc-hero-texte">
-          <h1 id="hero-title">Bédjondo et sa diaspora, ensemble pour agir.</h1>
+          <h1 id="hero-title">Tout le peuple bedjond, ensemble pour agir.</h1>
           <p className="acc-hero-lead">
-            ADEB LONODJI relie les habitants de Bédjondo, sa diaspora et ses partenaires pour documenter les besoins, porter les priorités du territoire et préserver la mémoire bedjond.
+            ADEB LONODJI s’adresse à tout le peuple bedjond, à Bédjondo, ailleurs au Tchad et dans la diaspora. Avec ses partenaires, elle documente les besoins, porte les priorités du pays bedjond et préserve sa mémoire.
           </p>
           <div className="acc-hero-actions">
             <Link className="acc-bouton acc-bouton--plein" href="/impact#plaidoyers">Voir le suivi public</Link>

@@ -10,7 +10,7 @@ import Partager from "@/components/partager";
 
 export const metadata: Metadata = {
   title: "Notre mission",
-  description: "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : mission, valeurs, repères depuis 1986, bureau exécutif et organisation.",
+  description: "Au service de tout le peuple bedjond, au Tchad et dans la diaspora : mission, valeurs, repères depuis 1986, bureau exécutif et organisation.",
   alternates: { canonical: "/mission", languages: alternatesLangues("/mission") },
   openGraph: ogFor("/mission"),
 };
@@ -27,12 +27,12 @@ export default function Mission() {
   const toc = (page.toc ?? []).filter((t) => t.href !== `#${DOUBLON}` && !PATRIMOINE.includes(t.href.slice(1)));
   return (
     <main id="main-content" className="hub-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", "@graph": [webPageSchema({ url: "/mission", name: "Notre mission", description: "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : mission, valeurs, repères depuis 1986, bureau exécutif et organisation." }), breadcrumbSchema([{ name: "Accueil", url: "/" }, { name: "Notre mission" }], "/mission")] }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", "@graph": [webPageSchema({ url: "/mission", name: "Notre mission", description: "Au service de tout le peuple bedjond, au Tchad et dans la diaspora : mission, valeurs, repères depuis 1986, bureau exécutif et organisation." }), breadcrumbSchema([{ name: "Accueil", url: "/" }, { name: "Notre mission" }], "/mission")] }) }} />
       <PageHeader
         eyebrow="Association · notre mission"
-        title="L’association de Bédjondo et de sa diaspora,"
-        em="gardienne du patrimoine bedjond."
-        lead={page.lede || "Reconnue en 1995 après dix ans de réflexion, remise en mouvement en 2026, ADEB LONODJI agit pour tous les habitants de Bédjondo — eau, santé, école, routes — et garde au cœur de son objet la sauvegarde de la langue, de l’histoire et du patrimoine bedjond."}
+        title="Au service de tout le peuple bedjond,"
+        em="au Tchad et dans la diaspora."
+        lead="Ancrée à Bédjondo, ADEB LONODJI s’adresse à tout le peuple bedjond, où qu’il vive. Elle rassemble les contributions au développement du pays bedjond — eau, santé, école, routes — et à la sauvegarde de sa langue, de son histoire et de son patrimoine."
         pills={["Reconnue en 1995 · autorisation actuelle en vérification", "Réactivée en 2026", "6 pôles · 22 thématiques"]}
       />
 
@@ -59,7 +59,7 @@ export default function Mission() {
         </div>
         <p className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="button secondary" href="/histoire#origines">Origines, terre, histoire et langue du peuple bedjond <span aria-hidden="true">→</span></Link></p>
       </section>
-      <Partager route="/mission" titre="Notre mission" texte="L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : mission, valeurs, repères depuis 1986, bureau exécutif et organisation." />
+      <Partager route="/mission" titre="Notre mission" texte="Au service de tout le peuple bedjond, au Tchad et dans la diaspora : mission, valeurs, repères depuis 1986, bureau exécutif et organisation." />
     </main>
   );
 }

@@ -92,7 +92,7 @@ def read_pages() -> list[dict]:
         m = re.search(r'<meta name="description" content="(.*?)"', html, re.S)
         desc = unescape(m.group(1)) if m else ""
         if route == "/":
-            title = "Construire aujourd’hui. — Transmettre demain."
+            title = "Tout le peuple bedjond, ensemble pour agir."
         if route in articles:
             a = articles[route]
             eyebrow = f"Le journal · {a['tag']} · {a['dateLabel']}"

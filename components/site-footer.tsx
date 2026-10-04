@@ -53,7 +53,7 @@ export default function SiteFooter({ miseAJour, lang = "fr" }: { miseAJour?: str
       <div className="footer-top">
         <div className="footer-brand-block">
           <div className="footer-brand"><span className="logo-verre logo-verre--pied" aria-hidden="true"><img src="/icones/logo-motif-verre.svg" alt="" width={26} height={30} loading="lazy" decoding="async" /></span><strong className="brand-mot">ADEB <b>LONODJI</b></strong></div>
-          <p className="footer-tagline">{en ? "The association of Bédjondo and its diaspora, guardian of the Bedjond heritage." : ORG.tagline}</p>
+          <p className="footer-tagline">{en ? "Serving all Bedjond people, in Chad and across the diaspora." : ORG.tagline}</p>
           <p className="footer-place">{en ? <span lang="fr">{ORG.fullName}</span> : ORG.fullName}<br />{en ? "Bédjondo · Mandoul Occidental · Mandoul, Chad" : ORG.place}</p>
           <div className="footer-contact">
             <a className="footer-contact-icone" href={ORG.phoneHref} aria-label={en ? "Call the association" : "Appeler l’association"} title={en ? "Call the association" : "Appeler l’association"}><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg></a>

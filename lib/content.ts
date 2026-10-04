@@ -174,7 +174,7 @@ export const enLettres = (n: number, majuscule = false) => { const t = lettres(n
 export const ORG = {
   name: "ADEB LONODJI",
   fullName: "Association de Développement et d’Entraide de Bédjondo",
-  tagline: "L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond.",
+  tagline: "Au service de tout le peuple bedjond, au Tchad et dans la diaspora.",
   motto: "Courage · Discipline · Héritage",
   place: "Bédjondo · Mandoul Occidental · Mandoul, Tchad",
   phone: TELEPHONE,

@@ -6,10 +6,10 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     id: "/",
-    name: "ADEB LONODJI — Bédjondo",
+    name: "ADEB LONODJI — peuple bedjond",
     short_name: "LONODJI",
     description:
-      "L’association de Bédjondo et de sa diaspora : villages, thématiques, plaidoyers, journal. Les pages déjà ouvertes restent lisibles sans connexion.",
+      "Au service de tout le peuple bedjond, au Tchad et dans la diaspora : villages, thématiques, plaidoyers, journal. Les pages déjà ouvertes restent lisibles sans connexion.",
     start_url: "/",
     scope: "/",
     display: "standalone",
