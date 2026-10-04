@@ -35,20 +35,21 @@ export const metadataFr: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "ADEB LONODJI",
   title: {
-    default: "ADEB LONODJI — Courage · Discipline · Héritage",
+    default: "ADEB LONODJI — Association de Bédjondo et de sa diaspora",
     template: "%s — ADEB LONODJI",
   },
   description:
-    `L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : six pôles, ${themeLabel}, ${enLettres(plaidoyerCount)} dossiers de plaidoyer pour le Mandoul (Tchad).`,
+    `ADEB LONODJI relie Bédjondo et sa diaspora : développement local, patrimoine bedjond, données territoriales et ${enLettres(plaidoyerCount)} dossiers de plaidoyer suivis publiquement dans le Mandoul, au Tchad.`,
+  keywords: ["ADEB LONODJI", "Bédjondo", "Mandoul Occidental", "Tchad", "diaspora bedjond", "développement local Bédjondo", "patrimoine bedjond", "plaidoyer Bédjondo"],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: siteUrl,
     siteName: "ADEB LONODJI",
-    title: "ADEB LONODJI — Courage · Discipline · Héritage",
+    title: "ADEB LONODJI — Bédjondo, diaspora, développement et patrimoine",
     description:
-      `L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond. Six pôles, ${themeLabel}, ${enLettres(plaidoyerCount)} dossiers de plaidoyer publiés.`,
+      `Association de Bédjondo et de sa diaspora : développement local, patrimoine bedjond, données territoriales et ${enLettres(plaidoyerCount)} dossiers de plaidoyer suivis publiquement.`,
     images: [{ url: "/og/index.jpg", width: 1200, height: 630, alt: "ADEB LONODJI — Courage · Discipline · Héritage" }],
   },
   twitter: { card: "summary_large_image" },
