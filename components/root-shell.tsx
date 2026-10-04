@@ -75,7 +75,7 @@ export default function RootShell({
     <html lang={lang} suppressHydrationWarning>
       <body className={`${dmSans.variable} ${playfair.variable}`}>
         {/* Téléphone modeste ou mode économie de données : pas de flou (verre plein), cf. site.css « Verre clair ». */}
-        <script dangerouslySetInnerHTML={{ __html: "try{var n=navigator,c=n.connection;if((n.deviceMemory&&n.deviceMemory<=2)||(c&&c.saveData))document.documentElement.classList.add('sobre')}catch(e){}" }} />
+        <script dangerouslySetInnerHTML={{ __html: "try{var n=navigator,c=n.connection;if((n.deviceMemory&&n.deviceMemory<=2)||(c&&(c.saveData||/^(slow-2g|2g)$/.test(c.effectiveType||''))))document.documentElement.classList.add('sobre')}catch(e){}" }} />
         <a className="skip-link" href="#main-content">{en ? "Skip to content" : "Aller au contenu"}</a>
         <header>
         <SiteNav lang={lang} chiffres={chiffres} whatsapp={ORG.whatsapp} telephone={ORG.phone} telephoneHref={ORG.phoneHref} devise={ORG.motto} />
