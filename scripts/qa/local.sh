@@ -27,6 +27,7 @@ python3 scripts/qa/parcours-revue.py "http://127.0.0.1:$PORT" || CODE=1
 python3 scripts/qa/navigation.py "http://127.0.0.1:$PORT" || CODE=1
 python3 scripts/qa/mobile.py "http://127.0.0.1:$PORT" || CODE=1
 python3 scripts/qa/fenetres-mobile.py "http://127.0.0.1:$PORT" || CODE=1
+python3 scripts/qa/formulaires.py "http://127.0.0.1:$PORT" || CODE=1
 kill $PID 2>/dev/null; pkill -f "next-serve[r]" 2>/dev/null; wait $PID 2>/dev/null
 [ "${DOCS:-0}" = 1 ] && CODE=1
 exit $CODE

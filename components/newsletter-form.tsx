@@ -1,5 +1,7 @@
 "use client";
 
+import RetourFormulaire from "@/components/retour-formulaire";
+
 import { useState } from "react";
 
 const T = {
@@ -14,7 +16,7 @@ export default function NewsletterForm({ id = "footer-nl-email", label, lang = "
   const t = T[lang];
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
   return state === "done" ? (
-    <p className="footer-consent" role="status">{t.merci}</p>
+    <RetourFormulaire className="footer-consent" role="status">{t.merci}</RetourFormulaire>
   ) : (
     <form
       name="lettre-info-pied"
@@ -43,7 +45,7 @@ export default function NewsletterForm({ id = "footer-nl-email", label, lang = "
         <button type="submit" disabled={state === "sending"}>{state === "sending" ? "…" : t.envoyer}</button>
       </div>
       <label className="footer-consent"><input type="checkbox" name="consentement" value="oui" required /> {t.accord} <a href="/mentions-legales#donnees" hrefLang="fr">{t.droits}</a></label>
-      {state === "error" ? <p className="footer-consent" role="alert">{t.erreur}</p> : null}
+      {state === "error" ? <RetourFormulaire className="footer-consent" role="alert">{t.erreur}</RetourFormulaire> : null}
     </form>
   );
 }

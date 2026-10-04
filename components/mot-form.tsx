@@ -1,5 +1,7 @@
 "use client";
 
+import RetourFormulaire from "@/components/retour-formulaire";
+
 import Link from "@/components/lien";
 import Appel from "@/components/appel";
 import { useEnvoiMultipart } from "./envoi-multipart";
@@ -13,7 +15,7 @@ const CATEGORIES = ["Un mot (nom, verbe, adjectif…)", "Une expression", "Un pr
 export default function MotForm({ telephone, whatsapp }: { telephone: string; whatsapp: string }) {
   const { etat, erreur, fichier, form, surFichier, envoyer } = useEnvoiMultipart(telephone);
   if (etat === "ok") {
-    return <p className="form-note form-success" role="status">Merci : votre mot est bien arrivé. Il est vérifié avec les linguistes de la thématique Culture &amp; patrimoine vivant, puis publié avec ou sans votre nom selon votre choix.</p>;
+    return <RetourFormulaire className="form-note form-success" role="status">Merci : votre mot est bien arrivé. Il est vérifié avec les linguistes de la thématique Culture &amp; patrimoine vivant, puis publié avec ou sans votre nom selon votre choix.</RetourFormulaire>;
   }
   return (
     <form ref={form} action="/__forms.html" id="formulaire-mot" method="POST" encType="multipart/form-data" name="mot-nangnda" onSubmit={envoyer}>
@@ -56,7 +58,7 @@ export default function MotForm({ telephone, whatsapp }: { telephone: string; wh
         </div>
         <label className="check check--consentement"><input name="consentement" required type="checkbox" value="oui" /> <span>J’accepte qu’ADEB LONODJI conserve cette contribution et l’enregistrement, les vérifie et les publie dans le dictionnaire selon le choix ci-dessus (<Link href="/mentions-legales#donnees">mentions légales</Link>). *</span></label>
       </fieldset>
-      {erreur ? <p className="form-note form-error" role="alert">{erreur}</p> : null}
+      {erreur ? <RetourFormulaire className="form-note form-error" role="alert">{erreur}</RetourFormulaire> : null}
       <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
         <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Envoyer ce mot"} <span aria-hidden="true">→</span></button>
       </div>

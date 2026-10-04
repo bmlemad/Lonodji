@@ -1,5 +1,7 @@
 "use client";
 
+import RetourFormulaire from "@/components/retour-formulaire";
+
 import Link from "@/components/lien";
 import Appel from "@/components/appel";
 import { useEffect, useRef, useState } from "react";
@@ -53,9 +55,9 @@ export default function TemoignageForm({ telephone, whatsapp }: { telephone: str
 
   if (etat === "ok") {
     return (
-      <p className="form-note form-success" role="status">
+      <RetourFormulaire className="form-note form-success" role="status">
         Merci : votre récit est bien arrivé. Nous vous répondons sous quarante-huit heures ouvrées, et rien n’est publié avant que vous ayez relu et approuvé la version finale.
-      </p>
+      </RetourFormulaire>
     );
   }
 
@@ -115,7 +117,7 @@ export default function TemoignageForm({ telephone, whatsapp }: { telephone: str
         <label className="check check--consentement"><input name="consentement" required type="checkbox" value="oui" /> <span>J’accepte qu’ADEB LONODJI conserve ce récit et ce fichier, me recontacte pour les vérifier, et les publie selon le choix ci-dessus après ma relecture (<Link href="/mentions-legales#donnees">mentions légales</Link>). Je peux les retirer à tout moment. *</span></label>
       </fieldset>
 
-      {erreur ? <p className="form-note form-error" role="alert">{erreur}</p> : null}
+      {erreur ? <RetourFormulaire className="form-note form-error" role="alert">{erreur}</RetourFormulaire> : null}
       <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
         <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Envoyer mon récit"} <span aria-hidden="true">→</span></button>
       </div>

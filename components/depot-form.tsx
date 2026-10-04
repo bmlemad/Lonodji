@@ -1,5 +1,7 @@
 "use client";
 
+import RetourFormulaire from "@/components/retour-formulaire";
+
 import Link from "@/components/lien";
 import Appel from "@/components/appel";
 import { useEnvoiMultipart } from "./envoi-multipart";
@@ -13,7 +15,7 @@ const TYPES = ["Thèse ou mémoire", "Article ou étude scientifique", "Ouvrage,
 export default function DepotForm({ telephone, whatsapp }: { telephone: string; whatsapp: string }) {
   const { etat, erreur, fichier, form, surFichier, envoyer } = useEnvoiMultipart(telephone);
   if (etat === "ok") {
-    return <p className="form-note form-success" role="status">Merci : votre dépôt est bien arrivé. La référence est vérifiée, les droits aussi, puis elle rejoint la bibliothèque — nous vous écrivons sous quarante-huit heures ouvrées.</p>;
+    return <RetourFormulaire className="form-note form-success" role="status">Merci : votre dépôt est bien arrivé. La référence est vérifiée, les droits aussi, puis elle rejoint la bibliothèque — nous vous écrivons sous quarante-huit heures ouvrées.</RetourFormulaire>;
   }
   return (
     <form ref={form} action="/__forms.html" id="formulaire-depot" method="POST" encType="multipart/form-data" name="depot-document" onSubmit={envoyer}>
@@ -69,7 +71,7 @@ export default function DepotForm({ telephone, whatsapp }: { telephone: string; 
         <div className="field"><label htmlFor="dd-message">Un mot, si vous voulez</label><textarea id="dd-message" name="message" rows={3} placeholder="Comment vous avez trouvé ce document, où il se trouve, qui le détient…" /></div>
         <label className="check check--consentement"><input name="consentement" required type="checkbox" value="oui" /> <span>J’accepte qu’ADEB LONODJI conserve ce dépôt, me recontacte pour vérifier la référence et les droits, et publie selon le choix ci-dessus (<Link href="/mentions-legales#donnees">mentions légales</Link>). *</span></label>
       </fieldset>
-      {erreur ? <p className="form-note form-error" role="alert">{erreur}</p> : null}
+      {erreur ? <RetourFormulaire className="form-note form-error" role="alert">{erreur}</RetourFormulaire> : null}
       <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
         <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Déposer ce document"} <span aria-hidden="true">→</span></button>
       </div>

@@ -16,6 +16,7 @@ with sync_playwright() as p:
             page.goto(base + route, wait_until='networkidle')
             trigger = page.locator('.tab--menu' if application else '.menu-toggle')
             trigger.click()
+            expect(page.locator("#mm-q")).to_be_visible()
             expect(trigger).to_be_focused()
             assert page.locator('main').evaluate('(el) => el.inert')
             page.keyboard.press('Shift+Tab')

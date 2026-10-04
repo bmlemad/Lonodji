@@ -1,5 +1,7 @@
 "use client";
 
+import RetourFormulaire from "@/components/retour-formulaire";
+
 import Link from "@/components/lien";
 import Appel from "@/components/appel";
 import { useRef, useState } from "react";
@@ -38,9 +40,9 @@ export default function RecensementForm({ thematiques, telephone, whatsapp }: { 
 
   if (etat === "ok") {
     return (
-      <p className="form-note form-success" role="status">
+      <RetourFormulaire className="form-note form-success" role="status">
         Merci : vous êtes recensé. Le Comité de réactivation vous recontactera si une information manque. Pour adhérer et recevoir votre carte, la marche à suivre est sur la page <Link href="/participer#adherer">Participer</Link>.
-      </p>
+      </RetourFormulaire>
     );
   }
 
@@ -122,7 +124,7 @@ export default function RecensementForm({ thematiques, telephone, whatsapp }: { 
         <label className="check check--consentement"><input name="consentement" required type="checkbox" value="oui" /> <span>J’accepte que ces informations soient conservées dans le registre des membres d’ADEB LONODJI, chez notre hébergeur aux États-Unis, et consultées par le bureau et le Comité seulement ; elles ne sont jamais publiées, et je peux demander à tout moment qu’elles soient effacées (<Link href="/mentions-legales#donnees">données et droits</Link>). *</span></label>
       </fieldset>
 
-      {etat === "erreur" ? <p className="form-note form-error" role="alert">L’envoi n’a pas abouti. Réessayez dans un instant, ou envoyez ces informations <a href={whatsapp} target="_blank" rel="noopener noreferrer">par WhatsApp</a>.</p> : null}
+      {etat === "erreur" ? <RetourFormulaire className="form-note form-error" role="alert">L’envoi n’a pas abouti. Réessayez dans un instant, ou envoyez ces informations <a href={whatsapp} target="_blank" rel="noopener noreferrer">par WhatsApp</a>.</RetourFormulaire> : null}
       <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
         <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Me faire recenser"} <span aria-hidden="true">→</span></button>
       </div>

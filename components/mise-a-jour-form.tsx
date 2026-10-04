@@ -1,5 +1,7 @@
 "use client";
 
+import RetourFormulaire from "@/components/retour-formulaire";
+
 import Link from "@/components/lien";
 import Appel from "@/components/appel";
 import { useEffect, useRef, useState } from "react";
@@ -46,9 +48,9 @@ export default function MiseAJourForm({ telephone, whatsapp }: { telephone: stri
 
   if (etat === "ok") {
     return (
-      <p className="form-note form-success" role="status">
+      <RetourFormulaire className="form-note form-success" role="status">
         Merci : votre demande est arrivée. Nous la vérifions et vous répondons sous quarante-huit heures ouvrées. Une erreur de fait corrigée est inscrite, datée, au <Link href="/transparence#corrections">journal des corrections</Link>.
-      </p>
+      </RetourFormulaire>
     );
   }
 
@@ -100,7 +102,7 @@ export default function MiseAJourForm({ telephone, whatsapp }: { telephone: stri
         <label className="check check--consentement"><input name="consentement" required type="checkbox" value="oui" /> <span>J’accepte qu’ADEB LONODJI conserve cette demande, chez notre hébergeur aux États-Unis, et me recontacte pour la vérifier ; je peux demander à tout moment qu’elle soit effacée (<Link href="/mentions-legales#donnees">données et droits</Link>). *</span></label>
       </fieldset>
 
-      {etat === "erreur" ? <p className="form-note form-error" role="alert">L’envoi n’a pas abouti. Réessayez dans un instant, ou envoyez votre demande <a href={whatsapp} target="_blank" rel="noopener noreferrer">par WhatsApp</a>.</p> : null}
+      {etat === "erreur" ? <RetourFormulaire className="form-note form-error" role="alert">L’envoi n’a pas abouti. Réessayez dans un instant, ou envoyez votre demande <a href={whatsapp} target="_blank" rel="noopener noreferrer">par WhatsApp</a>.</RetourFormulaire> : null}
       <div className="section-actions" style={{ justifyContent: "flex-start", marginTop: 8 }}>
         <button className="button primary" disabled={etat === "envoi"} type="submit">{etat === "envoi" ? "Envoi…" : "Envoyer la demande"} <span aria-hidden="true">→</span></button>
       </div>
