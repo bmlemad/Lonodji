@@ -4,6 +4,7 @@ import { PageHeader, SectionHead } from "@/components/blocks";
 import { LegacySections, Resume, Toc } from "@/components/legacy-content";
 import LegacyEnhance from "@/components/legacy-enhance";
 import { getPage, ogFor } from "@/lib/content";
+import { getIndicateurs } from "@/lib/indicateurs";
 import Partager from "@/components/partager";
 import OuvrirAncre from "@/components/ouvrir-ancre";
 
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
 
 export default function Transparence() {
   const page = getPage("redevabilite");
+  const indicateurs = getIndicateurs();
+  const genereLe = new Date(indicateurs.genere).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   const corrections = page.sections.find((s) => s.id === "corrections");
   const nb = corrections ? (corrections.html.match(/class="info-card"/g) || []).length : 0;
   /* Journal des corrections : les quatre plus récentes en vue, les précédentes dans un bloc repliable (rien n'est retiré).
@@ -40,9 +43,9 @@ export default function Transparence() {
         title="Une association qui demande des comptes"
         em="doit en rendre."
         lead={page.lede}
-        pills={["Réponse sous 48 h ouvrées", "Plainte possible, même anonyme", `${nb} corrections datées`]}
+        pills={["Réponse sous 48 h ouvrées", "Plainte possible, même anonyme", `${nb} corrections datées`, `Indicateurs générés le ${genereLe}`]}
       />
-      <div className="legacy">
+      <div className="notice">\n        <strong>Comment vérifier nos chiffres.</strong> Les compteurs publics sont générés depuis les contenus et relevés du site ; leur dernière génération date du {genereLe}. Les plaidoyers, décisions et corrections restent consultables dans leurs pages sources, avec leurs dates et documents lorsqu’ils existent.\n      </div>\n      <div className="legacy">
         <Resume items={page.resume} />
         <Toc items={page.toc} />
         {/* la première section répète le titre de la page : son h2 est retiré, le texte reste */}
