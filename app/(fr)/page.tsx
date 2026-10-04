@@ -42,6 +42,7 @@ export default function Home() {
   const filled = filledCount(idx);
   const indicateurs = getIndicateurs();
   const c = indicateurs.contenu;
+  const genereLe = new Date(indicateurs.genere).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   const poles = idx.structure.poles;
   const prio = new Set(PRIORITAIRES.map((p) => p.id));
   const el = getElection();
@@ -85,7 +86,7 @@ export default function Home() {
             <Link className="acc-bouton" href="/participer">Participer</Link>
           </div>
           <p className="acc-hero-carte-aide">
-            <b>Depuis 1995 · {poles.length} pôles · {total} thématiques · {c.plaidoyers.publies} dossiers de plaidoyer suivis.</b> Chaque chiffre du site est daté ou rattaché à sa source ; ce qui manque est signalé comme tel.
+            <b>Depuis 1995 · {poles.length} pôles · {total} thématiques · {c.plaidoyers.publies} dossiers de plaidoyer suivis.</b> Indicateurs générés le {genereLe} ; chaque chiffre sensible renvoie à sa source, sa date ou son état de preuve, et ce qui manque est signalé comme tel.
           </p>
           <p className="acc-hero-carte-aide">
             <b>{fr(c.carte.localitesNommees)} localités, une fiche chacune.</b> Choisissez une unité sur la carte pour retrouver votre village, ou <Link href="/villages">cherchez-le par son nom</Link>.

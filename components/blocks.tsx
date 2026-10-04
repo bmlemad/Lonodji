@@ -155,9 +155,11 @@ export function PlaidoyerCard({ p }: { p: Plaidoyer }) {
         <div><dt>Envoyé</dt><dd>{p.sent}</dd></div>
         <div><dt>Réponse</dt><dd>{p.answer}</dd></div>
       </dl>
+      <p className="lg-footnote"><strong>Preuve publique :</strong> le dossier en ligne contient les chiffres, les sources et les destinataires ; le PDF fige la version publiée. Les dates d’envoi et de réponse ne sont ajoutées qu’après l’événement réel.</p>
       <div className="plea-links">
         <Link className="button primary" href={p.href}>Lire le plaidoyer<span className="sr-only"> « {p.title} »</span> <span aria-hidden="true">→</span></Link>
         {p.pdf ? <a className="button secondary" href={p.pdf} download>PDF<span className="sr-only"> du plaidoyer « {p.title} »</span></a> : null}
+        <Link className="text-link" href="/impact#plaidoyers">Vérifier le suivi <span aria-hidden="true">→</span></Link>
       </div>
     </article>
   );
