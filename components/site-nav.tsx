@@ -14,8 +14,6 @@ import { equivalent } from "@/lib/langues";
 
 type Props = { lang?: "fr" | "en"; chiffres: NavChiffres; whatsapp: string; telephone: string; telephoneHref: string; devise: string };
 
-/* Pages anglaises : pas de méga-menu (ses libellés sont en français), une liste simple. */
-
 const Fleche = () => <svg className="nav-chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>;
 
 export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephoneHref, devise }: Props) {
@@ -26,6 +24,7 @@ export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephoneHref
   const navRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
+  const menuOriginRef = useRef<HTMLElement | null>(null);
   const en = lang === "en";
   const chemin = (pathname || "/").replace(/\/$/, "") || "/";
   const courante = en ? entreeCouranteEn(chemin) : entreeCourante(pathname);
@@ -42,10 +41,12 @@ export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephoneHref
   useEffect(() => {
     fine.current = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
     const mq = window.matchMedia("(min-width:641px)");
-    const maj = () => setLarge(mq.matches);
+    const mobile = window.matchMedia("(max-width:1100px)");
+    const maj = () => { setLarge(mq.matches); if (!mobile.matches) setMenu(false); };
     maj();
     mq.addEventListener("change", maj);
-    return () => mq.removeEventListener("change", maj);
+    mobile.addEventListener("change", maj);
+    return () => { mq.removeEventListener("change", maj); mobile.removeEventListener("change", maj); annuler(); };
   }, []);
 
   // changement de page : tout se referme
@@ -53,26 +54,46 @@ export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephoneHref
 
   // la barre d'onglets de l'appli (components/app-shell.tsx) ouvre et ferme le menu mobile
   useEffect(() => {
-    const surDemande = (e: Event) => setMenu(!!(e as CustomEvent<boolean>).detail);
+    const surDemande = (e: Event) => {
+      const ouvrirMenu = !!(e as CustomEvent<boolean>).detail;
+      if (ouvrirMenu) {
+        const actif = document.activeElement;
+        menuOriginRef.current = actif instanceof HTMLElement && actif.matches('button[aria-controls="mobile-menu"]')
+          ? actif : document.querySelector<HTMLElement>(".tab--menu") ?? toggleRef.current;
+      }
+      setMenu(ouvrirMenu);
+    };
     window.addEventListener("lonodji:menu", surDemande);
     return () => window.removeEventListener("lonodji:menu", surDemande);
   }, []);
   useEffect(() => {
     window.dispatchEvent(new CustomEvent("lonodji:menu-state", { detail: menu }));
     if (!menu) return;
-    // menu ouvert : le reste de la page est inerte, Tab boucle entre le bouton « Menu »
-    // et le dernier lien du menu, Échap ferme et rend le focus au bouton
+    // Le bouton d’origine peut être celui de la barre d’onglets de l’application.
+    // Le focus reste sur ce bouton ; Tab entre dans le menu sans ouvrir spontanément le clavier virtuel.
     const inertes = Array.from(document.querySelectorAll<HTMLElement>("main, footer")).filter((el) => !el.inert && !menuRef.current?.contains(el));
     inertes.forEach((el) => { el.inert = true; });
-    const focalisables = () => Array.from(menuRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), summary') || []).filter((el) => el.offsetParent !== null);
+    const visible = (el: HTMLElement) => el.getClientRects().length > 0 && !el.closest("[inert]") && getComputedStyle(el).visibility !== "hidden";
+    const boutonOrigine = () => {
+      const boutons = [menuOriginRef.current, toggleRef.current, document.querySelector<HTMLElement>(".tab--menu")];
+      return boutons.find((el): el is HTMLElement => !!el && el.isConnected && visible(el));
+    };
+    const focalisables = () => Array.from(menuRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), summary') || []).filter(visible);
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") { setMenu(false); toggleRef.current?.focus(); return; }
+      // La recherche ou le partage au-dessus du menu gère sa propre boucle de focus.
+      if (document.querySelector('[role="dialog"][aria-modal="true"]')) return;
+      if (event.key === "Escape") { event.preventDefault(); setMenu(false); document.documentElement.classList.remove("kb-open"); boutonOrigine()?.focus({ preventScroll: true }); return; }
       if (event.key !== "Tab") return;
       const els = focalisables();
-      const dernier = els[els.length - 1];
+      const bouton = boutonOrigine();
+      const boucle = bouton ? [bouton, ...els] : els;
       const actif = document.activeElement;
-      if (!event.shiftKey && dernier && actif === dernier) { event.preventDefault(); toggleRef.current?.focus(); }
-      else if (event.shiftKey && actif === toggleRef.current && dernier) { event.preventDefault(); dernier.focus(); }
+      const index = boucle.indexOf(actif as HTMLElement);
+      // Tous les déplacements sont explicites : l’ordre du DOM diffère entre les deux boutons Menu.
+      event.preventDefault();
+      const suivant = index < 0 ? (event.shiftKey ? boucle.length - 1 : bouton ? 1 : 0)
+        : (index + (event.shiftKey ? -1 : 1) + boucle.length) % boucle.length;
+      (boucle[suivant] ?? menuRef.current)?.focus();
     };
     document.addEventListener("keydown", onKeyDown);
     document.body.classList.add("menu-open");
@@ -179,12 +200,12 @@ export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephoneHref
         <Link className="nav-langue" href={autre.href} lang={autre.lang} hrefLang={autre.lang} aria-label={en ? "Lire cette page en français" : "Read this page in English"} title={en ? "Lire cette page en français" : "Read this page in English"} onClick={fermer}>{en ? "FR" : "EN"}</Link>
         <button className="nav-share" type="button" aria-label={en ? "Share this page" : "Partager cette page"} title={en ? "Share this page" : "Partager cette page"} onClick={() => { fermer(); setMenu(false); window.dispatchEvent(new CustomEvent("lonodji:partager")); }}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V4" /><path d="m8 8 4-4 4 4" /><path d="M5 12v6.5A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V12" /></svg></button>
         <Link className="nav-cta" href={en ? "/en/contact" : "/participer"} onClick={fermer} aria-label={en ? "Join us" : "Nous rejoindre"} title={en ? "Join us" : "Nous rejoindre"}><span>{en ? "Join us" : "Nous rejoindre"}</span><b aria-hidden="true">→</b></Link>
-        <button className="menu-toggle" type="button" ref={toggleRef} aria-expanded={menu} aria-controls="mobile-menu" aria-label={menu ? (en ? "Close navigation menu" : "Fermer le menu de navigation") : (en ? "Open navigation menu" : "Ouvrir le menu de navigation")} onClick={() => { fermer(); setMenu((v) => !v); }}><span>{menu ? (en ? "Close" : "Fermer") : "Menu"}</span><i aria-hidden="true">{menu
+        <button className="menu-toggle" type="button" ref={toggleRef} aria-expanded={menu} aria-controls="mobile-menu" aria-label={menu ? (en ? "Close navigation menu" : "Fermer le menu de navigation") : (en ? "Open navigation menu" : "Ouvrir le menu de navigation")} onClick={(event) => { fermer(); menuOriginRef.current = event.currentTarget; setMenu((v) => !v); }}><span>{menu ? (en ? "Close" : "Fermer") : "Menu"}</span><i aria-hidden="true">{menu
           ? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18" /></svg>
           : <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M4 7h16M4 12h16M4 17h16" /></svg>}</i></button>
       </nav>
 
-      <div className={menu ? "mobile-menu is-open" : "mobile-menu"} id="mobile-menu" aria-hidden={!menu} inert={!menu} ref={menuRef}>
+      <div className={menu ? "mobile-menu is-open" : "mobile-menu"} id="mobile-menu" aria-label={en ? "Navigation menu" : "Menu de navigation"} role="navigation" tabIndex={-1} aria-hidden={!menu} inert={!menu} ref={menuRef}>
         <div className="mobile-menu-inner">
           <form className="mm-search" action="/recherche" method="get" role="search" onSubmit={() => setMenu(false)}>
             <label className="sr-only" htmlFor="mm-q">{en ? "Search the site (in French)" : "Rechercher dans le site"}</label>

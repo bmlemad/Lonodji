@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
-/** Présélectionne le formulaire de contact depuis l'URL : ?theme=09 (01-20, financement, communication), &coordo=1,
+/** Présélectionne le formulaire de contact depuis l'URL : ?theme=09 (01-22, financement, communication), &coordo=1,
     et ?objet=odeb|presse|partenariat|question|donnees|autre (valeur data-objet des options du champ Objet). */
-export default function ContactPrefill() {
+function ChampsContactPrefill() {
+  const params = useSearchParams();
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
     const theme = params.get("theme");
     const direction = (params.get("direction") || "").toUpperCase();  // ?direction=I…VI : la vice-présidence d'un pôle
     const coordo = params.get("coordo");
@@ -41,6 +42,10 @@ export default function ContactPrefill() {
     if (message && adjoint === "1" && !message.value) message.value = "Je me propose comme adjoint ou adjointe de cette thématique.";
     const anchor = document.getElementById("contact");
     if (anchor && !window.location.hash) anchor.scrollIntoView({ block: "start" });
-  }, []);
+  }, [params]);
   return null;
+}
+
+export default function ContactPrefill() {
+  return <Suspense fallback={null}><ChampsContactPrefill /></Suspense>;
 }
