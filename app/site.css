@@ -2390,3 +2390,18 @@ footer.site-footer{ background-color:transparent; }
 html.sobre .nav::before, html.sobre .mega-inner, html.sobre .tabbar, html.sobre .mobile-menu{ -webkit-backdrop-filter:none !important; backdrop-filter:none !important; }
 html.sobre .nav::before{ background:#f7f9f5; } html.sobre .mega-inner{ background:linear-gradient(180deg,#f9fbf7,#f3f6f0); }
 html.sobre .tabbar{ background:#f7f9f5; } html.sobre .mobile-menu{ background:rgba(244,246,241,.98) !important; } html.sobre footer.site-footer{ background-color:#f1f4ed; }
+
+
+/* Mode faible débit : retire les décors coûteux et garde l’information essentielle. */
+html.sobre .hub-page,
+html.sobre .accueil,
+html.sobre .detail-page.lg-page{ background-image:none !important; }
+html.sobre .acc-mag img{ display:none; }
+html.sobre *{ scroll-behavior:auto !important; }
+html.sobre .carte-accueil,
+html.sobre .hero-visual{ box-shadow:none; }
+@media (prefers-reduced-data: reduce){
+  .hub-page, .accueil, .detail-page.lg-page{ background-image:none !important; }
+  .acc-mag img{ display:none; }
+  *{ scroll-behavior:auto !important; }
+}
