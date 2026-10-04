@@ -45,30 +45,18 @@ export const NAVIGATION: NavEntree[] = [
   {
     id: "actions", label: "Nos actions", href: "/programmes",
     colonnes: [
-      { titre: "Six pôles · thématiques structurées", liens: [
-        { label: "Mémoire, culture & patrimoine", href: "/programmes#pole-1", note: "Pôle I" },
-        { label: "Services essentiels", href: "/programmes#pole-2", note: "Pôle II" },
-        { label: "Gouvernance, paix & plaidoyer", href: "/programmes#pole-3", note: "Pôle III" },
-        { label: "Numérique & innovation", href: "/programmes#pole-4", note: "Pôle IV" },
-        { label: "Économie & ressources naturelles", href: "/programmes#pole-5", note: "Pôle V" },
-        { label: "Infrastructures, territoire & risques", href: "/programmes#pole-6", note: "Pôle VI" },
+      { titre: "Agir et suivre", liens: [
+        { label: "Nos priorités", href: "/programmes#propositions-organisation", note: "Les thématiques prioritaires et leurs responsables" },
+        { label: "Projets", href: "/projets", note: "Chaque projet, son stade, ce qui manque" },
+        { label: "Plaidoyers", href: "/actions", note: "Dossiers, sources et destinataires" },
+        { label: "Résultats et suivi", href: "/impact", note: "Indicateurs datés, transmissions et engagements" },
+        { label: "Contribuer", href: "/participer#postes-ouverts", note: "Choisir un rôle bénévole" },
+      ] },
+      { titre: "Organisation et partenaires", liens: [
+        { label: "Tous les pôles et thématiques", href: "/programmes", note: "L’organisation complète et les plans d’action" },
         { label: "Secteurs d’intervention", href: "/secteurs", note: "Les mêmes thématiques, en langue ONG" },
         { label: "Fiches de mission (PDF)", href: "/programmes/fiches-de-mission", note: "Vice-présider un pôle, coordonner une thématique" },
-      ] },
-      { titre: "Ce que nous faisons", liens: [
-        { label: "Plaidoyers & engagements", href: "/actions", note: "Huit dossiers, destinataires nommés" },
-        { label: "Projets", href: "/projets", note: "Chaque projet, son stade, ce qui manque" },
-        { label: "Programmes des bailleurs", href: "/bailleurs", note: "Banque mondiale, UE, ONU, BAD : où nous nous raccrochons" },
-        { label: "Tableau de suivi", href: "/impact", note: "Indicateurs, plaidoyers, engagements, décisions" },
-      ] },
-      { titre: "Plans d’action", liens: [
-        { label: "Agriculture, élevage & sécurité alimentaire", href: "/programmes/agriculture-securite-alimentaire" },
-        { label: "Environnement & durabilité", href: "/programmes/environnement" },
-        { label: "Jeunes mères, orphelins, personnes isolées", href: "/programmes/solidarite-inclusion" },
-        { label: "Plan pour les veuves", href: "/programmes/veuves" },
-        { label: "Plan handicap", href: "/programmes/handicap" },
-        { label: "Agriculteurs et éleveurs : prévenir les conflits", href: "/programmes/agriculteurs-eleveurs" },
-        { label: "Nos thématiques et les ODD", href: "/programmes/odd" },
+        { label: "Programmes des bailleurs", href: "/bailleurs", note: "Partenaires et possibilités de financement" },
       ] },
     ],
     vedette: { kicker: "Où nous en sommes", titre: (c) => `${c.pourvues} thématiques pourvues sur ${c.total}`, texte: (c) => `${c.total - c.pourvues} cherchent leur coordonnateur. Une compétence ponctuelle suffit souvent à faire avancer un dossier prêt.`, href: "/participer?coordo=1#contact", label: "Rejoindre une thématique" },
@@ -283,9 +271,9 @@ export const NAVIGATION_EN: NavEntree[] = [
 
 /* Rubrique courante d'une page anglaise (ou d'une page française atteinte depuis le menu anglais). */
 export function entreeCouranteEn(pathname: string): string {
-  if (/^\/en\/(about|odeb)/.test(pathname)) return "association";
+  if (/^\/en\/(about|odeb|organisation|election)(\/|$)/.test(pathname)) return "association";
   if (/^\/en\/(themes|sectors|advocacy|projects|donors|impact|commune)/.test(pathname)) return "actions";
-  if (/^\/en\/(villages|bedjondo)/.test(pathname)) return "territoire";
+  if (/^\/en\/(villages|bedjondo|governance|subsoil)(\/|$)/.test(pathname)) return "territoire";
   if (/^\/en\/contact/.test(pathname)) return "participer";
   return pathname.startsWith("/en/") ? "" : entreeCourante(pathname);
 }

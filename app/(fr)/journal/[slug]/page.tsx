@@ -7,6 +7,7 @@ import { ArticleCard } from "@/components/blocks";
 import { LegacySections, Resume, splitTitle } from "@/components/legacy-content";
 import { getArticle, getIndex, listArticleSlugs, metaDescription, ogFor, ogImage, ORG } from "@/lib/content";
 import { articleSchema, breadcrumbSchema, jsonLd, webPageSchema } from "@/lib/schema";
+import { ARTICLE_UPDATES } from "@/lib/article-updates";
 
 export const dynamicParams = true; // adresse inconnue : notFound() dans la page (404 hydratée sans écart)
 
@@ -32,6 +33,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!listArticleSlugs().includes(slug)) notFound();
   const a = getArticle(slug);
   const idx = getIndex();
+  const miseAJour = ARTICLE_UPDATES[slug];
   const pos = idx.articles.findIndex((x) => x.slug === slug);
   const newer = pos > 0 ? idx.articles[pos - 1] : null;
   const older = pos < idx.articles.length - 1 ? idx.articles[pos + 1] : null;
@@ -70,6 +72,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           {a.byline ? <span className="af-par"><span className="af-sep" aria-hidden="true">· </span>{a.byline}</span> : null}
         </p>
       </div>
+      {miseAJour ? <aside className="notice" aria-label="Mise à jour de cet article"><strong>Note du <time dateTime={miseAJour.date}>{miseAJour.dateLabel}</time>.</strong> {miseAJour.texte} <Link href={miseAJour.href}>{miseAJour.label} →</Link> · <Link href="/programmes">Voir l’organisation actuelle</Link>.</aside> : null}
       <div className="legacy">
         <Resume items={a.resume} />
         <LegacySections sections={a.sections} />

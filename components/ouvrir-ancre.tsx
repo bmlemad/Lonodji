@@ -6,11 +6,18 @@ import { useEffect } from "react";
 export default function OuvrirAncre() {
   useEffect(() => {
     const ouvrir = () => {
-      const id = decodeURIComponent(window.location.hash.slice(1));
+      let id: string;
+      try { id = decodeURIComponent(window.location.hash.slice(1)); } catch { return; }
       if (!id) return;
       const cible = document.getElementById(id);
-      const bloc = cible?.closest("details");
-      if (bloc && !bloc.open) { bloc.open = true; cible!.scrollIntoView(); }
+      if (!cible) return;
+      let bloc = cible.closest("details");
+      let ouvert = false;
+      while (bloc) {
+        if (!bloc.open) { bloc.open = true; ouvert = true; }
+        bloc = bloc.parentElement?.closest("details") ?? null;
+      }
+      if (ouvert) cible.scrollIntoView();
     };
     ouvrir();
     window.addEventListener("hashchange", ouvrir);

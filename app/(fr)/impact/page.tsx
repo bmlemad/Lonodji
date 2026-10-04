@@ -6,6 +6,7 @@ import { LegacySections } from "@/components/legacy-content";
 import TableauDeBord from "@/components/tableau-de-bord";
 import { getPage, ogFor } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
+import OuvrirAncre from "@/components/ouvrir-ancre";
 import Partager from "@/components/partager";
 import { getObservatoire } from "@/lib/observatoire";
 import { decisionsTriees, TYPES } from "@/lib/decisions";
@@ -37,8 +38,14 @@ export default function Impact() {
         crumbs={[{ label: "Nos actions", href: "/programmes" }, { label: "Tableau de suivi" }]}
         title="Mesurer ce qui"
         em="devient réel."
-        lead="Six indicateurs de suivi, datés et sourcés, que le plan d’action 2026-2028 nous engage à publier : ils mesurent ce que fait l’association (réalisations), pas encore les changements pour les habitants (impact), qui viendront des cibles du cadre de résultats. Puis, thématique par thématique, ce qui est documenté, publié, envoyé — et où une compétence changerait la donne. Ce qui n’est pas encore réalisé est écrit comme tel."
+        lead="Les réalisations de l’association, avec leur date et leur source : six indicateurs, le statut des plaidoyers et les engagements publics. Les changements pour les habitants restent à mesurer ; ils ne sont pas déduits de ces compteurs."
       />
+      <nav className="section-actions bl-sommaire" aria-label="Sur cette page" style={{ justifyContent: "flex-start" }}>
+        <a className="text-link" href="#tb-titre">Indicateurs</a>
+        <a className="text-link" href="#plaidoyers">Plaidoyers</a>
+        <a className="text-link" href="#engagements-decisions">Engagements et décisions</a>
+        <a className="text-link" href="#suivi-thematique">Thématique par thématique</a>
+      </nav>
       <Stats items={[
         { value: String(o.plaidoyers.length), label: "dossiers publiés", note: "texte, chiffres, sources et destinataires accessibles publiquement" },
         { value: String(transmis), label: "dossiers transmis", note: "une transmission n’est comptée que lorsqu’une date réelle est enregistrée" },
@@ -52,11 +59,7 @@ export default function Impact() {
       <div className="notice">
         <strong>Règle de publication.</strong> Aucun résultat n’est annoncé sans preuve : un chiffre paraît avec sa période, son périmètre, sa source et sa méthode. Ce qui n’est pas encore réalisé est écrit comme tel.
       </div>
-      <nav className="section-actions bl-sommaire" aria-label="Sur cette page" style={{ justifyContent: "flex-start" }}>
-        <a className="text-link" href="#plaidoyers">Plaidoyers</a>
-        <a className="text-link" href="#engagements-decisions">Engagements et décisions</a>
-        <a className="text-link" href="#suivi-thematique">Thématique par thématique</a>
-      </nav>
+
 
       <section className="hub-section" id="plaidoyers">
         <SectionHead eyebrow="Plaidoyers" title="Publiés, transmis," em="répondus." text="Chaque dossier de plaidoyer nomme ses destinataires ; ce tableau suit sa transmission et la réponse reçue. Le texte, les chiffres et les sources sont dans chaque dossier." />
@@ -95,9 +98,11 @@ export default function Impact() {
         </div>
       </section>
 
-      <div className="legacy" id="suivi-thematique">
-        <LegacySections sections={page.sections} />
-      </div>
+      <details className="plier" id="suivi-thematique">
+        <summary><strong>Consulter le suivi thématique détaillé</strong><span>Ce qui est documenté, publié et reste à réaliser, thème par thème</span></summary>
+        <div className="legacy suivi-detail-contenu"><LegacySections sections={page.sections} /></div>
+      </details>
+      <OuvrirAncre />
       <section className="hub-section">
         <p className="lg-footnote">Résultats vérifiés, projets documentés et témoignages authentifiés seront publiés ici, dossier par dossier, avec leur source. Ce que nous rectifions est dans le <Link href="/transparence#corrections">journal des corrections</Link>.</p>
       </section>

@@ -50,7 +50,7 @@ export default async function Unite({ params }: { params: Promise<{ unite: strin
         em={u.kmBedjondo < 1 ? "chef-lieu du pays bedjond." : u.nom === "Bédjondo" ? `centre de l’unité à ${km(u.kmBedjondo)} de la ville.` : `à ${km(u.kmBedjondo)} de Bédjondo.`}
         lead={`${u.notice} ${u.dep}${u.prov && u.prov !== u.dep ? `, ${u.prov}` : ""}. ${nf.format(u.comptes.nommes)} localités nommées sur OpenStreetMap${u.comptes.villages > u.comptes.nommes ? `, ${nf.format(u.comptes.villages - u.comptes.nommes)} sans nom` : ""} ; chacune a sa fiche.`}
         crumbs={[{ label: "Territoire", href: "/territoire" }, { label: "Villages", href: "/villages" }, { label: u.nom }]}
-        pills={[`${nf.format(u.comptes.nommes)} localités nommées`, `${nf.format(u.comptes.equipements)} ${u.comptes.equipements > 1 ? "équipements connus" : "équipement connu"}`, `${nf.format(nbPages)} ${nbPages > 1 ? "pages du site" : "page du site"}`]}
+        pills={[`${nf.format(u.comptes.nommes)} localités nommées`, u.comptes.equipements ? `${nf.format(u.comptes.equipements)} équipement${u.comptes.equipements > 1 ? "s" : ""} relevé${u.comptes.equipements > 1 ? "s" : ""} dans les données ouvertes` : "aucun équipement relevé dans les données ouvertes", `${nf.format(nbPages)} ${nbPages > 1 ? "pages du site" : "page du site"}`]}
       />
 
       <Stats items={[

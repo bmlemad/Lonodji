@@ -14,6 +14,15 @@ export const metadata: Metadata = {
 
 /* Les groupes du plan reprennent le menu (lib/navigation.ts), plus le projet ODEB en détail. */
 const main: [string, { href: string; label: string }[]][] = NAVIGATION.filter((e) => e.colonnes).map((e) => [e.label, [{ href: e.href, label: `${e.label} — vue d’ensemble` }, ...e.colonnes!.flatMap((c) => c.liens.filter((l) => !l.externe).map((l) => ({ href: l.href, label: l.label })))]]);
+main.push(["Plans d’action détaillés", [
+  { label: "Agriculture, élevage et sécurité alimentaire", href: "/programmes/agriculture-securite-alimentaire" },
+  { label: "Environnement et durabilité", href: "/programmes/environnement" },
+  { label: "Solidarité et inclusion", href: "/programmes/solidarite-inclusion" },
+  { label: "Plan pour les veuves", href: "/programmes/veuves" },
+  { label: "Plan handicap", href: "/programmes/handicap" },
+  { label: "Agriculteurs et éleveurs : prévenir les conflits", href: "/programmes/agriculteurs-eleveurs" },
+  { label: "Nos thématiques et les ODD", href: "/programmes/odd" },
+]]);
 main.push(["Projet ODEB LONODJI — programmes", PROGRAMMES.map((p) => ({ href: routeProgramme(p), label: `${p.numero} · ${p.nom}` }))]);
 main.push(["Outils", [{ href: "/recherche", label: "Rechercher dans le site" }, { href: "/plan-du-site", label: "Plan du site" }, { href: "/mentions-legales", label: "Mentions légales" }, { href: "/archives", label: "Archives du site" }, { href: "/hors-ligne", label: "Page hors ligne de l’application" }]]);
 

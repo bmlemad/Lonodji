@@ -4,6 +4,7 @@ import { estPrioritaire } from "@/lib/organisation";
 import { secteursDeThematique } from "../lib/secteurs";
 import { reperesFr } from "../lib/reperes";
 import { insecables } from "../lib/typo";
+import { ARTICLE_UPDATES } from "../lib/article-updates";
 
 /* Adresse du site pour les données structurées (pas d'import de lib/content : ce module sert aussi côté client). */
 const SITE = "https://lonodji.org";
@@ -133,10 +134,12 @@ export function ThematiqueRow({ t, pole, partenaires }: { t: Thematique; pole?: 
 }
 
 export function ArticleCard({ a }: { a: ArticleSummary }) {
+  const miseAJour = ARTICLE_UPDATES[a.slug];
   return (
     <article className="art-card">
       <div className="art-meta"><time dateTime={a.date}>{a.dateLabel}</time>{a.tag ? <span className="tag">{a.tag}</span> : null}</div>
       <h3><Link href={a.route}>{a.title}</Link></h3>
+      {miseAJour ? <p className="article-update"><Link href={miseAJour.href}>Actualisé par une décision ultérieure <span className="sr-only"> : {a.title}</span></Link><small>Note du <time dateTime={miseAJour.date}>{miseAJour.dateLabel}</time></small></p> : null}
       <p>{a.summary}</p>
       <div className="art-foot"><span>{a.readTime}</span><Link className="text-link" href={a.route}>Lire l’article<span className="sr-only"> « {a.title} »</span> <span aria-hidden="true">→</span></Link></div>
     </article>

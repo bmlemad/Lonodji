@@ -40,14 +40,14 @@ function cartesDuPlan(d: Indicateurs, f: Releve): Carte[] {
   return [
     {
       cle: "adherents",
-      eyebrow: "Adhérents",
+      eyebrow: d.bureau.adherents != null ? "Adhérents confirmés" : "Intentions d’adhésion",
       valeur: d.bureau.adherents != null ? n(d.bureau.adherents) : n(personnes),
       libelle: d.bureau.adherents != null ? "adhérents à jour de cotisation" : `${pluriel(personnes, "personne a", "personnes ont")} déclaré leur intention d’adhérer`,
       detail: d.bureau.adherents != null
         ? `Chiffre transmis par le bureau. ${n(personnes)} ${pluriel(personnes, "personne a", "personnes ont")} par ailleurs déclaré leur intention d’adhérer sur le site.`
         : `${n(adh.envois)} ${pluriel(adh.envois, "envoi reçu", "envois reçus")} par le formulaire d’adhésion. Le nombre d’adhérents à jour de cotisation est tenu par le bureau : il paraîtra ici, daté, dès sa première transmission.`,
-      source: `Formulaire du site · ${releve}`,
-      courte: "Formulaire du site",
+      source: d.bureau.adherents != null ? `Bilan du bureau · ${dateLongue(d.genere)}` : `Formulaire du site · ${releve}`,
+      courte: d.bureau.adherents != null ? "Bilan du bureau" : "Formulaire du site",
       href: "/participer#adherer",
     },
     {
@@ -84,8 +84,8 @@ function cartesDuPlan(d: Indicateurs, f: Releve): Carte[] {
     {
       cle: "resolus",
       eyebrow: "Besoins résolus",
-      valeur: n(d.bureau.besoinsResolus),
-      libelle: pluriel(d.bureau.besoinsResolus, "besoin confirmé résolu", "besoins confirmés résolus"),
+      valeur: d.bureau.besoinsResolus == null ? "Non publié" : n(d.bureau.besoinsResolus),
+      libelle: d.bureau.besoinsResolus == null ? "aucun bilan transmis par le bureau" : pluriel(d.bureau.besoinsResolus, "besoin confirmé résolu", "besoins confirmés résolus"),
       detail: `Rien n’est compté ici sans preuve datée. ${n(c.engagements.total)} engagements publics sont suivis un par un ; ${n(c.engagements.realises)} ${pluriel(c.engagements.realises, "est confirmé réalisé", "sont confirmés réalisés")}.`,
       source: "Règle de preuve · mise en ligne",
       courte: "Règle de preuve",
@@ -144,7 +144,7 @@ export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: 
         {cartes.map((k) => (
           <li key={k.cle}>
             <span className="eyebrow">{k.eyebrow}</span>
-            <strong className="tb-valeur">{k.valeur}{k.unite ? <small>{k.unite}</small> : null}</strong>
+            <strong className={`tb-valeur${k.valeur === "Non publié" ? " tb-valeur--texte" : ""}`}>{k.valeur}{k.unite ? <small>{k.unite}</small> : null}</strong>
             <span className="tb-libelle">{k.libelle}</span>
             <span className="tb-source">{k.courte}</span>
           </li>
@@ -169,7 +169,7 @@ export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: 
         {cartes.map((k) => (
           <article className="tb-carte" key={k.cle} id={`indicateur-${k.cle}`}>
             <p className="eyebrow">{k.eyebrow}</p>
-            <strong className="tb-valeur">{k.valeur}{k.unite ? <small>{k.unite}</small> : null}</strong>
+            <strong className={`tb-valeur${k.valeur === "Non publié" ? " tb-valeur--texte" : ""}`}>{k.valeur}{k.unite ? <small>{k.unite}</small> : null}</strong>
             <span className="tb-libelle">{k.libelle}</span>
             <p className="tb-detail">{k.detail}</p>
             <span className="tb-source">{k.source}</span>
@@ -178,6 +178,9 @@ export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: 
         ))}
       </div>
 
+      <details className="plier tb-complements" id="comptes-detail">
+      <summary><strong>Contenus, contributions et méthode de comptage</strong><span>Consulter les relevés détaillés et leurs sources</span></summary>
+      <div className="tb-complements-contenu">
       <div className="tb-titre">
         <h3>Ce que le site produit</h3>
         <p>Compté dans le contenu publié, à la mise en ligne du {miseEnLigne}.</p>
@@ -214,6 +217,8 @@ export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: 
       <div className="tb-methode">
         <strong>Comment ces chiffres sont faits.</strong> Les contenus (plaidoyers, articles, documents, corrections, coordinations, localités) sont comptés dans les pages elles-mêmes à chaque mise en ligne : un chiffre change quand la page change. Les envois de formulaires sont comptés sur la plateforme qui les reçoit — méthode du relevé : {formulaires.methode} Aucune donnée personnelle ne quitte la boîte de réception. Les chiffres que seule l’association détient — adhérents à jour de cotisation, besoins effectivement résolus — ne sont pas estimés : ils paraîtront datés quand le bureau les transmettra.
       </div>
+      </div>
+      </details>
     </section>
   );
 }

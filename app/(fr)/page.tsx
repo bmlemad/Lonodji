@@ -76,9 +76,9 @@ export default function Home() {
       {/* 1. La carte du pays bedjond, cliquable */}
       <section className="acc-hero" aria-labelledby="hero-title">
         <div className="acc-hero-texte">
-          <h1 id="hero-title">Bédjondo s’organise. Sa diaspora s’engage. Ses priorités se documentent.</h1>
+          <h1 id="hero-title">Bédjondo et sa diaspora, ensemble pour agir.</h1>
           <p className="acc-hero-lead">
-            Depuis 1995, ADEB LONODJI réunit habitants, ressortissants et partenaires pour préserver la mémoire bedjond, soutenir le développement de Bédjondo et suivre publiquement les engagements pris sur l’eau, la santé, l’école, les routes, l’énergie et les autres priorités du territoire.
+            ADEB LONODJI relie les habitants de Bédjondo, sa diaspora et ses partenaires pour documenter les besoins, porter les priorités du territoire et préserver la mémoire bedjond.
           </p>
           <div className="acc-hero-actions">
             <Link className="acc-bouton acc-bouton--plein" href="/impact#plaidoyers">Voir le suivi public</Link>
@@ -160,7 +160,7 @@ export default function Home() {
       <section className="acc-section acc-poles" aria-labelledby="poles-title">
         <div className="acc-tete">
           <h2 id="poles-title">{enLettres(poles.length, true)} pôles, {enLettres(total)} thématiques</h2>
-          <p>{filled} thématiques sur {total} sont pourvues. Sur l’accueil, nous ne montrons plus toute l’organisation : les {enLettres(prio.size)} priorités actives passent d’abord ; le détail complet reste dans « Nos actions ».</p>
+          <p>{filled} thématiques sur {total} sont pourvues. Découvrez les {enLettres(prio.size)} priorités actives, leurs missions et les coordinations à pourvoir.</p>
         </div>
         <ul className="acc-participer-grille">
           {poles.flatMap((p) => p.items.filter((t) => prio.has(t.id)).map((t) => (
@@ -176,7 +176,7 @@ export default function Home() {
       <section className="acc-section acc-odeb" aria-labelledby="odeb-title">
         <div className="acc-tete">
           <h2 id="odeb-title">Vision 2030</h2>
-          <p>La stratégie de long terme ne concurrence plus les urgences sur l’accueil. Retrouvez la vision, le livre blanc et la feuille de route dans leur espace dédié.</p>
+          <p>Le projet ODEB LONODJI propose une vision de long terme pour le pays bedjond. Consultez le livre blanc et la feuille de route pour comprendre les propositions, les étapes et les décisions à prendre.</p>
         </div>
         <p className="acc-liens acc-liens--clair"><Link href="/odeb">Comprendre la vision 2030</Link><Link href="/odeb/livre-blanc">Lire le livre blanc</Link><Link href="/odeb/feuille-de-route">Voir la feuille de route</Link></p>
       </section>

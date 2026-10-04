@@ -2405,3 +2405,14 @@ html.sobre .hero-visual{ box-shadow:none; }
   .acc-mag img{ display:none; }
   *{ scroll-behavior:auto !important; }
 }
+
+/* Revue du 4 octobre : lecture courte, compléments ouverts à la demande. */
+.article-update{ margin:12px 0; padding:10px 0; border-top:1px solid var(--line); font-size:13px; }
+.article-update small{ display:block; margin-top:4px; color:var(--muted); }
+.participer-detail-contenu,.tb-complements-contenu,.suivi-detail-contenu{ padding:0 24px 20px; }
+.participer-detail-contenu > .section-head{ margin-top:24px; }
+.tb-valeur.tb-valeur--texte{ font-size:clamp(26px,3vw,38px); line-height:1.1; }
+@media(max-width:640px){ .participer-detail-contenu,.tb-complements-contenu,.suivi-detail-contenu{ padding:0 16px 16px; } }
+
+.participer-choix{ margin-bottom:32px; }
+.participer-choix + .contact-cta{ margin-top:0; }

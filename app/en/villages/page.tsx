@@ -18,7 +18,7 @@ const GROUPES: Record<string, string> = { coeur: "Heart of the Bedjond country",
 const nf = new Intl.NumberFormat("en-GB");
 const df = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 const date = (iso: string) => { const d = new Date(iso.slice(0, 10) + "T12:00:00Z"); return Number.isNaN(d.getTime()) ? iso : df.format(d); };
-const equipements = (n: number) => `${n} known ${n === 1 ? "facility" : "facilities"}`;
+const equipements = (n: number) => n ? `${n} ${n === 1 ? "facility recorded" : "facilities recorded"} in open data` : "no facilities recorded in open data";
 
 export default function VillagesEn() {
   const v = getVillages();

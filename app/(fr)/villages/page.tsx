@@ -56,7 +56,8 @@ export default function Villages() {
               <small>{GROUPES[u.groupe]}</small>
               <strong>{u.nom}</strong>
               <span>{u.dep}{u.prov && u.prov !== u.dep ? `, ${u.prov}` : ""} · {u.kmBedjondo < 1 ? "chef-lieu" : `à ${km(u.kmBedjondo)} de Bédjondo`}</span>
-              <b>{nf.format(u.comptes.nommes)} {u.comptes.nommes > 1 ? "localités" : "localité"} · {nf.format(u.comptes.equipements)} {u.comptes.equipements > 1 ? "équipements" : "équipement"}</b>
+              <b>{nf.format(u.comptes.nommes)} {u.comptes.nommes > 1 ? "localités" : "localité"} · {u.comptes.equipements ? `${nf.format(u.comptes.equipements)} équipement${u.comptes.equipements > 1 ? "s" : ""} relevé${u.comptes.equipements > 1 ? "s" : ""}` : "aucun équipement relevé"}</b>
+              <span>Dans les données ouvertes ; ce relevé ne constitue pas un inventaire complet.</span>
             </Link>
           ))}
         </div>

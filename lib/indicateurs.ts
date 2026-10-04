@@ -31,7 +31,7 @@ export type Indicateurs = {
     projets: { actifs: number; annonces: number; finances: number; liste: Projet[] };
   };
   formulaires: Releve;
-  bureau: { adherents: number | null; besoinsResolus: number; note: string };
+  bureau: { adherents: number | null; besoinsResolus: number | null; note: string };
 };
 
 export function getIndicateurs(): Indicateurs {

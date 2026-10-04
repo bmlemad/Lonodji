@@ -41,7 +41,7 @@ const fmt = (n: number) => new Intl.NumberFormat("en-GB").format(n);
 
 export default function HomeEn() {
   const idx = getIndex();
-  const { piliers, themes } = nomsEn();
+  const { themes } = nomsEn();
   const total = thematiqueCount(idx);
   const filled = filledCount(idx);
   const indicateurs = getIndicateurs();
@@ -72,19 +72,42 @@ export default function HomeEn() {
     <main id="main-content" className="accueil" lang="en">
       <section className="acc-hero" aria-labelledby="hero-title">
         <div className="acc-hero-texte">
-          <h1 id="hero-title">The association of Bédjondo and its diaspora.</h1>
+          <h1 id="hero-title">Bédjondo and its diaspora, acting together.</h1>
           <p className="acc-hero-lead">
-            We work for water, health, schools, roads and energy in Bédjondo, in southern Chad, and its cantons, and we safeguard the language, history and heritage of the Bedjond people. Officially recognised in 1995, the association was relaunched in 2026.
+            ADEB LONODJI connects the people of Bédjondo, its diaspora and its partners to document local needs, advocate for the territory’s priorities and preserve Bedjond heritage.
           </p>
           <div className="acc-hero-actions">
-            <Link className="acc-bouton acc-bouton--plein" href="/en/contact">Join us</Link>
-            <Link className="acc-bouton" href="/en/organisation">How we are organised</Link>
+            <Link className="acc-bouton acc-bouton--plein" href="/en/impact">See public progress</Link>
+            <Link className="acc-bouton" href="/en/contact">Get involved</Link>
           </div>
           <p className="acc-hero-carte-aide">
             <b>{fmt(c.carte.localitesNommees)} localities, one record each.</b> Choose a unit on the map to find your village (records in French), or <Link href="/en/villages">read about the villages in English</Link>.
           </p>
         </div>
         <CarteAccueil lang="en" />
+      </section>
+
+      <section className="acc-section acc-participer" aria-labelledby="parcours-title">
+        <div className="acc-tete"><h2 id="parcours-title">Four ways to take part</h2><p>Find the next step that fits your situation.</p></div>
+        <ul className="acc-participer-grille">
+          <li><Link href="/territoire/besoins" hrefLang="fr"><strong>I live in the territory</strong><span>Report a local need (form in French).</span></Link></li>
+          <li><Link href="/diaspora" hrefLang="fr"><strong>I am part of the diaspora</strong><span>Offer my skills (form in French).</span></Link></li>
+          <li><Link href="/en/contact"><strong>I represent an organisation</strong><span>Discuss a partnership.</span></Link></li>
+          <li><Link href="/en/impact"><strong>I want facts and sources</strong><span>Check public progress and available evidence.</span></Link></li>
+        </ul>
+      </section>
+
+      <section className="acc-section acc-plaidoyers" aria-labelledby="plaidoyers-title">
+        <div className="acc-tete">
+          <h2 id="plaidoyers-title">{inWordsEn(idx.plaidoyers.length, true)} advocacy briefs for Bédjondo</h2>
+          <p>Sourced and costed, each with named recipients. The {lettres} cover letters are ready and await the board’s signature; each dispatch and each reply will be dated.</p>
+        </div>
+        <ol className="acc-plaidoyers-liste">
+          {idx.plaidoyers.map((p) => (
+            <li key={p.id}><Link href="/en/advocacy"><small>Advocacy brief</small><strong>{BRIEFS_EN[p.id] ?? p.title}</strong></Link></li>
+          ))}
+        </ol>
+        <p className="acc-liens"><Link href="/en/advocacy">Our advocacy, in English</Link><Link href="/en/commune">Proposals to the commune</Link><Link href="/en/donors">Donor programmes in Chad</Link></p>
       </section>
 
       <section className="acc-section acc-moment" aria-labelledby="moment-title">
@@ -120,37 +143,17 @@ export default function HomeEn() {
           <h2 id="poles-title">{inWordsEn(poles.length, true)} pillars, {inWordsEn(total)} themes</h2>
           <p>Each pillar has an elected vice-president, each theme a coordinator. {filled} of {total} themes have one; the {inWordsEn(prio.size)} priority themes carry our advocacy briefs.</p>
         </div>
-        <div className="acc-poles-grille">
-          {poles.map((p) => (
-            <article key={p.id} className="acc-pole">
-              <span className="acc-pole-num" aria-hidden="true">{p.roman}</span>
-              <h3><Link href="/en/themes"><span className="sr-only">Pillar {p.roman}: </span>{piliers[p.roman] ?? p.name}</Link></h3>
-              <p className="acc-pole-vp">{p.direction?.filled ? <>Vice-president: {p.direction.name}</> : <Link href="/en/election">Vice-president to be elected on {dateEn(vote.date, false)}</Link>}</p>
-              <ul>
-                {p.items.map((t) => (
-                  <li key={t.id} className={t.filled ? "" : "vacant"}>
-                    <span className="acc-them-num">{t.number}</span>
-                    <span>{themes[t.number] ?? t.name}{prio.has(t.id) ? <em className="acc-prio"> priority</em> : null}{t.filled ? null : <small> open</small>}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
+        <ul className="acc-participer-grille">
+          {poles.flatMap((p) => p.items.filter((t) => prio.has(t.id)).map((t) => (
+            <li key={t.id}><Link href="/en/themes"><strong>{themes[t.number] ?? t.name}</strong><span>Pillar {p.roman} · active priority{t.filled ? "" : " · coordinator needed"}</span></Link></li>
+          )))}
+        </ul>
         <p className="acc-liens"><Link href="/en/themes">All themes and their coordinators</Link><Link href="/en/organisation">The decisions of 1 October 2026</Link><Link href="/en/sectors">Our work in donors’ sectors</Link></p>
       </section>
 
-      <section className="acc-section acc-plaidoyers" aria-labelledby="plaidoyers-title">
-        <div className="acc-tete">
-          <h2 id="plaidoyers-title">{inWordsEn(idx.plaidoyers.length, true)} advocacy briefs for Bédjondo</h2>
-          <p>Sourced and costed, each with named recipients. The {lettres} cover letters are ready and await the board’s signature; each dispatch and each reply will be dated.</p>
-        </div>
-        <ol className="acc-plaidoyers-liste">
-          {idx.plaidoyers.map((p) => (
-            <li key={p.id}><Link href="/en/advocacy"><small>Advocacy brief</small><strong>{BRIEFS_EN[p.id] ?? p.title}</strong></Link></li>
-          ))}
-        </ol>
-        <p className="acc-liens"><Link href="/en/advocacy">Our advocacy, in English</Link><Link href="/en/commune">Proposals to the commune</Link><Link href="/en/donors">Donor programmes in Chad</Link></p>
+      <section className="acc-section acc-odeb" aria-labelledby="odeb-title">
+        <div className="acc-tete"><h2 id="odeb-title">Vision 2030</h2><p>The ODEB LONODJI project proposes a long-term vision for the Bedjond country. Explore the proposals and the steps still to be decided.</p></div>
+        <p className="acc-liens acc-liens--clair"><Link href="/en/odeb">Understand the vision</Link><Link href="/odeb/livre-blanc" hrefLang="fr">White paper (French)</Link><Link href="/odeb/feuille-de-route" hrefLang="fr">Roadmap (French)</Link></p>
       </section>
 
       <section className="acc-section acc-comptes impact" aria-labelledby="comptes-title">
