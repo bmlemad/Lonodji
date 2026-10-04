@@ -8,7 +8,6 @@ import CarteAccueil from "@/components/carte-accueil";
 import EnCeMoment from "@/components/en-ce-moment";
 import { enLettres, filledCount, getIndex, ORG, thematiqueCount } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
-import { ODEB, PROGRAMMES, routeProgramme } from "@/lib/odeb";
 import { PRIORITAIRES } from "@/lib/organisation";
 import { dateFr, etape, getElection } from "@/lib/election";
 import { getMagazine } from "@/lib/magazine";
@@ -52,7 +51,7 @@ export default function Home() {
   const tr = getTransmissions();
   const lettres = Object.values(tr).reduce((n, t) => n + t.destinataires.length, 0);
   const envoyees = Object.values(tr).reduce((n, t) => n + t.destinataires.filter((d) => d.statut !== "a-signer").length, 0);
-  const latest = idx.articles.slice(0, 4);
+  const latest = idx.articles.slice(0, 3);
   const etapes = [
     ...["appel", "cloture", "liste", "vote", "resultats"].map((cle) => {
       const e = etape(cle);
@@ -109,7 +108,23 @@ export default function Home() {
         </ul>
       </section>
 
-      {/* 3. En ce moment */}
+      {/* 3. Les plaidoyers — priorité de lecture */}
+      <section className="acc-section acc-plaidoyers" aria-labelledby="plaidoyers-title">
+        <div className="acc-tete">
+          <h2 id="plaidoyers-title">{enLettres(idx.plaidoyers.length, true)} dossiers de plaidoyer pour Bédjondo</h2>
+          <p>Sourcés, chiffrés, chacun avec ses destinataires nommés. {envoyees ? `${enLettres(envoyees, true)} lettres d’envoi sur ${lettres} sont parties.` : `Les ${lettres} lettres d’envoi sont prêtes et attendent la signature du bureau.`} Chaque envoi et chaque réponse seront datés.</p>
+        </div>
+        <ol className="acc-plaidoyers-liste">
+          {idx.plaidoyers.map((p) => (
+            <li key={p.id}>
+              <Link href={p.href}><small>{p.theme}</small><strong>{p.title}</strong></Link>
+            </li>
+          ))}
+        </ol>
+        <p className="acc-liens"><Link href="/impact#plaidoyers">Voir le statut de chaque dossier</Link><Link href="/actions">Les plaidoyers et leur transmission</Link><Link href="/territoire/propositions-commune">Nos propositions à la commune</Link></p>
+      </section>
+
+      {/* 4. En ce moment */}
       <section className="acc-section acc-moment" aria-labelledby="moment-title">
         <div className="acc-tete">
           <h2 id="moment-title">En ce moment</h2>
@@ -141,58 +156,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Les pôles */}
+      {/* 5. Organisation — résumé */}
       <section className="acc-section acc-poles" aria-labelledby="poles-title">
         <div className="acc-tete">
           <h2 id="poles-title">{enLettres(poles.length, true)} pôles, {enLettres(total)} thématiques</h2>
-          <p>Chaque pôle a une vice-présidence élue, chaque thématique un coordonnateur ou une coordonnatrice. {filled} thématiques sur {total} sont pourvues ; les {enLettres(prio.size)} prioritaires portent nos dossiers de plaidoyer.</p>
+          <p>{filled} thématiques sur {total} sont pourvues. Sur l’accueil, nous ne montrons plus toute l’organisation : les {enLettres(prio.size)} priorités actives passent d’abord ; le détail complet reste dans « Nos actions ».</p>
         </div>
-        <div className="acc-poles-grille">
-          {poles.map((p) => (
-            <article key={p.id} className="acc-pole">
-              <span className="acc-pole-num" aria-hidden="true">{p.roman}</span>
-              <h3><Link href={`/programmes#${p.id}`}><span className="sr-only">Pôle {p.roman} : </span>{p.name}</Link></h3>
-              <p className="acc-pole-vp">{p.direction?.filled ? <>Vice-présidence : {p.direction.name}</> : <Link href="/association/election-vice-presidences">Vice-présidence à élire le {dateFr(vote.date, false)}</Link>}</p>
-              <ul>
-                {p.items.map((t) => (
-                  <li key={t.id} className={t.filled ? "" : "vacant"}>
-                    <span className="acc-them-num">{t.number}</span>
-                    <span>{t.name}{prio.has(t.id) ? <em className="acc-prio"> prioritaire</em> : null}{t.filled ? null : <small> à pourvoir</small>}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-        <p className="acc-liens"><Link href="/programmes">Toutes les thématiques et leurs coordonnateurs</Link><Link href="/association/propositions-organisation">Les décisions du 1er octobre 2026</Link><Link href="/programmes/fiches-de-mission">Les fiches de mission</Link></p>
-      </section>
-
-      {/* 5. Les plaidoyers */}
-      <section className="acc-section acc-plaidoyers" aria-labelledby="plaidoyers-title">
-        <div className="acc-tete">
-          <h2 id="plaidoyers-title">{enLettres(idx.plaidoyers.length, true)} dossiers de plaidoyer pour Bédjondo</h2>
-          <p>Sourcés, chiffrés, chacun avec ses destinataires nommés. {envoyees ? `${enLettres(envoyees, true)} lettres d’envoi sur ${lettres} sont parties.` : `Les ${lettres} lettres d’envoi sont prêtes et attendent la signature du bureau.`} Chaque envoi et chaque réponse seront datés.</p>
-        </div>
-        <ol className="acc-plaidoyers-liste">
-          {idx.plaidoyers.map((p) => (
-            <li key={p.id}>
-              <Link href={p.href}><small>{p.theme}</small><strong>{p.title}</strong></Link>
+        <ul className="acc-participer-grille">
+          {poles.flatMap((p) => p.items.filter((t) => prio.has(t.id)).map((t) => (
+            <li key={t.id}>
+              <Link href={`/programmes#${t.id}`}><strong>{t.name}</strong><span>Pôle {p.roman} · priorité active{t.filled ? "" : " · coordination à pourvoir"}</span></Link>
             </li>
-          ))}
-        </ol>
-        <p className="acc-liens"><Link href="/impact#plaidoyers">Voir le statut de chaque dossier</Link><Link href="/actions">Les plaidoyers et leur transmission</Link><Link href="/territoire/propositions-commune">Nos propositions à la commune</Link></p>
+          )))}
+        </ul>
+        <p className="acc-liens"><Link href="/programmes">Voir les {total} thématiques et leurs responsables</Link><Link href="/programmes/fiches-de-mission">Les fiches de mission</Link></p>
       </section>
 
-      {/* 6. Le projet ODEB */}
+      {/* 6. Vision 2030 — accès synthétique */}
       <section className="acc-section acc-odeb" aria-labelledby="odeb-title">
         <div className="acc-tete">
-          <h2 id="odeb-title">Le projet ODEB LONODJI, vision 2030</h2>
-          <p>{ODEB.formulation}</p>
+          <h2 id="odeb-title">Vision 2030</h2>
+          <p>La stratégie de long terme ne concurrence plus les urgences sur l’accueil. Retrouvez la vision, le livre blanc et la feuille de route dans leur espace dédié.</p>
         </div>
-        <ul className="acc-odeb-programmes">
-          {PROGRAMMES.map((p) => <li key={p.slug}><Link href={routeProgramme(p)}><span>{p.numero}</span>{p.nom}</Link></li>)}
-        </ul>
-        <p className="acc-liens acc-liens--clair"><Link href="/odeb">La vision 2030</Link><Link href="/odeb/livre-blanc">Le livre blanc</Link><Link href="/odeb/feuille-de-route">La feuille de route 2026-2030</Link></p>
+        <p className="acc-liens acc-liens--clair"><Link href="/odeb">Comprendre la vision 2030</Link><Link href="/odeb/livre-blanc">Lire le livre blanc</Link><Link href="/odeb/feuille-de-route">Voir la feuille de route</Link></p>
       </section>
 
       {/* 7. Le journal */}
