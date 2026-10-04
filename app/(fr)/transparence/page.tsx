@@ -45,7 +45,10 @@ export default function Transparence() {
         lead={page.lede}
         pills={["Réponse sous 48 h ouvrées", "Plainte possible, même anonyme", `${nb} corrections datées`, `Indicateurs générés le ${genereLe}`]}
       />
-      <div className="notice">\n        <strong>Comment vérifier nos chiffres.</strong> Les compteurs publics sont générés depuis les contenus et relevés du site ; leur dernière génération date du {genereLe}. Les plaidoyers, décisions et corrections restent consultables dans leurs pages sources, avec leurs dates et documents lorsqu’ils existent.\n      </div>\n      <div className="legacy">
+      <div className="notice">
+        <strong>Comment vérifier nos chiffres.</strong> Les compteurs publics sont générés depuis les contenus et relevés du site ; leur dernière génération date du {genereLe}. Les plaidoyers, décisions et corrections restent consultables dans leurs pages sources, avec leurs dates et documents lorsqu’ils existent.
+      </div>
+      <div className="legacy">
         <Resume items={page.resume} />
         <Toc items={page.toc} />
         {/* la première section répète le titre de la page : son h2 est retiré, le texte reste */}
