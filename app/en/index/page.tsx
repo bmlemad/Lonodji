@@ -114,7 +114,7 @@ export default function HomeEn() {
           <h2 id="moment-title">Right now</h2>
           <p>{inWordsEn(el.poles.length, true)} pillar vice-presidents to elect on {dateEn(vote.date, false)}, {inWordsEn(postes.length)} open posts, and a magazine published every quarter.</p>
         </div>
-        <EnCeMoment etapes={etapes} prochaine="Next step" />
+        <EnCeMoment etapes={etapes} prochaine="Next step" calendrier="View the full calendar" />
         <div className="acc-duo">
           {mag ? (
             <a className="acc-mag" href={mag.pdf} hrefLang="fr">

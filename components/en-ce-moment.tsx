@@ -1,25 +1,20 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
-/* Frise « En ce moment » de l'accueil : marque, au jour du lecteur, les étapes passées et la prochaine
-   (la page est statique ; sans JavaScript, la frise reste lisible, sans marque). */
-export default function EnCeMoment({ etapes, prochaine = "Prochaine étape" }: { etapes: { date: string; jour: string; mois: string; quoi: string; href: string }[]; prochaine?: string }) {
-  const ref = useRef<HTMLOListElement>(null);
-  useEffect(() => {
-    const auj = new Date().toISOString().slice(0, 10);
-    const items = Array.from(ref.current?.querySelectorAll<HTMLLIElement>("li") ?? []);
-    let prochaine = false;
-    for (const li of items) {
-      const d = li.dataset.date ?? "";
-      if (d < auj) li.classList.add("fait");
-      else if (!prochaine) { li.classList.add("prochaine"); li.setAttribute("aria-current", "date"); prochaine = true; }
-    }
-  }, []);
-  return (
-    <ol className="acc-frise" ref={ref}>
-      {etapes.map((e) => (
-        <li key={e.date + e.quoi} data-date={e.date}>
+type Etape = { date: string; jour: string; mois: string; quoi: string; href: string };
+
+/* Trois échéances à venir ; le calendrier complet reste accessible sans JavaScript. */
+export default function EnCeMoment({ etapes, prochaine = "Prochaine étape", calendrier = "Voir le calendrier complet" }: { etapes: Etape[]; prochaine?: string; calendrier?: string }) {
+  const [aujourdhui, setAujourdhui] = useState("");
+  useEffect(() => { setAujourdhui(new Date().toLocaleDateString("en-CA", { timeZone: "Africa/Ndjamena" })); }, []);
+  const aVenir = etapes.filter((e) => e.date >= aujourdhui);
+  const apercu = aVenir.length ? aVenir.slice(0, 3) : etapes.slice(-3);
+  const prochaineDate = aVenir[0]?.date;
+  const liste = (items: Etape[]) => (
+    <ol className="acc-frise">
+      {items.map((e) => (
+        <li key={e.date + e.quoi} className={e.date < aujourdhui ? "fait" : e.date === prochaineDate ? "prochaine" : undefined} aria-current={e.date === prochaineDate ? "date" : undefined}>
           <a href={e.href}>
             <time dateTime={e.date}><b>{e.jour}</b> {e.mois}</time>
             <span data-prochaine={prochaine}>{e.quoi}</span>
@@ -27,5 +22,16 @@ export default function EnCeMoment({ etapes, prochaine = "Prochaine étape" }: {
         </li>
       ))}
     </ol>
+  );
+  return (
+    <div className="acc-calendrier">
+      {liste(apercu)}
+      {etapes.length > apercu.length ? (
+        <details className="acc-calendrier-complet">
+          <summary>{calendrier} ({etapes.length})</summary>
+          {liste(etapes)}
+        </details>
+      ) : null}
+    </div>
   );
 }
