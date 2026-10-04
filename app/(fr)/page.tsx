@@ -22,7 +22,7 @@ import { apercu } from "@/lib/apercu";
    Tous les chiffres sont lus dans content/ à la construction. */
 const idx0 = getIndex();
 export const metadata: Metadata = {
-  description: `L’association de Bédjondo et de sa diaspora, gardienne du patrimoine bedjond : ${enLettres(idx0.structure.poles.length)} pôles, ${enLettres(thematiqueCount(idx0))} thématiques, ${enLettres(getIndicateurs().contenu.plaidoyers.publies)} dossiers de plaidoyer.`,
+  description: `Depuis 1995, ADEB LONODJI relie Bédjondo et sa diaspora : ${enLettres(idx0.structure.poles.length)} pôles, ${enLettres(thematiqueCount(idx0))} thématiques et ${enLettres(getIndicateurs().contenu.plaidoyers.publies)} dossiers de plaidoyer suivis publiquement.`,
   alternates: { canonical: "/", languages: alternatesLangues("/") },
 };
 
@@ -76,14 +76,17 @@ export default function Home() {
       {/* 1. La carte du pays bedjond, cliquable */}
       <section className="acc-hero" aria-labelledby="hero-title">
         <div className="acc-hero-texte">
-          <h1 id="hero-title">L’association de Bédjondo et de sa diaspora.</h1>
+          <h1 id="hero-title">Bédjondo s’organise. Sa diaspora s’engage. Ses priorités se documentent.</h1>
           <p className="acc-hero-lead">
-            Nous agissons pour l’eau, la santé, l’école, les routes et l’énergie de Bédjondo et de ses cantons, et nous gardons la langue, l’histoire et le patrimoine du peuple bedjond. Reconnue en 1995, l’association s’est remise en mouvement en 2026.
+            Depuis 1995, ADEB LONODJI réunit habitants, ressortissants et partenaires pour préserver la mémoire bedjond, soutenir le développement de Bédjondo et suivre publiquement les engagements pris sur l’eau, la santé, l’école, les routes, l’énergie et les autres priorités du territoire.
           </p>
           <div className="acc-hero-actions">
-            <Link className="acc-bouton acc-bouton--plein" href="/participer">Nous rejoindre</Link>
-            <Link className="acc-bouton" href="/programmes">Ce que nous faisons</Link>
+            <Link className="acc-bouton acc-bouton--plein" href="/impact#plaidoyers">Voir le suivi public</Link>
+            <Link className="acc-bouton" href="/participer">Participer</Link>
           </div>
+          <p className="acc-hero-carte-aide">
+            <b>Depuis 1995 · {poles.length} pôles · {total} thématiques · {c.plaidoyers.publies} dossiers de plaidoyer suivis.</b> Chaque chiffre du site est daté ou rattaché à sa source ; ce qui manque est signalé comme tel.
+          </p>
           <p className="acc-hero-carte-aide">
             <b>{fr(c.carte.localitesNommees)} localités, une fiche chacune.</b> Choisissez une unité sur la carte pour retrouver votre village, ou <Link href="/villages">cherchez-le par son nom</Link>.
           </p>
@@ -91,7 +94,21 @@ export default function Home() {
         <CarteAccueil />
       </section>
 
-      {/* 2. En ce moment */}
+      {/* 2. Choisir son parcours */}
+      <section className="acc-section acc-participer" aria-labelledby="parcours-title">
+        <div className="acc-tete">
+          <h2 id="parcours-title">Un site, quatre façons d’agir</h2>
+          <p>Allez directement à ce qui vous concerne : documenter un besoin, mettre une compétence à disposition, préparer un partenariat ou vérifier les données et les dossiers publics.</p>
+        </div>
+        <ul className="acc-participer-grille">
+          <li><Link href="/territoire/besoins"><strong>J’habite le territoire</strong><span>Signaler un forage en panne, une école, une route, un problème de réseau ou un autre besoin local.</span></Link></li>
+          <li><Link href="/diaspora"><strong>Je suis de la diaspora</strong><span>Inscrire mes compétences et n’être sollicité que pour les sujets sur lesquels je peux réellement aider.</span></Link></li>
+          <li><Link href="/association/ong-partenaires"><strong>Je représente une organisation</strong><span>Comprendre notre statut, nos priorités et les points de rencontre possibles avec un partenaire.</span></Link></li>
+          <li><Link href="/observatoire"><strong>Je cherche des faits et des sources</strong><span>Consulter l’observatoire, les données disponibles, les manques connus et le suivi des plaidoyers.</span></Link></li>
+        </ul>
+      </section>
+
+      {/* 3. En ce moment */}
       <section className="acc-section acc-moment" aria-labelledby="moment-title">
         <div className="acc-tete">
           <h2 id="moment-title">En ce moment</h2>
@@ -123,7 +140,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Les pôles */}
+      {/* 4. Les pôles */}
       <section className="acc-section acc-poles" aria-labelledby="poles-title">
         <div className="acc-tete">
           <h2 id="poles-title">{enLettres(poles.length, true)} pôles, {enLettres(total)} thématiques</h2>
@@ -149,7 +166,7 @@ export default function Home() {
         <p className="acc-liens"><Link href="/programmes">Toutes les thématiques et leurs coordonnateurs</Link><Link href="/association/propositions-organisation">Les décisions du 1er octobre 2026</Link><Link href="/programmes/fiches-de-mission">Les fiches de mission</Link></p>
       </section>
 
-      {/* 4. Les plaidoyers */}
+      {/* 5. Les plaidoyers */}
       <section className="acc-section acc-plaidoyers" aria-labelledby="plaidoyers-title">
         <div className="acc-tete">
           <h2 id="plaidoyers-title">{enLettres(idx.plaidoyers.length, true)} dossiers de plaidoyer pour Bédjondo</h2>
@@ -162,10 +179,10 @@ export default function Home() {
             </li>
           ))}
         </ol>
-        <p className="acc-liens"><Link href="/actions">Les plaidoyers et leur transmission</Link><Link href="/territoire/propositions-commune">Nos propositions à la commune</Link></p>
+        <p className="acc-liens"><Link href="/impact#plaidoyers">Voir le statut de chaque dossier</Link><Link href="/actions">Les plaidoyers et leur transmission</Link><Link href="/territoire/propositions-commune">Nos propositions à la commune</Link></p>
       </section>
 
-      {/* 5. Le projet ODEB */}
+      {/* 6. Le projet ODEB */}
       <section className="acc-section acc-odeb" aria-labelledby="odeb-title">
         <div className="acc-tete">
           <h2 id="odeb-title">Le projet ODEB LONODJI, vision 2030</h2>
@@ -177,7 +194,7 @@ export default function Home() {
         <p className="acc-liens acc-liens--clair"><Link href="/odeb">La vision 2030</Link><Link href="/odeb/livre-blanc">Le livre blanc</Link><Link href="/odeb/feuille-de-route">La feuille de route 2026-2030</Link></p>
       </section>
 
-      {/* 6. Le journal */}
+      {/* 7. Le journal */}
       <section className="acc-section acc-journal" aria-labelledby="journal-title">
         <div className="acc-tete">
           <h2 id="journal-title">Le journal</h2>
@@ -187,7 +204,7 @@ export default function Home() {
         <p className="acc-liens"><Link href="/journal">Tous les articles</Link><Link href="/lettre">La lettre mensuelle</Link><Link href="/magazine">Le magazine Lonodji</Link></p>
       </section>
 
-      {/* 7. Le territoire et la mémoire */}
+      {/* 8. Le territoire et la mémoire */}
       <section className="acc-section acc-pays" aria-labelledby="pays-title">
         <div className="acc-tete">
           <h2 id="pays-title">Le pays bedjond</h2>
@@ -215,7 +232,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. Rendre des comptes */}
+      {/* 9. Rendre des comptes */}
       <section className="acc-section acc-comptes impact" aria-labelledby="comptes-title">
         <div className="impact-intro">
           <h2 id="comptes-title">Ce qui est fait, et ce qui ne l’est pas encore</h2>
@@ -225,7 +242,7 @@ export default function Home() {
         <TableauDeBord donnees={indicateurs} mode="compact" />
       </section>
 
-      {/* 9. Participer */}
+      {/* 10. Participer */}
       <section className="acc-section acc-participer" aria-labelledby="participer-title">
         <div className="acc-tete">
           <h2 id="participer-title">Une place pour chaque contribution</h2>
