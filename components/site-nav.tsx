@@ -207,11 +207,18 @@ export default function SiteNav({ lang = "fr", chiffres, whatsapp, telephoneHref
 
       <div className={menu ? "mobile-menu is-open" : "mobile-menu"} id="mobile-menu" aria-label={en ? "Navigation menu" : "Menu de navigation"} role="navigation" tabIndex={-1} aria-hidden={!menu} inert={!menu} ref={menuRef}>
         <div className="mobile-menu-inner">
+          <div className="mm-toolbar">
           <form className="mm-search" action="/recherche" method="get" role="search" onSubmit={() => setMenu(false)}>
             <label className="sr-only" htmlFor="mm-q">{en ? "Search the site (in French)" : "Rechercher dans le site"}</label>
             <input id="mm-q" name="q" type="search" placeholder={en ? "Search a village, a page, a word…" : "Rechercher un village, un dossier, un mot…"} autoComplete="off" />
             <button type="submit" aria-label={en ? "Search" : "Lancer la recherche"}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg></button>
           </form>
+          <button className="mm-close" type="button" aria-label={en ? "Close navigation menu" : "Fermer le menu de navigation"} onClick={() => {
+            setMenu(false);
+            document.documentElement.classList.remove("kb-open");
+            menuOriginRef.current?.focus({ preventScroll: true });
+          }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg></button>
+          </div>
           <div className="mm-groups">
             {MENU.map((e) => {
               const estCourante = courante === e.id;

@@ -183,7 +183,7 @@ export default function Palette() {
             autoComplete="off"
             enterKeyHint="go"
           />
-          <button type="button" className="palette-fermer" onClick={() => setOuverte(false)} aria-label={en ? "Close (Esc)" : "Fermer (Échap)"}>{en ? "Esc" : "Échap"}</button>
+          <button type="button" className="palette-fermer" onClick={() => setOuverte(false)} aria-label={en ? "Close (Esc)" : "Fermer (Échap)"}>{en ? "Close" : "Fermer"}</button>
         </div>
         {texte && !index ? <p className="palette-vide" role="status">{en ? "Loading the index…" : "Chargement de l’index…"}</p> : null}
         {texte && index && !resultats.length ? <p className="palette-vide" role="status">{en ? "No page with this title; look for it among the villages or across the site below." : "Aucune page avec ce titre ; cherchez-le parmi les villages ou dans tout le site ci-dessous."}</p> : null}
