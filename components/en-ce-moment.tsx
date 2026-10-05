@@ -10,7 +10,7 @@ export default function EnCeMoment({ etapes, prochaine = "Prochaine étape", cal
   useEffect(() => { setAujourdhui(new Date().toLocaleDateString("en-CA", { timeZone: "Africa/Ndjamena" })); }, []);
   const aVenir = etapes.filter((e) => e.date >= aujourdhui);
   const apercu = aVenir.length ? aVenir.slice(0, 3) : etapes.slice(-3);
-  const prochaineDate = aVenir[0]?.date;
+  const prochaineDate = aujourdhui ? aVenir[0]?.date : undefined;
   const liste = (items: Etape[]) => (
     <ol className="acc-frise">
       {items.map((e) => (

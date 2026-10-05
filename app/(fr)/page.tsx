@@ -9,7 +9,7 @@ import EnCeMoment from "@/components/en-ce-moment";
 import { enLettres, filledCount, getIndex, ORG, thematiqueCount } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
 import { PRIORITAIRES } from "@/lib/organisation";
-import { dateFr, etape, getElection } from "@/lib/election";
+import { aujourdhuiNdjamena, dateFr, etape, getElection, RECENSEMENT_ECHEANCE } from "@/lib/election";
 import { getMagazine } from "@/lib/magazine";
 import { getPostes } from "@/lib/postes";
 import { getTransmissions } from "@/lib/transmissions";
@@ -36,6 +36,7 @@ export default function Home() {
   const poles = idx.structure.poles;
   const prio = new Set(PRIORITAIRES.map((p) => p.id));
   const el = getElection();
+  const recensementOuvert = aujourdhuiNdjamena() <= RECENSEMENT_ECHEANCE;
   const vote = etape("vote");
   const mag = getMagazine().numeros[0];
   const postes = getPostes();
@@ -80,7 +81,7 @@ export default function Home() {
       <section className="acc-section acc-moment" aria-labelledby="moment-title">
         <div className="acc-tete">
           <h2 id="moment-title">En ce moment</h2>
-          <p>{enLettres(el.poles.length, true)} vice-présidences à élire le {dateFr(vote.date, false)}. <Link href="/participer/recensement">Recensement des membres</Link> jusqu’au 18 octobre.</p>
+          <p>{enLettres(el.poles.length, true)} vice-présidences à élire le {dateFr(vote.date, false)}. {recensementOuvert ? <><Link href="/participer/recensement">Recensement des membres</Link> jusqu’au {dateFr(RECENSEMENT_ECHEANCE, false)}.</> : <><Link href="/participer/recensement">Recensement des membres</Link> : il reste ouvert.</>}</p>
         </div>
         <EnCeMoment etapes={etapes} />
         <div className="acc-actualites">

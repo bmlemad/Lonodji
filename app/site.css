@@ -16,8 +16,8 @@
 .status.filled{ color:var(--deep); border-color:rgba(23,59,45,.35); background:#e7efd9; }
 /* pôles et thématiques */
 .pole-block{ margin:0 0 44px; padding:30px clamp(18px,3vw,38px); border:1px solid var(--line); border-radius:26px; background:rgba(255,255,255,.58); }
-.pole-block > header{ display:grid; grid-template-columns:auto 1fr; gap:18px 26px; align-items:start; margin-bottom:10px; }
-.pole-roman{ font-family:var(--font-playfair),Georgia,serif; font-size:clamp(44px,5vw,64px); line-height:.9; color:var(--deep); }
+.pole-block > header{ display:grid; grid-template-columns:70px 1fr; gap:18px 22px; align-items:start; margin-bottom:10px; }   /* même colonne que .them-row : titres de pôle et de thématique alignés (5/10/2026) */
+.pole-roman{ font-family:var(--font-playfair),Georgia,serif; font-size:clamp(44px,5vw,64px); line-height:.9; color:var(--deep); min-width:0; overflow-wrap:anywhere; }
 .pole-block > header h2{ font-size:clamp(28px,3.4vw,44px); line-height:1; letter-spacing:-.04em; margin:6px 0 10px; }
 .pole-block > header p{ color:#53625b; line-height:1.65; margin:0; max-width:64ch; }
 .them-row{ display:grid; grid-template-columns:70px 1fr auto; gap:18px 22px; padding:24px 0; border-top:1px solid var(--line); align-items:start; scroll-margin-top:110px; }
@@ -121,9 +121,11 @@ footer.site-footer{ display:block; }
 @media (max-width:980px){ .footer-cols{ grid-template-columns:1fr 1fr; } }
 @media (max-width:800px){
   .hub-page{ padding:120px 20px 60px; }
-  .them-row{ grid-template-columns:1fr; gap:8px; }
-  .them-num{ font-size:22px; }
-  .pole-block > header{ grid-template-columns:1fr; }
+  .them-row{ grid-template-columns:40px minmax(0,1fr); gap:8px 12px; }
+  .them-row .status{ grid-column:2; justify-self:start; }
+  .them-num{ font-size:22px; padding-top:4px; }
+  .pole-block > header{ grid-template-columns:40px 1fr; gap:8px 12px; }
+  .pole-roman{ font-size:34px; }
   .contact-grid{ grid-template-columns:1fr; }
   .timeline li{ grid-template-columns:1fr; gap:4px; }
   .plea-facts{ grid-template-columns:1fr; }
@@ -2546,3 +2548,9 @@ html.sobre .hero-visual{ box-shadow:none; }
   main :is(.lg-footnote, .them-links, .them-reperes, .sec-cadre, .tb-detail, .mag-meta, .od-existant, .pp-ligne, .poste-pole, .bb-role), main .legacy .lettre-corps{ font-size:14px; line-height:1.65; }
   .legacy .geo-liste{ margin-inline:0; padding-inline:0; scroll-padding-inline:0; max-width:100%; }
 }
+
+/* Plans d’action sur /programmes (liés ici depuis que le menu « Nos actions » est resserré, 4/10/2026). */
+.hub-page ul.liens-plans{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.hub-page ul.liens-plans li{margin:0;padding:0}
+.hub-page ul.liens-plans a{display:flex;justify-content:space-between;gap:10px;min-height:44px;align-items:center;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);text-decoration:none;font-weight:600}
+.hub-page ul.liens-plans a:hover,.hub-page ul.liens-plans a:focus-visible{border-color:var(--accent);text-decoration:underline}

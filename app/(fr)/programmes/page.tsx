@@ -18,6 +18,18 @@ const NB = (() => { const i = getIndex(); return { poles: enLettres(i.structure.
 const TITRE = `Nos actions — ${NB.poles} pôles, ${NB.them} thématiques`;
 const DESCRIPTION = `${NB.Poles} pôles, ${NB.them} thématiques et ${NB.cell} cellules transversales : coordonnateurs, thématiques prioritaires, objectifs et Objectifs de développement durable associés.`;
 
+/* Plans d’action thématiques (hérités de la première version du site) : liés ici depuis que le menu
+   « Nos actions » renvoie à cette page pour les trouver (menu resserré le 4 octobre 2026). */
+const PLANS = [
+  { label: "Agriculture, élevage & sécurité alimentaire", href: "/programmes/agriculture-securite-alimentaire" },
+  { label: "Environnement & durabilité", href: "/programmes/environnement" },
+  { label: "Jeunes mères, orphelins, personnes isolées", href: "/programmes/solidarite-inclusion" },
+  { label: "Plan pour les veuves", href: "/programmes/veuves" },
+  { label: "Plan handicap", href: "/programmes/handicap" },
+  { label: "Agriculteurs et éleveurs : prévenir les conflits", href: "/programmes/agriculteurs-eleveurs" },
+  { label: "Nos thématiques et les ODD", href: "/programmes/odd" },
+];
+
 export const metadata: Metadata = {
   title: TITRE,
   description: DESCRIPTION,
@@ -106,6 +118,12 @@ export default function Programmes() {
         <p className="section-actions" style={{ justifyContent: "flex-start" }}><Link className="text-link" href="/programmes/fiches-de-mission">Toutes les fiches de mission <span aria-hidden="true">→</span></Link></p>
       </section>
 
+      <section className="hub-section" id="plans-d-action">
+        <SectionHead eyebrow="Plans d’action" title="Sept plans thématiques," em="hérités de la première version du site." text="Chacun détaille un sujet transversal : ce que l’association propose, pour qui, et avec quelles thématiques. Ils restent la référence jusqu’à leur révision par les coordonnateurs." />
+        <ul className="liens-plans">
+          {PLANS.map((l) => <li key={l.href}><Link href={l.href}>{l.label} <span aria-hidden="true">→</span></Link></li>)}
+        </ul>
+      </section>
       <section className="hub-section">
         <SectionHead eyebrow="Pour aller plus loin" title="Comment ça fonctionne," em="et où chaque pôle agit." text="Les pages qui suivent viennent de la première version du site et restent la référence : devenir coordonnateur, la lecture par les Objectifs de développement durable, et les dossiers ouverts par chaque pôle." />
         <div className="legacy plier-liste">

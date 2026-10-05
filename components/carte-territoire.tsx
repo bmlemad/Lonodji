@@ -221,11 +221,15 @@ export default function CarteTerritoire() {
       clearTimeout(delai);
       delai = setTimeout(indisponible, 15000);
     });
-    tuiles.on("tileerror", indisponible);
+    /* Une tuile manquante (zoom élevé, sous-domaine en défaut) ne suffit pas : le fond n'est retiré
+       que si aucune tuile n'a jamais chargé et que plusieurs erreurs se succèdent. */
+    let chargees = 0, erreurs = 0;
+    tuiles.on("tileload", () => { chargees++; });
+    tuiles.on("tileerror", () => { erreurs++; if (!chargees && erreurs >= 4) indisponible(); });
     tuiles.on("load", () => {
       if (termine) return;
       clearTimeout(delai);
-      setFond("disponible");
+      if (chargees) setFond("disponible");
     });
     tuiles.addTo(m);
     return () => { termine = true; clearTimeout(delai); tuiles.off(); tuiles.remove(); };

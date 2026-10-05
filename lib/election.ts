@@ -59,3 +59,8 @@ export const nombreAElire = (majuscule = false) => {
   const n = ["zéro", "une", "deux", "trois", "quatre", "cinq", "six"][getElection().poles.length];
   return majuscule ? n.charAt(0).toUpperCase() + n.slice(1) : n;
 };
+
+/* Échéance du recensement des membres (compte rendu du 18 septembre 2026, phase 1 : J + 30). */
+export const RECENSEMENT_ECHEANCE = "2026-10-18";
+/* Date du jour à N’Djamena, au format ISO : calculée à la construction du site (pages statiques). */
+export const aujourdhuiNdjamena = () => new Date().toLocaleDateString("en-CA", { timeZone: "Africa/Ndjamena" });

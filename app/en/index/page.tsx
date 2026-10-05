@@ -9,7 +9,7 @@ import { filledCount, getIndex, ogFor, ORG, thematiqueCount } from "@/lib/conten
 import { alternatesLangues } from "@/lib/langues";
 import { getIndicateurs } from "@/lib/indicateurs";
 import { PRIORITAIRES } from "@/lib/organisation";
-import { etape, getElection } from "@/lib/election";
+import { aujourdhuiNdjamena, etape, getElection, RECENSEMENT_ECHEANCE } from "@/lib/election";
 import { getMagazine } from "@/lib/magazine";
 import { getPostes } from "@/lib/postes";
 import { getTransmissions } from "@/lib/transmissions";
@@ -45,6 +45,7 @@ export default function HomeEn() {
   const poles = idx.structure.poles;
   const prio = new Set(PRIORITAIRES.map((p) => p.id));
   const el = getElection();
+  const recensementOuvert = aujourdhuiNdjamena() <= RECENSEMENT_ECHEANCE;
   const vote = etape("vote");
   const mag = getMagazine().numeros[0];
   const postes = getPostes();
@@ -76,7 +77,7 @@ export default function HomeEn() {
       </section>
 
       <section className="acc-section acc-moment" aria-labelledby="moment-title">
-        <div className="acc-tete"><h2 id="moment-title">Right now</h2><p>{inWordsEn(el.poles.length, true)} pillar vice-presidents to elect on {dateEn(vote.date, false)}. <Link href="/participer/recensement" hrefLang="fr">Member census (French)</Link> until 18 October.</p></div>
+        <div className="acc-tete"><h2 id="moment-title">Right now</h2><p>{inWordsEn(el.poles.length, true)} pillar vice-presidents to elect on {dateEn(vote.date, false)}. {recensementOuvert ? <><Link href="/participer/recensement" hrefLang="fr">Member census (French)</Link> until {dateEn(RECENSEMENT_ECHEANCE, false)}.</> : <><Link href="/participer/recensement" hrefLang="fr">Member census (French)</Link>: still open.</>}</p></div>
         <EnCeMoment etapes={etapes} prochaine="Next step" calendrier="View the full calendar" />
         <div className="acc-actualites">
           {dernier ? <div className="acc-derniere" lang="fr"><small lang="en">Latest news · in French</small><ArticleCard a={dernier} /><Link className="acc-lien-direct" href="/journal" hrefLang="fr" lang="en">All news (French)</Link></div> : null}
