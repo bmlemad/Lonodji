@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { ArticleCard } from "@/components/blocks";
+import AccueilIndicateurs from "@/components/accueil-indicateurs";
 import Appel from "@/components/appel";
 import Link from "@/components/lien";
 import CarteAccueil from "@/components/carte-accueil";
@@ -14,9 +16,7 @@ import { getTransmissions } from "@/lib/transmissions";
 import { dateEn, inWordsEn, nomsEn } from "@/lib/structure-en";
 import { apercu } from "@/lib/apercu";
 
-/* English home (1 October 2026), same layout as the French home (app/(fr)/page.tsx): clickable map of the Bedjond
-   country, what is happening now, the six pillars, the advocacy briefs, the dashboard and how to help. Pillar and
-   theme names come from the English themes page; figures from content/. */
+/* English home mirrors the shortened French home. */
 const ROUTE = "/en/index";
 export const metadata: Metadata = {
   title: { absolute: "ADEB LONODJI — serving all Bedjond people" },
@@ -30,11 +30,6 @@ const BRIEFS_EN: Record<string, string> = {
   "plaidoyer-eau": "Drinking water", "plaidoyer-sante": "Health", "plaidoyer-routes": "Roads and bridges",
   "plaidoyer-education": "Education", "plaidoyer-formation-pro": "Vocational training",
 };
-const VALUES: [string, string][] = [
-  ["Courage", "Facing the community’s challenges without waiting for a solution to come from elsewhere."],
-  ["Discipline", "Keeping our commitments, respecting our organisation and reporting on what is done."],
-  ["Heritage", "Preserving what the Bedjond community has built, and passing it on stronger."],
-];
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const fmt = (n: number) => new Intl.NumberFormat("en-GB").format(n);
 
@@ -45,6 +40,8 @@ export default function HomeEn() {
   const filled = filledCount(idx);
   const indicateurs = getIndicateurs();
   const c = indicateurs.contenu;
+  const genereLe = new Date(indicateurs.genere).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  const dernier = idx.articles[0];
   const poles = idx.structure.poles;
   const prio = new Set(PRIORITAIRES.map((p) => p.id));
   const el = getElection();
@@ -65,126 +62,50 @@ export default function HomeEn() {
     { date: "2026-12-17", jour: "17", mois: MONTHS[11], quoi: "Relaunch general assembly, at the latest", href: "/en/organisation#decisions" },
     ...(mag ? [{ date: "2027-01-01", jour: "Jan", mois: "2027", quoi: `Lonodji magazine no. ${mag.numero + 1} (in French)`, href: "/magazine" }] : []),
   ].sort((a, b) => a.date.localeCompare(b.date));
-  const genres = [["titulaire", "lead", "leads"], ["adjoint", "deputy", "deputies"], ["vice-presidence", "pillar vice-presidency", "pillar vice-presidencies"]] as const;
+
 
   return (
-    <main id="main-content" className="accueil" lang="en">
+    <main id="main-content" className="accueil accueil-court" lang="en">
       <section className="acc-hero" aria-labelledby="hero-title">
         <div className="acc-hero-texte">
-          <h1 id="hero-title">All Bedjond people, acting together.</h1>
-          <p className="acc-hero-lead">
-            ADEB LONODJI serves all Bedjond people, in Bédjondo, elsewhere in Chad and across the diaspora. Together with its partners, it documents needs, advocates for the priorities of Bedjond country and preserves its heritage.
-          </p>
-          <div className="acc-hero-actions">
-            <Link className="acc-bouton acc-bouton--plein" href="/en/impact">See public progress</Link>
-            <Link className="acc-bouton" href="/en/contact">Get involved</Link>
-          </div>
-          <p className="acc-hero-carte-aide">
-            <b>{fmt(c.carte.localitesNommees)} localities, one record each.</b> Choose a unit on the map to find your village (records in French), or <Link href="/en/villages">read about the villages in English</Link>.
-          </p>
+          <h1 id="hero-title">All Bedjond people.<span>Acting together.</span></h1>
+          <p className="acc-hero-lead">ADEB LONODJI serves all Bedjond people, in Chad and across the diaspora. We document their needs and preserve their heritage.</p>
+          <div className="acc-hero-actions"><Link className="acc-bouton acc-bouton--plein" href="/en/contact">Get involved</Link><Link className="acc-bouton" href="/territoire/besoins" hrefLang="fr">Report a need (French)</Link><Link className="acc-bouton acc-bouton--texte" href="/en/impact">See progress</Link></div>
+          <p className="acc-hero-reperes">Since 1995 · {poles.length} pillars · {total} themes <Link href="/en/about">Our mission</Link></p>
         </div>
-        <CarteAccueil lang="en" />
-      </section>
-
-      <section className="acc-section acc-participer" aria-labelledby="parcours-title">
-        <div className="acc-tete"><h2 id="parcours-title">Four ways to take part</h2><p>Find the next step that fits your situation.</p></div>
-        <ul className="acc-participer-grille">
-          <li><Link href="/territoire/besoins" hrefLang="fr"><strong>I live in the territory</strong><span>Report a local need (form in French).</span></Link></li>
-          <li><Link href="/diaspora" hrefLang="fr"><strong>I am part of the diaspora</strong><span>Offer my skills (form in French).</span></Link></li>
-          <li><Link href="/en/contact"><strong>I represent an organisation</strong><span>Discuss a partnership.</span></Link></li>
-          <li><Link href="/en/impact"><strong>I want facts and sources</strong><span>Check public progress and available evidence.</span></Link></li>
-        </ul>
-      </section>
-
-      <section className="acc-section acc-plaidoyers" aria-labelledby="plaidoyers-title">
-        <div className="acc-tete">
-          <h2 id="plaidoyers-title">{inWordsEn(idx.plaidoyers.length, true)} advocacy briefs for Bédjondo</h2>
-          <p>Sourced and costed, each with named recipients. The {lettres} cover letters are ready and await the board’s signature; each dispatch and each reply will be dated.</p>
-        </div>
-        <ol className="acc-plaidoyers-liste">
-          {idx.plaidoyers.map((p) => (
-            <li key={p.id}><Link href="/en/advocacy"><small>Advocacy brief</small><strong>{BRIEFS_EN[p.id] ?? p.title}</strong></Link></li>
-          ))}
-        </ol>
-        <p className="acc-liens"><Link href="/en/advocacy">Our advocacy, in English</Link><Link href="/en/commune">Proposals to the commune</Link><Link href="/en/donors">Donor programmes in Chad</Link></p>
       </section>
 
       <section className="acc-section acc-moment" aria-labelledby="moment-title">
-        <div className="acc-tete">
-          <h2 id="moment-title">Right now</h2>
-          <p>{inWordsEn(el.poles.length, true)} pillar vice-presidents to elect on {dateEn(vote.date, false)}, {inWordsEn(postes.length)} open posts, and a magazine published every quarter.</p>
-        </div>
+        <div className="acc-tete"><h2 id="moment-title">Right now</h2><p>{inWordsEn(el.poles.length, true)} pillar vice-presidents to elect on {dateEn(vote.date, false)}. <Link href="/participer/recensement" hrefLang="fr">Member census (French)</Link> until 18 October.</p></div>
         <EnCeMoment etapes={etapes} prochaine="Next step" calendrier="View the full calendar" />
-        <div className="acc-duo">
-          {mag ? (
-            <a className="acc-mag" href={mag.pdf} hrefLang="fr">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={apercu(mag.couverture)} alt="" width={800} height={1131} loading="lazy" decoding="async" />
-              <span>
-                <small>Quarterly magazine · no. {mag.numero}, October 2026 · in French</small>
-                <strong>Lonodji: six pillars, seven priorities</strong>
-                <span>{mag.pages} pages to print or share on WhatsApp. Download the PDF ({mag.taille.replace(",", ".").replace("Mo", "MB")}).</span>
-              </span>
-            </a>
-          ) : null}
-          <Link className="acc-postes" href="/en/organisation#priorities">
-            <strong>{inWordsEn(postes.length, true)} posts are looking for someone</strong>
-            <span>Lead a theme, be its deputy, or stand for a pillar vice-presidency. Voluntary, in Chad or in the diaspora.</span>
-            <ul className="acc-postes-genres">
-              {genres.map(([g, one, many]) => { const n = postes.filter((x) => x.genre === g).length; return n ? <li key={g}><b>{n}</b> {n > 1 ? many : one}</li> : null; })}
-            </ul>
-          </Link>
+        <div className="acc-actualites">
+          {dernier ? <div className="acc-derniere" lang="fr"><small lang="en">Latest news · in French</small><ArticleCard a={dernier} /><Link className="acc-lien-direct" href="/journal" hrefLang="fr" lang="en">All news (French)</Link></div> : null}
+          <Link className="acc-postes" href="/en/organisation#priorities"><small>Get involved</small><strong>{inWordsEn(postes.length, true)} open posts</strong><span>Lead a theme, support its coordinator or chair a pillar.</span><span className="acc-lien-direct">Explore the roles</span></Link>
+          {mag ? <a className="acc-mag" href={mag.pdf} hrefLang="fr"><img src={apercu(mag.couverture)} alt="" width={800} height={1131} loading="lazy" decoding="async" /><span><small>Magazine · no. {mag.numero} · in French</small><strong lang="fr">Lonodji : {mag.titre}</strong><span>Download the PDF · {mag.pages} pages · {mag.taille.replace(",", ".").replace("Mo", "MB")}</span></span></a> : null}
         </div>
-      </section>
-
-      <section className="acc-section acc-poles" aria-labelledby="poles-title">
-        <div className="acc-tete">
-          <h2 id="poles-title">{inWordsEn(poles.length, true)} pillars, {inWordsEn(total)} themes</h2>
-          <p>Each pillar has an elected vice-president, each theme a coordinator. {filled} of {total} themes have one; the {inWordsEn(prio.size)} priority themes carry our advocacy briefs.</p>
-        </div>
-        <ul className="acc-participer-grille">
-          {poles.flatMap((p) => p.items.filter((t) => prio.has(t.id)).map((t) => (
-            <li key={t.id}><Link href="/en/themes"><strong>{themes[t.number] ?? t.name}</strong><span>Pillar {p.roman} · active priority{t.filled ? "" : " · coordinator needed"}</span></Link></li>
-          )))}
-        </ul>
-        <p className="acc-liens"><Link href="/en/themes">All themes and their coordinators</Link><Link href="/en/organisation">The decisions of 1 October 2026</Link><Link href="/en/sectors">Our work in donors’ sectors</Link></p>
-      </section>
-
-      <section className="acc-section acc-odeb" aria-labelledby="odeb-title">
-        <div className="acc-tete"><h2 id="odeb-title">Vision 2030</h2><p>The ODEB LONODJI project proposes a long-term vision for the Bedjond country. Explore the proposals and the steps still to be decided.</p></div>
-        <p className="acc-liens acc-liens--clair"><Link href="/en/odeb">Understand the vision</Link><Link href="/odeb/livre-blanc" hrefLang="fr">White paper (French)</Link><Link href="/odeb/feuille-de-route" hrefLang="fr">Roadmap (French)</Link></p>
       </section>
 
       <section className="acc-section acc-comptes impact" aria-labelledby="comptes-title">
-        <div className="impact-intro">
-          <h2 id="comptes-title">What is done, and what is not yet</h2>
-          <p>Dated, sourced indicators, {c.corrections} corrections published openly, a reply within 48 working hours and a complaints mechanism, even anonymous.</p>
-          <p className="acc-liens acc-liens--clair"><Link href="/en/impact">The impact dashboard</Link><Link href="/en/about">About the association</Link><Link href="/en/odeb">The ODEB LONODJI vision</Link></p>
-        </div>
-        <dl className="acc-chiffres">
-          <div><dt>Theme coordinators</dt><dd><b>{c.coordinations.pourvues}</b> of {c.coordinations.total}</dd></div>
-          <div><dt>Pillar vice-presidents</dt><dd><b>{c.coordinations.directionsPourvues}</b> of {c.coordinations.directionsTotal}</dd></div>
-          <div><dt>Advocacy briefs</dt><dd><b>{c.plaidoyers.publies}</b> published, {c.plaidoyers.envoyes} sent, {c.plaidoyers.reponses} replies</dd></div>
-          <div><dt>Local problems documented</dt><dd><b>{c.problematiques.documentees}</b> of {c.problematiques.total}; {c.problematiques.inconnues} still unknown</dd></div>
-          <div><dt>Localities on the map</dt><dd><b>{fmt(c.carte.localitesNommees)}</b> named, in {c.carte.unites} units</dd></div>
-          <div><dt>Corrections published</dt><dd><b>{c.corrections}</b>, each dated</dd></div>
-        </dl>
+        <div className="acc-tete"><h2 id="comptes-title">Facts and evidence.</h2><p>What is documented, published and confirmed resolved. Snapshot dated {genereLe}.</p></div>
+        <AccueilIndicateurs donnees={indicateurs} lang="en" />
+        <p className="acc-liens acc-liens--clair"><Link href="/en/impact">Full progress report and sources</Link><Link href="/en/about">About the association</Link><Link href="/en/organisation">Board decisions</Link></p>
       </section>
 
-      <section className="acc-section acc-participer" aria-labelledby="participer-title">
-        <div className="acc-tete">
-          <h2 id="participer-title">A place for every contribution</h2>
-          <p>We reply within 48 working hours, by the <Link className="lien-souligne" href="/en/contact">contact form</Link> or on the association’s number, that of its president, Adoumbé Maoura: <Appel texte="call" en /> and <a className="lien-souligne" href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
-        </div>
-        <ul className="acc-participer-grille">
-          <li><Link href="/en/organisation#priorities"><strong>Take on a post</strong><span>{inWordsEn(postes.length, true)} open posts: lead, deputise, chair a pillar.</span></Link></li>
-          <li><Link href="/en/contact"><strong>Join the association</strong><span>Declaring your intention commits no money: fundraising is suspended.</span></Link></li>
-          <li><Link href="/diaspora" hrefLang="fr"><strong>List your skills</strong><span>Five minutes to say what you can do, and be asked only for that (form in French).</span></Link></li>
-          <li><Link href="/en/villages"><strong>Find your village</strong><span>{fmt(c.carte.localitesNommees)} localities, what is known and what is missing.</span></Link></li>
-        </ul>
-        <dl className="acc-valeurs">
-          {VALUES.map(([t, d]) => <div key={t}><dt>{t}</dt><dd>{d}</dd></div>)}
-        </dl>
+      <section className="acc-section acc-poles" aria-labelledby="poles-title">
+        <div className="acc-tete"><h2 id="poles-title">Our priorities</h2><p>{inWordsEn(prio.size, true)} active priorities across {inWordsEn(total)} themes. {filled} themes have a coordinator.</p></div>
+        <ul className="acc-priorites">{poles.flatMap((p) => p.items.filter((t) => prio.has(t.id)).map((t) => <li key={t.id}><Link href="/en/themes">{themes[t.number] ?? t.name}</Link></li>))}</ul>
+        <details className="acc-dossiers"><summary>All advocacy briefs ({idx.plaidoyers.length})</summary><p>The {lettres} cover letters are ready and await the board’s signature. Each dispatch and each reply will be dated.</p><ol className="acc-plaidoyers-liste">{idx.plaidoyers.map((p) => <li key={p.id}><Link href="/en/advocacy"><small>Advocacy brief</small><strong>{BRIEFS_EN[p.id] ?? p.title}</strong></Link></li>)}</ol></details>
+        <p className="acc-liens"><Link href="/en/themes">All themes and coordinators</Link><Link href="/en/sectors">Our fields of work</Link><Link href="/en/projects">Projects and their status</Link><Link href="/en/commune">Proposals to the commune</Link></p>
+      </section>
+
+      <section className="acc-section acc-pays" aria-labelledby="pays-title">
+        <div className="acc-tete"><h2 id="pays-title">Our country, our memory.</h2><p>The Bedjond people, their Nangnda language and a history to pass on, at home and across the diaspora.</p></div>
+        <div className="acc-territoire"><div className="acc-carte-cadre"><h3>Find your village</h3><p>{fmt(c.carte.localitesNommees)} named localities, in {c.carte.unites} units.</p><CarteAccueil lang="en" /><Link className="acc-bouton acc-bouton--plein" href="/en/villages">Explore the villages</Link></div><div className="acc-memoire"><Link href="/en/about"><strong>History and heritage</strong><span>The association’s origins and the Bedjond people.</span></Link><Link href="/langue" hrefLang="fr"><strong>The Nangnda language</strong><span>Listen to the lexicon and contribute words (French).</span></Link><Link href="/bibliotheque" hrefLang="fr"><strong>The library</strong><span>Read the documents and their sources (French).</span></Link><Link href="/temoignages" hrefLang="fr"><strong>Share a story, a photograph or a voice</strong><span>Your consent and review come before publication (form in French).</span></Link><p className="acc-liens"><Link href="/carte" hrefLang="fr">Detailed map (French)</Link><Link href="/en/governance">Who decides what</Link><Link href="/patrimoine/lieux-sacres" hrefLang="fr">Sacred sites and genealogies (French)</Link></p></div></div>
+      </section>
+
+      <section className="acc-section acc-odeb" aria-labelledby="odeb-title">
+        <div className="acc-fin"><div><h2 id="odeb-title">Preparing tomorrow.</h2><p>The ODEB LONODJI project proposes a 2030 vision for Bedjond country. The proposals and next steps remain open for discussion.</p><p className="acc-liens acc-liens--clair"><Link href="/en/odeb">Vision 2030</Link><Link href="/odeb/livre-blanc" hrefLang="fr">White paper (French)</Link><Link href="/odeb/feuille-de-route" hrefLang="fr">Roadmap (French)</Link></p></div><div><h3>Everyone can contribute.</h3><ul className="acc-contribuer"><li><Link href="/en/contact">Join · declare your interest without payment</Link></li><li><Link href="/diaspora" hrefLang="fr">Offer your skills (French)</Link></li><li><Link href="/en/contact">Discuss a partnership</Link></li><li><Link href="/observatoire" hrefLang="fr">Explore data and sources (French)</Link></li></ul><p>A reply within 48 working hours: <Link href="/en/contact">write to us</Link>, <Appel texte="call" en /> or <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p></div></div>
+        <p className="acc-devise">Courage · Discipline · Heritage</p>
       </section>
     </main>
   );

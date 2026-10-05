@@ -2432,3 +2432,99 @@ html.sobre .hero-visual{ box-shadow:none; }
   .palette-fermer{ min-width:44px; min-height:44px; }
   .feuille-fermer{ width:44px; height:44px; }
 }
+
+/* Accueil raccourci : agir dès le premier écran, puis actualités et preuves. */
+.accueil-court .acc-section{ padding:clamp(36px,5vw,64px) clamp(18px,7vw,112px); }
+.accueil-court .acc-tete{ gap:24px 48px; margin-bottom:24px; }
+.accueil-court .acc-tete h2{ font-size:clamp(28px,3vw,40px); }
+.accueil-court .acc-hero{ display:block; padding-top:120px; padding-bottom:44px; }
+.accueil-court .acc-hero-texte{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:20px 48px; align-items:start; }
+.accueil-court .acc-hero h1{ grid-row:1 / 4; max-width:none; font-size:clamp(34px,3.8vw,52px); line-height:1.08; text-wrap:balance; }
+.accueil-court .acc-hero h1 span{ display:block; color:#d3dfd6; margin-top:8px; }
+.accueil-court .acc-hero-lead{ margin:0; font-size:17px; line-height:1.55; max-width:56ch; }
+.accueil-court .acc-hero-actions{ margin:0; gap:10px; }
+.acc-bouton--texte{ border-color:transparent; padding:0 4px; text-decoration:underline; text-underline-offset:5px; }
+.acc-hero-reperes{ margin:0; font-size:14px; line-height:1.5; color:#d3dfd6; }
+.acc-hero-reperes a{ display:inline-flex; min-height:44px; align-items:center; margin-left:12px; text-decoration:underline; text-underline-offset:4px; color:#fff; }
+.acc-actualites{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:24px; }
+.acc-actualites > *{ min-width:0; border:1px solid var(--champ-contour); border-radius:16px; background:#fff; padding:20px; }
+.acc-actualites .acc-derniere{ display:flex; flex-direction:column; gap:12px; }
+.acc-actualites small{ font-size:13px; color:var(--muted); }
+.acc-actualites .art-card{ padding:0; border:0; border-radius:0; min-height:0; box-shadow:none; background:transparent; }
+.acc-actualites .art-card h3{ font-size:19px; line-height:1.3; margin:10px 0; }
+.acc-actualites .art-card p{ font-size:15px; line-height:1.5; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; }
+.acc-actualites .acc-postes{ gap:12px; box-shadow:none; }
+.acc-actualites .acc-mag{ align-items:start; gap:14px; box-shadow:none; }
+.acc-actualites .acc-mag img{ width:64px; box-shadow:none; }
+.acc-actualites .acc-mag strong, .acc-actualites .acc-postes strong{ font-size:21px; }
+.acc-actualites .acc-mag span span, .acc-actualites .acc-postes > span{ font-size:15px; }
+.acc-lien-direct{ color:var(--deep); font-size:14px; font-weight:600; text-decoration:underline; text-underline-offset:4px; min-height:44px; display:inline-flex; align-items:center; }
+.accueil-court .acc-comptes.impact{ display:block; background:var(--acc-foret); padding:clamp(36px,5vw,64px) clamp(18px,7vw,112px); }
+.accueil-court .acc-comptes .acc-tete h2{ color:#fff; }
+.accueil-court .acc-comptes .acc-tete p{ color:#d3dfd6; }
+.acc-impact-chiffres{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; padding:0; margin:0; }
+.acc-impact-chiffres > div{ min-width:0; padding:20px; border-top:1px solid rgba(255,255,255,.35); }
+.acc-impact-chiffres dt{ color:#fff; font-size:16px; line-height:1.4; }
+.acc-impact-chiffres dd{ margin:12px 0 8px; display:flex; flex-wrap:wrap; align-items:baseline; gap:8px; color:#fff; }
+.acc-impact-chiffres strong{ font-size:clamp(32px,4vw,48px); line-height:1.1; }
+.acc-impact-chiffres strong.acc-impact-texte{ font-size:22px; }
+.acc-impact-chiffres small{ font-size:16px; color:#d3dfd6; }
+.acc-impact-chiffres a{ color:#d3dfd6; font-size:14px; text-decoration:underline; text-underline-offset:4px; min-height:44px; display:inline-flex; align-items:center; }
+.acc-priorites{ list-style:none; display:flex; flex-wrap:wrap; gap:10px; margin:0; padding:0; }
+.acc-priorites a{ display:flex; align-items:center; min-height:44px; padding:10px 16px; font-size:15px; line-height:1.4; border:1px solid var(--champ-contour); border-radius:12px; color:var(--deep); background:#fff; }
+.acc-priorites a:hover{ background:var(--soft); }
+.acc-dossiers{ margin-top:24px; border-top:1px solid var(--champ-contour); padding-top:8px; }
+.acc-dossiers summary{ cursor:pointer; min-height:44px; padding:12px 0; color:var(--deep); font-weight:600; font-size:16px; }
+.acc-dossiers > p{ font-size:16px; line-height:1.6; color:var(--muted); }
+.acc-territoire{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:28px; align-items:start; }
+.acc-carte-cadre{ min-width:0; background:var(--acc-foret); color:#fff; border-radius:20px; padding:24px; }
+.acc-carte-cadre h3{ margin:0; font-size:23px; }
+.acc-carte-cadre > p{ margin:12px 0; color:#d3dfd6; font-size:15px; line-height:1.5; }
+.acc-carte-cadre .acc-carte{ margin:16px 0 20px; }
+.acc-carte-cadre .acc-carte svg{ max-height:320px; }
+.acc-memoire{ display:flex; flex-direction:column; }
+.acc-memoire > a{ display:flex; flex-direction:column; gap:6px; padding:18px 0; border-bottom:1px solid var(--champ-contour); }
+.acc-memoire > a:first-child{ padding-top:0; }
+.acc-memoire strong{ font-size:19px; color:var(--deep); }
+.acc-memoire span{ font-size:16px; line-height:1.5; color:var(--muted); }
+.accueil-court .acc-fin{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:40px; }
+.acc-fin h2{ margin:0; font-size:clamp(28px,3vw,40px); color:#fff; }
+.acc-fin h3{ margin:0; font-size:24px; color:#fff; }
+.acc-fin p{ font-size:16px; line-height:1.6; color:#d3dfd6; }
+.acc-fin a{ text-decoration:underline; text-underline-offset:4px; }
+.acc-fin .lien-appel{ color:#fff; }
+.acc-contribuer{ list-style:none; padding:0; margin:16px 0; display:flex; flex-direction:column; }
+.acc-contribuer a{ min-height:44px; padding:8px 0; display:inline-flex; align-items:center; font-size:16px; }
+.acc-devise{ color:#d3dfd6; font-size:14px; margin:28px 0 0; padding-top:20px; border-top:1px solid rgba(255,255,255,.25); }
+@media(max-width:900px){
+  .accueil-court .acc-hero-texte{ grid-template-columns:minmax(0,1fr); gap:20px; }
+  .accueil-court .acc-hero h1{ grid-row:auto; max-width:25ch; }
+  .acc-actualites{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .acc-actualites > :last-child{ grid-column:1 / -1; }
+}
+@media(max-width:720px){
+  .accueil-court .acc-hero{ padding-top:108px; padding-bottom:32px; }
+  .accueil-court .acc-hero h1{ font-size:32px; max-width:none; }
+  .accueil-court .acc-hero-lead{ font-size:16px; }
+  .accueil-court .acc-hero-actions{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .accueil-court .acc-hero-actions .acc-bouton{ justify-content:center; padding:10px; font-size:14px; text-align:center; line-height:1.4; }
+  .accueil-court .acc-hero-actions .acc-bouton--texte{ grid-column:1 / -1; }
+  .accueil-court .acc-tete{ gap:16px; }
+  .acc-actualites, .acc-territoire, .accueil-court .acc-fin{ grid-template-columns:minmax(0,1fr); }
+  .acc-actualites > :last-child{ grid-column:auto; }
+  .acc-impact-chiffres{ gap:8px; }
+  .acc-impact-chiffres > div{ padding:12px 0; }
+  .acc-impact-chiffres dt{ font-size:14px; }
+  .acc-impact-chiffres dd{ gap:4px; }
+  .acc-impact-chiffres small, .acc-impact-chiffres a{ font-size:13px; }
+  .acc-carte-cadre{ padding:20px 16px; }
+}
+
+.acc-carte-cadre .acc-legende span{ color:#c2d1c7; font-size:inherit; }
+.acc-carte-cadre .acc-unites-liste a{ color:#eef3ef; font-size:13px; }
+.acc-impact-chiffres dd.acc-impact-source{ margin:0; }
+.acc-carte-cadre h3{ color:#fff; }
+.accueil .acc-carte-cadre li{ border:0; }
+.accueil .acc-carte-cadre .acc-legende{ margin-top:12px; }
+.accueil .acc-carte-cadre .acc-unites-liste{ margin-top:14px; }
+.acc-carte-cadre .acc-unites-liste a{ display:inline-flex; flex-direction:row; padding:6px 13px; min-height:44px; }
