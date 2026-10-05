@@ -2415,7 +2415,7 @@ html.sobre .hero-visual{ box-shadow:none; }
 
 /* Revue mobile du 4 octobre : champs lisibles sans zoom automatique iOS,
    cibles de l'en-tête accessibles au toucher, y compris sur petit écran. */
-@media(max-width:800px){
+@media(max-width:800px), (pointer:coarse){
   html body :is(input, select, textarea):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=hidden]):not([type=submit]):not([type=button]){ font-size:16px; min-height:44px; }
   .footer-top > *{ min-width:0; }
   .nav{ gap:6px; }
@@ -2531,3 +2531,18 @@ html.sobre .hero-visual{ box-shadow:none; }
 .accueil .acc-carte-cadre .acc-legende{ margin-top:12px; }
 .accueil .acc-carte-cadre .acc-unites-liste{ margin-top:14px; }
 .acc-carte-cadre .acc-unites-liste a{ display:inline-flex; flex-direction:row; padding:6px 13px; min-height:44px; }
+
+/* Revue mobile : commandes des pages intérieures et notes longues lisibles. */
+@media(max-width:800px), (pointer:coarse){
+  .nav :is(.nav-search, .nav-share, .nav-cta, .menu-toggle, .nav-langue){ min-width:44px; min-height:44px; }
+  .mm-foot a, .footer-contact a, .footer-bottom a{ min-width:44px; min-height:44px; display:inline-flex; align-items:center; }
+  .footer-cols.footer-cols--5 a{ min-height:44px; font-size:14px; }
+  main :is(button, .button, .partage-btn), footer.site-footer :is(button, .button){ min-width:44px; min-height:44px; }
+  .legacy .geo-btn, .partage-boutons--compact .partage-btn{ min-width:44px; min-height:44px; }
+  .legacy .geo-btn::after{ inset:0; }
+  main details > summary, .lg-sommaire summary{ min-height:44px; }
+  details.them-plus > summary, .partage-message summary{ display:inline-flex; align-items:center; }
+  .legacy{ --fs-sm:14px; }
+  main :is(.lg-footnote, .them-links, .them-reperes, .sec-cadre, .tb-detail, .mag-meta, .od-existant, .pp-ligne, .poste-pole, .bb-role), main .legacy .lettre-corps{ font-size:14px; line-height:1.65; }
+  .legacy .geo-liste{ margin-inline:0; padding-inline:0; scroll-padding-inline:0; max-width:100%; }
+}

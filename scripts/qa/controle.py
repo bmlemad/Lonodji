@@ -54,6 +54,23 @@ def axe_source() -> str | None:
     return None
 
 
+def poids_mobile(browser, base: str) -> dict[str, int]:
+    """Premier chargement : contexte neuf, sans cache ni interception par l'application."""
+    poids = {}
+    for chemin in ["/", "/villages", "/odeb", "/journal"]:
+        with browser.new_context(viewport={"width": 390, "height": 844}, service_workers="block") as ctx:
+            page = ctx.new_page()
+            cdp = ctx.new_cdp_session(page)
+            cdp.send("Network.enable")
+            cdp.send("Network.setCacheDisabled", {"cacheDisabled": True})
+            total = {"n": 0}
+            cdp.on("Network.loadingFinished", lambda e: total.__setitem__("n", total["n"] + e.get("encodedDataLength", 0)))
+            page.goto(base + chemin, wait_until="networkidle", timeout=60000)
+            page.wait_for_timeout(500)
+            poids[chemin] = round(total["n"] / 1024)
+    return poids
+
+
 def main() -> int:
     from playwright.sync_api import sync_playwright
 
@@ -145,22 +162,12 @@ def main() -> int:
                 problemes.append(f"visuel {k}: {json.dumps(v, ensure_ascii=False)[:300]}")
         # poids
         if a.poids:
-            poids = {}
-            c3 = b.new_context(viewport={"width": 390, "height": 844})
-            for chemin in ["/", "/villages", "/odeb", "/journal"]:
-                pg = c3.new_page()
-                cdp = c3.new_cdp_session(pg)
-                cdp.send("Network.enable")
-                total = {"n": 0}
-                cdp.on("Network.loadingFinished", lambda e: total.__setitem__("n", total["n"] + e.get("encodedDataLength", 0)))
-                pg.goto(base + chemin, wait_until="networkidle", timeout=60000)
-                pg.wait_for_timeout(500)
-                poids[chemin] = round(total["n"] / 1024)
-                pg.close()
-            c3.close()
+            poids = poids_mobile(b, base)
             rapport["poids_ko"] = poids
             for chemin, ko in poids.items():
-                if ko > 600:
+                if ko == 0:
+                    problemes.append(f"poids {chemin} : mesure de transfert indisponible")
+                elif ko > 600:
                     problemes.append(f"poids {chemin} : {ko} ko transférés (seuil 600)")
         b.close()
     console = [c for c in console if "favicon" not in c[1] and "third-party cookie" not in c[1].lower()]
