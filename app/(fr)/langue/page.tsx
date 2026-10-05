@@ -110,9 +110,9 @@ export default function Langue() {
       </section>
 
       <section className="hub-section" id="alphabet">
-        <SectionHead eyebrow="Ce qui reste à écrire" title="L’alphabet, la prononciation," em="les règles." text="Le lexique de Dinguemrebeye et Keegan utilise une orthographe pratique avec des tons ; la paroisse de Bédjondo et le Comité de langue ont eu leurs propres essais d’écriture, que la SIL relevait déjà en 2000. Réconcilier ces usages en une page « Apprendre le nangnda » — alphabet, sons, tons, premières phrases — est un travail pour la thématique Culture & patrimoine vivant, avec les linguistes et Kokotan. Nous ne le publierons pas avant qu’il soit vérifié : une langue mal écrite se transmet mal." />
+        <SectionHead eyebrow="Ce qui reste à écrire" title="L’alphabet, la prononciation," em="les règles." text="Le lexique de Dinguemrebeye et Keegan utilise une orthographe pratique avec des tons ; la paroisse de Bédjondo et le Comité de langue ont eu leurs propres essais d’écriture, que la SIL relevait déjà en 2000. Réconcilier ces usages en une page « Apprendre le nangnda » — alphabet, sons, tons, premières phrases — est un travail pour la thématique Culture et patrimoine immatériel, avec les linguistes et Kokotan. Nous ne le publierons pas avant qu’il soit vérifié : une langue mal écrite se transmet mal." />
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
-          <Link className="button secondary" href="/programmes#culture-patrimoine-vivant">La thématique Culture &amp; patrimoine vivant <span aria-hidden="true">→</span></Link>
+          <Link className="button secondary" href="/programmes#culture-patrimoine-vivant">La thématique Culture et patrimoine immatériel <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/diaspora">Linguiste, enseignant·e ? Inscrivez vos compétences <span aria-hidden="true">→</span></Link>
         </div>
       </section>

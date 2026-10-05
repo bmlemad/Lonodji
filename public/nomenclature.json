@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-05",
+  "motif": "Intitulés des thématiques alignés sur la nomenclature des bailleurs : secteurs CAD de l’OCDE (codes CRS à cinq chiffres, liste 2025), clusters humanitaires et Objectifs de développement durable. Les numéros, les adresses des pages et les pôles ne changent pas.",
+  "sources": {
+    "cad": "OCDE, Liste des codes-objet du SNPC (CRS purpose codes), copie IATI consultée le 5 octobre 2026",
+    "odd": "Nations unies, cadre mondial d’indicateurs des ODD",
+    "clusters": "IASC, clusters humanitaires (WASH, Santé, Nutrition, Éducation, Protection, Sécurité alimentaire)"
+  },
+  "thematiques": [
+    { "num": "01", "ancien": "Mémoire & héritage", "fr": "Patrimoine historique et archives", "ancienEn": "Memory & Heritage", "en": "Historical Heritage and Archives", "cad": ["16061", "16066"], "cluster": null, "odd": ["11.4", "4.7"] },
+    { "num": "02", "ancien": "Culture & patrimoine vivant", "fr": "Culture et patrimoine immatériel", "ancienEn": "Culture & Living Heritage", "en": "Culture and Intangible Heritage", "cad": ["16061"], "cluster": null, "odd": ["11.4", "4.7"] },
+    { "num": "03", "ancien": "Recherche & savoirs", "fr": "Recherche et enseignement supérieur", "ancienEn": "Research & Knowledge", "en": "Research and Higher Education", "cad": ["11420", "43082"], "cluster": null, "odd": ["4.7", "9.5", "17.6"] },
+    { "num": "07", "ancien": "Eau, assainissement & hygiène", "fr": "Eau, assainissement et hygiène (WASH)", "ancienEn": "Water, Sanitation & Hygiene", "en": "Water, Sanitation and Hygiene (WASH)", "cad": ["14030", "14031", "14032"], "cluster": "WASH", "odd": ["6.1", "6.2"] },
+    { "num": "09", "ancien": "Éducation, jeunesse & formation", "fr": "Éducation et formation professionnelle", "ancienEn": "Education, Youth & Training", "en": "Education and Vocational Training", "cad": ["11110", "11320", "11330"], "cluster": "Éducation", "odd": ["4.1", "4.4", "8.6"] },
+    { "num": "10", "ancien": "Genre & autonomisation des femmes", "fr": "Égalité des genres et autonomisation des femmes", "ancienEn": "Gender & Women’s Empowerment", "en": "Gender Equality and Women’s Empowerment", "cad": ["15170"], "cluster": null, "odd": ["5.2", "5.3", "5.5", "8.3"] },
+    { "num": "11", "ancien": "Santé, nutrition & prévention", "fr": "Santé et nutrition", "ancienEn": "Health, Nutrition & Prevention", "en": "Health and Nutrition", "cad": ["12110", "12261", "12240"], "cluster": "Santé · Nutrition", "odd": ["3.1", "3.2", "3.3", "3.8", "2.2"] },
+    { "num": "12", "ancien": "Protection sociale, enfance & inclusion", "fr": "Protection et inclusion sociale", "ancienEn": "Social Protection, Children & Inclusion", "en": "Protection and Social Inclusion", "cad": ["16010", "16015"], "cluster": "Protection", "odd": ["1.3", "10.2", "16.2", "16.9"] },
+    { "num": "22", "ancien": "Sport, arts & loisirs", "fr": "Sport, culture et loisirs", "ancienEn": "Sport, Arts & Leisure", "en": "Sport, Culture and Recreation", "cad": ["16065", "16066"], "cluster": null, "odd": ["3.4", "11.7"] },
+    { "num": "13", "ancien": "Gouvernance & plaidoyer", "fr": "Gouvernance et société civile", "ancienEn": "Governance & Advocacy", "en": "Governance and Civil Society", "cad": ["15110", "15150"], "cluster": null, "odd": ["16.7", "16.9", "17.17"] },
+    { "num": "14", "ancien": "Paix & cohésion", "fr": "Paix et cohésion sociale", "ancienEn": "Peace & Social Cohesion", "en": "Peace and Social Cohesion", "cad": ["15220"], "cluster": null, "odd": ["16.1", "10.2"] },
+    { "num": "15", "ancien": "Réseau d’experts & diaspora", "fr": "Diaspora et partenariats", "ancienEn": "Expert Network & Diaspora", "en": "Diaspora and Partnerships", "cad": ["15190", "15150"], "cluster": null, "odd": ["17.17", "10.7"] },
+    { "num": "16", "ancien": "Justice & droits humains", "fr": "Droits humains et accès à la justice", "ancienEn": "Justice & Human Rights", "en": "Human Rights and Access to Justice", "cad": ["15160", "15130"], "cluster": null, "odd": ["16.3", "5.2", "10.2"] },
+    { "num": "17", "ancien": "Connectivité & services numériques", "fr": "TIC et connectivité", "ancienEn": "Connectivity & Digital Services", "en": "ICT and Connectivity", "cad": ["22040", "22010"], "cluster": null, "odd": ["9.c", "16.9", "10.2"] },
+    { "num": "18", "ancien": "Intelligence artificielle & données", "fr": "Données et intelligence artificielle", "ancienEn": "Artificial Intelligence & Data", "en": "Data and Artificial Intelligence", "cad": ["22040", "16062"], "cluster": null, "odd": ["17.18", "9.5", "4.4"] },
+    { "num": "19", "ancien": "Compétences & entrepreneuriat numérique", "fr": "Compétences numériques et emploi des jeunes", "ancienEn": "Digital Skills & Entrepreneurship", "en": "Digital Skills and Youth Employment", "cad": ["11330", "16020", "11231"], "cluster": null, "odd": ["4.4", "8.6", "9.c"] },
+    { "num": "04", "ancien": "Agriculture, élevage & sécurité alimentaire", "fr": "Agriculture, élevage et sécurité alimentaire", "ancienEn": "Agriculture, Livestock & Food Security", "en": "Agriculture, Livestock and Food Security", "cad": ["31120", "31163", "43071"], "cluster": "Sécurité alimentaire", "odd": ["2.1", "2.3", "12.3", "15.3"] },
+    { "num": "05", "ancien": "Entrepreneuriat & finance inclusive", "fr": "Moyens d’existence et inclusion financière", "ancienEn": "Entrepreneurship & Inclusive Finance", "en": "Livelihoods and Financial Inclusion", "cad": ["24040", "25030", "32130"], "cluster": null, "odd": ["8.3", "1.4", "12.5"] },
+    { "num": "06", "ancien": "Environnement, climat & ressources naturelles", "fr": "Environnement, climat et ressources naturelles", "ancienEn": "Environment, Climate & Natural Resources", "en": "Environment, Climate and Natural Resources", "cad": ["41010", "41030"], "cluster": null, "odd": ["13.1", "15.2", "12.5"] },
+    { "num": "08", "ancien": "Routes & urbanisme", "fr": "Transport et développement urbain", "ancienEn": "Roads & Urban Planning", "en": "Transport and Urban Development", "cad": ["21020", "43030"], "cluster": null, "odd": ["9.1", "11.3", "11.6"] },
+    { "num": "20", "ancien": "Urgences & risques", "fr": "Réduction des risques de catastrophe et urgences", "ancienEn": "Emergencies & Risks", "en": "Disaster Risk Reduction and Emergencies", "cad": ["43060", "74020", "72010"], "cluster": null, "odd": ["1.5", "11.5", "13.1"] },
+    { "num": "21", "ancien": "Énergie", "fr": "Énergie durable", "ancienEn": "Energy", "en": "Sustainable Energy", "cad": ["23110", "23210"], "cluster": null, "odd": ["7.1", "7.2"] }
+  ]
+}

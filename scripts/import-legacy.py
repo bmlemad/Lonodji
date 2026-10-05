@@ -2025,7 +2025,36 @@ def lire_source(path: Path) -> str:
     if path.name == "kit-mobilisation.html":
         html = kit_liens(html)
     html = numero_en_icone(html, path)
+    if "articles" not in path.parts and path.name not in ("actualites.html", "en--news.html", "news.html"):
+        html = nomenclature(html, path)   # jamais dans les articles datés ni dans leurs résumés (actualites.html)
     return html if "articles" in path.parts else comptes_courants(html)
+
+
+def _variantes(nom: str) -> list[str]:
+    """Les écritures HTML d'un même intitulé : & / &amp;, ’ / &rsquo; / '."""
+    out = {nom}
+    for a, b in (("&", "&amp;"), ("’", "&rsquo;"), ("’", "'"), ("É", "&Eacute;"), ("é", "&eacute;")):
+        out |= {v.replace(a, b) for v in list(out)}
+    return sorted(out, key=len, reverse=True)
+
+
+def nomenclature(html: str, path: Path) -> str:
+    """5/10/2026 : les intitulés des thématiques suivent la nomenclature des bailleurs (content/nomenclature.json) :
+    secteurs CAD de l'OCDE, clusters, ODD. Les anciens noms sont remplacés dans les pages (jamais dans les articles
+    datés du journal) ; les numéros et les adresses ne bougent pas. « Énergie » / « Energy », mots courants, ne sont
+    remplacés que comme intitulés (balise, numéro ou puce devant)."""
+    data = json.loads((ROOT / "content" / "nomenclature.json").read_text(encoding="utf-8"))
+    en = path.parts[:1] == ("en",) or "/en/" in str(path)
+    for t in data["thematiques"]:
+        ancien, nouveau = (t["ancienEn"], t["en"]) if en else (t["ancien"], t["fr"])
+        if en and t["num"] == "21" or not en and t["num"] == "21":
+            for v in _variantes(ancien):
+                pre = r"(>|→ |&rarr; |thématique |theme |" + t["num"] + r"\. |" + t["num"] + r" &middot; |" + t["num"] + r" · )"
+                html = re.sub(pre + re.escape(v) + r"(?=<| →| &rarr;| &middot;| ·| <span|\.|,)", lambda m, n=nouveau: m.group(1) + n, html)
+            continue
+        for v in _variantes(ancien):
+            html = html.replace(v, nouveau.replace("&", "&amp;") if "&amp;" in v else nouveau)
+    return html
 
 
 ICONE_APPEL = ('<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '

@@ -1,5 +1,5 @@
 {
- "genere": "2026-10-02",
+ "genere": "2026-10-05",
  "recueil": "/missions/fiches-de-mission-adeb-lonodji.pdf",
  "directions": [
   {
@@ -61,7 +61,7 @@
   {
    "id": "memoire-heritage",
    "numero": "01",
-   "nom": "Mémoire & héritage",
+   "nom": "Patrimoine historique et archives",
    "pole": "I",
    "poleNom": "Mémoire, culture & patrimoine",
    "pourvue": true,
@@ -71,7 +71,7 @@
   {
    "id": "culture-patrimoine-vivant",
    "numero": "02",
-   "nom": "Culture & patrimoine vivant",
+   "nom": "Culture et patrimoine immatériel",
    "pole": "I",
    "poleNom": "Mémoire, culture & patrimoine",
    "pourvue": true,
@@ -81,7 +81,7 @@
   {
    "id": "savoirs-innovation",
    "numero": "03",
-   "nom": "Recherche & savoirs",
+   "nom": "Recherche et enseignement supérieur",
    "pole": "I",
    "poleNom": "Mémoire, culture & patrimoine",
    "pourvue": true,
@@ -91,7 +91,7 @@
   {
    "id": "eau-energie-connectivite",
    "numero": "07",
-   "nom": "Eau, assainissement & hygiène",
+   "nom": "Eau, assainissement et hygiène (WASH)",
    "pole": "II",
    "poleNom": "Services essentiels",
    "pourvue": false,
@@ -101,7 +101,7 @@
   {
    "id": "jeunesse-reussite",
    "numero": "09",
-   "nom": "Éducation, jeunesse & formation",
+   "nom": "Éducation et formation professionnelle",
    "pole": "II",
    "poleNom": "Services essentiels",
    "pourvue": true,
@@ -111,7 +111,7 @@
   {
    "id": "leadership-feminin",
    "numero": "10",
-   "nom": "Genre & autonomisation des femmes",
+   "nom": "Égalité des genres et autonomisation des femmes",
    "pole": "II",
    "poleNom": "Services essentiels",
    "pourvue": true,
@@ -121,7 +121,7 @@
   {
    "id": "sante-prevention",
    "numero": "11",
-   "nom": "Santé, nutrition & prévention",
+   "nom": "Santé et nutrition",
    "pole": "II",
    "poleNom": "Services essentiels",
    "pourvue": true,
@@ -131,7 +131,7 @@
   {
    "id": "solidarite-inclusion",
    "numero": "12",
-   "nom": "Protection sociale, enfance & inclusion",
+   "nom": "Protection et inclusion sociale",
    "pole": "II",
    "poleNom": "Services essentiels",
    "pourvue": true,
@@ -141,7 +141,7 @@
   {
    "id": "sport-arts-loisirs",
    "numero": "22",
-   "nom": "Sport, arts & loisirs",
+   "nom": "Sport, culture et loisirs",
    "pole": "II",
    "poleNom": "Services essentiels",
    "pourvue": false,
@@ -151,7 +151,7 @@
   {
    "id": "gouvernance-plaidoyer",
    "numero": "13",
-   "nom": "Gouvernance & plaidoyer",
+   "nom": "Gouvernance et société civile",
    "pole": "III",
    "poleNom": "Gouvernance, paix & plaidoyer",
    "pourvue": true,
@@ -161,7 +161,7 @@
   {
    "id": "paix-cohesion",
    "numero": "14",
-   "nom": "Paix & cohésion",
+   "nom": "Paix et cohésion sociale",
    "pole": "III",
    "poleNom": "Gouvernance, paix & plaidoyer",
    "pourvue": true,
@@ -171,7 +171,7 @@
   {
    "id": "reseau-experts-diaspora",
    "numero": "15",
-   "nom": "Réseau d’experts & diaspora",
+   "nom": "Diaspora et partenariats",
    "pole": "III",
    "poleNom": "Gouvernance, paix & plaidoyer",
    "pourvue": true,
@@ -181,7 +181,7 @@
   {
    "id": "justice-droits-homme",
    "numero": "16",
-   "nom": "Justice & droits humains",
+   "nom": "Droits humains et accès à la justice",
    "pole": "III",
    "poleNom": "Gouvernance, paix & plaidoyer",
    "pourvue": true,
@@ -191,7 +191,7 @@
   {
    "id": "transformation-numerique-services",
    "numero": "17",
-   "nom": "Connectivité & services numériques",
+   "nom": "TIC et connectivité",
    "pole": "IV",
    "poleNom": "Numérique & innovation",
    "pourvue": true,
@@ -201,7 +201,7 @@
   {
    "id": "intelligence-artificielle-donnees",
    "numero": "18",
-   "nom": "Intelligence artificielle & données",
+   "nom": "Données et intelligence artificielle",
    "pole": "IV",
    "poleNom": "Numérique & innovation",
    "pourvue": true,
@@ -211,7 +211,7 @@
   {
    "id": "competences-entrepreneuriat-numerique",
    "numero": "19",
-   "nom": "Compétences & entrepreneuriat numérique",
+   "nom": "Compétences numériques et emploi des jeunes",
    "pole": "IV",
    "poleNom": "Numérique & innovation",
    "pourvue": true,
@@ -221,7 +221,7 @@
   {
    "id": "agriculture-elevage-securite-alimentaire",
    "numero": "04",
-   "nom": "Agriculture, élevage & sécurité alimentaire",
+   "nom": "Agriculture, élevage et sécurité alimentaire",
    "pole": "V",
    "poleNom": "Économie & ressources naturelles",
    "pourvue": true,
@@ -231,7 +231,7 @@
   {
    "id": "entrepreneuriat-finance-inclusive",
    "numero": "05",
-   "nom": "Entrepreneuriat & finance inclusive",
+   "nom": "Moyens d’existence et inclusion financière",
    "pole": "V",
    "poleNom": "Économie & ressources naturelles",
    "pourvue": true,
@@ -241,7 +241,7 @@
   {
    "id": "environnement-ressources",
    "numero": "06",
-   "nom": "Environnement, climat & ressources naturelles",
+   "nom": "Environnement, climat et ressources naturelles",
    "pole": "V",
    "poleNom": "Économie & ressources naturelles",
    "pourvue": false,
@@ -251,7 +251,7 @@
   {
    "id": "desenclavement-urbanisation",
    "numero": "08",
-   "nom": "Routes & urbanisme",
+   "nom": "Transport et développement urbain",
    "pole": "VI",
    "poleNom": "Infrastructures, territoire & risques",
    "pourvue": false,
@@ -261,7 +261,7 @@
   {
    "id": "urgences-risques",
    "numero": "20",
-   "nom": "Urgences & risques",
+   "nom": "Réduction des risques de catastrophe et urgences",
    "pole": "VI",
    "poleNom": "Infrastructures, territoire & risques",
    "pourvue": false,
@@ -271,7 +271,7 @@
   {
    "id": "energie",
    "numero": "21",
-   "nom": "Énergie",
+   "nom": "Énergie durable",
    "pole": "VI",
    "poleNom": "Infrastructures, territoire & risques",
    "pourvue": false,

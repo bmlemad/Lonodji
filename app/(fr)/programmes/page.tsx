@@ -21,7 +21,7 @@ const DESCRIPTION = `${NB.Poles} pôles, ${NB.them} thématiques et ${NB.cell} c
 /* Plans d’action thématiques (hérités de la première version du site) : liés ici depuis que le menu
    « Nos actions » renvoie à cette page pour les trouver (menu resserré le 4 octobre 2026). */
 const PLANS = [
-  { label: "Agriculture, élevage & sécurité alimentaire", href: "/programmes/agriculture-securite-alimentaire" },
+  { label: "Agriculture, élevage et sécurité alimentaire", href: "/programmes/agriculture-securite-alimentaire" },
   { label: "Environnement & durabilité", href: "/programmes/environnement" },
   { label: "Jeunes mères, orphelins, personnes isolées", href: "/programmes/solidarite-inclusion" },
   { label: "Plan pour les veuves", href: "/programmes/veuves" },

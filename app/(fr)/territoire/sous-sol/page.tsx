@@ -100,7 +100,7 @@ export default function SousSol() {
         <ul className="gl-demandes">
           {ENGAGEMENTS.map((p) => <li key={p.texte}><strong>{p.qui}.</strong> {p.texte} <Liens liens={p.liens} /></li>)}
         </ul>
-        <p className="lg-footnote">Ce sujet relève de la thématique <Link href="/programmes#environnement-ressources">Environnement, climat & ressources naturelles</Link>, qui cherche encore son coordonnateur ou sa coordonnatrice. <Link href="/participer?theme=06#contact">Proposer sa compétence</Link> : géologues, ingénieurs du pétrole et des mines, juristes, environnementalistes.</p>
+        <p className="lg-footnote">Ce sujet relève de la thématique <Link href="/programmes#environnement-ressources">Environnement, climat et ressources naturelles</Link>, qui cherche encore son coordonnateur ou sa coordonnatrice. <Link href="/participer?theme=06#contact">Proposer sa compétence</Link> : géologues, ingénieurs du pétrole et des mines, juristes, environnementalistes.</p>
       </section>
 
       <section className="hub-section" id="sources">
@@ -119,7 +119,7 @@ export default function SousSol() {
           <Link href="/territoire/gouvernance-locale"><small>Territoire</small><strong>Gouvernance locale</strong><span>Qui décide quoi, du canton à l’État : à qui s’adressent nos propositions.</span></Link>
           <Link href="/patrimoine/lieux-sacres"><small>Patrimoine</small><strong>Lieux sacrés et sépultures</strong><span>Le registre tenu par la chefferie, jamais publié, et l’inscription des périmètres au plan communal.</span></Link>
           <Link href="/territoire/diagnostic"><small>Territoire</small><strong>Diagnostic territorial</strong><span>Dont le départ d’enfants vers les sites aurifères du Nord.</span></Link>
-          <Link href="/programmes#environnement-ressources"><small>Thématique</small><strong>Environnement, climat & ressources naturelles</strong><span>La thématique qui portera ce dossier.</span></Link>
+          <Link href="/programmes#environnement-ressources"><small>Thématique</small><strong>Environnement, climat et ressources naturelles</strong><span>La thématique qui portera ce dossier.</span></Link>
         </div>
       </section>
 

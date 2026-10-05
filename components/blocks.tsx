@@ -3,6 +3,7 @@ import type { ArticleSummary, DocumentItem, Plaidoyer, Thematique } from "../lib
 import { estPrioritaire } from "@/lib/organisation";
 import { secteursDeThematique } from "../lib/secteurs";
 import { reperesFr } from "../lib/reperes";
+import { nomenclatureDe } from "../lib/nomenclature";
 import { insecables } from "../lib/typo";
 import { ARTICLE_UPDATES } from "../lib/article-updates";
 
@@ -92,6 +93,17 @@ export function ThematiqueRow({ t, pole, partenaires }: { t: Thematique; pole?: 
         <p className="them-coord">
           {t.filled ? <><b>{t.coordinatorLabel || "Coordination"} :</b> {t.coordinator}</> : <>Coordination à pourvoir — <Link href={`/participer?theme=${cle}&coordo=1#contact`}>{t.kind === "cellule" ? <>Rejoindre cette cellule <span aria-hidden="true">→</span></> : "proposer sa candidature"}</Link></>}
         </p>
+        {(() => {
+          const n = t.kind === "thematique" ? nomenclatureDe(t.number) : undefined;
+          return n ? (
+            <p className="them-nomenclature">
+              <span><b>CAD</b> {n.cad.join(", ")}</span>
+              {n.cluster ? <span><b>Cluster</b> {n.cluster}</span> : null}
+              <span><b>ODD</b> {n.odd.join(", ")}</span>
+              <span className="them-ancien">anciennement « {n.ancien} »</span>
+            </p>
+          ) : null;
+        })()}
         {secteursDeThematique(t.id).length ? <p className="them-secteurs" aria-label="Secteurs d’intervention">{secteursDeThematique(t.id).map((s) => <Link key={s.id} href={`/secteurs#${s.id}`}>{s.sigle}</Link>)}</p> : null}
         {(() => {
           const [debut, suite] = couperDescription(t.description);

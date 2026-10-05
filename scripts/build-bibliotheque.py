@@ -31,12 +31,12 @@ RUBRIQUES = [
 
 # Chercheurs du pays bedjond (recommandation « centre de documentation », 28/09/2026) : motifs de reconnaissance dans les auteurs
 CHERCHEURS = [
-    ("be-rammaj-miaro-ii", "Bé-Rammaj Miaro-II", "historien ; directeur du pôle Mémoire, culture & patrimoine (coordonnateur de Mémoire & héritage jusqu’au 30 septembre 2026)", r"miaro"),
+    ("be-rammaj-miaro-ii", "Bé-Rammaj Miaro-II", "historien ; directeur du pôle Mémoire, culture & patrimoine (coordonnateur de Patrimoine historique et archives jusqu’au 30 septembre 2026)", r"miaro"),
     ("john-m-keegan", "John M. Keegan", "linguiste, Sara Bagirmi Language Project (Morkeg Books)", r"keegan"),
     ("roger-dinguemrebeye", "Roger Dinguemrebeye", "linguiste-traducteur, co-auteur du Lexique Nangnda", r"dinguemrebeye"),
     ("eric-c-johnson", "Eric C. Johnson", "SIL International, enquête sociolinguistique de la région de Doba", r"johnson"),
     ("djarangar-djita-issa", "Djarangar Djita Issa", "linguiste, professeur titulaire, École normale supérieure de Bongor", r"djarangar"),
-    ("yaphete-madjirade", "Yaphete Madjiradé", "coordonnateur de la thématique Culture & patrimoine vivant", r"madjira[bd]"),
+    ("yaphete-madjirade", "Yaphete Madjiradé", "coordonnateur de la thématique Culture et patrimoine immatériel", r"madjira[bd]"),
     ("service-alladoum", "Service Alladoum", "linguistique du nangnda (travaux à référencer)", r"alladoum"),
     ("masnan-beoss", "Masnan Béoss", "historien, ACAREF", r"b[eé]oss"),
     ("kosmadji-merci", "Kosmadji Merci", "travaux à référencer", r"kosmadji"),

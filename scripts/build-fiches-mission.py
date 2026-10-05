@@ -99,6 +99,7 @@ li{margin:0 0 1.2mm}
 .etapes div{border-top:2px solid #b6cf45;padding-top:2mm}
 .etapes b{display:block;font-size:9.5pt}
 .etapes span{display:block;font-size:8.5pt;color:#526159;line-height:1.45;margin-top:1mm}
+.nomenclature{font-size:9.5pt;color:#53625b;margin:0 0 6pt}.nomenclature b{font-weight:600;color:#3c4a44}
 .odd{display:flex;flex-wrap:wrap;gap:2mm}
 .odd span{display:inline-block;padding:1mm 2.5mm;border-radius:2mm;font-size:8.5pt;font-weight:700;color:#fff}
 .candidater{margin-top:6mm;padding:4mm 5mm;border-radius:3mm;background:#173b2d;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:6mm;break-inside:avoid}
@@ -149,6 +150,22 @@ def fiche_direction(pole: dict, logo: str, jour: str) -> str:
 </section>"""
 
 
+def nomenclature_html(t: dict) -> str:
+    """Ligne « CAD · cluster · ODD · anciennement » (content/nomenclature.json, 5 octobre 2026)."""
+    if t.get("kind") != "thematique":
+        return ""
+    data = json.loads((ROOT / "content" / "nomenclature.json").read_text(encoding="utf-8"))
+    n = next((x for x in data["thematiques"] if x["num"] == t["number"]), None)
+    if not n:
+        return ""
+    parts = [f"<b>Secteur CAD (OCDE)</b> {', '.join(n['cad'])}"]
+    if n.get("cluster"):
+        parts.append(f"<b>Cluster</b> {h.escape(n['cluster'])}")
+    parts.append(f"<b>ODD</b> {', '.join(n['odd'])}")
+    parts.append(f"<i>anciennement « {h.escape(n['ancien'])} »</i>")
+    return '<p class="nomenclature">' + " · ".join(parts) + "</p>"
+
+
 def fiche_coordination(t: dict, pole: dict | None, logo: str, jour: str, cellule: bool = False) -> str:
     pourvu = t["filled"]
     odd = "".join(f'<span style="background:{o["accent"]};color:{o["ink"]}">ODD {o["num"]} · {h.escape(o["name"])} · {h.escape(o["cible"])}</span>' for o in t.get("odd", []))
@@ -168,6 +185,7 @@ def fiche_coordination(t: dict, pole: dict | None, logo: str, jour: str, cellule
 <h1>{titre}<small>{sous}</small></h1>
 <span class="etat{' pourvu' if pourvu else ''}">{'Pourvue : ' + h.escape(t['coordinator']) if pourvu else 'À pourvoir'}</span>
 <h2>La thématique</h2>
+{nomenclature_html(t)}
 <p>{h.escape(t['descriptionText'])}</p>
 {('<p class="odd">' + odd + '</p>') if odd else ''}
 {direction}

@@ -105,7 +105,7 @@ export const PROPOSITIONS: Proposition[] = [
   { qui: "Préfecture · sous-préfectures", texte: "Informer par écrit la commune et les chefs de canton avant tout levé, forage ou ouverture de site, et réunir les communautés concernées avant les travaux, pas après.", liens: [{ label: "Gouvernance locale", href: "/territoire/gouvernance-locale" }] },
   { qui: "Commune · chefferies", texte: "Inscrire au plan communal le périmètre des lieux sacrés et des sépultures avant toute exploration, et garantir par écrit les compensations foncières.", liens: [{ label: "Lieux sacrés et sépultures", href: "/patrimoine/lieux-sacres" }] },
   { qui: "Opérateurs, s’il y en a", texte: "Publier un état initial de l’eau et des sols avant les travaux ; recruter et former d’abord dans le département ; faire profiter les villages voisins de l’électricité produite sur les sites.", liens: [{ label: "Plaidoyer formation professionnelle", href: "/journal/2026-09-17-plaidoyer-formation-professionnelle-bedjondo" }, { label: "Plaidoyer électricité", href: "/journal/2026-09-16-plaidoyer-electricite-bedjondo" }] },
-  { qui: "Tous", texte: "Aucun enfant sur un site d’extraction, ici ou au Nord.", liens: [{ label: "Protection sociale, enfance & inclusion", href: "/programmes#solidarite-inclusion" }] },
+  { qui: "Tous", texte: "Aucun enfant sur un site d’extraction, ici ou au Nord.", liens: [{ label: "Protection et inclusion sociale", href: "/programmes#solidarite-inclusion" }] },
 ];
 
 /* Ce que l'association s'engage à faire elle-même (la contrepartie). */

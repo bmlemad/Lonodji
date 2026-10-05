@@ -15,7 +15,7 @@ const CATEGORIES = ["Un mot (nom, verbe, adjectif…)", "Une expression", "Un pr
 export default function MotForm({ telephone, whatsapp }: { telephone: string; whatsapp: string }) {
   const { etat, erreur, fichier, form, surFichier, envoyer } = useEnvoiMultipart(telephone);
   if (etat === "ok") {
-    return <RetourFormulaire className="form-note form-success" role="status">Merci : votre mot est bien arrivé. Il est vérifié avec les linguistes de la thématique Culture &amp; patrimoine vivant, puis publié avec ou sans votre nom selon votre choix.</RetourFormulaire>;
+    return <RetourFormulaire className="form-note form-success" role="status">Merci : votre mot est bien arrivé. Il est vérifié avec les linguistes de la thématique Culture et patrimoine immatériel, puis publié avec ou sans votre nom selon votre choix.</RetourFormulaire>;
   }
   return (
     <form ref={form} action="/__forms.html" id="formulaire-mot" method="POST" encType="multipart/form-data" name="mot-nangnda" onSubmit={envoyer}>
