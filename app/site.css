@@ -893,7 +893,7 @@ html.is-standalone .haut{ bottom:calc(76px + env(safe-area-inset-bottom,0px)); }
 .pr-logo:hover{ transform:translateY(-2px); box-shadow:0 10px 30px rgba(23,59,45,.1); }
 .pr-logo-apercu{ display:grid; place-items:center; height:130px; border-radius:12px; background:#fff; margin-bottom:8px; }
 .pr-logo-apercu.est-sombre{ background:var(--deep); }
-.pr-logo-apercu img{ max-width:120px; max-height:110px; height:auto; }
+.pr-logo-apercu img{ max-width:120px; max-height:110px; width:auto; height:auto; object-fit:contain; }   /* attributs 120×120 : sans width:auto, le logo était écrasé à 120×110 (revue images du 5/10/2026) */
 .pr-logo strong{ font-size:14px; letter-spacing:-.01em; }
 .pr-logo small{ font-size:11.5px; color:#53625b; }
 .pr-contact{ max-width:760px; }
@@ -1013,7 +1013,7 @@ html.is-standalone .haut{ bottom:calc(76px + env(safe-area-inset-bottom,0px)); }
 .footer-mark--embleme{ width:30px; height:30px; }
 .pr-logos--larges{ margin-top:12px; grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr)); }
 .pr-logo-apercu--large{ aspect-ratio:auto; padding:10px 14px; }
-.pr-logo-apercu--large img{ width:100%; height:auto; }
+.pr-logo-apercu--large img{ width:100%; max-width:100%; max-height:none; height:auto; }   /* le max-width:120px de la règle générale rapetissait les logos horizontaux (revue images du 5/10/2026) */
 .pr-ancien{ margin-top:22px; padding:16px 20px; border:1px solid var(--line); border-radius:18px; background:rgba(255,255,255,.4); }
 .pr-ancien summary{ cursor:pointer; font-weight:700; font-size:14px; color:var(--deep); }
 .pr-ancien p{ font-size:14px; color:#4f5f58; line-height:1.55; margin:12px 0 14px; max-width:70ch; }
