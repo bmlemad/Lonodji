@@ -62,5 +62,22 @@ with sync_playwright() as p:
         assert box and box['y'] >= 0 and box['y'] + box['height'] <= 390, box
         close.tap()
         expect(page.locator('#mobile-menu')).to_have_attribute('aria-hidden', 'true')
+    # Entre 640 et 760 px, ces tableaux défilent au lieu de s'empiler.
+    page.set_viewport_size({'width': 720, 'height': 900})
+    for route, selector in (('/secteurs', '.ob-table-wrap'), ('/en/sectors', '.ob-table-wrap'), ('/territoire/besoins', '.table-wrap')):
+        page.goto(base + route, wait_until='networkidle')
+        cadre = page.locator('main ' + selector).first
+        expect(cadre).to_have_attribute('tabindex', '0')
+        expect(cadre).to_have_attribute('role', 'region')
+        assert cadre.get_attribute('aria-label') or cadre.get_attribute('aria-labelledby'), route
+        cadre.focus()
+        expect(cadre).to_be_focused()
+        page.keyboard.press('ArrowRight')
+        for _ in range(20):
+            if cadre.evaluate('e => e.scrollLeft > 0'):
+                break
+            page.wait_for_timeout(50)
+        assert cadre.evaluate('e => e.scrollLeft > 0'), route
+        assert page.evaluate('document.documentElement.scrollWidth') <= 721, route
     browser.close()
-print(f'Mobile : {len(routes)} pages à 320/360/390/430 px, champs, commandes de page, cibles tactiles, pied de page et menu en paysage FR/EN vérifiés.')
+print(f'Mobile : {len(routes)} pages à 320/360/390/430 px, champs, commandes de page, cibles tactiles, pied de page, menu en paysage FR/EN et tableaux défilants au clavier vérifiés.')

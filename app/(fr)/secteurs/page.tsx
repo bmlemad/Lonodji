@@ -39,7 +39,7 @@ export default function Secteurs() {
 
       <section className="hub-section" id="correspondance">
         <SectionHead eyebrow="En un tableau" title="Secteur, thématiques," em="cadre de référence." text="Pour un bailleur ou une ONG partenaire : le secteur, son étiquette usuelle, les thématiques qui le portent, le cluster, le code CAD et l’ODD de référence." />
-        <div className="ob-table-wrap">
+        <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Correspondance des secteurs et cadres de référence">
           <table className="sec-table">
             <thead><tr><th scope="col">Secteur</th><th scope="col">Thématiques</th><th scope="col">Cluster</th><th scope="col">CAD</th><th scope="col">ODD</th><th scope="col">État</th></tr></thead>
             <tbody>

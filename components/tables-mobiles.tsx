@@ -11,6 +11,19 @@ export default function TablesMobiles() {
   const chemin = useChemin();
   useEffect(() => {
     const poser = () => {
+      // Les tableaux hérités peuvent rester défilants en paysage ou avec le zoom.
+      // Nommer leur cadre et le rendre accessible au clavier, comme les pages natives.
+      for (const cadre of Array.from(document.querySelectorAll<HTMLElement>("main .ob-table-wrap, main .od-table-wrap, main .table-wrap"))) {
+        const table = cadre.querySelector("table");
+        if (!table) continue;
+        if (!cadre.hasAttribute("tabindex")) cadre.tabIndex = 0;
+        if (!cadre.hasAttribute("role")) cadre.setAttribute("role", "region");
+        if (!cadre.hasAttribute("aria-label") && !cadre.hasAttribute("aria-labelledby")) {
+          const titre = table.caption?.textContent || cadre.closest("section")?.querySelector("h2")?.textContent;
+          const fallback = document.documentElement.lang.startsWith("en") ? "Data table" : "Tableau de données";
+          cadre.setAttribute("aria-label", titre?.replace(/\s+/g, " ").trim() || fallback);
+        }
+      }
       for (const t of Array.from(document.querySelectorAll<HTMLTableElement>("main table"))) {
         if (t.dataset.empile || t.classList.contains("ob-table--empile") || t.classList.contains("no-empile") || t.closest(".dossier-print")) continue;
         const ligneTete = t.tHead?.rows[t.tHead.rows.length - 1];

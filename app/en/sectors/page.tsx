@@ -30,7 +30,7 @@ export default function SectorsEn() {
       />
       <section className="hub-section" id="mapping">
         <SectionHead eyebrow="At a glance" title="Sectors, themes" em="and reference frameworks." />
-        <div className="ob-table-wrap">
+        <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Sector and reference framework mapping">
           <table className="sec-table">
             <thead><tr><th scope="col">Sector</th><th scope="col">Themes (no.)</th><th scope="col">Cluster</th><th scope="col">DAC</th><th scope="col">SDG</th><th scope="col">Status</th></tr></thead>
             <tbody>
