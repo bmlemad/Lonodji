@@ -15,7 +15,8 @@ cases = (
 )
 with sync_playwright() as p:
     browser = p.chromium.launch()
-    context = browser.new_context(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True)
+    # Le cache de l'application ne doit pas intercepter les réponses simulées.
+    context = browser.new_context(service_workers='block', viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True)
     attempts = []
     def simulated(route):
         assert route.request.method == 'POST'

@@ -384,7 +384,7 @@
 .legacy input[aria-invalid="true"], .legacy select[aria-invalid="true"], .legacy textarea[aria-invalid="true"]{border-color:#C23B2E;}
 .legacy input[aria-invalid="true"]:focus, .legacy select[aria-invalid="true"]:focus, .legacy textarea[aria-invalid="true"]:focus{box-shadow:0 0 0 4px rgba(194,59,46,.16);}
 .legacy textarea{resize:vertical; min-height:110px;}
-.legacy select{appearance:none;
+.legacy select{appearance:none; overflow:hidden; text-overflow:ellipsis;
   -webkit-appearance:none;
   padding-right:2.4em;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"%234B5A6B\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 9l6 6 6-6\"/></svg>");

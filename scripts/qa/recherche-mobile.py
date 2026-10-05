@@ -31,7 +31,9 @@ with sync_playwright() as p:
     pending = []
     context.route('**/search-index.json', lambda route: pending.append(route))
     page = context.new_page()
-    page.goto(base+'/recherche', wait_until='domcontentloaded')
+    # Attendre le montage du composant avant de saisir pendant le chargement.
+    with page.expect_request('**/search-index.json'):
+        page.goto(base+'/recherche', wait_until='domcontentloaded')
     page.locator('#site-search').fill('Alpha')
     expect(page.locator('.journal-count')).to_contain_text('Chargement')
     assert pending
@@ -50,7 +52,7 @@ with sync_playwright() as p:
     context = browser.new_context(service_workers='block', viewport={'width':390,'height':844}, is_mobile=True, has_touch=True)
     page = context.new_page()
     page.goto(base+'/villages', wait_until='networkidle')
-    page.locator('#vl-q').fill('Bedjondo')
+    page.locator('#vl-q').press_sequentially('Bedjondo', delay=60)
     expect(page).to_have_url(re.compile(r'q=Bedjondo'))
     target=page.locator('#vl-resultats a').first.get_attribute('href')
     page.locator('#vl-resultats a').first.tap()
