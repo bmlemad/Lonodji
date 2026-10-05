@@ -146,7 +146,7 @@ export const SECTEURS: Secteur[] = [
   {
     id: "drr", groupe: "urgences", nom: "Réduction des risques de catastrophe", sigle: "DRR / RRC", en: "Disaster risk reduction (DRR)",
     enTexte: "Mapping flood-prone areas with the villages, a contingency plan per canton, an alert network over WhatsApp and community radio.",
-    cadre: { cad: "CAD 740", odd: "ODD 11.5 · 13.1", reference: "cadre de Sendai 2015-2030" }, etat: "nouveau",
+    cadre: { cad: "CAD 43060 · 74020", odd: "ODD 11.5 · 13.1", reference: "cadre de Sendai 2015-2030 ; le code 74010 est retiré de la liste CAD" }, etat: "nouveau",
     thematiques: ["urgences-risques", "environnement-ressources"],
     activites: [
       { texte: "Carte du territoire, base de la cartographie des risques", etat: "fait", href: "/carte" },
@@ -196,7 +196,7 @@ export const SECTEURS: Secteur[] = [
   {
     id: "genre", groupe: "droits", nom: "Égalité femmes-hommes", sigle: "Genre", en: "Gender equality",
     enTexte: "Women’s leadership in the association and the villages; the gender marker applied to every theme.",
-    cadre: { cad: "marqueur genre du CAD", odd: "ODD 5" }, etat: "couvert",
+    cadre: { cad: "CAD 15170, et marqueur genre", odd: "ODD 5" }, etat: "couvert",
     thematiques: ["leadership-feminin"],
     activites: [
       { texte: "Article : le leadership des femmes de Bédjondo (14 septembre 2026)", etat: "fait", href: "/journal/2026-09-14-femmes-bedjondo-leadership-feminin" },
@@ -230,7 +230,7 @@ export const SECTEURS: Secteur[] = [
   {
     id: "diaspora", groupe: "singularites", nom: "Diaspora et compétences", sigle: "Diaspora", en: "Diaspora and skills",
     enTexte: "A skills directory of the diaspora, called on only for what each person offered.",
-    cadre: { cad: "hors nomenclature CAD", odd: "ODD 17" }, etat: "couvert",
+    cadre: { cad: "CAD 15190 · 15150", odd: "ODD 17 · 10.7" }, etat: "couvert",
     thematiques: ["reseau-experts-diaspora"],
     activites: [
       { texte: "Formulaire du répertoire des compétences (0 inscription au 28 septembre 2026)", etat: "fait", href: "/diaspora" },

@@ -27,7 +27,7 @@ export default function Secteurs() {
         em="nos thématiques dans la langue des ONG."
         lead="Les partenaires du développement et de l’aide classent le travail par secteurs — les clusters humanitaires, les codes du Comité d’aide au développement de l’OCDE, les Objectifs de développement durable. Voici les vingt-deux thématiques de l’association rangées dans ces secteurs, avec pour chacun ce qui est déjà publié (un lien vers la page, le document ou le formulaire — pas une activité réalisée sur le terrain) et ce qui n’est encore qu’une piste. Rien n’est chiffré ni financé à ce jour. Cette page est une table de correspondance : le travail s’organise par pôles et thématiques (décision du bureau du 1er octobre 2026)."
         crumbs={[{ label: "Nos actions", href: "/programmes" }, { label: "Secteurs d’intervention" }]}
-        pills={[`${SECTEURS.length} secteurs`, "22 thématiques", `${nouveaux} élargis ou nouveaux le 29 septembre 2026`, `${NON_COUVERTS.length} secteurs non couverts, dits`]}
+        pills={[`${SECTEURS.length} secteurs`, `${Object.values(th).filter((t) => t.kind === "thematique").length} thématiques`, `${nouveaux} élargis ou nouveaux le 29 septembre 2026`, `${NON_COUVERTS.length} secteurs non couverts, dits`]}
       />
       <VuesThematiques active="secteurs" />
       <Stats items={[
