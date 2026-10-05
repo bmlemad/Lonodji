@@ -258,6 +258,9 @@ html.can-install .install-cta{ display:inline-flex; }
 .ct-couches input{ width:18px; height:18px; accent-color:var(--deep); }
 .ct-couches small{ font-weight:500; color:#53625b; }
 .ct-corps{ display:grid; grid-template-columns:minmax(0,1.6fr) minmax(300px,.9fr); gap:16px; align-items:stretch; }
+.ct-fond{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; margin:0 0 16px; padding:14px 16px; border:1px solid var(--line); border-radius:16px; background:var(--paper); }
+.ct-fond p{ flex:1 1 340px; margin:0; font-size:14px; line-height:1.5; color:var(--ink); }
+.ct-fond .button, .ct-fond .text-link{ min-height:44px; display:inline-flex; align-items:center; }
 .ct-carte{ position:relative; min-height:560px; height:70vh; max-height:760px; border:1px solid var(--line); border-radius:24px; overflow:hidden; background:#e9efe4; z-index:0; }
 .ct-carte:focus-visible{ outline:3px solid var(--accent); outline-offset:3px; }
 .ct-chargement{ position:absolute; inset:0; display:grid; place-items:center; margin:0; padding:20px; text-align:center; color:var(--muted); font-size:15px; }

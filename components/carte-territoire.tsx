@@ -84,6 +84,8 @@ export default function CarteTerritoire() {
   const [visibles, setVisibles] = useState({ unites: true, villages: true, equipements: true });
   const [requete, setRequete] = useState("");
   const [pret, setPret] = useState(false);
+  const [fond, setFond] = useState<"chargement" | "disponible" | "indisponible">("chargement");
+  const [tentativeFond, setTentativeFond] = useState(0);
 
   const indexes = useMemo(() => {
     if (!donnees) return null;
@@ -108,13 +110,10 @@ export default function CarteTerritoire() {
       const L = (await import("leaflet")).default as unknown as typeof Leaflet;
       await import("leaflet/dist/leaflet.css");
       if (annule || !boite.current) return;
-      const m = L.map(boite.current, { preferCanvas: true, zoomControl: false, attributionControl: true, scrollWheelZoom: false, tap: true } as Leaflet.MapOptions);
+      const m = L.map(boite.current, { preferCanvas: true, maxZoom: 18, zoomControl: false, attributionControl: true, scrollWheelZoom: false, tap: true } as Leaflet.MapOptions);
       L.control.zoom({ position: "topright", zoomInTitle: "Zoomer", zoomOutTitle: "Dézoomer" }).addTo(m);
-      L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
-        maxZoom: 18, subdomains: "abc",
-        attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · style <a href="https://www.hotosm.org/" target="_blank" rel="noopener">HOT</a> · limites GADM 4.1',
-      }).addTo(m);
       m.attributionControl.setPrefix("");
+      m.attributionControl.addAttribution('Localités et équipements : © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · limites GADM 4.1');
       m.on("focus", () => m.scrollWheelZoom.enable());
       m.on("blur", () => m.scrollWheelZoom.disable());
 
@@ -200,6 +199,38 @@ export default function CarteTerritoire() {
 
   useEffect(() => () => { carte.current?.remove(); carte.current = null; }, []);
 
+  // Le fond externe est indépendant des contours et des points conservés sur le site.
+  // Une panne arrête les demandes de tuiles ; seule une action explicite les relance.
+  useEffect(() => {
+    const m = carte.current; const L = couches.current.L;
+    if (!pret || !m || !L) return;
+    let termine = false;
+    let delai: ReturnType<typeof setTimeout> | undefined;
+    const tuiles = L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
+      maxZoom: 18, subdomains: "abc",
+      attribution: 'Fond : style <a href="https://www.hotosm.org/" target="_blank" rel="noopener">HOT</a> · OpenStreetMap France',
+    });
+    const indisponible = () => {
+      if (termine) return;
+      termine = true;
+      clearTimeout(delai);
+      tuiles.remove();
+      setFond("indisponible");
+    };
+    tuiles.on("loading", () => {
+      clearTimeout(delai);
+      delai = setTimeout(indisponible, 15000);
+    });
+    tuiles.on("tileerror", indisponible);
+    tuiles.on("load", () => {
+      if (termine) return;
+      clearTimeout(delai);
+      setFond("disponible");
+    });
+    tuiles.addTo(m);
+    return () => { termine = true; clearTimeout(delai); tuiles.off(); tuiles.remove(); };
+  }, [pret, tentativeFond]);
+
   // ?village=<unité>/<slug> ou ?unite=<id> (depuis les fiches des villages) : ouvre la fiche à l'arrivée
   const ouvertDepuisAdresse = useRef(false);
   useEffect(() => {
@@ -278,7 +309,7 @@ export default function CarteTerritoire() {
           <input type="search" placeholder="Chercher un village, un canton…" value={requete} onChange={(e) => setRequete(e.target.value)} aria-controls={requete.trim().length >= 2 ? "ct-resultats" : undefined} autoComplete="off" />
         </label>
         {resultats.length ? (
-          <ul className="ct-resultats" id="ct-resultats" role="listbox" aria-label="Résultats">
+          <ul className="ct-resultats" id="ct-resultats" aria-label="Résultats">
             {resultats.map((r) => (
               <li key={r.key}><button type="button" onClick={() => aller(r.coords, r.unit ? 10 : 13, r.unit ? { genre: "unite", unite: r.unit } : r.village ? { genre: "village", village: r.village } : null)}><strong>{r.nom}</strong> <span>{r.type}{r.unite ? ` · ${r.unite}` : ""}</span></button></li>
             ))}
@@ -291,6 +322,15 @@ export default function CarteTerritoire() {
           <label><input type="checkbox" checked={visibles.equipements} onChange={(e) => setVisibles({ ...visibles, equipements: e.target.checked })} /> Équipements <small>{donnees ? donnees.equipements.length : ""}</small></label>
         </fieldset>
       </div>
+
+      {pret ? <div className="ct-fond">
+        <p role="status">{fond === "indisponible"
+          ? "Fond de carte indisponible. Les contours, localités, équipements et fiches restent consultables."
+          : fond === "chargement" ? "Chargement du fond de carte… Les localités et leurs fiches sont déjà accessibles."
+          : "Fond de carte OpenStreetMap France affiché."}</p>
+        {fond === "indisponible" ? <button type="button" className="button secondary" onClick={() => { setFond("chargement"); setTentativeFond((n) => n + 1); }}>Réessayer le fond de carte</button> : null}
+        <Link className="text-link" href="/villages">Consulter la liste des villages <span aria-hidden="true">→</span></Link>
+      </div> : null}
 
       <div className="ct-corps">
         <div className="ct-carte" ref={boite} role="region" aria-label="Carte interactive du territoire bedjond" tabIndex={0}>

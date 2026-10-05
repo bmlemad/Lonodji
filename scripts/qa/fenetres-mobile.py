@@ -33,6 +33,9 @@ with sync_playwright() as p:
             page.locator('.nav-search').tap()
             expect(page.locator('.palette input')).to_be_focused()
             close = page.locator('.palette-fermer')
+            # L'animation d'ouverture réduit momentanément la boîte (scale .985).
+            # Attendre sa fin avant de mesurer, comme tap() attend la stabilité.
+            page.locator('.palette-boite').evaluate("e => Promise.all(e.getAnimations().map(a => a.finished))")
             box = close.bounding_box()
             assert box and box['width'] >= 43.5 and box['height'] >= 43.5, box
             close.tap()
