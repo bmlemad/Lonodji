@@ -23,6 +23,7 @@ const playfair = Playfair_Display({ subsets: ["latin"], display: "swap", variabl
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
   colorScheme: "light",
   themeColor: "#173b2d",
 };
@@ -34,6 +35,7 @@ const themeLabel = `${enLettres(themeCount)} thématiques`;
 export const metadataFr: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "ADEB LONODJI",
+  appleWebApp: { capable: true, title: "LONODJI", statusBarStyle: "black-translucent" },
   title: {
     default: "ADEB LONODJI — Au service de tout le peuple bedjond",
     template: "%s — ADEB LONODJI",
