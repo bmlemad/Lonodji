@@ -24,6 +24,7 @@ fi
 python3 scripts/qa/controle.py "http://127.0.0.1:$PORT" --visuel "$@"
 CODE=$?
 python3 scripts/qa/parcours-revue.py "http://127.0.0.1:$PORT" || CODE=1
+python3 scripts/qa/carte.py "http://127.0.0.1:$PORT" || CODE=1
 python3 scripts/qa/navigation.py "http://127.0.0.1:$PORT" || CODE=1
 python3 scripts/qa/mobile.py "http://127.0.0.1:$PORT" || CODE=1
 python3 scripts/qa/fenetres-mobile.py "http://127.0.0.1:$PORT" || CODE=1

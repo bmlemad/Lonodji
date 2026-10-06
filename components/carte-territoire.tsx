@@ -84,7 +84,7 @@ export default function CarteTerritoire() {
   const [visibles, setVisibles] = useState({ unites: true, villages: true, equipements: true });
   const [requete, setRequete] = useState("");
   const [pret, setPret] = useState(false);
-  const [fond, setFond] = useState<"chargement" | "disponible" | "indisponible">("chargement");
+  const [fond, setFond] = useState<"chargement" | "disponible" | "partiel" | "indisponible">("chargement");
   const [tentativeFond, setTentativeFond] = useState(0);
 
   const indexes = useMemo(() => {
@@ -214,25 +214,34 @@ export default function CarteTerritoire() {
       if (termine) return;
       termine = true;
       clearTimeout(delai);
-      tuiles.remove();
+      // Leaflet termine encore son événement « load » : retirer la couche dans
+      // cet événement ferait accéder sa fin de traitement à une carte déjà détachée.
+      delai = setTimeout(() => { tuiles.remove(); tuiles.off(); }, 0);
       setFond("indisponible");
     };
-    tuiles.on("loading", () => {
-      clearTimeout(delai);
-      delai = setTimeout(indisponible, 15000);
-    });
-    /* Une tuile manquante (zoom élevé, sous-domaine en défaut) ne suffit pas : le fond n'est retiré
-       que si aucune tuile n'a jamais chargé et que plusieurs erreurs se succèdent. */
+    // Compter chaque chargement, y compris après un zoom : un succès ancien ne prouve
+    // pas que le fond demandé maintenant est disponible. Attendre le bilan évite aussi
+    // de retirer les tuiles utiles si les premières réponses sont des erreurs.
     let chargees = 0, erreurs = 0;
-    tuiles.on("tileload", () => { chargees++; });
-    tuiles.on("tileerror", () => { erreurs++; if (!chargees && erreurs >= 4) indisponible(); });
-    tuiles.on("load", () => {
+    const bilan = (incomplet = false) => {
       if (termine) return;
       clearTimeout(delai);
-      if (chargees) setFond("disponible");
+      if (!chargees) indisponible();
+      else setFond(erreurs || incomplet ? "partiel" : "disponible");
+    };
+    tuiles.on("loading", () => {
+      if (termine) return;
+      chargees = 0; erreurs = 0;
+      setFond("chargement");
+      clearTimeout(delai);
+      delai = setTimeout(() => bilan(true), 15000);
     });
+    tuiles.on("tileload", () => { chargees++; });
+    tuiles.on("tileerror", () => { erreurs++; });
+    tuiles.on("load", () => bilan());
     tuiles.addTo(m);
-    return () => { termine = true; clearTimeout(delai); tuiles.off(); tuiles.remove(); };
+    // « remove » détache les événements de la carte ; ne pas effacer ses handlers avant.
+    return () => { termine = true; clearTimeout(delai); tuiles.remove(); tuiles.off(); };
   }, [pret, tentativeFond]);
 
   // ?village=<unité>/<slug> ou ?unite=<id> (depuis les fiches des villages) : ouvre la fiche à l'arrivée
@@ -331,6 +340,7 @@ export default function CarteTerritoire() {
         <p role="status">{fond === "indisponible"
           ? "Fond de carte indisponible. Les contours, localités, équipements et fiches restent consultables."
           : fond === "chargement" ? "Chargement du fond de carte… Les localités et leurs fiches sont déjà accessibles."
+          : fond === "partiel" ? "Fond de carte partiellement chargé. Les contours, localités, équipements et fiches restent consultables."
           : "Fond de carte OpenStreetMap France affiché."}</p>
         {fond === "indisponible" ? <button type="button" className="button secondary" onClick={() => { setFond("chargement"); setTentativeFond((n) => n + 1); }}>Réessayer le fond de carte</button> : null}
         <Link className="text-link" href="/villages">Consulter la liste des villages <span aria-hidden="true">→</span></Link>
