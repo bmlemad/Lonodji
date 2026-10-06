@@ -100,5 +100,6 @@
  "rootAttrs": {},
  "slug": "enquetes",
  "route": "/territoire/enquetes",
- "kind": "dossier"
+ "kind": "dossier",
+ "architectureDate": "2026-10-06"
 }

@@ -52,5 +52,6 @@
  "rootAttrs": {},
  "slug": "genealogie-outil",
  "route": "/patrimoine/genealogie-outil",
- "kind": "dossier"
+ "kind": "dossier",
+ "architectureDate": "2026-10-06"
 }

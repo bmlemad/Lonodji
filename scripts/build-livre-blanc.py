@@ -24,6 +24,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCUMENTS = {
+    "architecture": ("/association/architecture", ROOT / "public" / "organisation" / "architecture-institutionnelle-adeb-lonodji.pdf",
+                     "ADEB LONODJI · Architecture institutionnelle · référentiel du 6 octobre 2026 · lonodji.org/association/architecture"),
     "livre-blanc": ("/odeb/livre-blanc", ROOT / "public" / "odeb" / "livre-blanc-odeb-lonodji-2026.pdf",
                     "ADEB LONODJI · Livre blanc du projet ODEB LONODJI · version de travail n° 1 · lonodji.org/odeb/livre-blanc"),
     "charte": ("/odeb/identite", ROOT / "public" / "odeb" / "charte-identite-odeb-lonodji-2026.pdf",
@@ -41,7 +43,7 @@ def attendre(url: str, delai: float = 60) -> None:
     fin = time.time() + delai
     while time.time() < fin:
         try:
-            with urllib.request.urlopen(url, timeout=3) as r:
+            with urllib.request.build_opener(urllib.request.ProxyHandler({})).open(url, timeout=3) as r:
                 if r.status == 200:
                     return
         except Exception:
@@ -54,9 +56,9 @@ def main() -> None:
 
     if not (ROOT / ".next" / "BUILD_ID").exists():
         raise SystemExit("aucune construction : lancer npm run build d'abord")
-    cles = ["livre-blanc", "charte"] if "--tous" in sys.argv else ["charte"] if "--charte" in sys.argv else ["livre-blanc"]
+    cles = ["architecture"] if "--architecture" in sys.argv else ["livre-blanc", "charte"] if "--tous" in sys.argv else ["charte"] if "--charte" in sys.argv else ["livre-blanc"]
     port = port_libre()
-    serveur = subprocess.Popen(["npx", "next", "start", "-p", str(port)], cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, preexec_fn=os.setsid)
+    serveur = subprocess.Popen(["npx", "next", "start", "-H", "127.0.0.1", "-p", str(port)], cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, preexec_fn=os.setsid)
     try:
         attendre(f"http://127.0.0.1:{port}{DOCUMENTS[cles[0]][0]}")
         with sync_playwright() as p:

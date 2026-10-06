@@ -111,5 +111,6 @@
  "rootAttrs": {},
  "slug": "agriculteurs-eleveurs",
  "route": "/programmes/agriculteurs-eleveurs",
- "kind": "dossier"
+ "kind": "dossier",
+ "architectureDate": "2026-10-06"
 }

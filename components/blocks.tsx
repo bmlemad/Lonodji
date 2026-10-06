@@ -140,7 +140,7 @@ export function ThematiqueRow({ t, pole, partenaires }: { t: Thematique; pole?: 
         ) : null}
         {t.links.length ? <p className="them-links">{t.links.map((l) => <Link key={l.href + l.label} href={l.href}>{l.label}</Link>)}<a href={`/missions/fiche-mission-${t.kind === "cellule" ? "" : "coordination-"}${t.id}.pdf`} download>Fiche de mission (PDF) ↓</a></p> : null}
       </div>
-      <span className={t.filled ? "status filled" : "status"}>{t.filled ? "Pourvu" : "À pourvoir"}{pole ? ` · Pôle ${pole}` : ""}</span>
+      <span className={t.filled ? "status filled" : "status"}>{t.filled ? "Pourvu" : "À pourvoir"}{pole ? ` · Pilier ${pole}` : ""}</span>
     </article>
   );
 }
@@ -209,10 +209,10 @@ export function Timeline({ items }: { items: { year: string; title: string; text
   );
 }
 
-/* Deux vues d'une même grille : les vingt-deux thématiques par pôle (/programmes) ou par secteur, en langue ONG (/secteurs). */
+/* Deux vues d'une même grille : les vingt-deux thématiques par pilier (/programmes) ou par secteur, en langue ONG (/secteurs). */
 export function VuesThematiques({ active }: { active: "poles" | "secteurs" }) {
   const vues = [
-    { id: "poles", href: "/programmes", label: "Par pôle", note: "l’organisation de l’association" },
+    { id: "poles", href: "/programmes", label: "Par pilier", note: "l’organisation de l’association" },
     { id: "secteurs", href: "/secteurs", label: "Par secteur", note: "la langue des ONG et des bailleurs" },
   ] as const;
   return (

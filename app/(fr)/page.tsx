@@ -1,3 +1,4 @@
+import architecture from "@/content/architecture.json";
 import type { Metadata } from "next";
 import Appel from "@/components/appel";
 import { alternatesLangues } from "@/lib/langues";
@@ -18,7 +19,7 @@ import { apercu } from "@/lib/apercu";
 /* Accueil : agir, suivre les actualités, consulter les preuves et retrouver le pays bedjond. */
 const idx0 = getIndex();
 export const metadata: Metadata = {
-  description: `Depuis 1995, ADEB LONODJI est au service de tout le peuple bedjond, au Tchad et dans la diaspora : ${enLettres(idx0.structure.poles.length)} pôles, ${enLettres(thematiqueCount(idx0))} thématiques et ${enLettres(getIndicateurs().contenu.plaidoyers.publies)} dossiers de plaidoyer suivis publiquement.`,
+  description: `Depuis 1995, ADEB LONODJI est au service de tout le peuple bedjond, au Tchad et dans la diaspora : ${enLettres(idx0.structure.poles.length)} piliers, ${enLettres(thematiqueCount(idx0))} thématiques et ${enLettres(getIndicateurs().contenu.plaidoyers.publies)} dossiers de plaidoyer suivis publiquement.`,
   alternates: { canonical: "/", languages: alternatesLangues("/") },
 };
 
@@ -48,7 +49,7 @@ export default function Home() {
     ...["appel", "cloture", "liste", "vote", "resultats"].map((cle) => {
       const e = etape(cle);
       const quoi: Record<string, string> = {
-        appel: "Appel à candidatures pour les vice-présidences de pôle",
+        appel: "Appel à candidatures pour les vice-présidences de pilier",
         cloture: "Clôture des candidatures",
         liste: "Liste des candidats",
         vote: `Vote du collège : ${enLettres(el.poles.length)} vice-présidences`,
@@ -74,7 +75,7 @@ export default function Home() {
             <Link className="acc-bouton" href="/territoire/besoins">Signaler un besoin</Link>
             <Link className="acc-bouton acc-bouton--texte" href="/impact">Voir les avancées</Link>
           </div>
-          <p className="acc-hero-reperes">Depuis 1995 · {poles.length} pôles · {total} thématiques <Link href="/mission">Notre mission</Link></p>
+          <p className="acc-hero-reperes">Depuis 1995 · {architecture.piliers.length} piliers stratégiques · {total} thématiques <Link href="/association/architecture">Notre architecture</Link></p>
         </div>
       </section>
 
@@ -86,7 +87,7 @@ export default function Home() {
         <EnCeMoment etapes={etapes} />
         <div className="acc-actualites">
           {dernier ? <div className="acc-derniere"><small>Dernière actualité</small><ArticleCard a={dernier} /><Link className="acc-lien-direct" href="/journal">Tout le journal</Link></div> : null}
-          <Link className="acc-postes" href="/participer#postes-ouverts"><small>Contribuer</small><strong>{enLettres(postes.length, true)} postes ouverts</strong><span>Coordonner une thématique, seconder son responsable ou présider un pôle.</span><span className="acc-lien-direct">Voir les missions et candidater</span></Link>
+          <Link className="acc-postes" href="/participer#postes-ouverts"><small>Contribuer</small><strong>{enLettres(postes.length, true)} postes ouverts</strong><span>Coordonner une thématique, seconder son responsable ou présider un pilier.</span><span className="acc-lien-direct">Voir les missions et candidater</span></Link>
           {mag ? <a className="acc-mag" href={mag.pdf}><img src={apercu(mag.couverture)} alt="" width={800} height={1131} loading="lazy" decoding="async" /><span><small>Magazine · n° {mag.numero}, {mag.periode}</small><strong>Lonodji : {mag.titre}</strong><span>Télécharger le PDF · {mag.pages} pages · {mag.taille}</span></span></a> : null}
         </div>
       </section>

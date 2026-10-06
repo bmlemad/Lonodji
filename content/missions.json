@@ -1,29 +1,29 @@
 {
- "genere": "2026-10-05",
+ "genere": "2026-10-06",
  "recueil": "/missions/fiches-de-mission-adeb-lonodji.pdf",
  "directions": [
   {
    "pole": "pole-1",
    "roman": "I",
-   "nom": "Mémoire, culture & patrimoine",
+   "nom": "Culture, patrimoine et transmission",
    "pourvue": true,
    "qui": "Dr Bé-Rammaj Miaro-II",
    "pdf": "/missions/fiche-mission-direction-pole-1.pdf",
-   "thematiques": 3
+   "thematiques": 2
   },
   {
    "pole": "pole-2",
    "roman": "II",
-   "nom": "Services essentiels",
+   "nom": "Capital humain et inclusion sociale",
    "pourvue": true,
    "qui": "Franco Joseph Ngarlena",
    "pdf": "/missions/fiche-mission-direction-pole-2.pdf",
-   "thematiques": 6
+   "thematiques": 7
   },
   {
    "pole": "pole-3",
    "roman": "III",
-   "nom": "Gouvernance, paix & plaidoyer",
+   "nom": "Services essentiels et développement territorial",
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-direction-pole-3.pdf",
@@ -32,29 +32,29 @@
   {
    "pole": "pole-4",
    "roman": "IV",
-   "nom": "Numérique & innovation",
+   "nom": "Économie inclusive et prospérité locale",
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-direction-pole-4.pdf",
-   "thematiques": 3
+   "thematiques": 2
   },
   {
    "pole": "pole-5",
    "roman": "V",
-   "nom": "Économie & ressources naturelles",
+   "nom": "Environnement, climat et résilience",
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-direction-pole-5.pdf",
-   "thematiques": 3
+   "thematiques": 2
   },
   {
    "pole": "pole-6",
    "roman": "VI",
-   "nom": "Infrastructures, territoire & risques",
+   "nom": "Gouvernance, paix et partenariats",
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-direction-pole-6.pdf",
-   "thematiques": 3
+   "thematiques": 5
   }
  ],
  "coordinations": [
@@ -63,7 +63,7 @@
    "numero": "01",
    "nom": "Patrimoine historique et archives",
    "pole": "I",
-   "poleNom": "Mémoire, culture & patrimoine",
+   "poleNom": "Culture, patrimoine et transmission",
    "pourvue": true,
    "qui": "Félix Mbété Nangmbatnan",
    "pdf": "/missions/fiche-mission-coordination-memoire-heritage.pdf"
@@ -73,7 +73,7 @@
    "numero": "02",
    "nom": "Culture et patrimoine immatériel",
    "pole": "I",
-   "poleNom": "Mémoire, culture & patrimoine",
+   "poleNom": "Culture, patrimoine et transmission",
    "pourvue": true,
    "qui": "Dr Yaphete Madjiradé",
    "pdf": "/missions/fiche-mission-coordination-culture-patrimoine-vivant.pdf"
@@ -82,28 +82,18 @@
    "id": "savoirs-innovation",
    "numero": "03",
    "nom": "Recherche et enseignement supérieur",
-   "pole": "I",
-   "poleNom": "Mémoire, culture & patrimoine",
+   "pole": "II",
+   "poleNom": "Capital humain et inclusion sociale",
    "pourvue": true,
    "qui": "Sylvain Nomaye, ingénieur de conception en informatique",
    "pdf": "/missions/fiche-mission-coordination-savoirs-innovation.pdf"
-  },
-  {
-   "id": "eau-energie-connectivite",
-   "numero": "07",
-   "nom": "Eau, assainissement et hygiène (WASH)",
-   "pole": "II",
-   "poleNom": "Services essentiels",
-   "pourvue": false,
-   "qui": "à pourvoir",
-   "pdf": "/missions/fiche-mission-coordination-eau-energie-connectivite.pdf"
   },
   {
    "id": "jeunesse-reussite",
    "numero": "09",
    "nom": "Éducation et formation professionnelle",
    "pole": "II",
-   "poleNom": "Services essentiels",
+   "poleNom": "Capital humain et inclusion sociale",
    "pourvue": true,
    "qui": "Bruno Kodjadoum NGARTEL",
    "pdf": "/missions/fiche-mission-coordination-jeunesse-reussite.pdf"
@@ -113,7 +103,7 @@
    "numero": "10",
    "nom": "Égalité des genres et autonomisation des femmes",
    "pole": "II",
-   "poleNom": "Services essentiels",
+   "poleNom": "Capital humain et inclusion sociale",
    "pourvue": true,
    "qui": "Odette Tolmbaye",
    "pdf": "/missions/fiche-mission-coordination-leadership-feminin.pdf"
@@ -123,7 +113,7 @@
    "numero": "11",
    "nom": "Santé et nutrition",
    "pole": "II",
-   "poleNom": "Services essentiels",
+   "poleNom": "Capital humain et inclusion sociale",
    "pourvue": true,
    "qui": "Dr Nestor Alladoumdjim",
    "pdf": "/missions/fiche-mission-coordination-sante-prevention.pdf"
@@ -133,7 +123,7 @@
    "numero": "12",
    "nom": "Protection et inclusion sociale",
    "pole": "II",
-   "poleNom": "Services essentiels",
+   "poleNom": "Capital humain et inclusion sociale",
    "pourvue": true,
    "qui": "Solkem Ngarmbatina",
    "pdf": "/missions/fiche-mission-coordination-solidarite-inclusion.pdf"
@@ -143,87 +133,67 @@
    "numero": "22",
    "nom": "Sport, culture et loisirs",
    "pole": "II",
-   "poleNom": "Services essentiels",
+   "poleNom": "Capital humain et inclusion sociale",
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-coordination-sport-arts-loisirs.pdf"
   },
   {
-   "id": "gouvernance-plaidoyer",
-   "numero": "13",
-   "nom": "Gouvernance et société civile",
-   "pole": "III",
-   "poleNom": "Gouvernance, paix & plaidoyer",
-   "pourvue": true,
-   "qui": "Adoumbé Maoura, président de l’association",
-   "pdf": "/missions/fiche-mission-coordination-gouvernance-plaidoyer.pdf"
-  },
-  {
-   "id": "paix-cohesion",
-   "numero": "14",
-   "nom": "Paix et cohésion sociale",
-   "pole": "III",
-   "poleNom": "Gouvernance, paix & plaidoyer",
-   "pourvue": true,
-   "qui": "Sa Majesté Moulbe Brahim Nadoumbeye, chef de canton de Bébopen",
-   "pdf": "/missions/fiche-mission-coordination-paix-cohesion.pdf"
-  },
-  {
-   "id": "reseau-experts-diaspora",
-   "numero": "15",
-   "nom": "Diaspora et partenariats",
-   "pole": "III",
-   "poleNom": "Gouvernance, paix & plaidoyer",
-   "pourvue": true,
-   "qui": "Edgard Djerassem Djimhotengar",
-   "pdf": "/missions/fiche-mission-coordination-reseau-experts-diaspora.pdf"
-  },
-  {
-   "id": "justice-droits-homme",
-   "numero": "16",
-   "nom": "Droits humains et accès à la justice",
-   "pole": "III",
-   "poleNom": "Gouvernance, paix & plaidoyer",
-   "pourvue": true,
-   "qui": "Dr Eugène Ngartebaye Le Yotha",
-   "pdf": "/missions/fiche-mission-coordination-justice-droits-homme.pdf"
-  },
-  {
-   "id": "transformation-numerique-services",
-   "numero": "17",
-   "nom": "TIC et connectivité",
-   "pole": "IV",
-   "poleNom": "Numérique & innovation",
-   "pourvue": true,
-   "qui": "Bignéro Moïalbéi LE MADANG",
-   "pdf": "/missions/fiche-mission-coordination-transformation-numerique-services.pdf"
-  },
-  {
-   "id": "intelligence-artificielle-donnees",
-   "numero": "18",
-   "nom": "Données et intelligence artificielle",
-   "pole": "IV",
-   "poleNom": "Numérique & innovation",
-   "pourvue": true,
-   "qui": "Bonheur Allahaddje",
-   "pdf": "/missions/fiche-mission-coordination-intelligence-artificielle-donnees.pdf"
-  },
-  {
    "id": "competences-entrepreneuriat-numerique",
    "numero": "19",
    "nom": "Compétences numériques et emploi des jeunes",
-   "pole": "IV",
-   "poleNom": "Numérique & innovation",
+   "pole": "II",
+   "poleNom": "Capital humain et inclusion sociale",
    "pourvue": true,
    "qui": "Rosine Mbaïnodoum",
    "pdf": "/missions/fiche-mission-coordination-competences-entrepreneuriat-numerique.pdf"
   },
   {
+   "id": "eau-energie-connectivite",
+   "numero": "07",
+   "nom": "Eau, assainissement et hygiène (WASH)",
+   "pole": "III",
+   "poleNom": "Services essentiels et développement territorial",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-coordination-eau-energie-connectivite.pdf"
+  },
+  {
+   "id": "desenclavement-urbanisation",
+   "numero": "08",
+   "nom": "Transport et développement urbain",
+   "pole": "III",
+   "poleNom": "Services essentiels et développement territorial",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-coordination-desenclavement-urbanisation.pdf"
+  },
+  {
+   "id": "energie",
+   "numero": "21",
+   "nom": "Énergie durable",
+   "pole": "III",
+   "poleNom": "Services essentiels et développement territorial",
+   "pourvue": false,
+   "qui": "à pourvoir",
+   "pdf": "/missions/fiche-mission-coordination-energie.pdf"
+  },
+  {
+   "id": "transformation-numerique-services",
+   "numero": "17",
+   "nom": "TIC et connectivité",
+   "pole": "III",
+   "poleNom": "Services essentiels et développement territorial",
+   "pourvue": true,
+   "qui": "Bignéro Moïalbéi LE MADANG",
+   "pdf": "/missions/fiche-mission-coordination-transformation-numerique-services.pdf"
+  },
+  {
    "id": "agriculture-elevage-securite-alimentaire",
    "numero": "04",
    "nom": "Agriculture, élevage et sécurité alimentaire",
-   "pole": "V",
-   "poleNom": "Économie & ressources naturelles",
+   "pole": "IV",
+   "poleNom": "Économie inclusive et prospérité locale",
    "pourvue": true,
    "qui": "Olivier Allaramadji Nomaye, ingénieur agroéconomiste",
    "pdf": "/missions/fiche-mission-coordination-agriculture-elevage-securite-alimentaire.pdf"
@@ -232,8 +202,8 @@
    "id": "entrepreneuriat-finance-inclusive",
    "numero": "05",
    "nom": "Moyens d’existence et inclusion financière",
-   "pole": "V",
-   "poleNom": "Économie & ressources naturelles",
+   "pole": "IV",
+   "poleNom": "Économie inclusive et prospérité locale",
    "pourvue": true,
    "qui": "Tamar Neloum DOUMANBE",
    "pdf": "/missions/fiche-mission-coordination-entrepreneuriat-finance-inclusive.pdf"
@@ -243,40 +213,70 @@
    "numero": "06",
    "nom": "Environnement, climat et ressources naturelles",
    "pole": "V",
-   "poleNom": "Économie & ressources naturelles",
+   "poleNom": "Environnement, climat et résilience",
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-coordination-environnement-ressources.pdf"
   },
   {
-   "id": "desenclavement-urbanisation",
-   "numero": "08",
-   "nom": "Transport et développement urbain",
-   "pole": "VI",
-   "poleNom": "Infrastructures, territoire & risques",
-   "pourvue": false,
-   "qui": "à pourvoir",
-   "pdf": "/missions/fiche-mission-coordination-desenclavement-urbanisation.pdf"
-  },
-  {
    "id": "urgences-risques",
    "numero": "20",
    "nom": "Réduction des risques de catastrophe et urgences",
-   "pole": "VI",
-   "poleNom": "Infrastructures, territoire & risques",
+   "pole": "V",
+   "poleNom": "Environnement, climat et résilience",
    "pourvue": false,
    "qui": "à pourvoir",
    "pdf": "/missions/fiche-mission-coordination-urgences-risques.pdf"
   },
   {
-   "id": "energie",
-   "numero": "21",
-   "nom": "Énergie durable",
+   "id": "gouvernance-plaidoyer",
+   "numero": "13",
+   "nom": "Gouvernance et société civile",
    "pole": "VI",
-   "poleNom": "Infrastructures, territoire & risques",
-   "pourvue": false,
-   "qui": "à pourvoir",
-   "pdf": "/missions/fiche-mission-coordination-energie.pdf"
+   "poleNom": "Gouvernance, paix et partenariats",
+   "pourvue": true,
+   "qui": "Adoumbé Maoura, président de l’association",
+   "pdf": "/missions/fiche-mission-coordination-gouvernance-plaidoyer.pdf"
+  },
+  {
+   "id": "paix-cohesion",
+   "numero": "14",
+   "nom": "Paix et cohésion sociale",
+   "pole": "VI",
+   "poleNom": "Gouvernance, paix et partenariats",
+   "pourvue": true,
+   "qui": "Sa Majesté Moulbe Brahim Nadoumbeye, chef de canton de Bébopen",
+   "pdf": "/missions/fiche-mission-coordination-paix-cohesion.pdf"
+  },
+  {
+   "id": "reseau-experts-diaspora",
+   "numero": "15",
+   "nom": "Diaspora et partenariats",
+   "pole": "VI",
+   "poleNom": "Gouvernance, paix et partenariats",
+   "pourvue": true,
+   "qui": "Edgard Djerassem Djimhotengar",
+   "pdf": "/missions/fiche-mission-coordination-reseau-experts-diaspora.pdf"
+  },
+  {
+   "id": "justice-droits-homme",
+   "numero": "16",
+   "nom": "Droits humains et accès à la justice",
+   "pole": "VI",
+   "poleNom": "Gouvernance, paix et partenariats",
+   "pourvue": true,
+   "qui": "Dr Eugène Ngartebaye Le Yotha",
+   "pdf": "/missions/fiche-mission-coordination-justice-droits-homme.pdf"
+  },
+  {
+   "id": "intelligence-artificielle-donnees",
+   "numero": "18",
+   "nom": "Données et intelligence artificielle",
+   "pole": "VI",
+   "poleNom": "Gouvernance, paix et partenariats",
+   "pourvue": true,
+   "qui": "Bonheur Allahaddje",
+   "pdf": "/missions/fiche-mission-coordination-intelligence-artificielle-donnees.pdf"
   }
  ],
  "cellules": [

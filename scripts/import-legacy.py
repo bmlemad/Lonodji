@@ -23,6 +23,8 @@ from copy import copy
 from pathlib import Path
 
 from bs4 import BeautifulSoup, NavigableString, Tag
+from architecture import appliquer_structure, appliquer_page
+STRUCTURE_ARCHITECTURE = None
 
 LEGACY = Path(sys.argv[1] if len(sys.argv) > 1 else "/home/claude/lonodji").resolve()
 ROOT = Path(__file__).resolve().parents[1]
@@ -431,6 +433,8 @@ def parse_page(path: Path):
     data["hasMap"] = any("data-geo" in s["html"] for s in sections)
     data["scripts"] = PAGE_SCRIPTS.get(path.stem, []) if base_dir == "" else []
     data["rootAttrs"] = {k: (v if isinstance(v, str) else " ".join(v)) for k, v in root_attrs.items()}
+    if STRUCTURE_ARCHITECTURE is not None:
+        data = appliquer_page(data, STRUCTURE_ARCHITECTURE)
     return data, forms
 
 
@@ -523,7 +527,7 @@ def structure(soup_poles: BeautifulSoup, base_dir="") -> dict:
             cellules = entry
         else:
             poles.append(entry)
-    return {"poles": poles, "cellules": cellules}
+    return appliquer_structure({"poles": poles, "cellules": cellules})
 
 
 def plaidoyers(soup_plea: BeautifulSoup) -> list:
@@ -2213,8 +2217,9 @@ def main():
     all_forms = {}
     index = {"pages": [], "articles": []}
     # comptes réels (après les nominations), pour comptes_courants()
-    global COMPTES_COURANTS
+    global COMPTES_COURANTS, STRUCTURE_ARCHITECTURE
     s0 = structure(BeautifulSoup(lire_source(LEGACY / "poles.html"), "lxml"))
+    STRUCTURE_ARCHITECTURE = s0
     them0 = [t for pole in s0["poles"] for t in pole["items"]]
     COMPTES_COURANTS = (sum(1 for t in them0 if not t["filled"]), sum(1 for t in them0 if t["filled"]),
                         sum(1 for t in s0["cellules"]["items"] if not t["filled"]), len(them0))

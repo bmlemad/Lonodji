@@ -4,7 +4,7 @@ et le message WhatsApp de chacun dans content/brouillons/postes-ouverts-whatsapp
 
 Les postes sont calculés comme sur la page Participer (lib/postes.ts) : un adjoint pour chacune des sept thématiques
 prioritaires (PRIORITAIRES, lib/organisation.ts), un titulaire pour chaque priorité sans coordonnateur, une
-vice-présidence pour chaque pôle qui n'en a pas. Un poste pourvu disparaît au prochain lancement ; son visuel est retiré.
+vice-présidence pour chaque pilier qui n'en a pas. Un poste pourvu disparaît au prochain lancement ; son visuel est retiré.
 
     python3 scripts/build-postes.py
 """
@@ -60,9 +60,9 @@ def postes() -> list[dict]:
                 "cle": f"{genre}-{t['number']}", "genre": genre,
                 "eyebrow": f"Poste ouvert · thématique prioritaire {t['number']}",
                 "role": "Coordonnateur ou coordonnatrice" if genre == "titulaire" else "Adjoint ou adjointe",
-                "nom": t["name"], "pole": f"Pôle {p['roman']} · {p['name']}",
+                "nom": t["name"], "pole": f"Pilier {p['roman']} · {p['name']}",
                 "fiche": f"/missions/fiche-mission-coordination-{t['id']}.pdf",
-                "message": f"ADEB LONODJI cherche {role} pour la thématique prioritaire « {t['number']}. {t['name']} » (pôle {p['roman']}). Bénévole, au Tchad ou dans la diaspora. La fiche de mission et le formulaire : {SITE}{q}#contact — ou par WhatsApp au {TELEPHONE}.",
+                "message": f"ADEB LONODJI cherche {role} pour la thématique prioritaire « {t['number']}. {t['name']} » (pilier {p['roman']}). Bénévole, au Tchad ou dans la diaspora. La fiche de mission et le formulaire : {SITE}{q}#contact — ou par WhatsApp au {TELEPHONE}.",
             })
     el = json.loads((ROOT / "content" / "election.json").read_text("utf8"))
     cal = {e["cle"]: date_fr(e["date"]) for e in el["calendrier"]}
@@ -73,11 +73,11 @@ def postes() -> list[dict]:
         q = f"/participer?direction={p['roman']}&coordo=1"
         out.append({
             "cle": f"vice-presidence-{p['roman']}", "genre": "vice-presidence",
-            "eyebrow": "Poste ouvert · élection", "role": f"Vice-présidence du pôle {p['roman']}",
-            "nom": p["name"], "pole": f"Pôle {p['roman']} · vice-présidence déléguée, élue",
+            "eyebrow": "Poste ouvert · élection", "role": f"Vice-présidence du pilier {p['roman']}",
+            "nom": p["name"], "pole": f"Pilier {p['roman']} · vice-présidence déléguée, élue",
             "fiche": f"/missions/fiche-mission-direction-{p['id']}.pdf",
-            "lignes": [f"Pôle {p['roman']} · vice-présidence déléguée, élue", f"Candidatures jusqu’au {cal['cloture']}", f"Vote le {cal['vote']} · bénévole"],
-            "message": f"ADEB LONODJI élira la vice-présidente ou le vice-président délégué du pôle {p['roman']}, « {p['name']} ». Candidatures jusqu’au {cal['cloture']}, vote le {cal['vote']} ; au Tchad comme dans la diaspora. Le formulaire : {SITE}{q}#contact — la procédure : {SITE}/association/election-vice-presidences — ou par WhatsApp au {TELEPHONE}.",
+            "lignes": [f"Pilier {p['roman']} · vice-présidence déléguée, élue", f"Candidatures jusqu’au {cal['cloture']}", f"Vote le {cal['vote']} · bénévole"],
+            "message": f"ADEB LONODJI élira la vice-présidente ou le vice-président délégué du pilier {p['roman']}, « {p['name']} ». Candidatures jusqu’au {cal['cloture']}, vote le {cal['vote']} ; au Tchad comme dans la diaspora. Le formulaire : {SITE}{q}#contact — la procédure : {SITE}/association/election-vice-presidences — ou par WhatsApp au {TELEPHONE}.",
         })
     return out
 
@@ -116,7 +116,7 @@ def main() -> None:
             cal = {e["cle"]: date_fr(e["date"]) for e in el["calendrier"]}
             n = len(vps)
             titre = f"{['', 'Une', 'Deux', 'Trois', 'Quatre', 'Cinq'][n]} vice-présidence{'s' if n > 1 else ''}<br><em>à élire</em>"
-            lignes = [f"{p['role'].replace('Vice-présidence du pôle', 'Pôle')} · {p['nom']}" for p in vps] + [f"Candidatures jusqu’au {cal['cloture']}"]
+            lignes = [f"{p['role'].replace('Vice-présidence du pilier', 'Pilier')} · {p['nom']}" for p in vps] + [f"Candidatures jusqu’au {cal['cloture']}"]
             html = _v.TEMPLATE.format(mois=mois, fonts=fonts, logo=_v.LOGO, eyebrow=_v.esc(f"Élection · vote le {cal['vote']}"),
                                       titre=titre, lignes="".join(f"<li>{_v.esc(l)}</li>" for l in lignes), url="lonodji.org/participer",
                                       size=76, classe="", odeb="")
@@ -136,7 +136,7 @@ def main() -> None:
                     png.unlink(missing_ok=True)
                     continue
                 titre = f"Coordonnateur ou coordonnatrice<br><em>{_v.esc(t['name'])}</em>"
-                lignes = [f"Pôle {pole_['roman']} · {pole_['name']}", "Bénévole · au Tchad ou dans la diaspora", "Fiche de mission et candidature en ligne"]
+                lignes = [f"Pilier {pole_['roman']} · {pole_['name']}", "Bénévole · au Tchad ou dans la diaspora", "Fiche de mission et candidature en ligne"]
                 html = _v.TEMPLATE.format(mois=mois, fonts=fonts, logo=_v.LOGO, eyebrow=_v.esc(f"Poste ouvert · thématique {t['number']}"),
                                           titre=titre, lignes="".join(f"<li>{_v.esc(l)}</li>" for l in lignes), url="lonodji.org/participer",
                                           size=64, classe="", odeb="")

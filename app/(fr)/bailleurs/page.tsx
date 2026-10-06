@@ -56,7 +56,7 @@ export default function Bailleurs() {
     f, items: principaux.filter((p) => p.famille === f).sort((a, b) => ORDRE_PORTEE.indexOf(a.portee) - ORDRE_PORTEE.indexOf(b.portee)),
   })).filter((g) => g.items.length);
   const { poles, cellules } = getIndex().structure;
-  const groupesActions = [...poles.map((pl) => ({ id: pl.id, titre: `Pôle ${pl.roman} · ${pl.name}`, items: pl.items })), ...(cellules ? [{ id: "cellules", titre: cellules.name, items: cellules.items.filter((c) => c.id !== "cellule-financement-ressources") }] : [])];
+  const groupesActions = [...poles.map((pl) => ({ id: pl.id, titre: `Pilier ${pl.roman} · ${pl.name}`, items: pl.items })), ...(cellules ? [{ id: "cellules", titre: cellules.name, items: cellules.items.filter((c) => c.id !== "cellule-financement-ressources") }] : [])];
   const toutesActions = groupesActions.flatMap((g) => g.items);
   const sansProgramme = toutesActions.filter((t) => !programmesUtilesDe(t.id).length);
   const projets = getProjets().projets.filter((pj) => ALIGNEMENT_PROJETS[pj.slug]);
@@ -125,7 +125,7 @@ export default function Bailleurs() {
       </section>
 
       <section className="hub-section" id="par-action">
-        <SectionHead eyebrow="Nos actions" title="Pour chaque thématique," em="les programmes qui la financent." text={`Nos ${toutesActions.filter((t) => t.kind !== "cellule").length} thématiques et ${(() => { const n = toutesActions.filter((t) => t.kind === "cellule").length; return n > 1 ? `${n} cellules transversales` : `${n} cellule transversale`; })()}, pôle par pôle, avec les programmes en cours ou en préparation qui financent le même domaine — du plus proche de Bédjondo au plus lointain. ${sansProgramme.length ? `${sansProgramme.length} n’en ont aucun : ${sansProgramme.map((t) => t.name).join(", ")}. Ce sont des angles morts des bailleurs, que l’association devra financer autrement.` : ""}`} />
+        <SectionHead eyebrow="Nos actions" title="Pour chaque thématique," em="les programmes qui la financent." text={`Nos ${toutesActions.filter((t) => t.kind !== "cellule").length} thématiques et ${(() => { const n = toutesActions.filter((t) => t.kind === "cellule").length; return n > 1 ? `${n} cellules transversales` : `${n} cellule transversale`; })()}, pilier par pilier, avec les programmes en cours ou en préparation qui financent le même domaine — du plus proche de Bédjondo au plus lointain. ${sansProgramme.length ? `${sansProgramme.length} n’en ont aucun : ${sansProgramme.map((t) => t.name).join(", ")}. Ce sont des angles morts des bailleurs, que l’association devra financer autrement.` : ""}`} />
         <div className="bl-actions">
           {groupesActions.map((g) => (
             <div className="bl-actions-pole" key={g.id}>

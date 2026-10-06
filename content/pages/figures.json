@@ -45,7 +45,7 @@
    "alt": false,
    "cls": "",
    "tag": "section",
-   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Recherche &amp; transmission</div>\n<h2>Chercheurs et transmetteurs de la mémoire bedjond</h2>\n<div class=\"pole-grid\">\n<article class=\"info-card\">\n<h3>Djarangar Djita Issa</h3>\n<p>Professeur titulaire des universités, Palme du CAMES. Auteur du travail de référence sur la langue bedjond, à l’origine de la désignation du peuple d’origine de Bédjondo comme <strong>peuple bedjond</strong> — la source citée sur l’ensemble du site pour cette désignation.</p>\n</article>\n<article class=\"info-card\">\n<h3>Bé-Rammaj Miaro-II</h3>\n<p>Historien, auteur (L’Harmattan) de travaux sur l’histoire des Sara du Tchad, cités dans la <a href=\"/patrimoine/base-de-recherche\">base de recherche</a> du site. Il dirige aujourd’hui le pôle I, Mémoire, culture &amp; patrimoine, après avoir coordonné la thématique <a href=\"/programmes#memoire-heritage\">Patrimoine historique et archives</a> jusqu’au 30 septembre 2026.</p>\n</article>\n<article class=\"info-card\">\n<h3>Roger Dinguemrebeye &amp; John M. Keegan</h3>\n<p>Auteurs du Lexique Nangnda, produit dans le cadre du Sara Bagirmi Language Project. John M. Keegan est également l’auteur d’une série d’ouvrages de documentation linguistique sur les langues sara.</p>\n</article>\n</div>\n</div>"
+   "html": "<div class=\"prose\">\n<div class=\"eyebrow\">Recherche &amp; transmission</div>\n<h2>Chercheurs et transmetteurs de la mémoire bedjond</h2>\n<div class=\"pole-grid\">\n<article class=\"info-card\">\n<h3>Djarangar Djita Issa</h3>\n<p>Professeur titulaire des universités, Palme du CAMES. Auteur du travail de référence sur la langue bedjond, à l’origine de la désignation du peuple d’origine de Bédjondo comme <strong>peuple bedjond</strong> — la source citée sur l’ensemble du site pour cette désignation.</p>\n</article>\n<article class=\"info-card\">\n<h3>Bé-Rammaj Miaro-II</h3>\n<p>Historien, auteur (L’Harmattan) de travaux sur l’histoire des Sara du Tchad, cités dans la <a href=\"/patrimoine/base-de-recherche\">base de recherche</a> du site. Il dirige aujourd’hui le pilier I, Culture, patrimoine et transmission, après avoir coordonné la thématique <a href=\"/programmes#memoire-heritage\">Patrimoine historique et archives</a> jusqu’au 30 septembre 2026.</p>\n</article>\n<article class=\"info-card\">\n<h3>Roger Dinguemrebeye &amp; John M. Keegan</h3>\n<p>Auteurs du Lexique Nangnda, produit dans le cadre du Sara Bagirmi Language Project. John M. Keegan est également l’auteur d’une série d’ouvrages de documentation linguistique sur les langues sara.</p>\n</article>\n</div>\n</div>"
   },
   {
    "id": "",
@@ -71,5 +71,6 @@
  "rootAttrs": {},
  "slug": "figures",
  "route": "/histoire",
- "kind": "hub"
+ "kind": "hub",
+ "architectureDate": "2026-10-06"
 }

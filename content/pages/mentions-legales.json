@@ -48,5 +48,6 @@
  "rootAttrs": {},
  "slug": "mentions-legales",
  "route": "/mentions-legales",
- "kind": "hub"
+ "kind": "hub",
+ "architectureDate": "2026-10-06"
 }

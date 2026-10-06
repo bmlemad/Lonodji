@@ -92,5 +92,6 @@
  "rootAttrs": {},
  "slug": "plaidoyers",
  "route": "/actions",
- "kind": "hub"
+ "kind": "hub",
+ "architectureDate": "2026-10-06"
 }

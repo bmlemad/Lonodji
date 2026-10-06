@@ -51,7 +51,7 @@ export default function Patrimoine() {
       </section>
 
       <section className="hub-section">
-        <p className="lg-footnote">Le patrimoine est porté par le Pôle I, <Link href="/programmes#pole-1">Mémoire, culture & patrimoine</Link>, et par le programme <Link href="/odeb/programmes/memoire-patrimoine">Mémoire et Patrimoine</Link> du projet ODEB.</p>
+        <p className="lg-footnote">Le patrimoine est porté par le Pilier I, <Link href="/programmes#pole-1">Mémoire, culture & patrimoine</Link>, et par le programme <Link href="/odeb/programmes/memoire-patrimoine">Mémoire et Patrimoine</Link> du projet ODEB.</p>
         <Partager route="/patrimoine" titre="Patrimoine — la mémoire du pays bedjond" texte="Histoire, lieux sacrés, généalogies, témoignages, la langue nangnda et la bibliothèque numérique." />
       </section>
     </main>

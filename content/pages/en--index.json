@@ -37,7 +37,7 @@
    "alt": false,
    "cls": "",
    "tag": "section",
-   "html": "<div class=\"section-head\"><div><div class=\"eyebrow\">What we do</div><h2>Six pillars</h2></div></div>\n<div class=\"pole-grid\">\n<article class=\"pole-card\"><h3>I — Memory, Culture &amp; Heritage</h3><p>Memory and heritage, living culture, research and knowledge: documenting oral tradition, the Bedjond language, the Kul iron currency, and building a Bedjond and Sara library.</p></article>\n<article class=\"pole-card\"><h3>II — Essential Services · V — Economy &amp; Natural Resources · VI — Infrastructure, Territory &amp; Risks</h3><p>Agriculture, livestock and food security; entrepreneurship and inclusive finance; environment and climate; water, sanitation and hygiene; energy, roads and urban planning; education, youth and training; women’s empowerment; health and nutrition; social protection and children; emergencies and risks.</p></article>\n<article class=\"pole-card\"><h3>III — Governance, Peace &amp; Advocacy</h3><p>Governance and advocacy, peace and cohesion, the network of experts and the diaspora, justice and human rights.</p></article>\n<article class=\"pole-card\"><h3>IV — Digital &amp; Innovation</h3><p>Connectivity and digital services, artificial intelligence and data, digital skills and entrepreneurship.</p></article>\n</div>"
+   "html": "<div class=\"section-head\"><div><div class=\"eyebrow\">What we do</div><h2>Six pillars</h2></div></div>\n<div class=\"pole-grid\">\n<article class=\"pole-card\"><h3>I — Culture, heritage and transmission</h3><p>Memory and heritage, living culture, research and knowledge: documenting oral tradition, the Bedjond language, the Kul iron currency, and building a Bedjond and Sara library.</p></article>\n<article class=\"pole-card\"><h3>II — Human capital and social inclusion · V — Inclusive economy and local prosperity · VI — Essential services and territorial development</h3><p>Agriculture, livestock and food security; entrepreneurship and inclusive finance; environment and climate; water, sanitation and hygiene; energy, roads and urban planning; education, youth and training; women’s empowerment; health and nutrition; social protection and children; emergencies and risks.</p></article>\n<article class=\"pole-card\"><h3>III — Governance, peace and partnerships</h3><p>Governance and advocacy, peace and cohesion, the network of experts and the diaspora, justice and human rights.</p></article>\n<article class=\"pole-card\"><h3>IV — Digital and innovation — cross-cutting tools</h3><p>Connectivity and digital services, artificial intelligence and data, digital skills and entrepreneurship.</p></article>\n</div>"
   },
   {
    "id": "",
@@ -61,5 +61,6 @@
  "rootAttrs": {},
  "slug": "en/index",
  "route": "/en/index",
- "kind": "en"
+ "kind": "en",
+ "architectureDate": "2026-10-06"
 }

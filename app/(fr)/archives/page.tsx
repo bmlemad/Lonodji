@@ -36,7 +36,7 @@ export default function Archives() {
       <section className="hub-section">
         <SectionHead eyebrow="Ce qui a été repris" title="Page par page," em="sans réécrire l’histoire." text="Les dates, les faits et les corrections publiées dans la première version sont conservés tels quels. Les articles gardent les intitulés en vigueur à leur date ; le journal des corrections garde chaque entrée." />
         <div className="link-list">
-          <Link href="/programmes"><small>Nos actions</small><strong>6 pôles, 22 thématiques, 2 cellules</strong><span>Avec leurs coordonnateurs, leurs objectifs et les ODD associés.</span></Link>
+          <Link href="/programmes"><small>Nos actions</small><strong>6 piliers, 22 thématiques, 2 cellules</strong><span>Avec leurs coordonnateurs, leurs objectifs et les ODD associés.</span></Link>
           <Link href="/actions"><small>Plaidoyers</small><strong>7 plaidoyers et la note à la commune</strong><span>Destinataires, état d’envoi, cadre de résultats à 22 indicateurs.</span></Link>
           <Link href="/journal"><small>Journal</small><strong>36 articles repris ({idx.articles.length} aujourd’hui)</strong><span>Vie de l’association, histoire, plaidoyers, lettre d’information.</span></Link>
           <Link href="/dossiers"><small>Dossiers</small><strong>{dossiers} dossiers de fond</strong><span>Du diagnostic territorial aux projets à l’étude.</span></Link>
@@ -57,7 +57,7 @@ export default function Archives() {
       <section className="hub-section">
         <SectionHead eyebrow="Sources extérieures" title="Ce que d’autres" em="disent de nous." text="Deux traces publiques, conservées avec leur statut : elles ne remplacent pas les archives de l’association." />
         <div className="detail-grid">
-          <article><h3>Domain Arrivals · 25 septembre 2026</h3><p>Une fiche d’indexation décrit lonodji.org comme le site d’une association tchadienne réunissant des habitants de Bédjondo et la diaspora autour du patrimoine bedjond, du développement communautaire et du plaidoyer public — avec la reconnaissance de 1995, quatre pôles, dix-neuf thématiques et huit appels publics. Exact.</p><span className="status">Trace externe</span></article>
+          <article><h3>Domain Arrivals · 25 septembre 2026</h3><p>Une fiche d’indexation décrit lonodji.org comme le site d’une association tchadienne réunissant des habitants de Bédjondo et la diaspora autour du patrimoine bedjond, du développement communautaire et du plaidoyer public — avec la reconnaissance de 1995, quatre piliers, dix-neuf thématiques et huit appels publics. Exact.</p><span className="status">Trace externe</span></article>
           <article><h3>Talou-Choufou Magazine · 2 mai 2021</h3><p>Publication consacrée à Alladoum Désiré Nandogongar, présenté comme membre fondateur, qui rapporte des initiatives de l’association dans les années 2000 : forums, verger scolaire, matériel didactique, tables-bancs, adduction d’eau. Pistes à confirmer par des pièces originales.</p><a className="text-link" href="https://talouchoufoumagazine.wordpress.com/2021/05/02/actu-alladoum-desire-nandogongar-le-premier-tchadien-a-occuper-le-poste-de-superintendant-des-operations-directeur-usine-dans-le-monde-petrolier-depuis-2020/" target="_blank" rel="noopener noreferrer">Consulter la source ↗</a></article>
         </div>
       </section>

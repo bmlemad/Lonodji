@@ -65,7 +65,7 @@
    "route": "/projets/complexe-sportif",
    "kind": "dossier",
    "title": "Un complexe de formation sportive pour les jeunes de Bédjondo",
-   "eyebrow": "Pôle II · Éducation et formation professionnelle · Projet à l’étude",
+   "eyebrow": "Pilier II · Éducation et formation professionnelle · Projet à l’étude",
    "lede": "Une école de football, du basket, du judo, du karaté et de l’athlétisme, dans un même lieu, pour les filles et les garçons de Bédjondo et des cantons. Rien n’est encore construit ni financé : voici ce que nous proposons, dans quel ordre, et ce que chacun peut faire dès maintenant.",
    "description": "Football, basket, judo, karaté, athlétisme : le projet par étapes d’un complexe de formation sportive à Bédjondo. Rien n’est encore construit ni financé.",
    "parent": "Nos actions",
@@ -101,7 +101,7 @@
    "route": "/projets/drones-innovation",
    "kind": "dossier",
    "title": "Drones & innovation pour les secteurs stratégiques",
-   "eyebrow": "Numérique & innovation",
+   "eyebrow": "Numérique et innovation — leviers transversaux",
    "lede": "Aucun drone ne survole aujourd’hui Bédjondo. Cette page est une proposition, pas un bilan : comment cet outil pourrait servir l’agriculture, la cartographie, la santé, la protection du patrimoine et la formation des jeunes — cinq secteurs déjà ouverts sur ce site.",
    "description": "Une proposition d’ADEB LONODJI : des drones pour l’agriculture, la cartographie, la santé, le patrimoine et la formation numérique à Bédjondo.",
    "parent": "Nos actions",
@@ -162,7 +162,7 @@
    "kind": "dossier",
    "title": "Événements",
    "eyebrow": "Agenda communautaire",
-   "lede": "Réunions de pôles, assemblées générales et activités communautaires à venir.",
+   "lede": "Réunions de piliers, assemblées générales et activités communautaires à venir.",
    "description": "Assemblées, lancements de thématiques et rencontres d’ADEB LONODJI, à Bédjondo, à N’Djamena et dans la diaspora : toutes les dates restent à fixer.",
    "parent": "Actualités",
    "words": 160,
@@ -340,10 +340,10 @@
    "slug": "poles",
    "route": "/programmes",
    "kind": "hub",
-   "title": "Six pôles, vingt-deux thématiques",
+   "title": "Six piliers, vingt-deux thématiques",
    "eyebrow": "Les Chantiers ADEB LONODJI",
-   "lede": "Les Chantiers ADEB LONODJI sont les projets de réflexion, de recherche et d’action portés par l’association. Pour les organiser, ADEB LONODJI structure son action autour de vingt-deux thématiques réparties en six pôles, appuyées par deux cellules transversales — dont un pôle spécialisé Numérique & innovation, créé en septembre 2026. Chaque thématique est animée par un coordonnateur. Cette organisation en pôles est notre méthodologie de travail en équipe : elle permet une bonne coordination des actions entre les thématiques, au lieu d’initiatives dispersées. Chaque thématique est en outre mise en regard des Objectifs de développement durable adoptés par les Nations unies, pour que nos partenaires situent immédiatement notre travail.",
-   "description": "Six pôles, vingt-deux thématiques et deux cellules transversales pour organiser l’action d’ADEB LONODJI.",
+   "lede": "Les Chantiers ADEB LONODJI sont les projets de réflexion, de recherche et d’action portés par l’association. Pour les organiser, ADEB LONODJI structure son action autour de vingt-deux thématiques réparties en six piliers, appuyées par deux cellules transversales — le numérique et l’innovation contribuent à plusieurs piliers. Chaque thématique est animée par un coordonnateur. Cette organisation en piliers est notre méthodologie de travail en équipe : elle permet une bonne coordination des actions entre les thématiques, au lieu d’initiatives dispersées. Chaque thématique est en outre mise en regard des Objectifs de développement durable adoptés par les Nations unies, pour que nos partenaires situent immédiatement notre travail.",
+   "description": "Six piliers, vingt-deux thématiques et deux cellules transversales pour organiser l’action d’ADEB LONODJI.",
    "parent": "Accueil",
    "words": 6825,
    "hasMap": false
@@ -462,7 +462,7 @@
    "kind": "hub",
    "title": "Le journal",
    "eyebrow": "Vie de l’association",
-   "lede": "Le journal des décisions, réunions et actions menées par ADEB LONODJI et ses pôles.",
+   "lede": "Le journal des décisions, réunions et actions menées par ADEB LONODJI et ses piliers.",
    "description": "Le journal d’ADEB LONODJI : annonces de l’association, travaux sur le peuple bedjond, plaidoyers et comptes rendus de terrain au Mandoul Occidental.",
    "parent": "Accueil",
    "words": 1762,
@@ -1405,9 +1405,9 @@
    {
     "id": "pole-1",
     "roman": "I",
-    "eyebrow": "Pôle I",
-    "name": "Mémoire, culture & patrimoine",
-    "intro": "",
+    "eyebrow": "Pilier stratégique I",
+    "name": "Culture, patrimoine et transmission",
+    "intro": "Préserver, valoriser et transmettre l’héritage culturel, historique et linguistique du peuple bedjond.",
     "items": [
      {
       "id": "memoire-heritage",
@@ -1518,7 +1518,22 @@
         "href": "/participer?theme=02#contact"
        }
       ]
-     },
+     }
+    ],
+    "direction": {
+     "label": "Vice-président délégué ou vice-présidente déléguée du pilier",
+     "rang": "vice-présidence déléguée",
+     "name": "Dr Bé-Rammaj Miaro-II",
+     "filled": true
+    }
+   },
+   {
+    "id": "pole-2",
+    "roman": "II",
+    "eyebrow": "Pilier stratégique II",
+    "name": "Capital humain et inclusion sociale",
+    "intro": "Promouvoir le bien-être, l’éducation, l’égalité des chances et la cohésion sociale.",
+    "items": [
      {
       "id": "savoirs-innovation",
       "number": "03",
@@ -1587,70 +1602,6 @@
        {
         "label": "Rejoindre cette thématique →",
         "href": "/participer?theme=03#contact"
-       }
-      ]
-     }
-    ],
-    "direction": {
-     "label": "Vice-président délégué ou vice-présidente déléguée du pôle",
-     "rang": "vice-présidence déléguée",
-     "name": "Dr Bé-Rammaj Miaro-II",
-     "filled": true
-    }
-   },
-   {
-    "id": "pole-2",
-    "roman": "II",
-    "eyebrow": "Pôle II",
-    "name": "Services essentiels",
-    "intro": "",
-    "items": [
-     {
-      "id": "eau-energie-connectivite",
-      "number": "07",
-      "kind": "thematique",
-      "name": "Eau, assainissement et hygiène (WASH)",
-      "status": "À pourvoir",
-      "filled": false,
-      "coordinator": "à pourvoir",
-      "coordinatorLabel": "Coordonnateur",
-      "description": "Eau potable, assainissement et hygiène — ce que les ONG appellent EAH (WASH) : l’eau dans chaque quartier, les latrines, les eaux usées et les déchets, le lavage des mains à l’école et au marché, en lien avec les écoles et les centres de santé. La thématique porte le <a href=\"/journal/2026-09-17-plaidoyer-eau-potable-bedjondo\">plaidoyer pour l’eau potable</a>. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique devient <strong>Eau, assainissement et hygiène (WASH)</strong>. L’énergie rejoint la thématique 08, Énergie, routes & urbanisme, et la connexion internet la thématique 17, TIC et connectivité.",
-      "descriptionText": "Eau potable, assainissement et hygiène — ce que les ONG appellent EAH (WASH) : l’eau dans chaque quartier, les latrines, les eaux usées et les déchets, le lavage des mains à l’école et au marché, en lien avec les écoles et les centres de santé. La thématique porte le plaidoyer pour l’eau potable . Mise à jour du 29 septembre 2026 : la thématique devient Eau, assainissement et hygiène (WASH) . L’énergie rejoint la thématique 08, Énergie, routes & urbanisme, et la connexion internet la thématique 17, TIC et connectivité.",
-      "tags": [
-       "Eau potable",
-       "Assainissement",
-       "Hygiène"
-      ],
-      "odd": [
-       {
-        "num": "6",
-        "name": "Eau & assainissement",
-        "cible": "6.1 / 6.2",
-        "title": "ODD 6 — Eau propre et assainissement | cible 6.1 — accès universel à l’eau potable · cible 6.2 — assainissement et hygiène",
-        "accent": "#26BDE2",
-        "ink": "#10181f"
-       }
-      ],
-      "links": [
-       {
-        "label": "Environnement, climat et ressources naturelles →",
-        "href": "/programmes#environnement-ressources"
-       },
-       {
-        "label": "Santé et nutrition →",
-        "href": "/programmes#sante-prevention"
-       },
-       {
-        "label": "Énergie durable →",
-        "href": "/programmes#energie"
-       },
-       {
-        "label": "Suivi : 2 problématiques · 1 plaidoyer →",
-        "href": "/impact#eau-energie-connectivite"
-       },
-       {
-        "label": "Rejoindre cette thématique →",
-        "href": "/participer?theme=07#contact"
        }
       ]
      },
@@ -1951,10 +1902,67 @@
         "href": "/participer?theme=22#contact"
        }
       ]
+     },
+     {
+      "id": "competences-entrepreneuriat-numerique",
+      "number": "19",
+      "kind": "thematique",
+      "name": "Compétences numériques et emploi des jeunes",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Rosine Mbaïnodoum",
+      "coordinatorLabel": "Coordonnatrice",
+      "description": "Former les jeunes de Bédjondo aux métiers du numérique et leur ouvrir des débouchés sur place : initiation à l’informatique, au code, au design et aux outils bureautiques ; académie numérique et parrainage par les professionnels bedjond du secteur, au Tchad comme dans la diaspora ; appui aux jeunes qui veulent vivre du numérique — freelance, services en ligne, petites entreprises tech — en lien avec la thématique <a href=\"#entrepreneuriat-finance-inclusive\">Moyens d’existence et inclusion financière</a>. Une réponse concrète à l’exode des jeunes évoqué par la thématique <a href=\"#jeunesse-reussite\">Éducation et formation professionnelle</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. <strong>Mise à jour du 30 septembre 2026 :</strong> la coordination de cette thématique est confiée à Rosine Mbaïnodoum, qui succède à Bignéro Moïalbéi LE MADANG.",
+      "descriptionText": "Former les jeunes de Bédjondo aux métiers du numérique et leur ouvrir des débouchés sur place : initiation à l’informatique, au code, au design et aux outils bureautiques ; académie numérique et parrainage par les professionnels bedjond du secteur, au Tchad comme dans la diaspora ; appui aux jeunes qui veulent vivre du numérique — freelance, services en ligne, petites entreprises tech — en lien avec la thématique Moyens d’existence et inclusion financière . Une réponse concrète à l’exode des jeunes évoqué par la thématique Éducation et formation professionnelle . Mise à jour du 28 septembre 2026 : les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. Mise à jour du 30 septembre 2026 : la coordination de cette thématique est confiée à Rosine Mbaïnodoum, qui succède à Bignéro Moïalbéi LE MADANG.",
+      "tags": [
+       "Formation",
+       "Emploi",
+       "Startups"
+      ],
+      "odd": [
+       {
+        "num": "4",
+        "name": "Éducation",
+        "cible": "4.4",
+        "title": "ODD 4 — Éducation de qualité | cible 4.4 — compétences pour l’emploi et l’entrepreneuriat",
+        "accent": "#C5192D",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "8",
+        "name": "Travail décent",
+        "cible": "8.6",
+        "title": "ODD 8 — Travail décent et croissance économique | cible 8.6 — jeunes sans emploi ni formation",
+        "accent": "#A21942",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "9",
+        "name": "Infrastructures",
+        "cible": "9.c",
+        "title": "ODD 9 — Industrie, innovation et infrastructure | cible 9.c — accès à internet",
+        "accent": "#FD6925",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Éducation et formation professionnelle →",
+        "href": "/programmes#jeunesse-reussite"
+       },
+       {
+        "label": "Diaspora et partenariats →",
+        "href": "/programmes#reseau-experts-diaspora"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=19#contact"
+       }
+      ]
      }
     ],
     "direction": {
-     "label": "Vice-président délégué ou vice-présidente déléguée du pôle",
+     "label": "Vice-président délégué ou vice-présidente déléguée du pilier",
      "rang": "vice-présidence déléguée",
      "name": "Franco Joseph Ngarlena",
      "filled": true
@@ -1963,9 +1971,499 @@
    {
     "id": "pole-3",
     "roman": "III",
-    "eyebrow": "Pôle III",
-    "name": "Gouvernance, paix & plaidoyer",
-    "intro": "",
+    "eyebrow": "Pilier stratégique III",
+    "name": "Services essentiels et développement territorial",
+    "intro": "Améliorer les conditions de vie et l’accès équitable aux services de base.",
+    "items": [
+     {
+      "id": "eau-energie-connectivite",
+      "number": "07",
+      "kind": "thematique",
+      "name": "Eau, assainissement et hygiène (WASH)",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Eau potable, assainissement et hygiène — ce que les ONG appellent EAH (WASH) : l’eau dans chaque quartier, les latrines, les eaux usées et les déchets, le lavage des mains à l’école et au marché, en lien avec les écoles et les centres de santé. La thématique porte le <a href=\"/journal/2026-09-17-plaidoyer-eau-potable-bedjondo\">plaidoyer pour l’eau potable</a>. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique devient <strong>Eau, assainissement et hygiène (WASH)</strong>. L’énergie rejoint la thématique 08, Énergie, routes & urbanisme, et la connexion internet la thématique 17, TIC et connectivité.",
+      "descriptionText": "Eau potable, assainissement et hygiène — ce que les ONG appellent EAH (WASH) : l’eau dans chaque quartier, les latrines, les eaux usées et les déchets, le lavage des mains à l’école et au marché, en lien avec les écoles et les centres de santé. La thématique porte le plaidoyer pour l’eau potable . Mise à jour du 29 septembre 2026 : la thématique devient Eau, assainissement et hygiène (WASH) . L’énergie rejoint la thématique 08, Énergie, routes & urbanisme, et la connexion internet la thématique 17, TIC et connectivité.",
+      "tags": [
+       "Eau potable",
+       "Assainissement",
+       "Hygiène"
+      ],
+      "odd": [
+       {
+        "num": "6",
+        "name": "Eau & assainissement",
+        "cible": "6.1 / 6.2",
+        "title": "ODD 6 — Eau propre et assainissement | cible 6.1 — accès universel à l’eau potable · cible 6.2 — assainissement et hygiène",
+        "accent": "#26BDE2",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Environnement, climat et ressources naturelles →",
+        "href": "/programmes#environnement-ressources"
+       },
+       {
+        "label": "Santé et nutrition →",
+        "href": "/programmes#sante-prevention"
+       },
+       {
+        "label": "Énergie durable →",
+        "href": "/programmes#energie"
+       },
+       {
+        "label": "Suivi : 2 problématiques · 1 plaidoyer →",
+        "href": "/impact#eau-energie-connectivite"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=07#contact"
+       }
+      ]
+     },
+     {
+      "id": "desenclavement-urbanisation",
+      "number": "08",
+      "kind": "thematique",
+      "name": "Transport et développement urbain",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la <a href=\"/programmes#jeunesse-reussite\">thématique Éducation et formation professionnelle</a>. Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir <a href=\"/journal/2026-09-16-bedjondo-village-devenu-ville\">nos douze propositions pour une ville moderne</a>). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir <a href=\"https://lonodji.org/projets/bedjondo-transport-logistique\">Bedjondo Transport et Logistique</a>, ex-Air Bedjondo). <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’<strong>énergie</strong> (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo. <strong>Mise à jour du 30 septembre 2026 :</strong> l’énergie devient une thématique à part entière, la 21, Énergie ; la thématique 08, qui prend le nom de Transport et développement urbain, garde les routes, les ponts, les pistes et l’urbanisme de Bédjondo. <strong>Mise à jour du 1er octobre 2026 :</strong> la thématique passe au nouveau pôle VI, Infrastructures, territoire & risques, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
+      "descriptionText": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la thématique Éducation et formation professionnelle . Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir nos douze propositions pour une ville moderne ). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir Bedjondo Transport et Logistique , ex-Air Bedjondo). Mise à jour du 29 septembre 2026 : la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’ énergie (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo. Mise à jour du 30 septembre 2026 : l’énergie devient une thématique à part entière, la 21, Énergie ; la thématique 08, qui prend le nom de Transport et développement urbain, garde les routes, les ponts, les pistes et l’urbanisme de Bédjondo. Mise à jour du 1er octobre 2026 : la thématique passe au nouveau pôle VI, Infrastructures, territoire & risques, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
+      "tags": [
+       "Désenclavement",
+       "Urbanisation",
+       "Routes",
+       "Ponts",
+       "Plan de ville"
+      ],
+      "odd": [
+       {
+        "num": "9",
+        "name": "Infrastructures",
+        "cible": "9.1",
+        "title": "ODD 9 — Industrie, innovation et infrastructure | cible 9.1 — infrastructures fiables et accessibles",
+        "accent": "#FD6925",
+        "ink": "#10181f"
+       },
+       {
+        "num": "11",
+        "name": "Villes durables",
+        "cible": "11.3 / 11.6",
+        "title": "ODD 11 — Villes et communautés durables | cible 11.3 — urbanisation participative et planifiée · cible 11.6 — gestion des déchets municipaux",
+        "accent": "#FD9D24",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Bedjondo Transport et Logistique →",
+        "href": "https://lonodji.org/projets/bedjondo-transport-logistique"
+       },
+       {
+        "label": "Éducation et formation professionnelle →",
+        "href": "/programmes#jeunesse-reussite"
+       },
+       {
+        "label": "Suivi : 3 problématiques · 1 plaidoyer →",
+        "href": "/impact#desenclavement-urbanisation"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=08#contact"
+       }
+      ]
+     },
+     {
+      "id": "energie",
+      "number": "21",
+      "kind": "thematique",
+      "name": "Énergie durable",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "L’accès à l’énergie dans le pays bedjond : électricité par le réseau, par des mini-réseaux ou par le solaire, éclairage public, électrification des écoles, des centres de santé et de la mairie — notre diagnostic ne connaît aujourd’hui aucun équipement public électrifié à Bédjondo. La thématique porte le plaidoyer <a href=\"/journal/2026-09-16-plaidoyer-electricite-bedjondo\">« De la lumière pour Bédjondo »</a> et suit les programmes de l’État et des bailleurs qui financent l’électrification. Avec la thématique Environnement, climat et ressources naturelles, elle suit aussi ce que le <a href=\"https://lonodji.org/territoire/sous-sol\">sous-sol</a> pourrait un jour apporter. <strong>Thématique créée le 30 septembre 2026</strong> ; elle reprend l’énergie, rattachée depuis le 29 septembre à la thématique 08, qui devient Transport et développement urbain. Rien n’est encore engagé. <strong>Mise à jour du 1er octobre 2026 :</strong> la thématique passe au nouveau pôle VI, Infrastructures, territoire & risques, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
+      "descriptionText": "L’accès à l’énergie dans le pays bedjond : électricité par le réseau, par des mini-réseaux ou par le solaire, éclairage public, électrification des écoles, des centres de santé et de la mairie — notre diagnostic ne connaît aujourd’hui aucun équipement public électrifié à Bédjondo. La thématique porte le plaidoyer « De la lumière pour Bédjondo » et suit les programmes de l’État et des bailleurs qui financent l’électrification. Avec la thématique Environnement, climat et ressources naturelles, elle suit aussi ce que le sous-sol pourrait un jour apporter. Thématique créée le 30 septembre 2026 ; elle reprend l’énergie, rattachée depuis le 29 septembre à la thématique 08, qui devient Transport et développement urbain. Rien n’est encore engagé. Mise à jour du 1er octobre 2026 : la thématique passe au nouveau pôle VI, Infrastructures, territoire & risques, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
+      "tags": [
+       "Électricité",
+       "Solaire",
+       "Éclairage public",
+       "Mini-réseaux"
+      ],
+      "odd": [
+       {
+        "num": "7",
+        "name": "Énergie durable",
+        "cible": "7.1 / 7.2",
+        "title": "ODD 7 — Énergie propre et d’un coût abordable | cible 7.1 — accès à des services énergétiques fiables · cible 7.2 — part des énergies renouvelables",
+        "accent": "#FCC30B",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Suivi : 1 problématique · 1 plaidoyer →",
+        "href": "/impact#energie"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=21#contact"
+       }
+      ]
+     },
+     {
+      "id": "transformation-numerique-services",
+      "number": "17",
+      "kind": "thematique",
+      "name": "TIC et connectivité",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Bignéro Moïalbéi LE MADANG",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons : accompagnement à l’état civil et aux démarches administratives en ligne, mobile money et paiements numériques pour les producteurs et les commerçants, outils simples pour les écoles, les centres de santé et les coopératives. La thématique porte aussi l’inclusion numérique — initier les aînés, les femmes et les villages éloignés aux usages de base — et l’équipement, en lien avec l’énergie solaire portée par la thématique <a href=\"#energie\">Énergie durable</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique, jusqu’ici « Transformation numérique & services », reprend la <strong>connectivité</strong> — réseau mobile, haut débit, espace numérique — venue de la thématique 07. Sa coordination ne change pas.",
+      "descriptionText": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons : accompagnement à l’état civil et aux démarches administratives en ligne, mobile money et paiements numériques pour les producteurs et les commerçants, outils simples pour les écoles, les centres de santé et les coopératives. La thématique porte aussi l’inclusion numérique — initier les aînés, les femmes et les villages éloignés aux usages de base — et l’équipement, en lien avec l’énergie solaire portée par la thématique Énergie durable . Mise à jour du 28 septembre 2026 : les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. Mise à jour du 29 septembre 2026 : la thématique, jusqu’ici « Transformation numérique & services », reprend la connectivité — réseau mobile, haut débit, espace numérique — venue de la thématique 07. Sa coordination ne change pas.",
+      "tags": [
+       "Internet",
+       "E-administration",
+       "Inclusion numérique",
+       "Mobile money"
+      ],
+      "odd": [
+       {
+        "num": "9",
+        "name": "Infrastructures",
+        "cible": "9.c",
+        "title": "ODD 9 — Industrie, innovation et infrastructure | cible 9.c — accès à internet",
+        "accent": "#FD6925",
+        "ink": "#10181f"
+       },
+       {
+        "num": "16",
+        "name": "Paix & justice",
+        "cible": "16.9",
+        "title": "ODD 16 — Paix, justice et institutions efficaces | cible 16.9 — identité juridique pour tous, dont l’état civil",
+        "accent": "#00689D",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "10",
+        "name": "Inégalités",
+        "cible": "10.2",
+        "title": "ODD 10 — Inégalités réduites | cible 10.2 — inclusion de tous, sans distinction",
+        "accent": "#DD1367",
+        "ink": "#ffffff"
+       }
+      ],
+      "links": [
+       {
+        "label": "Espace numérique →",
+        "href": "/projets/espace-numerique"
+       },
+       {
+        "label": "Énergie durable →",
+        "href": "/programmes#energie"
+       },
+       {
+        "label": "Suivi : 1 problématique · 1 plaidoyer →",
+        "href": "/impact#transformation-numerique-services"
+       },
+       {
+        "label": "Gouvernance et société civile →",
+        "href": "/programmes#gouvernance-plaidoyer"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=17#contact"
+       }
+      ]
+     }
+    ],
+    "direction": {
+     "label": "Vice-président délégué ou vice-présidente déléguée du pilier",
+     "rang": "vice-présidence déléguée",
+     "name": "à pourvoir",
+     "filled": false
+    }
+   },
+   {
+    "id": "pole-4",
+    "roman": "IV",
+    "eyebrow": "Pilier stratégique IV",
+    "name": "Économie inclusive et prospérité locale",
+    "intro": "Créer des opportunités économiques durables au bénéfice des populations et des territoires.",
+    "items": [
+     {
+      "id": "agriculture-elevage-securite-alimentaire",
+      "number": "04",
+      "kind": "thematique",
+      "name": "Agriculture, élevage et sécurité alimentaire",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Olivier Allaramadji Nomaye, ingénieur agroéconomiste",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Agriculture, élevage et sécurité alimentaire, sur une <a href=\"/mission\">terre d’agriculture et d’élevage</a> qui reste, aujourd’hui encore, le premier moyen de subsistance des villages du Mandoul Occidental. Parmi les pistes envisagées : appui aux coopératives agricoles et aux filières locales (mil, sorgho, arachide, sésame, maïs, manioc, élevage bovin et caprin), et promotion d’une agriculture moderne : techniques de production améliorées et diversification, y compris le développement de la pisciculture. La sécurité alimentaire passe aussi par la conservation post-récolte (stockage, séchage), souvent le vrai goulot d’étranglement pour les paysans une fois la récolte faite. Piste envisagée à plus long terme : un label des produits de Bédjondo, pour identifier et valoriser les productions locales, agricoles et artisanales, sur les marchés régionaux, en lien avec la cellule Financement & ressources. <strong>Mise à jour du 28 septembre 2026 :</strong> la coordination de la thématique est confiée à Olivier Allaramadji Nomaye, ingénieur agroéconomiste. <strong>Mise à jour du 1er octobre 2026 :</strong> la thématique passe au nouveau pôle V, Économie & ressources naturelles, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
+      "descriptionText": "Agriculture, élevage et sécurité alimentaire, sur une terre d’agriculture et d’élevage qui reste, aujourd’hui encore, le premier moyen de subsistance des villages du Mandoul Occidental. Parmi les pistes envisagées : appui aux coopératives agricoles et aux filières locales (mil, sorgho, arachide, sésame, maïs, manioc, élevage bovin et caprin), et promotion d’une agriculture moderne : techniques de production améliorées et diversification, y compris le développement de la pisciculture. La sécurité alimentaire passe aussi par la conservation post-récolte (stockage, séchage), souvent le vrai goulot d’étranglement pour les paysans une fois la récolte faite. Piste envisagée à plus long terme : un label des produits de Bédjondo, pour identifier et valoriser les productions locales, agricoles et artisanales, sur les marchés régionaux, en lien avec la cellule Financement & ressources. Mise à jour du 28 septembre 2026 : la coordination de la thématique est confiée à Olivier Allaramadji Nomaye, ingénieur agroéconomiste. Mise à jour du 1er octobre 2026 : la thématique passe au nouveau pôle V, Économie & ressources naturelles, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
+      "tags": [
+       "Agriculture",
+       "Élevage",
+       "Sécurité alimentaire"
+      ],
+      "odd": [
+       {
+        "num": "2",
+        "name": "Faim",
+        "cible": "2.1 / 2.3",
+        "title": "ODD 2 — Faim « zéro » | cible 2.1 — accès de tous à une alimentation suffisante · cible 2.3 — revenus des petits producteurs",
+        "accent": "#DDA63A",
+        "ink": "#10181f"
+       },
+       {
+        "num": "12",
+        "name": "Consommation responsable",
+        "cible": "12.3",
+        "title": "ODD 12 — Consommation et production responsables | cible 12.3 — pertes après récolte",
+        "accent": "#BF8B2E",
+        "ink": "#10181f"
+       },
+       {
+        "num": "15",
+        "name": "Vie terrestre",
+        "cible": "15.3",
+        "title": "ODD 15 — Vie terrestre | cible 15.3 — restauration des terres dégradées",
+        "accent": "#56C02B",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Hub filières & appuis techniques →",
+        "href": "/programmes/agriculture-securite-alimentaire"
+       },
+       {
+        "label": "Cellule financement & ressources →",
+        "href": "/programmes#cellule-financement-ressources"
+       },
+       {
+        "label": "Suivi : 3 problématiques →",
+        "href": "/impact#agriculture-elevage-securite-alimentaire"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=04#contact"
+       }
+      ]
+     },
+     {
+      "id": "entrepreneuriat-finance-inclusive",
+      "number": "05",
+      "kind": "thematique",
+      "name": "Moyens d’existence et inclusion financière",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Tamar Neloum DOUMANBE",
+      "coordinatorLabel": "Coordonnatrice",
+      "description": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la <a href=\"/programmes#cellule-financement-ressources\">cellule Financement &amp; ressources</a> pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire, notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire (<a href=\"/programmes/environnement#economie-verte\">voir les pistes</a>). <strong>Mise à jour du 30 septembre 2026 :</strong> la coordination de la thématique est confiée à Tamar Neloum DOUMANBE. <strong>Mise à jour du 1er octobre 2026 :</strong> la thématique passe au nouveau pôle V, Économie & ressources naturelles, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
+      "descriptionText": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la cellule Financement & ressources pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire, notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire ( voir les pistes ). Mise à jour du 30 septembre 2026 : la coordination de la thématique est confiée à Tamar Neloum DOUMANBE. Mise à jour du 1er octobre 2026 : la thématique passe au nouveau pôle V, Économie & ressources naturelles, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
+      "tags": [
+       "Emploi",
+       "Entrepreneuriat",
+       "Vie chère",
+       "Inclusion financière",
+       "Métiers verts"
+      ],
+      "odd": [
+       {
+        "num": "8",
+        "name": "Travail décent",
+        "cible": "8.3",
+        "title": "ODD 8 — Travail décent et croissance économique | cible 8.3 — création d’emplois décents et petites entreprises",
+        "accent": "#A21942",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "1",
+        "name": "Pauvreté",
+        "cible": "1.4",
+        "title": "ODD 1 — Pas de pauvreté | cible 1.4 — accès aux ressources économiques et aux services financiers",
+        "accent": "#E5243B",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "12",
+        "name": "Consommation responsable",
+        "cible": "12.5",
+        "title": "ODD 12 — Consommation et production responsables | cible 12.5 — réduction des déchets par le réemploi et le recyclage",
+        "accent": "#BF8B2E",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Cellule financement & ressources →",
+        "href": "/programmes#cellule-financement-ressources"
+       },
+       {
+        "label": "Suivi : 1 problématique →",
+        "href": "/impact#entrepreneuriat-finance-inclusive"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=05#contact"
+       }
+      ]
+     }
+    ],
+    "direction": {
+     "label": "Vice-président délégué ou vice-présidente déléguée du pilier",
+     "rang": "vice-présidence déléguée",
+     "name": "à pourvoir",
+     "filled": false
+    }
+   },
+   {
+    "id": "pole-5",
+    "roman": "V",
+    "eyebrow": "Pilier stratégique V",
+    "name": "Environnement, climat et résilience",
+    "intro": "Préserver les ressources naturelles et renforcer la résilience des communautés face aux défis environnementaux et climatiques.",
+    "items": [
+     {
+      "id": "environnement-ressources",
+      "number": "06",
+      "kind": "thematique",
+      "name": "Environnement, climat et ressources naturelles",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la <a href=\"/programmes#energie\">thématique Énergie durable</a>. La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page <a href=\"/programmes/environnement#economie-verte\">Environnement &amp; durabilité</a>. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique s’élargit à l’<strong>adaptation au changement climatique</strong> — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Réduction des risques de catastrophe et urgences. <strong>Mise à jour du 1er octobre 2026 :</strong> la thématique passe au nouveau pôle V, Économie & ressources naturelles, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
+      "descriptionText": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la thématique Énergie durable . La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page Environnement & durabilité . Mise à jour du 29 septembre 2026 : la thématique s’élargit à l’ adaptation au changement climatique — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Réduction des risques de catastrophe et urgences. Mise à jour du 1er octobre 2026 : la thématique passe au nouveau pôle V, Économie & ressources naturelles, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
+      "tags": [
+       "Foncier",
+       "Environnement",
+       "Climat",
+       "Énergie solaire",
+       "Économie circulaire"
+      ],
+      "odd": [
+       {
+        "num": "13",
+        "name": "Climat",
+        "cible": "13.1",
+        "title": "ODD 13 — Lutte contre les changements climatiques | cible 13.1 — résilience face aux aléas climatiques",
+        "accent": "#3F7E44",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "15",
+        "name": "Vie terrestre",
+        "cible": "15.2",
+        "title": "ODD 15 — Vie terrestre | cible 15.2 — gestion durable des forêts et reboisement",
+        "accent": "#56C02B",
+        "ink": "#10181f"
+       },
+       {
+        "num": "12",
+        "name": "Consommation responsable",
+        "cible": "12.5",
+        "title": "ODD 12 — Consommation et production responsables | cible 12.5 — réduction des déchets par le réemploi et le recyclage",
+        "accent": "#BF8B2E",
+        "ink": "#10181f"
+       }
+      ],
+      "links": [
+       {
+        "label": "Environnement & durabilité →",
+        "href": "/programmes/environnement"
+       },
+       {
+        "label": "Eau, assainissement et hygiène (WASH) →",
+        "href": "/programmes#eau-energie-connectivite"
+       },
+       {
+        "label": "Suivi : 1 problématique →",
+        "href": "/impact#environnement-ressources"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=06#contact"
+       }
+      ]
+     },
+     {
+      "id": "urgences-risques",
+      "number": "20",
+      "kind": "thematique",
+      "name": "Réduction des risques de catastrophe et urgences",
+      "status": "À pourvoir",
+      "filled": false,
+      "coordinator": "à pourvoir",
+      "coordinatorLabel": "Coordonnateur",
+      "description": "Préparer le pays bedjond aux crises plutôt que les subir : inondations de la saison des pluies, épidémies, sécheresse, feux de brousse, arrivée de familles déplacées. Pistes envisagées : cartographier avec les villages les zones inondables et les points d’eau exposés ; un plan de contingence simple par canton — qui prévenir, où se mettre à l’abri, quelles réserves ; un réseau d’alerte par WhatsApp et par la radio communautaire, qui relaie les alertes officielles ; et, quand la crise est là, informer, orienter et recenser les besoins pour les services de l’État, la Croix-Rouge du Tchad et les agences humanitaires, plutôt que les doubler. L’association ne collecte rien avant d’avoir un compte à son nom : une aide d’urgence ne passerait que par des circuits vérifiables et publiés. <strong>Thématique créée le 29 septembre 2026</strong> ; elle reprend l’aide d’urgence jusqu’ici rattachée à Protection et inclusion sociale. Rien n’est encore engagé. <strong>Mise à jour du 1er octobre 2026 :</strong> la thématique passe au nouveau pôle VI, Infrastructures, territoire & risques, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
+      "descriptionText": "Préparer le pays bedjond aux crises plutôt que les subir : inondations de la saison des pluies, épidémies, sécheresse, feux de brousse, arrivée de familles déplacées. Pistes envisagées : cartographier avec les villages les zones inondables et les points d’eau exposés ; un plan de contingence simple par canton — qui prévenir, où se mettre à l’abri, quelles réserves ; un réseau d’alerte par WhatsApp et par la radio communautaire, qui relaie les alertes officielles ; et, quand la crise est là, informer, orienter et recenser les besoins pour les services de l’État, la Croix-Rouge du Tchad et les agences humanitaires, plutôt que les doubler. L’association ne collecte rien avant d’avoir un compte à son nom : une aide d’urgence ne passerait que par des circuits vérifiables et publiés. Thématique créée le 29 septembre 2026 ; elle reprend l’aide d’urgence jusqu’ici rattachée à Protection et inclusion sociale. Rien n’est encore engagé. Mise à jour du 1er octobre 2026 : la thématique passe au nouveau pôle VI, Infrastructures, territoire & risques, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
+      "tags": [
+       "Urgences",
+       "Inondations",
+       "Épidémies",
+       "Alerte"
+      ],
+      "odd": [
+       {
+        "num": "1",
+        "name": "Pauvreté",
+        "cible": "1.5",
+        "title": "ODD 1 — Pas de pauvreté | cible 1.5 — résilience des plus pauvres face aux catastrophes",
+        "accent": "#E5243B",
+        "ink": "#ffffff"
+       },
+       {
+        "num": "11",
+        "name": "Villes durables",
+        "cible": "11.5",
+        "title": "ODD 11 — Villes et communautés durables | cible 11.5 — réduire les décès et les pertes dus aux catastrophes",
+        "accent": "#FD9D24",
+        "ink": "#10181f"
+       },
+       {
+        "num": "13",
+        "name": "Climat",
+        "cible": "13.1",
+        "title": "ODD 13 — Lutte contre le changement climatique | cible 13.1 — résilience face aux aléas climatiques",
+        "accent": "#3F7E44",
+        "ink": "#ffffff"
+       }
+      ],
+      "links": [
+       {
+        "label": "Signaler un besoin, localité par localité →",
+        "href": "/territoire/besoins"
+       },
+       {
+        "label": "Rejoindre cette thématique →",
+        "href": "/participer?theme=20#contact"
+       }
+      ]
+     }
+    ],
+    "direction": {
+     "label": "Vice-président délégué ou vice-présidente déléguée du pilier",
+     "rang": "vice-présidence déléguée",
+     "name": "à pourvoir",
+     "filled": false
+    }
+   },
+   {
+    "id": "pole-6",
+    "roman": "VI",
+    "eyebrow": "Pilier stratégique VI",
+    "name": "Gouvernance, paix et partenariats",
+    "intro": "Renforcer les institutions, la participation citoyenne, la cohésion sociale et la coopération pour le développement.",
     "items": [
      {
       "id": "gouvernance-plaidoyer",
@@ -2184,87 +2682,6 @@
         "href": "/participer?theme=16#contact"
        }
       ]
-     }
-    ],
-    "direction": {
-     "label": "Vice-président délégué ou vice-présidente déléguée du pôle",
-     "rang": "vice-présidence déléguée",
-     "name": "à pourvoir",
-     "filled": false
-    }
-   },
-   {
-    "id": "pole-4",
-    "roman": "IV",
-    "eyebrow": "Pôle IV",
-    "name": "Numérique & innovation",
-    "intro": "",
-    "items": [
-     {
-      "id": "transformation-numerique-services",
-      "number": "17",
-      "kind": "thematique",
-      "name": "TIC et connectivité",
-      "status": "Pourvu",
-      "filled": true,
-      "coordinator": "Bignéro Moïalbéi LE MADANG",
-      "coordinatorLabel": "Coordonnateur",
-      "description": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons : accompagnement à l’état civil et aux démarches administratives en ligne, mobile money et paiements numériques pour les producteurs et les commerçants, outils simples pour les écoles, les centres de santé et les coopératives. La thématique porte aussi l’inclusion numérique — initier les aînés, les femmes et les villages éloignés aux usages de base — et l’équipement, en lien avec l’énergie solaire portée par la thématique <a href=\"#energie\">Énergie durable</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique, jusqu’ici « Transformation numérique & services », reprend la <strong>connectivité</strong> — réseau mobile, haut débit, espace numérique — venue de la thématique 07. Sa coordination ne change pas.",
-      "descriptionText": "Faire entrer les services du quotidien dans le numérique, à Bédjondo comme dans les cantons : accompagnement à l’état civil et aux démarches administratives en ligne, mobile money et paiements numériques pour les producteurs et les commerçants, outils simples pour les écoles, les centres de santé et les coopératives. La thématique porte aussi l’inclusion numérique — initier les aînés, les femmes et les villages éloignés aux usages de base — et l’équipement, en lien avec l’énergie solaire portée par la thématique Énergie durable . Mise à jour du 28 septembre 2026 : les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. Mise à jour du 29 septembre 2026 : la thématique, jusqu’ici « Transformation numérique & services », reprend la connectivité — réseau mobile, haut débit, espace numérique — venue de la thématique 07. Sa coordination ne change pas.",
-      "tags": [
-       "Internet",
-       "E-administration",
-       "Inclusion numérique",
-       "Mobile money"
-      ],
-      "odd": [
-       {
-        "num": "9",
-        "name": "Infrastructures",
-        "cible": "9.c",
-        "title": "ODD 9 — Industrie, innovation et infrastructure | cible 9.c — accès à internet",
-        "accent": "#FD6925",
-        "ink": "#10181f"
-       },
-       {
-        "num": "16",
-        "name": "Paix & justice",
-        "cible": "16.9",
-        "title": "ODD 16 — Paix, justice et institutions efficaces | cible 16.9 — identité juridique pour tous, dont l’état civil",
-        "accent": "#00689D",
-        "ink": "#ffffff"
-       },
-       {
-        "num": "10",
-        "name": "Inégalités",
-        "cible": "10.2",
-        "title": "ODD 10 — Inégalités réduites | cible 10.2 — inclusion de tous, sans distinction",
-        "accent": "#DD1367",
-        "ink": "#ffffff"
-       }
-      ],
-      "links": [
-       {
-        "label": "Espace numérique →",
-        "href": "/projets/espace-numerique"
-       },
-       {
-        "label": "Énergie durable →",
-        "href": "/programmes#energie"
-       },
-       {
-        "label": "Suivi : 1 problématique · 1 plaidoyer →",
-        "href": "/impact#transformation-numerique-services"
-       },
-       {
-        "label": "Gouvernance et société civile →",
-        "href": "/programmes#gouvernance-plaidoyer"
-       },
-       {
-        "label": "Rejoindre cette thématique →",
-        "href": "/participer?theme=17#contact"
-       }
-      ]
      },
      {
       "id": "intelligence-artificielle-donnees",
@@ -2331,427 +2748,10 @@
         "href": "/participer?theme=18#contact"
        }
       ]
-     },
-     {
-      "id": "competences-entrepreneuriat-numerique",
-      "number": "19",
-      "kind": "thematique",
-      "name": "Compétences numériques et emploi des jeunes",
-      "status": "Pourvu",
-      "filled": true,
-      "coordinator": "Rosine Mbaïnodoum",
-      "coordinatorLabel": "Coordonnatrice",
-      "description": "Former les jeunes de Bédjondo aux métiers du numérique et leur ouvrir des débouchés sur place : initiation à l’informatique, au code, au design et aux outils bureautiques ; académie numérique et parrainage par les professionnels bedjond du secteur, au Tchad comme dans la diaspora ; appui aux jeunes qui veulent vivre du numérique — freelance, services en ligne, petites entreprises tech — en lien avec la thématique <a href=\"#entrepreneuriat-finance-inclusive\">Moyens d’existence et inclusion financière</a>. Une réponse concrète à l’exode des jeunes évoqué par la thématique <a href=\"#jeunesse-reussite\">Éducation et formation professionnelle</a>. <strong>Mise à jour du 28 septembre 2026 :</strong> les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. <strong>Mise à jour du 30 septembre 2026 :</strong> la coordination de cette thématique est confiée à Rosine Mbaïnodoum, qui succède à Bignéro Moïalbéi LE MADANG.",
-      "descriptionText": "Former les jeunes de Bédjondo aux métiers du numérique et leur ouvrir des débouchés sur place : initiation à l’informatique, au code, au design et aux outils bureautiques ; académie numérique et parrainage par les professionnels bedjond du secteur, au Tchad comme dans la diaspora ; appui aux jeunes qui veulent vivre du numérique — freelance, services en ligne, petites entreprises tech — en lien avec la thématique Moyens d’existence et inclusion financière . Une réponse concrète à l’exode des jeunes évoqué par la thématique Éducation et formation professionnelle . Mise à jour du 28 septembre 2026 : les trois thématiques du pôle Numérique & innovation sont confiées à Bignéro Moïalbéi LE MADANG, animateur général de l’association. Mise à jour du 30 septembre 2026 : la coordination de cette thématique est confiée à Rosine Mbaïnodoum, qui succède à Bignéro Moïalbéi LE MADANG.",
-      "tags": [
-       "Formation",
-       "Emploi",
-       "Startups"
-      ],
-      "odd": [
-       {
-        "num": "4",
-        "name": "Éducation",
-        "cible": "4.4",
-        "title": "ODD 4 — Éducation de qualité | cible 4.4 — compétences pour l’emploi et l’entrepreneuriat",
-        "accent": "#C5192D",
-        "ink": "#ffffff"
-       },
-       {
-        "num": "8",
-        "name": "Travail décent",
-        "cible": "8.6",
-        "title": "ODD 8 — Travail décent et croissance économique | cible 8.6 — jeunes sans emploi ni formation",
-        "accent": "#A21942",
-        "ink": "#ffffff"
-       },
-       {
-        "num": "9",
-        "name": "Infrastructures",
-        "cible": "9.c",
-        "title": "ODD 9 — Industrie, innovation et infrastructure | cible 9.c — accès à internet",
-        "accent": "#FD6925",
-        "ink": "#10181f"
-       }
-      ],
-      "links": [
-       {
-        "label": "Éducation et formation professionnelle →",
-        "href": "/programmes#jeunesse-reussite"
-       },
-       {
-        "label": "Diaspora et partenariats →",
-        "href": "/programmes#reseau-experts-diaspora"
-       },
-       {
-        "label": "Rejoindre cette thématique →",
-        "href": "/participer?theme=19#contact"
-       }
-      ]
      }
     ],
     "direction": {
-     "label": "Vice-président délégué ou vice-présidente déléguée du pôle",
-     "rang": "vice-présidence déléguée",
-     "name": "à pourvoir",
-     "filled": false
-    }
-   },
-   {
-    "id": "pole-5",
-    "roman": "V",
-    "eyebrow": "Pôle V",
-    "name": "Économie & ressources naturelles",
-    "intro": "",
-    "items": [
-     {
-      "id": "agriculture-elevage-securite-alimentaire",
-      "number": "04",
-      "kind": "thematique",
-      "name": "Agriculture, élevage et sécurité alimentaire",
-      "status": "Pourvu",
-      "filled": true,
-      "coordinator": "Olivier Allaramadji Nomaye, ingénieur agroéconomiste",
-      "coordinatorLabel": "Coordonnateur",
-      "description": "Agriculture, élevage et sécurité alimentaire, sur une <a href=\"/mission\">terre d’agriculture et d’élevage</a> qui reste, aujourd’hui encore, le premier moyen de subsistance des villages du Mandoul Occidental. Parmi les pistes envisagées : appui aux coopératives agricoles et aux filières locales (mil, sorgho, arachide, sésame, maïs, manioc, élevage bovin et caprin), et promotion d’une agriculture moderne : techniques de production améliorées et diversification, y compris le développement de la pisciculture. La sécurité alimentaire passe aussi par la conservation post-récolte (stockage, séchage), souvent le vrai goulot d’étranglement pour les paysans une fois la récolte faite. Piste envisagée à plus long terme : un label des produits de Bédjondo, pour identifier et valoriser les productions locales, agricoles et artisanales, sur les marchés régionaux, en lien avec la cellule Financement & ressources. <strong>Mise à jour du 28 septembre 2026 :</strong> la coordination de la thématique est confiée à Olivier Allaramadji Nomaye, ingénieur agroéconomiste. <strong>Mise à jour du 1er octobre 2026 :</strong> la thématique passe au nouveau pôle V, Économie & ressources naturelles, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
-      "descriptionText": "Agriculture, élevage et sécurité alimentaire, sur une terre d’agriculture et d’élevage qui reste, aujourd’hui encore, le premier moyen de subsistance des villages du Mandoul Occidental. Parmi les pistes envisagées : appui aux coopératives agricoles et aux filières locales (mil, sorgho, arachide, sésame, maïs, manioc, élevage bovin et caprin), et promotion d’une agriculture moderne : techniques de production améliorées et diversification, y compris le développement de la pisciculture. La sécurité alimentaire passe aussi par la conservation post-récolte (stockage, séchage), souvent le vrai goulot d’étranglement pour les paysans une fois la récolte faite. Piste envisagée à plus long terme : un label des produits de Bédjondo, pour identifier et valoriser les productions locales, agricoles et artisanales, sur les marchés régionaux, en lien avec la cellule Financement & ressources. Mise à jour du 28 septembre 2026 : la coordination de la thématique est confiée à Olivier Allaramadji Nomaye, ingénieur agroéconomiste. Mise à jour du 1er octobre 2026 : la thématique passe au nouveau pôle V, Économie & ressources naturelles, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
-      "tags": [
-       "Agriculture",
-       "Élevage",
-       "Sécurité alimentaire"
-      ],
-      "odd": [
-       {
-        "num": "2",
-        "name": "Faim",
-        "cible": "2.1 / 2.3",
-        "title": "ODD 2 — Faim « zéro » | cible 2.1 — accès de tous à une alimentation suffisante · cible 2.3 — revenus des petits producteurs",
-        "accent": "#DDA63A",
-        "ink": "#10181f"
-       },
-       {
-        "num": "12",
-        "name": "Consommation responsable",
-        "cible": "12.3",
-        "title": "ODD 12 — Consommation et production responsables | cible 12.3 — pertes après récolte",
-        "accent": "#BF8B2E",
-        "ink": "#10181f"
-       },
-       {
-        "num": "15",
-        "name": "Vie terrestre",
-        "cible": "15.3",
-        "title": "ODD 15 — Vie terrestre | cible 15.3 — restauration des terres dégradées",
-        "accent": "#56C02B",
-        "ink": "#10181f"
-       }
-      ],
-      "links": [
-       {
-        "label": "Hub filières & appuis techniques →",
-        "href": "/programmes/agriculture-securite-alimentaire"
-       },
-       {
-        "label": "Cellule financement & ressources →",
-        "href": "/programmes#cellule-financement-ressources"
-       },
-       {
-        "label": "Suivi : 3 problématiques →",
-        "href": "/impact#agriculture-elevage-securite-alimentaire"
-       },
-       {
-        "label": "Rejoindre cette thématique →",
-        "href": "/participer?theme=04#contact"
-       }
-      ]
-     },
-     {
-      "id": "entrepreneuriat-finance-inclusive",
-      "number": "05",
-      "kind": "thematique",
-      "name": "Moyens d’existence et inclusion financière",
-      "status": "Pourvu",
-      "filled": true,
-      "coordinator": "Tamar Neloum DOUMANBE",
-      "coordinatorLabel": "Coordonnatrice",
-      "description": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la <a href=\"/programmes#cellule-financement-ressources\">cellule Financement &amp; ressources</a> pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire, notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire (<a href=\"/programmes/environnement#economie-verte\">voir les pistes</a>). <strong>Mise à jour du 30 septembre 2026 :</strong> la coordination de la thématique est confiée à Tamar Neloum DOUMANBE. <strong>Mise à jour du 1er octobre 2026 :</strong> la thématique passe au nouveau pôle V, Économie & ressources naturelles, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
-      "descriptionText": "Commerce, emploi et initiatives économiques portées par les membres de la communauté. La thématique suit de près la vie chère et la crise économique qui pèsent aujourd’hui sur les familles, en lien avec la cellule Financement & ressources pour organiser une réponse solidaire. Parmi les pistes envisagées : soutien aux petits entrepreneurs par la tontine ou le micro-crédit, mise en réseau des commerçants et employeurs bedjond de la diaspora pour ouvrir des débouchés aux jeunes de Bédjondo, et développement de l’inclusion financière — mobile money et accès bancaire, notamment pour faciliter les envois de fonds et les investissements de la diaspora. La thématique regarde enfin du côté des métiers verts et de l’économie circulaire, où la demande existe déjà sans que l’offre suive : réparation de pompes, de motos et d’électronique, pépinières, maçonnerie en matériaux locaux. Chaque pièce que l’on ne sait pas réparer est une somme qui quitte le territoire ( voir les pistes ). Mise à jour du 30 septembre 2026 : la coordination de la thématique est confiée à Tamar Neloum DOUMANBE. Mise à jour du 1er octobre 2026 : la thématique passe au nouveau pôle V, Économie & ressources naturelles, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
-      "tags": [
-       "Emploi",
-       "Entrepreneuriat",
-       "Vie chère",
-       "Inclusion financière",
-       "Métiers verts"
-      ],
-      "odd": [
-       {
-        "num": "8",
-        "name": "Travail décent",
-        "cible": "8.3",
-        "title": "ODD 8 — Travail décent et croissance économique | cible 8.3 — création d’emplois décents et petites entreprises",
-        "accent": "#A21942",
-        "ink": "#ffffff"
-       },
-       {
-        "num": "1",
-        "name": "Pauvreté",
-        "cible": "1.4",
-        "title": "ODD 1 — Pas de pauvreté | cible 1.4 — accès aux ressources économiques et aux services financiers",
-        "accent": "#E5243B",
-        "ink": "#ffffff"
-       },
-       {
-        "num": "12",
-        "name": "Consommation responsable",
-        "cible": "12.5",
-        "title": "ODD 12 — Consommation et production responsables | cible 12.5 — réduction des déchets par le réemploi et le recyclage",
-        "accent": "#BF8B2E",
-        "ink": "#10181f"
-       }
-      ],
-      "links": [
-       {
-        "label": "Cellule financement & ressources →",
-        "href": "/programmes#cellule-financement-ressources"
-       },
-       {
-        "label": "Suivi : 1 problématique →",
-        "href": "/impact#entrepreneuriat-finance-inclusive"
-       },
-       {
-        "label": "Rejoindre cette thématique →",
-        "href": "/participer?theme=05#contact"
-       }
-      ]
-     },
-     {
-      "id": "environnement-ressources",
-      "number": "06",
-      "kind": "thematique",
-      "name": "Environnement, climat et ressources naturelles",
-      "status": "À pourvoir",
-      "filled": false,
-      "coordinator": "à pourvoir",
-      "coordinatorLabel": "Coordonnateur",
-      "description": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la <a href=\"/programmes#energie\">thématique Énergie durable</a>. La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page <a href=\"/programmes/environnement#economie-verte\">Environnement &amp; durabilité</a>. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique s’élargit à l’<strong>adaptation au changement climatique</strong> — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Réduction des risques de catastrophe et urgences. <strong>Mise à jour du 1er octobre 2026 :</strong> la thématique passe au nouveau pôle V, Économie & ressources naturelles, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
-      "descriptionText": "Foncier, protection de l’environnement et gestion durable des ressources naturelles du territoire. Sur le terrain, cela pourrait passer par : sécurisation foncière des familles face à la pression de l’urbanisation, reboisement et lutte contre la déforestation liée au bois de chauffe, gestion durable de l’eau, et adaptation aux aléas climatiques qui touchent l’agriculture et l’élevage du Mandoul Occidental. Inclut aussi une réflexion sur l’accès à l’énergie solaire dans les villages, en complément de l’énergie conventionnelle portée par la thématique Énergie durable . La thématique porte aussi le volet économie verte et économie circulaire : réparation plutôt que remplacement, compostage des déchets du marché, valorisation des résidus agricoles, et la question encore sans réponse de la reprise des batteries et panneaux solaires en fin de vie. Six pistes concrètes sont détaillées sur la page Environnement & durabilité . Mise à jour du 29 septembre 2026 : la thématique s’élargit à l’ adaptation au changement climatique — pratiques agricoles face aux pluies irrégulières, reboisement, protection des berges ; la préparation aux catastrophes relève de la thématique 20, Réduction des risques de catastrophe et urgences. Mise à jour du 1er octobre 2026 : la thématique passe au nouveau pôle V, Économie & ressources naturelles, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
-      "tags": [
-       "Foncier",
-       "Environnement",
-       "Climat",
-       "Énergie solaire",
-       "Économie circulaire"
-      ],
-      "odd": [
-       {
-        "num": "13",
-        "name": "Climat",
-        "cible": "13.1",
-        "title": "ODD 13 — Lutte contre les changements climatiques | cible 13.1 — résilience face aux aléas climatiques",
-        "accent": "#3F7E44",
-        "ink": "#ffffff"
-       },
-       {
-        "num": "15",
-        "name": "Vie terrestre",
-        "cible": "15.2",
-        "title": "ODD 15 — Vie terrestre | cible 15.2 — gestion durable des forêts et reboisement",
-        "accent": "#56C02B",
-        "ink": "#10181f"
-       },
-       {
-        "num": "12",
-        "name": "Consommation responsable",
-        "cible": "12.5",
-        "title": "ODD 12 — Consommation et production responsables | cible 12.5 — réduction des déchets par le réemploi et le recyclage",
-        "accent": "#BF8B2E",
-        "ink": "#10181f"
-       }
-      ],
-      "links": [
-       {
-        "label": "Environnement & durabilité →",
-        "href": "/programmes/environnement"
-       },
-       {
-        "label": "Eau, assainissement et hygiène (WASH) →",
-        "href": "/programmes#eau-energie-connectivite"
-       },
-       {
-        "label": "Suivi : 1 problématique →",
-        "href": "/impact#environnement-ressources"
-       },
-       {
-        "label": "Rejoindre cette thématique →",
-        "href": "/participer?theme=06#contact"
-       }
-      ]
-     }
-    ],
-    "direction": {
-     "label": "Vice-président délégué ou vice-présidente déléguée du pôle",
-     "rang": "vice-présidence déléguée",
-     "name": "à pourvoir",
-     "filled": false
-    }
-   },
-   {
-    "id": "pole-6",
-    "roman": "VI",
-    "eyebrow": "Pôle VI",
-    "name": "Infrastructures, territoire & risques",
-    "intro": "",
-    "items": [
-     {
-      "id": "desenclavement-urbanisation",
-      "number": "08",
-      "kind": "thematique",
-      "name": "Transport et développement urbain",
-      "status": "À pourvoir",
-      "filled": false,
-      "coordinator": "à pourvoir",
-      "coordinatorLabel": "Coordonnateur",
-      "description": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la <a href=\"/programmes#jeunesse-reussite\">thématique Éducation et formation professionnelle</a>. Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir <a href=\"/journal/2026-09-16-bedjondo-village-devenu-ville\">nos douze propositions pour une ville moderne</a>). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir <a href=\"https://lonodji.org/projets/bedjondo-transport-logistique\">Bedjondo Transport et Logistique</a>, ex-Air Bedjondo). <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’<strong>énergie</strong> (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo. <strong>Mise à jour du 30 septembre 2026 :</strong> l’énergie devient une thématique à part entière, la 21, Énergie ; la thématique 08, qui prend le nom de Transport et développement urbain, garde les routes, les ponts, les pistes et l’urbanisme de Bédjondo. <strong>Mise à jour du 1er octobre 2026 :</strong> la thématique passe au nouveau pôle VI, Infrastructures, territoire & risques, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
-      "descriptionText": "Pistes et routes, désenclavement de Bédjondo : l’état des routes vers N’Djamena et les marchés régionaux pèse directement sur les échanges économiques et sur l’exode des jeunes évoqué par la thématique Éducation et formation professionnelle . Accompagne aussi l’urbanisation et la croissance de nos villes, à commencer par Bédjondo, pour qu’elles se fassent en anticipant les besoins plutôt qu’en les subissant, y compris la gestion des déchets à mesure que la ville grandit. Bédjondo, passée de village à ville sans avoir été modernisée, est son premier chantier : plan d’urbanisme et lotissement, voirie drainée, eau potable en réseau, électricité solaire et éclairage public, assainissement, marché aménagé (voir nos douze propositions pour une ville moderne ). Un projet de transport et de logistique terrestre a depuis été annoncé pour désenclaver le territoire et relier ses terroirs entre eux (voir Bedjondo Transport et Logistique , ex-Air Bedjondo). Mise à jour du 29 septembre 2026 : la thématique, jusqu’ici « Désenclavement & urbanisation », réunit désormais les infrastructures : l’ énergie (électricité, solaire, venue de la thématique 07), les routes, les ponts et les pistes, et l’urbanisme de Bédjondo. Mise à jour du 30 septembre 2026 : l’énergie devient une thématique à part entière, la 21, Énergie ; la thématique 08, qui prend le nom de Transport et développement urbain, garde les routes, les ponts, les pistes et l’urbanisme de Bédjondo. Mise à jour du 1er octobre 2026 : la thématique passe au nouveau pôle VI, Infrastructures, territoire & risques, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
-      "tags": [
-       "Désenclavement",
-       "Urbanisation",
-       "Routes",
-       "Ponts",
-       "Plan de ville"
-      ],
-      "odd": [
-       {
-        "num": "9",
-        "name": "Infrastructures",
-        "cible": "9.1",
-        "title": "ODD 9 — Industrie, innovation et infrastructure | cible 9.1 — infrastructures fiables et accessibles",
-        "accent": "#FD6925",
-        "ink": "#10181f"
-       },
-       {
-        "num": "11",
-        "name": "Villes durables",
-        "cible": "11.3 / 11.6",
-        "title": "ODD 11 — Villes et communautés durables | cible 11.3 — urbanisation participative et planifiée · cible 11.6 — gestion des déchets municipaux",
-        "accent": "#FD9D24",
-        "ink": "#10181f"
-       }
-      ],
-      "links": [
-       {
-        "label": "Bedjondo Transport et Logistique →",
-        "href": "https://lonodji.org/projets/bedjondo-transport-logistique"
-       },
-       {
-        "label": "Éducation et formation professionnelle →",
-        "href": "/programmes#jeunesse-reussite"
-       },
-       {
-        "label": "Suivi : 3 problématiques · 1 plaidoyer →",
-        "href": "/impact#desenclavement-urbanisation"
-       },
-       {
-        "label": "Rejoindre cette thématique →",
-        "href": "/participer?theme=08#contact"
-       }
-      ]
-     },
-     {
-      "id": "urgences-risques",
-      "number": "20",
-      "kind": "thematique",
-      "name": "Réduction des risques de catastrophe et urgences",
-      "status": "À pourvoir",
-      "filled": false,
-      "coordinator": "à pourvoir",
-      "coordinatorLabel": "Coordonnateur",
-      "description": "Préparer le pays bedjond aux crises plutôt que les subir : inondations de la saison des pluies, épidémies, sécheresse, feux de brousse, arrivée de familles déplacées. Pistes envisagées : cartographier avec les villages les zones inondables et les points d’eau exposés ; un plan de contingence simple par canton — qui prévenir, où se mettre à l’abri, quelles réserves ; un réseau d’alerte par WhatsApp et par la radio communautaire, qui relaie les alertes officielles ; et, quand la crise est là, informer, orienter et recenser les besoins pour les services de l’État, la Croix-Rouge du Tchad et les agences humanitaires, plutôt que les doubler. L’association ne collecte rien avant d’avoir un compte à son nom : une aide d’urgence ne passerait que par des circuits vérifiables et publiés. <strong>Thématique créée le 29 septembre 2026</strong> ; elle reprend l’aide d’urgence jusqu’ici rattachée à Protection et inclusion sociale. Rien n’est encore engagé. <strong>Mise à jour du 1er octobre 2026 :</strong> la thématique passe au nouveau pôle VI, Infrastructures, territoire & risques, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
-      "descriptionText": "Préparer le pays bedjond aux crises plutôt que les subir : inondations de la saison des pluies, épidémies, sécheresse, feux de brousse, arrivée de familles déplacées. Pistes envisagées : cartographier avec les villages les zones inondables et les points d’eau exposés ; un plan de contingence simple par canton — qui prévenir, où se mettre à l’abri, quelles réserves ; un réseau d’alerte par WhatsApp et par la radio communautaire, qui relaie les alertes officielles ; et, quand la crise est là, informer, orienter et recenser les besoins pour les services de l’État, la Croix-Rouge du Tchad et les agences humanitaires, plutôt que les doubler. L’association ne collecte rien avant d’avoir un compte à son nom : une aide d’urgence ne passerait que par des circuits vérifiables et publiés. Thématique créée le 29 septembre 2026 ; elle reprend l’aide d’urgence jusqu’ici rattachée à Protection et inclusion sociale. Rien n’est encore engagé. Mise à jour du 1er octobre 2026 : la thématique passe au nouveau pôle VI, Infrastructures, territoire & risques, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
-      "tags": [
-       "Urgences",
-       "Inondations",
-       "Épidémies",
-       "Alerte"
-      ],
-      "odd": [
-       {
-        "num": "1",
-        "name": "Pauvreté",
-        "cible": "1.5",
-        "title": "ODD 1 — Pas de pauvreté | cible 1.5 — résilience des plus pauvres face aux catastrophes",
-        "accent": "#E5243B",
-        "ink": "#ffffff"
-       },
-       {
-        "num": "11",
-        "name": "Villes durables",
-        "cible": "11.5",
-        "title": "ODD 11 — Villes et communautés durables | cible 11.5 — réduire les décès et les pertes dus aux catastrophes",
-        "accent": "#FD9D24",
-        "ink": "#10181f"
-       },
-       {
-        "num": "13",
-        "name": "Climat",
-        "cible": "13.1",
-        "title": "ODD 13 — Lutte contre le changement climatique | cible 13.1 — résilience face aux aléas climatiques",
-        "accent": "#3F7E44",
-        "ink": "#ffffff"
-       }
-      ],
-      "links": [
-       {
-        "label": "Signaler un besoin, localité par localité →",
-        "href": "/territoire/besoins"
-       },
-       {
-        "label": "Rejoindre cette thématique →",
-        "href": "/participer?theme=20#contact"
-       }
-      ]
-     },
-     {
-      "id": "energie",
-      "number": "21",
-      "kind": "thematique",
-      "name": "Énergie durable",
-      "status": "À pourvoir",
-      "filled": false,
-      "coordinator": "à pourvoir",
-      "coordinatorLabel": "Coordonnateur",
-      "description": "L’accès à l’énergie dans le pays bedjond : électricité par le réseau, par des mini-réseaux ou par le solaire, éclairage public, électrification des écoles, des centres de santé et de la mairie — notre diagnostic ne connaît aujourd’hui aucun équipement public électrifié à Bédjondo. La thématique porte le plaidoyer <a href=\"/journal/2026-09-16-plaidoyer-electricite-bedjondo\">« De la lumière pour Bédjondo »</a> et suit les programmes de l’État et des bailleurs qui financent l’électrification. Avec la thématique Environnement, climat et ressources naturelles, elle suit aussi ce que le <a href=\"https://lonodji.org/territoire/sous-sol\">sous-sol</a> pourrait un jour apporter. <strong>Thématique créée le 30 septembre 2026</strong> ; elle reprend l’énergie, rattachée depuis le 29 septembre à la thématique 08, qui devient Transport et développement urbain. Rien n’est encore engagé. <strong>Mise à jour du 1er octobre 2026 :</strong> la thématique passe au nouveau pôle VI, Infrastructures, territoire & risques, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
-      "descriptionText": "L’accès à l’énergie dans le pays bedjond : électricité par le réseau, par des mini-réseaux ou par le solaire, éclairage public, électrification des écoles, des centres de santé et de la mairie — notre diagnostic ne connaît aujourd’hui aucun équipement public électrifié à Bédjondo. La thématique porte le plaidoyer « De la lumière pour Bédjondo » et suit les programmes de l’État et des bailleurs qui financent l’électrification. Avec la thématique Environnement, climat et ressources naturelles, elle suit aussi ce que le sous-sol pourrait un jour apporter. Thématique créée le 30 septembre 2026 ; elle reprend l’énergie, rattachée depuis le 29 septembre à la thématique 08, qui devient Transport et développement urbain. Rien n’est encore engagé. Mise à jour du 1er octobre 2026 : la thématique passe au nouveau pôle VI, Infrastructures, territoire & risques, issu du partage du pôle Développement humain & moyens d’existence ; son numéro ne change pas.",
-      "tags": [
-       "Électricité",
-       "Solaire",
-       "Éclairage public",
-       "Mini-réseaux"
-      ],
-      "odd": [
-       {
-        "num": "7",
-        "name": "Énergie durable",
-        "cible": "7.1 / 7.2",
-        "title": "ODD 7 — Énergie propre et d’un coût abordable | cible 7.1 — accès à des services énergétiques fiables · cible 7.2 — part des énergies renouvelables",
-        "accent": "#FCC30B",
-        "ink": "#10181f"
-       }
-      ],
-      "links": [
-       {
-        "label": "Suivi : 1 problématique · 1 plaidoyer →",
-        "href": "/impact#energie"
-       },
-       {
-        "label": "Rejoindre cette thématique →",
-        "href": "/participer?theme=21#contact"
-       }
-      ]
-     }
-    ],
-    "direction": {
-     "label": "Vice-président délégué ou vice-présidente déléguée du pôle",
+     "label": "Vice-président délégué ou vice-présidente déléguée du pilier",
      "rang": "vice-présidence déléguée",
      "name": "à pourvoir",
      "filled": false
@@ -2879,7 +2879,8 @@
      ]
     }
    ]
-  }
+  },
+  "architectureDate": "2026-10-06"
  },
  "plaidoyers": [
   {

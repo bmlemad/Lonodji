@@ -114,5 +114,6 @@
  "rootAttrs": {},
  "slug": "problematiques",
  "route": "/territoire/diagnostic",
- "kind": "dossier"
+ "kind": "dossier",
+ "architectureDate": "2026-10-06"
 }

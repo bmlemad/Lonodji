@@ -26,10 +26,11 @@ ODEB_EMBLEME = ROOT / "public" / "odeb" / "identite" / "odeb-lonodji-embleme-sup
 SKIP = {"/_global-error", "/_not-found", "/hors-ligne", "/en"}  # /en redirige vers /en/index
 
 EYEBROWS = {
+    "/association/architecture": "ADEB LONODJI · architecture institutionnelle",
     "/": "Association · Bédjondo · diaspora",
     "/mission": "L’association",
     "/histoire": "Histoire & patrimoine",
-    "/programmes": "Nos actions · 6 pôles, 22 thématiques",
+    "/programmes": "Nos actions · 6 piliers, 22 thématiques",
     "/secteurs": "Nos actions · secteurs d’intervention",
     "/bailleurs": "Nos actions · programmes des bailleurs",
     "/territoire": "Territoire",

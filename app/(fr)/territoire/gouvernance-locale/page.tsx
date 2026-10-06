@@ -126,7 +126,7 @@ export default function GouvernanceLocale() {
           <Link href={L.propositions.href}><small>Propositions</small><strong>Nos propositions à la commune</strong><span>{RESUME_PROPOSITIONS}, notre démarche avec la commune et les autorités locales.</span></Link>
           <Link href={L.paix.href}><small>Dossier</small><strong>Paix entre agriculteurs et éleveurs</strong><span>Six mesures à l’échelle des cantons, dont le comité mixte et le cahier de médiation.</span></Link>
           <Link href={L.lieux.href}><small>Dossier</small><strong>Lieux sacrés et sépultures</strong><span>Le registre tenu par la chefferie, et l’inscription au plan communal.</span></Link>
-          <Link href="/programmes#gouvernance-plaidoyer"><small>Thématique</small><strong>Gouvernance et société civile</strong><span>La thématique qui porte ces dossiers, au pôle Gouvernance, paix & plaidoyer.</span></Link>
+          <Link href="/programmes#gouvernance-plaidoyer"><small>Thématique</small><strong>Gouvernance et société civile</strong><span>La thématique qui porte ces dossiers, au pilier Gouvernance, paix & plaidoyer.</span></Link>
           <Link href={L.enquetes.href}><small>Enquêtes</small><strong>Enquêtes de terrain</strong><span>Ce que nous demandons aux chefs de quartier et de village, et comment.</span></Link>
         </div>
       </section>

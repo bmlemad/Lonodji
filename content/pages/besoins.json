@@ -57,5 +57,6 @@
  "rootAttrs": {},
  "slug": "besoins",
  "route": "/territoire/besoins",
- "kind": "dossier"
+ "kind": "dossier",
+ "architectureDate": "2026-10-06"
 }

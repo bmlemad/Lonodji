@@ -2,13 +2,13 @@ import fs from "node:fs";
 import path from "node:path";
 import { getIndex, ORG } from "@/lib/content";
 
-/* Élection des vice-présidences de pôle sans titulaire : procédure et calendrier adoptés par le bureau exécutif le
+/* Élection des vice-présidences de pilier sans titulaire : procédure et calendrier adoptés par le bureau exécutif le
    1er octobre 2026 (registre 2026-33). Seule source : content/election.json (lu aussi par scripts/build-postes.py et
    scripts/build-dossier-bureau.py). */
 export type Etape = { cle: string; date: string; quoi: string; quoi_en?: string };
 export type Regle = { point: string; texte: string; note: string; point_en?: string; texte_en?: string; note_en?: string };
 export type Candidat = { nom: string; pole: string; presentation: string };
-/* Une ligne par pôle, recopiée du procès-verbal signé : « elu » vide si personne n'est élu (appel rouvert, cf. note). */
+/* Une ligne par pilier, recopiée du procès-verbal signé : « elu » vide si personne n'est élu (appel rouvert, cf. note). */
 export type Resultat = { pole: string; elu: string; votants: number; exprimes: number; blancs?: number; tour?: number; voix?: { nom: string; voix: number }[]; note?: string; note_en?: string };
 export type Election = {
   adoptee: string; instance: string; poles: string[]; calendrier: Etape[]; regles: Regle[]; organisation: string[]; organisation_en?: string[];
@@ -18,7 +18,8 @@ export type Election = {
 let cache: Election | null = null;
 export function getElection(): Election {
   if (!cache) cache = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content", "election.json"), "utf8"));
-  return cache!;
+  return { ...cache!, regles: cache!.regles.map((regle) => ({ ...regle,
+    texte: regle.texte.replace(/vice-présidences de pôle/g, "vice-présidences de pilier") })) };
 }
 
 const MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
@@ -53,7 +54,7 @@ export function etatElection(): string {
   return `Candidatures ${periodeCandidatures()} · vote le ${dateFr(etape("vote").date)}`;
 }
 
-/* « III, IV, V et VI » et « quatre » : les pôles à élire, tels que content/election.json les donne. */
+/* « III, IV, V et VI » et « quatre » : les piliers à élire, tels que content/election.json les donne. */
 export const polesAElire = () => getElection().poles.join(", ").replace(/, ([^,]+)$/, " et $1");
 export const nombreAElire = (majuscule = false) => {
   const n = ["zéro", "une", "deux", "trois", "quatre", "cinq", "six"][getElection().poles.length];

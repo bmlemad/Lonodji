@@ -48,10 +48,14 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
 - Nommer un coordonnateur : une ligne dans `NOMINATIONS` (`scripts/import-legacy.py`) et une entrée dans
   `lib/decisions.ts`. Les phrases héritées qui comptent les coordinations (« quatre des vingt thématiques… »,
   « Sixteen themes out of twenty… ») sont recalculées à l'import (`comptes_courants`) : ne pas les corriger à la main.
-- Structure en vigueur depuis le 1er octobre 2026 : six pôles (V et VI issus du pôle II), vingt-deux thématiques (la 22, Sport, arts & loisirs), vice-présidences de pôle élues
-  (plus « directions de pôle, rang de chef de projet »), sept thématiques prioritaires (`lib/organisation.ts`). Le
-  nombre de pôles se lit dans `content/index.json` ; s'il change encore, chercher aussi « six pôles », « 6 pôles », « six pillars »,
-  « vingt-deux thématiques » et « twenty-two themes », encore écrits en dur dans quelques libellés (menus, palette, manifeste, métadonnées).
+- Structure en vigueur depuis le 6 octobre 2026 : six piliers stratégiques, intitulés et missions dans
+  `content/architecture.json`. Ils remplacent les anciens pôles. Les vingt-deux thématiques sont rattachées une
+  seule fois dans ce fichier ; `scripts/architecture.py` projette cette structure sur les données importées et les
+  pages courantes. `import-legacy.py` rejoue cette projection. Les noms et l’ordre des piliers se reprennent depuis
+  cette source ; les vice-présidences I et II conservent leurs titulaires, les III à VI restent à élire.
+  Les articles, notes historiques et décisions datées conservent leurs formulations d’origine. Ne pas présenter
+  l’alignement UNESCO/ODD comme une certification ou un partenariat. Le numérique est transversal : formation au II,
+  connectivité au III, données et IA au VI. Les sept priorités restent dans `lib/organisation.ts`.
 - `content/transmissions.json` : n'y porter un envoi, un accusé ou une réponse qu'avec sa date réelle, donnée par le
   bureau ; `/actions#transmission` l'affiche. Les lettres d'envoi (`build-lettres-envoi.py`) restent hors dépôt.
 - Magazine « Lonodji » : un numéro paru (`public/magazine/*.pdf`) est un texte daté, jamais régénéré (pas de

@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-06",
+  "titre": "Architecture institutionnelle définitive d’ADEB LONODJI",
+  "signature": "Six piliers stratégiques pour préserver l’héritage bedjond, promouvoir le développement durable et préparer l’avenir.",
+  "piliers": [
+    {
+      "roman": "I",
+      "mot": "Culture",
+      "nom": "Culture, patrimoine et transmission",
+      "mission": "Préserver, valoriser et transmettre l’héritage culturel, historique et linguistique du peuple bedjond.",
+      "thematiques": [
+        "memoire-heritage",
+        "culture-patrimoine-vivant"
+      ],
+      "nomEn": "Culture, heritage and transmission",
+      "ancienPoleDirection": "I"
+    },
+    {
+      "roman": "II",
+      "mot": "Capital humain",
+      "nom": "Capital humain et inclusion sociale",
+      "mission": "Promouvoir le bien-être, l’éducation, l’égalité des chances et la cohésion sociale.",
+      "thematiques": [
+        "savoirs-innovation",
+        "jeunesse-reussite",
+        "leadership-feminin",
+        "sante-prevention",
+        "solidarite-inclusion",
+        "sport-arts-loisirs",
+        "competences-entrepreneuriat-numerique"
+      ],
+      "nomEn": "Human capital and social inclusion",
+      "ancienPoleDirection": "II"
+    },
+    {
+      "roman": "III",
+      "mot": "Territoire",
+      "nom": "Services essentiels et développement territorial",
+      "mission": "Améliorer les conditions de vie et l’accès équitable aux services de base.",
+      "thematiques": [
+        "eau-energie-connectivite",
+        "desenclavement-urbanisation",
+        "energie",
+        "transformation-numerique-services"
+      ],
+      "nomEn": "Essential services and territorial development",
+      "ancienPoleDirection": "VI"
+    },
+    {
+      "roman": "IV",
+      "mot": "Économie",
+      "nom": "Économie inclusive et prospérité locale",
+      "mission": "Créer des opportunités économiques durables au bénéfice des populations et des territoires.",
+      "thematiques": [
+        "agriculture-elevage-securite-alimentaire",
+        "entrepreneuriat-finance-inclusive"
+      ],
+      "nomEn": "Inclusive economy and local prosperity",
+      "ancienPoleDirection": "V"
+    },
+    {
+      "roman": "V",
+      "mot": "Environnement",
+      "nom": "Environnement, climat et résilience",
+      "mission": "Préserver les ressources naturelles et renforcer la résilience des communautés face aux défis environnementaux et climatiques.",
+      "thematiques": [
+        "environnement-ressources",
+        "urgences-risques"
+      ],
+      "nomEn": "Environment, climate and resilience",
+      "ancienPoleDirection": "IV"
+    },
+    {
+      "roman": "VI",
+      "mot": "Gouvernance",
+      "nom": "Gouvernance, paix et partenariats",
+      "mission": "Renforcer les institutions, la participation citoyenne, la cohésion sociale et la coopération pour le développement.",
+      "thematiques": [
+        "gouvernance-plaidoyer",
+        "paix-cohesion",
+        "reseau-experts-diaspora",
+        "justice-droits-homme",
+        "intelligence-artificielle-donnees"
+      ],
+      "nomEn": "Governance, peace and partnerships",
+      "ancienPoleDirection": "III"
+    }
+  ],
+  "references": [
+    {
+      "titre": "UNESCO — culture et développement durable",
+      "url": "https://www.unesco.org/en/sustainable-development/culture"
+    },
+    {
+      "titre": "Nations Unies — les 17 Objectifs de développement durable",
+      "url": "https://sdgs.un.org/goals"
+    }
+  ]
+}

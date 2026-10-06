@@ -62,5 +62,6 @@
  "rootAttrs": {},
  "slug": "air-bedjondo",
  "route": "/dossiers/air-bedjondo",
- "kind": "dossier"
+ "kind": "dossier",
+ "architectureDate": "2026-10-06"
 }

@@ -69,7 +69,7 @@ export default function Participer() {
         <details className="plier participer-detail" id="postes-ouverts">
           <summary><strong>Voir les postes ouverts</strong><span>Choisir un rôle bénévole et accéder à sa fiche de mission</span></summary>
           <div className="participer-detail-contenu">
-          <SectionHead eyebrow="Postes ouverts" title={`${enLettres(postes.length, true)} postes`} em="cherchent quelqu’un." text="Depuis le 1er octobre 2026, chacune des sept thématiques prioritaires a un titulaire et un adjoint, et chaque pôle une vice-présidence élue. Ces postes sont encore libres. Tous sont bénévoles et s’exercent depuis Bédjondo, N’Djamena ou la diaspora. Le bouton prépare le formulaire de contact ; le lien WhatsApp partage l’annonce à quelqu’un que vous connaissez." />
+          <SectionHead eyebrow="Postes ouverts" title={`${enLettres(postes.length, true)} postes`} em="cherchent quelqu’un." text="Depuis le 1er octobre 2026, chacune des sept thématiques prioritaires a un titulaire et un adjoint, et chaque pilier une vice-présidence élue. Ces postes sont encore libres. Tous sont bénévoles et s’exercent depuis Bédjondo, N’Djamena ou la diaspora. Le bouton prépare le formulaire de contact ; le lien WhatsApp partage l’annonce à quelqu’un que vous connaissez." />
           <ul className="postes-grille">
             {postes.map((p) => (
               <li key={p.cle} className={`poste poste-${p.genre}`}>
@@ -93,12 +93,12 @@ export default function Participer() {
       <details className="plier participer-detail" id="thematiques">
           <summary><strong>Trouver ma thématique</strong><span>Organisation, questions fréquentes et pistes de contribution</span></summary>
           <div className="participer-detail-contenu">
-        <SectionHead eyebrow="Avant de vous lancer" title="Choisissez un pôle," em="puis une thématique." text={`Vingt-deux thématiques, ${enLettres(vacantes)} sans coordonnateur ; et ${dirVacantes === 0 ? "chaque pôle a sa vice-présidence" : `${enLettres(dirVacantes)} des ${enLettres(idx.structure.poles.length)} pôles ${dirVacantes > 1 ? "attendent" : "attend"} encore leur vice-présidence, pourvue par élection`}. La page Nos actions les détaille ; ce raccourci vous oriente en quelques questions.`} />
+        <SectionHead eyebrow="Avant de vous lancer" title="Choisissez un pilier," em="puis une thématique." text={`Vingt-deux thématiques, ${enLettres(vacantes)} sans coordonnateur ; et ${dirVacantes === 0 ? "chaque pilier a sa vice-présidence" : `${enLettres(dirVacantes)} des ${enLettres(idx.structure.poles.length)} piliers ${dirVacantes > 1 ? "attendent" : "attend"} encore leur vice-présidence, pourvue par élection`}. La page Nos actions les détaille ; ce raccourci vous oriente en quelques questions.`} />
         <div className="legacy"><LegacySections sections={[choisir, avant]} sansPremierTitre /></div>
         <div className="section-actions" style={{ justifyContent: "flex-start" }}>
           <Link className="button primary" href="/participer/trouver-ma-thematique">Trouver ma thématique en trois questions <span aria-hidden="true">→</span></Link>
           <Link className="button secondary" href="/programmes#thematiques">Voir les vingt-deux thématiques <span aria-hidden="true">→</span></Link>
-          <Link className="text-link" href="/association/election-vice-presidences">Se présenter à une vice-présidence de pôle <span aria-hidden="true">→</span></Link>
+          <Link className="text-link" href="/association/election-vice-presidences">Se présenter à une vice-présidence de pilier <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/programmes/fiches-de-mission">Les fiches de mission (PDF) <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/diaspora">Diaspora : inscrire mes compétences <span aria-hidden="true">→</span></Link>
           <Link className="text-link" href="/temoignages">Raconter Bédjondo : témoignages &amp; photos <span aria-hidden="true">→</span></Link>

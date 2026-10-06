@@ -1,3 +1,4 @@
+import ArchitectureReference from "@/components/architecture-reference";
 import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
@@ -46,6 +47,7 @@ export default function LivreBlanc() {
         crumbs={[{ label: "Vision 2030 — projet ODEB", href: "/odeb" }, { label: "Livre blanc" }]}
         pills={["Version de travail n° 1", ODEB.presenteLabel, "Non adopté à ce jour"]}
       />
+      <ArchitectureReference />
       <OdebNav actif="livre-blanc" />
 
       <div className="od-doc-layout">
@@ -71,7 +73,7 @@ export default function LivreBlanc() {
 
           <section id="depart" className="od-chap">
             <h2><span>2.</span> D’où nous partons</h2>
-            <p>L’Association de Développement et d’Entraide de Bédjondo est née de réflexions engagées dès 1986 par des cadres bedjond et a été reconnue officiellement en 1995. Deux forums, en 2000 et 2003, ont marqué ses premières années ; une longue mise en veille a suivi. En 2026, l’association s’est remise en mouvement et s’est organisée en six pôles, {enLettres(c.total)} thématiques et deux cellules transversales, chaque thématique devant être animée par un coordonnateur ou une coordonnatrice qui rend compte publiquement.</p>
+            <p>L’Association de Développement et d’Entraide de Bédjondo est née de réflexions engagées dès 1986 par des cadres bedjond et a été reconnue officiellement en 1995. Deux forums, en 2000 et 2003, ont marqué ses premières années ; une longue mise en veille a suivi. En 2026, l’association s’est remise en mouvement et s’est organisée en six piliers, {enLettres(c.total)} thématiques et deux cellules transversales, chaque thématique devant être animée par un coordonnateur ou une coordonnatrice qui rend compte publiquement.</p>
             <p>En quelques semaines, cette organisation a produit ce que le site lonodji.org tient à jour : {enLettres(c.plaidoyers)} dossiers de plaidoyer publiés — sept plaidoyers et une note à la commune —, à destinataires nommés ; un diagnostic territorial de {c.problematiques} problématiques, dont {c.inconnues} restent « inconnues » ; une carte du pays bedjond sur contours administratifs vérifiés — {c.unites} unités, {nf.format(c.localites)} localités — et {nf.format(c.fiches)} fiches de villages ; une bibliothèque de {c.references} références et {c.chercheurs} chercheurs ; un répertoire des compétences de la diaspora ; un journal de {c.articles} articles ; {c.formulaires} formulaires par lesquels chacun peut signaler, déposer, raconter, proposer. À la dernière mise à jour du site, {c.pourvues} coordinations sur {c.total} sont pourvues.</p>
             <p>Ce socle a deux limites, que nous préférons nommer. La première est humaine : tout repose sur des bénévoles, et une thématique sans coordonnateur reste une page. La seconde est institutionnelle : l’association n’a ni compte bancaire en son nom — la collecte est suspendue jusqu’à son ouverture —, ni statut lui permettant d’être l’interlocuteur crédible des bailleurs et des programmes ; sa conversion en ONG est annoncée, aucun dossier n’est déposé. Ce que le site sait produire, il ne sait pas encore le garantir dans la durée.</p>
           </section>
@@ -79,7 +81,7 @@ export default function LivreBlanc() {
           <section id="pourquoi" className="od-chap">
             <h2><span>3.</span> Pourquoi une organisation</h2>
             <p>{ODEB.objet}</p>
-            <p>Six fonctions sont en cause. Chacune existe aujourd’hui en morceaux : la recherche dans une thématique et une bibliothèque, la documentation dans des dossiers et des formulaires, le développement territorial dans un diagnostic et des plaidoyers, l’innovation dans un pôle et un chantier, le patrimoine dans des cahiers de terrain, la diaspora dans un répertoire. Aucune n’a de structure permanente qui la porte au nom du pays bedjond tout entier, avec des moyens propres, une gouvernance et une obligation de rendre compte.</p>
+            <p>Six fonctions sont en cause. Chacune existe aujourd’hui en morceaux : la recherche dans une thématique et une bibliothèque, la documentation dans des dossiers et des formulaires, le développement territorial dans un diagnostic et des plaidoyers, l’innovation dans un pilier et un chantier, le patrimoine dans des cahiers de terrain, la diaspora dans un répertoire. Aucune n’a de structure permanente qui la porte au nom du pays bedjond tout entier, avec des moyens propres, une gouvernance et une obligation de rendre compte.</p>
             <p>Une association peut lancer ces chantiers ; seule une organisation peut les tenir. C’est le sens de la transformation institutionnelle : non pas remplacer l’ADEB LONODJI, mais lui donner, à terme, la forme qui correspond à ce qu’elle fait déjà — et à ce que le pays bedjond attend d’elle. Le nom ODEB est celui que l’association a prévu pour sa conversion en ONG ; ce livre blanc lui donne un contenu avant le statut.</p>
           </section>
 

@@ -1,3 +1,8 @@
+> Référentiel du 6 octobre 2026 : les six piliers stratégiques remplacent les pôles.
+> `content/architecture.json` porte leurs intitulés, missions et rattachements ; `scripts/architecture.py`
+> régénère la structure et les pages courantes (aussi rejoué automatiquement à l’import).
+> Les références UNESCO/ODD expriment un alignement, sans certification ni partenariat.
+
 # ADEB LONODJI — lonodji.org
 
 Site officiel de l’Association de Développement et d’Entraide de Bédjondo (ADEB LONODJI) — Courage • Discipline • Héritage.

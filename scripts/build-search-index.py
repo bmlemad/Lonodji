@@ -16,7 +16,7 @@ MAX_TEXT = 3500
 
 KIND_LABEL = {"hub": "Page", "dossier": "Dossier", "en": "In English", "article": "Article"}
 HUB_TITLES = {
-    "mission": "Notre mission", "poles": "Nos actions : six pôles, vingt-deux thématiques", "plaidoyers": "Plaidoyers & engagements",
+    "mission": "Notre mission", "poles": "Nos actions : six piliers, vingt-deux thématiques", "plaidoyers": "Plaidoyers & engagements",
     "suivi": "Suivi & tableau de bord", "contact": "Participer : nous écrire", "adherer": "Adhérer et cotiser", "soutenir": "Nous soutenir",
     "redevabilite": "Redevabilité & transparence", "mentions-legales": "Mentions légales & confidentialité", "figures": "Histoire : grandes figures",
     "documents": "Documents à télécharger", "actualites": "Le journal",
@@ -92,7 +92,7 @@ PAGES_SITE += [
      "x": "feuille de route 2026 2030 phases tableau de bord dynamique cartographie communautaire espace membre registre des compétences plateforme de projets bibliothèque numérique observatoire du Mandoul Occidental patrimoine vivant multimédia académie numérique application mobile bilan plan d’action rapport annuel organisation constituée"},
     {"t": "Les six programmes du projet ODEB", "r": "/odeb/programmes", "k": "Page",
      "d": "Mémoire et Patrimoine, Recherche, Développement territorial, Jeunesse et Innovation, Diaspora : axes, thématiques mobilisées, coordination.",
-     "x": "programmes ODEB mémoire patrimoine recherche développement territorial jeunesse innovation diaspora thématiques coordonnateurs articulation pôles"},
+     "x": "programmes ODEB mémoire patrimoine recherche développement territorial jeunesse innovation diaspora thématiques coordonnateurs articulation piliers"},
     {"t": "Programme Mémoire et Patrimoine (ODEB)", "r": "/odeb/programmes/memoire-patrimoine", "k": "Page",
      "d": "Histoire des peuples bedjonds, atlas patrimonial, bibliothèque numérique : ce qui existe, ce que le programme construira.",
      "x": "programme mémoire patrimoine histoire des peuples bedjonds manuscrit atlas patrimonial lieux sacrés sépultures généalogies bibliothèque numérique bibliothèque orale musée numérique dictionnaire nangnda"},
@@ -125,14 +125,14 @@ PAGES_SITE.append({"t": "Sous-sol & ressources naturelles", "r": "/territoire/so
      "d": "Le sous-sol du Mandoul Occidental : pétrole du bassin voisin de Doba, fer des anciens fondeurs, or du Nord, ce qui reste inconnu, les leçons de Doba et nos propositions avant tout forage.",
      "x": "sous-sol ressources naturelles pétrole hydrocarbures bassin de Doba Doseo Komé Belanga mines minerais fer minerai de fer hauts fourneaux fondeurs métallurgie or orpaillage carrières latérite permis sismique levés sismiques 2D 3D BGP Glencore Delonex ERHC puits ITIE transparence revenus pétroliers 5 % région productrice Logone Oriental géologie"})
 _EL = json.loads((ROOT / "content" / "election.json").read_text(encoding="utf-8"))["poles"]
-_A_ELIRE = (["Une", "Deux", "Trois", "Quatre", "Cinq", "Six"][len(_EL) - 1] + " vice-présidences à élire (pôles "
+_A_ELIRE = (["Une", "Deux", "Trois", "Quatre", "Cinq", "Six"][len(_EL) - 1] + " vice-présidences à élire (piliers "
             + ", ".join(_EL[:-1]) + " et " + _EL[-1] + ")")
-PAGES_SITE.append({"t": "Élection des vice-présidences de pôle (octobre 2026)", "r": "/association/election-vice-presidences", "k": "Page",
+PAGES_SITE.append({"t": "Élection des vice-présidences de pilier (octobre 2026)", "r": "/association/election-vice-presidences", "k": "Page",
      "d": f"{_A_ELIRE} : candidatures du 2 au 15 octobre 2026, vote le 22 octobre ; qui peut se présenter, qui vote, comment ; fiche de candidature.",
-     "x": "élection vice-présidence vice-président pôle candidature candidater vote scrutin collège électoral quorum majorité mandat calendrier fiche procès-verbal"})
+     "x": "élection vice-présidence vice-président pilier candidature candidater vote scrutin collège électoral quorum majorité mandat calendrier fiche procès-verbal"})
 PAGES_SITE.append({"t": "Décisions d’organisation de l’association", "r": "/association/propositions-organisation", "k": "Page",
-     "d": "Huit décisions du bureau du 1er octobre 2026 : six pôles, sept thématiques prioritaires avec un adjoint, des vice-présidences de pôle élues, la cellule Financement à la trésorière, une seule grille de pilotage.",
-     "x": "organisation structure pôles thématiques benchmark comparaison propositions bureau prioritaires veille réorganisation cellule financement projets suivi redevabilité vice-présidence vice-président direction de pôle cumul adjoint grille pilotage plan communal décision pôle V économie territoire risques services essentiels"})
+     "d": "Huit décisions du bureau du 1er octobre 2026 : six piliers, sept thématiques prioritaires avec un adjoint, des vice-présidences de pilier élues, la cellule Financement à la trésorière, une seule grille de pilotage.",
+     "x": "organisation structure piliers thématiques benchmark comparaison propositions bureau prioritaires veille réorganisation cellule financement projets suivi redevabilité vice-présidence vice-président direction de pilier cumul adjoint grille pilotage plan communal décision pilier V économie territoire risques services essentiels"})
 PAGES_SITE.append({"t": "Nos propositions à la commune de Bédjondo", "r": "/territoire/propositions-commune", "k": "Page",
      "d": "Dix projets prioritaires, un projet intégré de développement économique local, et toutes les mesures proposées à la mairie, chacune avec sa source.",
      "x": "projets prioritaires PNUD développement économique local marché moderne centre de transformation agricole Maison de la Femme et de la Jeunesse maraîchage irrigation reboisement fonds microprojets assainissement centre numérique commune mairie maire conseil communal propositions plan de développement communal schéma d’aménagement cadastre adressage droits de marché budget session publique comité de quartier doléances convention jumelage éclairage solaire marché voirie eau santé école formation"})
@@ -166,9 +166,9 @@ PAGES_SITE.append({"t": "Donor programmes in Chad — World Bank, EU, UN, AfDB (
 PAGES_SITE.append({"t": "Sectors of intervention — WASH, health, nutrition, relief, DRR (in English)", "r": "/en/sectors", "k": "In English",
      "d": "Twenty-two themes mapped to NGO sectors: IASC clusters, OECD-DAC codes, SDGs.",
      "x": "English sectors WASH health nutrition education food security livelihoods relief emergency DRR protection governance peace gender climate ICT4D culture diaspora cluster DAC SDG donor NGO partner"})
-PAGES_SITE.append({"t": "Fiches de mission : vice-présider un pôle, coordonner une thématique", "r": "/programmes/fiches-de-mission", "k": "Page",
-     "d": "Trente fiches en PDF — six vice-présidences de pôle, vingt-deux coordinations, deux cellules — avec le rôle, le périmètre, les quatre étapes et le lien pour candidater.",
-     "x": "fiche de mission fiches poste vice-président vice-présidence directeur directrice de pôle coordonnateur coordonnatrice coordination thématique cellule candidater candidature recrutement bénévole rôle périmètre étapes PDF recueil à pourvoir vacant"})
+PAGES_SITE.append({"t": "Fiches de mission : vice-présider un pilier, coordonner une thématique", "r": "/programmes/fiches-de-mission", "k": "Page",
+     "d": "Trente fiches en PDF — six vice-présidences de pilier, vingt-deux coordinations, deux cellules — avec le rôle, le périmètre, les quatre étapes et le lien pour candidater.",
+     "x": "fiche de mission fiches poste vice-président vice-présidence directeur directrice de pilier coordonnateur coordonnatrice coordination thématique cellule candidater candidature recrutement bénévole rôle périmètre étapes PDF recueil à pourvoir vacant"})
 PAGES_SITE.append({"t": "Lonodji, le magazine trimestriel d’ADEB LONODJI", "r": "/magazine", "k": "Page",
      "d": "Quatre numéros par an (janvier, avril, juillet, octobre), en PDF à imprimer ou à transmettre sur WhatsApp : décisions du trimestre, dossier, plaidoyers, mémoire, culture, postes ouverts.",
      "x": "magazine trimestriel revue Lonodji numéro PDF imprimer WhatsApp couverture sommaire édito trimestre"})
@@ -177,7 +177,7 @@ PAGES_SITE.append({"t": "La lettre d’information : chaque mois, publié, déci
      "x": "lettre d’information newsletter infolettre numéros abonnement s’abonner e-mail mensuelle PDF WhatsApp transmettre publié décidé ouvert archive"})
 PAGES_SITE.append({"t": "Registre public des décisions", "r": "/transparence/decisions", "k": "Page",
      "d": "Ce que l’association a décidé, nommé, annoncé ou proposé depuis septembre 2026, tel que le site l’a publié, avec la source de chaque ligne et ce qui reste attendu.",
-     "x": "registre décisions décidé nommé nomination annoncé annonce proposé proposition à voter règle en vigueur procès-verbal PV assemblée bureau transparence redevabilité source daté logo directions de pôle sièges ODEB programme 06"})
+     "x": "registre décisions décidé nommé nomination annoncé annonce proposé proposition à voter règle en vigueur procès-verbal PV assemblée bureau transparence redevabilité source daté logo directions de pilier sièges ODEB programme 06"})
 PAGES_SITE.append({"t": "Quinze affiches « Retrouvez votre village » à imprimer", "r": "/villages#affiches", "k": "Document PDF",
      "d": "Une affiche A4 par unité et une affiche générale, avec un code QR vers les villages et l’adresse en toutes lettres — pour les chefs, les relais, les écoles, les centres de santé.",
      "x": "affiche affiches imprimer A4 PDF code QR village unité chef de canton relais école centre de santé lieu de culte accrocher papier"})
@@ -219,6 +219,9 @@ for e in entries:
     else:
         _gardees.append(e)
 entries = _gardees
+architecture = json.loads((CONTENT / "architecture.json").read_text())
+PAGES_SITE.append({"t": architecture["titre"], "r": "/association/architecture", "k": "Page",
+    "d": architecture["signature"], "x": " ".join(p["nom"] + " " + p["mission"] for p in architecture["piliers"])})
 entries.extend(PAGES_SITE)
 
 for f in sorted((CONTENT / "articles").glob("*.json")):
@@ -238,13 +241,13 @@ for pole in idx["structure"]["poles"] + ([idx["structure"]["cellules"]] if idx["
             "x": plain(t["description"])[:MAX_TEXT],
         })
 
-# vice-présidences de pôle (directions créées le 28/09/2026, renommées le 01/10/2026)
+# vice-présidences de pilier (directions créées le 28/09/2026, renommées le 01/10/2026)
 for pole in idx["structure"]["poles"]:
     d = pole.get("direction")
     if d:
-        entries.append({"t": f"Vice-présidence du pôle {pole['roman']} — {pole['name']}", "r": f"/programmes#{pole['id']}", "k": "Vice-présidence de pôle",
-                        "d": (f"Vice-présidence : {d['name']}. " if d["filled"] else "Vice-présidence à pourvoir, par élection. ") + "Réunit chaque trimestre les coordonnateurs des thématiques du pôle, tient le plan d’action et le calendrier, rend compte au bureau.",
-                        "x": "vice-président vice-présidente vice-présidence directeur de pôle directrice direction diriger un pôle élection candidater " + " ".join(t["name"] for t in pole["items"])})
+        entries.append({"t": f"Vice-présidence du pilier {pole['roman']} — {pole['name']}", "r": f"/programmes#{pole['id']}", "k": "Vice-présidence de pilier",
+                        "d": (f"Vice-présidence : {d['name']}. " if d["filled"] else "Vice-présidence à pourvoir, par élection. ") + "Réunit chaque trimestre les coordonnateurs des thématiques du pilier, tient le plan d’action et le calendrier, rend compte au bureau.",
+                        "x": "vice-président vice-présidente vice-présidence directeur de pilier directrice direction diriger un pilier élection candidater " + " ".join(t["name"] for t in pole["items"])})
 
 for p in idx["plaidoyers"]:
     entries.append({"t": p["title"], "r": f"/actions#{p['id']}", "k": "Plaidoyer", "d": p["demand"], "x": f"{p['theme']} {p['recipients']} {p['status']} {p['published']}"})

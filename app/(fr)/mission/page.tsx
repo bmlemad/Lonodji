@@ -1,3 +1,4 @@
+import ArchitectureReference from "@/components/architecture-reference";
 import { alternatesLangues } from "@/lib/langues";
 import Appel from "@/components/appel";
 import { breadcrumbSchema, jsonLd, webPageSchema } from "@/lib/schema";
@@ -33,9 +34,10 @@ export default function Mission() {
         title="Au service de tout le peuple bedjond,"
         em="au Tchad et dans la diaspora."
         lead="Ancrée à Bédjondo, ADEB LONODJI s’adresse à tout le peuple bedjond, où qu’il vive. Elle rassemble les contributions au développement du pays bedjond — eau, santé, école, routes — et à la sauvegarde de sa langue, de son histoire et de son patrimoine."
-        pills={["Reconnue en 1995 · autorisation actuelle en vérification", "Réactivée en 2026", "6 pôles · 22 thématiques"]}
+        pills={["Reconnue en 1995 · autorisation actuelle en vérification", "Réactivée en 2026", "6 piliers · 22 thématiques"]}
       />
 
+      <ArchitectureReference />
       <section className="hub-section" id="reperes">
         <SectionHead eyebrow="Repères historiques" title="Quarante ans," em="de 1986 à 2026." text="Les dates ci-dessous sont celles que l’association confirme. Quand une date reste incertaine, nous le disons dans le journal des corrections plutôt que de l’affirmer." />
         <Timeline items={idx.history} />

@@ -50,7 +50,7 @@ export default function Diaspora() {
         <SectionHead eyebrow="Comment contribuer" title="Choisir une mission," em="pas un engagement vague." text="Vous pouvez aider sans prendre un poste : relire un dossier, vérifier un budget, conseiller à distance, former quelqu’un, ouvrir un contact ou effectuer une mission courte." />
         <div className="link-list">
           <Link href="/actions"><small>Dossiers</small><strong>Relire ou renforcer un plaidoyer</strong><span>Apporter une expertise ciblée sur l’eau, la santé, l’école, les routes, l’énergie, le numérique ou la formation.</span></Link>
-          <Link href="/participer#postes-ouverts"><small>Responsabilités</small><strong>Prendre une mission structurée</strong><span>Coordination, adjoint ou vice-présidence de pôle : les postes actuellement ouverts sont publiés avec leur fiche.</span></Link>
+          <Link href="/participer#postes-ouverts"><small>Responsabilités</small><strong>Prendre une mission structurée</strong><span>Coordination, adjoint ou vice-présidence de pilier : les postes actuellement ouverts sont publiés avec leur fiche.</span></Link>
           <Link href="/territoire/enquetes"><small>Terrain</small><strong>Aider à produire une donnée manquante</strong><span>Participer à une enquête, vérifier une information locale ou documenter un besoin précis.</span></Link>
           <Link href="/bibliotheque#deposer"><small>Connaissance</small><strong>Partager un document ou une ressource</strong><span>Thèse, archive, étude, rapport ou référence utile pour Bédjondo et le pays bedjond.</span></Link>
         </div>
@@ -139,7 +139,7 @@ export default function Diaspora() {
                   <select id="dp-them" name="thematique">
                     <option value="">Choisir une thématique</option>
                     {poles.map((p) => (
-                      <optgroup key={p.id} label={`Pôle ${p.roman} — ${p.name}`}>
+                      <optgroup key={p.id} label={`Pilier ${p.roman} — ${p.name}`}>
                         {p.items.map((t) => <option key={t.id}>{t.number}. {t.name}</option>)}
                       </optgroup>
                     ))}

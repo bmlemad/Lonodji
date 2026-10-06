@@ -125,7 +125,7 @@ export default async function ProgrammePage({ params }: { params: Promise<{ prog
               <span className="od-them-num">{t.kind === "cellule" ? "Cellule" : t.number}</span>
               <div>
                 <strong><Link href={`/programmes#${t.id}`}>{t.name}</Link></strong>
-                <span>{t.poleRoman ? `Pôle ${t.poleRoman} · ${t.pole}` : t.pole}</span>
+                <span>{t.poleRoman ? `Pilier ${t.poleRoman} · ${t.pole}` : t.pole}</span>
                 <span>{t.filled ? `${t.coordinatorLabel || "Coordination"} : ${t.coordinator}` : "Coordination à pourvoir"}</span>
               </div>
               {t.filled ? <span className="status filled">Pourvue</span> : <Link className="status" href={`/participer?theme=${t.kind === "cellule" ? t.id.replace("cellule-", "").split("-")[0] : t.number}&coordo=1#contact`}>Proposer sa candidature</Link>}

@@ -1,3 +1,4 @@
+import ArchitectureReference from "@/components/architecture-reference";
 import { metaDescription } from "@/lib/content";
 import { alternatesLangues } from "@/lib/langues";
 import type { Metadata } from "next";
@@ -33,6 +34,7 @@ export default function Odeb() {
         crumbs={[{ label: "L’association", href: "/mission" }, { label: "Vision 2030 — projet ODEB" }]}
         pills={[`Principe adopté par le bureau le ${B18.dateLabel}`, "Projet porté par ADEB LONODJI", `Réflexion lancée le ${ODEB.presenteLabel}`, "Pour les quarante ans des fondations, 1986-2026", "Six missions, six programmes", "Livre blanc en version de travail"]}
       />
+      <ArchitectureReference />
       <OdebNav actif="vision" />
 
       <Stats items={[

@@ -52,5 +52,6 @@
  },
  "slug": "trouver-ma-thematique",
  "route": "/participer/trouver-ma-thematique",
- "kind": "dossier"
+ "kind": "dossier",
+ "architectureDate": "2026-10-06"
 }

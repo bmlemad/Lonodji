@@ -22,14 +22,14 @@ const DATES: [string, string][] = [
   ["1995", "Reconnaissance officielle de l’Association de Développement et d’Entraide de Bédjondo."],
   ["2000", "Premier forum communautaire, à Bédjondo."],
   ["2003", "Second forum, à Bébopen ; puis une longue mise en veille."],
-  ["2026", "Réactivation : quatre pôles, puis six le 1er octobre, vingt-deux thématiques (la vingtième, Urgences & risques, le 29 septembre ; la vingt et unième, Énergie, le 30 septembre ; la vingt-deuxième, Sport, arts & loisirs, le 1er octobre), deux cellules ; site lonodji.org ; sept plaidoyers et une note à la commune ; carte du territoire."],
+  ["2026", "Réactivation : quatre piliers, puis six le 1er octobre, vingt-deux thématiques (la vingtième, Urgences & risques, le 29 septembre ; la vingt et unième, Énergie, le 30 septembre ; la vingt-deuxième, Sport, arts & loisirs, le 1er octobre), deux cellules ; site lonodji.org ; sept plaidoyers et une note à la commune ; carte du territoire."],
   ["28 sept. 2026", "Quarante ans des fondations : lancement de la réflexion ODEB LONODJI (vision 2030, six programmes, livre blanc en version de travail)."],
 ];
 const VISUELS: [string, string][] = [
   ["/partage/40-ans-reflexion-odeb.png", "Quarante ans des fondations : la réflexion ODEB LONODJI"],
   ["/partage/livre-blanc-odeb.png", "Le livre blanc, à lire et à discuter"],
   ["/partage/thematiques-a-pourvoir.png", "Les thématiques qui cherchent leur coordonnateur"],
-  ["/partage/election-vice-presidences.png", `${nombreAElire(true)} vice-présidences de pôle à élire (vote le ${dateFr(etape("vote").date)})`],
+  ["/partage/election-vice-presidences.png", `${nombreAElire(true)} vice-présidences de pilier à élire (vote le ${dateFr(etape("vote").date)})`],
   ["/partage/recensement-membres.png", "Recensement des membres, avant le 18 octobre 2026"],
   ["/partage/retrouver-son-village.png", "Retrouver son village : une fiche par localité"],
   ["/partage/racontez-bedjondo.png", "Racontez Bédjondo : témoignages et photos"],
@@ -125,7 +125,7 @@ export default function Presse() {
         <SectionHead eyebrow="Documents" title="À lire" em="et à joindre." />
         <div className="link-list">
           <a href="/notes/note-synthese-bedjondo.pdf" download><small>PDF · 2 pages</small><strong>Note de synthèse des huit dossiers de plaidoyer</strong><span>Bédjondo en chiffres sourcés, les huit demandes, les programmes à rejoindre, ce que nous ne savons pas encore. À joindre aux courriers.</span></a>
-          <a href="/documents/dossier-presentation-adeb-lonodji-2026.pdf" download><small>PDF · 4 pages</small><strong>Dossier de présentation d’ADEB LONODJI</strong><span>L’association, ses pôles, ses thématiques, ses plaidoyers.</span></a>
+          <a href="/documents/dossier-presentation-adeb-lonodji-2026.pdf" download><small>PDF · 4 pages</small><strong>Dossier de présentation d’ADEB LONODJI</strong><span>L’association, ses piliers, ses thématiques, ses plaidoyers.</span></a>
           <a href={ODEB.livreBlancPdf} download><small>PDF · version de travail</small><strong>Livre blanc du projet ODEB LONODJI</strong><span>Vision 2030, six missions, six programmes, feuille de route. Non adopté à ce jour.</span></a>
           <a href={IDENTITE.charte} download><small>PDF · charte</small><strong>Identité visuelle du projet ODEB LONODJI</strong><span>Le logo « Les Pas vers l’Avenir », ses versions, ses couleurs, ses règles ; le kit et le papier à en-tête sont sur la page en ligne.</span></a>
           <Link href="/documents"><small>Tous les PDF</small><strong>Plaidoyers, cahiers de terrain, note à la commune</strong><span>{c.documentsPdf} documents disponibles, {c.documentsAnnonces} annoncés.</span></Link>

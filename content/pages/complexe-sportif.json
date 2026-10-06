@@ -4,7 +4,7 @@
  "documentTitle": "Complexe de formation sportive — ADEB LONODJI",
  "description": "Football, basket, judo, karaté, athlétisme : le projet par étapes d’un complexe de formation sportive à Bédjondo. Rien n’est encore construit ni financé.",
  "title": "Un complexe de formation sportive pour les jeunes de Bédjondo",
- "eyebrow": "Pôle II · Éducation et formation professionnelle · Projet à l’étude",
+ "eyebrow": "Pilier II · Éducation et formation professionnelle · Projet à l’étude",
  "lede": "Une école de football, du basket, du judo, du karaté et de l’athlétisme, dans un même lieu, pour les filles et les garçons de Bédjondo et des cantons. Rien n’est encore construit ni financé : voici ce que nous proposons, dans quel ordre, et ce que chacun peut faire dès maintenant.",
  "pills": [
   "Football",
@@ -174,5 +174,6 @@
  "rootAttrs": {},
  "slug": "complexe-sportif",
  "route": "/projets/complexe-sportif",
- "kind": "dossier"
+ "kind": "dossier",
+ "architectureDate": "2026-10-06"
 }

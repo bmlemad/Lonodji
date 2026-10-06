@@ -122,5 +122,6 @@
  "rootAttrs": {},
  "slug": "ong-partenaires",
  "route": "/association/ong-partenaires",
- "kind": "dossier"
+ "kind": "dossier",
+ "architectureDate": "2026-10-06"
 }

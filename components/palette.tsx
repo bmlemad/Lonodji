@@ -19,7 +19,7 @@ const RACCOURCIS: Entry[] = [
   { t: "Retrouver mon village", r: "/villages", k: "Raccourci", d: "966 fiches de localités, une par village, quartier ou canton" },
   { t: "Le projet ODEB LONODJI", r: "/odeb", k: "Raccourci", d: "Vision 2030, six missions, six programmes, livre blanc" },
   { t: "Signaler un besoin", r: "/territoire/besoins", k: "Raccourci", d: "Eau, école, santé, route : localité par localité" },
-  { t: "Nos actions : pôles et thématiques", r: "/programmes", k: "Raccourci", d: "Six pôles, vingt-deux thématiques, sept prioritaires, vice-présidences et coordonnateurs" },
+  { t: "Nos actions : piliers et thématiques", r: "/programmes", k: "Raccourci", d: "Six piliers, vingt-deux thématiques, sept prioritaires, vice-présidences et coordonnateurs" },
   { t: "Secteurs d’intervention", r: "/secteurs", k: "Raccourci", d: "WASH, santé, nutrition, urgences… nos thématiques en langue ONG" },
   { t: "Le journal", r: "/journal", k: "Raccourci", d: "Articles datés et sourcés, lettre d’information" },
   { t: "Adhérer, écrire, nous soutenir", r: "/participer", k: "Raccourci", d: "Formulaire, WhatsApp, téléphone ; réponse sous 48 h" },
@@ -40,7 +40,7 @@ const RACCOURCIS_EN: Entry[] = [
   { t: "Contact us", r: "/en/contact", k: "Raccourci", d: "Form and WhatsApp" },
 ];
 
-const ORDRE = ["Raccourci", "Page", "Direction de pôle", "Thématique", "Article", "Plaidoyer", "Document PDF", "Document à venir", "In English", "Dossier"];
+const ORDRE = ["Raccourci", "Page", "Direction de pilier", "Thématique", "Article", "Plaidoyer", "Document PDF", "Document à venir", "In English", "Dossier"];
 
 const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’']/g, " ");
 const estChamp = (el: Element | null) => !!el && (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || (el as HTMLElement).isContentEditable);

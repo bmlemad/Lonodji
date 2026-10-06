@@ -9,7 +9,7 @@ function ChampsContactPrefill() {
   const params = useSearchParams();
   useEffect(() => {
     const theme = params.get("theme");
-    const direction = (params.get("direction") || "").toUpperCase();  // ?direction=I…VI : la vice-présidence d'un pôle
+    const direction = (params.get("direction") || "").toUpperCase();  // ?direction=I…VI : la vice-présidence d'un pilier
     const coordo = params.get("coordo");
     const adjoint = params.get("adjoint");  // ?adjoint=1 : se proposer comme adjoint d'une thématique prioritaire
     const objetDemande = (params.get("objet") || "").toLowerCase();
@@ -32,8 +32,8 @@ function ChampsContactPrefill() {
       if (opt) pole.value = opt.value || opt.text;
     }
     if (pole && direction) {
-      // 01/10/2026 : les directions de pôle sont devenues des vice-présidences (l'ancien libellé reste reconnu)
-      const opt = Array.from(pole.options).find((o) => [`vice-présidence du pôle ${direction.toLowerCase()} `, `direction du pôle ${direction.toLowerCase()} `].some((d) => o.text.trim().toLowerCase().startsWith(d)));
+      // 01/10/2026 : les directions de pilier sont devenues des vice-présidences (l'ancien libellé reste reconnu)
+      const opt = Array.from(pole.options).find((o) => [`vice-présidence du pilier ${direction.toLowerCase()} `, `direction du pilier ${direction.toLowerCase()} `].some((d) => o.text.trim().toLowerCase().startsWith(d)));
       if (opt) pole.value = opt.value || opt.text;
     }
     const cb = form.querySelector<HTMLInputElement>("input[name='candidature_coordo']");

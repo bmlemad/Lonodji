@@ -1,3 +1,4 @@
+import ArchitectureReference from "@/components/architecture-reference";
 import type { Metadata } from "next";
 import { alternatesLangues } from "@/lib/langues";
 import Link from "@/components/lien";
@@ -35,6 +36,7 @@ export default function PropositionsOrganisation() {
   const ordre = Object.keys(SOURCES);
   return (
     <main id="main-content" className="hub-page gl-page">
+      <ArchitectureReference />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({ "@context": "https://schema.org", ...webPageSchema({ url: ROUTE, name: TITRE, description: RESUME, lang: "fr" }) }) }} />
       <PageHeader
         eyebrow="L’association · décisions d’organisation"

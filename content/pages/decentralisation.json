@@ -62,5 +62,6 @@
  "rootAttrs": {},
  "slug": "decentralisation",
  "route": "/territoire/decentralisation",
- "kind": "dossier"
+ "kind": "dossier",
+ "architectureDate": "2026-10-06"
 }

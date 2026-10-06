@@ -18,11 +18,12 @@ export const NAVIGATION: NavEntree[] = [
     id: "association", label: "L’association", court: "Association", href: "/mission",
     colonnes: [
       { titre: "Qui nous sommes", liens: [
+        { label: "Architecture institutionnelle", href: "/association/architecture", note: "Les six piliers stratégiques et leurs missions" },
         { label: "Notre mission", href: "/mission", note: "Objet, valeurs, bureau exécutif, repères" },
         { label: "Événements", href: "/association/evenements", note: "Réunions, assemblées, activités" },
         { label: "ONG & bailleurs : notre statut", href: "/association/ong-partenaires", note: "Statut, partenaires présents au Mandoul" },
         { label: "Les démarches, pas à pas", href: "/association/demarches", note: "Statut, récépissé, vers l’ONG" },
-        { label: "Décisions d’organisation", href: "/association/propositions-organisation", note: "Six pôles, sept priorités : décidé le 1er octobre 2026" },
+        { label: "Décisions d’organisation", href: "/association/propositions-organisation", note: "Six piliers, sept priorités : décidé le 1er octobre 2026" },
         { label: "Élection des vice-présidences", href: "/association/election-vice-presidences", note: "Candidatures du 2 au 15 octobre, vote le 22" },
       ] },
       { titre: "Rendre des comptes", liens: [
@@ -53,9 +54,9 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Contribuer", href: "/participer#postes-ouverts", note: "Choisir un rôle bénévole" },
       ] },
       { titre: "Organisation et partenaires", liens: [
-        { label: "Tous les pôles et thématiques", href: "/programmes", note: "L’organisation complète et les plans d’action" },
+        { label: "Tous les piliers et thématiques", href: "/programmes", note: "L’organisation complète et les plans d’action" },
         { label: "Secteurs d’intervention", href: "/secteurs", note: "Les mêmes thématiques, en langue ONG" },
-        { label: "Fiches de mission (PDF)", href: "/programmes/fiches-de-mission", note: "Vice-présider un pôle, coordonner une thématique" },
+        { label: "Fiches de mission (PDF)", href: "/programmes/fiches-de-mission", note: "Vice-présider un pilier, coordonner une thématique" },
         { label: "Programmes des bailleurs", href: "/bailleurs", note: "Partenaires et possibilités de financement" },
       ] },
     ],
@@ -293,12 +294,12 @@ export function entreeCourante(pathname: string): string {
 /* Pied de page : cinq colonnes, les mêmes rubriques que le menu. */
 export const PIED: { titre: string; liens: NavLien[] }[] = [
   { titre: "L’association", liens: [
-    { label: "Notre mission", href: "/mission" }, { label: "Vision 2030 — projet ODEB", href: "/odeb" }, { label: "Redevabilité & transparence", href: "/transparence" },
+    { label: "Notre mission", href: "/mission" }, { label: "Architecture institutionnelle", href: "/association/architecture" }, { label: "Vision 2030 — projet ODEB", href: "/odeb" }, { label: "Redevabilité & transparence", href: "/transparence" },
     { label: "Registre des décisions", href: "/transparence/decisions" }, { label: "Nos engagements", href: "/association/engagements" }, { label: "Documents", href: "/documents" },
     { label: "ONG & bailleurs : notre statut", href: "/association/ong-partenaires" }, { label: "Presse & partenaires", href: "/presse" },
   ] },
   { titre: "Nos actions", liens: [
-    { label: "Pôles & thématiques", href: "/programmes" }, { label: "Secteurs d’intervention", href: "/secteurs" }, { label: "Plaidoyers & engagements", href: "/actions" },
+    { label: "Piliers & thématiques", href: "/programmes" }, { label: "Secteurs d’intervention", href: "/secteurs" }, { label: "Plaidoyers & engagements", href: "/actions" },
     { label: "Projets", href: "/projets" }, { label: "Programmes des bailleurs", href: "/bailleurs" }, { label: "Tableau de suivi", href: "/impact" }, { label: "Fiches de mission", href: "/programmes/fiches-de-mission" },
   ] },
   { titre: "Territoire", liens: [
