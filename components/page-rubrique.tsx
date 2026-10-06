@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import GuideInstallation from "@/components/guide-installation";
 import { LegacyDocument } from "@/components/legacy-content";
 import { getIndex, getPage, metaDescription, ogFor } from "@/lib/content";
 import { alternatesLangues } from "@/lib/langues";
@@ -31,7 +32,7 @@ export function rubrique(prefixe: string) {
     async Page({ params }: { params: Promise<{ slug: string }> }) {
       const p = pageDe(`${prefixe}/${(await params).slug}`);
       if (!p) notFound();
-      return <LegacyDocument page={getPage(p.slug)} />;
+      return <LegacyDocument page={getPage(p.slug)}>{p.route === "/projets/application" ? <GuideInstallation /> : null}</LegacyDocument>;
     },
   };
 }

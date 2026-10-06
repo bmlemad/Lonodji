@@ -58,7 +58,7 @@ with tempfile.TemporaryDirectory(prefix='lonodji-ios-') as dossier:
         with sync_playwright() as p:
             browser = (p.webkit if webkit else p.chromium).launch()
             cas = 0
-            for route in ('/', '/en/index', '/participer', '/secteurs'):
+            for route in ('/', '/en/index', '/participer', '/secteurs', '/projets/application'):
                 for width, height, top, left, bottom in ((390,844,59,0,34), (844,390,0,44,21)):
                     context = browser.new_context(viewport={'width':width,'height':height}, is_mobile=True, has_touch=True, ignore_https_errors=webkit, service_workers='block', reduced_motion='reduce')
                     context.add_init_script("Object.defineProperty(navigator,'standalone',{get:()=>true})")

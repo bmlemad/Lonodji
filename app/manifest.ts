@@ -32,7 +32,7 @@ export default function manifest(): MetadataRoute.Manifest {
       { name: "Adhérer à l’association", short_name: "Adhérer", url: "/participer#adherer", icons: [{ src: "/app/raccourci-adherer.png", sizes: "96x96", type: "image/png" }] },
       { name: "Rechercher sur le site", short_name: "Rechercher", url: "/recherche", icons: [{ src: "/app/raccourci-rechercher.png", sizes: "96x96", type: "image/png" }] },
     ],
-    // captures de la version actuelle (29 septembre 2026), montrées par le navigateur à l'installation
+    // captures de la version actuelle (6 octobre 2026), montrées par le navigateur à l'installation
     screenshots: [
       { src: "/icones/capture-accueil.jpg", sizes: "1080x1920", type: "image/jpeg", form_factor: "narrow", label: "Accueil" },
       { src: "/icones/capture-villages.jpg", sizes: "1080x1920", type: "image/jpeg", form_factor: "narrow", label: "Retrouver son village" },

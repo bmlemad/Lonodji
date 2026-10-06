@@ -20,7 +20,7 @@ import urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-PAGES = ["/", "/mission", "/histoire", "/programmes", "/programmes/fiches-de-mission", "/secteurs", "/en/sectors", "/actions", "/impact", "/projets", "/observatoire", "/villages", "/villages/bedjondo", "/villages/bedjondo/bedjondo", "/carte", "/journal", "/lettre", "/magazine",
+PAGES = ["/", "/projets/application", "/hors-ligne", "/mission", "/histoire", "/programmes", "/programmes/fiches-de-mission", "/secteurs", "/en/sectors", "/actions", "/impact", "/projets", "/observatoire", "/villages", "/villages/bedjondo", "/villages/bedjondo/bedjondo", "/carte", "/journal", "/lettre", "/magazine",
          "/bibliotheque", "/langue", "/diaspora", "/temoignages", "/documents", "/transparence", "/transparence/decisions", "/participer", "/presse", "/accessibilite", "/mentions-legales", "/plan-du-site", "/archives", "/recherche?q=odeb",
          "/odeb", "/odeb/livre-blanc", "/odeb/feuille-de-route", "/odeb/programmes", "/odeb/programmes/economie-sociale", "/odeb/programmes/memoire-patrimoine", "/odeb/identite",
          "/dossiers", "/territoire", "/territoire/propositions-commune", "/en/commune", "/territoire/gouvernance-locale", "/territoire/sous-sol", "/association/propositions-organisation", "/association/election-vice-presidences", "/en/organisation", "/en/election", "/en/subsoil", "/en/governance", "/patrimoine", "/territoire/diagnostic", "/patrimoine/base-de-recherche", "/projets/bedjondo-transport-logistique", "/programmes/handicap", "/bailleurs", "/en/donors", "/territoire/besoins", "/association/ancienne-identite-visuelle", "/association/demarches", "/patrimoine/lieux-sacres",
