@@ -106,8 +106,8 @@
  "hasMap": true,
  "scripts": [],
  "rootAttrs": {},
+ "architectureDate": "2026-10-06",
  "slug": "bedjondo",
  "route": "/territoire/bedjondo",
- "kind": "dossier",
- "architectureDate": "2026-10-06"
+ "kind": "dossier"
 }

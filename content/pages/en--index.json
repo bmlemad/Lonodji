@@ -59,8 +59,8 @@
  "hasMap": false,
  "scripts": [],
  "rootAttrs": {},
+ "architectureDate": "2026-10-06",
  "slug": "en/index",
  "route": "/en/index",
- "kind": "en",
- "architectureDate": "2026-10-06"
+ "kind": "en"
 }

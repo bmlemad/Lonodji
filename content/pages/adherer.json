@@ -133,8 +133,8 @@
  "hasMap": false,
  "scripts": [],
  "rootAttrs": {},
+ "architectureDate": "2026-10-06",
  "slug": "adherer",
  "route": "/participer",
- "kind": "hub",
- "architectureDate": "2026-10-06"
+ "kind": "hub"
 }

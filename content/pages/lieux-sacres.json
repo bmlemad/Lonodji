@@ -145,8 +145,8 @@
  "hasMap": false,
  "scripts": [],
  "rootAttrs": {},
+ "architectureDate": "2026-10-06",
  "slug": "lieux-sacres",
  "route": "/patrimoine/lieux-sacres",
- "kind": "dossier",
- "architectureDate": "2026-10-06"
+ "kind": "dossier"
 }

@@ -60,8 +60,8 @@
  "hasMap": false,
  "scripts": [],
  "rootAttrs": {},
+ "architectureDate": "2026-10-06",
  "slug": "decentralisation",
  "route": "/territoire/decentralisation",
- "kind": "dossier",
- "architectureDate": "2026-10-06"
+ "kind": "dossier"
 }

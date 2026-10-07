@@ -172,8 +172,8 @@
  "hasMap": false,
  "scripts": [],
  "rootAttrs": {},
+ "architectureDate": "2026-10-06",
  "slug": "complexe-sportif",
  "route": "/projets/complexe-sportif",
- "kind": "dossier",
- "architectureDate": "2026-10-06"
+ "kind": "dossier"
 }

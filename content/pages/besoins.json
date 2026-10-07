@@ -55,8 +55,8 @@
  "hasMap": true,
  "scripts": [],
  "rootAttrs": {},
+ "architectureDate": "2026-10-06",
  "slug": "besoins",
  "route": "/territoire/besoins",
- "kind": "dossier",
- "architectureDate": "2026-10-06"
+ "kind": "dossier"
 }

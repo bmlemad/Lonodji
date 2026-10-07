@@ -50,8 +50,8 @@
  "rootAttrs": {
   "data-tm": ""
  },
+ "architectureDate": "2026-10-06",
  "slug": "trouver-ma-thematique",
  "route": "/participer/trouver-ma-thematique",
- "kind": "dossier",
- "architectureDate": "2026-10-06"
+ "kind": "dossier"
 }

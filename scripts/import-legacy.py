@@ -433,7 +433,7 @@ def parse_page(path: Path):
     data["hasMap"] = any("data-geo" in s["html"] for s in sections)
     data["scripts"] = PAGE_SCRIPTS.get(path.stem, []) if base_dir == "" else []
     data["rootAttrs"] = {k: (v if isinstance(v, str) else " ".join(v)) for k, v in root_attrs.items()}
-    if STRUCTURE_ARCHITECTURE is not None:
+    if STRUCTURE_ARCHITECTURE is not None and "articles" not in path.parts:   # les articles datés du journal gardent leurs mots (route pas encore connue ici)
         data = appliquer_page(data, STRUCTURE_ARCHITECTURE)
     return data, forms
 
@@ -2042,6 +2042,9 @@ def _variantes(nom: str) -> list[str]:
     return sorted(out, key=len, reverse=True)
 
 
+CLUSTERS_EN = {"Éducation": "Education", "Santé · Nutrition": "Health · Nutrition", "Sécurité alimentaire": "Food security", "Protection": "Protection", "WASH": "WASH"}
+
+
 def nomenclature(html: str, path: Path) -> str:
     """5/10/2026 : les intitulés des thématiques suivent la nomenclature des bailleurs (content/nomenclature.json) :
     secteurs CAD de l'OCDE, clusters, ODD. Les anciens noms sont remplacés dans les pages (jamais dans les articles
@@ -2058,6 +2061,20 @@ def nomenclature(html: str, path: Path) -> str:
             continue
         for v in _variantes(ancien):
             html = html.replace(v, nouveau.replace("&", "&amp;") if "&amp;" in v else nouveau)
+    # page anglaise des thématiques : la même ligne CAD · cluster · ODD · « formerly » que components/blocks.tsx en français
+    if en and path.name == "themes.html":
+        for t in data["thematiques"]:
+            ligne = (f'<p class="them-nomenclature"><span><b>DAC</b> {", ".join(t["cad"])}</span>'
+                     + (f'<span><b>Cluster</b> {CLUSTERS_EN.get(t["cluster"], t["cluster"])}</span>' if t.get("cluster") else "")
+                     + f'<span><b>SDG</b> {", ".join(t["odd"])}</span><span class="them-ancien">formerly “{t["ancienEn"]}”</span></p>')
+            html = html.replace(f"<h3>{t['en']}</h3>", f"<h3>{t['en']}</h3>\n{ligne}", 1)
+    # page Mission : les trois pôles cités au présent sont devenus des piliers le 6 octobre 2026 (texte daté conservé, note ajoutée)
+    if path.name == "mission.html":
+        anc = next((a for a in ("qui lui donne les moyens d’agir.", "qui lui donne les moyens d&rsquo;agir.") if a in html), "qui lui donne les moyens d&rsquo;agir.")
+        note = (" <em>Mise à jour du 6 octobre 2026 : l’association s’organise désormais en six piliers stratégiques ; ces thématiques relèvent "
+                "des piliers II, III, IV et V (<a href=\"https://lonodji.org/association/architecture\">architecture institutionnelle</a>).</em>")
+        if anc in html and "Mise à jour du 6 octobre 2026" not in html:
+            html = html.replace(anc, anc + note, 1)
     return html
 
 
