@@ -45,7 +45,7 @@ function cartesDuPlan(d: Indicateurs, f: Releve): Carte[] {
       libelle: d.bureau.adherents != null ? "adhérents à jour de cotisation" : `${pluriel(personnes, "personne a", "personnes ont")} déclaré leur intention d’adhérer`,
       detail: d.bureau.adherents != null
         ? `Chiffre transmis par le bureau. ${n(personnes)} ${pluriel(personnes, "personne a", "personnes ont")} par ailleurs déclaré leur intention d’adhérer sur le site.`
-        : `${n(adh.envois)} ${pluriel(adh.envois, "envoi reçu", "envois reçus")} par le formulaire d’adhésion. Le nombre d’adhérents à jour de cotisation est tenu par le bureau : il paraîtra ici, daté, dès sa première transmission.`,
+        : `${n(adh.envois)} ${pluriel(adh.envois, "envoi reçu", "envois reçus")} par le formulaire d’adhésion${adh.envois !== personnes ? `, comptés par personne (un même courriel envoyé plusieurs fois compte une fois)` : ""}. Le nombre d’adhérents à jour de cotisation est tenu par le bureau : il paraîtra ici, daté, dès sa première transmission.`,
       source: d.bureau.adherents != null ? `Bilan du bureau · ${dateLongue(d.genere)}` : `Formulaire du site · ${releve}`,
       courte: d.bureau.adherents != null ? "Bilan du bureau" : "Formulaire du site",
       href: "/participer#adherer",

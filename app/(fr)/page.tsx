@@ -75,7 +75,7 @@ export default function Home() {
             <Link className="acc-bouton" href="/territoire/besoins">Signaler un besoin</Link>
             <Link className="acc-bouton acc-bouton--texte" href="/impact">Voir les avancées</Link>
           </div>
-          <p className="acc-hero-reperes">Depuis 1995 · {architecture.piliers.length} piliers stratégiques · {total} thématiques <Link href="/association/architecture">Notre architecture</Link></p>
+          <p className="acc-hero-reperes">Depuis&nbsp;1995 · {architecture.piliers.length}&nbsp;piliers stratégiques · {total}&nbsp;thématiques <Link href="/association/architecture">Notre architecture</Link></p>
         </div>
       </section>
 

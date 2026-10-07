@@ -72,7 +72,7 @@ export default function HomeEn() {
           <h1 id="hero-title">All Bedjond people.<span>Acting together.</span></h1>
           <p className="acc-hero-lead">ADEB LONODJI serves all Bedjond people, in Chad and across the diaspora. We document their needs and preserve their heritage.</p>
           <div className="acc-hero-actions"><Link className="acc-bouton acc-bouton--plein" href="/en/contact">Get involved</Link><Link className="acc-bouton" href="/territoire/besoins" hrefLang="fr">Report a need (French)</Link><Link className="acc-bouton acc-bouton--texte" href="/en/impact">See progress</Link></div>
-          <p className="acc-hero-reperes">Since 1995 · {poles.length} pillars · {total} themes <Link href="/en/about">Our mission</Link></p>
+          <p className="acc-hero-reperes">Since&nbsp;1995 · {poles.length}&nbsp;pillars · {total}&nbsp;themes <Link href="/en/about">Our mission</Link></p>
         </div>
       </section>
 
