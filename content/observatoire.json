@@ -1,8 +1,8 @@
 {
- "genere": "2026-10-02",
+ "genere": "2026-10-08",
  "sources": {
-  "carte": "2026-10-01",
-  "villages": "2026-10-01",
+  "carte": "2026-10-08",
+  "villages": "2026-10-08",
   "releve": "2026-09-28"
  },
  "familles": {
@@ -37,8 +37,8 @@
  },
  "totaux": {
   "unites": 14,
-  "localites": 1259,
-  "nommees": 966,
+  "localites": 1258,
+  "nommees": 965,
   "equipements": 24,
   "couvertes": 411,
   "citees": 56
@@ -159,8 +159,8 @@
    "dep": "Mandoul Occidental",
    "prov": "Mandoul",
    "kmBedjondo": 20.8,
-   "localites": 43,
-   "nommees": 37,
+   "localites": 42,
+   "nommees": 36,
    "equipements": {
     "total": 1,
     "familles": {
@@ -474,7 +474,7 @@
      },
      {
       "id": "prob-02",
-      "texte": "Inventaire des villages incomplet — 966 localités nommées dans les données ouvertes (OpenStreetMap) sur les quatorze unités du pays bedjond, dont 205 dans le Mandoul Occidental, aucune encore vérifiée sur le terrain, pour environ 256 villages estimés dans ce seul département ( villages et cantons )",
+      "texte": "Inventaire des villages incomplet — 965 localités nommées dans les données ouvertes (OpenStreetMap) sur les quatorze unités du pays bedjond, dont 204 dans le Mandoul Occidental, aucune encore vérifiée sur le terrain, pour environ 256 villages estimés dans ce seul département ( villages et cantons )",
       "statut": "Partiel",
       "decideur": "Nous",
       "thematique": "savoirs-innovation"
@@ -883,7 +883,7 @@
   {
    "id": "plaidoyer-electricite",
    "title": "De la lumière pour Bédjondo",
-   "theme": "Énergie",
+   "theme": "Énergie durable",
    "status": "Publié",
    "recipients": "Ministère de l’Énergie · SNE · CEP-TchadElec (PAAET) · ARSE · Banque mondiale / Mission 300 · opérateurs de mini-réseaux",
    "published": "16 septembre 2026",

@@ -197,16 +197,16 @@ CORRECTIONS = {
          'num&eacute;rique (connectivit&eacute;)</div><div class="kanban-card-meta">Qui d&eacute;cide&nbsp;: National</div><div class="kanban-card-theme">→ Connectivité & services numériques</div>'),
         ('grandi sans plan</div><div class="kanban-card-meta">Qui d&eacute;cide&nbsp;: Commune</div><div class="kanban-card-theme">→ Énergie, routes & urbanisme</div>',
          'grandi sans plan</div><div class="kanban-card-meta">Qui d&eacute;cide&nbsp;: Commune</div><div class="kanban-card-theme">→ Eau, assainissement & hygiène</div>'),
-        # 13. L'inventaire des villages : les données ouvertes (public/carte/donnees.json : 966 localités
-        # nommées sur 14 unités, 205 dans les sept unités du Mandoul Occidental), pas 133 relevés.
+        # 13. L'inventaire des villages : les données ouvertes (public/carte/donnees.json : 965 localités
+        # nommées sur 14 unités, 204 dans les sept unités du Mandoul Occidental), pas 133 relevés.
         ("Inventaire des villages incomplet &mdash; 133 recens&eacute;s par nous sur 256 estim&eacute;s (<a href=\"articles/2026-09-13-villages-cantons-pays-nangnda.html\">villages et cantons</a>)",
-         "Inventaire des villages incomplet &mdash; 966 localités nommées dans les données ouvertes (OpenStreetMap) sur les quatorze unités du pays bedjond, dont 205 dans le Mandoul Occidental, "
+         "Inventaire des villages incomplet &mdash; 965 localités nommées dans les données ouvertes (OpenStreetMap) sur les quatorze unités du pays bedjond, dont 204 dans le Mandoul Occidental, "
          "aucune encore vérifiée sur le terrain, pour environ 256 villages estimés dans ce seul département (<a href=\"articles/2026-09-13-villages-cantons-pays-nangnda.html\">villages et cantons</a>)"),
         ("Inventaire des villages incomplet &mdash; 133 recens&eacute;s par nous sur 256 estim&eacute;s (villages et cantons)",
-         "Inventaire des villages incomplet &mdash; 966 localités nommées dans les données ouvertes, dont 205 dans le Mandoul Occidental, aucune vérifiée sur le terrain, pour environ 256 villages estimés"),
+         "Inventaire des villages incomplet &mdash; 965 localités nommées dans les données ouvertes, dont 204 dans le Mandoul Occidental, aucune vérifiée sur le terrain, pour environ 256 villages estimés"),
         ("la seule base de données locale existante est celle que nous construisons nous-mêmes&nbsp;: <strong>133 villages inventoriés sur environ 256 estimés</strong>. C&rsquo;est modeste, c&rsquo;est incomplet",
-         "la seule base de données locale existante est celle que nous rassemblons nous-mêmes à partir des données ouvertes (OpenStreetMap)&nbsp;: <strong>966 localités nommées sur les quatorze unités du pays bedjond, "
-         "dont 205 dans le Mandoul Occidental, pour environ 256 villages estimés dans ce département</strong>, aucune encore vérifiée sur le terrain. C&rsquo;est modeste, c&rsquo;est incomplet"),
+         "la seule base de données locale existante est celle que nous rassemblons nous-mêmes à partir des données ouvertes (OpenStreetMap)&nbsp;: <strong>965 localités nommées sur les quatorze unités du pays bedjond, "
+         "dont 204 dans le Mandoul Occidental, pour environ 256 villages estimés dans ce département</strong>, aucune encore vérifiée sur le terrain. C&rsquo;est modeste, c&rsquo;est incomplet"),
     ],
     "mission.html": [
         # 7.

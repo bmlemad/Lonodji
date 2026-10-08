@@ -7,11 +7,12 @@ import { alternatesLangues } from "@/lib/langues";
 import { getVillages } from "@/lib/villages";
 import Partager from "@/components/partager";
 
+const NOMMEES = getVillages().villages.filter((x) => x.nom).length;   // compte lu dans content/villages.json, pas écrit en dur
 export const metadata: Metadata = {
   title: "Find your village — the Bedjond country, unit by unit",
-  description: metaDescription("Fourteen units in and around Mandoul Occidental, 966 named localities, one page per village: what open data knows and what is still to document."),
+  description: metaDescription(`Fourteen units in and around Mandoul Occidental, ${NOMMEES} named localities, one page per village: what open data knows and what is still to document.`),
   alternates: { canonical: "/en/villages", languages: alternatesLangues("/en/villages") },
-  openGraph: { ...ogFor("/en/villages", "en"), title: "Find your village — the Bedjond country, unit by unit", description: "Fourteen units, 966 named localities, one page per village." },
+  openGraph: { ...ogFor("/en/villages", "en"), title: "Find your village — the Bedjond country, unit by unit", description: `Fourteen units, ${NOMMEES} named localities, one page per village.` },
 };
 
 const GROUPES: Record<string, string> = { coeur: "Heart of the Bedjond country", sud: "Southern neighbours", signale: "Reported by members", diaspora: "Diaspora towns" };
@@ -66,7 +67,7 @@ export default function VillagesEn() {
           <Link href="/territoire/besoins" hrefLang="fr"><small>Report</small><strong>Report a need, locality by locality</strong><span>Water, school, health post, road: the form takes the name of the place, the kind of need and its urgency.</span></Link>
           <Link href="/en/contact"><small>Write to us</small><strong>Correct a name, a position, a boundary</strong><span>Every correction is published and dated in the corrections log.</span></Link>
         </div>
-        <Partager route="/en/villages" titre="Find your village" texte="Fourteen administrative units in and around Mandoul Occidental, 966 named localities, one page per village: what open data knows, what the site says, what is still to document." lang="en" />
+        <Partager route="/en/villages" titre="Find your village" texte={`Fourteen administrative units in and around Mandoul Occidental, ${NOMMEES} named localities, one page per village: what open data knows, what the site says, what is still to document.`} lang="en" />
         <p className="lg-footnote">Counts as of {date(v.genere)}; boundaries from GADM 4.1, localities from OpenStreetMap and GeoNames, all approximate. Sacred sites and graves are never shown on the map: the association keeps that register with the chiefs. French page: <Link href="/villages" hrefLang="fr">Les villages</Link>.</p>
       </section>
     </main>

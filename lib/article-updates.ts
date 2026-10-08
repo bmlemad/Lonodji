@@ -3,6 +3,11 @@
 type ArticleUpdate = { date: string; dateLabel: string; texte: string; href: string; label: string };
 
 export const ARTICLE_UPDATES: Record<string, ArticleUpdate> = {
+  "2026-09-17-plaidoyer-sante-bedjondo": {
+    date: "2026-10-08", dateLabel: "8 octobre 2026",
+    texte: "Le taux de 1 063 décès pour 100 000 naissances vivantes est traduit ci-dessous par « près d’une femme sur cent qui meurt en donnant la vie ». Le ratio porte sur les naissances, pas sur les femmes : lire « environ un décès maternel pour cent naissances vivantes ». Le chiffre, lui, est exact ; le texte est conservé.",
+    href: "/transparence#corrections", label: "Voir le journal des corrections",
+  },
   "2026-10-01-cinq-poles-sept-priorites": {
     date: "2026-10-04", dateLabel: "4 octobre 2026",
     texte: "Une décision publiée l’après-midi du 1er octobre complète l’organisation décrite dans cet article. Le texte ci-dessous conserve l’état annoncé à sa publication ; consultez la décision suivante et la structure actuelle pour vous orienter.",

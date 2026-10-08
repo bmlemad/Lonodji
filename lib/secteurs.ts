@@ -221,7 +221,7 @@ export const SECTEURS: Secteur[] = [
     cadre: { cad: "CAD 220", odd: "ODD 9" }, etat: "couvert",
     thematiques: ["transformation-numerique-services", "intelligence-artificielle-donnees", "competences-entrepreneuriat-numerique"],
     activites: [
-      { texte: "Une fiche par village, 966 localités", etat: "fait", href: "/villages" },
+      { texte: "Une fiche par village, 965 localités", etat: "fait", href: "/villages" },
       { texte: "L’application pour téléphone", etat: "fait", href: "/projets/application" },
       { texte: "Drones et innovation", etat: "fait", href: "/projets/drones-innovation" },
       { texte: "Espace numérique communautaire", etat: "piste", href: "/projets#espace-numerique" },

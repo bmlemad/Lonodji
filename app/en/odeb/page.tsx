@@ -105,7 +105,7 @@ export default function OdebEn() {
       ]} />
 
       <section className="hub-section" id="why">
-        <SectionHead eyebrow="Why create ODEB" title="An association acts;" em="a territory needs a permanent tool." text="Recognised in 1995 and revived in 2026, ADEB LONODJI works through volunteer themes. In a few weeks it published advocacy briefs, a diagnosis of 34 issues, a map of 1,259 localities, 966 village pages and a library of 40 references. Keeping all this alive for years is the job of an organisation, not of a campaign. ODEB is the name the association has chosen for its future NGO status; the project gives the name substance before the legal status exists. Nothing is decided yet: no statutes, no budget, no staff." />
+        <SectionHead eyebrow="Why create ODEB" title="An association acts;" em="a territory needs a permanent tool." text="Recognised in 1995 and revived in 2026, ADEB LONODJI works through volunteer themes. In a few weeks it published advocacy briefs, a diagnosis of 34 issues, a map of 1,259 localities, 965 village pages and a library of 40 references. Keeping all this alive for years is the job of an organisation, not of a campaign. ODEB is the name the association has chosen for its future NGO status; the project gives the name substance before the legal status exists. Nothing is decided yet: no statutes, no budget, no staff." />
         <ol className="od-missions">
           {MISSIONS_EN.map(([nom, texte], i) => <li key={nom}><span className="od-num">0{i + 1}</span><div><h3>{nom}</h3><p>{texte}</p></div></li>)}
         </ol>

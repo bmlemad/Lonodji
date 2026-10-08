@@ -34,6 +34,9 @@ CONTENT = ROOT / "content"
 
 GADM_URL = "https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_TCD_3.json.zip"
 HOT = "https://production-raw-data-api.s3.amazonaws.com/ISO3/TCD/{n}/hotosm_tcd_{n}_osm_geojson.zip"
+# Localités écartées : noms manifestement corrompus dans OpenStreetMap (8 octobre 2026). La correction
+# de la donnée source relève d'un contributeur OSM ; en attendant, la fiche n'est pas publiée.
+NOMS_EXCLUS = {"p;rtharcourt ni"}   # unité de Péni ; 966 → 965 localités nommées
 HOT_SETS = ["populated_places", "education_facilities", "health_facilities", "points_of_interest", "cultural_places", "financial_services"]
 
 # Traduction des étiquettes OSM en familles d'équipements affichées
@@ -227,6 +230,8 @@ def main() -> None:
         if not uid:
             continue
         nom = (t.get("name") or t.get("name:fr") or "").strip()
+        if nom in NOMS_EXCLUS:   # nom corrompu dans OpenStreetMap, retiré le 8 octobre 2026 (journal des corrections)
+            continue
         cle = (nom.lower(), round(c[0], 3), round(c[1], 3))
         if nom and cle in vus:
             continue

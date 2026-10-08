@@ -2031,7 +2031,70 @@ def lire_source(path: Path) -> str:
     html = numero_en_icone(html, path)
     if "articles" not in path.parts and path.name not in ("actualites.html", "en--news.html", "news.html"):
         html = nomenclature(html, path)   # jamais dans les articles datés ni dans leurs résumés (actualites.html)
+    html = revue_8_octobre(html, path)
     return html if "articles" in path.parts else comptes_courants(html)
+
+
+# ---------------------------------------------------------------------------------------------------
+# Questions en suspens de la relecture du 1er octobre, tranchées par l'animateur le 8 octobre 2026.
+# Textes datés conservés ; correction datée en dessous et au journal des corrections.
+# ---------------------------------------------------------------------------------------------------
+ADRESSE_NETLIFY = ("Netlify, Inc., 101 2nd Street, San Francisco, CA 94105, États-Unis (adresse indiquée par l’hébergeur dans ses "
+                   "<a href=\"https://www.netlify.com/legal/terms-of-use\" rel=\"noopener\" target=\"_blank\">conditions d’utilisation</a>, section 14, consultées le 8 octobre 2026)")
+DAPLAN_NOM = "Direction de l’Alphabétisation et de la Promotion des langues nationales"
+DAPLAN_NOTE = (" Le sigle DAPLAN désigne la " + DAPLAN_NOM + " du ministère en charge de l’Éducation nationale ; le décret 11-1218/PR/PM/MEPEC/11 "
+               "du 2 novembre 2011 institue une « Direction générale de l’Alphabétisation et de la Promotion des langues nationales » (précision du 8 octobre 2026).")
+CORRECTIONS_8_OCT = (
+    '<article class="info-card">\n'
+    '<p class="form-note">8 octobre 2026 · Formulation · Relevé par la relecture du 1er octobre, tranché le 8</p>\n'
+    '<h3>Un décès maternel pour cent naissances, et non « une femme sur cent »</h3>\n'
+    '<p><strong>Ce que nous écrivions :</strong> dans le plaidoyer santé du 17 septembre 2026, le taux de 1 063 décès pour 100 000 naissances vivantes était traduit par « près d’une femme sur cent qui meurt en donnant la vie ».</p>\n'
+    '<p><strong>Ce qui est exact :</strong> le ratio porte sur les naissances, pas sur les femmes : environ un décès maternel pour cent naissances vivantes. Une femme ayant plusieurs grossesses, son risque sur la vie est différent. L’article garde son texte, avec une note datée ; le chiffre, lui, était juste.</p>\n'
+    '<p><strong>Comment nous nous en sommes aperçus :</strong> relecture complète du site le 1er octobre 2026.</p>\n'
+    '</article>\n'
+    '<article class="info-card">\n'
+    '<p class="form-note">8 octobre 2026 · Formulation · Relevé par la relecture du 1er octobre, tranché le 8</p>\n'
+    '<h3>La note du 19 septembre du diagnostic parlait d’un « second plan » sans le nommer</h3>\n'
+    '<p><strong>Ce que nous écrivions :</strong> « en rédigeant ce second plan, nous avons trouvé un troisième sujet dans le même cas ».</p>\n'
+    '<p><strong>Ce qui est exact :</strong> le second plan est le plan pour les veuves, préparé après le plan handicap ; le troisième sujet est la situation des veuves elle-même. Lire : « en préparant un second plan, celui pour les veuves ». La note garde son texte, avec la correction datée en dessous.</p>\n'
+    '<p><strong>Comment nous nous en sommes aperçus :</strong> relecture complète du site le 1er octobre 2026.</p>\n'
+    '</article>\n'
+    '<article class="info-card">\n'
+    '<p class="form-note">8 octobre 2026 · Donnée · Relevé par la relecture du 1er octobre, tranché le 8</p>\n'
+    '<h3>Une localité au nom corrompu retirée des fiches de villages : 965 localités nommées, et non 966</h3>\n'
+    '<p><strong>Ce que nous écrivions :</strong> la carte et les fiches comptaient 966 localités nommées, dont une, dans l’unité de Péni, portait un nom manifestement corrompu dans OpenStreetMap (une suite de caractères sans rapport avec un nom de lieu).</p>\n'
+    '<p><strong>Ce qui est exact :</strong> cette entrée est écartée de la carte et des fiches tant que la donnée source n’est pas corrigée par un contributeur OpenStreetMap ; le site compte 965 localités nommées sur 1 258 cartographiées. Les autres chiffres de la carte ne changent pas.</p>\n'
+    '<p><strong>Comment nous nous en sommes aperçus :</strong> relecture complète du site le 1er octobre 2026.</p>\n'
+    '</article>\n'
+)
+
+
+def revue_8_octobre(html: str, path: Path) -> str:
+    if path.name == "mentions-legales.html":
+        html = html.replace("Les personnes chargées de les lire les consultent dans cet espace ou reçoivent un avis par courriel&nbsp;; elles ne les recopient ailleurs que pour traiter votre demande.",
+                            "Les personnes chargées de les lire les consultent dans cet espace ou reçoivent un avis par courriel sur leur messagerie personnelle (précision du 8 octobre 2026)&nbsp;; elles ne les recopient ailleurs que pour traiter votre demande.")
+        html = html.replace("Ce site est hébergé par Netlify, Inc. (San Francisco, États-Unis), à l&rsquo;adresse ",
+                            "Ce site est hébergé par " + ADRESSE_NETLIFY + ", à l&rsquo;adresse ")
+    if path.name == "problematiques.html":
+        html = html.replace("Qui d&eacute;cide&nbsp;: DAPLAN", f'Qui d&eacute;cide&nbsp;: <abbr title="{DAPLAN_NOM}">DAPLAN</abbr>')
+        html = html.replace(">DAPLAN<", f'><abbr title="{DAPLAN_NOM}">DAPLAN</abbr><')
+        html = html.replace("par la DAPLAN", "par la " + DAPLAN_NOM + " (DAPLAN)")
+        i = html.find("par la " + DAPLAN_NOM)
+        if i > 0:
+            j = html.find("</p>", i)
+            if j > 0 and "Le sigle DAPLAN désigne" not in html:
+                html = html[:j] + DAPLAN_NOTE + html[j:]
+        anc = 'jusqu&rsquo;à notre <a href="veuves.html">plan veuves</a>.</p>'
+        if anc in html and "Correction du 8 octobre 2026" not in html:
+            html = html.replace(anc, anc[:-4] + ' <em>Correction du 8&nbsp;octobre&nbsp;2026&nbsp;: lire «&nbsp;en préparant un second plan, celui pour les veuves&nbsp;».</em></p>', 1)
+    if path.name == "redevabilite.html":
+        anc = "quelque chose d&rsquo;inexact</strong>.</p>"
+        i = html.find(anc)
+        if i > 0 and "8 octobre 2026 · Formulation" not in html:
+            k = html.find('<article class="info-card">', i)
+            if k > 0:
+                html = html[:k] + CORRECTIONS_8_OCT + html[k:]
+    return html
 
 
 def _variantes(nom: str) -> list[str]:

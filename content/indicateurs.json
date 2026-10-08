@@ -1,5 +1,5 @@
 {
- "genere": "2026-10-02T11:45:24Z",
+ "genere": "2026-10-08T09:35:19Z",
  "contenu": {
   "plaidoyers": {
    "publies": 8,
@@ -18,7 +18,7 @@
   "premierArticle": "2026-09-11",
   "documentsPdf": 19,
   "documentsAnnonces": 7,
-  "corrections": 22,
+  "corrections": 24,
   "engagements": {
    "total": 12,
    "realises": 0
@@ -32,10 +32,10 @@
   },
   "carte": {
    "unites": 14,
-   "localites": 1259,
-   "localitesNommees": 966,
+   "localites": 1258,
+   "localitesNommees": 965,
    "equipements": 24,
-   "genere": "2026-10-01"
+   "genere": "2026-10-08"
   },
   "pages": 45,
   "projets": {
