@@ -2,7 +2,7 @@ import { metaDescription } from "@/lib/content";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
 import Partager from "@/components/partager";
-import { PageHeader, SectionHead } from "@/components/blocks";
+import { PageHeader, SectionHead, VuesThematiques } from "@/components/blocks";
 import { ogFor } from "@/lib/content";
 import { alternatesLangues } from "@/lib/langues";
 import { thematiquesParId } from "@/lib/odeb-chiffres";
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 
 export default function SectorsEn() {
   const th = thematiquesParId();
+  const total = Object.values(th).filter((t) => t.kind === "thematique").length;
   return (
     <main id="main-content" className="hub-page" lang="en">
       <PageHeader
@@ -26,8 +27,9 @@ export default function SectorsEn() {
         lead="Seventeen sectors, as IASC clusters, OECD-DAC purpose codes and the SDGs name them, each with the association’s themes that carry it and a line on what it means in Bédjondo. Links lead to the French pages, where each activity says whether it is done or only an idea. Nothing is funded yet, and no money is collected before the association has a bank account in its name."
         crumbs={[{ label: "Sectors" }]}
         lang="en"
-        pills={[`${SECTEURS.length} sectors`, "22 themes", "Relief and DRR added on 29 September 2026"]}
+        pills={[`${SECTEURS.length} sectors`, `${total} themes`, "Relief and DRR added on 29 September 2026"]}
       />
+      <VuesThematiques active="secteurs" lang="en" />
       <section className="hub-section" id="mapping">
         <SectionHead eyebrow="At a glance" title="Sectors, themes" em="and reference frameworks." />
         <div className="ob-table-wrap" tabIndex={0} role="region" aria-label="Sector and reference framework mapping">

@@ -1,4 +1,5 @@
 import Link from "@/components/lien";
+import architecture from "@/content/architecture.json";
 import type { ArticleSummary, DocumentItem, Plaidoyer, Thematique } from "../lib/content";
 import { estPrioritaire } from "@/lib/organisation";
 import { secteursDeThematique } from "../lib/secteurs";
@@ -210,14 +211,19 @@ export function Timeline({ items }: { items: { year: string; title: string; text
 }
 
 /* Deux vues d'une même grille : les vingt-deux thématiques par pilier (/programmes) ou par secteur, en langue ONG (/secteurs). */
-export function VuesThematiques({ active }: { active: "poles" | "secteurs" }) {
-  const vues = [
+export function VuesThematiques({ active, lang = "fr" }: { active: "poles" | "secteurs"; lang?: "fr" | "en" }) {
+  const en = lang === "en";
+  const total = architecture.piliers.reduce((n, p) => n + p.thematiques.length, 0);
+  const vues = en ? [
+    { id: "poles", href: "/en/themes", label: "By pillar", note: "the association’s structure" },
+    { id: "secteurs", href: "/en/sectors", label: "By sector", note: "NGO and donor frameworks" },
+  ] : [
     { id: "poles", href: "/programmes", label: "Par pilier", note: "l’organisation de l’association" },
     { id: "secteurs", href: "/secteurs", label: "Par secteur", note: "la langue des ONG et des bailleurs" },
-  ] as const;
+  ];
   return (
-    <nav className="vues-them" aria-label="Deux vues des vingt-deux thématiques">
-      <span className="vues-them-titre">Les vingt-deux thématiques</span>
+    <nav className="vues-them" aria-label={en ? `Two views of the ${total} themes` : `Deux vues des ${total} thématiques`}>
+      <span className="vues-them-titre">{en ? `${total} themes` : `Les ${total} thématiques`}</span>
       {vues.map((v) => v.id === active
         ? <span key={v.id} className="vues-them-vue est-active" aria-current="page"><strong>{v.label}</strong><small>{v.note}</small></span>
         : <Link key={v.id} className="vues-them-vue" href={v.href}><strong>{v.label}</strong><small>{v.note}</small></Link>)}

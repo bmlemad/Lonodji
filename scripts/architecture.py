@@ -148,6 +148,12 @@ def appliquer_page(data, structure):
                 label = f"Strategic pillar {pilier['roman']}" if en else f"Pilier stratégique {pilier['roman']}"
                 nom = pilier['nomEn'] if en else pilier['nom']
                 intro = '' if en else f"<p>{html.escape(pilier['mission'])}</p>"
+                if en:
+                    direction = structure['poles'][index-1]['direction']
+                    statut = 'Filled' if direction['filled'] else 'Vacant'
+                    classe = 'status' if direction['filled'] else 'status status--vacant'
+                    responsable = html.escape(direction['name']) if direction['filled'] else f'<a href="/participer?direction={pilier["roman"]}&amp;coordo=1#contact" hreflang="fr">Apply (form in French)</a>'
+                    intro = f'<p class="pole-direction"><span class="{classe}">{statut}</span><span><strong>Pillar vice-president (elected)</strong> · {responsable}</span></p>'
                 rebuilt.append({'id': f'pole-{index}', 'alt': False, 'cls': 'pole-group', 'tag': 'section',
                     'html': f'<div class="section-head"><div><div class="eyebrow">{label}</div><h2>{html.escape(nom)}</h2>{intro}</div></div><div class="pole-grid">' + ''.join(cartes[key] for key in keys) + '</div>'})
             start = result['sections'].index(groupes[0])

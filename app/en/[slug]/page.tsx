@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LegacyDocument } from "@/components/legacy-content";
+import { VuesThematiques } from "@/components/blocks";
+import PiliersSommaire from "@/components/piliers-sommaire";
 import { getPage, hasPage, listEnSlugs, metaDescription, ogFor } from "@/lib/content";
 import { alternatesLangues } from "@/lib/langues";
 
@@ -28,5 +30,7 @@ export default async function EnglishPage({ params }: { params: Promise<{ slug: 
   const page = getPage("en/" + slug);
   // accueil anglais : surtitre « Home · in English » (l'ancien site disait « English »)
   const eyebrow = slug === "index" && page.eyebrow === "English" ? "Home" : page.eyebrow;
-  return <LegacyDocument page={{ ...page, eyebrow }} eyebrowPrefix="In English" />;
+  return <LegacyDocument page={{ ...page, eyebrow }} eyebrowPrefix="In English">
+    {slug === "themes" ? <><VuesThematiques active="poles" lang="en" /><PiliersSommaire lang="en" /></> : null}
+  </LegacyDocument>;
 }

@@ -1584,6 +1584,29 @@ main :where(ul, ol):not([class]):not(nav *) > li, main .plea-next > li, main .od
 a.vues-them-vue:hover{ background:#f1f5ec; }
 .vues-them-vue.est-active{ background:var(--deep); color:#fff; }
 .vues-them-vue.est-active small{ color:#cfe0c4; }
+.piliers-sommaire{ margin:0 0 30px; border:1px solid var(--line); border-radius:18px; background:var(--carte-fond); color:var(--deep); }
+.piliers-sommaire > summary{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 20px; min-height:64px; padding:14px 20px; cursor:pointer; list-style:none; }
+.piliers-sommaire > summary::-webkit-details-marker{ display:none; }
+.piliers-sommaire > summary:focus-visible{ outline:3px solid var(--accent); outline-offset:3px; border-radius:18px; }
+.piliers-sommaire > summary strong{ font-size:16px; }
+.piliers-sommaire > summary > span:not(.piliers-sommaire-fleche){ font-size:14px; color:var(--muted); }
+.piliers-sommaire-fleche{ margin-left:auto; font-size:22px; line-height:1; }
+.piliers-sommaire[open] .piliers-sommaire-fleche{ transform:rotate(180deg); }
+.piliers-sommaire ol{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; list-style:none; margin:0; padding:0 12px 12px; }
+.piliers-sommaire li{ min-width:0; }
+.piliers-sommaire a{ display:flex; align-items:flex-start; gap:12px; min-height:64px; height:100%; padding:14px; border-radius:12px; color:var(--deep); text-decoration:none; }
+.piliers-sommaire a:hover, .piliers-sommaire a:focus-visible{ background:var(--soft); }
+.piliers-sommaire a:focus-visible{ outline:3px solid var(--accent); outline-offset:1px; }
+.piliers-sommaire-roman{ flex:0 0 24px; font-size:14px; line-height:1.5; font-weight:700; color:var(--muted); }
+.piliers-sommaire a strong{ display:block; font-size:15px; line-height:1.45; }
+.piliers-sommaire a small{ display:block; margin-top:5px; font-size:13px; line-height:1.45; color:var(--muted); }
+@media(max-width:800px){ .piliers-sommaire ol{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:540px){
+  .piliers-sommaire ol{ grid-template-columns:minmax(0,1fr); }
+  .piliers-sommaire > summary{ display:grid; grid-template-columns:1fr auto; gap:6px 12px; padding:14px 16px; }
+  .piliers-sommaire > summary > span:not(.piliers-sommaire-fleche){ grid-row:2; }
+  .piliers-sommaire-fleche{ grid-column:2; grid-row:1 / 3; }
+}
 @media (max-width:560px){ .vues-them{ width:100%; } .vues-them-titre{ flex-basis:100%; padding:4px 8px; } .vues-them-vue{ flex:1; } }
 /* Vision 2030 — projet ODEB : la navigation de la partie adopte le style des sélecteurs du site */
 .od-nav{ border-radius:18px; border-color:var(--carte-filet); background:var(--carte-fond); padding:6px; }

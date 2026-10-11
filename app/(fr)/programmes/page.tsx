@@ -1,4 +1,5 @@
 import ArchitectureReference from "@/components/architecture-reference";
+import PiliersSommaire from "@/components/piliers-sommaire";
 import { alternatesLangues } from "@/lib/langues";
 import { breadcrumbSchema, jsonLd, webPageSchema } from "@/lib/schema";
 import type { Metadata } from "next";
@@ -72,6 +73,7 @@ export default function Programmes() {
         <Link className="text-link" href="/impact">Tableau de suivi <span aria-hidden="true">→</span></Link>
       </div>
 
+      <PiliersSommaire />
       <div id="thematiques">
         {poles.map((pole) => (
           <section className="pole-block" id={pole.id} key={pole.id} aria-labelledby={`${pole.id}-titre`}>

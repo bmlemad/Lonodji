@@ -50,14 +50,31 @@ with sync_playwright() as p:
                 facebook = page.locator('.partage a[href*="facebook.com/sharer"]').get_attribute('href')
                 assert parse_qs(urlsplit(facebook).query)['u'] == [share_url]
             elif route == '/programmes':
+                page.locator('.piliers-sommaire summary').click()
+                page.locator('.piliers-sommaire a').last.click()
+                expect(page.locator(f'#pole-{len(piliers)}-titre')).to_be_in_viewport()
                 for i, reference in enumerate(architecture['piliers'],1):
                     expect(page.locator(f'#pole-{i}-titre')).to_have_text(reference['nom'])
             elif route == '/en/themes':
+                page.locator('.piliers-sommaire summary').click()
+                page.locator('.piliers-sommaire a').last.click()
+                expect(page.locator(f'#pole-{len(piliers)} h2')).to_be_in_viewport()
                 for i, reference in enumerate(architecture['piliers'],1):
                     section = page.locator(f'#pole-{i}')
                     expect(section.locator('h2')).to_have_text(reference['nomEn'])
                     expected = ['theme-'+t['number'] for t in piliers[i-1]['items']]
                     assert section.locator('.pole-card[id]').evaluate_all('(cards) => cards.map(c => c.id)') == expected
+                    direction = piliers[i-1]['direction']
+                    if direction['filled']:
+                        expect(section.locator('.pole-direction')).to_contain_text(direction['name'])
+                    else:
+                        section.locator('.pole-direction a').click()
+                        expect(page.locator('select[name="pole"]')).to_have_value('Vice-présidence du pilier '+reference['roman']+' — '+reference['nom'])
+                        page.goto(base+route,wait_until='networkidle')
+                page.locator('.vues-them a[href="/en/sectors"]').click()
+                expect(page.locator('.vues-them [aria-current="page"] strong')).to_have_text('By sector')
+                page.locator('.vues-them a[href="/en/themes"]').click()
+                expect(page.locator('.vues-them [aria-current="page"] strong')).to_have_text('By pillar')
             else:
                 for reference in architecture['piliers'][2:]:
                     expect(page.get_by_role('heading',name=reference['nom'],exact=True)).to_be_visible()
@@ -66,5 +83,15 @@ with sync_playwright() as p:
             expect(page.locator('select[name="pole"]')).to_have_value('Vice-présidence du pilier '+reference['roman']+' — '+reference['nom'])
         assert not errors, errors
         context.close()
+    # Le choix d'un pilier reste utilisable avant hydratation ou sans JavaScript.
+    context = browser.new_context(viewport={'width':320,'height':740}, java_script_enabled=False)
+    page = context.new_page()
+    for route in ('/programmes','/en/themes'):
+        page.goto(base+route,wait_until='networkidle')
+        page.locator('.piliers-sommaire summary').click()
+        page.locator('.piliers-sommaire a').last.click()
+        target = f'#pole-{len(piliers)}'+(' h2' if route == '/en/themes' else '-titre')
+        expect(page.locator(target)).to_be_in_viewport()
+    context.close()
     browser.close()
 print(f'Architecture : {len(piliers)} piliers, {len(ids)} rattachements uniques, missions exactes, FR/EN, élections et reflux à 320/390/844/1440 px : OK.')
