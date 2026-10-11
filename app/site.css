@@ -2442,17 +2442,23 @@ html.sobre .hero-visual{ box-shadow:none; }
 .accueil-court .acc-section{ padding:clamp(36px,5vw,64px) clamp(18px,7vw,112px); }
 .accueil-court .acc-tete{ gap:24px 48px; margin-bottom:24px; }
 .accueil-court .acc-tete h2{ font-size:clamp(28px,3vw,40px); }
-.accueil-court .acc-hero{ display:block; padding-top:120px; padding-bottom:44px; }
-.accueil-court .acc-hero-texte{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:20px 48px; align-items:start; }
-.accueil-court .acc-hero h1{ grid-row:1 / 4; max-width:none; font-size:clamp(34px,3.8vw,52px); line-height:1.08; text-wrap:balance; }
+.accueil-court .acc-hero{ display:block; padding-top:124px; padding-bottom:48px; background:radial-gradient(ellipse at 95% 10%,color-mix(in srgb,var(--acc-citron) 13%,transparent),transparent 65%),var(--acc-foret); }
+.accueil-court .acc-hero-texte{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px 48px; align-items:center; }
+.acc-surtitre{ margin:0 0 18px; font-size:13px; line-height:1.5; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--acc-citron); }
+.acc-hero-suite{ display:flex; flex-direction:column; gap:20px; min-width:0; }
+.accueil-court .acc-hero h1{ max-width:none; font-size:clamp(34px,4vw,56px); line-height:1.08; text-wrap:balance; }
 .accueil-court .acc-hero h1 span{ display:block; color:#d3dfd6; margin-top:8px; }
 .accueil-court .acc-hero-lead{ margin:0; font-size:17px; line-height:1.55; max-width:56ch; }
 .accueil-court .acc-hero-actions{ margin:0; gap:10px; }
 .acc-bouton--texte{ border-color:transparent; padding:0 4px; text-decoration:underline; text-underline-offset:5px; }
 .acc-hero-reperes{ margin:0; font-size:14px; line-height:1.5; color:#d3dfd6; }
 .acc-hero-reperes a{ display:inline-flex; min-height:44px; align-items:center; margin-left:12px; text-decoration:underline; text-underline-offset:4px; color:#fff; }
+.acc-raccourcis{ display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; padding:8px clamp(18px,7vw,112px); border-bottom:1px solid var(--line); background:var(--paper); }
+.acc-raccourcis a{ display:flex; align-items:center; justify-content:center; gap:12px; min-height:48px; padding:8px 4px; border-radius:10px; color:var(--deep); font-size:14px; line-height:1.4; font-weight:600; }
+.acc-raccourcis a:hover, .acc-raccourcis a:focus-visible{ background:var(--soft); }
+.acc-raccourcis a span{ color:var(--muted); }
 .acc-actualites{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:24px; }
-.acc-actualites > *{ min-width:0; border:1px solid var(--champ-contour); border-radius:16px; background:#fff; padding:20px; }
+.acc-actualites > *{ min-width:0; border:1px solid var(--line); border-radius:20px; background:var(--carte-fond,#fff); padding:22px; box-shadow:0 8px 24px color-mix(in srgb,var(--deep) 5%,transparent); }
 .acc-actualites .acc-derniere{ display:flex; flex-direction:column; gap:12px; }
 .acc-actualites small{ font-size:13px; color:var(--muted); }
 .acc-actualites .art-card{ padding:0; border:0; border-radius:0; min-height:0; box-shadow:none; background:transparent; }
@@ -2463,6 +2469,10 @@ html.sobre .hero-visual{ box-shadow:none; }
 .acc-actualites .acc-mag img{ width:64px; box-shadow:none; }
 .acc-actualites .acc-mag strong, .acc-actualites .acc-postes strong{ font-size:21px; }
 .acc-actualites .acc-mag span span, .acc-actualites .acc-postes > span{ font-size:15px; }
+.acc-actualites .acc-note-edition{ margin-top:8px; padding-top:10px; border-top:1px solid var(--line); font-size:14px; line-height:1.5; }
+.acc-actualites .acc-postes{ background:var(--soft); }
+.acc-actualites .acc-postes .acc-lien-direct{ margin-top:auto; }
+.acc-actualites .acc-postes:hover, .acc-actualites .acc-mag:hover{ border-color:var(--deep); }
 .acc-lien-direct{ color:var(--deep); font-size:14px; font-weight:600; text-decoration:underline; text-underline-offset:4px; min-height:44px; display:inline-flex; align-items:center; }
 .accueil-court .acc-comptes.impact{ display:block; background:var(--acc-foret); padding:clamp(36px,5vw,64px) clamp(18px,7vw,112px); }
 .accueil-court .acc-comptes .acc-tete h2{ color:#fff; }
@@ -2475,6 +2485,14 @@ html.sobre .hero-visual{ box-shadow:none; }
 .acc-impact-chiffres strong.acc-impact-texte{ font-size:22px; }
 .acc-impact-chiffres small{ font-size:16px; color:#d3dfd6; }
 .acc-impact-chiffres a{ color:#d3dfd6; font-size:14px; text-decoration:underline; text-underline-offset:4px; min-height:44px; display:inline-flex; align-items:center; }
+.acc-piliers{ list-style:none; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:0; padding:0; }
+.acc-piliers li{ min-width:0; }
+.acc-piliers a{ position:relative; display:flex; flex-direction:column; gap:10px; height:100%; min-height:132px; padding:20px 44px 20px 20px; border:1px solid var(--line); border-radius:18px; background:var(--carte-fond,#fff); color:var(--deep); transition:background .2s ease,border-color .2s ease; }
+.acc-piliers a:hover, .acc-piliers a:focus-visible{ border-color:var(--deep); background:var(--soft); }
+.acc-pilier-repere{ font-size:13px; line-height:1.5; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+.acc-piliers strong{ font-size:18px; line-height:1.4; font-weight:600; text-wrap:balance; }
+.acc-pilier-fleche{ position:absolute; top:18px; right:18px; font-size:22px; line-height:1; color:var(--deep); }
+.accueil-court h3.acc-priorites-titre{ margin:28px 0 16px; font-size:19px; line-height:1.4; color:var(--deep); text-align:start; }
 .acc-priorites{ list-style:none; display:flex; flex-wrap:wrap; gap:10px; margin:0; padding:0; }
 .acc-priorites a{ display:flex; align-items:center; min-height:44px; padding:10px 16px; font-size:15px; line-height:1.4; border:1px solid var(--champ-contour); border-radius:12px; color:var(--deep); background:#fff; }
 .acc-priorites a:hover{ background:var(--soft); }
@@ -2503,7 +2521,8 @@ html.sobre .hero-visual{ box-shadow:none; }
 .acc-devise{ color:#d3dfd6; font-size:14px; margin:28px 0 0; padding-top:20px; border-top:1px solid rgba(255,255,255,.25); }
 @media(max-width:900px){
   .accueil-court .acc-hero-texte{ grid-template-columns:minmax(0,1fr); gap:20px; }
-  .accueil-court .acc-hero h1{ grid-row:auto; max-width:25ch; }
+  .accueil-court .acc-hero h1{ max-width:25ch; }
+  .acc-piliers{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   .acc-actualites{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   .acc-actualites > :last-child{ grid-column:1 / -1; }
 }
@@ -2511,6 +2530,10 @@ html.sobre .hero-visual{ box-shadow:none; }
   .accueil-court .acc-hero{ padding-top:108px; padding-bottom:32px; }
   .accueil-court .acc-hero h1{ font-size:32px; max-width:none; }
   .accueil-court .acc-hero-lead{ font-size:16px; }
+  .acc-surtitre{ font-size:12px; margin-bottom:14px; }
+  .acc-hero-suite{ gap:16px; }
+  .acc-raccourcis{ gap:0; padding-block:4px; }
+  .acc-raccourcis a span{ display:none; }
   .accueil-court .acc-hero-actions{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
   .accueil-court .acc-hero-actions .acc-bouton{ justify-content:center; padding:10px; font-size:14px; text-align:center; line-height:1.4; }
   .accueil-court .acc-hero-actions .acc-bouton--texte{ grid-column:1 / -1; }
@@ -2524,6 +2547,19 @@ html.sobre .hero-visual{ box-shadow:none; }
   .acc-impact-chiffres small, .acc-impact-chiffres a{ font-size:13px; }
   .acc-carte-cadre{ padding:20px 16px; }
 }
+@media(max-width:540px){
+  .acc-piliers{ grid-template-columns:minmax(0,1fr); gap:8px; }
+  .acc-piliers a{ display:grid; grid-template-columns:58px minmax(0,1fr); align-items:center; gap:12px; min-height:88px; padding:16px 36px 16px 16px; border-radius:14px; }
+  .acc-piliers strong{ font-size:16px; line-height:1.4; text-wrap:initial; }
+  .acc-pilier-repere{ font-size:12px; letter-spacing:0; }
+  .acc-pilier-fleche{ top:50%; right:12px; transform:translateY(-50%); font-size:19px; }
+  .acc-actualites > *{ padding:20px; }
+}
+@media(prefers-reduced-transparency:reduce){
+  .accueil-court .acc-hero{ background:var(--acc-foret); }
+  .acc-actualites > *, .acc-piliers a{ background:var(--paper); box-shadow:none; }
+}
+@media(prefers-reduced-motion:reduce){ .acc-piliers a{ transition:none; } }
 
 .acc-carte-cadre .acc-legende span{ color:#c2d1c7; font-size:inherit; }
 .acc-carte-cadre .acc-unites-liste a{ color:#eef3ef; font-size:13px; }

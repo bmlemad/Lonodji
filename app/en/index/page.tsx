@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArticleCard } from "@/components/blocks";
 import AccueilIndicateurs from "@/components/accueil-indicateurs";
+import AccueilPiliers from "@/components/accueil-piliers";
 import Appel from "@/components/appel";
 import Link from "@/components/lien";
 import CarteAccueil from "@/components/carte-accueil";
@@ -9,7 +10,7 @@ import { filledCount, getIndex, ogFor, ORG, thematiqueCount } from "@/lib/conten
 import { alternatesLangues } from "@/lib/langues";
 import { getIndicateurs } from "@/lib/indicateurs";
 import { PRIORITAIRES } from "@/lib/organisation";
-import { aujourdhuiNdjamena, etape, getElection, RECENSEMENT_ECHEANCE } from "@/lib/election";
+import { etape, getElection, RECENSEMENT_ECHEANCE } from "@/lib/election";
 import { getMagazine } from "@/lib/magazine";
 import { getPostes } from "@/lib/postes";
 import { getTransmissions } from "@/lib/transmissions";
@@ -45,7 +46,6 @@ export default function HomeEn() {
   const poles = idx.structure.poles;
   const prio = new Set(PRIORITAIRES.map((p) => p.id));
   const el = getElection();
-  const recensementOuvert = aujourdhuiNdjamena() <= RECENSEMENT_ECHEANCE;
   const vote = etape("vote");
   const mag = getMagazine().numeros[0];
   const postes = getPostes();
@@ -69,20 +69,33 @@ export default function HomeEn() {
     <main id="main-content" className="accueil accueil-court" lang="en">
       <section className="acc-hero" aria-labelledby="hero-title">
         <div className="acc-hero-texte">
-          <h1 id="hero-title">All Bedjond people.<span>Acting together.</span></h1>
-          <p className="acc-hero-lead">ADEB LONODJI serves all Bedjond people, in Chad and across the diaspora. We document their needs and preserve their heritage.</p>
-          <div className="acc-hero-actions"><Link className="acc-bouton acc-bouton--plein" href="/en/contact">Get involved</Link><Link className="acc-bouton" href="/territoire/besoins" hrefLang="fr">Report a need (French)</Link><Link className="acc-bouton acc-bouton--texte" href="/en/impact">See progress</Link></div>
-          <p className="acc-hero-reperes">Since&nbsp;1995 · {poles.length}&nbsp;pillars · {total}&nbsp;themes <Link href="/en/about">Our mission</Link></p>
+          <div className="acc-hero-intro">
+            <p className="acc-surtitre">ADEB LONODJI · Since 1995</p>
+            <h1 id="hero-title">All Bedjond people.<span>Acting together.</span></h1>
+          </div>
+          <div className="acc-hero-suite">
+            <p className="acc-hero-lead">ADEB LONODJI serves all Bedjond people, in Chad and across the diaspora. We document their needs and preserve their heritage.</p>
+            <div className="acc-hero-actions"><Link className="acc-bouton acc-bouton--plein" href="/en/contact">Get involved</Link><Link className="acc-bouton" href="/territoire/besoins" hrefLang="fr">Report a need (French)</Link><Link className="acc-bouton acc-bouton--texte" href="/en/impact">See progress</Link></div>
+            <p className="acc-hero-reperes">{poles.length}&nbsp;pillars · {total}&nbsp;themes <Link href="/en/themes">Our pillars</Link></p>
+          </div>
         </div>
       </section>
 
+      <nav className="acc-raccourcis" aria-label="Explore the home page">
+        <a href="#moment-title">Agenda <span aria-hidden="true">↓</span></a>
+        <a href="#poles-title">Pillars <span aria-hidden="true">↓</span></a>
+        <a href="#comptes-title">Results <span aria-hidden="true">↓</span></a>
+        <a href="#pays-title">Places <span aria-hidden="true">↓</span></a>
+        <a href="#contribuer-title">Join <span aria-hidden="true">↓</span></a>
+      </nav>
+
       <section className="acc-section acc-moment" aria-labelledby="moment-title">
-        <div className="acc-tete"><h2 id="moment-title">Right now</h2><p>{inWordsEn(el.poles.length, true)} pillar vice-presidents to elect on {dateEn(vote.date, false)}. {recensementOuvert ? <><Link href="/participer/recensement" hrefLang="fr">Member census (French)</Link> until {dateEn(RECENSEMENT_ECHEANCE, false)}.</> : <><Link href="/participer/recensement" hrefLang="fr">Member census (French)</Link>: still open.</>}</p></div>
+        <div className="acc-tete"><h2 id="moment-title">Right now</h2><p><Link href="/en/election">{inWordsEn(el.poles.length, true)} pillar vice-presidencies</Link>: vote scheduled for <time dateTime={vote.date}>{dateEn(vote.date, false)}</time>. <Link href="/participer/recensement" hrefLang="fr">Member census (French)</Link>: deadline of <time dateTime={RECENSEMENT_ECHEANCE}>{dateEn(RECENSEMENT_ECHEANCE, false)}</time>.</p></div>
         <EnCeMoment etapes={etapes} prochaine="Next step" calendrier="View the full calendar" />
         <div className="acc-actualites">
           {dernier ? <div className="acc-derniere" lang="fr"><small lang="en">Latest news · in French</small><ArticleCard a={dernier} /><Link className="acc-lien-direct" href="/journal" hrefLang="fr" lang="en">All news (French)</Link></div> : null}
           <Link className="acc-postes" href="/en/organisation#priorities"><small>Get involved</small><strong>{inWordsEn(postes.length, true)} open posts</strong><span>Lead a theme, support its coordinator or chair a pillar.</span><span className="acc-lien-direct">Explore the roles</span></Link>
-          {mag ? <a className="acc-mag" href={mag.pdf} hrefLang="fr"><img src={apercu(mag.couverture)} alt="" width={800} height={1131} loading="lazy" decoding="async" /><span><small>Magazine · no. {mag.numero} · in French</small><strong lang="fr">Lonodji : {mag.titre}</strong><span>Download the PDF · {mag.pages} pages · {mag.taille.replace(",", ".").replace("Mo", "MB")}</span></span></a> : null}
+          {mag ? <a className="acc-mag" href={mag.pdf} hrefLang="fr"><img src={apercu(mag.couverture)} alt="" width={800} height={1131} loading="lazy" decoding="async" /><span><small>Magazine · no. {mag.numero} · in French</small><strong lang="fr">Lonodji : {mag.titre}</strong><span>Download the PDF · {mag.pages} pages · {mag.taille.replace(",", ".").replace("Mo", "MB")}</span>{mag.numero === 1 ? <small className="acc-note-edition">Published before the current pillar framework.</small> : null}</span></a> : null}
         </div>
       </section>
 
@@ -93,7 +106,9 @@ export default function HomeEn() {
       </section>
 
       <section className="acc-section acc-poles" aria-labelledby="poles-title">
-        <div className="acc-tete"><h2 id="poles-title">Our priorities</h2><p>{inWordsEn(prio.size, true)} active priorities across {inWordsEn(total)} themes. {filled} themes have a coordinator.</p></div>
+        <div className="acc-tete"><h2 id="poles-title">{inWordsEn(poles.length, true)} pillars for action.</h2><p>Preserving Bedjond heritage, improving living conditions and preparing for the future. {filled} themes have a coordinator.</p></div>
+        <AccueilPiliers lang="en" />
+        <h3 className="acc-priorites-titre">Our {inWordsEn(prio.size)} active priorities</h3>
         <ul className="acc-priorites">{poles.flatMap((p) => p.items.filter((t) => prio.has(t.id)).map((t) => <li key={t.id}><Link href="/en/themes">{themes[t.number] ?? t.name}</Link></li>))}</ul>
         <details className="acc-dossiers"><summary>All advocacy briefs ({idx.plaidoyers.length})</summary><p>The {lettres} cover letters are ready and await the board’s signature. Each dispatch and each reply will be dated.</p><ol className="acc-plaidoyers-liste">{idx.plaidoyers.map((p) => <li key={p.id}><Link href="/en/advocacy"><small>Advocacy brief</small><strong>{BRIEFS_EN[p.id] ?? p.title}</strong></Link></li>)}</ol></details>
         <p className="acc-liens"><Link href="/en/themes">All themes and coordinators</Link><Link href="/en/sectors">Our fields of work</Link><Link href="/en/projects">Projects and their status</Link><Link href="/en/commune">Proposals to the commune</Link></p>
@@ -105,7 +120,7 @@ export default function HomeEn() {
       </section>
 
       <section className="acc-section acc-odeb" aria-labelledby="odeb-title">
-        <div className="acc-fin"><div><h2 id="odeb-title">Preparing tomorrow.</h2><p>The ODEB LONODJI project proposes a 2030 vision for Bedjond country. The proposals and next steps remain open for discussion.</p><p className="acc-liens acc-liens--clair"><Link href="/en/odeb">Vision 2030</Link><Link href="/odeb/livre-blanc" hrefLang="fr">White paper (French)</Link><Link href="/odeb/feuille-de-route" hrefLang="fr">Roadmap (French)</Link></p></div><div><h3>Everyone can contribute.</h3><ul className="acc-contribuer"><li><Link href="/en/contact">Join · declare your interest without payment</Link></li><li><Link href="/diaspora" hrefLang="fr">Offer your skills (French)</Link></li><li><Link href="/en/contact">Discuss a partnership</Link></li><li><Link href="/observatoire" hrefLang="fr">Explore data and sources (French)</Link></li></ul><p>A reply within 48 working hours: <Link href="/en/contact">write to us</Link>, <Appel texte="call" en /> or <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p></div></div>
+        <div className="acc-fin"><div><h2 id="odeb-title">Preparing tomorrow.</h2><p>The ODEB LONODJI project proposes a 2030 vision for Bedjond country. The proposals and next steps remain open for discussion.</p><p className="acc-liens acc-liens--clair"><Link href="/en/odeb">Vision 2030</Link><Link href="/odeb/livre-blanc" hrefLang="fr">White paper (French)</Link><Link href="/odeb/feuille-de-route" hrefLang="fr">Roadmap (French)</Link></p></div><div><h3 id="contribuer-title">Everyone can contribute.</h3><ul className="acc-contribuer"><li><Link href="/en/contact">Join · declare your interest without payment</Link></li><li><Link href="/diaspora" hrefLang="fr">Offer your skills (French)</Link></li><li><Link href="/en/contact">Discuss a partnership</Link></li><li><Link href="/observatoire" hrefLang="fr">Explore data and sources (French)</Link></li></ul><p>A reply within 48 working hours: <Link href="/en/contact">write to us</Link>, <Appel texte="call" en /> or <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p></div></div>
         <p className="acc-devise">Courage · Discipline · Heritage</p>
       </section>
     </main>

@@ -46,6 +46,6 @@ export default function Architecture() {
       <p className="button-row"><Link className="button primary" href="/programmes">Les thématiques et leurs responsables</Link><Link className="button secondary" href="/odeb">Vision 2030</Link></p>
     </section>
     <p className="lg-footnote">Formulation institutionnelle communiquée le 6 octobre 2026. <Link href="/transparence/decisions">Consulter le registre public</Link>.</p>
-    <Partager titre={architecture.titre} texte={architecture.signature} />
+    <Partager route={ROUTE} titre={architecture.titre} texte={architecture.signature} />
   </main>;
 }

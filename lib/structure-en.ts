@@ -1,14 +1,13 @@
 import { getPage } from "@/lib/content";
+import architecture from "@/content/architecture.json";
 
-/* English names of the pillars and themes, read from the English themes page (content/pages/en--themes.json, built by
-   the import from en/themes.html) — one source for the wording. */
+/* Canonical pillar names; theme names remain sourced from the imported English page. */
 let cache: { piliers: Record<string, string>; themes: Record<string, string> } | null = null;
 const decode = (s: string) => s.replace(/&amp;/g, "&").replace(/&rsquo;/g, "’").replace(/&eacute;/g, "é").replace(/<[^>]+>/g, "").trim();
 export function nomsEn() {
   if (cache) return cache;
   const html = getPage("en--themes").sections.map((s) => s.html).join("");
-  const piliers: Record<string, string> = {};
-  for (const m of html.matchAll(/eyebrow">Pillar ([IVX]+)<\/div>\s*<h2>(.*?)<\/h2>/g)) piliers[m[1]] = decode(m[2]);
+  const piliers: Record<string, string> = Object.fromEntries(architecture.piliers.map((p) => [p.roman, p.nomEn]));
   const themes: Record<string, string> = {};
   for (const m of html.matchAll(/THEME (\d{2})<\/span><\/div>[\s\S]*?<h3>(.*?)<\/h3>/g)) themes[m[1]] = decode(m[2]);
   cache = { piliers, themes };

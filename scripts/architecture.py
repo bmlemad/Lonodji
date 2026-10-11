@@ -110,9 +110,11 @@ def formulaire_piliers(data, structure):
     return data
 
 def appliquer_page(data, structure):
-    if data.get('architectureDate') == ARCHITECTURE['date']:
-        return references_courantes(formulaire_piliers(sommaire(copy.deepcopy(data)), structure))
     route = data.get('route', '')
+    # Une date à jour ne garantit pas que les groupes hérités ont été recomposés.
+    # Leur projection reste idempotente et vérifie les rattachements à chaque import.
+    if data.get('architectureDate') == ARCHITECTURE['date'] and route not in ('/programmes', '/impact', '/en/themes'):
+        return references_courantes(formulaire_piliers(sommaire(copy.deepcopy(data)), structure))
     if route.startswith('/journal/') or route in ('/transparence', '/transparence/decisions'):
         return data
     result = copy.deepcopy(data)

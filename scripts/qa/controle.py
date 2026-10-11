@@ -95,7 +95,7 @@ def main() -> int:
         b = p.chromium.launch()
         ctx = b.new_context(viewport={"width": 1440, "height": 900})
         page = ctx.new_page()
-        page.on("console", lambda m: console.append((m.type, m.text)) if m.type in ("error", "warning") else None)
+        page.on("console", lambda m: console.append((m.type, m.text + (" · " + m.location["url"] if m.location.get("url") else ""))) if m.type in ("error", "warning") else None)
         page.on("pageerror", lambda e: console.append(("pageerror", str(e))))
         for chemin in PAGES:
             try:

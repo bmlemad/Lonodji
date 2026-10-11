@@ -5,12 +5,13 @@ import { alternatesLangues } from "@/lib/langues";
 import Link from "@/components/lien";
 import { ArticleCard } from "@/components/blocks";
 import AccueilIndicateurs from "@/components/accueil-indicateurs";
+import AccueilPiliers from "@/components/accueil-piliers";
 import CarteAccueil from "@/components/carte-accueil";
 import EnCeMoment from "@/components/en-ce-moment";
 import { enLettres, filledCount, getIndex, ORG, thematiqueCount } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
 import { PRIORITAIRES } from "@/lib/organisation";
-import { aujourdhuiNdjamena, dateFr, etape, getElection, RECENSEMENT_ECHEANCE } from "@/lib/election";
+import { dateFr, etape, getElection, RECENSEMENT_ECHEANCE } from "@/lib/election";
 import { getMagazine } from "@/lib/magazine";
 import { getPostes } from "@/lib/postes";
 import { getTransmissions } from "@/lib/transmissions";
@@ -37,7 +38,6 @@ export default function Home() {
   const poles = idx.structure.poles;
   const prio = new Set(PRIORITAIRES.map((p) => p.id));
   const el = getElection();
-  const recensementOuvert = aujourdhuiNdjamena() <= RECENSEMENT_ECHEANCE;
   const vote = etape("vote");
   const mag = getMagazine().numeros[0];
   const postes = getPostes();
@@ -68,27 +68,40 @@ export default function Home() {
     <main id="main-content" className="accueil accueil-court">
       <section className="acc-hero" aria-labelledby="hero-title">
         <div className="acc-hero-texte">
-          <h1 id="hero-title">Tout le peuple bedjond.<span>Ensemble pour agir.</span></h1>
-          <p className="acc-hero-lead">ADEB LONODJI est au service de tout le peuple bedjond, au Tchad et dans la diaspora. Nous documentons ses besoins et préservons son patrimoine.</p>
-          <div className="acc-hero-actions">
-            <Link className="acc-bouton acc-bouton--plein" href="/participer">Participer</Link>
-            <Link className="acc-bouton" href="/territoire/besoins">Signaler un besoin</Link>
-            <Link className="acc-bouton acc-bouton--texte" href="/impact">Voir les avancées</Link>
+          <div className="acc-hero-intro">
+            <p className="acc-surtitre">ADEB LONODJI · Depuis 1995</p>
+            <h1 id="hero-title">Tout le peuple bedjond.<span>Ensemble pour agir.</span></h1>
           </div>
-          <p className="acc-hero-reperes">Depuis&nbsp;1995 · {architecture.piliers.length}&nbsp;piliers stratégiques · {total}&nbsp;thématiques <Link href="/association/architecture">Notre architecture</Link></p>
+          <div className="acc-hero-suite">
+            <p className="acc-hero-lead">ADEB LONODJI est au service de tout le peuple bedjond, au Tchad et dans la diaspora. Nous documentons ses besoins et préservons son patrimoine.</p>
+            <div className="acc-hero-actions">
+              <Link className="acc-bouton acc-bouton--plein" href="/participer">Participer</Link>
+              <Link className="acc-bouton" href="/territoire/besoins">Signaler un besoin</Link>
+              <Link className="acc-bouton acc-bouton--texte" href="/impact">Voir les avancées</Link>
+            </div>
+            <p className="acc-hero-reperes">{architecture.piliers.length}&nbsp;piliers stratégiques · {total}&nbsp;thématiques <Link href="/association/architecture">Notre architecture</Link></p>
+          </div>
         </div>
       </section>
+
+      <nav className="acc-raccourcis" aria-label="Explorer l’accueil">
+        <a href="#moment-title">Agenda <span aria-hidden="true">↓</span></a>
+        <a href="#poles-title">Piliers <span aria-hidden="true">↓</span></a>
+        <a href="#comptes-title">Suivi <span aria-hidden="true">↓</span></a>
+        <a href="#pays-title">Pays <span aria-hidden="true">↓</span></a>
+        <a href="#contribuer-title">Agir <span aria-hidden="true">↓</span></a>
+      </nav>
 
       <section className="acc-section acc-moment" aria-labelledby="moment-title">
         <div className="acc-tete">
           <h2 id="moment-title">En ce moment</h2>
-          <p>{enLettres(el.poles.length, true)} vice-présidences à élire le {dateFr(vote.date, false)}. {recensementOuvert ? <><Link href="/participer/recensement">Recensement des membres</Link> jusqu’au {dateFr(RECENSEMENT_ECHEANCE, false)}.</> : <><Link href="/participer/recensement">Recensement des membres</Link> : il reste ouvert.</>}</p>
+          <p><Link href="/association/election-vice-presidences">{enLettres(el.poles.length, true)} vice-présidences</Link> : vote prévu le <time dateTime={vote.date}>{dateFr(vote.date, false)}</time>. <Link href="/participer/recensement">Recensement des membres</Link> : échéance du <time dateTime={RECENSEMENT_ECHEANCE}>{dateFr(RECENSEMENT_ECHEANCE, false)}</time>.</p>
         </div>
         <EnCeMoment etapes={etapes} />
         <div className="acc-actualites">
           {dernier ? <div className="acc-derniere"><small>Dernière actualité</small><ArticleCard a={dernier} /><Link className="acc-lien-direct" href="/journal">Tout le journal</Link></div> : null}
           <Link className="acc-postes" href="/participer#postes-ouverts"><small>Contribuer</small><strong>{enLettres(postes.length, true)} postes ouverts</strong><span>Coordonner une thématique, seconder son responsable ou présider un pilier.</span><span className="acc-lien-direct">Voir les missions et candidater</span></Link>
-          {mag ? <a className="acc-mag" href={mag.pdf}><img src={apercu(mag.couverture)} alt="" width={800} height={1131} loading="lazy" decoding="async" /><span><small>Magazine · n° {mag.numero}, {mag.periode}</small><strong>Lonodji : {mag.titre}</strong><span>Télécharger le PDF · {mag.pages} pages · {mag.taille}</span></span></a> : null}
+          {mag ? <a className="acc-mag" href={mag.pdf}><img src={apercu(mag.couverture)} alt="" width={800} height={1131} loading="lazy" decoding="async" /><span><small>Magazine · n° {mag.numero}, {mag.periode}</small><strong>Lonodji : {mag.titre}</strong><span>Télécharger le PDF · {mag.pages} pages · {mag.taille}</span>{mag.numero === 1 ? <small className="acc-note-edition">Édition antérieure au référentiel actuel des piliers.</small> : null}</span></a> : null}
         </div>
       </section>
 
@@ -99,7 +112,9 @@ export default function Home() {
       </section>
 
       <section className="acc-section acc-poles" aria-labelledby="poles-title">
-        <div className="acc-tete"><h2 id="poles-title">Nos priorités</h2><p>{enLettres(prio.size, true)} priorités actives dans {enLettres(total)} thématiques. {filled} thématiques ont un coordonnateur.</p></div>
+        <div className="acc-tete"><h2 id="poles-title">{enLettres(architecture.piliers.length, true)} piliers pour agir.</h2><p>Préserver l’héritage bedjond, améliorer les conditions de vie et préparer l’avenir. {filled} thématiques ont un coordonnateur.</p></div>
+        <AccueilPiliers />
+        <h3 className="acc-priorites-titre">Nos {enLettres(prio.size)} priorités actives</h3>
         <ul className="acc-priorites">{poles.flatMap((p) => p.items.filter((t) => prio.has(t.id)).map((t) => <li key={t.id}><Link href={`/programmes#${t.id}`}>{t.name}</Link></li>))}</ul>
         <details className="acc-dossiers"><summary>Tous les dossiers de plaidoyer ({idx.plaidoyers.length})</summary><p>{envoyees ? `${envoyees} lettres d’envoi sur ${lettres} sont parties.` : `Les ${lettres} lettres d’envoi sont prêtes et attendent la signature du bureau.`} Chaque envoi et chaque réponse seront datés.</p><ol className="acc-plaidoyers-liste">{idx.plaidoyers.map((p) => <li key={p.id}><Link href={p.href}><small>{p.theme}</small><strong>{p.title}</strong></Link></li>)}</ol></details>
         <p className="acc-liens"><Link href="/programmes">Les {total} thématiques et leurs responsables</Link><Link href="/programmes/fiches-de-mission">Les fiches de mission</Link><Link href="/projets">Les projets et leur statut</Link><Link href="/territoire/propositions-commune">Nos propositions à la commune</Link></p>
@@ -116,7 +131,7 @@ export default function Home() {
       <section className="acc-section acc-odeb" aria-labelledby="odeb-title">
         <div className="acc-fin">
           <div><h2 id="odeb-title">Préparer demain.</h2><p>Le projet ODEB LONODJI propose une vision 2030 pour le pays bedjond. Les propositions et les étapes restent ouvertes à la discussion.</p><p className="acc-liens acc-liens--clair"><Link href="/odeb">Vision 2030</Link><Link href="/odeb/livre-blanc">Le livre blanc</Link><Link href="/odeb/feuille-de-route">La feuille de route</Link></p></div>
-          <div><h3>Chacun peut contribuer.</h3><ul className="acc-contribuer"><li><Link href="/participer#adherer">Adhérer · déclarer son intention sans paiement</Link></li><li><Link href="/diaspora">Proposer ses compétences</Link></li><li><Link href="/association/ong-partenaires">Préparer un partenariat</Link></li><li><Link href="/observatoire">Consulter les données et les sources</Link></li></ul><p>Une réponse sous quarante-huit heures ouvrées : <Link href="/participer#contact">nous écrire</Link>, <Appel texte="appel" /> ou <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p></div>
+          <div><h3 id="contribuer-title">Chacun peut contribuer.</h3><ul className="acc-contribuer"><li><Link href="/participer#adherer">Adhérer · déclarer son intention sans paiement</Link></li><li><Link href="/diaspora">Proposer ses compétences</Link></li><li><Link href="/association/ong-partenaires">Préparer un partenariat</Link></li><li><Link href="/observatoire">Consulter les données et les sources</Link></li></ul><p>Une réponse sous quarante-huit heures ouvrées : <Link href="/participer#contact">nous écrire</Link>, <Appel texte="appel" /> ou <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p></div>
         </div>
         <p className="acc-devise">Courage · Discipline · Héritage</p>
       </section>
