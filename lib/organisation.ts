@@ -11,7 +11,7 @@ export const SOURCES: Record<string, Source> = {
   grdr: { id: "grdr", titre: "Les associations villageoises de migrants dans le développement communal (Traverses n° 10, 2001)", editeur: "GRDR", href: "https://grdr.org/IMG/pdf/traverse_10_GRDR_migrant.pdf" },
   fafd: { id: "fafd", titre: "À propos de nous ; plan stratégique 2026-2030", editeur: "FAFD (Sénégal)", href: "https://fafd.info/a-propos-de-nous/" },
   moyenchari: { id: "moyenchari", titre: "Association Moyen-Chari", editeur: "Association Moyen-Chari (France, Tchad)", href: "https://www.associationmoyenchari.org/" },
-  chefferies: { id: "chefferies", titre: "La Route des Chefferies", editeur: "La Route des Chefferies (Cameroun)", href: "https://routedeschefferies.com/la-route-des-chefferies.html" },
+  chefferies: { id: "chefferies", titre: "La Route des Chefferies", editeur: "La Route des Chefferies (Cameroun)", href: "https://web.archive.org/web/20220814222421/http://www.routedeschefferies.com/la-route-des-chefferies.html" },
   mandjafa: { id: "mandjafa", titre: "Plan de développement local du canton Mandjafa 2014-2017", editeur: "République du Tchad", href: "https://www.eeas.europa.eu/sites/default/files/pdl_mandjafa.pdf" },
   chari: { id: "chari", titre: "Plan de développement départemental du Chari (validé le 31 août 2024)", editeur: "Département du Chari, Tchad", href: "https://accept-tchad.org/fileadmin/user_upload/accept/Outils_aide_decision/PDD_CHARI_Version_Validee_CDA_31_08_2024.pdf" },
   cvd: { id: "cvd", titre: "Décret n° 2007-032 sur les conseils villageois de développement", editeur: "Burkina Faso", href: "https://faolex.fao.org/docs/pdf/bkf148394.pdf" },

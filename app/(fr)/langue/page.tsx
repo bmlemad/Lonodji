@@ -59,7 +59,7 @@ export default function Langue() {
             <p>Roger Dinguemrebeye et John M. Keegan, avec l’association Kokotan ; 2e édition, avril 2014 ; environ 2 650 mots, 1 820 phrases d’exemple et 700 expressions, chaque mot accompagné de son enregistrement. Produit dans le cadre du Sara Bagirmi Language Project, avec le soutien du National Endowment for the Humanities.</p>
             <div className="bb-liens">
               <a className="text-link" href="https://morkegbooks.com/Services/World/Languages/SaraBagirmi/SoundDictionary/Nangnda/" target="_blank" rel="noopener noreferrer">Consulter le lexique sonore <span aria-hidden="true">↗</span></a>
-              <a className="text-link" href="https://morkegbooks.com/Services/World/Languages/SaraBagirmi/pdfs/Bediondo.pdf" target="_blank" rel="noopener noreferrer">Le lexique en PDF <span aria-hidden="true">↗</span></a>
+              <a className="text-link" href="https://morkegbooks.com/Services/World/Languages/SaraBagirmi/pdfs/Nangnda.pdf" target="_blank" rel="noopener noreferrer">Le lexique en PDF <span aria-hidden="true">↗</span></a>
               <Link className="text-link" href="/patrimoine/base-de-recherche#src-lexique-nangnda">La fiche dans la base<span className="sr-only"> : le lexique nangnda</span> <span aria-hidden="true">→</span></Link>
             </div>
           </article>

@@ -35,6 +35,17 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+# Modèles de signature de courriel : fichiers à copier, pas des pages du site ; hors des moteurs de recherche.
+[[headers]]
+  for = "/odeb/identite/signature-e-mail-adeb-lonodji.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/odeb/identite/signature-e-mail-odeb-lonodji.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
 # En-têtes de sécurité aussi pour les fichiers statiques (PDF, images, sw.js, __forms.html),
 # que les en-têtes de next.config.mjs ne couvrent pas.
 [[headers]]

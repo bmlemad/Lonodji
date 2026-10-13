@@ -65,7 +65,7 @@ export const PLAIDOYERS_NOMS: Record<string, { titre: string; href: string }> = 
   "plaidoyer-commune": { titre: "Note à la commune", href: "/journal/2026-09-16-note-commune-bedjondo" },
 };
 
-const WB = (n: string) => `http://documents.worldbank.org/curated/en/${n}`;
+const WB = (n: string) => `https://documents.worldbank.org/curated/en/${n}`;
 
 export const PROGRAMMES_BAILLEURS: ProgrammeBailleur[] = [
   // ——— au plus près de Bédjondo ———
