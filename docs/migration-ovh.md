@@ -47,7 +47,10 @@ Fonctions perdues sans remplacement : formulaires lus dans l'interface Netlify (
 ## 4. Étapes
 
 ### A. Avant toute bascule
-1. Commander l'hébergement OVH, rattacher `lonodji.org` en multisite (le domaine n'a pas besoin d'être chez OVH pour cela), activer SSH, créer la clé de déploiement ; copier `serveur/ovh/config.exemple.php` en `~/lonodji-prive/config.php` sur l'hébergement et y mettre le courriel de notification et le code d'invitation de l'espace de rédaction ; créer dans GitHub les secrets `OVH_SSH_HOST`, `OVH_SSH_USER`, `OVH_SSH_KEY`, `OVH_WWW`.
+1. Hébergement. Constat du 16 octobre : le compte OVH « Konguil Technologies » possède déjà un hébergement **Perso** (`enertcp`, cluster 129, Gravelines) qui porte enertchad.com ; lonodji.org n'est pas encore chez OVH (transfert en attente du 23 novembre). Deux voies :
+   - **sans achat** : rattacher `lonodji.org` en multisite de cet hébergement (dossier racine `lonodji/www`, SSL activé). L'offre Perso n'a pas de SSH : déploiement par SFTP (mode `lftp` du workflow). Le site de l'association partage alors l'hébergement d'une entreprise de l'utilisateur : à acter ;
+   - **avec achat** : hébergement Pro dédié à l'association (SSH, rsync, séparation nette). Décision de l'utilisateur.
+   Dans les deux cas : utilisateur FTP/SFTP dédié dont le dossier racine contient `www/` ; copier `serveur/ovh/config.exemple.php` en `lonodji-prive/config.php` à côté de `www/` (courriel de notification, code d'invitation) ; secrets GitHub `OVH_HOST`, `OVH_USER`, `OVH_PASSWORD` (et `OVH_SSH_KEY` en mode SSH) ; variables `OVH_WWW`, `OVH_URL`. Vérifier que `.ovhconfig` à la racine de l'hébergement est en PHP 8 (sur un multisite, c'est celui de la racine qui compte).
 2. Dépôt — **fait le 16 octobre 2026** (commit « Préparer l'hébergement OVH ») :
    - `lib/formulaires.ts` : l'adresse d'envoi des formulaires vient de `NEXT_PUBLIC_FORMULAIRES_URL` (`/__forms.html` sur Netlify, `/formulaires.php` dans l'export OVH) ; les huit composants concernés l'utilisent ;
    - `serveur/ovh/formulaires.php` (22 formulaires, pot de miel, limite de 20 envois par heure et par adresse hachée, pièces jointes de 10 Mo, enregistrement JSON hors racine web, courriel), `serveur/ovh/redaction.php` (même API que `/api/redaction`, Argon2id, blocage après cinq échecs), `.user.ini`, `.ovhconfig`, `config.exemple.php` ;
