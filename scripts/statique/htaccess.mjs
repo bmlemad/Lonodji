@@ -57,6 +57,14 @@ ErrorDocument 404 /404.html
   RewriteRule ^ https://lonodji.org%{REQUEST_URI} [R=301,L]
   RewriteCond %{HTTP_HOST} ^www\\.lonodji\\.org$ [NC]
   RewriteRule ^ https://lonodji.org%{REQUEST_URI} [R=301,L]
+  # adresses sans barre finale ni .html, comme sur Netlify : /participer sert participer.html
+  DirectorySlash Off
+  RewriteCond %{REQUEST_METHOD} =GET
+  RewriteCond %{REQUEST_URI} ^/(.+)/$
+  RewriteCond %{DOCUMENT_ROOT}/%1/index.html !-f
+  RewriteRule ^ /%1 [R=301,L]
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^([^.]+?)$ /$1.html [L]
   # scripts serveur (voir serveur/ovh/)
   RewriteCond %{REQUEST_METHOD} =POST
   RewriteRule ^__forms\\.html$ /formulaires.php [L]

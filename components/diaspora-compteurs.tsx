@@ -18,6 +18,7 @@ export default function DiasporaCompteurs({ releve, vacantes }: { releve: Releve
   const [etat, setEtat] = useState<Releve>({ ...releve, live: false });
 
   useEffect(() => {
+    if (process.env.NEXT_PUBLIC_SITE_STATIQUE) return; // export statique (OVH) : pas d'API
     const ctrl = new AbortController();
     fetch("/api/indicateurs", { signal: ctrl.signal })
       .then((r) => (r.ok ? r.json() : null))

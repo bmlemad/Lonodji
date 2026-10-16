@@ -17,12 +17,17 @@ done
 for f in app/manifest.ts app/robots.ts app/sitemap.ts; do
   grep -q "force-static" "$f" || sed -i '1i export const dynamic = "force-static";' "$f"
 done
-python3 - <<'PY'
+# OVH : adresses sans barre finale, comme aujourd'hui (fichiers page.html servis par .htaccess) ;
+# GitHub Pages : dossiers page/index.html (barre finale), seule forme que Pages sache servir.
+BARRE=$([ "$CIBLE" = ovh ] && echo false || echo true)
+BARRE=$BARRE python3 - <<'PY'
+import os
 s = open("next.config.mjs").read()
-s = s.replace("const nextConfig = {", "const nextConfig = {\n  output: 'export',\n  trailingSlash: true,\n  images: { unoptimized: true },", 1)
+s = s.replace("const nextConfig = {", "const nextConfig = {\n  output: 'export',\n  trailingSlash: %s,\n  images: { unoptimized: true }," % os.environ["BARRE"], 1)
 open("next.config.mjs", "w").write(s)
 PY
 
+export NEXT_PUBLIC_SITE_STATIQUE=1
 if [ "$CIBLE" = ovh ]; then
   export NEXT_PUBLIC_FORMULAIRES_URL=/formulaires.php
 fi

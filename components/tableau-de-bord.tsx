@@ -126,6 +126,8 @@ export default function TableauDeBord({ donnees, mode = "complet" }: { donnees: 
   const [formulaires, setFormulaires] = useState<Releve>({ ...donnees.formulaires, live: false });
 
   useEffect(() => {
+    // export statique (OVH) : pas d'API, les compteurs sont relevés à la construction (ENVOIS_DIR)
+    if (process.env.NEXT_PUBLIC_SITE_STATIQUE) return;
     const ctrl = new AbortController();
     fetch("/api/indicateurs", { signal: ctrl.signal })
       .then((r) => (r.ok ? r.json() : null))

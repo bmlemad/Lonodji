@@ -55,7 +55,8 @@ Fonctions perdues sans remplacement : formulaires lus dans l'interface Netlify (
    - `scripts/statique/construire.sh` : cible `ovh` (défaut) ou `pages` ;
    - `.github/workflows/deploy-ovh.yml` (lancement manuel, rsync, rapatriement des envois pour les indicateurs) ; `nextjs.yml` retiré ;
    - `scripts/build-indicateurs.py` lit les envois OVH (`ENVOIS_DIR`).
-   Testé en local : export de 1 133 pages, scripts PHP exercés (formulaire connu/inconnu, pot de miel, origine, pièce jointe acceptée/refusée, débit, création du mot de passe, brouillons, jetons, blocage) ; `npm run build` pour Netlify inchangé.
+   - adresses identiques à celles d'aujourd'hui (sans barre finale ni `.html`) : export `trailingSlash: false`, `.htaccess` sert `page.html` et renvoie `/page/` vers `/page` ; les compteurs en direct (`/api/indicateurs`) sont désactivés dans l'export (`NEXT_PUBLIC_SITE_STATIQUE`), le relevé de construction fait foi.
+   Testé en local le 16 octobre : export de 1 132 pages servi par un routeur PHP qui imite `.htaccess` ; `scripts/qa/controle.py` complet (73 pages, 816 liens, console, axe) : 0 problème ; 1 120 adresses du sitemap en 200 ; scripts PHP exercés (formulaire connu/inconnu, pot de miel, origine, pièce jointe acceptée/refusée, débit, création du mot de passe, brouillons, jetons, blocage) ; `npm run build` pour Netlify inchangé.
 3. Déployer sur l'adresse technique OVH (workflow « Déploiement OVH », lancement manuel), passer le QA et une vérification des adresses du sitemap, des 22 formulaires (un envoi de test chacun), des redirections et des en-têtes.
 
 ### B. Bascule du trafic (zone encore chez Netlify DNS)
