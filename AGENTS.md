@@ -82,6 +82,10 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
   `--muted` sans mesurer le contraste sur les fonds teintés : l'ancien `#607069` tombait à 4,1:1 sur `#dfe7cf`
   (AA demande 4,5:1), `#53625b` y tient 5,0:1.
 
+## Plan de développement
+- `docs/plan-developpement.md` : feuille de route datée (horizons A–D), relue chaque lundi ; la section « État » s'alimente par
+  lignes datées, jamais réécrites. Un nouveau chantier s'y inscrit avant d'être commencé.
+
 ## Hébergement OVH (migration en cours, docs/migration-ovh.md)
 - `main` reste construit par Netlify tant que la bascule n'est pas faite. L'export statique pour OVH se fait par
   `CIBLE=ovh bash scripts/statique/construire.sh` (jamais en local sur une copie qu'on va pousser : le script modifie
