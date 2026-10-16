@@ -57,12 +57,17 @@ Fonctions perdues sans remplacement : formulaires lus dans l'interface Netlify (
    - `scripts/build-indicateurs.py` lit les envois OVH (`ENVOIS_DIR`).
    - adresses identiques à celles d'aujourd'hui (sans barre finale ni `.html`) : export `trailingSlash: false`, `.htaccess` sert `page.html` et renvoie `/page/` vers `/page` ; les compteurs en direct (`/api/indicateurs`) sont désactivés dans l'export (`NEXT_PUBLIC_SITE_STATIQUE`), le relevé de construction fait foi.
    Testé en local le 16 octobre : export de 1 132 pages servi par un routeur PHP qui imite `.htaccess` ; `scripts/qa/controle.py` complet (73 pages, 816 liens, console, axe) : 0 problème ; 1 120 adresses du sitemap en 200 ; scripts PHP exercés (formulaire connu/inconnu, pot de miel, origine, pièce jointe acceptée/refusée, débit, création du mot de passe, brouillons, jetons, blocage) ; `npm run build` pour Netlify inchangé.
-3. Déployer sur l'adresse technique OVH (workflow « Déploiement OVH », lancement manuel), passer le QA et une vérification des adresses du sitemap, des 22 formulaires (un envoi de test chacun), des redirections et des en-têtes.
+3. Déployer sur l'adresse technique OVH (workflow « Déploiement OVH », lancement manuel), puis :
+   - `python3 scripts/qa/hebergement.py https://<adresse technique> --sitemap` : en-têtes réels d'Apache, redirections, barre finale, 404, scripts PHP, fichiers privés refusés, toutes les adresses du sitemap ;
+   - `python3 scripts/qa/controle.py https://<adresse technique>` : pages, liens, console, accessibilité ;
+   - un envoi de test sur chacun des 22 formulaires (courriel reçu, ligne dans `envois/`), puis suppression de ces lignes de test ;
+   - création du mot de passe de l'espace de rédaction avec le code d'invitation.
 
 ### B. Bascule du trafic (zone encore chez Netlify DNS)
 4. Dans Netlify DNS : remplacer les A de `lonodji.org` et `www` par l'adresse OVH (A ou CNAME selon ce qu'OVH indique), TTL court la veille.
 5. Demander le certificat Let's Encrypt côté OVH dès que la propagation est faite ; vérifier HTTPS, HSTS, redirection www → apex.
 6. Laisser Netlify en place une semaine en secours ; puis réduire le site Netlify à la redirection de l'ancienne adresse.
+   Le jour de la bascule : `DATE_BASCULE_OVH` dans `scripts/import-legacy.py` (date réelle), relancer l'import (note datée sous le paragraphe « Hébergement » des mentions légales), ajouter la décision au registre (`lib/decisions.ts`), activer le déclencheur `push` de `deploy-ovh.yml`, puis `python3 scripts/qa/hebergement.py https://lonodji.org --sitemap`.
 
 ### C. Domaine et zone (à partir du 23 novembre 2026)
 7. Relancer le transfert chez OVH (code de transfert fourni par Netlify/Name.com, déverrouillage du domaine). Netlify documente la procédure dans « Domain management ».
@@ -70,7 +75,7 @@ Fonctions perdues sans remplacement : formulaires lus dans l'interface Netlify (
 9. Supprimer la zone chez Netlify une fois la propagation complète.
 
 ### D. Après
-10. Mettre à jour `mentions-legales` (hébergeur : OVH SAS, 2 rue Kellermann, 59100 Roubaix — à vérifier sur la page officielle d'OVH au moment de la rédaction) par une note datée « Mise à jour du … », et `lib/decisions.ts` (décision de changement d'hébergeur).
+10. Mentions légales : note datée préparée dans `import-legacy.py` (`bascule_ovh`, adresse d'OVH SAS vérifiée le 16 octobre 2026 sur ovhcloud.com) ; `lib/decisions.ts` (décision de changement d'hébergeur, à dater du jour de la bascule).
 11. Mettre à jour `README.md`, `AGENTS.md` et `scripts/qa` pour le nouveau déploiement ; retirer `netlify.toml`, `@netlify/blobs`, les variables `NETLIFY_*`.
 
 ## 5. Répartition

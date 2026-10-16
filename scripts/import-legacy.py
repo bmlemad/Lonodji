@@ -2032,6 +2032,7 @@ def lire_source(path: Path) -> str:
     if "articles" not in path.parts and path.name not in ("actualites.html", "en--news.html", "news.html"):
         html = nomenclature(html, path)   # jamais dans les articles datés ni dans leurs résumés (actualites.html)
     html = revue_8_octobre(html, path)
+    html = bascule_ovh(html, path)
     return html if "articles" in path.parts else comptes_courants(html)
 
 
@@ -2095,6 +2096,37 @@ def revue_8_octobre(html: str, path: Path) -> str:
             if k > 0:
                 html = html[:k] + CORRECTIONS_8_OCT + html[k:]
     return html
+
+
+# ---------------------------------------------------------------------------------------------------
+# Bascule de l'hébergement vers OVH (docs/migration-ovh.md). Inactif tant que DATE_BASCULE_OVH est vide :
+# y mettre la date réelle de la bascule DNS (AAAA-MM-JJ) le jour J, puis relancer l'import. Le paragraphe
+# daté du 8 octobre reste ; la note datée s'ajoute dessous. Adresse d'OVH : page « Mentions légales »
+# d'ovhcloud.com (« OVH SAS, SAS au capital de 50 000 000 €, RCS Lille Métropole 424 761 419 00045,
+# 2 rue Kellermann - 59100 Roubaix - France »), consultée le 16 octobre 2026.
+# ---------------------------------------------------------------------------------------------------
+DATE_BASCULE_OVH = ""
+ADRESSE_OVH = ("OVH SAS, 2 rue Kellermann, 59100 Roubaix, France (adresse indiquée par l’hébergeur dans ses "
+               "<a href=\"https://www.ovhcloud.com/fr/terms-and-conditions/\" rel=\"noopener\" target=\"_blank\">mentions légales</a>, consultées le 16 octobre 2026)")
+
+
+def _date_fr(iso: str) -> str:
+    mois = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+    a, m, j = iso.split("-")
+    return f"{int(j)}{'er' if int(j) == 1 else ''}&nbsp;{mois[int(m) - 1]}&nbsp;{a}"
+
+
+def bascule_ovh(html: str, path: Path) -> str:
+    if not DATE_BASCULE_OVH or path.name != "mentions-legales.html":
+        return html
+    anc = "fonctionnent sur les services de Netlify.</p>"
+    if anc not in html or "hébergé par " + ADRESSE_OVH in html:
+        return html
+    note = ("<p><em>Mise à jour du " + _date_fr(DATE_BASCULE_OVH) + "&nbsp;:</em> depuis cette date, le site est hébergé par " + ADRESSE_OVH
+            + ", toujours à l&rsquo;adresse <a href=\"https://lonodji.org\">lonodji.org</a>. Les formulaires et l&rsquo;espace de rédaction fonctionnent "
+            "désormais sur cet hébergement, où les réponses sont conservées hors de la racine publique&nbsp;; les compteurs publics sont relevés à chaque "
+            "mise en ligne. L&rsquo;ancienne adresse adeb-lonodji.netlify.app continue d&rsquo;y renvoyer. Le paragraphe ci-dessus décrit la situation antérieure.</p>")
+    return html.replace(anc, anc + "\n" + note, 1)
 
 
 def _variantes(nom: str) -> list[str]:

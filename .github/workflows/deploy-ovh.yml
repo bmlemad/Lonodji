@@ -48,9 +48,6 @@ jobs:
           rsync -az --delete --timeout=60 \
             --exclude='.htaccess.ovh' \
             out/ "${{ secrets.OVH_SSH_USER }}@${{ secrets.OVH_SSH_HOST }}:${{ secrets.OVH_WWW || 'www' }}/"
-      - name: Contrôle
-        run: |
-          for u in / /participer/ /association/election-vice-presidences/ /partage/election-vice-presidences.png /formulaires.php; do
-            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "https://lonodji.org$u")
-            echo "$code $u"
-          done
+      - name: Recette de l'hébergement
+        # OVH_URL : adresse technique avant la bascule, https://lonodji.org après (variable du dépôt, pas un secret)
+        run: python3 scripts/qa/hebergement.py "${{ vars.OVH_URL || 'https://lonodji.org' }}"
