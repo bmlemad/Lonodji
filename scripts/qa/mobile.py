@@ -20,7 +20,9 @@ with sync_playwright() as p:
                 e.checkVisibility() && parseFloat(getComputedStyle(e).fontSize) < 16
             ).map(e => e.name || e.id)''')
             assert not problems, (route, width, problems)
-            # Commandes de page : déplier, partager et télécharger au toucher.
+            # Commandes de page : déplier, partager et télécharger au toucher — y compris dans les blocs repliés,
+            # qu'on déplie d'abord (checkVisibility ignore sinon tout ce qui est dans un <details> fermé).
+            page.evaluate("document.querySelectorAll('details').forEach(d => { d.open = true; })")
             targets = page.locator('main button, main summary, main .button, main .partage-btn, footer button, footer .button, .footer-cols a, .footer-contact a, .footer-bottom a').evaluate_all('''els => els.filter(e => {
                 if (!e.checkVisibility()) return false;
                 const r = e.getBoundingClientRect();
