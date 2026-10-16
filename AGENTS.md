@@ -82,6 +82,15 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
   `--muted` sans mesurer le contraste sur les fonds teintés : l'ancien `#607069` tombait à 4,1:1 sur `#dfe7cf`
   (AA demande 4,5:1), `#53625b` y tient 5,0:1.
 
+## Hébergement OVH (migration en cours, docs/migration-ovh.md)
+- `main` reste construit par Netlify tant que la bascule n'est pas faite. L'export statique pour OVH se fait par
+  `CIBLE=ovh bash scripts/statique/construire.sh` (jamais en local sur une copie qu'on va pousser : le script modifie
+  l'arbre) et par le workflow « Déploiement OVH » (lancement manuel).
+- Adresse d'envoi des formulaires : `FORMULAIRES_URL` (`lib/formulaires.ts`), jamais `/__forms.html` en dur dans un composant.
+- Scripts serveur dans `serveur/ovh/` ; leur configuration et leurs données vivent sur l'hébergement, hors du dépôt.
+- Redirections et en-têtes : une seule source (`next.config.mjs`, `netlify.toml`) ; `scripts/statique/htaccess.mjs`
+  les traduit pour Apache. Ne pas écrire de `.htaccess` à la main.
+
 ## Performance et cache
 - Cache immuable seulement sur les fichiers à empreinte (`/_next/static/*`). Les index et données sans empreinte
   (`search-index.json`, `search-palette.json`, `carte/donnees.json`, `sw.js`) se revalident à chaque visite.

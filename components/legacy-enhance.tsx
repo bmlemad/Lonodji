@@ -2,6 +2,7 @@
 
 import Script from "next/script";
 import { useEffect, useRef } from "react";
+import { FORMULAIRES_URL } from "@/lib/formulaires";
 
 declare global {
   interface Window { __initGeo?: () => void; __initTrouver?: () => void; __initGenealogie?: () => void }
@@ -31,7 +32,7 @@ export default function LegacyEnhance({ hasMap = false, hasForms = false, script
         if (button) { button.disabled = true; button.textContent = en ? "Sending…" : "Envoi…"; }
         try {
           const body = new URLSearchParams(new FormData(form) as unknown as Record<string, string>);
-          const res = await fetch("/__forms.html", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
+          const res = await fetch(FORMULAIRES_URL, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
           if (!res.ok) throw new Error(String(res.status));
           const note = document.createElement("p");
           note.className = "form-note form-success";

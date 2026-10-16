@@ -1,0 +1,6 @@
+; Moteur PHP de l'hébergement OVH pour lonodji.org (à la racine web).
+app.engine=php
+app.engine.version=8.3
+http.firewall=security
+environment=production
+container.image=stable64

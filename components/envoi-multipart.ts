@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { FORMULAIRES_URL } from "@/lib/formulaires";
 
 /* Envoi d'un formulaire Netlify avec pièce jointe (multipart), sans quitter la
    page : état, contrôle de la taille du fichier (10 Mo), messages. Partagé par
@@ -29,7 +30,7 @@ export function useEnvoiMultipart(telephone: string) {
     if (!form.current) return;
     setEtat("envoi"); setErreur("");
     try {
-      const res = await fetch("/__forms.html", { method: "POST", body: new FormData(form.current) });
+      const res = await fetch(FORMULAIRES_URL, { method: "POST", body: new FormData(form.current) });
       if (!res.ok) throw new Error(String(res.status));
       setEtat("ok");
     } catch {

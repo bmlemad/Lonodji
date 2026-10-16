@@ -5,6 +5,7 @@ import RetourFormulaire from "@/components/retour-formulaire";
 import Link from "@/components/lien";
 import Appel from "@/components/appel";
 import { useEffect, useRef, useState } from "react";
+import { FORMULAIRES_URL } from "@/lib/formulaires";
 
 /* Demande de mise à jour du site (Netlify « demande-mise-a-jour », 2 octobre 2026) : une erreur à corriger,
    une information à publier, une fiche à actualiser. La page concernée est préremplie depuis ?page=… ou
@@ -38,7 +39,7 @@ export default function MiseAJourForm({ telephone, whatsapp }: { telephone: stri
     setEtat("envoi");
     try {
       const body = new URLSearchParams(new FormData(form.current) as unknown as Record<string, string>);
-      const res = await fetch("/__forms.html", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
+      const res = await fetch(FORMULAIRES_URL, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
       if (!res.ok) throw new Error(String(res.status));
       setEtat("ok");
     } catch {
@@ -55,7 +56,7 @@ export default function MiseAJourForm({ telephone, whatsapp }: { telephone: stri
   }
 
   return (
-    <form ref={form} action="/__forms.html" id="formulaire-mise-a-jour" method="POST" name="demande-mise-a-jour" onSubmit={envoyer}>
+    <form ref={form} action={FORMULAIRES_URL} id="formulaire-mise-a-jour" method="POST" name="demande-mise-a-jour" onSubmit={envoyer}>
       <input name="form-name" type="hidden" value="demande-mise-a-jour" />
       <input autoComplete="off" name="_honey" style={{ display: "none" }} tabIndex={-1} type="text" />
 

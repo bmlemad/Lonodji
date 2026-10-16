@@ -5,6 +5,7 @@ import RetourFormulaire from "@/components/retour-formulaire";
 import Link from "@/components/lien";
 import Appel from "@/components/appel";
 import { useRef, useState } from "react";
+import { FORMULAIRES_URL } from "@/lib/formulaires";
 
 /* Recensement des membres et des sympathisants (Netlify « recensement-membres »), décidé par le bureau
    exécutif élargi le 18 septembre 2026 (CR-BE-2026-01, phase 1 : recensement et mise à jour de la base
@@ -30,7 +31,7 @@ export default function RecensementForm({ thematiques, telephone, whatsapp }: { 
     setEtat("envoi");
     try {
       const body = new URLSearchParams(new FormData(form.current) as unknown as Record<string, string>);
-      const res = await fetch("/__forms.html", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
+      const res = await fetch(FORMULAIRES_URL, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
       if (!res.ok) throw new Error(String(res.status));
       setEtat("ok");
     } catch {
@@ -47,7 +48,7 @@ export default function RecensementForm({ thematiques, telephone, whatsapp }: { 
   }
 
   return (
-    <form ref={form} action="/__forms.html" id="formulaire-recensement" method="POST" name="recensement-membres" onSubmit={envoyer}>
+    <form ref={form} action={FORMULAIRES_URL} id="formulaire-recensement" method="POST" name="recensement-membres" onSubmit={envoyer}>
       <input name="form-name" type="hidden" value="recensement-membres" />
       <input autoComplete="off" name="_honey" style={{ display: "none" }} tabIndex={-1} type="text" />
 

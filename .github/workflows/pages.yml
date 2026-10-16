@@ -24,7 +24,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: bash scripts/statique/construire.sh
+      - run: CIBLE=pages bash scripts/statique/construire.sh
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out

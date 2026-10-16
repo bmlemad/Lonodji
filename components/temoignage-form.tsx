@@ -5,6 +5,7 @@ import RetourFormulaire from "@/components/retour-formulaire";
 import Link from "@/components/lien";
 import Appel from "@/components/appel";
 import { useEffect, useRef, useState } from "react";
+import { FORMULAIRES_URL } from "@/lib/formulaires";
 
 /* Formulaire « Racontez Bédjondo » : un récit, une photo, un son ou une courte
    vidéo (≤ 10 Mo), avec les accords nécessaires. Envoi en multipart vers
@@ -44,7 +45,7 @@ export default function TemoignageForm({ telephone, whatsapp }: { telephone: str
     if (!form.current) return;
     setEtat("envoi"); setErreur("");
     try {
-      const res = await fetch("/__forms.html", { method: "POST", body: new FormData(form.current) });
+      const res = await fetch(FORMULAIRES_URL, { method: "POST", body: new FormData(form.current) });
       if (!res.ok) throw new Error(String(res.status));
       setEtat("ok");
     } catch {
@@ -62,7 +63,7 @@ export default function TemoignageForm({ telephone, whatsapp }: { telephone: str
   }
 
   return (
-    <form ref={form} action="/__forms.html" id="formulaire-temoignage" method="POST" encType="multipart/form-data" name="temoignage" onSubmit={envoyer}>
+    <form ref={form} action={FORMULAIRES_URL} id="formulaire-temoignage" method="POST" encType="multipart/form-data" name="temoignage" onSubmit={envoyer}>
       <input name="form-name" type="hidden" value="temoignage" />
       <input autoComplete="off" name="_honey" style={{ display: "none" }} tabIndex={-1} type="text" />
 

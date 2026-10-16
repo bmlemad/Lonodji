@@ -46,15 +46,17 @@ Fonctions perdues sans remplacement : formulaires lus dans l'interface Netlify (
 
 ## 4. Étapes
 
-### A. Avant toute bascule (dès maintenant)
-1. Commander l'hébergement OVH, rattacher `lonodji.org` en multisite (le domaine n'a pas besoin d'être chez OVH pour cela), activer SSH, créer un compte de déploiement.
-2. Préparer le dépôt :
-   - `scripts/statique/htaccess.mjs` : redirections 301 + en-têtes, générés depuis `next.config.mjs` et `netlify.toml` ;
-   - `public/formulaires.php`, `public/redaction.php` (ou un dossier `serveur/` copié par le workflow) ;
-   - remplacer `/__forms.html` par `/formulaires.php` dans les composants ;
-   - `.github/workflows/deploy-ovh.yml` : build statique, rsync vers OVH, secrets `OVH_SSH_HOST`, `OVH_SSH_USER`, clé privée ;
-   - adapter `build-indicateurs.py`.
-3. Déployer sur l'adresse technique OVH, passer le QA (`npm run qa` adapté à l'export) et une vérification des 1 121 adresses du sitemap, des 22 formulaires (un envoi de test chacun), des redirections et des en-têtes.
+### A. Avant toute bascule
+1. Commander l'hébergement OVH, rattacher `lonodji.org` en multisite (le domaine n'a pas besoin d'être chez OVH pour cela), activer SSH, créer la clé de déploiement ; copier `serveur/ovh/config.exemple.php` en `~/lonodji-prive/config.php` sur l'hébergement et y mettre le courriel de notification et le code d'invitation de l'espace de rédaction ; créer dans GitHub les secrets `OVH_SSH_HOST`, `OVH_SSH_USER`, `OVH_SSH_KEY`, `OVH_WWW`.
+2. Dépôt — **fait le 16 octobre 2026** (commit « Préparer l'hébergement OVH ») :
+   - `lib/formulaires.ts` : l'adresse d'envoi des formulaires vient de `NEXT_PUBLIC_FORMULAIRES_URL` (`/__forms.html` sur Netlify, `/formulaires.php` dans l'export OVH) ; les huit composants concernés l'utilisent ;
+   - `serveur/ovh/formulaires.php` (22 formulaires, pot de miel, limite de 20 envois par heure et par adresse hachée, pièces jointes de 10 Mo, enregistrement JSON hors racine web, courriel), `serveur/ovh/redaction.php` (même API que `/api/redaction`, Argon2id, blocage après cinq échecs), `.user.ini`, `.ovhconfig`, `config.exemple.php` ;
+   - `scripts/statique/htaccess.mjs` : 142 redirections 301 et tous les en-têtes, générés depuis `next.config.mjs` et `netlify.toml` ; `POST /__forms.html` et `/api/redaction` réécrits vers les scripts ;
+   - `scripts/statique/construire.sh` : cible `ovh` (défaut) ou `pages` ;
+   - `.github/workflows/deploy-ovh.yml` (lancement manuel, rsync, rapatriement des envois pour les indicateurs) ; `nextjs.yml` retiré ;
+   - `scripts/build-indicateurs.py` lit les envois OVH (`ENVOIS_DIR`).
+   Testé en local : export de 1 133 pages, scripts PHP exercés (formulaire connu/inconnu, pot de miel, origine, pièce jointe acceptée/refusée, débit, création du mot de passe, brouillons, jetons, blocage) ; `npm run build` pour Netlify inchangé.
+3. Déployer sur l'adresse technique OVH (workflow « Déploiement OVH », lancement manuel), passer le QA et une vérification des adresses du sitemap, des 22 formulaires (un envoi de test chacun), des redirections et des en-têtes.
 
 ### B. Bascule du trafic (zone encore chez Netlify DNS)
 4. Dans Netlify DNS : remplacer les A de `lonodji.org` et `www` par l'adresse OVH (A ou CNAME selon ce qu'OVH indique), TTL court la veille.

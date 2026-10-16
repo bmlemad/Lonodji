@@ -5,6 +5,7 @@ import RetourFormulaire from "@/components/retour-formulaire";
 import Link from "@/components/lien";
 import Appel from "@/components/appel";
 import { useEnvoiMultipart } from "./envoi-multipart";
+import { FORMULAIRES_URL } from "@/lib/formulaires";
 
 /* Dépôt d'un document pour la bibliothèque numérique : référence (titre,
    auteurs, année, type), résumé, lien ou fichier (≤ 10 Mo), droits déclarés.
@@ -18,7 +19,7 @@ export default function DepotForm({ telephone, whatsapp }: { telephone: string; 
     return <RetourFormulaire className="form-note form-success" role="status">Merci : votre dépôt est bien arrivé. La référence est vérifiée, les droits aussi, puis elle rejoint la bibliothèque — nous vous écrivons sous quarante-huit heures ouvrées.</RetourFormulaire>;
   }
   return (
-    <form ref={form} action="/__forms.html" id="formulaire-depot" method="POST" encType="multipart/form-data" name="depot-document" onSubmit={envoyer}>
+    <form ref={form} action={FORMULAIRES_URL} id="formulaire-depot" method="POST" encType="multipart/form-data" name="depot-document" onSubmit={envoyer}>
       <input name="form-name" type="hidden" value="depot-document" />
       <input autoComplete="off" name="_honey" style={{ display: "none" }} tabIndex={-1} type="text" />
       <fieldset>

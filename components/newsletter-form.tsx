@@ -3,6 +3,7 @@
 import RetourFormulaire from "@/components/retour-formulaire";
 
 import { useState } from "react";
+import { FORMULAIRES_URL } from "@/lib/formulaires";
 
 const T = {
   fr: { merci: "Merci ! Votre adresse est enregistrée pour la lettre d’information.", label: "Lettre d’information", email: "Adresse e-mail", placeholder: "votre@e-mail.com", envoyer: "S’abonner",
@@ -21,7 +22,7 @@ export default function NewsletterForm({ id = "footer-nl-email", label, lang = "
     <form
       name="lettre-info-pied"
       method="POST"
-      action="/__forms.html"
+      action={FORMULAIRES_URL}
       aria-label={label ?? t.label}
       onSubmit={async (e) => {
         e.preventDefault();
@@ -29,7 +30,7 @@ export default function NewsletterForm({ id = "footer-nl-email", label, lang = "
         setState("sending");
         try {
           const body = new URLSearchParams(new FormData(form) as unknown as Record<string, string>);
-          const res = await fetch("/__forms.html", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
+          const res = await fetch(FORMULAIRES_URL, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
           if (!res.ok) throw new Error(String(res.status));
           setState("done");
         } catch {

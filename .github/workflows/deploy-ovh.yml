@@ -1,0 +1,56 @@
+name: Déploiement OVH
+
+# Export statique de lonodji.org (scripts/statique/construire.sh, cible ovh) copié par rsync sur l'hébergement OVH.
+# Lancement manuel tant que le site est servi par Netlify ; activer le déclencheur « push » au moment de la bascule
+# (docs/migration-ovh.md, étape B). Secrets à créer dans GitHub : OVH_SSH_HOST, OVH_SSH_USER, OVH_SSH_KEY (clé privée
+# ed25519 dont la clé publique est enregistrée sur l'hébergement), OVH_WWW (dossier web, en général « www »).
+on:
+  workflow_dispatch:
+  # push:
+  #   branches: ["main"]
+
+concurrency:
+  group: ovh
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deployer:
+    runs-on: ubuntu-latest
+    environment: ovh
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Clé SSH
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.OVH_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "${{ secrets.OVH_SSH_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
+      - run: npm ci
+      - name: Envois des formulaires (pour les indicateurs)
+        run: |
+          mkdir -p .envois
+          rsync -az --timeout=30 "${{ secrets.OVH_SSH_USER }}@${{ secrets.OVH_SSH_HOST }}:lonodji-prive/envois/" .envois/ || echo "pas d'envois rapatriés"
+          ENVOIS_DIR=.envois python3 scripts/build-indicateurs.py
+      - name: Export statique
+        run: CIBLE=ovh bash scripts/statique/construire.sh
+      - name: Copie vers OVH
+        run: |
+          rsync -az --delete --timeout=60 \
+            --exclude='.htaccess.ovh' \
+            out/ "${{ secrets.OVH_SSH_USER }}@${{ secrets.OVH_SSH_HOST }}:${{ secrets.OVH_WWW || 'www' }}/"
+      - name: Contrôle
+        run: |
+          for u in / /participer/ /association/election-vice-presidences/ /partage/election-vice-presidences.png /formulaires.php; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "https://lonodji.org$u")
+            echo "$code $u"
+          done

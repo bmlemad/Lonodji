@@ -5,6 +5,7 @@ import RetourFormulaire from "@/components/retour-formulaire";
 import Link from "@/components/lien";
 import Appel from "@/components/appel";
 import { useEnvoiMultipart } from "./envoi-multipart";
+import { FORMULAIRES_URL } from "@/lib/formulaires";
 
 /* « Un mot, une expression » : première brique du dictionnaire nangnda. Un mot,
    son sens, un exemple, la prononciation enregistrée au téléphone (≤ 10 Mo).
@@ -18,7 +19,7 @@ export default function MotForm({ telephone, whatsapp }: { telephone: string; wh
     return <RetourFormulaire className="form-note form-success" role="status">Merci : votre mot est bien arrivé. Il est vérifié avec les linguistes de la thématique Culture et patrimoine immatériel, puis publié avec ou sans votre nom selon votre choix.</RetourFormulaire>;
   }
   return (
-    <form ref={form} action="/__forms.html" id="formulaire-mot" method="POST" encType="multipart/form-data" name="mot-nangnda" onSubmit={envoyer}>
+    <form ref={form} action={FORMULAIRES_URL} id="formulaire-mot" method="POST" encType="multipart/form-data" name="mot-nangnda" onSubmit={envoyer}>
       <input name="form-name" type="hidden" value="mot-nangnda" />
       <input autoComplete="off" name="_honey" style={{ display: "none" }} tabIndex={-1} type="text" />
       <fieldset>

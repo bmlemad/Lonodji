@@ -172,11 +172,49 @@ def releve_en_direct(jeton: str) -> dict | None:
     }
 
 
+def releve_envois_ovh(dossier: Path) -> dict | None:
+    """Relit les envois enregistrés par serveur/ovh/formulaires.php (une ligne JSON par envoi,
+    dossier lonodji-prive/envois/ de l'hébergement, rapatrié avant la construction). Ne conserve que des nombres."""
+    fichiers = sorted(dossier.glob("*.jsonl"))
+    if not fichiers:
+        print(f"aucun envoi dans {dossier} ; relevé manuel conservé", file=sys.stderr)
+        return None
+    comptes: dict[str, dict] = {}
+    for f in fichiers:
+        nom = FUSIONS.get(f.stem, f.stem)
+        if nom in JAMAIS_COMPTES:
+            continue
+        c = comptes.setdefault(nom, {"envois": 0})
+        cles = set()
+        for ligne in f.read_text("utf8").splitlines():
+            if not ligne.strip():
+                continue
+            try:
+                e = json.loads(ligne)
+            except json.JSONDecodeError:
+                continue
+            c["envois"] += 1
+            d = e.get("champs") or {}
+            cles.add((d.get("email") or "").strip().lower() or re.sub(r"\D", "", d.get("telephone") or "") or e.get("date"))
+        if nom in ("intention-adhesion", "diaspora-competences") and c["envois"]:
+            c["personnes"] = len(cles)
+    for nom in RELEVE["comptes"]:
+        comptes.setdefault(nom, {"envois": 0})
+    return {
+        "date": dt.date.today().isoformat(),
+        "methode": "Envois enregistrés sur l’hébergement, relevé automatique. Les intentions d’adhésion sont comptées par personne (un même courriel envoyé plusieurs fois compte une fois).",
+        "comptes": comptes,
+    }
+
+
 def main() -> None:
     contenu = compter_contenu()
     releve = None
+    envois = os.environ.get("ENVOIS_DIR")
     jeton = os.environ.get("NETLIFY_FORMS_TOKEN")
-    if jeton:
+    if envois:
+        releve = releve_envois_ovh(Path(envois))
+    elif jeton:
         releve = releve_en_direct(jeton)
     releve = releve or RELEVE
     data = {
