@@ -98,5 +98,8 @@ Site de l'association ADEB LONODJI (Bédjondo, Mandoul Occidental, Tchad). Next.
 ## Performance et cache
 - Cache immuable seulement sur les fichiers à empreinte (`/_next/static/*`). Les index et données sans empreinte
   (`search-index.json`, `search-palette.json`, `carte/donnees.json`, `sw.js`) se revalident à chaque visite.
+- Mesure de référence : `python3 scripts/qa/performance.py http://127.0.0.1:3100` (poids compressé, JavaScript, tâches longues ;
+  plafonds dans le script, valeurs de référence dans docs/plan-developpement.md, chantier C2). À relancer après tout
+  changement de CSS, de composant client ou de police ; une hausse se justifie dans le commit.
 - Le site doit rester utilisable en 3G lente : pas de bibliothèque lourde ajoutée sans mesure ; tout ce qui est
   différé doit rester utilisable pendant son chargement (voir `components/deferred-chrome.tsx`).
