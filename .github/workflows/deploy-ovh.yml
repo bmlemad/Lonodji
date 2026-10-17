@@ -28,6 +28,8 @@ jobs:
     environment: ovh
     env:
       WWW: ${{ vars.OVH_WWW || 'www' }}
+      # « true » si une clé SSH est fournie (mode rsync) ; les secrets ne sont pas lisibles dans un « if », d'où cette variable
+      SSH: ${{ secrets.OVH_SSH_KEY != '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -40,7 +42,7 @@ jobs:
       - name: Outils
         run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp rsync > /dev/null
       - name: Clé SSH (mode rsync)
-        if: ${{ secrets.OVH_SSH_KEY != '' }}
+        if: env.SSH == 'true'
         run: |
           mkdir -p ~/.ssh && chmod 700 ~/.ssh
           printf '%s\n' "${{ secrets.OVH_SSH_KEY }}" > ~/.ssh/id_ed25519
@@ -52,7 +54,7 @@ jobs:
           LFTP_PASSWORD: ${{ secrets.OVH_PASSWORD }}
         run: |
           mkdir -p .envois
-          if [ -n "${{ secrets.OVH_SSH_KEY }}" ]; then
+          if [ "$SSH" = true ]; then
             rsync -az --timeout=30 "${{ secrets.OVH_USER }}@${{ secrets.OVH_HOST }}:lonodji-prive/envois/" .envois/ || echo "pas d'envois rapatriés"
           else
             lftp -u "${{ secrets.OVH_USER }}","$LFTP_PASSWORD" "sftp://${{ secrets.OVH_HOST }}" \
@@ -65,7 +67,7 @@ jobs:
         env:
           LFTP_PASSWORD: ${{ secrets.OVH_PASSWORD }}
         run: |
-          if [ -n "${{ secrets.OVH_SSH_KEY }}" ]; then
+          if [ "$SSH" = true ]; then
             rsync -az --delete --timeout=60 out/ "${{ secrets.OVH_USER }}@${{ secrets.OVH_HOST }}:$WWW/"
           else
             # miroir SFTP : --delete retire du serveur ce qui n'est plus dans out/ ; --only-newer évite de renvoyer
