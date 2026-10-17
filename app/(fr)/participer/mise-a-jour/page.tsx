@@ -5,6 +5,7 @@ import MiseAJourForm from "@/components/mise-a-jour-form";
 import Partager from "@/components/partager";
 import { ogFor, ORG } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
+import "@/app/legacy.css"; // formulaires en .legacy dp-formulaire
 
 export const metadata: Metadata = {
   title: "Demander une mise à jour du site",

@@ -8,8 +8,9 @@ import { ORG, enLettres, getIndex, thematiqueCount } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
 import { jsonLd, siteOrganization, siteWebSite } from "@/lib/schema";
 import { DM_Sans, Playfair_Display } from "next/font/google";
+// legacy.css (contenu importé de l’ancien site, 131 ko) n’est chargé que par les composants qui rendent .legacy :
+// legacy-content.tsx, guide-installation.tsx, redaction-app.tsx. Les autres pages (accueil, 965 fiches de villages…) s’en passent.
 import "../app/globals.css";
-import "../app/legacy.css";
 import "../app/legacy-layout.css";
 import "../app/site.css";
 

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { insecables } from "@/lib/typo";
+import "../app/legacy.css";
 
 /* Espace de rédaction privé du journal (client). Le mot de passe part en POST,
    le jeton de session voyage en en-tête Authorization et vit dans

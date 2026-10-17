@@ -8,6 +8,7 @@ import { ogFor, ORG } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
 import Partager from "@/components/partager";
 import OuvrirAncre from "@/components/ouvrir-ancre";
+import "@/app/legacy.css"; // formulaires en .legacy dp-formulaire
 
 export const metadata: Metadata = {
   title: "Bibliothèque numérique bedjond",

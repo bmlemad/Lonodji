@@ -8,6 +8,7 @@ import SommaireLateral from "./sommaire-lateral";
 import { breadcrumbSchema, jsonLd, webPageSchema } from "../lib/schema";
 import PagesVoisines from "./pages-voisines";
 import { apercusHtml } from "../lib/apercu";
+import "../app/legacy.css";
 
 /** Rendu des sections importées de l'ancien site, dans le style du site moderne. */
 /* sansPremierTitre : quand la page pose déjà son propre titre de section (SectionHead) juste au-dessus,

@@ -5,6 +5,7 @@ import { PageHeader, SectionHead, Stats } from "@/components/blocks";
 import MotForm from "@/components/mot-form";
 import { getIndex, ogFor, ORG } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
+import "@/app/legacy.css"; // formulaires en .legacy dp-formulaire
 
 export const metadata: Metadata = {
   title: "La langue nangnda (bedjond)",

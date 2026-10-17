@@ -1,4 +1,5 @@
 import Link from "@/components/lien";
+import "../app/legacy.css";
 
 export default function GuideInstallation() {
   return (

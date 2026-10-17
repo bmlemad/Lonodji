@@ -5,6 +5,7 @@ import TemoignageForm from "@/components/temoignage-form";
 import { ogFor, ORG } from "@/lib/content";
 import { getIndicateurs } from "@/lib/indicateurs";
 import Partager from "@/components/partager";
+import "@/app/legacy.css"; // formulaires en .legacy dp-formulaire
 
 export const metadata: Metadata = {
   title: "Racontez Bédjondo : témoignages et banque d’images",

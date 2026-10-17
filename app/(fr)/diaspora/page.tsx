@@ -8,6 +8,7 @@ import { filledCount, getIndex, ogFor, ORG, thematiqueCount } from "@/lib/conten
 import { DOMAINES, OFFRES } from "@/lib/diaspora";
 import { getIndicateurs } from "@/lib/indicateurs";
 import Partager from "@/components/partager";
+import "@/app/legacy.css"; // formulaires en .legacy dp-formulaire
 
 export const metadata: Metadata = {
   title: "Répertoire des compétences de la diaspora bedjond",

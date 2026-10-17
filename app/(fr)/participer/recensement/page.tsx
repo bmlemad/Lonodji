@@ -5,6 +5,7 @@ import RecensementForm from "@/components/recensement-form";
 import Partager from "@/components/partager";
 import { getIndex, ogFor, ORG } from "@/lib/content";
 import { BUREAU_18_SEPTEMBRE as B18 } from "@/lib/odeb";
+import "@/app/legacy.css"; // formulaires en .legacy dp-formulaire
 
 export const metadata: Metadata = {
   title: "Recensement des membres et des sympathisants",

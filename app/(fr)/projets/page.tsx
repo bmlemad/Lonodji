@@ -12,6 +12,7 @@ import { getProjets, STADES_ACTIFS, stadeIndex } from "@/lib/projets";
 import Partager from "@/components/partager";
 import { ALIGNEMENT_PROJETS, GUICHETS, programmeParId } from "@/lib/bailleurs";
 import { jsonLd, webPageSchema } from "@/lib/schema";
+import "@/app/legacy.css"; // formulaires en .legacy dp-formulaire
 
 export const metadata: Metadata = {
   title: "Plateforme de projets",
