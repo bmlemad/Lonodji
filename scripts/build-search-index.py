@@ -178,6 +178,9 @@ PAGES_SITE.append({"t": "La lettre d’information : chaque mois, publié, déci
 PAGES_SITE.append({"t": "Registre public des décisions", "r": "/transparence/decisions", "k": "Page",
      "d": "Ce que l’association a décidé, nommé, annoncé ou proposé depuis septembre 2026, tel que le site l’a publié, avec la source de chaque ligne et ce qui reste attendu.",
      "x": "registre décisions décidé nommé nomination annoncé annonce proposé proposition à voter règle en vigueur procès-verbal PV assemblée bureau transparence redevabilité source daté logo directions de pilier sièges ODEB programme 06"})
+PAGES_SITE.append({"t": "Auto-évaluation au regard des référentiels des ONG", "r": "/transparence/auto-evaluation", "k": "Page",
+     "d": "Grille datée du 17 octobre 2026 : ce que le site montre et ce qu’il ne montre pas encore, critère par critère, avec la page qui en fait preuve.",
+     "x": "auto-évaluation audit ONG référentiels CHS Core Humanitarian Standard Global Standard Accountable Now redevabilité transparence statuts autorisation récépissé procès-verbal compte bancaire comptes politiques d’intégrité code de conduite plainte corrections bailleurs IATI"})
 PAGES_SITE.append({"t": "Quinze affiches « Retrouvez votre village » à imprimer", "r": "/villages#affiches", "k": "Document PDF",
      "d": "Une affiche A4 par unité et une affiche générale, avec un code QR vers les villages et l’adresse en toutes lettres — pour les chefs, les relais, les écoles, les centres de santé.",
      "x": "affiche affiches imprimer A4 PDF code QR village unité chef de canton relais école centre de santé lieu de culte accrocher papier"})

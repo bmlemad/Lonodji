@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-17",
+  "titre": "Auto-évaluation au regard des référentiels des ONG",
+  "methode": "L’animation du site a comparé, le 17 octobre 2026, ce que lonodji.org publie avec ce que les référentiels de redevabilité attendent d’une organisation non gouvernementale : le Core Humanitarian Standard (édition 2024, neuf engagements), la Global Standard for CSO Accountability (douze engagements) et le cadre tchadien que le site cite (ordonnance n° 023/PR/2018, décret n° 1917/PR/MEPD/2018). Chaque critère renvoie à la page qui en fait preuve. L’évaluation porte sur ce que le site montre, pas sur l’association elle-même ; elle sera refaite à chaque trimestre.",
+  "echelle": {
+    "present": "publié, vérifiable, daté",
+    "partiel": "annoncé, en projet ou incomplet",
+    "absent": "rien de publié"
+  },
+  "blocs": [
+    {
+      "id": "identite",
+      "titre": "Identité et base légale",
+      "criteres": [
+        { "critere": "Nom, objet, siège, histoire", "etat": "present", "preuve": "Mission, Histoire ; siège national à N’Djamena, siège des opérations à Bédjondo", "href": "/mission" },
+        { "critere": "Base légale affichée telle qu’elle est", "etat": "present", "preuve": "« Reconnue en 1995 · autorisation actuelle en vérification » ; la page Démarches explique l’ordonnance de 2018 et le décret sur les ONG", "href": "/association/demarches" },
+        { "critere": "Autorisation (arrêté ou récépissé) publiée", "etat": "absent", "preuve": "En vérification sur la page Documents ; c’est la première pièce qu’un bailleur ou une administration demande", "href": "/documents" },
+        { "critere": "Statuts et règlement intérieur publiés", "etat": "absent", "preuve": "À venir sur la page Documents ; statuts de 1995 non retrouvés, révision prévue par l’assemblée générale", "href": "/documents" },
+        { "critere": "Mentions légales : éditeur, hébergeur", "etat": "present", "preuve": "Mentions légales datées et corrigées le 8 octobre 2026", "href": "/mentions-legales" }
+      ]
+    },
+    {
+      "id": "gouvernance",
+      "titre": "Gouvernance",
+      "criteres": [
+        { "critere": "Instances nommées", "etat": "present", "preuve": "Bureau exécutif avec rôles sur la page Mission", "href": "/mission#bureau" },
+        { "critere": "Organigramme et responsabilités", "etat": "present", "preuve": "Six piliers, vingt-deux thématiques et leurs coordonnateurs", "href": "/association/architecture" },
+        { "critere": "Registre des décisions", "etat": "present", "preuve": "Une ligne datée par décision, nomination, annonce ou proposition, avec sa source", "href": "/transparence/decisions" },
+        { "critere": "Procès-verbaux d’assemblée générale", "etat": "absent", "preuve": "À venir ; le compte rendu du bureau du 18 septembre 2026 est publié, sa version signée est annoncée", "href": "/documents" },
+        { "critere": "Élections et mandats", "etat": "present", "preuve": "Procédure adoptée, calendrier, règles de publication des candidats et des résultats", "href": "/association/election-vice-presidences" },
+        { "critere": "Assemblée générale de relance", "etat": "partiel", "preuve": "Annoncée pour la phase 3 du chronogramme (décembre 2026), date non fixée", "href": "/odeb/feuille-de-route" },
+        { "critere": "Conflits d’intérêts des responsables", "etat": "absent", "preuve": "Politique en projet depuis le 23 septembre 2026, non adoptée ; aucune déclaration d’intérêts", "href": "/transparence/decisions" }
+      ]
+    },
+    {
+      "id": "finances",
+      "titre": "Finances",
+      "criteres": [
+        { "critere": "Compte bancaire au nom de l’association", "etat": "absent", "preuve": "« Collecte suspendue jusqu’à l’ouverture d’un compte au nom de l’association » : dit clairement, mais bloquant pour toute convention", "href": "/mission#bureau" },
+        { "critere": "Comptes annuels, budget", "etat": "absent", "preuve": "Annoncés à partir du premier exercice ; aucun chiffre financier sur le site, cohérent avec l’absence de compte", "href": "/documents" },
+        { "critere": "Origine des ressources, cotisations", "etat": "partiel", "preuve": "Cotisation évoquée, sans barème adopté ni montant collecté", "href": "/participer" },
+        { "critere": "Appel aux dons, reçus", "etat": "partiel", "preuve": "La page Participer propose de soutenir ; aucun reçu possible sans compte", "href": "/participer#soutenir" },
+        { "critere": "Programmes des bailleurs et guichets ouverts", "etat": "present", "preuve": "Quarante programmes relevés aux sources, note de synthèse à joindre aux courriers", "href": "/bailleurs" },
+        { "critere": "Publication des financements reçus (norme IATI)", "etat": "partiel", "preuve": "Sans objet tant qu’aucun financement n’est reçu ; à prévoir dès la première convention", "href": "/bailleurs" }
+      ]
+    },
+    {
+      "id": "integrite",
+      "titre": "Politiques d’intégrité",
+      "criteres": [
+        { "critere": "Conflits d’intérêts, fraude et corruption, achats, données personnelles, exploitation et abus sexuels", "etat": "partiel", "preuve": "Cinq projets du 23 septembre 2026 soumis au bureau exécutif, non adoptés, non publiés", "href": "/transparence/decisions" },
+        { "critere": "Code de conduite des membres et des bénévoles", "etat": "absent", "preuve": "Aucune page ; « Courage · Discipline · Héritage » sont des valeurs, pas un code", "href": "/mission" },
+        { "critere": "Protection des enfants et des personnes vulnérables", "etat": "partiel", "preuve": "Engagement général sur la page Redevabilité, sans procédure écrite ni référent désigné", "href": "/transparence#ce-que-nous-protegeons-et-comment" },
+        { "critere": "Protection des données personnelles", "etat": "present", "preuve": "Chaque formulaire décrit : ce qui est demandé, pourquoi, combien de temps ; responsable de traitement et droits", "href": "/mentions-legales#donnees" },
+        { "critere": "Lieux sacrés et sépultures jamais localisés", "etat": "present", "preuve": "Règle appliquée sur la carte et dans les fiches de villages", "href": "/patrimoine/lieux-sacres" }
+      ]
+    },
+    {
+      "id": "communautes",
+      "titre": "Redevabilité envers les communautés",
+      "criteres": [
+        { "critere": "Mécanisme de plainte, y compris anonyme, avec recours", "etat": "present", "preuve": "Formulaire de plainte, recours jusqu’à l’assemblée générale", "href": "/transparence#comment-nous-signaler-un-manquement" },
+        { "critere": "Engagement de réponse mesurable", "etat": "present", "preuve": "Réponse humaine sous quarante-huit heures ouvrées ; le respect du délai n’est pas encore relevé publiquement", "href": "/transparence#nous-repondons-sous-quarante-huit-heures" },
+        { "critere": "Participation des habitants aux priorités", "etat": "partiel", "preuve": "Formulaires de besoins, de recensement et de propositions ; le lien entre les besoins reçus et les sept priorités n’est pas montré", "href": "/territoire/besoins" },
+        { "critere": "Journal des corrections", "etat": "present", "preuve": "Chaque erreur datée : ce que nous écrivions, ce qui est exact, comment nous nous en sommes aperçus", "href": "/transparence#corrections" },
+        { "critere": "Compte rendu des messages reçus", "etat": "partiel", "preuve": "Promesse de réponse à chacun ; aucun relevé agrégé (combien reçus, combien répondus dans le délai)", "href": "/transparence" }
+      ]
+    },
+    {
+      "id": "resultats",
+      "titre": "Programmes, résultats et apprentissage",
+      "criteres": [
+        { "critere": "Ce que fait l’association, où, pour qui", "etat": "present", "preuve": "Piliers, thématiques, carte du territoire, diagnostic, besoins", "href": "/programmes" },
+        { "critere": "Promesse distinguée de réalisation", "etat": "present", "preuve": "Tableau de suivi : plaidoyers publiés et transmis, engagements confirmés réalisés ; conditionnel systématique", "href": "/impact" },
+        { "critere": "Résultats pour les habitants", "etat": "absent", "preuve": "« Les changements pour les habitants restent à mesurer » ; aucune action réalisée documentée à ce jour", "href": "/impact" },
+        { "critere": "Indicateurs avec cibles", "etat": "partiel", "preuve": "Six indicateurs sans cible, par règle : pas de cible sans décision du bureau", "href": "/impact#indicateur-plaidoyers" },
+        { "critere": "Alignement sur les ODD et la nomenclature des bailleurs", "etat": "present", "preuve": "Page ODD ; intitulés des vingt-deux thématiques alignés (décision 2026-37, à confirmer par le bureau)", "href": "/programmes/odd" },
+        { "critere": "Coordination avec les autres acteurs", "etat": "partiel", "preuve": "Les ONG présentes sont recensées ; aucun partenariat formalisé", "href": "/association/ong-partenaires" },
+        { "critere": "Préparation aux crises", "etat": "partiel", "preuve": "Thématique « Réduction des risques de catastrophe et urgences » sans plan", "href": "/programmes" }
+      ]
+    },
+    {
+      "id": "communication",
+      "titre": "Transparence sur l’organisation et communication",
+      "criteres": [
+        { "critere": "Rapport annuel ou d’activité", "etat": "absent", "preuve": "À venir ; le magazine trimestriel et la lettre mensuelle en tiennent lieu en partie", "href": "/documents" },
+        { "critere": "Journal et publications datées", "etat": "present", "preuve": "Journal, lettre mensuelle, magazine, espace presse", "href": "/journal" },
+        { "critere": "Chiffres vérifiables", "etat": "present", "preuve": "Compteurs générés depuis les données, date de génération affichée", "href": "/transparence" },
+        { "critere": "Langues", "etat": "partiel", "preuve": "Français complet, anglais sur les pages de fond ; arabe absent (brouillons non relus) ; lexique nangnda", "href": "/langue" },
+        { "critere": "Accessibilité", "etat": "present", "preuve": "Déclaration d’accessibilité, aucune violation relevée à l’audit du 5 octobre, site utilisable en 3G et hors ligne", "href": "/accessibilite" }
+      ]
+    },
+    {
+      "id": "personnes",
+      "titre": "Membres et bénévoles",
+      "criteres": [
+        { "critere": "Rôles et fiches de mission", "etat": "present", "preuve": "Fiches de mission des coordinations, postes ouverts", "href": "/programmes/fiches-de-mission" },
+        { "critere": "Formation, encadrement, évaluation", "etat": "absent", "preuve": "Rien de publié ; attendu une fois des activités engagées", "href": "/programmes/fiches-de-mission" },
+        { "critere": "Protection des bénévoles (assurance, consentement)", "etat": "absent", "preuve": "À traiter avec les politiques d’intégrité", "href": "/transparence/decisions" }
+      ]
+    }
+  ],
+  "suites": [
+    { "id": "pieces", "quoi": "Pièces constitutives : autorisation en règle, statuts et règlement intérieur soumis à l’assemblée générale, procès-verbaux", "qui": "Bureau exécutif", "quand": "Horizon du 17 novembre 2026 pour les projets de textes (phase 2 du chronogramme)" },
+    { "id": "politiques", "quoi": "Adoption des cinq politiques d’intégrité du 23 septembre ; code de conduite des membres et des bénévoles ; référent protection", "qui": "Bureau exécutif, puis animation du site", "quand": "Horizon du 17 novembre 2026" },
+    { "id": "compte", "quoi": "Compte bancaire au nom de l’association, barème de cotisation, puis comptes annuels", "qui": "Bureau exécutif", "quand": "Avant l’assemblée générale de relance" },
+    { "id": "reponses", "quoi": "Relevé trimestriel des messages reçus et de la part répondue sous quarante-huit heures, sans aucune donnée personnelle", "qui": "Animation du site", "quand": "Première publication au 31 décembre 2026" },
+    { "id": "rapport", "quoi": "Premier rapport d’activité, à partir du registre, des engagements, des corrections et des indicateurs", "qui": "Bureau exécutif et animation", "quand": "Clôture du premier exercice" }
+  ]
+}

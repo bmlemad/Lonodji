@@ -55,6 +55,7 @@ EYEBROWS = {
     "/bibliotheque": "Bibliothèque numérique bedjond",
     "/langue": "Langue · nangnda",
     "/transparence": "Redevabilité",
+    "/transparence/auto-evaluation": "Redevabilité · auto-évaluation",
     "/archives": "Archives du site",
     "/mentions-legales": "Mentions légales",
     "/plan-du-site": "Plan du site",

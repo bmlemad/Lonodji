@@ -1237,6 +1237,10 @@ body.feuille-open .tabbar{ display:none; }
 .registre-statut--proposition{ background:rgba(242,201,76,.28); border-color:rgba(242,201,76,.8); color:#5a4300; }
 .registre-statut--publication{ background:rgba(16,36,30,.06); }
 .registre-statut--regle{ background:var(--deep); border-color:var(--deep); color:#fff; }
+/* auto-évaluation (17/10/2026) : présent / partiel / absent, mêmes teintes que le registre */
+.eval-statut--present{ background:rgba(182,207,69,.32); border-color:rgba(182,207,69,.8); color:var(--deep); }
+.eval-statut--partiel{ background:rgba(242,201,76,.28); border-color:rgba(242,201,76,.8); color:#5a4300; }
+.eval-statut--absent{ background:rgba(16,36,30,.06); color:var(--ink); }
 .detail-grid article span.registre-statut{ color:var(--muted); }
 .detail-grid article span.registre-statut--decision, .detail-grid article span.registre-statut--nomination{ color:var(--deep); }
 .detail-grid article span.registre-statut--proposition{ color:#5a4300; }

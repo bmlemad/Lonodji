@@ -67,6 +67,7 @@ export default function Transparence() {
           <Link href="/transparence/decisions"><small>Décisions</small><strong>Registre public des décisions</strong><span>Chaque décision, nomination, annonce ou proposition avec sa date, son statut et sa source.</span></Link>
           <Link href="/documents"><small>Pièces</small><strong>Documents disponibles et documents attendus</strong><span>Les pièces publiées sont téléchargeables ; celles qui manquent restent affichées comme « à venir » ou « en vérification ».</span></Link>
           <Link href="/association/engagements"><small>Promesses</small><strong>Engagements publics</strong><span>Ce que l’association a promis, ce qui est confirmé réalisé et ce qui ne l’est pas encore.</span></Link>
+          <Link href="/transparence/auto-evaluation"><small>Auto-évaluation</small><strong>Le site au regard des référentiels des ONG</strong><span>Grille datée du 17 octobre 2026 : ce qui est présent, partiel ou absent, critère par critère, et les cinq suites décidées.</span></Link>
         </div>
       </section>
 

@@ -29,6 +29,7 @@ export const NAVIGATION: NavEntree[] = [
       { titre: "Rendre des comptes", liens: [
         { label: "Redevabilité & transparence", href: "/transparence", note: "Réponse sous 48 h, plainte, protection" },
         { label: "Registre des décisions", href: "/transparence/decisions", note: "Décidé, nommé, annoncé, proposé" },
+        { label: "Auto-évaluation", href: "/transparence/auto-evaluation", note: "Le site au regard des référentiels des ONG" },
         { label: "Nos engagements publics", href: "/association/engagements", note: "Ce que nous promettons, où nous en sommes" },
         { label: "Journal des corrections", href: "/transparence#corrections", note: "Chaque erreur, datée, à découvert" },
         { label: "Documents à télécharger", href: "/documents", note: "Kits, cahiers, plaidoyers en PDF" },
@@ -164,6 +165,7 @@ export const NAVIGATION_EN: NavEntree[] = [
       { titre: "Accountability", liens: [
         { label: "Accountability & transparency", href: "/transparence", note: "48-hour reply, complaints, safeguarding", fr: true },
         { label: "Decision register", href: "/transparence/decisions", note: "Decided, appointed, announced, proposed", fr: true },
+        { label: "Self-assessment", href: "/transparence/auto-evaluation", note: "The site against NGO accountability standards", fr: true },
         { label: "Public commitments", href: "/association/engagements", note: "What we promise, where we stand", fr: true },
         { label: "Documents", href: "/documents", note: "Kits, field notebooks, advocacy files (PDF)", fr: true },
       ] },
@@ -295,7 +297,7 @@ export function entreeCourante(pathname: string): string {
 export const PIED: { titre: string; liens: NavLien[] }[] = [
   { titre: "L’association", liens: [
     { label: "Notre mission", href: "/mission" }, { label: "Architecture institutionnelle", href: "/association/architecture" }, { label: "Vision 2030 — projet ODEB", href: "/odeb" }, { label: "Redevabilité & transparence", href: "/transparence" },
-    { label: "Registre des décisions", href: "/transparence/decisions" }, { label: "Nos engagements", href: "/association/engagements" }, { label: "Documents", href: "/documents" },
+    { label: "Registre des décisions", href: "/transparence/decisions" }, { label: "Auto-évaluation", href: "/transparence/auto-evaluation" }, { label: "Nos engagements", href: "/association/engagements" }, { label: "Documents", href: "/documents" },
     { label: "ONG & bailleurs : notre statut", href: "/association/ong-partenaires" }, { label: "Presse & partenaires", href: "/presse" },
   ] },
   { titre: "Nos actions", liens: [

@@ -35,6 +35,14 @@ export const TYPES: Record<TypeDecision, { label: string; court: string; note: s
 
 export const DECISIONS: Decision[] = [
   {
+    id: "2026-39", date: "2026-10-17", type: "publication",
+    titre: "Auto-évaluation du site au regard des référentiels des ONG",
+    texte: "L’animation du site a comparé ce que lonodji.org publie avec ce qu’attendent le Core Humanitarian Standard (édition 2024), la Global Standard for CSO Accountability et le cadre tchadien des associations et des ONG : 43 critères en huit blocs, chacun avec la page qui en fait preuve. Résultat : au niveau attendu sur la redevabilité envers le public (plainte, corrections, registre, promesses distinguées des réalisations, données personnelles) ; absents ou partiels sur les pièces constitutives, le compte bancaire et les comptes, les politiques d’intégrité et le code de conduite, les résultats pour les habitants. Cinq suites sont inscrites au plan de développement, avec leur responsable et leur horizon ; l’évaluation sera refaite chaque trimestre.",
+    sources: [{ label: "Auto-évaluation", href: "/transparence/auto-evaluation" }, { label: "Documents attendus", href: "/documents" }],
+    suite: "Pièces constitutives, politiques d’intégrité et code de conduite, compte bancaire : décisions du bureau exécutif attendues (voir les suites de l’auto-évaluation).",
+    instance: "Animation du site ; les suites relèvent du bureau exécutif",
+  },
+  {
     id: "2026-38", date: "2026-10-06", type: "publication",
     titre: "Architecture institutionnelle : six piliers stratégiques",
     texte: "Le référentiel institutionnel communiqué le 6 octobre 2026 remplace les pôles par six piliers : I Culture, patrimoine et transmission ; II Capital humain et inclusion sociale ; III Services essentiels et développement territorial ; IV Économie inclusive et prospérité locale ; V Environnement, climat et résilience ; VI Gouvernance, paix et partenariats. Les vingt-deux thématiques existantes sont rattachées à cette architecture. Le pilier I s’appuie sur les cadres de l’UNESCO ; les piliers II à VI s’alignent sur les ODD. Le référentiel commun est destiné au site, aux statuts, aux organigrammes et à la Vision 2030.",
