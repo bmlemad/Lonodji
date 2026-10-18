@@ -28,7 +28,7 @@
         { "critere": "Registre des décisions", "etat": "present", "preuve": "Une ligne datée par décision, nomination, annonce ou proposition, avec sa source", "href": "/transparence/decisions" },
         { "critere": "Procès-verbaux d’assemblée générale", "etat": "absent", "preuve": "À venir ; le compte rendu du bureau du 18 septembre 2026 est publié, sa version signée est annoncée", "href": "/documents" },
         { "critere": "Élections et mandats", "etat": "present", "preuve": "Procédure adoptée, calendrier, règles de publication des candidats et des résultats", "href": "/association/election-vice-presidences" },
-        { "critere": "Assemblée générale de relance", "etat": "partiel", "preuve": "Annoncée pour la phase 3 du chronogramme (décembre 2026), date non fixée", "href": "/odeb/feuille-de-route" },
+        { "critere": "Assemblée générale de relance", "etat": "partiel", "preuve": "Date fixée au samedi 30 janvier 2027 (annonce du 18 octobre 2026) ; lieu, ordre du jour et convocation à publier", "href": "/association/evenements" },
         { "critere": "Conflits d’intérêts des responsables", "etat": "absent", "preuve": "Politique en projet depuis le 23 septembre 2026, non adoptée ; aucune déclaration d’intérêts", "href": "/transparence/decisions" }
       ]
     },
@@ -103,7 +103,7 @@
   "suites": [
     { "id": "pieces", "quoi": "Pièces constitutives : autorisation en règle, statuts et règlement intérieur soumis à l’assemblée générale, procès-verbaux", "qui": "Bureau exécutif", "quand": "Horizon du 17 novembre 2026 pour les projets de textes (phase 2 du chronogramme)" },
     { "id": "politiques", "quoi": "Adoption des cinq politiques d’intégrité du 23 septembre ; code de conduite des membres et des bénévoles ; référent protection", "qui": "Bureau exécutif, puis animation du site", "quand": "Horizon du 17 novembre 2026" },
-    { "id": "compte", "quoi": "Compte bancaire au nom de l’association, barème de cotisation, puis comptes annuels", "qui": "Bureau exécutif", "quand": "Avant l’assemblée générale de relance" },
+    { "id": "compte", "quoi": "Compte bancaire au nom de l’association, barème de cotisation, puis comptes annuels", "qui": "Bureau exécutif", "quand": "Avant l’assemblée générale de relance du 30 janvier 2027" },
     { "id": "reponses", "quoi": "Relevé trimestriel des messages reçus et de la part répondue sous quarante-huit heures, sans aucune donnée personnelle", "qui": "Animation du site", "quand": "Première publication au 31 décembre 2026" },
     { "id": "rapport", "quoi": "Premier rapport d’activité, à partir du registre, des engagements, des corrections et des indicateurs", "qui": "Bureau exécutif et animation", "quand": "Clôture du premier exercice" }
   ]

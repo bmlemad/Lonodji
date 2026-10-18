@@ -73,7 +73,7 @@ export const BUREAU_18_SEPTEMBRE = {
   chronogramme: [
     { phase: "Phase 1 — Organisation et préparation", echeance: "J + 30, au 18 octobre 2026", actions: "Mise en place officielle du Comité ; recensement des membres ; mise à jour de la base de données ; collecte et examen des documents administratifs ; réactivation des canaux officiels de communication ; note d’orientation stratégique." },
     { phase: "Phase 2 — Réformes et mobilisation", echeance: "J + 30 à J + 60, au 17 novembre 2026", actions: "Consultation des membres et personnes ressources ; nouveaux statuts et règlement intérieur ; finalisation de la vision, de la mission et des valeurs ; campagne de mobilisation et d’adhésion ; préparation de l’assemblée générale." },
-    { phase: "Phase 3 — Relance institutionnelle", echeance: "J + 60 à J + 90, au 17 décembre 2026", actions: "Assemblée générale de relance ; adoption des nouveaux textes ; validation de la transformation en ODEB Lonodji ; mise en place ou renouvellement des organes de gouvernance ; adoption du plan d’actions prioritaires." },
+    { phase: "Phase 3 — Relance institutionnelle", echeance: "J + 60 à J + 90, au 17 décembre 2026 — mise à jour du 18 octobre 2026 : assemblée générale fixée au 30 janvier 2027", actions: "Assemblée générale de relance ; adoption des nouveaux textes ; validation de la transformation en ODEB Lonodji ; mise en place ou renouvellement des organes de gouvernance ; adoption du plan d’actions prioritaires." },
     { phase: "Phase 4 — Déploiement et développement", echeance: "J + 90 à J + 180, au 17 mars 2027", actions: "Lancement officiel des activités de l’ODEB Lonodji ; premiers projets ; partenariats stratégiques ; structuration des commissions thématiques ; programme pluriannuel de développement." },
     { phase: "Perspective à moyen terme", echeance: "1 à 3 ans, 2027-2029", actions: "Consolidation institutionnelle ; rayonnement national et international ; projets structurants ; mise en conformité réglementaire ; dossier d’obtention du statut d’ONG." },
   ],
@@ -84,7 +84,7 @@ export const BUREAU_18_SEPTEMBRE = {
     { action: "Réactiver les canaux officiels de communication (groupe WhatsApp, site web, réseaux sociaux)", qui: "Comité", echeance: "2026-10-18", fait: "Groupe WhatsApp, site, pages Facebook et X, chaîne YouTube en ligne au 2 octobre 2026 ; page LinkedIn le 3 octobre" },
     { action: "Rédiger la note d’orientation stratégique", qui: "Comité", echeance: "2026-10-18" },
     { action: "Produire les projets de statuts et de règlement intérieur", qui: "Comité", echeance: "2026-11-17" },
-    { action: "Fixer la date et le lieu de l’assemblée générale de relance", qui: "Bureau exécutif", echeance: "2026-11-17" },
+    { action: "Fixer la date et le lieu de l’assemblée générale de relance", qui: "Bureau exécutif", echeance: "2026-11-17", enCours: "Date arrêtée : samedi 30 janvier 2027 (annonce du 18 octobre 2026) ; lieu à confirmer", href: "/transparence/decisions#2026-40" },
     { action: "Étudier les conditions et le calendrier d’accès au statut d’ONG", qui: "Comité", echeance: "2026-12-17" },
     { action: "Diffuser le compte rendu aux membres du bureau exécutif", qui: "Secrétaire général", echeance: "2026-10-02", fait: "Publié sur le site le 2 octobre 2026" },
   ] as { action: string; qui: string; echeance: string; fait?: string; enCours?: string; href?: string }[],

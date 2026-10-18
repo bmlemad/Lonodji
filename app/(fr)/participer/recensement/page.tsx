@@ -38,7 +38,7 @@ export default function Recensement() {
         <div className="detail-grid">
           <article><h3>Recensé n’est pas adhérent</h3><p>Le recensement ne vous engage à rien et ne coûte rien. L’adhésion, avec sa carte et sa cotisation, a ses propres règles : elles sont sur la page <Link href="/participer#adherer">Participer</Link>, et aucun paiement n’est demandé tant que le compte de l’association n’est pas ouvert.</p></article>
           <article><h3>Ce que deviennent vos réponses</h3><p>Elles entrent dans le registre des membres, consulté par le bureau et le Comité seulement. Elles ne sont jamais publiées. Vous pouvez demander à tout moment qu’elles soient corrigées ou effacées, par le <Link href="/participer#contact">formulaire de contact</Link> ou par WhatsApp.</p></article>
-          <article><h3>La suite</h3><p>Le Comité prépare de nouveaux statuts et l’assemblée générale de relance, prévue d’ici le 17 décembre 2026. Les personnes recensées en seront informées en premier. Le calendrier est sur la <Link href="/odeb/feuille-de-route#calendrier-bureau">feuille de route</Link>.</p></article>
+          <article><h3>La suite</h3><p>Le Comité prépare de nouveaux statuts et l’assemblée générale de relance, prévue le 30 janvier 2027. Les personnes recensées en seront informées en premier. Le calendrier est sur la <Link href="/odeb/feuille-de-route#calendrier-bureau">feuille de route</Link>.</p></article>
         </div>
       </section>
 

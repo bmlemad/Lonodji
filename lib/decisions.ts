@@ -35,6 +35,14 @@ export const TYPES: Record<TypeDecision, { label: string; court: string; note: s
 
 export const DECISIONS: Decision[] = [
   {
+    id: "2026-40", date: "2026-10-18", type: "annonce",
+    titre: "Assemblée générale de relance : samedi 30 janvier 2027",
+    texte: "L’assemblée générale de relance de l’association est prévue le samedi 30 janvier 2027. Elle était attendue au plus tard le 17 décembre 2026 par le chronogramme indicatif du 18 septembre (phase 3) ; la date est désormais arrêtée, le lieu reste à confirmer. C’est l’assemblée qui doit adopter les nouveaux statuts et le règlement intérieur, se prononcer sur la transformation en ODEB LONODJI et renouveler ou confirmer les organes de gouvernance.",
+    sources: [{ label: "Événements", href: "/association/evenements" }, { label: "Chronogramme et suivi des décisions", href: "/odeb/feuille-de-route#calendrier-bureau" }],
+    suite: "Lieu, ordre du jour, convocation et documents soumis (projets de statuts et de règlement intérieur) à publier avant l’assemblée.",
+    instance: "Bureau exécutif (date communiquée à l’animation du site le 18 octobre 2026)",
+  },
+  {
     id: "2026-39", date: "2026-10-17", type: "publication",
     titre: "Auto-évaluation du site au regard des référentiels des ONG",
     texte: "L’animation du site a comparé ce que lonodji.org publie avec ce qu’attendent le Core Humanitarian Standard (édition 2024), la Global Standard for CSO Accountability et le cadre tchadien des associations et des ONG : 43 critères en huit blocs, chacun avec la page qui en fait preuve. Résultat : au niveau attendu sur la redevabilité envers le public (plainte, corrections, registre, promesses distinguées des réalisations, données personnelles) ; absents ou partiels sur les pièces constitutives, le compte bancaire et les comptes, les politiques d’intégrité et le code de conduite, les résultats pour les habitants. Cinq suites sont inscrites au plan de développement, avec leur responsable et leur horizon ; l’évaluation sera refaite chaque trimestre.",
