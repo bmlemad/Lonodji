@@ -7,4 +7,14 @@ CORRECTIONS = {
         ("Lieu à confirmer &middot; N&rsquo;Djamena / Mandoul</p>",
          "Samedi 30 janvier 2027 (date annoncée le 18 octobre 2026) &middot; lieu et heure communiqués ultérieurement</p>"),
     ],
+    # 18/10/2026 (registre 2026-41) : coordination de la thématique 07 (WASH), note datée en fin de carte
+    "poles.html": [
+        ("la connexion internet la thématique 17, Connectivité &amp; services numériques.",
+         "la connexion internet la thématique 17, Connectivité &amp; services numériques. <strong>Mise à jour du 18 octobre 2026&nbsp;:</strong> la coordination de la thématique est confiée à Ngarmadji Mastog."),
+    ],
+    "en/themes.html": [
+        ("and internet access to theme 17, Connectivity &amp; Digital Services.</p>",
+         "and internet access to theme 17, Connectivity &amp; Digital Services. <strong>Update, 18 October 2026:</strong> the theme is now coordinated by Ngarmadji Mastog.</p>"),
+    ],
 }
+

@@ -306,8 +306,8 @@
    "kind": "dossier",
    "title": "Quelle thématique pour vous ?",
    "eyebrow": "Agir avec nous",
-   "lede": "Vingt-deux thématiques, dont six sans coordonnateur. Cochez ce que vous savez faire ou ce qui vous tient à cœur, dites-nous où vous êtes et combien de temps vous pouvez donner : nous vous proposons les thématiques où vous seriez le plus utile, et le bon interlocuteur. Rien n’est envoyé tant que vous n’avez pas écrit.",
-   "description": "Cochez ce que vous savez faire ou ce qui vous tient à cœur : nous vous proposons les thématiques d’ADEB LONODJI où vous seriez le plus utile. Six attendent un coordonnateur.",
+   "lede": "Vingt-deux thématiques, dont cinq sans coordonnateur. Cochez ce que vous savez faire ou ce qui vous tient à cœur, dites-nous où vous êtes et combien de temps vous pouvez donner : nous vous proposons les thématiques où vous seriez le plus utile, et le bon interlocuteur. Rien n’est envoyé tant que vous n’avez pas écrit.",
+   "description": "Cochez ce que vous savez faire ou ce qui vous tient à cœur : nous vous proposons les thématiques d’ADEB LONODJI où vous seriez le plus utile. Cinq attendent un coordonnateur.",
    "parent": "Agir avec nous",
    "words": 348,
    "hasMap": false
@@ -345,7 +345,7 @@
    "lede": "Les Chantiers ADEB LONODJI sont les projets de réflexion, de recherche et d’action portés par l’association. Pour les organiser, ADEB LONODJI structure son action autour de vingt-deux thématiques réparties en six piliers, appuyées par deux cellules transversales — le numérique et l’innovation contribuent à plusieurs piliers. Chaque thématique est animée par un coordonnateur. Cette organisation en piliers est notre méthodologie de travail en équipe : elle permet une bonne coordination des actions entre les thématiques, au lieu d’initiatives dispersées. Chaque thématique est en outre mise en regard des Objectifs de développement durable adoptés par les Nations unies, pour que nos partenaires situent immédiatement notre travail.",
    "description": "Six piliers, vingt-deux thématiques et deux cellules transversales pour organiser l’action d’ADEB LONODJI.",
    "parent": "Accueil",
-   "words": 6825,
+   "words": 6842,
    "hasMap": false
   },
   {
@@ -369,7 +369,7 @@
    "lede": "Chaque problématique que nous avons recensée est reliée à la thématique qui doit la porter, et chaque thématique à son plaidoyer quand il existe. Une seule page pour voir où nous en sommes : ce qui avance, ce qui attend un coordonnateur ou une coordonnatrice, et ce que nous n’avons pas encore commencé à documenter.",
    "description": "Chaque problématique reliée à sa thématique, chaque thématique à son plaidoyer s’il existe : le tableau de bord de suivi des actions d’ADEB LONODJI, thématique par thématique.",
    "parent": "Nos actions",
-   "words": 1676,
+   "words": 1679,
    "hasMap": false
   },
   {
@@ -402,7 +402,7 @@
    "kind": "hub",
    "title": "Agir avec nous",
    "eyebrow": "Nous soutenir",
-   "lede": "Six des vingt-deux thématiques d’ADEB LONODJI cherchent encore un coordonnateur, et l’association elle-même se réactive après des années de mise en veille : votre soutien, sous toutes ses formes, compte. Voici les façons d’y contribuer.",
+   "lede": "Cinq des vingt-deux thématiques d’ADEB LONODJI cherchent encore un coordonnateur, et l’association elle-même se réactive après des années de mise en veille : votre soutien, sous toutes ses formes, compte. Voici les façons d’y contribuer.",
    "description": "Les façons de soutenir ADEB LONODJI : cotisation et don, temps et compétences, dons en nature — au service du peuple bedjond de Bédjondo.",
    "parent": "Accueil",
    "words": 486,
@@ -537,7 +537,7 @@
    "lede": "ADEB LONODJI organises its work into twenty-two themes grouped in six pillars, supported by two cross-cutting units. Each theme is meant to be led by a coordinator who reports to the membership. This page is the English summary; every theme has a fuller description in French .",
    "description": "How ADEB LONODJI organises its work: six pillars, twenty-two themes and two cross-cutting units, each mapped to the SDG targets it actually touches.",
    "parent": "Home",
-   "words": 4271,
+   "words": 4284,
    "hasMap": false
   }
  ],
@@ -1980,12 +1980,12 @@
       "number": "07",
       "kind": "thematique",
       "name": "Eau, assainissement et hygiène (WASH)",
-      "status": "À pourvoir",
-      "filled": false,
-      "coordinator": "à pourvoir",
+      "status": "Pourvu",
+      "filled": true,
+      "coordinator": "Ngarmadji Mastog",
       "coordinatorLabel": "Coordonnateur",
-      "description": "Eau potable, assainissement et hygiène — ce que les ONG appellent EAH (WASH) : l’eau dans chaque quartier, les latrines, les eaux usées et les déchets, le lavage des mains à l’école et au marché, en lien avec les écoles et les centres de santé. La thématique porte le <a href=\"/journal/2026-09-17-plaidoyer-eau-potable-bedjondo\">plaidoyer pour l’eau potable</a>. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique devient <strong>Eau, assainissement et hygiène (WASH)</strong>. L’énergie rejoint la thématique 08, Énergie, routes & urbanisme, et la connexion internet la thématique 17, TIC et connectivité.",
-      "descriptionText": "Eau potable, assainissement et hygiène — ce que les ONG appellent EAH (WASH) : l’eau dans chaque quartier, les latrines, les eaux usées et les déchets, le lavage des mains à l’école et au marché, en lien avec les écoles et les centres de santé. La thématique porte le plaidoyer pour l’eau potable . Mise à jour du 29 septembre 2026 : la thématique devient Eau, assainissement et hygiène (WASH) . L’énergie rejoint la thématique 08, Énergie, routes & urbanisme, et la connexion internet la thématique 17, TIC et connectivité.",
+      "description": "Eau potable, assainissement et hygiène — ce que les ONG appellent EAH (WASH) : l’eau dans chaque quartier, les latrines, les eaux usées et les déchets, le lavage des mains à l’école et au marché, en lien avec les écoles et les centres de santé. La thématique porte le <a href=\"/journal/2026-09-17-plaidoyer-eau-potable-bedjondo\">plaidoyer pour l’eau potable</a>. <strong>Mise à jour du 29 septembre 2026 :</strong> la thématique devient <strong>Eau, assainissement et hygiène (WASH)</strong>. L’énergie rejoint la thématique 08, Énergie, routes & urbanisme, et la connexion internet la thématique 17, TIC et connectivité. <strong>Mise à jour du 18 octobre 2026 :</strong> la coordination de la thématique est confiée à Ngarmadji Mastog.",
+      "descriptionText": "Eau potable, assainissement et hygiène — ce que les ONG appellent EAH (WASH) : l’eau dans chaque quartier, les latrines, les eaux usées et les déchets, le lavage des mains à l’école et au marché, en lien avec les écoles et les centres de santé. La thématique porte le plaidoyer pour l’eau potable . Mise à jour du 29 septembre 2026 : la thématique devient Eau, assainissement et hygiène (WASH) . L’énergie rejoint la thématique 08, Énergie, routes & urbanisme, et la connexion internet la thématique 17, TIC et connectivité. Mise à jour du 18 octobre 2026 : la coordination de la thématique est confiée à Ngarmadji Mastog.",
       "tags": [
        "Eau potable",
        "Assainissement",

@@ -43,7 +43,7 @@ export const metadataFr: Metadata = {
   },
   description:
     `ADEB LONODJI est au service de tout le peuple bedjond, au Tchad et dans la diaspora : développement local, patrimoine bedjond, données territoriales et ${enLettres(plaidoyerCount)} dossiers de plaidoyer suivis publiquement dans le Mandoul, au Tchad.`,
-  keywords: ["ADEB LONODJI", "Bédjondo", "Mandoul Occidental", "Tchad", "diaspora bedjond", "développement local Bédjondo", "patrimoine bedjond", "plaidoyer Bédjondo"],
+  keywords: ["ADEB LONODJI", "Bédjondo", "Mandoul Occidental", "Mandoul", "Tchad", "développement local au Tchad", "développement communautaire Tchad", "association de développement Tchad", "diaspora tchadienne", "diaspora bedjond", "patrimoine du Mandoul", "patrimoine bedjond", "langue nangnda", "sud du Tchad", "plaidoyer Bédjondo", "Chad community development", "Chadian diaspora"],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",

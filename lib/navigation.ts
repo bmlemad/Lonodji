@@ -73,6 +73,7 @@ export const NAVIGATION: NavEntree[] = [
         { label: "Gouvernance locale", href: "/territoire/gouvernance-locale", note: "Qui décide quoi, du canton à l’État" },
         { label: "Décentralisation & développement local", href: "/territoire/decentralisation", note: "Commune, canton, sous-préfecture" },
         { label: "Nos propositions à la commune", href: "/territoire/propositions-commune", note: "Dix projets prioritaires, mesures sourcées" },
+        { label: "Initiatives auprès de la mairie", href: "/territoire/mairie", note: "Plaidoyers, propositions, état des envois" },
         { label: "Sous-sol & ressources naturelles", href: "/territoire/sous-sol", note: "Pétrole, mines : savoir avant de promettre" },
       ] },
       { titre: "Comprendre et mesurer", liens: [
@@ -306,7 +307,7 @@ export const PIED: { titre: string; liens: NavLien[] }[] = [
   ] },
   { titre: "Territoire", liens: [
     { label: "Carte du territoire", href: "/carte" }, { label: "Les villages", href: "/villages" }, { label: "Bédjondo", href: "/territoire/bedjondo" },
-    { label: "Gouvernance locale", href: "/territoire/gouvernance-locale" }, { label: "Propositions à la commune", href: "/territoire/propositions-commune" }, { label: "Sous-sol", href: "/territoire/sous-sol" }, { label: "Observatoire", href: "/observatoire" }, { label: "Diagnostic territorial", href: "/territoire/diagnostic" }, { label: "Enquêtes de terrain", href: "/territoire/enquetes" },
+    { label: "Gouvernance locale", href: "/territoire/gouvernance-locale" }, { label: "Propositions à la commune", href: "/territoire/propositions-commune" }, { label: "Initiatives auprès de la mairie", href: "/territoire/mairie" }, { label: "Sous-sol", href: "/territoire/sous-sol" }, { label: "Observatoire", href: "/observatoire" }, { label: "Diagnostic territorial", href: "/territoire/diagnostic" }, { label: "Enquêtes de terrain", href: "/territoire/enquetes" },
   ] },
   { titre: "Patrimoine", liens: [
     { label: "Histoire & grandes figures", href: "/histoire" }, { label: "La langue nangnda", href: "/langue" }, { label: "Bibliothèque numérique", href: "/bibliotheque" },

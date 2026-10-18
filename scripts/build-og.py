@@ -55,6 +55,8 @@ EYEBROWS = {
     "/bibliotheque": "Bibliothèque numérique bedjond",
     "/langue": "Langue · nangnda",
     "/transparence": "Redevabilité",
+    "/territoire/mairie": "Territoire · initiatives auprès de la mairie",
+    "/developpement-local-tchad": "Développement local au Tchad",
     "/transparence/auto-evaluation": "Redevabilité · auto-évaluation",
     "/archives": "Archives du site",
     "/mentions-legales": "Mentions légales",

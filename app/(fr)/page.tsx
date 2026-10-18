@@ -20,7 +20,7 @@ import { apercu } from "@/lib/apercu";
 /* Accueil : agir, suivre les actualités, consulter les preuves et retrouver le pays bedjond. */
 const idx0 = getIndex();
 export const metadata: Metadata = {
-  description: `Depuis 1995, ADEB LONODJI est au service de tout le peuple bedjond, au Tchad et dans la diaspora : ${enLettres(idx0.structure.poles.length)} piliers, ${enLettres(thematiqueCount(idx0))} thématiques et ${enLettres(getIndicateurs().contenu.plaidoyers.publies)} dossiers de plaidoyer suivis publiquement.`,
+  description: `Association de développement local et communautaire au sud du Tchad (Bédjondo, Mandoul Occidental) et réseau de la diaspora tchadienne bedjond depuis 1995 : ${enLettres(idx0.structure.poles.length)} piliers, ${enLettres(thematiqueCount(idx0))} thématiques et ${enLettres(getIndicateurs().contenu.plaidoyers.publies)} dossiers de plaidoyer suivis publiquement.`,
   alternates: { canonical: "/", languages: alternatesLangues("/") },
 };
 
@@ -86,10 +86,10 @@ export default function Home() {
 
       <nav className="acc-raccourcis" aria-label="Explorer l’accueil">
         <a href="#moment-title">Agenda <span aria-hidden="true">↓</span></a>
-        <a href="#poles-title">Piliers <span aria-hidden="true">↓</span></a>
-        <a href="#comptes-title">Suivi <span aria-hidden="true">↓</span></a>
-        <a href="#pays-title">Pays <span aria-hidden="true">↓</span></a>
+        <a href="#comptes-title">Réalisé <span aria-hidden="true">↓</span></a>
         <a href="#contribuer-title">Agir <span aria-hidden="true">↓</span></a>
+        <a href="#poles-title">Piliers <span aria-hidden="true">↓</span></a>
+        <a href="#pays-title">Pays <span aria-hidden="true">↓</span></a>
       </nav>
 
       <section className="acc-section acc-moment" aria-labelledby="moment-title">
@@ -106,9 +106,16 @@ export default function Home() {
       </section>
 
       <section className="acc-section acc-comptes impact" aria-labelledby="comptes-title">
-        <div className="acc-tete"><h2 id="comptes-title">Des faits, des preuves.</h2><p>Ce qui est documenté, ce qui est publié et ce qui est confirmé résolu. Relevé du {genereLe}.</p></div>
+        <div className="acc-tete"><h2 id="comptes-title">Déjà réalisé.</h2><p>Ce que l’association a produit depuis sa réactivation : dossiers, plaidoyers, carte, documents, coordinations. Les résultats pour les habitants s’ajouteront ici quand ils seront confirmés, avec leur date et leur preuve. Relevé du {genereLe}.</p></div>
         <AccueilIndicateurs donnees={indicateurs} />
-        <p className="acc-liens acc-liens--clair"><Link href="/impact">Consulter le suivi complet et ses sources</Link><Link href="/transparence">Notre redevabilité</Link><Link href="/transparence/decisions">Les décisions du bureau</Link></p>
+        <p className="acc-liens acc-liens--clair"><Link href="/impact">Consulter le suivi complet et ses sources</Link><Link href="/temoignages">Les témoignages</Link><Link href="/transparence">Notre redevabilité</Link><Link href="/transparence/decisions">Les décisions du bureau</Link></p>
+      </section>
+
+      <section className="acc-section acc-agir" aria-labelledby="contribuer-title">
+        <div className="acc-fin">
+          <div><h2 id="contribuer-title">Agir avec nous.</h2><p>Chacun peut contribuer dès aujourd’hui, au pays comme dans la diaspora.</p><ul className="acc-contribuer"><li><Link href="/participer#adherer">Adhérer · déclarer son intention sans paiement</Link></li><li><Link href="/participer#postes-ouverts">Coordonner ou seconder une thématique</Link></li><li><Link href="/diaspora">Proposer ses compétences</Link></li><li><Link href="/temoignages">Transmettre un récit, une photo, une voix</Link></li><li><Link href="/association/ong-partenaires">Préparer un partenariat</Link></li></ul><p>Une réponse sous quarante-huit heures ouvrées : <Link href="/participer#contact">nous écrire</Link>, <Appel texte="appel" /> ou <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p></div>
+          <div className="acc-don"><h3>Soutenir financièrement</h3><p>La collecte ouvrira avec le compte bancaire au nom de l’association : chaque don recevra alors un reçu numéroté, et l’usage des fonds sera publié. D’ici là, vous pouvez promettre une contribution : elle ne vous engage à rien et nous aide à préparer les premiers projets.</p><Link className="acc-bouton acc-bouton--plein" href="/participer#soutenir">Promettre une contribution</Link><p className="acc-note-edition"><Link href="/transparence/auto-evaluation#finances">Pourquoi la collecte est suspendue</Link></p></div>
+        </div>
       </section>
 
       <section className="acc-section acc-poles" aria-labelledby="poles-title">
@@ -124,17 +131,11 @@ export default function Home() {
         <div className="acc-tete"><h2 id="pays-title">Notre pays, notre mémoire.</h2><p>Le peuple bedjond, sa langue nangnda et une histoire à transmettre, au pays comme dans la diaspora.</p></div>
         <div className="acc-territoire">
           <div className="acc-carte-cadre"><h3>Retrouver son village</h3><p>{fr(c.carte.localitesNommees)} localités nommées, dans {c.carte.unites} unités.</p><CarteAccueil /><Link className="acc-bouton acc-bouton--plein" href="/villages">Chercher un village</Link></div>
-          <div className="acc-memoire"><Link href="/histoire"><strong>L’histoire et les grandes figures</strong><span>Des chefs de canton aux fondateurs de l’association.</span></Link><Link href="/langue"><strong>La langue nangnda</strong><span>Un lexique à écouter et un dictionnaire à enrichir.</span></Link><Link href="/bibliotheque"><strong>La bibliothèque</strong><span>Lire les documents et leurs sources.</span></Link><Link href="/temoignages"><strong>Transmettre un récit, une photo, une voix</strong><span>Votre accord et votre relecture précèdent toute publication.</span></Link><p className="acc-liens"><Link href="/carte">La carte détaillée</Link><Link href="/territoire/gouvernance-locale">Qui décide quoi</Link><Link href="/patrimoine/lieux-sacres">Lieux sacrés et généalogies</Link></p></div>
-        </div>
-      </section>
-
-      <section className="acc-section acc-odeb" aria-labelledby="odeb-title">
-        <div className="acc-fin">
-          <div><h2 id="odeb-title">Préparer demain.</h2><p>Le projet ODEB LONODJI propose une vision 2030 pour le pays bedjond. Les propositions et les étapes restent ouvertes à la discussion.</p><p className="acc-liens acc-liens--clair"><Link href="/odeb">Vision 2030</Link><Link href="/odeb/livre-blanc">Le livre blanc</Link><Link href="/odeb/feuille-de-route">La feuille de route</Link></p></div>
-          <div><h3 id="contribuer-title">Chacun peut contribuer.</h3><ul className="acc-contribuer"><li><Link href="/participer#adherer">Adhérer · déclarer son intention sans paiement</Link></li><li><Link href="/diaspora">Proposer ses compétences</Link></li><li><Link href="/association/ong-partenaires">Préparer un partenariat</Link></li><li><Link href="/observatoire">Consulter les données et les sources</Link></li></ul><p>Une réponse sous quarante-huit heures ouvrées : <Link href="/participer#contact">nous écrire</Link>, <Appel texte="appel" /> ou <a href={ORG.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p></div>
+          <div className="acc-memoire"><Link href="/histoire"><strong>L’histoire et les grandes figures</strong><span>Des chefs de canton aux fondateurs de l’association.</span></Link><Link href="/langue"><strong>La langue nangnda</strong><span>Un lexique à écouter et un dictionnaire à enrichir.</span></Link><Link href="/bibliotheque"><strong>La bibliothèque</strong><span>Lire les documents et leurs sources.</span></Link><Link href="/temoignages"><strong>Transmettre un récit, une photo, une voix</strong><span>Votre accord et votre relecture précèdent toute publication.</span></Link><p className="acc-liens"><Link href="/carte">La carte détaillée</Link><Link href="/territoire/gouvernance-locale">Qui décide quoi</Link><Link href="/patrimoine/lieux-sacres">Lieux sacrés et généalogies</Link><Link href="/odeb">Vision 2030</Link></p></div>
         </div>
         <p className="acc-devise">Courage · Discipline · Héritage</p>
       </section>
+
     </main>
   );
 }

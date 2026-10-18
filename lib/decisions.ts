@@ -35,6 +35,13 @@ export const TYPES: Record<TypeDecision, { label: string; court: string; note: s
 
 export const DECISIONS: Decision[] = [
   {
+    id: "2026-41", date: "2026-10-18", type: "nomination",
+    titre: "Coordination de la thématique 07, Eau, assainissement et hygiène (WASH)",
+    texte: "Ngarmadji Mastog prend en charge la thématique 07, Eau, assainissement et hygiène (WASH), jusqu’ici à pourvoir. La thématique porte le plaidoyer pour l’eau potable et figure parmi les sept priorités de l’association.",
+    sources: [{ label: "Piliers et thématiques", href: "/programmes#eau-energie-connectivite" }, { label: "Plaidoyer pour l’eau potable", href: "/journal/2026-09-17-plaidoyer-eau-potable-bedjondo" }],
+    instance: "Bureau exécutif (communiquée à l’animation du site le 18 octobre 2026)",
+  },
+  {
     id: "2026-40", date: "2026-10-18", type: "annonce",
     titre: "Assemblée générale de relance : samedi 30 janvier 2027",
     texte: "L’assemblée générale de relance de l’association est prévue le samedi 30 janvier 2027. Elle était attendue au plus tard le 17 décembre 2026 par le chronogramme indicatif du 18 septembre (phase 3) ; la date est désormais arrêtée ; le lieu et l’heure seront communiqués ultérieurement. C’est l’assemblée qui doit adopter les nouveaux statuts et le règlement intérieur, se prononcer sur la transformation en ODEB LONODJI et renouveler ou confirmer les organes de gouvernance.",

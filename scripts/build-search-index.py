@@ -175,6 +175,12 @@ PAGES_SITE.append({"t": "Lonodji, le magazine trimestriel d’ADEB LONODJI", "r"
 PAGES_SITE.append({"t": "La lettre d’information : chaque mois, publié, décidé, ouvert", "r": "/lettre", "k": "Page",
      "d": "Les numéros de la lettre d’ADEB LONODJI, à lire en ligne ou à transmettre en PDF sur WhatsApp ; l’abonnement par e-mail ; la règle de la lettre.",
      "x": "lettre d’information newsletter infolettre numéros abonnement s’abonner e-mail mensuelle PDF WhatsApp transmettre publié décidé ouvert archive"})
+PAGES_SITE.append({"t": "Développement local et communautaire au Tchad", "r": "/developpement-local-tchad", "k": "Page",
+     "d": "Méthode, données et pages de référence d’une association communautaire du Mandoul et de sa diaspora.",
+     "x": "développement local Tchad développement communautaire association Mandoul Mandoul Occidental sud du Tchad diaspora tchadienne patrimoine du Mandoul Bédjondo ODD bailleurs"})
+PAGES_SITE.append({"t": "Nos initiatives auprès de la mairie de Bédjondo", "r": "/territoire/mairie", "k": "Page",
+     "d": "Plaidoyers, propositions et projets adressés à la commune, avec l’état de chaque envoi.",
+     "x": "mairie commune maire conseil communal Bédjondo plaidoyers propositions projets prioritaires lettres envoi réponse transmission"})
 PAGES_SITE.append({"t": "Registre public des décisions", "r": "/transparence/decisions", "k": "Page",
      "d": "Ce que l’association a décidé, nommé, annoncé ou proposé depuis septembre 2026, tel que le site l’a publié, avec la source de chaque ligne et ce qui reste attendu.",
      "x": "registre décisions décidé nommé nomination annoncé annonce proposé proposition à voter règle en vigueur procès-verbal PV assemblée bureau transparence redevabilité source daté logo directions de pilier sièges ODEB programme 06"})

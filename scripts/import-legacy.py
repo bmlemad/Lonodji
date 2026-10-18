@@ -917,6 +917,10 @@ NOMINATIONS = [
      "Tamar Neloum DOUMANBE", "Tamar Neloum DOUMANBE",
      " <strong>Mise à jour du 30 septembre 2026&nbsp;:</strong> la coordination de la thématique est confiée à Tamar Neloum DOUMANBE.",
      " <strong>Update, 30 September 2026:</strong> the theme is now coordinated by Tamar Neloum DOUMANBE."),
+    # 18/10/2026 : thématique 07 (WASH), jusqu'ici à pourvoir
+    ("eau-energie-connectivite", "Eau, énergie &amp; connectivité", "Water, Energy &amp; Connectivity", "Eau, énergie & connectivité", "Développement humain &amp; moyens d’existence",
+     "Ngarmadji Mastog", "Ngarmadji Mastog",
+     "", ""),  # note datée ajoutée après les corrections du 29/09 (corrections_revue_18oct.py), qui réécrivent ce paragraphe
     # cellule transversale : mêmes gabarits (tableau, carte, page anglaise, trouver.js), pas de fiche de suivi
     ("cellule-communication-numerique", "Communication &amp; numérique", "Communication &amp; Digital", "Communication & numérique", "Un appui à toutes les thématiques",
      "Djimtebaye Mahamat Mamadou Banadji", "Djimtebaye Mahamat Mamadou Banadji",

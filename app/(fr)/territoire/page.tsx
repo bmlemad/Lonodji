@@ -53,6 +53,7 @@ export default function Territoire() {
       <section className="hub-section" id="pays">
         <SectionHead eyebrow="Le pays bedjond" title="Où, et" em="village par village." />
         <div className="link-list">
+          <Link href="/developpement-local-tchad"><small>Synthèse</small><strong>Développement local au Tchad</strong><span>La méthode de l’association, pour un lecteur extérieur.</span></Link>
           <Link href="/carte"><small>Carte</small><strong>Carte du territoire</strong><span>Quatorze unités, les localités et les équipements connus, sur une carte que l’on peut parcourir.</span></Link>
           <Link href="/villages"><small>Fiches</small><strong>Les villages</strong><span>Une fiche par localité : ce que les données ouvertes en savent, ce que le site en dit, ce qui reste à documenter.</span></Link>
           <Link href="/territoire/bedjondo"><small>Dossier</small><strong>Bédjondo, village devenu ville</strong><span>Le chef-lieu, sa croissance, ce qui manque à une ville qui a grandi plus vite que ses équipements.</span></Link>
