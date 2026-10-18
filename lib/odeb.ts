@@ -84,7 +84,7 @@ export const BUREAU_18_SEPTEMBRE = {
     { action: "Réactiver les canaux officiels de communication (groupe WhatsApp, site web, réseaux sociaux)", qui: "Comité", echeance: "2026-10-18", fait: "Groupe WhatsApp, site, pages Facebook et X, chaîne YouTube en ligne au 2 octobre 2026 ; page LinkedIn le 3 octobre" },
     { action: "Rédiger la note d’orientation stratégique", qui: "Comité", echeance: "2026-10-18" },
     { action: "Produire les projets de statuts et de règlement intérieur", qui: "Comité", echeance: "2026-11-17" },
-    { action: "Fixer la date et le lieu de l’assemblée générale de relance", qui: "Bureau exécutif", echeance: "2026-11-17", enCours: "Date arrêtée : samedi 30 janvier 2027 (annonce du 18 octobre 2026) ; lieu à confirmer", href: "/transparence/decisions#2026-40" },
+    { action: "Fixer la date et le lieu de l’assemblée générale de relance", qui: "Bureau exécutif", echeance: "2026-11-17", enCours: "Date arrêtée : samedi 30 janvier 2027 (annonce du 18 octobre 2026) ; lieu et heure communiqués ultérieurement", href: "/transparence/decisions#2026-40" },
     { action: "Étudier les conditions et le calendrier d’accès au statut d’ONG", qui: "Comité", echeance: "2026-12-17" },
     { action: "Diffuser le compte rendu aux membres du bureau exécutif", qui: "Secrétaire général", echeance: "2026-10-02", fait: "Publié sur le site le 2 octobre 2026" },
   ] as { action: string; qui: string; echeance: string; fait?: string; enCours?: string; href?: string }[],

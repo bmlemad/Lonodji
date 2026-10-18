@@ -60,7 +60,7 @@ export default function Home() {
     // relance de l'association (compte rendu du bureau du 18 septembre 2026, chronogramme indicatif)
     { date: "2026-10-18", ...jourMois("2026-10-18"), quoi: "Fin du recensement des membres", href: "/participer/recensement" },
     { date: "2026-11-17", ...jourMois("2026-11-17"), quoi: "Projets de statuts et de règlement intérieur", href: "/odeb/feuille-de-route#calendrier-bureau" },
-    { date: "2027-01-30", ...jourMois("2027-01-30"), quoi: "Assemblée générale de relance (lieu à confirmer)", href: "/association/evenements" },
+    { date: "2027-01-30", ...jourMois("2027-01-30"), quoi: "Assemblée générale de relance (lieu et heure à venir)", href: "/association/evenements" },
     ...(mag ? [{ date: "2027-01-01", jour: "Janv.", mois: "2027", quoi: `Magazine Lonodji n° ${mag.numero + 1}`, href: "/magazine" }] : []),
   ].sort((a, b) => a.date.localeCompare(b.date));
 
