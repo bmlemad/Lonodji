@@ -17,6 +17,7 @@ export const FR_VERS_EN: Record<string, string> = {
   "/territoire/sous-sol": "/en/subsoil",
   "/association/propositions-organisation": "/en/organisation",
   "/association/election-vice-presidences": "/en/election",
+  "/developpement-local-tchad": "/en/local-development-chad",
 };
 
 export const EN_VERS_FR: Record<string, string> = Object.fromEntries(Object.entries(FR_VERS_EN).map(([fr, en]) => [en, fr]));

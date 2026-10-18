@@ -160,6 +160,9 @@ PAGES_SITE.append({"t": "Programmes des bailleurs au Tchad, et où nous nous rac
 PAGES_SITE.append({"t": "Secteurs d’intervention : WASH, santé, nutrition, urgences…", "r": "/secteurs", "k": "Page",
      "d": "Les vingt-deux thématiques dans la langue des ONG de développement et d’aide : dix-sept secteurs, leurs clusters, codes CAD et ODD, ce qui est fait et ce qui n’est qu’une piste.",
      "x": "secteurs secteur d’intervention WASH EAH eau assainissement hygiène santé nutrition éducation sécurité alimentaire FSL moyens d’existence livelihoods relief urgence humanitaire DRR RRC réduction des risques catastrophe protection enfance VBG gouvernance paix genre climat infrastructures ICT4D numérique culture diaspora cluster IASC CAD OCDE ODD bailleur ONG partenaire abris CCCM"})
+PAGES_SITE.append({"t": "Local and community development in Chad (in English)", "r": "/en/local-development-chad", "k": "In English",
+     "d": "How a community association from Mandoul and its diaspora document needs, safeguard heritage and carry sourced advocacy.",
+     "x": "English local development community development Chad southern Chad Mandoul diaspora heritage NGO association Bedjondo"})
 PAGES_SITE.append({"t": "Donor programmes in Chad — World Bank, EU, UN, AfDB (in English)", "r": "/en/donors", "k": "In English",
      "d": "Programmes under way in Chad, those reaching Mandoul, and how the association connects to each.",
      "x": "English donors funders World Bank European Union United Nations UNICEF UNDP UNFPA AfDB IFAD AFD Swiss cooperation GIZ programme project Mandoul Koumra water health education energy digital funding window grant"})
