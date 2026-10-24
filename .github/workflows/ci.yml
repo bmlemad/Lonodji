@@ -20,3 +20,12 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      # Les compteurs publiés (content/indicateurs.json) doivent suivre les données : une nomination ou un article
+      # ajouté sans relancer build-indicateurs.py laisse /impact en retard (16/22 affiché au lieu de 17/22, constaté le
+      # 24/10/2026). La date de génération est ignorée.
+      - name: Indicateurs à jour
+        run: |
+          python3 scripts/build-indicateurs.py > /dev/null
+          if git diff -U0 content/indicateurs.json | grep -E '^[+-] ' | grep -v '"genere"' ; then
+            echo "::error::content/indicateurs.json est en retard sur les données : lancer python3 scripts/build-indicateurs.py et committer"; exit 1
+          fi
