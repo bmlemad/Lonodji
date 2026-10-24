@@ -63,6 +63,17 @@ jobs:
           ENVOIS_DIR=.envois python3 scripts/build-indicateurs.py
       - name: Export statique
         run: CIBLE=ovh bash scripts/statique/construire.sh
+      - name: Diagnostic (sans aucune valeur secrète)
+        env:
+          H: ${{ secrets.OVH_HOST }}
+          U: ${{ secrets.OVH_USER }}
+          P: ${{ secrets.OVH_PASSWORD }}
+        run: |
+          for v in H U P; do eval x=\$$v; [ -n "$x" ] && echo "$v : renseigné" || echo "::error::secret $v vide ou absent"; done
+          case "$H" in *://*|*/*|*" "*) echo "::error::OVH_HOST ne doit contenir ni protocole, ni barre, ni espace";; esac
+          test -d out && echo "out/ : $(find out -type f | wc -l) fichiers" || echo "::error::out/ absent après l'export"
+          echo "dossier cible : $WWW"
+          lftp -u "$U","$P" "sftp://$H" -e "set sftp:auto-confirm yes; set net:timeout 20; set net:max-retries 1; ls; bye" 2>&1 | sed "s/$P/***/g" | tail -15 || true
       - name: Copie vers OVH
         env:
           LFTP_PASSWORD: ${{ secrets.OVH_PASSWORD }}
