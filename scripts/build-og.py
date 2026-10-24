@@ -38,6 +38,7 @@ EYEBROWS = {
     "/en/governance": "Territory · local governance",
     "/en/local-development-chad": "Local development in Chad",
     "/en/town-hall": "Territory · the town hall",
+    "/en/self-assessment": "Accountability · self-assessment",
     "/en/subsoil": "Territory · subsoil & natural resources",
     "/en/commune": "Territory · the commune",
     "/territoire/gouvernance-locale": "Territoire · gouvernance locale",

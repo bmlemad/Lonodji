@@ -1,0 +1,77 @@
+{
+  "titre": "Self-assessment against NGO accountability standards",
+  "methode": "On 17 October 2026, the site team compared what lonodji.org publishes with what accountability standards expect of a non-governmental organisation: the Core Humanitarian Standard (2024 edition, nine commitments), the Global Standard for CSO Accountability (twelve commitments) and the Chadian framework the site cites (ordinance No. 023/PR/2018, decree No. 1917/PR/MEPD/2018). Each criterion points to the page that evidences it. The assessment covers what the site shows, not the association itself; it will be repeated every quarter.",
+  "echelle": {
+    "present": "published, verifiable, dated",
+    "partiel": "announced, planned or incomplete",
+    "absent": "nothing published"
+  },
+  "blocs": {
+    "identite": { "titre": "Identity and legal basis", "criteres": [
+      ["Name, purpose, seat, history", "Mission, History; national seat in N’Djamena, operations seat in Bédjondo"],
+      ["Legal basis shown as it stands", "“Recognised in 1995 · current authorisation being verified”; the Procedures page explains the 2018 ordinance and the NGO decree"],
+      ["Authorisation (order or receipt) published", "Being verified on the Documents page; it is the first document a donor or an administration asks for"],
+      ["Statutes and internal rules published", "Forthcoming on the Documents page; the 1995 statutes have not been found, a revision is planned by the general assembly"],
+      ["Legal notice: publisher, host", "Legal notice dated and corrected on 8 October 2026"]
+    ] },
+    "gouvernance": { "titre": "Governance", "criteres": [
+      ["Named governing bodies", "Executive board with roles on the Mission page"],
+      ["Organisation chart and responsibilities", "Six pillars, twenty-two themes and their coordinators"],
+      ["Register of decisions", "One dated line per decision, appointment, announcement or proposal, with its source"],
+      ["General assembly minutes", "Forthcoming; the board report of 18 September 2026 is published, its signed version is announced"],
+      ["Elections and mandates", "Adopted procedure, timetable, rules for publishing candidates and results"],
+      ["Relaunch general assembly", "Date set for Saturday 30 January 2027 (announced 18 October 2026); venue, agenda and notice still to be published"],
+      ["Conflicts of interest of office-holders", "Policy drafted on 23 September 2026, not adopted; no declarations of interest"]
+    ] },
+    "finances": { "titre": "Finances", "criteres": [
+      ["Bank account in the association’s name", "“Fundraising suspended until an account is opened in the association’s name”: stated clearly, but blocking for any agreement"],
+      ["Annual accounts, budget", "Announced from the first financial year; no financial figure on the site, consistent with the absence of an account"],
+      ["Sources of funds, membership fees", "Membership fee mentioned, with no adopted scale and no amount collected"],
+      ["Call for donations, receipts", "The Get involved page invites support; no receipt possible without an account"],
+      ["Donor programmes and open windows", "Forty programmes surveyed at source, a summary note to attach to letters"],
+      ["Publication of funding received (IATI standard)", "Not applicable while no funding is received; to be planned from the first agreement"]
+    ] },
+    "integrite": { "titre": "Integrity policies", "criteres": [
+      ["Conflicts of interest, fraud and corruption, procurement, personal data, sexual exploitation and abuse", "Five drafts of 23 September 2026 submitted to the executive board, not adopted, not published"],
+      ["Code of conduct for members and volunteers", "No page; “Courage · Discipline · Heritage” are values, not a code"],
+      ["Safeguarding of children and vulnerable people", "General commitment on the Accountability page, with no written procedure and no designated focal point"],
+      ["Personal data protection", "Each form states what is asked, why and for how long; data controller and rights"],
+      ["Sacred sites and burial places never located", "Rule applied on the map and in the village pages"]
+    ] },
+    "communautes": { "titre": "Accountability to communities", "criteres": [
+      ["Complaints mechanism, including anonymous, with appeal", "Complaint form, appeal up to the general assembly"],
+      ["Measurable response commitment", "Human reply within forty-eight working hours; compliance with this deadline is not yet reported publicly"],
+      ["Residents’ participation in priorities", "Needs, census and proposal forms; the link between needs received and the seven priorities is not shown"],
+      ["Corrections log", "Each error dated: what we wrote, what is correct, how we noticed"],
+      ["Report on messages received", "Promise to answer everyone; no aggregate report (how many received, how many answered on time)"]
+    ] },
+    "resultats": { "titre": "Programmes, results and learning", "criteres": [
+      ["What the association does, where, for whom", "Pillars, themes, territory map, diagnosis, needs"],
+      ["Promise kept apart from delivery", "Tracking dashboard: advocacy files published and sent, commitments confirmed delivered; conditional tense throughout"],
+      ["Results for residents", "“Changes for residents remain to be measured”; no completed action documented to date"],
+      ["Indicators with targets", "Six indicators without targets, by rule: no target without a board decision"],
+      ["Alignment with the SDGs and donor categories", "SDG page; titles of the twenty-two themes aligned (decision 2026-37, to be confirmed by the board)"],
+      ["Coordination with other actors", "NGOs present are listed; no formal partnership"],
+      ["Crisis preparedness", "“Disaster risk reduction and emergencies” theme without a plan"]
+    ] },
+    "communication": { "titre": "Transparency about the organisation and communication", "criteres": [
+      ["Annual or activity report", "Forthcoming; the quarterly magazine and the monthly letter partly stand in for it"],
+      ["Dated news and publications", "News, monthly letter, magazine, press area"],
+      ["Verifiable figures", "Counters generated from the data, generation date shown"],
+      ["Languages", "Full French, English on the main pages; Arabic absent (drafts not reviewed); Nangnda lexicon"],
+      ["Accessibility", "Accessibility statement, no violation found in the 5 October audit, site usable on 3G and offline"]
+    ] },
+    "personnes": { "titre": "Members and volunteers", "criteres": [
+      ["Roles and job descriptions", "Coordination job descriptions, open positions"],
+      ["Training, supervision, evaluation", "Nothing published; expected once activities are under way"],
+      ["Volunteer protection (insurance, consent)", "To be handled with the integrity policies"]
+    ] }
+  },
+  "suites": {
+    "pieces": ["Founding documents: authorisation in order, statutes and internal rules submitted to the general assembly, minutes", "Executive board", "By 17 November 2026 for the draft texts (phase 2 of the timetable)"],
+    "politiques": ["Adoption of the five integrity policies of 23 September; code of conduct for members and volunteers; safeguarding focal point", "Executive board, then the site team", "By 17 November 2026"],
+    "compte": ["Bank account in the association’s name, membership fee scale, then annual accounts", "Executive board", "Before the relaunch general assembly of 30 January 2027"],
+    "reponses": ["Quarterly report on messages received and the share answered within forty-eight hours, with no personal data", "Site team", "First publication on 31 December 2026"],
+    "rapport": ["First activity report, built from the register, commitments, corrections and indicators", "Executive board and site team", "Close of the first financial year"]
+  }
+}

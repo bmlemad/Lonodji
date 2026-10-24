@@ -197,6 +197,7 @@ export const NAVIGATION_EN: NavEntree[] = [
         { label: "Proposals to the commune", href: "/en/commune", note: "Ten priority projects for Bédjondo" },
         { label: "Local development in Chad", href: "/en/local-development-chad", note: "Method, diaspora, Mandoul heritage" },
         { label: "Town hall initiatives", href: "/en/town-hall", note: "Every letter to the commune and its status" },
+        { label: "Self-assessment", href: "/en/self-assessment", note: "Against NGO accountability standards" },
       ] },
     ],
     vedette: { kicker: "Where we stand", titre: (c) => `${c.pourvues} of ${c.total} themes have a coordinator`, texte: (c) => `${c.total - c.pourvues} are still looking for someone to lead them. Occasional help is often enough to move a file forward.`, href: "/en/contact", label: "Offer your help" },
