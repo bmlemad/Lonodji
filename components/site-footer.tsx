@@ -29,7 +29,7 @@ const PIED_EN: Colonne[] = [
   ] },
   { titre: "Our work", liens: [
     { label: "Six pillars · structured themes", href: "/en/themes" }, { label: "Sectors", href: "/en/sectors" }, { label: "Advocacy", href: "/en/advocacy" },
-    { label: "Projects", href: "/en/projects" }, { label: "Donor programmes in Chad", href: "/en/donors" }, { label: "Local development in Chad", href: "/en/local-development-chad" }, { label: "Impact dashboard", href: "/en/impact" },
+    { label: "Projects", href: "/en/projects" }, { label: "Donor programmes in Chad", href: "/en/donors" }, { label: "Local development in Chad", href: "/en/local-development-chad" }, { label: "Town hall initiatives", href: "/en/town-hall" }, { label: "Impact dashboard", href: "/en/impact" },
   ] },
   { titre: "Territory", liens: [
     { label: "Villages", href: "/en/villages" }, { label: "Bédjondo, our town", href: "/en/bedjondo" }, { label: "Local governance", href: "/en/governance" }, { label: "Subsoil", href: "/en/subsoil" }, { label: "Proposals to the commune", href: "/en/commune" }, { label: "Map of the territory", href: "/carte", fr: true }, { label: "Observatory", href: "/observatoire", fr: true },

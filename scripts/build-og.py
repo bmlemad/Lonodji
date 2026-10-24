@@ -37,6 +37,7 @@ EYEBROWS = {
     "/territoire/propositions-commune": "Territoire · propositions à la commune",
     "/en/governance": "Territory · local governance",
     "/en/local-development-chad": "Local development in Chad",
+    "/en/town-hall": "Territory · the town hall",
     "/en/subsoil": "Territory · subsoil & natural resources",
     "/en/commune": "Territory · the commune",
     "/territoire/gouvernance-locale": "Territoire · gouvernance locale",
