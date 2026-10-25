@@ -81,7 +81,7 @@ export default function Impact() {
             </tbody>
           </table>
         </div>
-        <p className="lg-footnote">Règle de suivi : une date de transmission, un accusé de réception ou une réponse n’apparaît ici qu’après l’événement réel et son enregistrement par le bureau. L’absence de date signifie donc « non transmis à ce jour », pas « information inconnue ». <Link href="/actions#transmission">Voir le détail par destinataire</Link>.</p>
+        <p className="lg-footnote">Règle de suivi : une date de transmission, un accusé de réception ou une réponse n’apparaît ici qu’après l’événement réel et son enregistrement par le bureau. L’absence de date signifie donc « non transmis à ce jour », pas « information inconnue ». <Link href="/actions#transmission">Voir le détail par destinataire</Link> ; prochaine étape et responsable de chaque action : <Link href="/programmes/plan-d-action">plan d’action</Link>.</p>
       </section>
 
       <section className="hub-section" id="engagements-decisions">
