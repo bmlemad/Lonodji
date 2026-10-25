@@ -184,6 +184,9 @@ PAGES_SITE.append({"t": "Lonodji, le magazine trimestriel d’ADEB LONODJI", "r"
 PAGES_SITE.append({"t": "La lettre d’information : chaque mois, publié, décidé, ouvert", "r": "/lettre", "k": "Page",
      "d": "Les numéros de la lettre d’ADEB LONODJI, à lire en ligne ou à transmettre en PDF sur WhatsApp ; l’abonnement par e-mail ; la règle de la lettre.",
      "x": "lettre d’information newsletter infolettre numéros abonnement s’abonner e-mail mensuelle PDF WhatsApp transmettre publié décidé ouvert archive"})
+PAGES_SITE.append({"t": "Plan d’action par pilier", "r": "/programmes/plan-d-action", "k": "Page",
+     "d": "Chaque action avec son état, sa prochaine étape, son responsable et son échéance.",
+     "x": "plan d action actions piliers plaidoyers projets responsable échéance prochaine étape suivi ONG cadre logique"})
 PAGES_SITE.append({"t": "Développement local et communautaire au Tchad", "r": "/developpement-local-tchad", "k": "Page",
      "d": "Méthode, données et pages de référence d’une association communautaire du Mandoul et de sa diaspora.",
      "x": "développement local Tchad développement communautaire association Mandoul Mandoul Occidental sud du Tchad diaspora tchadienne patrimoine du Mandoul Bédjondo ODD bailleurs"})

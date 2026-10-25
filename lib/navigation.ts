@@ -56,6 +56,7 @@ export const NAVIGATION: NavEntree[] = [
       ] },
       { titre: "Organisation et partenaires", liens: [
         { label: "Tous les piliers et thématiques", href: "/programmes", note: "L’organisation complète et les plans d’action" },
+        { label: "Plan d’action", href: "/programmes/plan-d-action", note: "Chaque action, son état, son responsable" },
         { label: "Secteurs d’intervention", href: "/secteurs", note: "Les mêmes thématiques, en langue ONG" },
         { label: "Fiches de mission (PDF)", href: "/programmes/fiches-de-mission", note: "Vice-présider un pilier, coordonner une thématique" },
         { label: "Programmes des bailleurs", href: "/bailleurs", note: "Partenaires et possibilités de financement" },
